@@ -47,38 +47,69 @@ namespace Model
 
     
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
+
     
     inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = value; }
 
     
-    inline WebsiteConfiguration&  WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
+    inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = value; }
+
+    
+    inline WebsiteConfiguration& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
+
+    
+    inline WebsiteConfiguration& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(value); return *this;}
 
     
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
+
     
     inline void SetIndexDocument(const IndexDocument& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = value; }
 
     
-    inline WebsiteConfiguration&  WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
+    inline void SetIndexDocument(IndexDocument&& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = value; }
+
+    
+    inline WebsiteConfiguration& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
+
+    
+    inline WebsiteConfiguration& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(value); return *this;}
 
     
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
+
     
     inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
 
     
-    inline WebsiteConfiguration&  WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
+    inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
+
+    
+    inline WebsiteConfiguration& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
+
+    
+    inline WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(value); return *this;}
 
     
     inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
+
     
     inline void SetRoutingRules(const Aws::Vector<RoutingRule>& value) { m_routingRulesHasBeenSet = true; m_routingRules = value; }
 
     
-    inline WebsiteConfiguration&  WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
+    inline void SetRoutingRules(Aws::Vector<RoutingRule>&& value) { m_routingRulesHasBeenSet = true; m_routingRules = value; }
+
+    
+    inline WebsiteConfiguration& WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
+
+    
+    inline WebsiteConfiguration& WithRoutingRules(Aws::Vector<RoutingRule>&& value) { SetRoutingRules(value); return *this;}
 
     
     inline WebsiteConfiguration& AddRoutingRules(const RoutingRule& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(value); return *this; }
+
+    
+    inline WebsiteConfiguration& AddRoutingRules(RoutingRule&& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(value); return *this; }
 
   private:
     ErrorDocument m_errorDocument;

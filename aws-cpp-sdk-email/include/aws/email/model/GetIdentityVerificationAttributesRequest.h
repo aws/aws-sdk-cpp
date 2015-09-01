@@ -39,6 +39,7 @@ namespace Model
      <p>A list of identities.</p>
     */
     inline const Aws::Vector<Aws::String>& GetIdentities() const{ return m_identities; }
+
     /*
      <p>A list of identities.</p>
     */
@@ -47,12 +48,27 @@ namespace Model
     /*
      <p>A list of identities.</p>
     */
-    inline GetIdentityVerificationAttributesRequest&  WithIdentities(const Aws::Vector<Aws::String>& value) { SetIdentities(value); return *this;}
+    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = value; }
+
+    /*
+     <p>A list of identities.</p>
+    */
+    inline GetIdentityVerificationAttributesRequest& WithIdentities(const Aws::Vector<Aws::String>& value) { SetIdentities(value); return *this;}
+
+    /*
+     <p>A list of identities.</p>
+    */
+    inline GetIdentityVerificationAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(value); return *this;}
 
     /*
      <p>A list of identities.</p>
     */
     inline GetIdentityVerificationAttributesRequest& AddIdentities(const Aws::String& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
+
+    /*
+     <p>A list of identities.</p>
+    */
+    inline GetIdentityVerificationAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
     /*
      <p>A list of identities.</p>

@@ -43,12 +43,22 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode subnetIdentifierNode = resultNode.FirstChild("SubnetIdentifier");
+    if(subnetIdentifierNode.IsNull())
+    {
+      subnetIdentifierNode = resultNode;
+    }
+
     if(!subnetIdentifierNode.IsNull())
     {
       m_subnetIdentifier = StringUtils::Trim(subnetIdentifierNode.GetText().c_str());
       m_subnetIdentifierHasBeenSet = true;
     }
     XmlNode subnetAvailabilityZoneNode = resultNode.FirstChild("SubnetAvailabilityZone");
+    if(subnetAvailabilityZoneNode.IsNull())
+    {
+      subnetAvailabilityZoneNode = resultNode;
+    }
+
     if(!subnetAvailabilityZoneNode.IsNull())
     {
       m_subnetAvailabilityZone = subnetAvailabilityZoneNode;

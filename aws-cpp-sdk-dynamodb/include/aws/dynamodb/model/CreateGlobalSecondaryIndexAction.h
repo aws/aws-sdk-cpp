@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the global secondary index to be created.</p>
     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
     /*
      <p>The name of the global secondary index to be created.</p>
     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+
+    /*
+     <p>The name of the global secondary index to be created.</p>
+    */
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /*
      <p>The name of the global secondary index to be created.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the global secondary index to be created.</p>
     */
-    inline CreateGlobalSecondaryIndexAction&  WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+    inline CreateGlobalSecondaryIndexAction& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /*
+     <p>The name of the global secondary index to be created.</p>
+    */
+    inline CreateGlobalSecondaryIndexAction& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
     /*
      <p>The name of the global secondary index to be created.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>The key schema for the global secondary index.</p>
     */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+
     /*
      <p>The key schema for the global secondary index.</p>
     */
@@ -80,28 +92,57 @@ namespace Model
     /*
      <p>The key schema for the global secondary index.</p>
     */
-    inline CreateGlobalSecondaryIndexAction&  WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
+    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
+
+    /*
+     <p>The key schema for the global secondary index.</p>
+    */
+    inline CreateGlobalSecondaryIndexAction& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
+
+    /*
+     <p>The key schema for the global secondary index.</p>
+    */
+    inline CreateGlobalSecondaryIndexAction& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(value); return *this;}
 
     /*
      <p>The key schema for the global secondary index.</p>
     */
     inline CreateGlobalSecondaryIndexAction& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
+    /*
+     <p>The key schema for the global secondary index.</p>
+    */
+    inline CreateGlobalSecondaryIndexAction& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
+
     
     inline const Projection& GetProjection() const{ return m_projection; }
+
     
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
     
-    inline CreateGlobalSecondaryIndexAction&  WithProjection(const Projection& value) { SetProjection(value); return *this;}
+    inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
+
+    
+    inline CreateGlobalSecondaryIndexAction& WithProjection(const Projection& value) { SetProjection(value); return *this;}
+
+    
+    inline CreateGlobalSecondaryIndexAction& WithProjection(Projection&& value) { SetProjection(value); return *this;}
 
     
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
     
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
     
-    inline CreateGlobalSecondaryIndexAction&  WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    
+    inline CreateGlobalSecondaryIndexAction& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+
+    
+    inline CreateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(value); return *this;}
 
   private:
     Aws::String m_indexName;

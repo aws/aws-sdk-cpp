@@ -42,10 +42,16 @@ namespace Model
      <p>The ID of the pipeline.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline AddTagsRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline AddTagsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline AddTagsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline.</p>
@@ -66,6 +77,7 @@ namespace Model
      <p>The tags to add, as key/value pairs.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>The tags to add, as key/value pairs.</p>
     */
@@ -74,12 +86,27 @@ namespace Model
     /*
      <p>The tags to add, as key/value pairs.</p>
     */
-    inline AddTagsRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The tags to add, as key/value pairs.</p>
+    */
+    inline AddTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The tags to add, as key/value pairs.</p>
+    */
+    inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The tags to add, as key/value pairs.</p>
     */
     inline AddTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The tags to add, as key/value pairs.</p>
+    */
+    inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_pipelineId;

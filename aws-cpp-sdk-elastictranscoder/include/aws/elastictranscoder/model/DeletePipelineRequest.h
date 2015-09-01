@@ -38,10 +38,16 @@ namespace Model
      <p>The identifier of the pipeline that you want to delete.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The identifier of the pipeline that you want to delete.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The identifier of the pipeline that you want to delete.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the pipeline that you want to delete.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identifier of the pipeline that you want to delete.</p>
     */
-    inline DeletePipelineRequest&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline DeletePipelineRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The identifier of the pipeline that you want to delete.</p>
+    */
+    inline DeletePipelineRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The identifier of the pipeline that you want to delete.</p>

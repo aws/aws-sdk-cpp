@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline DeleteLoadBalancerListenersRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The client port numbers of the listeners.</p>
     */
     inline const Aws::Vector<long>& GetLoadBalancerPorts() const{ return m_loadBalancerPorts; }
+
     /*
      <p>The client port numbers of the listeners.</p>
     */
@@ -70,7 +82,17 @@ namespace Model
     /*
      <p>The client port numbers of the listeners.</p>
     */
-    inline DeleteLoadBalancerListenersRequest&  WithLoadBalancerPorts(const Aws::Vector<long>& value) { SetLoadBalancerPorts(value); return *this;}
+    inline void SetLoadBalancerPorts(Aws::Vector<long>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
+
+    /*
+     <p>The client port numbers of the listeners.</p>
+    */
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(const Aws::Vector<long>& value) { SetLoadBalancerPorts(value); return *this;}
+
+    /*
+     <p>The client port numbers of the listeners.</p>
+    */
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<long>&& value) { SetLoadBalancerPorts(value); return *this;}
 
     /*
      <p>The client port numbers of the listeners.</p>

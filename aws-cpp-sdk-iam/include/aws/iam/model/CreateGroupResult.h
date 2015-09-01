@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the group.</p>
     */
     inline const Group& GetGroup() const{ return m_group; }
+
     /*
      <p>Information about the group.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the group.</p>
     */
-    inline CreateGroupResult&  WithGroup(const Group& value) { SetGroup(value); return *this;}
+    inline void SetGroup(Group&& value) { m_group = value; }
+
+    /*
+     <p>Information about the group.</p>
+    */
+    inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
+
+    /*
+     <p>Information about the group.</p>
+    */
+    inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Group m_group;

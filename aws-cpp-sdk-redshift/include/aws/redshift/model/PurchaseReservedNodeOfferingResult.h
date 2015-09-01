@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ReservedNode& GetReservedNode() const{ return m_reservedNode; }
+
     
     inline void SetReservedNode(const ReservedNode& value) { m_reservedNode = value; }
 
     
-    inline PurchaseReservedNodeOfferingResult&  WithReservedNode(const ReservedNode& value) { SetReservedNode(value); return *this;}
+    inline void SetReservedNode(ReservedNode&& value) { m_reservedNode = value; }
+
+    
+    inline PurchaseReservedNodeOfferingResult& WithReservedNode(const ReservedNode& value) { SetReservedNode(value); return *this;}
+
+    
+    inline PurchaseReservedNodeOfferingResult& WithReservedNode(ReservedNode&& value) { SetReservedNode(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline PurchaseReservedNodeOfferingResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline PurchaseReservedNodeOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline PurchaseReservedNodeOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReservedNode m_reservedNode;

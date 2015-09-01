@@ -49,10 +49,16 @@ namespace Model
      <p>The name of the cache subnet group.</p>
     */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
+
     /*
      <p>The name of the cache subnet group.</p>
     */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
+
+    /*
+     <p>The name of the cache subnet group.</p>
+    */
+    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /*
      <p>The name of the cache subnet group.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The name of the cache subnet group.</p>
     */
-    inline CacheSubnetGroup&  WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
+    inline CacheSubnetGroup& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the cache subnet group.</p>
+    */
+    inline CacheSubnetGroup& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(value); return *this;}
 
     /*
      <p>The name of the cache subnet group.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The description of the cache subnet group.</p>
     */
     inline const Aws::String& GetCacheSubnetGroupDescription() const{ return m_cacheSubnetGroupDescription; }
+
     /*
      <p>The description of the cache subnet group.</p>
     */
     inline void SetCacheSubnetGroupDescription(const Aws::String& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
+
+    /*
+     <p>The description of the cache subnet group.</p>
+    */
+    inline void SetCacheSubnetGroupDescription(Aws::String&& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
     /*
      <p>The description of the cache subnet group.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The description of the cache subnet group.</p>
     */
-    inline CacheSubnetGroup&  WithCacheSubnetGroupDescription(const Aws::String& value) { SetCacheSubnetGroupDescription(value); return *this;}
+    inline CacheSubnetGroup& WithCacheSubnetGroupDescription(const Aws::String& value) { SetCacheSubnetGroupDescription(value); return *this;}
+
+    /*
+     <p>The description of the cache subnet group.</p>
+    */
+    inline CacheSubnetGroup& WithCacheSubnetGroupDescription(Aws::String&& value) { SetCacheSubnetGroupDescription(value); return *this;}
 
     /*
      <p>The description of the cache subnet group.</p>
@@ -97,10 +119,16 @@ namespace Model
      <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
     /*
      <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /*
+     <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
+    */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /*
      <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
     */
-    inline CacheSubnetGroup&  WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline CacheSubnetGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /*
+     <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
+    */
+    inline CacheSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /*
      <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
@@ -121,6 +154,7 @@ namespace Model
      <p>A list of subnets associated with the cache subnet group.</p>
     */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
+
     /*
      <p>A list of subnets associated with the cache subnet group.</p>
     */
@@ -129,12 +163,27 @@ namespace Model
     /*
      <p>A list of subnets associated with the cache subnet group.</p>
     */
-    inline CacheSubnetGroup&  WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
+    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+
+    /*
+     <p>A list of subnets associated with the cache subnet group.</p>
+    */
+    inline CacheSubnetGroup& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
+
+    /*
+     <p>A list of subnets associated with the cache subnet group.</p>
+    */
+    inline CacheSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(value); return *this;}
 
     /*
      <p>A list of subnets associated with the cache subnet group.</p>
     */
     inline CacheSubnetGroup& AddSubnets(const Subnet& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /*
+     <p>A list of subnets associated with the cache subnet group.</p>
+    */
+    inline CacheSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
   private:
     Aws::String m_cacheSubnetGroupName;

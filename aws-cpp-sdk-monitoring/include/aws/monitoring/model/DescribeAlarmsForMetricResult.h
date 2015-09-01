@@ -48,6 +48,7 @@ namespace Model
      <p> A list of information for each alarm with the specified metric. </p>
     */
     inline const Aws::Vector<MetricAlarm>& GetMetricAlarms() const{ return m_metricAlarms; }
+
     /*
      <p> A list of information for each alarm with the specified metric. </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p> A list of information for each alarm with the specified metric. </p>
     */
-    inline DescribeAlarmsForMetricResult&  WithMetricAlarms(const Aws::Vector<MetricAlarm>& value) { SetMetricAlarms(value); return *this;}
+    inline void SetMetricAlarms(Aws::Vector<MetricAlarm>&& value) { m_metricAlarms = value; }
+
+    /*
+     <p> A list of information for each alarm with the specified metric. </p>
+    */
+    inline DescribeAlarmsForMetricResult& WithMetricAlarms(const Aws::Vector<MetricAlarm>& value) { SetMetricAlarms(value); return *this;}
+
+    /*
+     <p> A list of information for each alarm with the specified metric. </p>
+    */
+    inline DescribeAlarmsForMetricResult& WithMetricAlarms(Aws::Vector<MetricAlarm>&& value) { SetMetricAlarms(value); return *this;}
 
     /*
      <p> A list of information for each alarm with the specified metric. </p>
     */
     inline DescribeAlarmsForMetricResult& AddMetricAlarms(const MetricAlarm& value) { m_metricAlarms.push_back(value); return *this; }
 
+    /*
+     <p> A list of information for each alarm with the specified metric. </p>
+    */
+    inline DescribeAlarmsForMetricResult& AddMetricAlarms(MetricAlarm&& value) { m_metricAlarms.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeAlarmsForMetricResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeAlarmsForMetricResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeAlarmsForMetricResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<MetricAlarm> m_metricAlarms;

@@ -38,6 +38,7 @@ namespace Model
      <p>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </p>
     */
     inline long GetNumberOfBytes() const{ return m_numberOfBytes; }
+
     /*
      <p>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </p>
     */
@@ -46,7 +47,7 @@ namespace Model
     /*
      <p>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </p>
     */
-    inline GenerateRandomRequest&  WithNumberOfBytes(long value) { SetNumberOfBytes(value); return *this;}
+    inline GenerateRandomRequest& WithNumberOfBytes(long value) { SetNumberOfBytes(value); return *this;}
 
   private:
     long m_numberOfBytes;

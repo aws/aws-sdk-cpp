@@ -46,10 +46,16 @@ namespace Model
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline MergeDeveloperIdentitiesResult&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline MergeDeveloperIdentitiesResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline MergeDeveloperIdentitiesResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>

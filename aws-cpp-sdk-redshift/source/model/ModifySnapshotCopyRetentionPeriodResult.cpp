@@ -42,6 +42,11 @@ ModifySnapshotCopyRetentionPeriodResult& ModifySnapshotCopyRetentionPeriodResult
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
+    if(clusterNode.IsNull())
+    {
+      clusterNode = resultNode;
+    }
+
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

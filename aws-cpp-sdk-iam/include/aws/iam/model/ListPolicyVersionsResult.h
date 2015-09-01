@@ -49,6 +49,7 @@ namespace Model
      <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::Vector<PolicyVersion>& GetVersions() const{ return m_versions; }
+
     /*
      <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline ListPolicyVersionsResult&  WithVersions(const Aws::Vector<PolicyVersion>& value) { SetVersions(value); return *this;}
+    inline void SetVersions(Aws::Vector<PolicyVersion>&& value) { m_versions = value; }
+
+    /*
+     <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ListPolicyVersionsResult& WithVersions(const Aws::Vector<PolicyVersion>& value) { SetVersions(value); return *this;}
+
+    /*
+     <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ListPolicyVersionsResult& WithVersions(Aws::Vector<PolicyVersion>&& value) { SetVersions(value); return *this;}
 
     /*
      <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -65,9 +76,15 @@ namespace Model
     inline ListPolicyVersionsResult& AddVersions(const PolicyVersion& value) { m_versions.push_back(value); return *this; }
 
     /*
+     <p>A list of policy versions.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ListPolicyVersionsResult& AddVersions(PolicyVersion&& value) { m_versions.push_back(value); return *this; }
+
+    /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
@@ -76,16 +93,22 @@ namespace Model
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
-    inline ListPolicyVersionsResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListPolicyVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -95,7 +118,12 @@ namespace Model
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
-    inline ListPolicyVersionsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListPolicyVersionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline ListPolicyVersionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -104,11 +132,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListPolicyVersionsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListPolicyVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListPolicyVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<PolicyVersion> m_versions;

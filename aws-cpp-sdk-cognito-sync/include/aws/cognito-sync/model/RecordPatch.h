@@ -45,6 +45,7 @@ namespace Model
      An operation, either replace or remove.
     */
     inline const Operation& GetOp() const{ return m_op; }
+
     /*
      An operation, either replace or remove.
     */
@@ -53,16 +54,32 @@ namespace Model
     /*
      An operation, either replace or remove.
     */
-    inline RecordPatch&  WithOp(const Operation& value) { SetOp(value); return *this;}
+    inline void SetOp(Operation&& value) { m_opHasBeenSet = true; m_op = value; }
+
+    /*
+     An operation, either replace or remove.
+    */
+    inline RecordPatch& WithOp(const Operation& value) { SetOp(value); return *this;}
+
+    /*
+     An operation, either replace or remove.
+    */
+    inline RecordPatch& WithOp(Operation&& value) { SetOp(value); return *this;}
 
     /*
      The key associated with the record patch.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      The key associated with the record patch.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     The key associated with the record patch.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The key associated with the record patch.
@@ -72,7 +89,12 @@ namespace Model
     /*
      The key associated with the record patch.
     */
-    inline RecordPatch&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline RecordPatch& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     The key associated with the record patch.
+    */
+    inline RecordPatch& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      The key associated with the record patch.
@@ -83,10 +105,16 @@ namespace Model
      The value associated with the record patch.
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      The value associated with the record patch.
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     The value associated with the record patch.
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      The value associated with the record patch.
@@ -96,7 +124,12 @@ namespace Model
     /*
      The value associated with the record patch.
     */
-    inline RecordPatch&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline RecordPatch& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     The value associated with the record patch.
+    */
+    inline RecordPatch& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      The value associated with the record patch.
@@ -107,6 +140,7 @@ namespace Model
      Last known server sync count for this record. Set to 0 if unknown.
     */
     inline long long GetSyncCount() const{ return m_syncCount; }
+
     /*
      Last known server sync count for this record. Set to 0 if unknown.
     */
@@ -115,12 +149,13 @@ namespace Model
     /*
      Last known server sync count for this record. Set to 0 if unknown.
     */
-    inline RecordPatch&  WithSyncCount(long long value) { SetSyncCount(value); return *this;}
+    inline RecordPatch& WithSyncCount(long long value) { SetSyncCount(value); return *this;}
 
     /*
      The last modified date of the client device.
     */
     inline double GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
+
     /*
      The last modified date of the client device.
     */
@@ -129,7 +164,7 @@ namespace Model
     /*
      The last modified date of the client device.
     */
-    inline RecordPatch&  WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
+    inline RecordPatch& WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
 
   private:
     Operation m_op;

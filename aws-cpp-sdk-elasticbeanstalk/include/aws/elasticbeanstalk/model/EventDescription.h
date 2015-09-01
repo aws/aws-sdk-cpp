@@ -48,6 +48,7 @@ namespace Model
      <p>The date when the event occurred.</p>
     */
     inline double GetEventDate() const{ return m_eventDate; }
+
     /*
      <p>The date when the event occurred.</p>
     */
@@ -56,16 +57,22 @@ namespace Model
     /*
      <p>The date when the event occurred.</p>
     */
-    inline EventDescription&  WithEventDate(double value) { SetEventDate(value); return *this;}
+    inline EventDescription& WithEventDate(double value) { SetEventDate(value); return *this;}
 
     /*
      <p>The event message.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The event message.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The event message.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The event message.</p>
@@ -75,7 +82,12 @@ namespace Model
     /*
      <p>The event message.</p>
     */
-    inline EventDescription&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline EventDescription& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The event message.</p>
+    */
+    inline EventDescription& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The event message.</p>
@@ -86,10 +98,16 @@ namespace Model
      <p>The application associated with the event.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The application associated with the event.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The application associated with the event.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The application associated with the event.</p>
@@ -99,7 +117,12 @@ namespace Model
     /*
      <p>The application associated with the event.</p>
     */
-    inline EventDescription&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline EventDescription& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The application associated with the event.</p>
+    */
+    inline EventDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The application associated with the event.</p>
@@ -110,10 +133,16 @@ namespace Model
      <p>The release label for the application version associated with this event.</p>
     */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
     /*
      <p>The release label for the application version associated with this event.</p>
     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+
+    /*
+     <p>The release label for the application version associated with this event.</p>
+    */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /*
      <p>The release label for the application version associated with this event.</p>
@@ -123,7 +152,12 @@ namespace Model
     /*
      <p>The release label for the application version associated with this event.</p>
     */
-    inline EventDescription&  WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+    inline EventDescription& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /*
+     <p>The release label for the application version associated with this event.</p>
+    */
+    inline EventDescription& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /*
      <p>The release label for the application version associated with this event.</p>
@@ -134,10 +168,16 @@ namespace Model
      <p>The name of the configuration associated with this event.</p>
     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
     /*
      <p>The name of the configuration associated with this event.</p>
     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /*
+     <p>The name of the configuration associated with this event.</p>
+    */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p>The name of the configuration associated with this event.</p>
@@ -147,7 +187,12 @@ namespace Model
     /*
      <p>The name of the configuration associated with this event.</p>
     */
-    inline EventDescription&  WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+    inline EventDescription& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /*
+     <p>The name of the configuration associated with this event.</p>
+    */
+    inline EventDescription& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /*
      <p>The name of the configuration associated with this event.</p>
@@ -158,10 +203,16 @@ namespace Model
      <p>The name of the environment associated with this event.</p>
     */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
     /*
      <p>The name of the environment associated with this event.</p>
     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /*
+     <p>The name of the environment associated with this event.</p>
+    */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p>The name of the environment associated with this event.</p>
@@ -171,7 +222,12 @@ namespace Model
     /*
      <p>The name of the environment associated with this event.</p>
     */
-    inline EventDescription&  WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+    inline EventDescription& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /*
+     <p>The name of the environment associated with this event.</p>
+    */
+    inline EventDescription& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /*
      <p>The name of the environment associated with this event.</p>
@@ -182,10 +238,16 @@ namespace Model
      <p>The web service request ID for the activity of this event.</p>
     */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
     /*
      <p>The web service request ID for the activity of this event.</p>
     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    /*
+     <p>The web service request ID for the activity of this event.</p>
+    */
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /*
      <p>The web service request ID for the activity of this event.</p>
@@ -195,7 +257,12 @@ namespace Model
     /*
      <p>The web service request ID for the activity of this event.</p>
     */
-    inline EventDescription&  WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline EventDescription& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    /*
+     <p>The web service request ID for the activity of this event.</p>
+    */
+    inline EventDescription& WithRequestId(Aws::String&& value) { SetRequestId(value); return *this;}
 
     /*
      <p>The web service request ID for the activity of this event.</p>
@@ -206,6 +273,7 @@ namespace Model
      <p>The severity level of this event. </p>
     */
     inline const EventSeverity& GetSeverity() const{ return m_severity; }
+
     /*
      <p>The severity level of this event. </p>
     */
@@ -214,7 +282,17 @@ namespace Model
     /*
      <p>The severity level of this event. </p>
     */
-    inline EventDescription&  WithSeverity(const EventSeverity& value) { SetSeverity(value); return *this;}
+    inline void SetSeverity(EventSeverity&& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /*
+     <p>The severity level of this event. </p>
+    */
+    inline EventDescription& WithSeverity(const EventSeverity& value) { SetSeverity(value); return *this;}
+
+    /*
+     <p>The severity level of this event. </p>
+    */
+    inline EventDescription& WithSeverity(EventSeverity&& value) { SetSeverity(value); return *this;}
 
   private:
     double m_eventDate;

@@ -47,10 +47,16 @@ namespace Model
      <p> Specifies the identifier for the DB snapshot. </p>
     */
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
+
     /*
      <p> Specifies the identifier for the DB snapshot. </p>
     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
+
+    /*
+     <p> Specifies the identifier for the DB snapshot. </p>
+    */
+    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /*
      <p> Specifies the identifier for the DB snapshot. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> Specifies the identifier for the DB snapshot. </p>
     */
-    inline DBSnapshot&  WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
+    inline DBSnapshot& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> Specifies the identifier for the DB snapshot. </p>
+    */
+    inline DBSnapshot& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /*
      <p> Specifies the identifier for the DB snapshot. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
     */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
     /*
      <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+
+    /*
+     <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
+    */
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
     */
-    inline DBSnapshot&  WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline DBSnapshot& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+
+    /*
+     <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
+    */
+    inline DBSnapshot& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
      <p> Specifies the DB instance identifier of the DB instance this DB snapshot was created from. </p>
@@ -95,6 +117,7 @@ namespace Model
      <p> Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+
     /*
      <p> Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
@@ -103,16 +126,22 @@ namespace Model
     /*
      <p> Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
-    inline DBSnapshot&  WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
+    inline DBSnapshot& WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
 
     /*
      <p> Specifies the name of the database engine. </p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p> Specifies the name of the database engine. </p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p> Specifies the name of the database engine. </p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p> Specifies the name of the database engine. </p>
@@ -122,7 +151,12 @@ namespace Model
     /*
      <p> Specifies the name of the database engine. </p>
     */
-    inline DBSnapshot&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline DBSnapshot& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p> Specifies the name of the database engine. </p>
+    */
+    inline DBSnapshot& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p> Specifies the name of the database engine. </p>
@@ -133,6 +167,7 @@ namespace Model
      <p> Specifies the allocated storage size in gigabytes (GB). </p>
     */
     inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+
     /*
      <p> Specifies the allocated storage size in gigabytes (GB). </p>
     */
@@ -141,16 +176,22 @@ namespace Model
     /*
      <p> Specifies the allocated storage size in gigabytes (GB). </p>
     */
-    inline DBSnapshot&  WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline DBSnapshot& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
 
     /*
      <p> Specifies the status of this DB snapshot. </p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p> Specifies the status of this DB snapshot. </p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> Specifies the status of this DB snapshot. </p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> Specifies the status of this DB snapshot. </p>
@@ -160,7 +201,12 @@ namespace Model
     /*
      <p> Specifies the status of this DB snapshot. </p>
     */
-    inline DBSnapshot&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline DBSnapshot& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> Specifies the status of this DB snapshot. </p>
+    */
+    inline DBSnapshot& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p> Specifies the status of this DB snapshot. </p>
@@ -171,6 +217,7 @@ namespace Model
      <p> Specifies the port that the database engine was listening on at the time of the snapshot. </p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p> Specifies the port that the database engine was listening on at the time of the snapshot. </p>
     */
@@ -179,16 +226,22 @@ namespace Model
     /*
      <p> Specifies the port that the database engine was listening on at the time of the snapshot. </p>
     */
-    inline DBSnapshot&  WithPort(long value) { SetPort(value); return *this;}
+    inline DBSnapshot& WithPort(long value) { SetPort(value); return *this;}
 
     /*
      <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
@@ -198,7 +251,12 @@ namespace Model
     /*
      <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
     */
-    inline DBSnapshot&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline DBSnapshot& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
+    */
+    inline DBSnapshot& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p> Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot. </p>
@@ -209,10 +267,16 @@ namespace Model
      <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
     /*
      <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /*
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
+    */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /*
      <p> Provides the VPC ID associated with the DB snapshot. </p>
@@ -222,7 +286,12 @@ namespace Model
     /*
      <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
-    inline DBSnapshot&  WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline DBSnapshot& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /*
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
+    */
+    inline DBSnapshot& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /*
      <p> Provides the VPC ID associated with the DB snapshot. </p>
@@ -233,6 +302,7 @@ namespace Model
      <p> Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline double GetInstanceCreateTime() const{ return m_instanceCreateTime; }
+
     /*
      <p> Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
@@ -241,16 +311,22 @@ namespace Model
     /*
      <p> Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
-    inline DBSnapshot&  WithInstanceCreateTime(double value) { SetInstanceCreateTime(value); return *this;}
+    inline DBSnapshot& WithInstanceCreateTime(double value) { SetInstanceCreateTime(value); return *this;}
 
     /*
      <p> Provides the master username for the DB snapshot. </p>
     */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
     /*
      <p> Provides the master username for the DB snapshot. </p>
     */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+
+    /*
+     <p> Provides the master username for the DB snapshot. </p>
+    */
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /*
      <p> Provides the master username for the DB snapshot. </p>
@@ -260,7 +336,12 @@ namespace Model
     /*
      <p> Provides the master username for the DB snapshot. </p>
     */
-    inline DBSnapshot&  WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
+    inline DBSnapshot& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
+
+    /*
+     <p> Provides the master username for the DB snapshot. </p>
+    */
+    inline DBSnapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
 
     /*
      <p> Provides the master username for the DB snapshot. </p>
@@ -271,10 +352,16 @@ namespace Model
      <p> Specifies the version of the database engine. </p>
     */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
     /*
      <p> Specifies the version of the database engine. </p>
     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /*
+     <p> Specifies the version of the database engine. </p>
+    */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /*
      <p> Specifies the version of the database engine. </p>
@@ -284,7 +371,12 @@ namespace Model
     /*
      <p> Specifies the version of the database engine. </p>
     */
-    inline DBSnapshot&  WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline DBSnapshot& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /*
+     <p> Specifies the version of the database engine. </p>
+    */
+    inline DBSnapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /*
      <p> Specifies the version of the database engine. </p>
@@ -295,10 +387,16 @@ namespace Model
      <p> License model information for the restored DB instance. </p>
     */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
     /*
      <p> License model information for the restored DB instance. </p>
     */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /*
+     <p> License model information for the restored DB instance. </p>
+    */
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /*
      <p> License model information for the restored DB instance. </p>
@@ -308,7 +406,12 @@ namespace Model
     /*
      <p> License model information for the restored DB instance. </p>
     */
-    inline DBSnapshot&  WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+    inline DBSnapshot& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+
+    /*
+     <p> License model information for the restored DB instance. </p>
+    */
+    inline DBSnapshot& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
 
     /*
      <p> License model information for the restored DB instance. </p>
@@ -319,10 +422,16 @@ namespace Model
      <p> Provides the type of the DB snapshot. </p>
     */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
+
     /*
      <p> Provides the type of the DB snapshot. </p>
     */
     inline void SetSnapshotType(const Aws::String& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
+
+    /*
+     <p> Provides the type of the DB snapshot. </p>
+    */
+    inline void SetSnapshotType(Aws::String&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
 
     /*
      <p> Provides the type of the DB snapshot. </p>
@@ -332,7 +441,12 @@ namespace Model
     /*
      <p> Provides the type of the DB snapshot. </p>
     */
-    inline DBSnapshot&  WithSnapshotType(const Aws::String& value) { SetSnapshotType(value); return *this;}
+    inline DBSnapshot& WithSnapshotType(const Aws::String& value) { SetSnapshotType(value); return *this;}
+
+    /*
+     <p> Provides the type of the DB snapshot. </p>
+    */
+    inline DBSnapshot& WithSnapshotType(Aws::String&& value) { SetSnapshotType(value); return *this;}
 
     /*
      <p> Provides the type of the DB snapshot. </p>
@@ -343,6 +457,7 @@ namespace Model
      <p> Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot. </p>
     */
     inline long GetIops() const{ return m_iops; }
+
     /*
      <p> Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot. </p>
     */
@@ -351,16 +466,22 @@ namespace Model
     /*
      <p> Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot. </p>
     */
-    inline DBSnapshot&  WithIops(long value) { SetIops(value); return *this;}
+    inline DBSnapshot& WithIops(long value) { SetIops(value); return *this;}
 
     /*
      <p> Provides the option group name for the DB snapshot. </p>
     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
     /*
      <p> Provides the option group name for the DB snapshot. </p>
     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+
+    /*
+     <p> Provides the option group name for the DB snapshot. </p>
+    */
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p> Provides the option group name for the DB snapshot. </p>
@@ -370,7 +491,12 @@ namespace Model
     /*
      <p> Provides the option group name for the DB snapshot. </p>
     */
-    inline DBSnapshot&  WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+    inline DBSnapshot& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+
+    /*
+     <p> Provides the option group name for the DB snapshot. </p>
+    */
+    inline DBSnapshot& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /*
      <p> Provides the option group name for the DB snapshot. </p>
@@ -381,6 +507,7 @@ namespace Model
      <p> The percentage of the estimated data that has been transferred. </p>
     */
     inline long GetPercentProgress() const{ return m_percentProgress; }
+
     /*
      <p> The percentage of the estimated data that has been transferred. </p>
     */
@@ -389,16 +516,22 @@ namespace Model
     /*
      <p> The percentage of the estimated data that has been transferred. </p>
     */
-    inline DBSnapshot&  WithPercentProgress(long value) { SetPercentProgress(value); return *this;}
+    inline DBSnapshot& WithPercentProgress(long value) { SetPercentProgress(value); return *this;}
 
     /*
      <p> The region that the DB snapshot was created in or copied from. </p>
     */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
     /*
      <p> The region that the DB snapshot was created in or copied from. </p>
     */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+
+    /*
+     <p> The region that the DB snapshot was created in or copied from. </p>
+    */
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /*
      <p> The region that the DB snapshot was created in or copied from. </p>
@@ -408,7 +541,12 @@ namespace Model
     /*
      <p> The region that the DB snapshot was created in or copied from. </p>
     */
-    inline DBSnapshot&  WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+    inline DBSnapshot& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+
+    /*
+     <p> The region that the DB snapshot was created in or copied from. </p>
+    */
+    inline DBSnapshot& WithSourceRegion(Aws::String&& value) { SetSourceRegion(value); return *this;}
 
     /*
      <p> The region that the DB snapshot was created in or copied from. </p>
@@ -419,10 +557,16 @@ namespace Model
      <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
     */
     inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
+
     /*
      <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
     */
     inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
+
+    /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline void SetSourceDBSnapshotIdentifier(Aws::String&& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
 
     /*
      <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
@@ -432,7 +576,12 @@ namespace Model
     /*
      <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
     */
-    inline DBSnapshot&  WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
+    inline DBSnapshot& WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline DBSnapshot& WithSourceDBSnapshotIdentifier(Aws::String&& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
     /*
      <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
@@ -443,10 +592,16 @@ namespace Model
      <p> Specifies the storage type associated with DB Snapshot. </p>
     */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
     /*
      <p> Specifies the storage type associated with DB Snapshot. </p>
     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /*
+     <p> Specifies the storage type associated with DB Snapshot. </p>
+    */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /*
      <p> Specifies the storage type associated with DB Snapshot. </p>
@@ -456,7 +611,12 @@ namespace Model
     /*
      <p> Specifies the storage type associated with DB Snapshot. </p>
     */
-    inline DBSnapshot&  WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+    inline DBSnapshot& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /*
+     <p> Specifies the storage type associated with DB Snapshot. </p>
+    */
+    inline DBSnapshot& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
 
     /*
      <p> Specifies the storage type associated with DB Snapshot. </p>
@@ -467,10 +627,16 @@ namespace Model
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
     */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
+
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
     */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
+
+    /*
+     <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
+    */
+    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
@@ -480,7 +646,12 @@ namespace Model
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
     */
-    inline DBSnapshot&  WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
+    inline DBSnapshot& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
+
+    /*
+     <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
+    */
+    inline DBSnapshot& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
 
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
@@ -491,6 +662,7 @@ namespace Model
      <p> Specifies whether the DB snapshot is encrypted. </p>
     */
     inline bool GetEncrypted() const{ return m_encrypted; }
+
     /*
      <p> Specifies whether the DB snapshot is encrypted. </p>
     */
@@ -499,16 +671,22 @@ namespace Model
     /*
      <p> Specifies whether the DB snapshot is encrypted. </p>
     */
-    inline DBSnapshot&  WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+    inline DBSnapshot& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
     /*
      <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>
     */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
     /*
      <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>
     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /*
+     <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>
+    */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /*
      <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>
@@ -518,7 +696,12 @@ namespace Model
     /*
      <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>
     */
-    inline DBSnapshot&  WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+    inline DBSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /*
+     <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>
+    */
+    inline DBSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
     /*
      <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot. </p>

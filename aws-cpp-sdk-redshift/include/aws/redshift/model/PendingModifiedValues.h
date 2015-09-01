@@ -47,10 +47,16 @@ namespace Model
      <p> The pending or in-progress change of the master user password for the cluster. </p>
     */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+
     /*
      <p> The pending or in-progress change of the master user password for the cluster. </p>
     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+
+    /*
+     <p> The pending or in-progress change of the master user password for the cluster. </p>
+    */
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /*
      <p> The pending or in-progress change of the master user password for the cluster. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The pending or in-progress change of the master user password for the cluster. </p>
     */
-    inline PendingModifiedValues&  WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
+    inline PendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
+
+    /*
+     <p> The pending or in-progress change of the master user password for the cluster. </p>
+    */
+    inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
 
     /*
      <p> The pending or in-progress change of the master user password for the cluster. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The pending or in-progress change of the cluster's node type. </p>
     */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+
     /*
      <p> The pending or in-progress change of the cluster's node type. </p>
     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+
+    /*
+     <p> The pending or in-progress change of the cluster's node type. </p>
+    */
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /*
      <p> The pending or in-progress change of the cluster's node type. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The pending or in-progress change of the cluster's node type. </p>
     */
-    inline PendingModifiedValues&  WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
+    inline PendingModifiedValues& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
+
+    /*
+     <p> The pending or in-progress change of the cluster's node type. </p>
+    */
+    inline PendingModifiedValues& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
 
     /*
      <p> The pending or in-progress change of the cluster's node type. </p>
@@ -95,6 +117,7 @@ namespace Model
      <p> The pending or in-progress change of the number of nodes in the cluster. </p>
     */
     inline long GetNumberOfNodes() const{ return m_numberOfNodes; }
+
     /*
      <p> The pending or in-progress change of the number of nodes in the cluster. </p>
     */
@@ -103,16 +126,22 @@ namespace Model
     /*
      <p> The pending or in-progress change of the number of nodes in the cluster. </p>
     */
-    inline PendingModifiedValues&  WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
+    inline PendingModifiedValues& WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
 
     /*
      <p> The pending or in-progress change of the cluster type. </p>
     */
     inline const Aws::String& GetClusterType() const{ return m_clusterType; }
+
     /*
      <p> The pending or in-progress change of the cluster type. </p>
     */
     inline void SetClusterType(const Aws::String& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+
+    /*
+     <p> The pending or in-progress change of the cluster type. </p>
+    */
+    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
     /*
      <p> The pending or in-progress change of the cluster type. </p>
@@ -122,7 +151,12 @@ namespace Model
     /*
      <p> The pending or in-progress change of the cluster type. </p>
     */
-    inline PendingModifiedValues&  WithClusterType(const Aws::String& value) { SetClusterType(value); return *this;}
+    inline PendingModifiedValues& WithClusterType(const Aws::String& value) { SetClusterType(value); return *this;}
+
+    /*
+     <p> The pending or in-progress change of the cluster type. </p>
+    */
+    inline PendingModifiedValues& WithClusterType(Aws::String&& value) { SetClusterType(value); return *this;}
 
     /*
      <p> The pending or in-progress change of the cluster type. </p>
@@ -133,10 +167,16 @@ namespace Model
      <p> The pending or in-progress change of the service version. </p>
     */
     inline const Aws::String& GetClusterVersion() const{ return m_clusterVersion; }
+
     /*
      <p> The pending or in-progress change of the service version. </p>
     */
     inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+
+    /*
+     <p> The pending or in-progress change of the service version. </p>
+    */
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
 
     /*
      <p> The pending or in-progress change of the service version. </p>
@@ -146,7 +186,12 @@ namespace Model
     /*
      <p> The pending or in-progress change of the service version. </p>
     */
-    inline PendingModifiedValues&  WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
+    inline PendingModifiedValues& WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
+
+    /*
+     <p> The pending or in-progress change of the service version. </p>
+    */
+    inline PendingModifiedValues& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
 
     /*
      <p> The pending or in-progress change of the service version. </p>
@@ -157,6 +202,7 @@ namespace Model
      <p> The pending or in-progress change of the automated snapshot retention period. </p>
     */
     inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+
     /*
      <p> The pending or in-progress change of the automated snapshot retention period. </p>
     */
@@ -165,16 +211,22 @@ namespace Model
     /*
      <p> The pending or in-progress change of the automated snapshot retention period. </p>
     */
-    inline PendingModifiedValues&  WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+    inline PendingModifiedValues& WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
     /*
      <p>The pending or in-progress change of the new identifier for the cluster.</p>
     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
     /*
      <p>The pending or in-progress change of the new identifier for the cluster.</p>
     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /*
+     <p>The pending or in-progress change of the new identifier for the cluster.</p>
+    */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p>The pending or in-progress change of the new identifier for the cluster.</p>
@@ -184,7 +236,12 @@ namespace Model
     /*
      <p>The pending or in-progress change of the new identifier for the cluster.</p>
     */
-    inline PendingModifiedValues&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline PendingModifiedValues& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p>The pending or in-progress change of the new identifier for the cluster.</p>
+    */
+    inline PendingModifiedValues& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /*
      <p>The pending or in-progress change of the new identifier for the cluster.</p>

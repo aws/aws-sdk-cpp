@@ -42,6 +42,11 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
+    if(solutionStackNameNode.IsNull())
+    {
+      solutionStackNameNode = resultNode;
+    }
+
     if(!solutionStackNameNode.IsNull())
     {
       m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());

@@ -45,6 +45,7 @@ namespace Model
      <p>The programmatic code for the state change reason.</p>
     */
     inline const ClusterStateChangeReasonCode& GetCode() const{ return m_code; }
+
     /*
      <p>The programmatic code for the state change reason.</p>
     */
@@ -53,16 +54,32 @@ namespace Model
     /*
      <p>The programmatic code for the state change reason.</p>
     */
-    inline ClusterStateChangeReason&  WithCode(const ClusterStateChangeReasonCode& value) { SetCode(value); return *this;}
+    inline void SetCode(ClusterStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /*
+     <p>The programmatic code for the state change reason.</p>
+    */
+    inline ClusterStateChangeReason& WithCode(const ClusterStateChangeReasonCode& value) { SetCode(value); return *this;}
+
+    /*
+     <p>The programmatic code for the state change reason.</p>
+    */
+    inline ClusterStateChangeReason& WithCode(ClusterStateChangeReasonCode&& value) { SetCode(value); return *this;}
 
     /*
      <p>The descriptive message for the state change reason.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The descriptive message for the state change reason.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The descriptive message for the state change reason.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The descriptive message for the state change reason.</p>
@@ -72,7 +89,12 @@ namespace Model
     /*
      <p>The descriptive message for the state change reason.</p>
     */
-    inline ClusterStateChangeReason&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline ClusterStateChangeReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The descriptive message for the state change reason.</p>
+    */
+    inline ClusterStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The descriptive message for the state change reason.</p>

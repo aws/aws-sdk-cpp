@@ -47,50 +47,81 @@ namespace Model
 
     
     inline const Aws::Vector<ReceiptRuleSetMetadata>& GetRuleSets() const{ return m_ruleSets; }
+
     
     inline void SetRuleSets(const Aws::Vector<ReceiptRuleSetMetadata>& value) { m_ruleSets = value; }
 
     
-    inline ListReceiptRuleSetsResult&  WithRuleSets(const Aws::Vector<ReceiptRuleSetMetadata>& value) { SetRuleSets(value); return *this;}
+    inline void SetRuleSets(Aws::Vector<ReceiptRuleSetMetadata>&& value) { m_ruleSets = value; }
+
+    
+    inline ListReceiptRuleSetsResult& WithRuleSets(const Aws::Vector<ReceiptRuleSetMetadata>& value) { SetRuleSets(value); return *this;}
+
+    
+    inline ListReceiptRuleSetsResult& WithRuleSets(Aws::Vector<ReceiptRuleSetMetadata>&& value) { SetRuleSets(value); return *this;}
 
     
     inline ListReceiptRuleSetsResult& AddRuleSets(const ReceiptRuleSetMetadata& value) { m_ruleSets.push_back(value); return *this; }
 
     
+    inline ListReceiptRuleSetsResult& AddRuleSets(ReceiptRuleSetMetadata&& value) { m_ruleSets.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
     
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
+
+    
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
 
     
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     
-    inline ListReceiptRuleSetsResult&  WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+    inline ListReceiptRuleSetsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+
+    
+    inline ListReceiptRuleSetsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
 
     
     inline ListReceiptRuleSetsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     
-    inline ListReceiptRuleSetsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListReceiptRuleSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline ListReceiptRuleSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline ListReceiptRuleSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListReceiptRuleSetsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListReceiptRuleSetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListReceiptRuleSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ReceiptRuleSetMetadata> m_ruleSets;

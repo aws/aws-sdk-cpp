@@ -44,41 +44,81 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
+    if(credentialsNode.IsNull())
+    {
+      credentialsNode = resultNode;
+    }
+
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
     }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
+    if(assumedRoleUserNode.IsNull())
+    {
+      assumedRoleUserNode = resultNode;
+    }
+
     if(!assumedRoleUserNode.IsNull())
     {
       m_assumedRoleUser = assumedRoleUserNode;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
+    if(packedPolicySizeNode.IsNull())
+    {
+      packedPolicySizeNode = resultNode;
+    }
+
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
     }
     XmlNode subjectNode = resultNode.FirstChild("Subject");
+    if(subjectNode.IsNull())
+    {
+      subjectNode = resultNode;
+    }
+
     if(!subjectNode.IsNull())
     {
       m_subject = StringUtils::Trim(subjectNode.GetText().c_str());
     }
     XmlNode subjectTypeNode = resultNode.FirstChild("SubjectType");
+    if(subjectTypeNode.IsNull())
+    {
+      subjectTypeNode = resultNode;
+    }
+
     if(!subjectTypeNode.IsNull())
     {
       m_subjectType = StringUtils::Trim(subjectTypeNode.GetText().c_str());
     }
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
+    if(issuerNode.IsNull())
+    {
+      issuerNode = resultNode;
+    }
+
     if(!issuerNode.IsNull())
     {
       m_issuer = StringUtils::Trim(issuerNode.GetText().c_str());
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
+    if(audienceNode.IsNull())
+    {
+      audienceNode = resultNode;
+    }
+
     if(!audienceNode.IsNull())
     {
       m_audience = StringUtils::Trim(audienceNode.GetText().c_str());
     }
     XmlNode nameQualifierNode = resultNode.FirstChild("NameQualifier");
+    if(nameQualifierNode.IsNull())
+    {
+      nameQualifierNode = resultNode;
+    }
+
     if(!nameQualifierNode.IsNull())
     {
       m_nameQualifier = StringUtils::Trim(nameQualifierNode.GetText().c_str());

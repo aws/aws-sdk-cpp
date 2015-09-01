@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const Service& GetService() const{ return m_service; }
+
     
     inline void SetService(const Service& value) { m_service = value; }
 
     
-    inline DeleteServiceResult&  WithService(const Service& value) { SetService(value); return *this;}
+    inline void SetService(Service&& value) { m_service = value; }
+
+    
+    inline DeleteServiceResult& WithService(const Service& value) { SetService(value); return *this;}
+
+    
+    inline DeleteServiceResult& WithService(Service&& value) { SetService(value); return *this;}
 
   private:
     Service m_service;

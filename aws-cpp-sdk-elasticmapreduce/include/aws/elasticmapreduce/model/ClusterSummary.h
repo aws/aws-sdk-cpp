@@ -45,10 +45,16 @@ namespace Model
      <p>The unique identifier for the cluster.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The unique identifier for the cluster.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The unique identifier for the cluster.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The unique identifier for the cluster.</p>
     */
-    inline ClusterSummary&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ClusterSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline ClusterSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The unique identifier for the cluster.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The name of the cluster.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the cluster.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the cluster.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The name of the cluster.</p>
     */
-    inline ClusterSummary&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ClusterSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline ClusterSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the cluster.</p>
@@ -93,6 +115,7 @@ namespace Model
      <p>The details about the current status of the cluster.</p>
     */
     inline const ClusterStatus& GetStatus() const{ return m_status; }
+
     /*
      <p>The details about the current status of the cluster.</p>
     */
@@ -101,12 +124,23 @@ namespace Model
     /*
      <p>The details about the current status of the cluster.</p>
     */
-    inline ClusterSummary&  WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(ClusterStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The details about the current status of the cluster.</p>
+    */
+    inline ClusterSummary& WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The details about the current status of the cluster.</p>
+    */
+    inline ClusterSummary& WithStatus(ClusterStatus&& value) { SetStatus(value); return *this;}
 
     /*
      <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     */
     inline long GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+
     /*
      <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     */
@@ -115,7 +149,7 @@ namespace Model
     /*
      <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     */
-    inline ClusterSummary&  WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
+    inline ClusterSummary& WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
 
   private:
     Aws::String m_id;

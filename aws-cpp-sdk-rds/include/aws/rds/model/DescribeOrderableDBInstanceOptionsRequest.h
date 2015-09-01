@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the engine to retrieve DB instance options for. </p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p> The name of the engine to retrieve DB instance options for. </p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p> The name of the engine to retrieve DB instance options for. </p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
@@ -64,10 +75,16 @@ namespace Model
      <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
     */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
     /*
      <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /*
+     <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
+    */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /*
      <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /*
+     <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /*
      <p> The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version. </p>
@@ -88,10 +110,16 @@ namespace Model
      <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
     */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
     /*
      <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+
+    /*
+     <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
+    */
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
      <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
@@ -101,7 +129,12 @@ namespace Model
     /*
      <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
+
+    /*
+     <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /*
      <p> The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class. </p>
@@ -112,10 +145,16 @@ namespace Model
      <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
     */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
     /*
      <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
     */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /*
+     <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
+    */
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /*
      <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
@@ -125,7 +164,12 @@ namespace Model
     /*
      <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+
+    /*
+     <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
 
     /*
      <p> The license model filter value. Specify this parameter to show only the available offerings matching the specified license model. </p>
@@ -136,6 +180,7 @@ namespace Model
      <p> The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings. </p>
     */
     inline bool GetVpc() const{ return m_vpc; }
+
     /*
      <p> The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings. </p>
     */
@@ -144,12 +189,13 @@ namespace Model
     /*
      <p> The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings. </p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithVpc(bool value) { SetVpc(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
     /*
      <p>This parameter is not currently supported.</p>
     */
@@ -158,7 +204,17 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -166,9 +222,15 @@ namespace Model
     inline DescribeOrderableDBInstanceOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
@@ -177,16 +239,22 @@ namespace Model
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
@@ -196,7 +264,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
-    inline DescribeOrderableDBInstanceOptionsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>

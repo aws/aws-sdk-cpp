@@ -46,6 +46,7 @@ namespace Model
      <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     */
     inline double GetMetricIntervalLowerBound() const{ return m_metricIntervalLowerBound; }
+
     /*
      <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     */
-    inline StepAdjustment&  WithMetricIntervalLowerBound(double value) { SetMetricIntervalLowerBound(value); return *this;}
+    inline StepAdjustment& WithMetricIntervalLowerBound(double value) { SetMetricIntervalLowerBound(value); return *this;}
 
     /*
      <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p> <p>The upper bound must be greater than the lower bound.</p>
     */
     inline double GetMetricIntervalUpperBound() const{ return m_metricIntervalUpperBound; }
+
     /*
      <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p> <p>The upper bound must be greater than the lower bound.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p> <p>The upper bound must be greater than the lower bound.</p>
     */
-    inline StepAdjustment&  WithMetricIntervalUpperBound(double value) { SetMetricIntervalUpperBound(value); return *this;}
+    inline StepAdjustment& WithMetricIntervalUpperBound(double value) { SetMetricIntervalUpperBound(value); return *this;}
 
     /*
      <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     */
     inline long GetScalingAdjustment() const{ return m_scalingAdjustment; }
+
     /*
      <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     */
@@ -82,7 +85,7 @@ namespace Model
     /*
      <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     */
-    inline StepAdjustment&  WithScalingAdjustment(long value) { SetScalingAdjustment(value); return *this;}
+    inline StepAdjustment& WithScalingAdjustment(long value) { SetScalingAdjustment(value); return *this;}
 
   private:
     double m_metricIntervalLowerBound;

@@ -46,6 +46,7 @@ namespace Model
      <p>A section of the response body that provides information about the job.</p>
     */
     inline const Job& GetJob() const{ return m_job; }
+
     /*
      <p>A section of the response body that provides information about the job.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A section of the response body that provides information about the job.</p>
     */
-    inline ReadJobResult&  WithJob(const Job& value) { SetJob(value); return *this;}
+    inline void SetJob(Job&& value) { m_job = value; }
+
+    /*
+     <p>A section of the response body that provides information about the job.</p>
+    */
+    inline ReadJobResult& WithJob(const Job& value) { SetJob(value); return *this;}
+
+    /*
+     <p>A section of the response body that provides information about the job.</p>
+    */
+    inline ReadJobResult& WithJob(Job&& value) { SetJob(value); return *this;}
 
   private:
     Job m_job;

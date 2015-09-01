@@ -47,6 +47,7 @@ namespace Model
      <p>The identifiers of the list of steps added to the job flow.</p>
     */
     inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
+
     /*
      <p>The identifiers of the list of steps added to the job flow.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>The identifiers of the list of steps added to the job flow.</p>
     */
-    inline AddJobFlowStepsResult&  WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
+    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIds = value; }
+
+    /*
+     <p>The identifiers of the list of steps added to the job flow.</p>
+    */
+    inline AddJobFlowStepsResult& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
+
+    /*
+     <p>The identifiers of the list of steps added to the job flow.</p>
+    */
+    inline AddJobFlowStepsResult& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(value); return *this;}
 
     /*
      <p>The identifiers of the list of steps added to the job flow.</p>
     */
     inline AddJobFlowStepsResult& AddStepIds(const Aws::String& value) { m_stepIds.push_back(value); return *this; }
+
+    /*
+     <p>The identifiers of the list of steps added to the job flow.</p>
+    */
+    inline AddJobFlowStepsResult& AddStepIds(Aws::String&& value) { m_stepIds.push_back(value); return *this; }
 
     /*
      <p>The identifiers of the list of steps added to the job flow.</p>

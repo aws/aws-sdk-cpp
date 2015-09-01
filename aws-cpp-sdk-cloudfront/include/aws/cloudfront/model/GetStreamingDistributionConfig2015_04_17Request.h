@@ -38,10 +38,16 @@ namespace Model
      The streaming distribution's id.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The streaming distribution's id.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The streaming distribution's id.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The streaming distribution's id.
@@ -51,7 +57,12 @@ namespace Model
     /*
      The streaming distribution's id.
     */
-    inline GetStreamingDistributionConfig2015_04_17Request&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline GetStreamingDistributionConfig2015_04_17Request& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The streaming distribution's id.
+    */
+    inline GetStreamingDistributionConfig2015_04_17Request& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The streaming distribution's id.

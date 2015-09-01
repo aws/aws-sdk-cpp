@@ -40,10 +40,16 @@ namespace Model
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline SetTimeBasedAutoScalingRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline SetTimeBasedAutoScalingRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline SetTimeBasedAutoScalingRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     */
     inline const WeeklyAutoScalingSchedule& GetAutoScalingSchedule() const{ return m_autoScalingSchedule; }
+
     /*
      <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     */
@@ -72,7 +84,17 @@ namespace Model
     /*
      <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     */
-    inline SetTimeBasedAutoScalingRequest&  WithAutoScalingSchedule(const WeeklyAutoScalingSchedule& value) { SetAutoScalingSchedule(value); return *this;}
+    inline void SetAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { m_autoScalingScheduleHasBeenSet = true; m_autoScalingSchedule = value; }
+
+    /*
+     <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    */
+    inline SetTimeBasedAutoScalingRequest& WithAutoScalingSchedule(const WeeklyAutoScalingSchedule& value) { SetAutoScalingSchedule(value); return *this;}
+
+    /*
+     <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    */
+    inline SetTimeBasedAutoScalingRequest& WithAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { SetAutoScalingSchedule(value); return *this;}
 
   private:
     Aws::String m_instanceId;

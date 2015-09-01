@@ -48,6 +48,7 @@ namespace Model
      <p>The filtered list of steps for the cluster.</p>
     */
     inline const Aws::Vector<StepSummary>& GetSteps() const{ return m_steps; }
+
     /*
      <p>The filtered list of steps for the cluster.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The filtered list of steps for the cluster.</p>
     */
-    inline ListStepsResult&  WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
+    inline void SetSteps(Aws::Vector<StepSummary>&& value) { m_steps = value; }
+
+    /*
+     <p>The filtered list of steps for the cluster.</p>
+    */
+    inline ListStepsResult& WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
+
+    /*
+     <p>The filtered list of steps for the cluster.</p>
+    */
+    inline ListStepsResult& WithSteps(Aws::Vector<StepSummary>&& value) { SetSteps(value); return *this;}
 
     /*
      <p>The filtered list of steps for the cluster.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListStepsResult& AddSteps(const StepSummary& value) { m_steps.push_back(value); return *this; }
 
     /*
+     <p>The filtered list of steps for the cluster.</p>
+    */
+    inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
-    inline ListStepsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListStepsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline ListStepsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>

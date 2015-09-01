@@ -47,10 +47,16 @@ namespace Model
      <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     /*
      <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /*
+     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
+    */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
     */
-    inline AccountWithRestoreAccess&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline AccountWithRestoreAccess& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
+    */
+    inline AccountWithRestoreAccess& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /*
      <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>

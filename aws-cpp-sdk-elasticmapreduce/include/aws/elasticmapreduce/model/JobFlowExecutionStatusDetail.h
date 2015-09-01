@@ -45,6 +45,7 @@ namespace Model
      <p>The state of the job flow.</p>
     */
     inline const JobFlowExecutionState& GetState() const{ return m_state; }
+
     /*
      <p>The state of the job flow.</p>
     */
@@ -53,12 +54,23 @@ namespace Model
     /*
      <p>The state of the job flow.</p>
     */
-    inline JobFlowExecutionStatusDetail&  WithState(const JobFlowExecutionState& value) { SetState(value); return *this;}
+    inline void SetState(JobFlowExecutionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p>The state of the job flow.</p>
+    */
+    inline JobFlowExecutionStatusDetail& WithState(const JobFlowExecutionState& value) { SetState(value); return *this;}
+
+    /*
+     <p>The state of the job flow.</p>
+    */
+    inline JobFlowExecutionStatusDetail& WithState(JobFlowExecutionState&& value) { SetState(value); return *this;}
 
     /*
      <p>The creation date and time of the job flow.</p>
     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
+
     /*
      <p>The creation date and time of the job flow.</p>
     */
@@ -67,12 +79,13 @@ namespace Model
     /*
      <p>The creation date and time of the job flow.</p>
     */
-    inline JobFlowExecutionStatusDetail&  WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
     /*
      <p>The start date and time of the job flow.</p>
     */
     inline double GetStartDateTime() const{ return m_startDateTime; }
+
     /*
      <p>The start date and time of the job flow.</p>
     */
@@ -81,12 +94,13 @@ namespace Model
     /*
      <p>The start date and time of the job flow.</p>
     */
-    inline JobFlowExecutionStatusDetail&  WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
 
     /*
      <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
     */
     inline double GetReadyDateTime() const{ return m_readyDateTime; }
+
     /*
      <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
     */
@@ -95,12 +109,13 @@ namespace Model
     /*
      <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
     */
-    inline JobFlowExecutionStatusDetail&  WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
 
     /*
      <p>The completion date and time of the job flow.</p>
     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
+
     /*
      <p>The completion date and time of the job flow.</p>
     */
@@ -109,16 +124,22 @@ namespace Model
     /*
      <p>The completion date and time of the job flow.</p>
     */
-    inline JobFlowExecutionStatusDetail&  WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
     /*
      <p>Description of the job flow last changed state.</p>
     */
     inline const Aws::String& GetLastStateChangeReason() const{ return m_lastStateChangeReason; }
+
     /*
      <p>Description of the job flow last changed state.</p>
     */
     inline void SetLastStateChangeReason(const Aws::String& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
+
+    /*
+     <p>Description of the job flow last changed state.</p>
+    */
+    inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
 
     /*
      <p>Description of the job flow last changed state.</p>
@@ -128,7 +149,12 @@ namespace Model
     /*
      <p>Description of the job flow last changed state.</p>
     */
-    inline JobFlowExecutionStatusDetail&  WithLastStateChangeReason(const Aws::String& value) { SetLastStateChangeReason(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(const Aws::String& value) { SetLastStateChangeReason(value); return *this;}
+
+    /*
+     <p>Description of the job flow last changed state.</p>
+    */
+    inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(value); return *this;}
 
     /*
      <p>Description of the job flow last changed state.</p>

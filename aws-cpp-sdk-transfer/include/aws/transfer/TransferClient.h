@@ -61,7 +61,7 @@ class AWS_TRANSFER_API TransferClient
         // Single entry point for attempting an upload - attempting to create an existing bucket won't hurt anything but will affect performance
         // unnecessarily as the request waits for S3 to propagate the bucket
         // All queries about the upload after this point can be found in UploadFileRequest's interface
-        std::shared_ptr<UploadFileRequest> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, bool createBucket = false);
+        std::shared_ptr<UploadFileRequest> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, bool createBucket = false, bool doConsistencyChecks = false);
 
         // User requested upload cancels should go through here
         void CancelUpload(std::shared_ptr<UploadFileRequest>& fileRequest) const;
@@ -123,12 +123,27 @@ class AWS_TRANSFER_API TransferClient
             const Aws::S3::Model::PutObjectOutcome& outcome,
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
 
-        static void OnGetObject(const Aws::S3::S3Client* s3Client,
+        static void OnDownloadGetObject(const Aws::S3::S3Client* s3Client,
             const Aws::S3::Model::GetObjectRequest& request,
             const Aws::S3::Model::GetObjectOutcome& outcome,
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
 
-        static void OnListObjects(const Aws::S3::S3Client* s3Client,
+        static void OnDownloadListObjects(const Aws::S3::S3Client* s3Client,
+            const Aws::S3::Model::ListObjectsRequest& request,
+            const Aws::S3::Model::ListObjectsOutcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
+
+        static void OnUploadGetObject(const Aws::S3::S3Client* s3Client,
+            const Aws::S3::Model::GetObjectRequest& request,
+            const Aws::S3::Model::GetObjectOutcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
+
+        static void OnHeadObject(const Aws::S3::S3Client* s3Client,
+            const Aws::S3::Model::HeadObjectRequest& request,
+            const Aws::S3::Model::HeadObjectOutcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
+
+        static void OnUploadListObjects(const Aws::S3::S3Client* s3Client,
             const Aws::S3::Model::ListObjectsRequest& request,
             const Aws::S3::Model::ListObjectsOutcome& outcome,
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);

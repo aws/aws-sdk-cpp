@@ -47,39 +47,63 @@ namespace Model
 
     
     inline const Aws::String& GetContextKeyName() const{ return m_contextKeyName; }
+
     
     inline void SetContextKeyName(const Aws::String& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
+
+    
+    inline void SetContextKeyName(Aws::String&& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
 
     
     inline void SetContextKeyName(const char* value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName.assign(value); }
 
     
-    inline ContextEntry&  WithContextKeyName(const Aws::String& value) { SetContextKeyName(value); return *this;}
+    inline ContextEntry& WithContextKeyName(const Aws::String& value) { SetContextKeyName(value); return *this;}
+
+    
+    inline ContextEntry& WithContextKeyName(Aws::String&& value) { SetContextKeyName(value); return *this;}
 
     
     inline ContextEntry& WithContextKeyName(const char* value) { SetContextKeyName(value); return *this;}
 
     
     inline const Aws::Vector<Aws::String>& GetContextKeyValues() const{ return m_contextKeyValues; }
+
     
     inline void SetContextKeyValues(const Aws::Vector<Aws::String>& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = value; }
 
     
-    inline ContextEntry&  WithContextKeyValues(const Aws::Vector<Aws::String>& value) { SetContextKeyValues(value); return *this;}
+    inline void SetContextKeyValues(Aws::Vector<Aws::String>&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = value; }
+
+    
+    inline ContextEntry& WithContextKeyValues(const Aws::Vector<Aws::String>& value) { SetContextKeyValues(value); return *this;}
+
+    
+    inline ContextEntry& WithContextKeyValues(Aws::Vector<Aws::String>&& value) { SetContextKeyValues(value); return *this;}
 
     
     inline ContextEntry& AddContextKeyValues(const Aws::String& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
+
+    
+    inline ContextEntry& AddContextKeyValues(Aws::String&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
 
     
     inline ContextEntry& AddContextKeyValues(const char* value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
 
     
     inline const ContextKeyTypeEnum& GetContextKeyType() const{ return m_contextKeyType; }
+
     
     inline void SetContextKeyType(const ContextKeyTypeEnum& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = value; }
 
     
-    inline ContextEntry&  WithContextKeyType(const ContextKeyTypeEnum& value) { SetContextKeyType(value); return *this;}
+    inline void SetContextKeyType(ContextKeyTypeEnum&& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = value; }
+
+    
+    inline ContextEntry& WithContextKeyType(const ContextKeyTypeEnum& value) { SetContextKeyType(value); return *this;}
+
+    
+    inline ContextEntry& WithContextKeyType(ContextKeyTypeEnum&& value) { SetContextKeyType(value); return *this;}
 
   private:
     Aws::String m_contextKeyName;

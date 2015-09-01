@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the log group to query. </p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p> The name of the log group to query. </p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p> The name of the log group to query. </p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p> The name of the log group to query. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the log group to query. </p>
     */
-    inline FilterLogEventsRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline FilterLogEventsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p> The name of the log group to query. </p>
+    */
+    inline FilterLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p> The name of the log group to query. </p>
@@ -64,6 +75,7 @@ namespace Model
      <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
     */
     inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
+
     /*
      <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
     */
@@ -72,12 +84,27 @@ namespace Model
     /*
      <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
     */
-    inline FilterLogEventsRequest&  WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
+    inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
+
+    /*
+     <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
+    */
+    inline FilterLogEventsRequest& WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
+
+    /*
+     <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
+    */
+    inline FilterLogEventsRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(value); return *this;}
 
     /*
      <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
     */
     inline FilterLogEventsRequest& AddLogStreamNames(const Aws::String& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
+
+    /*
+     <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
+    */
+    inline FilterLogEventsRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
     /*
      <p> Optional list of log stream names within the specified log group to search. Defaults to all the log streams in the log group. </p>
@@ -88,6 +115,7 @@ namespace Model
      <p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>
     */
     inline long long GetStartTime() const{ return m_startTime; }
+
     /*
      <p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>
     */
@@ -96,12 +124,13 @@ namespace Model
     /*
      <p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>
     */
-    inline FilterLogEventsRequest&  WithStartTime(long long value) { SetStartTime(value); return *this;}
+    inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
     /*
      <p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>
     */
     inline long long GetEndTime() const{ return m_endTime; }
+
     /*
      <p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>
     */
@@ -110,16 +139,22 @@ namespace Model
     /*
      <p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>
     */
-    inline FilterLogEventsRequest&  WithEndTime(long long value) { SetEndTime(value); return *this;}
+    inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
 
     /*
      <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
     */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+
     /*
      <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
     */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+
+    /*
+     <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
+    */
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /*
      <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
@@ -129,7 +164,12 @@ namespace Model
     /*
      <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
     */
-    inline FilterLogEventsRequest&  WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+    inline FilterLogEventsRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+
+    /*
+     <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
+    */
+    inline FilterLogEventsRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
 
     /*
      <p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>
@@ -140,10 +180,16 @@ namespace Model
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
@@ -153,7 +199,12 @@ namespace Model
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
-    inline FilterLogEventsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline FilterLogEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
+    */
+    inline FilterLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
@@ -164,6 +215,7 @@ namespace Model
      <p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>
     */
@@ -172,12 +224,13 @@ namespace Model
     /*
      <p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>
     */
-    inline FilterLogEventsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline FilterLogEventsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
     /*
      <p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>
     */
     inline bool GetInterleaved() const{ return m_interleaved; }
+
     /*
      <p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>
     */
@@ -186,7 +239,7 @@ namespace Model
     /*
      <p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>
     */
-    inline FilterLogEventsRequest&  WithInterleaved(bool value) { SetInterleaved(value); return *this;}
+    inline FilterLogEventsRequest& WithInterleaved(bool value) { SetInterleaved(value); return *this;}
 
   private:
     Aws::String m_logGroupName;

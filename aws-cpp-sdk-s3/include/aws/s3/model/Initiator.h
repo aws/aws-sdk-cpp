@@ -45,10 +45,16 @@ namespace Model
      If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
     */
     inline const Aws::String& GetID() const{ return m_iD; }
+
     /*
      If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
+
+    /*
+     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
+    */
+    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /*
      If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
@@ -58,7 +64,12 @@ namespace Model
     /*
      If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
     */
-    inline Initiator&  WithID(const Aws::String& value) { SetID(value); return *this;}
+    inline Initiator& WithID(const Aws::String& value) { SetID(value); return *this;}
+
+    /*
+     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
+    */
+    inline Initiator& WithID(Aws::String&& value) { SetID(value); return *this;}
 
     /*
      If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
@@ -69,10 +80,16 @@ namespace Model
      Name of the Principal.
     */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
     /*
      Name of the Principal.
     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /*
+     Name of the Principal.
+    */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /*
      Name of the Principal.
@@ -82,7 +99,12 @@ namespace Model
     /*
      Name of the Principal.
     */
-    inline Initiator&  WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline Initiator& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /*
+     Name of the Principal.
+    */
+    inline Initiator& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
 
     /*
      Name of the Principal.

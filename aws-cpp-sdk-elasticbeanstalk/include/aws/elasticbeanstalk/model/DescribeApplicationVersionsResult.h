@@ -48,6 +48,7 @@ namespace Model
      <p> A list of <a>ApplicationVersionDescription</a> . </p>
     */
     inline const Aws::Vector<ApplicationVersionDescription>& GetApplicationVersions() const{ return m_applicationVersions; }
+
     /*
      <p> A list of <a>ApplicationVersionDescription</a> . </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p> A list of <a>ApplicationVersionDescription</a> . </p>
     */
-    inline DescribeApplicationVersionsResult&  WithApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { SetApplicationVersions(value); return *this;}
+    inline void SetApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { m_applicationVersions = value; }
+
+    /*
+     <p> A list of <a>ApplicationVersionDescription</a> . </p>
+    */
+    inline DescribeApplicationVersionsResult& WithApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { SetApplicationVersions(value); return *this;}
+
+    /*
+     <p> A list of <a>ApplicationVersionDescription</a> . </p>
+    */
+    inline DescribeApplicationVersionsResult& WithApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { SetApplicationVersions(value); return *this;}
 
     /*
      <p> A list of <a>ApplicationVersionDescription</a> . </p>
     */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(const ApplicationVersionDescription& value) { m_applicationVersions.push_back(value); return *this; }
 
+    /*
+     <p> A list of <a>ApplicationVersionDescription</a> . </p>
+    */
+    inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeApplicationVersionsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeApplicationVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeApplicationVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ApplicationVersionDescription> m_applicationVersions;

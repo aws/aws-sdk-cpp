@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
     */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
+
     /*
      <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
     */
     inline void SetVirtualName(const Aws::String& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
+
+    /*
+     <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
+    */
+    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
     /*
      <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
     */
-    inline BlockDeviceMapping&  WithVirtualName(const Aws::String& value) { SetVirtualName(value); return *this;}
+    inline BlockDeviceMapping& WithVirtualName(const Aws::String& value) { SetVirtualName(value); return *this;}
+
+    /*
+     <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
+    */
+    inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(value); return *this;}
 
     /*
      <p>The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
     */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /*
+     <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
     */
-    inline BlockDeviceMapping&  WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+    inline BlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /*
+     <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    */
+    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
 
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
@@ -96,6 +118,7 @@ namespace Model
      <p>The information about the Amazon EBS volume.</p>
     */
     inline const Ebs& GetEbs() const{ return m_ebs; }
+
     /*
      <p>The information about the Amazon EBS volume.</p>
     */
@@ -104,12 +127,23 @@ namespace Model
     /*
      <p>The information about the Amazon EBS volume.</p>
     */
-    inline BlockDeviceMapping&  WithEbs(const Ebs& value) { SetEbs(value); return *this;}
+    inline void SetEbs(Ebs&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+
+    /*
+     <p>The information about the Amazon EBS volume.</p>
+    */
+    inline BlockDeviceMapping& WithEbs(const Ebs& value) { SetEbs(value); return *this;}
+
+    /*
+     <p>The information about the Amazon EBS volume.</p>
+    */
+    inline BlockDeviceMapping& WithEbs(Ebs&& value) { SetEbs(value); return *this;}
 
     /*
      <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
     */
     inline bool GetNoDevice() const{ return m_noDevice; }
+
     /*
      <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
     */
@@ -118,7 +152,7 @@ namespace Model
     /*
      <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
     */
-    inline BlockDeviceMapping&  WithNoDevice(bool value) { SetNoDevice(value); return *this;}
+    inline BlockDeviceMapping& WithNoDevice(bool value) { SetNoDevice(value); return *this;}
 
   private:
     Aws::String m_virtualName;

@@ -39,10 +39,16 @@ namespace Model
      <p>The Elastic Load Balancing instance's name.</p>
     */
     inline const Aws::String& GetElasticLoadBalancerName() const{ return m_elasticLoadBalancerName; }
+
     /*
      <p>The Elastic Load Balancing instance's name.</p>
     */
     inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
+
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline void SetElasticLoadBalancerName(Aws::String&& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
 
     /*
      <p>The Elastic Load Balancing instance's name.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The Elastic Load Balancing instance's name.</p>
     */
-    inline DetachElasticLoadBalancerRequest&  WithElasticLoadBalancerName(const Aws::String& value) { SetElasticLoadBalancerName(value); return *this;}
+    inline DetachElasticLoadBalancerRequest& WithElasticLoadBalancerName(const Aws::String& value) { SetElasticLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline DetachElasticLoadBalancerRequest& WithElasticLoadBalancerName(Aws::String&& value) { SetElasticLoadBalancerName(value); return *this;}
 
     /*
      <p>The Elastic Load Balancing instance's name.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
+
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     */
-    inline DetachElasticLoadBalancerRequest&  WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+    inline DetachElasticLoadBalancerRequest& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline DetachElasticLoadBalancerRequest& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
 
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>

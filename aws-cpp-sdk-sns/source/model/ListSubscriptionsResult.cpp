@@ -53,6 +53,11 @@ ListSubscriptionsResult& ListSubscriptionsResult::operator =(const AmazonWebServ
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
+    if(nextTokenNode.IsNull())
+    {
+      nextTokenNode = resultNode;
+    }
+
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

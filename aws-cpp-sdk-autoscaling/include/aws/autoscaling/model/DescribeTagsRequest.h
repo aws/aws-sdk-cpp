@@ -39,6 +39,7 @@ namespace Model
      <p>A filter used to scope the tags to return.</p>
     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
     /*
      <p>A filter used to scope the tags to return.</p>
     */
@@ -47,7 +48,17 @@ namespace Model
     /*
      <p>A filter used to scope the tags to return.</p>
     */
-    inline DescribeTagsRequest&  WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /*
+     <p>A filter used to scope the tags to return.</p>
+    */
+    inline DescribeTagsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /*
+     <p>A filter used to scope the tags to return.</p>
+    */
+    inline DescribeTagsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /*
      <p>A filter used to scope the tags to return.</p>
@@ -55,13 +66,24 @@ namespace Model
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /*
+     <p>A filter used to scope the tags to return.</p>
+    */
+    inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -71,7 +93,12 @@ namespace Model
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
-    inline DescribeTagsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline DescribeTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -82,6 +109,7 @@ namespace Model
      <p>The maximum number of items to return with this call.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of items to return with this call.</p>
     */
@@ -90,7 +118,7 @@ namespace Model
     /*
      <p>The maximum number of items to return with this call.</p>
     */
-    inline DescribeTagsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeTagsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::Vector<Filter> m_filters;

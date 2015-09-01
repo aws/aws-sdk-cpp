@@ -48,10 +48,16 @@ namespace Model
      <p>PlatformApplicationArn for platform application object.</p>
     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
+
     /*
      <p>PlatformApplicationArn for platform application object.</p>
     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
+
+    /*
+     <p>PlatformApplicationArn for platform application object.</p>
+    */
+    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn for platform application object.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn for platform application object.</p>
     */
-    inline PlatformApplication&  WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+    inline PlatformApplication& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+
+    /*
+     <p>PlatformApplicationArn for platform application object.</p>
+    */
+    inline PlatformApplication& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
     /*
      <p>PlatformApplicationArn for platform application object.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>Attributes for platform application object.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
     /*
      <p>Attributes for platform application object.</p>
     */
@@ -80,12 +92,47 @@ namespace Model
     /*
      <p>Attributes for platform application object.</p>
     */
-    inline PlatformApplication&  WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /*
      <p>Attributes for platform application object.</p>
     */
     inline PlatformApplication& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>Attributes for platform application object.</p>
+    */
+    inline PlatformApplication& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /*
      <p>Attributes for platform application object.</p>

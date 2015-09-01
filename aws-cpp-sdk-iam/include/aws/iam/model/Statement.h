@@ -47,41 +47,69 @@ namespace Model
 
     
     inline const Aws::String& GetSourcePolicyId() const{ return m_sourcePolicyId; }
+
     
     inline void SetSourcePolicyId(const Aws::String& value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId = value; }
+
+    
+    inline void SetSourcePolicyId(Aws::String&& value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId = value; }
 
     
     inline void SetSourcePolicyId(const char* value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId.assign(value); }
 
     
-    inline Statement&  WithSourcePolicyId(const Aws::String& value) { SetSourcePolicyId(value); return *this;}
+    inline Statement& WithSourcePolicyId(const Aws::String& value) { SetSourcePolicyId(value); return *this;}
+
+    
+    inline Statement& WithSourcePolicyId(Aws::String&& value) { SetSourcePolicyId(value); return *this;}
 
     
     inline Statement& WithSourcePolicyId(const char* value) { SetSourcePolicyId(value); return *this;}
 
     
     inline const PolicySourceType& GetSourcePolicyType() const{ return m_sourcePolicyType; }
+
     
     inline void SetSourcePolicyType(const PolicySourceType& value) { m_sourcePolicyTypeHasBeenSet = true; m_sourcePolicyType = value; }
 
     
-    inline Statement&  WithSourcePolicyType(const PolicySourceType& value) { SetSourcePolicyType(value); return *this;}
+    inline void SetSourcePolicyType(PolicySourceType&& value) { m_sourcePolicyTypeHasBeenSet = true; m_sourcePolicyType = value; }
+
+    
+    inline Statement& WithSourcePolicyType(const PolicySourceType& value) { SetSourcePolicyType(value); return *this;}
+
+    
+    inline Statement& WithSourcePolicyType(PolicySourceType&& value) { SetSourcePolicyType(value); return *this;}
 
     
     inline const Position& GetStartPosition() const{ return m_startPosition; }
+
     
     inline void SetStartPosition(const Position& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
 
     
-    inline Statement&  WithStartPosition(const Position& value) { SetStartPosition(value); return *this;}
+    inline void SetStartPosition(Position&& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
+
+    
+    inline Statement& WithStartPosition(const Position& value) { SetStartPosition(value); return *this;}
+
+    
+    inline Statement& WithStartPosition(Position&& value) { SetStartPosition(value); return *this;}
 
     
     inline const Position& GetEndPosition() const{ return m_endPosition; }
+
     
     inline void SetEndPosition(const Position& value) { m_endPositionHasBeenSet = true; m_endPosition = value; }
 
     
-    inline Statement&  WithEndPosition(const Position& value) { SetEndPosition(value); return *this;}
+    inline void SetEndPosition(Position&& value) { m_endPositionHasBeenSet = true; m_endPosition = value; }
+
+    
+    inline Statement& WithEndPosition(const Position& value) { SetEndPosition(value); return *this;}
+
+    
+    inline Statement& WithEndPosition(Position&& value) { SetEndPosition(value); return *this;}
 
   private:
     Aws::String m_sourcePolicyId;

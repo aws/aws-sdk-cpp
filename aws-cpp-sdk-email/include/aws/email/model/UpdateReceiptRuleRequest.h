@@ -36,25 +36,39 @@ namespace Model
 
     
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+
     
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+
+    
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     
-    inline UpdateReceiptRuleRequest&  WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
+    inline UpdateReceiptRuleRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
+
+    
+    inline UpdateReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
 
     
     inline UpdateReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
     
     inline const ReceiptRule& GetRule() const{ return m_rule; }
+
     
     inline void SetRule(const ReceiptRule& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     
-    inline UpdateReceiptRuleRequest&  WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
+    inline void SetRule(ReceiptRule&& value) { m_ruleHasBeenSet = true; m_rule = value; }
+
+    
+    inline UpdateReceiptRuleRequest& WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
+
+    
+    inline UpdateReceiptRuleRequest& WithRule(ReceiptRule&& value) { SetRule(value); return *this;}
 
   private:
     Aws::String m_ruleSetName;

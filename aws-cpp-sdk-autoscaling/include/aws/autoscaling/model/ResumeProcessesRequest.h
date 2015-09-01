@@ -38,10 +38,16 @@ namespace Model
      <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
     */
-    inline ResumeProcessesRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline ResumeProcessesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    */
+    inline ResumeProcessesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
     */
     inline const Aws::Vector<Aws::String>& GetScalingProcesses() const{ return m_scalingProcesses; }
+
     /*
      <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
     */
-    inline ResumeProcessesRequest&  WithScalingProcesses(const Aws::Vector<Aws::String>& value) { SetScalingProcesses(value); return *this;}
+    inline void SetScalingProcesses(Aws::Vector<Aws::String>&& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses = value; }
+
+    /*
+     <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
+    */
+    inline ResumeProcessesRequest& WithScalingProcesses(const Aws::Vector<Aws::String>& value) { SetScalingProcesses(value); return *this;}
+
+    /*
+     <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
+    */
+    inline ResumeProcessesRequest& WithScalingProcesses(Aws::Vector<Aws::String>&& value) { SetScalingProcesses(value); return *this;}
 
     /*
      <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
     */
     inline ResumeProcessesRequest& AddScalingProcesses(const Aws::String& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses.push_back(value); return *this; }
+
+    /*
+     <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>
+    */
+    inline ResumeProcessesRequest& AddScalingProcesses(Aws::String&& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses.push_back(value); return *this; }
 
     /*
      <p>One or more of the following processes:</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>ScheduledActions</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> </ul>

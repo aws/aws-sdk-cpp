@@ -47,6 +47,7 @@ namespace Model
      <p> A list of <a>EnvironmentResourceDescription</a>. </p>
     */
     inline const EnvironmentResourceDescription& GetEnvironmentResources() const{ return m_environmentResources; }
+
     /*
      <p> A list of <a>EnvironmentResourceDescription</a>. </p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p> A list of <a>EnvironmentResourceDescription</a>. </p>
     */
-    inline DescribeEnvironmentResourcesResult&  WithEnvironmentResources(const EnvironmentResourceDescription& value) { SetEnvironmentResources(value); return *this;}
+    inline void SetEnvironmentResources(EnvironmentResourceDescription&& value) { m_environmentResources = value; }
+
+    /*
+     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+    */
+    inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(const EnvironmentResourceDescription& value) { SetEnvironmentResources(value); return *this;}
+
+    /*
+     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+    */
+    inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourceDescription&& value) { SetEnvironmentResources(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeEnvironmentResourcesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeEnvironmentResourcesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeEnvironmentResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     EnvironmentResourceDescription m_environmentResources;

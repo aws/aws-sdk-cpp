@@ -41,6 +41,11 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode suffixNode = resultNode.FirstChild("Suffix");
+    if(suffixNode.IsNull())
+    {
+      suffixNode = resultNode;
+    }
+
     if(!suffixNode.IsNull())
     {
       m_suffix = StringUtils::Trim(suffixNode.GetText().c_str());

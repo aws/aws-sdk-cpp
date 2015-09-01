@@ -47,10 +47,16 @@ namespace Model
      <p>The name (friendly name, not ARN) identifying the user.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name (friendly name, not ARN) identifying the user.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the user.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the user.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the user.</p>
     */
-    inline PolicyUser&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline PolicyUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the user.</p>
+    */
+    inline PolicyUser& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) identifying the user.</p>

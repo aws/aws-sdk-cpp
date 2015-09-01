@@ -45,14 +45,21 @@ namespace Model
 
     
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     
-    inline SNSAction&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline SNSAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    
+    inline SNSAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     
     inline SNSAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}

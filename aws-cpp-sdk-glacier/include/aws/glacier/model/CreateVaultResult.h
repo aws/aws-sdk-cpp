@@ -46,10 +46,16 @@ namespace Model
      <p>The URI of the vault that was created.</p>
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      <p>The URI of the vault that was created.</p>
     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /*
+     <p>The URI of the vault that was created.</p>
+    */
+    inline void SetLocation(Aws::String&& value) { m_location = value; }
 
     /*
      <p>The URI of the vault that was created.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The URI of the vault that was created.</p>
     */
-    inline CreateVaultResult&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline CreateVaultResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     <p>The URI of the vault that was created.</p>
+    */
+    inline CreateVaultResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      <p>The URI of the vault that was created.</p>

@@ -43,14 +43,21 @@ namespace Model
 
     
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
     
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+
+    
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     
-    inline CommonPrefix&  WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline CommonPrefix& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+
+    
+    inline CommonPrefix& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
     
     inline CommonPrefix& WithPrefix(const char* value) { SetPrefix(value); return *this;}

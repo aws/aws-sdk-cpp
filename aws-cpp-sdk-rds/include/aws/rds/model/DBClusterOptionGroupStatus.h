@@ -47,10 +47,16 @@ namespace Model
      <p>Specifies the name of the DB cluster option group.</p>
     */
     inline const Aws::String& GetDBClusterOptionGroupName() const{ return m_dBClusterOptionGroupName; }
+
     /*
      <p>Specifies the name of the DB cluster option group.</p>
     */
     inline void SetDBClusterOptionGroupName(const Aws::String& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = value; }
+
+    /*
+     <p>Specifies the name of the DB cluster option group.</p>
+    */
+    inline void SetDBClusterOptionGroupName(Aws::String&& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = value; }
 
     /*
      <p>Specifies the name of the DB cluster option group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Specifies the name of the DB cluster option group.</p>
     */
-    inline DBClusterOptionGroupStatus&  WithDBClusterOptionGroupName(const Aws::String& value) { SetDBClusterOptionGroupName(value); return *this;}
+    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(const Aws::String& value) { SetDBClusterOptionGroupName(value); return *this;}
+
+    /*
+     <p>Specifies the name of the DB cluster option group.</p>
+    */
+    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(Aws::String&& value) { SetDBClusterOptionGroupName(value); return *this;}
 
     /*
      <p>Specifies the name of the DB cluster option group.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>Specifies the status of the DB cluster option group.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>Specifies the status of the DB cluster option group.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>Specifies the status of the DB cluster option group.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>Specifies the status of the DB cluster option group.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>Specifies the status of the DB cluster option group.</p>
     */
-    inline DBClusterOptionGroupStatus&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline DBClusterOptionGroupStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>Specifies the status of the DB cluster option group.</p>
+    */
+    inline DBClusterOptionGroupStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>Specifies the status of the DB cluster option group.</p>

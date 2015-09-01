@@ -41,10 +41,16 @@ namespace Model
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline UpdateConfigurationTemplateRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -65,10 +76,16 @@ namespace Model
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /*
+     <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -78,7 +95,12 @@ namespace Model
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline UpdateConfigurationTemplateRequest&  WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /*
+     <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -89,10 +111,16 @@ namespace Model
      <p>A new description for the configuration.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A new description for the configuration.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A new description for the configuration.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A new description for the configuration.</p>
@@ -102,7 +130,12 @@ namespace Model
     /*
      <p>A new description for the configuration.</p>
     */
-    inline UpdateConfigurationTemplateRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A new description for the configuration.</p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A new description for the configuration.</p>
@@ -113,6 +146,7 @@ namespace Model
      <p> A list of configuration option settings to update with the new specified option value. </p>
     */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
     /*
      <p> A list of configuration option settings to update with the new specified option value. </p>
     */
@@ -121,7 +155,17 @@ namespace Model
     /*
      <p> A list of configuration option settings to update with the new specified option value. </p>
     */
-    inline UpdateConfigurationTemplateRequest&  WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+
+    /*
+     <p> A list of configuration option settings to update with the new specified option value. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
+
+    /*
+     <p> A list of configuration option settings to update with the new specified option value. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /*
      <p> A list of configuration option settings to update with the new specified option value. </p>
@@ -129,9 +173,15 @@ namespace Model
     inline UpdateConfigurationTemplateRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /*
+     <p> A list of configuration option settings to update with the new specified option value. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+
+    /*
      <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     */
     inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
+
     /*
      <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     */
@@ -140,12 +190,27 @@ namespace Model
     /*
      <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     */
-    inline UpdateConfigurationTemplateRequest&  WithOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { SetOptionsToRemove(value); return *this;}
+    inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
+
+    /*
+     <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { SetOptionsToRemove(value); return *this;}
+
+    /*
+     <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(value); return *this;}
 
     /*
      <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     */
     inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(const OptionSpecification& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
+
+    /*
+     <p> A list of configuration options to remove from the configuration set. </p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    */
+    inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
   private:
     Aws::String m_applicationName;

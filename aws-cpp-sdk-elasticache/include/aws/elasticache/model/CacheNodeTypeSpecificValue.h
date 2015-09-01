@@ -47,10 +47,16 @@ namespace Model
      <p>The cache node type for which this value applies.</p>
     */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
     /*
      <p>The cache node type for which this value applies.</p>
     */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /*
+     <p>The cache node type for which this value applies.</p>
+    */
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /*
      <p>The cache node type for which this value applies.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The cache node type for which this value applies.</p>
     */
-    inline CacheNodeTypeSpecificValue&  WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
+    inline CacheNodeTypeSpecificValue& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
+
+    /*
+     <p>The cache node type for which this value applies.</p>
+    */
+    inline CacheNodeTypeSpecificValue& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
 
     /*
      <p>The cache node type for which this value applies.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The value for the cache node type.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>The value for the cache node type.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>The value for the cache node type.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>The value for the cache node type.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The value for the cache node type.</p>
     */
-    inline CacheNodeTypeSpecificValue&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline CacheNodeTypeSpecificValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>The value for the cache node type.</p>
+    */
+    inline CacheNodeTypeSpecificValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>The value for the cache node type.</p>

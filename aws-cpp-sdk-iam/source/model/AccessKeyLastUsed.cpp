@@ -47,18 +47,33 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode lastUsedDateNode = resultNode.FirstChild("LastUsedDate");
+    if(lastUsedDateNode.IsNull())
+    {
+      lastUsedDateNode = resultNode;
+    }
+
     if(!lastUsedDateNode.IsNull())
     {
       m_lastUsedDate = StringUtils::ConvertToDouble(StringUtils::Trim(lastUsedDateNode.GetText().c_str()).c_str());
       m_lastUsedDateHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
+    if(serviceNameNode.IsNull())
+    {
+      serviceNameNode = resultNode;
+    }
+
     if(!serviceNameNode.IsNull())
     {
       m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
       m_serviceNameHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
+    if(regionNode.IsNull())
+    {
+      regionNode = resultNode;
+    }
+
     if(!regionNode.IsNull())
     {
       m_region = StringUtils::Trim(regionNode.GetText().c_str());

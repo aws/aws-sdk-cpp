@@ -47,28 +47,45 @@ namespace Model
 
     
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline DeletableItem&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline DeletableItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline DeletableItem& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline DeletableItem& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline const Aws::Vector<DeletableAttribute>& GetAttributes() const{ return m_attributes; }
+
     
     inline void SetAttributes(const Aws::Vector<DeletableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     
-    inline DeletableItem&  WithAttributes(const Aws::Vector<DeletableAttribute>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Vector<DeletableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    
+    inline DeletableItem& WithAttributes(const Aws::Vector<DeletableAttribute>& value) { SetAttributes(value); return *this;}
+
+    
+    inline DeletableItem& WithAttributes(Aws::Vector<DeletableAttribute>&& value) { SetAttributes(value); return *this;}
 
     
     inline DeletableItem& AddAttributes(const DeletableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+
+    
+    inline DeletableItem& AddAttributes(DeletableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_name;

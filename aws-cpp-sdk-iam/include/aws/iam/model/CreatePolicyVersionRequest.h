@@ -35,14 +35,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline CreatePolicyVersionRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline CreatePolicyVersionRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline CreatePolicyVersionRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline CreatePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
@@ -51,10 +58,16 @@ namespace Model
      <p>The policy document.</p>
     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
     /*
      <p>The policy document.</p>
     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
@@ -64,7 +77,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline CreatePolicyVersionRequest&  WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+    inline CreatePolicyVersionRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /*
      <p>The policy document.</p>
@@ -75,6 +93,7 @@ namespace Model
      <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
     */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
+
     /*
      <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
     */
@@ -83,7 +102,7 @@ namespace Model
     /*
      <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline CreatePolicyVersionRequest&  WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
+    inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 
   private:
     Aws::String m_policyArn;

@@ -22,7 +22,7 @@ namespace IAM
 {
 namespace Model
 {
-  enum class policyScopeType
+  enum class PolicyScopeType
   {
     NOT_SET,
     All,
@@ -30,12 +30,12 @@ namespace Model
     Local
   };
 
-namespace policyScopeTypeMapper
+namespace PolicyScopeTypeMapper
 {
-AWS_IAM_API policyScopeType GetpolicyScopeTypeForName(const Aws::String& name);
+AWS_IAM_API PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name);
 
-AWS_IAM_API Aws::String GetNameForpolicyScopeType(policyScopeType value);
-} // namespace policyScopeTypeMapper
+AWS_IAM_API Aws::String GetNameForPolicyScopeType(PolicyScopeType value);
+} // namespace PolicyScopeTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

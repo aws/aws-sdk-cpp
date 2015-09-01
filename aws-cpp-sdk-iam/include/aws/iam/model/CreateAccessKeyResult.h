@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the access key.</p>
     */
     inline const AccessKey& GetAccessKey() const{ return m_accessKey; }
+
     /*
      <p>Information about the access key.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the access key.</p>
     */
-    inline CreateAccessKeyResult&  WithAccessKey(const AccessKey& value) { SetAccessKey(value); return *this;}
+    inline void SetAccessKey(AccessKey&& value) { m_accessKey = value; }
+
+    /*
+     <p>Information about the access key.</p>
+    */
+    inline CreateAccessKeyResult& WithAccessKey(const AccessKey& value) { SetAccessKey(value); return *this;}
+
+    /*
+     <p>Information about the access key.</p>
+    */
+    inline CreateAccessKeyResult& WithAccessKey(AccessKey&& value) { SetAccessKey(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateAccessKeyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateAccessKeyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateAccessKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     AccessKey m_accessKey;

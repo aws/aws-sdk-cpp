@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the user.</p>
     */
     inline const User& GetUser() const{ return m_user; }
+
     /*
      <p>Information about the user.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the user.</p>
     */
-    inline CreateUserResult&  WithUser(const User& value) { SetUser(value); return *this;}
+    inline void SetUser(User&& value) { m_user = value; }
+
+    /*
+     <p>Information about the user.</p>
+    */
+    inline CreateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
+
+    /*
+     <p>Information about the user.</p>
+    */
+    inline CreateUserResult& WithUser(User&& value) { SetUser(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateUserResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateUserResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateUserResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     User m_user;

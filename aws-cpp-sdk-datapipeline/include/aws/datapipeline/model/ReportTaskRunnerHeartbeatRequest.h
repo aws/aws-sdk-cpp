@@ -40,10 +40,16 @@ namespace Model
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     */
     inline const Aws::String& GetTaskrunnerId() const{ return m_taskrunnerId; }
+
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     */
     inline void SetTaskrunnerId(const Aws::String& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = value; }
+
+    /*
+     <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    */
+    inline void SetTaskrunnerId(Aws::String&& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = value; }
 
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     */
-    inline ReportTaskRunnerHeartbeatRequest&  WithTaskrunnerId(const Aws::String& value) { SetTaskrunnerId(value); return *this;}
+    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(const Aws::String& value) { SetTaskrunnerId(value); return *this;}
+
+    /*
+     <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    */
+    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(Aws::String&& value) { SetTaskrunnerId(value); return *this;}
 
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     */
     inline const Aws::String& GetWorkerGroup() const{ return m_workerGroup; }
+
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     */
     inline void SetWorkerGroup(const Aws::String& value) { m_workerGroupHasBeenSet = true; m_workerGroup = value; }
+
+    /*
+     <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    */
+    inline void SetWorkerGroup(Aws::String&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = value; }
 
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     */
-    inline ReportTaskRunnerHeartbeatRequest&  WithWorkerGroup(const Aws::String& value) { SetWorkerGroup(value); return *this;}
+    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(const Aws::String& value) { SetWorkerGroup(value); return *this;}
+
+    /*
+     <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    */
+    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(Aws::String&& value) { SetWorkerGroup(value); return *this;}
 
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
@@ -88,10 +110,16 @@ namespace Model
      <p>The public DNS name of the task runner.</p>
     */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
+
     /*
      <p>The public DNS name of the task runner.</p>
     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+
+    /*
+     <p>The public DNS name of the task runner.</p>
+    */
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /*
      <p>The public DNS name of the task runner.</p>
@@ -101,7 +129,12 @@ namespace Model
     /*
      <p>The public DNS name of the task runner.</p>
     */
-    inline ReportTaskRunnerHeartbeatRequest&  WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+    inline ReportTaskRunnerHeartbeatRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+
+    /*
+     <p>The public DNS name of the task runner.</p>
+    */
+    inline ReportTaskRunnerHeartbeatRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
 
     /*
      <p>The public DNS name of the task runner.</p>

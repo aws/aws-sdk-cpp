@@ -46,22 +46,39 @@ namespace Model
 
     
     inline const Aws::Vector<EvaluationResult>& GetEvaluationResults() const{ return m_evaluationResults; }
+
     
     inline void SetEvaluationResults(const Aws::Vector<EvaluationResult>& value) { m_evaluationResults = value; }
 
     
-    inline SimulatePolicyResult&  WithEvaluationResults(const Aws::Vector<EvaluationResult>& value) { SetEvaluationResults(value); return *this;}
+    inline void SetEvaluationResults(Aws::Vector<EvaluationResult>&& value) { m_evaluationResults = value; }
+
+    
+    inline SimulatePolicyResult& WithEvaluationResults(const Aws::Vector<EvaluationResult>& value) { SetEvaluationResults(value); return *this;}
+
+    
+    inline SimulatePolicyResult& WithEvaluationResults(Aws::Vector<EvaluationResult>&& value) { SetEvaluationResults(value); return *this;}
 
     
     inline SimulatePolicyResult& AddEvaluationResults(const EvaluationResult& value) { m_evaluationResults.push_back(value); return *this; }
 
     
+    inline SimulatePolicyResult& AddEvaluationResults(EvaluationResult&& value) { m_evaluationResults.push_back(value); return *this; }
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline SimulatePolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline SimulatePolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline SimulatePolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<EvaluationResult> m_evaluationResults;

@@ -47,6 +47,7 @@ namespace Model
      The streaming distribution's information.
     */
     inline const StreamingDistribution& GetStreamingDistribution() const{ return m_streamingDistribution; }
+
     /*
      The streaming distribution's information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The streaming distribution's information.
     */
-    inline GetStreamingDistribution2015_04_17Result&  WithStreamingDistribution(const StreamingDistribution& value) { SetStreamingDistribution(value); return *this;}
+    inline void SetStreamingDistribution(StreamingDistribution&& value) { m_streamingDistribution = value; }
+
+    /*
+     The streaming distribution's information.
+    */
+    inline GetStreamingDistribution2015_04_17Result& WithStreamingDistribution(const StreamingDistribution& value) { SetStreamingDistribution(value); return *this;}
+
+    /*
+     The streaming distribution's information.
+    */
+    inline GetStreamingDistribution2015_04_17Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(value); return *this;}
 
     /*
      The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
     */
-    inline GetStreamingDistribution2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline GetStreamingDistribution2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
+    */
+    inline GetStreamingDistribution2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.

@@ -45,10 +45,16 @@ namespace Model
      The DNS name of the S3 origin.
     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
     /*
      The DNS name of the S3 origin.
     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /*
+     The DNS name of the S3 origin.
+    */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The DNS name of the S3 origin.
@@ -58,7 +64,12 @@ namespace Model
     /*
      The DNS name of the S3 origin.
     */
-    inline S3Origin&  WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline S3Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /*
+     The DNS name of the S3 origin.
+    */
+    inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /*
      The DNS name of the S3 origin.
@@ -69,10 +80,16 @@ namespace Model
      Your S3 origin's origin access identity.
     */
     inline const Aws::String& GetOriginAccessIdentity() const{ return m_originAccessIdentity; }
+
     /*
      Your S3 origin's origin access identity.
     */
     inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
+
+    /*
+     Your S3 origin's origin access identity.
+    */
+    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
 
     /*
      Your S3 origin's origin access identity.
@@ -82,7 +99,12 @@ namespace Model
     /*
      Your S3 origin's origin access identity.
     */
-    inline S3Origin&  WithOriginAccessIdentity(const Aws::String& value) { SetOriginAccessIdentity(value); return *this;}
+    inline S3Origin& WithOriginAccessIdentity(const Aws::String& value) { SetOriginAccessIdentity(value); return *this;}
+
+    /*
+     Your S3 origin's origin access identity.
+    */
+    inline S3Origin& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(value); return *this;}
 
     /*
      Your S3 origin's origin access identity.

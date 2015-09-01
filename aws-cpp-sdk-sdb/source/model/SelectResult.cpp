@@ -53,6 +53,11 @@ SelectResult& SelectResult::operator =(const AmazonWebServiceResult<XmlDocument>
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
+    if(nextTokenNode.IsNull())
+    {
+      nextTokenNode = resultNode;
+    }
+
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

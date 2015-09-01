@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const HsmClientCertificate& GetHsmClientCertificate() const{ return m_hsmClientCertificate; }
+
     
     inline void SetHsmClientCertificate(const HsmClientCertificate& value) { m_hsmClientCertificate = value; }
 
     
-    inline CreateHsmClientCertificateResult&  WithHsmClientCertificate(const HsmClientCertificate& value) { SetHsmClientCertificate(value); return *this;}
+    inline void SetHsmClientCertificate(HsmClientCertificate&& value) { m_hsmClientCertificate = value; }
+
+    
+    inline CreateHsmClientCertificateResult& WithHsmClientCertificate(const HsmClientCertificate& value) { SetHsmClientCertificate(value); return *this;}
+
+    
+    inline CreateHsmClientCertificateResult& WithHsmClientCertificate(HsmClientCertificate&& value) { SetHsmClientCertificate(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateHsmClientCertificateResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateHsmClientCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateHsmClientCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     HsmClientCertificate m_hsmClientCertificate;

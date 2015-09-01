@@ -49,6 +49,7 @@ namespace Model
      <p>A list of topic ARNs.</p>
     */
     inline const Aws::Vector<Topic>& GetTopics() const{ return m_topics; }
+
     /*
      <p>A list of topic ARNs.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of topic ARNs.</p>
     */
-    inline ListTopicsResult&  WithTopics(const Aws::Vector<Topic>& value) { SetTopics(value); return *this;}
+    inline void SetTopics(Aws::Vector<Topic>&& value) { m_topics = value; }
+
+    /*
+     <p>A list of topic ARNs.</p>
+    */
+    inline ListTopicsResult& WithTopics(const Aws::Vector<Topic>& value) { SetTopics(value); return *this;}
+
+    /*
+     <p>A list of topic ARNs.</p>
+    */
+    inline ListTopicsResult& WithTopics(Aws::Vector<Topic>&& value) { SetTopics(value); return *this;}
 
     /*
      <p>A list of topic ARNs.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline ListTopicsResult& AddTopics(const Topic& value) { m_topics.push_back(value); return *this; }
 
     /*
+     <p>A list of topic ARNs.</p>
+    */
+    inline ListTopicsResult& AddTopics(Topic&& value) { m_topics.push_back(value); return *this; }
+
+    /*
      <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     */
-    inline ListTopicsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListTopicsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
+    */
+    inline ListTopicsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListTopicsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListTopicsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListTopicsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Topic> m_topics;

@@ -42,6 +42,11 @@ CreatePlatformEndpointResult& CreatePlatformEndpointResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode endpointArnNode = resultNode.FirstChild("EndpointArn");
+    if(endpointArnNode.IsNull())
+    {
+      endpointArnNode = resultNode;
+    }
+
     if(!endpointArnNode.IsNull())
     {
       m_endpointArn = StringUtils::Trim(endpointArnNode.GetText().c_str());

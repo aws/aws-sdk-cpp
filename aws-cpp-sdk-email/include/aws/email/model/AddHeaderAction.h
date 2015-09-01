@@ -45,28 +45,42 @@ namespace Model
 
     
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
+
     
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
+
+    
+    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
     
     inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
 
     
-    inline AddHeaderAction&  WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
+    inline AddHeaderAction& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
+
+    
+    inline AddHeaderAction& WithHeaderName(Aws::String&& value) { SetHeaderName(value); return *this;}
 
     
     inline AddHeaderAction& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
 
     
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
+
     
     inline void SetHeaderValue(const Aws::String& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
+
+    
+    inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
 
     
     inline void SetHeaderValue(const char* value) { m_headerValueHasBeenSet = true; m_headerValue.assign(value); }
 
     
-    inline AddHeaderAction&  WithHeaderValue(const Aws::String& value) { SetHeaderValue(value); return *this;}
+    inline AddHeaderAction& WithHeaderValue(const Aws::String& value) { SetHeaderValue(value); return *this;}
+
+    
+    inline AddHeaderAction& WithHeaderValue(Aws::String&& value) { SetHeaderValue(value); return *this;}
 
     
     inline AddHeaderAction& WithHeaderValue(const char* value) { SetHeaderValue(value); return *this;}

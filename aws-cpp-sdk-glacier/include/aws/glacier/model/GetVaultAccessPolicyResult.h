@@ -46,6 +46,7 @@ namespace Model
      <p>Contains the returned vault access policy as a JSON string.</p>
     */
     inline const VaultAccessPolicy& GetPolicy() const{ return m_policy; }
+
     /*
      <p>Contains the returned vault access policy as a JSON string.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Contains the returned vault access policy as a JSON string.</p>
     */
-    inline GetVaultAccessPolicyResult&  WithPolicy(const VaultAccessPolicy& value) { SetPolicy(value); return *this;}
+    inline void SetPolicy(VaultAccessPolicy&& value) { m_policy = value; }
+
+    /*
+     <p>Contains the returned vault access policy as a JSON string.</p>
+    */
+    inline GetVaultAccessPolicyResult& WithPolicy(const VaultAccessPolicy& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>Contains the returned vault access policy as a JSON string.</p>
+    */
+    inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(value); return *this;}
 
   private:
     VaultAccessPolicy m_policy;

@@ -46,14 +46,21 @@ namespace Model
 
     
     inline const Aws::String& GetId() const{ return m_id; }
+
     
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     
-    inline LambdaFunctionConfiguration&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline LambdaFunctionConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline LambdaFunctionConfiguration& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     
     inline LambdaFunctionConfiguration& WithId(const char* value) { SetId(value); return *this;}
@@ -62,10 +69,16 @@ namespace Model
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
     */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
+
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
     */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
+
+    /*
+     Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
+    */
+    inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
 
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
@@ -75,7 +88,12 @@ namespace Model
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
     */
-    inline LambdaFunctionConfiguration&  WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
+    inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
+
+    /*
+     Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
+    */
+    inline LambdaFunctionConfiguration& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(value); return *this;}
 
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
@@ -84,22 +102,39 @@ namespace Model
 
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
+
     
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
-    inline LambdaFunctionConfiguration&  WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    
+    inline LambdaFunctionConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
+
+    
+    inline LambdaFunctionConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
 
     
     inline LambdaFunctionConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     
+    inline LambdaFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+
+    
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+
     
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     
-    inline LambdaFunctionConfiguration&  WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
+    inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline LambdaFunctionConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
+
+    
+    inline LambdaFunctionConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(value); return *this;}
 
   private:
     Aws::String m_id;

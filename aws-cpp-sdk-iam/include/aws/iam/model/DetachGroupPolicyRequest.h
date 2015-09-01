@@ -37,10 +37,16 @@ namespace Model
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
     */
-    inline DetachGroupPolicyRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline DetachGroupPolicyRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+    */
+    inline DetachGroupPolicyRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
@@ -59,14 +70,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline DetachGroupPolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline DetachGroupPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline DetachGroupPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline DetachGroupPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}

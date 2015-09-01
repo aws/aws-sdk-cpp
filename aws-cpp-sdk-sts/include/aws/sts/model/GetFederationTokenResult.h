@@ -48,6 +48,7 @@ namespace Model
      <p>Credentials for the service API authentication. </p>
     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
+
     /*
      <p>Credentials for the service API authentication. </p>
     */
@@ -56,12 +57,23 @@ namespace Model
     /*
      <p>Credentials for the service API authentication. </p>
     */
-    inline GetFederationTokenResult&  WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+    inline void SetCredentials(Credentials&& value) { m_credentials = value; }
+
+    /*
+     <p>Credentials for the service API authentication. </p>
+    */
+    inline GetFederationTokenResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+
+    /*
+     <p>Credentials for the service API authentication. </p>
+    */
+    inline GetFederationTokenResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
     /*
      <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
     */
     inline const FederatedUser& GetFederatedUser() const{ return m_federatedUser; }
+
     /*
      <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
     */
@@ -70,12 +82,23 @@ namespace Model
     /*
      <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
     */
-    inline GetFederationTokenResult&  WithFederatedUser(const FederatedUser& value) { SetFederatedUser(value); return *this;}
+    inline void SetFederatedUser(FederatedUser&& value) { m_federatedUser = value; }
+
+    /*
+     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
+    */
+    inline GetFederationTokenResult& WithFederatedUser(const FederatedUser& value) { SetFederatedUser(value); return *this;}
+
+    /*
+     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
+    */
+    inline GetFederationTokenResult& WithFederatedUser(FederatedUser&& value) { SetFederatedUser(value); return *this;}
 
     /*
      <p>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value. </p>
     */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
+
     /*
      <p>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value. </p>
     */
@@ -84,15 +107,22 @@ namespace Model
     /*
      <p>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value. </p>
     */
-    inline GetFederationTokenResult&  WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
+    inline GetFederationTokenResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetFederationTokenResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetFederationTokenResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetFederationTokenResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Credentials m_credentials;

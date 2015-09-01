@@ -47,10 +47,16 @@ namespace Model
      <p>The EC2 instance type of the master node.</p>
     */
     inline const Aws::String& GetMasterInstanceType() const{ return m_masterInstanceType; }
+
     /*
      <p>The EC2 instance type of the master node.</p>
     */
     inline void SetMasterInstanceType(const Aws::String& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
+
+    /*
+     <p>The EC2 instance type of the master node.</p>
+    */
+    inline void SetMasterInstanceType(Aws::String&& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
 
     /*
      <p>The EC2 instance type of the master node.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The EC2 instance type of the master node.</p>
     */
-    inline JobFlowInstancesConfig&  WithMasterInstanceType(const Aws::String& value) { SetMasterInstanceType(value); return *this;}
+    inline JobFlowInstancesConfig& WithMasterInstanceType(const Aws::String& value) { SetMasterInstanceType(value); return *this;}
+
+    /*
+     <p>The EC2 instance type of the master node.</p>
+    */
+    inline JobFlowInstancesConfig& WithMasterInstanceType(Aws::String&& value) { SetMasterInstanceType(value); return *this;}
 
     /*
      <p>The EC2 instance type of the master node.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The EC2 instance type of the slave nodes.</p>
     */
     inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
+
     /*
      <p>The EC2 instance type of the slave nodes.</p>
     */
     inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
+
+    /*
+     <p>The EC2 instance type of the slave nodes.</p>
+    */
+    inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
 
     /*
      <p>The EC2 instance type of the slave nodes.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The EC2 instance type of the slave nodes.</p>
     */
-    inline JobFlowInstancesConfig&  WithSlaveInstanceType(const Aws::String& value) { SetSlaveInstanceType(value); return *this;}
+    inline JobFlowInstancesConfig& WithSlaveInstanceType(const Aws::String& value) { SetSlaveInstanceType(value); return *this;}
+
+    /*
+     <p>The EC2 instance type of the slave nodes.</p>
+    */
+    inline JobFlowInstancesConfig& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(value); return *this;}
 
     /*
      <p>The EC2 instance type of the slave nodes.</p>
@@ -95,6 +117,7 @@ namespace Model
      <p>The number of Amazon EC2 instances used to execute the job flow.</p>
     */
     inline long GetInstanceCount() const{ return m_instanceCount; }
+
     /*
      <p>The number of Amazon EC2 instances used to execute the job flow.</p>
     */
@@ -103,12 +126,13 @@ namespace Model
     /*
      <p>The number of Amazon EC2 instances used to execute the job flow.</p>
     */
-    inline JobFlowInstancesConfig&  WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline JobFlowInstancesConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
 
     /*
      <p>Configuration for the job flow's instance groups.</p>
     */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+
     /*
      <p>Configuration for the job flow's instance groups.</p>
     */
@@ -117,7 +141,17 @@ namespace Model
     /*
      <p>Configuration for the job flow's instance groups.</p>
     */
-    inline JobFlowInstancesConfig&  WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
+
+    /*
+     <p>Configuration for the job flow's instance groups.</p>
+    */
+    inline JobFlowInstancesConfig& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
+
+    /*
+     <p>Configuration for the job flow's instance groups.</p>
+    */
+    inline JobFlowInstancesConfig& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(value); return *this;}
 
     /*
      <p>Configuration for the job flow's instance groups.</p>
@@ -125,13 +159,24 @@ namespace Model
     inline JobFlowInstancesConfig& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /*
+     <p>Configuration for the job flow's instance groups.</p>
+    */
+    inline JobFlowInstancesConfig& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
+
+    /*
      <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
     */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
+
     /*
      <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
     */
     inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
+
+    /*
+     <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
+    */
+    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /*
      <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
@@ -141,7 +186,12 @@ namespace Model
     /*
      <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
     */
-    inline JobFlowInstancesConfig&  WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
+    inline JobFlowInstancesConfig& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
+
+    /*
+     <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
+    */
+    inline JobFlowInstancesConfig& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(value); return *this;}
 
     /*
      <p>The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."</p>
@@ -152,6 +202,7 @@ namespace Model
      <p>The Availability Zone the job flow will run in.</p>
     */
     inline const PlacementType& GetPlacement() const{ return m_placement; }
+
     /*
      <p>The Availability Zone the job flow will run in.</p>
     */
@@ -160,12 +211,23 @@ namespace Model
     /*
      <p>The Availability Zone the job flow will run in.</p>
     */
-    inline JobFlowInstancesConfig&  WithPlacement(const PlacementType& value) { SetPlacement(value); return *this;}
+    inline void SetPlacement(PlacementType&& value) { m_placementHasBeenSet = true; m_placement = value; }
+
+    /*
+     <p>The Availability Zone the job flow will run in.</p>
+    */
+    inline JobFlowInstancesConfig& WithPlacement(const PlacementType& value) { SetPlacement(value); return *this;}
+
+    /*
+     <p>The Availability Zone the job flow will run in.</p>
+    */
+    inline JobFlowInstancesConfig& WithPlacement(PlacementType&& value) { SetPlacement(value); return *this;}
 
     /*
      <p>Specifies whether the job flow should be kept alive after completing all steps.</p>
     */
     inline bool GetKeepJobFlowAliveWhenNoSteps() const{ return m_keepJobFlowAliveWhenNoSteps; }
+
     /*
      <p>Specifies whether the job flow should be kept alive after completing all steps.</p>
     */
@@ -174,12 +236,13 @@ namespace Model
     /*
      <p>Specifies whether the job flow should be kept alive after completing all steps.</p>
     */
-    inline JobFlowInstancesConfig&  WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
+    inline JobFlowInstancesConfig& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
 
     /*
      <p>Specifies whether to lock the job flow to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job flow error.</p>
     */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+
     /*
      <p>Specifies whether to lock the job flow to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job flow error.</p>
     */
@@ -188,16 +251,22 @@ namespace Model
     /*
      <p>Specifies whether to lock the job flow to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job flow error.</p>
     */
-    inline JobFlowInstancesConfig&  WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
+    inline JobFlowInstancesConfig& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
 
     /*
      <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     */
     inline const Aws::String& GetHadoopVersion() const{ return m_hadoopVersion; }
+
     /*
      <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     */
     inline void SetHadoopVersion(const Aws::String& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = value; }
+
+    /*
+     <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
+    */
+    inline void SetHadoopVersion(Aws::String&& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = value; }
 
     /*
      <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
@@ -207,7 +276,12 @@ namespace Model
     /*
      <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     */
-    inline JobFlowInstancesConfig&  WithHadoopVersion(const Aws::String& value) { SetHadoopVersion(value); return *this;}
+    inline JobFlowInstancesConfig& WithHadoopVersion(const Aws::String& value) { SetHadoopVersion(value); return *this;}
+
+    /*
+     <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
+    */
+    inline JobFlowInstancesConfig& WithHadoopVersion(Aws::String&& value) { SetHadoopVersion(value); return *this;}
 
     /*
      <p>The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
@@ -218,10 +292,16 @@ namespace Model
      <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
     */
     inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
+
     /*
      <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
     */
     inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
+
+    /*
+     <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
+    */
+    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /*
      <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
@@ -231,7 +311,12 @@ namespace Model
     /*
      <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
     */
-    inline JobFlowInstancesConfig&  WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
+    inline JobFlowInstancesConfig& WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
+
+    /*
+     <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
+    */
+    inline JobFlowInstancesConfig& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(value); return *this;}
 
     /*
      <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. </p>
@@ -242,10 +327,16 @@ namespace Model
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
     */
     inline const Aws::String& GetEmrManagedMasterSecurityGroup() const{ return m_emrManagedMasterSecurityGroup; }
+
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
     */
     inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
+    */
+    inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
@@ -255,7 +346,12 @@ namespace Model
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
     */
-    inline JobFlowInstancesConfig&  WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
+    inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
+    */
+    inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the master node.</p>
@@ -266,10 +362,16 @@ namespace Model
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
     */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
+
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
     */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
+    */
+    inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
@@ -279,7 +381,12 @@ namespace Model
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
     */
-    inline JobFlowInstancesConfig&  WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+    inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
+    */
+    inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce) for the slave nodes.</p>
@@ -290,6 +397,7 @@ namespace Model
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAdditionalMasterSecurityGroups() const{ return m_additionalMasterSecurityGroups; }
+
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
@@ -298,12 +406,27 @@ namespace Model
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
-    inline JobFlowInstancesConfig&  WithAdditionalMasterSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
+    inline void SetAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = value; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    */
+    inline JobFlowInstancesConfig& WithAdditionalMasterSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    */
+    inline JobFlowInstancesConfig& WithAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
     inline JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(const Aws::String& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    */
+    inline JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(Aws::String&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -314,6 +437,7 @@ namespace Model
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const{ return m_additionalSlaveSecurityGroups; }
+
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
@@ -322,12 +446,27 @@ namespace Model
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
-    inline JobFlowInstancesConfig&  WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
+    inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = value; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+    */
+    inline JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+    */
+    inline JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
     inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(const Aws::String& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+    */
+    inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>

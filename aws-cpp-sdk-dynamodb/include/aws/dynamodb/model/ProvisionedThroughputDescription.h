@@ -44,10 +44,16 @@ namespace Model
      <p>The date and time of the last provisioned throughput increase for this table.</p>
     */
     inline const Aws::String& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
+
     /*
      <p>The date and time of the last provisioned throughput increase for this table.</p>
     */
     inline void SetLastIncreaseDateTime(const Aws::String& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
+
+    /*
+     <p>The date and time of the last provisioned throughput increase for this table.</p>
+    */
+    inline void SetLastIncreaseDateTime(Aws::String&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
 
     /*
      <p>The date and time of the last provisioned throughput increase for this table.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The date and time of the last provisioned throughput increase for this table.</p>
     */
-    inline ProvisionedThroughputDescription&  WithLastIncreaseDateTime(const Aws::String& value) { SetLastIncreaseDateTime(value); return *this;}
+    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(const Aws::String& value) { SetLastIncreaseDateTime(value); return *this;}
+
+    /*
+     <p>The date and time of the last provisioned throughput increase for this table.</p>
+    */
+    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::String&& value) { SetLastIncreaseDateTime(value); return *this;}
 
     /*
      <p>The date and time of the last provisioned throughput increase for this table.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The date and time of the last provisioned throughput decrease for this table.</p>
     */
     inline const Aws::String& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
+
     /*
      <p>The date and time of the last provisioned throughput decrease for this table.</p>
     */
     inline void SetLastDecreaseDateTime(const Aws::String& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
+
+    /*
+     <p>The date and time of the last provisioned throughput decrease for this table.</p>
+    */
+    inline void SetLastDecreaseDateTime(Aws::String&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
 
     /*
      <p>The date and time of the last provisioned throughput decrease for this table.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The date and time of the last provisioned throughput decrease for this table.</p>
     */
-    inline ProvisionedThroughputDescription&  WithLastDecreaseDateTime(const Aws::String& value) { SetLastDecreaseDateTime(value); return *this;}
+    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(const Aws::String& value) { SetLastDecreaseDateTime(value); return *this;}
+
+    /*
+     <p>The date and time of the last provisioned throughput decrease for this table.</p>
+    */
+    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::String&& value) { SetLastDecreaseDateTime(value); return *this;}
 
     /*
      <p>The date and time of the last provisioned throughput decrease for this table.</p>
@@ -92,6 +114,7 @@ namespace Model
      <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     */
     inline long long GetNumberOfDecreasesToday() const{ return m_numberOfDecreasesToday; }
+
     /*
      <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     */
@@ -100,12 +123,13 @@ namespace Model
     /*
      <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     */
-    inline ProvisionedThroughputDescription&  WithNumberOfDecreasesToday(long long value) { SetNumberOfDecreasesToday(value); return *this;}
+    inline ProvisionedThroughputDescription& WithNumberOfDecreasesToday(long long value) { SetNumberOfDecreasesToday(value); return *this;}
 
     /*
      <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per second.</p>
     */
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+
     /*
      <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per second.</p>
     */
@@ -114,12 +138,13 @@ namespace Model
     /*
      <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per second.</p>
     */
-    inline ProvisionedThroughputDescription&  WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
+    inline ProvisionedThroughputDescription& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
 
     /*
      <p>The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.</p>
     */
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+
     /*
      <p>The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.</p>
     */
@@ -128,7 +153,7 @@ namespace Model
     /*
      <p>The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.</p>
     */
-    inline ProvisionedThroughputDescription&  WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
+    inline ProvisionedThroughputDescription& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
 
   private:
     Aws::String m_lastIncreaseDateTime;

@@ -46,10 +46,16 @@ namespace Model
      <p>The cloned stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The cloned stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+
+    /*
+     <p>The cloned stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackId = value; }
 
     /*
      <p>The cloned stack ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The cloned stack ID.</p>
     */
-    inline CloneStackResult&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline CloneStackResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The cloned stack ID.</p>
+    */
+    inline CloneStackResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The cloned stack ID.</p>

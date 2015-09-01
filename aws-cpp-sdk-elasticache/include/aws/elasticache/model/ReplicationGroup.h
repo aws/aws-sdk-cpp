@@ -51,10 +51,16 @@ namespace Model
      <p>The identifier for the replication group.</p>
     */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+
     /*
      <p>The identifier for the replication group.</p>
     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+
+    /*
+     <p>The identifier for the replication group.</p>
+    */
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /*
      <p>The identifier for the replication group.</p>
@@ -64,7 +70,12 @@ namespace Model
     /*
      <p>The identifier for the replication group.</p>
     */
-    inline ReplicationGroup&  WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
+    inline ReplicationGroup& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
+
+    /*
+     <p>The identifier for the replication group.</p>
+    */
+    inline ReplicationGroup& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
 
     /*
      <p>The identifier for the replication group.</p>
@@ -75,10 +86,16 @@ namespace Model
      <p>The description of the replication group.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>The description of the replication group.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>The description of the replication group.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>The description of the replication group.</p>
@@ -88,7 +105,12 @@ namespace Model
     /*
      <p>The description of the replication group.</p>
     */
-    inline ReplicationGroup&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline ReplicationGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>The description of the replication group.</p>
+    */
+    inline ReplicationGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>The description of the replication group.</p>
@@ -99,10 +121,16 @@ namespace Model
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
@@ -112,7 +140,12 @@ namespace Model
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
     */
-    inline ReplicationGroup&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline ReplicationGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
+    */
+    inline ReplicationGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
@@ -123,6 +156,7 @@ namespace Model
      <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
     */
     inline const ReplicationGroupPendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
+
     /*
      <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
     */
@@ -131,12 +165,23 @@ namespace Model
     /*
      <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
     */
-    inline ReplicationGroup&  WithPendingModifiedValues(const ReplicationGroupPendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
+    inline void SetPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
+
+    /*
+     <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
+    */
+    inline ReplicationGroup& WithPendingModifiedValues(const ReplicationGroupPendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
+
+    /*
+     <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
+    */
+    inline ReplicationGroup& WithPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { SetPendingModifiedValues(value); return *this;}
 
     /*
      <p>The names of all the cache clusters that are part of this replication group.</p>
     */
     inline const Aws::Vector<Aws::String>& GetMemberClusters() const{ return m_memberClusters; }
+
     /*
      <p>The names of all the cache clusters that are part of this replication group.</p>
     */
@@ -145,12 +190,27 @@ namespace Model
     /*
      <p>The names of all the cache clusters that are part of this replication group.</p>
     */
-    inline ReplicationGroup&  WithMemberClusters(const Aws::Vector<Aws::String>& value) { SetMemberClusters(value); return *this;}
+    inline void SetMemberClusters(Aws::Vector<Aws::String>&& value) { m_memberClustersHasBeenSet = true; m_memberClusters = value; }
+
+    /*
+     <p>The names of all the cache clusters that are part of this replication group.</p>
+    */
+    inline ReplicationGroup& WithMemberClusters(const Aws::Vector<Aws::String>& value) { SetMemberClusters(value); return *this;}
+
+    /*
+     <p>The names of all the cache clusters that are part of this replication group.</p>
+    */
+    inline ReplicationGroup& WithMemberClusters(Aws::Vector<Aws::String>&& value) { SetMemberClusters(value); return *this;}
 
     /*
      <p>The names of all the cache clusters that are part of this replication group.</p>
     */
     inline ReplicationGroup& AddMemberClusters(const Aws::String& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
+
+    /*
+     <p>The names of all the cache clusters that are part of this replication group.</p>
+    */
+    inline ReplicationGroup& AddMemberClusters(Aws::String&& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
 
     /*
      <p>The names of all the cache clusters that are part of this replication group.</p>
@@ -161,6 +221,7 @@ namespace Model
      <p>A single element list with information about the nodes in the replication group.</p>
     */
     inline const Aws::Vector<NodeGroup>& GetNodeGroups() const{ return m_nodeGroups; }
+
     /*
      <p>A single element list with information about the nodes in the replication group.</p>
     */
@@ -169,7 +230,17 @@ namespace Model
     /*
      <p>A single element list with information about the nodes in the replication group.</p>
     */
-    inline ReplicationGroup&  WithNodeGroups(const Aws::Vector<NodeGroup>& value) { SetNodeGroups(value); return *this;}
+    inline void SetNodeGroups(Aws::Vector<NodeGroup>&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups = value; }
+
+    /*
+     <p>A single element list with information about the nodes in the replication group.</p>
+    */
+    inline ReplicationGroup& WithNodeGroups(const Aws::Vector<NodeGroup>& value) { SetNodeGroups(value); return *this;}
+
+    /*
+     <p>A single element list with information about the nodes in the replication group.</p>
+    */
+    inline ReplicationGroup& WithNodeGroups(Aws::Vector<NodeGroup>&& value) { SetNodeGroups(value); return *this;}
 
     /*
      <p>A single element list with information about the nodes in the replication group.</p>
@@ -177,13 +248,24 @@ namespace Model
     inline ReplicationGroup& AddNodeGroups(const NodeGroup& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(value); return *this; }
 
     /*
+     <p>A single element list with information about the nodes in the replication group.</p>
+    */
+    inline ReplicationGroup& AddNodeGroups(NodeGroup&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(value); return *this; }
+
+    /*
      <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
     */
     inline const Aws::String& GetSnapshottingClusterId() const{ return m_snapshottingClusterId; }
+
     /*
      <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
     */
     inline void SetSnapshottingClusterId(const Aws::String& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
+
+    /*
+     <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
+    */
+    inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
 
     /*
      <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
@@ -193,7 +275,12 @@ namespace Model
     /*
      <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
     */
-    inline ReplicationGroup&  WithSnapshottingClusterId(const Aws::String& value) { SetSnapshottingClusterId(value); return *this;}
+    inline ReplicationGroup& WithSnapshottingClusterId(const Aws::String& value) { SetSnapshottingClusterId(value); return *this;}
+
+    /*
+     <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
+    */
+    inline ReplicationGroup& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(value); return *this;}
 
     /*
      <p>The cache cluster ID that is used as the daily snapshot source for the replication group.</p>
@@ -204,6 +291,7 @@ namespace Model
      <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
     */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
+
     /*
      <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
     */
@@ -212,7 +300,17 @@ namespace Model
     /*
      <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
     */
-    inline ReplicationGroup&  WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
+    inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
+
+    /*
+     <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+    */
+    inline ReplicationGroup& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
+
+    /*
+     <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+    */
+    inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(value); return *this;}
 
   private:
     Aws::String m_replicationGroupId;

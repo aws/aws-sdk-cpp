@@ -43,11 +43,18 @@ namespace Model
 
     
     inline const S3KeyFilter& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const S3KeyFilter& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline NotificationConfigurationFilter&  WithKey(const S3KeyFilter& value) { SetKey(value); return *this;}
+    inline void SetKey(S3KeyFilter&& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline NotificationConfigurationFilter& WithKey(const S3KeyFilter& value) { SetKey(value); return *this;}
+
+    
+    inline NotificationConfigurationFilter& WithKey(S3KeyFilter&& value) { SetKey(value); return *this;}
 
   private:
     S3KeyFilter m_key;

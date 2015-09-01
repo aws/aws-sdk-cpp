@@ -40,10 +40,16 @@ namespace Model
      <p>The log group name for which log streams are to be listed.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The log group name for which log streams are to be listed.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The log group name for which log streams are to be listed.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The log group name for which log streams are to be listed.</p>
     */
-    inline DescribeLogStreamsRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline DescribeLogStreamsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
+    inline DescribeLogStreamsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The log group name for which log streams are to be listed.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
     */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
+
     /*
      <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
     */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
+
+    /*
+     <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
+    */
+    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /*
      <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
     */
-    inline DescribeLogStreamsRequest&  WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
+    inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
+
+    /*
+     <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
+    */
+    inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /*
      <p> Will only return log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix filter is applied. </p>
@@ -88,6 +110,7 @@ namespace Model
      <p> Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix. </p>
     */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+
     /*
      <p> Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix. </p>
     */
@@ -96,12 +119,23 @@ namespace Model
     /*
      <p> Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix. </p>
     */
-    inline DescribeLogStreamsRequest&  WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
+    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+
+    /*
+     <p> Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix. </p>
+    */
+    inline DescribeLogStreamsRequest& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
+
+    /*
+     <p> Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix. </p>
+    */
+    inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(value); return *this;}
 
     /*
      <p> If set to true, results are returned in descending order. If you don't specify a value or set it to false, results are returned in ascending order. </p>
     */
     inline bool GetDescending() const{ return m_descending; }
+
     /*
      <p> If set to true, results are returned in descending order. If you don't specify a value or set it to false, results are returned in ascending order. </p>
     */
@@ -110,16 +144,22 @@ namespace Model
     /*
      <p> If set to true, results are returned in descending order. If you don't specify a value or set it to false, results are returned in ascending order. </p>
     */
-    inline DescribeLogStreamsRequest&  WithDescending(bool value) { SetDescending(value); return *this;}
+    inline DescribeLogStreamsRequest& WithDescending(bool value) { SetDescending(value); return *this;}
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
@@ -129,7 +169,12 @@ namespace Model
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
     */
-    inline DescribeLogStreamsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLogStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
+    */
+    inline DescribeLogStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code> request. </p>
@@ -140,6 +185,7 @@ namespace Model
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
@@ -148,7 +194,7 @@ namespace Model
     /*
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
-    inline DescribeLogStreamsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeLogStreamsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_logGroupName;

@@ -45,10 +45,16 @@ namespace Model
      <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
     */
-    inline Volume&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+    */
+    inline Volume& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>The path on the host container instance that is presented to the containers which access the volume. If this parameter is empty, then the Docker daemon assigns a host path for you.</p>
     */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
+
     /*
      <p>The path on the host container instance that is presented to the containers which access the volume. If this parameter is empty, then the Docker daemon assigns a host path for you.</p>
     */
@@ -77,7 +89,17 @@ namespace Model
     /*
      <p>The path on the host container instance that is presented to the containers which access the volume. If this parameter is empty, then the Docker daemon assigns a host path for you.</p>
     */
-    inline Volume&  WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
+    inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = value; }
+
+    /*
+     <p>The path on the host container instance that is presented to the containers which access the volume. If this parameter is empty, then the Docker daemon assigns a host path for you.</p>
+    */
+    inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
+
+    /*
+     <p>The path on the host container instance that is presented to the containers which access the volume. If this parameter is empty, then the Docker daemon assigns a host path for you.</p>
+    */
+    inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(value); return *this;}
 
   private:
     Aws::String m_name;

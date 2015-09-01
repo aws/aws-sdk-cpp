@@ -45,10 +45,16 @@ namespace Model
      The name of the bucket.
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      The name of the bucket.
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     The name of the bucket.
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the bucket.
@@ -58,7 +64,12 @@ namespace Model
     /*
      The name of the bucket.
     */
-    inline Bucket&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Bucket& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     The name of the bucket.
+    */
+    inline Bucket& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      The name of the bucket.
@@ -69,6 +80,7 @@ namespace Model
      Date the bucket was created.
     */
     inline double GetCreationDate() const{ return m_creationDate; }
+
     /*
      Date the bucket was created.
     */
@@ -77,7 +89,7 @@ namespace Model
     /*
      Date the bucket was created.
     */
-    inline Bucket&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline Bucket& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
   private:
     Aws::String m_name;

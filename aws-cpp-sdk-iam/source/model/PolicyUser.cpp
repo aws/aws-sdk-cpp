@@ -41,6 +41,11 @@ PolicyUser& PolicyUser::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());

@@ -49,18 +49,33 @@ EvaluationResult& EvaluationResult::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode evalActionNameNode = resultNode.FirstChild("EvalActionName");
+    if(evalActionNameNode.IsNull())
+    {
+      evalActionNameNode = resultNode;
+    }
+
     if(!evalActionNameNode.IsNull())
     {
       m_evalActionName = StringUtils::Trim(evalActionNameNode.GetText().c_str());
       m_evalActionNameHasBeenSet = true;
     }
     XmlNode evalResourceNameNode = resultNode.FirstChild("EvalResourceName");
+    if(evalResourceNameNode.IsNull())
+    {
+      evalResourceNameNode = resultNode;
+    }
+
     if(!evalResourceNameNode.IsNull())
     {
       m_evalResourceName = StringUtils::Trim(evalResourceNameNode.GetText().c_str());
       m_evalResourceNameHasBeenSet = true;
     }
     XmlNode evalDecisionNode = resultNode.FirstChild("EvalDecision");
+    if(evalDecisionNode.IsNull())
+    {
+      evalDecisionNode = resultNode;
+    }
+
     if(!evalDecisionNode.IsNull())
     {
       m_evalDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(evalDecisionNode.GetText().c_str()).c_str());

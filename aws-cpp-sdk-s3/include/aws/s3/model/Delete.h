@@ -44,19 +44,30 @@ namespace Model
 
     
     inline const Aws::Vector<ObjectIdentifier>& GetObjects() const{ return m_objects; }
+
     
     inline void SetObjects(const Aws::Vector<ObjectIdentifier>& value) { m_objectsHasBeenSet = true; m_objects = value; }
 
     
-    inline Delete&  WithObjects(const Aws::Vector<ObjectIdentifier>& value) { SetObjects(value); return *this;}
+    inline void SetObjects(Aws::Vector<ObjectIdentifier>&& value) { m_objectsHasBeenSet = true; m_objects = value; }
+
+    
+    inline Delete& WithObjects(const Aws::Vector<ObjectIdentifier>& value) { SetObjects(value); return *this;}
+
+    
+    inline Delete& WithObjects(Aws::Vector<ObjectIdentifier>&& value) { SetObjects(value); return *this;}
 
     
     inline Delete& AddObjects(const ObjectIdentifier& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
+
+    
+    inline Delete& AddObjects(ObjectIdentifier&& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
 
     /*
      Element to enable quiet mode for the request. When you add this element, you must set its value to true.
     */
     inline bool GetQuiet() const{ return m_quiet; }
+
     /*
      Element to enable quiet mode for the request. When you add this element, you must set its value to true.
     */
@@ -65,7 +76,7 @@ namespace Model
     /*
      Element to enable quiet mode for the request. When you add this element, you must set its value to true.
     */
-    inline Delete&  WithQuiet(bool value) { SetQuiet(value); return *this;}
+    inline Delete& WithQuiet(bool value) { SetQuiet(value); return *this;}
 
   private:
     Aws::Vector<ObjectIdentifier> m_objects;

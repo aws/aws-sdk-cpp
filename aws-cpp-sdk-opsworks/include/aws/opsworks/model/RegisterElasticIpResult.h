@@ -46,10 +46,16 @@ namespace Model
      <p>The Elastic IP address.</p>
     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+
     /*
      <p>The Elastic IP address.</p>
     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIp = value; }
+
+    /*
+     <p>The Elastic IP address.</p>
+    */
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIp = value; }
 
     /*
      <p>The Elastic IP address.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The Elastic IP address.</p>
     */
-    inline RegisterElasticIpResult&  WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+    inline RegisterElasticIpResult& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p>The Elastic IP address.</p>
+    */
+    inline RegisterElasticIpResult& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
 
     /*
      <p>The Elastic IP address.</p>

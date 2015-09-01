@@ -47,10 +47,16 @@ namespace Model
      <p>The elastic IP (EIP) address for the cluster.</p>
     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+
     /*
      <p>The elastic IP (EIP) address for the cluster.</p>
     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /*
      <p>The elastic IP (EIP) address for the cluster.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The elastic IP (EIP) address for the cluster.</p>
     */
-    inline ElasticIpStatus&  WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+    inline ElasticIpStatus& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline ElasticIpStatus& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
 
     /*
      <p>The elastic IP (EIP) address for the cluster.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>Describes the status of the elastic IP (EIP) address.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>Describes the status of the elastic IP (EIP) address.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>Describes the status of the elastic IP (EIP) address.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>Describes the status of the elastic IP (EIP) address.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>Describes the status of the elastic IP (EIP) address.</p>
     */
-    inline ElasticIpStatus&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline ElasticIpStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>Describes the status of the elastic IP (EIP) address.</p>
+    */
+    inline ElasticIpStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>Describes the status of the elastic IP (EIP) address.</p>

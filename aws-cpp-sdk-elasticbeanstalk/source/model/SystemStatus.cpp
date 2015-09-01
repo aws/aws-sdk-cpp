@@ -43,6 +43,11 @@ SystemStatus& SystemStatus::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode cPUUtilizationNode = resultNode.FirstChild("CPUUtilization");
+    if(cPUUtilizationNode.IsNull())
+    {
+      cPUUtilizationNode = resultNode;
+    }
+
     if(!cPUUtilizationNode.IsNull())
     {
       m_cPUUtilization = cPUUtilizationNode;

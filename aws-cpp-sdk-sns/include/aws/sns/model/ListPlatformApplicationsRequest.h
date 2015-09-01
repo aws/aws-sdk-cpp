@@ -38,10 +38,16 @@ namespace Model
      <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
     */
-    inline ListPlatformApplicationsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListPlatformApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
+    */
+    inline ListPlatformApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>

@@ -45,10 +45,16 @@ namespace Model
      <p>The on-premises instance tag filter key.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>The on-premises instance tag filter key.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>The on-premises instance tag filter key.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The on-premises instance tag filter key.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The on-premises instance tag filter key.</p>
     */
-    inline TagFilter&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline TagFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>The on-premises instance tag filter key.</p>
+    */
+    inline TagFilter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>The on-premises instance tag filter key.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The on-premises instance tag filter value.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>The on-premises instance tag filter value.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>The on-premises instance tag filter value.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>The on-premises instance tag filter value.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The on-premises instance tag filter value.</p>
     */
-    inline TagFilter&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline TagFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>The on-premises instance tag filter value.</p>
+    */
+    inline TagFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>The on-premises instance tag filter value.</p>
@@ -93,6 +115,7 @@ namespace Model
      <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
     */
     inline const TagFilterType& GetType() const{ return m_type; }
+
     /*
      <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
     */
@@ -101,7 +124,17 @@ namespace Model
     /*
      <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
     */
-    inline TagFilter&  WithType(const TagFilterType& value) { SetType(value); return *this;}
+    inline void SetType(TagFilterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+    */
+    inline TagFilter& WithType(const TagFilterType& value) { SetType(value); return *this;}
+
+    /*
+     <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+    */
+    inline TagFilter& WithType(TagFilterType&& value) { SetType(value); return *this;}
 
   private:
     Aws::String m_key;

@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline ScheduledUpdateGroupAction& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name of the scheduled action.</p>
     */
     inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+
     /*
      <p>The name of the scheduled action.</p>
     */
     inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
+
+    /*
+     <p>The name of the scheduled action.</p>
+    */
+    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
 
     /*
      <p>The name of the scheduled action.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name of the scheduled action.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
+
+    /*
+     <p>The name of the scheduled action.</p>
+    */
+    inline ScheduledUpdateGroupAction& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(value); return *this;}
 
     /*
      <p>The name of the scheduled action.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     */
     inline const Aws::String& GetScheduledActionARN() const{ return m_scheduledActionARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     */
     inline void SetScheduledActionARN(const Aws::String& value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
+    */
+    inline void SetScheduledActionARN(Aws::String&& value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithScheduledActionARN(const Aws::String& value) { SetScheduledActionARN(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithScheduledActionARN(const Aws::String& value) { SetScheduledActionARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
+    */
+    inline ScheduledUpdateGroupAction& WithScheduledActionARN(Aws::String&& value) { SetScheduledActionARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
@@ -119,6 +152,7 @@ namespace Model
      <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline double GetTime() const{ return m_time; }
+
     /*
      <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
     */
@@ -127,12 +161,13 @@ namespace Model
     /*
      <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithTime(double value) { SetTime(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithTime(double value) { SetTime(value); return *this;}
 
     /*
      <p>The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline double GetStartTime() const{ return m_startTime; }
+
     /*
      <p>The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
@@ -141,12 +176,13 @@ namespace Model
     /*
      <p>The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /*
      <p>The date and time that the action is scheduled to end. This date and time can be up to one month in the future.</p>
     */
     inline double GetEndTime() const{ return m_endTime; }
+
     /*
      <p>The date and time that the action is scheduled to end. This date and time can be up to one month in the future.</p>
     */
@@ -155,16 +191,22 @@ namespace Model
     /*
      <p>The date and time that the action is scheduled to end. This date and time can be up to one month in the future.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithEndTime(double value) { SetEndTime(value); return *this;}
 
     /*
      <p>The recurring schedule for the action.</p>
     */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
+
     /*
      <p>The recurring schedule for the action.</p>
     */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
+
+    /*
+     <p>The recurring schedule for the action.</p>
+    */
+    inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /*
      <p>The recurring schedule for the action.</p>
@@ -174,7 +216,12 @@ namespace Model
     /*
      <p>The recurring schedule for the action.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
+
+    /*
+     <p>The recurring schedule for the action.</p>
+    */
+    inline ScheduledUpdateGroupAction& WithRecurrence(Aws::String&& value) { SetRecurrence(value); return *this;}
 
     /*
      <p>The recurring schedule for the action.</p>
@@ -185,6 +232,7 @@ namespace Model
      <p>The minimum size of the group.</p>
     */
     inline long GetMinSize() const{ return m_minSize; }
+
     /*
      <p>The minimum size of the group.</p>
     */
@@ -193,12 +241,13 @@ namespace Model
     /*
      <p>The minimum size of the group.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithMinSize(long value) { SetMinSize(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithMinSize(long value) { SetMinSize(value); return *this;}
 
     /*
      <p>The maximum size of the group.</p>
     */
     inline long GetMaxSize() const{ return m_maxSize; }
+
     /*
      <p>The maximum size of the group.</p>
     */
@@ -207,12 +256,13 @@ namespace Model
     /*
      <p>The maximum size of the group.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithMaxSize(long value) { SetMaxSize(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithMaxSize(long value) { SetMaxSize(value); return *this;}
 
     /*
      <p>The number of instances you prefer to maintain in the group.</p>
     */
     inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
+
     /*
      <p>The number of instances you prefer to maintain in the group.</p>
     */
@@ -221,7 +271,7 @@ namespace Model
     /*
      <p>The number of instances you prefer to maintain in the group.</p>
     */
-    inline ScheduledUpdateGroupAction&  WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;

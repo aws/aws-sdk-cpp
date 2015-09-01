@@ -44,10 +44,16 @@ namespace Model
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -57,7 +63,12 @@ namespace Model
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
-    inline ListRecordsRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline ListRecordsRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline ListRecordsRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -68,10 +79,16 @@ namespace Model
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -81,7 +98,12 @@ namespace Model
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
-    inline ListRecordsRequest&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline ListRecordsRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline ListRecordsRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -92,10 +114,16 @@ namespace Model
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
+
+    /*
+     A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    */
+    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -105,7 +133,12 @@ namespace Model
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
-    inline ListRecordsRequest&  WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+    inline ListRecordsRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+
+    /*
+     A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    */
+    inline ListRecordsRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(value); return *this;}
 
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -116,6 +149,7 @@ namespace Model
      The last server sync count for this record.
     */
     inline long long GetLastSyncCount() const{ return m_lastSyncCount; }
+
     /*
      The last server sync count for this record.
     */
@@ -124,16 +158,22 @@ namespace Model
     /*
      The last server sync count for this record.
     */
-    inline ListRecordsRequest&  WithLastSyncCount(long long value) { SetLastSyncCount(value); return *this;}
+    inline ListRecordsRequest& WithLastSyncCount(long long value) { SetLastSyncCount(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token for obtaining the next page of results.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      A pagination token for obtaining the next page of results.
@@ -143,7 +183,12 @@ namespace Model
     /*
      A pagination token for obtaining the next page of results.
     */
-    inline ListRecordsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListRecordsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline ListRecordsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.
@@ -154,6 +199,7 @@ namespace Model
      The maximum number of results to be returned.
     */
     inline long GetMaxResults() const{ return m_maxResults; }
+
     /*
      The maximum number of results to be returned.
     */
@@ -162,16 +208,22 @@ namespace Model
     /*
      The maximum number of results to be returned.
     */
-    inline ListRecordsRequest&  WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListRecordsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
     /*
      A token containing a session ID, identity ID, and expiration.
     */
     inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
+
     /*
      A token containing a session ID, identity ID, and expiration.
     */
     inline void SetSyncSessionToken(const Aws::String& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = value; }
+
+    /*
+     A token containing a session ID, identity ID, and expiration.
+    */
+    inline void SetSyncSessionToken(Aws::String&& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = value; }
 
     /*
      A token containing a session ID, identity ID, and expiration.
@@ -181,7 +233,12 @@ namespace Model
     /*
      A token containing a session ID, identity ID, and expiration.
     */
-    inline ListRecordsRequest&  WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
+    inline ListRecordsRequest& WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
+
+    /*
+     A token containing a session ID, identity ID, and expiration.
+    */
+    inline ListRecordsRequest& WithSyncSessionToken(Aws::String&& value) { SetSyncSessionToken(value); return *this;}
 
     /*
      A token containing a session ID, identity ID, and expiration.

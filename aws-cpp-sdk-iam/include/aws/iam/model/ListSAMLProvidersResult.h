@@ -48,6 +48,7 @@ namespace Model
      <p>The list of SAML providers for this account.</p>
     */
     inline const Aws::Vector<SAMLProviderListEntry>& GetSAMLProviderList() const{ return m_sAMLProviderList; }
+
     /*
      <p>The list of SAML providers for this account.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>The list of SAML providers for this account.</p>
     */
-    inline ListSAMLProvidersResult&  WithSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { SetSAMLProviderList(value); return *this;}
+    inline void SetSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { m_sAMLProviderList = value; }
+
+    /*
+     <p>The list of SAML providers for this account.</p>
+    */
+    inline ListSAMLProvidersResult& WithSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { SetSAMLProviderList(value); return *this;}
+
+    /*
+     <p>The list of SAML providers for this account.</p>
+    */
+    inline ListSAMLProvidersResult& WithSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { SetSAMLProviderList(value); return *this;}
 
     /*
      <p>The list of SAML providers for this account.</p>
     */
     inline ListSAMLProvidersResult& AddSAMLProviderList(const SAMLProviderListEntry& value) { m_sAMLProviderList.push_back(value); return *this; }
 
+    /*
+     <p>The list of SAML providers for this account.</p>
+    */
+    inline ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListEntry&& value) { m_sAMLProviderList.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListSAMLProvidersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListSAMLProvidersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListSAMLProvidersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<SAMLProviderListEntry> m_sAMLProviderList;

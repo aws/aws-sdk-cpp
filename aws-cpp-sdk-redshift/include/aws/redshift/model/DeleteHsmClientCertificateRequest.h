@@ -38,10 +38,16 @@ namespace Model
      <p>The identifier of the HSM client certificate to be deleted.</p>
     */
     inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
+
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>
     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+
+    /*
+     <p>The identifier of the HSM client certificate to be deleted.</p>
+    */
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>
     */
-    inline DeleteHsmClientCertificateRequest&  WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline DeleteHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+
+    /*
+     <p>The identifier of the HSM client certificate to be deleted.</p>
+    */
+    inline DeleteHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>

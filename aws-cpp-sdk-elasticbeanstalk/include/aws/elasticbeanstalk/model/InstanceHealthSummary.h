@@ -46,6 +46,7 @@ namespace Model
      <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     */
     inline long GetNoData() const{ return m_noData; }
+
     /*
      <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     */
-    inline InstanceHealthSummary&  WithNoData(long value) { SetNoData(value); return *this;}
+    inline InstanceHealthSummary& WithNoData(long value) { SetNoData(value); return *this;}
 
     /*
      <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     */
     inline long GetUnknown() const{ return m_unknown; }
+
     /*
      <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     */
-    inline InstanceHealthSummary&  WithUnknown(long value) { SetUnknown(value); return *this;}
+    inline InstanceHealthSummary& WithUnknown(long value) { SetUnknown(value); return *this;}
 
     /*
      <p><b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     */
     inline long GetPending() const{ return m_pending; }
+
     /*
      <p><b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p><b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     */
-    inline InstanceHealthSummary&  WithPending(long value) { SetPending(value); return *this;}
+    inline InstanceHealthSummary& WithPending(long value) { SetPending(value); return *this;}
 
     /*
      <p><b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
     */
     inline long GetOk() const{ return m_ok; }
+
     /*
      <p><b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
     */
@@ -96,12 +100,13 @@ namespace Model
     /*
      <p><b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
     */
-    inline InstanceHealthSummary&  WithOk(long value) { SetOk(value); return *this;}
+    inline InstanceHealthSummary& WithOk(long value) { SetOk(value); return *this;}
 
     /*
      <p><b>Green.</b> An operation is in progress on an instance.</p>
     */
     inline long GetInfo() const{ return m_info; }
+
     /*
      <p><b>Green.</b> An operation is in progress on an instance.</p>
     */
@@ -110,12 +115,13 @@ namespace Model
     /*
      <p><b>Green.</b> An operation is in progress on an instance.</p>
     */
-    inline InstanceHealthSummary&  WithInfo(long value) { SetInfo(value); return *this;}
+    inline InstanceHealthSummary& WithInfo(long value) { SetInfo(value); return *this;}
 
     /*
      <p><b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
     */
     inline long GetWarning() const{ return m_warning; }
+
     /*
      <p><b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
     */
@@ -124,12 +130,13 @@ namespace Model
     /*
      <p><b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
     */
-    inline InstanceHealthSummary&  WithWarning(long value) { SetWarning(value); return *this;}
+    inline InstanceHealthSummary& WithWarning(long value) { SetWarning(value); return *this;}
 
     /*
      <p><b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
     */
     inline long GetDegraded() const{ return m_degraded; }
+
     /*
      <p><b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
     */
@@ -138,12 +145,13 @@ namespace Model
     /*
      <p><b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
     */
-    inline InstanceHealthSummary&  WithDegraded(long value) { SetDegraded(value); return *this;}
+    inline InstanceHealthSummary& WithDegraded(long value) { SetDegraded(value); return *this;}
 
     /*
      <p><b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     */
     inline long GetSevere() const{ return m_severe; }
+
     /*
      <p><b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     */
@@ -152,7 +160,7 @@ namespace Model
     /*
      <p><b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     */
-    inline InstanceHealthSummary&  WithSevere(long value) { SetSevere(value); return *this;}
+    inline InstanceHealthSummary& WithSevere(long value) { SetSevere(value); return *this;}
 
   private:
     long m_noData;

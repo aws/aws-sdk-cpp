@@ -37,10 +37,16 @@ namespace Model
      <p>The identifier of an access key.</p>
     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
     /*
      <p>The identifier of an access key.</p>
     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /*
+     <p>The identifier of an access key.</p>
+    */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The identifier of an access key.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The identifier of an access key.</p>
     */
-    inline GetAccessKeyLastUsedRequest&  WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+    inline GetAccessKeyLastUsedRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /*
+     <p>The identifier of an access key.</p>
+    */
+    inline GetAccessKeyLastUsedRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /*
      <p>The identifier of an access key.</p>

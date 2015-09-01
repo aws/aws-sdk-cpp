@@ -47,30 +47,54 @@ namespace Model
 
     
     inline const ReceiptRuleSetMetadata& GetMetadata() const{ return m_metadata; }
+
     
     inline void SetMetadata(const ReceiptRuleSetMetadata& value) { m_metadata = value; }
 
     
-    inline DescribeReceiptRuleSetResult&  WithMetadata(const ReceiptRuleSetMetadata& value) { SetMetadata(value); return *this;}
+    inline void SetMetadata(ReceiptRuleSetMetadata&& value) { m_metadata = value; }
+
+    
+    inline DescribeReceiptRuleSetResult& WithMetadata(const ReceiptRuleSetMetadata& value) { SetMetadata(value); return *this;}
+
+    
+    inline DescribeReceiptRuleSetResult& WithMetadata(ReceiptRuleSetMetadata&& value) { SetMetadata(value); return *this;}
 
     
     inline const Aws::Vector<ReceiptRule>& GetRules() const{ return m_rules; }
+
     
     inline void SetRules(const Aws::Vector<ReceiptRule>& value) { m_rules = value; }
 
     
-    inline DescribeReceiptRuleSetResult&  WithRules(const Aws::Vector<ReceiptRule>& value) { SetRules(value); return *this;}
+    inline void SetRules(Aws::Vector<ReceiptRule>&& value) { m_rules = value; }
+
+    
+    inline DescribeReceiptRuleSetResult& WithRules(const Aws::Vector<ReceiptRule>& value) { SetRules(value); return *this;}
+
+    
+    inline DescribeReceiptRuleSetResult& WithRules(Aws::Vector<ReceiptRule>&& value) { SetRules(value); return *this;}
 
     
     inline DescribeReceiptRuleSetResult& AddRules(const ReceiptRule& value) { m_rules.push_back(value); return *this; }
 
     
+    inline DescribeReceiptRuleSetResult& AddRules(ReceiptRule&& value) { m_rules.push_back(value); return *this; }
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeReceiptRuleSetResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeReceiptRuleSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeReceiptRuleSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReceiptRuleSetMetadata m_metadata;

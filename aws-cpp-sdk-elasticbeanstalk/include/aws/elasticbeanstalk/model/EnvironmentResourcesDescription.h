@@ -47,6 +47,7 @@ namespace Model
      <p>Describes the LoadBalancer.</p>
     */
     inline const LoadBalancerDescription& GetLoadBalancer() const{ return m_loadBalancer; }
+
     /*
      <p>Describes the LoadBalancer.</p>
     */
@@ -55,7 +56,17 @@ namespace Model
     /*
      <p>Describes the LoadBalancer.</p>
     */
-    inline EnvironmentResourcesDescription&  WithLoadBalancer(const LoadBalancerDescription& value) { SetLoadBalancer(value); return *this;}
+    inline void SetLoadBalancer(LoadBalancerDescription&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = value; }
+
+    /*
+     <p>Describes the LoadBalancer.</p>
+    */
+    inline EnvironmentResourcesDescription& WithLoadBalancer(const LoadBalancerDescription& value) { SetLoadBalancer(value); return *this;}
+
+    /*
+     <p>Describes the LoadBalancer.</p>
+    */
+    inline EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerDescription&& value) { SetLoadBalancer(value); return *this;}
 
   private:
     LoadBalancerDescription m_loadBalancer;

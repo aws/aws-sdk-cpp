@@ -47,36 +47,66 @@ namespace Model
 
     
     inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const{ return m_topicConfigurations; }
+
     
     inline void SetTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { m_topicConfigurations = value; }
 
     
-    inline GetBucketNotificationConfigurationResult&  WithTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { SetTopicConfigurations(value); return *this;}
+    inline void SetTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { m_topicConfigurations = value; }
+
+    
+    inline GetBucketNotificationConfigurationResult& WithTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { SetTopicConfigurations(value); return *this;}
+
+    
+    inline GetBucketNotificationConfigurationResult& WithTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { SetTopicConfigurations(value); return *this;}
 
     
     inline GetBucketNotificationConfigurationResult& AddTopicConfigurations(const TopicConfiguration& value) { m_topicConfigurations.push_back(value); return *this; }
 
     
+    inline GetBucketNotificationConfigurationResult& AddTopicConfigurations(TopicConfiguration&& value) { m_topicConfigurations.push_back(value); return *this; }
+
+    
     inline const Aws::Vector<QueueConfiguration>& GetQueueConfigurations() const{ return m_queueConfigurations; }
+
     
     inline void SetQueueConfigurations(const Aws::Vector<QueueConfiguration>& value) { m_queueConfigurations = value; }
 
     
-    inline GetBucketNotificationConfigurationResult&  WithQueueConfigurations(const Aws::Vector<QueueConfiguration>& value) { SetQueueConfigurations(value); return *this;}
+    inline void SetQueueConfigurations(Aws::Vector<QueueConfiguration>&& value) { m_queueConfigurations = value; }
+
+    
+    inline GetBucketNotificationConfigurationResult& WithQueueConfigurations(const Aws::Vector<QueueConfiguration>& value) { SetQueueConfigurations(value); return *this;}
+
+    
+    inline GetBucketNotificationConfigurationResult& WithQueueConfigurations(Aws::Vector<QueueConfiguration>&& value) { SetQueueConfigurations(value); return *this;}
 
     
     inline GetBucketNotificationConfigurationResult& AddQueueConfigurations(const QueueConfiguration& value) { m_queueConfigurations.push_back(value); return *this; }
 
     
+    inline GetBucketNotificationConfigurationResult& AddQueueConfigurations(QueueConfiguration&& value) { m_queueConfigurations.push_back(value); return *this; }
+
+    
     inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
+
     
     inline void SetLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { m_lambdaFunctionConfigurations = value; }
 
     
-    inline GetBucketNotificationConfigurationResult&  WithLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { SetLambdaFunctionConfigurations(value); return *this;}
+    inline void SetLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { m_lambdaFunctionConfigurations = value; }
+
+    
+    inline GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { SetLambdaFunctionConfigurations(value); return *this;}
+
+    
+    inline GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { SetLambdaFunctionConfigurations(value); return *this;}
 
     
     inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(const LambdaFunctionConfiguration& value) { m_lambdaFunctionConfigurations.push_back(value); return *this; }
+
+    
+    inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurations.push_back(value); return *this; }
 
   private:
     Aws::Vector<TopicConfiguration> m_topicConfigurations;

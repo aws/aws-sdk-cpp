@@ -47,10 +47,16 @@ namespace Model
      The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /*
+     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+    */
+    inline void SetLocation(Aws::String&& value) { m_location = value; }
 
     /*
      The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
     */
-    inline CreateInvalidation2015_04_17Result&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline CreateInvalidation2015_04_17Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+    */
+    inline CreateInvalidation2015_04_17Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
@@ -71,6 +82,7 @@ namespace Model
      The invalidation's information.
     */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
+
     /*
      The invalidation's information.
     */
@@ -79,7 +91,17 @@ namespace Model
     /*
      The invalidation's information.
     */
-    inline CreateInvalidation2015_04_17Result&  WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
+    inline void SetInvalidation(Invalidation&& value) { m_invalidation = value; }
+
+    /*
+     The invalidation's information.
+    */
+    inline CreateInvalidation2015_04_17Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
+
+    /*
+     The invalidation's information.
+    */
+    inline CreateInvalidation2015_04_17Result& WithInvalidation(Invalidation&& value) { SetInvalidation(value); return *this;}
 
   private:
     Aws::String m_location;

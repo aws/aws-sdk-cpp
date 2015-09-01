@@ -40,10 +40,16 @@ namespace Model
      <p>The identifier of the cluster with steps to describe.</p>
     */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
     /*
      <p>The identifier of the cluster with steps to describe.</p>
     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /*
+     <p>The identifier of the cluster with steps to describe.</p>
+    */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /*
      <p>The identifier of the cluster with steps to describe.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The identifier of the cluster with steps to describe.</p>
     */
-    inline DescribeStepRequest&  WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+    inline DescribeStepRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /*
+     <p>The identifier of the cluster with steps to describe.</p>
+    */
+    inline DescribeStepRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
 
     /*
      <p>The identifier of the cluster with steps to describe.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The identifier of the step to describe.</p>
     */
     inline const Aws::String& GetStepId() const{ return m_stepId; }
+
     /*
      <p>The identifier of the step to describe.</p>
     */
     inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
+
+    /*
+     <p>The identifier of the step to describe.</p>
+    */
+    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
 
     /*
      <p>The identifier of the step to describe.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The identifier of the step to describe.</p>
     */
-    inline DescribeStepRequest&  WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
+    inline DescribeStepRequest& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
+
+    /*
+     <p>The identifier of the step to describe.</p>
+    */
+    inline DescribeStepRequest& WithStepId(Aws::String&& value) { SetStepId(value); return *this;}
 
     /*
      <p>The identifier of the step to describe.</p>

@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline DeleteNotificationConfigurationRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DeleteNotificationConfigurationRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline DeleteNotificationConfigurationRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
+    */
+    inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
-    inline DeleteNotificationConfigurationRequest&  WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
+    inline DeleteNotificationConfigurationRequest& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
+    */
+    inline DeleteNotificationConfigurationRequest& WithTopicARN(Aws::String&& value) { SetTopicARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>

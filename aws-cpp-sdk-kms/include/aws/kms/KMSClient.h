@@ -237,19 +237,19 @@ namespace Model
 
         ~KMSClient();
             /*
-            ${operation.documentation}
+            
         */
         Model::CancelKeyDeletionOutcome CancelKeyDeletion(const Model::CancelKeyDeletionRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::CancelKeyDeletionOutcomeCallable CancelKeyDeletionCallable(const Model::CancelKeyDeletionRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -636,19 +636,19 @@ namespace Model
         void ListKeysAsync(const Model::ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::ListRetirableGrantsOutcome ListRetirableGrants(const Model::ListRetirableGrantsRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::ListRetirableGrantsOutcomeCallable ListRetirableGrantsCallable(const Model::ListRetirableGrantsRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -731,19 +731,19 @@ namespace Model
         void RevokeGrantAsync(const Model::RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::ScheduleKeyDeletionOutcome ScheduleKeyDeletion(const Model::ScheduleKeyDeletionRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */

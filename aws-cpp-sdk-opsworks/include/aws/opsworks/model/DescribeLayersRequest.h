@@ -40,10 +40,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline DescribeLayersRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline DescribeLayersRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline DescribeLayersRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
     /*
      <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     */
@@ -72,12 +84,27 @@ namespace Model
     /*
      <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     */
-    inline DescribeLayersRequest&  WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /*
+     <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    */
+    inline DescribeLayersRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+
+    /*
+     <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    */
+    inline DescribeLayersRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
 
     /*
      <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     */
     inline DescribeLayersRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /*
+     <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    */
+    inline DescribeLayersRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>

@@ -47,10 +47,16 @@ namespace Model
      <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
     */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
     /*
      <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
     */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
+
+    /*
+     <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
+    */
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /*
      <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
     */
-    inline PolicyVersion&  WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
+    inline PolicyVersion& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
+
+    /*
+     <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
+    */
+    inline PolicyVersion& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
     /*
      <p>The policy document.</p> <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /*
+     <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
     */
-    inline PolicyVersion&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline PolicyVersion& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
+    */
+    inline PolicyVersion& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      <p>The identifier for the policy version.</p> <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
@@ -95,6 +117,7 @@ namespace Model
      <p>Specifies whether the policy version is set as the policy's default version.</p>
     */
     inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
+
     /*
      <p>Specifies whether the policy version is set as the policy's default version.</p>
     */
@@ -103,12 +126,13 @@ namespace Model
     /*
      <p>Specifies whether the policy version is set as the policy's default version.</p>
     */
-    inline PolicyVersion&  WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
+    inline PolicyVersion& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy version was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy version was created.</p>
     */
@@ -117,7 +141,7 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy version was created.</p>
     */
-    inline PolicyVersion&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline PolicyVersion& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
   private:
     Aws::String m_document;

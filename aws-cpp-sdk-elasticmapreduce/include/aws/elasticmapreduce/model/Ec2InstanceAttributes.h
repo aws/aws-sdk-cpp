@@ -45,10 +45,16 @@ namespace Model
      <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
     */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
+
     /*
      <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
     */
     inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
+
+    /*
+     <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
+    */
+    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /*
      <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
     */
-    inline Ec2InstanceAttributes&  WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
+    inline Ec2InstanceAttributes& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
+
+    /*
+     <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
+    */
+    inline Ec2InstanceAttributes& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(value); return *this;}
 
     /*
      <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
@@ -69,10 +80,16 @@ namespace Model
      <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
     */
     inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
+
     /*
      <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
     */
     inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
+
+    /*
+     <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
+    */
+    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /*
      <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
     */
-    inline Ec2InstanceAttributes&  WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
+    inline Ec2InstanceAttributes& WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
+
+    /*
+     <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
+    */
+    inline Ec2InstanceAttributes& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(value); return *this;}
 
     /*
      <p> To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. </p> <p> Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC. </p>
@@ -93,10 +115,16 @@ namespace Model
      <p>The Availability Zone in which the cluster will run.</p>
     */
     inline const Aws::String& GetEc2AvailabilityZone() const{ return m_ec2AvailabilityZone; }
+
     /*
      <p>The Availability Zone in which the cluster will run.</p>
     */
     inline void SetEc2AvailabilityZone(const Aws::String& value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone = value; }
+
+    /*
+     <p>The Availability Zone in which the cluster will run.</p>
+    */
+    inline void SetEc2AvailabilityZone(Aws::String&& value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone = value; }
 
     /*
      <p>The Availability Zone in which the cluster will run.</p>
@@ -106,7 +134,12 @@ namespace Model
     /*
      <p>The Availability Zone in which the cluster will run.</p>
     */
-    inline Ec2InstanceAttributes&  WithEc2AvailabilityZone(const Aws::String& value) { SetEc2AvailabilityZone(value); return *this;}
+    inline Ec2InstanceAttributes& WithEc2AvailabilityZone(const Aws::String& value) { SetEc2AvailabilityZone(value); return *this;}
+
+    /*
+     <p>The Availability Zone in which the cluster will run.</p>
+    */
+    inline Ec2InstanceAttributes& WithEc2AvailabilityZone(Aws::String&& value) { SetEc2AvailabilityZone(value); return *this;}
 
     /*
      <p>The Availability Zone in which the cluster will run.</p>
@@ -117,10 +150,16 @@ namespace Model
      <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
     */
     inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+
     /*
      <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
     */
     inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+
+    /*
+     <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
+    */
+    inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /*
      <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
@@ -130,7 +169,12 @@ namespace Model
     /*
      <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
     */
-    inline Ec2InstanceAttributes&  WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
+    inline Ec2InstanceAttributes& WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
+
+    /*
+     <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
+    */
+    inline Ec2InstanceAttributes& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(value); return *this;}
 
     /*
      <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
@@ -141,10 +185,16 @@ namespace Model
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
     */
     inline const Aws::String& GetEmrManagedMasterSecurityGroup() const{ return m_emrManagedMasterSecurityGroup; }
+
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
     */
     inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
+    */
+    inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
@@ -154,7 +204,12 @@ namespace Model
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
     */
-    inline Ec2InstanceAttributes&  WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
+    inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
+    */
+    inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the master node.</p>
@@ -165,10 +220,16 @@ namespace Model
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
     */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
+
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
     */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
+    */
+    inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
@@ -178,7 +239,12 @@ namespace Model
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
     */
-    inline Ec2InstanceAttributes&  WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+    inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+
+    /*
+     <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
+    */
+    inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /*
      <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce) for the slave nodes.</p>
@@ -189,6 +255,7 @@ namespace Model
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAdditionalMasterSecurityGroups() const{ return m_additionalMasterSecurityGroups; }
+
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
@@ -197,12 +264,27 @@ namespace Model
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
-    inline Ec2InstanceAttributes&  WithAdditionalMasterSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
+    inline void SetAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = value; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    */
+    inline Ec2InstanceAttributes& WithAdditionalMasterSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    */
+    inline Ec2InstanceAttributes& WithAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     */
     inline Ec2InstanceAttributes& AddAdditionalMasterSecurityGroups(const Aws::String& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    */
+    inline Ec2InstanceAttributes& AddAdditionalMasterSecurityGroups(Aws::String&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -213,6 +295,7 @@ namespace Model
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const{ return m_additionalSlaveSecurityGroups; }
+
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
@@ -221,12 +304,27 @@ namespace Model
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
-    inline Ec2InstanceAttributes&  WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
+    inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = value; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+    */
+    inline Ec2InstanceAttributes& WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+    */
+    inline Ec2InstanceAttributes& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
     */
     inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(const Aws::String& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+    */
+    inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 
     /*
      <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>

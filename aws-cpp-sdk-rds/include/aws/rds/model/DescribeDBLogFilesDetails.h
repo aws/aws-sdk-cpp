@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the log file for the specified DB instance. </p>
     */
     inline const Aws::String& GetLogFileName() const{ return m_logFileName; }
+
     /*
      <p> The name of the log file for the specified DB instance. </p>
     */
     inline void SetLogFileName(const Aws::String& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
+
+    /*
+     <p> The name of the log file for the specified DB instance. </p>
+    */
+    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
 
     /*
      <p> The name of the log file for the specified DB instance. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the log file for the specified DB instance. </p>
     */
-    inline DescribeDBLogFilesDetails&  WithLogFileName(const Aws::String& value) { SetLogFileName(value); return *this;}
+    inline DescribeDBLogFilesDetails& WithLogFileName(const Aws::String& value) { SetLogFileName(value); return *this;}
+
+    /*
+     <p> The name of the log file for the specified DB instance. </p>
+    */
+    inline DescribeDBLogFilesDetails& WithLogFileName(Aws::String&& value) { SetLogFileName(value); return *this;}
 
     /*
      <p> The name of the log file for the specified DB instance. </p>
@@ -71,6 +82,7 @@ namespace Model
      <p> A POSIX timestamp when the last log entry was written. </p>
     */
     inline long long GetLastWritten() const{ return m_lastWritten; }
+
     /*
      <p> A POSIX timestamp when the last log entry was written. </p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p> A POSIX timestamp when the last log entry was written. </p>
     */
-    inline DescribeDBLogFilesDetails&  WithLastWritten(long long value) { SetLastWritten(value); return *this;}
+    inline DescribeDBLogFilesDetails& WithLastWritten(long long value) { SetLastWritten(value); return *this;}
 
     /*
      <p> The size, in bytes, of the log file for the specified DB instance. </p>
     */
     inline long long GetSize() const{ return m_size; }
+
     /*
      <p> The size, in bytes, of the log file for the specified DB instance. </p>
     */
@@ -93,7 +106,7 @@ namespace Model
     /*
      <p> The size, in bytes, of the log file for the specified DB instance. </p>
     */
-    inline DescribeDBLogFilesDetails&  WithSize(long long value) { SetSize(value); return *this;}
+    inline DescribeDBLogFilesDetails& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
     Aws::String m_logFileName;

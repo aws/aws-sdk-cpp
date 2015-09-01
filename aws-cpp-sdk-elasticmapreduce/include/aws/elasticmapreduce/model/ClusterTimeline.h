@@ -43,6 +43,7 @@ namespace Model
      <p>The creation date and time of the cluster.</p>
     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
+
     /*
      <p>The creation date and time of the cluster.</p>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The creation date and time of the cluster.</p>
     */
-    inline ClusterTimeline&  WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline ClusterTimeline& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
     /*
      <p>The date and time when the cluster was ready to execute steps.</p>
     */
     inline double GetReadyDateTime() const{ return m_readyDateTime; }
+
     /*
      <p>The date and time when the cluster was ready to execute steps.</p>
     */
@@ -65,12 +67,13 @@ namespace Model
     /*
      <p>The date and time when the cluster was ready to execute steps.</p>
     */
-    inline ClusterTimeline&  WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
+    inline ClusterTimeline& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
 
     /*
      <p>The date and time when the cluster was terminated.</p>
     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
+
     /*
      <p>The date and time when the cluster was terminated.</p>
     */
@@ -79,7 +82,7 @@ namespace Model
     /*
      <p>The date and time when the cluster was terminated.</p>
     */
-    inline ClusterTimeline&  WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline ClusterTimeline& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
   private:
     double m_creationDateTime;

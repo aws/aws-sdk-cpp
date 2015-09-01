@@ -43,12 +43,22 @@ LoadBalancerState& LoadBalancerState::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
+    if(loadBalancerNameNode.IsNull())
+    {
+      loadBalancerNameNode = resultNode;
+    }
+
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
+    if(stateNode.IsNull())
+    {
+      stateNode = resultNode;
+    }
+
     if(!stateNode.IsNull())
     {
       m_state = StringUtils::Trim(stateNode.GetText().c_str());

@@ -40,10 +40,16 @@ namespace Model
      <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
     */
     inline const Aws::String& GetExclusiveStartTableName() const{ return m_exclusiveStartTableName; }
+
     /*
      <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
     */
     inline void SetExclusiveStartTableName(const Aws::String& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
+
+    /*
+     <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
+    */
+    inline void SetExclusiveStartTableName(Aws::String&& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
 
     /*
      <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
     */
-    inline ListTablesRequest&  WithExclusiveStartTableName(const Aws::String& value) { SetExclusiveStartTableName(value); return *this;}
+    inline ListTablesRequest& WithExclusiveStartTableName(const Aws::String& value) { SetExclusiveStartTableName(value); return *this;}
+
+    /*
+     <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
+    */
+    inline ListTablesRequest& WithExclusiveStartTableName(Aws::String&& value) { SetExclusiveStartTableName(value); return *this;}
 
     /*
      <p>The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p> A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p> A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     */
@@ -72,7 +84,7 @@ namespace Model
     /*
      <p> A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     */
-    inline ListTablesRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListTablesRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_exclusiveStartTableName;

@@ -46,6 +46,7 @@ namespace Model
      <p>Specifies whether connection draining is enabled for the load balancer.</p>
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      <p>Specifies whether connection draining is enabled for the load balancer.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>Specifies whether connection draining is enabled for the load balancer.</p>
     */
-    inline ConnectionDraining&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline ConnectionDraining& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /*
      <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     */
     inline long GetTimeout() const{ return m_timeout; }
+
     /*
      <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     */
@@ -68,7 +70,7 @@ namespace Model
     /*
      <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     */
-    inline ConnectionDraining&  WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline ConnectionDraining& WithTimeout(long value) { SetTimeout(value); return *this;}
 
   private:
     bool m_enabled;

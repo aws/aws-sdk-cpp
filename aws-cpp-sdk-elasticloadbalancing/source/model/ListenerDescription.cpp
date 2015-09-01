@@ -43,6 +43,11 @@ ListenerDescription& ListenerDescription::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode listenerNode = resultNode.FirstChild("Listener");
+    if(listenerNode.IsNull())
+    {
+      listenerNode = resultNode;
+    }
+
     if(!listenerNode.IsNull())
     {
       m_listener = listenerNode;

@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the instance profile.</p>
     */
     inline const InstanceProfile& GetInstanceProfile() const{ return m_instanceProfile; }
+
     /*
      <p>Information about the instance profile.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the instance profile.</p>
     */
-    inline GetInstanceProfileResult&  WithInstanceProfile(const InstanceProfile& value) { SetInstanceProfile(value); return *this;}
+    inline void SetInstanceProfile(InstanceProfile&& value) { m_instanceProfile = value; }
+
+    /*
+     <p>Information about the instance profile.</p>
+    */
+    inline GetInstanceProfileResult& WithInstanceProfile(const InstanceProfile& value) { SetInstanceProfile(value); return *this;}
+
+    /*
+     <p>Information about the instance profile.</p>
+    */
+    inline GetInstanceProfileResult& WithInstanceProfile(InstanceProfile&& value) { SetInstanceProfile(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetInstanceProfileResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetInstanceProfileResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetInstanceProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     InstanceProfile m_instanceProfile;

@@ -46,10 +46,16 @@ namespace Model
      <p>The name of the on-premises instance.</p>
     */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
     /*
      <p>The name of the on-premises instance.</p>
     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+
+    /*
+     <p>The name of the on-premises instance.</p>
+    */
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /*
      <p>The name of the on-premises instance.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The name of the on-premises instance.</p>
     */
-    inline InstanceInfo&  WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+    inline InstanceInfo& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+
+    /*
+     <p>The name of the on-premises instance.</p>
+    */
+    inline InstanceInfo& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
 
     /*
      <p>The name of the on-premises instance.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The IAM user ARN associated with the on-premises instance.</p>
     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
     /*
      <p>The IAM user ARN associated with the on-premises instance.</p>
     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+
+    /*
+     <p>The IAM user ARN associated with the on-premises instance.</p>
+    */
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The IAM user ARN associated with the on-premises instance.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The IAM user ARN associated with the on-premises instance.</p>
     */
-    inline InstanceInfo&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+    inline InstanceInfo& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+
+    /*
+     <p>The IAM user ARN associated with the on-premises instance.</p>
+    */
+    inline InstanceInfo& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /*
      <p>The IAM user ARN associated with the on-premises instance.</p>
@@ -94,10 +116,16 @@ namespace Model
      <p>The ARN of the on-premises instance.</p>
     */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
     /*
      <p>The ARN of the on-premises instance.</p>
     */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+
+    /*
+     <p>The ARN of the on-premises instance.</p>
+    */
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /*
      <p>The ARN of the on-premises instance.</p>
@@ -107,7 +135,12 @@ namespace Model
     /*
      <p>The ARN of the on-premises instance.</p>
     */
-    inline InstanceInfo&  WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+    inline InstanceInfo& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+
+    /*
+     <p>The ARN of the on-premises instance.</p>
+    */
+    inline InstanceInfo& WithInstanceArn(Aws::String&& value) { SetInstanceArn(value); return *this;}
 
     /*
      <p>The ARN of the on-premises instance.</p>
@@ -118,6 +151,7 @@ namespace Model
      <p>The time that the on-premises instance was registered.</p>
     */
     inline double GetRegisterTime() const{ return m_registerTime; }
+
     /*
      <p>The time that the on-premises instance was registered.</p>
     */
@@ -126,12 +160,13 @@ namespace Model
     /*
      <p>The time that the on-premises instance was registered.</p>
     */
-    inline InstanceInfo&  WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
+    inline InstanceInfo& WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
 
     /*
      <p>If the on-premises instance was deregistered, the time that the on-premises instance was deregistered.</p>
     */
     inline double GetDeregisterTime() const{ return m_deregisterTime; }
+
     /*
      <p>If the on-premises instance was deregistered, the time that the on-premises instance was deregistered.</p>
     */
@@ -140,12 +175,13 @@ namespace Model
     /*
      <p>If the on-premises instance was deregistered, the time that the on-premises instance was deregistered.</p>
     */
-    inline InstanceInfo&  WithDeregisterTime(double value) { SetDeregisterTime(value); return *this;}
+    inline InstanceInfo& WithDeregisterTime(double value) { SetDeregisterTime(value); return *this;}
 
     /*
      <p>The tags that are currently associated with the on-premises instance.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>The tags that are currently associated with the on-premises instance.</p>
     */
@@ -154,12 +190,27 @@ namespace Model
     /*
      <p>The tags that are currently associated with the on-premises instance.</p>
     */
-    inline InstanceInfo&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The tags that are currently associated with the on-premises instance.</p>
+    */
+    inline InstanceInfo& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The tags that are currently associated with the on-premises instance.</p>
+    */
+    inline InstanceInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The tags that are currently associated with the on-premises instance.</p>
     */
     inline InstanceInfo& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The tags that are currently associated with the on-premises instance.</p>
+    */
+    inline InstanceInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_instanceName;

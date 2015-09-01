@@ -49,10 +49,16 @@ namespace Model
      <p> The identifier for the source of the event. </p>
     */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
     /*
      <p> The identifier for the source of the event. </p>
     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+
+    /*
+     <p> The identifier for the source of the event. </p>
+    */
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /*
      <p> The identifier for the source of the event. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> The identifier for the source of the event. </p>
     */
-    inline Event&  WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+    inline Event& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier for the source of the event. </p>
+    */
+    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
     /*
      <p> The identifier for the source of the event. </p>
@@ -73,6 +84,7 @@ namespace Model
      <p> The source type for this event. </p>
     */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
+
     /*
      <p> The source type for this event. </p>
     */
@@ -81,16 +93,32 @@ namespace Model
     /*
      <p> The source type for this event. </p>
     */
-    inline Event&  WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+
+    /*
+     <p> The source type for this event. </p>
+    */
+    inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
+
+    /*
+     <p> The source type for this event. </p>
+    */
+    inline Event& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
     /*
      <p> The text of this event. </p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p> The text of this event. </p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p> The text of this event. </p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p> The text of this event. </p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p> The text of this event. </p>
     */
-    inline Event&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p> The text of this event. </p>
+    */
+    inline Event& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p> The text of this event. </p>
@@ -111,6 +144,7 @@ namespace Model
      <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
     */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
     /*
      <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
     */
@@ -119,12 +153,27 @@ namespace Model
     /*
      <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
     */
-    inline Event&  WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+
+    /*
+     <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
+    */
+    inline Event& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
+
+    /*
+     <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
+    */
+    inline Event& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
 
     /*
      <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
     */
     inline Event& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+
+    /*
+     <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
+    */
+    inline Event& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /*
      <p> A list of the event categories. </p> <p>Values: Configuration, Management, Monitoring, Security</p>
@@ -135,10 +184,16 @@ namespace Model
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
     */
     inline const Aws::String& GetSeverity() const{ return m_severity; }
+
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
     */
     inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /*
+     <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
+    */
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -148,7 +203,12 @@ namespace Model
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
     */
-    inline Event&  WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+    inline Event& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+
+    /*
+     <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
+    */
+    inline Event& WithSeverity(Aws::String&& value) { SetSeverity(value); return *this;}
 
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -159,6 +219,7 @@ namespace Model
      <p> The date and time of the event. </p>
     */
     inline double GetDate() const{ return m_date; }
+
     /*
      <p> The date and time of the event. </p>
     */
@@ -167,16 +228,22 @@ namespace Model
     /*
      <p> The date and time of the event. </p>
     */
-    inline Event&  WithDate(double value) { SetDate(value); return *this;}
+    inline Event& WithDate(double value) { SetDate(value); return *this;}
 
     /*
      <p> The identifier of the event. </p>
     */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
+
     /*
      <p> The identifier of the event. </p>
     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+
+    /*
+     <p> The identifier of the event. </p>
+    */
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /*
      <p> The identifier of the event. </p>
@@ -186,7 +253,12 @@ namespace Model
     /*
      <p> The identifier of the event. </p>
     */
-    inline Event&  WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
+    inline Event& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
+
+    /*
+     <p> The identifier of the event. </p>
+    */
+    inline Event& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
 
     /*
      <p> The identifier of the event. </p>

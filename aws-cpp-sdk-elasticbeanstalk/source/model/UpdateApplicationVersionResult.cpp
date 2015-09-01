@@ -42,6 +42,11 @@ UpdateApplicationVersionResult& UpdateApplicationVersionResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode applicationVersionNode = resultNode.FirstChild("ApplicationVersion");
+    if(applicationVersionNode.IsNull())
+    {
+      applicationVersionNode = resultNode;
+    }
+
     if(!applicationVersionNode.IsNull())
     {
       m_applicationVersion = applicationVersionNode;

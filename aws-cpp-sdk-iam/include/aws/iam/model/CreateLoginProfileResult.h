@@ -47,6 +47,7 @@ namespace Model
      <p>The user name and password create date.</p>
     */
     inline const LoginProfile& GetLoginProfile() const{ return m_loginProfile; }
+
     /*
      <p>The user name and password create date.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>The user name and password create date.</p>
     */
-    inline CreateLoginProfileResult&  WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
+    inline void SetLoginProfile(LoginProfile&& value) { m_loginProfile = value; }
+
+    /*
+     <p>The user name and password create date.</p>
+    */
+    inline CreateLoginProfileResult& WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
+
+    /*
+     <p>The user name and password create date.</p>
+    */
+    inline CreateLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateLoginProfileResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateLoginProfileResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateLoginProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     LoginProfile m_loginProfile;

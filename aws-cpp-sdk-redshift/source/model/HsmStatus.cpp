@@ -45,18 +45,33 @@ HsmStatus& HsmStatus::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hsmClientCertificateIdentifierNode = resultNode.FirstChild("HsmClientCertificateIdentifier");
+    if(hsmClientCertificateIdentifierNode.IsNull())
+    {
+      hsmClientCertificateIdentifierNode = resultNode;
+    }
+
     if(!hsmClientCertificateIdentifierNode.IsNull())
     {
       m_hsmClientCertificateIdentifier = StringUtils::Trim(hsmClientCertificateIdentifierNode.GetText().c_str());
       m_hsmClientCertificateIdentifierHasBeenSet = true;
     }
     XmlNode hsmConfigurationIdentifierNode = resultNode.FirstChild("HsmConfigurationIdentifier");
+    if(hsmConfigurationIdentifierNode.IsNull())
+    {
+      hsmConfigurationIdentifierNode = resultNode;
+    }
+
     if(!hsmConfigurationIdentifierNode.IsNull())
     {
       m_hsmConfigurationIdentifier = StringUtils::Trim(hsmConfigurationIdentifierNode.GetText().c_str());
       m_hsmConfigurationIdentifierHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

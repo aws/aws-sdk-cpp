@@ -47,6 +47,7 @@ namespace Model
      The origin access identity's information.
     */
     inline const CloudFrontOriginAccessIdentity& GetCloudFrontOriginAccessIdentity() const{ return m_cloudFrontOriginAccessIdentity; }
+
     /*
      The origin access identity's information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The origin access identity's information.
     */
-    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result&  WithCloudFrontOriginAccessIdentity(const CloudFrontOriginAccessIdentity& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
+    inline void SetCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { m_cloudFrontOriginAccessIdentity = value; }
+
+    /*
+     The origin access identity's information.
+    */
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result& WithCloudFrontOriginAccessIdentity(const CloudFrontOriginAccessIdentity& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
+
+    /*
+     The origin access identity's information.
+    */
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result& WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
 
     /*
      The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /*
+     The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+    */
+    inline void SetLocation(Aws::String&& value) { m_location = value; }
 
     /*
      The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
     */
-    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+    */
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      The fully qualified URI of the new origin access identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
@@ -85,10 +107,16 @@ namespace Model
      The current version of the origin access identity created.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the origin access identity created.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the origin access identity created.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the origin access identity created.
@@ -98,7 +126,12 @@ namespace Model
     /*
      The current version of the origin access identity created.
     */
-    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the origin access identity created.
+    */
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the origin access identity created.

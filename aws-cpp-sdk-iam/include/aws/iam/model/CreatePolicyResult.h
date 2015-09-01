@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the policy.</p>
     */
     inline const Policy& GetPolicy() const{ return m_policy; }
+
     /*
      <p>Information about the policy.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the policy.</p>
     */
-    inline CreatePolicyResult&  WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
+    inline void SetPolicy(Policy&& value) { m_policy = value; }
+
+    /*
+     <p>Information about the policy.</p>
+    */
+    inline CreatePolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>Information about the policy.</p>
+    */
+    inline CreatePolicyResult& WithPolicy(Policy&& value) { SetPolicy(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreatePolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreatePolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreatePolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Policy m_policy;

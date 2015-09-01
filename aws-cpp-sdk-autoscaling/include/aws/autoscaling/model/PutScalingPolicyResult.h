@@ -47,10 +47,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the policy.</p>
     */
     inline const Aws::String& GetPolicyARN() const{ return m_policyARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the policy.</p>
     */
     inline void SetPolicyARN(const Aws::String& value) { m_policyARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the policy.</p>
+    */
+    inline void SetPolicyARN(Aws::String&& value) { m_policyARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the policy.</p>
     */
-    inline PutScalingPolicyResult&  WithPolicyARN(const Aws::String& value) { SetPolicyARN(value); return *this;}
+    inline PutScalingPolicyResult& WithPolicyARN(const Aws::String& value) { SetPolicyARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the policy.</p>
+    */
+    inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline PutScalingPolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline PutScalingPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline PutScalingPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_policyARN;

@@ -39,6 +39,7 @@ namespace Model
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
+
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
@@ -47,12 +48,27 @@ namespace Model
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
-    inline RemoveTagsRequest&  WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
+    inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
+
+    /*
+     <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    */
+    inline RemoveTagsRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
+
+    /*
+     <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    */
+    inline RemoveTagsRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(value); return *this;}
 
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
     inline RemoveTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+
+    /*
+     <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    */
+    inline RemoveTagsRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
@@ -63,6 +79,7 @@ namespace Model
      <p>The list of tag keys to remove.</p>
     */
     inline const Aws::Vector<TagKeyOnly>& GetTags() const{ return m_tags; }
+
     /*
      <p>The list of tag keys to remove.</p>
     */
@@ -71,12 +88,27 @@ namespace Model
     /*
      <p>The list of tag keys to remove.</p>
     */
-    inline RemoveTagsRequest&  WithTags(const Aws::Vector<TagKeyOnly>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<TagKeyOnly>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The list of tag keys to remove.</p>
+    */
+    inline RemoveTagsRequest& WithTags(const Aws::Vector<TagKeyOnly>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The list of tag keys to remove.</p>
+    */
+    inline RemoveTagsRequest& WithTags(Aws::Vector<TagKeyOnly>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The list of tag keys to remove.</p>
     */
     inline RemoveTagsRequest& AddTags(const TagKeyOnly& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The list of tag keys to remove.</p>
+    */
+    inline RemoveTagsRequest& AddTags(TagKeyOnly&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_loadBalancerNames;

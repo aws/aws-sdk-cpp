@@ -45,10 +45,16 @@ namespace Model
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
     */
     inline const Aws::String& GetSuffix() const{ return m_suffix; }
+
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
     */
     inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
+
+    /*
+     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
+    */
+    inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = value; }
 
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
@@ -58,7 +64,12 @@ namespace Model
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
     */
-    inline IndexDocument&  WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
+    inline IndexDocument& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
+
+    /*
+     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
+    */
+    inline IndexDocument& WithSuffix(Aws::String&& value) { SetSuffix(value); return *this;}
 
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.

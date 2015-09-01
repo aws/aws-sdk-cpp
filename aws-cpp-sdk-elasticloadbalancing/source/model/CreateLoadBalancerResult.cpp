@@ -42,6 +42,11 @@ CreateLoadBalancerResult& CreateLoadBalancerResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
+    if(dNSNameNode.IsNull())
+    {
+      dNSNameNode = resultNode;
+    }
+
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());

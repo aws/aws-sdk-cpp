@@ -42,6 +42,11 @@ ConfirmSubscriptionResult& ConfirmSubscriptionResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode subscriptionArnNode = resultNode.FirstChild("SubscriptionArn");
+    if(subscriptionArnNode.IsNull())
+    {
+      subscriptionArnNode = resultNode;
+    }
+
     if(!subscriptionArnNode.IsNull())
     {
       m_subscriptionArn = StringUtils::Trim(subscriptionArnNode.GetText().c_str());

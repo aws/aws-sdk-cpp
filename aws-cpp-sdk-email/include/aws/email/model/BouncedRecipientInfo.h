@@ -49,10 +49,16 @@ namespace Model
      The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
     */
     inline const Aws::String& GetRecipient() const{ return m_recipient; }
+
     /*
      The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
     */
     inline void SetRecipient(const Aws::String& value) { m_recipientHasBeenSet = true; m_recipient = value; }
+
+    /*
+     The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
+    */
+    inline void SetRecipient(Aws::String&& value) { m_recipientHasBeenSet = true; m_recipient = value; }
 
     /*
      The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
@@ -62,7 +68,12 @@ namespace Model
     /*
      The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
     */
-    inline BouncedRecipientInfo&  WithRecipient(const Aws::String& value) { SetRecipient(value); return *this;}
+    inline BouncedRecipientInfo& WithRecipient(const Aws::String& value) { SetRecipient(value); return *this;}
+
+    /*
+     The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
+    */
+    inline BouncedRecipientInfo& WithRecipient(Aws::String&& value) { SetRecipient(value); return *this;}
 
     /*
      The address of a recipient that bounced from the original message. Will be used as the Original-Recipient (and also the Final-Recipient if a BounceType is given or if FinalRecipient not specified in the RecipientDsnFields). If the FinalRecipient is not specified, this must be a recipient of the original inbound message. Should be just an email address (i.e. do not prepend with "rfc 822;").
@@ -73,10 +84,16 @@ namespace Model
      The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
     */
     inline const Aws::String& GetRecipientArn() const{ return m_recipientArn; }
+
     /*
      The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
     */
     inline void SetRecipientArn(const Aws::String& value) { m_recipientArnHasBeenSet = true; m_recipientArn = value; }
+
+    /*
+     The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
+    */
+    inline void SetRecipientArn(Aws::String&& value) { m_recipientArnHasBeenSet = true; m_recipientArn = value; }
 
     /*
      The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
@@ -86,7 +103,12 @@ namespace Model
     /*
      The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
     */
-    inline BouncedRecipientInfo&  WithRecipientArn(const Aws::String& value) { SetRecipientArn(value); return *this;}
+    inline BouncedRecipientInfo& WithRecipientArn(const Aws::String& value) { SetRecipientArn(value); return *this;}
+
+    /*
+     The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
+    */
+    inline BouncedRecipientInfo& WithRecipientArn(Aws::String&& value) { SetRecipientArn(value); return *this;}
 
     /*
      The ARN of the identity for the address of the recipient that bounced from the original message (i.e. the Recipient member of this structure). This is only necessary if the caller doesn't own the identity being bounced and is using sending authorization policies to bounce messages sent to another account.
@@ -97,6 +119,7 @@ namespace Model
      The reason for the bounce, which is used to auto populate the recipient-level DSN fields. This or RecipientDsnFields is required.
     */
     inline const BounceType& GetBounceType() const{ return m_bounceType; }
+
     /*
      The reason for the bounce, which is used to auto populate the recipient-level DSN fields. This or RecipientDsnFields is required.
     */
@@ -105,12 +128,23 @@ namespace Model
     /*
      The reason for the bounce, which is used to auto populate the recipient-level DSN fields. This or RecipientDsnFields is required.
     */
-    inline BouncedRecipientInfo&  WithBounceType(const BounceType& value) { SetBounceType(value); return *this;}
+    inline void SetBounceType(BounceType&& value) { m_bounceTypeHasBeenSet = true; m_bounceType = value; }
+
+    /*
+     The reason for the bounce, which is used to auto populate the recipient-level DSN fields. This or RecipientDsnFields is required.
+    */
+    inline BouncedRecipientInfo& WithBounceType(const BounceType& value) { SetBounceType(value); return *this;}
+
+    /*
+     The reason for the bounce, which is used to auto populate the recipient-level DSN fields. This or RecipientDsnFields is required.
+    */
+    inline BouncedRecipientInfo& WithBounceType(BounceType&& value) { SetBounceType(value); return *this;}
 
     /*
      Recipient-level DSN fields, most of which would normally be filled in automatically given a BounceType. This or BounceType is required.
     */
     inline const RecipientDsnFields& GetRecipientDsnFields() const{ return m_recipientDsnFields; }
+
     /*
      Recipient-level DSN fields, most of which would normally be filled in automatically given a BounceType. This or BounceType is required.
     */
@@ -119,7 +153,17 @@ namespace Model
     /*
      Recipient-level DSN fields, most of which would normally be filled in automatically given a BounceType. This or BounceType is required.
     */
-    inline BouncedRecipientInfo&  WithRecipientDsnFields(const RecipientDsnFields& value) { SetRecipientDsnFields(value); return *this;}
+    inline void SetRecipientDsnFields(RecipientDsnFields&& value) { m_recipientDsnFieldsHasBeenSet = true; m_recipientDsnFields = value; }
+
+    /*
+     Recipient-level DSN fields, most of which would normally be filled in automatically given a BounceType. This or BounceType is required.
+    */
+    inline BouncedRecipientInfo& WithRecipientDsnFields(const RecipientDsnFields& value) { SetRecipientDsnFields(value); return *this;}
+
+    /*
+     Recipient-level DSN fields, most of which would normally be filled in automatically given a BounceType. This or BounceType is required.
+    */
+    inline BouncedRecipientInfo& WithRecipientDsnFields(RecipientDsnFields&& value) { SetRecipientDsnFields(value); return *this;}
 
   private:
     Aws::String m_recipient;

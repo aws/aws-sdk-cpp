@@ -38,10 +38,16 @@ namespace Model
      <p>EndpointArn for GetEndpointAttributes input.</p>
     */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+
     /*
      <p>EndpointArn for GetEndpointAttributes input.</p>
     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+
+    /*
+     <p>EndpointArn for GetEndpointAttributes input.</p>
+    */
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /*
      <p>EndpointArn for GetEndpointAttributes input.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>EndpointArn for GetEndpointAttributes input.</p>
     */
-    inline GetEndpointAttributesRequest&  WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
+    inline GetEndpointAttributesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
+
+    /*
+     <p>EndpointArn for GetEndpointAttributes input.</p>
+    */
+    inline GetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
 
     /*
      <p>EndpointArn for GetEndpointAttributes input.</p>

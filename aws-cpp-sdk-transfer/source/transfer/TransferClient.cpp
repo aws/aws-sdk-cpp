@@ -55,9 +55,9 @@ TransferClient::~TransferClient()
 {
 }
 
-std::shared_ptr<UploadFileRequest> TransferClient::UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, bool createBucket)
+std::shared_ptr<UploadFileRequest> TransferClient::UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, bool createBucket, bool doConsistencyChecks)
 {
-    auto request = Aws::MakeShared<UploadFileRequest>(ALLOCATION_TAG, fileName, bucketName, keyName, contentType, m_s3Client, createBucket);
+    auto request = Aws::MakeShared<UploadFileRequest>(ALLOCATION_TAG, fileName, bucketName, keyName, contentType, m_s3Client, createBucket, doConsistencyChecks);
 
     UploadFileInternal(request);
 
@@ -212,7 +212,7 @@ void TransferClient::OnPutObject(const Aws::S3::S3Client* s3Client,
     uploadRequest->HandlePutObjectOutcome(request, outcome);
 }
 
-void TransferClient::OnGetObject(const Aws::S3::S3Client* s3Client,
+void TransferClient::OnDownloadGetObject(const Aws::S3::S3Client* s3Client,
     const Aws::S3::Model::GetObjectRequest& request,
     const Aws::S3::Model::GetObjectOutcome& outcome,
     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -227,7 +227,7 @@ void TransferClient::OnGetObject(const Aws::S3::S3Client* s3Client,
 }
 
 
-void TransferClient::OnListObjects(const Aws::S3::S3Client* s3Client,
+void TransferClient::OnDownloadListObjects(const Aws::S3::S3Client* s3Client,
     const Aws::S3::Model::ListObjectsRequest& request,
     const Aws::S3::Model::ListObjectsOutcome& outcome,
     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -241,6 +241,47 @@ void TransferClient::OnListObjects(const Aws::S3::S3Client* s3Client,
     downloadRequest->HandleListObjectsOutcome(request, outcome);
 }
 
+void TransferClient::OnUploadGetObject(const Aws::S3::S3Client* s3Client,
+    const Aws::S3::Model::GetObjectRequest& request,
+    const Aws::S3::Model::GetObjectOutcome& outcome,
+    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+{
+    AWS_UNREFERENCED_PARAM(s3Client);
+
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
+
+    std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
+
+    uploadRequest->HandleGetObjectOutcome(request, outcome);
+}
+
+void TransferClient::OnHeadObject(const Aws::S3::S3Client* s3Client,
+    const Aws::S3::Model::HeadObjectRequest& request,
+    const Aws::S3::Model::HeadObjectOutcome& outcome,
+    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+{
+    AWS_UNREFERENCED_PARAM(s3Client);
+
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
+
+    std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
+
+    uploadRequest->HandleHeadObjectOutcome(request, outcome);
+}
+
+void TransferClient::OnUploadListObjects(const Aws::S3::S3Client* s3Client,
+    const Aws::S3::Model::ListObjectsRequest& request,
+    const Aws::S3::Model::ListObjectsOutcome& outcome,
+    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+{
+    AWS_UNREFERENCED_PARAM(s3Client);
+
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
+
+    std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
+
+    uploadRequest->HandleListObjectsOutcome(request, outcome);
+}
 
 
 std::shared_ptr< UploadBufferScopedResourceSetType > TransferClient::AcquireUploadBuffers(uint32_t bufferCount)

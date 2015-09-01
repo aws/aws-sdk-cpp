@@ -46,22 +46,39 @@ namespace Model
 
     
     inline const Aws::Vector<ContextEntryResult>& GetContextEntries() const{ return m_contextEntries; }
+
     
     inline void SetContextEntries(const Aws::Vector<ContextEntryResult>& value) { m_contextEntries = value; }
 
     
-    inline GetContextKeysForPolicyResult&  WithContextEntries(const Aws::Vector<ContextEntryResult>& value) { SetContextEntries(value); return *this;}
+    inline void SetContextEntries(Aws::Vector<ContextEntryResult>&& value) { m_contextEntries = value; }
+
+    
+    inline GetContextKeysForPolicyResult& WithContextEntries(const Aws::Vector<ContextEntryResult>& value) { SetContextEntries(value); return *this;}
+
+    
+    inline GetContextKeysForPolicyResult& WithContextEntries(Aws::Vector<ContextEntryResult>&& value) { SetContextEntries(value); return *this;}
 
     
     inline GetContextKeysForPolicyResult& AddContextEntries(const ContextEntryResult& value) { m_contextEntries.push_back(value); return *this; }
 
     
+    inline GetContextKeysForPolicyResult& AddContextEntries(ContextEntryResult&& value) { m_contextEntries.push_back(value); return *this; }
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetContextKeysForPolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetContextKeysForPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetContextKeysForPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ContextEntryResult> m_contextEntries;

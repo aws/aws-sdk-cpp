@@ -51,6 +51,7 @@ namespace Model
      A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.
     */
@@ -59,16 +60,22 @@ namespace Model
     /*
      A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.
     */
-    inline ListObjectVersionsResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListObjectVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      Marks the last Key returned in a truncated response.
     */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
+
     /*
      Marks the last Key returned in a truncated response.
     */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarker = value; }
+
+    /*
+     Marks the last Key returned in a truncated response.
+    */
+    inline void SetKeyMarker(Aws::String&& value) { m_keyMarker = value; }
 
     /*
      Marks the last Key returned in a truncated response.
@@ -78,7 +85,12 @@ namespace Model
     /*
      Marks the last Key returned in a truncated response.
     */
-    inline ListObjectVersionsResult&  WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
+    inline ListObjectVersionsResult& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
+
+    /*
+     Marks the last Key returned in a truncated response.
+    */
+    inline ListObjectVersionsResult& WithKeyMarker(Aws::String&& value) { SetKeyMarker(value); return *this;}
 
     /*
      Marks the last Key returned in a truncated response.
@@ -87,14 +99,21 @@ namespace Model
 
     
     inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
+
     
     inline void SetVersionIdMarker(const Aws::String& value) { m_versionIdMarker = value; }
+
+    
+    inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarker = value; }
 
     
     inline void SetVersionIdMarker(const char* value) { m_versionIdMarker.assign(value); }
 
     
-    inline ListObjectVersionsResult&  WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
+    inline ListObjectVersionsResult& WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(value); return *this;}
 
     
     inline ListObjectVersionsResult& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
@@ -103,10 +122,16 @@ namespace Model
      Use this value for the key marker request parameter in a subsequent request.
     */
     inline const Aws::String& GetNextKeyMarker() const{ return m_nextKeyMarker; }
+
     /*
      Use this value for the key marker request parameter in a subsequent request.
     */
     inline void SetNextKeyMarker(const Aws::String& value) { m_nextKeyMarker = value; }
+
+    /*
+     Use this value for the key marker request parameter in a subsequent request.
+    */
+    inline void SetNextKeyMarker(Aws::String&& value) { m_nextKeyMarker = value; }
 
     /*
      Use this value for the key marker request parameter in a subsequent request.
@@ -116,7 +141,12 @@ namespace Model
     /*
      Use this value for the key marker request parameter in a subsequent request.
     */
-    inline ListObjectVersionsResult&  WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
+    inline ListObjectVersionsResult& WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
+
+    /*
+     Use this value for the key marker request parameter in a subsequent request.
+    */
+    inline ListObjectVersionsResult& WithNextKeyMarker(Aws::String&& value) { SetNextKeyMarker(value); return *this;}
 
     /*
      Use this value for the key marker request parameter in a subsequent request.
@@ -127,10 +157,16 @@ namespace Model
      Use this value for the next version id marker parameter in a subsequent request.
     */
     inline const Aws::String& GetNextVersionIdMarker() const{ return m_nextVersionIdMarker; }
+
     /*
      Use this value for the next version id marker parameter in a subsequent request.
     */
     inline void SetNextVersionIdMarker(const Aws::String& value) { m_nextVersionIdMarker = value; }
+
+    /*
+     Use this value for the next version id marker parameter in a subsequent request.
+    */
+    inline void SetNextVersionIdMarker(Aws::String&& value) { m_nextVersionIdMarker = value; }
 
     /*
      Use this value for the next version id marker parameter in a subsequent request.
@@ -140,7 +176,12 @@ namespace Model
     /*
      Use this value for the next version id marker parameter in a subsequent request.
     */
-    inline ListObjectVersionsResult&  WithNextVersionIdMarker(const Aws::String& value) { SetNextVersionIdMarker(value); return *this;}
+    inline ListObjectVersionsResult& WithNextVersionIdMarker(const Aws::String& value) { SetNextVersionIdMarker(value); return *this;}
+
+    /*
+     Use this value for the next version id marker parameter in a subsequent request.
+    */
+    inline ListObjectVersionsResult& WithNextVersionIdMarker(Aws::String&& value) { SetNextVersionIdMarker(value); return *this;}
 
     /*
      Use this value for the next version id marker parameter in a subsequent request.
@@ -149,91 +190,144 @@ namespace Model
 
     
     inline const Aws::Vector<ObjectVersion>& GetVersions() const{ return m_versions; }
+
     
     inline void SetVersions(const Aws::Vector<ObjectVersion>& value) { m_versions = value; }
 
     
-    inline ListObjectVersionsResult&  WithVersions(const Aws::Vector<ObjectVersion>& value) { SetVersions(value); return *this;}
+    inline void SetVersions(Aws::Vector<ObjectVersion>&& value) { m_versions = value; }
+
+    
+    inline ListObjectVersionsResult& WithVersions(const Aws::Vector<ObjectVersion>& value) { SetVersions(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithVersions(Aws::Vector<ObjectVersion>&& value) { SetVersions(value); return *this;}
 
     
     inline ListObjectVersionsResult& AddVersions(const ObjectVersion& value) { m_versions.push_back(value); return *this; }
 
     
+    inline ListObjectVersionsResult& AddVersions(ObjectVersion&& value) { m_versions.push_back(value); return *this; }
+
+    
     inline const Aws::Vector<DeleteMarkerEntry>& GetDeleteMarkers() const{ return m_deleteMarkers; }
+
     
     inline void SetDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { m_deleteMarkers = value; }
 
     
-    inline ListObjectVersionsResult&  WithDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { SetDeleteMarkers(value); return *this;}
+    inline void SetDeleteMarkers(Aws::Vector<DeleteMarkerEntry>&& value) { m_deleteMarkers = value; }
+
+    
+    inline ListObjectVersionsResult& WithDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { SetDeleteMarkers(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithDeleteMarkers(Aws::Vector<DeleteMarkerEntry>&& value) { SetDeleteMarkers(value); return *this;}
 
     
     inline ListObjectVersionsResult& AddDeleteMarkers(const DeleteMarkerEntry& value) { m_deleteMarkers.push_back(value); return *this; }
 
     
+    inline ListObjectVersionsResult& AddDeleteMarkers(DeleteMarkerEntry&& value) { m_deleteMarkers.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_name = value; }
 
     
     inline void SetName(const char* value) { m_name.assign(value); }
 
     
-    inline ListObjectVersionsResult&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ListObjectVersionsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline ListObjectVersionsResult& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
     
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
+
+    
+    inline void SetPrefix(Aws::String&& value) { m_prefix = value; }
 
     
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
     
-    inline ListObjectVersionsResult&  WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline ListObjectVersionsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
     
     inline ListObjectVersionsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
     
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+
     
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
+
+    
+    inline void SetDelimiter(Aws::String&& value) { m_delimiter = value; }
 
     
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     
-    inline ListObjectVersionsResult&  WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
+    inline ListObjectVersionsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
 
     
     inline ListObjectVersionsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
     
     inline long GetMaxKeys() const{ return m_maxKeys; }
+
     
     inline void SetMaxKeys(long value) { m_maxKeys = value; }
 
     
-    inline ListObjectVersionsResult&  WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
+    inline ListObjectVersionsResult& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
 
     
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
+
     
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     
-    inline ListObjectVersionsResult&  WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
+    inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = value; }
+
+    
+    inline ListObjectVersionsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(value); return *this;}
 
     
     inline ListObjectVersionsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
+
+    
+    inline ListObjectVersionsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /*
      Encoding type used by Amazon S3 to encode object keys in the response.
     */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
+
     /*
      Encoding type used by Amazon S3 to encode object keys in the response.
     */
@@ -242,7 +336,17 @@ namespace Model
     /*
      Encoding type used by Amazon S3 to encode object keys in the response.
     */
-    inline ListObjectVersionsResult&  WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
+    inline void SetEncodingType(EncodingType&& value) { m_encodingType = value; }
+
+    /*
+     Encoding type used by Amazon S3 to encode object keys in the response.
+    */
+    inline ListObjectVersionsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
+
+    /*
+     Encoding type used by Amazon S3 to encode object keys in the response.
+    */
+    inline ListObjectVersionsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
 
   private:
     bool m_isTruncated;

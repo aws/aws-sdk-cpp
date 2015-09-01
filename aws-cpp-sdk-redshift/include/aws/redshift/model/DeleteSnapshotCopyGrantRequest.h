@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the snapshot copy grant to delete.</p>
     */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
+
     /*
      <p>The name of the snapshot copy grant to delete.</p>
     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
+
+    /*
+     <p>The name of the snapshot copy grant to delete.</p>
+    */
+    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
     /*
      <p>The name of the snapshot copy grant to delete.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the snapshot copy grant to delete.</p>
     */
-    inline DeleteSnapshotCopyGrantRequest&  WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
+    inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
+
+    /*
+     <p>The name of the snapshot copy grant to delete.</p>
+    */
+    inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
 
     /*
      <p>The name of the snapshot copy grant to delete.</p>

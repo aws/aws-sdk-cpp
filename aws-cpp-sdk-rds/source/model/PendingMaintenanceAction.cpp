@@ -57,36 +57,66 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode actionNode = resultNode.FirstChild("Action");
+    if(actionNode.IsNull())
+    {
+      actionNode = resultNode;
+    }
+
     if(!actionNode.IsNull())
     {
       m_action = StringUtils::Trim(actionNode.GetText().c_str());
       m_actionHasBeenSet = true;
     }
     XmlNode autoAppliedAfterDateNode = resultNode.FirstChild("AutoAppliedAfterDate");
+    if(autoAppliedAfterDateNode.IsNull())
+    {
+      autoAppliedAfterDateNode = resultNode;
+    }
+
     if(!autoAppliedAfterDateNode.IsNull())
     {
       m_autoAppliedAfterDate = StringUtils::ConvertToDouble(StringUtils::Trim(autoAppliedAfterDateNode.GetText().c_str()).c_str());
       m_autoAppliedAfterDateHasBeenSet = true;
     }
     XmlNode forcedApplyDateNode = resultNode.FirstChild("ForcedApplyDate");
+    if(forcedApplyDateNode.IsNull())
+    {
+      forcedApplyDateNode = resultNode;
+    }
+
     if(!forcedApplyDateNode.IsNull())
     {
       m_forcedApplyDate = StringUtils::ConvertToDouble(StringUtils::Trim(forcedApplyDateNode.GetText().c_str()).c_str());
       m_forcedApplyDateHasBeenSet = true;
     }
     XmlNode optInStatusNode = resultNode.FirstChild("OptInStatus");
+    if(optInStatusNode.IsNull())
+    {
+      optInStatusNode = resultNode;
+    }
+
     if(!optInStatusNode.IsNull())
     {
       m_optInStatus = StringUtils::Trim(optInStatusNode.GetText().c_str());
       m_optInStatusHasBeenSet = true;
     }
     XmlNode currentApplyDateNode = resultNode.FirstChild("CurrentApplyDate");
+    if(currentApplyDateNode.IsNull())
+    {
+      currentApplyDateNode = resultNode;
+    }
+
     if(!currentApplyDateNode.IsNull())
     {
       m_currentApplyDate = StringUtils::ConvertToDouble(StringUtils::Trim(currentApplyDateNode.GetText().c_str()).c_str());
       m_currentApplyDateHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

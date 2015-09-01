@@ -48,6 +48,7 @@ namespace Model
      <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
     */
     inline const Aws::Vector<ApplicationDescription>& GetApplications() const{ return m_applications; }
+
     /*
      <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
     */
-    inline DescribeApplicationsResult&  WithApplications(const Aws::Vector<ApplicationDescription>& value) { SetApplications(value); return *this;}
+    inline void SetApplications(Aws::Vector<ApplicationDescription>&& value) { m_applications = value; }
+
+    /*
+     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+    */
+    inline DescribeApplicationsResult& WithApplications(const Aws::Vector<ApplicationDescription>& value) { SetApplications(value); return *this;}
+
+    /*
+     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+    */
+    inline DescribeApplicationsResult& WithApplications(Aws::Vector<ApplicationDescription>&& value) { SetApplications(value); return *this;}
 
     /*
      <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
     */
     inline DescribeApplicationsResult& AddApplications(const ApplicationDescription& value) { m_applications.push_back(value); return *this; }
 
+    /*
+     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+    */
+    inline DescribeApplicationsResult& AddApplications(ApplicationDescription&& value) { m_applications.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeApplicationsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeApplicationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeApplicationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ApplicationDescription> m_applications;

@@ -52,6 +52,7 @@ namespace Model
      <p>If enabled, the load balancer routes the request traffic evenly across all back-end instances regardless of the Availability Zones.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline const CrossZoneLoadBalancing& GetCrossZoneLoadBalancing() const{ return m_crossZoneLoadBalancing; }
+
     /*
      <p>If enabled, the load balancer routes the request traffic evenly across all back-end instances regardless of the Availability Zones.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
@@ -60,12 +61,23 @@ namespace Model
     /*
      <p>If enabled, the load balancer routes the request traffic evenly across all back-end instances regardless of the Availability Zones.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline LoadBalancerAttributes&  WithCrossZoneLoadBalancing(const CrossZoneLoadBalancing& value) { SetCrossZoneLoadBalancing(value); return *this;}
+    inline void SetCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { m_crossZoneLoadBalancingHasBeenSet = true; m_crossZoneLoadBalancing = value; }
+
+    /*
+     <p>If enabled, the load balancer routes the request traffic evenly across all back-end instances regardless of the Availability Zones.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(const CrossZoneLoadBalancing& value) { SetCrossZoneLoadBalancing(value); return *this;}
+
+    /*
+     <p>If enabled, the load balancer routes the request traffic evenly across all back-end instances regardless of the Availability Zones.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { SetCrossZoneLoadBalancing(value); return *this;}
 
     /*
      <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline const AccessLog& GetAccessLog() const{ return m_accessLog; }
+
     /*
      <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
@@ -74,12 +86,23 @@ namespace Model
     /*
      <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline LoadBalancerAttributes&  WithAccessLog(const AccessLog& value) { SetAccessLog(value); return *this;}
+    inline void SetAccessLog(AccessLog&& value) { m_accessLogHasBeenSet = true; m_accessLog = value; }
+
+    /*
+     <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithAccessLog(const AccessLog& value) { SetAccessLog(value); return *this;}
+
+    /*
+     <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithAccessLog(AccessLog&& value) { SetAccessLog(value); return *this;}
 
     /*
      <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy back-end instance. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline const ConnectionDraining& GetConnectionDraining() const{ return m_connectionDraining; }
+
     /*
      <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy back-end instance. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
@@ -88,12 +111,23 @@ namespace Model
     /*
      <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy back-end instance. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline LoadBalancerAttributes&  WithConnectionDraining(const ConnectionDraining& value) { SetConnectionDraining(value); return *this;}
+    inline void SetConnectionDraining(ConnectionDraining&& value) { m_connectionDrainingHasBeenSet = true; m_connectionDraining = value; }
+
+    /*
+     <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy back-end instance. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithConnectionDraining(const ConnectionDraining& value) { SetConnectionDraining(value); return *this;}
+
+    /*
+     <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy back-end instance. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithConnectionDraining(ConnectionDraining&& value) { SetConnectionDraining(value); return *this;}
 
     /*
      <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline const ConnectionSettings& GetConnectionSettings() const{ return m_connectionSettings; }
+
     /*
      <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
@@ -102,12 +136,23 @@ namespace Model
     /*
      <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline LoadBalancerAttributes&  WithConnectionSettings(const ConnectionSettings& value) { SetConnectionSettings(value); return *this;}
+    inline void SetConnectionSettings(ConnectionSettings&& value) { m_connectionSettingsHasBeenSet = true; m_connectionSettings = value; }
+
+    /*
+     <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithConnectionSettings(const ConnectionSettings& value) { SetConnectionSettings(value); return *this;}
+
+    /*
+     <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerAttributes& WithConnectionSettings(ConnectionSettings&& value) { SetConnectionSettings(value); return *this;}
 
     /*
      <p>This parameter is reserved.</p>
     */
     inline const Aws::Vector<AdditionalAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
+
     /*
      <p>This parameter is reserved.</p>
     */
@@ -116,12 +161,27 @@ namespace Model
     /*
      <p>This parameter is reserved.</p>
     */
-    inline LoadBalancerAttributes&  WithAdditionalAttributes(const Aws::Vector<AdditionalAttribute>& value) { SetAdditionalAttributes(value); return *this;}
+    inline void SetAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline LoadBalancerAttributes& WithAdditionalAttributes(const Aws::Vector<AdditionalAttribute>& value) { SetAdditionalAttributes(value); return *this;}
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline LoadBalancerAttributes& WithAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { SetAdditionalAttributes(value); return *this;}
 
     /*
      <p>This parameter is reserved.</p>
     */
     inline LoadBalancerAttributes& AddAdditionalAttributes(const AdditionalAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline LoadBalancerAttributes& AddAdditionalAttributes(AdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
 
   private:
     CrossZoneLoadBalancing m_crossZoneLoadBalancing;

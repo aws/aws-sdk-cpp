@@ -47,6 +47,7 @@ namespace Model
      <p>The updated health check.</p>
     */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+
     /*
      <p>The updated health check.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>The updated health check.</p>
     */
-    inline ConfigureHealthCheckResult&  WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = value; }
+
+    /*
+     <p>The updated health check.</p>
+    */
+    inline ConfigureHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+
+    /*
+     <p>The updated health check.</p>
+    */
+    inline ConfigureHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ConfigureHealthCheckResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ConfigureHealthCheckResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ConfigureHealthCheckResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     HealthCheck m_healthCheck;

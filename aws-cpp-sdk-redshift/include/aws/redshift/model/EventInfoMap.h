@@ -48,10 +48,16 @@ namespace Model
      <p>The identifier of an Amazon Redshift event.</p>
     */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
+
     /*
      <p>The identifier of an Amazon Redshift event.</p>
     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+
+    /*
+     <p>The identifier of an Amazon Redshift event.</p>
+    */
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /*
      <p>The identifier of an Amazon Redshift event.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The identifier of an Amazon Redshift event.</p>
     */
-    inline EventInfoMap&  WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
+    inline EventInfoMap& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
+
+    /*
+     <p>The identifier of an Amazon Redshift event.</p>
+    */
+    inline EventInfoMap& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
 
     /*
      <p>The identifier of an Amazon Redshift event.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>The category of an Amazon Redshift event.</p>
     */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
     /*
      <p>The category of an Amazon Redshift event.</p>
     */
@@ -80,12 +92,27 @@ namespace Model
     /*
      <p>The category of an Amazon Redshift event.</p>
     */
-    inline EventInfoMap&  WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+
+    /*
+     <p>The category of an Amazon Redshift event.</p>
+    */
+    inline EventInfoMap& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
+
+    /*
+     <p>The category of an Amazon Redshift event.</p>
+    */
+    inline EventInfoMap& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
 
     /*
      <p>The category of an Amazon Redshift event.</p>
     */
     inline EventInfoMap& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+
+    /*
+     <p>The category of an Amazon Redshift event.</p>
+    */
+    inline EventInfoMap& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /*
      <p>The category of an Amazon Redshift event.</p>
@@ -96,10 +123,16 @@ namespace Model
      <p>The description of an Amazon Redshift event.</p>
     */
     inline const Aws::String& GetEventDescription() const{ return m_eventDescription; }
+
     /*
      <p>The description of an Amazon Redshift event.</p>
     */
     inline void SetEventDescription(const Aws::String& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
+
+    /*
+     <p>The description of an Amazon Redshift event.</p>
+    */
+    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
 
     /*
      <p>The description of an Amazon Redshift event.</p>
@@ -109,7 +142,12 @@ namespace Model
     /*
      <p>The description of an Amazon Redshift event.</p>
     */
-    inline EventInfoMap&  WithEventDescription(const Aws::String& value) { SetEventDescription(value); return *this;}
+    inline EventInfoMap& WithEventDescription(const Aws::String& value) { SetEventDescription(value); return *this;}
+
+    /*
+     <p>The description of an Amazon Redshift event.</p>
+    */
+    inline EventInfoMap& WithEventDescription(Aws::String&& value) { SetEventDescription(value); return *this;}
 
     /*
      <p>The description of an Amazon Redshift event.</p>
@@ -120,10 +158,16 @@ namespace Model
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
     */
     inline const Aws::String& GetSeverity() const{ return m_severity; }
+
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
     */
     inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /*
+     <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
+    */
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -133,7 +177,12 @@ namespace Model
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
     */
-    inline EventInfoMap&  WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+    inline EventInfoMap& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+
+    /*
+     <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
+    */
+    inline EventInfoMap& WithSeverity(Aws::String&& value) { SetSeverity(value); return *this;}
 
     /*
      <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>

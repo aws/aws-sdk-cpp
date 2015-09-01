@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline DescribePoliciesRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DescribePoliciesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribePoliciesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
     /*
      <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
     */
-    inline DescribePoliciesRequest&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+
+    /*
+     <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
+    */
+    inline DescribePoliciesRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+
+    /*
+     <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
+    */
+    inline DescribePoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /*
      <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
     */
     inline DescribePoliciesRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+
+    /*
+     <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
+    */
+    inline DescribePoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /*
      <p>One or more policy names or policy ARNs to be described. If you omit this list, all policy names are described. If an group name is provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown policy name, it is ignored with no error.</p>
@@ -86,6 +113,7 @@ namespace Model
      <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyTypes() const{ return m_policyTypes; }
+
     /*
      <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
     */
@@ -94,12 +122,27 @@ namespace Model
     /*
      <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
     */
-    inline DescribePoliciesRequest&  WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
+    inline void SetPolicyTypes(Aws::Vector<Aws::String>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
+
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
+    inline DescribePoliciesRequest& WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
+
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
+    inline DescribePoliciesRequest& WithPolicyTypes(Aws::Vector<Aws::String>&& value) { SetPolicyTypes(value); return *this;}
 
     /*
      <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
     */
     inline DescribePoliciesRequest& AddPolicyTypes(const Aws::String& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
+
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
+    inline DescribePoliciesRequest& AddPolicyTypes(Aws::String&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
     /*
      <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
@@ -110,10 +153,16 @@ namespace Model
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -123,7 +172,12 @@ namespace Model
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
-    inline DescribePoliciesRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribePoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline DescribePoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -134,6 +188,7 @@ namespace Model
      <p>The maximum number of items to be returned with each call.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of items to be returned with each call.</p>
     */
@@ -142,7 +197,7 @@ namespace Model
     /*
      <p>The maximum number of items to be returned with each call.</p>
     */
-    inline DescribePoliciesRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribePoliciesRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;

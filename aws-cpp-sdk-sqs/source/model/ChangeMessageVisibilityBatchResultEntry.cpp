@@ -41,6 +41,11 @@ ChangeMessageVisibilityBatchResultEntry& ChangeMessageVisibilityBatchResultEntry
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());

@@ -42,16 +42,31 @@ SendMessageResult& SendMessageResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode mD5OfMessageBodyNode = resultNode.FirstChild("MD5OfMessageBody");
+    if(mD5OfMessageBodyNode.IsNull())
+    {
+      mD5OfMessageBodyNode = resultNode;
+    }
+
     if(!mD5OfMessageBodyNode.IsNull())
     {
       m_mD5OfMessageBody = StringUtils::Trim(mD5OfMessageBodyNode.GetText().c_str());
     }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
+    if(mD5OfMessageAttributesNode.IsNull())
+    {
+      mD5OfMessageAttributesNode = resultNode;
+    }
+
     if(!mD5OfMessageAttributesNode.IsNull())
     {
       m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
+    if(messageIdNode.IsNull())
+    {
+      messageIdNode = resultNode;
+    }
+
     if(!messageIdNode.IsNull())
     {
       m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());

@@ -45,6 +45,7 @@ namespace Model
      <p>The programmable code for the state change reason.</p>
     */
     inline const InstanceGroupStateChangeReasonCode& GetCode() const{ return m_code; }
+
     /*
      <p>The programmable code for the state change reason.</p>
     */
@@ -53,16 +54,32 @@ namespace Model
     /*
      <p>The programmable code for the state change reason.</p>
     */
-    inline InstanceGroupStateChangeReason&  WithCode(const InstanceGroupStateChangeReasonCode& value) { SetCode(value); return *this;}
+    inline void SetCode(InstanceGroupStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /*
+     <p>The programmable code for the state change reason.</p>
+    */
+    inline InstanceGroupStateChangeReason& WithCode(const InstanceGroupStateChangeReasonCode& value) { SetCode(value); return *this;}
+
+    /*
+     <p>The programmable code for the state change reason.</p>
+    */
+    inline InstanceGroupStateChangeReason& WithCode(InstanceGroupStateChangeReasonCode&& value) { SetCode(value); return *this;}
 
     /*
      <p>The status change reason description.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The status change reason description.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The status change reason description.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The status change reason description.</p>
@@ -72,7 +89,12 @@ namespace Model
     /*
      <p>The status change reason description.</p>
     */
-    inline InstanceGroupStateChangeReason&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline InstanceGroupStateChangeReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The status change reason description.</p>
+    */
+    inline InstanceGroupStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The status change reason description.</p>

@@ -51,6 +51,7 @@ namespace Model
      <p>Specifies the allocated storage size in gigabytes (GB). </p>
     */
     inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+
     /*
      <p>Specifies the allocated storage size in gigabytes (GB). </p>
     */
@@ -59,12 +60,13 @@ namespace Model
     /*
      <p>Specifies the allocated storage size in gigabytes (GB). </p>
     */
-    inline DBCluster&  WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline DBCluster& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
 
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
     */
@@ -73,12 +75,27 @@ namespace Model
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
     */
-    inline DBCluster&  WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /*
+     <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+    */
+    inline DBCluster& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /*
+     <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+    */
+    inline DBCluster& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
 
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
     */
     inline DBCluster& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+    */
+    inline DBCluster& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
@@ -89,6 +106,7 @@ namespace Model
      <p>Specifies the number of days for which automatic DB snapshots are retained. </p>
     */
     inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+
     /*
      <p>Specifies the number of days for which automatic DB snapshots are retained. </p>
     */
@@ -97,16 +115,22 @@ namespace Model
     /*
      <p>Specifies the number of days for which automatic DB snapshots are retained. </p>
     */
-    inline DBCluster&  WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline DBCluster& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
 
     /*
      <p>If present, specifies the name of the character set that this cluster is associated with. </p>
     */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+
     /*
      <p>If present, specifies the name of the character set that this cluster is associated with. </p>
     */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
+
+    /*
+     <p>If present, specifies the name of the character set that this cluster is associated with. </p>
+    */
+    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /*
      <p>If present, specifies the name of the character set that this cluster is associated with. </p>
@@ -116,7 +140,12 @@ namespace Model
     /*
      <p>If present, specifies the name of the character set that this cluster is associated with. </p>
     */
-    inline DBCluster&  WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
+    inline DBCluster& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
+
+    /*
+     <p>If present, specifies the name of the character set that this cluster is associated with. </p>
+    */
+    inline DBCluster& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(value); return *this;}
 
     /*
      <p>If present, specifies the name of the character set that this cluster is associated with. </p>
@@ -127,10 +156,16 @@ namespace Model
      <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
     */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
     /*
      <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+
+    /*
+     <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
+    */
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /*
      <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
@@ -140,7 +175,12 @@ namespace Model
     /*
      <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
     */
-    inline DBCluster&  WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+    inline DBCluster& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+
+    /*
+     <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
+    */
+    inline DBCluster& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
 
     /*
      <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster. </p>
@@ -151,10 +191,16 @@ namespace Model
      <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
     */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
     /*
      <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+
+    /*
+     <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
+    */
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /*
      <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
@@ -164,7 +210,12 @@ namespace Model
     /*
      <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
     */
-    inline DBCluster&  WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
+    inline DBCluster& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
+
+    /*
+     <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
+    */
+    inline DBCluster& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
 
     /*
      <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster. </p>
@@ -175,10 +226,16 @@ namespace Model
      <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
     */
     inline const Aws::String& GetDBClusterParameterGroup() const{ return m_dBClusterParameterGroup; }
+
     /*
      <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
     */
     inline void SetDBClusterParameterGroup(const Aws::String& value) { m_dBClusterParameterGroupHasBeenSet = true; m_dBClusterParameterGroup = value; }
+
+    /*
+     <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
+    */
+    inline void SetDBClusterParameterGroup(Aws::String&& value) { m_dBClusterParameterGroupHasBeenSet = true; m_dBClusterParameterGroup = value; }
 
     /*
      <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
@@ -188,7 +245,12 @@ namespace Model
     /*
      <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
     */
-    inline DBCluster&  WithDBClusterParameterGroup(const Aws::String& value) { SetDBClusterParameterGroup(value); return *this;}
+    inline DBCluster& WithDBClusterParameterGroup(const Aws::String& value) { SetDBClusterParameterGroup(value); return *this;}
+
+    /*
+     <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
+    */
+    inline DBCluster& WithDBClusterParameterGroup(Aws::String&& value) { SetDBClusterParameterGroup(value); return *this;}
 
     /*
      <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
@@ -199,10 +261,16 @@ namespace Model
      <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
     */
     inline const Aws::String& GetDBSubnetGroup() const{ return m_dBSubnetGroup; }
+
     /*
      <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
     */
     inline void SetDBSubnetGroup(const Aws::String& value) { m_dBSubnetGroupHasBeenSet = true; m_dBSubnetGroup = value; }
+
+    /*
+     <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
+    */
+    inline void SetDBSubnetGroup(Aws::String&& value) { m_dBSubnetGroupHasBeenSet = true; m_dBSubnetGroup = value; }
 
     /*
      <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
@@ -212,7 +280,12 @@ namespace Model
     /*
      <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
     */
-    inline DBCluster&  WithDBSubnetGroup(const Aws::String& value) { SetDBSubnetGroup(value); return *this;}
+    inline DBCluster& WithDBSubnetGroup(const Aws::String& value) { SetDBSubnetGroup(value); return *this;}
+
+    /*
+     <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
+    */
+    inline DBCluster& WithDBSubnetGroup(Aws::String&& value) { SetDBSubnetGroup(value); return *this;}
 
     /*
      <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group. </p>
@@ -223,10 +296,16 @@ namespace Model
      <p>Specifies the current state of this DB cluster. </p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>Specifies the current state of this DB cluster. </p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>Specifies the current state of this DB cluster. </p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>Specifies the current state of this DB cluster. </p>
@@ -236,7 +315,12 @@ namespace Model
     /*
      <p>Specifies the current state of this DB cluster. </p>
     */
-    inline DBCluster&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline DBCluster& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>Specifies the current state of this DB cluster. </p>
+    */
+    inline DBCluster& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>Specifies the current state of this DB cluster. </p>
@@ -247,10 +331,16 @@ namespace Model
      <p>Specifies the progress of the operation as a percentage. </p>
     */
     inline const Aws::String& GetPercentProgress() const{ return m_percentProgress; }
+
     /*
      <p>Specifies the progress of the operation as a percentage. </p>
     */
     inline void SetPercentProgress(const Aws::String& value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
+
+    /*
+     <p>Specifies the progress of the operation as a percentage. </p>
+    */
+    inline void SetPercentProgress(Aws::String&& value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
 
     /*
      <p>Specifies the progress of the operation as a percentage. </p>
@@ -260,7 +350,12 @@ namespace Model
     /*
      <p>Specifies the progress of the operation as a percentage. </p>
     */
-    inline DBCluster&  WithPercentProgress(const Aws::String& value) { SetPercentProgress(value); return *this;}
+    inline DBCluster& WithPercentProgress(const Aws::String& value) { SetPercentProgress(value); return *this;}
+
+    /*
+     <p>Specifies the progress of the operation as a percentage. </p>
+    */
+    inline DBCluster& WithPercentProgress(Aws::String&& value) { SetPercentProgress(value); return *this;}
 
     /*
      <p>Specifies the progress of the operation as a percentage. </p>
@@ -271,6 +366,7 @@ namespace Model
      <p>Specifies the earliest time to which a database can be restored with point-in-time restore. </p>
     */
     inline double GetEarliestRestorableTime() const{ return m_earliestRestorableTime; }
+
     /*
      <p>Specifies the earliest time to which a database can be restored with point-in-time restore. </p>
     */
@@ -279,16 +375,22 @@ namespace Model
     /*
      <p>Specifies the earliest time to which a database can be restored with point-in-time restore. </p>
     */
-    inline DBCluster&  WithEarliestRestorableTime(double value) { SetEarliestRestorableTime(value); return *this;}
+    inline DBCluster& WithEarliestRestorableTime(double value) { SetEarliestRestorableTime(value); return *this;}
 
     /*
      <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
     */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
     /*
      <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+
+    /*
+     <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
+    */
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /*
      <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
@@ -298,7 +400,12 @@ namespace Model
     /*
      <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
     */
-    inline DBCluster&  WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+    inline DBCluster& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+
+    /*
+     <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
+    */
+    inline DBCluster& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
 
     /*
      <p>Specifies the connection endpoint for the primary instance of the DB cluster. </p>
@@ -309,10 +416,16 @@ namespace Model
      <p>Provides the name of the database engine to be used for this DB cluster. </p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p>Provides the name of the database engine to be used for this DB cluster. </p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p>Provides the name of the database engine to be used for this DB cluster. </p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p>Provides the name of the database engine to be used for this DB cluster. </p>
@@ -322,7 +435,12 @@ namespace Model
     /*
      <p>Provides the name of the database engine to be used for this DB cluster. </p>
     */
-    inline DBCluster&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline DBCluster& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p>Provides the name of the database engine to be used for this DB cluster. </p>
+    */
+    inline DBCluster& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p>Provides the name of the database engine to be used for this DB cluster. </p>
@@ -333,10 +451,16 @@ namespace Model
      <p>Indicates the database engine version. </p>
     */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
     /*
      <p>Indicates the database engine version. </p>
     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /*
+     <p>Indicates the database engine version. </p>
+    */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /*
      <p>Indicates the database engine version. </p>
@@ -346,7 +470,12 @@ namespace Model
     /*
      <p>Indicates the database engine version. </p>
     */
-    inline DBCluster&  WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline DBCluster& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /*
+     <p>Indicates the database engine version. </p>
+    */
+    inline DBCluster& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /*
      <p>Indicates the database engine version. </p>
@@ -357,6 +486,7 @@ namespace Model
      <p>Specifies the latest time to which a database can be restored with point-in-time restore. </p>
     */
     inline double GetLatestRestorableTime() const{ return m_latestRestorableTime; }
+
     /*
      <p>Specifies the latest time to which a database can be restored with point-in-time restore. </p>
     */
@@ -365,12 +495,13 @@ namespace Model
     /*
      <p>Specifies the latest time to which a database can be restored with point-in-time restore. </p>
     */
-    inline DBCluster&  WithLatestRestorableTime(double value) { SetLatestRestorableTime(value); return *this;}
+    inline DBCluster& WithLatestRestorableTime(double value) { SetLatestRestorableTime(value); return *this;}
 
     /*
      <p>Specifies the port that the database engine is listening on. </p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p>Specifies the port that the database engine is listening on. </p>
     */
@@ -379,16 +510,22 @@ namespace Model
     /*
      <p>Specifies the port that the database engine is listening on. </p>
     */
-    inline DBCluster&  WithPort(long value) { SetPort(value); return *this;}
+    inline DBCluster& WithPort(long value) { SetPort(value); return *this;}
 
     /*
      <p>Contains the master username for the DB cluster. </p>
     */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
     /*
      <p>Contains the master username for the DB cluster. </p>
     */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+
+    /*
+     <p>Contains the master username for the DB cluster. </p>
+    */
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /*
      <p>Contains the master username for the DB cluster. </p>
@@ -398,7 +535,12 @@ namespace Model
     /*
      <p>Contains the master username for the DB cluster. </p>
     */
-    inline DBCluster&  WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
+    inline DBCluster& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
+
+    /*
+     <p>Contains the master username for the DB cluster. </p>
+    */
+    inline DBCluster& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
 
     /*
      <p>Contains the master username for the DB cluster. </p>
@@ -409,6 +551,7 @@ namespace Model
      <p> Provides the list of option group memberships for this DB cluster. </p>
     */
     inline const Aws::Vector<DBClusterOptionGroupStatus>& GetDBClusterOptionGroupMemberships() const{ return m_dBClusterOptionGroupMemberships; }
+
     /*
      <p> Provides the list of option group memberships for this DB cluster. </p>
     */
@@ -417,7 +560,17 @@ namespace Model
     /*
      <p> Provides the list of option group memberships for this DB cluster. </p>
     */
-    inline DBCluster&  WithDBClusterOptionGroupMemberships(const Aws::Vector<DBClusterOptionGroupStatus>& value) { SetDBClusterOptionGroupMemberships(value); return *this;}
+    inline void SetDBClusterOptionGroupMemberships(Aws::Vector<DBClusterOptionGroupStatus>&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships = value; }
+
+    /*
+     <p> Provides the list of option group memberships for this DB cluster. </p>
+    */
+    inline DBCluster& WithDBClusterOptionGroupMemberships(const Aws::Vector<DBClusterOptionGroupStatus>& value) { SetDBClusterOptionGroupMemberships(value); return *this;}
+
+    /*
+     <p> Provides the list of option group memberships for this DB cluster. </p>
+    */
+    inline DBCluster& WithDBClusterOptionGroupMemberships(Aws::Vector<DBClusterOptionGroupStatus>&& value) { SetDBClusterOptionGroupMemberships(value); return *this;}
 
     /*
      <p> Provides the list of option group memberships for this DB cluster. </p>
@@ -425,13 +578,24 @@ namespace Model
     inline DBCluster& AddDBClusterOptionGroupMemberships(const DBClusterOptionGroupStatus& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(value); return *this; }
 
     /*
+     <p> Provides the list of option group memberships for this DB cluster. </p>
+    */
+    inline DBCluster& AddDBClusterOptionGroupMemberships(DBClusterOptionGroupStatus&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(value); return *this; }
+
+    /*
      <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
     /*
      <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+
+    /*
+     <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    */
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /*
      <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
@@ -441,7 +605,12 @@ namespace Model
     /*
      <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     */
-    inline DBCluster&  WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
+    inline DBCluster& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
+
+    /*
+     <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    */
+    inline DBCluster& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
 
     /*
      <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
@@ -452,10 +621,16 @@ namespace Model
      <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
     /*
      <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+
+    /*
+     <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
+    */
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /*
      <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
@@ -465,7 +640,12 @@ namespace Model
     /*
      <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
-    inline DBCluster&  WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline DBCluster& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
+
+    /*
+     <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
+    */
+    inline DBCluster& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /*
      <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
@@ -476,6 +656,7 @@ namespace Model
      <p>Provides the list of instances that make up the DB cluster.</p>
     */
     inline const Aws::Vector<DBClusterMember>& GetDBClusterMembers() const{ return m_dBClusterMembers; }
+
     /*
      <p>Provides the list of instances that make up the DB cluster.</p>
     */
@@ -484,7 +665,17 @@ namespace Model
     /*
      <p>Provides the list of instances that make up the DB cluster.</p>
     */
-    inline DBCluster&  WithDBClusterMembers(const Aws::Vector<DBClusterMember>& value) { SetDBClusterMembers(value); return *this;}
+    inline void SetDBClusterMembers(Aws::Vector<DBClusterMember>&& value) { m_dBClusterMembersHasBeenSet = true; m_dBClusterMembers = value; }
+
+    /*
+     <p>Provides the list of instances that make up the DB cluster.</p>
+    */
+    inline DBCluster& WithDBClusterMembers(const Aws::Vector<DBClusterMember>& value) { SetDBClusterMembers(value); return *this;}
+
+    /*
+     <p>Provides the list of instances that make up the DB cluster.</p>
+    */
+    inline DBCluster& WithDBClusterMembers(Aws::Vector<DBClusterMember>&& value) { SetDBClusterMembers(value); return *this;}
 
     /*
      <p>Provides the list of instances that make up the DB cluster.</p>
@@ -492,9 +683,15 @@ namespace Model
     inline DBCluster& AddDBClusterMembers(const DBClusterMember& value) { m_dBClusterMembersHasBeenSet = true; m_dBClusterMembers.push_back(value); return *this; }
 
     /*
+     <p>Provides the list of instances that make up the DB cluster.</p>
+    */
+    inline DBCluster& AddDBClusterMembers(DBClusterMember&& value) { m_dBClusterMembersHasBeenSet = true; m_dBClusterMembers.push_back(value); return *this; }
+
+    /*
      <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
     */
     inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroups() const{ return m_vpcSecurityGroups; }
+
     /*
      <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
     */
@@ -503,7 +700,17 @@ namespace Model
     /*
      <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
     */
-    inline DBCluster&  WithVpcSecurityGroups(const Aws::Vector<VpcSecurityGroupMembership>& value) { SetVpcSecurityGroups(value); return *this;}
+    inline void SetVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = value; }
+
+    /*
+     <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
+    */
+    inline DBCluster& WithVpcSecurityGroups(const Aws::Vector<VpcSecurityGroupMembership>& value) { SetVpcSecurityGroups(value); return *this;}
+
+    /*
+     <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
+    */
+    inline DBCluster& WithVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { SetVpcSecurityGroups(value); return *this;}
 
     /*
      <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
@@ -511,13 +718,24 @@ namespace Model
     inline DBCluster& AddVpcSecurityGroups(const VpcSecurityGroupMembership& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
 
     /*
+     <p> Provides a list of VPC security groups that the DB cluster belongs to. </p>
+    */
+    inline DBCluster& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
+
+    /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
@@ -527,7 +745,12 @@ namespace Model
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     */
-    inline DBCluster&  WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+    inline DBCluster& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline DBCluster& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
 
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>

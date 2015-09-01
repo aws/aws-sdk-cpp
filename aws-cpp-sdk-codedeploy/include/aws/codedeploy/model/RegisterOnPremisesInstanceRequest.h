@@ -40,10 +40,16 @@ namespace Model
      <p>The name of the on-premises instance to register.</p>
     */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
     /*
      <p>The name of the on-premises instance to register.</p>
     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /*
      <p>The name of the on-premises instance to register.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of the on-premises instance to register.</p>
     */
-    inline RegisterOnPremisesInstanceRequest&  WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+    inline RegisterOnPremisesInstanceRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
+    inline RegisterOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
 
     /*
      <p>The name of the on-premises instance to register.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
     /*
      <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The ARN of the IAM user to associate with the on-premises instance.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     */
-    inline RegisterOnPremisesInstanceRequest&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
+    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /*
      <p>The ARN of the IAM user to associate with the on-premises instance.</p>

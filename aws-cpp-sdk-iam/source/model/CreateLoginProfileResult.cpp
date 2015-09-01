@@ -42,6 +42,11 @@ CreateLoginProfileResult& CreateLoginProfileResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode loginProfileNode = resultNode.FirstChild("LoginProfile");
+    if(loginProfileNode.IsNull())
+    {
+      loginProfileNode = resultNode;
+    }
+
     if(!loginProfileNode.IsNull())
     {
       m_loginProfile = loginProfileNode;

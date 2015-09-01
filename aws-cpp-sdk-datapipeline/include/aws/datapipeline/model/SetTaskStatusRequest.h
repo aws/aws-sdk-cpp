@@ -41,10 +41,16 @@ namespace Model
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
+
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+
+    /*
+     <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    */
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
-    inline SetTaskStatusRequest&  WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+    inline SetTaskStatusRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+
+    /*
+     <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    */
+    inline SetTaskStatusRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
 
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
@@ -65,6 +76,7 @@ namespace Model
      <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     */
     inline const TaskStatus& GetTaskStatus() const{ return m_taskStatus; }
+
     /*
      <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     */
@@ -73,16 +85,32 @@ namespace Model
     /*
      <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     */
-    inline SetTaskStatusRequest&  WithTaskStatus(const TaskStatus& value) { SetTaskStatus(value); return *this;}
+    inline void SetTaskStatus(TaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
+
+    /*
+     <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    */
+    inline SetTaskStatusRequest& WithTaskStatus(const TaskStatus& value) { SetTaskStatus(value); return *this;}
+
+    /*
+     <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    */
+    inline SetTaskStatusRequest& WithTaskStatus(TaskStatus&& value) { SetTaskStatus(value); return *this;}
 
     /*
      <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     */
     inline const Aws::String& GetErrorId() const{ return m_errorId; }
+
     /*
      <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     */
     inline void SetErrorId(const Aws::String& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
+
+    /*
+     <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    */
+    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
 
     /*
      <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
@@ -92,7 +120,12 @@ namespace Model
     /*
      <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     */
-    inline SetTaskStatusRequest&  WithErrorId(const Aws::String& value) { SetErrorId(value); return *this;}
+    inline SetTaskStatusRequest& WithErrorId(const Aws::String& value) { SetErrorId(value); return *this;}
+
+    /*
+     <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    */
+    inline SetTaskStatusRequest& WithErrorId(Aws::String&& value) { SetErrorId(value); return *this;}
 
     /*
      <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
@@ -103,10 +136,16 @@ namespace Model
      <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
     /*
      <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+
+    /*
+     <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /*
      <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
@@ -116,7 +155,12 @@ namespace Model
     /*
      <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     */
-    inline SetTaskStatusRequest&  WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+    inline SetTaskStatusRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /*
+     <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    */
+    inline SetTaskStatusRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
 
     /*
      <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
@@ -127,10 +171,16 @@ namespace Model
      <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     */
     inline const Aws::String& GetErrorStackTrace() const{ return m_errorStackTrace; }
+
     /*
      <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     */
     inline void SetErrorStackTrace(const Aws::String& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = value; }
+
+    /*
+     <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    */
+    inline void SetErrorStackTrace(Aws::String&& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = value; }
 
     /*
      <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
@@ -140,7 +190,12 @@ namespace Model
     /*
      <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     */
-    inline SetTaskStatusRequest&  WithErrorStackTrace(const Aws::String& value) { SetErrorStackTrace(value); return *this;}
+    inline SetTaskStatusRequest& WithErrorStackTrace(const Aws::String& value) { SetErrorStackTrace(value); return *this;}
+
+    /*
+     <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    */
+    inline SetTaskStatusRequest& WithErrorStackTrace(Aws::String&& value) { SetErrorStackTrace(value); return *this;}
 
     /*
      <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>

@@ -41,6 +41,11 @@ PolicyRole& PolicyRole::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
+    if(roleNameNode.IsNull())
+    {
+      roleNameNode = resultNode;
+    }
+
     if(!roleNameNode.IsNull())
     {
       m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());

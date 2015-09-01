@@ -38,10 +38,16 @@ namespace Model
      <p>The email address to be verified.</p>
     */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+
     /*
      <p>The email address to be verified.</p>
     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
+
+    /*
+     <p>The email address to be verified.</p>
+    */
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /*
      <p>The email address to be verified.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The email address to be verified.</p>
     */
-    inline VerifyEmailIdentityRequest&  WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
+    inline VerifyEmailIdentityRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
+
+    /*
+     <p>The email address to be verified.</p>
+    */
+    inline VerifyEmailIdentityRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
 
     /*
      <p>The email address to be verified.</p>

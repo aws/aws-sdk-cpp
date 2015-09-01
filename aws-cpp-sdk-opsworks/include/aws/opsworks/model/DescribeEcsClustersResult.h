@@ -48,6 +48,7 @@ namespace Model
      <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     */
     inline const Aws::Vector<EcsCluster>& GetEcsClusters() const{ return m_ecsClusters; }
+
     /*
      <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     */
-    inline DescribeEcsClustersResult&  WithEcsClusters(const Aws::Vector<EcsCluster>& value) { SetEcsClusters(value); return *this;}
+    inline void SetEcsClusters(Aws::Vector<EcsCluster>&& value) { m_ecsClusters = value; }
+
+    /*
+     <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    */
+    inline DescribeEcsClustersResult& WithEcsClusters(const Aws::Vector<EcsCluster>& value) { SetEcsClusters(value); return *this;}
+
+    /*
+     <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    */
+    inline DescribeEcsClustersResult& WithEcsClusters(Aws::Vector<EcsCluster>&& value) { SetEcsClusters(value); return *this;}
 
     /*
      <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline DescribeEcsClustersResult& AddEcsClusters(const EcsCluster& value) { m_ecsClusters.push_back(value); return *this; }
 
     /*
+     <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    */
+    inline DescribeEcsClustersResult& AddEcsClusters(EcsCluster&& value) { m_ecsClusters.push_back(value); return *this; }
+
+    /*
      <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     */
-    inline DescribeEcsClustersResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeEcsClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
+    */
+    inline DescribeEcsClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>

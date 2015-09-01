@@ -65,60 +65,110 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode activityIdNode = resultNode.FirstChild("ActivityId");
+    if(activityIdNode.IsNull())
+    {
+      activityIdNode = resultNode;
+    }
+
     if(!activityIdNode.IsNull())
     {
       m_activityId = StringUtils::Trim(activityIdNode.GetText().c_str());
       m_activityIdHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
+    if(autoScalingGroupNameNode.IsNull())
+    {
+      autoScalingGroupNameNode = resultNode;
+    }
+
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode causeNode = resultNode.FirstChild("Cause");
+    if(causeNode.IsNull())
+    {
+      causeNode = resultNode;
+    }
+
     if(!causeNode.IsNull())
     {
       m_cause = StringUtils::Trim(causeNode.GetText().c_str());
       m_causeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
+    if(startTimeNode.IsNull())
+    {
+      startTimeNode = resultNode;
+    }
+
     if(!startTimeNode.IsNull())
     {
       m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
+    if(endTimeNode.IsNull())
+    {
+      endTimeNode = resultNode;
+    }
+
     if(!endTimeNode.IsNull())
     {
       m_endTime = StringUtils::ConvertToDouble(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str());
       m_endTimeHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
+    if(statusCodeNode.IsNull())
+    {
+      statusCodeNode = resultNode;
+    }
+
     if(!statusCodeNode.IsNull())
     {
       m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(statusCodeNode.GetText().c_str()).c_str());
       m_statusCodeHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
+    if(statusMessageNode.IsNull())
+    {
+      statusMessageNode = resultNode;
+    }
+
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
       m_statusMessageHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("Progress");
+    if(progressNode.IsNull())
+    {
+      progressNode = resultNode;
+    }
+
     if(!progressNode.IsNull())
     {
       m_progress = StringUtils::ConvertToInt32(StringUtils::Trim(progressNode.GetText().c_str()).c_str());
       m_progressHasBeenSet = true;
     }
     XmlNode detailsNode = resultNode.FirstChild("Details");
+    if(detailsNode.IsNull())
+    {
+      detailsNode = resultNode;
+    }
+
     if(!detailsNode.IsNull())
     {
       m_details = StringUtils::Trim(detailsNode.GetText().c_str());

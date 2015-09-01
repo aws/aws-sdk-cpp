@@ -50,10 +50,16 @@ namespace Model
      <p>The unique identifier for the cluster.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The unique identifier for the cluster.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The unique identifier for the cluster.</p>
@@ -63,7 +69,12 @@ namespace Model
     /*
      <p>The unique identifier for the cluster.</p>
     */
-    inline Cluster&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Cluster& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline Cluster& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The unique identifier for the cluster.</p>
@@ -74,10 +85,16 @@ namespace Model
      <p>The name of the cluster.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the cluster.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the cluster.</p>
@@ -87,7 +104,12 @@ namespace Model
     /*
      <p>The name of the cluster.</p>
     */
-    inline Cluster&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Cluster& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline Cluster& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the cluster.</p>
@@ -98,6 +120,7 @@ namespace Model
      <p>The current status details about the cluster.</p>
     */
     inline const ClusterStatus& GetStatus() const{ return m_status; }
+
     /*
      <p>The current status details about the cluster.</p>
     */
@@ -106,24 +129,47 @@ namespace Model
     /*
      <p>The current status details about the cluster.</p>
     */
-    inline Cluster&  WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(ClusterStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The current status details about the cluster.</p>
+    */
+    inline Cluster& WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The current status details about the cluster.</p>
+    */
+    inline Cluster& WithStatus(ClusterStatus&& value) { SetStatus(value); return *this;}
 
     
     inline const Ec2InstanceAttributes& GetEc2InstanceAttributes() const{ return m_ec2InstanceAttributes; }
+
     
     inline void SetEc2InstanceAttributes(const Ec2InstanceAttributes& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = value; }
 
     
-    inline Cluster&  WithEc2InstanceAttributes(const Ec2InstanceAttributes& value) { SetEc2InstanceAttributes(value); return *this;}
+    inline void SetEc2InstanceAttributes(Ec2InstanceAttributes&& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = value; }
+
+    
+    inline Cluster& WithEc2InstanceAttributes(const Ec2InstanceAttributes& value) { SetEc2InstanceAttributes(value); return *this;}
+
+    
+    inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(value); return *this;}
 
     /*
      <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
     */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
+
     /*
      <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
     */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
+
+    /*
+     <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
+    */
+    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = value; }
 
     /*
      <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
@@ -133,7 +179,12 @@ namespace Model
     /*
      <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
     */
-    inline Cluster&  WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
+    inline Cluster& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
+
+    /*
+     <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
+    */
+    inline Cluster& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
 
     /*
      <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
@@ -144,10 +195,16 @@ namespace Model
      <p>The AMI version requested for this cluster.</p>
     */
     inline const Aws::String& GetRequestedAmiVersion() const{ return m_requestedAmiVersion; }
+
     /*
      <p>The AMI version requested for this cluster.</p>
     */
     inline void SetRequestedAmiVersion(const Aws::String& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = value; }
+
+    /*
+     <p>The AMI version requested for this cluster.</p>
+    */
+    inline void SetRequestedAmiVersion(Aws::String&& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = value; }
 
     /*
      <p>The AMI version requested for this cluster.</p>
@@ -157,7 +214,12 @@ namespace Model
     /*
      <p>The AMI version requested for this cluster.</p>
     */
-    inline Cluster&  WithRequestedAmiVersion(const Aws::String& value) { SetRequestedAmiVersion(value); return *this;}
+    inline Cluster& WithRequestedAmiVersion(const Aws::String& value) { SetRequestedAmiVersion(value); return *this;}
+
+    /*
+     <p>The AMI version requested for this cluster.</p>
+    */
+    inline Cluster& WithRequestedAmiVersion(Aws::String&& value) { SetRequestedAmiVersion(value); return *this;}
 
     /*
      <p>The AMI version requested for this cluster.</p>
@@ -168,10 +230,16 @@ namespace Model
      <p>The AMI version running on this cluster. </p>
     */
     inline const Aws::String& GetRunningAmiVersion() const{ return m_runningAmiVersion; }
+
     /*
      <p>The AMI version running on this cluster. </p>
     */
     inline void SetRunningAmiVersion(const Aws::String& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
+
+    /*
+     <p>The AMI version running on this cluster. </p>
+    */
+    inline void SetRunningAmiVersion(Aws::String&& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
 
     /*
      <p>The AMI version running on this cluster. </p>
@@ -181,7 +249,12 @@ namespace Model
     /*
      <p>The AMI version running on this cluster. </p>
     */
-    inline Cluster&  WithRunningAmiVersion(const Aws::String& value) { SetRunningAmiVersion(value); return *this;}
+    inline Cluster& WithRunningAmiVersion(const Aws::String& value) { SetRunningAmiVersion(value); return *this;}
+
+    /*
+     <p>The AMI version running on this cluster. </p>
+    */
+    inline Cluster& WithRunningAmiVersion(Aws::String&& value) { SetRunningAmiVersion(value); return *this;}
 
     /*
      <p>The AMI version running on this cluster. </p>
@@ -192,10 +265,16 @@ namespace Model
      <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
     */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+
     /*
      <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
     */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
+
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /*
      <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
@@ -205,7 +284,12 @@ namespace Model
     /*
      <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
     */
-    inline Cluster&  WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
+    inline Cluster& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
+
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(value); return *this;}
 
     /*
      <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
@@ -216,6 +300,7 @@ namespace Model
      <p>Specifies whether the cluster should terminate after completing all steps.</p>
     */
     inline bool GetAutoTerminate() const{ return m_autoTerminate; }
+
     /*
      <p>Specifies whether the cluster should terminate after completing all steps.</p>
     */
@@ -224,12 +309,13 @@ namespace Model
     /*
      <p>Specifies whether the cluster should terminate after completing all steps.</p>
     */
-    inline Cluster&  WithAutoTerminate(bool value) { SetAutoTerminate(value); return *this;}
+    inline Cluster& WithAutoTerminate(bool value) { SetAutoTerminate(value); return *this;}
 
     /*
      <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+
     /*
      <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     */
@@ -238,12 +324,13 @@ namespace Model
     /*
      <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     */
-    inline Cluster&  WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
+    inline Cluster& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
 
     /*
      <p>Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.</p>
     */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
+
     /*
      <p>Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.</p>
     */
@@ -252,12 +339,13 @@ namespace Model
     /*
      <p>Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.</p>
     */
-    inline Cluster&  WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
+    inline Cluster& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
     /*
      <p>The applications installed on this cluster.</p>
     */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+
     /*
      <p>The applications installed on this cluster.</p>
     */
@@ -266,7 +354,17 @@ namespace Model
     /*
      <p>The applications installed on this cluster.</p>
     */
-    inline Cluster&  WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /*
+     <p>The applications installed on this cluster.</p>
+    */
+    inline Cluster& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
+
+    /*
+     <p>The applications installed on this cluster.</p>
+    */
+    inline Cluster& WithApplications(Aws::Vector<Application>&& value) { SetApplications(value); return *this;}
 
     /*
      <p>The applications installed on this cluster.</p>
@@ -274,9 +372,15 @@ namespace Model
     inline Cluster& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
     /*
+     <p>The applications installed on this cluster.</p>
+    */
+    inline Cluster& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /*
      <p>A list of tags associated with a cluster.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>A list of tags associated with a cluster.</p>
     */
@@ -285,7 +389,17 @@ namespace Model
     /*
      <p>A list of tags associated with a cluster.</p>
     */
-    inline Cluster&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>A list of tags associated with a cluster.</p>
+    */
+    inline Cluster& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tags associated with a cluster.</p>
+    */
+    inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>A list of tags associated with a cluster.</p>
@@ -293,13 +407,24 @@ namespace Model
     inline Cluster& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /*
+     <p>A list of tags associated with a cluster.</p>
+    */
+    inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
      <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
     */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
     /*
      <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
     */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+
+    /*
+     <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
+    */
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /*
      <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
@@ -309,7 +434,12 @@ namespace Model
     /*
      <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
     */
-    inline Cluster&  WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+    inline Cluster& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+
+    /*
+     <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
+    */
+    inline Cluster& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
 
     /*
      <p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>
@@ -320,6 +450,7 @@ namespace Model
      <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     */
     inline long GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+
     /*
      <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     */
@@ -328,16 +459,22 @@ namespace Model
     /*
      <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     */
-    inline Cluster&  WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
+    inline Cluster& WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
 
     /*
      <p>The public DNS name of the master EC2 instance.</p>
     */
     inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
+
     /*
      <p>The public DNS name of the master EC2 instance.</p>
     */
     inline void SetMasterPublicDnsName(const Aws::String& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
+
+    /*
+     <p>The public DNS name of the master EC2 instance.</p>
+    */
+    inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
 
     /*
      <p>The public DNS name of the master EC2 instance.</p>
@@ -347,7 +484,12 @@ namespace Model
     /*
      <p>The public DNS name of the master EC2 instance.</p>
     */
-    inline Cluster&  WithMasterPublicDnsName(const Aws::String& value) { SetMasterPublicDnsName(value); return *this;}
+    inline Cluster& WithMasterPublicDnsName(const Aws::String& value) { SetMasterPublicDnsName(value); return *this;}
+
+    /*
+     <p>The public DNS name of the master EC2 instance.</p>
+    */
+    inline Cluster& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(value); return *this;}
 
     /*
      <p>The public DNS name of the master EC2 instance.</p>
@@ -358,6 +500,7 @@ namespace Model
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
     */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
     */
@@ -366,12 +509,27 @@ namespace Model
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
     */
-    inline Cluster&  WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline Cluster& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
 
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
     */
     inline Cluster& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
   private:
     Aws::String m_id;

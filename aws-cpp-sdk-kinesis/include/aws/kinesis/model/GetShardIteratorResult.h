@@ -46,10 +46,16 @@ namespace Model
      <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     */
     inline const Aws::String& GetShardIterator() const{ return m_shardIterator; }
+
     /*
      <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     */
     inline void SetShardIterator(const Aws::String& value) { m_shardIterator = value; }
+
+    /*
+     <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
+    */
+    inline void SetShardIterator(Aws::String&& value) { m_shardIterator = value; }
 
     /*
      <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     */
-    inline GetShardIteratorResult&  WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
+    inline GetShardIteratorResult& WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
+
+    /*
+     <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
+    */
+    inline GetShardIteratorResult& WithShardIterator(Aws::String&& value) { SetShardIterator(value); return *this;}
 
     /*
      <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>

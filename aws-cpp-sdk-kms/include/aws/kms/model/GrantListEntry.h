@@ -45,14 +45,21 @@ namespace Model
 
     
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     
-    inline GrantListEntry&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline GrantListEntry& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    
+    inline GrantListEntry& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     
     inline GrantListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
@@ -61,10 +68,16 @@ namespace Model
      <p>Unique grant identifier.</p>
     */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
+
     /*
      <p>Unique grant identifier.</p>
     */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
+
+    /*
+     <p>Unique grant identifier.</p>
+    */
+    inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /*
      <p>Unique grant identifier.</p>
@@ -74,7 +87,12 @@ namespace Model
     /*
      <p>Unique grant identifier.</p>
     */
-    inline GrantListEntry&  WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
+    inline GrantListEntry& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
+
+    /*
+     <p>Unique grant identifier.</p>
+    */
+    inline GrantListEntry& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
 
     /*
      <p>Unique grant identifier.</p>
@@ -83,34 +101,48 @@ namespace Model
 
     
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline GrantListEntry&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline GrantListEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline GrantListEntry& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline GrantListEntry& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline double GetCreationDate() const{ return m_creationDate; }
+
     
     inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     
-    inline GrantListEntry&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline GrantListEntry& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
     /*
      <p>The principal that receives the grant permission.</p>
     */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+
     /*
      <p>The principal that receives the grant permission.</p>
     */
     inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
+
+    /*
+     <p>The principal that receives the grant permission.</p>
+    */
+    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
     /*
      <p>The principal that receives the grant permission.</p>
@@ -120,7 +152,12 @@ namespace Model
     /*
      <p>The principal that receives the grant permission.</p>
     */
-    inline GrantListEntry&  WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
+    inline GrantListEntry& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
+
+    /*
+     <p>The principal that receives the grant permission.</p>
+    */
+    inline GrantListEntry& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(value); return *this;}
 
     /*
      <p>The principal that receives the grant permission.</p>
@@ -131,10 +168,16 @@ namespace Model
      <p>The principal that can retire the account.</p>
     */
     inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
+
     /*
      <p>The principal that can retire the account.</p>
     */
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
+
+    /*
+     <p>The principal that can retire the account.</p>
+    */
+    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
     /*
      <p>The principal that can retire the account.</p>
@@ -144,7 +187,12 @@ namespace Model
     /*
      <p>The principal that can retire the account.</p>
     */
-    inline GrantListEntry&  WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
+    inline GrantListEntry& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
+
+    /*
+     <p>The principal that can retire the account.</p>
+    */
+    inline GrantListEntry& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(value); return *this;}
 
     /*
      <p>The principal that can retire the account.</p>
@@ -155,10 +203,16 @@ namespace Model
      <p>The account under which the grant was issued.</p>
     */
     inline const Aws::String& GetIssuingAccount() const{ return m_issuingAccount; }
+
     /*
      <p>The account under which the grant was issued.</p>
     */
     inline void SetIssuingAccount(const Aws::String& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
+
+    /*
+     <p>The account under which the grant was issued.</p>
+    */
+    inline void SetIssuingAccount(Aws::String&& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
 
     /*
      <p>The account under which the grant was issued.</p>
@@ -168,7 +222,12 @@ namespace Model
     /*
      <p>The account under which the grant was issued.</p>
     */
-    inline GrantListEntry&  WithIssuingAccount(const Aws::String& value) { SetIssuingAccount(value); return *this;}
+    inline GrantListEntry& WithIssuingAccount(const Aws::String& value) { SetIssuingAccount(value); return *this;}
+
+    /*
+     <p>The account under which the grant was issued.</p>
+    */
+    inline GrantListEntry& WithIssuingAccount(Aws::String&& value) { SetIssuingAccount(value); return *this;}
 
     /*
      <p>The account under which the grant was issued.</p>
@@ -179,6 +238,7 @@ namespace Model
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
     */
     inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
+
     /*
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
     */
@@ -187,7 +247,17 @@ namespace Model
     /*
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
     */
-    inline GrantListEntry&  WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
+    inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
+
+    /*
+     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+    */
+    inline GrantListEntry& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
+
+    /*
+     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+    */
+    inline GrantListEntry& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(value); return *this;}
 
     /*
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
@@ -195,9 +265,15 @@ namespace Model
     inline GrantListEntry& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /*
+     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+    */
+    inline GrantListEntry& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
+
+    /*
      <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
     */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
+
     /*
      <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
     */
@@ -206,7 +282,17 @@ namespace Model
     /*
      <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
     */
-    inline GrantListEntry&  WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
+    inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
+
+    /*
+     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
+    */
+    inline GrantListEntry& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
+
+    /*
+     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
+    */
+    inline GrantListEntry& WithConstraints(GrantConstraints&& value) { SetConstraints(value); return *this;}
 
   private:
     Aws::String m_keyId;

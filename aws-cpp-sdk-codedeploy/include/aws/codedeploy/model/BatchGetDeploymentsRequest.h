@@ -41,6 +41,7 @@ namespace Model
      <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
     */
     inline const Aws::Vector<Aws::String>& GetDeploymentIds() const{ return m_deploymentIds; }
+
     /*
      <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
     */
@@ -49,12 +50,27 @@ namespace Model
     /*
      <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
     */
-    inline BatchGetDeploymentsRequest&  WithDeploymentIds(const Aws::Vector<Aws::String>& value) { SetDeploymentIds(value); return *this;}
+    inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
+
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
+    inline BatchGetDeploymentsRequest& WithDeploymentIds(const Aws::Vector<Aws::String>& value) { SetDeploymentIds(value); return *this;}
+
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
+    inline BatchGetDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(value); return *this;}
 
     /*
      <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
     */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const Aws::String& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
+
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
+    inline BatchGetDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 
     /*
      <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>

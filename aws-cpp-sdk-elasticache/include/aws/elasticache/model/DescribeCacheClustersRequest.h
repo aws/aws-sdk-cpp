@@ -38,10 +38,16 @@ namespace Model
      <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
     */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
     /*
      <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /*
+     <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
+    */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
     */
-    inline DescribeCacheClustersRequest&  WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+    inline DescribeCacheClustersRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /*
+     <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
+    */
+    inline DescribeCacheClustersRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
     /*
      <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache cluster is returned. This parameter isn't case sensitive.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
     */
@@ -70,16 +82,22 @@ namespace Model
     /*
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
     */
-    inline DescribeCacheClustersRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeCacheClustersRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
@@ -89,7 +107,12 @@ namespace Model
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
-    inline DescribeCacheClustersRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeCacheClustersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
+    */
+    inline DescribeCacheClustersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
@@ -100,6 +123,7 @@ namespace Model
      <p>An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the individual cache nodes.</p>
     */
     inline bool GetShowCacheNodeInfo() const{ return m_showCacheNodeInfo; }
+
     /*
      <p>An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the individual cache nodes.</p>
     */
@@ -108,7 +132,7 @@ namespace Model
     /*
      <p>An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the individual cache nodes.</p>
     */
-    inline DescribeCacheClustersRequest&  WithShowCacheNodeInfo(bool value) { SetShowCacheNodeInfo(value); return *this;}
+    inline DescribeCacheClustersRequest& WithShowCacheNodeInfo(bool value) { SetShowCacheNodeInfo(value); return *this;}
 
   private:
     Aws::String m_cacheClusterId;

@@ -48,10 +48,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
     */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
     */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+    */
+    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
     */
-    inline ContainerInstance&  WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+    inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+    */
+    inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The Amazon EC2 instance ID of the container instance.</p>
     */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
     /*
      <p>The Amazon EC2 instance ID of the container instance.</p>
     */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
+
+    /*
+     <p>The Amazon EC2 instance ID of the container instance.</p>
+    */
+    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /*
      <p>The Amazon EC2 instance ID of the container instance.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The Amazon EC2 instance ID of the container instance.</p>
     */
-    inline ContainerInstance&  WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+    inline ContainerInstance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+
+    /*
+     <p>The Amazon EC2 instance ID of the container instance.</p>
+    */
+    inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(value); return *this;}
 
     /*
      <p>The Amazon EC2 instance ID of the container instance.</p>
@@ -96,6 +118,7 @@ namespace Model
      <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     */
     inline const VersionInfo& GetVersionInfo() const{ return m_versionInfo; }
+
     /*
      <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     */
@@ -104,12 +127,23 @@ namespace Model
     /*
      <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     */
-    inline ContainerInstance&  WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
+    inline void SetVersionInfo(VersionInfo&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
+
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
+    inline ContainerInstance& WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
+
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
+    inline ContainerInstance& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(value); return *this;}
 
     /*
      <p>The remaining resources of the container instance that are available for new tasks.</p>
     */
     inline const Aws::Vector<Resource>& GetRemainingResources() const{ return m_remainingResources; }
+
     /*
      <p>The remaining resources of the container instance that are available for new tasks.</p>
     */
@@ -118,7 +152,17 @@ namespace Model
     /*
      <p>The remaining resources of the container instance that are available for new tasks.</p>
     */
-    inline ContainerInstance&  WithRemainingResources(const Aws::Vector<Resource>& value) { SetRemainingResources(value); return *this;}
+    inline void SetRemainingResources(Aws::Vector<Resource>&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = value; }
+
+    /*
+     <p>The remaining resources of the container instance that are available for new tasks.</p>
+    */
+    inline ContainerInstance& WithRemainingResources(const Aws::Vector<Resource>& value) { SetRemainingResources(value); return *this;}
+
+    /*
+     <p>The remaining resources of the container instance that are available for new tasks.</p>
+    */
+    inline ContainerInstance& WithRemainingResources(Aws::Vector<Resource>&& value) { SetRemainingResources(value); return *this;}
 
     /*
      <p>The remaining resources of the container instance that are available for new tasks.</p>
@@ -126,9 +170,15 @@ namespace Model
     inline ContainerInstance& AddRemainingResources(const Resource& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(value); return *this; }
 
     /*
+     <p>The remaining resources of the container instance that are available for new tasks.</p>
+    */
+    inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(value); return *this; }
+
+    /*
      <p>The registered resources on the container instance that are in use by current tasks.</p>
     */
     inline const Aws::Vector<Resource>& GetRegisteredResources() const{ return m_registeredResources; }
+
     /*
      <p>The registered resources on the container instance that are in use by current tasks.</p>
     */
@@ -137,7 +187,17 @@ namespace Model
     /*
      <p>The registered resources on the container instance that are in use by current tasks.</p>
     */
-    inline ContainerInstance&  WithRegisteredResources(const Aws::Vector<Resource>& value) { SetRegisteredResources(value); return *this;}
+    inline void SetRegisteredResources(Aws::Vector<Resource>&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = value; }
+
+    /*
+     <p>The registered resources on the container instance that are in use by current tasks.</p>
+    */
+    inline ContainerInstance& WithRegisteredResources(const Aws::Vector<Resource>& value) { SetRegisteredResources(value); return *this;}
+
+    /*
+     <p>The registered resources on the container instance that are in use by current tasks.</p>
+    */
+    inline ContainerInstance& WithRegisteredResources(Aws::Vector<Resource>&& value) { SetRegisteredResources(value); return *this;}
 
     /*
      <p>The registered resources on the container instance that are in use by current tasks.</p>
@@ -145,13 +205,24 @@ namespace Model
     inline ContainerInstance& AddRegisteredResources(const Resource& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(value); return *this; }
 
     /*
+     <p>The registered resources on the container instance that are in use by current tasks.</p>
+    */
+    inline ContainerInstance& AddRegisteredResources(Resource&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(value); return *this; }
+
+    /*
      <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
@@ -161,7 +232,12 @@ namespace Model
     /*
      <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
     */
-    inline ContainerInstance&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline ContainerInstance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
+    */
+    inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>
@@ -172,6 +248,7 @@ namespace Model
      <p>This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances with an agent that may be unhealthy or stopped will return <code>false</code>, and instances without a connected agent cannot accept placement request.</p>
     */
     inline bool GetAgentConnected() const{ return m_agentConnected; }
+
     /*
      <p>This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances with an agent that may be unhealthy or stopped will return <code>false</code>, and instances without a connected agent cannot accept placement request.</p>
     */
@@ -180,12 +257,13 @@ namespace Model
     /*
      <p>This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances with an agent that may be unhealthy or stopped will return <code>false</code>, and instances without a connected agent cannot accept placement request.</p>
     */
-    inline ContainerInstance&  WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
+    inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
 
     /*
      <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
     */
     inline long GetRunningTasksCount() const{ return m_runningTasksCount; }
+
     /*
      <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
     */
@@ -194,12 +272,13 @@ namespace Model
     /*
      <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
     */
-    inline ContainerInstance&  WithRunningTasksCount(long value) { SetRunningTasksCount(value); return *this;}
+    inline ContainerInstance& WithRunningTasksCount(long value) { SetRunningTasksCount(value); return *this;}
 
     /*
      <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
     */
     inline long GetPendingTasksCount() const{ return m_pendingTasksCount; }
+
     /*
      <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
     */
@@ -208,12 +287,13 @@ namespace Model
     /*
      <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
     */
-    inline ContainerInstance&  WithPendingTasksCount(long value) { SetPendingTasksCount(value); return *this;}
+    inline ContainerInstance& WithPendingTasksCount(long value) { SetPendingTasksCount(value); return *this;}
 
     /*
      <p>The status of the most recent agent update. If an update has never been requested, this value is <code>NULL</code>.</p>
     */
     inline const AgentUpdateStatus& GetAgentUpdateStatus() const{ return m_agentUpdateStatus; }
+
     /*
      <p>The status of the most recent agent update. If an update has never been requested, this value is <code>NULL</code>.</p>
     */
@@ -222,7 +302,17 @@ namespace Model
     /*
      <p>The status of the most recent agent update. If an update has never been requested, this value is <code>NULL</code>.</p>
     */
-    inline ContainerInstance&  WithAgentUpdateStatus(const AgentUpdateStatus& value) { SetAgentUpdateStatus(value); return *this;}
+    inline void SetAgentUpdateStatus(AgentUpdateStatus&& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = value; }
+
+    /*
+     <p>The status of the most recent agent update. If an update has never been requested, this value is <code>NULL</code>.</p>
+    */
+    inline ContainerInstance& WithAgentUpdateStatus(const AgentUpdateStatus& value) { SetAgentUpdateStatus(value); return *this;}
+
+    /*
+     <p>The status of the most recent agent update. If an update has never been requested, this value is <code>NULL</code>.</p>
+    */
+    inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(value); return *this;}
 
   private:
     Aws::String m_containerInstanceArn;

@@ -46,6 +46,7 @@ namespace Model
      The CloudFrontOriginAccessIdentityList type.
     */
     inline const CloudFrontOriginAccessIdentityList& GetCloudFrontOriginAccessIdentityList() const{ return m_cloudFrontOriginAccessIdentityList; }
+
     /*
      The CloudFrontOriginAccessIdentityList type.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      The CloudFrontOriginAccessIdentityList type.
     */
-    inline ListCloudFrontOriginAccessIdentities2015_04_17Result&  WithCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
+    inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = value; }
+
+    /*
+     The CloudFrontOriginAccessIdentityList type.
+    */
+    inline ListCloudFrontOriginAccessIdentities2015_04_17Result& WithCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
+
+    /*
+     The CloudFrontOriginAccessIdentityList type.
+    */
+    inline ListCloudFrontOriginAccessIdentities2015_04_17Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
 
   private:
     CloudFrontOriginAccessIdentityList m_cloudFrontOriginAccessIdentityList;

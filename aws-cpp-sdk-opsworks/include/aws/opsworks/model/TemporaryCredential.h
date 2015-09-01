@@ -44,10 +44,16 @@ namespace Model
      <p>The user name.</p>
     */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
     /*
      <p>The user name.</p>
     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
+
+    /*
+     <p>The user name.</p>
+    */
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /*
      <p>The user name.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The user name.</p>
     */
-    inline TemporaryCredential&  WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
+    inline TemporaryCredential& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
+
+    /*
+     <p>The user name.</p>
+    */
+    inline TemporaryCredential& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
 
     /*
      <p>The user name.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The password.</p>
     */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
     /*
      <p>The password.</p>
     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
+
+    /*
+     <p>The password.</p>
+    */
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /*
      <p>The password.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The password.</p>
     */
-    inline TemporaryCredential&  WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
+    inline TemporaryCredential& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
+
+    /*
+     <p>The password.</p>
+    */
+    inline TemporaryCredential& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
 
     /*
      <p>The password.</p>
@@ -92,6 +114,7 @@ namespace Model
      <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
     */
     inline long GetValidForInMinutes() const{ return m_validForInMinutes; }
+
     /*
      <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
     */
@@ -100,16 +123,22 @@ namespace Model
     /*
      <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
     */
-    inline TemporaryCredential&  WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
+    inline TemporaryCredential& WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance's AWS OpsWorks ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>
@@ -119,7 +148,12 @@ namespace Model
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
-    inline TemporaryCredential&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline TemporaryCredential& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance's AWS OpsWorks ID.</p>
+    */
+    inline TemporaryCredential& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>

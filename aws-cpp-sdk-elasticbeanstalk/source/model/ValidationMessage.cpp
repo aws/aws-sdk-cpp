@@ -47,24 +47,44 @@ ValidationMessage& ValidationMessage::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode messageNode = resultNode.FirstChild("Message");
+    if(messageNode.IsNull())
+    {
+      messageNode = resultNode;
+    }
+
     if(!messageNode.IsNull())
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
       m_messageHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
+    if(severityNode.IsNull())
+    {
+      severityNode = resultNode;
+    }
+
     if(!severityNode.IsNull())
     {
       m_severity = ValidationSeverityMapper::GetValidationSeverityForName(StringUtils::Trim(severityNode.GetText().c_str()).c_str());
       m_severityHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
+    if(namespaceNode.IsNull())
+    {
+      namespaceNode = resultNode;
+    }
+
     if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
+    if(optionNameNode.IsNull())
+    {
+      optionNameNode = resultNode;
+    }
+
     if(!optionNameNode.IsNull())
     {
       m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());

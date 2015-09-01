@@ -38,10 +38,16 @@ namespace Model
      <p>The identifier of the pipeline to update.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The identifier of the pipeline to update.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The identifier of the pipeline to update.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the pipeline to update.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identifier of the pipeline to update.</p>
     */
-    inline UpdatePipelineStatusRequest&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline UpdatePipelineStatusRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The identifier of the pipeline to update.</p>
+    */
+    inline UpdatePipelineStatusRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The identifier of the pipeline to update.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
     */
-    inline UpdatePipelineStatusRequest&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline UpdatePipelineStatusRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
+    */
+    inline UpdatePipelineStatusRequest& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>

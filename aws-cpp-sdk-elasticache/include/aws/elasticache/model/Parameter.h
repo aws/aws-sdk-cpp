@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the parameter.</p>
     */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+
     /*
      <p>The name of the parameter.</p>
     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
+
+    /*
+     <p>The name of the parameter.</p>
+    */
+    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /*
      <p>The name of the parameter.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the parameter.</p>
     */
-    inline Parameter&  WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
+    inline Parameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
+
+    /*
+     <p>The name of the parameter.</p>
+    */
+    inline Parameter& WithParameterName(Aws::String&& value) { SetParameterName(value); return *this;}
 
     /*
      <p>The name of the parameter.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The value of the parameter.</p>
     */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+
     /*
      <p>The value of the parameter.</p>
     */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
+
+    /*
+     <p>The value of the parameter.</p>
+    */
+    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
     /*
      <p>The value of the parameter.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The value of the parameter.</p>
     */
-    inline Parameter&  WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
+    inline Parameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
+
+    /*
+     <p>The value of the parameter.</p>
+    */
+    inline Parameter& WithParameterValue(Aws::String&& value) { SetParameterValue(value); return *this;}
 
     /*
      <p>The value of the parameter.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>A description of the parameter.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A description of the parameter.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A description of the parameter.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description of the parameter.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>A description of the parameter.</p>
     */
-    inline Parameter&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline Parameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A description of the parameter.</p>
+    */
+    inline Parameter& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A description of the parameter.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The source of the parameter.</p>
     */
     inline const Aws::String& GetSource() const{ return m_source; }
+
     /*
      <p>The source of the parameter.</p>
     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
+
+    /*
+     <p>The source of the parameter.</p>
+    */
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /*
      <p>The source of the parameter.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The source of the parameter.</p>
     */
-    inline Parameter&  WithSource(const Aws::String& value) { SetSource(value); return *this;}
+    inline Parameter& WithSource(const Aws::String& value) { SetSource(value); return *this;}
+
+    /*
+     <p>The source of the parameter.</p>
+    */
+    inline Parameter& WithSource(Aws::String&& value) { SetSource(value); return *this;}
 
     /*
      <p>The source of the parameter.</p>
@@ -143,10 +187,16 @@ namespace Model
      <p>The valid data type for the parameter.</p>
     */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
+
     /*
      <p>The valid data type for the parameter.</p>
     */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /*
+     <p>The valid data type for the parameter.</p>
+    */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /*
      <p>The valid data type for the parameter.</p>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p>The valid data type for the parameter.</p>
     */
-    inline Parameter&  WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+    inline Parameter& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /*
+     <p>The valid data type for the parameter.</p>
+    */
+    inline Parameter& WithDataType(Aws::String&& value) { SetDataType(value); return *this;}
 
     /*
      <p>The valid data type for the parameter.</p>
@@ -167,10 +222,16 @@ namespace Model
      <p>The valid range of values for the parameter.</p>
     */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+
     /*
      <p>The valid range of values for the parameter.</p>
     */
     inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
+
+    /*
+     <p>The valid range of values for the parameter.</p>
+    */
+    inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /*
      <p>The valid range of values for the parameter.</p>
@@ -180,7 +241,12 @@ namespace Model
     /*
      <p>The valid range of values for the parameter.</p>
     */
-    inline Parameter&  WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
+    inline Parameter& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
+
+    /*
+     <p>The valid range of values for the parameter.</p>
+    */
+    inline Parameter& WithAllowedValues(Aws::String&& value) { SetAllowedValues(value); return *this;}
 
     /*
      <p>The valid range of values for the parameter.</p>
@@ -191,6 +257,7 @@ namespace Model
      <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     */
     inline bool GetIsModifiable() const{ return m_isModifiable; }
+
     /*
      <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     */
@@ -199,16 +266,22 @@ namespace Model
     /*
      <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     */
-    inline Parameter&  WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
+    inline Parameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
     /*
      <p>The earliest cache engine version to which the parameter can apply.</p>
     */
     inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
     /*
      <p>The earliest cache engine version to which the parameter can apply.</p>
     */
     inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
+
+    /*
+     <p>The earliest cache engine version to which the parameter can apply.</p>
+    */
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
 
     /*
      <p>The earliest cache engine version to which the parameter can apply.</p>
@@ -218,7 +291,12 @@ namespace Model
     /*
      <p>The earliest cache engine version to which the parameter can apply.</p>
     */
-    inline Parameter&  WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+    inline Parameter& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    /*
+     <p>The earliest cache engine version to which the parameter can apply.</p>
+    */
+    inline Parameter& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(value); return *this;}
 
     /*
      <p>The earliest cache engine version to which the parameter can apply.</p>

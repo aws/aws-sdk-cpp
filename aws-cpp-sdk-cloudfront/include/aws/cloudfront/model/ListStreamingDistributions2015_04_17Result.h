@@ -46,6 +46,7 @@ namespace Model
      The StreamingDistributionList type.
     */
     inline const StreamingDistributionList& GetStreamingDistributionList() const{ return m_streamingDistributionList; }
+
     /*
      The StreamingDistributionList type.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      The StreamingDistributionList type.
     */
-    inline ListStreamingDistributions2015_04_17Result&  WithStreamingDistributionList(const StreamingDistributionList& value) { SetStreamingDistributionList(value); return *this;}
+    inline void SetStreamingDistributionList(StreamingDistributionList&& value) { m_streamingDistributionList = value; }
+
+    /*
+     The StreamingDistributionList type.
+    */
+    inline ListStreamingDistributions2015_04_17Result& WithStreamingDistributionList(const StreamingDistributionList& value) { SetStreamingDistributionList(value); return *this;}
+
+    /*
+     The StreamingDistributionList type.
+    */
+    inline ListStreamingDistributions2015_04_17Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(value); return *this;}
 
   private:
     StreamingDistributionList m_streamingDistributionList;

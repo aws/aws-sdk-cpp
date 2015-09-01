@@ -49,6 +49,7 @@ namespace Model
      <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
     */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
+
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
     */
-    inline GetItemResult&  WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
+    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_item = value; }
+
+    /*
+     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
+    */
+    inline GetItemResult& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
+
+    /*
+     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
+    */
+    inline GetItemResult& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(value); return *this;}
 
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
@@ -67,15 +78,42 @@ namespace Model
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
     */
+    inline GetItemResult& AddItem(Aws::String&& key, const AttributeValue& value) { m_item[key] = value; return *this; }
+
+    /*
+     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
+    */
+    inline GetItemResult& AddItem(const Aws::String& key, AttributeValue&& value) { m_item[key] = value; return *this; }
+
+    /*
+     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
+    */
+    inline GetItemResult& AddItem(Aws::String&& key, AttributeValue&& value) { m_item[key] = value; return *this; }
+
+    /*
+     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
+    */
+    inline GetItemResult& AddItem(const char* key, AttributeValue&& value) { m_item[key] = value; return *this; }
+
+    /*
+     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
+    */
     inline GetItemResult& AddItem(const char* key, const AttributeValue& value) { m_item[key] = value; return *this; }
 
     
     inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
+
     
     inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
 
     
-    inline GetItemResult&  WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
+    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = value; }
+
+    
+    inline GetItemResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
+
+    
+    inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(value); return *this;}
 
   private:
     Aws::Map<Aws::String, AttributeValue> m_item;

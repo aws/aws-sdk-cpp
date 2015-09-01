@@ -46,25 +46,42 @@ namespace Model
 
     
     inline const Aws::Vector<MetricFilter>& GetMetricFilters() const{ return m_metricFilters; }
+
     
     inline void SetMetricFilters(const Aws::Vector<MetricFilter>& value) { m_metricFilters = value; }
 
     
-    inline DescribeMetricFiltersResult&  WithMetricFilters(const Aws::Vector<MetricFilter>& value) { SetMetricFilters(value); return *this;}
+    inline void SetMetricFilters(Aws::Vector<MetricFilter>&& value) { m_metricFilters = value; }
+
+    
+    inline DescribeMetricFiltersResult& WithMetricFilters(const Aws::Vector<MetricFilter>& value) { SetMetricFilters(value); return *this;}
+
+    
+    inline DescribeMetricFiltersResult& WithMetricFilters(Aws::Vector<MetricFilter>&& value) { SetMetricFilters(value); return *this;}
 
     
     inline DescribeMetricFiltersResult& AddMetricFilters(const MetricFilter& value) { m_metricFilters.push_back(value); return *this; }
 
     
+    inline DescribeMetricFiltersResult& AddMetricFilters(MetricFilter&& value) { m_metricFilters.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     
-    inline DescribeMetricFiltersResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeMetricFiltersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline DescribeMetricFiltersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline DescribeMetricFiltersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

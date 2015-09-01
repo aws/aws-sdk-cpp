@@ -44,10 +44,16 @@ namespace Model
      An identity pool ID in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      An identity pool ID in the format REGION:GUID.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -57,7 +63,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline IdentityPoolShortDescription&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline IdentityPoolShortDescription& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline IdentityPoolShortDescription& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -68,10 +79,16 @@ namespace Model
      A string that you provide.
     */
     inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
+
     /*
      A string that you provide.
     */
     inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
+
+    /*
+     A string that you provide.
+    */
+    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
 
     /*
      A string that you provide.
@@ -81,7 +98,12 @@ namespace Model
     /*
      A string that you provide.
     */
-    inline IdentityPoolShortDescription&  WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
+    inline IdentityPoolShortDescription& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
+
+    /*
+     A string that you provide.
+    */
+    inline IdentityPoolShortDescription& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(value); return *this;}
 
     /*
      A string that you provide.

@@ -38,10 +38,16 @@ namespace Model
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+
+    /*
+     <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline DownloadDBLogFilePortionRequest&  WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+
+    /*
+     <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -62,10 +73,16 @@ namespace Model
      <p> The name of the log file to be downloaded. </p>
     */
     inline const Aws::String& GetLogFileName() const{ return m_logFileName; }
+
     /*
      <p> The name of the log file to be downloaded. </p>
     */
     inline void SetLogFileName(const Aws::String& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
+
+    /*
+     <p> The name of the log file to be downloaded. </p>
+    */
+    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
 
     /*
      <p> The name of the log file to be downloaded. </p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p> The name of the log file to be downloaded. </p>
     */
-    inline DownloadDBLogFilePortionRequest&  WithLogFileName(const Aws::String& value) { SetLogFileName(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithLogFileName(const Aws::String& value) { SetLogFileName(value); return *this;}
+
+    /*
+     <p> The name of the log file to be downloaded. </p>
+    */
+    inline DownloadDBLogFilePortionRequest& WithLogFileName(Aws::String&& value) { SetLogFileName(value); return *this;}
 
     /*
      <p> The name of the log file to be downloaded. </p>
@@ -86,10 +108,16 @@ namespace Model
      <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
     */
-    inline DownloadDBLogFilePortionRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
+    */
+    inline DownloadDBLogFilePortionRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines. </p>
@@ -110,6 +143,7 @@ namespace Model
      <p> The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file will be truncated at 1 MB in size. </p> <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter. <ul> <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned.</p></li> <li><p>If NumberOfLines is specified and Marker is not specified, then the most recent lines from the end of the log file are returned.</p></li> <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li> <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li> </ul></p>
     */
     inline long GetNumberOfLines() const{ return m_numberOfLines; }
+
     /*
      <p> The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file will be truncated at 1 MB in size. </p> <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter. <ul> <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned.</p></li> <li><p>If NumberOfLines is specified and Marker is not specified, then the most recent lines from the end of the log file are returned.</p></li> <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li> <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li> </ul></p>
     */
@@ -118,7 +152,7 @@ namespace Model
     /*
      <p> The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file will be truncated at 1 MB in size. </p> <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter. <ul> <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned.</p></li> <li><p>If NumberOfLines is specified and Marker is not specified, then the most recent lines from the end of the log file are returned.</p></li> <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li> <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li> </ul></p>
     */
-    inline DownloadDBLogFilePortionRequest&  WithNumberOfLines(long value) { SetNumberOfLines(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithNumberOfLines(long value) { SetNumberOfLines(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;

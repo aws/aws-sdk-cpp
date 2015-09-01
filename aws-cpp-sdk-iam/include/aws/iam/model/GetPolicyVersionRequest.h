@@ -35,14 +35,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline GetPolicyVersionRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline GetPolicyVersionRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline GetPolicyVersionRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline GetPolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
@@ -51,10 +58,16 @@ namespace Model
      <p>Identifies the policy version to retrieve.</p>
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      <p>Identifies the policy version to retrieve.</p>
     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /*
+     <p>Identifies the policy version to retrieve.</p>
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      <p>Identifies the policy version to retrieve.</p>
@@ -64,7 +77,12 @@ namespace Model
     /*
      <p>Identifies the policy version to retrieve.</p>
     */
-    inline GetPolicyVersionRequest&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline GetPolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     <p>Identifies the policy version to retrieve.</p>
+    */
+    inline GetPolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      <p>Identifies the policy version to retrieve.</p>

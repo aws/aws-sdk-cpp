@@ -41,6 +41,11 @@ PolicyGroup& PolicyGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
+    if(groupNameNode.IsNull())
+    {
+      groupNameNode = resultNode;
+    }
+
     if(!groupNameNode.IsNull())
     {
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());

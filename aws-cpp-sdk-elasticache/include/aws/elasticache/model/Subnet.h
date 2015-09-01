@@ -48,10 +48,16 @@ namespace Model
      <p>The unique identifier for the subnet.</p>
     */
     inline const Aws::String& GetSubnetIdentifier() const{ return m_subnetIdentifier; }
+
     /*
      <p>The unique identifier for the subnet.</p>
     */
     inline void SetSubnetIdentifier(const Aws::String& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
+
+    /*
+     <p>The unique identifier for the subnet.</p>
+    */
+    inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
     /*
      <p>The unique identifier for the subnet.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The unique identifier for the subnet.</p>
     */
-    inline Subnet&  WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
+    inline Subnet& WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
+
+    /*
+     <p>The unique identifier for the subnet.</p>
+    */
+    inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(value); return *this;}
 
     /*
      <p>The unique identifier for the subnet.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>The Availability Zone associated with the subnet.</p>
     */
     inline const AvailabilityZone& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
+
     /*
      <p>The Availability Zone associated with the subnet.</p>
     */
@@ -80,7 +92,17 @@ namespace Model
     /*
      <p>The Availability Zone associated with the subnet.</p>
     */
-    inline Subnet&  WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
+    inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
+
+    /*
+     <p>The Availability Zone associated with the subnet.</p>
+    */
+    inline Subnet& WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The Availability Zone associated with the subnet.</p>
+    */
+    inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(value); return *this;}
 
   private:
     Aws::String m_subnetIdentifier;

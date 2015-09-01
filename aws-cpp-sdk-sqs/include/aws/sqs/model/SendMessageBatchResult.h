@@ -49,6 +49,7 @@ namespace Model
      <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
     */
     inline const Aws::Vector<SendMessageBatchResultEntry>& GetSuccessful() const{ return m_successful; }
+
     /*
      <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
     */
-    inline SendMessageBatchResult&  WithSuccessful(const Aws::Vector<SendMessageBatchResultEntry>& value) { SetSuccessful(value); return *this;}
+    inline void SetSuccessful(Aws::Vector<SendMessageBatchResultEntry>&& value) { m_successful = value; }
+
+    /*
+     <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+    */
+    inline SendMessageBatchResult& WithSuccessful(const Aws::Vector<SendMessageBatchResultEntry>& value) { SetSuccessful(value); return *this;}
+
+    /*
+     <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+    */
+    inline SendMessageBatchResult& WithSuccessful(Aws::Vector<SendMessageBatchResultEntry>&& value) { SetSuccessful(value); return *this;}
 
     /*
      <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline SendMessageBatchResult& AddSuccessful(const SendMessageBatchResultEntry& value) { m_successful.push_back(value); return *this; }
 
     /*
+     <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+    */
+    inline SendMessageBatchResult& AddSuccessful(SendMessageBatchResultEntry&& value) { m_successful.push_back(value); return *this; }
+
+    /*
      <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
     */
     inline const Aws::Vector<BatchResultErrorEntry>& GetFailed() const{ return m_failed; }
+
     /*
      <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
     */
@@ -76,20 +93,42 @@ namespace Model
     /*
      <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
     */
-    inline SendMessageBatchResult&  WithFailed(const Aws::Vector<BatchResultErrorEntry>& value) { SetFailed(value); return *this;}
+    inline void SetFailed(Aws::Vector<BatchResultErrorEntry>&& value) { m_failed = value; }
+
+    /*
+     <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
+    */
+    inline SendMessageBatchResult& WithFailed(const Aws::Vector<BatchResultErrorEntry>& value) { SetFailed(value); return *this;}
+
+    /*
+     <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
+    */
+    inline SendMessageBatchResult& WithFailed(Aws::Vector<BatchResultErrorEntry>&& value) { SetFailed(value); return *this;}
 
     /*
      <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
     */
     inline SendMessageBatchResult& AddFailed(const BatchResultErrorEntry& value) { m_failed.push_back(value); return *this; }
 
+    /*
+     <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.</p>
+    */
+    inline SendMessageBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline SendMessageBatchResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline SendMessageBatchResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline SendMessageBatchResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<SendMessageBatchResultEntry> m_successful;

@@ -44,10 +44,16 @@ namespace Model
      <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
     /*
      <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
+
+    /*
+     <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
+    */
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /*
      <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     */
-    inline InstanceIdentity&  WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
+    inline InstanceIdentity& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
+
+    /*
+     <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
+    */
+    inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
     /*
      <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
     /*
      <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     */
     inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
+
+    /*
+     <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
+    */
+    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = value; }
 
     /*
      <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     */
-    inline InstanceIdentity&  WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
+    inline InstanceIdentity& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
+
+    /*
+     <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
+    */
+    inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(value); return *this;}
 
     /*
      <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>

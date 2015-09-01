@@ -41,10 +41,16 @@ namespace Model
      <p>The name of the stream.</p>
     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     /*
      <p>The name of the stream.</p>
     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /*
+     <p>The name of the stream.</p>
+    */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The name of the stream.</p>
     */
-    inline GetShardIteratorRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline GetShardIteratorRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /*
+     <p>The name of the stream.</p>
+    */
+    inline GetShardIteratorRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /*
      <p>The name of the stream.</p>
@@ -65,10 +76,16 @@ namespace Model
      <p>The shard ID of the shard to get the iterator for.</p>
     */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
+
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
     */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
+
+    /*
+     <p>The shard ID of the shard to get the iterator for.</p>
+    */
+    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
@@ -78,7 +95,12 @@ namespace Model
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
     */
-    inline GetShardIteratorRequest&  WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
+    inline GetShardIteratorRequest& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
+
+    /*
+     <p>The shard ID of the shard to get the iterator for.</p>
+    */
+    inline GetShardIteratorRequest& WithShardId(Aws::String&& value) { SetShardId(value); return *this;}
 
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
@@ -89,6 +111,7 @@ namespace Model
      <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
     */
     inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
+
     /*
      <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
     */
@@ -97,16 +120,32 @@ namespace Model
     /*
      <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
     */
-    inline GetShardIteratorRequest&  WithShardIteratorType(const ShardIteratorType& value) { SetShardIteratorType(value); return *this;}
+    inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
+
+    /*
+     <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
+    */
+    inline GetShardIteratorRequest& WithShardIteratorType(const ShardIteratorType& value) { SetShardIteratorType(value); return *this;}
+
+    /*
+     <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
+    */
+    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(value); return *this;}
 
     /*
      <p>The sequence number of the data record in the shard from which to start reading from.</p>
     */
     inline const Aws::String& GetStartingSequenceNumber() const{ return m_startingSequenceNumber; }
+
     /*
      <p>The sequence number of the data record in the shard from which to start reading from.</p>
     */
     inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
+
+    /*
+     <p>The sequence number of the data record in the shard from which to start reading from.</p>
+    */
+    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
     /*
      <p>The sequence number of the data record in the shard from which to start reading from.</p>
@@ -116,7 +155,12 @@ namespace Model
     /*
      <p>The sequence number of the data record in the shard from which to start reading from.</p>
     */
-    inline GetShardIteratorRequest&  WithStartingSequenceNumber(const Aws::String& value) { SetStartingSequenceNumber(value); return *this;}
+    inline GetShardIteratorRequest& WithStartingSequenceNumber(const Aws::String& value) { SetStartingSequenceNumber(value); return *this;}
+
+    /*
+     <p>The sequence number of the data record in the shard from which to start reading from.</p>
+    */
+    inline GetShardIteratorRequest& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(value); return *this;}
 
     /*
      <p>The sequence number of the data record in the shard from which to start reading from.</p>

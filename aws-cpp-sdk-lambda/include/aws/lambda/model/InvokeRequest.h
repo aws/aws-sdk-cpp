@@ -40,10 +40,16 @@ namespace Model
      <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+
     /*
      <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+
+    /*
+     <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
+    */
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline InvokeRequest&  WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
+    inline InvokeRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
+
+    /*
+     <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
+    */
+    inline InvokeRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /*
      <p>The Lambda function name. </p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -64,6 +75,7 @@ namespace Model
      <p>By default, the <code>Invoke</code> API assumes "RequestResponse" invocation type. You can optionally request asynchronous execution by specifying "Event" as the <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the caller is authorized to invoke the function and if the inputs are valid. You request this by specifying "DryRun" as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want to verify access to a function without running it. </p>
     */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
+
     /*
      <p>By default, the <code>Invoke</code> API assumes "RequestResponse" invocation type. You can optionally request asynchronous execution by specifying "Event" as the <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the caller is authorized to invoke the function and if the inputs are valid. You request this by specifying "DryRun" as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want to verify access to a function without running it. </p>
     */
@@ -72,12 +84,23 @@ namespace Model
     /*
      <p>By default, the <code>Invoke</code> API assumes "RequestResponse" invocation type. You can optionally request asynchronous execution by specifying "Event" as the <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the caller is authorized to invoke the function and if the inputs are valid. You request this by specifying "DryRun" as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want to verify access to a function without running it. </p>
     */
-    inline InvokeRequest&  WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
+    inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
+
+    /*
+     <p>By default, the <code>Invoke</code> API assumes "RequestResponse" invocation type. You can optionally request asynchronous execution by specifying "Event" as the <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the caller is authorized to invoke the function and if the inputs are valid. You request this by specifying "DryRun" as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want to verify access to a function without running it. </p>
+    */
+    inline InvokeRequest& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
+
+    /*
+     <p>By default, the <code>Invoke</code> API assumes "RequestResponse" invocation type. You can optionally request asynchronous execution by specifying "Event" as the <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the caller is authorized to invoke the function and if the inputs are valid. You request this by specifying "DryRun" as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want to verify access to a function without running it. </p>
+    */
+    inline InvokeRequest& WithInvocationType(InvocationType&& value) { SetInvocationType(value); return *this;}
 
     /*
      <p>You can set this optional parameter to "Tail" in the request only if you specify the <code>InvocationType</code> parameter with value "RequestResponse". In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <code>x-amz-log-results</code> header. </p>
     */
     inline const LogType& GetLogType() const{ return m_logType; }
+
     /*
      <p>You can set this optional parameter to "Tail" in the request only if you specify the <code>InvocationType</code> parameter with value "RequestResponse". In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <code>x-amz-log-results</code> header. </p>
     */
@@ -86,16 +109,32 @@ namespace Model
     /*
      <p>You can set this optional parameter to "Tail" in the request only if you specify the <code>InvocationType</code> parameter with value "RequestResponse". In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <code>x-amz-log-results</code> header. </p>
     */
-    inline InvokeRequest&  WithLogType(const LogType& value) { SetLogType(value); return *this;}
+    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = value; }
+
+    /*
+     <p>You can set this optional parameter to "Tail" in the request only if you specify the <code>InvocationType</code> parameter with value "RequestResponse". In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <code>x-amz-log-results</code> header. </p>
+    */
+    inline InvokeRequest& WithLogType(const LogType& value) { SetLogType(value); return *this;}
+
+    /*
+     <p>You can set this optional parameter to "Tail" in the request only if you specify the <code>InvocationType</code> parameter with value "RequestResponse". In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <code>x-amz-log-results</code> header. </p>
+    */
+    inline InvokeRequest& WithLogType(LogType&& value) { SetLogType(value); return *this;}
 
     /*
      <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>
     */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+
     /*
      <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>
     */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
+
+    /*
+     <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>
+    */
+    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /*
      <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>
@@ -105,7 +144,12 @@ namespace Model
     /*
      <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>
     */
-    inline InvokeRequest&  WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
+    inline InvokeRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
+
+    /*
+     <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>
+    */
+    inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(value); return *this;}
 
     /*
      <p>Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a ClientContext JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The ClientContext JSON must be base64-encoded.</p>

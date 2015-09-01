@@ -46,10 +46,16 @@ namespace Model
      A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+
+    /*
+     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
     /*
      A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
@@ -59,7 +65,12 @@ namespace Model
     /*
      A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
     */
-    inline GetOpenIdTokenResult&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline GetOpenIdTokenResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
+    */
+    inline GetOpenIdTokenResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
@@ -70,10 +81,16 @@ namespace Model
      An OpenID token, valid for 15 minutes.
     */
     inline const Aws::String& GetToken() const{ return m_token; }
+
     /*
      An OpenID token, valid for 15 minutes.
     */
     inline void SetToken(const Aws::String& value) { m_token = value; }
+
+    /*
+     An OpenID token, valid for 15 minutes.
+    */
+    inline void SetToken(Aws::String&& value) { m_token = value; }
 
     /*
      An OpenID token, valid for 15 minutes.
@@ -83,7 +100,12 @@ namespace Model
     /*
      An OpenID token, valid for 15 minutes.
     */
-    inline GetOpenIdTokenResult&  WithToken(const Aws::String& value) { SetToken(value); return *this;}
+    inline GetOpenIdTokenResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
+
+    /*
+     An OpenID token, valid for 15 minutes.
+    */
+    inline GetOpenIdTokenResult& WithToken(Aws::String&& value) { SetToken(value); return *this;}
 
     /*
      An OpenID token, valid for 15 minutes.

@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the parameter group to be modified. </p>
     */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+
     /*
      <p> The name of the parameter group to be modified. </p>
     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+
+    /*
+     <p> The name of the parameter group to be modified. </p>
+    */
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of the parameter group to be modified. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the parameter group to be modified. </p>
     */
-    inline ModifyClusterParameterGroupRequest&  WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+    inline ModifyClusterParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+
+    /*
+     <p> The name of the parameter group to be modified. </p>
+    */
+    inline ModifyClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
 
     /*
      <p> The name of the parameter group to be modified. </p>
@@ -64,6 +75,7 @@ namespace Model
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
     /*
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
     */
@@ -72,12 +84,27 @@ namespace Model
     /*
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
     */
-    inline ModifyClusterParameterGroupRequest&  WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /*
+     <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
+    */
+    inline ModifyClusterParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+
+    /*
+     <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
+    */
+    inline ModifyClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /*
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
     */
     inline ModifyClusterParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /*
+     <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
+    */
+    inline ModifyClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
   private:
     Aws::String m_parameterGroupName;

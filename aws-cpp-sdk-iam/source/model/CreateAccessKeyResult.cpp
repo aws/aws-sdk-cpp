@@ -42,6 +42,11 @@ CreateAccessKeyResult& CreateAccessKeyResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode accessKeyNode = resultNode.FirstChild("AccessKey");
+    if(accessKeyNode.IsNull())
+    {
+      accessKeyNode = resultNode;
+    }
+
     if(!accessKeyNode.IsNull())
     {
       m_accessKey = accessKeyNode;

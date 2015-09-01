@@ -40,10 +40,16 @@ namespace Model
      <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     */
-    inline DescribeRaidArraysRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline DescribeRaidArraysRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    */
+    inline DescribeRaidArraysRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline DescribeRaidArraysRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline DescribeRaidArraysRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline DescribeRaidArraysRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -88,6 +110,7 @@ namespace Model
      <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
     */
     inline const Aws::Vector<Aws::String>& GetRaidArrayIds() const{ return m_raidArrayIds; }
+
     /*
      <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
     */
@@ -96,12 +119,27 @@ namespace Model
     /*
      <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
     */
-    inline DescribeRaidArraysRequest&  WithRaidArrayIds(const Aws::Vector<Aws::String>& value) { SetRaidArrayIds(value); return *this;}
+    inline void SetRaidArrayIds(Aws::Vector<Aws::String>&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds = value; }
+
+    /*
+     <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    */
+    inline DescribeRaidArraysRequest& WithRaidArrayIds(const Aws::Vector<Aws::String>& value) { SetRaidArrayIds(value); return *this;}
+
+    /*
+     <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    */
+    inline DescribeRaidArraysRequest& WithRaidArrayIds(Aws::Vector<Aws::String>&& value) { SetRaidArrayIds(value); return *this;}
 
     /*
      <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
     */
     inline DescribeRaidArraysRequest& AddRaidArrayIds(const Aws::String& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(value); return *this; }
+
+    /*
+     <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    */
+    inline DescribeRaidArraysRequest& AddRaidArrayIds(Aws::String&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(value); return *this; }
 
     /*
      <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>

@@ -46,6 +46,7 @@ namespace Model
      <p>Returns the notification configuration set on the vault.</p>
     */
     inline const VaultNotificationConfig& GetVaultNotificationConfig() const{ return m_vaultNotificationConfig; }
+
     /*
      <p>Returns the notification configuration set on the vault.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Returns the notification configuration set on the vault.</p>
     */
-    inline GetVaultNotificationsResult&  WithVaultNotificationConfig(const VaultNotificationConfig& value) { SetVaultNotificationConfig(value); return *this;}
+    inline void SetVaultNotificationConfig(VaultNotificationConfig&& value) { m_vaultNotificationConfig = value; }
+
+    /*
+     <p>Returns the notification configuration set on the vault.</p>
+    */
+    inline GetVaultNotificationsResult& WithVaultNotificationConfig(const VaultNotificationConfig& value) { SetVaultNotificationConfig(value); return *this;}
+
+    /*
+     <p>Returns the notification configuration set on the vault.</p>
+    */
+    inline GetVaultNotificationsResult& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(value); return *this;}
 
   private:
     VaultNotificationConfig m_vaultNotificationConfig;

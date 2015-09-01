@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the server certificate you want to delete.</p>
     */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
+
     /*
      <p>The name of the server certificate you want to delete.</p>
     */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
+
+    /*
+     <p>The name of the server certificate you want to delete.</p>
+    */
+    inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
      <p>The name of the server certificate you want to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the server certificate you want to delete.</p>
     */
-    inline DeleteServerCertificateRequest&  WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
+    inline DeleteServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
+
+    /*
+     <p>The name of the server certificate you want to delete.</p>
+    */
+    inline DeleteServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(value); return *this;}
 
     /*
      <p>The name of the server certificate you want to delete.</p>

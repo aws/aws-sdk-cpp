@@ -38,10 +38,16 @@ namespace Model
      <p> The name of the application to delete the configuration template from. </p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p> The name of the application to delete the configuration template from. </p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p> The name of the application to delete the configuration template from. </p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application to delete the configuration template from. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The name of the application to delete the configuration template from. </p>
     */
-    inline DeleteConfigurationTemplateRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline DeleteConfigurationTemplateRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p> The name of the application to delete the configuration template from. </p>
+    */
+    inline DeleteConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p> The name of the application to delete the configuration template from. </p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The name of the configuration template to delete.</p>
     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
     /*
      <p>The name of the configuration template to delete.</p>
     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /*
+     <p>The name of the configuration template to delete.</p>
+    */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p>The name of the configuration template to delete.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The name of the configuration template to delete.</p>
     */
-    inline DeleteConfigurationTemplateRequest&  WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+    inline DeleteConfigurationTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /*
+     <p>The name of the configuration template to delete.</p>
+    */
+    inline DeleteConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /*
      <p>The name of the configuration template to delete.</p>

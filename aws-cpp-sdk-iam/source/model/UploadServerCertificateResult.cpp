@@ -42,6 +42,11 @@ UploadServerCertificateResult& UploadServerCertificateResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode serverCertificateMetadataNode = resultNode.FirstChild("ServerCertificateMetadata");
+    if(serverCertificateMetadataNode.IsNull())
+    {
+      serverCertificateMetadataNode = resultNode;
+    }
+
     if(!serverCertificateMetadataNode.IsNull())
     {
       m_serverCertificateMetadata = serverCertificateMetadataNode;

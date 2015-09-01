@@ -45,10 +45,16 @@ namespace Model
      <p>The unique identifier for the instance in Amazon EMR.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The unique identifier for the instance in Amazon EMR.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The unique identifier for the instance in Amazon EMR.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The unique identifier for the instance in Amazon EMR.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The unique identifier for the instance in Amazon EMR.</p>
     */
-    inline Instance&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Instance& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the instance in Amazon EMR.</p>
+    */
+    inline Instance& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The unique identifier for the instance in Amazon EMR.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The unique identifier of the instance in Amazon EC2.</p>
     */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
     /*
      <p>The unique identifier of the instance in Amazon EC2.</p>
     */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
+
+    /*
+     <p>The unique identifier of the instance in Amazon EC2.</p>
+    */
+    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /*
      <p>The unique identifier of the instance in Amazon EC2.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The unique identifier of the instance in Amazon EC2.</p>
     */
-    inline Instance&  WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+    inline Instance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+
+    /*
+     <p>The unique identifier of the instance in Amazon EC2.</p>
+    */
+    inline Instance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(value); return *this;}
 
     /*
      <p>The unique identifier of the instance in Amazon EC2.</p>
@@ -93,10 +115,16 @@ namespace Model
      <p>The public DNS name of the instance.</p>
     */
     inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+
     /*
      <p>The public DNS name of the instance.</p>
     */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
+
+    /*
+     <p>The public DNS name of the instance.</p>
+    */
+    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /*
      <p>The public DNS name of the instance.</p>
@@ -106,7 +134,12 @@ namespace Model
     /*
      <p>The public DNS name of the instance.</p>
     */
-    inline Instance&  WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
+    inline Instance& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
+
+    /*
+     <p>The public DNS name of the instance.</p>
+    */
+    inline Instance& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(value); return *this;}
 
     /*
      <p>The public DNS name of the instance.</p>
@@ -117,10 +150,16 @@ namespace Model
      <p>The public IP address of the instance.</p>
     */
     inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
+
     /*
      <p>The public IP address of the instance.</p>
     */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
+
+    /*
+     <p>The public IP address of the instance.</p>
+    */
+    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /*
      <p>The public IP address of the instance.</p>
@@ -130,7 +169,12 @@ namespace Model
     /*
      <p>The public IP address of the instance.</p>
     */
-    inline Instance&  WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
+    inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
+
+    /*
+     <p>The public IP address of the instance.</p>
+    */
+    inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(value); return *this;}
 
     /*
      <p>The public IP address of the instance.</p>
@@ -141,10 +185,16 @@ namespace Model
      <p>The private DNS name of the instance.</p>
     */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
     /*
      <p>The private DNS name of the instance.</p>
     */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
+
+    /*
+     <p>The private DNS name of the instance.</p>
+    */
+    inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /*
      <p>The private DNS name of the instance.</p>
@@ -154,7 +204,12 @@ namespace Model
     /*
      <p>The private DNS name of the instance.</p>
     */
-    inline Instance&  WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
+    inline Instance& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
+
+    /*
+     <p>The private DNS name of the instance.</p>
+    */
+    inline Instance& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(value); return *this;}
 
     /*
      <p>The private DNS name of the instance.</p>
@@ -165,10 +220,16 @@ namespace Model
      <p>The private IP address of the instance.</p>
     */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
     /*
      <p>The private IP address of the instance.</p>
     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+
+    /*
+     <p>The private IP address of the instance.</p>
+    */
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /*
      <p>The private IP address of the instance.</p>
@@ -178,7 +239,12 @@ namespace Model
     /*
      <p>The private IP address of the instance.</p>
     */
-    inline Instance&  WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+    inline Instance& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+
+    /*
+     <p>The private IP address of the instance.</p>
+    */
+    inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /*
      <p>The private IP address of the instance.</p>
@@ -189,6 +255,7 @@ namespace Model
      <p>The current status of the instance.</p>
     */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
+
     /*
      <p>The current status of the instance.</p>
     */
@@ -197,7 +264,17 @@ namespace Model
     /*
      <p>The current status of the instance.</p>
     */
-    inline Instance&  WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The current status of the instance.</p>
+    */
+    inline Instance& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The current status of the instance.</p>
+    */
+    inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
 
   private:
     Aws::String m_id;

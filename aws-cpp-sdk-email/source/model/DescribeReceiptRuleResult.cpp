@@ -42,6 +42,11 @@ DescribeReceiptRuleResult& DescribeReceiptRuleResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode ruleNode = resultNode.FirstChild("Rule");
+    if(ruleNode.IsNull())
+    {
+      ruleNode = resultNode;
+    }
+
     if(!ruleNode.IsNull())
     {
       m_rule = ruleNode;

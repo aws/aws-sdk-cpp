@@ -38,10 +38,16 @@ namespace Model
      <p>A user-specified name for the cache parameter group.</p>
     */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+
     /*
      <p>A user-specified name for the cache parameter group.</p>
     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>A user-specified name for the cache parameter group.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>A user-specified name for the cache parameter group.</p>
     */
-    inline CreateCacheParameterGroupRequest&  WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+    inline CreateCacheParameterGroupRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline CreateCacheParameterGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
 
     /*
      <p>A user-specified name for the cache parameter group.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
+
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
+
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
-    inline CreateCacheParameterGroupRequest&  WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+    inline CreateCacheParameterGroupRequest& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline CreateCacheParameterGroupRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
@@ -86,10 +108,16 @@ namespace Model
      <p>A user-specified description for the cache parameter group.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A user-specified description for the cache parameter group.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A user-specified description for the cache parameter group.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>A user-specified description for the cache parameter group.</p>
     */
-    inline CreateCacheParameterGroupRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateCacheParameterGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline CreateCacheParameterGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A user-specified description for the cache parameter group.</p>

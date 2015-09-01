@@ -39,10 +39,16 @@ namespace Model
      The distribution's id.
     */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+
     /*
      The distribution's id.
     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
+
+    /*
+     The distribution's id.
+    */
+    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
     /*
      The distribution's id.
@@ -52,7 +58,12 @@ namespace Model
     /*
      The distribution's id.
     */
-    inline CreateInvalidation2015_04_17Request&  WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
+    inline CreateInvalidation2015_04_17Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
+
+    /*
+     The distribution's id.
+    */
+    inline CreateInvalidation2015_04_17Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
 
     /*
      The distribution's id.
@@ -63,6 +74,7 @@ namespace Model
      The batch information for the invalidation.
     */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
+
     /*
      The batch information for the invalidation.
     */
@@ -71,7 +83,17 @@ namespace Model
     /*
      The batch information for the invalidation.
     */
-    inline CreateInvalidation2015_04_17Request&  WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
+    inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
+
+    /*
+     The batch information for the invalidation.
+    */
+    inline CreateInvalidation2015_04_17Request& WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
+
+    /*
+     The batch information for the invalidation.
+    */
+    inline CreateInvalidation2015_04_17Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(value); return *this;}
 
   private:
     Aws::String m_distributionId;

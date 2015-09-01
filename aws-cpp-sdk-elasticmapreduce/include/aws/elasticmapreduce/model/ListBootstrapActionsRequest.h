@@ -40,10 +40,16 @@ namespace Model
      <p>The cluster identifier for the bootstrap actions to list .</p>
     */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
     /*
      <p>The cluster identifier for the bootstrap actions to list .</p>
     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /*
+     <p>The cluster identifier for the bootstrap actions to list .</p>
+    */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /*
      <p>The cluster identifier for the bootstrap actions to list .</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The cluster identifier for the bootstrap actions to list .</p>
     */
-    inline ListBootstrapActionsRequest&  WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+    inline ListBootstrapActionsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /*
+     <p>The cluster identifier for the bootstrap actions to list .</p>
+    */
+    inline ListBootstrapActionsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
 
     /*
      <p>The cluster identifier for the bootstrap actions to list .</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The pagination token that indicates the next set of results to retrieve .</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve .</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
     */
-    inline ListBootstrapActionsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListBootstrapActionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve .</p>
+    */
+    inline ListBootstrapActionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>

@@ -55,6 +55,11 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
       m_grantsHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
+    if(ownerNode.IsNull())
+    {
+      ownerNode = resultNode;
+    }
+
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
@@ -70,9 +75,10 @@ void AccessControlPolicy::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_grantsHasBeenSet)
   {
+   XmlNode grantsParentNode = parentNode.CreateChildElement("Grants");
    for(const auto& item : m_grants)
    {
-     XmlNode grantsNode = parentNode.CreateChildElement("Grant");
+     XmlNode grantsNode = grantsParentNode.CreateChildElement("Grant");
      item.AddToNode(grantsNode);
    }
   }

@@ -49,6 +49,7 @@ namespace Model
      <p>A map of Identity to IdentityNotificationAttributes.</p>
     */
     inline const Aws::Map<Aws::String, IdentityNotificationAttributes>& GetNotificationAttributes() const{ return m_notificationAttributes; }
+
     /*
      <p>A map of Identity to IdentityNotificationAttributes.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A map of Identity to IdentityNotificationAttributes.</p>
     */
-    inline GetIdentityNotificationAttributesResult&  WithNotificationAttributes(const Aws::Map<Aws::String, IdentityNotificationAttributes>& value) { SetNotificationAttributes(value); return *this;}
+    inline void SetNotificationAttributes(Aws::Map<Aws::String, IdentityNotificationAttributes>&& value) { m_notificationAttributes = value; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& WithNotificationAttributes(const Aws::Map<Aws::String, IdentityNotificationAttributes>& value) { SetNotificationAttributes(value); return *this;}
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& WithNotificationAttributes(Aws::Map<Aws::String, IdentityNotificationAttributes>&& value) { SetNotificationAttributes(value); return *this;}
 
     /*
      <p>A map of Identity to IdentityNotificationAttributes.</p>
@@ -67,15 +78,42 @@ namespace Model
     /*
      <p>A map of Identity to IdentityNotificationAttributes.</p>
     */
+    inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(Aws::String&& key, const IdentityNotificationAttributes& value) { m_notificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(const Aws::String& key, IdentityNotificationAttributes&& value) { m_notificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(Aws::String&& key, IdentityNotificationAttributes&& value) { m_notificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(const char* key, IdentityNotificationAttributes&& value) { m_notificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
     inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(const char* key, const IdentityNotificationAttributes& value) { m_notificationAttributes[key] = value; return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetIdentityNotificationAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetIdentityNotificationAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetIdentityNotificationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Map<Aws::String, IdentityNotificationAttributes> m_notificationAttributes;

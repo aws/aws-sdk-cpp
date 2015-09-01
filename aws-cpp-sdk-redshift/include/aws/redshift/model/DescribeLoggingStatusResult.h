@@ -47,6 +47,7 @@ namespace Model
      <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     */
     inline bool GetLoggingEnabled() const{ return m_loggingEnabled; }
+
     /*
      <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     */
@@ -55,16 +56,22 @@ namespace Model
     /*
      <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     */
-    inline DescribeLoggingStatusResult&  WithLoggingEnabled(bool value) { SetLoggingEnabled(value); return *this;}
+    inline DescribeLoggingStatusResult& WithLoggingEnabled(bool value) { SetLoggingEnabled(value); return *this;}
 
     /*
      <p>The name of the S3 bucket where the log files are stored.</p>
     */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+
     /*
      <p>The name of the S3 bucket where the log files are stored.</p>
     */
     inline void SetBucketName(const Aws::String& value) { m_bucketName = value; }
+
+    /*
+     <p>The name of the S3 bucket where the log files are stored.</p>
+    */
+    inline void SetBucketName(Aws::String&& value) { m_bucketName = value; }
 
     /*
      <p>The name of the S3 bucket where the log files are stored.</p>
@@ -74,7 +81,12 @@ namespace Model
     /*
      <p>The name of the S3 bucket where the log files are stored.</p>
     */
-    inline DescribeLoggingStatusResult&  WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
+    inline DescribeLoggingStatusResult& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
+
+    /*
+     <p>The name of the S3 bucket where the log files are stored.</p>
+    */
+    inline DescribeLoggingStatusResult& WithBucketName(Aws::String&& value) { SetBucketName(value); return *this;}
 
     /*
      <p>The name of the S3 bucket where the log files are stored.</p>
@@ -85,10 +97,16 @@ namespace Model
      <p>The prefix applied to the log file names.</p>
     */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+
     /*
      <p>The prefix applied to the log file names.</p>
     */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefix = value; }
+
+    /*
+     <p>The prefix applied to the log file names.</p>
+    */
+    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefix = value; }
 
     /*
      <p>The prefix applied to the log file names.</p>
@@ -98,7 +116,12 @@ namespace Model
     /*
      <p>The prefix applied to the log file names.</p>
     */
-    inline DescribeLoggingStatusResult&  WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
+    inline DescribeLoggingStatusResult& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
+
+    /*
+     <p>The prefix applied to the log file names.</p>
+    */
+    inline DescribeLoggingStatusResult& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(value); return *this;}
 
     /*
      <p>The prefix applied to the log file names.</p>
@@ -109,6 +132,7 @@ namespace Model
      <p> The last time when logs were delivered. </p>
     */
     inline double GetLastSuccessfulDeliveryTime() const{ return m_lastSuccessfulDeliveryTime; }
+
     /*
      <p> The last time when logs were delivered. </p>
     */
@@ -117,12 +141,13 @@ namespace Model
     /*
      <p> The last time when logs were delivered. </p>
     */
-    inline DescribeLoggingStatusResult&  WithLastSuccessfulDeliveryTime(double value) { SetLastSuccessfulDeliveryTime(value); return *this;}
+    inline DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(double value) { SetLastSuccessfulDeliveryTime(value); return *this;}
 
     /*
      <p> The last time when logs failed to be delivered. </p>
     */
     inline double GetLastFailureTime() const{ return m_lastFailureTime; }
+
     /*
      <p> The last time when logs failed to be delivered. </p>
     */
@@ -131,16 +156,22 @@ namespace Model
     /*
      <p> The last time when logs failed to be delivered. </p>
     */
-    inline DescribeLoggingStatusResult&  WithLastFailureTime(double value) { SetLastFailureTime(value); return *this;}
+    inline DescribeLoggingStatusResult& WithLastFailureTime(double value) { SetLastFailureTime(value); return *this;}
 
     /*
      <p> The message indicating that logs failed to be delivered. </p>
     */
     inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
+
     /*
      <p> The message indicating that logs failed to be delivered. </p>
     */
     inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessage = value; }
+
+    /*
+     <p> The message indicating that logs failed to be delivered. </p>
+    */
+    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessage = value; }
 
     /*
      <p> The message indicating that logs failed to be delivered. </p>
@@ -150,7 +181,12 @@ namespace Model
     /*
      <p> The message indicating that logs failed to be delivered. </p>
     */
-    inline DescribeLoggingStatusResult&  WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
+    inline DescribeLoggingStatusResult& WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
+
+    /*
+     <p> The message indicating that logs failed to be delivered. </p>
+    */
+    inline DescribeLoggingStatusResult& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(value); return *this;}
 
     /*
      <p> The message indicating that logs failed to be delivered. </p>
@@ -159,11 +195,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLoggingStatusResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLoggingStatusResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLoggingStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     bool m_loggingEnabled;

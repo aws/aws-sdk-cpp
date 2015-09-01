@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iam/model/statusType.h>
+#include <aws/iam/model/StatusType.h>
 
 namespace Aws
 {
@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the IAM user that the key is associated with.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the IAM user that the key is associated with.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the IAM user that the key is associated with.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the IAM user that the key is associated with.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the IAM user that the key is associated with.</p>
     */
-    inline AccessKeyMetadata&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline AccessKeyMetadata& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the IAM user that the key is associated with.</p>
+    */
+    inline AccessKeyMetadata& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the IAM user that the key is associated with.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The ID for this access key.</p>
     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
     /*
      <p>The ID for this access key.</p>
     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /*
+     <p>The ID for this access key.</p>
+    */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The ID for this access key.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The ID for this access key.</p>
     */
-    inline AccessKeyMetadata&  WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+    inline AccessKeyMetadata& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /*
+     <p>The ID for this access key.</p>
+    */
+    inline AccessKeyMetadata& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /*
      <p>The ID for this access key.</p>
@@ -95,21 +117,33 @@ namespace Model
     /*
      <p>The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code> means it is not.</p>
     */
-    inline const statusType& GetStatus() const{ return m_status; }
-    /*
-     <p>The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code> means it is not.</p>
-    */
-    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline const StatusType& GetStatus() const{ return m_status; }
 
     /*
      <p>The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code> means it is not.</p>
     */
-    inline AccessKeyMetadata&  WithStatus(const statusType& value) { SetStatus(value); return *this;}
+    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code> means it is not.</p>
+    */
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code> means it is not.</p>
+    */
+    inline AccessKeyMetadata& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code> means it is not.</p>
+    */
+    inline AccessKeyMetadata& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The date when the access key was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date when the access key was created.</p>
     */
@@ -118,14 +152,14 @@ namespace Model
     /*
      <p>The date when the access key was created.</p>
     */
-    inline AccessKeyMetadata&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline AccessKeyMetadata& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
-    statusType m_status;
+    StatusType m_status;
     bool m_statusHasBeenSet;
     double m_createDate;
     bool m_createDateHasBeenSet;

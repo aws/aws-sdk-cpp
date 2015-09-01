@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     */
     inline const Aws::Vector<Deployment>& GetDeployments() const{ return m_deployments; }
+
     /*
      <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     */
-    inline DescribeDeploymentsResult&  WithDeployments(const Aws::Vector<Deployment>& value) { SetDeployments(value); return *this;}
+    inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deployments = value; }
+
+    /*
+     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
+    */
+    inline DescribeDeploymentsResult& WithDeployments(const Aws::Vector<Deployment>& value) { SetDeployments(value); return *this;}
+
+    /*
+     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
+    */
+    inline DescribeDeploymentsResult& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(value); return *this;}
 
     /*
      <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     */
     inline DescribeDeploymentsResult& AddDeployments(const Deployment& value) { m_deployments.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
+    */
+    inline DescribeDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(value); return *this; }
 
   private:
     Aws::Vector<Deployment> m_deployments;

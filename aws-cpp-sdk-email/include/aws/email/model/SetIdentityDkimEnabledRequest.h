@@ -38,10 +38,16 @@ namespace Model
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
     */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
+
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
+
+    /*
+     <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    */
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
     */
-    inline SetIdentityDkimEnabledRequest&  WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
+    inline SetIdentityDkimEnabledRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
+
+    /*
+     <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    */
+    inline SetIdentityDkimEnabledRequest& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
 
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     */
     inline bool GetDkimEnabled() const{ return m_dkimEnabled; }
+
     /*
      <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     */
@@ -70,7 +82,7 @@ namespace Model
     /*
      <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     */
-    inline SetIdentityDkimEnabledRequest&  WithDkimEnabled(bool value) { SetDkimEnabled(value); return *this;}
+    inline SetIdentityDkimEnabledRequest& WithDkimEnabled(bool value) { SetDkimEnabled(value); return *this;}
 
   private:
     Aws::String m_identity;

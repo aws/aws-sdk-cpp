@@ -47,18 +47,33 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
+    if(createTimeNode.IsNull())
+    {
+      createTimeNode = resultNode;
+    }
+
     if(!createTimeNode.IsNull())
     {
       m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
       m_createTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

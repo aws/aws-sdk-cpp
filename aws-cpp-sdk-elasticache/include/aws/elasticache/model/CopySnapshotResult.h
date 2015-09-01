@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
+
     
     inline void SetSnapshot(const Snapshot& value) { m_snapshot = value; }
 
     
-    inline CopySnapshotResult&  WithSnapshot(const Snapshot& value) { SetSnapshot(value); return *this;}
+    inline void SetSnapshot(Snapshot&& value) { m_snapshot = value; }
+
+    
+    inline CopySnapshotResult& WithSnapshot(const Snapshot& value) { SetSnapshot(value); return *this;}
+
+    
+    inline CopySnapshotResult& WithSnapshot(Snapshot&& value) { SetSnapshot(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CopySnapshotResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CopySnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CopySnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Snapshot m_snapshot;

@@ -47,6 +47,7 @@ namespace Model
      <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
     */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
+
     /*
      <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
     */
-    inline EncryptResult&  WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
+    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
+
+    /*
+     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
+    */
+    inline EncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
+
+    /*
+     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
+    */
+    inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
 
     /*
      <p>The ID of the key used during encryption.</p>
     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     /*
      <p>The ID of the key used during encryption.</p>
     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
+
+    /*
+     <p>The ID of the key used during encryption.</p>
+    */
+    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
     /*
      <p>The ID of the key used during encryption.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The ID of the key used during encryption.</p>
     */
-    inline EncryptResult&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline EncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /*
+     <p>The ID of the key used during encryption.</p>
+    */
+    inline EncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /*
      <p>The ID of the key used during encryption.</p>

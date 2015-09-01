@@ -49,6 +49,7 @@ namespace Model
      <p>Contains the response body with information about the health of the instance.</p>
     */
     inline const Aws::Vector<SingleInstanceHealth>& GetInstanceHealthList() const{ return m_instanceHealthList; }
+
     /*
      <p>Contains the response body with information about the health of the instance.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>Contains the response body with information about the health of the instance.</p>
     */
-    inline DescribeInstancesHealthResult&  WithInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { SetInstanceHealthList(value); return *this;}
+    inline void SetInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { m_instanceHealthList = value; }
+
+    /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
+    inline DescribeInstancesHealthResult& WithInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { SetInstanceHealthList(value); return *this;}
+
+    /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
+    inline DescribeInstancesHealthResult& WithInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { SetInstanceHealthList(value); return *this;}
 
     /*
      <p>Contains the response body with information about the health of the instance.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline DescribeInstancesHealthResult& AddInstanceHealthList(const SingleInstanceHealth& value) { m_instanceHealthList.push_back(value); return *this; }
 
     /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
+    inline DescribeInstancesHealthResult& AddInstanceHealthList(SingleInstanceHealth&& value) { m_instanceHealthList.push_back(value); return *this; }
+
+    /*
      <p>The date and time the information was last refreshed.</p>
     */
     inline double GetRefreshedAt() const{ return m_refreshedAt; }
+
     /*
      <p>The date and time the information was last refreshed.</p>
     */
@@ -76,16 +93,22 @@ namespace Model
     /*
      <p>The date and time the information was last refreshed.</p>
     */
-    inline DescribeInstancesHealthResult&  WithRefreshedAt(double value) { SetRefreshedAt(value); return *this;}
+    inline DescribeInstancesHealthResult& WithRefreshedAt(double value) { SetRefreshedAt(value); return *this;}
 
     /*
      <p>The next token.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The next token.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The next token.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The next token.</p>
@@ -95,7 +118,12 @@ namespace Model
     /*
      <p>The next token.</p>
     */
-    inline DescribeInstancesHealthResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesHealthResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The next token.</p>
+    */
+    inline DescribeInstancesHealthResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The next token.</p>
@@ -104,11 +132,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeInstancesHealthResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeInstancesHealthResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeInstancesHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<SingleInstanceHealth> m_instanceHealthList;

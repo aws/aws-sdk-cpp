@@ -46,14 +46,21 @@ namespace Model
 
     
     inline const Aws::String& GetId() const{ return m_id; }
+
     
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     
-    inline TopicConfiguration&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline TopicConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline TopicConfiguration& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     
     inline TopicConfiguration& WithId(const char* value) { SetId(value); return *this;}
@@ -62,10 +69,16 @@ namespace Model
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
@@ -75,7 +88,12 @@ namespace Model
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
-    inline TopicConfiguration&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline TopicConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
+    */
+    inline TopicConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
@@ -84,22 +102,39 @@ namespace Model
 
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
+
     
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
-    inline TopicConfiguration&  WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    
+    inline TopicConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
+
+    
+    inline TopicConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
 
     
     inline TopicConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     
+    inline TopicConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+
+    
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+
     
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     
-    inline TopicConfiguration&  WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
+    inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline TopicConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
+
+    
+    inline TopicConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(value); return *this;}
 
   private:
     Aws::String m_id;

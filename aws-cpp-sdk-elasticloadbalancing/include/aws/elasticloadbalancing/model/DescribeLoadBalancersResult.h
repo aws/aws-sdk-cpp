@@ -49,6 +49,7 @@ namespace Model
      <p>Information about the load balancers.</p>
     */
     inline const Aws::Vector<LoadBalancerDescription>& GetLoadBalancerDescriptions() const{ return m_loadBalancerDescriptions; }
+
     /*
      <p>Information about the load balancers.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>Information about the load balancers.</p>
     */
-    inline DescribeLoadBalancersResult&  WithLoadBalancerDescriptions(const Aws::Vector<LoadBalancerDescription>& value) { SetLoadBalancerDescriptions(value); return *this;}
+    inline void SetLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { m_loadBalancerDescriptions = value; }
+
+    /*
+     <p>Information about the load balancers.</p>
+    */
+    inline DescribeLoadBalancersResult& WithLoadBalancerDescriptions(const Aws::Vector<LoadBalancerDescription>& value) { SetLoadBalancerDescriptions(value); return *this;}
+
+    /*
+     <p>Information about the load balancers.</p>
+    */
+    inline DescribeLoadBalancersResult& WithLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { SetLoadBalancerDescriptions(value); return *this;}
 
     /*
      <p>Information about the load balancers.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeLoadBalancersResult& AddLoadBalancerDescriptions(const LoadBalancerDescription& value) { m_loadBalancerDescriptions.push_back(value); return *this; }
 
     /*
+     <p>Information about the load balancers.</p>
+    */
+    inline DescribeLoadBalancersResult& AddLoadBalancerDescriptions(LoadBalancerDescription&& value) { m_loadBalancerDescriptions.push_back(value); return *this; }
+
+    /*
      <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
     /*
      <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
+
+    /*
+     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    */
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
     /*
      <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     */
-    inline DescribeLoadBalancersResult&  WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+    inline DescribeLoadBalancersResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+
+    /*
+     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    */
+    inline DescribeLoadBalancersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
     /*
      <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLoadBalancersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLoadBalancersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLoadBalancersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<LoadBalancerDescription> m_loadBalancerDescriptions;

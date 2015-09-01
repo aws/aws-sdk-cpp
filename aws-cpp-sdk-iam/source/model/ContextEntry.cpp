@@ -45,6 +45,11 @@ ContextEntry& ContextEntry::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode contextKeyNameNode = resultNode.FirstChild("ContextKeyName");
+    if(contextKeyNameNode.IsNull())
+    {
+      contextKeyNameNode = resultNode;
+    }
+
     if(!contextKeyNameNode.IsNull())
     {
       m_contextKeyName = StringUtils::Trim(contextKeyNameNode.GetText().c_str());
@@ -63,6 +68,11 @@ ContextEntry& ContextEntry::operator =(const XmlNode& xmlNode)
       m_contextKeyValuesHasBeenSet = true;
     }
     XmlNode contextKeyTypeNode = resultNode.FirstChild("ContextKeyType");
+    if(contextKeyTypeNode.IsNull())
+    {
+      contextKeyTypeNode = resultNode;
+    }
+
     if(!contextKeyTypeNode.IsNull())
     {
       m_contextKeyType = ContextKeyTypeEnumMapper::GetContextKeyTypeEnumForName(StringUtils::Trim(contextKeyTypeNode.GetText().c_str()).c_str());

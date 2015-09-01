@@ -57,30 +57,55 @@ CloudFrontOriginAccessIdentityList& CloudFrontOriginAccessIdentityList::operator
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
+    if(markerNode.IsNull())
+    {
+      markerNode = resultNode;
+    }
+
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());
       m_markerHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
+    if(nextMarkerNode.IsNull())
+    {
+      nextMarkerNode = resultNode;
+    }
+
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
+    if(maxItemsNode.IsNull())
+    {
+      maxItemsNode = resultNode;
+    }
+
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(maxItemsNode.GetText().c_str()).c_str());
       m_maxItemsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
+    if(isTruncatedNode.IsNull())
+    {
+      isTruncatedNode = resultNode;
+    }
+
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
+    if(quantityNode.IsNull())
+    {
+      quantityNode = resultNode;
+    }
+
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
@@ -144,9 +169,10 @@ void CloudFrontOriginAccessIdentityList::AddToNode(XmlNode& parentNode) const
 
   if(m_itemsHasBeenSet)
   {
+   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = parentNode.CreateChildElement("CloudFrontOriginAccessIdentitySummary");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("CloudFrontOriginAccessIdentitySummary");
      item.AddToNode(itemsNode);
    }
   }

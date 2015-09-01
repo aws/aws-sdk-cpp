@@ -40,10 +40,16 @@ namespace Model
      <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
     /*
      <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /*
      <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
     */
-    inline GetDeploymentRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+    inline GetDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
+    inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /*
      <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>

@@ -43,6 +43,7 @@ namespace Model
      <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     */
     inline long long GetSubmitTimeMillis() const{ return m_submitTimeMillis; }
+
     /*
      <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     */
-    inline Timing&  WithSubmitTimeMillis(long long value) { SetSubmitTimeMillis(value); return *this;}
+    inline Timing& WithSubmitTimeMillis(long long value) { SetSubmitTimeMillis(value); return *this;}
 
     /*
      <p>The time the job began transcoding, in epoch milliseconds.</p>
     */
     inline long long GetStartTimeMillis() const{ return m_startTimeMillis; }
+
     /*
      <p>The time the job began transcoding, in epoch milliseconds.</p>
     */
@@ -65,12 +67,13 @@ namespace Model
     /*
      <p>The time the job began transcoding, in epoch milliseconds.</p>
     */
-    inline Timing&  WithStartTimeMillis(long long value) { SetStartTimeMillis(value); return *this;}
+    inline Timing& WithStartTimeMillis(long long value) { SetStartTimeMillis(value); return *this;}
 
     /*
      <p>The time the job finished transcoding, in epoch milliseconds.</p>
     */
     inline long long GetFinishTimeMillis() const{ return m_finishTimeMillis; }
+
     /*
      <p>The time the job finished transcoding, in epoch milliseconds.</p>
     */
@@ -79,7 +82,7 @@ namespace Model
     /*
      <p>The time the job finished transcoding, in epoch milliseconds.</p>
     */
-    inline Timing&  WithFinishTimeMillis(long long value) { SetFinishTimeMillis(value); return *this;}
+    inline Timing& WithFinishTimeMillis(long long value) { SetFinishTimeMillis(value); return *this;}
 
   private:
     long long m_submitTimeMillis;

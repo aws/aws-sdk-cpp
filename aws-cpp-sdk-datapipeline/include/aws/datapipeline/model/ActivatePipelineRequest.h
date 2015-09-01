@@ -42,10 +42,16 @@ namespace Model
      <p>The ID of the pipeline.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline ActivatePipelineRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline ActivatePipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline ActivatePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline.</p>
@@ -66,6 +77,7 @@ namespace Model
      <p>A list of parameter values to pass to the pipeline at activation.</p>
     */
     inline const Aws::Vector<ParameterValue>& GetParameterValues() const{ return m_parameterValues; }
+
     /*
      <p>A list of parameter values to pass to the pipeline at activation.</p>
     */
@@ -74,7 +86,17 @@ namespace Model
     /*
      <p>A list of parameter values to pass to the pipeline at activation.</p>
     */
-    inline ActivatePipelineRequest&  WithParameterValues(const Aws::Vector<ParameterValue>& value) { SetParameterValues(value); return *this;}
+    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = value; }
+
+    /*
+     <p>A list of parameter values to pass to the pipeline at activation.</p>
+    */
+    inline ActivatePipelineRequest& WithParameterValues(const Aws::Vector<ParameterValue>& value) { SetParameterValues(value); return *this;}
+
+    /*
+     <p>A list of parameter values to pass to the pipeline at activation.</p>
+    */
+    inline ActivatePipelineRequest& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(value); return *this;}
 
     /*
      <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -82,9 +104,15 @@ namespace Model
     inline ActivatePipelineRequest& AddParameterValues(const ParameterValue& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
 
     /*
+     <p>A list of parameter values to pass to the pipeline at activation.</p>
+    */
+    inline ActivatePipelineRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
+
+    /*
      <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     */
     inline double GetStartTimestamp() const{ return m_startTimestamp; }
+
     /*
      <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     */
@@ -93,7 +121,7 @@ namespace Model
     /*
      <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     */
-    inline ActivatePipelineRequest&  WithStartTimestamp(double value) { SetStartTimestamp(value); return *this;}
+    inline ActivatePipelineRequest& WithStartTimestamp(double value) { SetStartTimestamp(value); return *this;}
 
   private:
     Aws::String m_pipelineId;

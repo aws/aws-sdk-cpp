@@ -35,28 +35,42 @@ namespace Model
 
     
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
     
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+
+    
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     
-    inline ListReceiptRuleSetsRequest&  WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+    inline ListReceiptRuleSetsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+
+    
+    inline ListReceiptRuleSetsRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
 
     
     inline ListReceiptRuleSetsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     
-    inline ListReceiptRuleSetsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListReceiptRuleSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline ListReceiptRuleSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline ListReceiptRuleSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

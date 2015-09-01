@@ -44,25 +44,33 @@ namespace Model
 
     
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
+
+    
+    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
     
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     
-    inline ScheduleKeyDeletionResult&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline ScheduleKeyDeletionResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    
+    inline ScheduleKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     
     inline ScheduleKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     
     inline double GetDeletionDate() const{ return m_deletionDate; }
+
     
     inline void SetDeletionDate(double value) { m_deletionDate = value; }
 
     
-    inline ScheduleKeyDeletionResult&  WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
+    inline ScheduleKeyDeletionResult& WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
 
   private:
     Aws::String m_keyId;

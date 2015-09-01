@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the group to delete.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the group to delete.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group to delete.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the group to delete.</p>
     */
-    inline DeleteAutoScalingGroupRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DeleteAutoScalingGroupRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group to delete.</p>
+    */
+    inline DeleteAutoScalingGroupRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the group to delete.</p>
@@ -61,6 +72,7 @@ namespace Model
      <p>Specifies that the group will be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.</p>
     */
     inline bool GetForceDelete() const{ return m_forceDelete; }
+
     /*
      <p>Specifies that the group will be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.</p>
     */
@@ -69,7 +81,7 @@ namespace Model
     /*
      <p>Specifies that the group will be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.</p>
     */
-    inline DeleteAutoScalingGroupRequest&  WithForceDelete(bool value) { SetForceDelete(value); return *this;}
+    inline DeleteAutoScalingGroupRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;

@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the alarm.</p>
     */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+
     /*
      <p>The name of the alarm.</p>
     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+
+    /*
+     <p>The name of the alarm.</p>
+    */
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /*
      <p>The name of the alarm.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the alarm.</p>
     */
-    inline Alarm&  WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+    inline Alarm& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+
+    /*
+     <p>The name of the alarm.</p>
+    */
+    inline Alarm& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
 
     /*
      <p>The name of the alarm.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the alarm.</p>
     */
     inline const Aws::String& GetAlarmARN() const{ return m_alarmARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the alarm.</p>
     */
     inline void SetAlarmARN(const Aws::String& value) { m_alarmARNHasBeenSet = true; m_alarmARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    */
+    inline void SetAlarmARN(Aws::String&& value) { m_alarmARNHasBeenSet = true; m_alarmARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the alarm.</p>
     */
-    inline Alarm&  WithAlarmARN(const Aws::String& value) { SetAlarmARN(value); return *this;}
+    inline Alarm& WithAlarmARN(const Aws::String& value) { SetAlarmARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    */
+    inline Alarm& WithAlarmARN(Aws::String&& value) { SetAlarmARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the alarm.</p>

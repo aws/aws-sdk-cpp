@@ -41,6 +41,11 @@ ListInvalidations2015_04_17Result& ListInvalidations2015_04_17Result::operator =
   if(!resultNode.IsNull())
   {
     XmlNode invalidationListNode = resultNode.FirstChild("InvalidationList");
+    if(invalidationListNode.IsNull())
+    {
+      invalidationListNode = resultNode;
+    }
+
     if(!invalidationListNode.IsNull())
     {
       m_invalidationList = invalidationListNode;

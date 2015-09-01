@@ -47,12 +47,22 @@ Position& Position::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode lineNode = resultNode.FirstChild("Line");
+    if(lineNode.IsNull())
+    {
+      lineNode = resultNode;
+    }
+
     if(!lineNode.IsNull())
     {
       m_line = StringUtils::ConvertToInt32(StringUtils::Trim(lineNode.GetText().c_str()).c_str());
       m_lineHasBeenSet = true;
     }
     XmlNode columnNode = resultNode.FirstChild("Column");
+    if(columnNode.IsNull())
+    {
+      columnNode = resultNode;
+    }
+
     if(!columnNode.IsNull())
     {
       m_column = StringUtils::ConvertToInt32(StringUtils::Trim(columnNode.GetText().c_str()).c_str());

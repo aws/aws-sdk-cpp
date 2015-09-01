@@ -48,6 +48,7 @@ namespace Model
      <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
     */
     inline const Aws::Vector<Aws::String>& GetLifecycleHookTypes() const{ return m_lifecycleHookTypes; }
+
     /*
      <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
     */
-    inline DescribeLifecycleHookTypesResult&  WithLifecycleHookTypes(const Aws::Vector<Aws::String>& value) { SetLifecycleHookTypes(value); return *this;}
+    inline void SetLifecycleHookTypes(Aws::Vector<Aws::String>&& value) { m_lifecycleHookTypes = value; }
+
+    /*
+     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+    */
+    inline DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(const Aws::Vector<Aws::String>& value) { SetLifecycleHookTypes(value); return *this;}
+
+    /*
+     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+    */
+    inline DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(Aws::Vector<Aws::String>&& value) { SetLifecycleHookTypes(value); return *this;}
 
     /*
      <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
@@ -66,15 +77,27 @@ namespace Model
     /*
      <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
     */
+    inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(Aws::String&& value) { m_lifecycleHookTypes.push_back(value); return *this; }
+
+    /*
+     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+    */
     inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(const char* value) { m_lifecycleHookTypes.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLifecycleHookTypesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLifecycleHookTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLifecycleHookTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_lifecycleHookTypes;

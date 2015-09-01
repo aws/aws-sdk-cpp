@@ -40,10 +40,16 @@ namespace Model
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     */
     inline const Aws::String& GetShardIterator() const{ return m_shardIterator; }
+
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     */
     inline void SetShardIterator(const Aws::String& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = value; }
+
+    /*
+     <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
+    */
+    inline void SetShardIterator(Aws::String&& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = value; }
 
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     */
-    inline GetRecordsRequest&  WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
+    inline GetRecordsRequest& WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
+
+    /*
+     <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
+    */
+    inline GetRecordsRequest& WithShardIterator(Aws::String&& value) { SetShardIterator(value); return *this;}
 
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>
     */
@@ -72,7 +84,7 @@ namespace Model
     /*
      <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>
     */
-    inline GetRecordsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline GetRecordsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_shardIterator;

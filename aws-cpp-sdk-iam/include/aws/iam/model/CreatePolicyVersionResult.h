@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the policy version.</p>
     */
     inline const PolicyVersion& GetPolicyVersion() const{ return m_policyVersion; }
+
     /*
      <p>Information about the policy version.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the policy version.</p>
     */
-    inline CreatePolicyVersionResult&  WithPolicyVersion(const PolicyVersion& value) { SetPolicyVersion(value); return *this;}
+    inline void SetPolicyVersion(PolicyVersion&& value) { m_policyVersion = value; }
+
+    /*
+     <p>Information about the policy version.</p>
+    */
+    inline CreatePolicyVersionResult& WithPolicyVersion(const PolicyVersion& value) { SetPolicyVersion(value); return *this;}
+
+    /*
+     <p>Information about the policy version.</p>
+    */
+    inline CreatePolicyVersionResult& WithPolicyVersion(PolicyVersion&& value) { SetPolicyVersion(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreatePolicyVersionResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreatePolicyVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreatePolicyVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     PolicyVersion m_policyVersion;

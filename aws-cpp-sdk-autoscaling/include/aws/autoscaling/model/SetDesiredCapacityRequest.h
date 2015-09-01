@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline SetDesiredCapacityRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline SetDesiredCapacityRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline SetDesiredCapacityRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -61,6 +72,7 @@ namespace Model
      <p>The number of EC2 instances that should be running in the Auto Scaling group.</p>
     */
     inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
+
     /*
      <p>The number of EC2 instances that should be running in the Auto Scaling group.</p>
     */
@@ -69,12 +81,13 @@ namespace Model
     /*
      <p>The number of EC2 instances that should be running in the Auto Scaling group.</p>
     */
-    inline SetDesiredCapacityRequest&  WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
+    inline SetDesiredCapacityRequest& WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 
     /*
      <p>By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.</p>
     */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
+
     /*
      <p>By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.</p>
     */
@@ -83,7 +96,7 @@ namespace Model
     /*
      <p>By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.</p>
     */
-    inline SetDesiredCapacityRequest&  WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
+    inline SetDesiredCapacityRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;

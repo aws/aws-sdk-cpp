@@ -47,6 +47,7 @@ namespace Model
      The origin access identity's information.
     */
     inline const CloudFrontOriginAccessIdentity& GetCloudFrontOriginAccessIdentity() const{ return m_cloudFrontOriginAccessIdentity; }
+
     /*
      The origin access identity's information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The origin access identity's information.
     */
-    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Result&  WithCloudFrontOriginAccessIdentity(const CloudFrontOriginAccessIdentity& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
+    inline void SetCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { m_cloudFrontOriginAccessIdentity = value; }
+
+    /*
+     The origin access identity's information.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Result& WithCloudFrontOriginAccessIdentity(const CloudFrontOriginAccessIdentity& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
+
+    /*
+     The origin access identity's information.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Result& WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
-    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.

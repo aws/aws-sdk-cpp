@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     */
     inline const Aws::Vector<Stack>& GetStacks() const{ return m_stacks; }
+
     /*
      <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     */
-    inline DescribeStacksResult&  WithStacks(const Aws::Vector<Stack>& value) { SetStacks(value); return *this;}
+    inline void SetStacks(Aws::Vector<Stack>&& value) { m_stacks = value; }
+
+    /*
+     <p>An array of <code>Stack</code> objects that describe the stacks.</p>
+    */
+    inline DescribeStacksResult& WithStacks(const Aws::Vector<Stack>& value) { SetStacks(value); return *this;}
+
+    /*
+     <p>An array of <code>Stack</code> objects that describe the stacks.</p>
+    */
+    inline DescribeStacksResult& WithStacks(Aws::Vector<Stack>&& value) { SetStacks(value); return *this;}
 
     /*
      <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     */
     inline DescribeStacksResult& AddStacks(const Stack& value) { m_stacks.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Stack</code> objects that describe the stacks.</p>
+    */
+    inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(value); return *this; }
 
   private:
     Aws::Vector<Stack> m_stacks;

@@ -46,10 +46,16 @@ namespace Model
      <p>The layer ID.</p>
     */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
     /*
      <p>The layer ID.</p>
     */
     inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline void SetLayerId(Aws::String&& value) { m_layerId = value; }
 
     /*
      <p>The layer ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The layer ID.</p>
     */
-    inline GetHostnameSuggestionResult&  WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+    inline GetHostnameSuggestionResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline GetHostnameSuggestionResult& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
 
     /*
      <p>The layer ID.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The generated host name.</p>
     */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
+
     /*
      <p>The generated host name.</p>
     */
     inline void SetHostname(const Aws::String& value) { m_hostname = value; }
+
+    /*
+     <p>The generated host name.</p>
+    */
+    inline void SetHostname(Aws::String&& value) { m_hostname = value; }
 
     /*
      <p>The generated host name.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The generated host name.</p>
     */
-    inline GetHostnameSuggestionResult&  WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+    inline GetHostnameSuggestionResult& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+
+    /*
+     <p>The generated host name.</p>
+    */
+    inline GetHostnameSuggestionResult& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
 
     /*
      <p>The generated host name.</p>

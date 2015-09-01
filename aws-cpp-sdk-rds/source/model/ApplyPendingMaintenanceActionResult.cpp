@@ -42,6 +42,11 @@ ApplyPendingMaintenanceActionResult& ApplyPendingMaintenanceActionResult::operat
   if(!resultNode.IsNull())
   {
     XmlNode resourcePendingMaintenanceActionsNode = resultNode.FirstChild("ResourcePendingMaintenanceActions");
+    if(resourcePendingMaintenanceActionsNode.IsNull())
+    {
+      resourcePendingMaintenanceActionsNode = resultNode;
+    }
+
     if(!resourcePendingMaintenanceActionsNode.IsNull())
     {
       m_resourcePendingMaintenanceActions = resourcePendingMaintenanceActionsNode;

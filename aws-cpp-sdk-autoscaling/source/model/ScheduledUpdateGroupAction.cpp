@@ -71,60 +71,110 @@ ScheduledUpdateGroupAction& ScheduledUpdateGroupAction::operator =(const XmlNode
   if(!resultNode.IsNull())
   {
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
+    if(autoScalingGroupNameNode.IsNull())
+    {
+      autoScalingGroupNameNode = resultNode;
+    }
+
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode scheduledActionNameNode = resultNode.FirstChild("ScheduledActionName");
+    if(scheduledActionNameNode.IsNull())
+    {
+      scheduledActionNameNode = resultNode;
+    }
+
     if(!scheduledActionNameNode.IsNull())
     {
       m_scheduledActionName = StringUtils::Trim(scheduledActionNameNode.GetText().c_str());
       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode scheduledActionARNNode = resultNode.FirstChild("ScheduledActionARN");
+    if(scheduledActionARNNode.IsNull())
+    {
+      scheduledActionARNNode = resultNode;
+    }
+
     if(!scheduledActionARNNode.IsNull())
     {
       m_scheduledActionARN = StringUtils::Trim(scheduledActionARNNode.GetText().c_str());
       m_scheduledActionARNHasBeenSet = true;
     }
     XmlNode timeNode = resultNode.FirstChild("Time");
+    if(timeNode.IsNull())
+    {
+      timeNode = resultNode;
+    }
+
     if(!timeNode.IsNull())
     {
       m_time = StringUtils::ConvertToDouble(StringUtils::Trim(timeNode.GetText().c_str()).c_str());
       m_timeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
+    if(startTimeNode.IsNull())
+    {
+      startTimeNode = resultNode;
+    }
+
     if(!startTimeNode.IsNull())
     {
       m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
+    if(endTimeNode.IsNull())
+    {
+      endTimeNode = resultNode;
+    }
+
     if(!endTimeNode.IsNull())
     {
       m_endTime = StringUtils::ConvertToDouble(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str());
       m_endTimeHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("Recurrence");
+    if(recurrenceNode.IsNull())
+    {
+      recurrenceNode = resultNode;
+    }
+
     if(!recurrenceNode.IsNull())
     {
       m_recurrence = StringUtils::Trim(recurrenceNode.GetText().c_str());
       m_recurrenceHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
+    if(minSizeNode.IsNull())
+    {
+      minSizeNode = resultNode;
+    }
+
     if(!minSizeNode.IsNull())
     {
       m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(minSizeNode.GetText().c_str()).c_str());
       m_minSizeHasBeenSet = true;
     }
     XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
+    if(maxSizeNode.IsNull())
+    {
+      maxSizeNode = resultNode;
+    }
+
     if(!maxSizeNode.IsNull())
     {
       m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxSizeNode.GetText().c_str()).c_str());
       m_maxSizeHasBeenSet = true;
     }
     XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
+    if(desiredCapacityNode.IsNull())
+    {
+      desiredCapacityNode = resultNode;
+    }
+
     if(!desiredCapacityNode.IsNull())
     {
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(desiredCapacityNode.GetText().c_str()).c_str());

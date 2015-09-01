@@ -69,36 +69,66 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
+    if(namespaceNode.IsNull())
+    {
+      namespaceNode = resultNode;
+    }
+
     if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
+    if(nameNode.IsNull())
+    {
+      nameNode = resultNode;
+    }
+
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
+    if(defaultValueNode.IsNull())
+    {
+      defaultValueNode = resultNode;
+    }
+
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode changeSeverityNode = resultNode.FirstChild("ChangeSeverity");
+    if(changeSeverityNode.IsNull())
+    {
+      changeSeverityNode = resultNode;
+    }
+
     if(!changeSeverityNode.IsNull())
     {
       m_changeSeverity = StringUtils::Trim(changeSeverityNode.GetText().c_str());
       m_changeSeverityHasBeenSet = true;
     }
     XmlNode userDefinedNode = resultNode.FirstChild("UserDefined");
+    if(userDefinedNode.IsNull())
+    {
+      userDefinedNode = resultNode;
+    }
+
     if(!userDefinedNode.IsNull())
     {
       m_userDefined = StringUtils::ConvertToBool(StringUtils::Trim(userDefinedNode.GetText().c_str()).c_str());
       m_userDefinedHasBeenSet = true;
     }
     XmlNode valueTypeNode = resultNode.FirstChild("ValueType");
+    if(valueTypeNode.IsNull())
+    {
+      valueTypeNode = resultNode;
+    }
+
     if(!valueTypeNode.IsNull())
     {
       m_valueType = ConfigurationOptionValueTypeMapper::GetConfigurationOptionValueTypeForName(StringUtils::Trim(valueTypeNode.GetText().c_str()).c_str());
@@ -117,24 +147,44 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
       m_valueOptionsHasBeenSet = true;
     }
     XmlNode minValueNode = resultNode.FirstChild("MinValue");
+    if(minValueNode.IsNull())
+    {
+      minValueNode = resultNode;
+    }
+
     if(!minValueNode.IsNull())
     {
       m_minValue = StringUtils::ConvertToInt32(StringUtils::Trim(minValueNode.GetText().c_str()).c_str());
       m_minValueHasBeenSet = true;
     }
     XmlNode maxValueNode = resultNode.FirstChild("MaxValue");
+    if(maxValueNode.IsNull())
+    {
+      maxValueNode = resultNode;
+    }
+
     if(!maxValueNode.IsNull())
     {
       m_maxValue = StringUtils::ConvertToInt32(StringUtils::Trim(maxValueNode.GetText().c_str()).c_str());
       m_maxValueHasBeenSet = true;
     }
     XmlNode maxLengthNode = resultNode.FirstChild("MaxLength");
+    if(maxLengthNode.IsNull())
+    {
+      maxLengthNode = resultNode;
+    }
+
     if(!maxLengthNode.IsNull())
     {
       m_maxLength = StringUtils::ConvertToInt32(StringUtils::Trim(maxLengthNode.GetText().c_str()).c_str());
       m_maxLengthHasBeenSet = true;
     }
     XmlNode regexNode = resultNode.FirstChild("Regex");
+    if(regexNode.IsNull())
+    {
+      regexNode = resultNode;
+    }
+
     if(!regexNode.IsNull())
     {
       m_regex = regexNode;

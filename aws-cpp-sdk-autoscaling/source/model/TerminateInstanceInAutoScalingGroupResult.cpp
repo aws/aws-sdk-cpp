@@ -42,6 +42,11 @@ TerminateInstanceInAutoScalingGroupResult& TerminateInstanceInAutoScalingGroupRe
   if(!resultNode.IsNull())
   {
     XmlNode activityNode = resultNode.FirstChild("Activity");
+    if(activityNode.IsNull())
+    {
+      activityNode = resultNode;
+    }
+
     if(!activityNode.IsNull())
     {
       m_activity = activityNode;

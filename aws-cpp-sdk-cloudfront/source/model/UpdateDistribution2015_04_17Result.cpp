@@ -42,6 +42,11 @@ UpdateDistribution2015_04_17Result& UpdateDistribution2015_04_17Result::operator
   if(!resultNode.IsNull())
   {
     XmlNode distributionNode = resultNode.FirstChild("Distribution");
+    if(distributionNode.IsNull())
+    {
+      distributionNode = resultNode;
+    }
+
     if(!distributionNode.IsNull())
     {
       m_distribution = distributionNode;

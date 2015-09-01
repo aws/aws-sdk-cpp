@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline SetLoadBalancerPoliciesForBackendServerRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline SetLoadBalancerPoliciesForBackendServerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline SetLoadBalancerPoliciesForBackendServerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The port number associated with the back-end server.</p>
     */
     inline long GetInstancePort() const{ return m_instancePort; }
+
     /*
      <p>The port number associated with the back-end server.</p>
     */
@@ -70,12 +82,13 @@ namespace Model
     /*
      <p>The port number associated with the back-end server.</p>
     */
-    inline SetLoadBalancerPoliciesForBackendServerRequest&  WithInstancePort(long value) { SetInstancePort(value); return *this;}
+    inline SetLoadBalancerPoliciesForBackendServerRequest& WithInstancePort(long value) { SetInstancePort(value); return *this;}
 
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
@@ -84,12 +97,27 @@ namespace Model
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
-    inline SetLoadBalancerPoliciesForBackendServerRequest&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+
+    /*
+     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
+    */
+    inline SetLoadBalancerPoliciesForBackendServerRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+
+    /*
+     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
+    */
+    inline SetLoadBalancerPoliciesForBackendServerRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
+    */
+    inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>

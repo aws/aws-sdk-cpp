@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iam/model/statusType.h>
+#include <aws/iam/model/StatusType.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
@@ -26,38 +26,38 @@ namespace IAM
 {
 namespace Model
 {
-namespace statusTypeMapper
+namespace StatusTypeMapper
 {
-statusType GetstatusTypeForName(const Aws::String& name)
+StatusType GetStatusTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
   if (hashCode == Active_HASH)
   {
-    return statusType::Active;
+    return StatusType::Active;
   }
   else if (hashCode == Inactive_HASH)
   {
-    return statusType::Inactive;
+    return StatusType::Inactive;
   }
 
-  return statusType::NOT_SET;
+  return StatusType::NOT_SET;
 }
 
-Aws::String GetNameForstatusType(statusType value)
+Aws::String GetNameForStatusType(StatusType value)
 {
   switch(value)
   {
-  case statusType::Active:
+  case StatusType::Active:
     return "Active";
-  case statusType::Inactive:
+  case StatusType::Inactive:
     return "Inactive";
   default:
     return "";
   }
 }
 
-} // namespace statusTypeMapper
+} // namespace StatusTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

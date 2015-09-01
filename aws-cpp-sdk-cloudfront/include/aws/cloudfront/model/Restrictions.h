@@ -43,11 +43,18 @@ namespace Model
 
     
     inline const GeoRestriction& GetGeoRestriction() const{ return m_geoRestriction; }
+
     
     inline void SetGeoRestriction(const GeoRestriction& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
 
     
-    inline Restrictions&  WithGeoRestriction(const GeoRestriction& value) { SetGeoRestriction(value); return *this;}
+    inline void SetGeoRestriction(GeoRestriction&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
+
+    
+    inline Restrictions& WithGeoRestriction(const GeoRestriction& value) { SetGeoRestriction(value); return *this;}
+
+    
+    inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(value); return *this;}
 
   private:
     GeoRestriction m_geoRestriction;

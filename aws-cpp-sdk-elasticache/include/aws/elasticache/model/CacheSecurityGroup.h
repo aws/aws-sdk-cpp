@@ -49,10 +49,16 @@ namespace Model
      <p>The AWS account ID of the cache security group owner.</p>
     */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
     /*
      <p>The AWS account ID of the cache security group owner.</p>
     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /*
+     <p>The AWS account ID of the cache security group owner.</p>
+    */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /*
      <p>The AWS account ID of the cache security group owner.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The AWS account ID of the cache security group owner.</p>
     */
-    inline CacheSecurityGroup&  WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+    inline CacheSecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /*
+     <p>The AWS account ID of the cache security group owner.</p>
+    */
+    inline CacheSecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(value); return *this;}
 
     /*
      <p>The AWS account ID of the cache security group owner.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The name of the cache security group.</p>
     */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
+
     /*
      <p>The name of the cache security group.</p>
     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
+
+    /*
+     <p>The name of the cache security group.</p>
+    */
+    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /*
      <p>The name of the cache security group.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The name of the cache security group.</p>
     */
-    inline CacheSecurityGroup&  WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
+    inline CacheSecurityGroup& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
+
+    /*
+     <p>The name of the cache security group.</p>
+    */
+    inline CacheSecurityGroup& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
 
     /*
      <p>The name of the cache security group.</p>
@@ -97,10 +119,16 @@ namespace Model
      <p>The description of the cache security group.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>The description of the cache security group.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>The description of the cache security group.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>The description of the cache security group.</p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p>The description of the cache security group.</p>
     */
-    inline CacheSecurityGroup&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CacheSecurityGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>The description of the cache security group.</p>
+    */
+    inline CacheSecurityGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>The description of the cache security group.</p>
@@ -121,6 +154,7 @@ namespace Model
      <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
     */
     inline const Aws::Vector<EC2SecurityGroup>& GetEC2SecurityGroups() const{ return m_eC2SecurityGroups; }
+
     /*
      <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
     */
@@ -129,12 +163,27 @@ namespace Model
     /*
      <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
     */
-    inline CacheSecurityGroup&  WithEC2SecurityGroups(const Aws::Vector<EC2SecurityGroup>& value) { SetEC2SecurityGroups(value); return *this;}
+    inline void SetEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups = value; }
+
+    /*
+     <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
+    */
+    inline CacheSecurityGroup& WithEC2SecurityGroups(const Aws::Vector<EC2SecurityGroup>& value) { SetEC2SecurityGroups(value); return *this;}
+
+    /*
+     <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
+    */
+    inline CacheSecurityGroup& WithEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { SetEC2SecurityGroups(value); return *this;}
 
     /*
      <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
     */
     inline CacheSecurityGroup& AddEC2SecurityGroups(const EC2SecurityGroup& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
+    */
+    inline CacheSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(value); return *this; }
 
   private:
     Aws::String m_ownerId;

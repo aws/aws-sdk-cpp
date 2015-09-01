@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>Instance</code> objects that describe the instances.</p>
     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
     /*
      <p>An array of <code>Instance</code> objects that describe the instances.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>Instance</code> objects that describe the instances.</p>
     */
-    inline DescribeInstancesResult&  WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
+
+    /*
+     <p>An array of <code>Instance</code> objects that describe the instances.</p>
+    */
+    inline DescribeInstancesResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+
+    /*
+     <p>An array of <code>Instance</code> objects that describe the instances.</p>
+    */
+    inline DescribeInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
     /*
      <p>An array of <code>Instance</code> objects that describe the instances.</p>
     */
     inline DescribeInstancesResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Instance</code> objects that describe the instances.</p>
+    */
+    inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
 
   private:
     Aws::Vector<Instance> m_instances;

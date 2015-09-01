@@ -49,10 +49,16 @@ namespace Model
      <p>The identifier of the HSM client certificate.</p>
     */
     inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
+
     /*
      <p>The identifier of the HSM client certificate.</p>
     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+
+    /*
+     <p>The identifier of the HSM client certificate.</p>
+    */
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /*
      <p>The identifier of the HSM client certificate.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The identifier of the HSM client certificate.</p>
     */
-    inline HsmClientCertificate&  WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+
+    /*
+     <p>The identifier of the HSM client certificate.</p>
+    */
+    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
     /*
      <p>The identifier of the HSM client certificate.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     */
     inline const Aws::String& GetHsmClientCertificatePublicKey() const{ return m_hsmClientCertificatePublicKey; }
+
     /*
      <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     */
     inline void SetHsmClientCertificatePublicKey(const Aws::String& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = value; }
+
+    /*
+     <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
+    */
+    inline void SetHsmClientCertificatePublicKey(Aws::String&& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = value; }
 
     /*
      <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     */
-    inline HsmClientCertificate&  WithHsmClientCertificatePublicKey(const Aws::String& value) { SetHsmClientCertificatePublicKey(value); return *this;}
+    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(const Aws::String& value) { SetHsmClientCertificatePublicKey(value); return *this;}
+
+    /*
+     <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
+    */
+    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(Aws::String&& value) { SetHsmClientCertificatePublicKey(value); return *this;}
 
     /*
      <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
@@ -97,6 +119,7 @@ namespace Model
      <p>The list of tags for the HSM client certificate.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>The list of tags for the HSM client certificate.</p>
     */
@@ -105,12 +128,27 @@ namespace Model
     /*
      <p>The list of tags for the HSM client certificate.</p>
     */
-    inline HsmClientCertificate&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The list of tags for the HSM client certificate.</p>
+    */
+    inline HsmClientCertificate& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The list of tags for the HSM client certificate.</p>
+    */
+    inline HsmClientCertificate& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The list of tags for the HSM client certificate.</p>
     */
     inline HsmClientCertificate& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The list of tags for the HSM client certificate.</p>
+    */
+    inline HsmClientCertificate& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_hsmClientCertificateIdentifier;

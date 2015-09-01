@@ -44,10 +44,16 @@ namespace Model
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -57,7 +63,12 @@ namespace Model
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
-    inline IdentityPoolUsage&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline IdentityPoolUsage& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline IdentityPoolUsage& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -68,6 +79,7 @@ namespace Model
      Number of sync sessions for the identity pool.
     */
     inline long long GetSyncSessionsCount() const{ return m_syncSessionsCount; }
+
     /*
      Number of sync sessions for the identity pool.
     */
@@ -76,12 +88,13 @@ namespace Model
     /*
      Number of sync sessions for the identity pool.
     */
-    inline IdentityPoolUsage&  WithSyncSessionsCount(long long value) { SetSyncSessionsCount(value); return *this;}
+    inline IdentityPoolUsage& WithSyncSessionsCount(long long value) { SetSyncSessionsCount(value); return *this;}
 
     /*
      Data storage information for the identity pool.
     */
     inline long long GetDataStorage() const{ return m_dataStorage; }
+
     /*
      Data storage information for the identity pool.
     */
@@ -90,12 +103,13 @@ namespace Model
     /*
      Data storage information for the identity pool.
     */
-    inline IdentityPoolUsage&  WithDataStorage(long long value) { SetDataStorage(value); return *this;}
+    inline IdentityPoolUsage& WithDataStorage(long long value) { SetDataStorage(value); return *this;}
 
     /*
      Date on which the identity pool was last modified.
     */
     inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
     /*
      Date on which the identity pool was last modified.
     */
@@ -104,7 +118,7 @@ namespace Model
     /*
      Date on which the identity pool was last modified.
     */
-    inline IdentityPoolUsage&  WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline IdentityPoolUsage& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
   private:
     Aws::String m_identityPoolId;

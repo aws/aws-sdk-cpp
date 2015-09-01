@@ -38,10 +38,16 @@ namespace Model
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
     */
     inline const Aws::String& GetReservedNodeOfferingId() const{ return m_reservedNodeOfferingId; }
+
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
+
+    /*
+     <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    */
+    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
     */
-    inline PurchaseReservedNodeOfferingRequest&  WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
+    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
+
+    /*
+     <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    */
+    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
 
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The number of reserved nodes you want to purchase.</p> <p>Default: <code>1</code></p>
     */
     inline long GetNodeCount() const{ return m_nodeCount; }
+
     /*
      <p>The number of reserved nodes you want to purchase.</p> <p>Default: <code>1</code></p>
     */
@@ -70,7 +82,7 @@ namespace Model
     /*
      <p>The number of reserved nodes you want to purchase.</p> <p>Default: <code>1</code></p>
     */
-    inline PurchaseReservedNodeOfferingRequest&  WithNodeCount(long value) { SetNodeCount(value); return *this;}
+    inline PurchaseReservedNodeOfferingRequest& WithNodeCount(long value) { SetNodeCount(value); return *this;}
 
   private:
     Aws::String m_reservedNodeOfferingId;

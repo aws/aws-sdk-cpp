@@ -46,6 +46,7 @@ namespace Model
      Information about the usage of the identity pool.
     */
     inline const IdentityPoolUsage& GetIdentityPoolUsage() const{ return m_identityPoolUsage; }
+
     /*
      Information about the usage of the identity pool.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      Information about the usage of the identity pool.
     */
-    inline DescribeIdentityPoolUsageResult&  WithIdentityPoolUsage(const IdentityPoolUsage& value) { SetIdentityPoolUsage(value); return *this;}
+    inline void SetIdentityPoolUsage(IdentityPoolUsage&& value) { m_identityPoolUsage = value; }
+
+    /*
+     Information about the usage of the identity pool.
+    */
+    inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(const IdentityPoolUsage& value) { SetIdentityPoolUsage(value); return *this;}
+
+    /*
+     Information about the usage of the identity pool.
+    */
+    inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(IdentityPoolUsage&& value) { SetIdentityPoolUsage(value); return *this;}
 
   private:
     IdentityPoolUsage m_identityPoolUsage;

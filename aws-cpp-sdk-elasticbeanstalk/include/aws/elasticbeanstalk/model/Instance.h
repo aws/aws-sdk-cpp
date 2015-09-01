@@ -47,10 +47,16 @@ namespace Model
      <p>The ID of the Amazon EC2 instance.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The ID of the Amazon EC2 instance.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The ID of the Amazon EC2 instance.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the Amazon EC2 instance.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The ID of the Amazon EC2 instance.</p>
     */
-    inline Instance&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Instance& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The ID of the Amazon EC2 instance.</p>
+    */
+    inline Instance& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The ID of the Amazon EC2 instance.</p>

@@ -45,10 +45,16 @@ namespace Model
      <p>The deployment configuration ID.</p>
     */
     inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
+
     /*
      <p>The deployment configuration ID.</p>
     */
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigIdHasBeenSet = true; m_deploymentConfigId = value; }
+
+    /*
+     <p>The deployment configuration ID.</p>
+    */
+    inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigIdHasBeenSet = true; m_deploymentConfigId = value; }
 
     /*
      <p>The deployment configuration ID.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The deployment configuration ID.</p>
     */
-    inline DeploymentConfigInfo&  WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
+    inline DeploymentConfigInfo& WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
+
+    /*
+     <p>The deployment configuration ID.</p>
+    */
+    inline DeploymentConfigInfo& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(value); return *this;}
 
     /*
      <p>The deployment configuration ID.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The deployment configuration name.</p>
     */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
     /*
      <p>The deployment configuration name.</p>
     */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
+
+    /*
+     <p>The deployment configuration name.</p>
+    */
+    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /*
      <p>The deployment configuration name.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The deployment configuration name.</p>
     */
-    inline DeploymentConfigInfo&  WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
+    inline DeploymentConfigInfo& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
+
+    /*
+     <p>The deployment configuration name.</p>
+    */
+    inline DeploymentConfigInfo& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(value); return *this;}
 
     /*
      <p>The deployment configuration name.</p>
@@ -93,6 +115,7 @@ namespace Model
      <p>Information about the number or percentage of minimum healthy instances.</p>
     */
     inline const MinimumHealthyHosts& GetMinimumHealthyHosts() const{ return m_minimumHealthyHosts; }
+
     /*
      <p>Information about the number or percentage of minimum healthy instances.</p>
     */
@@ -101,12 +124,23 @@ namespace Model
     /*
      <p>Information about the number or percentage of minimum healthy instances.</p>
     */
-    inline DeploymentConfigInfo&  WithMinimumHealthyHosts(const MinimumHealthyHosts& value) { SetMinimumHealthyHosts(value); return *this;}
+    inline void SetMinimumHealthyHosts(MinimumHealthyHosts&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
+
+    /*
+     <p>Information about the number or percentage of minimum healthy instances.</p>
+    */
+    inline DeploymentConfigInfo& WithMinimumHealthyHosts(const MinimumHealthyHosts& value) { SetMinimumHealthyHosts(value); return *this;}
+
+    /*
+     <p>Information about the number or percentage of minimum healthy instances.</p>
+    */
+    inline DeploymentConfigInfo& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(value); return *this;}
 
     /*
      <p>The time that the deployment configuration was created.</p>
     */
     inline double GetCreateTime() const{ return m_createTime; }
+
     /*
      <p>The time that the deployment configuration was created.</p>
     */
@@ -115,7 +149,7 @@ namespace Model
     /*
      <p>The time that the deployment configuration was created.</p>
     */
-    inline DeploymentConfigInfo&  WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline DeploymentConfigInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 
   private:
     Aws::String m_deploymentConfigId;

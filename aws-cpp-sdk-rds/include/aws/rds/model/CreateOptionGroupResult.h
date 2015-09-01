@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const OptionGroup& GetOptionGroup() const{ return m_optionGroup; }
+
     
     inline void SetOptionGroup(const OptionGroup& value) { m_optionGroup = value; }
 
     
-    inline CreateOptionGroupResult&  WithOptionGroup(const OptionGroup& value) { SetOptionGroup(value); return *this;}
+    inline void SetOptionGroup(OptionGroup&& value) { m_optionGroup = value; }
+
+    
+    inline CreateOptionGroupResult& WithOptionGroup(const OptionGroup& value) { SetOptionGroup(value); return *this;}
+
+    
+    inline CreateOptionGroupResult& WithOptionGroup(OptionGroup&& value) { SetOptionGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateOptionGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateOptionGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateOptionGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     OptionGroup m_optionGroup;

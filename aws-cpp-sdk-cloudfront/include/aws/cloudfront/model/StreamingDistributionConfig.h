@@ -50,10 +50,16 @@ namespace Model
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
     */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
     */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+
+    /*
+     A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
+    */
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
@@ -63,7 +69,12 @@ namespace Model
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
     */
-    inline StreamingDistributionConfig&  WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
+    inline StreamingDistributionConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
+
+    /*
+     A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
+    */
+    inline StreamingDistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
 
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the StreamingDistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the StreamingDistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
@@ -74,6 +85,7 @@ namespace Model
      A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
     */
     inline const S3Origin& GetS3Origin() const{ return m_s3Origin; }
+
     /*
      A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
     */
@@ -82,12 +94,23 @@ namespace Model
     /*
      A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
     */
-    inline StreamingDistributionConfig&  WithS3Origin(const S3Origin& value) { SetS3Origin(value); return *this;}
+    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
+
+    /*
+     A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+    */
+    inline StreamingDistributionConfig& WithS3Origin(const S3Origin& value) { SetS3Origin(value); return *this;}
+
+    /*
+     A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+    */
+    inline StreamingDistributionConfig& WithS3Origin(S3Origin&& value) { SetS3Origin(value); return *this;}
 
     /*
      A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.
     */
     inline const Aliases& GetAliases() const{ return m_aliases; }
+
     /*
      A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.
     */
@@ -96,16 +119,32 @@ namespace Model
     /*
      A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.
     */
-    inline StreamingDistributionConfig&  WithAliases(const Aliases& value) { SetAliases(value); return *this;}
+    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+
+    /*
+     A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
+
+    /*
+     A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithAliases(Aliases&& value) { SetAliases(value); return *this;}
 
     /*
      Any comments you want to include about the streaming distribution.
     */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
     /*
      Any comments you want to include about the streaming distribution.
     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
+
+    /*
+     Any comments you want to include about the streaming distribution.
+    */
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /*
      Any comments you want to include about the streaming distribution.
@@ -115,7 +154,12 @@ namespace Model
     /*
      Any comments you want to include about the streaming distribution.
     */
-    inline StreamingDistributionConfig&  WithComment(const Aws::String& value) { SetComment(value); return *this;}
+    inline StreamingDistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
+
+    /*
+     Any comments you want to include about the streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /*
      Any comments you want to include about the streaming distribution.
@@ -126,6 +170,7 @@ namespace Model
      A complex type that controls whether access logs are written for the streaming distribution.
     */
     inline const StreamingLoggingConfig& GetLogging() const{ return m_logging; }
+
     /*
      A complex type that controls whether access logs are written for the streaming distribution.
     */
@@ -134,12 +179,23 @@ namespace Model
     /*
      A complex type that controls whether access logs are written for the streaming distribution.
     */
-    inline StreamingDistributionConfig&  WithLogging(const StreamingLoggingConfig& value) { SetLogging(value); return *this;}
+    inline void SetLogging(StreamingLoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = value; }
+
+    /*
+     A complex type that controls whether access logs are written for the streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithLogging(const StreamingLoggingConfig& value) { SetLogging(value); return *this;}
+
+    /*
+     A complex type that controls whether access logs are written for the streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithLogging(StreamingLoggingConfig&& value) { SetLogging(value); return *this;}
 
     /*
      A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
     */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
+
     /*
      A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
     */
@@ -148,12 +204,23 @@ namespace Model
     /*
      A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
     */
-    inline StreamingDistributionConfig&  WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
+    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
+
+    /*
+     A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
+    */
+    inline StreamingDistributionConfig& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
+
+    /*
+     A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
+    */
+    inline StreamingDistributionConfig& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(value); return *this;}
 
     /*
      A complex type that contains information about price class for this streaming distribution.
     */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
+
     /*
      A complex type that contains information about price class for this streaming distribution.
     */
@@ -162,12 +229,23 @@ namespace Model
     /*
      A complex type that contains information about price class for this streaming distribution.
     */
-    inline StreamingDistributionConfig&  WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
+    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
+
+    /*
+     A complex type that contains information about price class for this streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
+
+    /*
+     A complex type that contains information about price class for this streaming distribution.
+    */
+    inline StreamingDistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(value); return *this;}
 
     /*
      Whether the streaming distribution is enabled to accept end user requests for content.
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      Whether the streaming distribution is enabled to accept end user requests for content.
     */
@@ -176,7 +254,7 @@ namespace Model
     /*
      Whether the streaming distribution is enabled to accept end user requests for content.
     */
-    inline StreamingDistributionConfig&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline StreamingDistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
     Aws::String m_callerReference;

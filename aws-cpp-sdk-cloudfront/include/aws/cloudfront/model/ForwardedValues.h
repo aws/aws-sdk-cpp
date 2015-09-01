@@ -46,6 +46,7 @@ namespace Model
      Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.
     */
     inline bool GetQueryString() const{ return m_queryString; }
+
     /*
      Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.
     */
-    inline ForwardedValues&  WithQueryString(bool value) { SetQueryString(value); return *this;}
+    inline ForwardedValues& WithQueryString(bool value) { SetQueryString(value); return *this;}
 
     /*
      A complex type that specifies how CloudFront handles cookies.
     */
     inline const CookiePreference& GetCookies() const{ return m_cookies; }
+
     /*
      A complex type that specifies how CloudFront handles cookies.
     */
@@ -68,12 +70,23 @@ namespace Model
     /*
      A complex type that specifies how CloudFront handles cookies.
     */
-    inline ForwardedValues&  WithCookies(const CookiePreference& value) { SetCookies(value); return *this;}
+    inline void SetCookies(CookiePreference&& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
+
+    /*
+     A complex type that specifies how CloudFront handles cookies.
+    */
+    inline ForwardedValues& WithCookies(const CookiePreference& value) { SetCookies(value); return *this;}
+
+    /*
+     A complex type that specifies how CloudFront handles cookies.
+    */
+    inline ForwardedValues& WithCookies(CookiePreference&& value) { SetCookies(value); return *this;}
 
     /*
      A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.
     */
     inline const Headers& GetHeaders() const{ return m_headers; }
+
     /*
      A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.
     */
@@ -82,7 +95,17 @@ namespace Model
     /*
      A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.
     */
-    inline ForwardedValues&  WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
+    inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /*
+     A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.
+    */
+    inline ForwardedValues& WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
+
+    /*
+     A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.
+    */
+    inline ForwardedValues& WithHeaders(Headers&& value) { SetHeaders(value); return *this;}
 
   private:
     bool m_queryString;

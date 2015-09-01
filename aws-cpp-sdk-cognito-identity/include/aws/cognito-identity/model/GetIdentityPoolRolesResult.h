@@ -47,10 +47,16 @@ namespace Model
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+
+    /*
+     <p>An identity pool ID in the format REGION:GUID.</p>
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline GetIdentityPoolRolesResult&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline GetIdentityPoolRolesResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     <p>An identity pool ID in the format REGION:GUID.</p>
+    */
+    inline GetIdentityPoolRolesResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetRoles() const{ return m_roles; }
+
     /*
      <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
     */
@@ -79,12 +91,47 @@ namespace Model
     /*
      <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
     */
-    inline GetIdentityPoolRolesResult&  WithRoles(const Aws::Map<Aws::String, Aws::String>& value) { SetRoles(value); return *this;}
+    inline void SetRoles(Aws::Map<Aws::String, Aws::String>&& value) { m_roles = value; }
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& WithRoles(const Aws::Map<Aws::String, Aws::String>& value) { SetRoles(value); return *this;}
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& WithRoles(Aws::Map<Aws::String, Aws::String>&& value) { SetRoles(value); return *this;}
 
     /*
      <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
     */
     inline GetIdentityPoolRolesResult& AddRoles(const Aws::String& key, const Aws::String& value) { m_roles[key] = value; return *this; }
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& AddRoles(Aws::String&& key, const Aws::String& value) { m_roles[key] = value; return *this; }
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& AddRoles(const Aws::String& key, Aws::String&& value) { m_roles[key] = value; return *this; }
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& AddRoles(Aws::String&& key, Aws::String&& value) { m_roles[key] = value; return *this; }
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& AddRoles(const char* key, Aws::String&& value) { m_roles[key] = value; return *this; }
+
+    /*
+     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+    */
+    inline GetIdentityPoolRolesResult& AddRoles(Aws::String&& key, const char* value) { m_roles[key] = value; return *this; }
 
     /*
      <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>

@@ -17,7 +17,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sns/model/ResponseMetadata.h>
-#include <aws/sns/model/Endpoint.h>
 
 namespace Aws
 {
@@ -48,30 +47,57 @@ namespace Model
     /*
      <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     */
-    inline const Aws::Vector<Endpoint>& GetEndpoints() const{ return m_endpoints; }
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
-    inline void SetEndpoints(const Aws::Vector<Endpoint>& value) { m_endpoints = value; }
+    inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
 
     /*
      <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     */
-    inline ListEndpointsByPlatformApplicationResult&  WithEndpoints(const Aws::Vector<Endpoint>& value) { SetEndpoints(value); return *this;}
+    inline void SetEndpoints(const Aws::Vector<Aws::String>& value) { m_endpoints = value; }
 
     /*
      <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     */
-    inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const Endpoint& value) { m_endpoints.push_back(value); return *this; }
+    inline void SetEndpoints(Aws::Vector<Aws::String>&& value) { m_endpoints = value; }
+
+    /*
+     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    */
+    inline ListEndpointsByPlatformApplicationResult& WithEndpoints(const Aws::Vector<Aws::String>& value) { SetEndpoints(value); return *this;}
+
+    /*
+     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    */
+    inline ListEndpointsByPlatformApplicationResult& WithEndpoints(Aws::Vector<Aws::String>&& value) { SetEndpoints(value); return *this;}
+
+    /*
+     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    */
+    inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const Aws::String& value) { m_endpoints.push_back(value); return *this; }
+
+    /*
+     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    */
+    inline ListEndpointsByPlatformApplicationResult& AddEndpoints(Aws::String&& value) { m_endpoints.push_back(value); return *this; }
+
+    /*
+     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    */
+    inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const char* value) { m_endpoints.push_back(value); return *this; }
 
     /*
      <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
@@ -81,7 +107,12 @@ namespace Model
     /*
      <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
     */
-    inline ListEndpointsByPlatformApplicationResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListEndpointsByPlatformApplicationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
+    */
+    inline ListEndpointsByPlatformApplicationResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
@@ -90,14 +121,21 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListEndpointsByPlatformApplicationResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListEndpointsByPlatformApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListEndpointsByPlatformApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
-    Aws::Vector<Endpoint> m_endpoints;
+    Aws::Vector<Aws::String> m_endpoints;
     Aws::String m_nextToken;
     ResponseMetadata m_responseMetadata;
   };

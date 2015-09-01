@@ -45,10 +45,16 @@ namespace Model
      <p>The agent version.</p>
     */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
     /*
      <p>The agent version.</p>
     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>The agent version.</p>
+    */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /*
      <p>The agent version.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The agent version.</p>
     */
-    inline AgentVersion&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline AgentVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>The agent version.</p>
+    */
+    inline AgentVersion& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /*
      <p>The agent version.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>The configuration manager.</p>
     */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
+
     /*
      <p>The configuration manager.</p>
     */
@@ -77,7 +89,17 @@ namespace Model
     /*
      <p>The configuration manager.</p>
     */
-    inline AgentVersion&  WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
+    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
+
+    /*
+     <p>The configuration manager.</p>
+    */
+    inline AgentVersion& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
+
+    /*
+     <p>The configuration manager.</p>
+    */
+    inline AgentVersion& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(value); return *this;}
 
   private:
     Aws::String m_version;

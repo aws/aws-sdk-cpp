@@ -46,10 +46,16 @@ namespace Model
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
     */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
+
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
     */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+
+    /*
+     <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
+    */
+    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
     */
-    inline Event&  WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
+    inline Event& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
+
+    /*
+     <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
+    */
+    inline Event& WithEventType(Aws::String&& value) { SetEventType(value); return *this;}
 
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
     inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /*
+     <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
+    */
+    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
-    inline Event&  WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
+    inline Event& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
+
+    /*
+     <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
+    */
+    inline Event& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
 
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
@@ -94,6 +116,7 @@ namespace Model
      <p>The session the event occured within. </p>
     */
     inline const Session& GetSession() const{ return m_session; }
+
     /*
      <p>The session the event occured within. </p>
     */
@@ -102,16 +125,32 @@ namespace Model
     /*
      <p>The session the event occured within. </p>
     */
-    inline Event&  WithSession(const Session& value) { SetSession(value); return *this;}
+    inline void SetSession(Session&& value) { m_sessionHasBeenSet = true; m_session = value; }
+
+    /*
+     <p>The session the event occured within. </p>
+    */
+    inline Event& WithSession(const Session& value) { SetSession(value); return *this;}
+
+    /*
+     <p>The session the event occured within. </p>
+    */
+    inline Event& WithSession(Session&& value) { SetSession(value); return *this;}
 
     /*
      <p>The version of the event.</p>
     */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
     /*
      <p>The version of the event.</p>
     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>The version of the event.</p>
+    */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /*
      <p>The version of the event.</p>
@@ -121,7 +160,12 @@ namespace Model
     /*
      <p>The version of the event.</p>
     */
-    inline Event&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline Event& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>The version of the event.</p>
+    */
+    inline Event& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /*
      <p>The version of the event.</p>
@@ -132,6 +176,7 @@ namespace Model
      <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
     /*
      <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
@@ -140,12 +185,47 @@ namespace Model
     /*
      <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
-    inline Event&  WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /*
      <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
     inline Event& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /*
      <p>A collection of key-value pairs that give additional context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
@@ -156,6 +236,7 @@ namespace Model
      <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
     inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
+
     /*
      <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
@@ -164,12 +245,27 @@ namespace Model
     /*
      <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
-    inline Event&  WithMetrics(const Aws::Map<Aws::String, double>& value) { SetMetrics(value); return *this;}
+    inline void SetMetrics(Aws::Map<Aws::String, double>&& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /*
+     <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& WithMetrics(const Aws::Map<Aws::String, double>& value) { SetMetrics(value); return *this;}
+
+    /*
+     <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& WithMetrics(Aws::Map<Aws::String, double>&& value) { SetMetrics(value); return *this;}
 
     /*
      <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
     */
     inline Event& AddMetrics(const Aws::String& key, double value) { m_metricsHasBeenSet = true; m_metrics[key] = value; return *this; }
+
+    /*
+     <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>
+    */
+    inline Event& AddMetrics(Aws::String&& key, double value) { m_metricsHasBeenSet = true; m_metrics[key] = value; return *this; }
 
     /*
      <p>A collection of key-value pairs that gives additional, measurable context to the event. The key-value pairs are specified by the developer.</p> <p>This collection can be empty or the attribute object can be omitted.</p>

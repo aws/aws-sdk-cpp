@@ -39,10 +39,16 @@ namespace Model
      <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
     /*
      <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+
+    /*
+     <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    */
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /*
      <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     */
-    inline RequestEnvironmentInfoRequest&  WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
+    inline RequestEnvironmentInfoRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
+
+    /*
+     <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    */
+    inline RequestEnvironmentInfoRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /*
      <p>The ID of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
     /*
      <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /*
+     <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     */
-    inline RequestEnvironmentInfoRequest&  WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+    inline RequestEnvironmentInfoRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /*
+     <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    */
+    inline RequestEnvironmentInfoRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /*
      <p>The name of the environment of the requested data.</p> <p> If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -87,6 +109,7 @@ namespace Model
      <p> The type of information to request. </p>
     */
     inline const EnvironmentInfoType& GetInfoType() const{ return m_infoType; }
+
     /*
      <p> The type of information to request. </p>
     */
@@ -95,7 +118,17 @@ namespace Model
     /*
      <p> The type of information to request. </p>
     */
-    inline RequestEnvironmentInfoRequest&  WithInfoType(const EnvironmentInfoType& value) { SetInfoType(value); return *this;}
+    inline void SetInfoType(EnvironmentInfoType&& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
+
+    /*
+     <p> The type of information to request. </p>
+    */
+    inline RequestEnvironmentInfoRequest& WithInfoType(const EnvironmentInfoType& value) { SetInfoType(value); return *this;}
+
+    /*
+     <p> The type of information to request. </p>
+    */
+    inline RequestEnvironmentInfoRequest& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(value); return *this;}
 
   private:
     Aws::String m_environmentId;

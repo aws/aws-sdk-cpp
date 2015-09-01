@@ -44,10 +44,16 @@ namespace Model
      <p>The instance's ARN.</p>
     */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
+
     /*
      <p>The instance's ARN.</p>
     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
+
+    /*
+     <p>The instance's ARN.</p>
+    */
+    inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /*
      <p>The instance's ARN.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The instance's ARN.</p>
     */
-    inline RdsDbInstance&  WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
+    inline RdsDbInstance& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
+
+    /*
+     <p>The instance's ARN.</p>
+    */
+    inline RdsDbInstance& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(value); return *this;}
 
     /*
      <p>The instance's ARN.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The DB instance identifier.</p>
     */
     inline const Aws::String& GetDbInstanceIdentifier() const{ return m_dbInstanceIdentifier; }
+
     /*
      <p>The DB instance identifier.</p>
     */
     inline void SetDbInstanceIdentifier(const Aws::String& value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier = value; }
+
+    /*
+     <p>The DB instance identifier.</p>
+    */
+    inline void SetDbInstanceIdentifier(Aws::String&& value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier = value; }
 
     /*
      <p>The DB instance identifier.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The DB instance identifier.</p>
     */
-    inline RdsDbInstance&  WithDbInstanceIdentifier(const Aws::String& value) { SetDbInstanceIdentifier(value); return *this;}
+    inline RdsDbInstance& WithDbInstanceIdentifier(const Aws::String& value) { SetDbInstanceIdentifier(value); return *this;}
+
+    /*
+     <p>The DB instance identifier.</p>
+    */
+    inline RdsDbInstance& WithDbInstanceIdentifier(Aws::String&& value) { SetDbInstanceIdentifier(value); return *this;}
 
     /*
      <p>The DB instance identifier.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The master user name.</p>
     */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
+
     /*
      <p>The master user name.</p>
     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
+
+    /*
+     <p>The master user name.</p>
+    */
+    inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /*
      <p>The master user name.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The master user name.</p>
     */
-    inline RdsDbInstance&  WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
+    inline RdsDbInstance& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
+
+    /*
+     <p>The master user name.</p>
+    */
+    inline RdsDbInstance& WithDbUser(Aws::String&& value) { SetDbUser(value); return *this;}
 
     /*
      <p>The master user name.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
+
     /*
      <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     */
     inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
+
+    /*
+     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    */
+    inline void SetDbPassword(Aws::String&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
     /*
      <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     */
-    inline RdsDbInstance&  WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
+    inline RdsDbInstance& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
+
+    /*
+     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    */
+    inline RdsDbInstance& WithDbPassword(Aws::String&& value) { SetDbPassword(value); return *this;}
 
     /*
      <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -140,10 +184,16 @@ namespace Model
      <p>The instance's AWS region.</p>
     */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
     /*
      <p>The instance's AWS region.</p>
     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /*
+     <p>The instance's AWS region.</p>
+    */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /*
      <p>The instance's AWS region.</p>
@@ -153,7 +203,12 @@ namespace Model
     /*
      <p>The instance's AWS region.</p>
     */
-    inline RdsDbInstance&  WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+    inline RdsDbInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /*
+     <p>The instance's AWS region.</p>
+    */
+    inline RdsDbInstance& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
 
     /*
      <p>The instance's AWS region.</p>
@@ -164,10 +219,16 @@ namespace Model
      <p>The instance's address.</p>
     */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
     /*
      <p>The instance's address.</p>
     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
+
+    /*
+     <p>The instance's address.</p>
+    */
+    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /*
      <p>The instance's address.</p>
@@ -177,7 +238,12 @@ namespace Model
     /*
      <p>The instance's address.</p>
     */
-    inline RdsDbInstance&  WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+    inline RdsDbInstance& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+
+    /*
+     <p>The instance's address.</p>
+    */
+    inline RdsDbInstance& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
     /*
      <p>The instance's address.</p>
@@ -188,10 +254,16 @@ namespace Model
      <p>The instance's database engine.</p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p>The instance's database engine.</p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p>The instance's database engine.</p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p>The instance's database engine.</p>
@@ -201,7 +273,12 @@ namespace Model
     /*
      <p>The instance's database engine.</p>
     */
-    inline RdsDbInstance&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline RdsDbInstance& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p>The instance's database engine.</p>
+    */
+    inline RdsDbInstance& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p>The instance's database engine.</p>
@@ -212,10 +289,16 @@ namespace Model
      <p>The ID of the stack that the instance is registered with.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The ID of the stack that the instance is registered with.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The ID of the stack that the instance is registered with.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The ID of the stack that the instance is registered with.</p>
@@ -225,7 +308,12 @@ namespace Model
     /*
      <p>The ID of the stack that the instance is registered with.</p>
     */
-    inline RdsDbInstance&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline RdsDbInstance& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The ID of the stack that the instance is registered with.</p>
+    */
+    inline RdsDbInstance& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The ID of the stack that the instance is registered with.</p>
@@ -236,6 +324,7 @@ namespace Model
      <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance. AWS OpsWorks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance and then register it again.</p>
     */
     inline bool GetMissingOnRds() const{ return m_missingOnRds; }
+
     /*
      <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance. AWS OpsWorks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance and then register it again.</p>
     */
@@ -244,7 +333,7 @@ namespace Model
     /*
      <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance. AWS OpsWorks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance and then register it again.</p>
     */
-    inline RdsDbInstance&  WithMissingOnRds(bool value) { SetMissingOnRds(value); return *this;}
+    inline RdsDbInstance& WithMissingOnRds(bool value) { SetMissingOnRds(value); return *this;}
 
   private:
     Aws::String m_rdsDbInstanceArn;

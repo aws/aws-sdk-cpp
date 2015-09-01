@@ -47,6 +47,7 @@ namespace Model
      <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
     */
     inline const ApplicationVersionDescription& GetApplicationVersion() const{ return m_applicationVersion; }
+
     /*
      <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
     */
-    inline CreateApplicationVersionResult&  WithApplicationVersion(const ApplicationVersionDescription& value) { SetApplicationVersion(value); return *this;}
+    inline void SetApplicationVersion(ApplicationVersionDescription&& value) { m_applicationVersion = value; }
+
+    /*
+     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+    */
+    inline CreateApplicationVersionResult& WithApplicationVersion(const ApplicationVersionDescription& value) { SetApplicationVersion(value); return *this;}
+
+    /*
+     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+    */
+    inline CreateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateApplicationVersionResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateApplicationVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateApplicationVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ApplicationVersionDescription m_applicationVersion;

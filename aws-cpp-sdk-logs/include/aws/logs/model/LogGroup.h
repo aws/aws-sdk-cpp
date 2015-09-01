@@ -42,63 +42,81 @@ namespace Model
 
     
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     
-    inline LogGroup&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline LogGroup& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    
+    inline LogGroup& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     
     inline LogGroup& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     
     inline long long GetCreationTime() const{ return m_creationTime; }
+
     
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     
-    inline LogGroup&  WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+    inline LogGroup& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     
     inline long GetRetentionInDays() const{ return m_retentionInDays; }
+
     
     inline void SetRetentionInDays(long value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
 
     
-    inline LogGroup&  WithRetentionInDays(long value) { SetRetentionInDays(value); return *this;}
+    inline LogGroup& WithRetentionInDays(long value) { SetRetentionInDays(value); return *this;}
 
     
     inline long GetMetricFilterCount() const{ return m_metricFilterCount; }
+
     
     inline void SetMetricFilterCount(long value) { m_metricFilterCountHasBeenSet = true; m_metricFilterCount = value; }
 
     
-    inline LogGroup&  WithMetricFilterCount(long value) { SetMetricFilterCount(value); return *this;}
+    inline LogGroup& WithMetricFilterCount(long value) { SetMetricFilterCount(value); return *this;}
 
     
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     
-    inline LogGroup&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline LogGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline LogGroup& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     
     inline LogGroup& WithArn(const char* value) { SetArn(value); return *this;}
 
     
     inline long long GetStoredBytes() const{ return m_storedBytes; }
+
     
     inline void SetStoredBytes(long long value) { m_storedBytesHasBeenSet = true; m_storedBytes = value; }
 
     
-    inline LogGroup&  WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
+    inline LogGroup& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
   private:
     Aws::String m_logGroupName;

@@ -42,6 +42,11 @@ RevokeSnapshotAccessResult& RevokeSnapshotAccessResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
+    if(snapshotNode.IsNull())
+    {
+      snapshotNode = resultNode;
+    }
+
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;

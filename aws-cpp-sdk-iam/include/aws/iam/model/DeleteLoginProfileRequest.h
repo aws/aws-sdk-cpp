@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user whose password you want to delete.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user whose password you want to delete.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user whose password you want to delete.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose password you want to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user whose password you want to delete.</p>
     */
-    inline DeleteLoginProfileRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline DeleteLoginProfileRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user whose password you want to delete.</p>
+    */
+    inline DeleteLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user whose password you want to delete.</p>

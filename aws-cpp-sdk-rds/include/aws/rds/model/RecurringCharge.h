@@ -47,6 +47,7 @@ namespace Model
      <p> The amount of the recurring charge. </p>
     */
     inline double GetRecurringChargeAmount() const{ return m_recurringChargeAmount; }
+
     /*
      <p> The amount of the recurring charge. </p>
     */
@@ -55,16 +56,22 @@ namespace Model
     /*
      <p> The amount of the recurring charge. </p>
     */
-    inline RecurringCharge&  WithRecurringChargeAmount(double value) { SetRecurringChargeAmount(value); return *this;}
+    inline RecurringCharge& WithRecurringChargeAmount(double value) { SetRecurringChargeAmount(value); return *this;}
 
     /*
      <p> The frequency of the recurring charge. </p>
     */
     inline const Aws::String& GetRecurringChargeFrequency() const{ return m_recurringChargeFrequency; }
+
     /*
      <p> The frequency of the recurring charge. </p>
     */
     inline void SetRecurringChargeFrequency(const Aws::String& value) { m_recurringChargeFrequencyHasBeenSet = true; m_recurringChargeFrequency = value; }
+
+    /*
+     <p> The frequency of the recurring charge. </p>
+    */
+    inline void SetRecurringChargeFrequency(Aws::String&& value) { m_recurringChargeFrequencyHasBeenSet = true; m_recurringChargeFrequency = value; }
 
     /*
      <p> The frequency of the recurring charge. </p>
@@ -74,7 +81,12 @@ namespace Model
     /*
      <p> The frequency of the recurring charge. </p>
     */
-    inline RecurringCharge&  WithRecurringChargeFrequency(const Aws::String& value) { SetRecurringChargeFrequency(value); return *this;}
+    inline RecurringCharge& WithRecurringChargeFrequency(const Aws::String& value) { SetRecurringChargeFrequency(value); return *this;}
+
+    /*
+     <p> The frequency of the recurring charge. </p>
+    */
+    inline RecurringCharge& WithRecurringChargeFrequency(Aws::String&& value) { SetRecurringChargeFrequency(value); return *this;}
 
     /*
      <p> The frequency of the recurring charge. </p>

@@ -37,25 +37,33 @@ namespace Model
 
     
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     
-    inline IncreaseStreamRetentionPeriodRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    
+    inline IncreaseStreamRetentionPeriodRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     
     inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
     
     inline long GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+
     
     inline void SetRetentionPeriodHours(long value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
     
-    inline IncreaseStreamRetentionPeriodRequest&  WithRetentionPeriodHours(long value) { SetRetentionPeriodHours(value); return *this;}
+    inline IncreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(long value) { SetRetentionPeriodHours(value); return *this;}
 
   private:
     Aws::String m_streamName;

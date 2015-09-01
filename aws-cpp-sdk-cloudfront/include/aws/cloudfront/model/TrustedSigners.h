@@ -46,6 +46,7 @@ namespace Model
      Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.
     */
-    inline TrustedSigners&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline TrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /*
      The number of trusted signers for this cache behavior.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of trusted signers for this cache behavior.
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      The number of trusted signers for this cache behavior.
     */
-    inline TrustedSigners&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline TrustedSigners& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
     */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
     /*
      Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
     */
@@ -82,12 +85,27 @@ namespace Model
     /*
      Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
     */
-    inline TrustedSigners&  WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
+    */
+    inline TrustedSigners& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+
+    /*
+     Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
+    */
+    inline TrustedSigners& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
 
     /*
      Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
     */
     inline TrustedSigners& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.
+    */
+    inline TrustedSigners& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /*
      Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.

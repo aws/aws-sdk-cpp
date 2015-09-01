@@ -46,6 +46,7 @@ namespace Model
      Information about invalidation batches.
     */
     inline const InvalidationList& GetInvalidationList() const{ return m_invalidationList; }
+
     /*
      Information about invalidation batches.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      Information about invalidation batches.
     */
-    inline ListInvalidations2015_04_17Result&  WithInvalidationList(const InvalidationList& value) { SetInvalidationList(value); return *this;}
+    inline void SetInvalidationList(InvalidationList&& value) { m_invalidationList = value; }
+
+    /*
+     Information about invalidation batches.
+    */
+    inline ListInvalidations2015_04_17Result& WithInvalidationList(const InvalidationList& value) { SetInvalidationList(value); return *this;}
+
+    /*
+     Information about invalidation batches.
+    */
+    inline ListInvalidations2015_04_17Result& WithInvalidationList(InvalidationList&& value) { SetInvalidationList(value); return *this;}
 
   private:
     InvalidationList m_invalidationList;

@@ -38,10 +38,16 @@ namespace Model
      <p>The Cognito Identity Pool ID for the request</p>
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      <p>The Cognito Identity Pool ID for the request</p>
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     <p>The Cognito Identity Pool ID for the request</p>
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>The Cognito Identity Pool ID for the request</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The Cognito Identity Pool ID for the request</p>
     */
-    inline GetCognitoEventsRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline GetCognitoEventsRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     <p>The Cognito Identity Pool ID for the request</p>
+    */
+    inline GetCognitoEventsRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      <p>The Cognito Identity Pool ID for the request</p>

@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the IAM user to associate the SSH public key with.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the IAM user to associate the SSH public key with.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the IAM user to associate the SSH public key with.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the IAM user to associate the SSH public key with.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the IAM user to associate the SSH public key with.</p>
     */
-    inline UploadSSHPublicKeyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline UploadSSHPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the IAM user to associate the SSH public key with.</p>
+    */
+    inline UploadSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the IAM user to associate the SSH public key with.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
     */
     inline const Aws::String& GetSSHPublicKeyBody() const{ return m_sSHPublicKeyBody; }
+
     /*
      <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
     */
     inline void SetSSHPublicKeyBody(const Aws::String& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = value; }
+
+    /*
+     <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
+    */
+    inline void SetSSHPublicKeyBody(Aws::String&& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = value; }
 
     /*
      <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
     */
-    inline UploadSSHPublicKeyRequest&  WithSSHPublicKeyBody(const Aws::String& value) { SetSSHPublicKeyBody(value); return *this;}
+    inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(const Aws::String& value) { SetSSHPublicKeyBody(value); return *this;}
+
+    /*
+     <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
+    */
+    inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(Aws::String&& value) { SetSSHPublicKeyBody(value); return *this;}
 
     /*
      <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>

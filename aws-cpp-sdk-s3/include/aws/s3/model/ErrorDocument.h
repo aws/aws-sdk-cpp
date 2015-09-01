@@ -45,10 +45,16 @@ namespace Model
      The object key name to use when a 4XX class error occurs.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      The object key name to use when a 4XX class error occurs.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     The object key name to use when a 4XX class error occurs.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The object key name to use when a 4XX class error occurs.
@@ -58,7 +64,12 @@ namespace Model
     /*
      The object key name to use when a 4XX class error occurs.
     */
-    inline ErrorDocument&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline ErrorDocument& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     The object key name to use when a 4XX class error occurs.
+    */
+    inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      The object key name to use when a 4XX class error occurs.

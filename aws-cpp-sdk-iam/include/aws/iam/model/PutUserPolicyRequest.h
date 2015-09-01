@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user to associate the policy with.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user to associate the policy with.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user to associate the policy with.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user to associate the policy with.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user to associate the policy with.</p>
     */
-    inline PutUserPolicyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline PutUserPolicyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user to associate the policy with.</p>
+    */
+    inline PutUserPolicyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user to associate the policy with.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the policy document.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy document.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy document.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the policy document.</p>
     */
-    inline PutUserPolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline PutUserPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy document.</p>
+    */
+    inline PutUserPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy document.</p>
@@ -85,10 +107,16 @@ namespace Model
      <p>The policy document.</p>
     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
     /*
      <p>The policy document.</p>
     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline PutUserPolicyRequest&  WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+    inline PutUserPolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline PutUserPolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /*
      <p>The policy document.</p>

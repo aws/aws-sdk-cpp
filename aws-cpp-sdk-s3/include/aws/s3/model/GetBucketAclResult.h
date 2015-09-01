@@ -46,16 +46,24 @@ namespace Model
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
+
     
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
     
-    inline GetBucketAclResult&  WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline void SetOwner(Owner&& value) { m_owner = value; }
+
+    
+    inline GetBucketAclResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+
+    
+    inline GetBucketAclResult& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
     /*
      A list of grants.
     */
     inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
+
     /*
      A list of grants.
     */
@@ -64,12 +72,27 @@ namespace Model
     /*
      A list of grants.
     */
-    inline GetBucketAclResult&  WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
+    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = value; }
+
+    /*
+     A list of grants.
+    */
+    inline GetBucketAclResult& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
+
+    /*
+     A list of grants.
+    */
+    inline GetBucketAclResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(value); return *this;}
 
     /*
      A list of grants.
     */
     inline GetBucketAclResult& AddGrants(const Grant& value) { m_grants.push_back(value); return *this; }
+
+    /*
+     A list of grants.
+    */
+    inline GetBucketAclResult& AddGrants(Grant&& value) { m_grants.push_back(value); return *this; }
 
   private:
     Owner m_owner;

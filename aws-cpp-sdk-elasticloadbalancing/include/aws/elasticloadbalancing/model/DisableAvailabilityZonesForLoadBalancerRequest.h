@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline DisableAvailabilityZonesForLoadBalancerRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The Availability Zones.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
     /*
      <p>The Availability Zones.</p>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>The Availability Zones.</p>
     */
-    inline DisableAvailabilityZonesForLoadBalancerRequest&  WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /*
+     <p>The Availability Zones.</p>
+    */
+    inline DisableAvailabilityZonesForLoadBalancerRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /*
+     <p>The Availability Zones.</p>
+    */
+    inline DisableAvailabilityZonesForLoadBalancerRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
 
     /*
      <p>The Availability Zones.</p>
     */
     inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>The Availability Zones.</p>
+    */
+    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>The Availability Zones.</p>

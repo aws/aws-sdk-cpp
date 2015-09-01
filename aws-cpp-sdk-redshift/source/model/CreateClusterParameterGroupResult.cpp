@@ -42,6 +42,11 @@ CreateClusterParameterGroupResult& CreateClusterParameterGroupResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode clusterParameterGroupNode = resultNode.FirstChild("ClusterParameterGroup");
+    if(clusterParameterGroupNode.IsNull())
+    {
+      clusterParameterGroupNode = resultNode;
+    }
+
     if(!clusterParameterGroupNode.IsNull())
     {
       m_clusterParameterGroup = clusterParameterGroupNode;

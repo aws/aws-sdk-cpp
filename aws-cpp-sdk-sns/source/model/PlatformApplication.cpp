@@ -43,6 +43,11 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode platformApplicationArnNode = resultNode.FirstChild("PlatformApplicationArn");
+    if(platformApplicationArnNode.IsNull())
+    {
+      platformApplicationArnNode = resultNode;
+    }
+
     if(!platformApplicationArnNode.IsNull())
     {
       m_platformApplicationArn = StringUtils::Trim(platformApplicationArnNode.GetText().c_str());

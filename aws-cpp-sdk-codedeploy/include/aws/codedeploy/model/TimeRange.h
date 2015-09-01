@@ -43,6 +43,7 @@ namespace Model
      <p>The time range's start time.</p> <note>Specify null to leave the time range's start time open-ended.</note>
     */
     inline double GetStart() const{ return m_start; }
+
     /*
      <p>The time range's start time.</p> <note>Specify null to leave the time range's start time open-ended.</note>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The time range's start time.</p> <note>Specify null to leave the time range's start time open-ended.</note>
     */
-    inline TimeRange&  WithStart(double value) { SetStart(value); return *this;}
+    inline TimeRange& WithStart(double value) { SetStart(value); return *this;}
 
     /*
      <p>The time range's end time.</p> <note>Specify null to leave the time range's end time open-ended.</note>
     */
     inline double GetEnd() const{ return m_end; }
+
     /*
      <p>The time range's end time.</p> <note>Specify null to leave the time range's end time open-ended.</note>
     */
@@ -65,7 +67,7 @@ namespace Model
     /*
      <p>The time range's end time.</p> <note>Specify null to leave the time range's end time open-ended.</note>
     */
-    inline TimeRange&  WithEnd(double value) { SetEnd(value); return *this;}
+    inline TimeRange& WithEnd(double value) { SetEnd(value); return *this;}
 
   private:
     double m_start;

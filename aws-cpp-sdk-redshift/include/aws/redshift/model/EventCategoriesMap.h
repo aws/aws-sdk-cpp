@@ -49,10 +49,16 @@ namespace Model
      <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+
     /*
      <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+
+    /*
+     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
+    */
+    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /*
      <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     */
-    inline EventCategoriesMap&  WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
+    inline EventCategoriesMap& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
+
+    /*
+     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
+    */
+    inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
 
     /*
      <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
@@ -73,6 +84,7 @@ namespace Model
      <p>The events in the event category.</p>
     */
     inline const Aws::Vector<EventInfoMap>& GetEvents() const{ return m_events; }
+
     /*
      <p>The events in the event category.</p>
     */
@@ -81,12 +93,27 @@ namespace Model
     /*
      <p>The events in the event category.</p>
     */
-    inline EventCategoriesMap&  WithEvents(const Aws::Vector<EventInfoMap>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Vector<EventInfoMap>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /*
+     <p>The events in the event category.</p>
+    */
+    inline EventCategoriesMap& WithEvents(const Aws::Vector<EventInfoMap>& value) { SetEvents(value); return *this;}
+
+    /*
+     <p>The events in the event category.</p>
+    */
+    inline EventCategoriesMap& WithEvents(Aws::Vector<EventInfoMap>&& value) { SetEvents(value); return *this;}
 
     /*
      <p>The events in the event category.</p>
     */
     inline EventCategoriesMap& AddEvents(const EventInfoMap& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+
+    /*
+     <p>The events in the event category.</p>
+    */
+    inline EventCategoriesMap& AddEvents(EventInfoMap&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
   private:
     Aws::String m_sourceType;

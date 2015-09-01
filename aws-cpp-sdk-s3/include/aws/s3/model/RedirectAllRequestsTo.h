@@ -46,10 +46,16 @@ namespace Model
      Name of the host where requests will be redirected.
     */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
+
     /*
      Name of the host where requests will be redirected.
     */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
+
+    /*
+     Name of the host where requests will be redirected.
+    */
+    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /*
      Name of the host where requests will be redirected.
@@ -59,7 +65,12 @@ namespace Model
     /*
      Name of the host where requests will be redirected.
     */
-    inline RedirectAllRequestsTo&  WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
+    inline RedirectAllRequestsTo& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
+
+    /*
+     Name of the host where requests will be redirected.
+    */
+    inline RedirectAllRequestsTo& WithHostName(Aws::String&& value) { SetHostName(value); return *this;}
 
     /*
      Name of the host where requests will be redirected.
@@ -70,6 +81,7 @@ namespace Model
      Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
     */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
+
     /*
      Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
     */
@@ -78,7 +90,17 @@ namespace Model
     /*
      Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
     */
-    inline RedirectAllRequestsTo&  WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
+    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /*
+     Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
+    */
+    inline RedirectAllRequestsTo& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
+
+    /*
+     Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
+    */
+    inline RedirectAllRequestsTo& WithProtocol(Protocol&& value) { SetProtocol(value); return *this;}
 
   private:
     Aws::String m_hostName;

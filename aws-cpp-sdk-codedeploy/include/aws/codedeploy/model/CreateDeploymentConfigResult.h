@@ -46,10 +46,16 @@ namespace Model
      <p>A unique deployment configuration ID.</p>
     */
     inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
+
     /*
      <p>A unique deployment configuration ID.</p>
     */
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigId = value; }
+
+    /*
+     <p>A unique deployment configuration ID.</p>
+    */
+    inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigId = value; }
 
     /*
      <p>A unique deployment configuration ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A unique deployment configuration ID.</p>
     */
-    inline CreateDeploymentConfigResult&  WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
+    inline CreateDeploymentConfigResult& WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
+
+    /*
+     <p>A unique deployment configuration ID.</p>
+    */
+    inline CreateDeploymentConfigResult& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(value); return *this;}
 
     /*
      <p>A unique deployment configuration ID.</p>

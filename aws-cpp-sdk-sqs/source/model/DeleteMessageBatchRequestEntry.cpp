@@ -43,12 +43,22 @@ DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
+    if(receiptHandleNode.IsNull())
+    {
+      receiptHandleNode = resultNode;
+    }
+
     if(!receiptHandleNode.IsNull())
     {
       m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());

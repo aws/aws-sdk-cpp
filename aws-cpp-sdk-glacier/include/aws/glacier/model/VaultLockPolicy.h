@@ -44,10 +44,16 @@ namespace Model
      <p>The vault lock policy.</p>
     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
     /*
      <p>The vault lock policy.</p>
     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
+
+    /*
+     <p>The vault lock policy.</p>
+    */
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /*
      <p>The vault lock policy.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The vault lock policy.</p>
     */
-    inline VaultLockPolicy&  WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+    inline VaultLockPolicy& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>The vault lock policy.</p>
+    */
+    inline VaultLockPolicy& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /*
      <p>The vault lock policy.</p>

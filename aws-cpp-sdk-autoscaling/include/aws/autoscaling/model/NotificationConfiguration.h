@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline NotificationConfiguration&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline NotificationConfiguration& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline NotificationConfiguration& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
+    */
+    inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
-    inline NotificationConfiguration&  WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
+    inline NotificationConfiguration& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
+    */
+    inline NotificationConfiguration& WithTopicARN(Aws::String&& value) { SetTopicARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
     */
     inline const Aws::String& GetNotificationType() const{ return m_notificationType; }
+
     /*
      <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
     */
     inline void SetNotificationType(const Aws::String& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+
+    /*
+     <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+    */
+    inline void SetNotificationType(Aws::String&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /*
      <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
     */
-    inline NotificationConfiguration&  WithNotificationType(const Aws::String& value) { SetNotificationType(value); return *this;}
+    inline NotificationConfiguration& WithNotificationType(const Aws::String& value) { SetNotificationType(value); return *this;}
+
+    /*
+     <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+    */
+    inline NotificationConfiguration& WithNotificationType(Aws::String&& value) { SetNotificationType(value); return *this;}
 
     /*
      <p>The types of events for an action to start.</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>

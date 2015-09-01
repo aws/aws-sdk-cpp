@@ -42,6 +42,11 @@ ModifyClusterSubnetGroupResult& ModifyClusterSubnetGroupResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode clusterSubnetGroupNode = resultNode.FirstChild("ClusterSubnetGroup");
+    if(clusterSubnetGroupNode.IsNull())
+    {
+      clusterSubnetGroupNode = resultNode;
+    }
+
     if(!clusterSubnetGroupNode.IsNull())
     {
       m_clusterSubnetGroup = clusterSubnetGroupNode;

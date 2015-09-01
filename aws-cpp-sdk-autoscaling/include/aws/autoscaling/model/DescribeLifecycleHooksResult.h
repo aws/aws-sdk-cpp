@@ -48,6 +48,7 @@ namespace Model
      <p>The lifecycle hooks for the specified group.</p>
     */
     inline const Aws::Vector<LifecycleHook>& GetLifecycleHooks() const{ return m_lifecycleHooks; }
+
     /*
      <p>The lifecycle hooks for the specified group.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>The lifecycle hooks for the specified group.</p>
     */
-    inline DescribeLifecycleHooksResult&  WithLifecycleHooks(const Aws::Vector<LifecycleHook>& value) { SetLifecycleHooks(value); return *this;}
+    inline void SetLifecycleHooks(Aws::Vector<LifecycleHook>&& value) { m_lifecycleHooks = value; }
+
+    /*
+     <p>The lifecycle hooks for the specified group.</p>
+    */
+    inline DescribeLifecycleHooksResult& WithLifecycleHooks(const Aws::Vector<LifecycleHook>& value) { SetLifecycleHooks(value); return *this;}
+
+    /*
+     <p>The lifecycle hooks for the specified group.</p>
+    */
+    inline DescribeLifecycleHooksResult& WithLifecycleHooks(Aws::Vector<LifecycleHook>&& value) { SetLifecycleHooks(value); return *this;}
 
     /*
      <p>The lifecycle hooks for the specified group.</p>
     */
     inline DescribeLifecycleHooksResult& AddLifecycleHooks(const LifecycleHook& value) { m_lifecycleHooks.push_back(value); return *this; }
 
+    /*
+     <p>The lifecycle hooks for the specified group.</p>
+    */
+    inline DescribeLifecycleHooksResult& AddLifecycleHooks(LifecycleHook&& value) { m_lifecycleHooks.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLifecycleHooksResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLifecycleHooksResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLifecycleHooksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<LifecycleHook> m_lifecycleHooks;

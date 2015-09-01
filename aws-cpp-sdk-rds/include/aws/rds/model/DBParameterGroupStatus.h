@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the DP parameter group. </p>
     */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+
     /*
      <p> The name of the DP parameter group. </p>
     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
+
+    /*
+     <p> The name of the DP parameter group. </p>
+    */
+    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /*
      <p> The name of the DP parameter group. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the DP parameter group. </p>
     */
-    inline DBParameterGroupStatus&  WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
+    inline DBParameterGroupStatus& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
+
+    /*
+     <p> The name of the DP parameter group. </p>
+    */
+    inline DBParameterGroupStatus& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
     /*
      <p> The name of the DP parameter group. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The status of parameter updates. </p>
     */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+
     /*
      <p> The status of parameter updates. </p>
     */
     inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
+
+    /*
+     <p> The status of parameter updates. </p>
+    */
+    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
 
     /*
      <p> The status of parameter updates. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The status of parameter updates. </p>
     */
-    inline DBParameterGroupStatus&  WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
+    inline DBParameterGroupStatus& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
+
+    /*
+     <p> The status of parameter updates. </p>
+    */
+    inline DBParameterGroupStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(value); return *this;}
 
     /*
      <p> The status of parameter updates. </p>

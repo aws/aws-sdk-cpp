@@ -38,39 +38,60 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline PutBucketWebsiteRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline PutBucketWebsiteRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline PutBucketWebsiteRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline PutBucketWebsiteRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
     
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     
-    inline PutBucketWebsiteRequest&  WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+    inline PutBucketWebsiteRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    
+    inline PutBucketWebsiteRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
 
     
     inline PutBucketWebsiteRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
     
     inline const WebsiteConfiguration& GetWebsiteConfiguration() const{ return m_websiteConfiguration; }
+
     
     inline void SetWebsiteConfiguration(const WebsiteConfiguration& value) { m_websiteConfigurationHasBeenSet = true; m_websiteConfiguration = value; }
 
     
-    inline PutBucketWebsiteRequest&  WithWebsiteConfiguration(const WebsiteConfiguration& value) { SetWebsiteConfiguration(value); return *this;}
+    inline void SetWebsiteConfiguration(WebsiteConfiguration&& value) { m_websiteConfigurationHasBeenSet = true; m_websiteConfiguration = value; }
+
+    
+    inline PutBucketWebsiteRequest& WithWebsiteConfiguration(const WebsiteConfiguration& value) { SetWebsiteConfiguration(value); return *this;}
+
+    
+    inline PutBucketWebsiteRequest& WithWebsiteConfiguration(WebsiteConfiguration&& value) { SetWebsiteConfiguration(value); return *this;}
 
   private:
     Aws::String m_bucket;

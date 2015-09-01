@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const CacheCluster& GetCacheCluster() const{ return m_cacheCluster; }
+
     
     inline void SetCacheCluster(const CacheCluster& value) { m_cacheCluster = value; }
 
     
-    inline CreateCacheClusterResult&  WithCacheCluster(const CacheCluster& value) { SetCacheCluster(value); return *this;}
+    inline void SetCacheCluster(CacheCluster&& value) { m_cacheCluster = value; }
+
+    
+    inline CreateCacheClusterResult& WithCacheCluster(const CacheCluster& value) { SetCacheCluster(value); return *this;}
+
+    
+    inline CreateCacheClusterResult& WithCacheCluster(CacheCluster&& value) { SetCacheCluster(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateCacheClusterResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateCacheClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateCacheClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     CacheCluster m_cacheCluster;

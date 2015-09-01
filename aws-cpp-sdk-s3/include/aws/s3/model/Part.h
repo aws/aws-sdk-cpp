@@ -45,6 +45,7 @@ namespace Model
      Part number identifying the part. This is a positive integer between 1 and 10,000.
     */
     inline long GetPartNumber() const{ return m_partNumber; }
+
     /*
      Part number identifying the part. This is a positive integer between 1 and 10,000.
     */
@@ -53,12 +54,13 @@ namespace Model
     /*
      Part number identifying the part. This is a positive integer between 1 and 10,000.
     */
-    inline Part&  WithPartNumber(long value) { SetPartNumber(value); return *this;}
+    inline Part& WithPartNumber(long value) { SetPartNumber(value); return *this;}
 
     /*
      Date and time at which the part was uploaded.
     */
     inline double GetLastModified() const{ return m_lastModified; }
+
     /*
      Date and time at which the part was uploaded.
     */
@@ -67,16 +69,22 @@ namespace Model
     /*
      Date and time at which the part was uploaded.
     */
-    inline Part&  WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline Part& WithLastModified(double value) { SetLastModified(value); return *this;}
 
     /*
      Entity tag returned when the part was uploaded.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      Entity tag returned when the part was uploaded.
     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+
+    /*
+     Entity tag returned when the part was uploaded.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /*
      Entity tag returned when the part was uploaded.
@@ -86,7 +94,12 @@ namespace Model
     /*
      Entity tag returned when the part was uploaded.
     */
-    inline Part&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline Part& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     Entity tag returned when the part was uploaded.
+    */
+    inline Part& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      Entity tag returned when the part was uploaded.
@@ -97,6 +110,7 @@ namespace Model
      Size of the uploaded part data.
     */
     inline long GetSize() const{ return m_size; }
+
     /*
      Size of the uploaded part data.
     */
@@ -105,7 +119,7 @@ namespace Model
     /*
      Size of the uploaded part data.
     */
-    inline Part&  WithSize(long value) { SetSize(value); return *this;}
+    inline Part& WithSize(long value) { SetSize(value); return *this;}
 
   private:
     long m_partNumber;

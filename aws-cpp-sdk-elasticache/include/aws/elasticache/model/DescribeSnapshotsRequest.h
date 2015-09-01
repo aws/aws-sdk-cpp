@@ -38,10 +38,16 @@ namespace Model
      <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
     */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
     /*
      <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /*
+     <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
+    */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
     */
-    inline DescribeSnapshotsRequest&  WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+    inline DescribeSnapshotsRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /*
+     <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
+    */
+    inline DescribeSnapshotsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
     /*
      <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
     */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
     /*
      <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+
+    /*
+     <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
+    */
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /*
      <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
     */
-    inline DescribeSnapshotsRequest&  WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
+    inline DescribeSnapshotsRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
+
+    /*
+     <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
+    */
+    inline DescribeSnapshotsRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
 
     /*
      <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</p>
@@ -86,10 +108,16 @@ namespace Model
      <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     */
     inline const Aws::String& GetSnapshotSource() const{ return m_snapshotSource; }
+
     /*
      <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     */
     inline void SetSnapshotSource(const Aws::String& value) { m_snapshotSourceHasBeenSet = true; m_snapshotSource = value; }
+
+    /*
+     <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    */
+    inline void SetSnapshotSource(Aws::String&& value) { m_snapshotSourceHasBeenSet = true; m_snapshotSource = value; }
 
     /*
      <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     */
-    inline DescribeSnapshotsRequest&  WithSnapshotSource(const Aws::String& value) { SetSnapshotSource(value); return *this;}
+    inline DescribeSnapshotsRequest& WithSnapshotSource(const Aws::String& value) { SetSnapshotSource(value); return *this;}
+
+    /*
+     <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    */
+    inline DescribeSnapshotsRequest& WithSnapshotSource(Aws::String&& value) { SetSnapshotSource(value); return *this;}
 
     /*
      <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
@@ -110,10 +143,16 @@ namespace Model
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
@@ -123,7 +162,12 @@ namespace Model
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
-    inline DescribeSnapshotsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeSnapshotsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
+    */
+    inline DescribeSnapshotsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
@@ -134,6 +178,7 @@ namespace Model
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 50</p> <p>Constraints: minimum 20; maximum 50.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 50</p> <p>Constraints: minimum 20; maximum 50.</p>
     */
@@ -142,7 +187,7 @@ namespace Model
     /*
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 50</p> <p>Constraints: minimum 20; maximum 50.</p>
     */
-    inline DescribeSnapshotsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeSnapshotsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::String m_cacheClusterId;

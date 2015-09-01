@@ -40,10 +40,16 @@ namespace Model
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
-    inline DeleteApplicationRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline DeleteApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
+    inline DeleteApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>

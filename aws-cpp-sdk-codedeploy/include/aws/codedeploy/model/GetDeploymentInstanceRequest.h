@@ -40,10 +40,16 @@ namespace Model
      <p>The unique ID of a deployment.</p>
     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
     /*
      <p>The unique ID of a deployment.</p>
     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /*
      <p>The unique ID of a deployment.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The unique ID of a deployment.</p>
     */
-    inline GetDeploymentInstanceRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+    inline GetDeploymentInstanceRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
+    inline GetDeploymentInstanceRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /*
      <p>The unique ID of a deployment.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The unique ID of an instance in the deployment's deployment group.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The unique ID of an instance in the deployment's deployment group.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The unique ID of an instance in the deployment's deployment group.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The unique ID of an instance in the deployment's deployment group.</p>
     */
-    inline GetDeploymentInstanceRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline GetDeploymentInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
+    inline GetDeploymentInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The unique ID of an instance in the deployment's deployment group.</p>

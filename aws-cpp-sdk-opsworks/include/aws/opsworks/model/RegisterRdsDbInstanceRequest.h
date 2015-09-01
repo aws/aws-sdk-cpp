@@ -39,10 +39,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline RegisterRdsDbInstanceRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline RegisterRdsDbInstanceRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline RegisterRdsDbInstanceRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The Amazon RDS instance's ARN.</p>
     */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
+
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
+
+    /*
+     <p>The Amazon RDS instance's ARN.</p>
+    */
+    inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
-    inline RegisterRdsDbInstanceRequest&  WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
+    inline RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
+
+    /*
+     <p>The Amazon RDS instance's ARN.</p>
+    */
+    inline RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(value); return *this;}
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
@@ -87,10 +109,16 @@ namespace Model
      <p>The database's master user name.</p>
     */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
+
     /*
      <p>The database's master user name.</p>
     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
+
+    /*
+     <p>The database's master user name.</p>
+    */
+    inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /*
      <p>The database's master user name.</p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p>The database's master user name.</p>
     */
-    inline RegisterRdsDbInstanceRequest&  WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
+    inline RegisterRdsDbInstanceRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
+
+    /*
+     <p>The database's master user name.</p>
+    */
+    inline RegisterRdsDbInstanceRequest& WithDbUser(Aws::String&& value) { SetDbUser(value); return *this;}
 
     /*
      <p>The database's master user name.</p>
@@ -111,10 +144,16 @@ namespace Model
      <p>The database password.</p>
     */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
+
     /*
      <p>The database password.</p>
     */
     inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
+
+    /*
+     <p>The database password.</p>
+    */
+    inline void SetDbPassword(Aws::String&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
     /*
      <p>The database password.</p>
@@ -124,7 +163,12 @@ namespace Model
     /*
      <p>The database password.</p>
     */
-    inline RegisterRdsDbInstanceRequest&  WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
+    inline RegisterRdsDbInstanceRequest& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
+
+    /*
+     <p>The database password.</p>
+    */
+    inline RegisterRdsDbInstanceRequest& WithDbPassword(Aws::String&& value) { SetDbPassword(value); return *this;}
 
     /*
      <p>The database password.</p>

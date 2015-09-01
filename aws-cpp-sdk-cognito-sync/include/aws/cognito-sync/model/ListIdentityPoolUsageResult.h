@@ -48,6 +48,7 @@ namespace Model
      Usage information for the identity pools.
     */
     inline const Aws::Vector<IdentityPoolUsage>& GetIdentityPoolUsages() const{ return m_identityPoolUsages; }
+
     /*
      Usage information for the identity pools.
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      Usage information for the identity pools.
     */
-    inline ListIdentityPoolUsageResult&  WithIdentityPoolUsages(const Aws::Vector<IdentityPoolUsage>& value) { SetIdentityPoolUsages(value); return *this;}
+    inline void SetIdentityPoolUsages(Aws::Vector<IdentityPoolUsage>&& value) { m_identityPoolUsages = value; }
+
+    /*
+     Usage information for the identity pools.
+    */
+    inline ListIdentityPoolUsageResult& WithIdentityPoolUsages(const Aws::Vector<IdentityPoolUsage>& value) { SetIdentityPoolUsages(value); return *this;}
+
+    /*
+     Usage information for the identity pools.
+    */
+    inline ListIdentityPoolUsageResult& WithIdentityPoolUsages(Aws::Vector<IdentityPoolUsage>&& value) { SetIdentityPoolUsages(value); return *this;}
 
     /*
      Usage information for the identity pools.
@@ -64,9 +75,15 @@ namespace Model
     inline ListIdentityPoolUsageResult& AddIdentityPoolUsages(const IdentityPoolUsage& value) { m_identityPoolUsages.push_back(value); return *this; }
 
     /*
+     Usage information for the identity pools.
+    */
+    inline ListIdentityPoolUsageResult& AddIdentityPoolUsages(IdentityPoolUsage&& value) { m_identityPoolUsages.push_back(value); return *this; }
+
+    /*
      The maximum number of results to be returned.
     */
     inline long GetMaxResults() const{ return m_maxResults; }
+
     /*
      The maximum number of results to be returned.
     */
@@ -75,12 +92,13 @@ namespace Model
     /*
      The maximum number of results to be returned.
     */
-    inline ListIdentityPoolUsageResult&  WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListIdentityPoolUsageResult& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
     /*
      Total number of identities for the identity pool.
     */
     inline long GetCount() const{ return m_count; }
+
     /*
      Total number of identities for the identity pool.
     */
@@ -89,16 +107,22 @@ namespace Model
     /*
      Total number of identities for the identity pool.
     */
-    inline ListIdentityPoolUsageResult&  WithCount(long value) { SetCount(value); return *this;}
+    inline ListIdentityPoolUsageResult& WithCount(long value) { SetCount(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token for obtaining the next page of results.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      A pagination token for obtaining the next page of results.
@@ -108,7 +132,12 @@ namespace Model
     /*
      A pagination token for obtaining the next page of results.
     */
-    inline ListIdentityPoolUsageResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListIdentityPoolUsageResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline ListIdentityPoolUsageResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.

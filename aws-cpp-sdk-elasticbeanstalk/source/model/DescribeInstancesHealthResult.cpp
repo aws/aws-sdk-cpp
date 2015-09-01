@@ -55,11 +55,21 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
 
     }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
+    if(refreshedAtNode.IsNull())
+    {
+      refreshedAtNode = resultNode;
+    }
+
     if(!refreshedAtNode.IsNull())
     {
       m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
+    if(nextTokenNode.IsNull())
+    {
+      nextTokenNode = resultNode;
+    }
+
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

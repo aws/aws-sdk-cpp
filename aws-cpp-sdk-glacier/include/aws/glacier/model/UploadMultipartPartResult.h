@@ -46,10 +46,16 @@ namespace Model
      <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
     */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
     /*
      <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
     */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
+
+    /*
+     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+    */
+    inline void SetChecksum(Aws::String&& value) { m_checksum = value; }
 
     /*
      <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
     */
-    inline UploadMultipartPartResult&  WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
+    inline UploadMultipartPartResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
+
+    /*
+     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+    */
+    inline UploadMultipartPartResult& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
 
     /*
      <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>

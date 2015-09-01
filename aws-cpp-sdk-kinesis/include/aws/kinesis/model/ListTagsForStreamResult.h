@@ -47,6 +47,7 @@ namespace Model
      <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     */
@@ -55,7 +56,17 @@ namespace Model
     /*
      <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     */
-    inline ListTagsForStreamResult&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+
+    /*
+     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
+    */
+    inline ListTagsForStreamResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
+    */
+    inline ListTagsForStreamResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
@@ -63,9 +74,15 @@ namespace Model
     inline ListTagsForStreamResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /*
+     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
+    */
+    inline ListTagsForStreamResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+
+    /*
      <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     */
     inline bool GetHasMoreTags() const{ return m_hasMoreTags; }
+
     /*
      <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     */
@@ -74,7 +91,7 @@ namespace Model
     /*
      <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     */
-    inline ListTagsForStreamResult&  WithHasMoreTags(bool value) { SetHasMoreTags(value); return *this;}
+    inline ListTagsForStreamResult& WithHasMoreTags(bool value) { SetHasMoreTags(value); return *this;}
 
   private:
     Aws::Vector<Tag> m_tags;

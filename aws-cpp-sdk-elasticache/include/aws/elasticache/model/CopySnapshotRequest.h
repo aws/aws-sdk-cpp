@@ -38,10 +38,16 @@ namespace Model
      <p>The name of an existing snapshot from which to copy.</p>
     */
     inline const Aws::String& GetSourceSnapshotName() const{ return m_sourceSnapshotName; }
+
     /*
      <p>The name of an existing snapshot from which to copy.</p>
     */
     inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
+
+    /*
+     <p>The name of an existing snapshot from which to copy.</p>
+    */
+    inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
 
     /*
      <p>The name of an existing snapshot from which to copy.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of an existing snapshot from which to copy.</p>
     */
-    inline CopySnapshotRequest&  WithSourceSnapshotName(const Aws::String& value) { SetSourceSnapshotName(value); return *this;}
+    inline CopySnapshotRequest& WithSourceSnapshotName(const Aws::String& value) { SetSourceSnapshotName(value); return *this;}
+
+    /*
+     <p>The name of an existing snapshot from which to copy.</p>
+    */
+    inline CopySnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(value); return *this;}
 
     /*
      <p>The name of an existing snapshot from which to copy.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>A name for the copied snapshot.</p>
     */
     inline const Aws::String& GetTargetSnapshotName() const{ return m_targetSnapshotName; }
+
     /*
      <p>A name for the copied snapshot.</p>
     */
     inline void SetTargetSnapshotName(const Aws::String& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
+
+    /*
+     <p>A name for the copied snapshot.</p>
+    */
+    inline void SetTargetSnapshotName(Aws::String&& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
 
     /*
      <p>A name for the copied snapshot.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>A name for the copied snapshot.</p>
     */
-    inline CopySnapshotRequest&  WithTargetSnapshotName(const Aws::String& value) { SetTargetSnapshotName(value); return *this;}
+    inline CopySnapshotRequest& WithTargetSnapshotName(const Aws::String& value) { SetTargetSnapshotName(value); return *this;}
+
+    /*
+     <p>A name for the copied snapshot.</p>
+    */
+    inline CopySnapshotRequest& WithTargetSnapshotName(Aws::String&& value) { SetTargetSnapshotName(value); return *this;}
 
     /*
      <p>A name for the copied snapshot.</p>

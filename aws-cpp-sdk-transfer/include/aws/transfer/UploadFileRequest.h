@@ -81,11 +81,15 @@ public:
                       const Aws::String& keyName, 
                       const Aws::String& contentType, 
                       const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
-                      bool createBucket);
+                      bool createBucket,
+                      bool doConsistencyChecks);
     ~UploadFileRequest();
 
     // How many parts have we at least begun to upload
     uint32_t GetPartCount() const;
+
+    // How many parts have we completed
+    size_t GetCompletedPartCount() const;
 
     // Total number of parts we'll be dividing the file into for upload
     uint32_t GetTotalParts() const { return m_totalParts;  }
@@ -103,11 +107,24 @@ public:
     // How many parts do we have left to start sending (Parts which have begun upload are not considered "remaining" for the purpose of this call)
     uint32_t GetPartsRemaining() const;
 
+    size_t GetPendingParts() const;
+
     // Data progress callback
     void OnDataSent(const Aws::Http::HttpRequest*, long long);
 
     // How many buffers are we currently holding on to
     size_t GetResourcesInUse() const;
+
+    // How many parts have been returned
+    uint32_t GetPartsReturned() const;
+
+    uint32_t GetTotalPartRetries() const;
+
+    // Consistency check diagnostics
+    bool HasSentConsistencyChecks() const { return m_sentConsistencyChecks.load(); }
+    bool HasPassedHeadObject() const { return m_headObjectPassed.load(); }
+    bool HasPassedGetObject() const { return m_getObjectPassed.load(); }
+    bool HasPassedListObjects() const { return m_listObjectsPassed.load(); }
 
     friend class TransferClient;
 
@@ -128,6 +145,16 @@ private:
     // The primary lifecycle routine - Create a bucket if needed, Wait for it to propagate, Create a multi part upload if needed, start processing, etc
     bool ContinueUpload();
 
+    // Send out our requests to check for consistency
+    void DoConsistencyChecks();
+
+    // We just received a positive result, let's see if we should now consider the upload a success
+    void CheckConsistencyCompletion();
+
+    void CheckGetObject();
+    void CheckHeadObject();
+    void CheckListObjects();
+
     bool CreateBucket();
     bool WaitForBucketToPropagate();
     bool CreateMultipartUpload();
@@ -145,7 +172,7 @@ private:
     void ReusePart(PartRequestRecord& partRequest);
 
     void PartReturned(PartRequestRecord& partRequest);
-    uint32_t GetPartsReturned() const;
+
     void SingleUploadComplete();
 
     bool HandleCreateBucketOutcome(const Aws::S3::Model::CreateBucketRequest& request,
@@ -166,6 +193,15 @@ private:
     bool HandlePutObjectOutcome(const Aws::S3::Model::PutObjectRequest& request,
         const Aws::S3::Model::PutObjectOutcome& outcome);
 
+    bool HandleHeadObjectOutcome(const Aws::S3::Model::HeadObjectRequest& request,
+        const Aws::S3::Model::HeadObjectOutcome& outcome);
+
+    bool HandleGetObjectOutcome(const Aws::S3::Model::GetObjectRequest& request,
+        const Aws::S3::Model::GetObjectOutcome& outcome);
+
+    bool HandleListObjectsOutcome(const Aws::S3::Model::ListObjectsRequest& request,
+        const Aws::S3::Model::ListObjectsOutcome& outcome);
+
     void AddReadyBuffer(std::shared_ptr<UploadBuffer> buffer);
     bool GetReadyBuffer(std::shared_ptr<UploadBuffer>& buffer);
     bool ProcessAvailableBuffers();
@@ -174,6 +210,8 @@ private:
     // files can cause failures in S3
     bool DoSingleObjectUpload(std::shared_ptr<Aws::IOStream>& streamBuf, uint64_t bytesRead);
     
+    void SendPutObjectRequest(const Aws::S3::Model::PutObjectRequest& request);
+
     bool IsUsingBuffer(const std::shared_ptr<UploadBuffer>& buffer) const;
 
     void CheckReacquireBuffers();
@@ -196,6 +234,7 @@ private:
 
     std::atomic<uint32_t> m_partCount;
     std::atomic<uint32_t> m_partsReturned;
+    std::atomic<uint32_t> m_totalPartRetries;
 
     std::atomic<bool> m_createBucket;
     std::atomic<bool> m_createBucketPending;
@@ -217,8 +256,25 @@ private:
 
     Aws::String m_contentType;
     Aws::String m_uploadId;
+    uint32_t m_createMultipartRetries;
+    uint32_t m_createBucketRetries;
     uint32_t m_completeRetries;
+    uint32_t m_singleRetry;
+    bool m_doConsistencyChecks;
+
+    // S3 propagation checks to optionally check for consistency before returning "done"
+    std::atomic<bool> m_sentConsistencyChecks;
+    std::atomic<bool> m_headObjectPassed;
+    std::atomic<bool> m_getObjectPassed;
+    std::atomic<bool> m_listObjectsPassed;
+
+    unsigned m_headObjectRetries;
+    unsigned m_getObjectRetries;
+    unsigned m_listObjectsRetries;
+    unsigned m_headBucketRetries;
 };
+
+
 
 } // namespace Transfer
 } // namespace Aws

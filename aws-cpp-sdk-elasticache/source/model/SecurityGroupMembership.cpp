@@ -43,12 +43,22 @@ SecurityGroupMembership& SecurityGroupMembership::operator =(const XmlNode& xmlN
   if(!resultNode.IsNull())
   {
     XmlNode securityGroupIdNode = resultNode.FirstChild("SecurityGroupId");
+    if(securityGroupIdNode.IsNull())
+    {
+      securityGroupIdNode = resultNode;
+    }
+
     if(!securityGroupIdNode.IsNull())
     {
       m_securityGroupId = StringUtils::Trim(securityGroupIdNode.GetText().c_str());
       m_securityGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

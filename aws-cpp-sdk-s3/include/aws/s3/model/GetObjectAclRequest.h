@@ -44,28 +44,42 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline GetObjectAclRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline GetObjectAclRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline GetObjectAclRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline GetObjectAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline GetObjectAclRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline GetObjectAclRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline GetObjectAclRequest& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline GetObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
@@ -74,10 +88,16 @@ namespace Model
      VersionId used to reference a specific version of the object.
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      VersionId used to reference a specific version of the object.
     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /*
+     VersionId used to reference a specific version of the object.
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      VersionId used to reference a specific version of the object.
@@ -87,7 +107,12 @@ namespace Model
     /*
      VersionId used to reference a specific version of the object.
     */
-    inline GetObjectAclRequest&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline GetObjectAclRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     VersionId used to reference a specific version of the object.
+    */
+    inline GetObjectAclRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      VersionId used to reference a specific version of the object.
@@ -96,11 +121,18 @@ namespace Model
 
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+
     
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
-    inline GetObjectAclRequest&  WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline GetObjectAclRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+
+    
+    inline GetObjectAclRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
   private:
     Aws::String m_bucket;

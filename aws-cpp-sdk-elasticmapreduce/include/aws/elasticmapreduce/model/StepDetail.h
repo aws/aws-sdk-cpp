@@ -45,6 +45,7 @@ namespace Model
      <p>The step configuration.</p>
     */
     inline const StepConfig& GetStepConfig() const{ return m_stepConfig; }
+
     /*
      <p>The step configuration.</p>
     */
@@ -53,12 +54,23 @@ namespace Model
     /*
      <p>The step configuration.</p>
     */
-    inline StepDetail&  WithStepConfig(const StepConfig& value) { SetStepConfig(value); return *this;}
+    inline void SetStepConfig(StepConfig&& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
+
+    /*
+     <p>The step configuration.</p>
+    */
+    inline StepDetail& WithStepConfig(const StepConfig& value) { SetStepConfig(value); return *this;}
+
+    /*
+     <p>The step configuration.</p>
+    */
+    inline StepDetail& WithStepConfig(StepConfig&& value) { SetStepConfig(value); return *this;}
 
     /*
      <p>The description of the step status.</p>
     */
     inline const StepExecutionStatusDetail& GetExecutionStatusDetail() const{ return m_executionStatusDetail; }
+
     /*
      <p>The description of the step status.</p>
     */
@@ -67,7 +79,17 @@ namespace Model
     /*
      <p>The description of the step status.</p>
     */
-    inline StepDetail&  WithExecutionStatusDetail(const StepExecutionStatusDetail& value) { SetExecutionStatusDetail(value); return *this;}
+    inline void SetExecutionStatusDetail(StepExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
+
+    /*
+     <p>The description of the step status.</p>
+    */
+    inline StepDetail& WithExecutionStatusDetail(const StepExecutionStatusDetail& value) { SetExecutionStatusDetail(value); return *this;}
+
+    /*
+     <p>The description of the step status.</p>
+    */
+    inline StepDetail& WithExecutionStatusDetail(StepExecutionStatusDetail&& value) { SetExecutionStatusDetail(value); return *this;}
 
   private:
     StepConfig m_stepConfig;

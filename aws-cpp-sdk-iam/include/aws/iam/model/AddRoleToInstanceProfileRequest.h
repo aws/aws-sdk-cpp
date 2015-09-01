@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the instance profile to update.</p>
     */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
+
     /*
      <p>The name of the instance profile to update.</p>
     */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+
+    /*
+     <p>The name of the instance profile to update.</p>
+    */
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name of the instance profile to update.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the instance profile to update.</p>
     */
-    inline AddRoleToInstanceProfileRequest&  WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+    inline AddRoleToInstanceProfileRequest& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+
+    /*
+     <p>The name of the instance profile to update.</p>
+    */
+    inline AddRoleToInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
 
     /*
      <p>The name of the instance profile to update.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the role to add.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name of the role to add.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name of the role to add.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to add.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the role to add.</p>
     */
-    inline AddRoleToInstanceProfileRequest&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline AddRoleToInstanceProfileRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name of the role to add.</p>
+    */
+    inline AddRoleToInstanceProfileRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name of the role to add.</p>

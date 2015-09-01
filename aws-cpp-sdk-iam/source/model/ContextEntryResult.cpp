@@ -41,6 +41,11 @@ ContextEntryResult& ContextEntryResult::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode contextKeyNameNode = resultNode.FirstChild("ContextKeyName");
+    if(contextKeyNameNode.IsNull())
+    {
+      contextKeyNameNode = resultNode;
+    }
+
     if(!contextKeyNameNode.IsNull())
     {
       m_contextKeyName = StringUtils::Trim(contextKeyNameNode.GetText().c_str());

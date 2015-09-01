@@ -38,6 +38,7 @@ namespace Model
      The origin access identity's configuration information.
     */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
+
     /*
      The origin access identity's configuration information.
     */
@@ -46,7 +47,17 @@ namespace Model
     /*
      The origin access identity's configuration information.
     */
-    inline CreateCloudFrontOriginAccessIdentity2015_04_17Request&  WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
+    inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
+
+    /*
+     The origin access identity's configuration information.
+    */
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Request& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
+
+    /*
+     The origin access identity's configuration information.
+    */
+    inline CreateCloudFrontOriginAccessIdentity2015_04_17Request& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
 
   private:
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;

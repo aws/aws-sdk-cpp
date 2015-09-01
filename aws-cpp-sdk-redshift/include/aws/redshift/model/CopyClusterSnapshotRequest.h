@@ -38,10 +38,16 @@ namespace Model
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
     */
     inline const Aws::String& GetSourceSnapshotIdentifier() const{ return m_sourceSnapshotIdentifier; }
+
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
     */
     inline void SetSourceSnapshotIdentifier(const Aws::String& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = value; }
+
+    /*
+     <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
+    */
+    inline void SetSourceSnapshotIdentifier(Aws::String&& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = value; }
 
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
     */
-    inline CopyClusterSnapshotRequest&  WithSourceSnapshotIdentifier(const Aws::String& value) { SetSourceSnapshotIdentifier(value); return *this;}
+    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(const Aws::String& value) { SetSourceSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
+    */
+    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(Aws::String&& value) { SetSourceSnapshotIdentifier(value); return *this;}
 
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
@@ -62,10 +73,16 @@ namespace Model
      <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
     */
     inline const Aws::String& GetSourceSnapshotClusterIdentifier() const{ return m_sourceSnapshotClusterIdentifier; }
+
     /*
      <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
     */
     inline void SetSourceSnapshotClusterIdentifier(const Aws::String& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = value; }
+
+    /*
+     <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
+    */
+    inline void SetSourceSnapshotClusterIdentifier(Aws::String&& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = value; }
 
     /*
      <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
     */
-    inline CopyClusterSnapshotRequest&  WithSourceSnapshotClusterIdentifier(const Aws::String& value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
+    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(const Aws::String& value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
+    */
+    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(Aws::String&& value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
 
     /*
      <p> The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
@@ -86,10 +108,16 @@ namespace Model
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
     */
     inline const Aws::String& GetTargetSnapshotIdentifier() const{ return m_targetSnapshotIdentifier; }
+
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
     */
     inline void SetTargetSnapshotIdentifier(const Aws::String& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
+
+    /*
+     <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
+    */
+    inline void SetTargetSnapshotIdentifier(Aws::String&& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
 
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
     */
-    inline CopyClusterSnapshotRequest&  WithTargetSnapshotIdentifier(const Aws::String& value) { SetTargetSnapshotIdentifier(value); return *this;}
+    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const Aws::String& value) { SetTargetSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
+    */
+    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(Aws::String&& value) { SetTargetSnapshotIdentifier(value); return *this;}
 
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>

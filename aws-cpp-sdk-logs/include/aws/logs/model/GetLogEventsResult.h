@@ -46,39 +46,63 @@ namespace Model
 
     
     inline const Aws::Vector<OutputLogEvent>& GetEvents() const{ return m_events; }
+
     
     inline void SetEvents(const Aws::Vector<OutputLogEvent>& value) { m_events = value; }
 
     
-    inline GetLogEventsResult&  WithEvents(const Aws::Vector<OutputLogEvent>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Vector<OutputLogEvent>&& value) { m_events = value; }
+
+    
+    inline GetLogEventsResult& WithEvents(const Aws::Vector<OutputLogEvent>& value) { SetEvents(value); return *this;}
+
+    
+    inline GetLogEventsResult& WithEvents(Aws::Vector<OutputLogEvent>&& value) { SetEvents(value); return *this;}
 
     
     inline GetLogEventsResult& AddEvents(const OutputLogEvent& value) { m_events.push_back(value); return *this; }
 
     
+    inline GetLogEventsResult& AddEvents(OutputLogEvent&& value) { m_events.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextForwardToken() const{ return m_nextForwardToken; }
+
     
     inline void SetNextForwardToken(const Aws::String& value) { m_nextForwardToken = value; }
+
+    
+    inline void SetNextForwardToken(Aws::String&& value) { m_nextForwardToken = value; }
 
     
     inline void SetNextForwardToken(const char* value) { m_nextForwardToken.assign(value); }
 
     
-    inline GetLogEventsResult&  WithNextForwardToken(const Aws::String& value) { SetNextForwardToken(value); return *this;}
+    inline GetLogEventsResult& WithNextForwardToken(const Aws::String& value) { SetNextForwardToken(value); return *this;}
+
+    
+    inline GetLogEventsResult& WithNextForwardToken(Aws::String&& value) { SetNextForwardToken(value); return *this;}
 
     
     inline GetLogEventsResult& WithNextForwardToken(const char* value) { SetNextForwardToken(value); return *this;}
 
     
     inline const Aws::String& GetNextBackwardToken() const{ return m_nextBackwardToken; }
+
     
     inline void SetNextBackwardToken(const Aws::String& value) { m_nextBackwardToken = value; }
+
+    
+    inline void SetNextBackwardToken(Aws::String&& value) { m_nextBackwardToken = value; }
 
     
     inline void SetNextBackwardToken(const char* value) { m_nextBackwardToken.assign(value); }
 
     
-    inline GetLogEventsResult&  WithNextBackwardToken(const Aws::String& value) { SetNextBackwardToken(value); return *this;}
+    inline GetLogEventsResult& WithNextBackwardToken(const Aws::String& value) { SetNextBackwardToken(value); return *this;}
+
+    
+    inline GetLogEventsResult& WithNextBackwardToken(Aws::String&& value) { SetNextBackwardToken(value); return *this;}
 
     
     inline GetLogEventsResult& WithNextBackwardToken(const char* value) { SetNextBackwardToken(value); return *this;}

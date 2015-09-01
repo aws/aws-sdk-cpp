@@ -50,10 +50,16 @@ namespace Model
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
     inline const Aws::String& GetPath() const{ return m_path; }
+
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -63,7 +69,12 @@ namespace Model
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
-    inline UserDetail&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+    inline UserDetail& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline UserDetail& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -74,10 +85,16 @@ namespace Model
      <p>The friendly name identifying the user.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The friendly name identifying the user.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The friendly name identifying the user.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The friendly name identifying the user.</p>
@@ -87,7 +104,12 @@ namespace Model
     /*
      <p>The friendly name identifying the user.</p>
     */
-    inline UserDetail&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline UserDetail& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The friendly name identifying the user.</p>
+    */
+    inline UserDetail& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The friendly name identifying the user.</p>
@@ -98,10 +120,16 @@ namespace Model
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /*
+     <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -111,7 +139,12 @@ namespace Model
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
-    inline UserDetail&  WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+    inline UserDetail& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+
+    /*
+     <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline UserDetail& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
 
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -120,14 +153,21 @@ namespace Model
 
     
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     
-    inline UserDetail&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline UserDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline UserDetail& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     
     inline UserDetail& WithArn(const char* value) { SetArn(value); return *this;}
@@ -136,6 +176,7 @@ namespace Model
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
     */
@@ -144,12 +185,13 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
     */
-    inline UserDetail&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline UserDetail& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
     /*
      <p>A list of the inline policies embedded in the user.</p>
     */
     inline const Aws::Vector<PolicyDetail>& GetUserPolicyList() const{ return m_userPolicyList; }
+
     /*
      <p>A list of the inline policies embedded in the user.</p>
     */
@@ -158,7 +200,17 @@ namespace Model
     /*
      <p>A list of the inline policies embedded in the user.</p>
     */
-    inline UserDetail&  WithUserPolicyList(const Aws::Vector<PolicyDetail>& value) { SetUserPolicyList(value); return *this;}
+    inline void SetUserPolicyList(Aws::Vector<PolicyDetail>&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList = value; }
+
+    /*
+     <p>A list of the inline policies embedded in the user.</p>
+    */
+    inline UserDetail& WithUserPolicyList(const Aws::Vector<PolicyDetail>& value) { SetUserPolicyList(value); return *this;}
+
+    /*
+     <p>A list of the inline policies embedded in the user.</p>
+    */
+    inline UserDetail& WithUserPolicyList(Aws::Vector<PolicyDetail>&& value) { SetUserPolicyList(value); return *this;}
 
     /*
      <p>A list of the inline policies embedded in the user.</p>
@@ -166,9 +218,15 @@ namespace Model
     inline UserDetail& AddUserPolicyList(const PolicyDetail& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList.push_back(value); return *this; }
 
     /*
+     <p>A list of the inline policies embedded in the user.</p>
+    */
+    inline UserDetail& AddUserPolicyList(PolicyDetail&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList.push_back(value); return *this; }
+
+    /*
      <p>A list of IAM groups that the user is in.</p>
     */
     inline const Aws::Vector<Aws::String>& GetGroupList() const{ return m_groupList; }
+
     /*
      <p>A list of IAM groups that the user is in.</p>
     */
@@ -177,12 +235,27 @@ namespace Model
     /*
      <p>A list of IAM groups that the user is in.</p>
     */
-    inline UserDetail&  WithGroupList(const Aws::Vector<Aws::String>& value) { SetGroupList(value); return *this;}
+    inline void SetGroupList(Aws::Vector<Aws::String>&& value) { m_groupListHasBeenSet = true; m_groupList = value; }
+
+    /*
+     <p>A list of IAM groups that the user is in.</p>
+    */
+    inline UserDetail& WithGroupList(const Aws::Vector<Aws::String>& value) { SetGroupList(value); return *this;}
+
+    /*
+     <p>A list of IAM groups that the user is in.</p>
+    */
+    inline UserDetail& WithGroupList(Aws::Vector<Aws::String>&& value) { SetGroupList(value); return *this;}
 
     /*
      <p>A list of IAM groups that the user is in.</p>
     */
     inline UserDetail& AddGroupList(const Aws::String& value) { m_groupListHasBeenSet = true; m_groupList.push_back(value); return *this; }
+
+    /*
+     <p>A list of IAM groups that the user is in.</p>
+    */
+    inline UserDetail& AddGroupList(Aws::String&& value) { m_groupListHasBeenSet = true; m_groupList.push_back(value); return *this; }
 
     /*
      <p>A list of IAM groups that the user is in.</p>
@@ -193,6 +266,7 @@ namespace Model
      <p>A list of the managed policies attached to the user.</p>
     */
     inline const Aws::Vector<AttachedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+
     /*
      <p>A list of the managed policies attached to the user.</p>
     */
@@ -201,12 +275,27 @@ namespace Model
     /*
      <p>A list of the managed policies attached to the user.</p>
     */
-    inline UserDetail&  WithAttachedManagedPolicies(const Aws::Vector<AttachedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
+    inline void SetAttachedManagedPolicies(Aws::Vector<AttachedPolicy>&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = value; }
+
+    /*
+     <p>A list of the managed policies attached to the user.</p>
+    */
+    inline UserDetail& WithAttachedManagedPolicies(const Aws::Vector<AttachedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
+
+    /*
+     <p>A list of the managed policies attached to the user.</p>
+    */
+    inline UserDetail& WithAttachedManagedPolicies(Aws::Vector<AttachedPolicy>&& value) { SetAttachedManagedPolicies(value); return *this;}
 
     /*
      <p>A list of the managed policies attached to the user.</p>
     */
     inline UserDetail& AddAttachedManagedPolicies(const AttachedPolicy& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(value); return *this; }
+
+    /*
+     <p>A list of the managed policies attached to the user.</p>
+    */
+    inline UserDetail& AddAttachedManagedPolicies(AttachedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(value); return *this; }
 
   private:
     Aws::String m_path;

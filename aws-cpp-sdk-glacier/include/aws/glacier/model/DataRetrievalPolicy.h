@@ -45,6 +45,7 @@ namespace Model
      <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     */
     inline const Aws::Vector<DataRetrievalRule>& GetRules() const{ return m_rules; }
+
     /*
      <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     */
@@ -53,12 +54,27 @@ namespace Model
     /*
      <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     */
-    inline DataRetrievalPolicy&  WithRules(const Aws::Vector<DataRetrievalRule>& value) { SetRules(value); return *this;}
+    inline void SetRules(Aws::Vector<DataRetrievalRule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+
+    /*
+     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
+    */
+    inline DataRetrievalPolicy& WithRules(const Aws::Vector<DataRetrievalRule>& value) { SetRules(value); return *this;}
+
+    /*
+     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
+    */
+    inline DataRetrievalPolicy& WithRules(Aws::Vector<DataRetrievalRule>&& value) { SetRules(value); return *this;}
 
     /*
      <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     */
     inline DataRetrievalPolicy& AddRules(const DataRetrievalRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+
+    /*
+     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
+    */
+    inline DataRetrievalPolicy& AddRules(DataRetrievalRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
   private:
     Aws::Vector<DataRetrievalRule> m_rules;

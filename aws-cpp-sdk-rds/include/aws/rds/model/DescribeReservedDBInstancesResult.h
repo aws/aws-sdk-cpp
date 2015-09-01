@@ -49,10 +49,16 @@ namespace Model
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
-    inline DescribeReservedDBInstancesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeReservedDBInstancesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline DescribeReservedDBInstancesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -73,6 +84,7 @@ namespace Model
      <p> A list of reserved DB instances. </p>
     */
     inline const Aws::Vector<ReservedDBInstance>& GetReservedDBInstances() const{ return m_reservedDBInstances; }
+
     /*
      <p> A list of reserved DB instances. </p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p> A list of reserved DB instances. </p>
     */
-    inline DescribeReservedDBInstancesResult&  WithReservedDBInstances(const Aws::Vector<ReservedDBInstance>& value) { SetReservedDBInstances(value); return *this;}
+    inline void SetReservedDBInstances(Aws::Vector<ReservedDBInstance>&& value) { m_reservedDBInstances = value; }
+
+    /*
+     <p> A list of reserved DB instances. </p>
+    */
+    inline DescribeReservedDBInstancesResult& WithReservedDBInstances(const Aws::Vector<ReservedDBInstance>& value) { SetReservedDBInstances(value); return *this;}
+
+    /*
+     <p> A list of reserved DB instances. </p>
+    */
+    inline DescribeReservedDBInstancesResult& WithReservedDBInstances(Aws::Vector<ReservedDBInstance>&& value) { SetReservedDBInstances(value); return *this;}
 
     /*
      <p> A list of reserved DB instances. </p>
     */
     inline DescribeReservedDBInstancesResult& AddReservedDBInstances(const ReservedDBInstance& value) { m_reservedDBInstances.push_back(value); return *this; }
 
+    /*
+     <p> A list of reserved DB instances. </p>
+    */
+    inline DescribeReservedDBInstancesResult& AddReservedDBInstances(ReservedDBInstance&& value) { m_reservedDBInstances.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeReservedDBInstancesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeReservedDBInstancesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeReservedDBInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

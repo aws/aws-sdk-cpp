@@ -38,6 +38,7 @@ namespace Model
      The distribution's configuration information.
     */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
+
     /*
      The distribution's configuration information.
     */
@@ -46,7 +47,17 @@ namespace Model
     /*
      The distribution's configuration information.
     */
-    inline CreateDistribution2015_04_17Request&  WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
+    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
+
+    /*
+     The distribution's configuration information.
+    */
+    inline CreateDistribution2015_04_17Request& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
+
+    /*
+     The distribution's configuration information.
+    */
+    inline CreateDistribution2015_04_17Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
 
   private:
     DistributionConfig m_distributionConfig;

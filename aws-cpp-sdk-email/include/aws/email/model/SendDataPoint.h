@@ -46,6 +46,7 @@ namespace Model
      <p>Time of the data point.</p>
     */
     inline double GetTimestamp() const{ return m_timestamp; }
+
     /*
      <p>Time of the data point.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>Time of the data point.</p>
     */
-    inline SendDataPoint&  WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline SendDataPoint& WithTimestamp(double value) { SetTimestamp(value); return *this;}
 
     /*
      <p>Number of emails that have been enqueued for sending.</p>
     */
     inline long long GetDeliveryAttempts() const{ return m_deliveryAttempts; }
+
     /*
      <p>Number of emails that have been enqueued for sending.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p>Number of emails that have been enqueued for sending.</p>
     */
-    inline SendDataPoint&  WithDeliveryAttempts(long long value) { SetDeliveryAttempts(value); return *this;}
+    inline SendDataPoint& WithDeliveryAttempts(long long value) { SetDeliveryAttempts(value); return *this;}
 
     /*
      <p>Number of emails that have bounced.</p>
     */
     inline long long GetBounces() const{ return m_bounces; }
+
     /*
      <p>Number of emails that have bounced.</p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p>Number of emails that have bounced.</p>
     */
-    inline SendDataPoint&  WithBounces(long long value) { SetBounces(value); return *this;}
+    inline SendDataPoint& WithBounces(long long value) { SetBounces(value); return *this;}
 
     /*
      <p>Number of unwanted emails that were rejected by recipients.</p>
     */
     inline long long GetComplaints() const{ return m_complaints; }
+
     /*
      <p>Number of unwanted emails that were rejected by recipients.</p>
     */
@@ -96,12 +100,13 @@ namespace Model
     /*
      <p>Number of unwanted emails that were rejected by recipients.</p>
     */
-    inline SendDataPoint&  WithComplaints(long long value) { SetComplaints(value); return *this;}
+    inline SendDataPoint& WithComplaints(long long value) { SetComplaints(value); return *this;}
 
     /*
      <p>Number of emails rejected by Amazon SES.</p>
     */
     inline long long GetRejects() const{ return m_rejects; }
+
     /*
      <p>Number of emails rejected by Amazon SES.</p>
     */
@@ -110,7 +115,7 @@ namespace Model
     /*
      <p>Number of emails rejected by Amazon SES.</p>
     */
-    inline SendDataPoint&  WithRejects(long long value) { SetRejects(value); return *this;}
+    inline SendDataPoint& WithRejects(long long value) { SetRejects(value); return *this;}
 
   private:
     double m_timestamp;

@@ -45,10 +45,16 @@ namespace Model
      <p>The name of the function.</p>
     */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+
     /*
      <p>The name of the function.</p>
     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+
+    /*
+     <p>The name of the function.</p>
+    */
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>The name of the function.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of the function.</p>
     */
-    inline FunctionConfiguration&  WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
+    inline FunctionConfiguration& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
+
+    /*
+     <p>The name of the function.</p>
+    */
+    inline FunctionConfiguration& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /*
      <p>The name of the function.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) assigned to the function.</p>
     */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) assigned to the function.</p>
     */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) assigned to the function.</p>
+    */
+    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) assigned to the function.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) assigned to the function.</p>
     */
-    inline FunctionConfiguration&  WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
+    inline FunctionConfiguration& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) assigned to the function.</p>
+    */
+    inline FunctionConfiguration& WithFunctionArn(Aws::String&& value) { SetFunctionArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) assigned to the function.</p>
@@ -93,6 +115,7 @@ namespace Model
      <p>The runtime environment for the Lambda function.</p>
     */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
+
     /*
      <p>The runtime environment for the Lambda function.</p>
     */
@@ -101,16 +124,32 @@ namespace Model
     /*
      <p>The runtime environment for the Lambda function.</p>
     */
-    inline FunctionConfiguration&  WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
+    inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    /*
+     <p>The runtime environment for the Lambda function.</p>
+    */
+    inline FunctionConfiguration& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
+
+    /*
+     <p>The runtime environment for the Lambda function.</p>
+    */
+    inline FunctionConfiguration& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
     */
     inline const Aws::String& GetRole() const{ return m_role; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
+    */
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
@@ -120,7 +159,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
     */
-    inline FunctionConfiguration&  WithRole(const Aws::String& value) { SetRole(value); return *this;}
+    inline FunctionConfiguration& WithRole(const Aws::String& value) { SetRole(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
+    */
+    inline FunctionConfiguration& WithRole(Aws::String&& value) { SetRole(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </p>
@@ -131,10 +175,16 @@ namespace Model
      <p>The function Lambda calls to begin executing your function.</p>
     */
     inline const Aws::String& GetHandler() const{ return m_handler; }
+
     /*
      <p>The function Lambda calls to begin executing your function.</p>
     */
     inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
+
+    /*
+     <p>The function Lambda calls to begin executing your function.</p>
+    */
+    inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = value; }
 
     /*
      <p>The function Lambda calls to begin executing your function.</p>
@@ -144,7 +194,12 @@ namespace Model
     /*
      <p>The function Lambda calls to begin executing your function.</p>
     */
-    inline FunctionConfiguration&  WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
+    inline FunctionConfiguration& WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
+
+    /*
+     <p>The function Lambda calls to begin executing your function.</p>
+    */
+    inline FunctionConfiguration& WithHandler(Aws::String&& value) { SetHandler(value); return *this;}
 
     /*
      <p>The function Lambda calls to begin executing your function.</p>
@@ -155,6 +210,7 @@ namespace Model
      <p>The size, in bytes, of the function .zip file you uploaded.</p>
     */
     inline long long GetCodeSize() const{ return m_codeSize; }
+
     /*
      <p>The size, in bytes, of the function .zip file you uploaded.</p>
     */
@@ -163,16 +219,22 @@ namespace Model
     /*
      <p>The size, in bytes, of the function .zip file you uploaded.</p>
     */
-    inline FunctionConfiguration&  WithCodeSize(long long value) { SetCodeSize(value); return *this;}
+    inline FunctionConfiguration& WithCodeSize(long long value) { SetCodeSize(value); return *this;}
 
     /*
      <p>The user-provided description.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>The user-provided description.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>The user-provided description.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>The user-provided description.</p>
@@ -182,7 +244,12 @@ namespace Model
     /*
      <p>The user-provided description.</p>
     */
-    inline FunctionConfiguration&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline FunctionConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>The user-provided description.</p>
+    */
+    inline FunctionConfiguration& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>The user-provided description.</p>
@@ -193,6 +260,7 @@ namespace Model
      <p>The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. </p>
     */
     inline long GetTimeout() const{ return m_timeout; }
+
     /*
      <p>The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. </p>
     */
@@ -201,12 +269,13 @@ namespace Model
     /*
      <p>The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. </p>
     */
-    inline FunctionConfiguration&  WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline FunctionConfiguration& WithTimeout(long value) { SetTimeout(value); return *this;}
 
     /*
      <p>The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.</p>
     */
     inline long GetMemorySize() const{ return m_memorySize; }
+
     /*
      <p>The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.</p>
     */
@@ -215,16 +284,22 @@ namespace Model
     /*
      <p>The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.</p>
     */
-    inline FunctionConfiguration&  WithMemorySize(long value) { SetMemorySize(value); return *this;}
+    inline FunctionConfiguration& WithMemorySize(long value) { SetMemorySize(value); return *this;}
 
     /*
      <p>The timestamp of the last time you updated the function.</p>
     */
     inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+
     /*
      <p>The timestamp of the last time you updated the function.</p>
     */
     inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    /*
+     <p>The timestamp of the last time you updated the function.</p>
+    */
+    inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /*
      <p>The timestamp of the last time you updated the function.</p>
@@ -234,7 +309,12 @@ namespace Model
     /*
      <p>The timestamp of the last time you updated the function.</p>
     */
-    inline FunctionConfiguration&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
+    inline FunctionConfiguration& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
+
+    /*
+     <p>The timestamp of the last time you updated the function.</p>
+    */
+    inline FunctionConfiguration& WithLastModified(Aws::String&& value) { SetLastModified(value); return *this;}
 
     /*
      <p>The timestamp of the last time you updated the function.</p>

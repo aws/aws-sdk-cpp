@@ -37,25 +37,33 @@ namespace Model
 
     
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     
-    inline ScheduleKeyDeletionRequest&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline ScheduleKeyDeletionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    
+    inline ScheduleKeyDeletionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     
     inline ScheduleKeyDeletionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     
     inline long GetPendingWindowInDays() const{ return m_pendingWindowInDays; }
+
     
     inline void SetPendingWindowInDays(long value) { m_pendingWindowInDaysHasBeenSet = true; m_pendingWindowInDays = value; }
 
     
-    inline ScheduleKeyDeletionRequest&  WithPendingWindowInDays(long value) { SetPendingWindowInDays(value); return *this;}
+    inline ScheduleKeyDeletionRequest& WithPendingWindowInDays(long value) { SetPendingWindowInDays(value); return *this;}
 
   private:
     Aws::String m_keyId;

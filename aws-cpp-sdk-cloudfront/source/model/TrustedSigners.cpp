@@ -49,12 +49,22 @@ TrustedSigners& TrustedSigners::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
+    if(enabledNode.IsNull())
+    {
+      enabledNode = resultNode;
+    }
+
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
+    if(quantityNode.IsNull())
+    {
+      quantityNode = resultNode;
+    }
+
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
@@ -98,9 +108,10 @@ void TrustedSigners::AddToNode(XmlNode& parentNode) const
 
   if(m_itemsHasBeenSet)
   {
+   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = parentNode.CreateChildElement("string");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("String");
      itemsNode.SetText(item);
    }
   }

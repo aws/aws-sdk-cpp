@@ -48,6 +48,7 @@ namespace Model
      <p>A list of cost allocation tags as key-value pairs. </p>
     */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
     /*
      <p>A list of cost allocation tags as key-value pairs. </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>A list of cost allocation tags as key-value pairs. </p>
     */
-    inline RemoveTagsFromResourceResult&  WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = value; }
+
+    /*
+     <p>A list of cost allocation tags as key-value pairs. </p>
+    */
+    inline RemoveTagsFromResourceResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    /*
+     <p>A list of cost allocation tags as key-value pairs. </p>
+    */
+    inline RemoveTagsFromResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
 
     /*
      <p>A list of cost allocation tags as key-value pairs. </p>
     */
     inline RemoveTagsFromResourceResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
 
+    /*
+     <p>A list of cost allocation tags as key-value pairs. </p>
+    */
+    inline RemoveTagsFromResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline RemoveTagsFromResourceResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline RemoveTagsFromResourceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline RemoveTagsFromResourceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Tag> m_tagList;

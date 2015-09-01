@@ -36,28 +36,45 @@ namespace Model
 
     
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
     
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     
-    inline RemoveTagsFromResourceRequest&  WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    
+    inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
 
     
     inline RemoveTagsFromResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
     
     inline const Aws::Vector<Aws::String>& GetTags() const{ return m_tags; }
+
     
     inline void SetTags(const Aws::Vector<Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline RemoveTagsFromResourceRequest&  WithTags(const Aws::Vector<Aws::String>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline RemoveTagsFromResourceRequest& WithTags(const Aws::Vector<Aws::String>& value) { SetTags(value); return *this;}
+
+    
+    inline RemoveTagsFromResourceRequest& WithTags(Aws::Vector<Aws::String>&& value) { SetTags(value); return *this;}
 
     
     inline RemoveTagsFromResourceRequest& AddTags(const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    
+    inline RemoveTagsFromResourceRequest& AddTags(Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
     inline RemoveTagsFromResourceRequest& AddTags(const char* value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }

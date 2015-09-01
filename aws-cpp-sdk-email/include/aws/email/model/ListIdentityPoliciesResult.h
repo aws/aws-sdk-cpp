@@ -48,6 +48,7 @@ namespace Model
      <p>A list of names of policies that apply to the specified identity.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
     /*
      <p>A list of names of policies that apply to the specified identity.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>A list of names of policies that apply to the specified identity.</p>
     */
-    inline ListIdentityPoliciesResult&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = value; }
+
+    /*
+     <p>A list of names of policies that apply to the specified identity.</p>
+    */
+    inline ListIdentityPoliciesResult& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+
+    /*
+     <p>A list of names of policies that apply to the specified identity.</p>
+    */
+    inline ListIdentityPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /*
      <p>A list of names of policies that apply to the specified identity.</p>
@@ -66,15 +77,27 @@ namespace Model
     /*
      <p>A list of names of policies that apply to the specified identity.</p>
     */
+    inline ListIdentityPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(value); return *this; }
+
+    /*
+     <p>A list of names of policies that apply to the specified identity.</p>
+    */
     inline ListIdentityPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListIdentityPoliciesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListIdentityPoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListIdentityPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_policyNames;

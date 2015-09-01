@@ -38,10 +38,16 @@ namespace Model
      <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
+
     /*
      <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
+
+    /*
+     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    */
+    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
     */
-    inline GetPlatformApplicationAttributesRequest&  WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+    inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+
+    /*
+     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    */
+    inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
     /*
      <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>

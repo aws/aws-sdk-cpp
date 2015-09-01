@@ -113,54 +113,99 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
+    if(clusterIdentifierNode.IsNull())
+    {
+      clusterIdentifierNode = resultNode;
+    }
+
     if(!clusterIdentifierNode.IsNull())
     {
       m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
+    if(nodeTypeNode.IsNull())
+    {
+      nodeTypeNode = resultNode;
+    }
+
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode clusterStatusNode = resultNode.FirstChild("ClusterStatus");
+    if(clusterStatusNode.IsNull())
+    {
+      clusterStatusNode = resultNode;
+    }
+
     if(!clusterStatusNode.IsNull())
     {
       m_clusterStatus = StringUtils::Trim(clusterStatusNode.GetText().c_str());
       m_clusterStatusHasBeenSet = true;
     }
     XmlNode modifyStatusNode = resultNode.FirstChild("ModifyStatus");
+    if(modifyStatusNode.IsNull())
+    {
+      modifyStatusNode = resultNode;
+    }
+
     if(!modifyStatusNode.IsNull())
     {
       m_modifyStatus = StringUtils::Trim(modifyStatusNode.GetText().c_str());
       m_modifyStatusHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
+    if(masterUsernameNode.IsNull())
+    {
+      masterUsernameNode = resultNode;
+    }
+
     if(!masterUsernameNode.IsNull())
     {
       m_masterUsername = StringUtils::Trim(masterUsernameNode.GetText().c_str());
       m_masterUsernameHasBeenSet = true;
     }
     XmlNode dBNameNode = resultNode.FirstChild("DBName");
+    if(dBNameNode.IsNull())
+    {
+      dBNameNode = resultNode;
+    }
+
     if(!dBNameNode.IsNull())
     {
       m_dBName = StringUtils::Trim(dBNameNode.GetText().c_str());
       m_dBNameHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
+    if(endpointNode.IsNull())
+    {
+      endpointNode = resultNode;
+    }
+
     if(!endpointNode.IsNull())
     {
       m_endpoint = endpointNode;
       m_endpointHasBeenSet = true;
     }
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
+    if(clusterCreateTimeNode.IsNull())
+    {
+      clusterCreateTimeNode = resultNode;
+    }
+
     if(!clusterCreateTimeNode.IsNull())
     {
       m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode automatedSnapshotRetentionPeriodNode = resultNode.FirstChild("AutomatedSnapshotRetentionPeriod");
+    if(automatedSnapshotRetentionPeriodNode.IsNull())
+    {
+      automatedSnapshotRetentionPeriodNode = resultNode;
+    }
+
     if(!automatedSnapshotRetentionPeriodNode.IsNull())
     {
       m_automatedSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(automatedSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
@@ -203,84 +248,154 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_clusterParameterGroupsHasBeenSet = true;
     }
     XmlNode clusterSubnetGroupNameNode = resultNode.FirstChild("ClusterSubnetGroupName");
+    if(clusterSubnetGroupNameNode.IsNull())
+    {
+      clusterSubnetGroupNameNode = resultNode;
+    }
+
     if(!clusterSubnetGroupNameNode.IsNull())
     {
       m_clusterSubnetGroupName = StringUtils::Trim(clusterSubnetGroupNameNode.GetText().c_str());
       m_clusterSubnetGroupNameHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
+    if(vpcIdNode.IsNull())
+    {
+      vpcIdNode = resultNode;
+    }
+
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
+    if(availabilityZoneNode.IsNull())
+    {
+      availabilityZoneNode = resultNode;
+    }
+
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
+    if(preferredMaintenanceWindowNode.IsNull())
+    {
+      preferredMaintenanceWindowNode = resultNode;
+    }
+
     if(!preferredMaintenanceWindowNode.IsNull())
     {
       m_preferredMaintenanceWindow = StringUtils::Trim(preferredMaintenanceWindowNode.GetText().c_str());
       m_preferredMaintenanceWindowHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
+    if(pendingModifiedValuesNode.IsNull())
+    {
+      pendingModifiedValuesNode = resultNode;
+    }
+
     if(!pendingModifiedValuesNode.IsNull())
     {
       m_pendingModifiedValues = pendingModifiedValuesNode;
       m_pendingModifiedValuesHasBeenSet = true;
     }
     XmlNode clusterVersionNode = resultNode.FirstChild("ClusterVersion");
+    if(clusterVersionNode.IsNull())
+    {
+      clusterVersionNode = resultNode;
+    }
+
     if(!clusterVersionNode.IsNull())
     {
       m_clusterVersion = StringUtils::Trim(clusterVersionNode.GetText().c_str());
       m_clusterVersionHasBeenSet = true;
     }
     XmlNode allowVersionUpgradeNode = resultNode.FirstChild("AllowVersionUpgrade");
+    if(allowVersionUpgradeNode.IsNull())
+    {
+      allowVersionUpgradeNode = resultNode;
+    }
+
     if(!allowVersionUpgradeNode.IsNull())
     {
       m_allowVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(allowVersionUpgradeNode.GetText().c_str()).c_str());
       m_allowVersionUpgradeHasBeenSet = true;
     }
     XmlNode numberOfNodesNode = resultNode.FirstChild("NumberOfNodes");
+    if(numberOfNodesNode.IsNull())
+    {
+      numberOfNodesNode = resultNode;
+    }
+
     if(!numberOfNodesNode.IsNull())
     {
       m_numberOfNodes = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfNodesNode.GetText().c_str()).c_str());
       m_numberOfNodesHasBeenSet = true;
     }
     XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
+    if(publiclyAccessibleNode.IsNull())
+    {
+      publiclyAccessibleNode = resultNode;
+    }
+
     if(!publiclyAccessibleNode.IsNull())
     {
       m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
       m_publiclyAccessibleHasBeenSet = true;
     }
     XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
+    if(encryptedNode.IsNull())
+    {
+      encryptedNode = resultNode;
+    }
+
     if(!encryptedNode.IsNull())
     {
       m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
       m_encryptedHasBeenSet = true;
     }
     XmlNode restoreStatusNode = resultNode.FirstChild("RestoreStatus");
+    if(restoreStatusNode.IsNull())
+    {
+      restoreStatusNode = resultNode;
+    }
+
     if(!restoreStatusNode.IsNull())
     {
       m_restoreStatus = restoreStatusNode;
       m_restoreStatusHasBeenSet = true;
     }
     XmlNode hsmStatusNode = resultNode.FirstChild("HsmStatus");
+    if(hsmStatusNode.IsNull())
+    {
+      hsmStatusNode = resultNode;
+    }
+
     if(!hsmStatusNode.IsNull())
     {
       m_hsmStatus = hsmStatusNode;
       m_hsmStatusHasBeenSet = true;
     }
     XmlNode clusterSnapshotCopyStatusNode = resultNode.FirstChild("ClusterSnapshotCopyStatus");
+    if(clusterSnapshotCopyStatusNode.IsNull())
+    {
+      clusterSnapshotCopyStatusNode = resultNode;
+    }
+
     if(!clusterSnapshotCopyStatusNode.IsNull())
     {
       m_clusterSnapshotCopyStatus = clusterSnapshotCopyStatusNode;
       m_clusterSnapshotCopyStatusHasBeenSet = true;
     }
     XmlNode clusterPublicKeyNode = resultNode.FirstChild("ClusterPublicKey");
+    if(clusterPublicKeyNode.IsNull())
+    {
+      clusterPublicKeyNode = resultNode;
+    }
+
     if(!clusterPublicKeyNode.IsNull())
     {
       m_clusterPublicKey = StringUtils::Trim(clusterPublicKeyNode.GetText().c_str());
@@ -299,12 +414,22 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_clusterNodesHasBeenSet = true;
     }
     XmlNode elasticIpStatusNode = resultNode.FirstChild("ElasticIpStatus");
+    if(elasticIpStatusNode.IsNull())
+    {
+      elasticIpStatusNode = resultNode;
+    }
+
     if(!elasticIpStatusNode.IsNull())
     {
       m_elasticIpStatus = elasticIpStatusNode;
       m_elasticIpStatusHasBeenSet = true;
     }
     XmlNode clusterRevisionNumberNode = resultNode.FirstChild("ClusterRevisionNumber");
+    if(clusterRevisionNumberNode.IsNull())
+    {
+      clusterRevisionNumberNode = resultNode;
+    }
+
     if(!clusterRevisionNumberNode.IsNull())
     {
       m_clusterRevisionNumber = StringUtils::Trim(clusterRevisionNumberNode.GetText().c_str());
@@ -323,6 +448,11 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_tagsHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
+    if(kmsKeyIdNode.IsNull())
+    {
+      kmsKeyIdNode = resultNode;
+    }
+
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());

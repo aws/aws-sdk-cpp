@@ -39,10 +39,16 @@ namespace Model
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+
+    /*
+     <p>The URL of the Amazon SQS queue to take action on.</p>
+    */
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline DeleteMessageBatchRequest&  WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+    inline DeleteMessageBatchRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+
+    /*
+     <p>The URL of the Amazon SQS queue to take action on.</p>
+    */
+    inline DeleteMessageBatchRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>A list of receipt handles for the messages to be deleted.</p>
     */
     inline const Aws::Vector<DeleteMessageBatchRequestEntry>& GetEntries() const{ return m_entries; }
+
     /*
      <p>A list of receipt handles for the messages to be deleted.</p>
     */
@@ -71,12 +83,27 @@ namespace Model
     /*
      <p>A list of receipt handles for the messages to be deleted.</p>
     */
-    inline DeleteMessageBatchRequest&  WithEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { SetEntries(value); return *this;}
+    inline void SetEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = value; }
+
+    /*
+     <p>A list of receipt handles for the messages to be deleted.</p>
+    */
+    inline DeleteMessageBatchRequest& WithEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { SetEntries(value); return *this;}
+
+    /*
+     <p>A list of receipt handles for the messages to be deleted.</p>
+    */
+    inline DeleteMessageBatchRequest& WithEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { SetEntries(value); return *this;}
 
     /*
      <p>A list of receipt handles for the messages to be deleted.</p>
     */
     inline DeleteMessageBatchRequest& AddEntries(const DeleteMessageBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
+
+    /*
+     <p>A list of receipt handles for the messages to be deleted.</p>
+    */
+    inline DeleteMessageBatchRequest& AddEntries(DeleteMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
   private:
     Aws::String m_queueUrl;

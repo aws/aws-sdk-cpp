@@ -49,6 +49,7 @@ namespace Model
      <p>The list of <a>Certificate</a> objects for the AWS account.</p>
     */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
+
     /*
      <p>The list of <a>Certificate</a> objects for the AWS account.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The list of <a>Certificate</a> objects for the AWS account.</p>
     */
-    inline DescribeCertificatesResult&  WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
+    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = value; }
+
+    /*
+     <p>The list of <a>Certificate</a> objects for the AWS account.</p>
+    */
+    inline DescribeCertificatesResult& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
+
+    /*
+     <p>The list of <a>Certificate</a> objects for the AWS account.</p>
+    */
+    inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(value); return *this;}
 
     /*
      <p>The list of <a>Certificate</a> objects for the AWS account.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeCertificatesResult& AddCertificates(const Certificate& value) { m_certificates.push_back(value); return *this; }
 
     /*
+     <p>The list of <a>Certificate</a> objects for the AWS account.</p>
+    */
+    inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(value); return *this; }
+
+    /*
      <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
-    inline DescribeCertificatesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeCertificatesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    */
+    inline DescribeCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeCertificatesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeCertificatesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Certificate> m_certificates;

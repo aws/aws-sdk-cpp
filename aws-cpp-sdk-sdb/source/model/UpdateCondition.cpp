@@ -47,18 +47,33 @@ UpdateCondition& UpdateCondition::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
+    if(nameNode.IsNull())
+    {
+      nameNode = resultNode;
+    }
+
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
+    if(valueNode.IsNull())
+    {
+      valueNode = resultNode;
+    }
+
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::Trim(valueNode.GetText().c_str());
       m_valueHasBeenSet = true;
     }
     XmlNode existsNode = resultNode.FirstChild("Exists");
+    if(existsNode.IsNull())
+    {
+      existsNode = resultNode;
+    }
+
     if(!existsNode.IsNull())
     {
       m_exists = StringUtils::ConvertToBool(StringUtils::Trim(existsNode.GetText().c_str()).c_str());

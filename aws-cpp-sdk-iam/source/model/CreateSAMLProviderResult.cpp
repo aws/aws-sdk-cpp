@@ -42,6 +42,11 @@ CreateSAMLProviderResult& CreateSAMLProviderResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode sAMLProviderArnNode = resultNode.FirstChild("SAMLProviderArn");
+    if(sAMLProviderArnNode.IsNull())
+    {
+      sAMLProviderArnNode = resultNode;
+    }
+
     if(!sAMLProviderArnNode.IsNull())
     {
       m_sAMLProviderArn = StringUtils::Trim(sAMLProviderArnNode.GetText().c_str());

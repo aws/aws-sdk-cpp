@@ -47,10 +47,16 @@ namespace Model
      <p>The application name.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The application name.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+
+    /*
+     <p>The application name.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationName = value; }
 
     /*
      <p>The application name.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The application name.</p>
     */
-    inline ListDeploymentGroupsResult&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline ListDeploymentGroupsResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The application name.</p>
+    */
+    inline ListDeploymentGroupsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The application name.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>A list of corresponding deployment group names.</p>
     */
     inline const Aws::Vector<Aws::String>& GetDeploymentGroups() const{ return m_deploymentGroups; }
+
     /*
      <p>A list of corresponding deployment group names.</p>
     */
@@ -79,12 +91,27 @@ namespace Model
     /*
      <p>A list of corresponding deployment group names.</p>
     */
-    inline ListDeploymentGroupsResult&  WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
+    inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroups = value; }
+
+    /*
+     <p>A list of corresponding deployment group names.</p>
+    */
+    inline ListDeploymentGroupsResult& WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
+
+    /*
+     <p>A list of corresponding deployment group names.</p>
+    */
+    inline ListDeploymentGroupsResult& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(value); return *this;}
 
     /*
      <p>A list of corresponding deployment group names.</p>
     */
     inline ListDeploymentGroupsResult& AddDeploymentGroups(const Aws::String& value) { m_deploymentGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of corresponding deployment group names.</p>
+    */
+    inline ListDeploymentGroupsResult& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroups.push_back(value); return *this; }
 
     /*
      <p>A list of corresponding deployment group names.</p>
@@ -95,10 +122,16 @@ namespace Model
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
@@ -108,7 +141,12 @@ namespace Model
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     */
-    inline ListDeploymentGroupsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
+    */
+    inline ListDeploymentGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>

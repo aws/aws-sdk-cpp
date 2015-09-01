@@ -45,10 +45,16 @@ namespace Model
      <p>The name of a key attribute.</p>
     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
     /*
      <p>The name of a key attribute.</p>
     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+
+    /*
+     <p>The name of a key attribute.</p>
+    */
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of a key attribute.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of a key attribute.</p>
     */
-    inline KeySchemaElement&  WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+    inline KeySchemaElement& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+
+    /*
+     <p>The name of a key attribute.</p>
+    */
+    inline KeySchemaElement& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /*
      <p>The name of a key attribute.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>The attribute data, consisting of the data type and the attribute value itself.</p>
     */
     inline const KeyType& GetKeyType() const{ return m_keyType; }
+
     /*
      <p>The attribute data, consisting of the data type and the attribute value itself.</p>
     */
@@ -77,7 +89,17 @@ namespace Model
     /*
      <p>The attribute data, consisting of the data type and the attribute value itself.</p>
     */
-    inline KeySchemaElement&  WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
+    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+
+    /*
+     <p>The attribute data, consisting of the data type and the attribute value itself.</p>
+    */
+    inline KeySchemaElement& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
+
+    /*
+     <p>The attribute data, consisting of the data type and the attribute value itself.</p>
+    */
+    inline KeySchemaElement& WithKeyType(KeyType&& value) { SetKeyType(value); return *this;}
 
   private:
     Aws::String m_attributeName;

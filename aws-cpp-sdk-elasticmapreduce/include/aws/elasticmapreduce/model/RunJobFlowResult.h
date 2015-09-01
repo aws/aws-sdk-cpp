@@ -46,10 +46,16 @@ namespace Model
      <p>An unique identifier for the job flow.</p>
     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
+
     /*
      <p>An unique identifier for the job flow.</p>
     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
+
+    /*
+     <p>An unique identifier for the job flow.</p>
+    */
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = value; }
 
     /*
      <p>An unique identifier for the job flow.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>An unique identifier for the job flow.</p>
     */
-    inline RunJobFlowResult&  WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+    inline RunJobFlowResult& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+
+    /*
+     <p>An unique identifier for the job flow.</p>
+    */
+    inline RunJobFlowResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
     /*
      <p>An unique identifier for the job flow.</p>

@@ -38,6 +38,7 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const{ return m_autoScalingGroupNames; }
+
     /*
      <p>The name of the group.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline DescribeNotificationConfigurationsRequest&  WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
+    inline void SetAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroupNames(value); return *this;}
 
     /*
      <p>The name of the group.</p>
     */
     inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(const Aws::String& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(Aws::String&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 
     /*
      <p>The name of the group.</p>
@@ -62,10 +78,16 @@ namespace Model
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -75,7 +97,12 @@ namespace Model
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
-    inline DescribeNotificationConfigurationsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeNotificationConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline DescribeNotificationConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -86,6 +113,7 @@ namespace Model
      <p>The maximum number of items to return with this call.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of items to return with this call.</p>
     */
@@ -94,7 +122,7 @@ namespace Model
     /*
      <p>The maximum number of items to return with this call.</p>
     */
-    inline DescribeNotificationConfigurationsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeNotificationConfigurationsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_autoScalingGroupNames;

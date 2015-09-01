@@ -47,10 +47,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the task.</p>
     */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the task.</p>
     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the task.</p>
+    */
+    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the task.</p>
     */
-    inline Task&  WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
+    inline Task& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the task.</p>
+    */
+    inline Task& WithTaskArn(Aws::String&& value) { SetTaskArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
     */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+    */
+    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
     */
-    inline Task&  WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
+    inline Task& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+    */
+    inline Task& WithClusterArn(Aws::String&& value) { SetClusterArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
     */
     inline const Aws::String& GetTaskDefinitionArn() const{ return m_taskDefinitionArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
     */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
+    */
+    inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
     */
-    inline Task&  WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
+    inline Task& WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
+    */
+    inline Task& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the of the task definition that creates the task.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
     */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
     */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
+    */
+    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
     */
-    inline Task&  WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+    inline Task& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
+    */
+    inline Task& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instances that host the task.</p>
@@ -143,6 +187,7 @@ namespace Model
      <p>One or more container overrides.</p>
     */
     inline const TaskOverride& GetOverrides() const{ return m_overrides; }
+
     /*
      <p>One or more container overrides.</p>
     */
@@ -151,16 +196,32 @@ namespace Model
     /*
      <p>One or more container overrides.</p>
     */
-    inline Task&  WithOverrides(const TaskOverride& value) { SetOverrides(value); return *this;}
+    inline void SetOverrides(TaskOverride&& value) { m_overridesHasBeenSet = true; m_overrides = value; }
+
+    /*
+     <p>One or more container overrides.</p>
+    */
+    inline Task& WithOverrides(const TaskOverride& value) { SetOverrides(value); return *this;}
+
+    /*
+     <p>One or more container overrides.</p>
+    */
+    inline Task& WithOverrides(TaskOverride&& value) { SetOverrides(value); return *this;}
 
     /*
      <p>The last known status of the task.</p>
     */
     inline const Aws::String& GetLastStatus() const{ return m_lastStatus; }
+
     /*
      <p>The last known status of the task.</p>
     */
     inline void SetLastStatus(const Aws::String& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
+
+    /*
+     <p>The last known status of the task.</p>
+    */
+    inline void SetLastStatus(Aws::String&& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /*
      <p>The last known status of the task.</p>
@@ -170,7 +231,12 @@ namespace Model
     /*
      <p>The last known status of the task.</p>
     */
-    inline Task&  WithLastStatus(const Aws::String& value) { SetLastStatus(value); return *this;}
+    inline Task& WithLastStatus(const Aws::String& value) { SetLastStatus(value); return *this;}
+
+    /*
+     <p>The last known status of the task.</p>
+    */
+    inline Task& WithLastStatus(Aws::String&& value) { SetLastStatus(value); return *this;}
 
     /*
      <p>The last known status of the task.</p>
@@ -181,10 +247,16 @@ namespace Model
      <p>The desired status of the task.</p>
     */
     inline const Aws::String& GetDesiredStatus() const{ return m_desiredStatus; }
+
     /*
      <p>The desired status of the task.</p>
     */
     inline void SetDesiredStatus(const Aws::String& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
+
+    /*
+     <p>The desired status of the task.</p>
+    */
+    inline void SetDesiredStatus(Aws::String&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
     /*
      <p>The desired status of the task.</p>
@@ -194,7 +266,12 @@ namespace Model
     /*
      <p>The desired status of the task.</p>
     */
-    inline Task&  WithDesiredStatus(const Aws::String& value) { SetDesiredStatus(value); return *this;}
+    inline Task& WithDesiredStatus(const Aws::String& value) { SetDesiredStatus(value); return *this;}
+
+    /*
+     <p>The desired status of the task.</p>
+    */
+    inline Task& WithDesiredStatus(Aws::String&& value) { SetDesiredStatus(value); return *this;}
 
     /*
      <p>The desired status of the task.</p>
@@ -205,6 +282,7 @@ namespace Model
      <p>The containers associated with the task.</p>
     */
     inline const Aws::Vector<Container>& GetContainers() const{ return m_containers; }
+
     /*
      <p>The containers associated with the task.</p>
     */
@@ -213,7 +291,17 @@ namespace Model
     /*
      <p>The containers associated with the task.</p>
     */
-    inline Task&  WithContainers(const Aws::Vector<Container>& value) { SetContainers(value); return *this;}
+    inline void SetContainers(Aws::Vector<Container>&& value) { m_containersHasBeenSet = true; m_containers = value; }
+
+    /*
+     <p>The containers associated with the task.</p>
+    */
+    inline Task& WithContainers(const Aws::Vector<Container>& value) { SetContainers(value); return *this;}
+
+    /*
+     <p>The containers associated with the task.</p>
+    */
+    inline Task& WithContainers(Aws::Vector<Container>&& value) { SetContainers(value); return *this;}
 
     /*
      <p>The containers associated with the task.</p>
@@ -221,13 +309,24 @@ namespace Model
     inline Task& AddContainers(const Container& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
 
     /*
+     <p>The containers associated with the task.</p>
+    */
+    inline Task& AddContainers(Container&& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
+
+    /*
      <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+
     /*
      <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
+
+    /*
+     <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
+    */
+    inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
     /*
      <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
@@ -237,7 +336,12 @@ namespace Model
     /*
      <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     */
-    inline Task&  WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
+    inline Task& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
+
+    /*
+     <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
+    */
+    inline Task& WithStartedBy(Aws::String&& value) { SetStartedBy(value); return *this;}
 
     /*
      <p>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>

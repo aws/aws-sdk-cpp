@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the application.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of the application.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of the application.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the application.</p>
     */
-    inline ApplicationDescription&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline ApplicationDescription& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of the application.</p>
+    */
+    inline ApplicationDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of the application.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>User-defined description of the application.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>User-defined description of the application.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>User-defined description of the application.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>User-defined description of the application.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>User-defined description of the application.</p>
     */
-    inline ApplicationDescription&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline ApplicationDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>User-defined description of the application.</p>
+    */
+    inline ApplicationDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>User-defined description of the application.</p>
@@ -96,6 +118,7 @@ namespace Model
      <p>The date when the application was created.</p>
     */
     inline double GetDateCreated() const{ return m_dateCreated; }
+
     /*
      <p>The date when the application was created.</p>
     */
@@ -104,12 +127,13 @@ namespace Model
     /*
      <p>The date when the application was created.</p>
     */
-    inline ApplicationDescription&  WithDateCreated(double value) { SetDateCreated(value); return *this;}
+    inline ApplicationDescription& WithDateCreated(double value) { SetDateCreated(value); return *this;}
 
     /*
      <p>The date when the application was last modified.</p>
     */
     inline double GetDateUpdated() const{ return m_dateUpdated; }
+
     /*
      <p>The date when the application was last modified.</p>
     */
@@ -118,12 +142,13 @@ namespace Model
     /*
      <p>The date when the application was last modified.</p>
     */
-    inline ApplicationDescription&  WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
+    inline ApplicationDescription& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
 
     /*
      <p>The names of the versions for this application.</p>
     */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+
     /*
      <p>The names of the versions for this application.</p>
     */
@@ -132,12 +157,27 @@ namespace Model
     /*
      <p>The names of the versions for this application.</p>
     */
-    inline ApplicationDescription&  WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
+    inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = value; }
+
+    /*
+     <p>The names of the versions for this application.</p>
+    */
+    inline ApplicationDescription& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
+
+    /*
+     <p>The names of the versions for this application.</p>
+    */
+    inline ApplicationDescription& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(value); return *this;}
 
     /*
      <p>The names of the versions for this application.</p>
     */
     inline ApplicationDescription& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
+
+    /*
+     <p>The names of the versions for this application.</p>
+    */
+    inline ApplicationDescription& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
     /*
      <p>The names of the versions for this application.</p>
@@ -148,6 +188,7 @@ namespace Model
      <p> The names of the configuration templates associated with this application. </p>
     */
     inline const Aws::Vector<Aws::String>& GetConfigurationTemplates() const{ return m_configurationTemplates; }
+
     /*
      <p> The names of the configuration templates associated with this application. </p>
     */
@@ -156,12 +197,27 @@ namespace Model
     /*
      <p> The names of the configuration templates associated with this application. </p>
     */
-    inline ApplicationDescription&  WithConfigurationTemplates(const Aws::Vector<Aws::String>& value) { SetConfigurationTemplates(value); return *this;}
+    inline void SetConfigurationTemplates(Aws::Vector<Aws::String>&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates = value; }
+
+    /*
+     <p> The names of the configuration templates associated with this application. </p>
+    */
+    inline ApplicationDescription& WithConfigurationTemplates(const Aws::Vector<Aws::String>& value) { SetConfigurationTemplates(value); return *this;}
+
+    /*
+     <p> The names of the configuration templates associated with this application. </p>
+    */
+    inline ApplicationDescription& WithConfigurationTemplates(Aws::Vector<Aws::String>&& value) { SetConfigurationTemplates(value); return *this;}
 
     /*
      <p> The names of the configuration templates associated with this application. </p>
     */
     inline ApplicationDescription& AddConfigurationTemplates(const Aws::String& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
+
+    /*
+     <p> The names of the configuration templates associated with this application. </p>
+    */
+    inline ApplicationDescription& AddConfigurationTemplates(Aws::String&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
 
     /*
      <p> The names of the configuration templates associated with this application. </p>

@@ -53,36 +53,66 @@ OptionGroupOptionSetting& OptionGroupOptionSetting::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode settingNameNode = resultNode.FirstChild("SettingName");
+    if(settingNameNode.IsNull())
+    {
+      settingNameNode = resultNode;
+    }
+
     if(!settingNameNode.IsNull())
     {
       m_settingName = StringUtils::Trim(settingNameNode.GetText().c_str());
       m_settingNameHasBeenSet = true;
     }
     XmlNode settingDescriptionNode = resultNode.FirstChild("SettingDescription");
+    if(settingDescriptionNode.IsNull())
+    {
+      settingDescriptionNode = resultNode;
+    }
+
     if(!settingDescriptionNode.IsNull())
     {
       m_settingDescription = StringUtils::Trim(settingDescriptionNode.GetText().c_str());
       m_settingDescriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
+    if(defaultValueNode.IsNull())
+    {
+      defaultValueNode = resultNode;
+    }
+
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
+    if(applyTypeNode.IsNull())
+    {
+      applyTypeNode = resultNode;
+    }
+
     if(!applyTypeNode.IsNull())
     {
       m_applyType = StringUtils::Trim(applyTypeNode.GetText().c_str());
       m_applyTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
+    if(allowedValuesNode.IsNull())
+    {
+      allowedValuesNode = resultNode;
+    }
+
     if(!allowedValuesNode.IsNull())
     {
       m_allowedValues = StringUtils::Trim(allowedValuesNode.GetText().c_str());
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
+    if(isModifiableNode.IsNull())
+    {
+      isModifiableNode = resultNode;
+    }
+
     if(!isModifiableNode.IsNull())
     {
       m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());

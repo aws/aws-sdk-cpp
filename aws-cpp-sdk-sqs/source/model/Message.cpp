@@ -53,24 +53,44 @@ Message& Message::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
+    if(messageIdNode.IsNull())
+    {
+      messageIdNode = resultNode;
+    }
+
     if(!messageIdNode.IsNull())
     {
       m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
       m_messageIdHasBeenSet = true;
     }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
+    if(receiptHandleNode.IsNull())
+    {
+      receiptHandleNode = resultNode;
+    }
+
     if(!receiptHandleNode.IsNull())
     {
       m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
       m_receiptHandleHasBeenSet = true;
     }
     XmlNode mD5OfBodyNode = resultNode.FirstChild("MD5OfBody");
+    if(mD5OfBodyNode.IsNull())
+    {
+      mD5OfBodyNode = resultNode;
+    }
+
     if(!mD5OfBodyNode.IsNull())
     {
       m_mD5OfBody = StringUtils::Trim(mD5OfBodyNode.GetText().c_str());
       m_mD5OfBodyHasBeenSet = true;
     }
     XmlNode bodyNode = resultNode.FirstChild("Body");
+    if(bodyNode.IsNull())
+    {
+      bodyNode = resultNode;
+    }
+
     if(!bodyNode.IsNull())
     {
       m_body = StringUtils::Trim(bodyNode.GetText().c_str());
@@ -92,6 +112,11 @@ Message& Message::operator =(const XmlNode& xmlNode)
       m_attributesHasBeenSet = true;
     }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
+    if(mD5OfMessageAttributesNode.IsNull())
+    {
+      mD5OfMessageAttributesNode = resultNode;
+    }
+
     if(!mD5OfMessageAttributesNode.IsNull())
     {
       m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());

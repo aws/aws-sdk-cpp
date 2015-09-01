@@ -44,14 +44,24 @@ namespace Model
 
     
     inline const Aws::Vector<CORSRule>& GetCORSRules() const{ return m_cORSRules; }
+
     
     inline void SetCORSRules(const Aws::Vector<CORSRule>& value) { m_cORSRulesHasBeenSet = true; m_cORSRules = value; }
 
     
-    inline CORSConfiguration&  WithCORSRules(const Aws::Vector<CORSRule>& value) { SetCORSRules(value); return *this;}
+    inline void SetCORSRules(Aws::Vector<CORSRule>&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules = value; }
+
+    
+    inline CORSConfiguration& WithCORSRules(const Aws::Vector<CORSRule>& value) { SetCORSRules(value); return *this;}
+
+    
+    inline CORSConfiguration& WithCORSRules(Aws::Vector<CORSRule>&& value) { SetCORSRules(value); return *this;}
 
     
     inline CORSConfiguration& AddCORSRules(const CORSRule& value) { m_cORSRulesHasBeenSet = true; m_cORSRules.push_back(value); return *this; }
+
+    
+    inline CORSConfiguration& AddCORSRules(CORSRule&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules.push_back(value); return *this; }
 
   private:
     Aws::Vector<CORSRule> m_cORSRules;

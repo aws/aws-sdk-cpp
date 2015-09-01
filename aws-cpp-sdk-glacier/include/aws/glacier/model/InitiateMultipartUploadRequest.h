@@ -40,10 +40,16 @@ namespace Model
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+    */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
-    inline InitiateMultipartUploadRequest&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline InitiateMultipartUploadRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+    */
+    inline InitiateMultipartUploadRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The name of the vault.</p>
     */
     inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+
     /*
      <p>The name of the vault.</p>
     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /*
      <p>The name of the vault.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The name of the vault.</p>
     */
-    inline InitiateMultipartUploadRequest&  WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+    inline InitiateMultipartUploadRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline InitiateMultipartUploadRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
 
     /*
      <p>The name of the vault.</p>
@@ -88,10 +110,16 @@ namespace Model
      <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
     */
     inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
+
     /*
      <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
     */
     inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
+
+    /*
+     <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
+    */
+    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
 
     /*
      <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
@@ -101,7 +129,12 @@ namespace Model
     /*
      <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
     */
-    inline InitiateMultipartUploadRequest&  WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+    inline InitiateMultipartUploadRequest& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+
+    /*
+     <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
+    */
+    inline InitiateMultipartUploadRequest& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(value); return *this;}
 
     /*
      <p>The archive description that you are uploading in parts.</p> <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
@@ -112,10 +145,16 @@ namespace Model
      <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
     */
     inline const Aws::String& GetPartSize() const{ return m_partSize; }
+
     /*
      <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
     */
     inline void SetPartSize(const Aws::String& value) { m_partSizeHasBeenSet = true; m_partSize = value; }
+
+    /*
+     <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
+    */
+    inline void SetPartSize(Aws::String&& value) { m_partSizeHasBeenSet = true; m_partSize = value; }
 
     /*
      <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
@@ -125,7 +164,12 @@ namespace Model
     /*
      <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
     */
-    inline InitiateMultipartUploadRequest&  WithPartSize(const Aws::String& value) { SetPartSize(value); return *this;}
+    inline InitiateMultipartUploadRequest& WithPartSize(const Aws::String& value) { SetPartSize(value); return *this;}
+
+    /*
+     <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
+    */
+    inline InitiateMultipartUploadRequest& WithPartSize(Aws::String&& value) { SetPartSize(value); return *this;}
 
     /*
      <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>

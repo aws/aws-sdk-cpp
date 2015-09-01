@@ -47,10 +47,16 @@ namespace Model
      <p>The name (friendly name, not ARN) identifying the group.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name (friendly name, not ARN) identifying the group.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the group.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the group.</p>
     */
-    inline PolicyGroup&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline PolicyGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the group.</p>
+    */
+    inline PolicyGroup& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) identifying the group.</p>

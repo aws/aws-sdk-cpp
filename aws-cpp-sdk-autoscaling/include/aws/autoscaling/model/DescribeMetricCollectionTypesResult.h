@@ -49,6 +49,7 @@ namespace Model
      <p>One or more metrics.</p>
     */
     inline const Aws::Vector<MetricCollectionType>& GetMetrics() const{ return m_metrics; }
+
     /*
      <p>One or more metrics.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>One or more metrics.</p>
     */
-    inline DescribeMetricCollectionTypesResult&  WithMetrics(const Aws::Vector<MetricCollectionType>& value) { SetMetrics(value); return *this;}
+    inline void SetMetrics(Aws::Vector<MetricCollectionType>&& value) { m_metrics = value; }
+
+    /*
+     <p>One or more metrics.</p>
+    */
+    inline DescribeMetricCollectionTypesResult& WithMetrics(const Aws::Vector<MetricCollectionType>& value) { SetMetrics(value); return *this;}
+
+    /*
+     <p>One or more metrics.</p>
+    */
+    inline DescribeMetricCollectionTypesResult& WithMetrics(Aws::Vector<MetricCollectionType>&& value) { SetMetrics(value); return *this;}
 
     /*
      <p>One or more metrics.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline DescribeMetricCollectionTypesResult& AddMetrics(const MetricCollectionType& value) { m_metrics.push_back(value); return *this; }
 
     /*
+     <p>One or more metrics.</p>
+    */
+    inline DescribeMetricCollectionTypesResult& AddMetrics(MetricCollectionType&& value) { m_metrics.push_back(value); return *this; }
+
+    /*
      <p>The granularities for the metrics.</p>
     */
     inline const Aws::Vector<MetricGranularityType>& GetGranularities() const{ return m_granularities; }
+
     /*
      <p>The granularities for the metrics.</p>
     */
@@ -76,20 +93,42 @@ namespace Model
     /*
      <p>The granularities for the metrics.</p>
     */
-    inline DescribeMetricCollectionTypesResult&  WithGranularities(const Aws::Vector<MetricGranularityType>& value) { SetGranularities(value); return *this;}
+    inline void SetGranularities(Aws::Vector<MetricGranularityType>&& value) { m_granularities = value; }
+
+    /*
+     <p>The granularities for the metrics.</p>
+    */
+    inline DescribeMetricCollectionTypesResult& WithGranularities(const Aws::Vector<MetricGranularityType>& value) { SetGranularities(value); return *this;}
+
+    /*
+     <p>The granularities for the metrics.</p>
+    */
+    inline DescribeMetricCollectionTypesResult& WithGranularities(Aws::Vector<MetricGranularityType>&& value) { SetGranularities(value); return *this;}
 
     /*
      <p>The granularities for the metrics.</p>
     */
     inline DescribeMetricCollectionTypesResult& AddGranularities(const MetricGranularityType& value) { m_granularities.push_back(value); return *this; }
 
+    /*
+     <p>The granularities for the metrics.</p>
+    */
+    inline DescribeMetricCollectionTypesResult& AddGranularities(MetricGranularityType&& value) { m_granularities.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeMetricCollectionTypesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeMetricCollectionTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeMetricCollectionTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<MetricCollectionType> m_metrics;

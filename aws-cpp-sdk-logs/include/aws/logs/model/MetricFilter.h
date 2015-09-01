@@ -44,50 +44,75 @@ namespace Model
 
     
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
     
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+
+    
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     
-    inline MetricFilter&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+    inline MetricFilter& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+
+    
+    inline MetricFilter& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
     
     inline MetricFilter& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
     
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+
     
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+
+    
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
 
     
-    inline MetricFilter&  WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+    inline MetricFilter& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+
+    
+    inline MetricFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
 
     
     inline MetricFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
     
     inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const{ return m_metricTransformations; }
+
     
     inline void SetMetricTransformations(const Aws::Vector<MetricTransformation>& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
 
     
-    inline MetricFilter&  WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
+    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
+
+    
+    inline MetricFilter& WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
+
+    
+    inline MetricFilter& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(value); return *this;}
 
     
     inline MetricFilter& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
 
     
+    inline MetricFilter& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
+
+    
     inline long long GetCreationTime() const{ return m_creationTime; }
+
     
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     
-    inline MetricFilter&  WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+    inline MetricFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
   private:
     Aws::String m_filterName;

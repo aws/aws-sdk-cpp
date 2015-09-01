@@ -40,10 +40,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     */
-    inline DescribeContainerInstancesRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline DescribeContainerInstancesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline DescribeContainerInstancesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
+
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
@@ -72,12 +84,27 @@ namespace Model
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline DescribeContainerInstancesRequest&  WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
+    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
+
+    /*
+     <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
+    */
+    inline DescribeContainerInstancesRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
+
+    /*
+     <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
+    */
+    inline DescribeContainerInstancesRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(value); return *this;}
 
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
     inline DescribeContainerInstancesRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+
+    /*
+     <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
+    */
+    inline DescribeContainerInstancesRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>

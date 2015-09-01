@@ -40,10 +40,16 @@ namespace Model
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
-    inline DeleteDeploymentGroupRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline DeleteDeploymentGroupRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
+    inline DeleteDeploymentGroupRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The name of an existing deployment group for the specified application.</p>
     */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
+
     /*
      <p>The name of an existing deployment group for the specified application.</p>
     */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
+
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
+    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /*
      <p>The name of an existing deployment group for the specified application.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The name of an existing deployment group for the specified application.</p>
     */
-    inline DeleteDeploymentGroupRequest&  WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
+    inline DeleteDeploymentGroupRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
+
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
+    inline DeleteDeploymentGroupRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(value); return *this;}
 
     /*
      <p>The name of an existing deployment group for the specified application.</p>

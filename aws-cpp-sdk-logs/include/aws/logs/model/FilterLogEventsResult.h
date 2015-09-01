@@ -49,6 +49,7 @@ namespace Model
      <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
     */
     inline const Aws::Vector<FilteredLogEvent>& GetEvents() const{ return m_events; }
+
     /*
      <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
     */
-    inline FilterLogEventsResult&  WithEvents(const Aws::Vector<FilteredLogEvent>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Vector<FilteredLogEvent>&& value) { m_events = value; }
+
+    /*
+     <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
+    */
+    inline FilterLogEventsResult& WithEvents(const Aws::Vector<FilteredLogEvent>& value) { SetEvents(value); return *this;}
+
+    /*
+     <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
+    */
+    inline FilterLogEventsResult& WithEvents(Aws::Vector<FilteredLogEvent>&& value) { SetEvents(value); return *this;}
 
     /*
      <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline FilterLogEventsResult& AddEvents(const FilteredLogEvent& value) { m_events.push_back(value); return *this; }
 
     /*
+     <p>A list of <code class="code">FilteredLogEvent</code> objects representing the matched events from the request.</p>
+    */
+    inline FilterLogEventsResult& AddEvents(FilteredLogEvent&& value) { m_events.push_back(value); return *this; }
+
+    /*
      <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
     */
     inline const Aws::Vector<SearchedLogStream>& GetSearchedLogStreams() const{ return m_searchedLogStreams; }
+
     /*
      <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
     */
@@ -76,7 +93,17 @@ namespace Model
     /*
      <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
     */
-    inline FilterLogEventsResult&  WithSearchedLogStreams(const Aws::Vector<SearchedLogStream>& value) { SetSearchedLogStreams(value); return *this;}
+    inline void SetSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { m_searchedLogStreams = value; }
+
+    /*
+     <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
+    */
+    inline FilterLogEventsResult& WithSearchedLogStreams(const Aws::Vector<SearchedLogStream>& value) { SetSearchedLogStreams(value); return *this;}
+
+    /*
+     <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
+    */
+    inline FilterLogEventsResult& WithSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { SetSearchedLogStreams(value); return *this;}
 
     /*
      <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
@@ -84,13 +111,24 @@ namespace Model
     inline FilterLogEventsResult& AddSearchedLogStreams(const SearchedLogStream& value) { m_searchedLogStreams.push_back(value); return *this; }
 
     /*
+     <p>A list of <code class="code">SearchedLogStream</code> objects indicating which log streams have been searched in this request and whether each has been searched completely or still has more to be paginated.</p>
+    */
+    inline FilterLogEventsResult& AddSearchedLogStreams(SearchedLogStream&& value) { m_searchedLogStreams.push_back(value); return *this; }
+
+    /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
@@ -100,7 +138,12 @@ namespace Model
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
-    inline FilterLogEventsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline FilterLogEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
+    */
+    inline FilterLogEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>

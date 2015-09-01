@@ -46,6 +46,7 @@ namespace Model
      Object key name prefix or suffix identifying one or more objects to which the filtering rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
     */
     inline const FilterRuleName& GetName() const{ return m_name; }
+
     /*
      Object key name prefix or suffix identifying one or more objects to which the filtering rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
     */
@@ -54,18 +55,35 @@ namespace Model
     /*
      Object key name prefix or suffix identifying one or more objects to which the filtering rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
     */
-    inline FilterRule&  WithName(const FilterRuleName& value) { SetName(value); return *this;}
+    inline void SetName(FilterRuleName&& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     Object key name prefix or suffix identifying one or more objects to which the filtering rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+    */
+    inline FilterRule& WithName(const FilterRuleName& value) { SetName(value); return *this;}
+
+    /*
+     Object key name prefix or suffix identifying one or more objects to which the filtering rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+    */
+    inline FilterRule& WithName(FilterRuleName&& value) { SetName(value); return *this;}
 
     
     inline const Aws::String& GetValue() const{ return m_value; }
+
     
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     
-    inline FilterRule&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    
+    inline FilterRule& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     
     inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}

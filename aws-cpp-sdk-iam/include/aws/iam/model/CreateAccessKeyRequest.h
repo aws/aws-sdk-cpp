@@ -37,10 +37,16 @@ namespace Model
      <p>The user name that the new key will belong to.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The user name that the new key will belong to.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The user name that the new key will belong to.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The user name that the new key will belong to.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The user name that the new key will belong to.</p>
     */
-    inline CreateAccessKeyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline CreateAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The user name that the new key will belong to.</p>
+    */
+    inline CreateAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The user name that the new key will belong to.</p>

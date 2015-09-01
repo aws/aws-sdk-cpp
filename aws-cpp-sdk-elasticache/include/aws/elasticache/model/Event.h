@@ -48,10 +48,16 @@ namespace Model
      <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
     */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
     /*
      <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+
+    /*
+     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
+    */
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /*
      <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
     */
-    inline Event&  WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+    inline Event& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+
+    /*
+     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
+    */
+    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
     /*
      <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
     */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
+
     /*
      <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
     */
@@ -80,16 +92,32 @@ namespace Model
     /*
      <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
     */
-    inline Event&  WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+
+    /*
+     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
+    */
+    inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
+
+    /*
+     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
+    */
+    inline Event& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
     /*
      <p>The text of the event.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The text of the event.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The text of the event.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The text of the event.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>The text of the event.</p>
     */
-    inline Event&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The text of the event.</p>
+    */
+    inline Event& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The text of the event.</p>
@@ -110,6 +143,7 @@ namespace Model
      <p>The date and time when the event occurred.</p>
     */
     inline double GetDate() const{ return m_date; }
+
     /*
      <p>The date and time when the event occurred.</p>
     */
@@ -118,7 +152,7 @@ namespace Model
     /*
      <p>The date and time when the event occurred.</p>
     */
-    inline Event&  WithDate(double value) { SetDate(value); return *this;}
+    inline Event& WithDate(double value) { SetDate(value); return *this;}
 
   private:
     Aws::String m_sourceIdentifier;

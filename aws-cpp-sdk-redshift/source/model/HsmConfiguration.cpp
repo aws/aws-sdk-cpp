@@ -49,24 +49,44 @@ HsmConfiguration& HsmConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hsmConfigurationIdentifierNode = resultNode.FirstChild("HsmConfigurationIdentifier");
+    if(hsmConfigurationIdentifierNode.IsNull())
+    {
+      hsmConfigurationIdentifierNode = resultNode;
+    }
+
     if(!hsmConfigurationIdentifierNode.IsNull())
     {
       m_hsmConfigurationIdentifier = StringUtils::Trim(hsmConfigurationIdentifierNode.GetText().c_str());
       m_hsmConfigurationIdentifierHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode hsmIpAddressNode = resultNode.FirstChild("HsmIpAddress");
+    if(hsmIpAddressNode.IsNull())
+    {
+      hsmIpAddressNode = resultNode;
+    }
+
     if(!hsmIpAddressNode.IsNull())
     {
       m_hsmIpAddress = StringUtils::Trim(hsmIpAddressNode.GetText().c_str());
       m_hsmIpAddressHasBeenSet = true;
     }
     XmlNode hsmPartitionNameNode = resultNode.FirstChild("HsmPartitionName");
+    if(hsmPartitionNameNode.IsNull())
+    {
+      hsmPartitionNameNode = resultNode;
+    }
+
     if(!hsmPartitionNameNode.IsNull())
     {
       m_hsmPartitionName = StringUtils::Trim(hsmPartitionNameNode.GetText().c_str());

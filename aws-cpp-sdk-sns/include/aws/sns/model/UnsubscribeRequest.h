@@ -38,10 +38,16 @@ namespace Model
      <p>The ARN of the subscription to be deleted.</p>
     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
     /*
      <p>The ARN of the subscription to be deleted.</p>
     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
+
+    /*
+     <p>The ARN of the subscription to be deleted.</p>
+    */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /*
      <p>The ARN of the subscription to be deleted.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The ARN of the subscription to be deleted.</p>
     */
-    inline UnsubscribeRequest&  WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+    inline UnsubscribeRequest& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /*
+     <p>The ARN of the subscription to be deleted.</p>
+    */
+    inline UnsubscribeRequest& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
     /*
      <p>The ARN of the subscription to be deleted.</p>

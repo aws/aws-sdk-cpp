@@ -49,10 +49,16 @@ namespace Model
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::String& GetPath() const{ return m_path; }
+
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline InstanceProfile&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+    inline InstanceProfile& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline InstanceProfile& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The name identifying the instance profile.</p>
     */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
+
     /*
      <p>The name identifying the instance profile.</p>
     */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+
+    /*
+     <p>The name identifying the instance profile.</p>
+    */
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name identifying the instance profile.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The name identifying the instance profile.</p>
     */
-    inline InstanceProfile&  WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+    inline InstanceProfile& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+
+    /*
+     <p>The name identifying the instance profile.</p>
+    */
+    inline InstanceProfile& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
 
     /*
      <p>The name identifying the instance profile.</p>
@@ -97,10 +119,16 @@ namespace Model
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::String& GetInstanceProfileId() const{ return m_instanceProfileId; }
+
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline void SetInstanceProfileId(const Aws::String& value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId = value; }
+
+    /*
+     <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetInstanceProfileId(Aws::String&& value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId = value; }
 
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline InstanceProfile&  WithInstanceProfileId(const Aws::String& value) { SetInstanceProfileId(value); return *this;}
+    inline InstanceProfile& WithInstanceProfileId(const Aws::String& value) { SetInstanceProfileId(value); return *this;}
+
+    /*
+     <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline InstanceProfile& WithInstanceProfileId(Aws::String&& value) { SetInstanceProfileId(value); return *this;}
 
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -121,10 +154,16 @@ namespace Model
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -134,7 +173,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline InstanceProfile&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline InstanceProfile& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline InstanceProfile& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -145,6 +189,7 @@ namespace Model
      <p>The date when the instance profile was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date when the instance profile was created.</p>
     */
@@ -153,12 +198,13 @@ namespace Model
     /*
      <p>The date when the instance profile was created.</p>
     */
-    inline InstanceProfile&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline InstanceProfile& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
     /*
      <p>The role associated with the instance profile.</p>
     */
     inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
+
     /*
      <p>The role associated with the instance profile.</p>
     */
@@ -167,12 +213,27 @@ namespace Model
     /*
      <p>The role associated with the instance profile.</p>
     */
-    inline InstanceProfile&  WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
+    inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = value; }
+
+    /*
+     <p>The role associated with the instance profile.</p>
+    */
+    inline InstanceProfile& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
+
+    /*
+     <p>The role associated with the instance profile.</p>
+    */
+    inline InstanceProfile& WithRoles(Aws::Vector<Role>&& value) { SetRoles(value); return *this;}
 
     /*
      <p>The role associated with the instance profile.</p>
     */
     inline InstanceProfile& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
+
+    /*
+     <p>The role associated with the instance profile.</p>
+    */
+    inline InstanceProfile& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
 
   private:
     Aws::String m_path;

@@ -47,10 +47,16 @@ namespace Model
      <p>The cache node identifier for the node in the source cache cluster.</p>
     */
     inline const Aws::String& GetCacheNodeId() const{ return m_cacheNodeId; }
+
     /*
      <p>The cache node identifier for the node in the source cache cluster.</p>
     */
     inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
+
+    /*
+     <p>The cache node identifier for the node in the source cache cluster.</p>
+    */
+    inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
     /*
      <p>The cache node identifier for the node in the source cache cluster.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The cache node identifier for the node in the source cache cluster.</p>
     */
-    inline NodeSnapshot&  WithCacheNodeId(const Aws::String& value) { SetCacheNodeId(value); return *this;}
+    inline NodeSnapshot& WithCacheNodeId(const Aws::String& value) { SetCacheNodeId(value); return *this;}
+
+    /*
+     <p>The cache node identifier for the node in the source cache cluster.</p>
+    */
+    inline NodeSnapshot& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(value); return *this;}
 
     /*
      <p>The cache node identifier for the node in the source cache cluster.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The size of the cache on the source cache node.</p>
     */
     inline const Aws::String& GetCacheSize() const{ return m_cacheSize; }
+
     /*
      <p>The size of the cache on the source cache node.</p>
     */
     inline void SetCacheSize(const Aws::String& value) { m_cacheSizeHasBeenSet = true; m_cacheSize = value; }
+
+    /*
+     <p>The size of the cache on the source cache node.</p>
+    */
+    inline void SetCacheSize(Aws::String&& value) { m_cacheSizeHasBeenSet = true; m_cacheSize = value; }
 
     /*
      <p>The size of the cache on the source cache node.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The size of the cache on the source cache node.</p>
     */
-    inline NodeSnapshot&  WithCacheSize(const Aws::String& value) { SetCacheSize(value); return *this;}
+    inline NodeSnapshot& WithCacheSize(const Aws::String& value) { SetCacheSize(value); return *this;}
+
+    /*
+     <p>The size of the cache on the source cache node.</p>
+    */
+    inline NodeSnapshot& WithCacheSize(Aws::String&& value) { SetCacheSize(value); return *this;}
 
     /*
      <p>The size of the cache on the source cache node.</p>
@@ -95,6 +117,7 @@ namespace Model
      <p>The date and time when the cache node was created in the source cache cluster.</p>
     */
     inline double GetCacheNodeCreateTime() const{ return m_cacheNodeCreateTime; }
+
     /*
      <p>The date and time when the cache node was created in the source cache cluster.</p>
     */
@@ -103,12 +126,13 @@ namespace Model
     /*
      <p>The date and time when the cache node was created in the source cache cluster.</p>
     */
-    inline NodeSnapshot&  WithCacheNodeCreateTime(double value) { SetCacheNodeCreateTime(value); return *this;}
+    inline NodeSnapshot& WithCacheNodeCreateTime(double value) { SetCacheNodeCreateTime(value); return *this;}
 
     /*
      <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     */
     inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+
     /*
      <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     */
@@ -117,7 +141,7 @@ namespace Model
     /*
      <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     */
-    inline NodeSnapshot&  WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
+    inline NodeSnapshot& WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
 
   private:
     Aws::String m_cacheNodeId;

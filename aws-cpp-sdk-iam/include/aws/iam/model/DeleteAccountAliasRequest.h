@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the account alias to delete.</p>
     */
     inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
+
     /*
      <p>The name of the account alias to delete.</p>
     */
     inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
+
+    /*
+     <p>The name of the account alias to delete.</p>
+    */
+    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
 
     /*
      <p>The name of the account alias to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the account alias to delete.</p>
     */
-    inline DeleteAccountAliasRequest&  WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
+    inline DeleteAccountAliasRequest& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
+
+    /*
+     <p>The name of the account alias to delete.</p>
+    */
+    inline DeleteAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(value); return *this;}
 
     /*
      <p>The name of the account alias to delete.</p>

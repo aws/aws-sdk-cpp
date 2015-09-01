@@ -45,6 +45,7 @@ namespace Model
      Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket and Prefix, the values are automatically deleted.
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket and Prefix, the values are automatically deleted.
     */
@@ -53,16 +54,22 @@ namespace Model
     /*
      Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket and Prefix, the values are automatically deleted.
     */
-    inline StreamingLoggingConfig&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline StreamingLoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    /*
+     The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+    */
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
@@ -72,7 +79,12 @@ namespace Model
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
     */
-    inline StreamingLoggingConfig&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline StreamingLoggingConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    /*
+     The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+    */
+    inline StreamingLoggingConfig& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
@@ -83,10 +95,16 @@ namespace Model
      An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+
+    /*
+     An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
+    */
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
@@ -96,7 +114,12 @@ namespace Model
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
     */
-    inline StreamingLoggingConfig&  WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline StreamingLoggingConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+
+    /*
+     An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
+    */
+    inline StreamingLoggingConfig& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.

@@ -45,12 +45,22 @@ DefaultClusterParameters& DefaultClusterParameters::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode parameterGroupFamilyNode = resultNode.FirstChild("ParameterGroupFamily");
+    if(parameterGroupFamilyNode.IsNull())
+    {
+      parameterGroupFamilyNode = resultNode;
+    }
+
     if(!parameterGroupFamilyNode.IsNull())
     {
       m_parameterGroupFamily = StringUtils::Trim(parameterGroupFamilyNode.GetText().c_str());
       m_parameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
+    if(markerNode.IsNull())
+    {
+      markerNode = resultNode;
+    }
+
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

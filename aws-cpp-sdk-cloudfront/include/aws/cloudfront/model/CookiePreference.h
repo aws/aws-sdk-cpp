@@ -46,6 +46,7 @@ namespace Model
      Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
     */
     inline const ItemSelection& GetForward() const{ return m_forward; }
+
     /*
      Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
     */
@@ -54,12 +55,23 @@ namespace Model
     /*
      Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
     */
-    inline CookiePreference&  WithForward(const ItemSelection& value) { SetForward(value); return *this;}
+    inline void SetForward(ItemSelection&& value) { m_forwardHasBeenSet = true; m_forward = value; }
+
+    /*
+     Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
+    */
+    inline CookiePreference& WithForward(const ItemSelection& value) { SetForward(value); return *this;}
+
+    /*
+     Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
+    */
+    inline CookiePreference& WithForward(ItemSelection&& value) { SetForward(value); return *this;}
 
     /*
      A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.
     */
     inline const CookieNames& GetWhitelistedNames() const{ return m_whitelistedNames; }
+
     /*
      A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.
     */
@@ -68,7 +80,17 @@ namespace Model
     /*
      A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.
     */
-    inline CookiePreference&  WithWhitelistedNames(const CookieNames& value) { SetWhitelistedNames(value); return *this;}
+    inline void SetWhitelistedNames(CookieNames&& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = value; }
+
+    /*
+     A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.
+    */
+    inline CookiePreference& WithWhitelistedNames(const CookieNames& value) { SetWhitelistedNames(value); return *this;}
+
+    /*
+     A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.
+    */
+    inline CookiePreference& WithWhitelistedNames(CookieNames&& value) { SetWhitelistedNames(value); return *this;}
 
   private:
     ItemSelection m_forward;

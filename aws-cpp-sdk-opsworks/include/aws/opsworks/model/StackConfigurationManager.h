@@ -44,10 +44,16 @@ namespace Model
      <p>The name. This parameter must be set to "Chef".</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name. This parameter must be set to "Chef".</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name. This parameter must be set to "Chef".</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The name. This parameter must be set to "Chef".</p>
     */
-    inline StackConfigurationManager&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StackConfigurationManager& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline StackConfigurationManager& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name. This parameter must be set to "Chef".</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
     */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
     /*
      <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /*
      <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
     */
-    inline StackConfigurationManager&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline StackConfigurationManager& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline StackConfigurationManager& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /*
      <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>

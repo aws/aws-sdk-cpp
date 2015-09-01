@@ -40,10 +40,16 @@ namespace Model
      <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
     */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
     /*
      <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
     */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
+
+    /*
+     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
+    */
+    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /*
      <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
     */
-    inline GetDeploymentConfigRequest&  WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
+    inline GetDeploymentConfigRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
+
+    /*
+     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
+    */
+    inline GetDeploymentConfigRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(value); return *this;}
 
     /*
      <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>

@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the launch configuration.</p>
     */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
+
     /*
      <p>The name of the launch configuration.</p>
     */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
+
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The name of the launch configuration.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the launch configuration.</p>
     */
-    inline DeleteLaunchConfigurationRequest&  WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+    inline DeleteLaunchConfigurationRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline DeleteLaunchConfigurationRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(value); return *this;}
 
     /*
      <p>The name of the launch configuration.</p>

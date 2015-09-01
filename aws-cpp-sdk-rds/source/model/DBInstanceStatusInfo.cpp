@@ -49,24 +49,44 @@ DBInstanceStatusInfo& DBInstanceStatusInfo::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode statusTypeNode = resultNode.FirstChild("StatusType");
+    if(statusTypeNode.IsNull())
+    {
+      statusTypeNode = resultNode;
+    }
+
     if(!statusTypeNode.IsNull())
     {
       m_statusType = StringUtils::Trim(statusTypeNode.GetText().c_str());
       m_statusTypeHasBeenSet = true;
     }
     XmlNode normalNode = resultNode.FirstChild("Normal");
+    if(normalNode.IsNull())
+    {
+      normalNode = resultNode;
+    }
+
     if(!normalNode.IsNull())
     {
       m_normal = StringUtils::ConvertToBool(StringUtils::Trim(normalNode.GetText().c_str()).c_str());
       m_normalHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
+    if(messageNode.IsNull())
+    {
+      messageNode = resultNode;
+    }
+
     if(!messageNode.IsNull())
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());

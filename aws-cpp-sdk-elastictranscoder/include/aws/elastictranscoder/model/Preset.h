@@ -47,10 +47,16 @@ namespace Model
      <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     */
-    inline Preset&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Preset& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
+    */
+    inline Preset& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) for the preset.</p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p>The Amazon Resource Name (ARN) for the preset.</p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) for the preset.</p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) for the preset.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) for the preset.</p>
     */
-    inline Preset&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline Preset& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) for the preset.</p>
+    */
+    inline Preset& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) for the preset.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The name of the preset.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the preset.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the preset.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the preset.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The name of the preset.</p>
     */
-    inline Preset&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Preset& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the preset.</p>
+    */
+    inline Preset& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the preset.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>A description of the preset.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A description of the preset.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A description of the preset.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description of the preset.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>A description of the preset.</p>
     */
-    inline Preset&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline Preset& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A description of the preset.</p>
+    */
+    inline Preset& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A description of the preset.</p>
@@ -143,10 +187,16 @@ namespace Model
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     */
     inline const Aws::String& GetContainer() const{ return m_container; }
+
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     */
     inline void SetContainer(const Aws::String& value) { m_containerHasBeenSet = true; m_container = value; }
+
+    /*
+     <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    */
+    inline void SetContainer(Aws::String&& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     */
-    inline Preset&  WithContainer(const Aws::String& value) { SetContainer(value); return *this;}
+    inline Preset& WithContainer(const Aws::String& value) { SetContainer(value); return *this;}
+
+    /*
+     <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    */
+    inline Preset& WithContainer(Aws::String&& value) { SetContainer(value); return *this;}
 
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
@@ -167,6 +222,7 @@ namespace Model
      <p>A section of the response body that provides information about the audio preset values.</p>
     */
     inline const AudioParameters& GetAudio() const{ return m_audio; }
+
     /*
      <p>A section of the response body that provides information about the audio preset values.</p>
     */
@@ -175,12 +231,23 @@ namespace Model
     /*
      <p>A section of the response body that provides information about the audio preset values.</p>
     */
-    inline Preset&  WithAudio(const AudioParameters& value) { SetAudio(value); return *this;}
+    inline void SetAudio(AudioParameters&& value) { m_audioHasBeenSet = true; m_audio = value; }
+
+    /*
+     <p>A section of the response body that provides information about the audio preset values.</p>
+    */
+    inline Preset& WithAudio(const AudioParameters& value) { SetAudio(value); return *this;}
+
+    /*
+     <p>A section of the response body that provides information about the audio preset values.</p>
+    */
+    inline Preset& WithAudio(AudioParameters&& value) { SetAudio(value); return *this;}
 
     /*
      <p>A section of the response body that provides information about the video preset values.</p>
     */
     inline const VideoParameters& GetVideo() const{ return m_video; }
+
     /*
      <p>A section of the response body that provides information about the video preset values.</p>
     */
@@ -189,12 +256,23 @@ namespace Model
     /*
      <p>A section of the response body that provides information about the video preset values.</p>
     */
-    inline Preset&  WithVideo(const VideoParameters& value) { SetVideo(value); return *this;}
+    inline void SetVideo(VideoParameters&& value) { m_videoHasBeenSet = true; m_video = value; }
+
+    /*
+     <p>A section of the response body that provides information about the video preset values.</p>
+    */
+    inline Preset& WithVideo(const VideoParameters& value) { SetVideo(value); return *this;}
+
+    /*
+     <p>A section of the response body that provides information about the video preset values.</p>
+    */
+    inline Preset& WithVideo(VideoParameters&& value) { SetVideo(value); return *this;}
 
     /*
      <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
     */
     inline const Thumbnails& GetThumbnails() const{ return m_thumbnails; }
+
     /*
      <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
     */
@@ -203,16 +281,32 @@ namespace Model
     /*
      <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
     */
-    inline Preset&  WithThumbnails(const Thumbnails& value) { SetThumbnails(value); return *this;}
+    inline void SetThumbnails(Thumbnails&& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = value; }
+
+    /*
+     <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
+    */
+    inline Preset& WithThumbnails(const Thumbnails& value) { SetThumbnails(value); return *this;}
+
+    /*
+     <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
+    */
+    inline Preset& WithThumbnails(Thumbnails&& value) { SetThumbnails(value); return *this;}
 
     /*
      <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     */
     inline const Aws::String& GetType() const{ return m_type; }
+
     /*
      <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
+    */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
@@ -222,7 +316,12 @@ namespace Model
     /*
      <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     */
-    inline Preset&  WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline Preset& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /*
+     <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
+    */
+    inline Preset& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /*
      <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>

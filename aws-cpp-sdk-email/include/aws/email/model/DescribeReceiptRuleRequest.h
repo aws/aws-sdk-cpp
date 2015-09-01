@@ -35,28 +35,42 @@ namespace Model
 
     
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+
     
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+
+    
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     
-    inline DescribeReceiptRuleRequest&  WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
+    inline DescribeReceiptRuleRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
+
+    
+    inline DescribeReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
 
     
     inline DescribeReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
     
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+
     
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+
+    
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     
-    inline DescribeReceiptRuleRequest&  WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
+    inline DescribeReceiptRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
+
+    
+    inline DescribeReceiptRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(value); return *this;}
 
     
     inline DescribeReceiptRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}

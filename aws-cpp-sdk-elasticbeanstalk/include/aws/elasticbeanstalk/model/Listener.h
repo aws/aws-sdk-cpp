@@ -47,10 +47,16 @@ namespace Model
      <p>The protocol that is used by the Listener.</p>
     */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
     /*
      <p>The protocol that is used by the Listener.</p>
     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /*
+     <p>The protocol that is used by the Listener.</p>
+    */
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /*
      <p>The protocol that is used by the Listener.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The protocol that is used by the Listener.</p>
     */
-    inline Listener&  WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+    inline Listener& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+
+    /*
+     <p>The protocol that is used by the Listener.</p>
+    */
+    inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
 
     /*
      <p>The protocol that is used by the Listener.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The port that is used by the Listener.</p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p>The port that is used by the Listener.</p>
     */
@@ -79,7 +91,7 @@ namespace Model
     /*
      <p>The port that is used by the Listener.</p>
     */
-    inline Listener&  WithPort(long value) { SetPort(value); return *this;}
+    inline Listener& WithPort(long value) { SetPort(value); return *this;}
 
   private:
     Aws::String m_protocol;

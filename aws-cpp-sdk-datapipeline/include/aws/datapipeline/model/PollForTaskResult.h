@@ -46,6 +46,7 @@ namespace Model
      <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>
     */
     inline const TaskObject& GetTaskObject() const{ return m_taskObject; }
+
     /*
      <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>
     */
-    inline PollForTaskResult&  WithTaskObject(const TaskObject& value) { SetTaskObject(value); return *this;}
+    inline void SetTaskObject(TaskObject&& value) { m_taskObject = value; }
+
+    /*
+     <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>
+    */
+    inline PollForTaskResult& WithTaskObject(const TaskObject& value) { SetTaskObject(value); return *this;}
+
+    /*
+     <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>
+    */
+    inline PollForTaskResult& WithTaskObject(TaskObject&& value) { SetTaskObject(value); return *this;}
 
   private:
     TaskObject m_taskObject;

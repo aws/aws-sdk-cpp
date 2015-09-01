@@ -48,6 +48,7 @@ namespace Model
      <p>A list of policy names.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
     /*
      <p>A list of policy names.</p>
     */
@@ -56,12 +57,27 @@ namespace Model
     /*
      <p>A list of policy names.</p>
     */
-    inline ListUserPoliciesResult&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = value; }
+
+    /*
+     <p>A list of policy names.</p>
+    */
+    inline ListUserPoliciesResult& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+
+    /*
+     <p>A list of policy names.</p>
+    */
+    inline ListUserPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /*
      <p>A list of policy names.</p>
     */
     inline ListUserPoliciesResult& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
+
+    /*
+     <p>A list of policy names.</p>
+    */
+    inline ListUserPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(value); return *this; }
 
     /*
      <p>A list of policy names.</p>
@@ -72,6 +88,7 @@ namespace Model
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
@@ -80,16 +97,22 @@ namespace Model
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
-    inline ListUserPoliciesResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListUserPoliciesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -99,7 +122,12 @@ namespace Model
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
-    inline ListUserPoliciesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListUserPoliciesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline ListUserPoliciesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -108,11 +136,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListUserPoliciesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListUserPoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListUserPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_policyNames;

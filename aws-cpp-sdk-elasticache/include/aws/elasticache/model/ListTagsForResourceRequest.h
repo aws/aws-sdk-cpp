@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+
+    /*
+     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+    */
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
-    inline ListTagsForResourceRequest&  WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    /*
+     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+    */
+    inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>

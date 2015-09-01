@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the parameter.</p>
     */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+
     /*
      <p>The name of the parameter.</p>
     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
+
+    /*
+     <p>The name of the parameter.</p>
+    */
+    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /*
      <p>The name of the parameter.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the parameter.</p>
     */
-    inline ParameterNameValue&  WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
+    inline ParameterNameValue& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
+
+    /*
+     <p>The name of the parameter.</p>
+    */
+    inline ParameterNameValue& WithParameterName(Aws::String&& value) { SetParameterName(value); return *this;}
 
     /*
      <p>The name of the parameter.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The value of the parameter.</p>
     */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+
     /*
      <p>The value of the parameter.</p>
     */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
+
+    /*
+     <p>The value of the parameter.</p>
+    */
+    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
     /*
      <p>The value of the parameter.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The value of the parameter.</p>
     */
-    inline ParameterNameValue&  WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
+    inline ParameterNameValue& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
+
+    /*
+     <p>The value of the parameter.</p>
+    */
+    inline ParameterNameValue& WithParameterValue(Aws::String&& value) { SetParameterValue(value); return *this;}
 
     /*
      <p>The value of the parameter.</p>

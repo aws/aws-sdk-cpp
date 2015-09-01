@@ -48,6 +48,7 @@ namespace Model
      <p>Contains the credential report. The report is Base64-encoded.</p>
     */
     inline const Aws::Utils::ByteBuffer& GetContent() const{ return m_content; }
+
     /*
      <p>Contains the credential report. The report is Base64-encoded.</p>
     */
@@ -56,12 +57,23 @@ namespace Model
     /*
      <p>Contains the credential report. The report is Base64-encoded.</p>
     */
-    inline GetCredentialReportResult&  WithContent(const Aws::Utils::ByteBuffer& value) { SetContent(value); return *this;}
+    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = value; }
+
+    /*
+     <p>Contains the credential report. The report is Base64-encoded.</p>
+    */
+    inline GetCredentialReportResult& WithContent(const Aws::Utils::ByteBuffer& value) { SetContent(value); return *this;}
+
+    /*
+     <p>Contains the credential report. The report is Base64-encoded.</p>
+    */
+    inline GetCredentialReportResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(value); return *this;}
 
     /*
      <p>The format (MIME type) of the credential report.</p>
     */
     inline const ReportFormatType& GetReportFormat() const{ return m_reportFormat; }
+
     /*
      <p>The format (MIME type) of the credential report.</p>
     */
@@ -70,12 +82,23 @@ namespace Model
     /*
      <p>The format (MIME type) of the credential report.</p>
     */
-    inline GetCredentialReportResult&  WithReportFormat(const ReportFormatType& value) { SetReportFormat(value); return *this;}
+    inline void SetReportFormat(ReportFormatType&& value) { m_reportFormat = value; }
+
+    /*
+     <p>The format (MIME type) of the credential report.</p>
+    */
+    inline GetCredentialReportResult& WithReportFormat(const ReportFormatType& value) { SetReportFormat(value); return *this;}
+
+    /*
+     <p>The format (MIME type) of the credential report.</p>
+    */
+    inline GetCredentialReportResult& WithReportFormat(ReportFormatType&& value) { SetReportFormat(value); return *this;}
 
     /*
      <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
     */
     inline double GetGeneratedTime() const{ return m_generatedTime; }
+
     /*
      <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
     */
@@ -84,15 +107,22 @@ namespace Model
     /*
      <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
     */
-    inline GetCredentialReportResult&  WithGeneratedTime(double value) { SetGeneratedTime(value); return *this;}
+    inline GetCredentialReportResult& WithGeneratedTime(double value) { SetGeneratedTime(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetCredentialReportResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetCredentialReportResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_content;

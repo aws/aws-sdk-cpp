@@ -55,24 +55,44 @@ StatusCodes& StatusCodes::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode status2xxNode = resultNode.FirstChild("Status2xx");
+    if(status2xxNode.IsNull())
+    {
+      status2xxNode = resultNode;
+    }
+
     if(!status2xxNode.IsNull())
     {
       m_status2xx = StringUtils::ConvertToInt32(StringUtils::Trim(status2xxNode.GetText().c_str()).c_str());
       m_status2xxHasBeenSet = true;
     }
     XmlNode status3xxNode = resultNode.FirstChild("Status3xx");
+    if(status3xxNode.IsNull())
+    {
+      status3xxNode = resultNode;
+    }
+
     if(!status3xxNode.IsNull())
     {
       m_status3xx = StringUtils::ConvertToInt32(StringUtils::Trim(status3xxNode.GetText().c_str()).c_str());
       m_status3xxHasBeenSet = true;
     }
     XmlNode status4xxNode = resultNode.FirstChild("Status4xx");
+    if(status4xxNode.IsNull())
+    {
+      status4xxNode = resultNode;
+    }
+
     if(!status4xxNode.IsNull())
     {
       m_status4xx = StringUtils::ConvertToInt32(StringUtils::Trim(status4xxNode.GetText().c_str()).c_str());
       m_status4xxHasBeenSet = true;
     }
     XmlNode status5xxNode = resultNode.FirstChild("Status5xx");
+    if(status5xxNode.IsNull())
+    {
+      status5xxNode = resultNode;
+    }
+
     if(!status5xxNode.IsNull())
     {
       m_status5xx = StringUtils::ConvertToInt32(StringUtils::Trim(status5xxNode.GetText().c_str()).c_str());

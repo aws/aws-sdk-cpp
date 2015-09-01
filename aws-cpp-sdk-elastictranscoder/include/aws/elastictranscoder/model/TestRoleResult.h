@@ -47,10 +47,16 @@ namespace Model
      <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     */
     inline const Aws::String& GetSuccess() const{ return m_success; }
+
     /*
      <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     */
     inline void SetSuccess(const Aws::String& value) { m_success = value; }
+
+    /*
+     <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
+    */
+    inline void SetSuccess(Aws::String&& value) { m_success = value; }
 
     /*
      <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     */
-    inline TestRoleResult&  WithSuccess(const Aws::String& value) { SetSuccess(value); return *this;}
+    inline TestRoleResult& WithSuccess(const Aws::String& value) { SetSuccess(value); return *this;}
+
+    /*
+     <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
+    */
+    inline TestRoleResult& WithSuccess(Aws::String&& value) { SetSuccess(value); return *this;}
 
     /*
      <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     */
     inline const Aws::Vector<Aws::String>& GetMessages() const{ return m_messages; }
+
     /*
      <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     */
@@ -79,12 +91,27 @@ namespace Model
     /*
      <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     */
-    inline TestRoleResult&  WithMessages(const Aws::Vector<Aws::String>& value) { SetMessages(value); return *this;}
+    inline void SetMessages(Aws::Vector<Aws::String>&& value) { m_messages = value; }
+
+    /*
+     <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
+    */
+    inline TestRoleResult& WithMessages(const Aws::Vector<Aws::String>& value) { SetMessages(value); return *this;}
+
+    /*
+     <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
+    */
+    inline TestRoleResult& WithMessages(Aws::Vector<Aws::String>&& value) { SetMessages(value); return *this;}
 
     /*
      <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     */
     inline TestRoleResult& AddMessages(const Aws::String& value) { m_messages.push_back(value); return *this; }
+
+    /*
+     <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
+    */
+    inline TestRoleResult& AddMessages(Aws::String&& value) { m_messages.push_back(value); return *this; }
 
     /*
      <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>

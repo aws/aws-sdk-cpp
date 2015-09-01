@@ -1,0 +1,243 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudformation/model/StackResource.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudFormation::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+StackResource::StackResource() : 
+    m_stackNameHasBeenSet(false),
+    m_stackIdHasBeenSet(false),
+    m_logicalResourceIdHasBeenSet(false),
+    m_physicalResourceIdHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_timestamp(0.0),
+    m_timestampHasBeenSet(false),
+    m_resourceStatusHasBeenSet(false),
+    m_resourceStatusReasonHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
+{
+}
+
+StackResource::StackResource(const XmlNode& xmlNode) : 
+    m_stackNameHasBeenSet(false),
+    m_stackIdHasBeenSet(false),
+    m_logicalResourceIdHasBeenSet(false),
+    m_physicalResourceIdHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_timestamp(0.0),
+    m_timestampHasBeenSet(false),
+    m_resourceStatusHasBeenSet(false),
+    m_resourceStatusReasonHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+StackResource& StackResource::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode stackNameNode = resultNode.FirstChild("StackName");
+    if(stackNameNode.IsNull())
+    {
+      stackNameNode = resultNode;
+    }
+
+    if(!stackNameNode.IsNull())
+    {
+      m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+      m_stackNameHasBeenSet = true;
+    }
+    XmlNode stackIdNode = resultNode.FirstChild("StackId");
+    if(stackIdNode.IsNull())
+    {
+      stackIdNode = resultNode;
+    }
+
+    if(!stackIdNode.IsNull())
+    {
+      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackIdHasBeenSet = true;
+    }
+    XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
+    if(logicalResourceIdNode.IsNull())
+    {
+      logicalResourceIdNode = resultNode;
+    }
+
+    if(!logicalResourceIdNode.IsNull())
+    {
+      m_logicalResourceId = StringUtils::Trim(logicalResourceIdNode.GetText().c_str());
+      m_logicalResourceIdHasBeenSet = true;
+    }
+    XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
+    if(physicalResourceIdNode.IsNull())
+    {
+      physicalResourceIdNode = resultNode;
+    }
+
+    if(!physicalResourceIdNode.IsNull())
+    {
+      m_physicalResourceId = StringUtils::Trim(physicalResourceIdNode.GetText().c_str());
+      m_physicalResourceIdHasBeenSet = true;
+    }
+    XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
+    if(resourceTypeNode.IsNull())
+    {
+      resourceTypeNode = resultNode;
+    }
+
+    if(!resourceTypeNode.IsNull())
+    {
+      m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());
+      m_resourceTypeHasBeenSet = true;
+    }
+    XmlNode timestampNode = resultNode.FirstChild("Timestamp");
+    if(timestampNode.IsNull())
+    {
+      timestampNode = resultNode;
+    }
+
+    if(!timestampNode.IsNull())
+    {
+      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestampHasBeenSet = true;
+    }
+    XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
+    if(resourceStatusNode.IsNull())
+    {
+      resourceStatusNode = resultNode;
+    }
+
+    if(!resourceStatusNode.IsNull())
+    {
+      m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(StringUtils::Trim(resourceStatusNode.GetText().c_str()).c_str());
+      m_resourceStatusHasBeenSet = true;
+    }
+    XmlNode resourceStatusReasonNode = resultNode.FirstChild("ResourceStatusReason");
+    if(resourceStatusReasonNode.IsNull())
+    {
+      resourceStatusReasonNode = resultNode;
+    }
+
+    if(!resourceStatusReasonNode.IsNull())
+    {
+      m_resourceStatusReason = StringUtils::Trim(resourceStatusReasonNode.GetText().c_str());
+      m_resourceStatusReasonHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void StackResource::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_stackNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if(m_stackIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+  }
+  if(m_logicalResourceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
+  }
+  if(m_physicalResourceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
+  }
+  if(m_resourceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
+  }
+  if(m_timestampHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+  }
+  if(m_resourceStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
+  }
+  if(m_resourceStatusReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+}
+
+void StackResource::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_stackNameHasBeenSet)
+  {
+      oStream << location << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if(m_stackIdHasBeenSet)
+  {
+      oStream << location << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+  }
+  if(m_logicalResourceIdHasBeenSet)
+  {
+      oStream << location << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
+  }
+  if(m_physicalResourceIdHasBeenSet)
+  {
+      oStream << location << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
+  }
+  if(m_resourceTypeHasBeenSet)
+  {
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
+  }
+  if(m_timestampHasBeenSet)
+  {
+      oStream << location << ".Timestamp=" << m_timestamp << "&";
+  }
+  if(m_resourceStatusHasBeenSet)
+  {
+      oStream << location << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
+  }
+  if(m_resourceStatusReasonHasBeenSet)
+  {
+      oStream << location << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+}

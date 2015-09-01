@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the dimension. </p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p> The name of the dimension. </p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p> The name of the dimension. </p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p> The name of the dimension. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the dimension. </p>
     */
-    inline Dimension&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p> The name of the dimension. </p>
+    */
+    inline Dimension& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p> The name of the dimension. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The value representing the dimension measurement </p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p> The value representing the dimension measurement </p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p> The value representing the dimension measurement </p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p> The value representing the dimension measurement </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The value representing the dimension measurement </p>
     */
-    inline Dimension&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p> The value representing the dimension measurement </p>
+    */
+    inline Dimension& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p> The value representing the dimension measurement </p>

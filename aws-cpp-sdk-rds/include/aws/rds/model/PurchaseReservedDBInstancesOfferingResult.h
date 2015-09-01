@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ReservedDBInstance& GetReservedDBInstance() const{ return m_reservedDBInstance; }
+
     
     inline void SetReservedDBInstance(const ReservedDBInstance& value) { m_reservedDBInstance = value; }
 
     
-    inline PurchaseReservedDBInstancesOfferingResult&  WithReservedDBInstance(const ReservedDBInstance& value) { SetReservedDBInstance(value); return *this;}
+    inline void SetReservedDBInstance(ReservedDBInstance&& value) { m_reservedDBInstance = value; }
+
+    
+    inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(const ReservedDBInstance& value) { SetReservedDBInstance(value); return *this;}
+
+    
+    inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstance&& value) { SetReservedDBInstance(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline PurchaseReservedDBInstancesOfferingResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReservedDBInstance m_reservedDBInstance;

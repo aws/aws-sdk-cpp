@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the cluster parameter group to be reset. </p>
     */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+
     /*
      <p> The name of the cluster parameter group to be reset. </p>
     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+
+    /*
+     <p> The name of the cluster parameter group to be reset. </p>
+    */
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of the cluster parameter group to be reset. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the cluster parameter group to be reset. </p>
     */
-    inline ResetClusterParameterGroupRequest&  WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+    inline ResetClusterParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+
+    /*
+     <p> The name of the cluster parameter group to be reset. </p>
+    */
+    inline ResetClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
 
     /*
      <p> The name of the cluster parameter group to be reset. </p>
@@ -64,6 +75,7 @@ namespace Model
      <p> If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code></p>
     */
     inline bool GetResetAllParameters() const{ return m_resetAllParameters; }
+
     /*
      <p> If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code></p>
     */
@@ -72,12 +84,13 @@ namespace Model
     /*
      <p> If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code></p>
     */
-    inline ResetClusterParameterGroupRequest&  WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
+    inline ResetClusterParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
 
     /*
      <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
     /*
      <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     */
@@ -86,12 +99,27 @@ namespace Model
     /*
      <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     */
-    inline ResetClusterParameterGroupRequest&  WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /*
+     <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    */
+    inline ResetClusterParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+
+    /*
+     <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    */
+    inline ResetClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /*
      <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     */
     inline ResetClusterParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /*
+     <p> An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    */
+    inline ResetClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
   private:
     Aws::String m_parameterGroupName;

@@ -43,12 +43,22 @@ CharacterSet& CharacterSet::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
+    if(characterSetNameNode.IsNull())
+    {
+      characterSetNameNode = resultNode;
+    }
+
     if(!characterSetNameNode.IsNull())
     {
       m_characterSetName = StringUtils::Trim(characterSetNameNode.GetText().c_str());
       m_characterSetNameHasBeenSet = true;
     }
     XmlNode characterSetDescriptionNode = resultNode.FirstChild("CharacterSetDescription");
+    if(characterSetDescriptionNode.IsNull())
+    {
+      characterSetDescriptionNode = resultNode;
+    }
+
     if(!characterSetDescriptionNode.IsNull())
     {
       m_characterSetDescription = StringUtils::Trim(characterSetDescriptionNode.GetText().c_str());

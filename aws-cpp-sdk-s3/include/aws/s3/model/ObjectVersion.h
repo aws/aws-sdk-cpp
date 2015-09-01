@@ -45,14 +45,21 @@ namespace Model
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+
+    
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     
-    inline ObjectVersion&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline ObjectVersion& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    
+    inline ObjectVersion& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     
     inline ObjectVersion& WithETag(const char* value) { SetETag(value); return *this;}
@@ -61,6 +68,7 @@ namespace Model
      Size in bytes of the object.
     */
     inline long GetSize() const{ return m_size; }
+
     /*
      Size in bytes of the object.
     */
@@ -69,12 +77,13 @@ namespace Model
     /*
      Size in bytes of the object.
     */
-    inline ObjectVersion&  WithSize(long value) { SetSize(value); return *this;}
+    inline ObjectVersion& WithSize(long value) { SetSize(value); return *this;}
 
     /*
      The class of storage used to store the object.
     */
     inline const ObjectVersionStorageClass& GetStorageClass() const{ return m_storageClass; }
+
     /*
      The class of storage used to store the object.
     */
@@ -83,16 +92,32 @@ namespace Model
     /*
      The class of storage used to store the object.
     */
-    inline ObjectVersion&  WithStorageClass(const ObjectVersionStorageClass& value) { SetStorageClass(value); return *this;}
+    inline void SetStorageClass(ObjectVersionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline ObjectVersion& WithStorageClass(const ObjectVersionStorageClass& value) { SetStorageClass(value); return *this;}
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline ObjectVersion& WithStorageClass(ObjectVersionStorageClass&& value) { SetStorageClass(value); return *this;}
 
     /*
      The object key.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      The object key.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     The object key.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The object key.
@@ -102,7 +127,12 @@ namespace Model
     /*
      The object key.
     */
-    inline ObjectVersion&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline ObjectVersion& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     The object key.
+    */
+    inline ObjectVersion& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      The object key.
@@ -113,10 +143,16 @@ namespace Model
      Version ID of an object.
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      Version ID of an object.
     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /*
+     Version ID of an object.
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      Version ID of an object.
@@ -126,7 +162,12 @@ namespace Model
     /*
      Version ID of an object.
     */
-    inline ObjectVersion&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline ObjectVersion& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     Version ID of an object.
+    */
+    inline ObjectVersion& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      Version ID of an object.
@@ -137,6 +178,7 @@ namespace Model
      Specifies whether the object is (true) or is not (false) the latest version of an object.
     */
     inline bool GetIsLatest() const{ return m_isLatest; }
+
     /*
      Specifies whether the object is (true) or is not (false) the latest version of an object.
     */
@@ -145,12 +187,13 @@ namespace Model
     /*
      Specifies whether the object is (true) or is not (false) the latest version of an object.
     */
-    inline ObjectVersion&  WithIsLatest(bool value) { SetIsLatest(value); return *this;}
+    inline ObjectVersion& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
 
     /*
      Date and time the object was last modified.
     */
     inline double GetLastModified() const{ return m_lastModified; }
+
     /*
      Date and time the object was last modified.
     */
@@ -159,15 +202,22 @@ namespace Model
     /*
      Date and time the object was last modified.
     */
-    inline ObjectVersion&  WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline ObjectVersion& WithLastModified(double value) { SetLastModified(value); return *this;}
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
+
     
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     
-    inline ObjectVersion&  WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    
+    inline ObjectVersion& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+
+    
+    inline ObjectVersion& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
   private:
     Aws::String m_eTag;

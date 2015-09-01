@@ -47,6 +47,7 @@ namespace Model
      A list of grants.
     */
     inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
+
     /*
      A list of grants.
     */
@@ -55,20 +56,42 @@ namespace Model
     /*
      A list of grants.
     */
-    inline AccessControlPolicy&  WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
+    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grantsHasBeenSet = true; m_grants = value; }
+
+    /*
+     A list of grants.
+    */
+    inline AccessControlPolicy& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
+
+    /*
+     A list of grants.
+    */
+    inline AccessControlPolicy& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(value); return *this;}
 
     /*
      A list of grants.
     */
     inline AccessControlPolicy& AddGrants(const Grant& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
 
+    /*
+     A list of grants.
+    */
+    inline AccessControlPolicy& AddGrants(Grant&& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
+
     
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     
-    inline AccessControlPolicy&  WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    
+    inline AccessControlPolicy& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+
+    
+    inline AccessControlPolicy& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
   private:
     Aws::Vector<Grant> m_grants;

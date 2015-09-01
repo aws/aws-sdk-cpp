@@ -51,24 +51,44 @@ PolicyVersion& PolicyVersion::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode documentNode = resultNode.FirstChild("Document");
+    if(documentNode.IsNull())
+    {
+      documentNode = resultNode;
+    }
+
     if(!documentNode.IsNull())
     {
       m_document = StringUtils::Trim(documentNode.GetText().c_str());
       m_documentHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
+    if(versionIdNode.IsNull())
+    {
+      versionIdNode = resultNode;
+    }
+
     if(!versionIdNode.IsNull())
     {
       m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
       m_versionIdHasBeenSet = true;
     }
     XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
+    if(isDefaultVersionNode.IsNull())
+    {
+      isDefaultVersionNode = resultNode;
+    }
+
     if(!isDefaultVersionNode.IsNull())
     {
       m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(isDefaultVersionNode.GetText().c_str()).c_str());
       m_isDefaultVersionHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
+    if(createDateNode.IsNull())
+    {
+      createDateNode = resultNode;
+    }
+
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());

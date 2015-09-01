@@ -44,10 +44,16 @@ namespace Model
      The key for the record.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      The key for the record.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     The key for the record.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The key for the record.
@@ -57,7 +63,12 @@ namespace Model
     /*
      The key for the record.
     */
-    inline Record&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline Record& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     The key for the record.
+    */
+    inline Record& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      The key for the record.
@@ -68,10 +79,16 @@ namespace Model
      The value for the record.
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      The value for the record.
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     The value for the record.
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      The value for the record.
@@ -81,7 +98,12 @@ namespace Model
     /*
      The value for the record.
     */
-    inline Record&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline Record& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     The value for the record.
+    */
+    inline Record& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      The value for the record.
@@ -92,6 +114,7 @@ namespace Model
      The server sync count for this record.
     */
     inline long long GetSyncCount() const{ return m_syncCount; }
+
     /*
      The server sync count for this record.
     */
@@ -100,12 +123,13 @@ namespace Model
     /*
      The server sync count for this record.
     */
-    inline Record&  WithSyncCount(long long value) { SetSyncCount(value); return *this;}
+    inline Record& WithSyncCount(long long value) { SetSyncCount(value); return *this;}
 
     /*
      The date on which the record was last modified.
     */
     inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
     /*
      The date on which the record was last modified.
     */
@@ -114,16 +138,22 @@ namespace Model
     /*
      The date on which the record was last modified.
     */
-    inline Record&  WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline Record& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
     /*
      The user/device that made the last change to this record.
     */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
     /*
      The user/device that made the last change to this record.
     */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
+
+    /*
+     The user/device that made the last change to this record.
+    */
+    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /*
      The user/device that made the last change to this record.
@@ -133,7 +163,12 @@ namespace Model
     /*
      The user/device that made the last change to this record.
     */
-    inline Record&  WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
+    inline Record& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
+
+    /*
+     The user/device that made the last change to this record.
+    */
+    inline Record& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(value); return *this;}
 
     /*
      The user/device that made the last change to this record.
@@ -144,6 +179,7 @@ namespace Model
      The last modified date of the client device.
     */
     inline double GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
+
     /*
      The last modified date of the client device.
     */
@@ -152,7 +188,7 @@ namespace Model
     /*
      The last modified date of the client device.
     */
-    inline Record&  WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
+    inline Record& WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
 
   private:
     Aws::String m_key;

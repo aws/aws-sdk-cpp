@@ -30,6 +30,6 @@
   #else
      #define AWS_S3_API
    #endif //
-#else /* defined (_WIN32) */
+#else /* defined (_MSC_VER) */
 #define AWS_S3_API
 #endif

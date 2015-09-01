@@ -39,10 +39,16 @@ namespace Model
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    /*
+     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
+    */
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
-    inline UpdateKeyDescriptionRequest&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline UpdateKeyDescriptionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /*
+     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
+    */
+    inline UpdateKeyDescriptionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
@@ -63,10 +74,16 @@ namespace Model
      <p>New description for the key.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>New description for the key.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>New description for the key.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>New description for the key.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>New description for the key.</p>
     */
-    inline UpdateKeyDescriptionRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline UpdateKeyDescriptionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>New description for the key.</p>
+    */
+    inline UpdateKeyDescriptionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>New description for the key.</p>

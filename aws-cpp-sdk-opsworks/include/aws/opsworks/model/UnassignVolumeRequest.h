@@ -39,10 +39,16 @@ namespace Model
      <p>The volume ID.</p>
     */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
     /*
      <p>The volume ID.</p>
     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+
+    /*
+     <p>The volume ID.</p>
+    */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /*
      <p>The volume ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The volume ID.</p>
     */
-    inline UnassignVolumeRequest&  WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+    inline UnassignVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /*
+     <p>The volume ID.</p>
+    */
+    inline UnassignVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
 
     /*
      <p>The volume ID.</p>

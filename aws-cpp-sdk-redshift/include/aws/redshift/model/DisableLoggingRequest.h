@@ -38,10 +38,16 @@ namespace Model
      <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
     /*
      <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /*
+     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
+    */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
     */
-    inline DisableLoggingRequest&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline DisableLoggingRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
+    */
+    inline DisableLoggingRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /*
      <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>

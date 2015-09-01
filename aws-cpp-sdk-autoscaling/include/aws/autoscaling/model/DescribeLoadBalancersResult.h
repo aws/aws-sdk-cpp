@@ -49,6 +49,7 @@ namespace Model
      <p>The load balancers.</p>
     */
     inline const Aws::Vector<LoadBalancerState>& GetLoadBalancers() const{ return m_loadBalancers; }
+
     /*
      <p>The load balancers.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The load balancers.</p>
     */
-    inline DescribeLoadBalancersResult&  WithLoadBalancers(const Aws::Vector<LoadBalancerState>& value) { SetLoadBalancers(value); return *this;}
+    inline void SetLoadBalancers(Aws::Vector<LoadBalancerState>&& value) { m_loadBalancers = value; }
+
+    /*
+     <p>The load balancers.</p>
+    */
+    inline DescribeLoadBalancersResult& WithLoadBalancers(const Aws::Vector<LoadBalancerState>& value) { SetLoadBalancers(value); return *this;}
+
+    /*
+     <p>The load balancers.</p>
+    */
+    inline DescribeLoadBalancersResult& WithLoadBalancers(Aws::Vector<LoadBalancerState>&& value) { SetLoadBalancers(value); return *this;}
 
     /*
      <p>The load balancers.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeLoadBalancersResult& AddLoadBalancers(const LoadBalancerState& value) { m_loadBalancers.push_back(value); return *this; }
 
     /*
+     <p>The load balancers.</p>
+    */
+    inline DescribeLoadBalancersResult& AddLoadBalancers(LoadBalancerState&& value) { m_loadBalancers.push_back(value); return *this; }
+
+    /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
-    inline DescribeLoadBalancersResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLoadBalancersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline DescribeLoadBalancersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLoadBalancersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLoadBalancersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLoadBalancersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<LoadBalancerState> m_loadBalancers;

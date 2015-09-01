@@ -46,6 +46,7 @@ namespace Model
      <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     */
     inline const SelfUserProfile& GetUserProfile() const{ return m_userProfile; }
+
     /*
      <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     */
-    inline DescribeMyUserProfileResult&  WithUserProfile(const SelfUserProfile& value) { SetUserProfile(value); return *this;}
+    inline void SetUserProfile(SelfUserProfile&& value) { m_userProfile = value; }
+
+    /*
+     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    */
+    inline DescribeMyUserProfileResult& WithUserProfile(const SelfUserProfile& value) { SetUserProfile(value); return *this;}
+
+    /*
+     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    */
+    inline DescribeMyUserProfileResult& WithUserProfile(SelfUserProfile&& value) { SetUserProfile(value); return *this;}
 
   private:
     SelfUserProfile m_userProfile;

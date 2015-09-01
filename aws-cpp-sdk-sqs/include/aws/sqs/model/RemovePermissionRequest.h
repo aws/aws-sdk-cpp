@@ -37,10 +37,16 @@ namespace Model
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+
+    /*
+     <p>The URL of the Amazon SQS queue to take action on.</p>
+    */
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline RemovePermissionRequest&  WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+    inline RemovePermissionRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+
+    /*
+     <p>The URL of the Amazon SQS queue to take action on.</p>
+    */
+    inline RemovePermissionRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
     */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
+
+    /*
+     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
+    */
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
     */
-    inline RemovePermissionRequest&  WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+    inline RemovePermissionRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /*
+     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
+    */
+    inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
 
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>

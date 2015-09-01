@@ -46,6 +46,7 @@ namespace Model
      The number of active CloudFront key pairs for AwsAccountNumber.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of active CloudFront key pairs for AwsAccountNumber.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      The number of active CloudFront key pairs for AwsAccountNumber.
     */
-    inline KeyPairIds&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline KeyPairIds& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
@@ -68,12 +70,27 @@ namespace Model
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
-    inline KeyPairIds&  WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+    */
+    inline KeyPairIds& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+    */
+    inline KeyPairIds& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
     inline KeyPairIds& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+    */
+    inline KeyPairIds& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.

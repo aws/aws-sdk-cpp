@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the role to delete.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name of the role to delete.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name of the role to delete.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the role to delete.</p>
     */
-    inline DeleteRoleRequest&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline DeleteRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name of the role to delete.</p>
+    */
+    inline DeleteRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name of the role to delete.</p>

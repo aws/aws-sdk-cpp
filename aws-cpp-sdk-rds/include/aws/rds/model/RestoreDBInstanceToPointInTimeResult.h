@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const DBInstance& GetDBInstance() const{ return m_dBInstance; }
+
     
     inline void SetDBInstance(const DBInstance& value) { m_dBInstance = value; }
 
     
-    inline RestoreDBInstanceToPointInTimeResult&  WithDBInstance(const DBInstance& value) { SetDBInstance(value); return *this;}
+    inline void SetDBInstance(DBInstance&& value) { m_dBInstance = value; }
+
+    
+    inline RestoreDBInstanceToPointInTimeResult& WithDBInstance(const DBInstance& value) { SetDBInstance(value); return *this;}
+
+    
+    inline RestoreDBInstanceToPointInTimeResult& WithDBInstance(DBInstance&& value) { SetDBInstance(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline RestoreDBInstanceToPointInTimeResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline RestoreDBInstanceToPointInTimeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline RestoreDBInstanceToPointInTimeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     DBInstance m_dBInstance;

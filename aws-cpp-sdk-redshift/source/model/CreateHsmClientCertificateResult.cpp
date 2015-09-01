@@ -42,6 +42,11 @@ CreateHsmClientCertificateResult& CreateHsmClientCertificateResult::operator =(c
   if(!resultNode.IsNull())
   {
     XmlNode hsmClientCertificateNode = resultNode.FirstChild("HsmClientCertificate");
+    if(hsmClientCertificateNode.IsNull())
+    {
+      hsmClientCertificateNode = resultNode;
+    }
+
     if(!hsmClientCertificateNode.IsNull())
     {
       m_hsmClientCertificate = hsmClientCertificateNode;

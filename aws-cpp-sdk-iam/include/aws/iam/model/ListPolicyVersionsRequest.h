@@ -35,14 +35,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline ListPolicyVersionsRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline ListPolicyVersionsRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline ListPolicyVersionsRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline ListPolicyVersionsRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
@@ -51,10 +58,16 @@ namespace Model
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -64,7 +77,12 @@ namespace Model
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
-    inline ListPolicyVersionsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListPolicyVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline ListPolicyVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -75,6 +93,7 @@ namespace Model
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
@@ -83,7 +102,7 @@ namespace Model
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
-    inline ListPolicyVersionsRequest&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListPolicyVersionsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_policyArn;

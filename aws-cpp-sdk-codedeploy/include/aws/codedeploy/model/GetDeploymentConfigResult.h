@@ -46,6 +46,7 @@ namespace Model
      <p>Information about the deployment configuration.</p>
     */
     inline const DeploymentConfigInfo& GetDeploymentConfigInfo() const{ return m_deploymentConfigInfo; }
+
     /*
      <p>Information about the deployment configuration.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Information about the deployment configuration.</p>
     */
-    inline GetDeploymentConfigResult&  WithDeploymentConfigInfo(const DeploymentConfigInfo& value) { SetDeploymentConfigInfo(value); return *this;}
+    inline void SetDeploymentConfigInfo(DeploymentConfigInfo&& value) { m_deploymentConfigInfo = value; }
+
+    /*
+     <p>Information about the deployment configuration.</p>
+    */
+    inline GetDeploymentConfigResult& WithDeploymentConfigInfo(const DeploymentConfigInfo& value) { SetDeploymentConfigInfo(value); return *this;}
+
+    /*
+     <p>Information about the deployment configuration.</p>
+    */
+    inline GetDeploymentConfigResult& WithDeploymentConfigInfo(DeploymentConfigInfo&& value) { SetDeploymentConfigInfo(value); return *this;}
 
   private:
     DeploymentConfigInfo m_deploymentConfigInfo;

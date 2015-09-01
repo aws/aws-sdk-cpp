@@ -44,10 +44,16 @@ namespace Model
      <p>The field identifier.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>The field identifier.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>The field identifier.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The field identifier.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The field identifier.</p>
     */
-    inline Field&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline Field& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>The field identifier.</p>
+    */
+    inline Field& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>The field identifier.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The field value, expressed as a String.</p>
     */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
     /*
      <p>The field value, expressed as a String.</p>
     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+
+    /*
+     <p>The field value, expressed as a String.</p>
+    */
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /*
      <p>The field value, expressed as a String.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The field value, expressed as a String.</p>
     */
-    inline Field&  WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+    inline Field& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+
+    /*
+     <p>The field value, expressed as a String.</p>
+    */
+    inline Field& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
 
     /*
      <p>The field value, expressed as a String.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The field value, expressed as the identifier of another object.</p>
     */
     inline const Aws::String& GetRefValue() const{ return m_refValue; }
+
     /*
      <p>The field value, expressed as the identifier of another object.</p>
     */
     inline void SetRefValue(const Aws::String& value) { m_refValueHasBeenSet = true; m_refValue = value; }
+
+    /*
+     <p>The field value, expressed as the identifier of another object.</p>
+    */
+    inline void SetRefValue(Aws::String&& value) { m_refValueHasBeenSet = true; m_refValue = value; }
 
     /*
      <p>The field value, expressed as the identifier of another object.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The field value, expressed as the identifier of another object.</p>
     */
-    inline Field&  WithRefValue(const Aws::String& value) { SetRefValue(value); return *this;}
+    inline Field& WithRefValue(const Aws::String& value) { SetRefValue(value); return *this;}
+
+    /*
+     <p>The field value, expressed as the identifier of another object.</p>
+    */
+    inline Field& WithRefValue(Aws::String&& value) { SetRefValue(value); return *this;}
 
     /*
      <p>The field value, expressed as the identifier of another object.</p>

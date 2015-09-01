@@ -48,6 +48,7 @@ namespace Model
      <p>A list of messages.</p>
     */
     inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
+
     /*
      <p>A list of messages.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>A list of messages.</p>
     */
-    inline ReceiveMessageResult&  WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
+    inline void SetMessages(Aws::Vector<Message>&& value) { m_messages = value; }
+
+    /*
+     <p>A list of messages.</p>
+    */
+    inline ReceiveMessageResult& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
+
+    /*
+     <p>A list of messages.</p>
+    */
+    inline ReceiveMessageResult& WithMessages(Aws::Vector<Message>&& value) { SetMessages(value); return *this;}
 
     /*
      <p>A list of messages.</p>
     */
     inline ReceiveMessageResult& AddMessages(const Message& value) { m_messages.push_back(value); return *this; }
 
+    /*
+     <p>A list of messages.</p>
+    */
+    inline ReceiveMessageResult& AddMessages(Message&& value) { m_messages.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ReceiveMessageResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ReceiveMessageResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ReceiveMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Message> m_messages;

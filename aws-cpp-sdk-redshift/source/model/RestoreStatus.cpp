@@ -61,36 +61,66 @@ RestoreStatus& RestoreStatus::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode currentRestoreRateInMegaBytesPerSecondNode = resultNode.FirstChild("CurrentRestoreRateInMegaBytesPerSecond");
+    if(currentRestoreRateInMegaBytesPerSecondNode.IsNull())
+    {
+      currentRestoreRateInMegaBytesPerSecondNode = resultNode;
+    }
+
     if(!currentRestoreRateInMegaBytesPerSecondNode.IsNull())
     {
       m_currentRestoreRateInMegaBytesPerSecond = StringUtils::ConvertToDouble(StringUtils::Trim(currentRestoreRateInMegaBytesPerSecondNode.GetText().c_str()).c_str());
       m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true;
     }
     XmlNode snapshotSizeInMegaBytesNode = resultNode.FirstChild("SnapshotSizeInMegaBytes");
+    if(snapshotSizeInMegaBytesNode.IsNull())
+    {
+      snapshotSizeInMegaBytesNode = resultNode;
+    }
+
     if(!snapshotSizeInMegaBytesNode.IsNull())
     {
       m_snapshotSizeInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(snapshotSizeInMegaBytesNode.GetText().c_str()).c_str());
       m_snapshotSizeInMegaBytesHasBeenSet = true;
     }
     XmlNode progressInMegaBytesNode = resultNode.FirstChild("ProgressInMegaBytes");
+    if(progressInMegaBytesNode.IsNull())
+    {
+      progressInMegaBytesNode = resultNode;
+    }
+
     if(!progressInMegaBytesNode.IsNull())
     {
       m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(progressInMegaBytesNode.GetText().c_str()).c_str());
       m_progressInMegaBytesHasBeenSet = true;
     }
     XmlNode elapsedTimeInSecondsNode = resultNode.FirstChild("ElapsedTimeInSeconds");
+    if(elapsedTimeInSecondsNode.IsNull())
+    {
+      elapsedTimeInSecondsNode = resultNode;
+    }
+
     if(!elapsedTimeInSecondsNode.IsNull())
     {
       m_elapsedTimeInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(elapsedTimeInSecondsNode.GetText().c_str()).c_str());
       m_elapsedTimeInSecondsHasBeenSet = true;
     }
     XmlNode estimatedTimeToCompletionInSecondsNode = resultNode.FirstChild("EstimatedTimeToCompletionInSeconds");
+    if(estimatedTimeToCompletionInSecondsNode.IsNull())
+    {
+      estimatedTimeToCompletionInSecondsNode = resultNode;
+    }
+
     if(!estimatedTimeToCompletionInSecondsNode.IsNull())
     {
       m_estimatedTimeToCompletionInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(estimatedTimeToCompletionInSecondsNode.GetText().c_str()).c_str());

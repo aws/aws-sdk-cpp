@@ -44,16 +44,31 @@ GetFederationTokenResult& GetFederationTokenResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
+    if(credentialsNode.IsNull())
+    {
+      credentialsNode = resultNode;
+    }
+
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
     }
     XmlNode federatedUserNode = resultNode.FirstChild("FederatedUser");
+    if(federatedUserNode.IsNull())
+    {
+      federatedUserNode = resultNode;
+    }
+
     if(!federatedUserNode.IsNull())
     {
       m_federatedUser = federatedUserNode;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
+    if(packedPolicySizeNode.IsNull())
+    {
+      packedPolicySizeNode = resultNode;
+    }
+
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());

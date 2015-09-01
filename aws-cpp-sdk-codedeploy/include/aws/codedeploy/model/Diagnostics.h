@@ -45,6 +45,7 @@ namespace Model
      <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
     */
     inline const LifecycleErrorCode& GetErrorCode() const{ return m_errorCode; }
+
     /*
      <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
     */
@@ -53,16 +54,32 @@ namespace Model
     /*
      <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
     */
-    inline Diagnostics&  WithErrorCode(const LifecycleErrorCode& value) { SetErrorCode(value); return *this;}
+    inline void SetErrorCode(LifecycleErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+
+    /*
+     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
+    */
+    inline Diagnostics& WithErrorCode(const LifecycleErrorCode& value) { SetErrorCode(value); return *this;}
+
+    /*
+     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
+    */
+    inline Diagnostics& WithErrorCode(LifecycleErrorCode&& value) { SetErrorCode(value); return *this;}
 
     /*
      <p>The name of the script.</p>
     */
     inline const Aws::String& GetScriptName() const{ return m_scriptName; }
+
     /*
      <p>The name of the script.</p>
     */
     inline void SetScriptName(const Aws::String& value) { m_scriptNameHasBeenSet = true; m_scriptName = value; }
+
+    /*
+     <p>The name of the script.</p>
+    */
+    inline void SetScriptName(Aws::String&& value) { m_scriptNameHasBeenSet = true; m_scriptName = value; }
 
     /*
      <p>The name of the script.</p>
@@ -72,7 +89,12 @@ namespace Model
     /*
      <p>The name of the script.</p>
     */
-    inline Diagnostics&  WithScriptName(const Aws::String& value) { SetScriptName(value); return *this;}
+    inline Diagnostics& WithScriptName(const Aws::String& value) { SetScriptName(value); return *this;}
+
+    /*
+     <p>The name of the script.</p>
+    */
+    inline Diagnostics& WithScriptName(Aws::String&& value) { SetScriptName(value); return *this;}
 
     /*
      <p>The name of the script.</p>
@@ -83,10 +105,16 @@ namespace Model
      <p>The message associated with the error.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The message associated with the error.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The message associated with the error.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The message associated with the error.</p>
@@ -96,7 +124,12 @@ namespace Model
     /*
      <p>The message associated with the error.</p>
     */
-    inline Diagnostics&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline Diagnostics& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The message associated with the error.</p>
+    */
+    inline Diagnostics& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The message associated with the error.</p>
@@ -107,10 +140,16 @@ namespace Model
      <p>The last portion of the associated diagnostic log.</p>
     */
     inline const Aws::String& GetLogTail() const{ return m_logTail; }
+
     /*
      <p>The last portion of the associated diagnostic log.</p>
     */
     inline void SetLogTail(const Aws::String& value) { m_logTailHasBeenSet = true; m_logTail = value; }
+
+    /*
+     <p>The last portion of the associated diagnostic log.</p>
+    */
+    inline void SetLogTail(Aws::String&& value) { m_logTailHasBeenSet = true; m_logTail = value; }
 
     /*
      <p>The last portion of the associated diagnostic log.</p>
@@ -120,7 +159,12 @@ namespace Model
     /*
      <p>The last portion of the associated diagnostic log.</p>
     */
-    inline Diagnostics&  WithLogTail(const Aws::String& value) { SetLogTail(value); return *this;}
+    inline Diagnostics& WithLogTail(const Aws::String& value) { SetLogTail(value); return *this;}
+
+    /*
+     <p>The last portion of the associated diagnostic log.</p>
+    */
+    inline Diagnostics& WithLogTail(Aws::String&& value) { SetLogTail(value); return *this;}
 
     /*
      <p>The last portion of the associated diagnostic log.</p>

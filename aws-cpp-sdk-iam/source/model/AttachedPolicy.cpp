@@ -43,12 +43,22 @@ AttachedPolicy& AttachedPolicy::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
+    if(policyNameNode.IsNull())
+    {
+      policyNameNode = resultNode;
+    }
+
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyArnNode = resultNode.FirstChild("PolicyArn");
+    if(policyArnNode.IsNull())
+    {
+      policyArnNode = resultNode;
+    }
+
     if(!policyArnNode.IsNull())
     {
       m_policyArn = StringUtils::Trim(policyArnNode.GetText().c_str());

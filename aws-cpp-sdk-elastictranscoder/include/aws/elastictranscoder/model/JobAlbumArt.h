@@ -46,10 +46,16 @@ namespace Model
      <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
     */
     inline const Aws::String& GetMergePolicy() const{ return m_mergePolicy; }
+
     /*
      <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
     */
     inline void SetMergePolicy(const Aws::String& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = value; }
+
+    /*
+     <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
+    */
+    inline void SetMergePolicy(Aws::String&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = value; }
 
     /*
      <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
     */
-    inline JobAlbumArt&  WithMergePolicy(const Aws::String& value) { SetMergePolicy(value); return *this;}
+    inline JobAlbumArt& WithMergePolicy(const Aws::String& value) { SetMergePolicy(value); return *this;}
+
+    /*
+     <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
+    */
+    inline JobAlbumArt& WithMergePolicy(Aws::String&& value) { SetMergePolicy(value); return *this;}
 
     /*
      <p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>
@@ -70,6 +81,7 @@ namespace Model
      <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
     */
     inline const Aws::Vector<Artwork>& GetArtwork() const{ return m_artwork; }
+
     /*
      <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
     */
@@ -78,12 +90,27 @@ namespace Model
     /*
      <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
     */
-    inline JobAlbumArt&  WithArtwork(const Aws::Vector<Artwork>& value) { SetArtwork(value); return *this;}
+    inline void SetArtwork(Aws::Vector<Artwork>&& value) { m_artworkHasBeenSet = true; m_artwork = value; }
+
+    /*
+     <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
+    */
+    inline JobAlbumArt& WithArtwork(const Aws::Vector<Artwork>& value) { SetArtwork(value); return *this;}
+
+    /*
+     <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
+    */
+    inline JobAlbumArt& WithArtwork(Aws::Vector<Artwork>&& value) { SetArtwork(value); return *this;}
 
     /*
      <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
     */
     inline JobAlbumArt& AddArtwork(const Artwork& value) { m_artworkHasBeenSet = true; m_artwork.push_back(value); return *this; }
+
+    /*
+     <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code></p>
+    */
+    inline JobAlbumArt& AddArtwork(Artwork&& value) { m_artworkHasBeenSet = true; m_artwork.push_back(value); return *this; }
 
   private:
     Aws::String m_mergePolicy;

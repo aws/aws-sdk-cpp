@@ -42,6 +42,11 @@ RevokeCacheSecurityGroupIngressResult& RevokeCacheSecurityGroupIngressResult::op
   if(!resultNode.IsNull())
   {
     XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
+    if(cacheSecurityGroupNode.IsNull())
+    {
+      cacheSecurityGroupNode = resultNode;
+    }
+
     if(!cacheSecurityGroupNode.IsNull())
     {
       m_cacheSecurityGroup = cacheSecurityGroupNode;

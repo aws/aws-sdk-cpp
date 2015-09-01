@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the SSH public key.</p>
     */
     inline const SSHPublicKey& GetSSHPublicKey() const{ return m_sSHPublicKey; }
+
     /*
      <p>Information about the SSH public key.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the SSH public key.</p>
     */
-    inline GetSSHPublicKeyResult&  WithSSHPublicKey(const SSHPublicKey& value) { SetSSHPublicKey(value); return *this;}
+    inline void SetSSHPublicKey(SSHPublicKey&& value) { m_sSHPublicKey = value; }
+
+    /*
+     <p>Information about the SSH public key.</p>
+    */
+    inline GetSSHPublicKeyResult& WithSSHPublicKey(const SSHPublicKey& value) { SetSSHPublicKey(value); return *this;}
+
+    /*
+     <p>Information about the SSH public key.</p>
+    */
+    inline GetSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetSSHPublicKeyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetSSHPublicKeyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetSSHPublicKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     SSHPublicKey m_sSHPublicKey;

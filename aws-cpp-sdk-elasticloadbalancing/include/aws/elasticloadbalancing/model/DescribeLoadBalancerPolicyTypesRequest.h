@@ -38,6 +38,7 @@ namespace Model
      <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyTypeNames() const{ return m_policyTypeNames; }
+
     /*
      <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     */
-    inline DescribeLoadBalancerPolicyTypesRequest&  WithPolicyTypeNames(const Aws::Vector<Aws::String>& value) { SetPolicyTypeNames(value); return *this;}
+    inline void SetPolicyTypeNames(Aws::Vector<Aws::String>&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = value; }
+
+    /*
+     <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    */
+    inline DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(const Aws::Vector<Aws::String>& value) { SetPolicyTypeNames(value); return *this;}
+
+    /*
+     <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    */
+    inline DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(Aws::Vector<Aws::String>&& value) { SetPolicyTypeNames(value); return *this;}
 
     /*
      <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     */
     inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(const Aws::String& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    */
+    inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(Aws::String&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(value); return *this; }
 
     /*
      <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>

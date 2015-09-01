@@ -37,10 +37,16 @@ namespace Model
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     */
-    inline DeleteGroupPolicyRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline DeleteGroupPolicyRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
+    */
+    inline DeleteGroupPolicyRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name identifying the policy document to delete.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name identifying the policy document to delete.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name identifying the policy document to delete.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name identifying the policy document to delete.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name identifying the policy document to delete.</p>
     */
-    inline DeleteGroupPolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline DeleteGroupPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name identifying the policy document to delete.</p>
+    */
+    inline DeleteGroupPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name identifying the policy document to delete.</p>

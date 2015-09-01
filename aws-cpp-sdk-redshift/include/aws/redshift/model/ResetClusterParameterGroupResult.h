@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the cluster parameter group. </p>
     */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+
     /*
      <p> The name of the cluster parameter group. </p>
     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
+
+    /*
+     <p> The name of the cluster parameter group. </p>
+    */
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupName = value; }
 
     /*
      <p> The name of the cluster parameter group. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the cluster parameter group. </p>
     */
-    inline ResetClusterParameterGroupResult&  WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+    inline ResetClusterParameterGroupResult& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+
+    /*
+     <p> The name of the cluster parameter group. </p>
+    */
+    inline ResetClusterParameterGroupResult& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
 
     /*
      <p> The name of the cluster parameter group. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
     */
     inline const Aws::String& GetParameterGroupStatus() const{ return m_parameterGroupStatus; }
+
     /*
      <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
     */
     inline void SetParameterGroupStatus(const Aws::String& value) { m_parameterGroupStatus = value; }
+
+    /*
+     <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
+    */
+    inline void SetParameterGroupStatus(Aws::String&& value) { m_parameterGroupStatus = value; }
 
     /*
      <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
     */
-    inline ResetClusterParameterGroupResult&  WithParameterGroupStatus(const Aws::String& value) { SetParameterGroupStatus(value); return *this;}
+    inline ResetClusterParameterGroupResult& WithParameterGroupStatus(const Aws::String& value) { SetParameterGroupStatus(value); return *this;}
+
+    /*
+     <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
+    */
+    inline ResetClusterParameterGroupResult& WithParameterGroupStatus(Aws::String&& value) { SetParameterGroupStatus(value); return *this;}
 
     /*
      <p> The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster. </p>
@@ -93,11 +115,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ResetClusterParameterGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ResetClusterParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ResetClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_parameterGroupName;

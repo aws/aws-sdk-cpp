@@ -46,10 +46,16 @@ namespace Model
      <p>A unique application ID.</p>
     */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
     /*
      <p>A unique application ID.</p>
     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
+
+    /*
+     <p>A unique application ID.</p>
+    */
+    inline void SetApplicationId(Aws::String&& value) { m_applicationId = value; }
 
     /*
      <p>A unique application ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A unique application ID.</p>
     */
-    inline CreateApplicationResult&  WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+    inline CreateApplicationResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+
+    /*
+     <p>A unique application ID.</p>
+    */
+    inline CreateApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(value); return *this;}
 
     /*
      <p>A unique application ID.</p>

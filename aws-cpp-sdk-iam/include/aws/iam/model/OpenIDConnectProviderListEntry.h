@@ -45,14 +45,21 @@ namespace Model
 
     
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     
-    inline OpenIDConnectProviderListEntry&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline OpenIDConnectProviderListEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline OpenIDConnectProviderListEntry& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     
     inline OpenIDConnectProviderListEntry& WithArn(const char* value) { SetArn(value); return *this;}

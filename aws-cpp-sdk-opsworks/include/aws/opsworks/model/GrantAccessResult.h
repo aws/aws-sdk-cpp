@@ -46,6 +46,7 @@ namespace Model
      <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     */
     inline const TemporaryCredential& GetTemporaryCredential() const{ return m_temporaryCredential; }
+
     /*
      <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     */
-    inline GrantAccessResult&  WithTemporaryCredential(const TemporaryCredential& value) { SetTemporaryCredential(value); return *this;}
+    inline void SetTemporaryCredential(TemporaryCredential&& value) { m_temporaryCredential = value; }
+
+    /*
+     <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    */
+    inline GrantAccessResult& WithTemporaryCredential(const TemporaryCredential& value) { SetTemporaryCredential(value); return *this;}
+
+    /*
+     <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    */
+    inline GrantAccessResult& WithTemporaryCredential(TemporaryCredential&& value) { SetTemporaryCredential(value); return *this;}
 
   private:
     TemporaryCredential m_temporaryCredential;

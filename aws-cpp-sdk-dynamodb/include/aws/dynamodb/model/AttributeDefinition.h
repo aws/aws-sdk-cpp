@@ -45,10 +45,16 @@ namespace Model
      <p>A name for the attribute.</p>
     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
     /*
      <p>A name for the attribute.</p>
     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+
+    /*
+     <p>A name for the attribute.</p>
+    */
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>A name for the attribute.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>A name for the attribute.</p>
     */
-    inline AttributeDefinition&  WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+    inline AttributeDefinition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+
+    /*
+     <p>A name for the attribute.</p>
+    */
+    inline AttributeDefinition& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /*
      <p>A name for the attribute.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>The data type for the attribute.</p>
     */
     inline const ScalarAttributeType& GetAttributeType() const{ return m_attributeType; }
+
     /*
      <p>The data type for the attribute.</p>
     */
@@ -77,7 +89,17 @@ namespace Model
     /*
      <p>The data type for the attribute.</p>
     */
-    inline AttributeDefinition&  WithAttributeType(const ScalarAttributeType& value) { SetAttributeType(value); return *this;}
+    inline void SetAttributeType(ScalarAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
+
+    /*
+     <p>The data type for the attribute.</p>
+    */
+    inline AttributeDefinition& WithAttributeType(const ScalarAttributeType& value) { SetAttributeType(value); return *this;}
+
+    /*
+     <p>The data type for the attribute.</p>
+    */
+    inline AttributeDefinition& WithAttributeType(ScalarAttributeType&& value) { SetAttributeType(value); return *this;}
 
   private:
     Aws::String m_attributeName;

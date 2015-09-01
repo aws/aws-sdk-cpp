@@ -46,6 +46,7 @@ namespace Model
      <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     */
     inline long GetStatus2xx() const{ return m_status2xx; }
+
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     */
-    inline StatusCodes&  WithStatus2xx(long value) { SetStatus2xx(value); return *this;}
+    inline StatusCodes& WithStatus2xx(long value) { SetStatus2xx(value); return *this;}
 
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     */
     inline long GetStatus3xx() const{ return m_status3xx; }
+
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     */
-    inline StatusCodes&  WithStatus3xx(long value) { SetStatus3xx(value); return *this;}
+    inline StatusCodes& WithStatus3xx(long value) { SetStatus3xx(value); return *this;}
 
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     */
     inline long GetStatus4xx() const{ return m_status4xx; }
+
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     */
-    inline StatusCodes&  WithStatus4xx(long value) { SetStatus4xx(value); return *this;}
+    inline StatusCodes& WithStatus4xx(long value) { SetStatus4xx(value); return *this;}
 
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     */
     inline long GetStatus5xx() const{ return m_status5xx; }
+
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     */
@@ -96,7 +100,7 @@ namespace Model
     /*
      <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     */
-    inline StatusCodes&  WithStatus5xx(long value) { SetStatus5xx(value); return *this;}
+    inline StatusCodes& WithStatus5xx(long value) { SetStatus5xx(value); return *this;}
 
   private:
     long m_status2xx;

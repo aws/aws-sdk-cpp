@@ -38,10 +38,16 @@ namespace Model
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
     */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /*
+     <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
+    */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
     */
-    inline CreateSnapshotRequest&  WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+    inline CreateSnapshotRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /*
+     <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
+    */
+    inline CreateSnapshotRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>A name for the snapshot being created.</p>
     */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
     /*
      <p>A name for the snapshot being created.</p>
     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+
+    /*
+     <p>A name for the snapshot being created.</p>
+    */
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /*
      <p>A name for the snapshot being created.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>A name for the snapshot being created.</p>
     */
-    inline CreateSnapshotRequest&  WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
+    inline CreateSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
+
+    /*
+     <p>A name for the snapshot being created.</p>
+    */
+    inline CreateSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
 
     /*
      <p>A name for the snapshot being created.</p>

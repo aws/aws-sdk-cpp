@@ -44,10 +44,16 @@ namespace Model
      <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
     */
     inline const Aws::String& GetAscending() const{ return m_ascending; }
+
     /*
      <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
     */
     inline void SetAscending(const Aws::String& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
+
+    /*
+     <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
+    */
+    inline void SetAscending(Aws::String&& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
 
     /*
      <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
     */
-    inline ListPipelinesRequest&  WithAscending(const Aws::String& value) { SetAscending(value); return *this;}
+    inline ListPipelinesRequest& WithAscending(const Aws::String& value) { SetAscending(value); return *this;}
+
+    /*
+     <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
+    */
+    inline ListPipelinesRequest& WithAscending(Aws::String&& value) { SetAscending(value); return *this;}
 
     /*
      <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
     /*
      <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+
+    /*
+     <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    */
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /*
      <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     */
-    inline ListPipelinesRequest&  WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+    inline ListPipelinesRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+
+    /*
+     <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    */
+    inline ListPipelinesRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
 
     /*
      <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>

@@ -47,6 +47,7 @@ namespace Model
      <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
     */
     inline const Aws::Vector<Aws::String>& GetContainerInstanceArns() const{ return m_containerInstanceArns; }
+
     /*
      <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
     */
-    inline ListContainerInstancesResult&  WithContainerInstanceArns(const Aws::Vector<Aws::String>& value) { SetContainerInstanceArns(value); return *this;}
+    inline void SetContainerInstanceArns(Aws::Vector<Aws::String>&& value) { m_containerInstanceArns = value; }
+
+    /*
+     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
+    */
+    inline ListContainerInstancesResult& WithContainerInstanceArns(const Aws::Vector<Aws::String>& value) { SetContainerInstanceArns(value); return *this;}
+
+    /*
+     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
+    */
+    inline ListContainerInstancesResult& WithContainerInstanceArns(Aws::Vector<Aws::String>&& value) { SetContainerInstanceArns(value); return *this;}
 
     /*
      <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
     */
     inline ListContainerInstancesResult& AddContainerInstanceArns(const Aws::String& value) { m_containerInstanceArns.push_back(value); return *this; }
+
+    /*
+     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
+    */
+    inline ListContainerInstancesResult& AddContainerInstanceArns(Aws::String&& value) { m_containerInstanceArns.push_back(value); return *this; }
 
     /*
      <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
-    inline ListContainerInstancesResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListContainerInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    */
+    inline ListContainerInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

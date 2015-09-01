@@ -38,10 +38,16 @@ namespace Model
      <p>The unique identifier for the offering.</p>
     */
     inline const Aws::String& GetReservedNodeOfferingId() const{ return m_reservedNodeOfferingId; }
+
     /*
      <p>The unique identifier for the offering.</p>
     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
+
+    /*
+     <p>The unique identifier for the offering.</p>
+    */
+    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
     /*
      <p>The unique identifier for the offering.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The unique identifier for the offering.</p>
     */
-    inline DescribeReservedNodeOfferingsRequest&  WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
+    inline DescribeReservedNodeOfferingsRequest& WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the offering.</p>
+    */
+    inline DescribeReservedNodeOfferingsRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
 
     /*
      <p>The unique identifier for the offering.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p> The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p> The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p>
     */
@@ -70,16 +82,22 @@ namespace Model
     /*
      <p> The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p>
     */
-    inline DescribeReservedNodeOfferingsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeReservedNodeOfferingsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
@@ -89,7 +107,12 @@ namespace Model
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     */
-    inline DescribeReservedNodeOfferingsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeReservedNodeOfferingsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    */
+    inline DescribeReservedNodeOfferingsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>

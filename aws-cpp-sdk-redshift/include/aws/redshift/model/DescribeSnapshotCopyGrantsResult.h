@@ -49,10 +49,16 @@ namespace Model
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     */
-    inline DescribeSnapshotCopyGrantsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeSnapshotCopyGrantsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    */
+    inline DescribeSnapshotCopyGrantsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p> Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
@@ -73,6 +84,7 @@ namespace Model
      <p>The list of snapshot copy grants.</p>
     */
     inline const Aws::Vector<SnapshotCopyGrant>& GetSnapshotCopyGrants() const{ return m_snapshotCopyGrants; }
+
     /*
      <p>The list of snapshot copy grants.</p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p>The list of snapshot copy grants.</p>
     */
-    inline DescribeSnapshotCopyGrantsResult&  WithSnapshotCopyGrants(const Aws::Vector<SnapshotCopyGrant>& value) { SetSnapshotCopyGrants(value); return *this;}
+    inline void SetSnapshotCopyGrants(Aws::Vector<SnapshotCopyGrant>&& value) { m_snapshotCopyGrants = value; }
+
+    /*
+     <p>The list of snapshot copy grants.</p>
+    */
+    inline DescribeSnapshotCopyGrantsResult& WithSnapshotCopyGrants(const Aws::Vector<SnapshotCopyGrant>& value) { SetSnapshotCopyGrants(value); return *this;}
+
+    /*
+     <p>The list of snapshot copy grants.</p>
+    */
+    inline DescribeSnapshotCopyGrantsResult& WithSnapshotCopyGrants(Aws::Vector<SnapshotCopyGrant>&& value) { SetSnapshotCopyGrants(value); return *this;}
 
     /*
      <p>The list of snapshot copy grants.</p>
     */
     inline DescribeSnapshotCopyGrantsResult& AddSnapshotCopyGrants(const SnapshotCopyGrant& value) { m_snapshotCopyGrants.push_back(value); return *this; }
 
+    /*
+     <p>The list of snapshot copy grants.</p>
+    */
+    inline DescribeSnapshotCopyGrantsResult& AddSnapshotCopyGrants(SnapshotCopyGrant&& value) { m_snapshotCopyGrants.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeSnapshotCopyGrantsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeSnapshotCopyGrantsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeSnapshotCopyGrantsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

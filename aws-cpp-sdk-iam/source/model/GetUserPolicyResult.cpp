@@ -42,16 +42,31 @@ GetUserPolicyResult& GetUserPolicyResult::operator =(const AmazonWebServiceResul
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
+    if(policyNameNode.IsNull())
+    {
+      policyNameNode = resultNode;
+    }
+
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
+    if(policyDocumentNode.IsNull())
+    {
+      policyDocumentNode = resultNode;
+    }
+
     if(!policyDocumentNode.IsNull())
     {
       m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());

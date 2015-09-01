@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline CreateLoadBalancerListenersRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline CreateLoadBalancerListenersRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline CreateLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>The listeners.</p>
     */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
+
     /*
      <p>The listeners.</p>
     */
@@ -71,12 +83,27 @@ namespace Model
     /*
      <p>The listeners.</p>
     */
-    inline CreateLoadBalancerListenersRequest&  WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
+    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = value; }
+
+    /*
+     <p>The listeners.</p>
+    */
+    inline CreateLoadBalancerListenersRequest& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
+
+    /*
+     <p>The listeners.</p>
+    */
+    inline CreateLoadBalancerListenersRequest& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(value); return *this;}
 
     /*
      <p>The listeners.</p>
     */
     inline CreateLoadBalancerListenersRequest& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
+
+    /*
+     <p>The listeners.</p>
+    */
+    inline CreateLoadBalancerListenersRequest& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;

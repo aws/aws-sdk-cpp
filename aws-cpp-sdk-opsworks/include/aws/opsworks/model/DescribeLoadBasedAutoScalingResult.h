@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     */
     inline const Aws::Vector<LoadBasedAutoScalingConfiguration>& GetLoadBasedAutoScalingConfigurations() const{ return m_loadBasedAutoScalingConfigurations; }
+
     /*
      <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     */
-    inline DescribeLoadBasedAutoScalingResult&  WithLoadBasedAutoScalingConfigurations(const Aws::Vector<LoadBasedAutoScalingConfiguration>& value) { SetLoadBasedAutoScalingConfigurations(value); return *this;}
+    inline void SetLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { m_loadBasedAutoScalingConfigurations = value; }
+
+    /*
+     <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    */
+    inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(const Aws::Vector<LoadBasedAutoScalingConfiguration>& value) { SetLoadBasedAutoScalingConfigurations(value); return *this;}
+
+    /*
+     <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    */
+    inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { SetLoadBasedAutoScalingConfigurations(value); return *this;}
 
     /*
      <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     */
     inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(const LoadBasedAutoScalingConfiguration& value) { m_loadBasedAutoScalingConfigurations.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    */
+    inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration&& value) { m_loadBasedAutoScalingConfigurations.push_back(value); return *this; }
 
   private:
     Aws::Vector<LoadBasedAutoScalingConfiguration> m_loadBasedAutoScalingConfigurations;

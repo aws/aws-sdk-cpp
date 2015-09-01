@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user to create a password for.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user to create a password for.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user to create a password for.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user to create a password for.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user to create a password for.</p>
     */
-    inline CreateLoginProfileRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline CreateLoginProfileRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user to create a password for.</p>
+    */
+    inline CreateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user to create a password for.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The new password for the user.</p>
     */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
     /*
      <p>The new password for the user.</p>
     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
+
+    /*
+     <p>The new password for the user.</p>
+    */
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /*
      <p>The new password for the user.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The new password for the user.</p>
     */
-    inline CreateLoginProfileRequest&  WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
+    inline CreateLoginProfileRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
+
+    /*
+     <p>The new password for the user.</p>
+    */
+    inline CreateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
 
     /*
      <p>The new password for the user.</p>
@@ -85,6 +107,7 @@ namespace Model
      <p> Specifies whether the user is required to set a new password on next sign-in. </p>
     */
     inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
+
     /*
      <p> Specifies whether the user is required to set a new password on next sign-in. </p>
     */
@@ -93,7 +116,7 @@ namespace Model
     /*
      <p> Specifies whether the user is required to set a new password on next sign-in. </p>
     */
-    inline CreateLoginProfileRequest&  WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
+    inline CreateLoginProfileRequest& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
 
   private:
     Aws::String m_userName;

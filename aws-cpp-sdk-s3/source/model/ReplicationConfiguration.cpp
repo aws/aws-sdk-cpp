@@ -43,6 +43,11 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode roleNode = resultNode.FirstChild("Role");
+    if(roleNode.IsNull())
+    {
+      roleNode = resultNode;
+    }
+
     if(!roleNode.IsNull())
     {
       m_role = StringUtils::Trim(roleNode.GetText().c_str());

@@ -45,10 +45,16 @@ namespace Model
      <p>The name of the global secondary index to be updated.</p>
     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
     /*
      <p>The name of the global secondary index to be updated.</p>
     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+
+    /*
+     <p>The name of the global secondary index to be updated.</p>
+    */
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /*
      <p>The name of the global secondary index to be updated.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of the global secondary index to be updated.</p>
     */
-    inline UpdateGlobalSecondaryIndexAction&  WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+    inline UpdateGlobalSecondaryIndexAction& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /*
+     <p>The name of the global secondary index to be updated.</p>
+    */
+    inline UpdateGlobalSecondaryIndexAction& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
     /*
      <p>The name of the global secondary index to be updated.</p>
@@ -67,11 +78,18 @@ namespace Model
 
     
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
     
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
     
-    inline UpdateGlobalSecondaryIndexAction&  WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    
+    inline UpdateGlobalSecondaryIndexAction& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+
+    
+    inline UpdateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(value); return *this;}
 
   private:
     Aws::String m_indexName;

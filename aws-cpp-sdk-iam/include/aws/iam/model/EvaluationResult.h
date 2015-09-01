@@ -49,61 +49,102 @@ namespace Model
 
     
     inline const Aws::String& GetEvalActionName() const{ return m_evalActionName; }
+
     
     inline void SetEvalActionName(const Aws::String& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = value; }
+
+    
+    inline void SetEvalActionName(Aws::String&& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = value; }
 
     
     inline void SetEvalActionName(const char* value) { m_evalActionNameHasBeenSet = true; m_evalActionName.assign(value); }
 
     
-    inline EvaluationResult&  WithEvalActionName(const Aws::String& value) { SetEvalActionName(value); return *this;}
+    inline EvaluationResult& WithEvalActionName(const Aws::String& value) { SetEvalActionName(value); return *this;}
+
+    
+    inline EvaluationResult& WithEvalActionName(Aws::String&& value) { SetEvalActionName(value); return *this;}
 
     
     inline EvaluationResult& WithEvalActionName(const char* value) { SetEvalActionName(value); return *this;}
 
     
     inline const Aws::String& GetEvalResourceName() const{ return m_evalResourceName; }
+
     
     inline void SetEvalResourceName(const Aws::String& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = value; }
+
+    
+    inline void SetEvalResourceName(Aws::String&& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = value; }
 
     
     inline void SetEvalResourceName(const char* value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName.assign(value); }
 
     
-    inline EvaluationResult&  WithEvalResourceName(const Aws::String& value) { SetEvalResourceName(value); return *this;}
+    inline EvaluationResult& WithEvalResourceName(const Aws::String& value) { SetEvalResourceName(value); return *this;}
+
+    
+    inline EvaluationResult& WithEvalResourceName(Aws::String&& value) { SetEvalResourceName(value); return *this;}
 
     
     inline EvaluationResult& WithEvalResourceName(const char* value) { SetEvalResourceName(value); return *this;}
 
     
     inline const PolicyEvaluationDecisionType& GetEvalDecision() const{ return m_evalDecision; }
+
     
     inline void SetEvalDecision(const PolicyEvaluationDecisionType& value) { m_evalDecisionHasBeenSet = true; m_evalDecision = value; }
 
     
-    inline EvaluationResult&  WithEvalDecision(const PolicyEvaluationDecisionType& value) { SetEvalDecision(value); return *this;}
+    inline void SetEvalDecision(PolicyEvaluationDecisionType&& value) { m_evalDecisionHasBeenSet = true; m_evalDecision = value; }
+
+    
+    inline EvaluationResult& WithEvalDecision(const PolicyEvaluationDecisionType& value) { SetEvalDecision(value); return *this;}
+
+    
+    inline EvaluationResult& WithEvalDecision(PolicyEvaluationDecisionType&& value) { SetEvalDecision(value); return *this;}
 
     
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
+
     
     inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
 
     
-    inline EvaluationResult&  WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
+    inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
+
+    
+    inline EvaluationResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
+
+    
+    inline EvaluationResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(value); return *this;}
 
     
     inline EvaluationResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
 
     
+    inline EvaluationResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
+
+    
     inline const Aws::Vector<ContextEntryResult>& GetMissingContextValues() const{ return m_missingContextValues; }
+
     
     inline void SetMissingContextValues(const Aws::Vector<ContextEntryResult>& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = value; }
 
     
-    inline EvaluationResult&  WithMissingContextValues(const Aws::Vector<ContextEntryResult>& value) { SetMissingContextValues(value); return *this;}
+    inline void SetMissingContextValues(Aws::Vector<ContextEntryResult>&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = value; }
+
+    
+    inline EvaluationResult& WithMissingContextValues(const Aws::Vector<ContextEntryResult>& value) { SetMissingContextValues(value); return *this;}
+
+    
+    inline EvaluationResult& WithMissingContextValues(Aws::Vector<ContextEntryResult>&& value) { SetMissingContextValues(value); return *this;}
 
     
     inline EvaluationResult& AddMissingContextValues(const ContextEntryResult& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
+
+    
+    inline EvaluationResult& AddMissingContextValues(ContextEntryResult&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
   private:
     Aws::String m_evalActionName;

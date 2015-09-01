@@ -46,10 +46,16 @@ namespace Model
      <p>Account ID number.</p>
     */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
+
     /*
      <p>Account ID number.</p>
     */
     inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
+
+    /*
+     <p>Account ID number.</p>
+    */
+    inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /*
      <p>Account ID number.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>Account ID number.</p>
     */
-    inline KeyMetadata&  WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
+    inline KeyMetadata& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
+
+    /*
+     <p>Account ID number.</p>
+    */
+    inline KeyMetadata& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(value); return *this;}
 
     /*
      <p>Account ID number.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>Unique identifier for the key.</p>
     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     /*
      <p>Unique identifier for the key.</p>
     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    /*
+     <p>Unique identifier for the key.</p>
+    */
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /*
      <p>Unique identifier for the key.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>Unique identifier for the key.</p>
     */
-    inline KeyMetadata&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline KeyMetadata& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /*
+     <p>Unique identifier for the key.</p>
+    */
+    inline KeyMetadata& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /*
      <p>Unique identifier for the key.</p>
@@ -94,10 +116,16 @@ namespace Model
      <p>Key ARN (Amazon Resource Name).</p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p>Key ARN (Amazon Resource Name).</p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>Key ARN (Amazon Resource Name).</p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>Key ARN (Amazon Resource Name).</p>
@@ -107,7 +135,12 @@ namespace Model
     /*
      <p>Key ARN (Amazon Resource Name).</p>
     */
-    inline KeyMetadata&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline KeyMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>Key ARN (Amazon Resource Name).</p>
+    */
+    inline KeyMetadata& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p>Key ARN (Amazon Resource Name).</p>
@@ -118,6 +151,7 @@ namespace Model
      <p>Date the key was created.</p>
     */
     inline double GetCreationDate() const{ return m_creationDate; }
+
     /*
      <p>Date the key was created.</p>
     */
@@ -126,12 +160,13 @@ namespace Model
     /*
      <p>Date the key was created.</p>
     */
-    inline KeyMetadata&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline KeyMetadata& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
     /*
      <p>Value that specifies whether the key is enabled.</p>
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      <p>Value that specifies whether the key is enabled.</p>
     */
@@ -140,16 +175,22 @@ namespace Model
     /*
      <p>Value that specifies whether the key is enabled.</p>
     */
-    inline KeyMetadata&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline KeyMetadata& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /*
      <p>The description of the key.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>The description of the key.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>The description of the key.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>The description of the key.</p>
@@ -159,7 +200,12 @@ namespace Model
     /*
      <p>The description of the key.</p>
     */
-    inline KeyMetadata&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline KeyMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>The description of the key.</p>
+    */
+    inline KeyMetadata& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>The description of the key.</p>
@@ -170,6 +216,7 @@ namespace Model
      <p>A value that specifies what operation(s) the key can perform.</p>
     */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
+
     /*
      <p>A value that specifies what operation(s) the key can perform.</p>
     */
@@ -178,23 +225,41 @@ namespace Model
     /*
      <p>A value that specifies what operation(s) the key can perform.</p>
     */
-    inline KeyMetadata&  WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
+    inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
+
+    /*
+     <p>A value that specifies what operation(s) the key can perform.</p>
+    */
+    inline KeyMetadata& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
+
+    /*
+     <p>A value that specifies what operation(s) the key can perform.</p>
+    */
+    inline KeyMetadata& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(value); return *this;}
 
     
     inline const KeyState& GetKeyState() const{ return m_keyState; }
+
     
     inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
 
     
-    inline KeyMetadata&  WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+
+    
+    inline KeyMetadata& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+
+    
+    inline KeyMetadata& WithKeyState(KeyState&& value) { SetKeyState(value); return *this;}
 
     
     inline double GetDeletionDate() const{ return m_deletionDate; }
+
     
     inline void SetDeletionDate(double value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
 
     
-    inline KeyMetadata&  WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
+    inline KeyMetadata& WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
 
   private:
     Aws::String m_aWSAccountId;

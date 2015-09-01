@@ -46,10 +46,16 @@ namespace Model
      <p>Acknowledgement of the state change.</p>
     */
     inline const Aws::String& GetAcknowledgment() const{ return m_acknowledgment; }
+
     /*
      <p>Acknowledgement of the state change.</p>
     */
     inline void SetAcknowledgment(const Aws::String& value) { m_acknowledgment = value; }
+
+    /*
+     <p>Acknowledgement of the state change.</p>
+    */
+    inline void SetAcknowledgment(Aws::String&& value) { m_acknowledgment = value; }
 
     /*
      <p>Acknowledgement of the state change.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>Acknowledgement of the state change.</p>
     */
-    inline SubmitTaskStateChangeResult&  WithAcknowledgment(const Aws::String& value) { SetAcknowledgment(value); return *this;}
+    inline SubmitTaskStateChangeResult& WithAcknowledgment(const Aws::String& value) { SetAcknowledgment(value); return *this;}
+
+    /*
+     <p>Acknowledgement of the state change.</p>
+    */
+    inline SubmitTaskStateChangeResult& WithAcknowledgment(Aws::String&& value) { SetAcknowledgment(value); return *this;}
 
     /*
      <p>Acknowledgement of the state change.</p>

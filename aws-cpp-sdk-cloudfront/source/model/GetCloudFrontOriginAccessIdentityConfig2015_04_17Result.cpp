@@ -42,6 +42,11 @@ GetCloudFrontOriginAccessIdentityConfig2015_04_17Result& GetCloudFrontOriginAcce
   if(!resultNode.IsNull())
   {
     XmlNode cloudFrontOriginAccessIdentityConfigNode = resultNode.FirstChild("CloudFrontOriginAccessIdentityConfig");
+    if(cloudFrontOriginAccessIdentityConfigNode.IsNull())
+    {
+      cloudFrontOriginAccessIdentityConfigNode = resultNode;
+    }
+
     if(!cloudFrontOriginAccessIdentityConfigNode.IsNull())
     {
       m_cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfigNode;

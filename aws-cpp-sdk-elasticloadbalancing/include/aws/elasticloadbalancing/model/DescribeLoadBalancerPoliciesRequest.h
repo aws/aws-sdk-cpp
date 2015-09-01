@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline DescribeLoadBalancerPoliciesRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline DescribeLoadBalancerPoliciesRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline DescribeLoadBalancerPoliciesRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The names of the policies.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
     /*
      <p>The names of the policies.</p>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>The names of the policies.</p>
     */
-    inline DescribeLoadBalancerPoliciesRequest&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+
+    /*
+     <p>The names of the policies.</p>
+    */
+    inline DescribeLoadBalancerPoliciesRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+
+    /*
+     <p>The names of the policies.</p>
+    */
+    inline DescribeLoadBalancerPoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /*
      <p>The names of the policies.</p>
     */
     inline DescribeLoadBalancerPoliciesRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the policies.</p>
+    */
+    inline DescribeLoadBalancerPoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /*
      <p>The names of the policies.</p>

@@ -41,6 +41,7 @@ namespace Model
      <p>Identifiers of the job flows to receive the new visibility setting.</p>
     */
     inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
+
     /*
      <p>Identifiers of the job flows to receive the new visibility setting.</p>
     */
@@ -49,12 +50,27 @@ namespace Model
     /*
      <p>Identifiers of the job flows to receive the new visibility setting.</p>
     */
-    inline SetVisibleToAllUsersRequest&  WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
+    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
+
+    /*
+     <p>Identifiers of the job flows to receive the new visibility setting.</p>
+    */
+    inline SetVisibleToAllUsersRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
+
+    /*
+     <p>Identifiers of the job flows to receive the new visibility setting.</p>
+    */
+    inline SetVisibleToAllUsersRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(value); return *this;}
 
     /*
      <p>Identifiers of the job flows to receive the new visibility setting.</p>
     */
     inline SetVisibleToAllUsersRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+
+    /*
+     <p>Identifiers of the job flows to receive the new visibility setting.</p>
+    */
+    inline SetVisibleToAllUsersRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
     /*
      <p>Identifiers of the job flows to receive the new visibility setting.</p>
@@ -65,6 +81,7 @@ namespace Model
      <p>Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view and manage it.</p>
     */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
+
     /*
      <p>Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view and manage it.</p>
     */
@@ -73,7 +90,7 @@ namespace Model
     /*
      <p>Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view and manage it.</p>
     */
-    inline SetVisibleToAllUsersRequest&  WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
+    inline SetVisibleToAllUsersRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_jobFlowIds;

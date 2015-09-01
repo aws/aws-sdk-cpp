@@ -45,6 +45,7 @@ namespace Model
      <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
     */
     inline const StepStateChangeReasonCode& GetCode() const{ return m_code; }
+
     /*
      <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
     */
@@ -53,16 +54,32 @@ namespace Model
     /*
      <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
     */
-    inline StepStateChangeReason&  WithCode(const StepStateChangeReasonCode& value) { SetCode(value); return *this;}
+    inline void SetCode(StepStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /*
+     <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
+    */
+    inline StepStateChangeReason& WithCode(const StepStateChangeReasonCode& value) { SetCode(value); return *this;}
+
+    /*
+     <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
+    */
+    inline StepStateChangeReason& WithCode(StepStateChangeReasonCode&& value) { SetCode(value); return *this;}
 
     /*
      <p>The descriptive message for the state change reason. </p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The descriptive message for the state change reason. </p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The descriptive message for the state change reason. </p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The descriptive message for the state change reason. </p>
@@ -72,7 +89,12 @@ namespace Model
     /*
      <p>The descriptive message for the state change reason. </p>
     */
-    inline StepStateChangeReason&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline StepStateChangeReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The descriptive message for the state change reason. </p>
+    */
+    inline StepStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The descriptive message for the state change reason. </p>

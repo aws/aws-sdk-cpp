@@ -38,10 +38,16 @@ namespace Model
      <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
     /*
      <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /*
+     <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+    */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /*
      <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     */
-    inline ApplyPendingMaintenanceActionRequest&  WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+    inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /*
+     <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+    */
+    inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(value); return *this;}
 
     /*
      <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The pending maintenance action to apply to this resource.</p>
     */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
+
     /*
      <p>The pending maintenance action to apply to this resource.</p>
     */
     inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
+
+    /*
+     <p>The pending maintenance action to apply to this resource.</p>
+    */
+    inline void SetApplyAction(Aws::String&& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /*
      <p>The pending maintenance action to apply to this resource.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The pending maintenance action to apply to this resource.</p>
     */
-    inline ApplyPendingMaintenanceActionRequest&  WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
+    inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
+
+    /*
+     <p>The pending maintenance action to apply to this resource.</p>
+    */
+    inline ApplyPendingMaintenanceActionRequest& WithApplyAction(Aws::String&& value) { SetApplyAction(value); return *this;}
 
     /*
      <p>The pending maintenance action to apply to this resource.</p>
@@ -86,10 +108,16 @@ namespace Model
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
     */
     inline const Aws::String& GetOptInType() const{ return m_optInType; }
+
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
     */
     inline void SetOptInType(const Aws::String& value) { m_optInTypeHasBeenSet = true; m_optInType = value; }
+
+    /*
+     <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
+    */
+    inline void SetOptInType(Aws::String&& value) { m_optInTypeHasBeenSet = true; m_optInType = value; }
 
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
     */
-    inline ApplyPendingMaintenanceActionRequest&  WithOptInType(const Aws::String& value) { SetOptInType(value); return *this;}
+    inline ApplyPendingMaintenanceActionRequest& WithOptInType(const Aws::String& value) { SetOptInType(value); return *this;}
+
+    /*
+     <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
+    */
+    inline ApplyPendingMaintenanceActionRequest& WithOptInType(Aws::String&& value) { SetOptInType(value); return *this;}
 
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>

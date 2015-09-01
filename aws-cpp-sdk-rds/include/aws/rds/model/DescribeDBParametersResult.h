@@ -49,6 +49,7 @@ namespace Model
      <p> A list of <a>Parameter</a> values. </p>
     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
     /*
      <p> A list of <a>Parameter</a> values. </p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p> A list of <a>Parameter</a> values. </p>
     */
-    inline DescribeDBParametersResult&  WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+
+    /*
+     <p> A list of <a>Parameter</a> values. </p>
+    */
+    inline DescribeDBParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+
+    /*
+     <p> A list of <a>Parameter</a> values. </p>
+    */
+    inline DescribeDBParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /*
      <p> A list of <a>Parameter</a> values. </p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeDBParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /*
+     <p> A list of <a>Parameter</a> values. </p>
+    */
+    inline DescribeDBParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+
+    /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
-    inline DescribeDBParametersResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeDBParametersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline DescribeDBParametersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeDBParametersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeDBParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeDBParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Parameter> m_parameters;

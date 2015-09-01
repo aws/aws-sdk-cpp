@@ -46,6 +46,7 @@ namespace Model
      <p>The step details for the requested step identifier.</p>
     */
     inline const Step& GetStep() const{ return m_step; }
+
     /*
      <p>The step details for the requested step identifier.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>The step details for the requested step identifier.</p>
     */
-    inline DescribeStepResult&  WithStep(const Step& value) { SetStep(value); return *this;}
+    inline void SetStep(Step&& value) { m_step = value; }
+
+    /*
+     <p>The step details for the requested step identifier.</p>
+    */
+    inline DescribeStepResult& WithStep(const Step& value) { SetStep(value); return *this;}
+
+    /*
+     <p>The step details for the requested step identifier.</p>
+    */
+    inline DescribeStepResult& WithStep(Step&& value) { SetStep(value); return *this;}
 
   private:
     Step m_step;

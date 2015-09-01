@@ -37,10 +37,16 @@ namespace Model
      <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
     */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
+
     /*
      <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
     */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
+
+    /*
+     <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
+    */
+    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /*
      <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
     */
-    inline ListRolesRequest&  WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
+    inline ListRolesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
+
+    /*
+     <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
+    */
+    inline ListRolesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
 
     /*
      <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. </p>
@@ -61,10 +72,16 @@ namespace Model
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
-    inline ListRolesRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListRolesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline ListRolesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -85,6 +107,7 @@ namespace Model
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
@@ -93,7 +116,7 @@ namespace Model
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
-    inline ListRolesRequest&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListRolesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_pathPrefix;

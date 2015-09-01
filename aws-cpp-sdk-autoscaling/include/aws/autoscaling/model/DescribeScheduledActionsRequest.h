@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline DescribeScheduledActionsRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeScheduledActionsRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
     */
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
+
     /*
      <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
     */
-    inline DescribeScheduledActionsRequest&  WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
+    inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
+
+    /*
+     <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+    */
+    inline DescribeScheduledActionsRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
+
+    /*
+     <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+    */
+    inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(value); return *this;}
 
     /*
      <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
     */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
+
+    /*
+     <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+    */
+    inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
     /*
      <p>Describes one or more scheduled actions. If you omit this list, the call describes all scheduled actions. If you specify an unknown scheduled action it is ignored with no error.</p> <p>You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
@@ -86,6 +113,7 @@ namespace Model
      <p>The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
     */
     inline double GetStartTime() const{ return m_startTime; }
+
     /*
      <p>The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
     */
@@ -94,12 +122,13 @@ namespace Model
     /*
      <p>The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
     */
-    inline DescribeScheduledActionsRequest&  WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /*
      <p>The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
     */
     inline double GetEndTime() const{ return m_endTime; }
+
     /*
      <p>The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
     */
@@ -108,16 +137,22 @@ namespace Model
     /*
      <p>The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
     */
-    inline DescribeScheduledActionsRequest&  WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -127,7 +162,12 @@ namespace Model
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
-    inline DescribeScheduledActionsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline DescribeScheduledActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -138,6 +178,7 @@ namespace Model
      <p>The maximum number of items to return with this call.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of items to return with this call.</p>
     */
@@ -146,7 +187,7 @@ namespace Model
     /*
      <p>The maximum number of items to return with this call.</p>
     */
-    inline DescribeScheduledActionsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;

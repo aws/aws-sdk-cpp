@@ -44,10 +44,16 @@ namespace Model
      A pagination token for obtaining the next page of results.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token for obtaining the next page of results.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      A pagination token for obtaining the next page of results.
@@ -57,7 +63,12 @@ namespace Model
     /*
      A pagination token for obtaining the next page of results.
     */
-    inline ListIdentityPoolUsageRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListIdentityPoolUsageRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline ListIdentityPoolUsageRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.
@@ -68,6 +79,7 @@ namespace Model
      The maximum number of results to be returned.
     */
     inline long GetMaxResults() const{ return m_maxResults; }
+
     /*
      The maximum number of results to be returned.
     */
@@ -76,7 +88,7 @@ namespace Model
     /*
      The maximum number of results to be returned.
     */
-    inline ListIdentityPoolUsageRequest&  WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListIdentityPoolUsageRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
   private:
     Aws::String m_nextToken;

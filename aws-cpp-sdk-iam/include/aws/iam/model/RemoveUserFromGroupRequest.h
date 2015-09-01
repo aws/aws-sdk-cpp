@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the group to update.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name of the group to update.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name of the group to update.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group to update.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the group to update.</p>
     */
-    inline RemoveUserFromGroupRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline RemoveUserFromGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group to update.</p>
+    */
+    inline RemoveUserFromGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name of the group to update.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the user to remove.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user to remove.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user to remove.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user to remove.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the user to remove.</p>
     */
-    inline RemoveUserFromGroupRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline RemoveUserFromGroupRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user to remove.</p>
+    */
+    inline RemoveUserFromGroupRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user to remove.</p>

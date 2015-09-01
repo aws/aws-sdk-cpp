@@ -45,10 +45,16 @@ namespace Model
      <p>The tag filter key.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>The tag filter key.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>The tag filter key.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The tag filter key.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The tag filter key.</p>
     */
-    inline EC2TagFilter&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline EC2TagFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>The tag filter key.</p>
+    */
+    inline EC2TagFilter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>The tag filter key.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The tag filter value.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>The tag filter value.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>The tag filter value.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>The tag filter value.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The tag filter value.</p>
     */
-    inline EC2TagFilter&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline EC2TagFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>The tag filter value.</p>
+    */
+    inline EC2TagFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>The tag filter value.</p>
@@ -93,6 +115,7 @@ namespace Model
      <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
     */
     inline const EC2TagFilterType& GetType() const{ return m_type; }
+
     /*
      <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
     */
@@ -101,7 +124,17 @@ namespace Model
     /*
      <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
     */
-    inline EC2TagFilter&  WithType(const EC2TagFilterType& value) { SetType(value); return *this;}
+    inline void SetType(EC2TagFilterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+    */
+    inline EC2TagFilter& WithType(const EC2TagFilterType& value) { SetType(value); return *this;}
+
+    /*
+     <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+    */
+    inline EC2TagFilter& WithType(EC2TagFilterType&& value) { SetType(value); return *this;}
 
   private:
     Aws::String m_key;

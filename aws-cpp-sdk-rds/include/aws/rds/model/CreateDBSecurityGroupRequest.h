@@ -40,10 +40,16 @@ namespace Model
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
     */
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
+
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
     */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
+
+    /*
+     <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
+    */
+    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
     */
-    inline CreateDBSecurityGroupRequest&  WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
+    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
+
+    /*
+     <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
+    */
+    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
 
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
@@ -64,10 +75,16 @@ namespace Model
      <p> The description for the DB security group. </p>
     */
     inline const Aws::String& GetDBSecurityGroupDescription() const{ return m_dBSecurityGroupDescription; }
+
     /*
      <p> The description for the DB security group. </p>
     */
     inline void SetDBSecurityGroupDescription(const Aws::String& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = value; }
+
+    /*
+     <p> The description for the DB security group. </p>
+    */
+    inline void SetDBSecurityGroupDescription(Aws::String&& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = value; }
 
     /*
      <p> The description for the DB security group. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> The description for the DB security group. </p>
     */
-    inline CreateDBSecurityGroupRequest&  WithDBSecurityGroupDescription(const Aws::String& value) { SetDBSecurityGroupDescription(value); return *this;}
+    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupDescription(const Aws::String& value) { SetDBSecurityGroupDescription(value); return *this;}
+
+    /*
+     <p> The description for the DB security group. </p>
+    */
+    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupDescription(Aws::String&& value) { SetDBSecurityGroupDescription(value); return *this;}
 
     /*
      <p> The description for the DB security group. </p>
@@ -86,14 +108,24 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline CreateDBSecurityGroupRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline CreateDBSecurityGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    
+    inline CreateDBSecurityGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     
     inline CreateDBSecurityGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    
+    inline CreateDBSecurityGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_dBSecurityGroupName;

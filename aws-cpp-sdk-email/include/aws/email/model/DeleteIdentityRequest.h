@@ -38,10 +38,16 @@ namespace Model
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
     */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
+
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
+
+    /*
+     <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    */
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
     */
-    inline DeleteIdentityRequest&  WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
+    inline DeleteIdentityRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
+
+    /*
+     <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    */
+    inline DeleteIdentityRequest& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
 
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>

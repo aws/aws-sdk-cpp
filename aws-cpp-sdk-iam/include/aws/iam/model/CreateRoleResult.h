@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the role.</p>
     */
     inline const Role& GetRole() const{ return m_role; }
+
     /*
      <p>Information about the role.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the role.</p>
     */
-    inline CreateRoleResult&  WithRole(const Role& value) { SetRole(value); return *this;}
+    inline void SetRole(Role&& value) { m_role = value; }
+
+    /*
+     <p>Information about the role.</p>
+    */
+    inline CreateRoleResult& WithRole(const Role& value) { SetRole(value); return *this;}
+
+    /*
+     <p>Information about the role.</p>
+    */
+    inline CreateRoleResult& WithRole(Role&& value) { SetRole(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateRoleResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateRoleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Role m_role;

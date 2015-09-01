@@ -46,6 +46,7 @@ namespace Model
      <p>The current state of the cluster.</p>
     */
     inline const ClusterState& GetState() const{ return m_state; }
+
     /*
      <p>The current state of the cluster.</p>
     */
@@ -54,12 +55,23 @@ namespace Model
     /*
      <p>The current state of the cluster.</p>
     */
-    inline ClusterStatus&  WithState(const ClusterState& value) { SetState(value); return *this;}
+    inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p>The current state of the cluster.</p>
+    */
+    inline ClusterStatus& WithState(const ClusterState& value) { SetState(value); return *this;}
+
+    /*
+     <p>The current state of the cluster.</p>
+    */
+    inline ClusterStatus& WithState(ClusterState&& value) { SetState(value); return *this;}
 
     /*
      <p>The reason for the cluster status change.</p>
     */
     inline const ClusterStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+
     /*
      <p>The reason for the cluster status change.</p>
     */
@@ -68,12 +80,23 @@ namespace Model
     /*
      <p>The reason for the cluster status change.</p>
     */
-    inline ClusterStatus&  WithStateChangeReason(const ClusterStateChangeReason& value) { SetStateChangeReason(value); return *this;}
+    inline void SetStateChangeReason(ClusterStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+
+    /*
+     <p>The reason for the cluster status change.</p>
+    */
+    inline ClusterStatus& WithStateChangeReason(const ClusterStateChangeReason& value) { SetStateChangeReason(value); return *this;}
+
+    /*
+     <p>The reason for the cluster status change.</p>
+    */
+    inline ClusterStatus& WithStateChangeReason(ClusterStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
 
     /*
      <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     */
     inline const ClusterTimeline& GetTimeline() const{ return m_timeline; }
+
     /*
      <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     */
@@ -82,7 +105,17 @@ namespace Model
     /*
      <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     */
-    inline ClusterStatus&  WithTimeline(const ClusterTimeline& value) { SetTimeline(value); return *this;}
+    inline void SetTimeline(ClusterTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+
+    /*
+     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
+    */
+    inline ClusterStatus& WithTimeline(const ClusterTimeline& value) { SetTimeline(value); return *this;}
+
+    /*
+     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
+    */
+    inline ClusterStatus& WithTimeline(ClusterTimeline&& value) { SetTimeline(value); return *this;}
 
   private:
     ClusterState m_state;

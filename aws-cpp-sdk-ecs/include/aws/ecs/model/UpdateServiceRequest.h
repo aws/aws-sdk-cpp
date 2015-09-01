@@ -39,10 +39,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
-    inline UpdateServiceRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline UpdateServiceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline UpdateServiceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The name of the service that you want to update.</p>
     */
     inline const Aws::String& GetService() const{ return m_service; }
+
     /*
      <p>The name of the service that you want to update.</p>
     */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
+
+    /*
+     <p>The name of the service that you want to update.</p>
+    */
+    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /*
      <p>The name of the service that you want to update.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The name of the service that you want to update.</p>
     */
-    inline UpdateServiceRequest&  WithService(const Aws::String& value) { SetService(value); return *this;}
+    inline UpdateServiceRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
+
+    /*
+     <p>The name of the service that you want to update.</p>
+    */
+    inline UpdateServiceRequest& WithService(Aws::String&& value) { SetService(value); return *this;}
 
     /*
      <p>The name of the service that you want to update.</p>
@@ -87,6 +109,7 @@ namespace Model
      <p>The number of instantiations of the task that you would like to place and keep running in your service.</p>
     */
     inline long GetDesiredCount() const{ return m_desiredCount; }
+
     /*
      <p>The number of instantiations of the task that you would like to place and keep running in your service.</p>
     */
@@ -95,16 +118,22 @@ namespace Model
     /*
      <p>The number of instantiations of the task that you would like to place and keep running in your service.</p>
     */
-    inline UpdateServiceRequest&  WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
+    inline UpdateServiceRequest& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
     */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+
+    /*
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
+    */
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
@@ -114,7 +143,12 @@ namespace Model
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
     */
-    inline UpdateServiceRequest&  WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
+    inline UpdateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
+
+    /*
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
+    */
+    inline UpdateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>

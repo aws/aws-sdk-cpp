@@ -47,10 +47,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
     */
-    inline NotificationConfiguration&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline NotificationConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    */
+    inline NotificationConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The current state of the topic.</p>
     */
     inline const Aws::String& GetTopicStatus() const{ return m_topicStatus; }
+
     /*
      <p>The current state of the topic.</p>
     */
     inline void SetTopicStatus(const Aws::String& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
+
+    /*
+     <p>The current state of the topic.</p>
+    */
+    inline void SetTopicStatus(Aws::String&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
 
     /*
      <p>The current state of the topic.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The current state of the topic.</p>
     */
-    inline NotificationConfiguration&  WithTopicStatus(const Aws::String& value) { SetTopicStatus(value); return *this;}
+    inline NotificationConfiguration& WithTopicStatus(const Aws::String& value) { SetTopicStatus(value); return *this;}
+
+    /*
+     <p>The current state of the topic.</p>
+    */
+    inline NotificationConfiguration& WithTopicStatus(Aws::String&& value) { SetTopicStatus(value); return *this;}
 
     /*
      <p>The current state of the topic.</p>

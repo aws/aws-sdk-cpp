@@ -46,10 +46,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the vault.</p>
     */
     inline const Aws::String& GetVaultARN() const{ return m_vaultARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the vault.</p>
     */
     inline void SetVaultARN(const Aws::String& value) { m_vaultARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the vault.</p>
+    */
+    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the vault.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the vault.</p>
     */
-    inline DescribeVaultResult&  WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
+    inline DescribeVaultResult& WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the vault.</p>
+    */
+    inline DescribeVaultResult& WithVaultARN(Aws::String&& value) { SetVaultARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the vault.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The name of the vault.</p>
     */
     inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+
     /*
      <p>The name of the vault.</p>
     */
     inline void SetVaultName(const Aws::String& value) { m_vaultName = value; }
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline void SetVaultName(Aws::String&& value) { m_vaultName = value; }
 
     /*
      <p>The name of the vault.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The name of the vault.</p>
     */
-    inline DescribeVaultResult&  WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+    inline DescribeVaultResult& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline DescribeVaultResult& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
 
     /*
      <p>The name of the vault.</p>
@@ -94,10 +116,16 @@ namespace Model
      <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
     */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
     /*
      <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDate = value; }
+
+    /*
+     <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
+    */
+    inline void SetCreationDate(Aws::String&& value) { m_creationDate = value; }
 
     /*
      <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
@@ -107,7 +135,12 @@ namespace Model
     /*
      <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
     */
-    inline DescribeVaultResult&  WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+    inline DescribeVaultResult& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+
+    /*
+     <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
+    */
+    inline DescribeVaultResult& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
 
     /*
      <p>The UTC date when the vault was created. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
@@ -118,10 +151,16 @@ namespace Model
      <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
     */
     inline const Aws::String& GetLastInventoryDate() const{ return m_lastInventoryDate; }
+
     /*
      <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
     */
     inline void SetLastInventoryDate(const Aws::String& value) { m_lastInventoryDate = value; }
+
+    /*
+     <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
+    */
+    inline void SetLastInventoryDate(Aws::String&& value) { m_lastInventoryDate = value; }
 
     /*
      <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
@@ -131,7 +170,12 @@ namespace Model
     /*
      <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
     */
-    inline DescribeVaultResult&  WithLastInventoryDate(const Aws::String& value) { SetLastInventoryDate(value); return *this;}
+    inline DescribeVaultResult& WithLastInventoryDate(const Aws::String& value) { SetLastInventoryDate(value); return *this;}
+
+    /*
+     <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
+    */
+    inline DescribeVaultResult& WithLastInventoryDate(Aws::String&& value) { SetLastInventoryDate(value); return *this;}
 
     /*
      <p>The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".</p>
@@ -142,6 +186,7 @@ namespace Model
      <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example, if you just created the vault.</p>
     */
     inline long long GetNumberOfArchives() const{ return m_numberOfArchives; }
+
     /*
      <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example, if you just created the vault.</p>
     */
@@ -150,12 +195,13 @@ namespace Model
     /*
      <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example, if you just created the vault.</p>
     */
-    inline DescribeVaultResult&  WithNumberOfArchives(long long value) { SetNumberOfArchives(value); return *this;}
+    inline DescribeVaultResult& WithNumberOfArchives(long long value) { SetNumberOfArchives(value); return *this;}
 
     /*
      <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example, if you just created the vault.</p>
     */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+
     /*
      <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example, if you just created the vault.</p>
     */
@@ -164,7 +210,7 @@ namespace Model
     /*
      <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example, if you just created the vault.</p>
     */
-    inline DescribeVaultResult&  WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+    inline DescribeVaultResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
   private:
     Aws::String m_vaultARN;

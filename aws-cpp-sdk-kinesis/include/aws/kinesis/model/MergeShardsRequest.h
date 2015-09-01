@@ -40,10 +40,16 @@ namespace Model
      <p>The name of the stream for the merge.</p>
     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     /*
      <p>The name of the stream for the merge.</p>
     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /*
+     <p>The name of the stream for the merge.</p>
+    */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream for the merge.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of the stream for the merge.</p>
     */
-    inline MergeShardsRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline MergeShardsRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /*
+     <p>The name of the stream for the merge.</p>
+    */
+    inline MergeShardsRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /*
      <p>The name of the stream for the merge.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     */
     inline const Aws::String& GetShardToMerge() const{ return m_shardToMerge; }
+
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     */
     inline void SetShardToMerge(const Aws::String& value) { m_shardToMergeHasBeenSet = true; m_shardToMerge = value; }
+
+    /*
+     <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
+    */
+    inline void SetShardToMerge(Aws::String&& value) { m_shardToMergeHasBeenSet = true; m_shardToMerge = value; }
 
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     */
-    inline MergeShardsRequest&  WithShardToMerge(const Aws::String& value) { SetShardToMerge(value); return *this;}
+    inline MergeShardsRequest& WithShardToMerge(const Aws::String& value) { SetShardToMerge(value); return *this;}
+
+    /*
+     <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
+    */
+    inline MergeShardsRequest& WithShardToMerge(Aws::String&& value) { SetShardToMerge(value); return *this;}
 
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
@@ -88,10 +110,16 @@ namespace Model
      <p>The shard ID of the adjacent shard for the merge.</p>
     */
     inline const Aws::String& GetAdjacentShardToMerge() const{ return m_adjacentShardToMerge; }
+
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>
     */
     inline void SetAdjacentShardToMerge(const Aws::String& value) { m_adjacentShardToMergeHasBeenSet = true; m_adjacentShardToMerge = value; }
+
+    /*
+     <p>The shard ID of the adjacent shard for the merge.</p>
+    */
+    inline void SetAdjacentShardToMerge(Aws::String&& value) { m_adjacentShardToMergeHasBeenSet = true; m_adjacentShardToMerge = value; }
 
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>
@@ -101,7 +129,12 @@ namespace Model
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>
     */
-    inline MergeShardsRequest&  WithAdjacentShardToMerge(const Aws::String& value) { SetAdjacentShardToMerge(value); return *this;}
+    inline MergeShardsRequest& WithAdjacentShardToMerge(const Aws::String& value) { SetAdjacentShardToMerge(value); return *this;}
+
+    /*
+     <p>The shard ID of the adjacent shard for the merge.</p>
+    */
+    inline MergeShardsRequest& WithAdjacentShardToMerge(Aws::String&& value) { SetAdjacentShardToMerge(value); return *this;}
 
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>

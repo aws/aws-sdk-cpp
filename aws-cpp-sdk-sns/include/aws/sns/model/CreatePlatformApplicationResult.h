@@ -47,10 +47,16 @@ namespace Model
      <p>PlatformApplicationArn is returned.</p>
     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
+
     /*
      <p>PlatformApplicationArn is returned.</p>
     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArn = value; }
+
+    /*
+     <p>PlatformApplicationArn is returned.</p>
+    */
+    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn is returned.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn is returned.</p>
     */
-    inline CreatePlatformApplicationResult&  WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+    inline CreatePlatformApplicationResult& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+
+    /*
+     <p>PlatformApplicationArn is returned.</p>
+    */
+    inline CreatePlatformApplicationResult& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
     /*
      <p>PlatformApplicationArn is returned.</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreatePlatformApplicationResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreatePlatformApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreatePlatformApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_platformApplicationArn;

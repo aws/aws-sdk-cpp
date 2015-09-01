@@ -39,10 +39,16 @@ namespace Model
      <p>The log group name for which subscription filters are to be listed.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The log group name for which subscription filters are to be listed.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The log group name for which subscription filters are to be listed.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The log group name for which subscription filters are to be listed.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The log group name for which subscription filters are to be listed.</p>
     */
-    inline DescribeSubscriptionFiltersRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The log group name for which subscription filters are to be listed.</p>
+    */
+    inline DescribeSubscriptionFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The log group name for which subscription filters are to be listed.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
+
     /*
      <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
+
+    /*
+     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
+    inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
     /*
      <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
-    inline DescribeSubscriptionFiltersRequest&  WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
+
+    /*
+     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
+    inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(value); return *this;}
 
     /*
      <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
@@ -85,25 +107,33 @@ namespace Model
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     
-    inline DescribeSubscriptionFiltersRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline DescribeSubscriptionFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline DescribeSubscriptionFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     
     inline long GetLimit() const{ return m_limit; }
+
     
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     
-    inline DescribeSubscriptionFiltersRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_logGroupName;

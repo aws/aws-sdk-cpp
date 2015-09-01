@@ -47,10 +47,16 @@ namespace Model
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
     */
     inline const Aws::String& GetRole() const{ return m_role; }
+
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /*
+     Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
+    */
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
@@ -60,7 +66,12 @@ namespace Model
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
     */
-    inline ReplicationConfiguration&  WithRole(const Aws::String& value) { SetRole(value); return *this;}
+    inline ReplicationConfiguration& WithRole(const Aws::String& value) { SetRole(value); return *this;}
+
+    /*
+     Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
+    */
+    inline ReplicationConfiguration& WithRole(Aws::String&& value) { SetRole(value); return *this;}
 
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
@@ -71,6 +82,7 @@ namespace Model
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
     */
     inline const Aws::Vector<ReplicationRule>& GetRules() const{ return m_rules; }
+
     /*
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
     */
@@ -79,12 +91,27 @@ namespace Model
     /*
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
     */
-    inline ReplicationConfiguration&  WithRules(const Aws::Vector<ReplicationRule>& value) { SetRules(value); return *this;}
+    inline void SetRules(Aws::Vector<ReplicationRule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+
+    /*
+     Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
+    */
+    inline ReplicationConfiguration& WithRules(const Aws::Vector<ReplicationRule>& value) { SetRules(value); return *this;}
+
+    /*
+     Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
+    */
+    inline ReplicationConfiguration& WithRules(Aws::Vector<ReplicationRule>&& value) { SetRules(value); return *this;}
 
     /*
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
     */
     inline ReplicationConfiguration& AddRules(const ReplicationRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+
+    /*
+     Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
+    */
+    inline ReplicationConfiguration& AddRules(ReplicationRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
   private:
     Aws::String m_role;

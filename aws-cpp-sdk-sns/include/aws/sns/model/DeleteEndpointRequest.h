@@ -38,10 +38,16 @@ namespace Model
      <p>EndpointArn of endpoint to delete.</p>
     */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+
     /*
      <p>EndpointArn of endpoint to delete.</p>
     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+
+    /*
+     <p>EndpointArn of endpoint to delete.</p>
+    */
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /*
      <p>EndpointArn of endpoint to delete.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>EndpointArn of endpoint to delete.</p>
     */
-    inline DeleteEndpointRequest&  WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
+    inline DeleteEndpointRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
+
+    /*
+     <p>EndpointArn of endpoint to delete.</p>
+    */
+    inline DeleteEndpointRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
 
     /*
      <p>EndpointArn of endpoint to delete.</p>

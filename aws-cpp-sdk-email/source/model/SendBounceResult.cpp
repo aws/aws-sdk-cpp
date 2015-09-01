@@ -42,6 +42,11 @@ SendBounceResult& SendBounceResult::operator =(const AmazonWebServiceResult<XmlD
   if(!resultNode.IsNull())
   {
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
+    if(messageIdNode.IsNull())
+    {
+      messageIdNode = resultNode;
+    }
+
     if(!messageIdNode.IsNull())
     {
       m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());

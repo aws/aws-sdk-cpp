@@ -47,6 +47,7 @@ namespace Model
      <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
     */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItemCollectionKey() const{ return m_itemCollectionKey; }
+
     /*
      <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
     */
@@ -55,12 +56,42 @@ namespace Model
     /*
      <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
     */
-    inline ItemCollectionMetrics&  WithItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetItemCollectionKey(value); return *this;}
+    inline void SetItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = value; }
+
+    /*
+     <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
+    */
+    inline ItemCollectionMetrics& WithItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetItemCollectionKey(value); return *this;}
+
+    /*
+     <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
+    */
+    inline ItemCollectionMetrics& WithItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetItemCollectionKey(value); return *this;}
 
     /*
      <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
     */
     inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+
+    /*
+     <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
+    */
+    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+
+    /*
+     <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
+    */
+    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+
+    /*
+     <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
+    */
+    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+
+    /*
+     <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
+    */
+    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 
     /*
      <p>The hash key value of the item collection. This value is the same as the hash key of the item.</p>
@@ -71,6 +102,7 @@ namespace Model
      <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
     */
     inline const Aws::Vector<double>& GetSizeEstimateRangeGB() const{ return m_sizeEstimateRangeGB; }
+
     /*
      <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
     */
@@ -79,7 +111,17 @@ namespace Model
     /*
      <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
     */
-    inline ItemCollectionMetrics&  WithSizeEstimateRangeGB(const Aws::Vector<double>& value) { SetSizeEstimateRangeGB(value); return *this;}
+    inline void SetSizeEstimateRangeGB(Aws::Vector<double>&& value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB = value; }
+
+    /*
+     <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    */
+    inline ItemCollectionMetrics& WithSizeEstimateRangeGB(const Aws::Vector<double>& value) { SetSizeEstimateRangeGB(value); return *this;}
+
+    /*
+     <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    */
+    inline ItemCollectionMetrics& WithSizeEstimateRangeGB(Aws::Vector<double>&& value) { SetSizeEstimateRangeGB(value); return *this;}
 
     /*
      <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>

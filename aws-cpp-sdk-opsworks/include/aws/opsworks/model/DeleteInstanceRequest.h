@@ -39,10 +39,16 @@ namespace Model
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline DeleteInstanceRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline DeleteInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline DeleteInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>Whether to delete the instance Elastic IP address.</p>
     */
     inline bool GetDeleteElasticIp() const{ return m_deleteElasticIp; }
+
     /*
      <p>Whether to delete the instance Elastic IP address.</p>
     */
@@ -71,12 +83,13 @@ namespace Model
     /*
      <p>Whether to delete the instance Elastic IP address.</p>
     */
-    inline DeleteInstanceRequest&  WithDeleteElasticIp(bool value) { SetDeleteElasticIp(value); return *this;}
+    inline DeleteInstanceRequest& WithDeleteElasticIp(bool value) { SetDeleteElasticIp(value); return *this;}
 
     /*
      <p>Whether to delete the instance's Amazon EBS volumes.</p>
     */
     inline bool GetDeleteVolumes() const{ return m_deleteVolumes; }
+
     /*
      <p>Whether to delete the instance's Amazon EBS volumes.</p>
     */
@@ -85,7 +98,7 @@ namespace Model
     /*
      <p>Whether to delete the instance's Amazon EBS volumes.</p>
     */
-    inline DeleteInstanceRequest&  WithDeleteVolumes(bool value) { SetDeleteVolumes(value); return *this;}
+    inline DeleteInstanceRequest& WithDeleteVolumes(bool value) { SetDeleteVolumes(value); return *this;}
 
   private:
     Aws::String m_instanceId;

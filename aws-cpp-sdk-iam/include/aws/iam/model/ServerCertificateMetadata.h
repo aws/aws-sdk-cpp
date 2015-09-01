@@ -47,10 +47,16 @@ namespace Model
      <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::String& GetPath() const{ return m_path; }
+
     /*
      <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline ServerCertificateMetadata&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+    inline ServerCertificateMetadata& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ServerCertificateMetadata& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /*
      <p> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name that identifies the server certificate.</p>
     */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
+
     /*
      <p>The name that identifies the server certificate.</p>
     */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
+
+    /*
+     <p>The name that identifies the server certificate.</p>
+    */
+    inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
      <p>The name that identifies the server certificate.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name that identifies the server certificate.</p>
     */
-    inline ServerCertificateMetadata&  WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
+    inline ServerCertificateMetadata& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
+
+    /*
+     <p>The name that identifies the server certificate.</p>
+    */
+    inline ServerCertificateMetadata& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(value); return *this;}
 
     /*
      <p>The name that identifies the server certificate.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::String& GetServerCertificateId() const{ return m_serverCertificateId; }
+
     /*
      <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline void SetServerCertificateId(const Aws::String& value) { m_serverCertificateIdHasBeenSet = true; m_serverCertificateId = value; }
+
+    /*
+     <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetServerCertificateId(Aws::String&& value) { m_serverCertificateIdHasBeenSet = true; m_serverCertificateId = value; }
 
     /*
      <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline ServerCertificateMetadata&  WithServerCertificateId(const Aws::String& value) { SetServerCertificateId(value); return *this;}
+    inline ServerCertificateMetadata& WithServerCertificateId(const Aws::String& value) { SetServerCertificateId(value); return *this;}
+
+    /*
+     <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ServerCertificateMetadata& WithServerCertificateId(Aws::String&& value) { SetServerCertificateId(value); return *this;}
 
     /*
      <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -119,10 +152,16 @@ namespace Model
      <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline ServerCertificateMetadata&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline ServerCertificateMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ServerCertificateMetadata& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -143,6 +187,7 @@ namespace Model
      <p>The date when the server certificate was uploaded.</p>
     */
     inline double GetUploadDate() const{ return m_uploadDate; }
+
     /*
      <p>The date when the server certificate was uploaded.</p>
     */
@@ -151,12 +196,13 @@ namespace Model
     /*
      <p>The date when the server certificate was uploaded.</p>
     */
-    inline ServerCertificateMetadata&  WithUploadDate(double value) { SetUploadDate(value); return *this;}
+    inline ServerCertificateMetadata& WithUploadDate(double value) { SetUploadDate(value); return *this;}
 
     /*
      <p>The date on which the certificate is set to expire.</p>
     */
     inline double GetExpiration() const{ return m_expiration; }
+
     /*
      <p>The date on which the certificate is set to expire.</p>
     */
@@ -165,7 +211,7 @@ namespace Model
     /*
      <p>The date on which the certificate is set to expire.</p>
     */
-    inline ServerCertificateMetadata&  WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline ServerCertificateMetadata& WithExpiration(double value) { SetExpiration(value); return *this;}
 
   private:
     Aws::String m_path;

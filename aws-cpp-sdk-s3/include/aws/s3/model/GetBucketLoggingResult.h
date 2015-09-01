@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const LoggingEnabled& GetLoggingEnabled() const{ return m_loggingEnabled; }
+
     
     inline void SetLoggingEnabled(const LoggingEnabled& value) { m_loggingEnabled = value; }
 
     
-    inline GetBucketLoggingResult&  WithLoggingEnabled(const LoggingEnabled& value) { SetLoggingEnabled(value); return *this;}
+    inline void SetLoggingEnabled(LoggingEnabled&& value) { m_loggingEnabled = value; }
+
+    
+    inline GetBucketLoggingResult& WithLoggingEnabled(const LoggingEnabled& value) { SetLoggingEnabled(value); return *this;}
+
+    
+    inline GetBucketLoggingResult& WithLoggingEnabled(LoggingEnabled&& value) { SetLoggingEnabled(value); return *this;}
 
   private:
     LoggingEnabled m_loggingEnabled;

@@ -48,6 +48,7 @@ namespace Model
      <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
     */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
+
     /*
      <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
     */
-    inline RunTaskResult&  WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
+    inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = value; }
+
+    /*
+     <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
+    */
+    inline RunTaskResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
+
+    /*
+     <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
+    */
+    inline RunTaskResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(value); return *this;}
 
     /*
      <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
@@ -64,9 +75,15 @@ namespace Model
     inline RunTaskResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
 
     /*
+     <p>A full description of the tasks that were run. Each task that was successfully placed on your cluster will be described here.</p>
+    */
+    inline RunTaskResult& AddTasks(Task&& value) { m_tasks.push_back(value); return *this; }
+
+    /*
      <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
     */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
+
     /*
      <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
     */
@@ -75,12 +92,27 @@ namespace Model
     /*
      <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
     */
-    inline RunTaskResult&  WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+
+    /*
+     <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
+    */
+    inline RunTaskResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+
+    /*
+     <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
+    */
+    inline RunTaskResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
     /*
      <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
     */
     inline RunTaskResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
+
+    /*
+     <p>Any failed tasks from your <code>RunTask</code> action are listed here.</p>
+    */
+    inline RunTaskResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:
     Aws::Vector<Task> m_tasks;

@@ -40,10 +40,16 @@ namespace Model
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     */
-    inline ListDeploymentGroupsRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline ListDeploymentGroupsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
+    inline ListDeploymentGroupsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
     */
-    inline ListDeploymentGroupsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
+    inline ListDeploymentGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>

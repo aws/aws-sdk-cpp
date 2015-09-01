@@ -48,6 +48,7 @@ namespace Model
      <p>The updated list of instances for the load balancer.</p>
     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
     /*
      <p>The updated list of instances for the load balancer.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>The updated list of instances for the load balancer.</p>
     */
-    inline RegisterInstancesWithLoadBalancerResult&  WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
+
+    /*
+     <p>The updated list of instances for the load balancer.</p>
+    */
+    inline RegisterInstancesWithLoadBalancerResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+
+    /*
+     <p>The updated list of instances for the load balancer.</p>
+    */
+    inline RegisterInstancesWithLoadBalancerResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
     /*
      <p>The updated list of instances for the load balancer.</p>
     */
     inline RegisterInstancesWithLoadBalancerResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
 
+    /*
+     <p>The updated list of instances for the load balancer.</p>
+    */
+    inline RegisterInstancesWithLoadBalancerResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline RegisterInstancesWithLoadBalancerResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline RegisterInstancesWithLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline RegisterInstancesWithLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Instance> m_instances;

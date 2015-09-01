@@ -39,10 +39,16 @@ namespace Model
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
-    inline SetDataRetrievalPolicyRequest&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline SetDataRetrievalPolicyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline SetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>The data retrieval policy in JSON format.</p>
     */
     inline const DataRetrievalPolicy& GetPolicy() const{ return m_policy; }
+
     /*
      <p>The data retrieval policy in JSON format.</p>
     */
@@ -71,7 +83,17 @@ namespace Model
     /*
      <p>The data retrieval policy in JSON format.</p>
     */
-    inline SetDataRetrievalPolicyRequest&  WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
+    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policyHasBeenSet = true; m_policy = value; }
+
+    /*
+     <p>The data retrieval policy in JSON format.</p>
+    */
+    inline SetDataRetrievalPolicyRequest& WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>The data retrieval policy in JSON format.</p>
+    */
+    inline SetDataRetrievalPolicyRequest& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(value); return *this;}
 
   private:
     Aws::String m_accountId;

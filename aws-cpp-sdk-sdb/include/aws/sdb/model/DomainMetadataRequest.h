@@ -37,10 +37,16 @@ namespace Model
      The name of the domain for which to display the metadata of.
     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
     /*
      The name of the domain for which to display the metadata of.
     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /*
+     The name of the domain for which to display the metadata of.
+    */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain for which to display the metadata of.
@@ -50,7 +56,12 @@ namespace Model
     /*
      The name of the domain for which to display the metadata of.
     */
-    inline DomainMetadataRequest&  WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline DomainMetadataRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /*
+     The name of the domain for which to display the metadata of.
+    */
+    inline DomainMetadataRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /*
      The name of the domain for which to display the metadata of.

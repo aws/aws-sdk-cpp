@@ -47,24 +47,44 @@ BouncedRecipientInfo& BouncedRecipientInfo::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode recipientNode = resultNode.FirstChild("Recipient");
+    if(recipientNode.IsNull())
+    {
+      recipientNode = resultNode;
+    }
+
     if(!recipientNode.IsNull())
     {
       m_recipient = StringUtils::Trim(recipientNode.GetText().c_str());
       m_recipientHasBeenSet = true;
     }
     XmlNode recipientArnNode = resultNode.FirstChild("RecipientArn");
+    if(recipientArnNode.IsNull())
+    {
+      recipientArnNode = resultNode;
+    }
+
     if(!recipientArnNode.IsNull())
     {
       m_recipientArn = StringUtils::Trim(recipientArnNode.GetText().c_str());
       m_recipientArnHasBeenSet = true;
     }
     XmlNode bounceTypeNode = resultNode.FirstChild("BounceType");
+    if(bounceTypeNode.IsNull())
+    {
+      bounceTypeNode = resultNode;
+    }
+
     if(!bounceTypeNode.IsNull())
     {
       m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(bounceTypeNode.GetText().c_str()).c_str());
       m_bounceTypeHasBeenSet = true;
     }
     XmlNode recipientDsnFieldsNode = resultNode.FirstChild("RecipientDsnFields");
+    if(recipientDsnFieldsNode.IsNull())
+    {
+      recipientDsnFieldsNode = resultNode;
+    }
+
     if(!recipientDsnFieldsNode.IsNull())
     {
       m_recipientDsnFields = recipientDsnFieldsNode;

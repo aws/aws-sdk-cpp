@@ -47,6 +47,7 @@ namespace Model
      <p>The Cognito Events returned from the GetCognitoEvents request</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetEvents() const{ return m_events; }
+
     /*
      <p>The Cognito Events returned from the GetCognitoEvents request</p>
     */
@@ -55,12 +56,47 @@ namespace Model
     /*
      <p>The Cognito Events returned from the GetCognitoEvents request</p>
     */
-    inline GetCognitoEventsResult&  WithEvents(const Aws::Map<Aws::String, Aws::String>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Map<Aws::String, Aws::String>&& value) { m_events = value; }
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& WithEvents(const Aws::Map<Aws::String, Aws::String>& value) { SetEvents(value); return *this;}
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& WithEvents(Aws::Map<Aws::String, Aws::String>&& value) { SetEvents(value); return *this;}
 
     /*
      <p>The Cognito Events returned from the GetCognitoEvents request</p>
     */
     inline GetCognitoEventsResult& AddEvents(const Aws::String& key, const Aws::String& value) { m_events[key] = value; return *this; }
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& AddEvents(Aws::String&& key, const Aws::String& value) { m_events[key] = value; return *this; }
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& AddEvents(const Aws::String& key, Aws::String&& value) { m_events[key] = value; return *this; }
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& AddEvents(Aws::String&& key, Aws::String&& value) { m_events[key] = value; return *this; }
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& AddEvents(const char* key, Aws::String&& value) { m_events[key] = value; return *this; }
+
+    /*
+     <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    */
+    inline GetCognitoEventsResult& AddEvents(Aws::String&& key, const char* value) { m_events[key] = value; return *this; }
 
     /*
      <p>The Cognito Events returned from the GetCognitoEvents request</p>

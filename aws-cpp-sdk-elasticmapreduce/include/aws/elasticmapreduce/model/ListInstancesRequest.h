@@ -42,10 +42,16 @@ namespace Model
      <p>The identifier of the cluster for which to list the instances.</p>
     */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
     /*
      <p>The identifier of the cluster for which to list the instances.</p>
     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /*
+     <p>The identifier of the cluster for which to list the instances.</p>
+    */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /*
      <p>The identifier of the cluster for which to list the instances.</p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>The identifier of the cluster for which to list the instances.</p>
     */
-    inline ListInstancesRequest&  WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+    inline ListInstancesRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /*
+     <p>The identifier of the cluster for which to list the instances.</p>
+    */
+    inline ListInstancesRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
 
     /*
      <p>The identifier of the cluster for which to list the instances.</p>
@@ -66,10 +77,16 @@ namespace Model
      <p>The identifier of the instance group for which to list the instances.</p>
     */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+
     /*
      <p>The identifier of the instance group for which to list the instances.</p>
     */
     inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
+
+    /*
+     <p>The identifier of the instance group for which to list the instances.</p>
+    */
+    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
     /*
      <p>The identifier of the instance group for which to list the instances.</p>
@@ -79,7 +96,12 @@ namespace Model
     /*
      <p>The identifier of the instance group for which to list the instances.</p>
     */
-    inline ListInstancesRequest&  WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
+    inline ListInstancesRequest& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
+
+    /*
+     <p>The identifier of the instance group for which to list the instances.</p>
+    */
+    inline ListInstancesRequest& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(value); return *this;}
 
     /*
      <p>The identifier of the instance group for which to list the instances.</p>
@@ -90,6 +112,7 @@ namespace Model
      <p>The type of instance group for which to list the instances.</p>
     */
     inline const Aws::Vector<InstanceGroupType>& GetInstanceGroupTypes() const{ return m_instanceGroupTypes; }
+
     /*
      <p>The type of instance group for which to list the instances.</p>
     */
@@ -98,7 +121,17 @@ namespace Model
     /*
      <p>The type of instance group for which to list the instances.</p>
     */
-    inline ListInstancesRequest&  WithInstanceGroupTypes(const Aws::Vector<InstanceGroupType>& value) { SetInstanceGroupTypes(value); return *this;}
+    inline void SetInstanceGroupTypes(Aws::Vector<InstanceGroupType>&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes = value; }
+
+    /*
+     <p>The type of instance group for which to list the instances.</p>
+    */
+    inline ListInstancesRequest& WithInstanceGroupTypes(const Aws::Vector<InstanceGroupType>& value) { SetInstanceGroupTypes(value); return *this;}
+
+    /*
+     <p>The type of instance group for which to list the instances.</p>
+    */
+    inline ListInstancesRequest& WithInstanceGroupTypes(Aws::Vector<InstanceGroupType>&& value) { SetInstanceGroupTypes(value); return *this;}
 
     /*
      <p>The type of instance group for which to list the instances.</p>
@@ -106,13 +139,24 @@ namespace Model
     inline ListInstancesRequest& AddInstanceGroupTypes(const InstanceGroupType& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(value); return *this; }
 
     /*
+     <p>The type of instance group for which to list the instances.</p>
+    */
+    inline ListInstancesRequest& AddInstanceGroupTypes(InstanceGroupType&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -122,7 +166,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
-    inline ListInstancesRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListInstancesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline ListInstancesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>

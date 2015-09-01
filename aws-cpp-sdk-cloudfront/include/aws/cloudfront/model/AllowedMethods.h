@@ -47,6 +47,7 @@ namespace Model
      The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
     */
@@ -55,12 +56,13 @@ namespace Model
     /*
      The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
     */
-    inline AllowedMethods&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline AllowedMethods& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
     */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
+
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
     */
@@ -69,20 +71,42 @@ namespace Model
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
     */
-    inline AllowedMethods&  WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+    */
+    inline AllowedMethods& WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+    */
+    inline AllowedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
     */
     inline AllowedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
+    /*
+     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+    */
+    inline AllowedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
     
     inline const CachedMethods& GetCachedMethods() const{ return m_cachedMethods; }
+
     
     inline void SetCachedMethods(const CachedMethods& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = value; }
 
     
-    inline AllowedMethods&  WithCachedMethods(const CachedMethods& value) { SetCachedMethods(value); return *this;}
+    inline void SetCachedMethods(CachedMethods&& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = value; }
+
+    
+    inline AllowedMethods& WithCachedMethods(const CachedMethods& value) { SetCachedMethods(value); return *this;}
+
+    
+    inline AllowedMethods& WithCachedMethods(CachedMethods&& value) { SetCachedMethods(value); return *this;}
 
   private:
     long m_quantity;

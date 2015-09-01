@@ -47,10 +47,16 @@ namespace Model
      <p>The URL for the queue.</p>
     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+
     /*
      <p>The URL for the queue.</p>
     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+
+    /*
+     <p>The URL for the queue.</p>
+    */
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrl = value; }
 
     /*
      <p>The URL for the queue.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The URL for the queue.</p>
     */
-    inline GetQueueUrlResult&  WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+    inline GetQueueUrlResult& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+
+    /*
+     <p>The URL for the queue.</p>
+    */
+    inline GetQueueUrlResult& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /*
      <p>The URL for the queue.</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetQueueUrlResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetQueueUrlResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetQueueUrlResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_queueUrl;

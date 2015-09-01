@@ -49,12 +49,22 @@ MetricDataBatch& MetricDataBatch::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
+    if(accountIdNode.IsNull())
+    {
+      accountIdNode = resultNode;
+    }
+
     if(!accountIdNode.IsNull())
     {
       m_accountId = StringUtils::Trim(accountIdNode.GetText().c_str());
       m_accountIdHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
+    if(namespaceNode.IsNull())
+    {
+      namespaceNode = resultNode;
+    }
+
     if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
@@ -73,6 +83,11 @@ MetricDataBatch& MetricDataBatch::operator =(const XmlNode& xmlNode)
       m_metricDataHasBeenSet = true;
     }
     XmlNode autoDecomposeNode = resultNode.FirstChild("AutoDecompose");
+    if(autoDecomposeNode.IsNull())
+    {
+      autoDecomposeNode = resultNode;
+    }
+
     if(!autoDecomposeNode.IsNull())
     {
       m_autoDecompose = StringUtils::ConvertToBool(StringUtils::Trim(autoDecomposeNode.GetText().c_str()).c_str());

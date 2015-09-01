@@ -46,10 +46,16 @@ namespace Model
      <p>The name of the job flow step.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the job flow step.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the job flow step.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the job flow step.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The name of the job flow step.</p>
     */
-    inline StepConfig&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StepConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the job flow step.</p>
+    */
+    inline StepConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the job flow step.</p>
@@ -70,6 +81,7 @@ namespace Model
      <p>The action to take if the job flow step fails.</p>
     */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
+
     /*
      <p>The action to take if the job flow step fails.</p>
     */
@@ -78,12 +90,23 @@ namespace Model
     /*
      <p>The action to take if the job flow step fails.</p>
     */
-    inline StepConfig&  WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
+    inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
+
+    /*
+     <p>The action to take if the job flow step fails.</p>
+    */
+    inline StepConfig& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
+
+    /*
+     <p>The action to take if the job flow step fails.</p>
+    */
+    inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(value); return *this;}
 
     /*
      <p>The JAR file used for the job flow step.</p>
     */
     inline const HadoopJarStepConfig& GetHadoopJarStep() const{ return m_hadoopJarStep; }
+
     /*
      <p>The JAR file used for the job flow step.</p>
     */
@@ -92,7 +115,17 @@ namespace Model
     /*
      <p>The JAR file used for the job flow step.</p>
     */
-    inline StepConfig&  WithHadoopJarStep(const HadoopJarStepConfig& value) { SetHadoopJarStep(value); return *this;}
+    inline void SetHadoopJarStep(HadoopJarStepConfig&& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = value; }
+
+    /*
+     <p>The JAR file used for the job flow step.</p>
+    */
+    inline StepConfig& WithHadoopJarStep(const HadoopJarStepConfig& value) { SetHadoopJarStep(value); return *this;}
+
+    /*
+     <p>The JAR file used for the job flow step.</p>
+    */
+    inline StepConfig& WithHadoopJarStep(HadoopJarStepConfig&& value) { SetHadoopJarStep(value); return *this;}
 
   private:
     Aws::String m_name;

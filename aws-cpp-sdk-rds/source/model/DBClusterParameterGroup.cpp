@@ -45,18 +45,33 @@ DBClusterParameterGroup& DBClusterParameterGroup::operator =(const XmlNode& xmlN
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterParameterGroupNameNode = resultNode.FirstChild("DBClusterParameterGroupName");
+    if(dBClusterParameterGroupNameNode.IsNull())
+    {
+      dBClusterParameterGroupNameNode = resultNode;
+    }
+
     if(!dBClusterParameterGroupNameNode.IsNull())
     {
       m_dBClusterParameterGroupName = StringUtils::Trim(dBClusterParameterGroupNameNode.GetText().c_str());
       m_dBClusterParameterGroupNameHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
+    if(dBParameterGroupFamilyNode.IsNull())
+    {
+      dBParameterGroupFamilyNode = resultNode;
+    }
+
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = StringUtils::Trim(dBParameterGroupFamilyNode.GetText().c_str());
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

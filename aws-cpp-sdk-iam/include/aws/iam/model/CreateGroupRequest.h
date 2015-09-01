@@ -37,10 +37,16 @@ namespace Model
      <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     */
     inline const Aws::String& GetPath() const{ return m_path; }
+
     /*
      <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     */
-    inline CreateGroupRequest&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+    inline CreateGroupRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    */
+    inline CreateGroupRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /*
      <p> The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the group to create. Do not include the path in this value.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name of the group to create. Do not include the path in this value.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>
     */
-    inline CreateGroupRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline CreateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group to create. Do not include the path in this value.</p>
+    */
+    inline CreateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>

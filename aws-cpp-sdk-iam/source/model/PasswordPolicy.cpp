@@ -79,60 +79,110 @@ PasswordPolicy& PasswordPolicy::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode minimumPasswordLengthNode = resultNode.FirstChild("MinimumPasswordLength");
+    if(minimumPasswordLengthNode.IsNull())
+    {
+      minimumPasswordLengthNode = resultNode;
+    }
+
     if(!minimumPasswordLengthNode.IsNull())
     {
       m_minimumPasswordLength = StringUtils::ConvertToInt32(StringUtils::Trim(minimumPasswordLengthNode.GetText().c_str()).c_str());
       m_minimumPasswordLengthHasBeenSet = true;
     }
     XmlNode requireSymbolsNode = resultNode.FirstChild("RequireSymbols");
+    if(requireSymbolsNode.IsNull())
+    {
+      requireSymbolsNode = resultNode;
+    }
+
     if(!requireSymbolsNode.IsNull())
     {
       m_requireSymbols = StringUtils::ConvertToBool(StringUtils::Trim(requireSymbolsNode.GetText().c_str()).c_str());
       m_requireSymbolsHasBeenSet = true;
     }
     XmlNode requireNumbersNode = resultNode.FirstChild("RequireNumbers");
+    if(requireNumbersNode.IsNull())
+    {
+      requireNumbersNode = resultNode;
+    }
+
     if(!requireNumbersNode.IsNull())
     {
       m_requireNumbers = StringUtils::ConvertToBool(StringUtils::Trim(requireNumbersNode.GetText().c_str()).c_str());
       m_requireNumbersHasBeenSet = true;
     }
     XmlNode requireUppercaseCharactersNode = resultNode.FirstChild("RequireUppercaseCharacters");
+    if(requireUppercaseCharactersNode.IsNull())
+    {
+      requireUppercaseCharactersNode = resultNode;
+    }
+
     if(!requireUppercaseCharactersNode.IsNull())
     {
       m_requireUppercaseCharacters = StringUtils::ConvertToBool(StringUtils::Trim(requireUppercaseCharactersNode.GetText().c_str()).c_str());
       m_requireUppercaseCharactersHasBeenSet = true;
     }
     XmlNode requireLowercaseCharactersNode = resultNode.FirstChild("RequireLowercaseCharacters");
+    if(requireLowercaseCharactersNode.IsNull())
+    {
+      requireLowercaseCharactersNode = resultNode;
+    }
+
     if(!requireLowercaseCharactersNode.IsNull())
     {
       m_requireLowercaseCharacters = StringUtils::ConvertToBool(StringUtils::Trim(requireLowercaseCharactersNode.GetText().c_str()).c_str());
       m_requireLowercaseCharactersHasBeenSet = true;
     }
     XmlNode allowUsersToChangePasswordNode = resultNode.FirstChild("AllowUsersToChangePassword");
+    if(allowUsersToChangePasswordNode.IsNull())
+    {
+      allowUsersToChangePasswordNode = resultNode;
+    }
+
     if(!allowUsersToChangePasswordNode.IsNull())
     {
       m_allowUsersToChangePassword = StringUtils::ConvertToBool(StringUtils::Trim(allowUsersToChangePasswordNode.GetText().c_str()).c_str());
       m_allowUsersToChangePasswordHasBeenSet = true;
     }
     XmlNode expirePasswordsNode = resultNode.FirstChild("ExpirePasswords");
+    if(expirePasswordsNode.IsNull())
+    {
+      expirePasswordsNode = resultNode;
+    }
+
     if(!expirePasswordsNode.IsNull())
     {
       m_expirePasswords = StringUtils::ConvertToBool(StringUtils::Trim(expirePasswordsNode.GetText().c_str()).c_str());
       m_expirePasswordsHasBeenSet = true;
     }
     XmlNode maxPasswordAgeNode = resultNode.FirstChild("MaxPasswordAge");
+    if(maxPasswordAgeNode.IsNull())
+    {
+      maxPasswordAgeNode = resultNode;
+    }
+
     if(!maxPasswordAgeNode.IsNull())
     {
       m_maxPasswordAge = StringUtils::ConvertToInt32(StringUtils::Trim(maxPasswordAgeNode.GetText().c_str()).c_str());
       m_maxPasswordAgeHasBeenSet = true;
     }
     XmlNode passwordReusePreventionNode = resultNode.FirstChild("PasswordReusePrevention");
+    if(passwordReusePreventionNode.IsNull())
+    {
+      passwordReusePreventionNode = resultNode;
+    }
+
     if(!passwordReusePreventionNode.IsNull())
     {
       m_passwordReusePrevention = StringUtils::ConvertToInt32(StringUtils::Trim(passwordReusePreventionNode.GetText().c_str()).c_str());
       m_passwordReusePreventionHasBeenSet = true;
     }
     XmlNode hardExpiryNode = resultNode.FirstChild("HardExpiry");
+    if(hardExpiryNode.IsNull())
+    {
+      hardExpiryNode = resultNode;
+    }
+
     if(!hardExpiryNode.IsNull())
     {
       m_hardExpiry = StringUtils::ConvertToBool(StringUtils::Trim(hardExpiryNode.GetText().c_str()).c_str());

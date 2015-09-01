@@ -46,6 +46,7 @@ namespace Model
      <p>The maximum number of groups allowed for your AWS account. The default limit is 20 per region.</p>
     */
     inline long GetMaxNumberOfAutoScalingGroups() const{ return m_maxNumberOfAutoScalingGroups; }
+
     /*
      <p>The maximum number of groups allowed for your AWS account. The default limit is 20 per region.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>The maximum number of groups allowed for your AWS account. The default limit is 20 per region.</p>
     */
-    inline DescribeAccountLimitsResult&  WithMaxNumberOfAutoScalingGroups(long value) { SetMaxNumberOfAutoScalingGroups(value); return *this;}
+    inline DescribeAccountLimitsResult& WithMaxNumberOfAutoScalingGroups(long value) { SetMaxNumberOfAutoScalingGroups(value); return *this;}
 
     /*
      <p>The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.</p>
     */
     inline long GetMaxNumberOfLaunchConfigurations() const{ return m_maxNumberOfLaunchConfigurations; }
+
     /*
      <p>The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.</p>
     */
@@ -68,15 +70,22 @@ namespace Model
     /*
      <p>The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.</p>
     */
-    inline DescribeAccountLimitsResult&  WithMaxNumberOfLaunchConfigurations(long value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
+    inline DescribeAccountLimitsResult& WithMaxNumberOfLaunchConfigurations(long value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeAccountLimitsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeAccountLimitsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeAccountLimitsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     long m_maxNumberOfAutoScalingGroups;

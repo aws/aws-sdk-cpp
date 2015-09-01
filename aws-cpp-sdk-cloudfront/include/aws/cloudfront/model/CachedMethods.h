@@ -46,6 +46,7 @@ namespace Model
      The number of HTTP methods for which you want CloudFront to cache responses. Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for caching responses to GET, HEAD, and OPTIONS requests).
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of HTTP methods for which you want CloudFront to cache responses. Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for caching responses to GET, HEAD, and OPTIONS requests).
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      The number of HTTP methods for which you want CloudFront to cache responses. Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for caching responses to GET, HEAD, and OPTIONS requests).
     */
-    inline CachedMethods&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CachedMethods& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
     */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
+
     /*
      A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
     */
@@ -68,12 +70,27 @@ namespace Model
     /*
      A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
     */
-    inline CachedMethods&  WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
+    */
+    inline CachedMethods& WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
+    */
+    inline CachedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
     */
     inline CachedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A complex type that contains the HTTP methods that you want CloudFront to cache responses to.
+    */
+    inline CachedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     long m_quantity;

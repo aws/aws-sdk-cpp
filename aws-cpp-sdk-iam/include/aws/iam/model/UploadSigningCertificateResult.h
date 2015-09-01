@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the certificate.</p>
     */
     inline const SigningCertificate& GetCertificate() const{ return m_certificate; }
+
     /*
      <p>Information about the certificate.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the certificate.</p>
     */
-    inline UploadSigningCertificateResult&  WithCertificate(const SigningCertificate& value) { SetCertificate(value); return *this;}
+    inline void SetCertificate(SigningCertificate&& value) { m_certificate = value; }
+
+    /*
+     <p>Information about the certificate.</p>
+    */
+    inline UploadSigningCertificateResult& WithCertificate(const SigningCertificate& value) { SetCertificate(value); return *this;}
+
+    /*
+     <p>Information about the certificate.</p>
+    */
+    inline UploadSigningCertificateResult& WithCertificate(SigningCertificate&& value) { SetCertificate(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline UploadSigningCertificateResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline UploadSigningCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline UploadSigningCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     SigningCertificate m_certificate;

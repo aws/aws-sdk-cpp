@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline DeleteScheduledActionRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DeleteScheduledActionRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline DeleteScheduledActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the action to delete.</p>
     */
     inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+
     /*
      <p>The name of the action to delete.</p>
     */
     inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
+
+    /*
+     <p>The name of the action to delete.</p>
+    */
+    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
 
     /*
      <p>The name of the action to delete.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the action to delete.</p>
     */
-    inline DeleteScheduledActionRequest&  WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
+    inline DeleteScheduledActionRequest& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
+
+    /*
+     <p>The name of the action to delete.</p>
+    */
+    inline DeleteScheduledActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(value); return *this;}
 
     /*
      <p>The name of the action to delete.</p>

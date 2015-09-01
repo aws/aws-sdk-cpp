@@ -37,10 +37,16 @@ namespace Model
      The queue URL of a dead letter queue.
     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+
     /*
      The queue URL of a dead letter queue.
     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+
+    /*
+     The queue URL of a dead letter queue.
+    */
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      The queue URL of a dead letter queue.
@@ -50,7 +56,12 @@ namespace Model
     /*
      The queue URL of a dead letter queue.
     */
-    inline ListDeadLetterSourceQueuesRequest&  WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+    inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+
+    /*
+     The queue URL of a dead letter queue.
+    */
+    inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /*
      The queue URL of a dead letter queue.

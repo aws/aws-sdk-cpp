@@ -38,10 +38,16 @@ namespace Model
      <p>The identifier of the job for which you want to get detailed information.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The identifier of the job for which you want to get detailed information.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>
     */
-    inline ReadJobRequest&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ReadJobRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The identifier of the job for which you want to get detailed information.</p>
+    */
+    inline ReadJobRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>

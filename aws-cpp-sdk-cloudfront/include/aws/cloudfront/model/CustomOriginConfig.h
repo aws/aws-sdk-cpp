@@ -45,6 +45,7 @@ namespace Model
      The HTTP port the custom origin listens on.
     */
     inline long GetHTTPPort() const{ return m_hTTPPort; }
+
     /*
      The HTTP port the custom origin listens on.
     */
@@ -53,12 +54,13 @@ namespace Model
     /*
      The HTTP port the custom origin listens on.
     */
-    inline CustomOriginConfig&  WithHTTPPort(long value) { SetHTTPPort(value); return *this;}
+    inline CustomOriginConfig& WithHTTPPort(long value) { SetHTTPPort(value); return *this;}
 
     /*
      The HTTPS port the custom origin listens on.
     */
     inline long GetHTTPSPort() const{ return m_hTTPSPort; }
+
     /*
      The HTTPS port the custom origin listens on.
     */
@@ -67,12 +69,13 @@ namespace Model
     /*
      The HTTPS port the custom origin listens on.
     */
-    inline CustomOriginConfig&  WithHTTPSPort(long value) { SetHTTPSPort(value); return *this;}
+    inline CustomOriginConfig& WithHTTPSPort(long value) { SetHTTPSPort(value); return *this;}
 
     /*
      The origin protocol policy to apply to your origin.
     */
     inline const OriginProtocolPolicy& GetOriginProtocolPolicy() const{ return m_originProtocolPolicy; }
+
     /*
      The origin protocol policy to apply to your origin.
     */
@@ -81,7 +84,17 @@ namespace Model
     /*
      The origin protocol policy to apply to your origin.
     */
-    inline CustomOriginConfig&  WithOriginProtocolPolicy(const OriginProtocolPolicy& value) { SetOriginProtocolPolicy(value); return *this;}
+    inline void SetOriginProtocolPolicy(OriginProtocolPolicy&& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
+
+    /*
+     The origin protocol policy to apply to your origin.
+    */
+    inline CustomOriginConfig& WithOriginProtocolPolicy(const OriginProtocolPolicy& value) { SetOriginProtocolPolicy(value); return *this;}
+
+    /*
+     The origin protocol policy to apply to your origin.
+    */
+    inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(value); return *this;}
 
   private:
     long m_hTTPPort;

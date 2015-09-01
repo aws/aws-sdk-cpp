@@ -63,12 +63,15 @@ public:
     // Human readable failure string routed through CompletionFailure
     const Aws::String& GetFailure() const;
 
+    void SetLastFailure(const char* failureString);
+
     // Different file requests will have different meanings for ready - some may need S3 buckets created, some may need files opened
     virtual bool IsReady() const = 0;
 
     // For uploads, look at the file on disk, for downloads, request content manifest from S3
     inline virtual uint64_t GetFileSize() const { return m_fileSize; }
 
+    uint64_t GetProgressAmount() const;
 protected:
 
     const std::shared_ptr<Aws::S3::S3Client>& GetS3Client() const;
@@ -85,8 +88,9 @@ protected:
 
     inline virtual void SetFileSize(uint64_t curSize) { m_fileSize = curSize; }
 
+    void ClearProgress();
     void RegisterProgress(int64_t progressAmount);
-    uint64_t GetProgressAmount() const;
+
 private:
     Aws::String m_fileName;
     Aws::String m_bucketName;

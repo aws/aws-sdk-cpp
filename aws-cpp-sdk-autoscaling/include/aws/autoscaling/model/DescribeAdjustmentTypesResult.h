@@ -48,6 +48,7 @@ namespace Model
      <p>The policy adjustment types.</p>
     */
     inline const Aws::Vector<AdjustmentType>& GetAdjustmentTypes() const{ return m_adjustmentTypes; }
+
     /*
      <p>The policy adjustment types.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>The policy adjustment types.</p>
     */
-    inline DescribeAdjustmentTypesResult&  WithAdjustmentTypes(const Aws::Vector<AdjustmentType>& value) { SetAdjustmentTypes(value); return *this;}
+    inline void SetAdjustmentTypes(Aws::Vector<AdjustmentType>&& value) { m_adjustmentTypes = value; }
+
+    /*
+     <p>The policy adjustment types.</p>
+    */
+    inline DescribeAdjustmentTypesResult& WithAdjustmentTypes(const Aws::Vector<AdjustmentType>& value) { SetAdjustmentTypes(value); return *this;}
+
+    /*
+     <p>The policy adjustment types.</p>
+    */
+    inline DescribeAdjustmentTypesResult& WithAdjustmentTypes(Aws::Vector<AdjustmentType>&& value) { SetAdjustmentTypes(value); return *this;}
 
     /*
      <p>The policy adjustment types.</p>
     */
     inline DescribeAdjustmentTypesResult& AddAdjustmentTypes(const AdjustmentType& value) { m_adjustmentTypes.push_back(value); return *this; }
 
+    /*
+     <p>The policy adjustment types.</p>
+    */
+    inline DescribeAdjustmentTypesResult& AddAdjustmentTypes(AdjustmentType&& value) { m_adjustmentTypes.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeAdjustmentTypesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeAdjustmentTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeAdjustmentTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<AdjustmentType> m_adjustmentTypes;

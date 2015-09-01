@@ -49,6 +49,7 @@ namespace Model
      <p>A list of roles.</p>
     */
     inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
+
     /*
      <p>A list of roles.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of roles.</p>
     */
-    inline ListRolesResult&  WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
+    inline void SetRoles(Aws::Vector<Role>&& value) { m_roles = value; }
+
+    /*
+     <p>A list of roles.</p>
+    */
+    inline ListRolesResult& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
+
+    /*
+     <p>A list of roles.</p>
+    */
+    inline ListRolesResult& WithRoles(Aws::Vector<Role>&& value) { SetRoles(value); return *this;}
 
     /*
      <p>A list of roles.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline ListRolesResult& AddRoles(const Role& value) { m_roles.push_back(value); return *this; }
 
     /*
+     <p>A list of roles.</p>
+    */
+    inline ListRolesResult& AddRoles(Role&& value) { m_roles.push_back(value); return *this; }
+
+    /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
@@ -76,16 +93,22 @@ namespace Model
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
-    inline ListRolesResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListRolesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -95,7 +118,12 @@ namespace Model
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
-    inline ListRolesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListRolesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline ListRolesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -104,11 +132,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListRolesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListRolesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListRolesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Role> m_roles;

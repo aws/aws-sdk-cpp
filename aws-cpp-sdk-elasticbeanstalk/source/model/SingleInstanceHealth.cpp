@@ -55,18 +55,33 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
+    if(instanceIdNode.IsNull())
+    {
+      instanceIdNode = resultNode;
+    }
+
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
+    if(healthStatusNode.IsNull())
+    {
+      healthStatusNode = resultNode;
+    }
+
     if(!healthStatusNode.IsNull())
     {
       m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
       m_healthStatusHasBeenSet = true;
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
+    if(colorNode.IsNull())
+    {
+      colorNode = resultNode;
+    }
+
     if(!colorNode.IsNull())
     {
       m_color = StringUtils::Trim(colorNode.GetText().c_str());
@@ -85,18 +100,33 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
       m_causesHasBeenSet = true;
     }
     XmlNode launchedAtNode = resultNode.FirstChild("LaunchedAt");
+    if(launchedAtNode.IsNull())
+    {
+      launchedAtNode = resultNode;
+    }
+
     if(!launchedAtNode.IsNull())
     {
       m_launchedAt = StringUtils::ConvertToDouble(StringUtils::Trim(launchedAtNode.GetText().c_str()).c_str());
       m_launchedAtHasBeenSet = true;
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
+    if(applicationMetricsNode.IsNull())
+    {
+      applicationMetricsNode = resultNode;
+    }
+
     if(!applicationMetricsNode.IsNull())
     {
       m_applicationMetrics = applicationMetricsNode;
       m_applicationMetricsHasBeenSet = true;
     }
     XmlNode systemNode = resultNode.FirstChild("System");
+    if(systemNode.IsNull())
+    {
+      systemNode = resultNode;
+    }
+
     if(!systemNode.IsNull())
     {
       m_system = systemNode;

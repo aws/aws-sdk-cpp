@@ -47,10 +47,16 @@ namespace Model
      <p>The ID of the instance.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The ID of the instance.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The ID of the instance.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the instance.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The ID of the instance.</p>
     */
-    inline Instance&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The ID of the instance.</p>
+    */
+    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The ID of the instance.</p>

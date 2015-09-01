@@ -45,56 +45,84 @@ namespace Model
 
     
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     
-    inline S3Action&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline S3Action& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    
+    inline S3Action& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     
     inline S3Action& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+
     
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
+
+    
+    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     
-    inline S3Action&  WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
+    inline S3Action& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
+
+    
+    inline S3Action& WithBucketName(Aws::String&& value) { SetBucketName(value); return *this;}
 
     
     inline S3Action& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
     
     inline const Aws::String& GetObjectKeyPrefix() const{ return m_objectKeyPrefix; }
+
     
     inline void SetObjectKeyPrefix(const Aws::String& value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix = value; }
+
+    
+    inline void SetObjectKeyPrefix(Aws::String&& value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix = value; }
 
     
     inline void SetObjectKeyPrefix(const char* value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix.assign(value); }
 
     
-    inline S3Action&  WithObjectKeyPrefix(const Aws::String& value) { SetObjectKeyPrefix(value); return *this;}
+    inline S3Action& WithObjectKeyPrefix(const Aws::String& value) { SetObjectKeyPrefix(value); return *this;}
+
+    
+    inline S3Action& WithObjectKeyPrefix(Aws::String&& value) { SetObjectKeyPrefix(value); return *this;}
 
     
     inline S3Action& WithObjectKeyPrefix(const char* value) { SetObjectKeyPrefix(value); return *this;}
 
     
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
     
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
+
+    
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     
-    inline S3Action&  WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+    inline S3Action& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    
+    inline S3Action& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(value); return *this;}
 
     
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}

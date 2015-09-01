@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /*
      <p>The name of the group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline TagDescription&  WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline TagDescription& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline TagDescription& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
     /*
      <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /*
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
+    */
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /*
      <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
-    inline TagDescription&  WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+    inline TagDescription& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+
+    /*
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
+    */
+    inline TagDescription& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
 
     /*
      <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The tag key.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>The tag key.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>The tag key.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The tag key.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The tag key.</p>
     */
-    inline TagDescription&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline TagDescription& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>The tag key.</p>
+    */
+    inline TagDescription& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>The tag key.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The tag value.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>The tag value.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>The tag value.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>The tag value.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The tag value.</p>
     */
-    inline TagDescription&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline TagDescription& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>The tag value.</p>
+    */
+    inline TagDescription& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>The tag value.</p>
@@ -143,6 +187,7 @@ namespace Model
      <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     */
     inline bool GetPropagateAtLaunch() const{ return m_propagateAtLaunch; }
+
     /*
      <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     */
@@ -151,7 +196,7 @@ namespace Model
     /*
      <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     */
-    inline TagDescription&  WithPropagateAtLaunch(bool value) { SetPropagateAtLaunch(value); return *this;}
+    inline TagDescription& WithPropagateAtLaunch(bool value) { SetPropagateAtLaunch(value); return *this;}
 
   private:
     Aws::String m_resourceId;

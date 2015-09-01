@@ -49,18 +49,33 @@ DescribeDBLogFilesDetails& DescribeDBLogFilesDetails::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode logFileNameNode = resultNode.FirstChild("LogFileName");
+    if(logFileNameNode.IsNull())
+    {
+      logFileNameNode = resultNode;
+    }
+
     if(!logFileNameNode.IsNull())
     {
       m_logFileName = StringUtils::Trim(logFileNameNode.GetText().c_str());
       m_logFileNameHasBeenSet = true;
     }
     XmlNode lastWrittenNode = resultNode.FirstChild("LastWritten");
+    if(lastWrittenNode.IsNull())
+    {
+      lastWrittenNode = resultNode;
+    }
+
     if(!lastWrittenNode.IsNull())
     {
       m_lastWritten = StringUtils::ConvertToInt64(StringUtils::Trim(lastWrittenNode.GetText().c_str()).c_str());
       m_lastWrittenHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
+    if(sizeNode.IsNull())
+    {
+      sizeNode = resultNode;
+    }
+
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());

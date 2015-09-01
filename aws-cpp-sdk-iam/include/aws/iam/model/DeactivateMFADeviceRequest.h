@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user whose MFA device you want to deactivate.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user whose MFA device you want to deactivate.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user whose MFA device you want to deactivate.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose MFA device you want to deactivate.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user whose MFA device you want to deactivate.</p>
     */
-    inline DeactivateMFADeviceRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline DeactivateMFADeviceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user whose MFA device you want to deactivate.</p>
+    */
+    inline DeactivateMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user whose MFA device you want to deactivate.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
     */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+
+    /*
+     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
+    */
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
     */
-    inline DeactivateMFADeviceRequest&  WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
+    inline DeactivateMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
+
+    /*
+     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
+    */
+    inline DeactivateMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>

@@ -42,6 +42,11 @@ DescribeReceiptRuleSetResult& DescribeReceiptRuleSetResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
+    if(metadataNode.IsNull())
+    {
+      metadataNode = resultNode;
+    }
+
     if(!metadataNode.IsNull())
     {
       m_metadata = metadataNode;

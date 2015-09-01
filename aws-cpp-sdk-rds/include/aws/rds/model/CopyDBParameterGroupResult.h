@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const DBParameterGroup& GetDBParameterGroup() const{ return m_dBParameterGroup; }
+
     
     inline void SetDBParameterGroup(const DBParameterGroup& value) { m_dBParameterGroup = value; }
 
     
-    inline CopyDBParameterGroupResult&  WithDBParameterGroup(const DBParameterGroup& value) { SetDBParameterGroup(value); return *this;}
+    inline void SetDBParameterGroup(DBParameterGroup&& value) { m_dBParameterGroup = value; }
+
+    
+    inline CopyDBParameterGroupResult& WithDBParameterGroup(const DBParameterGroup& value) { SetDBParameterGroup(value); return *this;}
+
+    
+    inline CopyDBParameterGroupResult& WithDBParameterGroup(DBParameterGroup&& value) { SetDBParameterGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CopyDBParameterGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CopyDBParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CopyDBParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     DBParameterGroup m_dBParameterGroup;

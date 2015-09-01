@@ -40,10 +40,16 @@ namespace Model
      <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     /*
      <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /*
+     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
+    */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
     */
-    inline CreateStreamRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline CreateStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /*
+     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
+    */
+    inline CreateStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /*
      <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>
     */
     inline long GetShardCount() const{ return m_shardCount; }
+
     /*
      <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>
     */
@@ -72,7 +84,7 @@ namespace Model
     /*
      <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>
     */
-    inline CreateStreamRequest&  WithShardCount(long value) { SetShardCount(value); return *this;}
+    inline CreateStreamRequest& WithShardCount(long value) { SetShardCount(value); return *this;}
 
   private:
     Aws::String m_streamName;

@@ -48,6 +48,7 @@ namespace Model
      <p>Information about the health of the instances.</p>
     */
     inline const Aws::Vector<InstanceState>& GetInstanceStates() const{ return m_instanceStates; }
+
     /*
      <p>Information about the health of the instances.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>Information about the health of the instances.</p>
     */
-    inline DescribeInstanceHealthResult&  WithInstanceStates(const Aws::Vector<InstanceState>& value) { SetInstanceStates(value); return *this;}
+    inline void SetInstanceStates(Aws::Vector<InstanceState>&& value) { m_instanceStates = value; }
+
+    /*
+     <p>Information about the health of the instances.</p>
+    */
+    inline DescribeInstanceHealthResult& WithInstanceStates(const Aws::Vector<InstanceState>& value) { SetInstanceStates(value); return *this;}
+
+    /*
+     <p>Information about the health of the instances.</p>
+    */
+    inline DescribeInstanceHealthResult& WithInstanceStates(Aws::Vector<InstanceState>&& value) { SetInstanceStates(value); return *this;}
 
     /*
      <p>Information about the health of the instances.</p>
     */
     inline DescribeInstanceHealthResult& AddInstanceStates(const InstanceState& value) { m_instanceStates.push_back(value); return *this; }
 
+    /*
+     <p>Information about the health of the instances.</p>
+    */
+    inline DescribeInstanceHealthResult& AddInstanceStates(InstanceState&& value) { m_instanceStates.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeInstanceHealthResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeInstanceHealthResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeInstanceHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<InstanceState> m_instanceStates;

@@ -49,10 +49,16 @@ namespace Model
      <p>The name of the snapshot copy grant.</p>
     */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
+
     /*
      <p>The name of the snapshot copy grant.</p>
     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
+
+    /*
+     <p>The name of the snapshot copy grant.</p>
+    */
+    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
     /*
      <p>The name of the snapshot copy grant.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The name of the snapshot copy grant.</p>
     */
-    inline SnapshotCopyGrant&  WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
+    inline SnapshotCopyGrant& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
+
+    /*
+     <p>The name of the snapshot copy grant.</p>
+    */
+    inline SnapshotCopyGrant& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
 
     /*
      <p>The name of the snapshot copy grant.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
     */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
     /*
      <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /*
+     <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
+    */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /*
      <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
     */
-    inline SnapshotCopyGrant&  WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+    inline SnapshotCopyGrant& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /*
+     <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
+    */
+    inline SnapshotCopyGrant& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
     /*
      <p>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</p>
@@ -97,6 +119,7 @@ namespace Model
      <p>A list of tag instances.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>A list of tag instances.</p>
     */
@@ -105,12 +128,27 @@ namespace Model
     /*
      <p>A list of tag instances.</p>
     */
-    inline SnapshotCopyGrant&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>A list of tag instances.</p>
+    */
+    inline SnapshotCopyGrant& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tag instances.</p>
+    */
+    inline SnapshotCopyGrant& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>A list of tag instances.</p>
     */
     inline SnapshotCopyGrant& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>A list of tag instances.</p>
+    */
+    inline SnapshotCopyGrant& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_snapshotCopyGrantName;

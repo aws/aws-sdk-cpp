@@ -44,10 +44,16 @@ namespace Model
      <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
-    inline PipelineIdName&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline PipelineIdName& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    */
+    inline PipelineIdName& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The name of the pipeline.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the pipeline.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the pipeline.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the pipeline.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The name of the pipeline.</p>
     */
-    inline PipelineIdName&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline PipelineIdName& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the pipeline.</p>
+    */
+    inline PipelineIdName& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the pipeline.</p>

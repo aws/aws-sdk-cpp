@@ -44,10 +44,16 @@ namespace Model
      <p>The cluster's ARN.</p>
     */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+
     /*
      <p>The cluster's ARN.</p>
     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
+
+    /*
+     <p>The cluster's ARN.</p>
+    */
+    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /*
      <p>The cluster's ARN.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The cluster's ARN.</p>
     */
-    inline EcsCluster&  WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+    inline EcsCluster& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+
+    /*
+     <p>The cluster's ARN.</p>
+    */
+    inline EcsCluster& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
 
     /*
      <p>The cluster's ARN.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The cluster name.</p>
     */
     inline const Aws::String& GetEcsClusterName() const{ return m_ecsClusterName; }
+
     /*
      <p>The cluster name.</p>
     */
     inline void SetEcsClusterName(const Aws::String& value) { m_ecsClusterNameHasBeenSet = true; m_ecsClusterName = value; }
+
+    /*
+     <p>The cluster name.</p>
+    */
+    inline void SetEcsClusterName(Aws::String&& value) { m_ecsClusterNameHasBeenSet = true; m_ecsClusterName = value; }
 
     /*
      <p>The cluster name.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The cluster name.</p>
     */
-    inline EcsCluster&  WithEcsClusterName(const Aws::String& value) { SetEcsClusterName(value); return *this;}
+    inline EcsCluster& WithEcsClusterName(const Aws::String& value) { SetEcsClusterName(value); return *this;}
+
+    /*
+     <p>The cluster name.</p>
+    */
+    inline EcsCluster& WithEcsClusterName(Aws::String&& value) { SetEcsClusterName(value); return *this;}
 
     /*
      <p>The cluster name.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline EcsCluster&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline EcsCluster& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline EcsCluster& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>The time and date that the cluster was registered with the stack.</p>
     */
     inline const Aws::String& GetRegisteredAt() const{ return m_registeredAt; }
+
     /*
      <p>The time and date that the cluster was registered with the stack.</p>
     */
     inline void SetRegisteredAt(const Aws::String& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
+
+    /*
+     <p>The time and date that the cluster was registered with the stack.</p>
+    */
+    inline void SetRegisteredAt(Aws::String&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
 
     /*
      <p>The time and date that the cluster was registered with the stack.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>The time and date that the cluster was registered with the stack.</p>
     */
-    inline EcsCluster&  WithRegisteredAt(const Aws::String& value) { SetRegisteredAt(value); return *this;}
+    inline EcsCluster& WithRegisteredAt(const Aws::String& value) { SetRegisteredAt(value); return *this;}
+
+    /*
+     <p>The time and date that the cluster was registered with the stack.</p>
+    */
+    inline EcsCluster& WithRegisteredAt(Aws::String&& value) { SetRegisteredAt(value); return *this;}
 
     /*
      <p>The time and date that the cluster was registered with the stack.</p>

@@ -44,10 +44,16 @@ namespace Model
      <p>The name of the container to mount volumes from.</p>
     */
     inline const Aws::String& GetSourceContainer() const{ return m_sourceContainer; }
+
     /*
      <p>The name of the container to mount volumes from.</p>
     */
     inline void SetSourceContainer(const Aws::String& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
+
+    /*
+     <p>The name of the container to mount volumes from.</p>
+    */
+    inline void SetSourceContainer(Aws::String&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
 
     /*
      <p>The name of the container to mount volumes from.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The name of the container to mount volumes from.</p>
     */
-    inline VolumeFrom&  WithSourceContainer(const Aws::String& value) { SetSourceContainer(value); return *this;}
+    inline VolumeFrom& WithSourceContainer(const Aws::String& value) { SetSourceContainer(value); return *this;}
+
+    /*
+     <p>The name of the container to mount volumes from.</p>
+    */
+    inline VolumeFrom& WithSourceContainer(Aws::String&& value) { SetSourceContainer(value); return *this;}
 
     /*
      <p>The name of the container to mount volumes from.</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     */
     inline bool GetReadOnly() const{ return m_readOnly; }
+
     /*
      <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     */
@@ -76,7 +88,7 @@ namespace Model
     /*
      <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     */
-    inline VolumeFrom&  WithReadOnly(bool value) { SetReadOnly(value); return *this;}
+    inline VolumeFrom& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
     Aws::String m_sourceContainer;

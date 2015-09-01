@@ -49,6 +49,7 @@ namespace Model
      <p>A list of server certificates.</p>
     */
     inline const Aws::Vector<ServerCertificateMetadata>& GetServerCertificateMetadataList() const{ return m_serverCertificateMetadataList; }
+
     /*
      <p>A list of server certificates.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of server certificates.</p>
     */
-    inline ListServerCertificatesResult&  WithServerCertificateMetadataList(const Aws::Vector<ServerCertificateMetadata>& value) { SetServerCertificateMetadataList(value); return *this;}
+    inline void SetServerCertificateMetadataList(Aws::Vector<ServerCertificateMetadata>&& value) { m_serverCertificateMetadataList = value; }
+
+    /*
+     <p>A list of server certificates.</p>
+    */
+    inline ListServerCertificatesResult& WithServerCertificateMetadataList(const Aws::Vector<ServerCertificateMetadata>& value) { SetServerCertificateMetadataList(value); return *this;}
+
+    /*
+     <p>A list of server certificates.</p>
+    */
+    inline ListServerCertificatesResult& WithServerCertificateMetadataList(Aws::Vector<ServerCertificateMetadata>&& value) { SetServerCertificateMetadataList(value); return *this;}
 
     /*
      <p>A list of server certificates.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline ListServerCertificatesResult& AddServerCertificateMetadataList(const ServerCertificateMetadata& value) { m_serverCertificateMetadataList.push_back(value); return *this; }
 
     /*
+     <p>A list of server certificates.</p>
+    */
+    inline ListServerCertificatesResult& AddServerCertificateMetadataList(ServerCertificateMetadata&& value) { m_serverCertificateMetadataList.push_back(value); return *this; }
+
+    /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
@@ -76,16 +93,22 @@ namespace Model
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
-    inline ListServerCertificatesResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListServerCertificatesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -95,7 +118,12 @@ namespace Model
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
-    inline ListServerCertificatesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListServerCertificatesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline ListServerCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -104,11 +132,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListServerCertificatesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListServerCertificatesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListServerCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ServerCertificateMetadata> m_serverCertificateMetadataList;

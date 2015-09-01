@@ -43,50 +43,72 @@ namespace Model
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline DeletedObject&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline DeletedObject& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline DeletedObject& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline DeletedObject& WithKey(const char* value) { SetKey(value); return *this;}
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     
-    inline DeletedObject&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline DeletedObject& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    
+    inline DeletedObject& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     
     inline DeletedObject& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
     
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
+
     
     inline void SetDeleteMarker(bool value) { m_deleteMarkerHasBeenSet = true; m_deleteMarker = value; }
 
     
-    inline DeletedObject&  WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
+    inline DeletedObject& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
 
     
     inline const Aws::String& GetDeleteMarkerVersionId() const{ return m_deleteMarkerVersionId; }
+
     
     inline void SetDeleteMarkerVersionId(const Aws::String& value) { m_deleteMarkerVersionIdHasBeenSet = true; m_deleteMarkerVersionId = value; }
+
+    
+    inline void SetDeleteMarkerVersionId(Aws::String&& value) { m_deleteMarkerVersionIdHasBeenSet = true; m_deleteMarkerVersionId = value; }
 
     
     inline void SetDeleteMarkerVersionId(const char* value) { m_deleteMarkerVersionIdHasBeenSet = true; m_deleteMarkerVersionId.assign(value); }
 
     
-    inline DeletedObject&  WithDeleteMarkerVersionId(const Aws::String& value) { SetDeleteMarkerVersionId(value); return *this;}
+    inline DeletedObject& WithDeleteMarkerVersionId(const Aws::String& value) { SetDeleteMarkerVersionId(value); return *this;}
+
+    
+    inline DeletedObject& WithDeleteMarkerVersionId(Aws::String&& value) { SetDeleteMarkerVersionId(value); return *this;}
 
     
     inline DeletedObject& WithDeleteMarkerVersionId(const char* value) { SetDeleteMarkerVersionId(value); return *this;}

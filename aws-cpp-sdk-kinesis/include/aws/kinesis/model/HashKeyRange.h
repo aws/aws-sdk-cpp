@@ -44,10 +44,16 @@ namespace Model
      <p>The starting hash key of the hash key range.</p>
     */
     inline const Aws::String& GetStartingHashKey() const{ return m_startingHashKey; }
+
     /*
      <p>The starting hash key of the hash key range.</p>
     */
     inline void SetStartingHashKey(const Aws::String& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
+
+    /*
+     <p>The starting hash key of the hash key range.</p>
+    */
+    inline void SetStartingHashKey(Aws::String&& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
 
     /*
      <p>The starting hash key of the hash key range.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The starting hash key of the hash key range.</p>
     */
-    inline HashKeyRange&  WithStartingHashKey(const Aws::String& value) { SetStartingHashKey(value); return *this;}
+    inline HashKeyRange& WithStartingHashKey(const Aws::String& value) { SetStartingHashKey(value); return *this;}
+
+    /*
+     <p>The starting hash key of the hash key range.</p>
+    */
+    inline HashKeyRange& WithStartingHashKey(Aws::String&& value) { SetStartingHashKey(value); return *this;}
 
     /*
      <p>The starting hash key of the hash key range.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The ending hash key of the hash key range.</p>
     */
     inline const Aws::String& GetEndingHashKey() const{ return m_endingHashKey; }
+
     /*
      <p>The ending hash key of the hash key range.</p>
     */
     inline void SetEndingHashKey(const Aws::String& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = value; }
+
+    /*
+     <p>The ending hash key of the hash key range.</p>
+    */
+    inline void SetEndingHashKey(Aws::String&& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = value; }
 
     /*
      <p>The ending hash key of the hash key range.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The ending hash key of the hash key range.</p>
     */
-    inline HashKeyRange&  WithEndingHashKey(const Aws::String& value) { SetEndingHashKey(value); return *this;}
+    inline HashKeyRange& WithEndingHashKey(const Aws::String& value) { SetEndingHashKey(value); return *this;}
+
+    /*
+     <p>The ending hash key of the hash key range.</p>
+    */
+    inline HashKeyRange& WithEndingHashKey(Aws::String&& value) { SetEndingHashKey(value); return *this;}
 
     /*
      <p>The ending hash key of the hash key range.</p>

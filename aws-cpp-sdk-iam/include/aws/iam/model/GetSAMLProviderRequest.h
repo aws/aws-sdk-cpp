@@ -37,10 +37,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
     */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
+    */
+    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
     */
-    inline GetSAMLProviderRequest&  WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
+    inline GetSAMLProviderRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
+    */
+    inline GetSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>

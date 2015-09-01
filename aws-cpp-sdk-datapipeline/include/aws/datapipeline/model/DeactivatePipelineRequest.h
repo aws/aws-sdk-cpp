@@ -40,10 +40,16 @@ namespace Model
      <p>The ID of the pipeline.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline DeactivatePipelineRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline DeactivatePipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline DeactivatePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     */
     inline bool GetCancelActive() const{ return m_cancelActive; }
+
     /*
      <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     */
@@ -72,7 +84,7 @@ namespace Model
     /*
      <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     */
-    inline DeactivatePipelineRequest&  WithCancelActive(bool value) { SetCancelActive(value); return *this;}
+    inline DeactivatePipelineRequest& WithCancelActive(bool value) { SetCancelActive(value); return *this;}
 
   private:
     Aws::String m_pipelineId;

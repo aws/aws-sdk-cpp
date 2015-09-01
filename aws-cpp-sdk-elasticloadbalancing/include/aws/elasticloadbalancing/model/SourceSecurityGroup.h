@@ -47,10 +47,16 @@ namespace Model
      <p>The owner of the security group.</p>
     */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
+
     /*
      <p>The owner of the security group.</p>
     */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
+
+    /*
+     <p>The owner of the security group.</p>
+    */
+    inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /*
      <p>The owner of the security group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The owner of the security group.</p>
     */
-    inline SourceSecurityGroup&  WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
+    inline SourceSecurityGroup& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
+
+    /*
+     <p>The owner of the security group.</p>
+    */
+    inline SourceSecurityGroup& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(value); return *this;}
 
     /*
      <p>The owner of the security group.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name of the security group.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name of the security group.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name of the security group.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the security group.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name of the security group.</p>
     */
-    inline SourceSecurityGroup&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline SourceSecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the security group.</p>
+    */
+    inline SourceSecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name of the security group.</p>

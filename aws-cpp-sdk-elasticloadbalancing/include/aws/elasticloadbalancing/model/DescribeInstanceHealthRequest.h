@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline DescribeInstanceHealthRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline DescribeInstanceHealthRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline DescribeInstanceHealthRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>The IDs of the instances.</p>
     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
     /*
      <p>The IDs of the instances.</p>
     */
@@ -71,12 +83,27 @@ namespace Model
     /*
      <p>The IDs of the instances.</p>
     */
-    inline DescribeInstanceHealthRequest&  WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+
+    /*
+     <p>The IDs of the instances.</p>
+    */
+    inline DescribeInstanceHealthRequest& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+
+    /*
+     <p>The IDs of the instances.</p>
+    */
+    inline DescribeInstanceHealthRequest& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
     /*
      <p>The IDs of the instances.</p>
     */
     inline DescribeInstanceHealthRequest& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the instances.</p>
+    */
+    inline DescribeInstanceHealthRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;

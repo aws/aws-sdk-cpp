@@ -36,14 +36,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline ListEntitiesForPolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline ListEntitiesForPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline ListEntitiesForPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
@@ -52,6 +59,7 @@ namespace Model
      <p>The entity type to use for filtering the results. </p> <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. </p>
     */
     inline const EntityType& GetEntityFilter() const{ return m_entityFilter; }
+
     /*
      <p>The entity type to use for filtering the results. </p> <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. </p>
     */
@@ -60,16 +68,32 @@ namespace Model
     /*
      <p>The entity type to use for filtering the results. </p> <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. </p>
     */
-    inline ListEntitiesForPolicyRequest&  WithEntityFilter(const EntityType& value) { SetEntityFilter(value); return *this;}
+    inline void SetEntityFilter(EntityType&& value) { m_entityFilterHasBeenSet = true; m_entityFilter = value; }
+
+    /*
+     <p>The entity type to use for filtering the results. </p> <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. </p>
+    */
+    inline ListEntitiesForPolicyRequest& WithEntityFilter(const EntityType& value) { SetEntityFilter(value); return *this;}
+
+    /*
+     <p>The entity type to use for filtering the results. </p> <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. </p>
+    */
+    inline ListEntitiesForPolicyRequest& WithEntityFilter(EntityType&& value) { SetEntityFilter(value); return *this;}
 
     /*
      <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
     */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
+
     /*
      <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
     */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
+
+    /*
+     <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
+    */
+    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /*
      <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
@@ -79,7 +103,12 @@ namespace Model
     /*
      <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
     */
-    inline ListEntitiesForPolicyRequest&  WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
+
+    /*
+     <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
+    */
+    inline ListEntitiesForPolicyRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
 
     /*
      <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>
@@ -90,10 +119,16 @@ namespace Model
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -103,7 +138,12 @@ namespace Model
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
-    inline ListEntitiesForPolicyRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline ListEntitiesForPolicyRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -114,6 +154,7 @@ namespace Model
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
@@ -122,7 +163,7 @@ namespace Model
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
-    inline ListEntitiesForPolicyRequest&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_policyArn;

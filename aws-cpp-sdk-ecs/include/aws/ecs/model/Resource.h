@@ -45,10 +45,16 @@ namespace Model
      <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
     */
-    inline Resource&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Resource& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
+    */
+    inline Resource& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined resource.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     */
     inline const Aws::String& GetType() const{ return m_type; }
+
     /*
      <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
+    */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     */
-    inline Resource&  WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /*
+     <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
+    */
+    inline Resource& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /*
      <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
@@ -93,6 +115,7 @@ namespace Model
      <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     */
     inline double GetDoubleValue() const{ return m_doubleValue; }
+
     /*
      <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     */
@@ -101,12 +124,13 @@ namespace Model
     /*
      <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     */
-    inline Resource&  WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
+    inline Resource& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
 
     /*
      <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     */
     inline long long GetLongValue() const{ return m_longValue; }
+
     /*
      <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     */
@@ -115,12 +139,13 @@ namespace Model
     /*
      <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     */
-    inline Resource&  WithLongValue(long long value) { SetLongValue(value); return *this;}
+    inline Resource& WithLongValue(long long value) { SetLongValue(value); return *this;}
 
     /*
      <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     */
     inline long GetIntegerValue() const{ return m_integerValue; }
+
     /*
      <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     */
@@ -129,12 +154,13 @@ namespace Model
     /*
      <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     */
-    inline Resource&  WithIntegerValue(long value) { SetIntegerValue(value); return *this;}
+    inline Resource& WithIntegerValue(long value) { SetIntegerValue(value); return *this;}
 
     /*
      <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     */
     inline const Aws::Vector<Aws::String>& GetStringSetValue() const{ return m_stringSetValue; }
+
     /*
      <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     */
@@ -143,12 +169,27 @@ namespace Model
     /*
      <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     */
-    inline Resource&  WithStringSetValue(const Aws::Vector<Aws::String>& value) { SetStringSetValue(value); return *this;}
+    inline void SetStringSetValue(Aws::Vector<Aws::String>&& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue = value; }
+
+    /*
+     <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
+    */
+    inline Resource& WithStringSetValue(const Aws::Vector<Aws::String>& value) { SetStringSetValue(value); return *this;}
+
+    /*
+     <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
+    */
+    inline Resource& WithStringSetValue(Aws::Vector<Aws::String>&& value) { SetStringSetValue(value); return *this;}
 
     /*
      <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     */
     inline Resource& AddStringSetValue(const Aws::String& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue.push_back(value); return *this; }
+
+    /*
+     <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
+    */
+    inline Resource& AddStringSetValue(Aws::String&& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue.push_back(value); return *this; }
 
     /*
      <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>

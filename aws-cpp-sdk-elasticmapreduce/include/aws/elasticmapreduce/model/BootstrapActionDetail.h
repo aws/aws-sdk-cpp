@@ -44,6 +44,7 @@ namespace Model
      <p>A description of the bootstrap action.</p>
     */
     inline const BootstrapActionConfig& GetBootstrapActionConfig() const{ return m_bootstrapActionConfig; }
+
     /*
      <p>A description of the bootstrap action.</p>
     */
@@ -52,7 +53,17 @@ namespace Model
     /*
      <p>A description of the bootstrap action.</p>
     */
-    inline BootstrapActionDetail&  WithBootstrapActionConfig(const BootstrapActionConfig& value) { SetBootstrapActionConfig(value); return *this;}
+    inline void SetBootstrapActionConfig(BootstrapActionConfig&& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = value; }
+
+    /*
+     <p>A description of the bootstrap action.</p>
+    */
+    inline BootstrapActionDetail& WithBootstrapActionConfig(const BootstrapActionConfig& value) { SetBootstrapActionConfig(value); return *this;}
+
+    /*
+     <p>A description of the bootstrap action.</p>
+    */
+    inline BootstrapActionDetail& WithBootstrapActionConfig(BootstrapActionConfig&& value) { SetBootstrapActionConfig(value); return *this;}
 
   private:
     BootstrapActionConfig m_bootstrapActionConfig;

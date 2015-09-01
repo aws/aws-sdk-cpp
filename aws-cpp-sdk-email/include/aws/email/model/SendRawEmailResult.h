@@ -47,10 +47,16 @@ namespace Model
      <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
+
     /*
      <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
+
+    /*
+     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    */
+    inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
     /*
      <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     */
-    inline SendRawEmailResult&  WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+    inline SendRawEmailResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+
+    /*
+     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    */
+    inline SendRawEmailResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
     /*
      <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline SendRawEmailResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline SendRawEmailResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline SendRawEmailResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_messageId;

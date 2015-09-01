@@ -38,6 +38,7 @@ namespace Model
      <p>One or more instance IDs. You must specify at least one instance ID.</p>
     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
     /*
      <p>One or more instance IDs. You must specify at least one instance ID.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>One or more instance IDs. You must specify at least one instance ID.</p>
     */
-    inline ExitStandbyRequest&  WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+
+    /*
+     <p>One or more instance IDs. You must specify at least one instance ID.</p>
+    */
+    inline ExitStandbyRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+
+    /*
+     <p>One or more instance IDs. You must specify at least one instance ID.</p>
+    */
+    inline ExitStandbyRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /*
      <p>One or more instance IDs. You must specify at least one instance ID.</p>
     */
     inline ExitStandbyRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
+    /*
+     <p>One or more instance IDs. You must specify at least one instance ID.</p>
+    */
+    inline ExitStandbyRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /*
      <p>One or more instance IDs. You must specify at least one instance ID.</p>
@@ -62,10 +78,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -75,7 +97,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline ExitStandbyRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline ExitStandbyRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline ExitStandbyRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>

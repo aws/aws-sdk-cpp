@@ -43,12 +43,22 @@ ReceiptIpFilter& ReceiptIpFilter::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode policyNode = resultNode.FirstChild("Policy");
+    if(policyNode.IsNull())
+    {
+      policyNode = resultNode;
+    }
+
     if(!policyNode.IsNull())
     {
       m_policy = ReceiptFilterPolicyMapper::GetReceiptFilterPolicyForName(StringUtils::Trim(policyNode.GetText().c_str()).c_str());
       m_policyHasBeenSet = true;
     }
     XmlNode cidrNode = resultNode.FirstChild("Cidr");
+    if(cidrNode.IsNull())
+    {
+      cidrNode = resultNode;
+    }
+
     if(!cidrNode.IsNull())
     {
       m_cidr = StringUtils::Trim(cidrNode.GetText().c_str());

@@ -49,10 +49,16 @@ namespace Model
      <p> Specifies the name of the DB subnet group. </p>
     */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
     /*
      <p> Specifies the name of the DB subnet group. </p>
     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /*
+     <p> Specifies the name of the DB subnet group. </p>
+    */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /*
      <p> Specifies the name of the DB subnet group. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> Specifies the name of the DB subnet group. </p>
     */
-    inline DBSubnetGroup&  WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+    inline DBSubnetGroup& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /*
+     <p> Specifies the name of the DB subnet group. </p>
+    */
+    inline DBSubnetGroup& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /*
      <p> Specifies the name of the DB subnet group. </p>
@@ -73,10 +84,16 @@ namespace Model
      <p> Provides the description of the DB subnet group. </p>
     */
     inline const Aws::String& GetDBSubnetGroupDescription() const{ return m_dBSubnetGroupDescription; }
+
     /*
      <p> Provides the description of the DB subnet group. </p>
     */
     inline void SetDBSubnetGroupDescription(const Aws::String& value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription = value; }
+
+    /*
+     <p> Provides the description of the DB subnet group. </p>
+    */
+    inline void SetDBSubnetGroupDescription(Aws::String&& value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription = value; }
 
     /*
      <p> Provides the description of the DB subnet group. </p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p> Provides the description of the DB subnet group. </p>
     */
-    inline DBSubnetGroup&  WithDBSubnetGroupDescription(const Aws::String& value) { SetDBSubnetGroupDescription(value); return *this;}
+    inline DBSubnetGroup& WithDBSubnetGroupDescription(const Aws::String& value) { SetDBSubnetGroupDescription(value); return *this;}
+
+    /*
+     <p> Provides the description of the DB subnet group. </p>
+    */
+    inline DBSubnetGroup& WithDBSubnetGroupDescription(Aws::String&& value) { SetDBSubnetGroupDescription(value); return *this;}
 
     /*
      <p> Provides the description of the DB subnet group. </p>
@@ -97,10 +119,16 @@ namespace Model
      <p> Provides the VpcId of the DB subnet group. </p>
     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
     /*
      <p> Provides the VpcId of the DB subnet group. </p>
     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /*
+     <p> Provides the VpcId of the DB subnet group. </p>
+    */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /*
      <p> Provides the VpcId of the DB subnet group. </p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p> Provides the VpcId of the DB subnet group. </p>
     */
-    inline DBSubnetGroup&  WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline DBSubnetGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /*
+     <p> Provides the VpcId of the DB subnet group. </p>
+    */
+    inline DBSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /*
      <p> Provides the VpcId of the DB subnet group. </p>
@@ -121,10 +154,16 @@ namespace Model
      <p> Provides the status of the DB subnet group. </p>
     */
     inline const Aws::String& GetSubnetGroupStatus() const{ return m_subnetGroupStatus; }
+
     /*
      <p> Provides the status of the DB subnet group. </p>
     */
     inline void SetSubnetGroupStatus(const Aws::String& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
+
+    /*
+     <p> Provides the status of the DB subnet group. </p>
+    */
+    inline void SetSubnetGroupStatus(Aws::String&& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
 
     /*
      <p> Provides the status of the DB subnet group. </p>
@@ -134,7 +173,12 @@ namespace Model
     /*
      <p> Provides the status of the DB subnet group. </p>
     */
-    inline DBSubnetGroup&  WithSubnetGroupStatus(const Aws::String& value) { SetSubnetGroupStatus(value); return *this;}
+    inline DBSubnetGroup& WithSubnetGroupStatus(const Aws::String& value) { SetSubnetGroupStatus(value); return *this;}
+
+    /*
+     <p> Provides the status of the DB subnet group. </p>
+    */
+    inline DBSubnetGroup& WithSubnetGroupStatus(Aws::String&& value) { SetSubnetGroupStatus(value); return *this;}
 
     /*
      <p> Provides the status of the DB subnet group. </p>
@@ -145,6 +189,7 @@ namespace Model
      <p> Contains a list of <a>Subnet</a> elements. </p>
     */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
+
     /*
      <p> Contains a list of <a>Subnet</a> elements. </p>
     */
@@ -153,12 +198,27 @@ namespace Model
     /*
      <p> Contains a list of <a>Subnet</a> elements. </p>
     */
-    inline DBSubnetGroup&  WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
+    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+
+    /*
+     <p> Contains a list of <a>Subnet</a> elements. </p>
+    */
+    inline DBSubnetGroup& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
+
+    /*
+     <p> Contains a list of <a>Subnet</a> elements. </p>
+    */
+    inline DBSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(value); return *this;}
 
     /*
      <p> Contains a list of <a>Subnet</a> elements. </p>
     */
     inline DBSubnetGroup& AddSubnets(const Subnet& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /*
+     <p> Contains a list of <a>Subnet</a> elements. </p>
+    */
+    inline DBSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
   private:
     Aws::String m_dBSubnetGroupName;

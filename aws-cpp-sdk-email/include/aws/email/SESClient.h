@@ -296,76 +296,76 @@ namespace Model
 
         ~SESClient();
         /*
-            ${operation.documentation}
+            
         */
         Model::CloneReceiptRuleSetOutcome CloneReceiptRuleSet(const Model::CloneReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::CloneReceiptRuleSetOutcomeCallable CloneReceiptRuleSetCallable(const Model::CloneReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void CloneReceiptRuleSetAsync(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::CreateReceiptFilterOutcome CreateReceiptFilter(const Model::CreateReceiptFilterRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::CreateReceiptFilterOutcomeCallable CreateReceiptFilterCallable(const Model::CreateReceiptFilterRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void CreateReceiptFilterAsync(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::CreateReceiptRuleOutcome CreateReceiptRule(const Model::CreateReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::CreateReceiptRuleOutcomeCallable CreateReceiptRuleCallable(const Model::CreateReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void CreateReceiptRuleAsync(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::CreateReceiptRuleSetOutcome CreateReceiptRuleSet(const Model::CreateReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::CreateReceiptRuleSetOutcomeCallable CreateReceiptRuleSetCallable(const Model::CreateReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -410,57 +410,57 @@ namespace Model
         void DeleteIdentityPolicyAsync(const Model::DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DeleteReceiptFilterOutcome DeleteReceiptFilter(const Model::DeleteReceiptFilterRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DeleteReceiptFilterOutcomeCallable DeleteReceiptFilterCallable(const Model::DeleteReceiptFilterRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void DeleteReceiptFilterAsync(const Model::DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DeleteReceiptRuleOutcome DeleteReceiptRule(const Model::DeleteReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DeleteReceiptRuleOutcomeCallable DeleteReceiptRuleCallable(const Model::DeleteReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void DeleteReceiptRuleAsync(const Model::DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DeleteReceiptRuleSetOutcome DeleteReceiptRuleSet(const Model::DeleteReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DeleteReceiptRuleSetOutcomeCallable DeleteReceiptRuleSetCallable(const Model::DeleteReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -486,57 +486,57 @@ namespace Model
         void DeleteVerifiedEmailAddressAsync(const Model::DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DescribeActiveReceiptRuleSetOutcomeCallable DescribeActiveReceiptRuleSetCallable(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void DescribeActiveReceiptRuleSetAsync(const Model::DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DescribeReceiptRuleOutcome DescribeReceiptRule(const Model::DescribeReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DescribeReceiptRuleOutcomeCallable DescribeReceiptRuleCallable(const Model::DescribeReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void DescribeReceiptRuleAsync(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DescribeReceiptRuleSetOutcome DescribeReceiptRuleSet(const Model::DescribeReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DescribeReceiptRuleSetOutcomeCallable DescribeReceiptRuleSetCallable(const Model::DescribeReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -695,38 +695,38 @@ namespace Model
         void ListIdentityPoliciesAsync(const Model::ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const Model::ListReceiptFiltersRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void ListReceiptFiltersAsync(const Model::ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::ListReceiptRuleSetsOutcomeCallable ListReceiptRuleSetsCallable(const Model::ListReceiptRuleSetsRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -771,19 +771,19 @@ namespace Model
         void PutIdentityPolicyAsync(const Model::PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::ReorderReceiptRuleSetOutcome ReorderReceiptRuleSet(const Model::ReorderReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::ReorderReceiptRuleSetOutcomeCallable ReorderReceiptRuleSetCallable(const Model::ReorderReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -847,19 +847,19 @@ namespace Model
         void SendRawEmailAsync(const Model::SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::SetActiveReceiptRuleSetOutcomeCallable SetActiveReceiptRuleSetCallable(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -923,38 +923,38 @@ namespace Model
         void SetIdentityNotificationTopicAsync(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::SetReceiptRulePositionOutcome SetReceiptRulePosition(const Model::SetReceiptRulePositionRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::SetReceiptRulePositionOutcomeCallable SetReceiptRulePositionCallable(const Model::SetReceiptRulePositionRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void SetReceiptRulePositionAsync(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::UpdateReceiptRuleOutcome UpdateReceiptRule(const Model::UpdateReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::UpdateReceiptRuleOutcomeCallable UpdateReceiptRuleCallable(const Model::UpdateReceiptRuleRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */

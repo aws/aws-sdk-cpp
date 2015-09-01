@@ -38,10 +38,16 @@ namespace Model
      The distribution's id.
     */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+
     /*
      The distribution's id.
     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
+
+    /*
+     The distribution's id.
+    */
+    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
     /*
      The distribution's id.
@@ -51,7 +57,12 @@ namespace Model
     /*
      The distribution's id.
     */
-    inline GetInvalidation2015_04_17Request&  WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
+    inline GetInvalidation2015_04_17Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
+
+    /*
+     The distribution's id.
+    */
+    inline GetInvalidation2015_04_17Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
 
     /*
      The distribution's id.
@@ -62,10 +73,16 @@ namespace Model
      The invalidation's id.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The invalidation's id.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The invalidation's id.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The invalidation's id.
@@ -75,7 +92,12 @@ namespace Model
     /*
      The invalidation's id.
     */
-    inline GetInvalidation2015_04_17Request&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline GetInvalidation2015_04_17Request& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The invalidation's id.
+    */
+    inline GetInvalidation2015_04_17Request& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The invalidation's id.

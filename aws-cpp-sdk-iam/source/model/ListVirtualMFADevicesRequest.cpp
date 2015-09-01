@@ -33,7 +33,7 @@ Aws::String ListVirtualMFADevicesRequest::SerializePayload() const
   ss << "Action=ListVirtualMFADevices&";
   if(m_assignmentStatusHasBeenSet)
   {
-    ss << "AssignmentStatus=" << assignmentStatusTypeMapper::GetNameForassignmentStatusType(m_assignmentStatus) << "&";
+    ss << "AssignmentStatus=" << AssignmentStatusTypeMapper::GetNameForAssignmentStatusType(m_assignmentStatus) << "&";
   }
   if(m_markerHasBeenSet)
   {

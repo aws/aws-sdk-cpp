@@ -42,6 +42,11 @@ RestoreDBInstanceFromDBSnapshotResult& RestoreDBInstanceFromDBSnapshotResult::op
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
+    if(dBInstanceNode.IsNull())
+    {
+      dBInstanceNode = resultNode;
+    }
+
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

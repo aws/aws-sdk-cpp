@@ -39,10 +39,16 @@ namespace Model
      <p>The user IAM ARN.</p>
     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
     /*
      <p>The user IAM ARN.</p>
     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+
+    /*
+     <p>The user IAM ARN.</p>
+    */
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The user IAM ARN.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The user IAM ARN.</p>
     */
-    inline UpdateUserProfileRequest&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+    inline UpdateUserProfileRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+
+    /*
+     <p>The user IAM ARN.</p>
+    */
+    inline UpdateUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /*
      <p>The user IAM ARN.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
     */
     inline const Aws::String& GetSshUsername() const{ return m_sshUsername; }
+
     /*
      <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
     */
     inline void SetSshUsername(const Aws::String& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
+
+    /*
+     <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
+    */
+    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
 
     /*
      <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
     */
-    inline UpdateUserProfileRequest&  WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
+    inline UpdateUserProfileRequest& WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
+
+    /*
+     <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
+    */
+    inline UpdateUserProfileRequest& WithSshUsername(Aws::String&& value) { SetSshUsername(value); return *this;}
 
     /*
      <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name. </p>
@@ -87,10 +109,16 @@ namespace Model
      <p>The user's new SSH public key.</p>
     */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
     /*
      <p>The user's new SSH public key.</p>
     */
     inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+
+    /*
+     <p>The user's new SSH public key.</p>
+    */
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
 
     /*
      <p>The user's new SSH public key.</p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p>The user's new SSH public key.</p>
     */
-    inline UpdateUserProfileRequest&  WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+    inline UpdateUserProfileRequest& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+
+    /*
+     <p>The user's new SSH public key.</p>
+    */
+    inline UpdateUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(value); return *this;}
 
     /*
      <p>The user's new SSH public key.</p>
@@ -111,6 +144,7 @@ namespace Model
      <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     */
     inline bool GetAllowSelfManagement() const{ return m_allowSelfManagement; }
+
     /*
      <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     */
@@ -119,7 +153,7 @@ namespace Model
     /*
      <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     */
-    inline UpdateUserProfileRequest&  WithAllowSelfManagement(bool value) { SetAllowSelfManagement(value); return *this;}
+    inline UpdateUserProfileRequest& WithAllowSelfManagement(bool value) { SetAllowSelfManagement(value); return *this;}
 
   private:
     Aws::String m_iamUserArn;

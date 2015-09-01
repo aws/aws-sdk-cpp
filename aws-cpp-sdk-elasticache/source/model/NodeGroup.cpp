@@ -47,18 +47,33 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
+    if(nodeGroupIdNode.IsNull())
+    {
+      nodeGroupIdNode = resultNode;
+    }
+
     if(!nodeGroupIdNode.IsNull())
     {
       m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode primaryEndpointNode = resultNode.FirstChild("PrimaryEndpoint");
+    if(primaryEndpointNode.IsNull())
+    {
+      primaryEndpointNode = resultNode;
+    }
+
     if(!primaryEndpointNode.IsNull())
     {
       m_primaryEndpoint = primaryEndpointNode;

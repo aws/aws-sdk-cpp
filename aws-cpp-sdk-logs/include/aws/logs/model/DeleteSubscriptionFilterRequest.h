@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the log group that is associated with the subscription filter to delete.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The name of the log group that is associated with the subscription filter to delete.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The name of the log group that is associated with the subscription filter to delete.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The name of the log group that is associated with the subscription filter to delete.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the log group that is associated with the subscription filter to delete.</p>
     */
-    inline DeleteSubscriptionFilterRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline DeleteSubscriptionFilterRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The name of the log group that is associated with the subscription filter to delete.</p>
+    */
+    inline DeleteSubscriptionFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The name of the log group that is associated with the subscription filter to delete.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The name of the subscription filter to delete.</p>
     */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
     /*
      <p>The name of the subscription filter to delete.</p>
     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+
+    /*
+     <p>The name of the subscription filter to delete.</p>
+    */
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /*
      <p>The name of the subscription filter to delete.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The name of the subscription filter to delete.</p>
     */
-    inline DeleteSubscriptionFilterRequest&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+    inline DeleteSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+
+    /*
+     <p>The name of the subscription filter to delete.</p>
+    */
+    inline DeleteSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
     /*
      <p>The name of the subscription filter to delete.</p>

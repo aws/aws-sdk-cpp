@@ -43,12 +43,22 @@ S3Origin& S3Origin::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
+    if(domainNameNode.IsNull())
+    {
+      domainNameNode = resultNode;
+    }
+
     if(!domainNameNode.IsNull())
     {
       m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
       m_domainNameHasBeenSet = true;
     }
     XmlNode originAccessIdentityNode = resultNode.FirstChild("OriginAccessIdentity");
+    if(originAccessIdentityNode.IsNull())
+    {
+      originAccessIdentityNode = resultNode;
+    }
+
     if(!originAccessIdentityNode.IsNull())
     {
       m_originAccessIdentity = StringUtils::Trim(originAccessIdentityNode.GetText().c_str());

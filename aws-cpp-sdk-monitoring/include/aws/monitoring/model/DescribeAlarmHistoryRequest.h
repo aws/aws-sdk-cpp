@@ -38,10 +38,16 @@ namespace Model
      <p> The name of the alarm. </p>
     */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+
     /*
      <p> The name of the alarm. </p>
     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /*
      <p> The name of the alarm. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The name of the alarm. </p>
     */
-    inline DescribeAlarmHistoryRequest&  WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline DescribeAlarmHistoryRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
 
     /*
      <p> The name of the alarm. </p>
@@ -62,6 +73,7 @@ namespace Model
      <p> The type of alarm histories to retrieve. </p>
     */
     inline const HistoryItemType& GetHistoryItemType() const{ return m_historyItemType; }
+
     /*
      <p> The type of alarm histories to retrieve. </p>
     */
@@ -70,12 +82,23 @@ namespace Model
     /*
      <p> The type of alarm histories to retrieve. </p>
     */
-    inline DescribeAlarmHistoryRequest&  WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
+    inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
+
+    /*
+     <p> The type of alarm histories to retrieve. </p>
+    */
+    inline DescribeAlarmHistoryRequest& WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
+
+    /*
+     <p> The type of alarm histories to retrieve. </p>
+    */
+    inline DescribeAlarmHistoryRequest& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(value); return *this;}
 
     /*
      <p> The starting date to retrieve alarm history. </p>
     */
     inline double GetStartDate() const{ return m_startDate; }
+
     /*
      <p> The starting date to retrieve alarm history. </p>
     */
@@ -84,12 +107,13 @@ namespace Model
     /*
      <p> The starting date to retrieve alarm history. </p>
     */
-    inline DescribeAlarmHistoryRequest&  WithStartDate(double value) { SetStartDate(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithStartDate(double value) { SetStartDate(value); return *this;}
 
     /*
      <p> The ending date to retrieve alarm history. </p>
     */
     inline double GetEndDate() const{ return m_endDate; }
+
     /*
      <p> The ending date to retrieve alarm history. </p>
     */
@@ -98,12 +122,13 @@ namespace Model
     /*
      <p> The ending date to retrieve alarm history. </p>
     */
-    inline DescribeAlarmHistoryRequest&  WithEndDate(double value) { SetEndDate(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithEndDate(double value) { SetEndDate(value); return *this;}
 
     /*
      <p> The maximum number of alarm history records to retrieve. </p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p> The maximum number of alarm history records to retrieve. </p>
     */
@@ -112,16 +137,22 @@ namespace Model
     /*
      <p> The maximum number of alarm history records to retrieve. </p>
     */
-    inline DescribeAlarmHistoryRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p> The token returned by a previous call to indicate that there is more data available. </p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p> The token returned by a previous call to indicate that there is more data available. </p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p> The token returned by a previous call to indicate that there is more data available. </p>
@@ -131,7 +162,12 @@ namespace Model
     /*
      <p> The token returned by a previous call to indicate that there is more data available. </p>
     */
-    inline DescribeAlarmHistoryRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline DescribeAlarmHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p> The token returned by a previous call to indicate that there is more data available. </p>

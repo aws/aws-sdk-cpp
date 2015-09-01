@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const FunctionConfiguration& GetConfiguration() const{ return m_configuration; }
+
     
     inline void SetConfiguration(const FunctionConfiguration& value) { m_configuration = value; }
 
     
-    inline GetFunctionResult&  WithConfiguration(const FunctionConfiguration& value) { SetConfiguration(value); return *this;}
+    inline void SetConfiguration(FunctionConfiguration&& value) { m_configuration = value; }
+
+    
+    inline GetFunctionResult& WithConfiguration(const FunctionConfiguration& value) { SetConfiguration(value); return *this;}
+
+    
+    inline GetFunctionResult& WithConfiguration(FunctionConfiguration&& value) { SetConfiguration(value); return *this;}
 
     
     inline const FunctionCodeLocation& GetCode() const{ return m_code; }
+
     
     inline void SetCode(const FunctionCodeLocation& value) { m_code = value; }
 
     
-    inline GetFunctionResult&  WithCode(const FunctionCodeLocation& value) { SetCode(value); return *this;}
+    inline void SetCode(FunctionCodeLocation&& value) { m_code = value; }
+
+    
+    inline GetFunctionResult& WithCode(const FunctionCodeLocation& value) { SetCode(value); return *this;}
+
+    
+    inline GetFunctionResult& WithCode(FunctionCodeLocation&& value) { SetCode(value); return *this;}
 
   private:
     FunctionConfiguration m_configuration;

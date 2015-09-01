@@ -44,28 +44,42 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline ListPartsRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline ListPartsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline ListPartsRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline ListPartsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline ListPartsRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline ListPartsRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline ListPartsRequest& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline ListPartsRequest& WithKey(const char* value) { SetKey(value); return *this;}
@@ -74,6 +88,7 @@ namespace Model
      Sets the maximum number of parts to return.
     */
     inline long GetMaxParts() const{ return m_maxParts; }
+
     /*
      Sets the maximum number of parts to return.
     */
@@ -82,12 +97,13 @@ namespace Model
     /*
      Sets the maximum number of parts to return.
     */
-    inline ListPartsRequest&  WithMaxParts(long value) { SetMaxParts(value); return *this;}
+    inline ListPartsRequest& WithMaxParts(long value) { SetMaxParts(value); return *this;}
 
     /*
      Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
     */
     inline long GetPartNumberMarker() const{ return m_partNumberMarker; }
+
     /*
      Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
     */
@@ -96,16 +112,22 @@ namespace Model
     /*
      Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
     */
-    inline ListPartsRequest&  WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
+    inline ListPartsRequest& WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
 
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
     */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
     */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
+
+    /*
+     Upload ID identifying the multipart upload whose parts are being listed.
+    */
+    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
@@ -115,7 +137,12 @@ namespace Model
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
     */
-    inline ListPartsRequest&  WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
+    inline ListPartsRequest& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
+
+    /*
+     Upload ID identifying the multipart upload whose parts are being listed.
+    */
+    inline ListPartsRequest& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
 
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
@@ -124,11 +151,18 @@ namespace Model
 
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+
     
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
-    inline ListPartsRequest&  WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline ListPartsRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+
+    
+    inline ListPartsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
   private:
     Aws::String m_bucket;

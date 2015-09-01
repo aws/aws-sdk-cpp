@@ -44,10 +44,16 @@ namespace Model
      The distribution's id.
     */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+
     /*
      The distribution's id.
     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
+
+    /*
+     The distribution's id.
+    */
+    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
     /*
      The distribution's id.
@@ -57,7 +63,12 @@ namespace Model
     /*
      The distribution's id.
     */
-    inline ListInvalidations2015_04_17Request&  WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
+    inline ListInvalidations2015_04_17Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
+
+    /*
+     The distribution's id.
+    */
+    inline ListInvalidations2015_04_17Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
 
     /*
      The distribution's id.
@@ -68,10 +79,16 @@ namespace Model
      Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
@@ -81,7 +98,12 @@ namespace Model
     /*
      Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
     */
-    inline ListInvalidations2015_04_17Request&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListInvalidations2015_04_17Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
+    */
+    inline ListInvalidations2015_04_17Request& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
@@ -92,10 +114,16 @@ namespace Model
      The maximum number of invalidation batches you want in the response body.
     */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
     /*
      The maximum number of invalidation batches you want in the response body.
     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+
+    /*
+     The maximum number of invalidation batches you want in the response body.
+    */
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /*
      The maximum number of invalidation batches you want in the response body.
@@ -105,7 +133,12 @@ namespace Model
     /*
      The maximum number of invalidation batches you want in the response body.
     */
-    inline ListInvalidations2015_04_17Request&  WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
+    inline ListInvalidations2015_04_17Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
+
+    /*
+     The maximum number of invalidation batches you want in the response body.
+    */
+    inline ListInvalidations2015_04_17Request& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
 
     /*
      The maximum number of invalidation batches you want in the response body.

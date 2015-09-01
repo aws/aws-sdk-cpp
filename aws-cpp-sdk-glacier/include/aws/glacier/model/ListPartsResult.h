@@ -48,10 +48,16 @@ namespace Model
      <p>The ID of the upload to which the parts are associated.</p>
     */
     inline const Aws::String& GetMultipartUploadId() const{ return m_multipartUploadId; }
+
     /*
      <p>The ID of the upload to which the parts are associated.</p>
     */
     inline void SetMultipartUploadId(const Aws::String& value) { m_multipartUploadId = value; }
+
+    /*
+     <p>The ID of the upload to which the parts are associated.</p>
+    */
+    inline void SetMultipartUploadId(Aws::String&& value) { m_multipartUploadId = value; }
 
     /*
      <p>The ID of the upload to which the parts are associated.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The ID of the upload to which the parts are associated.</p>
     */
-    inline ListPartsResult&  WithMultipartUploadId(const Aws::String& value) { SetMultipartUploadId(value); return *this;}
+    inline ListPartsResult& WithMultipartUploadId(const Aws::String& value) { SetMultipartUploadId(value); return *this;}
+
+    /*
+     <p>The ID of the upload to which the parts are associated.</p>
+    */
+    inline ListPartsResult& WithMultipartUploadId(Aws::String&& value) { SetMultipartUploadId(value); return *this;}
 
     /*
      <p>The ID of the upload to which the parts are associated.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     */
     inline const Aws::String& GetVaultARN() const{ return m_vaultARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     */
     inline void SetVaultARN(const Aws::String& value) { m_vaultARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
+    */
+    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     */
-    inline ListPartsResult&  WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
+    inline ListPartsResult& WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
+    */
+    inline ListPartsResult& WithVaultARN(Aws::String&& value) { SetVaultARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
@@ -96,10 +118,16 @@ namespace Model
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     */
     inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
+
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     */
     inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescription = value; }
+
+    /*
+     <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    */
+    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescription = value; }
 
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
@@ -109,7 +137,12 @@ namespace Model
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     */
-    inline ListPartsResult&  WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+    inline ListPartsResult& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+
+    /*
+     <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    */
+    inline ListPartsResult& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(value); return *this;}
 
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
@@ -120,6 +153,7 @@ namespace Model
      <p>The part size in bytes.</p>
     */
     inline long long GetPartSizeInBytes() const{ return m_partSizeInBytes; }
+
     /*
      <p>The part size in bytes.</p>
     */
@@ -128,16 +162,22 @@ namespace Model
     /*
      <p>The part size in bytes.</p>
     */
-    inline ListPartsResult&  WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
+    inline ListPartsResult& WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
 
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
     */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDate = value; }
+
+    /*
+     <p>The UTC time at which the multipart upload was initiated.</p>
+    */
+    inline void SetCreationDate(Aws::String&& value) { m_creationDate = value; }
 
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
@@ -147,7 +187,12 @@ namespace Model
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
     */
-    inline ListPartsResult&  WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+    inline ListPartsResult& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+
+    /*
+     <p>The UTC time at which the multipart upload was initiated.</p>
+    */
+    inline ListPartsResult& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
 
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
@@ -158,6 +203,7 @@ namespace Model
      <p>A list of the part sizes of the multipart upload.</p>
     */
     inline const Aws::Vector<PartListElement>& GetParts() const{ return m_parts; }
+
     /*
      <p>A list of the part sizes of the multipart upload.</p>
     */
@@ -166,7 +212,17 @@ namespace Model
     /*
      <p>A list of the part sizes of the multipart upload.</p>
     */
-    inline ListPartsResult&  WithParts(const Aws::Vector<PartListElement>& value) { SetParts(value); return *this;}
+    inline void SetParts(Aws::Vector<PartListElement>&& value) { m_parts = value; }
+
+    /*
+     <p>A list of the part sizes of the multipart upload.</p>
+    */
+    inline ListPartsResult& WithParts(const Aws::Vector<PartListElement>& value) { SetParts(value); return *this;}
+
+    /*
+     <p>A list of the part sizes of the multipart upload.</p>
+    */
+    inline ListPartsResult& WithParts(Aws::Vector<PartListElement>&& value) { SetParts(value); return *this;}
 
     /*
      <p>A list of the part sizes of the multipart upload.</p>
@@ -174,13 +230,24 @@ namespace Model
     inline ListPartsResult& AddParts(const PartListElement& value) { m_parts.push_back(value); return *this; }
 
     /*
+     <p>A list of the part sizes of the multipart upload.</p>
+    */
+    inline ListPartsResult& AddParts(PartListElement&& value) { m_parts.push_back(value); return *this; }
+
+    /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
@@ -190,7 +257,12 @@ namespace Model
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     */
-    inline ListPartsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListPartsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
+    */
+    inline ListPartsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>

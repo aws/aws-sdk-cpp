@@ -46,25 +46,42 @@ namespace Model
 
     
     inline const Aws::Vector<Destination>& GetDestinations() const{ return m_destinations; }
+
     
     inline void SetDestinations(const Aws::Vector<Destination>& value) { m_destinations = value; }
 
     
-    inline DescribeDestinationsResult&  WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
+    inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinations = value; }
+
+    
+    inline DescribeDestinationsResult& WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
+
+    
+    inline DescribeDestinationsResult& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(value); return *this;}
 
     
     inline DescribeDestinationsResult& AddDestinations(const Destination& value) { m_destinations.push_back(value); return *this; }
 
     
+    inline DescribeDestinationsResult& AddDestinations(Destination&& value) { m_destinations.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     
-    inline DescribeDestinationsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeDestinationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline DescribeDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline DescribeDestinationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

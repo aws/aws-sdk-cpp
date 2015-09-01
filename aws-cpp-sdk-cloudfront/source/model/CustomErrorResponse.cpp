@@ -51,24 +51,44 @@ CustomErrorResponse& CustomErrorResponse::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
+    if(errorCodeNode.IsNull())
+    {
+      errorCodeNode = resultNode;
+    }
+
     if(!errorCodeNode.IsNull())
     {
       m_errorCode = StringUtils::ConvertToInt32(StringUtils::Trim(errorCodeNode.GetText().c_str()).c_str());
       m_errorCodeHasBeenSet = true;
     }
     XmlNode responsePagePathNode = resultNode.FirstChild("ResponsePagePath");
+    if(responsePagePathNode.IsNull())
+    {
+      responsePagePathNode = resultNode;
+    }
+
     if(!responsePagePathNode.IsNull())
     {
       m_responsePagePath = StringUtils::Trim(responsePagePathNode.GetText().c_str());
       m_responsePagePathHasBeenSet = true;
     }
     XmlNode responseCodeNode = resultNode.FirstChild("ResponseCode");
+    if(responseCodeNode.IsNull())
+    {
+      responseCodeNode = resultNode;
+    }
+
     if(!responseCodeNode.IsNull())
     {
       m_responseCode = StringUtils::Trim(responseCodeNode.GetText().c_str());
       m_responseCodeHasBeenSet = true;
     }
     XmlNode errorCachingMinTTLNode = resultNode.FirstChild("ErrorCachingMinTTL");
+    if(errorCachingMinTTLNode.IsNull())
+    {
+      errorCachingMinTTLNode = resultNode;
+    }
+
     if(!errorCachingMinTTLNode.IsNull())
     {
       m_errorCachingMinTTL = StringUtils::ConvertToInt64(StringUtils::Trim(errorCachingMinTTLNode.GetText().c_str()).c_str());

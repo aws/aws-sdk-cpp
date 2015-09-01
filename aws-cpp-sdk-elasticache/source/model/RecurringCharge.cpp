@@ -45,12 +45,22 @@ RecurringCharge& RecurringCharge::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode recurringChargeAmountNode = resultNode.FirstChild("RecurringChargeAmount");
+    if(recurringChargeAmountNode.IsNull())
+    {
+      recurringChargeAmountNode = resultNode;
+    }
+
     if(!recurringChargeAmountNode.IsNull())
     {
       m_recurringChargeAmount = StringUtils::ConvertToDouble(StringUtils::Trim(recurringChargeAmountNode.GetText().c_str()).c_str());
       m_recurringChargeAmountHasBeenSet = true;
     }
     XmlNode recurringChargeFrequencyNode = resultNode.FirstChild("RecurringChargeFrequency");
+    if(recurringChargeFrequencyNode.IsNull())
+    {
+      recurringChargeFrequencyNode = resultNode;
+    }
+
     if(!recurringChargeFrequencyNode.IsNull())
     {
       m_recurringChargeFrequency = StringUtils::Trim(recurringChargeFrequencyNode.GetText().c_str());

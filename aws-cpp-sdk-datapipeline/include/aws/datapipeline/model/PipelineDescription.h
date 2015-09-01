@@ -47,10 +47,16 @@ namespace Model
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
-    inline PipelineDescription&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline PipelineDescription& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    */
+    inline PipelineDescription& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name of the pipeline.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the pipeline.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the pipeline.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the pipeline.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name of the pipeline.</p>
     */
-    inline PipelineDescription&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline PipelineDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the pipeline.</p>
+    */
+    inline PipelineDescription& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the pipeline.</p>
@@ -95,6 +117,7 @@ namespace Model
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
+
     /*
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     */
@@ -103,7 +126,17 @@ namespace Model
     /*
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     */
-    inline PipelineDescription&  WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
+    inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = value; }
+
+    /*
+     <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
+    */
+    inline PipelineDescription& WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
+
+    /*
+     <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
+    */
+    inline PipelineDescription& WithFields(Aws::Vector<Field>&& value) { SetFields(value); return *this;}
 
     /*
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
@@ -111,13 +144,24 @@ namespace Model
     inline PipelineDescription& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
 
     /*
+     <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
+    */
+    inline PipelineDescription& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
+
+    /*
      <p>Description of the pipeline.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>Description of the pipeline.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>Description of the pipeline.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>Description of the pipeline.</p>
@@ -127,7 +171,12 @@ namespace Model
     /*
      <p>Description of the pipeline.</p>
     */
-    inline PipelineDescription&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline PipelineDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>Description of the pipeline.</p>
+    */
+    inline PipelineDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>Description of the pipeline.</p>
@@ -138,6 +187,7 @@ namespace Model
      <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     */
@@ -146,12 +196,27 @@ namespace Model
     /*
      <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     */
-    inline PipelineDescription&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    */
+    inline PipelineDescription& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    */
+    inline PipelineDescription& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     */
     inline PipelineDescription& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    */
+    inline PipelineDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_pipelineId;

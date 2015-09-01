@@ -39,10 +39,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
     */
-    inline DeleteClusterRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline DeleteClusterRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
+    */
+    inline DeleteClusterRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>

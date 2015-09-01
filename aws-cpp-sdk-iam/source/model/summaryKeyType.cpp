@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iam/model/summaryKeyType.h>
+#include <aws/iam/model/SummaryKeyType.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
@@ -49,176 +49,176 @@ namespace IAM
 {
 namespace Model
 {
-namespace summaryKeyTypeMapper
+namespace SummaryKeyTypeMapper
 {
-summaryKeyType GetsummaryKeyTypeForName(const Aws::String& name)
+SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
   if (hashCode == Users_HASH)
   {
-    return summaryKeyType::Users;
+    return SummaryKeyType::Users;
   }
   else if (hashCode == UsersQuota_HASH)
   {
-    return summaryKeyType::UsersQuota;
+    return SummaryKeyType::UsersQuota;
   }
   else if (hashCode == Groups_HASH)
   {
-    return summaryKeyType::Groups;
+    return SummaryKeyType::Groups;
   }
   else if (hashCode == GroupsQuota_HASH)
   {
-    return summaryKeyType::GroupsQuota;
+    return SummaryKeyType::GroupsQuota;
   }
   else if (hashCode == ServerCertificates_HASH)
   {
-    return summaryKeyType::ServerCertificates;
+    return SummaryKeyType::ServerCertificates;
   }
   else if (hashCode == ServerCertificatesQuota_HASH)
   {
-    return summaryKeyType::ServerCertificatesQuota;
+    return SummaryKeyType::ServerCertificatesQuota;
   }
   else if (hashCode == UserPolicySizeQuota_HASH)
   {
-    return summaryKeyType::UserPolicySizeQuota;
+    return SummaryKeyType::UserPolicySizeQuota;
   }
   else if (hashCode == GroupPolicySizeQuota_HASH)
   {
-    return summaryKeyType::GroupPolicySizeQuota;
+    return SummaryKeyType::GroupPolicySizeQuota;
   }
   else if (hashCode == GroupsPerUserQuota_HASH)
   {
-    return summaryKeyType::GroupsPerUserQuota;
+    return SummaryKeyType::GroupsPerUserQuota;
   }
   else if (hashCode == SigningCertificatesPerUserQuota_HASH)
   {
-    return summaryKeyType::SigningCertificatesPerUserQuota;
+    return SummaryKeyType::SigningCertificatesPerUserQuota;
   }
   else if (hashCode == AccessKeysPerUserQuota_HASH)
   {
-    return summaryKeyType::AccessKeysPerUserQuota;
+    return SummaryKeyType::AccessKeysPerUserQuota;
   }
   else if (hashCode == MFADevices_HASH)
   {
-    return summaryKeyType::MFADevices;
+    return SummaryKeyType::MFADevices;
   }
   else if (hashCode == MFADevicesInUse_HASH)
   {
-    return summaryKeyType::MFADevicesInUse;
+    return SummaryKeyType::MFADevicesInUse;
   }
   else if (hashCode == AccountMFAEnabled_HASH)
   {
-    return summaryKeyType::AccountMFAEnabled;
+    return SummaryKeyType::AccountMFAEnabled;
   }
   else if (hashCode == AccountAccessKeysPresent_HASH)
   {
-    return summaryKeyType::AccountAccessKeysPresent;
+    return SummaryKeyType::AccountAccessKeysPresent;
   }
   else if (hashCode == AccountSigningCertificatesPresent_HASH)
   {
-    return summaryKeyType::AccountSigningCertificatesPresent;
+    return SummaryKeyType::AccountSigningCertificatesPresent;
   }
   else if (hashCode == AttachedPoliciesPerGroupQuota_HASH)
   {
-    return summaryKeyType::AttachedPoliciesPerGroupQuota;
+    return SummaryKeyType::AttachedPoliciesPerGroupQuota;
   }
   else if (hashCode == AttachedPoliciesPerRoleQuota_HASH)
   {
-    return summaryKeyType::AttachedPoliciesPerRoleQuota;
+    return SummaryKeyType::AttachedPoliciesPerRoleQuota;
   }
   else if (hashCode == AttachedPoliciesPerUserQuota_HASH)
   {
-    return summaryKeyType::AttachedPoliciesPerUserQuota;
+    return SummaryKeyType::AttachedPoliciesPerUserQuota;
   }
   else if (hashCode == Policies_HASH)
   {
-    return summaryKeyType::Policies;
+    return SummaryKeyType::Policies;
   }
   else if (hashCode == PoliciesQuota_HASH)
   {
-    return summaryKeyType::PoliciesQuota;
+    return SummaryKeyType::PoliciesQuota;
   }
   else if (hashCode == PolicySizeQuota_HASH)
   {
-    return summaryKeyType::PolicySizeQuota;
+    return SummaryKeyType::PolicySizeQuota;
   }
   else if (hashCode == PolicyVersionsInUse_HASH)
   {
-    return summaryKeyType::PolicyVersionsInUse;
+    return SummaryKeyType::PolicyVersionsInUse;
   }
   else if (hashCode == PolicyVersionsInUseQuota_HASH)
   {
-    return summaryKeyType::PolicyVersionsInUseQuota;
+    return SummaryKeyType::PolicyVersionsInUseQuota;
   }
   else if (hashCode == VersionsPerPolicyQuota_HASH)
   {
-    return summaryKeyType::VersionsPerPolicyQuota;
+    return SummaryKeyType::VersionsPerPolicyQuota;
   }
 
-  return summaryKeyType::NOT_SET;
+  return SummaryKeyType::NOT_SET;
 }
 
-Aws::String GetNameForsummaryKeyType(summaryKeyType value)
+Aws::String GetNameForSummaryKeyType(SummaryKeyType value)
 {
   switch(value)
   {
-  case summaryKeyType::Users:
+  case SummaryKeyType::Users:
     return "Users";
-  case summaryKeyType::UsersQuota:
+  case SummaryKeyType::UsersQuota:
     return "UsersQuota";
-  case summaryKeyType::Groups:
+  case SummaryKeyType::Groups:
     return "Groups";
-  case summaryKeyType::GroupsQuota:
+  case SummaryKeyType::GroupsQuota:
     return "GroupsQuota";
-  case summaryKeyType::ServerCertificates:
+  case SummaryKeyType::ServerCertificates:
     return "ServerCertificates";
-  case summaryKeyType::ServerCertificatesQuota:
+  case SummaryKeyType::ServerCertificatesQuota:
     return "ServerCertificatesQuota";
-  case summaryKeyType::UserPolicySizeQuota:
+  case SummaryKeyType::UserPolicySizeQuota:
     return "UserPolicySizeQuota";
-  case summaryKeyType::GroupPolicySizeQuota:
+  case SummaryKeyType::GroupPolicySizeQuota:
     return "GroupPolicySizeQuota";
-  case summaryKeyType::GroupsPerUserQuota:
+  case SummaryKeyType::GroupsPerUserQuota:
     return "GroupsPerUserQuota";
-  case summaryKeyType::SigningCertificatesPerUserQuota:
+  case SummaryKeyType::SigningCertificatesPerUserQuota:
     return "SigningCertificatesPerUserQuota";
-  case summaryKeyType::AccessKeysPerUserQuota:
+  case SummaryKeyType::AccessKeysPerUserQuota:
     return "AccessKeysPerUserQuota";
-  case summaryKeyType::MFADevices:
+  case SummaryKeyType::MFADevices:
     return "MFADevices";
-  case summaryKeyType::MFADevicesInUse:
+  case SummaryKeyType::MFADevicesInUse:
     return "MFADevicesInUse";
-  case summaryKeyType::AccountMFAEnabled:
+  case SummaryKeyType::AccountMFAEnabled:
     return "AccountMFAEnabled";
-  case summaryKeyType::AccountAccessKeysPresent:
+  case SummaryKeyType::AccountAccessKeysPresent:
     return "AccountAccessKeysPresent";
-  case summaryKeyType::AccountSigningCertificatesPresent:
+  case SummaryKeyType::AccountSigningCertificatesPresent:
     return "AccountSigningCertificatesPresent";
-  case summaryKeyType::AttachedPoliciesPerGroupQuota:
+  case SummaryKeyType::AttachedPoliciesPerGroupQuota:
     return "AttachedPoliciesPerGroupQuota";
-  case summaryKeyType::AttachedPoliciesPerRoleQuota:
+  case SummaryKeyType::AttachedPoliciesPerRoleQuota:
     return "AttachedPoliciesPerRoleQuota";
-  case summaryKeyType::AttachedPoliciesPerUserQuota:
+  case SummaryKeyType::AttachedPoliciesPerUserQuota:
     return "AttachedPoliciesPerUserQuota";
-  case summaryKeyType::Policies:
+  case SummaryKeyType::Policies:
     return "Policies";
-  case summaryKeyType::PoliciesQuota:
+  case SummaryKeyType::PoliciesQuota:
     return "PoliciesQuota";
-  case summaryKeyType::PolicySizeQuota:
+  case SummaryKeyType::PolicySizeQuota:
     return "PolicySizeQuota";
-  case summaryKeyType::PolicyVersionsInUse:
+  case SummaryKeyType::PolicyVersionsInUse:
     return "PolicyVersionsInUse";
-  case summaryKeyType::PolicyVersionsInUseQuota:
+  case SummaryKeyType::PolicyVersionsInUseQuota:
     return "PolicyVersionsInUseQuota";
-  case summaryKeyType::VersionsPerPolicyQuota:
+  case SummaryKeyType::VersionsPerPolicyQuota:
     return "VersionsPerPolicyQuota";
   default:
     return "";
   }
 }
 
-} // namespace summaryKeyTypeMapper
+} // namespace SummaryKeyTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

@@ -53,6 +53,11 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
+    if(markerNode.IsNull())
+    {
+      markerNode = resultNode;
+    }
+
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
     /*
      <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+
+    /*
+     <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+    */
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /*
      <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
     */
-    inline LocalSecondaryIndex&  WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+    inline LocalSecondaryIndex& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /*
+     <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+    */
+    inline LocalSecondaryIndex& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
     /*
      <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+
     /*
      <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
@@ -79,20 +91,42 @@ namespace Model
     /*
      <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
-    inline LocalSecondaryIndex&  WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
+    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
+
+    /*
+     <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
+    */
+    inline LocalSecondaryIndex& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
+
+    /*
+     <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
+    */
+    inline LocalSecondaryIndex& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(value); return *this;}
 
     /*
      <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
     inline LocalSecondaryIndex& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
+    /*
+     <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
+    */
+    inline LocalSecondaryIndex& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
+
     
     inline const Projection& GetProjection() const{ return m_projection; }
+
     
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
     
-    inline LocalSecondaryIndex&  WithProjection(const Projection& value) { SetProjection(value); return *this;}
+    inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
+
+    
+    inline LocalSecondaryIndex& WithProjection(const Projection& value) { SetProjection(value); return *this;}
+
+    
+    inline LocalSecondaryIndex& WithProjection(Projection&& value) { SetProjection(value); return *this;}
 
   private:
     Aws::String m_indexName;

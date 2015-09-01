@@ -42,10 +42,16 @@ namespace Model
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
     */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+
+    /*
+     <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
+    */
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
     */
-    inline AddTagsRequest&  WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline AddTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+
+    /*
+     <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
+    */
+    inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
@@ -66,6 +77,7 @@ namespace Model
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     */
@@ -74,12 +86,27 @@ namespace Model
     /*
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     */
-    inline AddTagsRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+    */
+    inline AddTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+    */
+    inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     */
     inline AddTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+    */
+    inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceId;

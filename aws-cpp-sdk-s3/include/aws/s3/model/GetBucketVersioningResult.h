@@ -47,6 +47,7 @@ namespace Model
      The versioning state of the bucket.
     */
     inline const BucketVersioningStatus& GetStatus() const{ return m_status; }
+
     /*
      The versioning state of the bucket.
     */
@@ -55,12 +56,23 @@ namespace Model
     /*
      The versioning state of the bucket.
     */
-    inline GetBucketVersioningResult&  WithStatus(const BucketVersioningStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(BucketVersioningStatus&& value) { m_status = value; }
+
+    /*
+     The versioning state of the bucket.
+    */
+    inline GetBucketVersioningResult& WithStatus(const BucketVersioningStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     The versioning state of the bucket.
+    */
+    inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus&& value) { SetStatus(value); return *this;}
 
     /*
      Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.
     */
     inline const MFADeleteStatus& GetMFADelete() const{ return m_mFADelete; }
+
     /*
      Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.
     */
@@ -69,7 +81,17 @@ namespace Model
     /*
      Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.
     */
-    inline GetBucketVersioningResult&  WithMFADelete(const MFADeleteStatus& value) { SetMFADelete(value); return *this;}
+    inline void SetMFADelete(MFADeleteStatus&& value) { m_mFADelete = value; }
+
+    /*
+     Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.
+    */
+    inline GetBucketVersioningResult& WithMFADelete(const MFADeleteStatus& value) { SetMFADelete(value); return *this;}
+
+    /*
+     Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.
+    */
+    inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus&& value) { SetMFADelete(value); return *this;}
 
   private:
     BucketVersioningStatus m_status;

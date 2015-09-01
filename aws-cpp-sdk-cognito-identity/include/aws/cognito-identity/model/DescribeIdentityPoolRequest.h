@@ -40,10 +40,16 @@ namespace Model
      An identity pool ID in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      An identity pool ID in the format REGION:GUID.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -53,7 +59,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline DescribeIdentityPoolRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline DescribeIdentityPoolRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline DescribeIdentityPoolRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      An identity pool ID in the format REGION:GUID.

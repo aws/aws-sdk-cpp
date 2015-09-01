@@ -49,6 +49,7 @@ namespace Model
      <p>A list of instance profiles.</p>
     */
     inline const Aws::Vector<InstanceProfile>& GetInstanceProfiles() const{ return m_instanceProfiles; }
+
     /*
      <p>A list of instance profiles.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of instance profiles.</p>
     */
-    inline ListInstanceProfilesResult&  WithInstanceProfiles(const Aws::Vector<InstanceProfile>& value) { SetInstanceProfiles(value); return *this;}
+    inline void SetInstanceProfiles(Aws::Vector<InstanceProfile>&& value) { m_instanceProfiles = value; }
+
+    /*
+     <p>A list of instance profiles.</p>
+    */
+    inline ListInstanceProfilesResult& WithInstanceProfiles(const Aws::Vector<InstanceProfile>& value) { SetInstanceProfiles(value); return *this;}
+
+    /*
+     <p>A list of instance profiles.</p>
+    */
+    inline ListInstanceProfilesResult& WithInstanceProfiles(Aws::Vector<InstanceProfile>&& value) { SetInstanceProfiles(value); return *this;}
 
     /*
      <p>A list of instance profiles.</p>
@@ -65,9 +76,15 @@ namespace Model
     inline ListInstanceProfilesResult& AddInstanceProfiles(const InstanceProfile& value) { m_instanceProfiles.push_back(value); return *this; }
 
     /*
+     <p>A list of instance profiles.</p>
+    */
+    inline ListInstanceProfilesResult& AddInstanceProfiles(InstanceProfile&& value) { m_instanceProfiles.push_back(value); return *this; }
+
+    /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
@@ -76,16 +93,22 @@ namespace Model
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
-    inline ListInstanceProfilesResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListInstanceProfilesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -95,7 +118,12 @@ namespace Model
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
-    inline ListInstanceProfilesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListInstanceProfilesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline ListInstanceProfilesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -104,11 +132,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListInstanceProfilesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListInstanceProfilesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListInstanceProfilesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<InstanceProfile> m_instanceProfiles;

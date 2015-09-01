@@ -51,24 +51,44 @@ DBSecurityGroup& DBSecurityGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode ownerIdNode = resultNode.FirstChild("OwnerId");
+    if(ownerIdNode.IsNull())
+    {
+      ownerIdNode = resultNode;
+    }
+
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode dBSecurityGroupNameNode = resultNode.FirstChild("DBSecurityGroupName");
+    if(dBSecurityGroupNameNode.IsNull())
+    {
+      dBSecurityGroupNameNode = resultNode;
+    }
+
     if(!dBSecurityGroupNameNode.IsNull())
     {
       m_dBSecurityGroupName = StringUtils::Trim(dBSecurityGroupNameNode.GetText().c_str());
       m_dBSecurityGroupNameHasBeenSet = true;
     }
     XmlNode dBSecurityGroupDescriptionNode = resultNode.FirstChild("DBSecurityGroupDescription");
+    if(dBSecurityGroupDescriptionNode.IsNull())
+    {
+      dBSecurityGroupDescriptionNode = resultNode;
+    }
+
     if(!dBSecurityGroupDescriptionNode.IsNull())
     {
       m_dBSecurityGroupDescription = StringUtils::Trim(dBSecurityGroupDescriptionNode.GetText().c_str());
       m_dBSecurityGroupDescriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
+    if(vpcIdNode.IsNull())
+    {
+      vpcIdNode = resultNode;
+    }
+
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());

@@ -46,10 +46,16 @@ namespace Model
      <p>The app ID.</p>
     */
     inline const Aws::String& GetAppId() const{ return m_appId; }
+
     /*
      <p>The app ID.</p>
     */
     inline void SetAppId(const Aws::String& value) { m_appId = value; }
+
+    /*
+     <p>The app ID.</p>
+    */
+    inline void SetAppId(Aws::String&& value) { m_appId = value; }
 
     /*
      <p>The app ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The app ID.</p>
     */
-    inline CreateAppResult&  WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
+    inline CreateAppResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
+
+    /*
+     <p>The app ID.</p>
+    */
+    inline CreateAppResult& WithAppId(Aws::String&& value) { SetAppId(value); return *this;}
 
     /*
      <p>The app ID.</p>

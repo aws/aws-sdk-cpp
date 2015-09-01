@@ -37,10 +37,16 @@ namespace Model
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
     */
-    inline DeleteRolePolicyRequest&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline DeleteRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
+    */
+    inline DeleteRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name identifying the policy document to delete.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name identifying the policy document to delete.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name identifying the policy document to delete.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name identifying the policy document to delete.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name identifying the policy document to delete.</p>
     */
-    inline DeleteRolePolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline DeleteRolePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name identifying the policy document to delete.</p>
+    */
+    inline DeleteRolePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name identifying the policy document to delete.</p>

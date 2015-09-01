@@ -48,6 +48,7 @@ namespace Model
      <p>The list of IAM OpenID Connect providers in the AWS account.</p>
     */
     inline const Aws::Vector<OpenIDConnectProviderListEntry>& GetOpenIDConnectProviderList() const{ return m_openIDConnectProviderList; }
+
     /*
      <p>The list of IAM OpenID Connect providers in the AWS account.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>The list of IAM OpenID Connect providers in the AWS account.</p>
     */
-    inline ListOpenIDConnectProvidersResult&  WithOpenIDConnectProviderList(const Aws::Vector<OpenIDConnectProviderListEntry>& value) { SetOpenIDConnectProviderList(value); return *this;}
+    inline void SetOpenIDConnectProviderList(Aws::Vector<OpenIDConnectProviderListEntry>&& value) { m_openIDConnectProviderList = value; }
+
+    /*
+     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+    */
+    inline ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(const Aws::Vector<OpenIDConnectProviderListEntry>& value) { SetOpenIDConnectProviderList(value); return *this;}
+
+    /*
+     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+    */
+    inline ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(Aws::Vector<OpenIDConnectProviderListEntry>&& value) { SetOpenIDConnectProviderList(value); return *this;}
 
     /*
      <p>The list of IAM OpenID Connect providers in the AWS account.</p>
     */
     inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(const OpenIDConnectProviderListEntry& value) { m_openIDConnectProviderList.push_back(value); return *this; }
 
+    /*
+     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+    */
+    inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(OpenIDConnectProviderListEntry&& value) { m_openIDConnectProviderList.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListOpenIDConnectProvidersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListOpenIDConnectProvidersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListOpenIDConnectProvidersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<OpenIDConnectProviderListEntry> m_openIDConnectProviderList;

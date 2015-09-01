@@ -46,6 +46,7 @@ namespace Model
      <p>Plaintext that contains the unpredictable byte string.</p>
     */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
+
     /*
      <p>Plaintext that contains the unpredictable byte string.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Plaintext that contains the unpredictable byte string.</p>
     */
-    inline GenerateRandomResult&  WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
+    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = value; }
+
+    /*
+     <p>Plaintext that contains the unpredictable byte string.</p>
+    */
+    inline GenerateRandomResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
+
+    /*
+     <p>Plaintext that contains the unpredictable byte string.</p>
+    */
+    inline GenerateRandomResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_plaintext;

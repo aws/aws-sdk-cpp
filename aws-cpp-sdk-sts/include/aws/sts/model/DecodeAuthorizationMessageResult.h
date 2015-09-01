@@ -47,10 +47,16 @@ namespace Model
      <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
     */
     inline const Aws::String& GetDecodedMessage() const{ return m_decodedMessage; }
+
     /*
      <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
     */
     inline void SetDecodedMessage(const Aws::String& value) { m_decodedMessage = value; }
+
+    /*
+     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
+    */
+    inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = value; }
 
     /*
      <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
     */
-    inline DecodeAuthorizationMessageResult&  WithDecodedMessage(const Aws::String& value) { SetDecodedMessage(value); return *this;}
+    inline DecodeAuthorizationMessageResult& WithDecodedMessage(const Aws::String& value) { SetDecodedMessage(value); return *this;}
+
+    /*
+     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
+    */
+    inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(value); return *this;}
 
     /*
      <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DecodeAuthorizationMessageResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DecodeAuthorizationMessageResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_decodedMessage;

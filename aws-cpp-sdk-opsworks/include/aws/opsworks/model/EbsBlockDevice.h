@@ -45,10 +45,16 @@ namespace Model
      <p>The snapshot ID.</p>
     */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
     /*
      <p>The snapshot ID.</p>
     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+
+    /*
+     <p>The snapshot ID.</p>
+    */
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /*
      <p>The snapshot ID.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The snapshot ID.</p>
     */
-    inline EbsBlockDevice&  WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
+    inline EbsBlockDevice& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
+
+    /*
+     <p>The snapshot ID.</p>
+    */
+    inline EbsBlockDevice& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
 
     /*
      <p>The snapshot ID.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     */
     inline long GetIops() const{ return m_iops; }
+
     /*
      <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     */
@@ -77,12 +89,13 @@ namespace Model
     /*
      <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     */
-    inline EbsBlockDevice&  WithIops(long value) { SetIops(value); return *this;}
+    inline EbsBlockDevice& WithIops(long value) { SetIops(value); return *this;}
 
     /*
      <p>The volume size, in GiB. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     */
     inline long GetVolumeSize() const{ return m_volumeSize; }
+
     /*
      <p>The volume size, in GiB. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     */
@@ -91,12 +104,13 @@ namespace Model
     /*
      <p>The volume size, in GiB. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     */
-    inline EbsBlockDevice&  WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
+    inline EbsBlockDevice& WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
 
     /*
      <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.</p>
     */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
     /*
      <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.</p>
     */
@@ -105,12 +119,23 @@ namespace Model
     /*
      <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.</p>
     */
-    inline EbsBlockDevice&  WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
+    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+
+    /*
+     <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.</p>
+    */
+    inline EbsBlockDevice& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
+
+    /*
+     <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.</p>
+    */
+    inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
 
     /*
      <p>Whether the volume is deleted on instance termination.</p>
     */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+
     /*
      <p>Whether the volume is deleted on instance termination.</p>
     */
@@ -119,7 +144,7 @@ namespace Model
     /*
      <p>Whether the volume is deleted on instance termination.</p>
     */
-    inline EbsBlockDevice&  WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+    inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
   private:
     Aws::String m_snapshotId;

@@ -45,14 +45,21 @@ namespace Model
 
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
     
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     
-    inline ResponseMetadata&  WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline ResponseMetadata& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ResponseMetadata& WithRequestId(Aws::String&& value) { SetRequestId(value); return *this;}
 
     
     inline ResponseMetadata& WithRequestId(const char* value) { SetRequestId(value); return *this;}

@@ -44,20 +44,33 @@ namespace Model
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
+
     
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     
-    inline DeleteMarkerEntry&  WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    
+    inline DeleteMarkerEntry& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+
+    
+    inline DeleteMarkerEntry& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
     /*
      The object key.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      The object key.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     The object key.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The object key.
@@ -67,7 +80,12 @@ namespace Model
     /*
      The object key.
     */
-    inline DeleteMarkerEntry&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline DeleteMarkerEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     The object key.
+    */
+    inline DeleteMarkerEntry& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      The object key.
@@ -78,10 +96,16 @@ namespace Model
      Version ID of an object.
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      Version ID of an object.
     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /*
+     Version ID of an object.
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      Version ID of an object.
@@ -91,7 +115,12 @@ namespace Model
     /*
      Version ID of an object.
     */
-    inline DeleteMarkerEntry&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline DeleteMarkerEntry& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     Version ID of an object.
+    */
+    inline DeleteMarkerEntry& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      Version ID of an object.
@@ -102,6 +131,7 @@ namespace Model
      Specifies whether the object is (true) or is not (false) the latest version of an object.
     */
     inline bool GetIsLatest() const{ return m_isLatest; }
+
     /*
      Specifies whether the object is (true) or is not (false) the latest version of an object.
     */
@@ -110,12 +140,13 @@ namespace Model
     /*
      Specifies whether the object is (true) or is not (false) the latest version of an object.
     */
-    inline DeleteMarkerEntry&  WithIsLatest(bool value) { SetIsLatest(value); return *this;}
+    inline DeleteMarkerEntry& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
 
     /*
      Date and time the object was last modified.
     */
     inline double GetLastModified() const{ return m_lastModified; }
+
     /*
      Date and time the object was last modified.
     */
@@ -124,7 +155,7 @@ namespace Model
     /*
      Date and time the object was last modified.
     */
-    inline DeleteMarkerEntry&  WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline DeleteMarkerEntry& WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:
     Owner m_owner;

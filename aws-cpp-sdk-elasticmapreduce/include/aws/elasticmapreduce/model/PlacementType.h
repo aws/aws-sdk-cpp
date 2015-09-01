@@ -44,10 +44,16 @@ namespace Model
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p>The Amazon EC2 Availability Zone for the job flow.</p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
     */
-    inline PlacementType&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline PlacementType& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The Amazon EC2 Availability Zone for the job flow.</p>
+    */
+    inline PlacementType& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>

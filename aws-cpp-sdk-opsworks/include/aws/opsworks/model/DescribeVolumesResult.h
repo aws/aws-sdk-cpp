@@ -47,6 +47,7 @@ namespace Model
      <p>An array of volume IDs.</p>
     */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+
     /*
      <p>An array of volume IDs.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of volume IDs.</p>
     */
-    inline DescribeVolumesResult&  WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = value; }
+
+    /*
+     <p>An array of volume IDs.</p>
+    */
+    inline DescribeVolumesResult& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
+
+    /*
+     <p>An array of volume IDs.</p>
+    */
+    inline DescribeVolumesResult& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
 
     /*
      <p>An array of volume IDs.</p>
     */
     inline DescribeVolumesResult& AddVolumes(const Volume& value) { m_volumes.push_back(value); return *this; }
+
+    /*
+     <p>An array of volume IDs.</p>
+    */
+    inline DescribeVolumesResult& AddVolumes(Volume&& value) { m_volumes.push_back(value); return *this; }
 
   private:
     Aws::Vector<Volume> m_volumes;

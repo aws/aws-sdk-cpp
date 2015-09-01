@@ -47,10 +47,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     */
-    inline SAMLProviderListEntry&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline SAMLProviderListEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+    */
+    inline SAMLProviderListEntry& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The expiration date and time for the SAML provider.</p>
     */
     inline double GetValidUntil() const{ return m_validUntil; }
+
     /*
      <p>The expiration date and time for the SAML provider.</p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p>The expiration date and time for the SAML provider.</p>
     */
-    inline SAMLProviderListEntry&  WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline SAMLProviderListEntry& WithValidUntil(double value) { SetValidUntil(value); return *this;}
 
     /*
      <p>The date and time when the SAML provider was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date and time when the SAML provider was created.</p>
     */
@@ -93,7 +106,7 @@ namespace Model
     /*
      <p>The date and time when the SAML provider was created.</p>
     */
-    inline SAMLProviderListEntry&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline SAMLProviderListEntry& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
   private:
     Aws::String m_arn;

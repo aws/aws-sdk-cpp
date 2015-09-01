@@ -47,6 +47,7 @@ namespace Model
      <p> The <a>ApplicationDescription</a> of the application. </p>
     */
     inline const ApplicationDescription& GetApplication() const{ return m_application; }
+
     /*
      <p> The <a>ApplicationDescription</a> of the application. </p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p> The <a>ApplicationDescription</a> of the application. </p>
     */
-    inline CreateApplicationResult&  WithApplication(const ApplicationDescription& value) { SetApplication(value); return *this;}
+    inline void SetApplication(ApplicationDescription&& value) { m_application = value; }
+
+    /*
+     <p> The <a>ApplicationDescription</a> of the application. </p>
+    */
+    inline CreateApplicationResult& WithApplication(const ApplicationDescription& value) { SetApplication(value); return *this;}
+
+    /*
+     <p> The <a>ApplicationDescription</a> of the application. </p>
+    */
+    inline CreateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateApplicationResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ApplicationDescription m_application;

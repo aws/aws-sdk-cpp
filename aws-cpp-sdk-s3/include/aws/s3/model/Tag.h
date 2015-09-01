@@ -45,10 +45,16 @@ namespace Model
      Name of the tag.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      Name of the tag.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     Name of the tag.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      Name of the tag.
@@ -58,7 +64,12 @@ namespace Model
     /*
      Name of the tag.
     */
-    inline Tag&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     Name of the tag.
+    */
+    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      Name of the tag.
@@ -69,10 +80,16 @@ namespace Model
      Value of the tag.
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      Value of the tag.
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     Value of the tag.
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      Value of the tag.
@@ -82,7 +99,12 @@ namespace Model
     /*
      Value of the tag.
     */
-    inline Tag&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     Value of the tag.
+    */
+    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      Value of the tag.

@@ -48,6 +48,7 @@ namespace Model
      <p>The IDs of the subnets attached to the load balancer.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
     /*
      <p>The IDs of the subnets attached to the load balancer.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The IDs of the subnets attached to the load balancer.</p>
     */
-    inline AttachLoadBalancerToSubnetsResult&  WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnets = value; }
+
+    /*
+     <p>The IDs of the subnets attached to the load balancer.</p>
+    */
+    inline AttachLoadBalancerToSubnetsResult& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+
+    /*
+     <p>The IDs of the subnets attached to the load balancer.</p>
+    */
+    inline AttachLoadBalancerToSubnetsResult& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
 
     /*
      <p>The IDs of the subnets attached to the load balancer.</p>
@@ -66,15 +77,27 @@ namespace Model
     /*
      <p>The IDs of the subnets attached to the load balancer.</p>
     */
+    inline AttachLoadBalancerToSubnetsResult& AddSubnets(Aws::String&& value) { m_subnets.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the subnets attached to the load balancer.</p>
+    */
     inline AttachLoadBalancerToSubnetsResult& AddSubnets(const char* value) { m_subnets.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline AttachLoadBalancerToSubnetsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline AttachLoadBalancerToSubnetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline AttachLoadBalancerToSubnetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_subnets;

@@ -38,10 +38,16 @@ namespace Model
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /*
+     <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
-    inline DeleteCacheClusterRequest&  WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+    inline DeleteCacheClusterRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /*
+     <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    */
+    inline DeleteCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>
     */
     inline const Aws::String& GetFinalSnapshotIdentifier() const{ return m_finalSnapshotIdentifier; }
+
     /*
      <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>
     */
     inline void SetFinalSnapshotIdentifier(const Aws::String& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
+
+    /*
+     <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>
+    */
+    inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
 
     /*
      <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>
     */
-    inline DeleteCacheClusterRequest&  WithFinalSnapshotIdentifier(const Aws::String& value) { SetFinalSnapshotIdentifier(value); return *this;}
+    inline DeleteCacheClusterRequest& WithFinalSnapshotIdentifier(const Aws::String& value) { SetFinalSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>
+    */
+    inline DeleteCacheClusterRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(value); return *this;}
 
     /*
      <p>The user-supplied name of a final cache cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.</p>

@@ -44,10 +44,16 @@ namespace Model
      <p>The volume ID.</p>
     */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
     /*
      <p>The volume ID.</p>
     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+
+    /*
+     <p>The volume ID.</p>
+    */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /*
      <p>The volume ID.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The volume ID.</p>
     */
-    inline Volume&  WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+    inline Volume& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /*
+     <p>The volume ID.</p>
+    */
+    inline Volume& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
 
     /*
      <p>The volume ID.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The Amazon EC2 volume ID.</p>
     */
     inline const Aws::String& GetEc2VolumeId() const{ return m_ec2VolumeId; }
+
     /*
      <p>The Amazon EC2 volume ID.</p>
     */
     inline void SetEc2VolumeId(const Aws::String& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
+
+    /*
+     <p>The Amazon EC2 volume ID.</p>
+    */
+    inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
 
     /*
      <p>The Amazon EC2 volume ID.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The Amazon EC2 volume ID.</p>
     */
-    inline Volume&  WithEc2VolumeId(const Aws::String& value) { SetEc2VolumeId(value); return *this;}
+    inline Volume& WithEc2VolumeId(const Aws::String& value) { SetEc2VolumeId(value); return *this;}
+
+    /*
+     <p>The Amazon EC2 volume ID.</p>
+    */
+    inline Volume& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(value); return *this;}
 
     /*
      <p>The Amazon EC2 volume ID.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The volume name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The volume name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The volume name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The volume name.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The volume name.</p>
     */
-    inline Volume&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The volume name.</p>
+    */
+    inline Volume& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The volume name.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>The RAID array ID.</p>
     */
     inline const Aws::String& GetRaidArrayId() const{ return m_raidArrayId; }
+
     /*
      <p>The RAID array ID.</p>
     */
     inline void SetRaidArrayId(const Aws::String& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = value; }
+
+    /*
+     <p>The RAID array ID.</p>
+    */
+    inline void SetRaidArrayId(Aws::String&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = value; }
 
     /*
      <p>The RAID array ID.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>The RAID array ID.</p>
     */
-    inline Volume&  WithRaidArrayId(const Aws::String& value) { SetRaidArrayId(value); return *this;}
+    inline Volume& WithRaidArrayId(const Aws::String& value) { SetRaidArrayId(value); return *this;}
+
+    /*
+     <p>The RAID array ID.</p>
+    */
+    inline Volume& WithRaidArrayId(Aws::String&& value) { SetRaidArrayId(value); return *this;}
 
     /*
      <p>The RAID array ID.</p>
@@ -140,10 +184,16 @@ namespace Model
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -153,7 +203,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline Volume&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline Volume& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline Volume& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>
@@ -164,10 +219,16 @@ namespace Model
      <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
@@ -177,7 +238,12 @@ namespace Model
     /*
      <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
     */
-    inline Volume&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline Volume& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+    */
+    inline Volume& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
@@ -188,6 +254,7 @@ namespace Model
      <p>The volume size.</p>
     */
     inline long GetSize() const{ return m_size; }
+
     /*
      <p>The volume size.</p>
     */
@@ -196,16 +263,22 @@ namespace Model
     /*
      <p>The volume size.</p>
     */
-    inline Volume&  WithSize(long value) { SetSize(value); return *this;}
+    inline Volume& WithSize(long value) { SetSize(value); return *this;}
 
     /*
      <p>The device name.</p>
     */
     inline const Aws::String& GetDevice() const{ return m_device; }
+
     /*
      <p>The device name.</p>
     */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
+
+    /*
+     <p>The device name.</p>
+    */
+    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /*
      <p>The device name.</p>
@@ -215,7 +288,12 @@ namespace Model
     /*
      <p>The device name.</p>
     */
-    inline Volume&  WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
+    inline Volume& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
+
+    /*
+     <p>The device name.</p>
+    */
+    inline Volume& WithDevice(Aws::String&& value) { SetDevice(value); return *this;}
 
     /*
      <p>The device name.</p>
@@ -226,10 +304,16 @@ namespace Model
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
     inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
+
+    /*
+     <p>The volume mount point. For example "/dev/sdh".</p>
+    */
+    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
@@ -239,7 +323,12 @@ namespace Model
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
-    inline Volume&  WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
+    inline Volume& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
+
+    /*
+     <p>The volume mount point. For example "/dev/sdh".</p>
+    */
+    inline Volume& WithMountPoint(Aws::String&& value) { SetMountPoint(value); return *this;}
 
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
@@ -250,10 +339,16 @@ namespace Model
      <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
     /*
      <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /*
+     <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /*
      <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -263,7 +358,12 @@ namespace Model
     /*
      <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
-    inline Volume&  WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+    inline Volume& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /*
+     <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline Volume& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
 
     /*
      <p>The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -274,10 +374,16 @@ namespace Model
      <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -287,7 +393,12 @@ namespace Model
     /*
      <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
-    inline Volume&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline Volume& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline Volume& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p>The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -298,10 +409,16 @@ namespace Model
      <p>The volume type, standard or PIOPS.</p>
     */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+
     /*
      <p>The volume type, standard or PIOPS.</p>
     */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+
+    /*
+     <p>The volume type, standard or PIOPS.</p>
+    */
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /*
      <p>The volume type, standard or PIOPS.</p>
@@ -311,7 +428,12 @@ namespace Model
     /*
      <p>The volume type, standard or PIOPS.</p>
     */
-    inline Volume&  WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
+    inline Volume& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
+
+    /*
+     <p>The volume type, standard or PIOPS.</p>
+    */
+    inline Volume& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
 
     /*
      <p>The volume type, standard or PIOPS.</p>
@@ -322,6 +444,7 @@ namespace Model
      <p>For PIOPS volumes, the IOPS per disk.</p>
     */
     inline long GetIops() const{ return m_iops; }
+
     /*
      <p>For PIOPS volumes, the IOPS per disk.</p>
     */
@@ -330,7 +453,7 @@ namespace Model
     /*
      <p>For PIOPS volumes, the IOPS per disk.</p>
     */
-    inline Volume&  WithIops(long value) { SetIops(value); return *this;}
+    inline Volume& WithIops(long value) { SetIops(value); return *this;}
 
   private:
     Aws::String m_volumeId;

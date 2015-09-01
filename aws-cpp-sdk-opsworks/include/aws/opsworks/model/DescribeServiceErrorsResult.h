@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     */
     inline const Aws::Vector<ServiceError>& GetServiceErrors() const{ return m_serviceErrors; }
+
     /*
      <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     */
-    inline DescribeServiceErrorsResult&  WithServiceErrors(const Aws::Vector<ServiceError>& value) { SetServiceErrors(value); return *this;}
+    inline void SetServiceErrors(Aws::Vector<ServiceError>&& value) { m_serviceErrors = value; }
+
+    /*
+     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    */
+    inline DescribeServiceErrorsResult& WithServiceErrors(const Aws::Vector<ServiceError>& value) { SetServiceErrors(value); return *this;}
+
+    /*
+     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    */
+    inline DescribeServiceErrorsResult& WithServiceErrors(Aws::Vector<ServiceError>&& value) { SetServiceErrors(value); return *this;}
 
     /*
      <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     */
     inline DescribeServiceErrorsResult& AddServiceErrors(const ServiceError& value) { m_serviceErrors.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    */
+    inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(value); return *this; }
 
   private:
     Aws::Vector<ServiceError> m_serviceErrors;

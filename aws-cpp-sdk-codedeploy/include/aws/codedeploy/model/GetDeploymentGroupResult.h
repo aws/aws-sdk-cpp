@@ -46,6 +46,7 @@ namespace Model
      <p>Information about the deployment group.</p>
     */
     inline const DeploymentGroupInfo& GetDeploymentGroupInfo() const{ return m_deploymentGroupInfo; }
+
     /*
      <p>Information about the deployment group.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Information about the deployment group.</p>
     */
-    inline GetDeploymentGroupResult&  WithDeploymentGroupInfo(const DeploymentGroupInfo& value) { SetDeploymentGroupInfo(value); return *this;}
+    inline void SetDeploymentGroupInfo(DeploymentGroupInfo&& value) { m_deploymentGroupInfo = value; }
+
+    /*
+     <p>Information about the deployment group.</p>
+    */
+    inline GetDeploymentGroupResult& WithDeploymentGroupInfo(const DeploymentGroupInfo& value) { SetDeploymentGroupInfo(value); return *this;}
+
+    /*
+     <p>Information about the deployment group.</p>
+    */
+    inline GetDeploymentGroupResult& WithDeploymentGroupInfo(DeploymentGroupInfo&& value) { SetDeploymentGroupInfo(value); return *this;}
 
   private:
     DeploymentGroupInfo m_deploymentGroupInfo;

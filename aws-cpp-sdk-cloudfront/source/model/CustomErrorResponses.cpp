@@ -45,6 +45,11 @@ CustomErrorResponses& CustomErrorResponses::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
+    if(quantityNode.IsNull())
+    {
+      quantityNode = resultNode;
+    }
+
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
@@ -80,9 +85,10 @@ void CustomErrorResponses::AddToNode(XmlNode& parentNode) const
 
   if(m_itemsHasBeenSet)
   {
+   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = parentNode.CreateChildElement("CustomErrorResponse");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("CustomErrorResponse");
      item.AddToNode(itemsNode);
    }
   }

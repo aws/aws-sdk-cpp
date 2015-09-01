@@ -39,34 +39,54 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline DeleteObjectsRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline DeleteObjectsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline DeleteObjectsRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline DeleteObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Delete& GetDelete() const{ return m_delete; }
+
     
     inline void SetDelete(const Delete& value) { m_deleteHasBeenSet = true; m_delete = value; }
 
     
-    inline DeleteObjectsRequest&  WithDelete(const Delete& value) { SetDelete(value); return *this;}
+    inline void SetDelete(Delete&& value) { m_deleteHasBeenSet = true; m_delete = value; }
+
+    
+    inline DeleteObjectsRequest& WithDelete(const Delete& value) { SetDelete(value); return *this;}
+
+    
+    inline DeleteObjectsRequest& WithDelete(Delete&& value) { SetDelete(value); return *this;}
 
     /*
      The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
     */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
+
     /*
      The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
     */
     inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
+
+    /*
+     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
+    */
+    inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
     /*
      The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
@@ -76,7 +96,12 @@ namespace Model
     /*
      The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
     */
-    inline DeleteObjectsRequest&  WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
+    inline DeleteObjectsRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
+
+    /*
+     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
+    */
+    inline DeleteObjectsRequest& WithMFA(Aws::String&& value) { SetMFA(value); return *this;}
 
     /*
      The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
@@ -85,11 +110,18 @@ namespace Model
 
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+
     
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
-    inline DeleteObjectsRequest&  WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline DeleteObjectsRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+
+    
+    inline DeleteObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
   private:
     Aws::String m_bucket;

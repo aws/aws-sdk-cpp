@@ -46,22 +46,36 @@ namespace Model
 
     
     inline const ReceiptFilterPolicy& GetPolicy() const{ return m_policy; }
+
     
     inline void SetPolicy(const ReceiptFilterPolicy& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     
-    inline ReceiptIpFilter&  WithPolicy(const ReceiptFilterPolicy& value) { SetPolicy(value); return *this;}
+    inline void SetPolicy(ReceiptFilterPolicy&& value) { m_policyHasBeenSet = true; m_policy = value; }
+
+    
+    inline ReceiptIpFilter& WithPolicy(const ReceiptFilterPolicy& value) { SetPolicy(value); return *this;}
+
+    
+    inline ReceiptIpFilter& WithPolicy(ReceiptFilterPolicy&& value) { SetPolicy(value); return *this;}
 
     
     inline const Aws::String& GetCidr() const{ return m_cidr; }
+
     
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
+
+    
+    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     
-    inline ReceiptIpFilter&  WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
+    inline ReceiptIpFilter& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
+
+    
+    inline ReceiptIpFilter& WithCidr(Aws::String&& value) { SetCidr(value); return *this;}
 
     
     inline ReceiptIpFilter& WithCidr(const char* value) { SetCidr(value); return *this;}

@@ -47,6 +47,7 @@ namespace Model
      <p>An array of descriptions for the specified pipelines.</p>
     */
     inline const Aws::Vector<PipelineDescription>& GetPipelineDescriptionList() const{ return m_pipelineDescriptionList; }
+
     /*
      <p>An array of descriptions for the specified pipelines.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of descriptions for the specified pipelines.</p>
     */
-    inline DescribePipelinesResult&  WithPipelineDescriptionList(const Aws::Vector<PipelineDescription>& value) { SetPipelineDescriptionList(value); return *this;}
+    inline void SetPipelineDescriptionList(Aws::Vector<PipelineDescription>&& value) { m_pipelineDescriptionList = value; }
+
+    /*
+     <p>An array of descriptions for the specified pipelines.</p>
+    */
+    inline DescribePipelinesResult& WithPipelineDescriptionList(const Aws::Vector<PipelineDescription>& value) { SetPipelineDescriptionList(value); return *this;}
+
+    /*
+     <p>An array of descriptions for the specified pipelines.</p>
+    */
+    inline DescribePipelinesResult& WithPipelineDescriptionList(Aws::Vector<PipelineDescription>&& value) { SetPipelineDescriptionList(value); return *this;}
 
     /*
      <p>An array of descriptions for the specified pipelines.</p>
     */
     inline DescribePipelinesResult& AddPipelineDescriptionList(const PipelineDescription& value) { m_pipelineDescriptionList.push_back(value); return *this; }
+
+    /*
+     <p>An array of descriptions for the specified pipelines.</p>
+    */
+    inline DescribePipelinesResult& AddPipelineDescriptionList(PipelineDescription&& value) { m_pipelineDescriptionList.push_back(value); return *this; }
 
   private:
     Aws::Vector<PipelineDescription> m_pipelineDescriptionList;

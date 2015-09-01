@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the instance profile to get information about.</p>
     */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
+
     /*
      <p>The name of the instance profile to get information about.</p>
     */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+
+    /*
+     <p>The name of the instance profile to get information about.</p>
+    */
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name of the instance profile to get information about.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the instance profile to get information about.</p>
     */
-    inline GetInstanceProfileRequest&  WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+    inline GetInstanceProfileRequest& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+
+    /*
+     <p>The name of the instance profile to get information about.</p>
+    */
+    inline GetInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
 
     /*
      <p>The name of the instance profile to get information about.</p>

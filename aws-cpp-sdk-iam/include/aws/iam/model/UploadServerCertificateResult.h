@@ -47,6 +47,7 @@ namespace Model
      <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
     */
     inline const ServerCertificateMetadata& GetServerCertificateMetadata() const{ return m_serverCertificateMetadata; }
+
     /*
      <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
     */
-    inline UploadServerCertificateResult&  WithServerCertificateMetadata(const ServerCertificateMetadata& value) { SetServerCertificateMetadata(value); return *this;}
+    inline void SetServerCertificateMetadata(ServerCertificateMetadata&& value) { m_serverCertificateMetadata = value; }
+
+    /*
+     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
+    */
+    inline UploadServerCertificateResult& WithServerCertificateMetadata(const ServerCertificateMetadata& value) { SetServerCertificateMetadata(value); return *this;}
+
+    /*
+     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
+    */
+    inline UploadServerCertificateResult& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline UploadServerCertificateResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline UploadServerCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline UploadServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ServerCertificateMetadata m_serverCertificateMetadata;

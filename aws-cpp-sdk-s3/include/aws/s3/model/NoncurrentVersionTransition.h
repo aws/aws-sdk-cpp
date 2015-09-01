@@ -45,6 +45,7 @@ namespace Model
      Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="/AmazonS3/latest/dev/s3-access-control.html">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple Storage Service Developer Guide.
     */
     inline long GetNoncurrentDays() const{ return m_noncurrentDays; }
+
     /*
      Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="/AmazonS3/latest/dev/s3-access-control.html">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple Storage Service Developer Guide.
     */
@@ -53,12 +54,13 @@ namespace Model
     /*
      Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="/AmazonS3/latest/dev/s3-access-control.html">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple Storage Service Developer Guide.
     */
-    inline NoncurrentVersionTransition&  WithNoncurrentDays(long value) { SetNoncurrentDays(value); return *this;}
+    inline NoncurrentVersionTransition& WithNoncurrentDays(long value) { SetNoncurrentDays(value); return *this;}
 
     /*
      The class of storage used to store the object.
     */
     inline const TransitionStorageClass& GetStorageClass() const{ return m_storageClass; }
+
     /*
      The class of storage used to store the object.
     */
@@ -67,7 +69,17 @@ namespace Model
     /*
      The class of storage used to store the object.
     */
-    inline NoncurrentVersionTransition&  WithStorageClass(const TransitionStorageClass& value) { SetStorageClass(value); return *this;}
+    inline void SetStorageClass(TransitionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline NoncurrentVersionTransition& WithStorageClass(const TransitionStorageClass& value) { SetStorageClass(value); return *this;}
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(value); return *this;}
 
   private:
     long m_noncurrentDays;

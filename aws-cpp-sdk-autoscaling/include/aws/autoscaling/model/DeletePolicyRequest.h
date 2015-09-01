@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline DeletePolicyRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DeletePolicyRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline DeletePolicyRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The name or Amazon Resource Name (ARN) of the policy.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name or Amazon Resource Name (ARN) of the policy.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the policy.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name or Amazon Resource Name (ARN) of the policy.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The name or Amazon Resource Name (ARN) of the policy.</p>
     */
-    inline DeletePolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline DeletePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the policy.</p>
+    */
+    inline DeletePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name or Amazon Resource Name (ARN) of the policy.</p>

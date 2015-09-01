@@ -42,10 +42,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
     */
-    inline RegisterContainerInstanceRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline RegisterContainerInstanceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
+    */
+    inline RegisterContainerInstanceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to register your container instance with. If you do not specify a cluster, the default cluster is assumed..</p>
@@ -66,10 +77,16 @@ namespace Model
      <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
     */
     inline const Aws::String& GetInstanceIdentityDocument() const{ return m_instanceIdentityDocument; }
+
     /*
      <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
     */
     inline void SetInstanceIdentityDocument(const Aws::String& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = value; }
+
+    /*
+     <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+    */
+    inline void SetInstanceIdentityDocument(Aws::String&& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = value; }
 
     /*
      <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
@@ -79,7 +96,12 @@ namespace Model
     /*
      <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
     */
-    inline RegisterContainerInstanceRequest&  WithInstanceIdentityDocument(const Aws::String& value) { SetInstanceIdentityDocument(value); return *this;}
+    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(const Aws::String& value) { SetInstanceIdentityDocument(value); return *this;}
+
+    /*
+     <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+    */
+    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(Aws::String&& value) { SetInstanceIdentityDocument(value); return *this;}
 
     /*
      <p>The instance identity document for the Amazon EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
@@ -90,10 +112,16 @@ namespace Model
      <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
     */
     inline const Aws::String& GetInstanceIdentityDocumentSignature() const{ return m_instanceIdentityDocumentSignature; }
+
     /*
      <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
     */
     inline void SetInstanceIdentityDocumentSignature(const Aws::String& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = value; }
+
+    /*
+     <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+    */
+    inline void SetInstanceIdentityDocumentSignature(Aws::String&& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = value; }
 
     /*
      <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
@@ -103,7 +131,12 @@ namespace Model
     /*
      <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
     */
-    inline RegisterContainerInstanceRequest&  WithInstanceIdentityDocumentSignature(const Aws::String& value) { SetInstanceIdentityDocumentSignature(value); return *this;}
+    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(const Aws::String& value) { SetInstanceIdentityDocumentSignature(value); return *this;}
+
+    /*
+     <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+    */
+    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(Aws::String&& value) { SetInstanceIdentityDocumentSignature(value); return *this;}
 
     /*
      <p>The instance identity document signature for the Amazon EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
@@ -114,6 +147,7 @@ namespace Model
      <p>The resources available on the instance.</p>
     */
     inline const Aws::Vector<Resource>& GetTotalResources() const{ return m_totalResources; }
+
     /*
      <p>The resources available on the instance.</p>
     */
@@ -122,7 +156,17 @@ namespace Model
     /*
      <p>The resources available on the instance.</p>
     */
-    inline RegisterContainerInstanceRequest&  WithTotalResources(const Aws::Vector<Resource>& value) { SetTotalResources(value); return *this;}
+    inline void SetTotalResources(Aws::Vector<Resource>&& value) { m_totalResourcesHasBeenSet = true; m_totalResources = value; }
+
+    /*
+     <p>The resources available on the instance.</p>
+    */
+    inline RegisterContainerInstanceRequest& WithTotalResources(const Aws::Vector<Resource>& value) { SetTotalResources(value); return *this;}
+
+    /*
+     <p>The resources available on the instance.</p>
+    */
+    inline RegisterContainerInstanceRequest& WithTotalResources(Aws::Vector<Resource>&& value) { SetTotalResources(value); return *this;}
 
     /*
      <p>The resources available on the instance.</p>
@@ -130,9 +174,15 @@ namespace Model
     inline RegisterContainerInstanceRequest& AddTotalResources(const Resource& value) { m_totalResourcesHasBeenSet = true; m_totalResources.push_back(value); return *this; }
 
     /*
+     <p>The resources available on the instance.</p>
+    */
+    inline RegisterContainerInstanceRequest& AddTotalResources(Resource&& value) { m_totalResourcesHasBeenSet = true; m_totalResources.push_back(value); return *this; }
+
+    /*
      <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     */
     inline const VersionInfo& GetVersionInfo() const{ return m_versionInfo; }
+
     /*
      <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     */
@@ -141,16 +191,32 @@ namespace Model
     /*
      <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     */
-    inline RegisterContainerInstanceRequest&  WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
+    inline void SetVersionInfo(VersionInfo&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
+
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
+    inline RegisterContainerInstanceRequest& WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
+
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
+    inline RegisterContainerInstanceRequest& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
     */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
     */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
@@ -160,7 +226,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
     */
-    inline RegisterContainerInstanceRequest&  WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+    inline RegisterContainerInstanceRequest& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline RegisterContainerInstanceRequest& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>

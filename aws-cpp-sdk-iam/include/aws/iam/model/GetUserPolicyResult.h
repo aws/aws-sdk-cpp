@@ -47,10 +47,16 @@ namespace Model
      <p>The user the policy is associated with.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The user the policy is associated with.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userName = value; }
+
+    /*
+     <p>The user the policy is associated with.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userName = value; }
 
     /*
      <p>The user the policy is associated with.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The user the policy is associated with.</p>
     */
-    inline GetUserPolicyResult&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline GetUserPolicyResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The user the policy is associated with.</p>
+    */
+    inline GetUserPolicyResult& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The user the policy is associated with.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name of the policy.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+
+    /*
+     <p>The name of the policy.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyName = value; }
 
     /*
      <p>The name of the policy.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name of the policy.</p>
     */
-    inline GetUserPolicyResult&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline GetUserPolicyResult& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy.</p>
+    */
+    inline GetUserPolicyResult& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The policy document.</p>
     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
     /*
      <p>The policy document.</p>
     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline GetUserPolicyResult&  WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+    inline GetUserPolicyResult& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline GetUserPolicyResult& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /*
      <p>The policy document.</p>
@@ -117,11 +150,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetUserPolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetUserPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetUserPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_userName;

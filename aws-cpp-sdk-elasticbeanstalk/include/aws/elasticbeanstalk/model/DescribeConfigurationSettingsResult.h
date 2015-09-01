@@ -48,6 +48,7 @@ namespace Model
      <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
     */
     inline const Aws::Vector<ConfigurationSettingsDescription>& GetConfigurationSettings() const{ return m_configurationSettings; }
+
     /*
      <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
     */
-    inline DescribeConfigurationSettingsResult&  WithConfigurationSettings(const Aws::Vector<ConfigurationSettingsDescription>& value) { SetConfigurationSettings(value); return *this;}
+    inline void SetConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { m_configurationSettings = value; }
+
+    /*
+     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+    */
+    inline DescribeConfigurationSettingsResult& WithConfigurationSettings(const Aws::Vector<ConfigurationSettingsDescription>& value) { SetConfigurationSettings(value); return *this;}
+
+    /*
+     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+    */
+    inline DescribeConfigurationSettingsResult& WithConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { SetConfigurationSettings(value); return *this;}
 
     /*
      <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
     */
     inline DescribeConfigurationSettingsResult& AddConfigurationSettings(const ConfigurationSettingsDescription& value) { m_configurationSettings.push_back(value); return *this; }
 
+    /*
+     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+    */
+    inline DescribeConfigurationSettingsResult& AddConfigurationSettings(ConfigurationSettingsDescription&& value) { m_configurationSettings.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeConfigurationSettingsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeConfigurationSettingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ConfigurationSettingsDescription> m_configurationSettings;

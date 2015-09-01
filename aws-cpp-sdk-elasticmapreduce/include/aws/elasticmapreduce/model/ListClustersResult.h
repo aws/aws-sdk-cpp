@@ -48,6 +48,7 @@ namespace Model
      <p>The list of clusters for the account based on the given filters. </p>
     */
     inline const Aws::Vector<ClusterSummary>& GetClusters() const{ return m_clusters; }
+
     /*
      <p>The list of clusters for the account based on the given filters. </p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The list of clusters for the account based on the given filters. </p>
     */
-    inline ListClustersResult&  WithClusters(const Aws::Vector<ClusterSummary>& value) { SetClusters(value); return *this;}
+    inline void SetClusters(Aws::Vector<ClusterSummary>&& value) { m_clusters = value; }
+
+    /*
+     <p>The list of clusters for the account based on the given filters. </p>
+    */
+    inline ListClustersResult& WithClusters(const Aws::Vector<ClusterSummary>& value) { SetClusters(value); return *this;}
+
+    /*
+     <p>The list of clusters for the account based on the given filters. </p>
+    */
+    inline ListClustersResult& WithClusters(Aws::Vector<ClusterSummary>&& value) { SetClusters(value); return *this;}
 
     /*
      <p>The list of clusters for the account based on the given filters. </p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListClustersResult& AddClusters(const ClusterSummary& value) { m_clusters.push_back(value); return *this; }
 
     /*
+     <p>The list of clusters for the account based on the given filters. </p>
+    */
+    inline ListClustersResult& AddClusters(ClusterSummary&& value) { m_clusters.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
     */
-    inline ListClustersResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListClustersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve. </p>
+    */
+    inline ListClustersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>

@@ -46,6 +46,7 @@ namespace Model
      <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP999() const{ return m_p999; }
+
     /*
      <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP999(double value) { SetP999(value); return *this;}
+    inline Latency& WithP999(double value) { SetP999(value); return *this;}
 
     /*
      <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP99() const{ return m_p99; }
+
     /*
      <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP99(double value) { SetP99(value); return *this;}
+    inline Latency& WithP99(double value) { SetP99(value); return *this;}
 
     /*
      <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP95() const{ return m_p95; }
+
     /*
      <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP95(double value) { SetP95(value); return *this;}
+    inline Latency& WithP95(double value) { SetP95(value); return *this;}
 
     /*
      <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP90() const{ return m_p90; }
+
     /*
      <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     */
@@ -96,12 +100,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP90(double value) { SetP90(value); return *this;}
+    inline Latency& WithP90(double value) { SetP90(value); return *this;}
 
     /*
      <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP85() const{ return m_p85; }
+
     /*
      <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     */
@@ -110,12 +115,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP85(double value) { SetP85(value); return *this;}
+    inline Latency& WithP85(double value) { SetP85(value); return *this;}
 
     /*
      <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP75() const{ return m_p75; }
+
     /*
      <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     */
@@ -124,12 +130,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP75(double value) { SetP75(value); return *this;}
+    inline Latency& WithP75(double value) { SetP75(value); return *this;}
 
     /*
      <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP50() const{ return m_p50; }
+
     /*
      <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     */
@@ -138,12 +145,13 @@ namespace Model
     /*
      <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP50(double value) { SetP50(value); return *this;}
+    inline Latency& WithP50(double value) { SetP50(value); return *this;}
 
     /*
      <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     */
     inline double GetP10() const{ return m_p10; }
+
     /*
      <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     */
@@ -152,7 +160,7 @@ namespace Model
     /*
      <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     */
-    inline Latency&  WithP10(double value) { SetP10(value); return *this;}
+    inline Latency& WithP10(double value) { SetP10(value); return *this;}
 
   private:
     double m_p999;

@@ -50,10 +50,16 @@ namespace Model
      <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
     */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
     /*
      <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
     */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /*
+     <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
+    */
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
 
     /*
      <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
@@ -63,7 +69,12 @@ namespace Model
     /*
      <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
     */
-    inline NodeGroup&  WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+    inline NodeGroup& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+
+    /*
+     <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
+    */
+    inline NodeGroup& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(value); return *this;}
 
     /*
      <p>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</p>
@@ -74,10 +85,16 @@ namespace Model
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
@@ -87,7 +104,12 @@ namespace Model
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
     */
-    inline NodeGroup&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline NodeGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
+    */
+    inline NodeGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The current state of this replication group - <i>creating</i>, <i>available</i>, etc.</p>
@@ -96,16 +118,24 @@ namespace Model
 
     
     inline const Endpoint& GetPrimaryEndpoint() const{ return m_primaryEndpoint; }
+
     
     inline void SetPrimaryEndpoint(const Endpoint& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = value; }
 
     
-    inline NodeGroup&  WithPrimaryEndpoint(const Endpoint& value) { SetPrimaryEndpoint(value); return *this;}
+    inline void SetPrimaryEndpoint(Endpoint&& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = value; }
+
+    
+    inline NodeGroup& WithPrimaryEndpoint(const Endpoint& value) { SetPrimaryEndpoint(value); return *this;}
+
+    
+    inline NodeGroup& WithPrimaryEndpoint(Endpoint&& value) { SetPrimaryEndpoint(value); return *this;}
 
     /*
      <p>A list containing information about individual nodes within the node group.</p>
     */
     inline const Aws::Vector<NodeGroupMember>& GetNodeGroupMembers() const{ return m_nodeGroupMembers; }
+
     /*
      <p>A list containing information about individual nodes within the node group.</p>
     */
@@ -114,12 +144,27 @@ namespace Model
     /*
      <p>A list containing information about individual nodes within the node group.</p>
     */
-    inline NodeGroup&  WithNodeGroupMembers(const Aws::Vector<NodeGroupMember>& value) { SetNodeGroupMembers(value); return *this;}
+    inline void SetNodeGroupMembers(Aws::Vector<NodeGroupMember>&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers = value; }
+
+    /*
+     <p>A list containing information about individual nodes within the node group.</p>
+    */
+    inline NodeGroup& WithNodeGroupMembers(const Aws::Vector<NodeGroupMember>& value) { SetNodeGroupMembers(value); return *this;}
+
+    /*
+     <p>A list containing information about individual nodes within the node group.</p>
+    */
+    inline NodeGroup& WithNodeGroupMembers(Aws::Vector<NodeGroupMember>&& value) { SetNodeGroupMembers(value); return *this;}
 
     /*
      <p>A list containing information about individual nodes within the node group.</p>
     */
     inline NodeGroup& AddNodeGroupMembers(const NodeGroupMember& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(value); return *this; }
+
+    /*
+     <p>A list containing information about individual nodes within the node group.</p>
+    */
+    inline NodeGroup& AddNodeGroupMembers(NodeGroupMember&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(value); return *this; }
 
   private:
     Aws::String m_nodeGroupId;

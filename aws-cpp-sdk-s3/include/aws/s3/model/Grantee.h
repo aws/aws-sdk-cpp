@@ -46,10 +46,16 @@ namespace Model
      Screen name of the grantee.
     */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
     /*
      Screen name of the grantee.
     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /*
+     Screen name of the grantee.
+    */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /*
      Screen name of the grantee.
@@ -59,7 +65,12 @@ namespace Model
     /*
      Screen name of the grantee.
     */
-    inline Grantee&  WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline Grantee& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /*
+     Screen name of the grantee.
+    */
+    inline Grantee& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
 
     /*
      Screen name of the grantee.
@@ -70,10 +81,16 @@ namespace Model
      Email address of the grantee.
     */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+
     /*
      Email address of the grantee.
     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
+
+    /*
+     Email address of the grantee.
+    */
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /*
      Email address of the grantee.
@@ -83,7 +100,12 @@ namespace Model
     /*
      Email address of the grantee.
     */
-    inline Grantee&  WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
+    inline Grantee& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
+
+    /*
+     Email address of the grantee.
+    */
+    inline Grantee& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
 
     /*
      Email address of the grantee.
@@ -94,10 +116,16 @@ namespace Model
      The canonical user ID of the grantee.
     */
     inline const Aws::String& GetID() const{ return m_iD; }
+
     /*
      The canonical user ID of the grantee.
     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
+
+    /*
+     The canonical user ID of the grantee.
+    */
+    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /*
      The canonical user ID of the grantee.
@@ -107,7 +135,12 @@ namespace Model
     /*
      The canonical user ID of the grantee.
     */
-    inline Grantee&  WithID(const Aws::String& value) { SetID(value); return *this;}
+    inline Grantee& WithID(const Aws::String& value) { SetID(value); return *this;}
+
+    /*
+     The canonical user ID of the grantee.
+    */
+    inline Grantee& WithID(Aws::String&& value) { SetID(value); return *this;}
 
     /*
      The canonical user ID of the grantee.
@@ -118,6 +151,7 @@ namespace Model
      Type of grantee
     */
     inline const Type& GetType() const{ return m_type; }
+
     /*
      Type of grantee
     */
@@ -126,16 +160,32 @@ namespace Model
     /*
      Type of grantee
     */
-    inline Grantee&  WithType(const Type& value) { SetType(value); return *this;}
+    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     Type of grantee
+    */
+    inline Grantee& WithType(const Type& value) { SetType(value); return *this;}
+
+    /*
+     Type of grantee
+    */
+    inline Grantee& WithType(Type&& value) { SetType(value); return *this;}
 
     /*
      URI of the grantee group.
     */
     inline const Aws::String& GetURI() const{ return m_uRI; }
+
     /*
      URI of the grantee group.
     */
     inline void SetURI(const Aws::String& value) { m_uRIHasBeenSet = true; m_uRI = value; }
+
+    /*
+     URI of the grantee group.
+    */
+    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = value; }
 
     /*
      URI of the grantee group.
@@ -145,7 +195,12 @@ namespace Model
     /*
      URI of the grantee group.
     */
-    inline Grantee&  WithURI(const Aws::String& value) { SetURI(value); return *this;}
+    inline Grantee& WithURI(const Aws::String& value) { SetURI(value); return *this;}
+
+    /*
+     URI of the grantee group.
+    */
+    inline Grantee& WithURI(Aws::String&& value) { SetURI(value); return *this;}
 
     /*
      URI of the grantee group.

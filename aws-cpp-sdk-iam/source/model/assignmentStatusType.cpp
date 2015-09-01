@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iam/model/assignmentStatusType.h>
+#include <aws/iam/model/AssignmentStatusType.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
@@ -27,44 +27,44 @@ namespace IAM
 {
 namespace Model
 {
-namespace assignmentStatusTypeMapper
+namespace AssignmentStatusTypeMapper
 {
-assignmentStatusType GetassignmentStatusTypeForName(const Aws::String& name)
+AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
   if (hashCode == Assigned_HASH)
   {
-    return assignmentStatusType::Assigned;
+    return AssignmentStatusType::Assigned;
   }
   else if (hashCode == Unassigned_HASH)
   {
-    return assignmentStatusType::Unassigned;
+    return AssignmentStatusType::Unassigned;
   }
   else if (hashCode == Any_HASH)
   {
-    return assignmentStatusType::Any;
+    return AssignmentStatusType::Any;
   }
 
-  return assignmentStatusType::NOT_SET;
+  return AssignmentStatusType::NOT_SET;
 }
 
-Aws::String GetNameForassignmentStatusType(assignmentStatusType value)
+Aws::String GetNameForAssignmentStatusType(AssignmentStatusType value)
 {
   switch(value)
   {
-  case assignmentStatusType::Assigned:
+  case AssignmentStatusType::Assigned:
     return "Assigned";
-  case assignmentStatusType::Unassigned:
+  case AssignmentStatusType::Unassigned:
     return "Unassigned";
-  case assignmentStatusType::Any:
+  case AssignmentStatusType::Any:
     return "Any";
   default:
     return "";
   }
 }
 
-} // namespace assignmentStatusTypeMapper
+} // namespace AssignmentStatusTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

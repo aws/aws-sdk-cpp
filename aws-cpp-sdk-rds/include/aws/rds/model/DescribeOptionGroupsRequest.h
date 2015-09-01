@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
     /*
      <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+
+    /*
+     <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
+    */
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
     */
-    inline DescribeOptionGroupsRequest&  WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+    inline DescribeOptionGroupsRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+
+    /*
+     <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
+    */
+    inline DescribeOptionGroupsRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /*
      <p> The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion. </p>
@@ -64,6 +75,7 @@ namespace Model
      <p>This parameter is not currently supported.</p>
     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
     /*
      <p>This parameter is not currently supported.</p>
     */
@@ -72,7 +84,17 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline DescribeOptionGroupsRequest&  WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOptionGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOptionGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -80,13 +102,24 @@ namespace Model
     inline DescribeOptionGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOptionGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /*
      <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -96,7 +129,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
-    inline DescribeOptionGroupsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeOptionGroupsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline DescribeOptionGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -107,6 +145,7 @@ namespace Model
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
@@ -115,16 +154,22 @@ namespace Model
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
-    inline DescribeOptionGroupsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeOptionGroupsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
     */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
+
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
+
+    /*
+     <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
+    */
+    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
@@ -134,7 +179,12 @@ namespace Model
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
     */
-    inline DescribeOptionGroupsRequest&  WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
+    inline DescribeOptionGroupsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
+
+    /*
+     <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
+    */
+    inline DescribeOptionGroupsRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine. </p>
@@ -145,10 +195,16 @@ namespace Model
      <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>
     */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>
     */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
+
+    /*
+     <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>
+    */
+    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>
@@ -158,7 +214,12 @@ namespace Model
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>
     */
-    inline DescribeOptionGroupsRequest&  WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
+    inline DescribeOptionGroupsRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
+
+    /*
+     <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>
+    */
+    inline DescribeOptionGroupsRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
 
     /*
      <p> Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified. </p>

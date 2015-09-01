@@ -50,6 +50,7 @@ namespace Model
      The bucket policy as a JSON document.
     */
     inline Aws::IOStream& GetPolicy() { return m_policy.GetUnderlyingStream(); }
+
   private:
     Utils::Stream::ResponseStream m_policy;
   };

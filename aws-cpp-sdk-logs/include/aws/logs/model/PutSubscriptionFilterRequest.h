@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the log group to associate the subscription filter with.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The name of the log group to associate the subscription filter with.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The name of the log group to associate the subscription filter with.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The name of the log group to associate the subscription filter with.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the log group to associate the subscription filter with.</p>
     */
-    inline PutSubscriptionFilterRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The name of the log group to associate the subscription filter with.</p>
+    */
+    inline PutSubscriptionFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The name of the log group to associate the subscription filter with.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>A name for the subscription filter.</p>
     */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
     /*
      <p>A name for the subscription filter.</p>
     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+
+    /*
+     <p>A name for the subscription filter.</p>
+    */
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /*
      <p>A name for the subscription filter.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>A name for the subscription filter.</p>
     */
-    inline PutSubscriptionFilterRequest&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+
+    /*
+     <p>A name for the subscription filter.</p>
+    */
+    inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
     /*
      <p>A name for the subscription filter.</p>
@@ -87,10 +109,16 @@ namespace Model
      <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
     */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+
     /*
      <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
     */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+
+    /*
+     <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
+    */
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /*
      <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
     */
-    inline PutSubscriptionFilterRequest&  WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+
+    /*
+     <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
+    */
+    inline PutSubscriptionFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
 
     /*
      <p>A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.</p>
@@ -111,10 +144,16 @@ namespace Model
      <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
     */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+
     /*
      <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
     */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
+
+    /*
+     <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
+    */
+    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /*
      <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
@@ -124,7 +163,12 @@ namespace Model
     /*
      <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
     */
-    inline PutSubscriptionFilterRequest&  WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
+
+    /*
+     <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
+    */
+    inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(value); return *this;}
 
     /*
      <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for cross-account delivery. </li> </ul> </p>
@@ -135,10 +179,16 @@ namespace Model
      <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>
     */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
     /*
      <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>
     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /*
+     <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>
+    */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /*
      <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>
@@ -148,7 +198,12 @@ namespace Model
     /*
      <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>
     */
-    inline PutSubscriptionFilterRequest&  WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /*
+     <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>
+    */
+    inline PutSubscriptionFilterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /*
      <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of <code>Destination</code>) for cross-account delivery.</p>

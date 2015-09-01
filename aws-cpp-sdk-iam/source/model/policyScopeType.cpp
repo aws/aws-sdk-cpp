@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iam/model/policyScopeType.h>
+#include <aws/iam/model/PolicyScopeType.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
@@ -27,44 +27,44 @@ namespace IAM
 {
 namespace Model
 {
-namespace policyScopeTypeMapper
+namespace PolicyScopeTypeMapper
 {
-policyScopeType GetpolicyScopeTypeForName(const Aws::String& name)
+PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
   if (hashCode == All_HASH)
   {
-    return policyScopeType::All;
+    return PolicyScopeType::All;
   }
   else if (hashCode == AWS_HASH)
   {
-    return policyScopeType::AWS;
+    return PolicyScopeType::AWS;
   }
   else if (hashCode == Local_HASH)
   {
-    return policyScopeType::Local;
+    return PolicyScopeType::Local;
   }
 
-  return policyScopeType::NOT_SET;
+  return PolicyScopeType::NOT_SET;
 }
 
-Aws::String GetNameForpolicyScopeType(policyScopeType value)
+Aws::String GetNameForPolicyScopeType(PolicyScopeType value)
 {
   switch(value)
   {
-  case policyScopeType::All:
+  case PolicyScopeType::All:
     return "All";
-  case policyScopeType::AWS:
+  case PolicyScopeType::AWS:
     return "AWS";
-  case policyScopeType::Local:
+  case PolicyScopeType::Local:
     return "Local";
   default:
     return "";
   }
 }
 
-} // namespace policyScopeTypeMapper
+} // namespace PolicyScopeTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

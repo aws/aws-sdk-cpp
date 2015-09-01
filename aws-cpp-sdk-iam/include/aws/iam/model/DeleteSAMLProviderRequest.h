@@ -37,10 +37,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    */
+    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     */
-    inline DeleteSAMLProviderRequest&  WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
+    inline DeleteSAMLProviderRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    */
+    inline DeleteSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>

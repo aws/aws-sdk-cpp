@@ -47,10 +47,16 @@ namespace Model
      <p>The ARN of the created subscription.</p>
     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
     /*
      <p>The ARN of the created subscription.</p>
     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
+
+    /*
+     <p>The ARN of the created subscription.</p>
+    */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = value; }
 
     /*
      <p>The ARN of the created subscription.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The ARN of the created subscription.</p>
     */
-    inline ConfirmSubscriptionResult&  WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+    inline ConfirmSubscriptionResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /*
+     <p>The ARN of the created subscription.</p>
+    */
+    inline ConfirmSubscriptionResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
     /*
      <p>The ARN of the created subscription.</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ConfirmSubscriptionResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ConfirmSubscriptionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ConfirmSubscriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_subscriptionArn;

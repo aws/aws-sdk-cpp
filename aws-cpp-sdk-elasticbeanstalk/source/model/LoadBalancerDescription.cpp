@@ -45,12 +45,22 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
+    if(loadBalancerNameNode.IsNull())
+    {
+      loadBalancerNameNode = resultNode;
+    }
+
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode domainNode = resultNode.FirstChild("Domain");
+    if(domainNode.IsNull())
+    {
+      domainNode = resultNode;
+    }
+
     if(!domainNode.IsNull())
     {
       m_domain = StringUtils::Trim(domainNode.GetText().c_str());

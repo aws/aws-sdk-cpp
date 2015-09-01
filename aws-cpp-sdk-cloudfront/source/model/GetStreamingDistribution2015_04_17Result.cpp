@@ -42,6 +42,11 @@ GetStreamingDistribution2015_04_17Result& GetStreamingDistribution2015_04_17Resu
   if(!resultNode.IsNull())
   {
     XmlNode streamingDistributionNode = resultNode.FirstChild("StreamingDistribution");
+    if(streamingDistributionNode.IsNull())
+    {
+      streamingDistributionNode = resultNode;
+    }
+
     if(!streamingDistributionNode.IsNull())
     {
       m_streamingDistribution = streamingDistributionNode;

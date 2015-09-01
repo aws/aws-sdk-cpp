@@ -42,6 +42,11 @@ DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(c
   if(!resultNode.IsNull())
   {
     XmlNode decodedMessageNode = resultNode.FirstChild("DecodedMessage");
+    if(decodedMessageNode.IsNull())
+    {
+      decodedMessageNode = resultNode;
+    }
+
     if(!decodedMessageNode.IsNull())
     {
       m_decodedMessage = StringUtils::Trim(decodedMessageNode.GetText().c_str());

@@ -40,6 +40,7 @@ namespace Model
      <p>An array of layer IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
     /*
      <p>An array of layer IDs.</p>
     */
@@ -48,12 +49,27 @@ namespace Model
     /*
      <p>An array of layer IDs.</p>
     */
-    inline DescribeLoadBasedAutoScalingRequest&  WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /*
+     <p>An array of layer IDs.</p>
+    */
+    inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+
+    /*
+     <p>An array of layer IDs.</p>
+    */
+    inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
 
     /*
      <p>An array of layer IDs.</p>
     */
     inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /*
+     <p>An array of layer IDs.</p>
+    */
+    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>An array of layer IDs.</p>

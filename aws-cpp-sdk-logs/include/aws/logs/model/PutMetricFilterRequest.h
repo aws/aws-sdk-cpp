@@ -41,10 +41,16 @@ namespace Model
      <p>The name of the log group to associate the metric filter with.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The name of the log group to associate the metric filter with.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The name of the log group to associate the metric filter with.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The name of the log group to associate the metric filter with.</p>
     */
-    inline PutMetricFilterRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline PutMetricFilterRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
+    inline PutMetricFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The name of the log group to associate the metric filter with.</p>
@@ -65,10 +76,16 @@ namespace Model
      <p>A name for the metric filter.</p>
     */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
     /*
      <p>A name for the metric filter.</p>
     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+
+    /*
+     <p>A name for the metric filter.</p>
+    */
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /*
      <p>A name for the metric filter.</p>
@@ -78,7 +95,12 @@ namespace Model
     /*
      <p>A name for the metric filter.</p>
     */
-    inline PutMetricFilterRequest&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+    inline PutMetricFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+
+    /*
+     <p>A name for the metric filter.</p>
+    */
+    inline PutMetricFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
     /*
      <p>A name for the metric filter.</p>
@@ -89,10 +111,16 @@ namespace Model
      <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
     */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+
     /*
      <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
     */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /*
      <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
@@ -102,7 +130,12 @@ namespace Model
     /*
      <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
     */
-    inline PutMetricFilterRequest&  WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+    inline PutMetricFilterRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
+    inline PutMetricFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
 
     /*
      <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
@@ -113,6 +146,7 @@ namespace Model
      <p>A collection of information needed to define how metric data gets emitted.</p>
     */
     inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const{ return m_metricTransformations; }
+
     /*
      <p>A collection of information needed to define how metric data gets emitted.</p>
     */
@@ -121,12 +155,27 @@ namespace Model
     /*
      <p>A collection of information needed to define how metric data gets emitted.</p>
     */
-    inline PutMetricFilterRequest&  WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
+    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
+
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
+    inline PutMetricFilterRequest& WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
+
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
+    inline PutMetricFilterRequest& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(value); return *this;}
 
     /*
      <p>A collection of information needed to define how metric data gets emitted.</p>
     */
     inline PutMetricFilterRequest& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
+
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
+    inline PutMetricFilterRequest& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
 
   private:
     Aws::String m_logGroupName;

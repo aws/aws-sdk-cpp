@@ -38,10 +38,16 @@ namespace Model
      <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>
     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
     /*
      <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>
     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /*
+     <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>
+    */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>
     */
-    inline DisableSnapshotCopyRequest&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline DisableSnapshotCopyRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>
+    */
+    inline DisableSnapshotCopyRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /*
      <p> The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. </p> <p> Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled. </p>

@@ -39,10 +39,16 @@ namespace Model
      <p>The cluster's ARN.</p>
     */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+
     /*
      <p>The cluster's ARN.</p>
     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
+
+    /*
+     <p>The cluster's ARN.</p>
+    */
+    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /*
      <p>The cluster's ARN.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The cluster's ARN.</p>
     */
-    inline DeregisterEcsClusterRequest&  WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+    inline DeregisterEcsClusterRequest& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+
+    /*
+     <p>The cluster's ARN.</p>
+    */
+    inline DeregisterEcsClusterRequest& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
 
     /*
      <p>The cluster's ARN.</p>

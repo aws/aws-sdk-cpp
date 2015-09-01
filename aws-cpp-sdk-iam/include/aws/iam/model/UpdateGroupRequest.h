@@ -37,10 +37,16 @@ namespace Model
      <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
     */
-    inline UpdateGroupRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline UpdateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
+    */
+    inline UpdateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p> Name of the group to update. If you're changing the name of the group, this is the original name. </p>
@@ -61,10 +72,16 @@ namespace Model
      <p>New path for the group. Only include this if changing the group's path.</p>
     */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
+
     /*
      <p>New path for the group. Only include this if changing the group's path.</p>
     */
     inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
+
+    /*
+     <p>New path for the group. Only include this if changing the group's path.</p>
+    */
+    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /*
      <p>New path for the group. Only include this if changing the group's path.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>New path for the group. Only include this if changing the group's path.</p>
     */
-    inline UpdateGroupRequest&  WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
+    inline UpdateGroupRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
+
+    /*
+     <p>New path for the group. Only include this if changing the group's path.</p>
+    */
+    inline UpdateGroupRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
 
     /*
      <p>New path for the group. Only include this if changing the group's path.</p>
@@ -85,10 +107,16 @@ namespace Model
      <p>New name for the group. Only include this if changing the group's name.</p>
     */
     inline const Aws::String& GetNewGroupName() const{ return m_newGroupName; }
+
     /*
      <p>New name for the group. Only include this if changing the group's name.</p>
     */
     inline void SetNewGroupName(const Aws::String& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = value; }
+
+    /*
+     <p>New name for the group. Only include this if changing the group's name.</p>
+    */
+    inline void SetNewGroupName(Aws::String&& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = value; }
 
     /*
      <p>New name for the group. Only include this if changing the group's name.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p>New name for the group. Only include this if changing the group's name.</p>
     */
-    inline UpdateGroupRequest&  WithNewGroupName(const Aws::String& value) { SetNewGroupName(value); return *this;}
+    inline UpdateGroupRequest& WithNewGroupName(const Aws::String& value) { SetNewGroupName(value); return *this;}
+
+    /*
+     <p>New name for the group. Only include this if changing the group's name.</p>
+    */
+    inline UpdateGroupRequest& WithNewGroupName(Aws::String&& value) { SetNewGroupName(value); return *this;}
 
     /*
      <p>New name for the group. Only include this if changing the group's name.</p>

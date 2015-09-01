@@ -42,6 +42,11 @@ ModifyOptionGroupResult& ModifyOptionGroupResult::operator =(const AmazonWebServ
   if(!resultNode.IsNull())
   {
     XmlNode optionGroupNode = resultNode.FirstChild("OptionGroup");
+    if(optionGroupNode.IsNull())
+    {
+      optionGroupNode = resultNode;
+    }
+
     if(!optionGroupNode.IsNull())
     {
       m_optionGroup = optionGroupNode;

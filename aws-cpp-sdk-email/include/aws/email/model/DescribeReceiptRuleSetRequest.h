@@ -35,14 +35,21 @@ namespace Model
 
     
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+
     
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+
+    
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     
-    inline DescribeReceiptRuleSetRequest&  WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
+    inline DescribeReceiptRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
+
+    
+    inline DescribeReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
 
     
     inline DescribeReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}

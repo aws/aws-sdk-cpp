@@ -47,10 +47,16 @@ namespace Model
      <p>The job flow ID in which the instance groups are added.</p>
     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
+
     /*
      <p>The job flow ID in which the instance groups are added.</p>
     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
+
+    /*
+     <p>The job flow ID in which the instance groups are added.</p>
+    */
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = value; }
 
     /*
      <p>The job flow ID in which the instance groups are added.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The job flow ID in which the instance groups are added.</p>
     */
-    inline AddInstanceGroupsResult&  WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+    inline AddInstanceGroupsResult& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+
+    /*
+     <p>The job flow ID in which the instance groups are added.</p>
+    */
+    inline AddInstanceGroupsResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
     /*
      <p>The job flow ID in which the instance groups are added.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>Instance group IDs of the newly created instance groups.</p>
     */
     inline const Aws::Vector<Aws::String>& GetInstanceGroupIds() const{ return m_instanceGroupIds; }
+
     /*
      <p>Instance group IDs of the newly created instance groups.</p>
     */
@@ -79,12 +91,27 @@ namespace Model
     /*
      <p>Instance group IDs of the newly created instance groups.</p>
     */
-    inline AddInstanceGroupsResult&  WithInstanceGroupIds(const Aws::Vector<Aws::String>& value) { SetInstanceGroupIds(value); return *this;}
+    inline void SetInstanceGroupIds(Aws::Vector<Aws::String>&& value) { m_instanceGroupIds = value; }
+
+    /*
+     <p>Instance group IDs of the newly created instance groups.</p>
+    */
+    inline AddInstanceGroupsResult& WithInstanceGroupIds(const Aws::Vector<Aws::String>& value) { SetInstanceGroupIds(value); return *this;}
+
+    /*
+     <p>Instance group IDs of the newly created instance groups.</p>
+    */
+    inline AddInstanceGroupsResult& WithInstanceGroupIds(Aws::Vector<Aws::String>&& value) { SetInstanceGroupIds(value); return *this;}
 
     /*
      <p>Instance group IDs of the newly created instance groups.</p>
     */
     inline AddInstanceGroupsResult& AddInstanceGroupIds(const Aws::String& value) { m_instanceGroupIds.push_back(value); return *this; }
+
+    /*
+     <p>Instance group IDs of the newly created instance groups.</p>
+    */
+    inline AddInstanceGroupsResult& AddInstanceGroupIds(Aws::String&& value) { m_instanceGroupIds.push_back(value); return *this; }
 
     /*
      <p>Instance group IDs of the newly created instance groups.</p>

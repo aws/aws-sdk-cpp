@@ -41,10 +41,16 @@ namespace Model
      <p>The ID of the pipeline.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline RemoveTagsRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline RemoveTagsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline RemoveTagsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline.</p>
@@ -65,6 +76,7 @@ namespace Model
      <p>The keys of the tags to remove.</p>
     */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
     /*
      <p>The keys of the tags to remove.</p>
     */
@@ -73,12 +85,27 @@ namespace Model
     /*
      <p>The keys of the tags to remove.</p>
     */
-    inline RemoveTagsRequest&  WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+
+    /*
+     <p>The keys of the tags to remove.</p>
+    */
+    inline RemoveTagsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+
+    /*
+     <p>The keys of the tags to remove.</p>
+    */
+    inline RemoveTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
 
     /*
      <p>The keys of the tags to remove.</p>
     */
     inline RemoveTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
+    /*
+     <p>The keys of the tags to remove.</p>
+    */
+    inline RemoveTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /*
      <p>The keys of the tags to remove.</p>

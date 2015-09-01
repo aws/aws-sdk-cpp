@@ -49,10 +49,16 @@ namespace Model
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
-    inline DescribeCacheEngineVersionsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeCacheEngineVersionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline DescribeCacheEngineVersionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -73,6 +84,7 @@ namespace Model
      <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     */
     inline const Aws::Vector<CacheEngineVersion>& GetCacheEngineVersions() const{ return m_cacheEngineVersions; }
+
     /*
      <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     */
-    inline DescribeCacheEngineVersionsResult&  WithCacheEngineVersions(const Aws::Vector<CacheEngineVersion>& value) { SetCacheEngineVersions(value); return *this;}
+    inline void SetCacheEngineVersions(Aws::Vector<CacheEngineVersion>&& value) { m_cacheEngineVersions = value; }
+
+    /*
+     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+    */
+    inline DescribeCacheEngineVersionsResult& WithCacheEngineVersions(const Aws::Vector<CacheEngineVersion>& value) { SetCacheEngineVersions(value); return *this;}
+
+    /*
+     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+    */
+    inline DescribeCacheEngineVersionsResult& WithCacheEngineVersions(Aws::Vector<CacheEngineVersion>&& value) { SetCacheEngineVersions(value); return *this;}
 
     /*
      <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     */
     inline DescribeCacheEngineVersionsResult& AddCacheEngineVersions(const CacheEngineVersion& value) { m_cacheEngineVersions.push_back(value); return *this; }
 
+    /*
+     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+    */
+    inline DescribeCacheEngineVersionsResult& AddCacheEngineVersions(CacheEngineVersion&& value) { m_cacheEngineVersions.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeCacheEngineVersionsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeCacheEngineVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeCacheEngineVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

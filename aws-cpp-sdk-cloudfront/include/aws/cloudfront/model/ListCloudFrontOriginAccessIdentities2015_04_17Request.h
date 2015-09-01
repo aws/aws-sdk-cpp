@@ -44,10 +44,16 @@ namespace Model
      Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
@@ -57,7 +63,12 @@ namespace Model
     /*
      Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
     */
-    inline ListCloudFrontOriginAccessIdentities2015_04_17Request&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListCloudFrontOriginAccessIdentities2015_04_17Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
+    */
+    inline ListCloudFrontOriginAccessIdentities2015_04_17Request& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last identity on that page).
@@ -68,10 +79,16 @@ namespace Model
      The maximum number of origin access identities you want in the response body.
     */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
     /*
      The maximum number of origin access identities you want in the response body.
     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+
+    /*
+     The maximum number of origin access identities you want in the response body.
+    */
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /*
      The maximum number of origin access identities you want in the response body.
@@ -81,7 +98,12 @@ namespace Model
     /*
      The maximum number of origin access identities you want in the response body.
     */
-    inline ListCloudFrontOriginAccessIdentities2015_04_17Request&  WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
+    inline ListCloudFrontOriginAccessIdentities2015_04_17Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
+
+    /*
+     The maximum number of origin access identities you want in the response body.
+    */
+    inline ListCloudFrontOriginAccessIdentities2015_04_17Request& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
 
     /*
      The maximum number of origin access identities you want in the response body.

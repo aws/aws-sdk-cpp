@@ -42,6 +42,11 @@ ModifyCacheSubnetGroupResult& ModifyCacheSubnetGroupResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode cacheSubnetGroupNode = resultNode.FirstChild("CacheSubnetGroup");
+    if(cacheSubnetGroupNode.IsNull())
+    {
+      cacheSubnetGroupNode = resultNode;
+    }
+
     if(!cacheSubnetGroupNode.IsNull())
     {
       m_cacheSubnetGroup = cacheSubnetGroupNode;

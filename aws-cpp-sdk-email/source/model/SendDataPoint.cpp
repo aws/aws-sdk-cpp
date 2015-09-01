@@ -59,30 +59,55 @@ SendDataPoint& SendDataPoint::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
+    if(timestampNode.IsNull())
+    {
+      timestampNode = resultNode;
+    }
+
     if(!timestampNode.IsNull())
     {
       m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode deliveryAttemptsNode = resultNode.FirstChild("DeliveryAttempts");
+    if(deliveryAttemptsNode.IsNull())
+    {
+      deliveryAttemptsNode = resultNode;
+    }
+
     if(!deliveryAttemptsNode.IsNull())
     {
       m_deliveryAttempts = StringUtils::ConvertToInt64(StringUtils::Trim(deliveryAttemptsNode.GetText().c_str()).c_str());
       m_deliveryAttemptsHasBeenSet = true;
     }
     XmlNode bouncesNode = resultNode.FirstChild("Bounces");
+    if(bouncesNode.IsNull())
+    {
+      bouncesNode = resultNode;
+    }
+
     if(!bouncesNode.IsNull())
     {
       m_bounces = StringUtils::ConvertToInt64(StringUtils::Trim(bouncesNode.GetText().c_str()).c_str());
       m_bouncesHasBeenSet = true;
     }
     XmlNode complaintsNode = resultNode.FirstChild("Complaints");
+    if(complaintsNode.IsNull())
+    {
+      complaintsNode = resultNode;
+    }
+
     if(!complaintsNode.IsNull())
     {
       m_complaints = StringUtils::ConvertToInt64(StringUtils::Trim(complaintsNode.GetText().c_str()).c_str());
       m_complaintsHasBeenSet = true;
     }
     XmlNode rejectsNode = resultNode.FirstChild("Rejects");
+    if(rejectsNode.IsNull())
+    {
+      rejectsNode = resultNode;
+    }
+
     if(!rejectsNode.IsNull())
     {
       m_rejects = StringUtils::ConvertToInt64(StringUtils::Trim(rejectsNode.GetText().c_str()).c_str());

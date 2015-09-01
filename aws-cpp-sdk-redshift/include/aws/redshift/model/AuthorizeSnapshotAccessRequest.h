@@ -38,10 +38,16 @@ namespace Model
      <p> The identifier of the snapshot the account is authorized to restore. </p>
     */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+
     /*
      <p> The identifier of the snapshot the account is authorized to restore. </p>
     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
+
+    /*
+     <p> The identifier of the snapshot the account is authorized to restore. </p>
+    */
+    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p> The identifier of the snapshot the account is authorized to restore. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The identifier of the snapshot the account is authorized to restore. </p>
     */
-    inline AuthorizeSnapshotAccessRequest&  WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+    inline AuthorizeSnapshotAccessRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier of the snapshot the account is authorized to restore. </p>
+    */
+    inline AuthorizeSnapshotAccessRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
 
     /*
      <p> The identifier of the snapshot the account is authorized to restore. </p>
@@ -62,10 +73,16 @@ namespace Model
      <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
     */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
+
     /*
      <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
     */
     inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
+
+    /*
+     <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /*
      <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
     */
-    inline AuthorizeSnapshotAccessRequest&  WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
+    inline AuthorizeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline AuthorizeSnapshotAccessRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /*
      <p> The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
@@ -86,10 +108,16 @@ namespace Model
      <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>
     */
     inline const Aws::String& GetAccountWithRestoreAccess() const{ return m_accountWithRestoreAccess; }
+
     /*
      <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>
     */
     inline void SetAccountWithRestoreAccess(const Aws::String& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
+
+    /*
+     <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>
+    */
+    inline void SetAccountWithRestoreAccess(Aws::String&& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
 
     /*
      <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>
     */
-    inline AuthorizeSnapshotAccessRequest&  WithAccountWithRestoreAccess(const Aws::String& value) { SetAccountWithRestoreAccess(value); return *this;}
+    inline AuthorizeSnapshotAccessRequest& WithAccountWithRestoreAccess(const Aws::String& value) { SetAccountWithRestoreAccess(value); return *this;}
+
+    /*
+     <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>
+    */
+    inline AuthorizeSnapshotAccessRequest& WithAccountWithRestoreAccess(Aws::String&& value) { SetAccountWithRestoreAccess(value); return *this;}
 
     /*
      <p> The identifier of the AWS customer account authorized to restore the specified snapshot. </p>

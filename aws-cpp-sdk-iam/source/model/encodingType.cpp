@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iam/model/encodingType.h>
+#include <aws/iam/model/EncodingType.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
@@ -26,38 +26,38 @@ namespace IAM
 {
 namespace Model
 {
-namespace encodingTypeMapper
+namespace EncodingTypeMapper
 {
-encodingType GetencodingTypeForName(const Aws::String& name)
+EncodingType GetEncodingTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
   if (hashCode == SSH_HASH)
   {
-    return encodingType::SSH;
+    return EncodingType::SSH;
   }
   else if (hashCode == PEM_HASH)
   {
-    return encodingType::PEM;
+    return EncodingType::PEM;
   }
 
-  return encodingType::NOT_SET;
+  return EncodingType::NOT_SET;
 }
 
-Aws::String GetNameForencodingType(encodingType value)
+Aws::String GetNameForEncodingType(EncodingType value)
 {
   switch(value)
   {
-  case encodingType::SSH:
+  case EncodingType::SSH:
     return "SSH";
-  case encodingType::PEM:
+  case EncodingType::PEM:
     return "PEM";
   default:
     return "";
   }
 }
 
-} // namespace encodingTypeMapper
+} // namespace EncodingTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

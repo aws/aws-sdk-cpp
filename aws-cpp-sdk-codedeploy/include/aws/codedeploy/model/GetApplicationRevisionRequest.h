@@ -41,10 +41,16 @@ namespace Model
      <p>The name of the application that corresponds to the revision.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of the application that corresponds to the revision.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application that corresponds to the revision.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The name of the application that corresponds to the revision.</p>
     */
-    inline GetApplicationRevisionRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline GetApplicationRevisionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
+    inline GetApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of the application that corresponds to the revision.</p>
@@ -65,6 +76,7 @@ namespace Model
      <p>Information about the application revision to get, including the revision's type and its location.</p>
     */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
+
     /*
      <p>Information about the application revision to get, including the revision's type and its location.</p>
     */
@@ -73,7 +85,17 @@ namespace Model
     /*
      <p>Information about the application revision to get, including the revision's type and its location.</p>
     */
-    inline GetApplicationRevisionRequest&  WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
+    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
+
+    /*
+     <p>Information about the application revision to get, including the revision's type and its location.</p>
+    */
+    inline GetApplicationRevisionRequest& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
+
+    /*
+     <p>Information about the application revision to get, including the revision's type and its location.</p>
+    */
+    inline GetApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
 
   private:
     Aws::String m_applicationName;

@@ -43,6 +43,7 @@ namespace Model
      <p>The total number of capacity units consumed on a table or an index.</p>
     */
     inline double GetCapacityUnits() const{ return m_capacityUnits; }
+
     /*
      <p>The total number of capacity units consumed on a table or an index.</p>
     */
@@ -51,7 +52,7 @@ namespace Model
     /*
      <p>The total number of capacity units consumed on a table or an index.</p>
     */
-    inline Capacity&  WithCapacityUnits(double value) { SetCapacityUnits(value); return *this;}
+    inline Capacity& WithCapacityUnits(double value) { SetCapacityUnits(value); return *this;}
 
   private:
     double m_capacityUnits;

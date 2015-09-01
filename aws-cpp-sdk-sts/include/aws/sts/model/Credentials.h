@@ -47,10 +47,16 @@ namespace Model
      <p>The access key ID that identifies the temporary security credentials.</p>
     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /*
+     <p>The access key ID that identifies the temporary security credentials.</p>
+    */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
     */
-    inline Credentials&  WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+    inline Credentials& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /*
+     <p>The access key ID that identifies the temporary security credentials.</p>
+    */
+    inline Credentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The secret access key that can be used to sign requests.</p>
     */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
+
     /*
      <p>The secret access key that can be used to sign requests.</p>
     */
     inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
+
+    /*
+     <p>The secret access key that can be used to sign requests.</p>
+    */
+    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
     /*
      <p>The secret access key that can be used to sign requests.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The secret access key that can be used to sign requests.</p>
     */
-    inline Credentials&  WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
+    inline Credentials& WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
+
+    /*
+     <p>The secret access key that can be used to sign requests.</p>
+    */
+    inline Credentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(value); return *this;}
 
     /*
      <p>The secret access key that can be used to sign requests.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
     */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
     */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
+
+    /*
+     <p>The token that users must pass to the service API to use the temporary credentials.</p>
+    */
+    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
     */
-    inline Credentials&  WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
+    inline Credentials& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
+
+    /*
+     <p>The token that users must pass to the service API to use the temporary credentials.</p>
+    */
+    inline Credentials& WithSessionToken(Aws::String&& value) { SetSessionToken(value); return *this;}
 
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
@@ -119,6 +152,7 @@ namespace Model
      <p>The date on which the current credentials expire.</p>
     */
     inline double GetExpiration() const{ return m_expiration; }
+
     /*
      <p>The date on which the current credentials expire.</p>
     */
@@ -127,7 +161,7 @@ namespace Model
     /*
      <p>The date on which the current credentials expire.</p>
     */
-    inline Credentials&  WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline Credentials& WithExpiration(double value) { SetExpiration(value); return *this;}
 
   private:
     Aws::String m_accessKeyId;

@@ -42,6 +42,11 @@ DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode environmentResourcesNode = resultNode.FirstChild("EnvironmentResources");
+    if(environmentResourcesNode.IsNull())
+    {
+      environmentResourcesNode = resultNode;
+    }
+
     if(!environmentResourcesNode.IsNull())
     {
       m_environmentResources = environmentResourcesNode;

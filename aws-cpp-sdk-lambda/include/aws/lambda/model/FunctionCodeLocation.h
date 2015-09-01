@@ -44,10 +44,16 @@ namespace Model
      <p>The repository from which you can download the function.</p>
     */
     inline const Aws::String& GetRepositoryType() const{ return m_repositoryType; }
+
     /*
      <p>The repository from which you can download the function.</p>
     */
     inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
+
+    /*
+     <p>The repository from which you can download the function.</p>
+    */
+    inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
 
     /*
      <p>The repository from which you can download the function.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The repository from which you can download the function.</p>
     */
-    inline FunctionCodeLocation&  WithRepositoryType(const Aws::String& value) { SetRepositoryType(value); return *this;}
+    inline FunctionCodeLocation& WithRepositoryType(const Aws::String& value) { SetRepositoryType(value); return *this;}
+
+    /*
+     <p>The repository from which you can download the function.</p>
+    */
+    inline FunctionCodeLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(value); return *this;}
 
     /*
      <p>The repository from which you can download the function.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>
     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /*
+     <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>
+    */
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /*
      <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>
     */
-    inline FunctionCodeLocation&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline FunctionCodeLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>
+    */
+    inline FunctionCodeLocation& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      <p>The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.</p>

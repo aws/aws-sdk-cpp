@@ -48,6 +48,7 @@ namespace Model
      <p>A map of policy names to policies.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetPolicies() const{ return m_policies; }
+
     /*
      <p>A map of policy names to policies.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>A map of policy names to policies.</p>
     */
-    inline GetIdentityPoliciesResult&  WithPolicies(const Aws::Map<Aws::String, Aws::String>& value) { SetPolicies(value); return *this;}
+    inline void SetPolicies(Aws::Map<Aws::String, Aws::String>&& value) { m_policies = value; }
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
+    inline GetIdentityPoliciesResult& WithPolicies(const Aws::Map<Aws::String, Aws::String>& value) { SetPolicies(value); return *this;}
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
+    inline GetIdentityPoliciesResult& WithPolicies(Aws::Map<Aws::String, Aws::String>&& value) { SetPolicies(value); return *this;}
 
     /*
      <p>A map of policy names to policies.</p>
@@ -66,15 +77,47 @@ namespace Model
     /*
      <p>A map of policy names to policies.</p>
     */
+    inline GetIdentityPoliciesResult& AddPolicies(Aws::String&& key, const Aws::String& value) { m_policies[key] = value; return *this; }
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
+    inline GetIdentityPoliciesResult& AddPolicies(const Aws::String& key, Aws::String&& value) { m_policies[key] = value; return *this; }
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
+    inline GetIdentityPoliciesResult& AddPolicies(Aws::String&& key, Aws::String&& value) { m_policies[key] = value; return *this; }
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
+    inline GetIdentityPoliciesResult& AddPolicies(const char* key, Aws::String&& value) { m_policies[key] = value; return *this; }
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
+    inline GetIdentityPoliciesResult& AddPolicies(Aws::String&& key, const char* value) { m_policies[key] = value; return *this; }
+
+    /*
+     <p>A map of policy names to policies.</p>
+    */
     inline GetIdentityPoliciesResult& AddPolicies(const char* key, const char* value) { m_policies[key] = value; return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetIdentityPoliciesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetIdentityPoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetIdentityPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Map<Aws::String, Aws::String> m_policies;

@@ -42,11 +42,21 @@ ModifyClusterParameterGroupResult& ModifyClusterParameterGroupResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
+    if(parameterGroupNameNode.IsNull())
+    {
+      parameterGroupNameNode = resultNode;
+    }
+
     if(!parameterGroupNameNode.IsNull())
     {
       m_parameterGroupName = StringUtils::Trim(parameterGroupNameNode.GetText().c_str());
     }
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
+    if(parameterGroupStatusNode.IsNull())
+    {
+      parameterGroupStatusNode = resultNode;
+    }
+
     if(!parameterGroupStatusNode.IsNull())
     {
       m_parameterGroupStatus = StringUtils::Trim(parameterGroupStatusNode.GetText().c_str());

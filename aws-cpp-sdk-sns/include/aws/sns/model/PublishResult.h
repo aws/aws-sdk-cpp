@@ -47,10 +47,16 @@ namespace Model
      <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
     */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
+
     /*
      <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
+
+    /*
+     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
+    */
+    inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
     /*
      <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
     */
-    inline PublishResult&  WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+    inline PublishResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+
+    /*
+     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
+    */
+    inline PublishResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
     /*
      <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline PublishResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline PublishResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline PublishResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_messageId;

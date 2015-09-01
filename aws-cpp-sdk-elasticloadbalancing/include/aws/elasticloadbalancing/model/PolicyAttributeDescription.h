@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the attribute.</p>
     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
     /*
      <p>The name of the attribute.</p>
     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+
+    /*
+     <p>The name of the attribute.</p>
+    */
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of the attribute.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the attribute.</p>
     */
-    inline PolicyAttributeDescription&  WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+    inline PolicyAttributeDescription& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+
+    /*
+     <p>The name of the attribute.</p>
+    */
+    inline PolicyAttributeDescription& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /*
      <p>The name of the attribute.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The value of the attribute.</p>
     */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
     /*
      <p>The value of the attribute.</p>
     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
+
+    /*
+     <p>The value of the attribute.</p>
+    */
+    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
     /*
      <p>The value of the attribute.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The value of the attribute.</p>
     */
-    inline PolicyAttributeDescription&  WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
+    inline PolicyAttributeDescription& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
+
+    /*
+     <p>The value of the attribute.</p>
+    */
+    inline PolicyAttributeDescription& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
 
     /*
      <p>The value of the attribute.</p>

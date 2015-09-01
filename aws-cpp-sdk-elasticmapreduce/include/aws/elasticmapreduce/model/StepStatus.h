@@ -46,6 +46,7 @@ namespace Model
      <p>The execution state of the cluster step. </p>
     */
     inline const StepState& GetState() const{ return m_state; }
+
     /*
      <p>The execution state of the cluster step. </p>
     */
@@ -54,12 +55,23 @@ namespace Model
     /*
      <p>The execution state of the cluster step. </p>
     */
-    inline StepStatus&  WithState(const StepState& value) { SetState(value); return *this;}
+    inline void SetState(StepState&& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p>The execution state of the cluster step. </p>
+    */
+    inline StepStatus& WithState(const StepState& value) { SetState(value); return *this;}
+
+    /*
+     <p>The execution state of the cluster step. </p>
+    */
+    inline StepStatus& WithState(StepState&& value) { SetState(value); return *this;}
 
     /*
      <p>The reason for the step execution status change. </p>
     */
     inline const StepStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+
     /*
      <p>The reason for the step execution status change. </p>
     */
@@ -68,12 +80,23 @@ namespace Model
     /*
      <p>The reason for the step execution status change. </p>
     */
-    inline StepStatus&  WithStateChangeReason(const StepStateChangeReason& value) { SetStateChangeReason(value); return *this;}
+    inline void SetStateChangeReason(StepStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+
+    /*
+     <p>The reason for the step execution status change. </p>
+    */
+    inline StepStatus& WithStateChangeReason(const StepStateChangeReason& value) { SetStateChangeReason(value); return *this;}
+
+    /*
+     <p>The reason for the step execution status change. </p>
+    */
+    inline StepStatus& WithStateChangeReason(StepStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
 
     /*
      <p>The timeline of the cluster step status over time. </p>
     */
     inline const StepTimeline& GetTimeline() const{ return m_timeline; }
+
     /*
      <p>The timeline of the cluster step status over time. </p>
     */
@@ -82,7 +105,17 @@ namespace Model
     /*
      <p>The timeline of the cluster step status over time. </p>
     */
-    inline StepStatus&  WithTimeline(const StepTimeline& value) { SetTimeline(value); return *this;}
+    inline void SetTimeline(StepTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+
+    /*
+     <p>The timeline of the cluster step status over time. </p>
+    */
+    inline StepStatus& WithTimeline(const StepTimeline& value) { SetTimeline(value); return *this;}
+
+    /*
+     <p>The timeline of the cluster step status over time. </p>
+    */
+    inline StepStatus& WithTimeline(StepTimeline&& value) { SetTimeline(value); return *this;}
 
   private:
     StepState m_state;

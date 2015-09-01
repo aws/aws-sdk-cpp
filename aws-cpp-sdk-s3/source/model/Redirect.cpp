@@ -49,30 +49,55 @@ Redirect& Redirect::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
+    if(hostNameNode.IsNull())
+    {
+      hostNameNode = resultNode;
+    }
+
     if(!hostNameNode.IsNull())
     {
       m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
       m_hostNameHasBeenSet = true;
     }
     XmlNode httpRedirectCodeNode = resultNode.FirstChild("HttpRedirectCode");
+    if(httpRedirectCodeNode.IsNull())
+    {
+      httpRedirectCodeNode = resultNode;
+    }
+
     if(!httpRedirectCodeNode.IsNull())
     {
       m_httpRedirectCode = StringUtils::Trim(httpRedirectCodeNode.GetText().c_str());
       m_httpRedirectCodeHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
+    if(protocolNode.IsNull())
+    {
+      protocolNode = resultNode;
+    }
+
     if(!protocolNode.IsNull())
     {
       m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(protocolNode.GetText().c_str()).c_str());
       m_protocolHasBeenSet = true;
     }
     XmlNode replaceKeyPrefixWithNode = resultNode.FirstChild("ReplaceKeyPrefixWith");
+    if(replaceKeyPrefixWithNode.IsNull())
+    {
+      replaceKeyPrefixWithNode = resultNode;
+    }
+
     if(!replaceKeyPrefixWithNode.IsNull())
     {
       m_replaceKeyPrefixWith = StringUtils::Trim(replaceKeyPrefixWithNode.GetText().c_str());
       m_replaceKeyPrefixWithHasBeenSet = true;
     }
     XmlNode replaceKeyWithNode = resultNode.FirstChild("ReplaceKeyWith");
+    if(replaceKeyWithNode.IsNull())
+    {
+      replaceKeyWithNode = resultNode;
+    }
+
     if(!replaceKeyWithNode.IsNull())
     {
       m_replaceKeyWith = StringUtils::Trim(replaceKeyWithNode.GetText().c_str());

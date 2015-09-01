@@ -42,6 +42,11 @@ CopyDBParameterGroupResult& CopyDBParameterGroupResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNode = resultNode.FirstChild("DBParameterGroup");
+    if(dBParameterGroupNode.IsNull())
+    {
+      dBParameterGroupNode = resultNode;
+    }
+
     if(!dBParameterGroupNode.IsNull())
     {
       m_dBParameterGroup = dBParameterGroupNode;

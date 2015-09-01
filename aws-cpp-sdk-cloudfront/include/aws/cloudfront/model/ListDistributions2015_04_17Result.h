@@ -46,6 +46,7 @@ namespace Model
      The DistributionList type.
     */
     inline const DistributionList& GetDistributionList() const{ return m_distributionList; }
+
     /*
      The DistributionList type.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      The DistributionList type.
     */
-    inline ListDistributions2015_04_17Result&  WithDistributionList(const DistributionList& value) { SetDistributionList(value); return *this;}
+    inline void SetDistributionList(DistributionList&& value) { m_distributionList = value; }
+
+    /*
+     The DistributionList type.
+    */
+    inline ListDistributions2015_04_17Result& WithDistributionList(const DistributionList& value) { SetDistributionList(value); return *this;}
+
+    /*
+     The DistributionList type.
+    */
+    inline ListDistributions2015_04_17Result& WithDistributionList(DistributionList&& value) { SetDistributionList(value); return *this;}
 
   private:
     DistributionList m_distributionList;

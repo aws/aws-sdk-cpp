@@ -47,6 +47,7 @@ namespace Model
      <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
     */
     inline const Aws::Vector<Aws::String>& GetStreamNames() const{ return m_streamNames; }
+
     /*
      <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
     */
-    inline ListStreamsResult&  WithStreamNames(const Aws::Vector<Aws::String>& value) { SetStreamNames(value); return *this;}
+    inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = value; }
+
+    /*
+     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
+    */
+    inline ListStreamsResult& WithStreamNames(const Aws::Vector<Aws::String>& value) { SetStreamNames(value); return *this;}
+
+    /*
+     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
+    */
+    inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(value); return *this;}
 
     /*
      <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
     */
     inline ListStreamsResult& AddStreamNames(const Aws::String& value) { m_streamNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
+    */
+    inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(value); return *this; }
 
     /*
      <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
@@ -71,6 +87,7 @@ namespace Model
      <p>If set to <code>true</code>, there are more streams available to list.</p>
     */
     inline bool GetHasMoreStreams() const{ return m_hasMoreStreams; }
+
     /*
      <p>If set to <code>true</code>, there are more streams available to list.</p>
     */
@@ -79,7 +96,7 @@ namespace Model
     /*
      <p>If set to <code>true</code>, there are more streams available to list.</p>
     */
-    inline ListStreamsResult&  WithHasMoreStreams(bool value) { SetHasMoreStreams(value); return *this;}
+    inline ListStreamsResult& WithHasMoreStreams(bool value) { SetHasMoreStreams(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_streamNames;

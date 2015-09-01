@@ -47,10 +47,16 @@ namespace Model
      <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
     /*
      <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
+
+    /*
+     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
+    */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = value; }
 
     /*
      <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
     */
-    inline SubscribeResult&  WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+    inline SubscribeResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /*
+     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
+    */
+    inline SubscribeResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
     /*
      <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline SubscribeResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline SubscribeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline SubscribeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_subscriptionArn;

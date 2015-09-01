@@ -42,6 +42,11 @@ GetInstanceProfileResult& GetInstanceProfileResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode instanceProfileNode = resultNode.FirstChild("InstanceProfile");
+    if(instanceProfileNode.IsNull())
+    {
+      instanceProfileNode = resultNode;
+    }
+
     if(!instanceProfileNode.IsNull())
     {
       m_instanceProfile = instanceProfileNode;

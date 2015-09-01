@@ -43,12 +43,22 @@ AppCookieStickinessPolicy& AppCookieStickinessPolicy::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
+    if(policyNameNode.IsNull())
+    {
+      policyNameNode = resultNode;
+    }
+
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
       m_policyNameHasBeenSet = true;
     }
     XmlNode cookieNameNode = resultNode.FirstChild("CookieName");
+    if(cookieNameNode.IsNull())
+    {
+      cookieNameNode = resultNode;
+    }
+
     if(!cookieNameNode.IsNull())
     {
       m_cookieName = StringUtils::Trim(cookieNameNode.GetText().c_str());

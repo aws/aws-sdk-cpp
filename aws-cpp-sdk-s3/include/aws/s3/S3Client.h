@@ -517,19 +517,19 @@
         void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -745,19 +745,19 @@
         void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */

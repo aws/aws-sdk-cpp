@@ -42,6 +42,11 @@ DeleteReplicationGroupResult& DeleteReplicationGroupResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode replicationGroupNode = resultNode.FirstChild("ReplicationGroup");
+    if(replicationGroupNode.IsNull())
+    {
+      replicationGroupNode = resultNode;
+    }
+
     if(!replicationGroupNode.IsNull())
     {
       m_replicationGroup = replicationGroupNode;

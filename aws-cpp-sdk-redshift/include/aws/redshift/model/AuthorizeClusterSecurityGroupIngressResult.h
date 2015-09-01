@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ClusterSecurityGroup& GetClusterSecurityGroup() const{ return m_clusterSecurityGroup; }
+
     
     inline void SetClusterSecurityGroup(const ClusterSecurityGroup& value) { m_clusterSecurityGroup = value; }
 
     
-    inline AuthorizeClusterSecurityGroupIngressResult&  WithClusterSecurityGroup(const ClusterSecurityGroup& value) { SetClusterSecurityGroup(value); return *this;}
+    inline void SetClusterSecurityGroup(ClusterSecurityGroup&& value) { m_clusterSecurityGroup = value; }
+
+    
+    inline AuthorizeClusterSecurityGroupIngressResult& WithClusterSecurityGroup(const ClusterSecurityGroup& value) { SetClusterSecurityGroup(value); return *this;}
+
+    
+    inline AuthorizeClusterSecurityGroupIngressResult& WithClusterSecurityGroup(ClusterSecurityGroup&& value) { SetClusterSecurityGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline AuthorizeClusterSecurityGroupIngressResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline AuthorizeClusterSecurityGroupIngressResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline AuthorizeClusterSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ClusterSecurityGroup m_clusterSecurityGroup;

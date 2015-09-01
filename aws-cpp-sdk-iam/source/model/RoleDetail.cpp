@@ -59,36 +59,66 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
+    if(pathNode.IsNull())
+    {
+      pathNode = resultNode;
+    }
+
     if(!pathNode.IsNull())
     {
       m_path = StringUtils::Trim(pathNode.GetText().c_str());
       m_pathHasBeenSet = true;
     }
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
+    if(roleNameNode.IsNull())
+    {
+      roleNameNode = resultNode;
+    }
+
     if(!roleNameNode.IsNull())
     {
       m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
       m_roleNameHasBeenSet = true;
     }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
+    if(roleIdNode.IsNull())
+    {
+      roleIdNode = resultNode;
+    }
+
     if(!roleIdNode.IsNull())
     {
       m_roleId = StringUtils::Trim(roleIdNode.GetText().c_str());
       m_roleIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
+    if(arnNode.IsNull())
+    {
+      arnNode = resultNode;
+    }
+
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
+    if(createDateNode.IsNull())
+    {
+      createDateNode = resultNode;
+    }
+
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
       m_createDateHasBeenSet = true;
     }
     XmlNode assumeRolePolicyDocumentNode = resultNode.FirstChild("AssumeRolePolicyDocument");
+    if(assumeRolePolicyDocumentNode.IsNull())
+    {
+      assumeRolePolicyDocumentNode = resultNode;
+    }
+
     if(!assumeRolePolicyDocumentNode.IsNull())
     {
       m_assumeRolePolicyDocument = StringUtils::Trim(assumeRolePolicyDocumentNode.GetText().c_str());

@@ -55,42 +55,77 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
+    if(cacheNodeIdNode.IsNull())
+    {
+      cacheNodeIdNode = resultNode;
+    }
+
     if(!cacheNodeIdNode.IsNull())
     {
       m_cacheNodeId = StringUtils::Trim(cacheNodeIdNode.GetText().c_str());
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode cacheNodeStatusNode = resultNode.FirstChild("CacheNodeStatus");
+    if(cacheNodeStatusNode.IsNull())
+    {
+      cacheNodeStatusNode = resultNode;
+    }
+
     if(!cacheNodeStatusNode.IsNull())
     {
       m_cacheNodeStatus = StringUtils::Trim(cacheNodeStatusNode.GetText().c_str());
       m_cacheNodeStatusHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
+    if(cacheNodeCreateTimeNode.IsNull())
+    {
+      cacheNodeCreateTimeNode = resultNode;
+    }
+
     if(!cacheNodeCreateTimeNode.IsNull())
     {
       m_cacheNodeCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(cacheNodeCreateTimeNode.GetText().c_str()).c_str());
       m_cacheNodeCreateTimeHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
+    if(endpointNode.IsNull())
+    {
+      endpointNode = resultNode;
+    }
+
     if(!endpointNode.IsNull())
     {
       m_endpoint = endpointNode;
       m_endpointHasBeenSet = true;
     }
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
+    if(parameterGroupStatusNode.IsNull())
+    {
+      parameterGroupStatusNode = resultNode;
+    }
+
     if(!parameterGroupStatusNode.IsNull())
     {
       m_parameterGroupStatus = StringUtils::Trim(parameterGroupStatusNode.GetText().c_str());
       m_parameterGroupStatusHasBeenSet = true;
     }
     XmlNode sourceCacheNodeIdNode = resultNode.FirstChild("SourceCacheNodeId");
+    if(sourceCacheNodeIdNode.IsNull())
+    {
+      sourceCacheNodeIdNode = resultNode;
+    }
+
     if(!sourceCacheNodeIdNode.IsNull())
     {
       m_sourceCacheNodeId = StringUtils::Trim(sourceCacheNodeIdNode.GetText().c_str());
       m_sourceCacheNodeIdHasBeenSet = true;
     }
     XmlNode customerAvailabilityZoneNode = resultNode.FirstChild("CustomerAvailabilityZone");
+    if(customerAvailabilityZoneNode.IsNull())
+    {
+      customerAvailabilityZoneNode = resultNode;
+    }
+
     if(!customerAvailabilityZoneNode.IsNull())
     {
       m_customerAvailabilityZone = StringUtils::Trim(customerAvailabilityZoneNode.GetText().c_str());

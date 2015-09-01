@@ -41,10 +41,16 @@ namespace Model
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline GetCredentialsForIdentityRequest&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline GetCredentialsForIdentityRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline GetCredentialsForIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -65,6 +76,7 @@ namespace Model
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogins() const{ return m_logins; }
+
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     */
@@ -73,12 +85,47 @@ namespace Model
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     */
-    inline GetCredentialsForIdentityRequest&  WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
+    inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(value); return *this;}
 
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     */
     inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    */
+    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p>

@@ -46,22 +46,39 @@ namespace Model
 
     
     inline const Aws::Vector<ReceiptFilter>& GetFilters() const{ return m_filters; }
+
     
     inline void SetFilters(const Aws::Vector<ReceiptFilter>& value) { m_filters = value; }
 
     
-    inline ListReceiptFiltersResult&  WithFilters(const Aws::Vector<ReceiptFilter>& value) { SetFilters(value); return *this;}
+    inline void SetFilters(Aws::Vector<ReceiptFilter>&& value) { m_filters = value; }
+
+    
+    inline ListReceiptFiltersResult& WithFilters(const Aws::Vector<ReceiptFilter>& value) { SetFilters(value); return *this;}
+
+    
+    inline ListReceiptFiltersResult& WithFilters(Aws::Vector<ReceiptFilter>&& value) { SetFilters(value); return *this;}
 
     
     inline ListReceiptFiltersResult& AddFilters(const ReceiptFilter& value) { m_filters.push_back(value); return *this; }
 
     
+    inline ListReceiptFiltersResult& AddFilters(ReceiptFilter&& value) { m_filters.push_back(value); return *this; }
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListReceiptFiltersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListReceiptFiltersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListReceiptFiltersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ReceiptFilter> m_filters;

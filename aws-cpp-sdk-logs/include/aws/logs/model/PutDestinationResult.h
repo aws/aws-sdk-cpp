@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const Destination& GetDestination() const{ return m_destination; }
+
     
     inline void SetDestination(const Destination& value) { m_destination = value; }
 
     
-    inline PutDestinationResult&  WithDestination(const Destination& value) { SetDestination(value); return *this;}
+    inline void SetDestination(Destination&& value) { m_destination = value; }
+
+    
+    inline PutDestinationResult& WithDestination(const Destination& value) { SetDestination(value); return *this;}
+
+    
+    inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(value); return *this;}
 
   private:
     Destination m_destination;

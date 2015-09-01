@@ -103,6 +103,11 @@ void S3FileRequest::RegisterProgress(int64_t progressAmount)
     m_progress += progressAmount;
 }
 
+void S3FileRequest::ClearProgress()
+{
+    m_progress = 0;
+}
+
 uint64_t S3FileRequest::GetProgressAmount() const
 {
     return m_progress;
@@ -165,6 +170,16 @@ const Aws::String& S3FileRequest::GetBucketName() const
 const Aws::String& S3FileRequest::GetFileName() const
 {
     return m_fileName;
+}
+
+const Aws::String& S3FileRequest::GetFailure() const
+{
+    return m_failureString;
+}
+
+void S3FileRequest::SetLastFailure(const char *failureString)
+{
+    m_failureString = failureString;
 }
 
 const Aws::String& S3FileRequest::GetKeyName() const

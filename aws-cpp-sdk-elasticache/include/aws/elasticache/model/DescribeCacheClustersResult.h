@@ -49,10 +49,16 @@ namespace Model
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
-    inline DescribeCacheClustersResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeCacheClustersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline DescribeCacheClustersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -73,6 +84,7 @@ namespace Model
      <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
     */
     inline const Aws::Vector<CacheCluster>& GetCacheClusters() const{ return m_cacheClusters; }
+
     /*
      <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
     */
-    inline DescribeCacheClustersResult&  WithCacheClusters(const Aws::Vector<CacheCluster>& value) { SetCacheClusters(value); return *this;}
+    inline void SetCacheClusters(Aws::Vector<CacheCluster>&& value) { m_cacheClusters = value; }
+
+    /*
+     <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
+    */
+    inline DescribeCacheClustersResult& WithCacheClusters(const Aws::Vector<CacheCluster>& value) { SetCacheClusters(value); return *this;}
+
+    /*
+     <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
+    */
+    inline DescribeCacheClustersResult& WithCacheClusters(Aws::Vector<CacheCluster>&& value) { SetCacheClusters(value); return *this;}
 
     /*
      <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
     */
     inline DescribeCacheClustersResult& AddCacheClusters(const CacheCluster& value) { m_cacheClusters.push_back(value); return *this; }
 
+    /*
+     <p>A list of cache clusters. Each item in the list contains detailed information about one cache cluster.</p>
+    */
+    inline DescribeCacheClustersResult& AddCacheClusters(CacheCluster&& value) { m_cacheClusters.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeCacheClustersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeCacheClustersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeCacheClustersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

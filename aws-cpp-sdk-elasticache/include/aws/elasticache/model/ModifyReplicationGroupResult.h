@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ReplicationGroup& GetReplicationGroup() const{ return m_replicationGroup; }
+
     
     inline void SetReplicationGroup(const ReplicationGroup& value) { m_replicationGroup = value; }
 
     
-    inline ModifyReplicationGroupResult&  WithReplicationGroup(const ReplicationGroup& value) { SetReplicationGroup(value); return *this;}
+    inline void SetReplicationGroup(ReplicationGroup&& value) { m_replicationGroup = value; }
+
+    
+    inline ModifyReplicationGroupResult& WithReplicationGroup(const ReplicationGroup& value) { SetReplicationGroup(value); return *this;}
+
+    
+    inline ModifyReplicationGroupResult& WithReplicationGroup(ReplicationGroup&& value) { SetReplicationGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ModifyReplicationGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ModifyReplicationGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ModifyReplicationGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReplicationGroup m_replicationGroup;

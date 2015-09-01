@@ -47,6 +47,7 @@ namespace Model
      <p>A <code>Users</code> object that describes the specified users.</p>
     */
     inline const Aws::Vector<UserProfile>& GetUserProfiles() const{ return m_userProfiles; }
+
     /*
      <p>A <code>Users</code> object that describes the specified users.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A <code>Users</code> object that describes the specified users.</p>
     */
-    inline DescribeUserProfilesResult&  WithUserProfiles(const Aws::Vector<UserProfile>& value) { SetUserProfiles(value); return *this;}
+    inline void SetUserProfiles(Aws::Vector<UserProfile>&& value) { m_userProfiles = value; }
+
+    /*
+     <p>A <code>Users</code> object that describes the specified users.</p>
+    */
+    inline DescribeUserProfilesResult& WithUserProfiles(const Aws::Vector<UserProfile>& value) { SetUserProfiles(value); return *this;}
+
+    /*
+     <p>A <code>Users</code> object that describes the specified users.</p>
+    */
+    inline DescribeUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfile>&& value) { SetUserProfiles(value); return *this;}
 
     /*
      <p>A <code>Users</code> object that describes the specified users.</p>
     */
     inline DescribeUserProfilesResult& AddUserProfiles(const UserProfile& value) { m_userProfiles.push_back(value); return *this; }
+
+    /*
+     <p>A <code>Users</code> object that describes the specified users.</p>
+    */
+    inline DescribeUserProfilesResult& AddUserProfiles(UserProfile&& value) { m_userProfiles.push_back(value); return *this; }
 
   private:
     Aws::Vector<UserProfile> m_userProfiles;

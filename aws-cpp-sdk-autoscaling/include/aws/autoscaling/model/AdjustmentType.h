@@ -47,10 +47,16 @@ namespace Model
      <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
+
     /*
      <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+
+    /*
+     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    */
+    inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /*
      <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     */
-    inline AdjustmentType&  WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
+    inline AdjustmentType& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
+
+    /*
+     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    */
+    inline AdjustmentType& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(value); return *this;}
 
     /*
      <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>

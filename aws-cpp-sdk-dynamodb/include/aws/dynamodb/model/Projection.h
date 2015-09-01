@@ -46,6 +46,7 @@ namespace Model
      <p>The set of attributes that are projected into the index:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul>
     */
     inline const ProjectionType& GetProjectionType() const{ return m_projectionType; }
+
     /*
      <p>The set of attributes that are projected into the index:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul>
     */
@@ -54,12 +55,23 @@ namespace Model
     /*
      <p>The set of attributes that are projected into the index:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul>
     */
-    inline Projection&  WithProjectionType(const ProjectionType& value) { SetProjectionType(value); return *this;}
+    inline void SetProjectionType(ProjectionType&& value) { m_projectionTypeHasBeenSet = true; m_projectionType = value; }
+
+    /*
+     <p>The set of attributes that are projected into the index:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul>
+    */
+    inline Projection& WithProjectionType(const ProjectionType& value) { SetProjectionType(value); return *this;}
+
+    /*
+     <p>The set of attributes that are projected into the index:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul>
+    */
+    inline Projection& WithProjectionType(ProjectionType&& value) { SetProjectionType(value); return *this;}
 
     /*
      <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     */
     inline const Aws::Vector<Aws::String>& GetNonKeyAttributes() const{ return m_nonKeyAttributes; }
+
     /*
      <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     */
@@ -68,12 +80,27 @@ namespace Model
     /*
      <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     */
-    inline Projection&  WithNonKeyAttributes(const Aws::Vector<Aws::String>& value) { SetNonKeyAttributes(value); return *this;}
+    inline void SetNonKeyAttributes(Aws::Vector<Aws::String>&& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes = value; }
+
+    /*
+     <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    */
+    inline Projection& WithNonKeyAttributes(const Aws::Vector<Aws::String>& value) { SetNonKeyAttributes(value); return *this;}
+
+    /*
+     <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    */
+    inline Projection& WithNonKeyAttributes(Aws::Vector<Aws::String>&& value) { SetNonKeyAttributes(value); return *this;}
 
     /*
      <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     */
     inline Projection& AddNonKeyAttributes(const Aws::String& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes.push_back(value); return *this; }
+
+    /*
+     <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    */
+    inline Projection& AddNonKeyAttributes(Aws::String&& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes.push_back(value); return *this; }
 
     /*
      <p>Represents the non-key attribute names which will be projected into the index.</p> <p>For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>

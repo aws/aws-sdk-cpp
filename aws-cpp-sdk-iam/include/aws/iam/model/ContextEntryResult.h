@@ -45,14 +45,21 @@ namespace Model
 
     
     inline const Aws::String& GetContextKeyName() const{ return m_contextKeyName; }
+
     
     inline void SetContextKeyName(const Aws::String& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
+
+    
+    inline void SetContextKeyName(Aws::String&& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
 
     
     inline void SetContextKeyName(const char* value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName.assign(value); }
 
     
-    inline ContextEntryResult&  WithContextKeyName(const Aws::String& value) { SetContextKeyName(value); return *this;}
+    inline ContextEntryResult& WithContextKeyName(const Aws::String& value) { SetContextKeyName(value); return *this;}
+
+    
+    inline ContextEntryResult& WithContextKeyName(Aws::String&& value) { SetContextKeyName(value); return *this;}
 
     
     inline ContextEntryResult& WithContextKeyName(const char* value) { SetContextKeyName(value); return *this;}

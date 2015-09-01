@@ -37,10 +37,16 @@ namespace Model
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
     */
-    inline DetachRolePolicyRequest&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline DetachRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+    */
+    inline DetachRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
@@ -59,14 +70,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline DetachRolePolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline DetachRolePolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline DetachRolePolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline DetachRolePolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}

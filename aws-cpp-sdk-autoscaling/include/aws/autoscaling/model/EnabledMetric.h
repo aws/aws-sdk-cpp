@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
     */
     inline const Aws::String& GetMetric() const{ return m_metric; }
+
     /*
      <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
+
+    /*
+     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
+    */
+    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /*
      <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
     */
-    inline EnabledMetric&  WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
+    inline EnabledMetric& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
+
+    /*
+     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
+    */
+    inline EnabledMetric& WithMetric(Aws::String&& value) { SetMetric(value); return *this;}
 
     /*
      <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
@@ -71,10 +82,16 @@ namespace Model
      <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     */
     inline const Aws::String& GetGranularity() const{ return m_granularity; }
+
     /*
      <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     */
     inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
+
+    /*
+     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
+    */
+    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /*
      <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     */
-    inline EnabledMetric&  WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
+    inline EnabledMetric& WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
+
+    /*
+     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
+    */
+    inline EnabledMetric& WithGranularity(Aws::String&& value) { SetGranularity(value); return *this;}
 
     /*
      <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>

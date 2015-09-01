@@ -40,10 +40,16 @@ namespace Model
      <p>The name of the cache parameter group to reset.</p>
     */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+
     /*
      <p>The name of the cache parameter group to reset.</p>
     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+
+    /*
+     <p>The name of the cache parameter group to reset.</p>
+    */
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>The name of the cache parameter group to reset.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group to reset.</p>
     */
-    inline ResetCacheParameterGroupRequest&  WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+    inline ResetCacheParameterGroupRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+
+    /*
+     <p>The name of the cache parameter group to reset.</p>
+    */
+    inline ResetCacheParameterGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
 
     /*
      <p>The name of the cache parameter group to reset.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>If <i>true</i>, all parameters in the cache parameter group will be reset to default values. If <i>false</i>, no such action occurs.</p> <p>Valid values: <code>true</code> | <code>false</code></p>
     */
     inline bool GetResetAllParameters() const{ return m_resetAllParameters; }
+
     /*
      <p>If <i>true</i>, all parameters in the cache parameter group will be reset to default values. If <i>false</i>, no such action occurs.</p> <p>Valid values: <code>true</code> | <code>false</code></p>
     */
@@ -72,12 +84,13 @@ namespace Model
     /*
      <p>If <i>true</i>, all parameters in the cache parameter group will be reset to default values. If <i>false</i>, no such action occurs.</p> <p>Valid values: <code>true</code> | <code>false</code></p>
     */
-    inline ResetCacheParameterGroupRequest&  WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
+    inline ResetCacheParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
 
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
     */
     inline const Aws::Vector<ParameterNameValue>& GetParameterNameValues() const{ return m_parameterNameValues; }
+
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
     */
@@ -86,12 +99,27 @@ namespace Model
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
     */
-    inline ResetCacheParameterGroupRequest&  WithParameterNameValues(const Aws::Vector<ParameterNameValue>& value) { SetParameterNameValues(value); return *this;}
+    inline void SetParameterNameValues(Aws::Vector<ParameterNameValue>&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues = value; }
+
+    /*
+     <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
+    */
+    inline ResetCacheParameterGroupRequest& WithParameterNameValues(const Aws::Vector<ParameterNameValue>& value) { SetParameterNameValues(value); return *this;}
+
+    /*
+     <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
+    */
+    inline ResetCacheParameterGroupRequest& WithParameterNameValues(Aws::Vector<ParameterNameValue>&& value) { SetParameterNameValues(value); return *this;}
 
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
     */
     inline ResetCacheParameterGroupRequest& AddParameterNameValues(const ParameterNameValue& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(value); return *this; }
+
+    /*
+     <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
+    */
+    inline ResetCacheParameterGroupRequest& AddParameterNameValues(ParameterNameValue&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(value); return *this; }
 
   private:
     Aws::String m_cacheParameterGroupName;

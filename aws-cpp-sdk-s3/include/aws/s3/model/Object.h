@@ -45,52 +45,69 @@ namespace Model
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline Object&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline Object& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline Object& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline Object& WithKey(const char* value) { SetKey(value); return *this;}
 
     
     inline double GetLastModified() const{ return m_lastModified; }
+
     
     inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     
-    inline Object&  WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline Object& WithLastModified(double value) { SetLastModified(value); return *this;}
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+
+    
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     
-    inline Object&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    
+    inline Object& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 
     
     inline long GetSize() const{ return m_size; }
+
     
     inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     
-    inline Object&  WithSize(long value) { SetSize(value); return *this;}
+    inline Object& WithSize(long value) { SetSize(value); return *this;}
 
     /*
      The class of storage used to store the object.
     */
     inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
+
     /*
      The class of storage used to store the object.
     */
@@ -99,15 +116,32 @@ namespace Model
     /*
      The class of storage used to store the object.
     */
-    inline Object&  WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
+    inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline Object& WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(value); return *this;}
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
+
     
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     
-    inline Object&  WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    
+    inline Object& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+
+    
+    inline Object& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
   private:
     Aws::String m_key;

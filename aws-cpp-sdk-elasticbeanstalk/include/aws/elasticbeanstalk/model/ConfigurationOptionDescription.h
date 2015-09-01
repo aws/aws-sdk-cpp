@@ -50,10 +50,16 @@ namespace Model
      <p> A unique namespace identifying the option's associated AWS resource. </p>
     */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
     /*
      <p> A unique namespace identifying the option's associated AWS resource. </p>
     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /*
+     <p> A unique namespace identifying the option's associated AWS resource. </p>
+    */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> A unique namespace identifying the option's associated AWS resource. </p>
@@ -63,7 +69,12 @@ namespace Model
     /*
      <p> A unique namespace identifying the option's associated AWS resource. </p>
     */
-    inline ConfigurationOptionDescription&  WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+    inline ConfigurationOptionDescription& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /*
+     <p> A unique namespace identifying the option's associated AWS resource. </p>
+    */
+    inline ConfigurationOptionDescription& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /*
      <p> A unique namespace identifying the option's associated AWS resource. </p>
@@ -74,10 +85,16 @@ namespace Model
      <p> The name of the configuration option. </p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p> The name of the configuration option. </p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p> The name of the configuration option. </p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p> The name of the configuration option. </p>
@@ -87,7 +104,12 @@ namespace Model
     /*
      <p> The name of the configuration option. </p>
     */
-    inline ConfigurationOptionDescription&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ConfigurationOptionDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p> The name of the configuration option. </p>
+    */
+    inline ConfigurationOptionDescription& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p> The name of the configuration option. </p>
@@ -98,10 +120,16 @@ namespace Model
      <p> The default value for this configuration option. </p>
     */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
     /*
      <p> The default value for this configuration option. </p>
     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    /*
+     <p> The default value for this configuration option. </p>
+    */
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /*
      <p> The default value for this configuration option. </p>
@@ -111,7 +139,12 @@ namespace Model
     /*
      <p> The default value for this configuration option. </p>
     */
-    inline ConfigurationOptionDescription&  WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+    inline ConfigurationOptionDescription& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    /*
+     <p> The default value for this configuration option. </p>
+    */
+    inline ConfigurationOptionDescription& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
 
     /*
      <p> The default value for this configuration option. </p>
@@ -122,10 +155,16 @@ namespace Model
      <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
     */
     inline const Aws::String& GetChangeSeverity() const{ return m_changeSeverity; }
+
     /*
      <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
     */
     inline void SetChangeSeverity(const Aws::String& value) { m_changeSeverityHasBeenSet = true; m_changeSeverity = value; }
+
+    /*
+     <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
+    */
+    inline void SetChangeSeverity(Aws::String&& value) { m_changeSeverityHasBeenSet = true; m_changeSeverity = value; }
 
     /*
      <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
@@ -135,7 +174,12 @@ namespace Model
     /*
      <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
     */
-    inline ConfigurationOptionDescription&  WithChangeSeverity(const Aws::String& value) { SetChangeSeverity(value); return *this;}
+    inline ConfigurationOptionDescription& WithChangeSeverity(const Aws::String& value) { SetChangeSeverity(value); return *this;}
+
+    /*
+     <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
+    */
+    inline ConfigurationOptionDescription& WithChangeSeverity(Aws::String&& value) { SetChangeSeverity(value); return *this;}
 
     /*
      <p> An indication of which action is required if the value for this configuration option changes: </p> <enumValues> <value name="NoInterruption"> <p> NoInterruption - There is no interruption to the environment or application availability. </p> </value> <value name="RestartEnvironment"> <p> RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </p> </value> <value name="RestartApplicationServer"> <p> RestartApplicationServer - The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </p> </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability. </li> <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
@@ -146,6 +190,7 @@ namespace Model
      <p> An indication of whether the user defined this configuration option: </p> <enumValues> <value name="true"> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying this as an Option to Remove when updating configuration settings. </p> </value> <value name="false"> <p> <code>false</code> : This configuration was not defined by the user. </p> </value> </enumValues> <ul> <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> <li> <code>false</code> : This configuration was not defined by the user. </li> </ul> <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> <p> Valid Values: <code>true</code> | <code>false</code></p>
     */
     inline bool GetUserDefined() const{ return m_userDefined; }
+
     /*
      <p> An indication of whether the user defined this configuration option: </p> <enumValues> <value name="true"> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying this as an Option to Remove when updating configuration settings. </p> </value> <value name="false"> <p> <code>false</code> : This configuration was not defined by the user. </p> </value> </enumValues> <ul> <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> <li> <code>false</code> : This configuration was not defined by the user. </li> </ul> <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> <p> Valid Values: <code>true</code> | <code>false</code></p>
     */
@@ -154,12 +199,13 @@ namespace Model
     /*
      <p> An indication of whether the user defined this configuration option: </p> <enumValues> <value name="true"> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying this as an Option to Remove when updating configuration settings. </p> </value> <value name="false"> <p> <code>false</code> : This configuration was not defined by the user. </p> </value> </enumValues> <ul> <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> <li> <code>false</code> : This configuration was not defined by the user. </li> </ul> <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> <p> Valid Values: <code>true</code> | <code>false</code></p>
     */
-    inline ConfigurationOptionDescription&  WithUserDefined(bool value) { SetUserDefined(value); return *this;}
+    inline ConfigurationOptionDescription& WithUserDefined(bool value) { SetUserDefined(value); return *this;}
 
     /*
      <p> An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values: </p> <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or a unformatted string or numeric value governed by the MIN/MAX/Regex constraints: </p> </value> <value name="List"> <p> <code>List</code> : Values for this option are multiple selections of the possible values. </p> </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </p> </value> <value name="Json"> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> : Values for this option are multiple selections from the possible values. </li> <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>. </li> </ul> </p>
     */
     inline const ConfigurationOptionValueType& GetValueType() const{ return m_valueType; }
+
     /*
      <p> An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values: </p> <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or a unformatted string or numeric value governed by the MIN/MAX/Regex constraints: </p> </value> <value name="List"> <p> <code>List</code> : Values for this option are multiple selections of the possible values. </p> </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </p> </value> <value name="Json"> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> : Values for this option are multiple selections from the possible values. </li> <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>. </li> </ul> </p>
     */
@@ -168,12 +214,23 @@ namespace Model
     /*
      <p> An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values: </p> <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or a unformatted string or numeric value governed by the MIN/MAX/Regex constraints: </p> </value> <value name="List"> <p> <code>List</code> : Values for this option are multiple selections of the possible values. </p> </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </p> </value> <value name="Json"> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> : Values for this option are multiple selections from the possible values. </li> <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>. </li> </ul> </p>
     */
-    inline ConfigurationOptionDescription&  WithValueType(const ConfigurationOptionValueType& value) { SetValueType(value); return *this;}
+    inline void SetValueType(ConfigurationOptionValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+
+    /*
+     <p> An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values: </p> <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or a unformatted string or numeric value governed by the MIN/MAX/Regex constraints: </p> </value> <value name="List"> <p> <code>List</code> : Values for this option are multiple selections of the possible values. </p> </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </p> </value> <value name="Json"> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> : Values for this option are multiple selections from the possible values. </li> <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>. </li> </ul> </p>
+    */
+    inline ConfigurationOptionDescription& WithValueType(const ConfigurationOptionValueType& value) { SetValueType(value); return *this;}
+
+    /*
+     <p> An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values: </p> <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or a unformatted string or numeric value governed by the MIN/MAX/Regex constraints: </p> </value> <value name="List"> <p> <code>List</code> : Values for this option are multiple selections of the possible values. </p> </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </p> </value> <value name="Json"> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> : Values for this option are multiple selections from the possible values. </li> <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>. </li> </ul> </p>
+    */
+    inline ConfigurationOptionDescription& WithValueType(ConfigurationOptionValueType&& value) { SetValueType(value); return *this;}
 
     /*
      <p> If specified, values for the configuration option are selected from this list. </p>
     */
     inline const Aws::Vector<Aws::String>& GetValueOptions() const{ return m_valueOptions; }
+
     /*
      <p> If specified, values for the configuration option are selected from this list. </p>
     */
@@ -182,12 +239,27 @@ namespace Model
     /*
      <p> If specified, values for the configuration option are selected from this list. </p>
     */
-    inline ConfigurationOptionDescription&  WithValueOptions(const Aws::Vector<Aws::String>& value) { SetValueOptions(value); return *this;}
+    inline void SetValueOptions(Aws::Vector<Aws::String>&& value) { m_valueOptionsHasBeenSet = true; m_valueOptions = value; }
+
+    /*
+     <p> If specified, values for the configuration option are selected from this list. </p>
+    */
+    inline ConfigurationOptionDescription& WithValueOptions(const Aws::Vector<Aws::String>& value) { SetValueOptions(value); return *this;}
+
+    /*
+     <p> If specified, values for the configuration option are selected from this list. </p>
+    */
+    inline ConfigurationOptionDescription& WithValueOptions(Aws::Vector<Aws::String>&& value) { SetValueOptions(value); return *this;}
 
     /*
      <p> If specified, values for the configuration option are selected from this list. </p>
     */
     inline ConfigurationOptionDescription& AddValueOptions(const Aws::String& value) { m_valueOptionsHasBeenSet = true; m_valueOptions.push_back(value); return *this; }
+
+    /*
+     <p> If specified, values for the configuration option are selected from this list. </p>
+    */
+    inline ConfigurationOptionDescription& AddValueOptions(Aws::String&& value) { m_valueOptionsHasBeenSet = true; m_valueOptions.push_back(value); return *this; }
 
     /*
      <p> If specified, values for the configuration option are selected from this list. </p>
@@ -198,6 +270,7 @@ namespace Model
      <p> If specified, the configuration option must be a numeric value greater than this value. </p>
     */
     inline long GetMinValue() const{ return m_minValue; }
+
     /*
      <p> If specified, the configuration option must be a numeric value greater than this value. </p>
     */
@@ -206,12 +279,13 @@ namespace Model
     /*
      <p> If specified, the configuration option must be a numeric value greater than this value. </p>
     */
-    inline ConfigurationOptionDescription&  WithMinValue(long value) { SetMinValue(value); return *this;}
+    inline ConfigurationOptionDescription& WithMinValue(long value) { SetMinValue(value); return *this;}
 
     /*
      <p> If specified, the configuration option must be a numeric value less than this value. </p>
     */
     inline long GetMaxValue() const{ return m_maxValue; }
+
     /*
      <p> If specified, the configuration option must be a numeric value less than this value. </p>
     */
@@ -220,12 +294,13 @@ namespace Model
     /*
      <p> If specified, the configuration option must be a numeric value less than this value. </p>
     */
-    inline ConfigurationOptionDescription&  WithMaxValue(long value) { SetMaxValue(value); return *this;}
+    inline ConfigurationOptionDescription& WithMaxValue(long value) { SetMaxValue(value); return *this;}
 
     /*
      <p> If specified, the configuration option must be a string value no longer than this value. </p>
     */
     inline long GetMaxLength() const{ return m_maxLength; }
+
     /*
      <p> If specified, the configuration option must be a string value no longer than this value. </p>
     */
@@ -234,12 +309,13 @@ namespace Model
     /*
      <p> If specified, the configuration option must be a string value no longer than this value. </p>
     */
-    inline ConfigurationOptionDescription&  WithMaxLength(long value) { SetMaxLength(value); return *this;}
+    inline ConfigurationOptionDescription& WithMaxLength(long value) { SetMaxLength(value); return *this;}
 
     /*
      <p> If specified, the configuration option must be a string value that satisfies this regular expression. </p>
     */
     inline const OptionRestrictionRegex& GetRegex() const{ return m_regex; }
+
     /*
      <p> If specified, the configuration option must be a string value that satisfies this regular expression. </p>
     */
@@ -248,7 +324,17 @@ namespace Model
     /*
      <p> If specified, the configuration option must be a string value that satisfies this regular expression. </p>
     */
-    inline ConfigurationOptionDescription&  WithRegex(const OptionRestrictionRegex& value) { SetRegex(value); return *this;}
+    inline void SetRegex(OptionRestrictionRegex&& value) { m_regexHasBeenSet = true; m_regex = value; }
+
+    /*
+     <p> If specified, the configuration option must be a string value that satisfies this regular expression. </p>
+    */
+    inline ConfigurationOptionDescription& WithRegex(const OptionRestrictionRegex& value) { SetRegex(value); return *this;}
+
+    /*
+     <p> If specified, the configuration option must be a string value that satisfies this regular expression. </p>
+    */
+    inline ConfigurationOptionDescription& WithRegex(OptionRestrictionRegex&& value) { SetRegex(value); return *this;}
 
   private:
     Aws::String m_namespace;

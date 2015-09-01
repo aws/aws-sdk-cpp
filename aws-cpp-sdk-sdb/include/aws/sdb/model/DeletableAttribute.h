@@ -47,10 +47,16 @@ namespace Model
      The name of the attribute.
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      The name of the attribute.
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     The name of the attribute.
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the attribute.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The name of the attribute.
     */
-    inline DeletableAttribute&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline DeletableAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     The name of the attribute.
+    */
+    inline DeletableAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      The name of the attribute.
@@ -71,10 +82,16 @@ namespace Model
      The value of the attribute.
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      The value of the attribute.
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     The value of the attribute.
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      The value of the attribute.
@@ -84,7 +101,12 @@ namespace Model
     /*
      The value of the attribute.
     */
-    inline DeletableAttribute&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline DeletableAttribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     The value of the attribute.
+    */
+    inline DeletableAttribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      The value of the attribute.

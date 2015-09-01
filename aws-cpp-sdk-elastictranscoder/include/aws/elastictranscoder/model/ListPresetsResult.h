@@ -48,6 +48,7 @@ namespace Model
      <p>An array of <code>Preset</code> objects.</p>
     */
     inline const Aws::Vector<Preset>& GetPresets() const{ return m_presets; }
+
     /*
      <p>An array of <code>Preset</code> objects.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>An array of <code>Preset</code> objects.</p>
     */
-    inline ListPresetsResult&  WithPresets(const Aws::Vector<Preset>& value) { SetPresets(value); return *this;}
+    inline void SetPresets(Aws::Vector<Preset>&& value) { m_presets = value; }
+
+    /*
+     <p>An array of <code>Preset</code> objects.</p>
+    */
+    inline ListPresetsResult& WithPresets(const Aws::Vector<Preset>& value) { SetPresets(value); return *this;}
+
+    /*
+     <p>An array of <code>Preset</code> objects.</p>
+    */
+    inline ListPresetsResult& WithPresets(Aws::Vector<Preset>&& value) { SetPresets(value); return *this;}
 
     /*
      <p>An array of <code>Preset</code> objects.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListPresetsResult& AddPresets(const Preset& value) { m_presets.push_back(value); return *this; }
 
     /*
+     <p>An array of <code>Preset</code> objects.</p>
+    */
+    inline ListPresetsResult& AddPresets(Preset&& value) { m_presets.push_back(value); return *this; }
+
+    /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
+
+    /*
+     <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    */
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
 
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     */
-    inline ListPresetsResult&  WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+    inline ListPresetsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+
+    /*
+     <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    */
+    inline ListPresetsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
 
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>

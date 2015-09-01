@@ -40,10 +40,16 @@ namespace Model
      <p>The name of the stream to describe.</p>
     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     /*
      <p>The name of the stream to describe.</p>
     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /*
+     <p>The name of the stream to describe.</p>
+    */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream to describe.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of the stream to describe.</p>
     */
-    inline DescribeStreamRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline DescribeStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /*
+     <p>The name of the stream to describe.</p>
+    */
+    inline DescribeStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /*
      <p>The name of the stream to describe.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>The maximum number of shards to return.</p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p>The maximum number of shards to return.</p>
     */
@@ -72,16 +84,22 @@ namespace Model
     /*
      <p>The maximum number of shards to return.</p>
     */
-    inline DescribeStreamRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeStreamRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
     /*
      <p>The shard ID of the shard to start with.</p>
     */
     inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
+
     /*
      <p>The shard ID of the shard to start with.</p>
     */
     inline void SetExclusiveStartShardId(const Aws::String& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
+
+    /*
+     <p>The shard ID of the shard to start with.</p>
+    */
+    inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
 
     /*
      <p>The shard ID of the shard to start with.</p>
@@ -91,7 +109,12 @@ namespace Model
     /*
      <p>The shard ID of the shard to start with.</p>
     */
-    inline DescribeStreamRequest&  WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
+    inline DescribeStreamRequest& WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
+
+    /*
+     <p>The shard ID of the shard to start with.</p>
+    */
+    inline DescribeStreamRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(value); return *this;}
 
     /*
      <p>The shard ID of the shard to start with.</p>

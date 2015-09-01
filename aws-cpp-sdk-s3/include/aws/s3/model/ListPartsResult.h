@@ -52,10 +52,16 @@ namespace Model
      Name of the bucket to which the multipart upload was initiated.
     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     /*
      Name of the bucket to which the multipart upload was initiated.
     */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+
+    /*
+     Name of the bucket to which the multipart upload was initiated.
+    */
+    inline void SetBucket(Aws::String&& value) { m_bucket = value; }
 
     /*
      Name of the bucket to which the multipart upload was initiated.
@@ -65,7 +71,12 @@ namespace Model
     /*
      Name of the bucket to which the multipart upload was initiated.
     */
-    inline ListPartsResult&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline ListPartsResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    /*
+     Name of the bucket to which the multipart upload was initiated.
+    */
+    inline ListPartsResult& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     /*
      Name of the bucket to which the multipart upload was initiated.
@@ -76,10 +87,16 @@ namespace Model
      Object key for which the multipart upload was initiated.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      Object key for which the multipart upload was initiated.
     */
     inline void SetKey(const Aws::String& value) { m_key = value; }
+
+    /*
+     Object key for which the multipart upload was initiated.
+    */
+    inline void SetKey(Aws::String&& value) { m_key = value; }
 
     /*
      Object key for which the multipart upload was initiated.
@@ -89,7 +106,12 @@ namespace Model
     /*
      Object key for which the multipart upload was initiated.
     */
-    inline ListPartsResult&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline ListPartsResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     Object key for which the multipart upload was initiated.
+    */
+    inline ListPartsResult& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      Object key for which the multipart upload was initiated.
@@ -100,10 +122,16 @@ namespace Model
      Upload ID identifying the multipart upload whose parts are being listed.
     */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
     */
     inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
+
+    /*
+     Upload ID identifying the multipart upload whose parts are being listed.
+    */
+    inline void SetUploadId(Aws::String&& value) { m_uploadId = value; }
 
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
@@ -113,7 +141,12 @@ namespace Model
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
     */
-    inline ListPartsResult&  WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
+    inline ListPartsResult& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
+
+    /*
+     Upload ID identifying the multipart upload whose parts are being listed.
+    */
+    inline ListPartsResult& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
 
     /*
      Upload ID identifying the multipart upload whose parts are being listed.
@@ -124,6 +157,7 @@ namespace Model
      Part number after which listing begins.
     */
     inline long GetPartNumberMarker() const{ return m_partNumberMarker; }
+
     /*
      Part number after which listing begins.
     */
@@ -132,12 +166,13 @@ namespace Model
     /*
      Part number after which listing begins.
     */
-    inline ListPartsResult&  WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
+    inline ListPartsResult& WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
 
     /*
      When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.
     */
     inline long GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
+
     /*
      When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.
     */
@@ -146,12 +181,13 @@ namespace Model
     /*
      When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.
     */
-    inline ListPartsResult&  WithNextPartNumberMarker(long value) { SetNextPartNumberMarker(value); return *this;}
+    inline ListPartsResult& WithNextPartNumberMarker(long value) { SetNextPartNumberMarker(value); return *this;}
 
     /*
      Maximum number of parts that were allowed in the response.
     */
     inline long GetMaxParts() const{ return m_maxParts; }
+
     /*
      Maximum number of parts that were allowed in the response.
     */
@@ -160,12 +196,13 @@ namespace Model
     /*
      Maximum number of parts that were allowed in the response.
     */
-    inline ListPartsResult&  WithMaxParts(long value) { SetMaxParts(value); return *this;}
+    inline ListPartsResult& WithMaxParts(long value) { SetMaxParts(value); return *this;}
 
     /*
      Indicates whether the returned list of parts is truncated.
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      Indicates whether the returned list of parts is truncated.
     */
@@ -174,23 +211,34 @@ namespace Model
     /*
      Indicates whether the returned list of parts is truncated.
     */
-    inline ListPartsResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListPartsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     
     inline const Aws::Vector<Part>& GetParts() const{ return m_parts; }
+
     
     inline void SetParts(const Aws::Vector<Part>& value) { m_parts = value; }
 
     
-    inline ListPartsResult&  WithParts(const Aws::Vector<Part>& value) { SetParts(value); return *this;}
+    inline void SetParts(Aws::Vector<Part>&& value) { m_parts = value; }
+
+    
+    inline ListPartsResult& WithParts(const Aws::Vector<Part>& value) { SetParts(value); return *this;}
+
+    
+    inline ListPartsResult& WithParts(Aws::Vector<Part>&& value) { SetParts(value); return *this;}
 
     
     inline ListPartsResult& AddParts(const Part& value) { m_parts.push_back(value); return *this; }
+
+    
+    inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(value); return *this; }
 
     /*
      Identifies who initiated the multipart upload.
     */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
+
     /*
      Identifies who initiated the multipart upload.
     */
@@ -199,20 +247,38 @@ namespace Model
     /*
      Identifies who initiated the multipart upload.
     */
-    inline ListPartsResult&  WithInitiator(const Initiator& value) { SetInitiator(value); return *this;}
+    inline void SetInitiator(Initiator&& value) { m_initiator = value; }
+
+    /*
+     Identifies who initiated the multipart upload.
+    */
+    inline ListPartsResult& WithInitiator(const Initiator& value) { SetInitiator(value); return *this;}
+
+    /*
+     Identifies who initiated the multipart upload.
+    */
+    inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(value); return *this;}
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
+
     
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
     
-    inline ListPartsResult&  WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline void SetOwner(Owner&& value) { m_owner = value; }
+
+    
+    inline ListPartsResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+
+    
+    inline ListPartsResult& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
     /*
      The class of storage used to store the object.
     */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+
     /*
      The class of storage used to store the object.
     */
@@ -221,15 +287,32 @@ namespace Model
     /*
      The class of storage used to store the object.
     */
-    inline ListPartsResult&  WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
+    inline void SetStorageClass(StorageClass&& value) { m_storageClass = value; }
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline ListPartsResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
+
+    /*
+     The class of storage used to store the object.
+    */
+    inline ListPartsResult& WithStorageClass(StorageClass&& value) { SetStorageClass(value); return *this;}
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
     
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline ListPartsResult&  WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+
+    
+    inline ListPartsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
 
   private:
     Aws::String m_bucket;

@@ -47,10 +47,16 @@ namespace Model
      <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
     */
-    inline AppCookieStickinessPolicy&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline AppCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
+    */
+    inline AppCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name of the application cookie used for stickiness.</p>
     */
     inline const Aws::String& GetCookieName() const{ return m_cookieName; }
+
     /*
      <p>The name of the application cookie used for stickiness.</p>
     */
     inline void SetCookieName(const Aws::String& value) { m_cookieNameHasBeenSet = true; m_cookieName = value; }
+
+    /*
+     <p>The name of the application cookie used for stickiness.</p>
+    */
+    inline void SetCookieName(Aws::String&& value) { m_cookieNameHasBeenSet = true; m_cookieName = value; }
 
     /*
      <p>The name of the application cookie used for stickiness.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name of the application cookie used for stickiness.</p>
     */
-    inline AppCookieStickinessPolicy&  WithCookieName(const Aws::String& value) { SetCookieName(value); return *this;}
+    inline AppCookieStickinessPolicy& WithCookieName(const Aws::String& value) { SetCookieName(value); return *this;}
+
+    /*
+     <p>The name of the application cookie used for stickiness.</p>
+    */
+    inline AppCookieStickinessPolicy& WithCookieName(Aws::String&& value) { SetCookieName(value); return *this;}
 
     /*
      <p>The name of the application cookie used for stickiness.</p>

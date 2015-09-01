@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline GetGroupRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline GetGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline GetGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
     */
-    inline GetGroupRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline GetGroupRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
+    */
+    inline GetGroupRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>
@@ -85,6 +107,7 @@ namespace Model
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
@@ -93,7 +116,7 @@ namespace Model
     /*
      <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>
     */
-    inline GetGroupRequest&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline GetGroupRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_groupName;

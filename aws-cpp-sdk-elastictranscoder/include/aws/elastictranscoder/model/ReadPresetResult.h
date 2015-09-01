@@ -46,6 +46,7 @@ namespace Model
      <p>A section of the response body that provides information about the preset.</p>
     */
     inline const Preset& GetPreset() const{ return m_preset; }
+
     /*
      <p>A section of the response body that provides information about the preset.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A section of the response body that provides information about the preset.</p>
     */
-    inline ReadPresetResult&  WithPreset(const Preset& value) { SetPreset(value); return *this;}
+    inline void SetPreset(Preset&& value) { m_preset = value; }
+
+    /*
+     <p>A section of the response body that provides information about the preset.</p>
+    */
+    inline ReadPresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
+
+    /*
+     <p>A section of the response body that provides information about the preset.</p>
+    */
+    inline ReadPresetResult& WithPreset(Preset&& value) { SetPreset(value); return *this;}
 
   private:
     Preset m_preset;

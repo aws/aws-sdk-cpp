@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the lifecycle hook.</p>
     */
     inline const Aws::String& GetLifecycleHookName() const{ return m_lifecycleHookName; }
+
     /*
      <p>The name of the lifecycle hook.</p>
     */
     inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
+
+    /*
+     <p>The name of the lifecycle hook.</p>
+    */
+    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /*
      <p>The name of the lifecycle hook.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the lifecycle hook.</p>
     */
-    inline DeleteLifecycleHookRequest&  WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
+    inline DeleteLifecycleHookRequest& WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
+
+    /*
+     <p>The name of the lifecycle hook.</p>
+    */
+    inline DeleteLifecycleHookRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(value); return *this;}
 
     /*
      <p>The name of the lifecycle hook.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the Auto Scaling group for the lifecycle hook.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group for the lifecycle hook.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group for the lifecycle hook.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group for the lifecycle hook.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group for the lifecycle hook.</p>
     */
-    inline DeleteLifecycleHookRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DeleteLifecycleHookRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group for the lifecycle hook.</p>
+    */
+    inline DeleteLifecycleHookRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group for the lifecycle hook.</p>

@@ -47,6 +47,7 @@ namespace Model
      <p>A newly created virtual MFA device.</p>
     */
     inline const VirtualMFADevice& GetVirtualMFADevice() const{ return m_virtualMFADevice; }
+
     /*
      <p>A newly created virtual MFA device.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>A newly created virtual MFA device.</p>
     */
-    inline CreateVirtualMFADeviceResult&  WithVirtualMFADevice(const VirtualMFADevice& value) { SetVirtualMFADevice(value); return *this;}
+    inline void SetVirtualMFADevice(VirtualMFADevice&& value) { m_virtualMFADevice = value; }
+
+    /*
+     <p>A newly created virtual MFA device.</p>
+    */
+    inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(const VirtualMFADevice& value) { SetVirtualMFADevice(value); return *this;}
+
+    /*
+     <p>A newly created virtual MFA device.</p>
+    */
+    inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(VirtualMFADevice&& value) { SetVirtualMFADevice(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateVirtualMFADeviceResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateVirtualMFADeviceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateVirtualMFADeviceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     VirtualMFADevice m_virtualMFADevice;

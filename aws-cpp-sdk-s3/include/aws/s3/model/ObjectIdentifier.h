@@ -45,10 +45,16 @@ namespace Model
      Key name of the object to delete.
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      Key name of the object to delete.
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     Key name of the object to delete.
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      Key name of the object to delete.
@@ -58,7 +64,12 @@ namespace Model
     /*
      Key name of the object to delete.
     */
-    inline ObjectIdentifier&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline ObjectIdentifier& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     Key name of the object to delete.
+    */
+    inline ObjectIdentifier& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      Key name of the object to delete.
@@ -69,10 +80,16 @@ namespace Model
      VersionId for the specific version of the object to delete.
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      VersionId for the specific version of the object to delete.
     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /*
+     VersionId for the specific version of the object to delete.
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      VersionId for the specific version of the object to delete.
@@ -82,7 +99,12 @@ namespace Model
     /*
      VersionId for the specific version of the object to delete.
     */
-    inline ObjectIdentifier&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline ObjectIdentifier& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     VersionId for the specific version of the object to delete.
+    */
+    inline ObjectIdentifier& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      VersionId for the specific version of the object to delete.

@@ -46,25 +46,42 @@ namespace Model
 
     
     inline const Aws::Vector<LogStream>& GetLogStreams() const{ return m_logStreams; }
+
     
     inline void SetLogStreams(const Aws::Vector<LogStream>& value) { m_logStreams = value; }
 
     
-    inline DescribeLogStreamsResult&  WithLogStreams(const Aws::Vector<LogStream>& value) { SetLogStreams(value); return *this;}
+    inline void SetLogStreams(Aws::Vector<LogStream>&& value) { m_logStreams = value; }
+
+    
+    inline DescribeLogStreamsResult& WithLogStreams(const Aws::Vector<LogStream>& value) { SetLogStreams(value); return *this;}
+
+    
+    inline DescribeLogStreamsResult& WithLogStreams(Aws::Vector<LogStream>&& value) { SetLogStreams(value); return *this;}
 
     
     inline DescribeLogStreamsResult& AddLogStreams(const LogStream& value) { m_logStreams.push_back(value); return *this; }
 
     
+    inline DescribeLogStreamsResult& AddLogStreams(LogStream&& value) { m_logStreams.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     
-    inline DescribeLogStreamsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLogStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline DescribeLogStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline DescribeLogStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

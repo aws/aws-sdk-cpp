@@ -48,6 +48,7 @@ namespace Model
      <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
+
     /*
      <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
     */
@@ -56,12 +57,23 @@ namespace Model
     /*
      <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
     */
-    inline AssumeRoleResult&  WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+    inline void SetCredentials(Credentials&& value) { m_credentials = value; }
+
+    /*
+     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
+    */
+    inline AssumeRoleResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+
+    /*
+     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
+    */
+    inline AssumeRoleResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
     */
     inline const AssumedRoleUser& GetAssumedRoleUser() const{ return m_assumedRoleUser; }
+
     /*
      <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
     */
@@ -70,12 +82,23 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
     */
-    inline AssumeRoleResult&  WithAssumedRoleUser(const AssumedRoleUser& value) { SetAssumedRoleUser(value); return *this;}
+    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
+    */
+    inline AssumeRoleResult& WithAssumedRoleUser(const AssumedRoleUser& value) { SetAssumedRoleUser(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
+    */
+    inline AssumeRoleResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(value); return *this;}
 
     /*
      <p>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space. </p>
     */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
+
     /*
      <p>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space. </p>
     */
@@ -84,15 +107,22 @@ namespace Model
     /*
      <p>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space. </p>
     */
-    inline AssumeRoleResult&  WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
+    inline AssumeRoleResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline AssumeRoleResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline AssumeRoleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline AssumeRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Credentials m_credentials;

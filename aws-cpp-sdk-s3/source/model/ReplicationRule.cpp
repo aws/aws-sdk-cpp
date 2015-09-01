@@ -47,24 +47,44 @@ ReplicationRule& ReplicationRule::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode iDNode = resultNode.FirstChild("ID");
+    if(iDNode.IsNull())
+    {
+      iDNode = resultNode;
+    }
+
     if(!iDNode.IsNull())
     {
       m_iD = StringUtils::Trim(iDNode.GetText().c_str());
       m_iDHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
+    if(prefixNode.IsNull())
+    {
+      prefixNode = resultNode;
+    }
+
     if(!prefixNode.IsNull())
     {
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
       m_prefixHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = ReplicationRuleStatusMapper::GetReplicationRuleStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
+    if(destinationNode.IsNull())
+    {
+      destinationNode = resultNode;
+    }
+
     if(!destinationNode.IsNull())
     {
       m_destination = destinationNode;

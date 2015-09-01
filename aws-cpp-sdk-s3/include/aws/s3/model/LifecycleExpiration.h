@@ -44,6 +44,7 @@ namespace Model
      Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
     */
     inline double GetDate() const{ return m_date; }
+
     /*
      Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
     */
@@ -52,12 +53,13 @@ namespace Model
     /*
      Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
     */
-    inline LifecycleExpiration&  WithDate(double value) { SetDate(value); return *this;}
+    inline LifecycleExpiration& WithDate(double value) { SetDate(value); return *this;}
 
     /*
      Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
     */
     inline long GetDays() const{ return m_days; }
+
     /*
      Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
     */
@@ -66,7 +68,7 @@ namespace Model
     /*
      Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
     */
-    inline LifecycleExpiration&  WithDays(long value) { SetDays(value); return *this;}
+    inline LifecycleExpiration& WithDays(long value) { SetDays(value); return *this;}
 
   private:
     double m_date;

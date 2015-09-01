@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the DB security group. </p>
     */
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
+
     /*
      <p> The name of the DB security group. </p>
     */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
+
+    /*
+     <p> The name of the DB security group. </p>
+    */
+    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /*
      <p> The name of the DB security group. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the DB security group. </p>
     */
-    inline DBSecurityGroupMembership&  WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
+    inline DBSecurityGroupMembership& WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
+
+    /*
+     <p> The name of the DB security group. </p>
+    */
+    inline DBSecurityGroupMembership& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
 
     /*
      <p> The name of the DB security group. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The status of the DB security group. </p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p> The status of the DB security group. </p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> The status of the DB security group. </p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> The status of the DB security group. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The status of the DB security group. </p>
     */
-    inline DBSecurityGroupMembership&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline DBSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> The status of the DB security group. </p>
+    */
+    inline DBSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p> The status of the DB security group. </p>

@@ -42,6 +42,11 @@ ConfigureHealthCheckResult& ConfigureHealthCheckResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
+    if(healthCheckNode.IsNull())
+    {
+      healthCheckNode = resultNode;
+    }
+
     if(!healthCheckNode.IsNull())
     {
       m_healthCheck = healthCheckNode;

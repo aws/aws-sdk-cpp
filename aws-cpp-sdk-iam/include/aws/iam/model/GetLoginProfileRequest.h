@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user whose login profile you want to retrieve.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user whose login profile you want to retrieve.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>
     */
-    inline GetLoginProfileRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline GetLoginProfileRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user whose login profile you want to retrieve.</p>
+    */
+    inline GetLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>

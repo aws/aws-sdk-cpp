@@ -48,6 +48,7 @@ namespace Model
      <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
     */
     inline const VerificationStatus& GetVerificationStatus() const{ return m_verificationStatus; }
+
     /*
      <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
     */
@@ -56,16 +57,32 @@ namespace Model
     /*
      <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
     */
-    inline IdentityVerificationAttributes&  WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
+    inline void SetVerificationStatus(VerificationStatus&& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
+
+    /*
+     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
+    */
+    inline IdentityVerificationAttributes& WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
+
+    /*
+     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
+    */
+    inline IdentityVerificationAttributes& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(value); return *this;}
 
     /*
      <p>The verification token for a domain identity. Null for email address identities.</p>
     */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
+
     /*
      <p>The verification token for a domain identity. Null for email address identities.</p>
     */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = value; }
+
+    /*
+     <p>The verification token for a domain identity. Null for email address identities.</p>
+    */
+    inline void SetVerificationToken(Aws::String&& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = value; }
 
     /*
      <p>The verification token for a domain identity. Null for email address identities.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The verification token for a domain identity. Null for email address identities.</p>
     */
-    inline IdentityVerificationAttributes&  WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
+    inline IdentityVerificationAttributes& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
+
+    /*
+     <p>The verification token for a domain identity. Null for email address identities.</p>
+    */
+    inline IdentityVerificationAttributes& WithVerificationToken(Aws::String&& value) { SetVerificationToken(value); return *this;}
 
     /*
      <p>The verification token for a domain identity. Null for email address identities.</p>

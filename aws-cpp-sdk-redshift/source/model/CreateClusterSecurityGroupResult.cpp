@@ -42,6 +42,11 @@ CreateClusterSecurityGroupResult& CreateClusterSecurityGroupResult::operator =(c
   if(!resultNode.IsNull())
   {
     XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
+    if(clusterSecurityGroupNode.IsNull())
+    {
+      clusterSecurityGroupNode = resultNode;
+    }
+
     if(!clusterSecurityGroupNode.IsNull())
     {
       m_clusterSecurityGroup = clusterSecurityGroupNode;

@@ -73,66 +73,121 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode reservedNodeIdNode = resultNode.FirstChild("ReservedNodeId");
+    if(reservedNodeIdNode.IsNull())
+    {
+      reservedNodeIdNode = resultNode;
+    }
+
     if(!reservedNodeIdNode.IsNull())
     {
       m_reservedNodeId = StringUtils::Trim(reservedNodeIdNode.GetText().c_str());
       m_reservedNodeIdHasBeenSet = true;
     }
     XmlNode reservedNodeOfferingIdNode = resultNode.FirstChild("ReservedNodeOfferingId");
+    if(reservedNodeOfferingIdNode.IsNull())
+    {
+      reservedNodeOfferingIdNode = resultNode;
+    }
+
     if(!reservedNodeOfferingIdNode.IsNull())
     {
       m_reservedNodeOfferingId = StringUtils::Trim(reservedNodeOfferingIdNode.GetText().c_str());
       m_reservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
+    if(nodeTypeNode.IsNull())
+    {
+      nodeTypeNode = resultNode;
+    }
+
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
+    if(startTimeNode.IsNull())
+    {
+      startTimeNode = resultNode;
+    }
+
     if(!startTimeNode.IsNull())
     {
       m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
+    if(durationNode.IsNull())
+    {
+      durationNode = resultNode;
+    }
+
     if(!durationNode.IsNull())
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
+    if(fixedPriceNode.IsNull())
+    {
+      fixedPriceNode = resultNode;
+    }
+
     if(!fixedPriceNode.IsNull())
     {
       m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(fixedPriceNode.GetText().c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
+    if(usagePriceNode.IsNull())
+    {
+      usagePriceNode = resultNode;
+    }
+
     if(!usagePriceNode.IsNull())
     {
       m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(usagePriceNode.GetText().c_str()).c_str());
       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
+    if(currencyCodeNode.IsNull())
+    {
+      currencyCodeNode = resultNode;
+    }
+
     if(!currencyCodeNode.IsNull())
     {
       m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode nodeCountNode = resultNode.FirstChild("NodeCount");
+    if(nodeCountNode.IsNull())
+    {
+      nodeCountNode = resultNode;
+    }
+
     if(!nodeCountNode.IsNull())
     {
       m_nodeCount = StringUtils::ConvertToInt32(StringUtils::Trim(nodeCountNode.GetText().c_str()).c_str());
       m_nodeCountHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
+    if(stateNode.IsNull())
+    {
+      stateNode = resultNode;
+    }
+
     if(!stateNode.IsNull())
     {
       m_state = StringUtils::Trim(stateNode.GetText().c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
+    if(offeringTypeNode.IsNull())
+    {
+      offeringTypeNode = resultNode;
+    }
+
     if(!offeringTypeNode.IsNull())
     {
       m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());

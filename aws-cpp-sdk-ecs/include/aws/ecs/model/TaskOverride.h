@@ -45,6 +45,7 @@ namespace Model
      <p>One or more container overrides sent to a task.</p>
     */
     inline const Aws::Vector<ContainerOverride>& GetContainerOverrides() const{ return m_containerOverrides; }
+
     /*
      <p>One or more container overrides sent to a task.</p>
     */
@@ -53,12 +54,27 @@ namespace Model
     /*
      <p>One or more container overrides sent to a task.</p>
     */
-    inline TaskOverride&  WithContainerOverrides(const Aws::Vector<ContainerOverride>& value) { SetContainerOverrides(value); return *this;}
+    inline void SetContainerOverrides(Aws::Vector<ContainerOverride>&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
+
+    /*
+     <p>One or more container overrides sent to a task.</p>
+    */
+    inline TaskOverride& WithContainerOverrides(const Aws::Vector<ContainerOverride>& value) { SetContainerOverrides(value); return *this;}
+
+    /*
+     <p>One or more container overrides sent to a task.</p>
+    */
+    inline TaskOverride& WithContainerOverrides(Aws::Vector<ContainerOverride>&& value) { SetContainerOverrides(value); return *this;}
 
     /*
      <p>One or more container overrides sent to a task.</p>
     */
     inline TaskOverride& AddContainerOverrides(const ContainerOverride& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
+
+    /*
+     <p>One or more container overrides sent to a task.</p>
+    */
+    inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
 
   private:
     Aws::Vector<ContainerOverride> m_containerOverrides;

@@ -51,24 +51,44 @@ ApplicationMetrics& ApplicationMetrics::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode durationNode = resultNode.FirstChild("Duration");
+    if(durationNode.IsNull())
+    {
+      durationNode = resultNode;
+    }
+
     if(!durationNode.IsNull())
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode requestCountNode = resultNode.FirstChild("RequestCount");
+    if(requestCountNode.IsNull())
+    {
+      requestCountNode = resultNode;
+    }
+
     if(!requestCountNode.IsNull())
     {
       m_requestCount = StringUtils::ConvertToInt32(StringUtils::Trim(requestCountNode.GetText().c_str()).c_str());
       m_requestCountHasBeenSet = true;
     }
     XmlNode statusCodesNode = resultNode.FirstChild("StatusCodes");
+    if(statusCodesNode.IsNull())
+    {
+      statusCodesNode = resultNode;
+    }
+
     if(!statusCodesNode.IsNull())
     {
       m_statusCodes = statusCodesNode;
       m_statusCodesHasBeenSet = true;
     }
     XmlNode latencyNode = resultNode.FirstChild("Latency");
+    if(latencyNode.IsNull())
+    {
+      latencyNode = resultNode;
+    }
+
     if(!latencyNode.IsNull())
     {
       m_latency = latencyNode;

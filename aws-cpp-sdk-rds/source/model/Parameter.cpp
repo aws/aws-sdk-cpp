@@ -61,60 +61,110 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode parameterNameNode = resultNode.FirstChild("ParameterName");
+    if(parameterNameNode.IsNull())
+    {
+      parameterNameNode = resultNode;
+    }
+
     if(!parameterNameNode.IsNull())
     {
       m_parameterName = StringUtils::Trim(parameterNameNode.GetText().c_str());
       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
+    if(parameterValueNode.IsNull())
+    {
+      parameterValueNode = resultNode;
+    }
+
     if(!parameterValueNode.IsNull())
     {
       m_parameterValue = StringUtils::Trim(parameterValueNode.GetText().c_str());
       m_parameterValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("Source");
+    if(sourceNode.IsNull())
+    {
+      sourceNode = resultNode;
+    }
+
     if(!sourceNode.IsNull())
     {
       m_source = StringUtils::Trim(sourceNode.GetText().c_str());
       m_sourceHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
+    if(applyTypeNode.IsNull())
+    {
+      applyTypeNode = resultNode;
+    }
+
     if(!applyTypeNode.IsNull())
     {
       m_applyType = StringUtils::Trim(applyTypeNode.GetText().c_str());
       m_applyTypeHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
+    if(dataTypeNode.IsNull())
+    {
+      dataTypeNode = resultNode;
+    }
+
     if(!dataTypeNode.IsNull())
     {
       m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
       m_dataTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
+    if(allowedValuesNode.IsNull())
+    {
+      allowedValuesNode = resultNode;
+    }
+
     if(!allowedValuesNode.IsNull())
     {
       m_allowedValues = StringUtils::Trim(allowedValuesNode.GetText().c_str());
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
+    if(isModifiableNode.IsNull())
+    {
+      isModifiableNode = resultNode;
+    }
+
     if(!isModifiableNode.IsNull())
     {
       m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());
       m_isModifiableHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
+    if(minimumEngineVersionNode.IsNull())
+    {
+      minimumEngineVersionNode = resultNode;
+    }
+
     if(!minimumEngineVersionNode.IsNull())
     {
       m_minimumEngineVersion = StringUtils::Trim(minimumEngineVersionNode.GetText().c_str());
       m_minimumEngineVersionHasBeenSet = true;
     }
     XmlNode applyMethodNode = resultNode.FirstChild("ApplyMethod");
+    if(applyMethodNode.IsNull())
+    {
+      applyMethodNode = resultNode;
+    }
+
     if(!applyMethodNode.IsNull())
     {
       m_applyMethod = ApplyMethodMapper::GetApplyMethodForName(StringUtils::Trim(applyMethodNode.GetText().c_str()).c_str());

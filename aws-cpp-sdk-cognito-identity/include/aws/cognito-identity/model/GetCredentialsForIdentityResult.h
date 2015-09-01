@@ -47,10 +47,16 @@ namespace Model
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline GetCredentialsForIdentityResult&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline GetCredentialsForIdentityResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline GetCredentialsForIdentityResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>Credentials for the the provided identity ID.</p>
     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
+
     /*
      <p>Credentials for the the provided identity ID.</p>
     */
@@ -79,7 +91,17 @@ namespace Model
     /*
      <p>Credentials for the the provided identity ID.</p>
     */
-    inline GetCredentialsForIdentityResult&  WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+    inline void SetCredentials(Credentials&& value) { m_credentials = value; }
+
+    /*
+     <p>Credentials for the the provided identity ID.</p>
+    */
+    inline GetCredentialsForIdentityResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+
+    /*
+     <p>Credentials for the the provided identity ID.</p>
+    */
+    inline GetCredentialsForIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
   private:
     Aws::String m_identityId;

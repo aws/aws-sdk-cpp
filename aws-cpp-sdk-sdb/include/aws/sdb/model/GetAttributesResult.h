@@ -48,6 +48,7 @@ namespace Model
      The list of attributes returned by the operation.
     */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
     /*
      The list of attributes returned by the operation.
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      The list of attributes returned by the operation.
     */
-    inline GetAttributesResult&  WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = value; }
+
+    /*
+     The list of attributes returned by the operation.
+    */
+    inline GetAttributesResult& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
+
+    /*
+     The list of attributes returned by the operation.
+    */
+    inline GetAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
     /*
      The list of attributes returned by the operation.
     */
     inline GetAttributesResult& AddAttributes(const Attribute& value) { m_attributes.push_back(value); return *this; }
 
+    /*
+     The list of attributes returned by the operation.
+    */
+    inline GetAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Attribute> m_attributes;

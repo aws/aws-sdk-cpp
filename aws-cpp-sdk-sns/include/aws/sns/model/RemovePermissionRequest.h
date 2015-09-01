@@ -38,10 +38,16 @@ namespace Model
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
-    inline RemovePermissionRequest&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline RemovePermissionRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    */
+    inline RemovePermissionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The unique label of the statement you want to remove.</p>
     */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
     /*
      <p>The unique label of the statement you want to remove.</p>
     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
+
+    /*
+     <p>The unique label of the statement you want to remove.</p>
+    */
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /*
      <p>The unique label of the statement you want to remove.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The unique label of the statement you want to remove.</p>
     */
-    inline RemovePermissionRequest&  WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+    inline RemovePermissionRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /*
+     <p>The unique label of the statement you want to remove.</p>
+    */
+    inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
 
     /*
      <p>The unique label of the statement you want to remove.</p>

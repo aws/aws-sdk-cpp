@@ -39,10 +39,16 @@ namespace Model
      <p>The name of destination to delete.</p>
     */
     inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+
     /*
      <p>The name of destination to delete.</p>
     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
+
+    /*
+     <p>The name of destination to delete.</p>
+    */
+    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /*
      <p>The name of destination to delete.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of destination to delete.</p>
     */
-    inline DeleteDestinationRequest&  WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
+    inline DeleteDestinationRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
+
+    /*
+     <p>The name of destination to delete.</p>
+    */
+    inline DeleteDestinationRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
 
     /*
      <p>The name of destination to delete.</p>

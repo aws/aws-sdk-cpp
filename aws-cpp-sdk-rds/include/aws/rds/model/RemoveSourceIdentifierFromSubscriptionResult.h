@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const EventSubscription& GetEventSubscription() const{ return m_eventSubscription; }
+
     
     inline void SetEventSubscription(const EventSubscription& value) { m_eventSubscription = value; }
 
     
-    inline RemoveSourceIdentifierFromSubscriptionResult&  WithEventSubscription(const EventSubscription& value) { SetEventSubscription(value); return *this;}
+    inline void SetEventSubscription(EventSubscription&& value) { m_eventSubscription = value; }
+
+    
+    inline RemoveSourceIdentifierFromSubscriptionResult& WithEventSubscription(const EventSubscription& value) { SetEventSubscription(value); return *this;}
+
+    
+    inline RemoveSourceIdentifierFromSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline RemoveSourceIdentifierFromSubscriptionResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline RemoveSourceIdentifierFromSubscriptionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline RemoveSourceIdentifierFromSubscriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     EventSubscription m_eventSubscription;

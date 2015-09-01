@@ -39,10 +39,16 @@ namespace Model
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     */
-    inline RegisterDeviceRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline RegisterDeviceRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    */
+    inline RegisterDeviceRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The unique ID for this identity.</p>
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      <p>The unique ID for this identity.</p>
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+
+    /*
+     <p>The unique ID for this identity.</p>
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>The unique ID for this identity.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The unique ID for this identity.</p>
     */
-    inline RegisterDeviceRequest&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline RegisterDeviceRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     <p>The unique ID for this identity.</p>
+    */
+    inline RegisterDeviceRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      <p>The unique ID for this identity.</p>
@@ -87,6 +109,7 @@ namespace Model
      <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     */
     inline const Platform& GetPlatform() const{ return m_platform; }
+
     /*
      <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     */
@@ -95,16 +118,32 @@ namespace Model
     /*
      <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     */
-    inline RegisterDeviceRequest&  WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
+    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = value; }
+
+    /*
+     <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+    */
+    inline RegisterDeviceRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
+
+    /*
+     <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+    */
+    inline RegisterDeviceRequest& WithPlatform(Platform&& value) { SetPlatform(value); return *this;}
 
     /*
      <p>The push token.</p>
     */
     inline const Aws::String& GetToken() const{ return m_token; }
+
     /*
      <p>The push token.</p>
     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
+
+    /*
+     <p>The push token.</p>
+    */
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /*
      <p>The push token.</p>
@@ -114,7 +153,12 @@ namespace Model
     /*
      <p>The push token.</p>
     */
-    inline RegisterDeviceRequest&  WithToken(const Aws::String& value) { SetToken(value); return *this;}
+    inline RegisterDeviceRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
+
+    /*
+     <p>The push token.</p>
+    */
+    inline RegisterDeviceRequest& WithToken(Aws::String&& value) { SetToken(value); return *this;}
 
     /*
      <p>The push token.</p>

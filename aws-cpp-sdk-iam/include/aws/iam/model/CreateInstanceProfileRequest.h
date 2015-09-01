@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the instance profile to create.</p>
     */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
+
     /*
      <p>The name of the instance profile to create.</p>
     */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+
+    /*
+     <p>The name of the instance profile to create.</p>
+    */
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name of the instance profile to create.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the instance profile to create.</p>
     */
-    inline CreateInstanceProfileRequest&  WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+    inline CreateInstanceProfileRequest& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+
+    /*
+     <p>The name of the instance profile to create.</p>
+    */
+    inline CreateInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
 
     /*
      <p>The name of the instance profile to create.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     */
     inline const Aws::String& GetPath() const{ return m_path; }
+
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     */
-    inline CreateInstanceProfileRequest&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+    inline CreateInstanceProfileRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    */
+    inline CreateInstanceProfileRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>

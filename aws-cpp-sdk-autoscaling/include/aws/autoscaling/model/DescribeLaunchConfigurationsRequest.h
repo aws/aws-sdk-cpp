@@ -38,6 +38,7 @@ namespace Model
      <p>The launch configuration names.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLaunchConfigurationNames() const{ return m_launchConfigurationNames; }
+
     /*
      <p>The launch configuration names.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>The launch configuration names.</p>
     */
-    inline DescribeLaunchConfigurationsRequest&  WithLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { SetLaunchConfigurationNames(value); return *this;}
+    inline void SetLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = value; }
+
+    /*
+     <p>The launch configuration names.</p>
+    */
+    inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { SetLaunchConfigurationNames(value); return *this;}
+
+    /*
+     <p>The launch configuration names.</p>
+    */
+    inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { SetLaunchConfigurationNames(value); return *this;}
 
     /*
      <p>The launch configuration names.</p>
     */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const Aws::String& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
+
+    /*
+     <p>The launch configuration names.</p>
+    */
+    inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(Aws::String&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 
     /*
      <p>The launch configuration names.</p>
@@ -62,10 +78,16 @@ namespace Model
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -75,7 +97,12 @@ namespace Model
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     */
-    inline DescribeLaunchConfigurationsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLaunchConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    */
+    inline DescribeLaunchConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -86,6 +113,7 @@ namespace Model
      <p>The maximum number of items to return with this call. The default is 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of items to return with this call. The default is 100.</p>
     */
@@ -94,7 +122,7 @@ namespace Model
     /*
      <p>The maximum number of items to return with this call. The default is 100.</p>
     */
-    inline DescribeLaunchConfigurationsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeLaunchConfigurationsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_launchConfigurationNames;

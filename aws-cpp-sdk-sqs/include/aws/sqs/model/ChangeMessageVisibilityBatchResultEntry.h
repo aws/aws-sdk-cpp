@@ -47,10 +47,16 @@ namespace Model
      <p>Represents a message whose visibility timeout has been changed successfully.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>Represents a message whose visibility timeout has been changed successfully.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>Represents a message whose visibility timeout has been changed successfully.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>Represents a message whose visibility timeout has been changed successfully.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Represents a message whose visibility timeout has been changed successfully.</p>
     */
-    inline ChangeMessageVisibilityBatchResultEntry&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ChangeMessageVisibilityBatchResultEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>Represents a message whose visibility timeout has been changed successfully.</p>
+    */
+    inline ChangeMessageVisibilityBatchResultEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>Represents a message whose visibility timeout has been changed successfully.</p>

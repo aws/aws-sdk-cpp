@@ -42,6 +42,11 @@ PurchaseReservedDBInstancesOfferingResult& PurchaseReservedDBInstancesOfferingRe
   if(!resultNode.IsNull())
   {
     XmlNode reservedDBInstanceNode = resultNode.FirstChild("ReservedDBInstance");
+    if(reservedDBInstanceNode.IsNull())
+    {
+      reservedDBInstanceNode = resultNode;
+    }
+
     if(!reservedDBInstanceNode.IsNull())
     {
       m_reservedDBInstance = reservedDBInstanceNode;

@@ -45,25 +45,39 @@ namespace Model
 
     
     inline const Aws::String& GetNextSequenceToken() const{ return m_nextSequenceToken; }
+
     
     inline void SetNextSequenceToken(const Aws::String& value) { m_nextSequenceToken = value; }
+
+    
+    inline void SetNextSequenceToken(Aws::String&& value) { m_nextSequenceToken = value; }
 
     
     inline void SetNextSequenceToken(const char* value) { m_nextSequenceToken.assign(value); }
 
     
-    inline PutLogEventsResult&  WithNextSequenceToken(const Aws::String& value) { SetNextSequenceToken(value); return *this;}
+    inline PutLogEventsResult& WithNextSequenceToken(const Aws::String& value) { SetNextSequenceToken(value); return *this;}
+
+    
+    inline PutLogEventsResult& WithNextSequenceToken(Aws::String&& value) { SetNextSequenceToken(value); return *this;}
 
     
     inline PutLogEventsResult& WithNextSequenceToken(const char* value) { SetNextSequenceToken(value); return *this;}
 
     
     inline const RejectedLogEventsInfo& GetRejectedLogEventsInfo() const{ return m_rejectedLogEventsInfo; }
+
     
     inline void SetRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { m_rejectedLogEventsInfo = value; }
 
     
-    inline PutLogEventsResult&  WithRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { SetRejectedLogEventsInfo(value); return *this;}
+    inline void SetRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { m_rejectedLogEventsInfo = value; }
+
+    
+    inline PutLogEventsResult& WithRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { SetRejectedLogEventsInfo(value); return *this;}
+
+    
+    inline PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { SetRejectedLogEventsInfo(value); return *this;}
 
   private:
     Aws::String m_nextSequenceToken;

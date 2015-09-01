@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the server certificate that you want to update.</p>
     */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
+
     /*
      <p>The name of the server certificate that you want to update.</p>
     */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
+
+    /*
+     <p>The name of the server certificate that you want to update.</p>
+    */
+    inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
      <p>The name of the server certificate that you want to update.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the server certificate that you want to update.</p>
     */
-    inline UpdateServerCertificateRequest&  WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
+    inline UpdateServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
+
+    /*
+     <p>The name of the server certificate that you want to update.</p>
+    */
+    inline UpdateServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(value); return *this;}
 
     /*
      <p>The name of the server certificate that you want to update.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
     */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
+
     /*
      <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
     */
     inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
+
+    /*
+     <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
+    */
+    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /*
      <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
     */
-    inline UpdateServerCertificateRequest&  WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
+    inline UpdateServerCertificateRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
+
+    /*
+     <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
+    */
+    inline UpdateServerCertificateRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
 
     /*
      <p> The new path for the server certificate. Include this only if you are updating the server certificate's path. </p>
@@ -85,10 +107,16 @@ namespace Model
      <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline const Aws::String& GetNewServerCertificateName() const{ return m_newServerCertificateName; }
+
     /*
      <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline void SetNewServerCertificateName(const Aws::String& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
+
+    /*
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
+    */
+    inline void SetNewServerCertificateName(Aws::String&& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
 
     /*
      <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
-    inline UpdateServerCertificateRequest&  WithNewServerCertificateName(const Aws::String& value) { SetNewServerCertificateName(value); return *this;}
+    inline UpdateServerCertificateRequest& WithNewServerCertificateName(const Aws::String& value) { SetNewServerCertificateName(value); return *this;}
+
+    /*
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
+    */
+    inline UpdateServerCertificateRequest& WithNewServerCertificateName(Aws::String&& value) { SetNewServerCertificateName(value); return *this;}
 
     /*
      <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>

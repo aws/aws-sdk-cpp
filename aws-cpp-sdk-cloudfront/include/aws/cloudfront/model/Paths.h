@@ -46,6 +46,7 @@ namespace Model
      The number of objects that you want to invalidate.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of objects that you want to invalidate.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      The number of objects that you want to invalidate.
     */
-    inline Paths&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline Paths& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that contains a list of the objects that you want to invalidate.
     */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
     /*
      A complex type that contains a list of the objects that you want to invalidate.
     */
@@ -68,12 +70,27 @@ namespace Model
     /*
      A complex type that contains a list of the objects that you want to invalidate.
     */
-    inline Paths&  WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that contains a list of the objects that you want to invalidate.
+    */
+    inline Paths& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that contains a list of the objects that you want to invalidate.
+    */
+    inline Paths& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that contains a list of the objects that you want to invalidate.
     */
     inline Paths& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A complex type that contains a list of the objects that you want to invalidate.
+    */
+    inline Paths& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /*
      A complex type that contains a list of the objects that you want to invalidate.

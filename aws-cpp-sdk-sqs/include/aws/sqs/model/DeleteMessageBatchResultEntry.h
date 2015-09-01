@@ -47,10 +47,16 @@ namespace Model
      <p>Represents a successfully deleted message.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>Represents a successfully deleted message.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>Represents a successfully deleted message.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>Represents a successfully deleted message.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Represents a successfully deleted message.</p>
     */
-    inline DeleteMessageBatchResultEntry&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline DeleteMessageBatchResultEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>Represents a successfully deleted message.</p>
+    */
+    inline DeleteMessageBatchResultEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>Represents a successfully deleted message.</p>

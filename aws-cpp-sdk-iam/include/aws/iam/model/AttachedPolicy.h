@@ -47,10 +47,16 @@ namespace Model
      <p>The friendly name of the attached policy.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The friendly name of the attached policy.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The friendly name of the attached policy.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The friendly name of the attached policy.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The friendly name of the attached policy.</p>
     */
-    inline AttachedPolicy&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline AttachedPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The friendly name of the attached policy.</p>
+    */
+    inline AttachedPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The friendly name of the attached policy.</p>
@@ -69,14 +80,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline AttachedPolicy&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline AttachedPolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline AttachedPolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline AttachedPolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}

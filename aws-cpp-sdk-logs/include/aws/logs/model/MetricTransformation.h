@@ -42,42 +42,63 @@ namespace Model
 
     
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
     
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+
+    
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     
-    inline MetricTransformation&  WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+    inline MetricTransformation& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+
+    
+    inline MetricTransformation& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
     
     inline MetricTransformation& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     
     inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
+
     
     inline void SetMetricNamespace(const Aws::String& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
+
+    
+    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
 
     
     inline void SetMetricNamespace(const char* value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace.assign(value); }
 
     
-    inline MetricTransformation&  WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
+    inline MetricTransformation& WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
+
+    
+    inline MetricTransformation& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(value); return *this;}
 
     
     inline MetricTransformation& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 
     
     inline const Aws::String& GetMetricValue() const{ return m_metricValue; }
+
     
     inline void SetMetricValue(const Aws::String& value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
+
+    
+    inline void SetMetricValue(Aws::String&& value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
 
     
     inline void SetMetricValue(const char* value) { m_metricValueHasBeenSet = true; m_metricValue.assign(value); }
 
     
-    inline MetricTransformation&  WithMetricValue(const Aws::String& value) { SetMetricValue(value); return *this;}
+    inline MetricTransformation& WithMetricValue(const Aws::String& value) { SetMetricValue(value); return *this;}
+
+    
+    inline MetricTransformation& WithMetricValue(Aws::String&& value) { SetMetricValue(value); return *this;}
 
     
     inline MetricTransformation& WithMetricValue(const char* value) { SetMetricValue(value); return *this;}

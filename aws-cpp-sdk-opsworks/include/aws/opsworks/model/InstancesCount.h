@@ -43,6 +43,7 @@ namespace Model
      <p>The number of instances in the Assigning state.</p>
     */
     inline long GetAssigning() const{ return m_assigning; }
+
     /*
      <p>The number of instances in the Assigning state.</p>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The number of instances in the Assigning state.</p>
     */
-    inline InstancesCount&  WithAssigning(long value) { SetAssigning(value); return *this;}
+    inline InstancesCount& WithAssigning(long value) { SetAssigning(value); return *this;}
 
     /*
      <p>The number of instances with <code>booting</code> status.</p>
     */
     inline long GetBooting() const{ return m_booting; }
+
     /*
      <p>The number of instances with <code>booting</code> status.</p>
     */
@@ -65,12 +67,13 @@ namespace Model
     /*
      <p>The number of instances with <code>booting</code> status.</p>
     */
-    inline InstancesCount&  WithBooting(long value) { SetBooting(value); return *this;}
+    inline InstancesCount& WithBooting(long value) { SetBooting(value); return *this;}
 
     /*
      <p>The number of instances with <code>connection_lost</code> status.</p>
     */
     inline long GetConnectionLost() const{ return m_connectionLost; }
+
     /*
      <p>The number of instances with <code>connection_lost</code> status.</p>
     */
@@ -79,12 +82,13 @@ namespace Model
     /*
      <p>The number of instances with <code>connection_lost</code> status.</p>
     */
-    inline InstancesCount&  WithConnectionLost(long value) { SetConnectionLost(value); return *this;}
+    inline InstancesCount& WithConnectionLost(long value) { SetConnectionLost(value); return *this;}
 
     /*
      <p>The number of instances in the Deregistering state.</p>
     */
     inline long GetDeregistering() const{ return m_deregistering; }
+
     /*
      <p>The number of instances in the Deregistering state.</p>
     */
@@ -93,12 +97,13 @@ namespace Model
     /*
      <p>The number of instances in the Deregistering state.</p>
     */
-    inline InstancesCount&  WithDeregistering(long value) { SetDeregistering(value); return *this;}
+    inline InstancesCount& WithDeregistering(long value) { SetDeregistering(value); return *this;}
 
     /*
      <p>The number of instances with <code>online</code> status.</p>
     */
     inline long GetOnline() const{ return m_online; }
+
     /*
      <p>The number of instances with <code>online</code> status.</p>
     */
@@ -107,12 +112,13 @@ namespace Model
     /*
      <p>The number of instances with <code>online</code> status.</p>
     */
-    inline InstancesCount&  WithOnline(long value) { SetOnline(value); return *this;}
+    inline InstancesCount& WithOnline(long value) { SetOnline(value); return *this;}
 
     /*
      <p>The number of instances with <code>pending</code> status.</p>
     */
     inline long GetPending() const{ return m_pending; }
+
     /*
      <p>The number of instances with <code>pending</code> status.</p>
     */
@@ -121,12 +127,13 @@ namespace Model
     /*
      <p>The number of instances with <code>pending</code> status.</p>
     */
-    inline InstancesCount&  WithPending(long value) { SetPending(value); return *this;}
+    inline InstancesCount& WithPending(long value) { SetPending(value); return *this;}
 
     /*
      <p>The number of instances with <code>rebooting</code> status.</p>
     */
     inline long GetRebooting() const{ return m_rebooting; }
+
     /*
      <p>The number of instances with <code>rebooting</code> status.</p>
     */
@@ -135,12 +142,13 @@ namespace Model
     /*
      <p>The number of instances with <code>rebooting</code> status.</p>
     */
-    inline InstancesCount&  WithRebooting(long value) { SetRebooting(value); return *this;}
+    inline InstancesCount& WithRebooting(long value) { SetRebooting(value); return *this;}
 
     /*
      <p>The number of instances in the Registered state.</p>
     */
     inline long GetRegistered() const{ return m_registered; }
+
     /*
      <p>The number of instances in the Registered state.</p>
     */
@@ -149,12 +157,13 @@ namespace Model
     /*
      <p>The number of instances in the Registered state.</p>
     */
-    inline InstancesCount&  WithRegistered(long value) { SetRegistered(value); return *this;}
+    inline InstancesCount& WithRegistered(long value) { SetRegistered(value); return *this;}
 
     /*
      <p>The number of instances in the Registering state.</p>
     */
     inline long GetRegistering() const{ return m_registering; }
+
     /*
      <p>The number of instances in the Registering state.</p>
     */
@@ -163,12 +172,13 @@ namespace Model
     /*
      <p>The number of instances in the Registering state.</p>
     */
-    inline InstancesCount&  WithRegistering(long value) { SetRegistering(value); return *this;}
+    inline InstancesCount& WithRegistering(long value) { SetRegistering(value); return *this;}
 
     /*
      <p>The number of instances with <code>requested</code> status.</p>
     */
     inline long GetRequested() const{ return m_requested; }
+
     /*
      <p>The number of instances with <code>requested</code> status.</p>
     */
@@ -177,12 +187,13 @@ namespace Model
     /*
      <p>The number of instances with <code>requested</code> status.</p>
     */
-    inline InstancesCount&  WithRequested(long value) { SetRequested(value); return *this;}
+    inline InstancesCount& WithRequested(long value) { SetRequested(value); return *this;}
 
     /*
      <p>The number of instances with <code>running_setup</code> status.</p>
     */
     inline long GetRunningSetup() const{ return m_runningSetup; }
+
     /*
      <p>The number of instances with <code>running_setup</code> status.</p>
     */
@@ -191,12 +202,13 @@ namespace Model
     /*
      <p>The number of instances with <code>running_setup</code> status.</p>
     */
-    inline InstancesCount&  WithRunningSetup(long value) { SetRunningSetup(value); return *this;}
+    inline InstancesCount& WithRunningSetup(long value) { SetRunningSetup(value); return *this;}
 
     /*
      <p>The number of instances with <code>setup_failed</code> status.</p>
     */
     inline long GetSetupFailed() const{ return m_setupFailed; }
+
     /*
      <p>The number of instances with <code>setup_failed</code> status.</p>
     */
@@ -205,12 +217,13 @@ namespace Model
     /*
      <p>The number of instances with <code>setup_failed</code> status.</p>
     */
-    inline InstancesCount&  WithSetupFailed(long value) { SetSetupFailed(value); return *this;}
+    inline InstancesCount& WithSetupFailed(long value) { SetSetupFailed(value); return *this;}
 
     /*
      <p>The number of instances with <code>shutting_down</code> status.</p>
     */
     inline long GetShuttingDown() const{ return m_shuttingDown; }
+
     /*
      <p>The number of instances with <code>shutting_down</code> status.</p>
     */
@@ -219,12 +232,13 @@ namespace Model
     /*
      <p>The number of instances with <code>shutting_down</code> status.</p>
     */
-    inline InstancesCount&  WithShuttingDown(long value) { SetShuttingDown(value); return *this;}
+    inline InstancesCount& WithShuttingDown(long value) { SetShuttingDown(value); return *this;}
 
     /*
      <p>The number of instances with <code>start_failed</code> status.</p>
     */
     inline long GetStartFailed() const{ return m_startFailed; }
+
     /*
      <p>The number of instances with <code>start_failed</code> status.</p>
     */
@@ -233,12 +247,13 @@ namespace Model
     /*
      <p>The number of instances with <code>start_failed</code> status.</p>
     */
-    inline InstancesCount&  WithStartFailed(long value) { SetStartFailed(value); return *this;}
+    inline InstancesCount& WithStartFailed(long value) { SetStartFailed(value); return *this;}
 
     /*
      <p>The number of instances with <code>stopped</code> status.</p>
     */
     inline long GetStopped() const{ return m_stopped; }
+
     /*
      <p>The number of instances with <code>stopped</code> status.</p>
     */
@@ -247,12 +262,13 @@ namespace Model
     /*
      <p>The number of instances with <code>stopped</code> status.</p>
     */
-    inline InstancesCount&  WithStopped(long value) { SetStopped(value); return *this;}
+    inline InstancesCount& WithStopped(long value) { SetStopped(value); return *this;}
 
     /*
      <p>The number of instances with <code>stopping</code> status.</p>
     */
     inline long GetStopping() const{ return m_stopping; }
+
     /*
      <p>The number of instances with <code>stopping</code> status.</p>
     */
@@ -261,12 +277,13 @@ namespace Model
     /*
      <p>The number of instances with <code>stopping</code> status.</p>
     */
-    inline InstancesCount&  WithStopping(long value) { SetStopping(value); return *this;}
+    inline InstancesCount& WithStopping(long value) { SetStopping(value); return *this;}
 
     /*
      <p>The number of instances with <code>terminated</code> status.</p>
     */
     inline long GetTerminated() const{ return m_terminated; }
+
     /*
      <p>The number of instances with <code>terminated</code> status.</p>
     */
@@ -275,12 +292,13 @@ namespace Model
     /*
      <p>The number of instances with <code>terminated</code> status.</p>
     */
-    inline InstancesCount&  WithTerminated(long value) { SetTerminated(value); return *this;}
+    inline InstancesCount& WithTerminated(long value) { SetTerminated(value); return *this;}
 
     /*
      <p>The number of instances with <code>terminating</code> status.</p>
     */
     inline long GetTerminating() const{ return m_terminating; }
+
     /*
      <p>The number of instances with <code>terminating</code> status.</p>
     */
@@ -289,12 +307,13 @@ namespace Model
     /*
      <p>The number of instances with <code>terminating</code> status.</p>
     */
-    inline InstancesCount&  WithTerminating(long value) { SetTerminating(value); return *this;}
+    inline InstancesCount& WithTerminating(long value) { SetTerminating(value); return *this;}
 
     /*
      <p>The number of instances in the Unassigning state.</p>
     */
     inline long GetUnassigning() const{ return m_unassigning; }
+
     /*
      <p>The number of instances in the Unassigning state.</p>
     */
@@ -303,7 +322,7 @@ namespace Model
     /*
      <p>The number of instances in the Unassigning state.</p>
     */
-    inline InstancesCount&  WithUnassigning(long value) { SetUnassigning(value); return *this;}
+    inline InstancesCount& WithUnassigning(long value) { SetUnassigning(value); return *this;}
 
   private:
     long m_assigning;

@@ -42,6 +42,7 @@ namespace Model
      <p>An array of Event JSON objects</p>
     */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
+
     /*
      <p>An array of Event JSON objects</p>
     */
@@ -50,7 +51,17 @@ namespace Model
     /*
      <p>An array of Event JSON objects</p>
     */
-    inline PutEventsRequest&  WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /*
+     <p>An array of Event JSON objects</p>
+    */
+    inline PutEventsRequest& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
+
+    /*
+     <p>An array of Event JSON objects</p>
+    */
+    inline PutEventsRequest& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
 
     /*
      <p>An array of Event JSON objects</p>
@@ -58,13 +69,24 @@ namespace Model
     inline PutEventsRequest& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /*
+     <p>An array of Event JSON objects</p>
+    */
+    inline PutEventsRequest& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+
+    /*
      <p>The client context including the client ID, app title, app version and package name.</p>
     */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
     */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
+
+    /*
+     <p>The client context including the client ID, app title, app version and package name.</p>
+    */
+    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
@@ -74,7 +96,12 @@ namespace Model
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
     */
-    inline PutEventsRequest&  WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
+    inline PutEventsRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
+
+    /*
+     <p>The client context including the client ID, app title, app version and package name.</p>
+    */
+    inline PutEventsRequest& WithClientContext(Aws::String&& value) { SetClientContext(value); return *this;}
 
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
@@ -85,10 +112,16 @@ namespace Model
      <p>The encoding used for the client context.</p>
     */
     inline const Aws::String& GetClientContextEncoding() const{ return m_clientContextEncoding; }
+
     /*
      <p>The encoding used for the client context.</p>
     */
     inline void SetClientContextEncoding(const Aws::String& value) { m_clientContextEncodingHasBeenSet = true; m_clientContextEncoding = value; }
+
+    /*
+     <p>The encoding used for the client context.</p>
+    */
+    inline void SetClientContextEncoding(Aws::String&& value) { m_clientContextEncodingHasBeenSet = true; m_clientContextEncoding = value; }
 
     /*
      <p>The encoding used for the client context.</p>
@@ -98,7 +131,12 @@ namespace Model
     /*
      <p>The encoding used for the client context.</p>
     */
-    inline PutEventsRequest&  WithClientContextEncoding(const Aws::String& value) { SetClientContextEncoding(value); return *this;}
+    inline PutEventsRequest& WithClientContextEncoding(const Aws::String& value) { SetClientContextEncoding(value); return *this;}
+
+    /*
+     <p>The encoding used for the client context.</p>
+    */
+    inline PutEventsRequest& WithClientContextEncoding(Aws::String&& value) { SetClientContextEncoding(value); return *this;}
 
     /*
      <p>The encoding used for the client context.</p>

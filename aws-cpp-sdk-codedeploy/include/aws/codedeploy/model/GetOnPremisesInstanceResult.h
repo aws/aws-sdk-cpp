@@ -46,6 +46,7 @@ namespace Model
      <p>Information about the on-premises instance.</p>
     */
     inline const InstanceInfo& GetInstanceInfo() const{ return m_instanceInfo; }
+
     /*
      <p>Information about the on-premises instance.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Information about the on-premises instance.</p>
     */
-    inline GetOnPremisesInstanceResult&  WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
+    inline void SetInstanceInfo(InstanceInfo&& value) { m_instanceInfo = value; }
+
+    /*
+     <p>Information about the on-premises instance.</p>
+    */
+    inline GetOnPremisesInstanceResult& WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
+
+    /*
+     <p>Information about the on-premises instance.</p>
+    */
+    inline GetOnPremisesInstanceResult& WithInstanceInfo(InstanceInfo&& value) { SetInstanceInfo(value); return *this;}
 
   private:
     InstanceInfo m_instanceInfo;

@@ -45,10 +45,16 @@ namespace Model
      Entity tag returned when the part was uploaded.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      Entity tag returned when the part was uploaded.
     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+
+    /*
+     Entity tag returned when the part was uploaded.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /*
      Entity tag returned when the part was uploaded.
@@ -58,7 +64,12 @@ namespace Model
     /*
      Entity tag returned when the part was uploaded.
     */
-    inline CompletedPart&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline CompletedPart& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     Entity tag returned when the part was uploaded.
+    */
+    inline CompletedPart& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      Entity tag returned when the part was uploaded.
@@ -69,6 +80,7 @@ namespace Model
      Part number that identifies the part. This is a positive integer between 1 and 10,000.
     */
     inline long GetPartNumber() const{ return m_partNumber; }
+
     /*
      Part number that identifies the part. This is a positive integer between 1 and 10,000.
     */
@@ -77,7 +89,7 @@ namespace Model
     /*
      Part number that identifies the part. This is a positive integer between 1 and 10,000.
     */
-    inline CompletedPart&  WithPartNumber(long value) { SetPartNumber(value); return *this;}
+    inline CompletedPart& WithPartNumber(long value) { SetPartNumber(value); return *this;}
 
   private:
     Aws::String m_eTag;

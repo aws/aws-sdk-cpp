@@ -47,6 +47,7 @@ namespace Model
      The distribution's information.
     */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
+
     /*
      The distribution's information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The distribution's information.
     */
-    inline UpdateDistribution2015_04_17Result&  WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
+    inline void SetDistribution(Distribution&& value) { m_distribution = value; }
+
+    /*
+     The distribution's information.
+    */
+    inline UpdateDistribution2015_04_17Result& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
+
+    /*
+     The distribution's information.
+    */
+    inline UpdateDistribution2015_04_17Result& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
-    inline UpdateDistribution2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline UpdateDistribution2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline UpdateDistribution2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.

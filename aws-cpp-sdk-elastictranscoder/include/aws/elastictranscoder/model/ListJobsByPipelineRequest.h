@@ -44,10 +44,16 @@ namespace Model
      <p> The ID of the pipeline for which you want to get job information. </p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p> The ID of the pipeline for which you want to get job information. </p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
     */
-    inline ListJobsByPipelineRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline ListJobsByPipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p> The ID of the pipeline for which you want to get job information. </p>
+    */
+    inline ListJobsByPipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
@@ -68,10 +79,16 @@ namespace Model
      <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
     */
     inline const Aws::String& GetAscending() const{ return m_ascending; }
+
     /*
      <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
     */
     inline void SetAscending(const Aws::String& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
+
+    /*
+     <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    */
+    inline void SetAscending(Aws::String&& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
 
     /*
      <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
     */
-    inline ListJobsByPipelineRequest&  WithAscending(const Aws::String& value) { SetAscending(value); return *this;}
+    inline ListJobsByPipelineRequest& WithAscending(const Aws::String& value) { SetAscending(value); return *this;}
+
+    /*
+     <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    */
+    inline ListJobsByPipelineRequest& WithAscending(Aws::String&& value) { SetAscending(value); return *this;}
 
     /*
      <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
@@ -92,10 +114,16 @@ namespace Model
      <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
     /*
      <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+
+    /*
+     <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    */
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /*
      <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     */
-    inline ListJobsByPipelineRequest&  WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+    inline ListJobsByPipelineRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+
+    /*
+     <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    */
+    inline ListJobsByPipelineRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
 
     /*
      <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>

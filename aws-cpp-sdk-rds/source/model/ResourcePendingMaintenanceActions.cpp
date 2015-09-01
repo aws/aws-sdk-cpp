@@ -43,6 +43,11 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
   if(!resultNode.IsNull())
   {
     XmlNode resourceIdentifierNode = resultNode.FirstChild("ResourceIdentifier");
+    if(resourceIdentifierNode.IsNull())
+    {
+      resourceIdentifierNode = resultNode;
+    }
+
     if(!resourceIdentifierNode.IsNull())
     {
       m_resourceIdentifier = StringUtils::Trim(resourceIdentifierNode.GetText().c_str());

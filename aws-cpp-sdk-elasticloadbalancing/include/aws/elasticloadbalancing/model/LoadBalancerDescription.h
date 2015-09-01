@@ -54,10 +54,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -67,7 +73,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline LoadBalancerDescription& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -78,10 +89,16 @@ namespace Model
      <p>The external DNS name of the load balancer.</p>
     */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
+
     /*
      <p>The external DNS name of the load balancer.</p>
     */
     inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
+
+    /*
+     <p>The external DNS name of the load balancer.</p>
+    */
+    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
     /*
      <p>The external DNS name of the load balancer.</p>
@@ -91,7 +108,12 @@ namespace Model
     /*
      <p>The external DNS name of the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
+    inline LoadBalancerDescription& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
+
+    /*
+     <p>The external DNS name of the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
 
     /*
      <p>The external DNS name of the load balancer.</p>
@@ -102,10 +124,16 @@ namespace Model
      <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline const Aws::String& GetCanonicalHostedZoneName() const{ return m_canonicalHostedZoneName; }
+
     /*
      <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline void SetCanonicalHostedZoneName(const Aws::String& value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName = value; }
+
+    /*
+     <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline void SetCanonicalHostedZoneName(Aws::String&& value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName = value; }
 
     /*
      <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
@@ -115,7 +143,12 @@ namespace Model
     /*
      <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline LoadBalancerDescription&  WithCanonicalHostedZoneName(const Aws::String& value) { SetCanonicalHostedZoneName(value); return *this;}
+    inline LoadBalancerDescription& WithCanonicalHostedZoneName(const Aws::String& value) { SetCanonicalHostedZoneName(value); return *this;}
+
+    /*
+     <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline LoadBalancerDescription& WithCanonicalHostedZoneName(Aws::String&& value) { SetCanonicalHostedZoneName(value); return *this;}
 
     /*
      <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
@@ -126,10 +159,16 @@ namespace Model
      <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
     */
     inline const Aws::String& GetCanonicalHostedZoneNameID() const{ return m_canonicalHostedZoneNameID; }
+
     /*
      <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
     */
     inline void SetCanonicalHostedZoneNameID(const Aws::String& value) { m_canonicalHostedZoneNameIDHasBeenSet = true; m_canonicalHostedZoneNameID = value; }
+
+    /*
+     <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
+    */
+    inline void SetCanonicalHostedZoneNameID(Aws::String&& value) { m_canonicalHostedZoneNameIDHasBeenSet = true; m_canonicalHostedZoneNameID = value; }
 
     /*
      <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
@@ -139,7 +178,12 @@ namespace Model
     /*
      <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithCanonicalHostedZoneNameID(const Aws::String& value) { SetCanonicalHostedZoneNameID(value); return *this;}
+    inline LoadBalancerDescription& WithCanonicalHostedZoneNameID(const Aws::String& value) { SetCanonicalHostedZoneNameID(value); return *this;}
+
+    /*
+     <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithCanonicalHostedZoneNameID(Aws::String&& value) { SetCanonicalHostedZoneNameID(value); return *this;}
 
     /*
      <p>The ID of the Amazon Route 53 hosted zone name associated with the load balancer.</p>
@@ -150,6 +194,7 @@ namespace Model
      <p>The listeners for the load balancer.</p>
     */
     inline const Aws::Vector<ListenerDescription>& GetListenerDescriptions() const{ return m_listenerDescriptions; }
+
     /*
      <p>The listeners for the load balancer.</p>
     */
@@ -158,7 +203,17 @@ namespace Model
     /*
      <p>The listeners for the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithListenerDescriptions(const Aws::Vector<ListenerDescription>& value) { SetListenerDescriptions(value); return *this;}
+    inline void SetListenerDescriptions(Aws::Vector<ListenerDescription>&& value) { m_listenerDescriptionsHasBeenSet = true; m_listenerDescriptions = value; }
+
+    /*
+     <p>The listeners for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithListenerDescriptions(const Aws::Vector<ListenerDescription>& value) { SetListenerDescriptions(value); return *this;}
+
+    /*
+     <p>The listeners for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithListenerDescriptions(Aws::Vector<ListenerDescription>&& value) { SetListenerDescriptions(value); return *this;}
 
     /*
      <p>The listeners for the load balancer.</p>
@@ -166,9 +221,15 @@ namespace Model
     inline LoadBalancerDescription& AddListenerDescriptions(const ListenerDescription& value) { m_listenerDescriptionsHasBeenSet = true; m_listenerDescriptions.push_back(value); return *this; }
 
     /*
+     <p>The listeners for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& AddListenerDescriptions(ListenerDescription&& value) { m_listenerDescriptionsHasBeenSet = true; m_listenerDescriptions.push_back(value); return *this; }
+
+    /*
      <p>The policies defined for the load balancer.</p>
     */
     inline const Policies& GetPolicies() const{ return m_policies; }
+
     /*
      <p>The policies defined for the load balancer.</p>
     */
@@ -177,12 +238,23 @@ namespace Model
     /*
      <p>The policies defined for the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithPolicies(const Policies& value) { SetPolicies(value); return *this;}
+    inline void SetPolicies(Policies&& value) { m_policiesHasBeenSet = true; m_policies = value; }
+
+    /*
+     <p>The policies defined for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithPolicies(const Policies& value) { SetPolicies(value); return *this;}
+
+    /*
+     <p>The policies defined for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithPolicies(Policies&& value) { SetPolicies(value); return *this;}
 
     /*
      <p>Information about the back-end servers.</p>
     */
     inline const Aws::Vector<BackendServerDescription>& GetBackendServerDescriptions() const{ return m_backendServerDescriptions; }
+
     /*
      <p>Information about the back-end servers.</p>
     */
@@ -191,7 +263,17 @@ namespace Model
     /*
      <p>Information about the back-end servers.</p>
     */
-    inline LoadBalancerDescription&  WithBackendServerDescriptions(const Aws::Vector<BackendServerDescription>& value) { SetBackendServerDescriptions(value); return *this;}
+    inline void SetBackendServerDescriptions(Aws::Vector<BackendServerDescription>&& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions = value; }
+
+    /*
+     <p>Information about the back-end servers.</p>
+    */
+    inline LoadBalancerDescription& WithBackendServerDescriptions(const Aws::Vector<BackendServerDescription>& value) { SetBackendServerDescriptions(value); return *this;}
+
+    /*
+     <p>Information about the back-end servers.</p>
+    */
+    inline LoadBalancerDescription& WithBackendServerDescriptions(Aws::Vector<BackendServerDescription>&& value) { SetBackendServerDescriptions(value); return *this;}
 
     /*
      <p>Information about the back-end servers.</p>
@@ -199,9 +281,15 @@ namespace Model
     inline LoadBalancerDescription& AddBackendServerDescriptions(const BackendServerDescription& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions.push_back(value); return *this; }
 
     /*
+     <p>Information about the back-end servers.</p>
+    */
+    inline LoadBalancerDescription& AddBackendServerDescriptions(BackendServerDescription&& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions.push_back(value); return *this; }
+
+    /*
      <p>The Availability Zones for the load balancer.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
     /*
      <p>The Availability Zones for the load balancer.</p>
     */
@@ -210,12 +298,27 @@ namespace Model
     /*
      <p>The Availability Zones for the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /*
+     <p>The Availability Zones for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /*
+     <p>The Availability Zones for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
 
     /*
      <p>The Availability Zones for the load balancer.</p>
     */
     inline LoadBalancerDescription& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>The Availability Zones for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>The Availability Zones for the load balancer.</p>
@@ -226,6 +329,7 @@ namespace Model
      <p>The IDs of the subnets for the load balancer.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
     /*
      <p>The IDs of the subnets for the load balancer.</p>
     */
@@ -234,12 +338,27 @@ namespace Model
     /*
      <p>The IDs of the subnets for the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+
+    /*
+     <p>The IDs of the subnets for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+
+    /*
+     <p>The IDs of the subnets for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
 
     /*
      <p>The IDs of the subnets for the load balancer.</p>
     */
     inline LoadBalancerDescription& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the subnets for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /*
      <p>The IDs of the subnets for the load balancer.</p>
@@ -250,10 +369,16 @@ namespace Model
      <p>The ID of the VPC for the load balancer.</p>
     */
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
+
     /*
      <p>The ID of the VPC for the load balancer.</p>
     */
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
+
+    /*
+     <p>The ID of the VPC for the load balancer.</p>
+    */
+    inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
 
     /*
      <p>The ID of the VPC for the load balancer.</p>
@@ -263,7 +388,12 @@ namespace Model
     /*
      <p>The ID of the VPC for the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
+    inline LoadBalancerDescription& WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
+
+    /*
+     <p>The ID of the VPC for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithVPCId(Aws::String&& value) { SetVPCId(value); return *this;}
 
     /*
      <p>The ID of the VPC for the load balancer.</p>
@@ -274,6 +404,7 @@ namespace Model
      <p>The IDs of the instances for the load balancer.</p>
     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
     /*
      <p>The IDs of the instances for the load balancer.</p>
     */
@@ -282,7 +413,17 @@ namespace Model
     /*
      <p>The IDs of the instances for the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+
+    /*
+     <p>The IDs of the instances for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+
+    /*
+     <p>The IDs of the instances for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
     /*
      <p>The IDs of the instances for the load balancer.</p>
@@ -290,9 +431,15 @@ namespace Model
     inline LoadBalancerDescription& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /*
+     <p>The IDs of the instances for the load balancer.</p>
+    */
+    inline LoadBalancerDescription& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
+    /*
      <p>Information about the health checks conducted on the load balancer.</p>
     */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+
     /*
      <p>Information about the health checks conducted on the load balancer.</p>
     */
@@ -301,12 +448,23 @@ namespace Model
     /*
      <p>Information about the health checks conducted on the load balancer.</p>
     */
-    inline LoadBalancerDescription&  WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
+
+    /*
+     <p>Information about the health checks conducted on the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+
+    /*
+     <p>Information about the health checks conducted on the load balancer.</p>
+    */
+    inline LoadBalancerDescription& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 
     /*
      <p>The security group that you can use as part of your inbound rules for your load balancer's back-end application instances. To only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the inbound source.</p>
     */
     inline const SourceSecurityGroup& GetSourceSecurityGroup() const{ return m_sourceSecurityGroup; }
+
     /*
      <p>The security group that you can use as part of your inbound rules for your load balancer's back-end application instances. To only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the inbound source.</p>
     */
@@ -315,12 +473,23 @@ namespace Model
     /*
      <p>The security group that you can use as part of your inbound rules for your load balancer's back-end application instances. To only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the inbound source.</p>
     */
-    inline LoadBalancerDescription&  WithSourceSecurityGroup(const SourceSecurityGroup& value) { SetSourceSecurityGroup(value); return *this;}
+    inline void SetSourceSecurityGroup(SourceSecurityGroup&& value) { m_sourceSecurityGroupHasBeenSet = true; m_sourceSecurityGroup = value; }
+
+    /*
+     <p>The security group that you can use as part of your inbound rules for your load balancer's back-end application instances. To only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the inbound source.</p>
+    */
+    inline LoadBalancerDescription& WithSourceSecurityGroup(const SourceSecurityGroup& value) { SetSourceSecurityGroup(value); return *this;}
+
+    /*
+     <p>The security group that you can use as part of your inbound rules for your load balancer's back-end application instances. To only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the inbound source.</p>
+    */
+    inline LoadBalancerDescription& WithSourceSecurityGroup(SourceSecurityGroup&& value) { SetSourceSecurityGroup(value); return *this;}
 
     /*
      <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
     /*
      <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     */
@@ -329,12 +498,27 @@ namespace Model
     /*
      <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     */
-    inline LoadBalancerDescription&  WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+
+    /*
+     <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
+    */
+    inline LoadBalancerDescription& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+
+    /*
+     <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
+    */
+    inline LoadBalancerDescription& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
 
     /*
      <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     */
     inline LoadBalancerDescription& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
+    */
+    inline LoadBalancerDescription& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /*
      <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
@@ -345,6 +529,7 @@ namespace Model
      <p>The date and time the load balancer was created.</p>
     */
     inline double GetCreatedTime() const{ return m_createdTime; }
+
     /*
      <p>The date and time the load balancer was created.</p>
     */
@@ -353,16 +538,22 @@ namespace Model
     /*
      <p>The date and time the load balancer was created.</p>
     */
-    inline LoadBalancerDescription&  WithCreatedTime(double value) { SetCreatedTime(value); return *this;}
+    inline LoadBalancerDescription& WithCreatedTime(double value) { SetCreatedTime(value); return *this;}
 
     /*
      <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     */
     inline const Aws::String& GetScheme() const{ return m_scheme; }
+
     /*
      <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     */
     inline void SetScheme(const Aws::String& value) { m_schemeHasBeenSet = true; m_scheme = value; }
+
+    /*
+     <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
+    */
+    inline void SetScheme(Aws::String&& value) { m_schemeHasBeenSet = true; m_scheme = value; }
 
     /*
      <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
@@ -372,7 +563,12 @@ namespace Model
     /*
      <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     */
-    inline LoadBalancerDescription&  WithScheme(const Aws::String& value) { SetScheme(value); return *this;}
+    inline LoadBalancerDescription& WithScheme(const Aws::String& value) { SetScheme(value); return *this;}
+
+    /*
+     <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
+    */
+    inline LoadBalancerDescription& WithScheme(Aws::String&& value) { SetScheme(value); return *this;}
 
     /*
      <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>

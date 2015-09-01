@@ -42,6 +42,11 @@ CreateUserResult& CreateUserResult::operator =(const AmazonWebServiceResult<XmlD
   if(!resultNode.IsNull())
   {
     XmlNode userNode = resultNode.FirstChild("User");
+    if(userNode.IsNull())
+    {
+      userNode = resultNode;
+    }
+
     if(!userNode.IsNull())
     {
       m_user = userNode;

@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
     /*
      <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+
+    /*
+     <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+    */
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
      <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
-    inline RemoveTagsFromResourceRequest&  WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    /*
+     <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+    */
+    inline RemoveTagsFromResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
     /*
      <p>The name of the ElastiCache resource from which you want the listed tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
     */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
     /*
      <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
     */
@@ -71,12 +83,27 @@ namespace Model
     /*
      <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
     */
-    inline RemoveTagsFromResourceRequest&  WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+
+    /*
+     <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
+    */
+    inline RemoveTagsFromResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+
+    /*
+     <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
+    */
+    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
 
     /*
      <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
     */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
+    /*
+     <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>
+    */
+    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /*
      <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.</p>

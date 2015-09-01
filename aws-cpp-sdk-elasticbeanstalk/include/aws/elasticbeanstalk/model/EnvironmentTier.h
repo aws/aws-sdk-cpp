@@ -47,10 +47,16 @@ namespace Model
      <p>The name of this environment tier.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of this environment tier.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of this environment tier.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of this environment tier.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of this environment tier.</p>
     */
-    inline EnvironmentTier&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline EnvironmentTier& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of this environment tier.</p>
+    */
+    inline EnvironmentTier& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of this environment tier.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The type of this environment tier.</p>
     */
     inline const Aws::String& GetType() const{ return m_type; }
+
     /*
      <p>The type of this environment tier.</p>
     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The type of this environment tier.</p>
+    */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The type of this environment tier.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The type of this environment tier.</p>
     */
-    inline EnvironmentTier&  WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline EnvironmentTier& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /*
+     <p>The type of this environment tier.</p>
+    */
+    inline EnvironmentTier& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /*
      <p>The type of this environment tier.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The version of this environment tier.</p>
     */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
     /*
      <p>The version of this environment tier.</p>
     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>The version of this environment tier.</p>
+    */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /*
      <p>The version of this environment tier.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The version of this environment tier.</p>
     */
-    inline EnvironmentTier&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline EnvironmentTier& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>The version of this environment tier.</p>
+    */
+    inline EnvironmentTier& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /*
      <p>The version of this environment tier.</p>

@@ -46,10 +46,16 @@ namespace Model
      <p>The evaluated expression.</p>
     */
     inline const Aws::String& GetEvaluatedExpression() const{ return m_evaluatedExpression; }
+
     /*
      <p>The evaluated expression.</p>
     */
     inline void SetEvaluatedExpression(const Aws::String& value) { m_evaluatedExpression = value; }
+
+    /*
+     <p>The evaluated expression.</p>
+    */
+    inline void SetEvaluatedExpression(Aws::String&& value) { m_evaluatedExpression = value; }
 
     /*
      <p>The evaluated expression.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The evaluated expression.</p>
     */
-    inline EvaluateExpressionResult&  WithEvaluatedExpression(const Aws::String& value) { SetEvaluatedExpression(value); return *this;}
+    inline EvaluateExpressionResult& WithEvaluatedExpression(const Aws::String& value) { SetEvaluatedExpression(value); return *this;}
+
+    /*
+     <p>The evaluated expression.</p>
+    */
+    inline EvaluateExpressionResult& WithEvaluatedExpression(Aws::String&& value) { SetEvaluatedExpression(value); return *this;}
 
     /*
      <p>The evaluated expression.</p>

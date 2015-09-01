@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const Task& GetTask() const{ return m_task; }
+
     
     inline void SetTask(const Task& value) { m_task = value; }
 
     
-    inline StopTaskResult&  WithTask(const Task& value) { SetTask(value); return *this;}
+    inline void SetTask(Task&& value) { m_task = value; }
+
+    
+    inline StopTaskResult& WithTask(const Task& value) { SetTask(value); return *this;}
+
+    
+    inline StopTaskResult& WithTask(Task&& value) { SetTask(value); return *this;}
 
   private:
     Task m_task;

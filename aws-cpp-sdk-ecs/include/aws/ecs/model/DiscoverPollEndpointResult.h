@@ -46,10 +46,16 @@ namespace Model
      <p>The endpoint for the Amazon ECS agent to poll.</p>
     */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
     /*
      <p>The endpoint for the Amazon ECS agent to poll.</p>
     */
     inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
+
+    /*
+     <p>The endpoint for the Amazon ECS agent to poll.</p>
+    */
+    inline void SetEndpoint(Aws::String&& value) { m_endpoint = value; }
 
     /*
      <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The endpoint for the Amazon ECS agent to poll.</p>
     */
-    inline DiscoverPollEndpointResult&  WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+    inline DiscoverPollEndpointResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+
+    /*
+     <p>The endpoint for the Amazon ECS agent to poll.</p>
+    */
+    inline DiscoverPollEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
 
     /*
      <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The telemetry endpoint for the Amazon ECS agent.</p>
     */
     inline const Aws::String& GetTelemetryEndpoint() const{ return m_telemetryEndpoint; }
+
     /*
      <p>The telemetry endpoint for the Amazon ECS agent.</p>
     */
     inline void SetTelemetryEndpoint(const Aws::String& value) { m_telemetryEndpoint = value; }
+
+    /*
+     <p>The telemetry endpoint for the Amazon ECS agent.</p>
+    */
+    inline void SetTelemetryEndpoint(Aws::String&& value) { m_telemetryEndpoint = value; }
 
     /*
      <p>The telemetry endpoint for the Amazon ECS agent.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The telemetry endpoint for the Amazon ECS agent.</p>
     */
-    inline DiscoverPollEndpointResult&  WithTelemetryEndpoint(const Aws::String& value) { SetTelemetryEndpoint(value); return *this;}
+    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const Aws::String& value) { SetTelemetryEndpoint(value); return *this;}
+
+    /*
+     <p>The telemetry endpoint for the Amazon ECS agent.</p>
+    */
+    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(Aws::String&& value) { SetTelemetryEndpoint(value); return *this;}
 
     /*
      <p>The telemetry endpoint for the Amazon ECS agent.</p>

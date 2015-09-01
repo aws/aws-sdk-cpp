@@ -46,6 +46,7 @@ namespace Model
      <p>Contains the returned data retrieval policy in JSON format.</p>
     */
     inline const DataRetrievalPolicy& GetPolicy() const{ return m_policy; }
+
     /*
      <p>Contains the returned data retrieval policy in JSON format.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Contains the returned data retrieval policy in JSON format.</p>
     */
-    inline GetDataRetrievalPolicyResult&  WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
+    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policy = value; }
+
+    /*
+     <p>Contains the returned data retrieval policy in JSON format.</p>
+    */
+    inline GetDataRetrievalPolicyResult& WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>Contains the returned data retrieval policy in JSON format.</p>
+    */
+    inline GetDataRetrievalPolicyResult& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(value); return *this;}
 
   private:
     DataRetrievalPolicy m_policy;

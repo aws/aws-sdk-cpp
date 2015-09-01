@@ -47,6 +47,7 @@ namespace Model
      <p>The session credentials for API authentication. </p>
     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
+
     /*
      <p>The session credentials for API authentication. </p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>The session credentials for API authentication. </p>
     */
-    inline GetSessionTokenResult&  WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+    inline void SetCredentials(Credentials&& value) { m_credentials = value; }
+
+    /*
+     <p>The session credentials for API authentication. </p>
+    */
+    inline GetSessionTokenResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
+
+    /*
+     <p>The session credentials for API authentication. </p>
+    */
+    inline GetSessionTokenResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetSessionTokenResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetSessionTokenResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetSessionTokenResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Credentials m_credentials;

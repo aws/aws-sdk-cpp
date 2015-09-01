@@ -38,10 +38,16 @@ namespace Model
      <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
     */
-    inline DescribeCacheEngineVersionsRequest&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    */
+    inline DescribeCacheEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
     */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
     /*
      <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /*
+     <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+    */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /*
      <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
     */
-    inline DescribeCacheEngineVersionsRequest&  WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /*
+     <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+    */
+    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /*
      <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
@@ -86,10 +108,16 @@ namespace Model
      <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
+
     /*
      <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
+
+    /*
+     <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /*
      <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline DescribeCacheEngineVersionsRequest&  WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+
+    /*
+     <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /*
      <p>The name of a specific cache parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -110,6 +143,7 @@ namespace Model
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
     */
@@ -118,16 +152,22 @@ namespace Model
     /*
      <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
     */
-    inline DescribeCacheEngineVersionsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
@@ -137,7 +177,12 @@ namespace Model
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
     */
-    inline DescribeCacheEngineVersionsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
+    */
+    inline DescribeCacheEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
@@ -148,6 +193,7 @@ namespace Model
      <p>If <i>true</i>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     */
     inline bool GetDefaultOnly() const{ return m_defaultOnly; }
+
     /*
      <p>If <i>true</i>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     */
@@ -156,7 +202,7 @@ namespace Model
     /*
      <p>If <i>true</i>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     */
-    inline DescribeCacheEngineVersionsRequest&  WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
 
   private:
     Aws::String m_engine;

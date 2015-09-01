@@ -45,6 +45,7 @@ namespace Model
      <p>A request to perform a <i>PutItem</i> operation.</p>
     */
     inline const PutRequest& GetPutRequest() const{ return m_putRequest; }
+
     /*
      <p>A request to perform a <i>PutItem</i> operation.</p>
     */
@@ -53,12 +54,23 @@ namespace Model
     /*
      <p>A request to perform a <i>PutItem</i> operation.</p>
     */
-    inline WriteRequest&  WithPutRequest(const PutRequest& value) { SetPutRequest(value); return *this;}
+    inline void SetPutRequest(PutRequest&& value) { m_putRequestHasBeenSet = true; m_putRequest = value; }
+
+    /*
+     <p>A request to perform a <i>PutItem</i> operation.</p>
+    */
+    inline WriteRequest& WithPutRequest(const PutRequest& value) { SetPutRequest(value); return *this;}
+
+    /*
+     <p>A request to perform a <i>PutItem</i> operation.</p>
+    */
+    inline WriteRequest& WithPutRequest(PutRequest&& value) { SetPutRequest(value); return *this;}
 
     /*
      <p>A request to perform a <i>DeleteItem</i> operation.</p>
     */
     inline const DeleteRequest& GetDeleteRequest() const{ return m_deleteRequest; }
+
     /*
      <p>A request to perform a <i>DeleteItem</i> operation.</p>
     */
@@ -67,7 +79,17 @@ namespace Model
     /*
      <p>A request to perform a <i>DeleteItem</i> operation.</p>
     */
-    inline WriteRequest&  WithDeleteRequest(const DeleteRequest& value) { SetDeleteRequest(value); return *this;}
+    inline void SetDeleteRequest(DeleteRequest&& value) { m_deleteRequestHasBeenSet = true; m_deleteRequest = value; }
+
+    /*
+     <p>A request to perform a <i>DeleteItem</i> operation.</p>
+    */
+    inline WriteRequest& WithDeleteRequest(const DeleteRequest& value) { SetDeleteRequest(value); return *this;}
+
+    /*
+     <p>A request to perform a <i>DeleteItem</i> operation.</p>
+    */
+    inline WriteRequest& WithDeleteRequest(DeleteRequest&& value) { SetDeleteRequest(value); return *this;}
 
   private:
     PutRequest m_putRequest;

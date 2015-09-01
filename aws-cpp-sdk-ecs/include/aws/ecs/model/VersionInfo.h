@@ -44,10 +44,16 @@ namespace Model
      <p>The version number of the Amazon ECS container agent.</p>
     */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
     /*
      <p>The version number of the Amazon ECS container agent.</p>
     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /*
+     <p>The version number of the Amazon ECS container agent.</p>
+    */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /*
      <p>The version number of the Amazon ECS container agent.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The version number of the Amazon ECS container agent.</p>
     */
-    inline VersionInfo&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+    inline VersionInfo& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /*
+     <p>The version number of the Amazon ECS container agent.</p>
+    */
+    inline VersionInfo& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
 
     /*
      <p>The version number of the Amazon ECS container agent.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
     */
     inline const Aws::String& GetAgentHash() const{ return m_agentHash; }
+
     /*
      <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
     */
     inline void SetAgentHash(const Aws::String& value) { m_agentHashHasBeenSet = true; m_agentHash = value; }
+
+    /*
+     <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
+    */
+    inline void SetAgentHash(Aws::String&& value) { m_agentHashHasBeenSet = true; m_agentHash = value; }
 
     /*
      <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
     */
-    inline VersionInfo&  WithAgentHash(const Aws::String& value) { SetAgentHash(value); return *this;}
+    inline VersionInfo& WithAgentHash(const Aws::String& value) { SetAgentHash(value); return *this;}
+
+    /*
+     <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
+    */
+    inline VersionInfo& WithAgentHash(Aws::String&& value) { SetAgentHash(value); return *this;}
 
     /*
      <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The Docker version running on the container instance.</p>
     */
     inline const Aws::String& GetDockerVersion() const{ return m_dockerVersion; }
+
     /*
      <p>The Docker version running on the container instance.</p>
     */
     inline void SetDockerVersion(const Aws::String& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = value; }
+
+    /*
+     <p>The Docker version running on the container instance.</p>
+    */
+    inline void SetDockerVersion(Aws::String&& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = value; }
 
     /*
      <p>The Docker version running on the container instance.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The Docker version running on the container instance.</p>
     */
-    inline VersionInfo&  WithDockerVersion(const Aws::String& value) { SetDockerVersion(value); return *this;}
+    inline VersionInfo& WithDockerVersion(const Aws::String& value) { SetDockerVersion(value); return *this;}
+
+    /*
+     <p>The Docker version running on the container instance.</p>
+    */
+    inline VersionInfo& WithDockerVersion(Aws::String&& value) { SetDockerVersion(value); return *this;}
 
     /*
      <p>The Docker version running on the container instance.</p>

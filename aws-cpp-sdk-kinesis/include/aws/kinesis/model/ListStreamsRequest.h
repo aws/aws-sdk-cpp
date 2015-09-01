@@ -40,6 +40,7 @@ namespace Model
      <p>The maximum number of streams to list.</p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p>The maximum number of streams to list.</p>
     */
@@ -48,16 +49,22 @@ namespace Model
     /*
      <p>The maximum number of streams to list.</p>
     */
-    inline ListStreamsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListStreamsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
     /*
      <p>The name of the stream to start the list with.</p>
     */
     inline const Aws::String& GetExclusiveStartStreamName() const{ return m_exclusiveStartStreamName; }
+
     /*
      <p>The name of the stream to start the list with.</p>
     */
     inline void SetExclusiveStartStreamName(const Aws::String& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = value; }
+
+    /*
+     <p>The name of the stream to start the list with.</p>
+    */
+    inline void SetExclusiveStartStreamName(Aws::String&& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = value; }
 
     /*
      <p>The name of the stream to start the list with.</p>
@@ -67,7 +74,12 @@ namespace Model
     /*
      <p>The name of the stream to start the list with.</p>
     */
-    inline ListStreamsRequest&  WithExclusiveStartStreamName(const Aws::String& value) { SetExclusiveStartStreamName(value); return *this;}
+    inline ListStreamsRequest& WithExclusiveStartStreamName(const Aws::String& value) { SetExclusiveStartStreamName(value); return *this;}
+
+    /*
+     <p>The name of the stream to start the list with.</p>
+    */
+    inline ListStreamsRequest& WithExclusiveStartStreamName(Aws::String&& value) { SetExclusiveStartStreamName(value); return *this;}
 
     /*
      <p>The name of the stream to start the list with.</p>

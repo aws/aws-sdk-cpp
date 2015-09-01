@@ -46,10 +46,16 @@ namespace Model
      <p>The ID of the object.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The ID of the object.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The ID of the object.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the object.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The ID of the object.</p>
     */
-    inline PipelineObject&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline PipelineObject& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The ID of the object.</p>
+    */
+    inline PipelineObject& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The ID of the object.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The name of the object.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the object.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the object.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the object.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The name of the object.</p>
     */
-    inline PipelineObject&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline PipelineObject& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the object.</p>
+    */
+    inline PipelineObject& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the object.</p>
@@ -94,6 +116,7 @@ namespace Model
      <p>Key-value pairs that define the properties of the object.</p>
     */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
+
     /*
      <p>Key-value pairs that define the properties of the object.</p>
     */
@@ -102,12 +125,27 @@ namespace Model
     /*
      <p>Key-value pairs that define the properties of the object.</p>
     */
-    inline PipelineObject&  WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
+    inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = value; }
+
+    /*
+     <p>Key-value pairs that define the properties of the object.</p>
+    */
+    inline PipelineObject& WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
+
+    /*
+     <p>Key-value pairs that define the properties of the object.</p>
+    */
+    inline PipelineObject& WithFields(Aws::Vector<Field>&& value) { SetFields(value); return *this;}
 
     /*
      <p>Key-value pairs that define the properties of the object.</p>
     */
     inline PipelineObject& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
+
+    /*
+     <p>Key-value pairs that define the properties of the object.</p>
+    */
+    inline PipelineObject& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
 
   private:
     Aws::String m_id;

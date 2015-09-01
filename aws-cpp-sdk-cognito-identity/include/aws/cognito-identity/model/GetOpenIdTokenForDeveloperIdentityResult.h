@@ -46,10 +46,16 @@ namespace Model
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline GetOpenIdTokenForDeveloperIdentityResult&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline GetOpenIdTokenForDeveloperIdentityResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     <p>A unique identifier in the format REGION:GUID.</p>
+    */
+    inline GetOpenIdTokenForDeveloperIdentityResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>An OpenID token.</p>
     */
     inline const Aws::String& GetToken() const{ return m_token; }
+
     /*
      <p>An OpenID token.</p>
     */
     inline void SetToken(const Aws::String& value) { m_token = value; }
+
+    /*
+     <p>An OpenID token.</p>
+    */
+    inline void SetToken(Aws::String&& value) { m_token = value; }
 
     /*
      <p>An OpenID token.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>An OpenID token.</p>
     */
-    inline GetOpenIdTokenForDeveloperIdentityResult&  WithToken(const Aws::String& value) { SetToken(value); return *this;}
+    inline GetOpenIdTokenForDeveloperIdentityResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
+
+    /*
+     <p>An OpenID token.</p>
+    */
+    inline GetOpenIdTokenForDeveloperIdentityResult& WithToken(Aws::String&& value) { SetToken(value); return *this;}
 
     /*
      <p>An OpenID token.</p>

@@ -48,10 +48,16 @@ namespace Model
      <p>The ID of the instance.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The ID of the instance.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The ID of the instance.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the instance.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The ID of the instance.</p>
     */
-    inline Instance&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The ID of the instance.</p>
+    */
+    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The ID of the instance.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The Availability Zone in which the instance is running.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p>The Availability Zone in which the instance is running.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p>The Availability Zone in which the instance is running.</p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The Availability Zone in which the instance is running.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The Availability Zone in which the instance is running.</p>
     */
-    inline Instance&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline Instance& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The Availability Zone in which the instance is running.</p>
+    */
+    inline Instance& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p>The Availability Zone in which the instance is running.</p>
@@ -96,6 +118,7 @@ namespace Model
      <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
     */
     inline const LifecycleState& GetLifecycleState() const{ return m_lifecycleState; }
+
     /*
      <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
     */
@@ -104,16 +127,32 @@ namespace Model
     /*
      <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
     */
-    inline Instance&  WithLifecycleState(const LifecycleState& value) { SetLifecycleState(value); return *this;}
+    inline void SetLifecycleState(LifecycleState&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
+
+    /*
+     <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
+    */
+    inline Instance& WithLifecycleState(const LifecycleState& value) { SetLifecycleState(value); return *this;}
+
+    /*
+     <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
+    */
+    inline Instance& WithLifecycleState(LifecycleState&& value) { SetLifecycleState(value); return *this;}
 
     /*
      <p>The health status of the instance.</p>
     */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
+
     /*
      <p>The health status of the instance.</p>
     */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+
+    /*
+     <p>The health status of the instance.</p>
+    */
+    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /*
      <p>The health status of the instance.</p>
@@ -123,7 +162,12 @@ namespace Model
     /*
      <p>The health status of the instance.</p>
     */
-    inline Instance&  WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
+    inline Instance& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
+
+    /*
+     <p>The health status of the instance.</p>
+    */
+    inline Instance& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
 
     /*
      <p>The health status of the instance.</p>
@@ -134,10 +178,16 @@ namespace Model
      <p>The launch configuration associated with the instance.</p>
     */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
+
     /*
      <p>The launch configuration associated with the instance.</p>
     */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
+
+    /*
+     <p>The launch configuration associated with the instance.</p>
+    */
+    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The launch configuration associated with the instance.</p>
@@ -147,7 +197,12 @@ namespace Model
     /*
      <p>The launch configuration associated with the instance.</p>
     */
-    inline Instance&  WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+    inline Instance& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+
+    /*
+     <p>The launch configuration associated with the instance.</p>
+    */
+    inline Instance& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(value); return *this;}
 
     /*
      <p>The launch configuration associated with the instance.</p>

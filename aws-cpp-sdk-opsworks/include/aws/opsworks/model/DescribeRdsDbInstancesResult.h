@@ -47,6 +47,7 @@ namespace Model
      <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     */
     inline const Aws::Vector<RdsDbInstance>& GetRdsDbInstances() const{ return m_rdsDbInstances; }
+
     /*
      <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     */
-    inline DescribeRdsDbInstancesResult&  WithRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { SetRdsDbInstances(value); return *this;}
+    inline void SetRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { m_rdsDbInstances = value; }
+
+    /*
+     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    */
+    inline DescribeRdsDbInstancesResult& WithRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { SetRdsDbInstances(value); return *this;}
+
+    /*
+     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    */
+    inline DescribeRdsDbInstancesResult& WithRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { SetRdsDbInstances(value); return *this;}
 
     /*
      <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     */
     inline DescribeRdsDbInstancesResult& AddRdsDbInstances(const RdsDbInstance& value) { m_rdsDbInstances.push_back(value); return *this; }
+
+    /*
+     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    */
+    inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(value); return *this; }
 
   private:
     Aws::Vector<RdsDbInstance> m_rdsDbInstances;

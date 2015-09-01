@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the key.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>The name of the key.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>The name of the key.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The name of the key.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the key.</p>
     */
-    inline TagKeyOnly&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline TagKeyOnly& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>The name of the key.</p>
+    */
+    inline TagKeyOnly& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>The name of the key.</p>

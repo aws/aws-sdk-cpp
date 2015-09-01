@@ -42,6 +42,11 @@ GetPolicyResult& GetPolicyResult::operator =(const AmazonWebServiceResult<XmlDoc
   if(!resultNode.IsNull())
   {
     XmlNode policyNode = resultNode.FirstChild("Policy");
+    if(policyNode.IsNull())
+    {
+      policyNode = resultNode;
+    }
+
     if(!policyNode.IsNull())
     {
       m_policy = policyNode;

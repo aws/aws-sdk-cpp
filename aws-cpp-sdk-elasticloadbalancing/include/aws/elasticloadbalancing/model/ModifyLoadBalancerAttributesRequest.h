@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline ModifyLoadBalancerAttributesRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The attributes of the load balancer.</p>
     */
     inline const LoadBalancerAttributes& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
+
     /*
      <p>The attributes of the load balancer.</p>
     */
@@ -70,7 +82,17 @@ namespace Model
     /*
      <p>The attributes of the load balancer.</p>
     */
-    inline ModifyLoadBalancerAttributesRequest&  WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
+    inline void SetLoadBalancerAttributes(LoadBalancerAttributes&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = value; }
+
+    /*
+     <p>The attributes of the load balancer.</p>
+    */
+    inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
+
+    /*
+     <p>The attributes of the load balancer.</p>
+    */
+    inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(value); return *this;}
 
   private:
     Aws::String m_loadBalancerName;

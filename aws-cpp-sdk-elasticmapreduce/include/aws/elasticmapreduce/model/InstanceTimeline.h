@@ -43,6 +43,7 @@ namespace Model
      <p>The creation date and time of the instance.</p>
     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
+
     /*
      <p>The creation date and time of the instance.</p>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The creation date and time of the instance.</p>
     */
-    inline InstanceTimeline&  WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline InstanceTimeline& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
     /*
      <p>The date and time when the instance was ready to perform tasks.</p>
     */
     inline double GetReadyDateTime() const{ return m_readyDateTime; }
+
     /*
      <p>The date and time when the instance was ready to perform tasks.</p>
     */
@@ -65,12 +67,13 @@ namespace Model
     /*
      <p>The date and time when the instance was ready to perform tasks.</p>
     */
-    inline InstanceTimeline&  WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
+    inline InstanceTimeline& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
 
     /*
      <p>The date and time when the instance was terminated.</p>
     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
+
     /*
      <p>The date and time when the instance was terminated.</p>
     */
@@ -79,7 +82,7 @@ namespace Model
     /*
      <p>The date and time when the instance was terminated.</p>
     */
-    inline InstanceTimeline&  WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline InstanceTimeline& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
   private:
     double m_creationDateTime;

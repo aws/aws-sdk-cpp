@@ -42,6 +42,7 @@ namespace Model
      <p>Instance Groups to add.</p>
     */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+
     /*
      <p>Instance Groups to add.</p>
     */
@@ -50,7 +51,17 @@ namespace Model
     /*
      <p>Instance Groups to add.</p>
     */
-    inline AddInstanceGroupsRequest&  WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
+
+    /*
+     <p>Instance Groups to add.</p>
+    */
+    inline AddInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
+
+    /*
+     <p>Instance Groups to add.</p>
+    */
+    inline AddInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(value); return *this;}
 
     /*
      <p>Instance Groups to add.</p>
@@ -58,13 +69,24 @@ namespace Model
     inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /*
+     <p>Instance Groups to add.</p>
+    */
+    inline AddInstanceGroupsRequest& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
+
+    /*
      <p>Job flow in which to add the instance groups.</p>
     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
+
     /*
      <p>Job flow in which to add the instance groups.</p>
     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
+
+    /*
+     <p>Job flow in which to add the instance groups.</p>
+    */
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
 
     /*
      <p>Job flow in which to add the instance groups.</p>
@@ -74,7 +96,12 @@ namespace Model
     /*
      <p>Job flow in which to add the instance groups.</p>
     */
-    inline AddInstanceGroupsRequest&  WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+    inline AddInstanceGroupsRequest& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+
+    /*
+     <p>Job flow in which to add the instance groups.</p>
+    */
+    inline AddInstanceGroupsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
     /*
      <p>Job flow in which to add the instance groups.</p>

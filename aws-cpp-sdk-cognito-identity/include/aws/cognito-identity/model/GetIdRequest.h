@@ -41,10 +41,16 @@ namespace Model
      A standard AWS account ID (9+ digits).
     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     /*
      A standard AWS account ID (9+ digits).
     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /*
+     A standard AWS account ID (9+ digits).
+    */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      A standard AWS account ID (9+ digits).
@@ -54,7 +60,12 @@ namespace Model
     /*
      A standard AWS account ID (9+ digits).
     */
-    inline GetIdRequest&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline GetIdRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     A standard AWS account ID (9+ digits).
+    */
+    inline GetIdRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /*
      A standard AWS account ID (9+ digits).
@@ -65,10 +76,16 @@ namespace Model
      An identity pool ID in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      An identity pool ID in the format REGION:GUID.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -78,7 +95,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline GetIdRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline GetIdRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline GetIdRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -89,6 +111,7 @@ namespace Model
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogins() const{ return m_logins; }
+
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
     */
@@ -97,12 +120,47 @@ namespace Model
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
     */
-    inline GetIdRequest&  WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
+    inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(value); return *this;}
 
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
     */
     inline GetIdRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+
+    /*
+     <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>
+    */
+    inline GetIdRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /*
      <p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>

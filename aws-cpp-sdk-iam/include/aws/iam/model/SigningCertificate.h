@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iam/model/statusType.h>
+#include <aws/iam/model/StatusType.h>
 
 namespace Aws
 {
@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the user the signing certificate is associated with.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user the signing certificate is associated with.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user the signing certificate is associated with.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user the signing certificate is associated with.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the user the signing certificate is associated with.</p>
     */
-    inline SigningCertificate&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline SigningCertificate& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user the signing certificate is associated with.</p>
+    */
+    inline SigningCertificate& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user the signing certificate is associated with.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The ID for the signing certificate.</p>
     */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+
     /*
      <p>The ID for the signing certificate.</p>
     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+
+    /*
+     <p>The ID for the signing certificate.</p>
+    */
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /*
      <p>The ID for the signing certificate.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The ID for the signing certificate.</p>
     */
-    inline SigningCertificate&  WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
+    inline SigningCertificate& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
+
+    /*
+     <p>The ID for the signing certificate.</p>
+    */
+    inline SigningCertificate& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
 
     /*
      <p>The ID for the signing certificate.</p>
@@ -96,10 +118,16 @@ namespace Model
      <p>The contents of the signing certificate.</p>
     */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
+
     /*
      <p>The contents of the signing certificate.</p>
     */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
+
+    /*
+     <p>The contents of the signing certificate.</p>
+    */
+    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /*
      <p>The contents of the signing certificate.</p>
@@ -109,7 +137,12 @@ namespace Model
     /*
      <p>The contents of the signing certificate.</p>
     */
-    inline SigningCertificate&  WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
+    inline SigningCertificate& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
+
+    /*
+     <p>The contents of the signing certificate.</p>
+    */
+    inline SigningCertificate& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
 
     /*
      <p>The contents of the signing certificate.</p>
@@ -119,21 +152,33 @@ namespace Model
     /*
      <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
     */
-    inline const statusType& GetStatus() const{ return m_status; }
-    /*
-     <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
-    */
-    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline const StatusType& GetStatus() const{ return m_status; }
 
     /*
      <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
     */
-    inline SigningCertificate&  WithStatus(const statusType& value) { SetStatus(value); return *this;}
+    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    */
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    */
+    inline SigningCertificate& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    */
+    inline SigningCertificate& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The date when the signing certificate was uploaded.</p>
     */
     inline double GetUploadDate() const{ return m_uploadDate; }
+
     /*
      <p>The date when the signing certificate was uploaded.</p>
     */
@@ -142,7 +187,7 @@ namespace Model
     /*
      <p>The date when the signing certificate was uploaded.</p>
     */
-    inline SigningCertificate&  WithUploadDate(double value) { SetUploadDate(value); return *this;}
+    inline SigningCertificate& WithUploadDate(double value) { SetUploadDate(value); return *this;}
 
   private:
     Aws::String m_userName;
@@ -151,7 +196,7 @@ namespace Model
     bool m_certificateIdHasBeenSet;
     Aws::String m_certificateBody;
     bool m_certificateBodyHasBeenSet;
-    statusType m_status;
+    StatusType m_status;
     bool m_statusHasBeenSet;
     double m_uploadDate;
     bool m_uploadDateHasBeenSet;

@@ -42,6 +42,11 @@ CreateDBSnapshotResult& CreateDBSnapshotResult::operator =(const AmazonWebServic
   if(!resultNode.IsNull())
   {
     XmlNode dBSnapshotNode = resultNode.FirstChild("DBSnapshot");
+    if(dBSnapshotNode.IsNull())
+    {
+      dBSnapshotNode = resultNode;
+    }
+
     if(!dBSnapshotNode.IsNull())
     {
       m_dBSnapshot = dBSnapshotNode;

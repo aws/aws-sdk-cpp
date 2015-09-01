@@ -48,20 +48,33 @@ namespace Model
 
     
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
+
     
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     
-    inline Rule&  WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
+    inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = value; }
+
+    
+    inline Rule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
+
+    
+    inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(value); return *this;}
 
     /*
      Unique identifier for the rule. The value cannot be longer than 255 characters.
     */
     inline const Aws::String& GetID() const{ return m_iD; }
+
     /*
      Unique identifier for the rule. The value cannot be longer than 255 characters.
     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
+
+    /*
+     Unique identifier for the rule. The value cannot be longer than 255 characters.
+    */
+    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /*
      Unique identifier for the rule. The value cannot be longer than 255 characters.
@@ -71,7 +84,12 @@ namespace Model
     /*
      Unique identifier for the rule. The value cannot be longer than 255 characters.
     */
-    inline Rule&  WithID(const Aws::String& value) { SetID(value); return *this;}
+    inline Rule& WithID(const Aws::String& value) { SetID(value); return *this;}
+
+    /*
+     Unique identifier for the rule. The value cannot be longer than 255 characters.
+    */
+    inline Rule& WithID(Aws::String&& value) { SetID(value); return *this;}
 
     /*
      Unique identifier for the rule. The value cannot be longer than 255 characters.
@@ -82,10 +100,16 @@ namespace Model
      Prefix identifying one or more objects to which the rule applies.
     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
     /*
      Prefix identifying one or more objects to which the rule applies.
     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+
+    /*
+     Prefix identifying one or more objects to which the rule applies.
+    */
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /*
      Prefix identifying one or more objects to which the rule applies.
@@ -95,7 +119,12 @@ namespace Model
     /*
      Prefix identifying one or more objects to which the rule applies.
     */
-    inline Rule&  WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline Rule& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+
+    /*
+     Prefix identifying one or more objects to which the rule applies.
+    */
+    inline Rule& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
     /*
      Prefix identifying one or more objects to which the rule applies.
@@ -106,6 +135,7 @@ namespace Model
      If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
     */
     inline const ExpirationStatus& GetStatus() const{ return m_status; }
+
     /*
      If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
     */
@@ -114,31 +144,62 @@ namespace Model
     /*
      If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
     */
-    inline Rule&  WithStatus(const ExpirationStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(ExpirationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
+    */
+    inline Rule& WithStatus(const ExpirationStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
+    */
+    inline Rule& WithStatus(ExpirationStatus&& value) { SetStatus(value); return *this;}
 
     
     inline const Transition& GetTransition() const{ return m_transition; }
+
     
     inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
 
     
-    inline Rule&  WithTransition(const Transition& value) { SetTransition(value); return *this;}
+    inline void SetTransition(Transition&& value) { m_transitionHasBeenSet = true; m_transition = value; }
+
+    
+    inline Rule& WithTransition(const Transition& value) { SetTransition(value); return *this;}
+
+    
+    inline Rule& WithTransition(Transition&& value) { SetTransition(value); return *this;}
 
     
     inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const{ return m_noncurrentVersionTransition; }
+
     
     inline void SetNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = value; }
 
     
-    inline Rule&  WithNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { SetNoncurrentVersionTransition(value); return *this;}
+    inline void SetNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = value; }
+
+    
+    inline Rule& WithNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { SetNoncurrentVersionTransition(value); return *this;}
+
+    
+    inline Rule& WithNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { SetNoncurrentVersionTransition(value); return *this;}
 
     
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
+
     
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
     
-    inline Rule&  WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
+    inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
+
+    
+    inline Rule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
+
+    
+    inline Rule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(value); return *this;}
 
   private:
     LifecycleExpiration m_expiration;

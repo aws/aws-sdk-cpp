@@ -49,6 +49,7 @@ namespace Model
      <p>The tags.</p>
     */
     inline const Aws::Vector<TagDescription>& GetTags() const{ return m_tags; }
+
     /*
      <p>The tags.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The tags.</p>
     */
-    inline DescribeTagsResult&  WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<TagDescription>&& value) { m_tags = value; }
+
+    /*
+     <p>The tags.</p>
+    */
+    inline DescribeTagsResult& WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The tags.</p>
+    */
+    inline DescribeTagsResult& WithTags(Aws::Vector<TagDescription>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The tags.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeTagsResult& AddTags(const TagDescription& value) { m_tags.push_back(value); return *this; }
 
     /*
+     <p>The tags.</p>
+    */
+    inline DescribeTagsResult& AddTags(TagDescription&& value) { m_tags.push_back(value); return *this; }
+
+    /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
-    inline DescribeTagsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeTagsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline DescribeTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeTagsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeTagsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeTagsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<TagDescription> m_tags;

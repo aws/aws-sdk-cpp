@@ -39,10 +39,16 @@ namespace Model
      <p>The log group name for which metric filters are to be listed.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The log group name for which metric filters are to be listed.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The log group name for which metric filters are to be listed.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The log group name for which metric filters are to be listed.</p>
     */
-    inline DescribeMetricFiltersRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
+    inline DescribeMetricFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The log group name for which metric filters are to be listed.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
+
     /*
      <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
+
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
+    inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
     /*
      <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
-    inline DescribeMetricFiltersRequest&  WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
+
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
+    inline DescribeMetricFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(value); return *this;}
 
     /*
      <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
@@ -87,10 +109,16 @@ namespace Model
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
     */
-    inline DescribeMetricFiltersRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
+    */
+    inline DescribeMetricFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code> request. </p>
@@ -111,6 +144,7 @@ namespace Model
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
@@ -119,7 +153,7 @@ namespace Model
     /*
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
-    inline DescribeMetricFiltersRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_logGroupName;

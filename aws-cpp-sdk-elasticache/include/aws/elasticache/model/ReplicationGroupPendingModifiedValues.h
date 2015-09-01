@@ -48,10 +48,16 @@ namespace Model
      <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
     */
     inline const Aws::String& GetPrimaryClusterId() const{ return m_primaryClusterId; }
+
     /*
      <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
     */
     inline void SetPrimaryClusterId(const Aws::String& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
+
+    /*
+     <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
+    */
+    inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
 
     /*
      <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
     */
-    inline ReplicationGroupPendingModifiedValues&  WithPrimaryClusterId(const Aws::String& value) { SetPrimaryClusterId(value); return *this;}
+    inline ReplicationGroupPendingModifiedValues& WithPrimaryClusterId(const Aws::String& value) { SetPrimaryClusterId(value); return *this;}
+
+    /*
+     <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
+    */
+    inline ReplicationGroupPendingModifiedValues& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(value); return *this;}
 
     /*
      <p>The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
     */
     inline const PendingAutomaticFailoverStatus& GetAutomaticFailoverStatus() const{ return m_automaticFailoverStatus; }
+
     /*
      <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
     */
@@ -80,7 +92,17 @@ namespace Model
     /*
      <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
     */
-    inline ReplicationGroupPendingModifiedValues&  WithAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { SetAutomaticFailoverStatus(value); return *this;}
+    inline void SetAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = value; }
+
+    /*
+     <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+    */
+    inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { SetAutomaticFailoverStatus(value); return *this;}
+
+    /*
+     <p>Indicates the status of Multi-AZ for this replication group.</p> <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+    */
+    inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(value); return *this;}
 
   private:
     Aws::String m_primaryClusterId;

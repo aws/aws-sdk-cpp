@@ -47,6 +47,7 @@ namespace Model
      <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     */
     inline const Aws::Vector<RaidArray>& GetRaidArrays() const{ return m_raidArrays; }
+
     /*
      <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     */
-    inline DescribeRaidArraysResult&  WithRaidArrays(const Aws::Vector<RaidArray>& value) { SetRaidArrays(value); return *this;}
+    inline void SetRaidArrays(Aws::Vector<RaidArray>&& value) { m_raidArrays = value; }
+
+    /*
+     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    */
+    inline DescribeRaidArraysResult& WithRaidArrays(const Aws::Vector<RaidArray>& value) { SetRaidArrays(value); return *this;}
+
+    /*
+     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    */
+    inline DescribeRaidArraysResult& WithRaidArrays(Aws::Vector<RaidArray>&& value) { SetRaidArrays(value); return *this;}
 
     /*
      <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     */
     inline DescribeRaidArraysResult& AddRaidArrays(const RaidArray& value) { m_raidArrays.push_back(value); return *this; }
+
+    /*
+     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    */
+    inline DescribeRaidArraysResult& AddRaidArrays(RaidArray&& value) { m_raidArrays.push_back(value); return *this; }
 
   private:
     Aws::Vector<RaidArray> m_raidArrays;

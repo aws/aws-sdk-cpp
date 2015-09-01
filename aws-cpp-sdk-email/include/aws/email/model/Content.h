@@ -47,10 +47,16 @@ namespace Model
      <p>The textual data of the content.</p>
     */
     inline const Aws::String& GetData() const{ return m_data; }
+
     /*
      <p>The textual data of the content.</p>
     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
+
+    /*
+     <p>The textual data of the content.</p>
+    */
+    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /*
      <p>The textual data of the content.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The textual data of the content.</p>
     */
-    inline Content&  WithData(const Aws::String& value) { SetData(value); return *this;}
+    inline Content& WithData(const Aws::String& value) { SetData(value); return *this;}
+
+    /*
+     <p>The textual data of the content.</p>
+    */
+    inline Content& WithData(Aws::String&& value) { SetData(value); return *this;}
 
     /*
      <p>The textual data of the content.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The character set of the content.</p>
     */
     inline const Aws::String& GetCharset() const{ return m_charset; }
+
     /*
      <p>The character set of the content.</p>
     */
     inline void SetCharset(const Aws::String& value) { m_charsetHasBeenSet = true; m_charset = value; }
+
+    /*
+     <p>The character set of the content.</p>
+    */
+    inline void SetCharset(Aws::String&& value) { m_charsetHasBeenSet = true; m_charset = value; }
 
     /*
      <p>The character set of the content.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The character set of the content.</p>
     */
-    inline Content&  WithCharset(const Aws::String& value) { SetCharset(value); return *this;}
+    inline Content& WithCharset(const Aws::String& value) { SetCharset(value); return *this;}
+
+    /*
+     <p>The character set of the content.</p>
+    */
+    inline Content& WithCharset(Aws::String&& value) { SetCharset(value); return *this;}
 
     /*
      <p>The character set of the content.</p>

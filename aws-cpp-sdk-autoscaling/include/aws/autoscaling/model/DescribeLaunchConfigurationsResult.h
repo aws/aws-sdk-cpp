@@ -49,6 +49,7 @@ namespace Model
      <p>The launch configurations.</p>
     */
     inline const Aws::Vector<LaunchConfiguration>& GetLaunchConfigurations() const{ return m_launchConfigurations; }
+
     /*
      <p>The launch configurations.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The launch configurations.</p>
     */
-    inline DescribeLaunchConfigurationsResult&  WithLaunchConfigurations(const Aws::Vector<LaunchConfiguration>& value) { SetLaunchConfigurations(value); return *this;}
+    inline void SetLaunchConfigurations(Aws::Vector<LaunchConfiguration>&& value) { m_launchConfigurations = value; }
+
+    /*
+     <p>The launch configurations.</p>
+    */
+    inline DescribeLaunchConfigurationsResult& WithLaunchConfigurations(const Aws::Vector<LaunchConfiguration>& value) { SetLaunchConfigurations(value); return *this;}
+
+    /*
+     <p>The launch configurations.</p>
+    */
+    inline DescribeLaunchConfigurationsResult& WithLaunchConfigurations(Aws::Vector<LaunchConfiguration>&& value) { SetLaunchConfigurations(value); return *this;}
 
     /*
      <p>The launch configurations.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeLaunchConfigurationsResult& AddLaunchConfigurations(const LaunchConfiguration& value) { m_launchConfigurations.push_back(value); return *this; }
 
     /*
+     <p>The launch configurations.</p>
+    */
+    inline DescribeLaunchConfigurationsResult& AddLaunchConfigurations(LaunchConfiguration&& value) { m_launchConfigurations.push_back(value); return *this; }
+
+    /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
-    inline DescribeLaunchConfigurationsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLaunchConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline DescribeLaunchConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLaunchConfigurationsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLaunchConfigurationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLaunchConfigurationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<LaunchConfiguration> m_launchConfigurations;

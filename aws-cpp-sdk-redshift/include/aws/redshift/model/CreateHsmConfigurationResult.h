@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const HsmConfiguration& GetHsmConfiguration() const{ return m_hsmConfiguration; }
+
     
     inline void SetHsmConfiguration(const HsmConfiguration& value) { m_hsmConfiguration = value; }
 
     
-    inline CreateHsmConfigurationResult&  WithHsmConfiguration(const HsmConfiguration& value) { SetHsmConfiguration(value); return *this;}
+    inline void SetHsmConfiguration(HsmConfiguration&& value) { m_hsmConfiguration = value; }
+
+    
+    inline CreateHsmConfigurationResult& WithHsmConfiguration(const HsmConfiguration& value) { SetHsmConfiguration(value); return *this;}
+
+    
+    inline CreateHsmConfigurationResult& WithHsmConfiguration(HsmConfiguration&& value) { SetHsmConfiguration(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateHsmConfigurationResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateHsmConfigurationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateHsmConfigurationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     HsmConfiguration m_hsmConfiguration;

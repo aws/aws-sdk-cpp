@@ -49,10 +49,16 @@ namespace Model
      <p>The ARN of the resource that has pending maintenance actions.</p>
     */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
     /*
      <p>The ARN of the resource that has pending maintenance actions.</p>
     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /*
+     <p>The ARN of the resource that has pending maintenance actions.</p>
+    */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /*
      <p>The ARN of the resource that has pending maintenance actions.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The ARN of the resource that has pending maintenance actions.</p>
     */
-    inline ResourcePendingMaintenanceActions&  WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+    inline ResourcePendingMaintenanceActions& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /*
+     <p>The ARN of the resource that has pending maintenance actions.</p>
+    */
+    inline ResourcePendingMaintenanceActions& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(value); return *this;}
 
     /*
      <p>The ARN of the resource that has pending maintenance actions.</p>
@@ -73,6 +84,7 @@ namespace Model
      <p>A list that provides details about the pending maintenance actions for the resource.</p>
     */
     inline const Aws::Vector<PendingMaintenanceAction>& GetPendingMaintenanceActionDetails() const{ return m_pendingMaintenanceActionDetails; }
+
     /*
      <p>A list that provides details about the pending maintenance actions for the resource.</p>
     */
@@ -81,12 +93,27 @@ namespace Model
     /*
      <p>A list that provides details about the pending maintenance actions for the resource.</p>
     */
-    inline ResourcePendingMaintenanceActions&  WithPendingMaintenanceActionDetails(const Aws::Vector<PendingMaintenanceAction>& value) { SetPendingMaintenanceActionDetails(value); return *this;}
+    inline void SetPendingMaintenanceActionDetails(Aws::Vector<PendingMaintenanceAction>&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails = value; }
+
+    /*
+     <p>A list that provides details about the pending maintenance actions for the resource.</p>
+    */
+    inline ResourcePendingMaintenanceActions& WithPendingMaintenanceActionDetails(const Aws::Vector<PendingMaintenanceAction>& value) { SetPendingMaintenanceActionDetails(value); return *this;}
+
+    /*
+     <p>A list that provides details about the pending maintenance actions for the resource.</p>
+    */
+    inline ResourcePendingMaintenanceActions& WithPendingMaintenanceActionDetails(Aws::Vector<PendingMaintenanceAction>&& value) { SetPendingMaintenanceActionDetails(value); return *this;}
 
     /*
      <p>A list that provides details about the pending maintenance actions for the resource.</p>
     */
     inline ResourcePendingMaintenanceActions& AddPendingMaintenanceActionDetails(const PendingMaintenanceAction& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails.push_back(value); return *this; }
+
+    /*
+     <p>A list that provides details about the pending maintenance actions for the resource.</p>
+    */
+    inline ResourcePendingMaintenanceActions& AddPendingMaintenanceActionDetails(PendingMaintenanceAction&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceIdentifier;

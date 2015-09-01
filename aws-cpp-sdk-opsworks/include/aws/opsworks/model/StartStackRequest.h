@@ -39,10 +39,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline StartStackRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline StartStackRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline StartStackRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>

@@ -47,10 +47,16 @@ namespace Model
      <p>The DNS name of the load balancer.</p>
     */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
+
     /*
      <p>The DNS name of the load balancer.</p>
     */
     inline void SetDNSName(const Aws::String& value) { m_dNSName = value; }
+
+    /*
+     <p>The DNS name of the load balancer.</p>
+    */
+    inline void SetDNSName(Aws::String&& value) { m_dNSName = value; }
 
     /*
      <p>The DNS name of the load balancer.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The DNS name of the load balancer.</p>
     */
-    inline CreateLoadBalancerResult&  WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
+    inline CreateLoadBalancerResult& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
+
+    /*
+     <p>The DNS name of the load balancer.</p>
+    */
+    inline CreateLoadBalancerResult& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
 
     /*
      <p>The DNS name of the load balancer.</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateLoadBalancerResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_dNSName;

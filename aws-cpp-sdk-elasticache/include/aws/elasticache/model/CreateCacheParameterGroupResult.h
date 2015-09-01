@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const CacheParameterGroup& GetCacheParameterGroup() const{ return m_cacheParameterGroup; }
+
     
     inline void SetCacheParameterGroup(const CacheParameterGroup& value) { m_cacheParameterGroup = value; }
 
     
-    inline CreateCacheParameterGroupResult&  WithCacheParameterGroup(const CacheParameterGroup& value) { SetCacheParameterGroup(value); return *this;}
+    inline void SetCacheParameterGroup(CacheParameterGroup&& value) { m_cacheParameterGroup = value; }
+
+    
+    inline CreateCacheParameterGroupResult& WithCacheParameterGroup(const CacheParameterGroup& value) { SetCacheParameterGroup(value); return *this;}
+
+    
+    inline CreateCacheParameterGroupResult& WithCacheParameterGroup(CacheParameterGroup&& value) { SetCacheParameterGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateCacheParameterGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateCacheParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateCacheParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     CacheParameterGroup m_cacheParameterGroup;

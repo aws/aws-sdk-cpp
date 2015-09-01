@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the vault.</p>
     */
     inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+
     /*
      <p>The name of the vault.</p>
     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /*
      <p>The name of the vault.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the vault.</p>
     */
-    inline UploadArchiveRequest&  WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+    inline UploadArchiveRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline UploadArchiveRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
 
     /*
      <p>The name of the vault.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+    */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
-    inline UploadArchiveRequest&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline UploadArchiveRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+    */
+    inline UploadArchiveRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
@@ -87,10 +109,16 @@ namespace Model
      <p>The optional description of the archive you are uploading. </p>
     */
     inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
+
     /*
      <p>The optional description of the archive you are uploading. </p>
     */
     inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
+
+    /*
+     <p>The optional description of the archive you are uploading. </p>
+    */
+    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
 
     /*
      <p>The optional description of the archive you are uploading. </p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p>The optional description of the archive you are uploading. </p>
     */
-    inline UploadArchiveRequest&  WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+    inline UploadArchiveRequest& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+
+    /*
+     <p>The optional description of the archive you are uploading. </p>
+    */
+    inline UploadArchiveRequest& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(value); return *this;}
 
     /*
      <p>The optional description of the archive you are uploading. </p>
@@ -111,10 +144,16 @@ namespace Model
      <p>The SHA256 tree hash of the data being uploaded.</p>
     */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
     /*
      <p>The SHA256 tree hash of the data being uploaded.</p>
     */
     inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
+
+    /*
+     <p>The SHA256 tree hash of the data being uploaded.</p>
+    */
+    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = value; }
 
     /*
      <p>The SHA256 tree hash of the data being uploaded.</p>
@@ -124,7 +163,12 @@ namespace Model
     /*
      <p>The SHA256 tree hash of the data being uploaded.</p>
     */
-    inline UploadArchiveRequest&  WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
+    inline UploadArchiveRequest& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
+
+    /*
+     <p>The SHA256 tree hash of the data being uploaded.</p>
+    */
+    inline UploadArchiveRequest& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
 
     /*
      <p>The SHA256 tree hash of the data being uploaded.</p>

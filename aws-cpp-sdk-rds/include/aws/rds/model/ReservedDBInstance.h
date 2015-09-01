@@ -49,10 +49,16 @@ namespace Model
      <p> The unique identifier for the reservation. </p>
     */
     inline const Aws::String& GetReservedDBInstanceId() const{ return m_reservedDBInstanceId; }
+
     /*
      <p> The unique identifier for the reservation. </p>
     */
     inline void SetReservedDBInstanceId(const Aws::String& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
+
+    /*
+     <p> The unique identifier for the reservation. </p>
+    */
+    inline void SetReservedDBInstanceId(Aws::String&& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
 
     /*
      <p> The unique identifier for the reservation. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> The unique identifier for the reservation. </p>
     */
-    inline ReservedDBInstance&  WithReservedDBInstanceId(const Aws::String& value) { SetReservedDBInstanceId(value); return *this;}
+    inline ReservedDBInstance& WithReservedDBInstanceId(const Aws::String& value) { SetReservedDBInstanceId(value); return *this;}
+
+    /*
+     <p> The unique identifier for the reservation. </p>
+    */
+    inline ReservedDBInstance& WithReservedDBInstanceId(Aws::String&& value) { SetReservedDBInstanceId(value); return *this;}
 
     /*
      <p> The unique identifier for the reservation. </p>
@@ -73,10 +84,16 @@ namespace Model
      <p> The offering identifier. </p>
     */
     inline const Aws::String& GetReservedDBInstancesOfferingId() const{ return m_reservedDBInstancesOfferingId; }
+
     /*
      <p> The offering identifier. </p>
     */
     inline void SetReservedDBInstancesOfferingId(const Aws::String& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
+
+    /*
+     <p> The offering identifier. </p>
+    */
+    inline void SetReservedDBInstancesOfferingId(Aws::String&& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
 
     /*
      <p> The offering identifier. </p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p> The offering identifier. </p>
     */
-    inline ReservedDBInstance&  WithReservedDBInstancesOfferingId(const Aws::String& value) { SetReservedDBInstancesOfferingId(value); return *this;}
+    inline ReservedDBInstance& WithReservedDBInstancesOfferingId(const Aws::String& value) { SetReservedDBInstancesOfferingId(value); return *this;}
+
+    /*
+     <p> The offering identifier. </p>
+    */
+    inline ReservedDBInstance& WithReservedDBInstancesOfferingId(Aws::String&& value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
     /*
      <p> The offering identifier. </p>
@@ -97,10 +119,16 @@ namespace Model
      <p> The DB instance class for the reserved DB instance. </p>
     */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
     /*
      <p> The DB instance class for the reserved DB instance. </p>
     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+
+    /*
+     <p> The DB instance class for the reserved DB instance. </p>
+    */
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
      <p> The DB instance class for the reserved DB instance. </p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p> The DB instance class for the reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
+    inline ReservedDBInstance& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
+
+    /*
+     <p> The DB instance class for the reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /*
      <p> The DB instance class for the reserved DB instance. </p>
@@ -121,6 +154,7 @@ namespace Model
      <p> The time the reservation started. </p>
     */
     inline double GetStartTime() const{ return m_startTime; }
+
     /*
      <p> The time the reservation started. </p>
     */
@@ -129,12 +163,13 @@ namespace Model
     /*
      <p> The time the reservation started. </p>
     */
-    inline ReservedDBInstance&  WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline ReservedDBInstance& WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /*
      <p> The duration of the reservation in seconds. </p>
     */
     inline long GetDuration() const{ return m_duration; }
+
     /*
      <p> The duration of the reservation in seconds. </p>
     */
@@ -143,12 +178,13 @@ namespace Model
     /*
      <p> The duration of the reservation in seconds. </p>
     */
-    inline ReservedDBInstance&  WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedDBInstance& WithDuration(long value) { SetDuration(value); return *this;}
 
     /*
      <p> The fixed price charged for this reserved DB instance. </p>
     */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
+
     /*
      <p> The fixed price charged for this reserved DB instance. </p>
     */
@@ -157,12 +193,13 @@ namespace Model
     /*
      <p> The fixed price charged for this reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
+    inline ReservedDBInstance& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
     /*
      <p> The hourly price charged for this reserved DB instance. </p>
     */
     inline double GetUsagePrice() const{ return m_usagePrice; }
+
     /*
      <p> The hourly price charged for this reserved DB instance. </p>
     */
@@ -171,16 +208,22 @@ namespace Model
     /*
      <p> The hourly price charged for this reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+    inline ReservedDBInstance& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
 
     /*
      <p> The currency code for the reserved DB instance. </p>
     */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
     /*
      <p> The currency code for the reserved DB instance. </p>
     */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+
+    /*
+     <p> The currency code for the reserved DB instance. </p>
+    */
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /*
      <p> The currency code for the reserved DB instance. </p>
@@ -190,7 +233,12 @@ namespace Model
     /*
      <p> The currency code for the reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
+    inline ReservedDBInstance& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
+
+    /*
+     <p> The currency code for the reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(value); return *this;}
 
     /*
      <p> The currency code for the reserved DB instance. </p>
@@ -201,6 +249,7 @@ namespace Model
      <p> The number of reserved DB instances. </p>
     */
     inline long GetDBInstanceCount() const{ return m_dBInstanceCount; }
+
     /*
      <p> The number of reserved DB instances. </p>
     */
@@ -209,16 +258,22 @@ namespace Model
     /*
      <p> The number of reserved DB instances. </p>
     */
-    inline ReservedDBInstance&  WithDBInstanceCount(long value) { SetDBInstanceCount(value); return *this;}
+    inline ReservedDBInstance& WithDBInstanceCount(long value) { SetDBInstanceCount(value); return *this;}
 
     /*
      <p> The description of the reserved DB instance. </p>
     */
     inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
+
     /*
      <p> The description of the reserved DB instance. </p>
     */
     inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+
+    /*
+     <p> The description of the reserved DB instance. </p>
+    */
+    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /*
      <p> The description of the reserved DB instance. </p>
@@ -228,7 +283,12 @@ namespace Model
     /*
      <p> The description of the reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithProductDescription(const Aws::String& value) { SetProductDescription(value); return *this;}
+    inline ReservedDBInstance& WithProductDescription(const Aws::String& value) { SetProductDescription(value); return *this;}
+
+    /*
+     <p> The description of the reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithProductDescription(Aws::String&& value) { SetProductDescription(value); return *this;}
 
     /*
      <p> The description of the reserved DB instance. </p>
@@ -239,10 +299,16 @@ namespace Model
      <p> The offering type of this reserved DB instance. </p>
     */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+
     /*
      <p> The offering type of this reserved DB instance. </p>
     */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+
+    /*
+     <p> The offering type of this reserved DB instance. </p>
+    */
+    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /*
      <p> The offering type of this reserved DB instance. </p>
@@ -252,7 +318,12 @@ namespace Model
     /*
      <p> The offering type of this reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
+    inline ReservedDBInstance& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
+
+    /*
+     <p> The offering type of this reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
 
     /*
      <p> The offering type of this reserved DB instance. </p>
@@ -263,6 +334,7 @@ namespace Model
      <p> Indicates if the reservation applies to Multi-AZ deployments. </p>
     */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
+
     /*
      <p> Indicates if the reservation applies to Multi-AZ deployments. </p>
     */
@@ -271,16 +343,22 @@ namespace Model
     /*
      <p> Indicates if the reservation applies to Multi-AZ deployments. </p>
     */
-    inline ReservedDBInstance&  WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+    inline ReservedDBInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
     /*
      <p> The state of the reserved DB instance. </p>
     */
     inline const Aws::String& GetState() const{ return m_state; }
+
     /*
      <p> The state of the reserved DB instance. </p>
     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p> The state of the reserved DB instance. </p>
+    */
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /*
      <p> The state of the reserved DB instance. </p>
@@ -290,7 +368,12 @@ namespace Model
     /*
      <p> The state of the reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithState(const Aws::String& value) { SetState(value); return *this;}
+    inline ReservedDBInstance& WithState(const Aws::String& value) { SetState(value); return *this;}
+
+    /*
+     <p> The state of the reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithState(Aws::String&& value) { SetState(value); return *this;}
 
     /*
      <p> The state of the reserved DB instance. </p>
@@ -301,6 +384,7 @@ namespace Model
      <p> The recurring price charged to run this reserved DB instance. </p>
     */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+
     /*
      <p> The recurring price charged to run this reserved DB instance. </p>
     */
@@ -309,12 +393,27 @@ namespace Model
     /*
      <p> The recurring price charged to run this reserved DB instance. </p>
     */
-    inline ReservedDBInstance&  WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
+    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
+
+    /*
+     <p> The recurring price charged to run this reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
+
+    /*
+     <p> The recurring price charged to run this reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
 
     /*
      <p> The recurring price charged to run this reserved DB instance. </p>
     */
     inline ReservedDBInstance& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
+
+    /*
+     <p> The recurring price charged to run this reserved DB instance. </p>
+    */
+    inline ReservedDBInstance& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
   private:
     Aws::String m_reservedDBInstanceId;

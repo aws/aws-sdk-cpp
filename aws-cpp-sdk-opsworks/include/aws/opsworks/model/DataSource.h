@@ -44,10 +44,16 @@ namespace Model
      <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
     */
     inline const Aws::String& GetType() const{ return m_type; }
+
     /*
      <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+    */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
     */
-    inline DataSource&  WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline DataSource& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /*
+     <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+    */
+    inline DataSource& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /*
      <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The data source's ARN.</p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p>The data source's ARN.</p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>The data source's ARN.</p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The data source's ARN.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The data source's ARN.</p>
     */
-    inline DataSource&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline DataSource& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>The data source's ARN.</p>
+    */
+    inline DataSource& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p>The data source's ARN.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The database name.</p>
     */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
     /*
      <p>The database name.</p>
     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+
+    /*
+     <p>The database name.</p>
+    */
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /*
      <p>The database name.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The database name.</p>
     */
-    inline DataSource&  WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+    inline DataSource& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+
+    /*
+     <p>The database name.</p>
+    */
+    inline DataSource& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
 
     /*
      <p>The database name.</p>

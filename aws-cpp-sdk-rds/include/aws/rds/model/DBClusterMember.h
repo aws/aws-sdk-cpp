@@ -47,10 +47,16 @@ namespace Model
      <p>Specifies the instance identifier for this member of the DB cluster.</p>
     */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
     /*
      <p>Specifies the instance identifier for this member of the DB cluster.</p>
     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+
+    /*
+     <p>Specifies the instance identifier for this member of the DB cluster.</p>
+    */
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p>Specifies the instance identifier for this member of the DB cluster.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Specifies the instance identifier for this member of the DB cluster.</p>
     */
-    inline DBClusterMember&  WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline DBClusterMember& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+
+    /*
+     <p>Specifies the instance identifier for this member of the DB cluster.</p>
+    */
+    inline DBClusterMember& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
      <p>Specifies the instance identifier for this member of the DB cluster.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
     */
     inline bool GetIsClusterWriter() const{ return m_isClusterWriter; }
+
     /*
      <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
     */
@@ -79,16 +91,22 @@ namespace Model
     /*
      <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
     */
-    inline DBClusterMember&  WithIsClusterWriter(bool value) { SetIsClusterWriter(value); return *this;}
+    inline DBClusterMember& WithIsClusterWriter(bool value) { SetIsClusterWriter(value); return *this;}
 
     /*
      <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>
     */
     inline const Aws::String& GetDBClusterParameterGroupStatus() const{ return m_dBClusterParameterGroupStatus; }
+
     /*
      <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>
     */
     inline void SetDBClusterParameterGroupStatus(const Aws::String& value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus = value; }
+
+    /*
+     <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>
+    */
+    inline void SetDBClusterParameterGroupStatus(Aws::String&& value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus = value; }
 
     /*
      <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>
@@ -98,7 +116,12 @@ namespace Model
     /*
      <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>
     */
-    inline DBClusterMember&  WithDBClusterParameterGroupStatus(const Aws::String& value) { SetDBClusterParameterGroupStatus(value); return *this;}
+    inline DBClusterMember& WithDBClusterParameterGroupStatus(const Aws::String& value) { SetDBClusterParameterGroupStatus(value); return *this;}
+
+    /*
+     <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>
+    */
+    inline DBClusterMember& WithDBClusterParameterGroupStatus(Aws::String&& value) { SetDBClusterParameterGroupStatus(value); return *this;}
 
     /*
      <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster. </p>

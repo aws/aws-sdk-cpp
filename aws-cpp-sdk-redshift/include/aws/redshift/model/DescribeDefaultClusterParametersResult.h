@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const DefaultClusterParameters& GetDefaultClusterParameters() const{ return m_defaultClusterParameters; }
+
     
     inline void SetDefaultClusterParameters(const DefaultClusterParameters& value) { m_defaultClusterParameters = value; }
 
     
-    inline DescribeDefaultClusterParametersResult&  WithDefaultClusterParameters(const DefaultClusterParameters& value) { SetDefaultClusterParameters(value); return *this;}
+    inline void SetDefaultClusterParameters(DefaultClusterParameters&& value) { m_defaultClusterParameters = value; }
+
+    
+    inline DescribeDefaultClusterParametersResult& WithDefaultClusterParameters(const DefaultClusterParameters& value) { SetDefaultClusterParameters(value); return *this;}
+
+    
+    inline DescribeDefaultClusterParametersResult& WithDefaultClusterParameters(DefaultClusterParameters&& value) { SetDefaultClusterParameters(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeDefaultClusterParametersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeDefaultClusterParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeDefaultClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     DefaultClusterParameters m_defaultClusterParameters;

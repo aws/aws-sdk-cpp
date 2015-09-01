@@ -46,6 +46,7 @@ namespace Model
      The number of cache behaviors for this distribution.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of cache behaviors for this distribution.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      The number of cache behaviors for this distribution.
     */
-    inline CacheBehaviors&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CacheBehaviors& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
     */
     inline const Aws::Vector<CacheBehavior>& GetItems() const{ return m_items; }
+
     /*
      Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
     */
@@ -68,12 +70,27 @@ namespace Model
     /*
      Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
     */
-    inline CacheBehaviors&  WithItems(const Aws::Vector<CacheBehavior>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<CacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
+    */
+    inline CacheBehaviors& WithItems(const Aws::Vector<CacheBehavior>& value) { SetItems(value); return *this;}
+
+    /*
+     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
+    */
+    inline CacheBehaviors& WithItems(Aws::Vector<CacheBehavior>&& value) { SetItems(value); return *this;}
 
     /*
      Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
     */
     inline CacheBehaviors& AddItems(const CacheBehavior& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
+    */
+    inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     long m_quantity;

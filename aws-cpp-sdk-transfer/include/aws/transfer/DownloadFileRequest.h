@@ -53,6 +53,8 @@ public:
 
     void OnDataReceived(const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long);
 
+    uint32_t GetRetries() const { return m_retries; }
+
     friend class TransferClient;
 
 private:
@@ -65,10 +67,13 @@ private:
 
     void GetContents();
 
+    bool DoRetry();
+
     virtual bool DoCancelAction() override;
 
     mutable std::mutex m_fileRequestMutex;
 
+    uint32_t m_retries;
     bool m_gotContents;
 };
 

@@ -40,10 +40,16 @@ namespace Model
      <p>The ID of the pipeline.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline DeletePipelineRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline DeletePipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline DeletePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline.</p>

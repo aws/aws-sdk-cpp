@@ -25,7 +25,7 @@ file(GLOB LOGGING_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-logging-tests/LoggingT
 file(GLOB IDENTITY_MANAGEMENT_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-identity-management-tests/auth/*.cpp")
 file(GLOB TEST_SRC "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp")
 
-# commented-out tests are not working on android yet
+# commented-out tests are not working on android yet due to file permissions/location/management issues
 file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC 
     ${CORE_AWS_SRC}
     ${CORE_AWS_AUTH_SRC}
@@ -64,7 +64,9 @@ set(AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-logging/include/"
+    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-iam/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-identity-management/include/"
+    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-access-management/include/"
     "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
 )
 
@@ -84,7 +86,9 @@ target_link_libraries(android-unified-tests
 		      aws-cpp-sdk-cognito-identity
 		      aws-cpp-sdk-transfer
 		      aws-cpp-sdk-logging
+                      aws-cpp-sdk-iam
 		      aws-cpp-sdk-identity-management
+		      aws-cpp-sdk-access-management
 		      testing-resources 
 		      aws-cpp-sdk-core 
 		      ${PLATFORM_DEP_LIBS})

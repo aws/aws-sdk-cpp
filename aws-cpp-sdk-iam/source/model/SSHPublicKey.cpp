@@ -53,36 +53,66 @@ SSHPublicKey& SSHPublicKey::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode sSHPublicKeyIdNode = resultNode.FirstChild("SSHPublicKeyId");
+    if(sSHPublicKeyIdNode.IsNull())
+    {
+      sSHPublicKeyIdNode = resultNode;
+    }
+
     if(!sSHPublicKeyIdNode.IsNull())
     {
       m_sSHPublicKeyId = StringUtils::Trim(sSHPublicKeyIdNode.GetText().c_str());
       m_sSHPublicKeyIdHasBeenSet = true;
     }
     XmlNode fingerprintNode = resultNode.FirstChild("Fingerprint");
+    if(fingerprintNode.IsNull())
+    {
+      fingerprintNode = resultNode;
+    }
+
     if(!fingerprintNode.IsNull())
     {
       m_fingerprint = StringUtils::Trim(fingerprintNode.GetText().c_str());
       m_fingerprintHasBeenSet = true;
     }
     XmlNode sSHPublicKeyBodyNode = resultNode.FirstChild("SSHPublicKeyBody");
+    if(sSHPublicKeyBodyNode.IsNull())
+    {
+      sSHPublicKeyBodyNode = resultNode;
+    }
+
     if(!sSHPublicKeyBodyNode.IsNull())
     {
       m_sSHPublicKeyBody = StringUtils::Trim(sSHPublicKeyBodyNode.GetText().c_str());
       m_sSHPublicKeyBodyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
-      m_status = statusTypeMapper::GetstatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
+    if(uploadDateNode.IsNull())
+    {
+      uploadDateNode = resultNode;
+    }
+
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());
@@ -113,7 +143,7 @@ void SSHPublicKey::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
   if(m_uploadDateHasBeenSet)
   {
@@ -141,7 +171,7 @@ void SSHPublicKey::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+      oStream << location << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
   if(m_uploadDateHasBeenSet)
   {

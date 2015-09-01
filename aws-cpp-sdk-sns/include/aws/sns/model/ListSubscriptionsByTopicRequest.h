@@ -38,10 +38,16 @@ namespace Model
      <p>The ARN of the topic for which you wish to find subscriptions.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The ARN of the topic for which you wish to find subscriptions.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic for which you wish to find subscriptions.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The ARN of the topic for which you wish to find subscriptions.</p>
     */
-    inline ListSubscriptionsByTopicRequest&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline ListSubscriptionsByTopicRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    */
+    inline ListSubscriptionsByTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The ARN of the topic for which you wish to find subscriptions.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     */
-    inline ListSubscriptionsByTopicRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListSubscriptionsByTopicRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    */
+    inline ListSubscriptionsByTopicRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>

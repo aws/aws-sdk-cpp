@@ -48,10 +48,16 @@ namespace Model
      An identity pool ID in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      An identity pool ID in the format REGION:GUID.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -61,7 +67,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline ListIdentitiesResult&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline ListIdentitiesResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline ListIdentitiesResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -72,6 +83,7 @@ namespace Model
      An object containing a set of identities and associated mappings.
     */
     inline const Aws::Vector<IdentityDescription>& GetIdentities() const{ return m_identities; }
+
     /*
      An object containing a set of identities and associated mappings.
     */
@@ -80,7 +92,17 @@ namespace Model
     /*
      An object containing a set of identities and associated mappings.
     */
-    inline ListIdentitiesResult&  WithIdentities(const Aws::Vector<IdentityDescription>& value) { SetIdentities(value); return *this;}
+    inline void SetIdentities(Aws::Vector<IdentityDescription>&& value) { m_identities = value; }
+
+    /*
+     An object containing a set of identities and associated mappings.
+    */
+    inline ListIdentitiesResult& WithIdentities(const Aws::Vector<IdentityDescription>& value) { SetIdentities(value); return *this;}
+
+    /*
+     An object containing a set of identities and associated mappings.
+    */
+    inline ListIdentitiesResult& WithIdentities(Aws::Vector<IdentityDescription>&& value) { SetIdentities(value); return *this;}
 
     /*
      An object containing a set of identities and associated mappings.
@@ -88,13 +110,24 @@ namespace Model
     inline ListIdentitiesResult& AddIdentities(const IdentityDescription& value) { m_identities.push_back(value); return *this; }
 
     /*
+     An object containing a set of identities and associated mappings.
+    */
+    inline ListIdentitiesResult& AddIdentities(IdentityDescription&& value) { m_identities.push_back(value); return *this; }
+
+    /*
      A pagination token.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     A pagination token.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      A pagination token.
@@ -104,7 +137,12 @@ namespace Model
     /*
      A pagination token.
     */
-    inline ListIdentitiesResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token.
+    */
+    inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token.

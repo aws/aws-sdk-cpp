@@ -47,6 +47,7 @@ namespace Model
      <p>A list of instances IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetInstancesList() const{ return m_instancesList; }
+
     /*
      <p>A list of instances IDs.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A list of instances IDs.</p>
     */
-    inline ListDeploymentInstancesResult&  WithInstancesList(const Aws::Vector<Aws::String>& value) { SetInstancesList(value); return *this;}
+    inline void SetInstancesList(Aws::Vector<Aws::String>&& value) { m_instancesList = value; }
+
+    /*
+     <p>A list of instances IDs.</p>
+    */
+    inline ListDeploymentInstancesResult& WithInstancesList(const Aws::Vector<Aws::String>& value) { SetInstancesList(value); return *this;}
+
+    /*
+     <p>A list of instances IDs.</p>
+    */
+    inline ListDeploymentInstancesResult& WithInstancesList(Aws::Vector<Aws::String>&& value) { SetInstancesList(value); return *this;}
 
     /*
      <p>A list of instances IDs.</p>
     */
     inline ListDeploymentInstancesResult& AddInstancesList(const Aws::String& value) { m_instancesList.push_back(value); return *this; }
+
+    /*
+     <p>A list of instances IDs.</p>
+    */
+    inline ListDeploymentInstancesResult& AddInstancesList(Aws::String&& value) { m_instancesList.push_back(value); return *this; }
 
     /*
      <p>A list of instances IDs.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     */
-    inline ListDeploymentInstancesResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
+    */
+    inline ListDeploymentInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>

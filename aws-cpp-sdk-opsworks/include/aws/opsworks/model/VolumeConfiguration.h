@@ -44,10 +44,16 @@ namespace Model
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
     inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
+
+    /*
+     <p>The volume mount point. For example "/dev/sdh".</p>
+    */
+    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
-    inline VolumeConfiguration&  WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
+    inline VolumeConfiguration& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
+
+    /*
+     <p>The volume mount point. For example "/dev/sdh".</p>
+    */
+    inline VolumeConfiguration& WithMountPoint(Aws::String&& value) { SetMountPoint(value); return *this;}
 
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     */
     inline long GetRaidLevel() const{ return m_raidLevel; }
+
     /*
      <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     */
@@ -76,12 +88,13 @@ namespace Model
     /*
      <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     */
-    inline VolumeConfiguration&  WithRaidLevel(long value) { SetRaidLevel(value); return *this;}
+    inline VolumeConfiguration& WithRaidLevel(long value) { SetRaidLevel(value); return *this;}
 
     /*
      <p>The number of disks in the volume.</p>
     */
     inline long GetNumberOfDisks() const{ return m_numberOfDisks; }
+
     /*
      <p>The number of disks in the volume.</p>
     */
@@ -90,12 +103,13 @@ namespace Model
     /*
      <p>The number of disks in the volume.</p>
     */
-    inline VolumeConfiguration&  WithNumberOfDisks(long value) { SetNumberOfDisks(value); return *this;}
+    inline VolumeConfiguration& WithNumberOfDisks(long value) { SetNumberOfDisks(value); return *this;}
 
     /*
      <p>The volume size.</p>
     */
     inline long GetSize() const{ return m_size; }
+
     /*
      <p>The volume size.</p>
     */
@@ -104,16 +118,22 @@ namespace Model
     /*
      <p>The volume size.</p>
     */
-    inline VolumeConfiguration&  WithSize(long value) { SetSize(value); return *this;}
+    inline VolumeConfiguration& WithSize(long value) { SetSize(value); return *this;}
 
     /*
      <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
     */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+
     /*
      <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
     */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+
+    /*
+     <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
+    */
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /*
      <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
@@ -123,7 +143,12 @@ namespace Model
     /*
      <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
     */
-    inline VolumeConfiguration&  WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
+    inline VolumeConfiguration& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
+
+    /*
+     <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
+    */
+    inline VolumeConfiguration& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
 
     /*
      <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
@@ -134,6 +159,7 @@ namespace Model
      <p>For PIOPS volumes, the IOPS per disk.</p>
     */
     inline long GetIops() const{ return m_iops; }
+
     /*
      <p>For PIOPS volumes, the IOPS per disk.</p>
     */
@@ -142,7 +168,7 @@ namespace Model
     /*
      <p>For PIOPS volumes, the IOPS per disk.</p>
     */
-    inline VolumeConfiguration&  WithIops(long value) { SetIops(value); return *this;}
+    inline VolumeConfiguration& WithIops(long value) { SetIops(value); return *this;}
 
   private:
     Aws::String m_mountPoint;

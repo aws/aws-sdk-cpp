@@ -45,10 +45,16 @@ namespace Model
      <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+
     /*
      <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
+
+    /*
+     <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
+    */
+    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
 
     /*
      <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     */
-    inline Selector&  WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
+    inline Selector& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
+
+    /*
+     <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
+    */
+    inline Selector& WithFieldName(Aws::String&& value) { SetFieldName(value); return *this;}
 
     /*
      <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
@@ -67,11 +78,18 @@ namespace Model
 
     
     inline const Operator& GetOperator() const{ return m_operator; }
+
     
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
     
-    inline Selector&  WithOperator(const Operator& value) { SetOperator(value); return *this;}
+    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = value; }
+
+    
+    inline Selector& WithOperator(const Operator& value) { SetOperator(value); return *this;}
+
+    
+    inline Selector& WithOperator(Operator&& value) { SetOperator(value); return *this;}
 
   private:
     Aws::String m_fieldName;

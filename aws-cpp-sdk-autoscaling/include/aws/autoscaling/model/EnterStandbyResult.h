@@ -48,6 +48,7 @@ namespace Model
      <p>The activities related to moving instances into <code>Standby</code> mode.</p>
     */
     inline const Aws::Vector<Activity>& GetActivities() const{ return m_activities; }
+
     /*
      <p>The activities related to moving instances into <code>Standby</code> mode.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>The activities related to moving instances into <code>Standby</code> mode.</p>
     */
-    inline EnterStandbyResult&  WithActivities(const Aws::Vector<Activity>& value) { SetActivities(value); return *this;}
+    inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = value; }
+
+    /*
+     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
+    */
+    inline EnterStandbyResult& WithActivities(const Aws::Vector<Activity>& value) { SetActivities(value); return *this;}
+
+    /*
+     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
+    */
+    inline EnterStandbyResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(value); return *this;}
 
     /*
      <p>The activities related to moving instances into <code>Standby</code> mode.</p>
     */
     inline EnterStandbyResult& AddActivities(const Activity& value) { m_activities.push_back(value); return *this; }
 
+    /*
+     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
+    */
+    inline EnterStandbyResult& AddActivities(Activity&& value) { m_activities.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline EnterStandbyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline EnterStandbyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline EnterStandbyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Activity> m_activities;

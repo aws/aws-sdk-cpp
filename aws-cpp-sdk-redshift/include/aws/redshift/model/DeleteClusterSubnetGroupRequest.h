@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the cluster subnet group name to be deleted.</p>
     */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
+
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>
     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+
+    /*
+     <p>The name of the cluster subnet group name to be deleted.</p>
+    */
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>
     */
-    inline DeleteClusterSubnetGroupRequest&  WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the cluster subnet group name to be deleted.</p>
+    */
+    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
 
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>

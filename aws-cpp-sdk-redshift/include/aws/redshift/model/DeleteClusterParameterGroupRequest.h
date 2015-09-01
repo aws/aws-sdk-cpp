@@ -38,10 +38,16 @@ namespace Model
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
     */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+
+    /*
+     <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
+    */
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
     */
-    inline DeleteClusterParameterGroupRequest&  WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+    inline DeleteClusterParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
+
+    /*
+     <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
+    */
+    inline DeleteClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
 
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>

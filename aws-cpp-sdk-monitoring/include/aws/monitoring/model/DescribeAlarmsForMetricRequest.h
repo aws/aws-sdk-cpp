@@ -41,10 +41,16 @@ namespace Model
      <p> The name of the metric. </p>
     */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
     /*
      <p> The name of the metric. </p>
     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+
+    /*
+     <p> The name of the metric. </p>
+    */
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /*
      <p> The name of the metric. </p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p> The name of the metric. </p>
     */
-    inline DescribeAlarmsForMetricRequest&  WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+    inline DescribeAlarmsForMetricRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+
+    /*
+     <p> The name of the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
     /*
      <p> The name of the metric. </p>
@@ -65,10 +76,16 @@ namespace Model
      <p> The namespace of the metric. </p>
     */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
     /*
      <p> The namespace of the metric. </p>
     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /*
+     <p> The namespace of the metric. </p>
+    */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> The namespace of the metric. </p>
@@ -78,7 +95,12 @@ namespace Model
     /*
      <p> The namespace of the metric. </p>
     */
-    inline DescribeAlarmsForMetricRequest&  WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+    inline DescribeAlarmsForMetricRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /*
+     <p> The namespace of the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /*
      <p> The namespace of the metric. </p>
@@ -89,6 +111,7 @@ namespace Model
      <p> The statistic for the metric. </p>
     */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
+
     /*
      <p> The statistic for the metric. </p>
     */
@@ -97,12 +120,23 @@ namespace Model
     /*
      <p> The statistic for the metric. </p>
     */
-    inline DescribeAlarmsForMetricRequest&  WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
+    inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = value; }
+
+    /*
+     <p> The statistic for the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
+
+    /*
+     <p> The statistic for the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithStatistic(Statistic&& value) { SetStatistic(value); return *this;}
 
     /*
      <p> The list of dimensions associated with the metric. </p>
     */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+
     /*
      <p> The list of dimensions associated with the metric. </p>
     */
@@ -111,7 +145,17 @@ namespace Model
     /*
      <p> The list of dimensions associated with the metric. </p>
     */
-    inline DescribeAlarmsForMetricRequest&  WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
+    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+
+    /*
+     <p> The list of dimensions associated with the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
+
+    /*
+     <p> The list of dimensions associated with the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
     /*
      <p> The list of dimensions associated with the metric. </p>
@@ -119,9 +163,15 @@ namespace Model
     inline DescribeAlarmsForMetricRequest& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /*
+     <p> The list of dimensions associated with the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+
+    /*
      <p> The period in seconds over which the statistic is applied. </p>
     */
     inline long GetPeriod() const{ return m_period; }
+
     /*
      <p> The period in seconds over which the statistic is applied. </p>
     */
@@ -130,12 +180,13 @@ namespace Model
     /*
      <p> The period in seconds over which the statistic is applied. </p>
     */
-    inline DescribeAlarmsForMetricRequest&  WithPeriod(long value) { SetPeriod(value); return *this;}
+    inline DescribeAlarmsForMetricRequest& WithPeriod(long value) { SetPeriod(value); return *this;}
 
     /*
      <p> The unit for the metric. </p>
     */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
+
     /*
      <p> The unit for the metric. </p>
     */
@@ -144,7 +195,17 @@ namespace Model
     /*
      <p> The unit for the metric. </p>
     */
-    inline DescribeAlarmsForMetricRequest&  WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
+    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
+
+    /*
+     <p> The unit for the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
+
+    /*
+     <p> The unit for the metric. </p>
+    */
+    inline DescribeAlarmsForMetricRequest& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 
   private:
     Aws::String m_metricName;

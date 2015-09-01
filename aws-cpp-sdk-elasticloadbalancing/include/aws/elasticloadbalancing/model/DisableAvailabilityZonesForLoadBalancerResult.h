@@ -48,6 +48,7 @@ namespace Model
      <p>The remaining Availability Zones for the load balancer.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
     /*
      <p>The remaining Availability Zones for the load balancer.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The remaining Availability Zones for the load balancer.</p>
     */
-    inline DisableAvailabilityZonesForLoadBalancerResult&  WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZones = value; }
+
+    /*
+     <p>The remaining Availability Zones for the load balancer.</p>
+    */
+    inline DisableAvailabilityZonesForLoadBalancerResult& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /*
+     <p>The remaining Availability Zones for the load balancer.</p>
+    */
+    inline DisableAvailabilityZonesForLoadBalancerResult& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
 
     /*
      <p>The remaining Availability Zones for the load balancer.</p>
@@ -66,15 +77,27 @@ namespace Model
     /*
      <p>The remaining Availability Zones for the load balancer.</p>
     */
+    inline DisableAvailabilityZonesForLoadBalancerResult& AddAvailabilityZones(Aws::String&& value) { m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>The remaining Availability Zones for the load balancer.</p>
+    */
     inline DisableAvailabilityZonesForLoadBalancerResult& AddAvailabilityZones(const char* value) { m_availabilityZones.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DisableAvailabilityZonesForLoadBalancerResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DisableAvailabilityZonesForLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DisableAvailabilityZonesForLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_availabilityZones;

@@ -44,10 +44,16 @@ namespace Model
      <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
     */
-    inline KeyValuePair&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline KeyValuePair& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
+    */
+    inline KeyValuePair& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the key value pair. For environment variables, this is the name of the environment variable.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>
     */
-    inline KeyValuePair&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline KeyValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>
+    */
+    inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>The value of the key value pair. For environment variables, this is the value of the environment variable.</p>

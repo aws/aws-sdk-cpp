@@ -47,6 +47,7 @@ namespace Model
      <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     */
     inline const Aws::Vector<ElasticLoadBalancer>& GetElasticLoadBalancers() const{ return m_elasticLoadBalancers; }
+
     /*
      <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     */
-    inline DescribeElasticLoadBalancersResult&  WithElasticLoadBalancers(const Aws::Vector<ElasticLoadBalancer>& value) { SetElasticLoadBalancers(value); return *this;}
+    inline void SetElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { m_elasticLoadBalancers = value; }
+
+    /*
+     <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+    */
+    inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(const Aws::Vector<ElasticLoadBalancer>& value) { SetElasticLoadBalancers(value); return *this;}
+
+    /*
+     <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+    */
+    inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { SetElasticLoadBalancers(value); return *this;}
 
     /*
      <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     */
     inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(const ElasticLoadBalancer& value) { m_elasticLoadBalancers.push_back(value); return *this; }
+
+    /*
+     <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+    */
+    inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancer&& value) { m_elasticLoadBalancers.push_back(value); return *this; }
 
   private:
     Aws::Vector<ElasticLoadBalancer> m_elasticLoadBalancers;

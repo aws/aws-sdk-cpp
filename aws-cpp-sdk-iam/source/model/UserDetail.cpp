@@ -57,30 +57,55 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
+    if(pathNode.IsNull())
+    {
+      pathNode = resultNode;
+    }
+
     if(!pathNode.IsNull())
     {
       m_path = StringUtils::Trim(pathNode.GetText().c_str());
       m_pathHasBeenSet = true;
     }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
+    if(userIdNode.IsNull())
+    {
+      userIdNode = resultNode;
+    }
+
     if(!userIdNode.IsNull())
     {
       m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
       m_userIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
+    if(arnNode.IsNull())
+    {
+      arnNode = resultNode;
+    }
+
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
+    if(createDateNode.IsNull())
+    {
+      createDateNode = resultNode;
+    }
+
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());

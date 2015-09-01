@@ -40,10 +40,16 @@ namespace Model
      An identity pool ID in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      An identity pool ID in the format REGION:GUID.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -53,7 +59,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline ListIdentitiesRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline ListIdentitiesRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline ListIdentitiesRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -64,6 +75,7 @@ namespace Model
      The maximum number of identities to return.
     */
     inline long GetMaxResults() const{ return m_maxResults; }
+
     /*
      The maximum number of identities to return.
     */
@@ -72,16 +84,22 @@ namespace Model
     /*
      The maximum number of identities to return.
     */
-    inline ListIdentitiesRequest&  WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListIdentitiesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
     /*
      A pagination token.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     A pagination token.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      A pagination token.
@@ -91,7 +109,12 @@ namespace Model
     /*
      A pagination token.
     */
-    inline ListIdentitiesRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListIdentitiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token.
+    */
+    inline ListIdentitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token.
@@ -102,6 +125,7 @@ namespace Model
      <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     */
     inline bool GetHideDisabled() const{ return m_hideDisabled; }
+
     /*
      <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     */
@@ -110,7 +134,7 @@ namespace Model
     /*
      <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     */
-    inline ListIdentitiesRequest&  WithHideDisabled(bool value) { SetHideDisabled(value); return *this;}
+    inline ListIdentitiesRequest& WithHideDisabled(bool value) { SetHideDisabled(value); return *this;}
 
   private:
     Aws::String m_identityPoolId;

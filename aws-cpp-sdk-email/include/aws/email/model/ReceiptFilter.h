@@ -46,25 +46,39 @@ namespace Model
 
     
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline ReceiptFilter&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ReceiptFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline ReceiptFilter& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline ReceiptFilter& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline const ReceiptIpFilter& GetIpFilter() const{ return m_ipFilter; }
+
     
     inline void SetIpFilter(const ReceiptIpFilter& value) { m_ipFilterHasBeenSet = true; m_ipFilter = value; }
 
     
-    inline ReceiptFilter&  WithIpFilter(const ReceiptIpFilter& value) { SetIpFilter(value); return *this;}
+    inline void SetIpFilter(ReceiptIpFilter&& value) { m_ipFilterHasBeenSet = true; m_ipFilter = value; }
+
+    
+    inline ReceiptFilter& WithIpFilter(const ReceiptIpFilter& value) { SetIpFilter(value); return *this;}
+
+    
+    inline ReceiptFilter& WithIpFilter(ReceiptIpFilter&& value) { SetIpFilter(value); return *this;}
 
   private:
     Aws::String m_name;

@@ -47,6 +47,7 @@ namespace Model
      <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     */
     inline const Aws::Vector<ElasticIp>& GetElasticIps() const{ return m_elasticIps; }
+
     /*
      <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     */
-    inline DescribeElasticIpsResult&  WithElasticIps(const Aws::Vector<ElasticIp>& value) { SetElasticIps(value); return *this;}
+    inline void SetElasticIps(Aws::Vector<ElasticIp>&& value) { m_elasticIps = value; }
+
+    /*
+     <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    */
+    inline DescribeElasticIpsResult& WithElasticIps(const Aws::Vector<ElasticIp>& value) { SetElasticIps(value); return *this;}
+
+    /*
+     <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    */
+    inline DescribeElasticIpsResult& WithElasticIps(Aws::Vector<ElasticIp>&& value) { SetElasticIps(value); return *this;}
 
     /*
      <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     */
     inline DescribeElasticIpsResult& AddElasticIps(const ElasticIp& value) { m_elasticIps.push_back(value); return *this; }
+
+    /*
+     <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    */
+    inline DescribeElasticIpsResult& AddElasticIps(ElasticIp&& value) { m_elasticIps.push_back(value); return *this; }
 
   private:
     Aws::Vector<ElasticIp> m_elasticIps;

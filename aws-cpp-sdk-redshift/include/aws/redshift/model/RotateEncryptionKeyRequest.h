@@ -38,10 +38,16 @@ namespace Model
      <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>
     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
     /*
      <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>
     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /*
+     <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>
+    */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>
     */
-    inline RotateEncryptionKeyRequest&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline RotateEncryptionKeyRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>
+    */
+    inline RotateEncryptionKeyRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /*
      <p> The unique identifier of the cluster that you want to rotate the encryption keys for. </p> <p> Constraints: Must be the name of valid cluster that has encryption enabled. </p>

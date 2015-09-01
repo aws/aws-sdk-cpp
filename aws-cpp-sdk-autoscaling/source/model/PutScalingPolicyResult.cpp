@@ -42,6 +42,11 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServic
   if(!resultNode.IsNull())
   {
     XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
+    if(policyARNNode.IsNull())
+    {
+      policyARNNode = resultNode;
+    }
+
     if(!policyARNNode.IsNull())
     {
       m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());

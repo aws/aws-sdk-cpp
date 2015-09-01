@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const TableDescription& GetTableDescription() const{ return m_tableDescription; }
+
     
     inline void SetTableDescription(const TableDescription& value) { m_tableDescription = value; }
 
     
-    inline DeleteTableResult&  WithTableDescription(const TableDescription& value) { SetTableDescription(value); return *this;}
+    inline void SetTableDescription(TableDescription&& value) { m_tableDescription = value; }
+
+    
+    inline DeleteTableResult& WithTableDescription(const TableDescription& value) { SetTableDescription(value); return *this;}
+
+    
+    inline DeleteTableResult& WithTableDescription(TableDescription&& value) { SetTableDescription(value); return *this;}
 
   private:
     TableDescription m_tableDescription;

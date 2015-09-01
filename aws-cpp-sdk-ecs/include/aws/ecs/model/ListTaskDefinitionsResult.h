@@ -47,6 +47,7 @@ namespace Model
      <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
     */
     inline const Aws::Vector<Aws::String>& GetTaskDefinitionArns() const{ return m_taskDefinitionArns; }
+
     /*
      <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
     */
-    inline ListTaskDefinitionsResult&  WithTaskDefinitionArns(const Aws::Vector<Aws::String>& value) { SetTaskDefinitionArns(value); return *this;}
+    inline void SetTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { m_taskDefinitionArns = value; }
+
+    /*
+     <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
+    */
+    inline ListTaskDefinitionsResult& WithTaskDefinitionArns(const Aws::Vector<Aws::String>& value) { SetTaskDefinitionArns(value); return *this;}
+
+    /*
+     <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
+    */
+    inline ListTaskDefinitionsResult& WithTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { SetTaskDefinitionArns(value); return *this;}
 
     /*
      <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
     */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(const Aws::String& value) { m_taskDefinitionArns.push_back(value); return *this; }
+
+    /*
+     <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
+    */
+    inline ListTaskDefinitionsResult& AddTaskDefinitionArns(Aws::String&& value) { m_taskDefinitionArns.push_back(value); return *this; }
 
     /*
      <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code> request.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
-    inline ListTaskDefinitionsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListTaskDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    */
+    inline ListTaskDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

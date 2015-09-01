@@ -38,10 +38,16 @@ namespace Model
      <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
     */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+
     /*
      <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+
+    /*
+     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
+    */
+    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /*
      <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
     */
-    inline DescribeEventCategoriesRequest&  WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
+    inline DescribeEventCategoriesRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
+
+    /*
+     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
+    */
+    inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
 
     /*
      <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>

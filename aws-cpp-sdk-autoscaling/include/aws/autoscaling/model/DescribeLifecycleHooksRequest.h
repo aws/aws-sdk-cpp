@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline DescribeLifecycleHooksRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the group.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The names of one or more lifecycle hooks.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const{ return m_lifecycleHookNames; }
+
     /*
      <p>The names of one or more lifecycle hooks.</p>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>The names of one or more lifecycle hooks.</p>
     */
-    inline DescribeLifecycleHooksRequest&  WithLifecycleHookNames(const Aws::Vector<Aws::String>& value) { SetLifecycleHookNames(value); return *this;}
+    inline void SetLifecycleHookNames(Aws::Vector<Aws::String>&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = value; }
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(const Aws::Vector<Aws::String>& value) { SetLifecycleHookNames(value); return *this;}
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(Aws::Vector<Aws::String>&& value) { SetLifecycleHookNames(value); return *this;}
 
     /*
      <p>The names of one or more lifecycle hooks.</p>
     */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const Aws::String& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(Aws::String&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
 
     /*
      <p>The names of one or more lifecycle hooks.</p>

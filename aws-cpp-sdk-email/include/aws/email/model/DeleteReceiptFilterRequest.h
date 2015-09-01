@@ -35,14 +35,21 @@ namespace Model
 
     
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
     
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+
+    
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     
-    inline DeleteReceiptFilterRequest&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+    inline DeleteReceiptFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+
+    
+    inline DeleteReceiptFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
     
     inline DeleteReceiptFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}

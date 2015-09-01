@@ -35,14 +35,21 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline GetBucketWebsiteRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline GetBucketWebsiteRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline GetBucketWebsiteRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline GetBucketWebsiteRequest& WithBucket(const char* value) { SetBucket(value); return *this;}

@@ -47,10 +47,16 @@ namespace Model
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
     */
-    inline StreamingDistribution&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline StreamingDistribution& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+    */
+    inline StreamingDistribution& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
@@ -71,10 +82,16 @@ namespace Model
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -84,7 +101,12 @@ namespace Model
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline StreamingDistribution&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline StreamingDistribution& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
+    */
+    inline StreamingDistribution& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -95,6 +117,7 @@ namespace Model
      The date and time the distribution was last modified.
     */
     inline double GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
     /*
      The date and time the distribution was last modified.
     */
@@ -103,16 +126,22 @@ namespace Model
     /*
      The date and time the distribution was last modified.
     */
-    inline StreamingDistribution&  WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
+    inline StreamingDistribution& WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
 
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /*
+     The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+    */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
@@ -122,7 +151,12 @@ namespace Model
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
     */
-    inline StreamingDistribution&  WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline StreamingDistribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /*
+     The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+    */
+    inline StreamingDistribution& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
@@ -133,6 +167,7 @@ namespace Model
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
+
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
@@ -141,12 +176,23 @@ namespace Model
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
-    inline StreamingDistribution&  WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
+    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
+
+    /*
+     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+    */
+    inline StreamingDistribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
+
+    /*
+     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+    */
+    inline StreamingDistribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(value); return *this;}
 
     /*
      The current configuration information for the streaming distribution.
     */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
+
     /*
      The current configuration information for the streaming distribution.
     */
@@ -155,7 +201,17 @@ namespace Model
     /*
      The current configuration information for the streaming distribution.
     */
-    inline StreamingDistribution&  WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
+    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
+
+    /*
+     The current configuration information for the streaming distribution.
+    */
+    inline StreamingDistribution& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
+
+    /*
+     The current configuration information for the streaming distribution.
+    */
+    inline StreamingDistribution& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(value); return *this;}
 
   private:
     Aws::String m_id;

@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the role associated with the policy.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name of the role associated with the policy.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name of the role associated with the policy.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role associated with the policy.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the role associated with the policy.</p>
     */
-    inline GetRolePolicyRequest&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline GetRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name of the role associated with the policy.</p>
+    */
+    inline GetRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name of the role associated with the policy.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the policy document to get.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy document to get.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy document to get.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document to get.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the policy document to get.</p>
     */
-    inline GetRolePolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline GetRolePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy document to get.</p>
+    */
+    inline GetRolePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy document to get.</p>

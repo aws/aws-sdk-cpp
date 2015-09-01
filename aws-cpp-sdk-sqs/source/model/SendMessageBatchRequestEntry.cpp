@@ -49,18 +49,33 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode messageBodyNode = resultNode.FirstChild("MessageBody");
+    if(messageBodyNode.IsNull())
+    {
+      messageBodyNode = resultNode;
+    }
+
     if(!messageBodyNode.IsNull())
     {
       m_messageBody = StringUtils::Trim(messageBodyNode.GetText().c_str());
       m_messageBodyHasBeenSet = true;
     }
     XmlNode delaySecondsNode = resultNode.FirstChild("DelaySeconds");
+    if(delaySecondsNode.IsNull())
+    {
+      delaySecondsNode = resultNode;
+    }
+
     if(!delaySecondsNode.IsNull())
     {
       m_delaySeconds = StringUtils::ConvertToInt32(StringUtils::Trim(delaySecondsNode.GetText().c_str()).c_str());

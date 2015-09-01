@@ -44,10 +44,16 @@ namespace Model
      <p>The ID string of the event.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The ID string of the event.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The ID string of the event.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID string of the event.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The ID string of the event.</p>
     */
-    inline ServiceEvent&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ServiceEvent& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The ID string of the event.</p>
+    */
+    inline ServiceEvent& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The ID string of the event.</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
     */
     inline double GetCreatedAt() const{ return m_createdAt; }
+
     /*
      <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
     */
@@ -76,16 +88,22 @@ namespace Model
     /*
      <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
     */
-    inline ServiceEvent&  WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline ServiceEvent& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
 
     /*
      <p>The event message.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>The event message.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>The event message.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The event message.</p>
@@ -95,7 +113,12 @@ namespace Model
     /*
      <p>The event message.</p>
     */
-    inline ServiceEvent&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline ServiceEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>The event message.</p>
+    */
+    inline ServiceEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>The event message.</p>

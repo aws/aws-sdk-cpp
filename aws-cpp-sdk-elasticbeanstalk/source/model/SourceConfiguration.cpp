@@ -43,12 +43,22 @@ SourceConfiguration& SourceConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
+    if(applicationNameNode.IsNull())
+    {
+      applicationNameNode = resultNode;
+    }
+
     if(!applicationNameNode.IsNull())
     {
       m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
       m_applicationNameHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
+    if(templateNameNode.IsNull())
+    {
+      templateNameNode = resultNode;
+    }
+
     if(!templateNameNode.IsNull())
     {
       m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());

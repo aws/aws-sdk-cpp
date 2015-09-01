@@ -37,14 +37,21 @@ namespace Model
 
     
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     
-    inline CancelKeyDeletionRequest&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline CancelKeyDeletionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    
+    inline CancelKeyDeletionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     
     inline CancelKeyDeletionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}

@@ -46,6 +46,7 @@ namespace Model
      <p> The number of samples used for the statistic set. </p>
     */
     inline double GetSampleCount() const{ return m_sampleCount; }
+
     /*
      <p> The number of samples used for the statistic set. </p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p> The number of samples used for the statistic set. </p>
     */
-    inline StatisticSet&  WithSampleCount(double value) { SetSampleCount(value); return *this;}
+    inline StatisticSet& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
     /*
      <p> The sum of values for the sample set. </p>
     */
     inline double GetSum() const{ return m_sum; }
+
     /*
      <p> The sum of values for the sample set. </p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p> The sum of values for the sample set. </p>
     */
-    inline StatisticSet&  WithSum(double value) { SetSum(value); return *this;}
+    inline StatisticSet& WithSum(double value) { SetSum(value); return *this;}
 
     /*
      <p> The minimum value of the sample set. </p>
     */
     inline double GetMinimum() const{ return m_minimum; }
+
     /*
      <p> The minimum value of the sample set. </p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p> The minimum value of the sample set. </p>
     */
-    inline StatisticSet&  WithMinimum(double value) { SetMinimum(value); return *this;}
+    inline StatisticSet& WithMinimum(double value) { SetMinimum(value); return *this;}
 
     /*
      <p> The maximum value of the sample set. </p>
     */
     inline double GetMaximum() const{ return m_maximum; }
+
     /*
      <p> The maximum value of the sample set. </p>
     */
@@ -96,7 +100,7 @@ namespace Model
     /*
      <p> The maximum value of the sample set. </p>
     */
-    inline StatisticSet&  WithMaximum(double value) { SetMaximum(value); return *this;}
+    inline StatisticSet& WithMaximum(double value) { SetMaximum(value); return *this;}
 
   private:
     double m_sampleCount;

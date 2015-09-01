@@ -48,6 +48,7 @@ namespace Model
      The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
     */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
+
     /*
      The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
     */
@@ -56,16 +57,32 @@ namespace Model
     /*
      The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
     */
-    inline UploadPartResult&  WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
+    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = value; }
+
+    /*
+     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
+    */
+    inline UploadPartResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
+
+    /*
+     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
+    */
+    inline UploadPartResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(value); return *this;}
 
     /*
      Entity tag for the uploaded object.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      Entity tag for the uploaded object.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     Entity tag for the uploaded object.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      Entity tag for the uploaded object.
@@ -75,7 +92,12 @@ namespace Model
     /*
      Entity tag for the uploaded object.
     */
-    inline UploadPartResult&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline UploadPartResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     Entity tag for the uploaded object.
+    */
+    inline UploadPartResult& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      Entity tag for the uploaded object.
@@ -86,10 +108,16 @@ namespace Model
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
     */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
     */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithm = value; }
+
+    /*
+     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
+    */
+    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithm = value; }
 
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
@@ -99,7 +127,12 @@ namespace Model
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
     */
-    inline UploadPartResult&  WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
+    inline UploadPartResult& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
+
+    /*
+     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
+    */
+    inline UploadPartResult& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
@@ -110,10 +143,16 @@ namespace Model
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
     */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
+
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
     */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
+
+    /*
+     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
+    */
+    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = value; }
 
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
@@ -123,7 +162,12 @@ namespace Model
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
     */
-    inline UploadPartResult&  WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
+    inline UploadPartResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
+
+    /*
+     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
+    */
+    inline UploadPartResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /*
      If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
@@ -134,10 +178,16 @@ namespace Model
      If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
     */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
+
     /*
      If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
     */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
+
+    /*
+     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
+    */
+    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = value; }
 
     /*
      If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
@@ -147,7 +197,12 @@ namespace Model
     /*
      If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
     */
-    inline UploadPartResult&  WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
+    inline UploadPartResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
+
+    /*
+     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
+    */
+    inline UploadPartResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(value); return *this;}
 
     /*
      If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
@@ -156,11 +211,18 @@ namespace Model
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
     
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline UploadPartResult&  WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+
+    
+    inline UploadPartResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline UploadPartResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
 
   private:
     ServerSideEncryption m_serverSideEncryption;

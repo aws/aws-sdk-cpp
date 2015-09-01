@@ -38,10 +38,16 @@ namespace Model
      <p>The ARN of the topic to modify.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The ARN of the topic to modify.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The ARN of the topic to modify.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic to modify.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The ARN of the topic to modify.</p>
     */
-    inline SetTopicAttributesRequest&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline SetTopicAttributesRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The ARN of the topic to modify.</p>
+    */
+    inline SetTopicAttributesRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The ARN of the topic to modify.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+
+    /*
+     <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
+    */
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
     */
-    inline SetTopicAttributesRequest&  WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+    inline SetTopicAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+
+    /*
+     <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
+    */
+    inline SetTopicAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
@@ -86,10 +108,16 @@ namespace Model
      <p>The new value for the attribute.</p>
     */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
     /*
      <p>The new value for the attribute.</p>
     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
+
+    /*
+     <p>The new value for the attribute.</p>
+    */
+    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
     /*
      <p>The new value for the attribute.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>The new value for the attribute.</p>
     */
-    inline SetTopicAttributesRequest&  WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
+    inline SetTopicAttributesRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
+
+    /*
+     <p>The new value for the attribute.</p>
+    */
+    inline SetTopicAttributesRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
 
     /*
      <p>The new value for the attribute.</p>

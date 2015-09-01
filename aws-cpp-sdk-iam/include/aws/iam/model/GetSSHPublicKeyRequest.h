@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iam/model/encodingType.h>
+#include <aws/iam/model/EncodingType.h>
 
 namespace Aws
 {
@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the IAM user associated with the SSH public key.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
-    inline GetSSHPublicKeyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline GetSSHPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the IAM user associated with the SSH public key.</p>
+    */
+    inline GetSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The unique identifier for the SSH public key.</p>
     */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
+
     /*
      <p>The unique identifier for the SSH public key.</p>
     */
     inline void SetSSHPublicKeyId(const Aws::String& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
+
+    /*
+     <p>The unique identifier for the SSH public key.</p>
+    */
+    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
 
     /*
      <p>The unique identifier for the SSH public key.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The unique identifier for the SSH public key.</p>
     */
-    inline GetSSHPublicKeyRequest&  WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
+    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the SSH public key.</p>
+    */
+    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
 
     /*
      <p>The unique identifier for the SSH public key.</p>
@@ -85,23 +107,34 @@ namespace Model
     /*
      <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
     */
-    inline const encodingType& GetEncoding() const{ return m_encoding; }
-    /*
-     <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
-    */
-    inline void SetEncoding(const encodingType& value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline const EncodingType& GetEncoding() const{ return m_encoding; }
 
     /*
      <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
     */
-    inline GetSSHPublicKeyRequest&  WithEncoding(const encodingType& value) { SetEncoding(value); return *this;}
+    inline void SetEncoding(const EncodingType& value) { m_encodingHasBeenSet = true; m_encoding = value; }
+
+    /*
+     <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
+    */
+    inline void SetEncoding(EncodingType&& value) { m_encodingHasBeenSet = true; m_encoding = value; }
+
+    /*
+     <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
+    */
+    inline GetSSHPublicKeyRequest& WithEncoding(const EncodingType& value) { SetEncoding(value); return *this;}
+
+    /*
+     <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
+    */
+    inline GetSSHPublicKeyRequest& WithEncoding(EncodingType&& value) { SetEncoding(value); return *this;}
 
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet;
-    encodingType m_encoding;
+    EncodingType m_encoding;
     bool m_encodingHasBeenSet;
   };
 

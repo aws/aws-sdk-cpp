@@ -39,10 +39,16 @@ namespace Model
      <p>The volume ID.</p>
     */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
     /*
      <p>The volume ID.</p>
     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+
+    /*
+     <p>The volume ID.</p>
+    */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /*
      <p>The volume ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The volume ID.</p>
     */
-    inline UpdateVolumeRequest&  WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+    inline UpdateVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /*
+     <p>The volume ID.</p>
+    */
+    inline UpdateVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
 
     /*
      <p>The volume ID.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The new name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The new name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The new name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The new name.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The new name.</p>
     */
-    inline UpdateVolumeRequest&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline UpdateVolumeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The new name.</p>
+    */
+    inline UpdateVolumeRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The new name.</p>
@@ -87,10 +109,16 @@ namespace Model
      <p>The new mount point.</p>
     */
     inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+
     /*
      <p>The new mount point.</p>
     */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
+
+    /*
+     <p>The new mount point.</p>
+    */
+    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /*
      <p>The new mount point.</p>
@@ -100,7 +128,12 @@ namespace Model
     /*
      <p>The new mount point.</p>
     */
-    inline UpdateVolumeRequest&  WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
+    inline UpdateVolumeRequest& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
+
+    /*
+     <p>The new mount point.</p>
+    */
+    inline UpdateVolumeRequest& WithMountPoint(Aws::String&& value) { SetMountPoint(value); return *this;}
 
     /*
      <p>The new mount point.</p>

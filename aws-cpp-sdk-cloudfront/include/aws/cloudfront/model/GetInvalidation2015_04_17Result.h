@@ -46,6 +46,7 @@ namespace Model
      The invalidation's information.
     */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
+
     /*
      The invalidation's information.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      The invalidation's information.
     */
-    inline GetInvalidation2015_04_17Result&  WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
+    inline void SetInvalidation(Invalidation&& value) { m_invalidation = value; }
+
+    /*
+     The invalidation's information.
+    */
+    inline GetInvalidation2015_04_17Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
+
+    /*
+     The invalidation's information.
+    */
+    inline GetInvalidation2015_04_17Result& WithInvalidation(Invalidation&& value) { SetInvalidation(value); return *this;}
 
   private:
     Invalidation m_invalidation;

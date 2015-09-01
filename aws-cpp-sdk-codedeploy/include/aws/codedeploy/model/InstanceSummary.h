@@ -47,10 +47,16 @@ namespace Model
      <p>The deployment ID.</p>
     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
     /*
      <p>The deployment ID.</p>
     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /*
+     <p>The deployment ID.</p>
+    */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /*
      <p>The deployment ID.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The deployment ID.</p>
     */
-    inline InstanceSummary&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+    inline InstanceSummary& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /*
+     <p>The deployment ID.</p>
+    */
+    inline InstanceSummary& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /*
      <p>The deployment ID.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline InstanceSummary&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline InstanceSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline InstanceSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>
@@ -95,6 +117,7 @@ namespace Model
      <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
     */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
+
     /*
      <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
     */
@@ -103,12 +126,23 @@ namespace Model
     /*
      <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
     */
-    inline InstanceSummary&  WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
+    */
+    inline InstanceSummary& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
+    */
+    inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
 
     /*
      <p>A timestamp indicating when the instance information was last updated.</p>
     */
     inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+
     /*
      <p>A timestamp indicating when the instance information was last updated.</p>
     */
@@ -117,12 +151,13 @@ namespace Model
     /*
      <p>A timestamp indicating when the instance information was last updated.</p>
     */
-    inline InstanceSummary&  WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline InstanceSummary& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
 
     /*
      <p>A list of lifecycle events for this instance.</p>
     */
     inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
+
     /*
      <p>A list of lifecycle events for this instance.</p>
     */
@@ -131,12 +166,27 @@ namespace Model
     /*
      <p>A list of lifecycle events for this instance.</p>
     */
-    inline InstanceSummary&  WithLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { SetLifecycleEvents(value); return *this;}
+    inline void SetLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = value; }
+
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
+    inline InstanceSummary& WithLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { SetLifecycleEvents(value); return *this;}
+
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
+    inline InstanceSummary& WithLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { SetLifecycleEvents(value); return *this;}
 
     /*
      <p>A list of lifecycle events for this instance.</p>
     */
     inline InstanceSummary& AddLifecycleEvents(const LifecycleEvent& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
+
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
+    inline InstanceSummary& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
 
   private:
     Aws::String m_deploymentId;

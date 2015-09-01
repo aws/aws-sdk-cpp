@@ -36,7 +36,7 @@ Aws::String ListPoliciesRequest::SerializePayload() const
   ss << "Action=ListPolicies&";
   if(m_scopeHasBeenSet)
   {
-    ss << "Scope=" << policyScopeTypeMapper::GetNameForpolicyScopeType(m_scope) << "&";
+    ss << "Scope=" << PolicyScopeTypeMapper::GetNameForPolicyScopeType(m_scope) << "&";
   }
   if(m_onlyAttachedHasBeenSet)
   {

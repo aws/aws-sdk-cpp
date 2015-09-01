@@ -37,10 +37,16 @@ namespace Model
      Name of the buket to get the notification configuration for.
     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     /*
      Name of the buket to get the notification configuration for.
     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    /*
+     Name of the buket to get the notification configuration for.
+    */
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /*
      Name of the buket to get the notification configuration for.
@@ -50,7 +56,12 @@ namespace Model
     /*
      Name of the buket to get the notification configuration for.
     */
-    inline GetBucketNotificationConfigurationRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline GetBucketNotificationConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    /*
+     Name of the buket to get the notification configuration for.
+    */
+    inline GetBucketNotificationConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     /*
      Name of the buket to get the notification configuration for.

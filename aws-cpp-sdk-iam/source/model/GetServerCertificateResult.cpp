@@ -42,6 +42,11 @@ GetServerCertificateResult& GetServerCertificateResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode serverCertificateNode = resultNode.FirstChild("ServerCertificate");
+    if(serverCertificateNode.IsNull())
+    {
+      serverCertificateNode = resultNode;
+    }
+
     if(!serverCertificateNode.IsNull())
     {
       m_serverCertificate = serverCertificateNode;

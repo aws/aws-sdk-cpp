@@ -48,10 +48,16 @@ namespace Model
      <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
     /*
      <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
     inline void SetUrl(const Aws::String& value) { m_url = value; }
+
+    /*
+     <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline void SetUrl(Aws::String&& value) { m_url = value; }
 
     /*
      <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
-    inline GetOpenIDConnectProviderResult&  WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
+    inline GetOpenIDConnectProviderResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
+
+    /*
+     <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
 
     /*
      <p>The URL that the IAM OpenID Connect provider is associated with. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
@@ -72,6 +83,7 @@ namespace Model
      <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
     inline const Aws::Vector<Aws::String>& GetClientIDList() const{ return m_clientIDList; }
+
     /*
      <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
@@ -80,12 +92,27 @@ namespace Model
     /*
      <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
-    inline GetOpenIDConnectProviderResult&  WithClientIDList(const Aws::Vector<Aws::String>& value) { SetClientIDList(value); return *this;}
+    inline void SetClientIDList(Aws::Vector<Aws::String>&& value) { m_clientIDList = value; }
+
+    /*
+     <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& WithClientIDList(const Aws::Vector<Aws::String>& value) { SetClientIDList(value); return *this;}
+
+    /*
+     <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& WithClientIDList(Aws::Vector<Aws::String>&& value) { SetClientIDList(value); return *this;}
 
     /*
      <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
     inline GetOpenIDConnectProviderResult& AddClientIDList(const Aws::String& value) { m_clientIDList.push_back(value); return *this; }
+
+    /*
+     <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& AddClientIDList(Aws::String&& value) { m_clientIDList.push_back(value); return *this; }
 
     /*
      <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
@@ -96,6 +123,7 @@ namespace Model
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
+
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
@@ -104,12 +132,27 @@ namespace Model
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
-    inline GetOpenIDConnectProviderResult&  WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
+    inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintList = value; }
+
+    /*
+     <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
+
+    /*
+     <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(value); return *this;}
 
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
     inline GetOpenIDConnectProviderResult& AddThumbprintList(const Aws::String& value) { m_thumbprintList.push_back(value); return *this; }
+
+    /*
+     <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    */
+    inline GetOpenIDConnectProviderResult& AddThumbprintList(Aws::String&& value) { m_thumbprintList.push_back(value); return *this; }
 
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
@@ -120,6 +163,7 @@ namespace Model
      <p>The date and time when the IAM OpenID Connect provider entity was created in the AWS account. </p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date and time when the IAM OpenID Connect provider entity was created in the AWS account. </p>
     */
@@ -128,15 +172,22 @@ namespace Model
     /*
      <p>The date and time when the IAM OpenID Connect provider entity was created in the AWS account. </p>
     */
-    inline GetOpenIDConnectProviderResult&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline GetOpenIDConnectProviderResult& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetOpenIDConnectProviderResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetOpenIDConnectProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetOpenIDConnectProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_url;

@@ -39,10 +39,16 @@ namespace Model
      <p>The address.</p>
     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+
     /*
      <p>The address.</p>
     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+
+    /*
+     <p>The address.</p>
+    */
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /*
      <p>The address.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The address.</p>
     */
-    inline UpdateElasticIpRequest&  WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+    inline UpdateElasticIpRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p>The address.</p>
+    */
+    inline UpdateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
 
     /*
      <p>The address.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The new name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The new name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The new name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The new name.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The new name.</p>
     */
-    inline UpdateElasticIpRequest&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline UpdateElasticIpRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The new name.</p>
+    */
+    inline UpdateElasticIpRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The new name.</p>

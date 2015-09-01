@@ -42,6 +42,11 @@ CreateInstanceProfileResult& CreateInstanceProfileResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode instanceProfileNode = resultNode.FirstChild("InstanceProfile");
+    if(instanceProfileNode.IsNull())
+    {
+      instanceProfileNode = resultNode;
+    }
+
     if(!instanceProfileNode.IsNull())
     {
       m_instanceProfile = instanceProfileNode;

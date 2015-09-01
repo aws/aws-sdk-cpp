@@ -47,10 +47,16 @@ namespace Model
      <p>The unique key that identifies a certificate. </p>
     */
     inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
+
     /*
      <p>The unique key that identifies a certificate. </p>
     */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
+
+    /*
+     <p>The unique key that identifies a certificate. </p>
+    */
+    inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /*
      <p>The unique key that identifies a certificate. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The unique key that identifies a certificate. </p>
     */
-    inline Certificate&  WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
+    inline Certificate& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
+
+    /*
+     <p>The unique key that identifies a certificate. </p>
+    */
+    inline Certificate& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(value); return *this;}
 
     /*
      <p>The unique key that identifies a certificate. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The type of the certificate. </p>
     */
     inline const Aws::String& GetCertificateType() const{ return m_certificateType; }
+
     /*
      <p>The type of the certificate. </p>
     */
     inline void SetCertificateType(const Aws::String& value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
+
+    /*
+     <p>The type of the certificate. </p>
+    */
+    inline void SetCertificateType(Aws::String&& value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
 
     /*
      <p>The type of the certificate. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The type of the certificate. </p>
     */
-    inline Certificate&  WithCertificateType(const Aws::String& value) { SetCertificateType(value); return *this;}
+    inline Certificate& WithCertificateType(const Aws::String& value) { SetCertificateType(value); return *this;}
+
+    /*
+     <p>The type of the certificate. </p>
+    */
+    inline Certificate& WithCertificateType(Aws::String&& value) { SetCertificateType(value); return *this;}
 
     /*
      <p>The type of the certificate. </p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The thumbprint of the certificate. </p>
     */
     inline const Aws::String& GetThumbprint() const{ return m_thumbprint; }
+
     /*
      <p>The thumbprint of the certificate. </p>
     */
     inline void SetThumbprint(const Aws::String& value) { m_thumbprintHasBeenSet = true; m_thumbprint = value; }
+
+    /*
+     <p>The thumbprint of the certificate. </p>
+    */
+    inline void SetThumbprint(Aws::String&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = value; }
 
     /*
      <p>The thumbprint of the certificate. </p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The thumbprint of the certificate. </p>
     */
-    inline Certificate&  WithThumbprint(const Aws::String& value) { SetThumbprint(value); return *this;}
+    inline Certificate& WithThumbprint(const Aws::String& value) { SetThumbprint(value); return *this;}
+
+    /*
+     <p>The thumbprint of the certificate. </p>
+    */
+    inline Certificate& WithThumbprint(Aws::String&& value) { SetThumbprint(value); return *this;}
 
     /*
      <p>The thumbprint of the certificate. </p>
@@ -119,6 +152,7 @@ namespace Model
      <p>The starting date from which the certificate is valid. </p>
     */
     inline double GetValidFrom() const{ return m_validFrom; }
+
     /*
      <p>The starting date from which the certificate is valid. </p>
     */
@@ -127,12 +161,13 @@ namespace Model
     /*
      <p>The starting date from which the certificate is valid. </p>
     */
-    inline Certificate&  WithValidFrom(double value) { SetValidFrom(value); return *this;}
+    inline Certificate& WithValidFrom(double value) { SetValidFrom(value); return *this;}
 
     /*
      <p>The final date that the certificate continues to be valid. </p>
     */
     inline double GetValidTill() const{ return m_validTill; }
+
     /*
      <p>The final date that the certificate continues to be valid. </p>
     */
@@ -141,7 +176,7 @@ namespace Model
     /*
      <p>The final date that the certificate continues to be valid. </p>
     */
-    inline Certificate&  WithValidTill(double value) { SetValidTill(value); return *this;}
+    inline Certificate& WithValidTill(double value) { SetValidTill(value); return *this;}
 
   private:
     Aws::String m_certificateIdentifier;

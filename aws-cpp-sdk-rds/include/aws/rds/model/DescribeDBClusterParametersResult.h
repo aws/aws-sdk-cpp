@@ -49,6 +49,7 @@ namespace Model
      <p>Provides a list of parameters for the DB cluster parameter group.</p>
     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
     /*
      <p>Provides a list of parameters for the DB cluster parameter group.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>Provides a list of parameters for the DB cluster parameter group.</p>
     */
-    inline DescribeDBClusterParametersResult&  WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+
+    /*
+     <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    */
+    inline DescribeDBClusterParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+
+    /*
+     <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    */
+    inline DescribeDBClusterParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /*
      <p>Provides a list of parameters for the DB cluster parameter group.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeDBClusterParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /*
+     <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    */
+    inline DescribeDBClusterParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+
+    /*
      <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
     */
-    inline DescribeDBClusterParametersResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeDBClusterParametersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    */
+    inline DescribeDBClusterParametersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeDBClusterParametersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeDBClusterParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeDBClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Parameter> m_parameters;

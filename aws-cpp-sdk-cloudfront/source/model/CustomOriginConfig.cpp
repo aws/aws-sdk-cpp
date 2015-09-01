@@ -49,18 +49,33 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hTTPPortNode = resultNode.FirstChild("HTTPPort");
+    if(hTTPPortNode.IsNull())
+    {
+      hTTPPortNode = resultNode;
+    }
+
     if(!hTTPPortNode.IsNull())
     {
       m_hTTPPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPPortNode.GetText().c_str()).c_str());
       m_hTTPPortHasBeenSet = true;
     }
     XmlNode hTTPSPortNode = resultNode.FirstChild("HTTPSPort");
+    if(hTTPSPortNode.IsNull())
+    {
+      hTTPSPortNode = resultNode;
+    }
+
     if(!hTTPSPortNode.IsNull())
     {
       m_hTTPSPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPSPortNode.GetText().c_str()).c_str());
       m_hTTPSPortHasBeenSet = true;
     }
     XmlNode originProtocolPolicyNode = resultNode.FirstChild("OriginProtocolPolicy");
+    if(originProtocolPolicyNode.IsNull())
+    {
+      originProtocolPolicyNode = resultNode;
+    }
+
     if(!originProtocolPolicyNode.IsNull())
     {
       m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(originProtocolPolicyNode.GetText().c_str()).c_str());

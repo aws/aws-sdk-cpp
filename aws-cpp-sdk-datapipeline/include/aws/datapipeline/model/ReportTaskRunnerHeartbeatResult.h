@@ -45,6 +45,7 @@ namespace Model
      <p>Indicates whether the calling task runner should terminate.</p>
     */
     inline bool GetTerminate() const{ return m_terminate; }
+
     /*
      <p>Indicates whether the calling task runner should terminate.</p>
     */
@@ -53,7 +54,7 @@ namespace Model
     /*
      <p>Indicates whether the calling task runner should terminate.</p>
     */
-    inline ReportTaskRunnerHeartbeatResult&  WithTerminate(bool value) { SetTerminate(value); return *this;}
+    inline ReportTaskRunnerHeartbeatResult& WithTerminate(bool value) { SetTerminate(value); return *this;}
 
   private:
     bool m_terminate;

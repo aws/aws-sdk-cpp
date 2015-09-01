@@ -40,10 +40,16 @@ namespace Model
      The distribution id.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The distribution id.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The distribution id.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The distribution id.
@@ -53,7 +59,12 @@ namespace Model
     /*
      The distribution id.
     */
-    inline DeleteStreamingDistribution2015_04_17Request&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline DeleteStreamingDistribution2015_04_17Request& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The distribution id.
+    */
+    inline DeleteStreamingDistribution2015_04_17Request& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The distribution id.
@@ -64,10 +75,16 @@ namespace Model
      The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.
     */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
     /*
      The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.
     */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
+
+    /*
+     The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.
+    */
+    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /*
      The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.
@@ -77,7 +94,12 @@ namespace Model
     /*
      The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.
     */
-    inline DeleteStreamingDistribution2015_04_17Request&  WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
+    inline DeleteStreamingDistribution2015_04_17Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
+
+    /*
+     The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.
+    */
+    inline DeleteStreamingDistribution2015_04_17Request& WithIfMatch(Aws::String&& value) { SetIfMatch(value); return *this;}
 
     /*
      The value of the ETag header you received when you disabled the streaming distribution. For example: E2QWRUHAPOMQZL.

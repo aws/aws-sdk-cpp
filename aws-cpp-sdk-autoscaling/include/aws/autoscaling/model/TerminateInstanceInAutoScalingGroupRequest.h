@@ -37,10 +37,16 @@ namespace Model
      <p>The ID of the EC2 instance.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The ID of the EC2 instance.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The ID of the EC2 instance.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the EC2 instance.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The ID of the EC2 instance.</p>
     */
-    inline TerminateInstanceInAutoScalingGroupRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The ID of the EC2 instance.</p>
+    */
+    inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The ID of the EC2 instance.</p>
@@ -61,6 +72,7 @@ namespace Model
      <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
     */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
+
     /*
      <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
     */
@@ -69,7 +81,7 @@ namespace Model
     /*
      <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
     */
-    inline TerminateInstanceInAutoScalingGroupRequest&  WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
+    inline TerminateInstanceInAutoScalingGroupRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
 
   private:
     Aws::String m_instanceId;

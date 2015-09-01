@@ -51,6 +51,7 @@ namespace Model
      <p>The HTTP status code will be in the 200 range for successful request. For the "RequestResonse" invocation type this status code will be 200. For the "Event" invocation type this status code will be 202. For the "DryRun" invocation type the status code will be 204. </p>
     */
     inline long GetStatusCode() const{ return m_statusCode; }
+
     /*
      <p>The HTTP status code will be in the 200 range for successful request. For the "RequestResonse" invocation type this status code will be 200. For the "Event" invocation type this status code will be 202. For the "DryRun" invocation type the status code will be 204. </p>
     */
@@ -59,16 +60,22 @@ namespace Model
     /*
      <p>The HTTP status code will be in the 200 range for successful request. For the "RequestResonse" invocation type this status code will be 200. For the "Event" invocation type this status code will be 202. For the "DryRun" invocation type the status code will be 204. </p>
     */
-    inline InvokeResult&  WithStatusCode(long value) { SetStatusCode(value); return *this;}
+    inline InvokeResult& WithStatusCode(long value) { SetStatusCode(value); return *this;}
 
     /*
      <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
     */
     inline const Aws::String& GetFunctionError() const{ return m_functionError; }
+
     /*
      <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
     */
     inline void SetFunctionError(const Aws::String& value) { m_functionError = value; }
+
+    /*
+     <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
+    */
+    inline void SetFunctionError(Aws::String&& value) { m_functionError = value; }
 
     /*
      <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
@@ -78,7 +85,12 @@ namespace Model
     /*
      <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
     */
-    inline InvokeResult&  WithFunctionError(const Aws::String& value) { SetFunctionError(value); return *this;}
+    inline InvokeResult& WithFunctionError(const Aws::String& value) { SetFunctionError(value); return *this;}
+
+    /*
+     <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
+    */
+    inline InvokeResult& WithFunctionError(Aws::String&& value) { SetFunctionError(value); return *this;}
 
     /*
      <p>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>. </p>
@@ -89,10 +101,16 @@ namespace Model
      <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
     */
     inline const Aws::String& GetLogResult() const{ return m_logResult; }
+
     /*
      <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
     */
     inline void SetLogResult(const Aws::String& value) { m_logResult = value; }
+
+    /*
+     <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
+    */
+    inline void SetLogResult(Aws::String&& value) { m_logResult = value; }
 
     /*
      <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
@@ -102,7 +120,12 @@ namespace Model
     /*
      <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
     */
-    inline InvokeResult&  WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
+    inline InvokeResult& WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
+
+    /*
+     <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
+    */
+    inline InvokeResult& WithLogResult(Aws::String&& value) { SetLogResult(value); return *this;}
 
     /*
      <p> It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is "RequestResponse" and the logs were requested. </p>
@@ -113,6 +136,7 @@ namespace Model
      <p> It is the JSON representation of the object returned by the Lambda function. In This is present only if the invocation type is "RequestResponse". </p> <p>In the event of a function error this field contains a message describing the error. For the <code>Handled</code> errors the Lambda function will report this message. For <code>Unhandled</code> errors AWS Lambda reports the message. </p>
     */
     inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+
   private:
     long m_statusCode;
     Aws::String m_functionError;

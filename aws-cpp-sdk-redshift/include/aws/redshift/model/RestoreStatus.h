@@ -47,10 +47,16 @@ namespace Model
      <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
     */
-    inline RestoreStatus&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline RestoreStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
+    */
+    inline RestoreStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
@@ -71,6 +82,7 @@ namespace Model
      <p> The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. </p>
     */
     inline double GetCurrentRestoreRateInMegaBytesPerSecond() const{ return m_currentRestoreRateInMegaBytesPerSecond; }
+
     /*
      <p> The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. </p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p> The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. </p>
     */
-    inline RestoreStatus&  WithCurrentRestoreRateInMegaBytesPerSecond(double value) { SetCurrentRestoreRateInMegaBytesPerSecond(value); return *this;}
+    inline RestoreStatus& WithCurrentRestoreRateInMegaBytesPerSecond(double value) { SetCurrentRestoreRateInMegaBytesPerSecond(value); return *this;}
 
     /*
      <p> The size of the set of snapshot data used to restore the cluster. </p>
     */
     inline long long GetSnapshotSizeInMegaBytes() const{ return m_snapshotSizeInMegaBytes; }
+
     /*
      <p> The size of the set of snapshot data used to restore the cluster. </p>
     */
@@ -93,12 +106,13 @@ namespace Model
     /*
      <p> The size of the set of snapshot data used to restore the cluster. </p>
     */
-    inline RestoreStatus&  WithSnapshotSizeInMegaBytes(long long value) { SetSnapshotSizeInMegaBytes(value); return *this;}
+    inline RestoreStatus& WithSnapshotSizeInMegaBytes(long long value) { SetSnapshotSizeInMegaBytes(value); return *this;}
 
     /*
      <p> The number of megabytes that have been transferred from snapshot storage. </p>
     */
     inline long long GetProgressInMegaBytes() const{ return m_progressInMegaBytes; }
+
     /*
      <p> The number of megabytes that have been transferred from snapshot storage. </p>
     */
@@ -107,12 +121,13 @@ namespace Model
     /*
      <p> The number of megabytes that have been transferred from snapshot storage. </p>
     */
-    inline RestoreStatus&  WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
+    inline RestoreStatus& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
 
     /*
      <p> The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. </p>
     */
     inline long long GetElapsedTimeInSeconds() const{ return m_elapsedTimeInSeconds; }
+
     /*
      <p> The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. </p>
     */
@@ -121,12 +136,13 @@ namespace Model
     /*
      <p> The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. </p>
     */
-    inline RestoreStatus&  WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
+    inline RestoreStatus& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
 
     /*
      <p> The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. </p>
     */
     inline long long GetEstimatedTimeToCompletionInSeconds() const{ return m_estimatedTimeToCompletionInSeconds; }
+
     /*
      <p> The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. </p>
     */
@@ -135,7 +151,7 @@ namespace Model
     /*
      <p> The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. </p>
     */
-    inline RestoreStatus&  WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
+    inline RestoreStatus& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 
   private:
     Aws::String m_status;

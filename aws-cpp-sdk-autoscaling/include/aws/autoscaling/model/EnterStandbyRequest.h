@@ -38,6 +38,7 @@ namespace Model
      <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
     /*
      <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
     */
-    inline EnterStandbyRequest&  WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+
+    /*
+     <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
+    */
+    inline EnterStandbyRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+
+    /*
+     <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
+    */
+    inline EnterStandbyRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /*
      <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
     */
     inline EnterStandbyRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
+    /*
+     <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
+    */
+    inline EnterStandbyRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /*
      <p>One or more instances to move into <code>Standby</code> mode. You must specify at least one instance ID.</p>
@@ -62,10 +78,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -75,7 +97,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline EnterStandbyRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline EnterStandbyRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline EnterStandbyRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -86,6 +113,7 @@ namespace Model
      <p>Specifies whether the instances moved to <code>Standby</code> mode count as part of the Auto Scaling group's desired capacity. If set, the desired capacity for the Auto Scaling group decrements by the number of instances moved to <code>Standby</code> mode.</p>
     */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
+
     /*
      <p>Specifies whether the instances moved to <code>Standby</code> mode count as part of the Auto Scaling group's desired capacity. If set, the desired capacity for the Auto Scaling group decrements by the number of instances moved to <code>Standby</code> mode.</p>
     */
@@ -94,7 +122,7 @@ namespace Model
     /*
      <p>Specifies whether the instances moved to <code>Standby</code> mode count as part of the Auto Scaling group's desired capacity. If set, the desired capacity for the Auto Scaling group decrements by the number of instances moved to <code>Standby</code> mode.</p>
     */
-    inline EnterStandbyRequest&  WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
+    inline EnterStandbyRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_instanceIds;

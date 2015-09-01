@@ -44,16 +44,24 @@ namespace Model
 
     
     inline const Grantee& GetGrantee() const{ return m_grantee; }
+
     
     inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
 
     
-    inline Grant&  WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
+    inline void SetGrantee(Grantee&& value) { m_granteeHasBeenSet = true; m_grantee = value; }
+
+    
+    inline Grant& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
+
+    
+    inline Grant& WithGrantee(Grantee&& value) { SetGrantee(value); return *this;}
 
     /*
      Specifies the permission given to the grantee.
     */
     inline const Permission& GetPermission() const{ return m_permission; }
+
     /*
      Specifies the permission given to the grantee.
     */
@@ -62,7 +70,17 @@ namespace Model
     /*
      Specifies the permission given to the grantee.
     */
-    inline Grant&  WithPermission(const Permission& value) { SetPermission(value); return *this;}
+    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = value; }
+
+    /*
+     Specifies the permission given to the grantee.
+    */
+    inline Grant& WithPermission(const Permission& value) { SetPermission(value); return *this;}
+
+    /*
+     Specifies the permission given to the grantee.
+    */
+    inline Grant& WithPermission(Permission&& value) { SetPermission(value); return *this;}
 
   private:
     Grantee m_grantee;

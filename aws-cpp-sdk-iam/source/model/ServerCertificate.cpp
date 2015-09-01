@@ -45,18 +45,33 @@ ServerCertificate& ServerCertificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode serverCertificateMetadataNode = resultNode.FirstChild("ServerCertificateMetadata");
+    if(serverCertificateMetadataNode.IsNull())
+    {
+      serverCertificateMetadataNode = resultNode;
+    }
+
     if(!serverCertificateMetadataNode.IsNull())
     {
       m_serverCertificateMetadata = serverCertificateMetadataNode;
       m_serverCertificateMetadataHasBeenSet = true;
     }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
+    if(certificateBodyNode.IsNull())
+    {
+      certificateBodyNode = resultNode;
+    }
+
     if(!certificateBodyNode.IsNull())
     {
       m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
       m_certificateBodyHasBeenSet = true;
     }
     XmlNode certificateChainNode = resultNode.FirstChild("CertificateChain");
+    if(certificateChainNode.IsNull())
+    {
+      certificateChainNode = resultNode;
+    }
+
     if(!certificateChainNode.IsNull())
     {
       m_certificateChain = StringUtils::Trim(certificateChainNode.GetText().c_str());

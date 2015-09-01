@@ -40,10 +40,16 @@ namespace Model
      <p> A required parameter. Options available for the given engine name will be described. </p>
     */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
+
     /*
      <p> A required parameter. Options available for the given engine name will be described. </p>
     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
+
+    /*
+     <p> A required parameter. Options available for the given engine name will be described. </p>
+    */
+    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /*
      <p> A required parameter. Options available for the given engine name will be described. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> A required parameter. Options available for the given engine name will be described. </p>
     */
-    inline DescribeOptionGroupOptionsRequest&  WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
+    inline DescribeOptionGroupOptionsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
+
+    /*
+     <p> A required parameter. Options available for the given engine name will be described. </p>
+    */
+    inline DescribeOptionGroupOptionsRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /*
      <p> A required parameter. Options available for the given engine name will be described. </p>
@@ -64,10 +75,16 @@ namespace Model
      <p> If specified, filters the results to include only options for the specified major engine version. </p>
     */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+
     /*
      <p> If specified, filters the results to include only options for the specified major engine version. </p>
     */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
+
+    /*
+     <p> If specified, filters the results to include only options for the specified major engine version. </p>
+    */
+    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /*
      <p> If specified, filters the results to include only options for the specified major engine version. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> If specified, filters the results to include only options for the specified major engine version. </p>
     */
-    inline DescribeOptionGroupOptionsRequest&  WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
+    inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
+
+    /*
+     <p> If specified, filters the results to include only options for the specified major engine version. </p>
+    */
+    inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
 
     /*
      <p> If specified, filters the results to include only options for the specified major engine version. </p>
@@ -88,6 +110,7 @@ namespace Model
      <p>This parameter is not currently supported.</p>
     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
     /*
      <p>This parameter is not currently supported.</p>
     */
@@ -96,7 +119,17 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline DescribeOptionGroupOptionsRequest&  WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOptionGroupOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOptionGroupOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -104,9 +137,15 @@ namespace Model
     inline DescribeOptionGroupOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeOptionGroupOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
@@ -115,16 +154,22 @@ namespace Model
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
-    inline DescribeOptionGroupOptionsRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeOptionGroupOptionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -134,7 +179,12 @@ namespace Model
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     */
-    inline DescribeOptionGroupOptionsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeOptionGroupOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    */
+    inline DescribeOptionGroupOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>

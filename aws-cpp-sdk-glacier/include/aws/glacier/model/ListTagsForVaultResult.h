@@ -47,6 +47,7 @@ namespace Model
      <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
     /*
      <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     */
@@ -55,12 +56,47 @@ namespace Model
     /*
      <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     */
-    inline ListTagsForVaultResult&  WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = value; }
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     */
     inline ListTagsForVaultResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& AddTags(const char* key, Aws::String&& value) { m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    */
+    inline ListTagsForVaultResult& AddTags(Aws::String&& key, const char* value) { m_tags[key] = value; return *this; }
 
     /*
      <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>

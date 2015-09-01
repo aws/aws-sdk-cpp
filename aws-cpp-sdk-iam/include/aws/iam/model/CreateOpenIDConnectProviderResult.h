@@ -47,10 +47,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
     */
     inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
     */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
+    */
+    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
     */
-    inline CreateOpenIDConnectProviderResult&  WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
+    inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
+    */
+    inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateOpenIDConnectProviderResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateOpenIDConnectProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateOpenIDConnectProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_openIDConnectProviderArn;

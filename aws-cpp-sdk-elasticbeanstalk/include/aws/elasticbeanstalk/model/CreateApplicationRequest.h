@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline CreateApplicationRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline CreateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
+    */
+    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of the application.</p> <p> Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </p>
@@ -62,10 +73,16 @@ namespace Model
      <p>Describes the application.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>Describes the application.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>Describes the application.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>Describes the application.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>Describes the application.</p>
     */
-    inline CreateApplicationRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>Describes the application.</p>
+    */
+    inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>Describes the application.</p>

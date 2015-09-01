@@ -46,6 +46,7 @@ namespace Model
      <p>Information about the application.</p>
     */
     inline const ApplicationInfo& GetApplication() const{ return m_application; }
+
     /*
      <p>Information about the application.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Information about the application.</p>
     */
-    inline GetApplicationResult&  WithApplication(const ApplicationInfo& value) { SetApplication(value); return *this;}
+    inline void SetApplication(ApplicationInfo&& value) { m_application = value; }
+
+    /*
+     <p>Information about the application.</p>
+    */
+    inline GetApplicationResult& WithApplication(const ApplicationInfo& value) { SetApplication(value); return *this;}
+
+    /*
+     <p>Information about the application.</p>
+    */
+    inline GetApplicationResult& WithApplication(ApplicationInfo&& value) { SetApplication(value); return *this;}
 
   private:
     ApplicationInfo m_application;

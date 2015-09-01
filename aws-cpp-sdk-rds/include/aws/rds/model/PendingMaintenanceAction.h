@@ -47,10 +47,16 @@ namespace Model
      <p>The type of pending maintenance action that is available for the resource.</p>
     */
     inline const Aws::String& GetAction() const{ return m_action; }
+
     /*
      <p>The type of pending maintenance action that is available for the resource.</p>
     */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /*
+     <p>The type of pending maintenance action that is available for the resource.</p>
+    */
+    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /*
      <p>The type of pending maintenance action that is available for the resource.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The type of pending maintenance action that is available for the resource.</p>
     */
-    inline PendingMaintenanceAction&  WithAction(const Aws::String& value) { SetAction(value); return *this;}
+    inline PendingMaintenanceAction& WithAction(const Aws::String& value) { SetAction(value); return *this;}
+
+    /*
+     <p>The type of pending maintenance action that is available for the resource.</p>
+    */
+    inline PendingMaintenanceAction& WithAction(Aws::String&& value) { SetAction(value); return *this;}
 
     /*
      <p>The type of pending maintenance action that is available for the resource.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The date of the maintenance window when the action will be applied. The maintenance action will be applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     */
     inline double GetAutoAppliedAfterDate() const{ return m_autoAppliedAfterDate; }
+
     /*
      <p>The date of the maintenance window when the action will be applied. The maintenance action will be applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p>The date of the maintenance window when the action will be applied. The maintenance action will be applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     */
-    inline PendingMaintenanceAction&  WithAutoAppliedAfterDate(double value) { SetAutoAppliedAfterDate(value); return *this;}
+    inline PendingMaintenanceAction& WithAutoAppliedAfterDate(double value) { SetAutoAppliedAfterDate(value); return *this;}
 
     /*
      <p>The date when the maintenance action will be automatically applied. The maintenance action will be applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     */
     inline double GetForcedApplyDate() const{ return m_forcedApplyDate; }
+
     /*
      <p>The date when the maintenance action will be automatically applied. The maintenance action will be applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     */
@@ -93,16 +106,22 @@ namespace Model
     /*
      <p>The date when the maintenance action will be automatically applied. The maintenance action will be applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     */
-    inline PendingMaintenanceAction&  WithForcedApplyDate(double value) { SetForcedApplyDate(value); return *this;}
+    inline PendingMaintenanceAction& WithForcedApplyDate(double value) { SetForcedApplyDate(value); return *this;}
 
     /*
      <p>Indicates the type of opt-in request that has been received for the resource.</p>
     */
     inline const Aws::String& GetOptInStatus() const{ return m_optInStatus; }
+
     /*
      <p>Indicates the type of opt-in request that has been received for the resource.</p>
     */
     inline void SetOptInStatus(const Aws::String& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
+
+    /*
+     <p>Indicates the type of opt-in request that has been received for the resource.</p>
+    */
+    inline void SetOptInStatus(Aws::String&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
 
     /*
      <p>Indicates the type of opt-in request that has been received for the resource.</p>
@@ -112,7 +131,12 @@ namespace Model
     /*
      <p>Indicates the type of opt-in request that has been received for the resource.</p>
     */
-    inline PendingMaintenanceAction&  WithOptInStatus(const Aws::String& value) { SetOptInStatus(value); return *this;}
+    inline PendingMaintenanceAction& WithOptInStatus(const Aws::String& value) { SetOptInStatus(value); return *this;}
+
+    /*
+     <p>Indicates the type of opt-in request that has been received for the resource.</p>
+    */
+    inline PendingMaintenanceAction& WithOptInStatus(Aws::String&& value) { SetOptInStatus(value); return *this;}
 
     /*
      <p>Indicates the type of opt-in request that has been received for the resource.</p>
@@ -123,6 +147,7 @@ namespace Model
      <p>The effective date when the pending maintenance action will be applied to the resource. This date takes into account opt-in requests received from the <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
     */
     inline double GetCurrentApplyDate() const{ return m_currentApplyDate; }
+
     /*
      <p>The effective date when the pending maintenance action will be applied to the resource. This date takes into account opt-in requests received from the <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
     */
@@ -131,16 +156,22 @@ namespace Model
     /*
      <p>The effective date when the pending maintenance action will be applied to the resource. This date takes into account opt-in requests received from the <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
     */
-    inline PendingMaintenanceAction&  WithCurrentApplyDate(double value) { SetCurrentApplyDate(value); return *this;}
+    inline PendingMaintenanceAction& WithCurrentApplyDate(double value) { SetCurrentApplyDate(value); return *this;}
 
     /*
      <p>A description providing more detail about the maintenance action.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A description providing more detail about the maintenance action.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A description providing more detail about the maintenance action.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description providing more detail about the maintenance action.</p>
@@ -150,7 +181,12 @@ namespace Model
     /*
      <p>A description providing more detail about the maintenance action.</p>
     */
-    inline PendingMaintenanceAction&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline PendingMaintenanceAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A description providing more detail about the maintenance action.</p>
+    */
+    inline PendingMaintenanceAction& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A description providing more detail about the maintenance action.</p>

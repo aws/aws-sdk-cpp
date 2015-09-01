@@ -42,6 +42,11 @@ CreateVirtualMFADeviceResult& CreateVirtualMFADeviceResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode virtualMFADeviceNode = resultNode.FirstChild("VirtualMFADevice");
+    if(virtualMFADeviceNode.IsNull())
+    {
+      virtualMFADeviceNode = resultNode;
+    }
+
     if(!virtualMFADeviceNode.IsNull())
     {
       m_virtualMFADevice = virtualMFADeviceNode;

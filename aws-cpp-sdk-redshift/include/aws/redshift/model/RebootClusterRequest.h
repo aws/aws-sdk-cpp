@@ -38,10 +38,16 @@ namespace Model
      <p> The cluster identifier. </p>
     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
     /*
      <p> The cluster identifier. </p>
     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /*
+     <p> The cluster identifier. </p>
+    */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The cluster identifier. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The cluster identifier. </p>
     */
-    inline RebootClusterRequest&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline RebootClusterRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The cluster identifier. </p>
+    */
+    inline RebootClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /*
      <p> The cluster identifier. </p>

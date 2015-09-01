@@ -44,6 +44,11 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode urlNode = resultNode.FirstChild("Url");
+    if(urlNode.IsNull())
+    {
+      urlNode = resultNode;
+    }
+
     if(!urlNode.IsNull())
     {
       m_url = StringUtils::Trim(urlNode.GetText().c_str());
@@ -71,6 +76,11 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
 
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
+    if(createDateNode.IsNull())
+    {
+      createDateNode = resultNode;
+    }
+
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());

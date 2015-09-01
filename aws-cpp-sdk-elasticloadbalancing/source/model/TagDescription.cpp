@@ -43,6 +43,11 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
+    if(loadBalancerNameNode.IsNull())
+    {
+      loadBalancerNameNode = resultNode;
+    }
+
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());

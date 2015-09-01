@@ -44,10 +44,16 @@ namespace Model
      <p>A JSON document that contains the metadata. </p>
     */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
     /*
      <p>A JSON document that contains the metadata. </p>
     */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
+
+    /*
+     <p>A JSON document that contains the metadata. </p>
+    */
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /*
      <p>A JSON document that contains the metadata. </p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>A JSON document that contains the metadata. </p>
     */
-    inline InstanceIdentity&  WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
+    inline InstanceIdentity& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
+
+    /*
+     <p>A JSON document that contains the metadata. </p>
+    */
+    inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
     /*
      <p>A JSON document that contains the metadata. </p>
@@ -68,10 +79,16 @@ namespace Model
      <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
     */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
     /*
      <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
     */
     inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
+
+    /*
+     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
+    */
+    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = value; }
 
     /*
      <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
     */
-    inline InstanceIdentity&  WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
+    inline InstanceIdentity& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
+
+    /*
+     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
+    */
+    inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(value); return *this;}
 
     /*
      <p>A signature that can be used to verify the document's accuracy and authenticity. </p>

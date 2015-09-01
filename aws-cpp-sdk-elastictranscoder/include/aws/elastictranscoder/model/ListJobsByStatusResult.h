@@ -48,6 +48,7 @@ namespace Model
      <p>An array of <code>Job</code> objects that have the specified status.</p>
     */
     inline const Aws::Vector<Job>& GetJobs() const{ return m_jobs; }
+
     /*
      <p>An array of <code>Job</code> objects that have the specified status.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>An array of <code>Job</code> objects that have the specified status.</p>
     */
-    inline ListJobsByStatusResult&  WithJobs(const Aws::Vector<Job>& value) { SetJobs(value); return *this;}
+    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = value; }
+
+    /*
+     <p>An array of <code>Job</code> objects that have the specified status.</p>
+    */
+    inline ListJobsByStatusResult& WithJobs(const Aws::Vector<Job>& value) { SetJobs(value); return *this;}
+
+    /*
+     <p>An array of <code>Job</code> objects that have the specified status.</p>
+    */
+    inline ListJobsByStatusResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(value); return *this;}
 
     /*
      <p>An array of <code>Job</code> objects that have the specified status.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListJobsByStatusResult& AddJobs(const Job& value) { m_jobs.push_back(value); return *this; }
 
     /*
+     <p>An array of <code>Job</code> objects that have the specified status.</p>
+    */
+    inline ListJobsByStatusResult& AddJobs(Job&& value) { m_jobs.push_back(value); return *this; }
+
+    /*
      <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
     /*
      <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
+
+    /*
+     <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    */
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
 
     /*
      <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     */
-    inline ListJobsByStatusResult&  WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+    inline ListJobsByStatusResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+
+    /*
+     <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    */
+    inline ListJobsByStatusResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
 
     /*
      <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>

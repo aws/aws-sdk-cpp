@@ -48,6 +48,7 @@ namespace Model
      <p>A list of data points, each of which represents 15 minutes of activity.</p>
     */
     inline const Aws::Vector<SendDataPoint>& GetSendDataPoints() const{ return m_sendDataPoints; }
+
     /*
      <p>A list of data points, each of which represents 15 minutes of activity.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>A list of data points, each of which represents 15 minutes of activity.</p>
     */
-    inline GetSendStatisticsResult&  WithSendDataPoints(const Aws::Vector<SendDataPoint>& value) { SetSendDataPoints(value); return *this;}
+    inline void SetSendDataPoints(Aws::Vector<SendDataPoint>&& value) { m_sendDataPoints = value; }
+
+    /*
+     <p>A list of data points, each of which represents 15 minutes of activity.</p>
+    */
+    inline GetSendStatisticsResult& WithSendDataPoints(const Aws::Vector<SendDataPoint>& value) { SetSendDataPoints(value); return *this;}
+
+    /*
+     <p>A list of data points, each of which represents 15 minutes of activity.</p>
+    */
+    inline GetSendStatisticsResult& WithSendDataPoints(Aws::Vector<SendDataPoint>&& value) { SetSendDataPoints(value); return *this;}
 
     /*
      <p>A list of data points, each of which represents 15 minutes of activity.</p>
     */
     inline GetSendStatisticsResult& AddSendDataPoints(const SendDataPoint& value) { m_sendDataPoints.push_back(value); return *this; }
 
+    /*
+     <p>A list of data points, each of which represents 15 minutes of activity.</p>
+    */
+    inline GetSendStatisticsResult& AddSendDataPoints(SendDataPoint&& value) { m_sendDataPoints.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetSendStatisticsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetSendStatisticsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetSendStatisticsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<SendDataPoint> m_sendDataPoints;

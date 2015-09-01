@@ -49,10 +49,16 @@ namespace Model
      <p>The name of the policy type.</p>
     */
     inline const Aws::String& GetPolicyTypeName() const{ return m_policyTypeName; }
+
     /*
      <p>The name of the policy type.</p>
     */
     inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
+
+    /*
+     <p>The name of the policy type.</p>
+    */
+    inline void SetPolicyTypeName(Aws::String&& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
     /*
      <p>The name of the policy type.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The name of the policy type.</p>
     */
-    inline PolicyTypeDescription&  WithPolicyTypeName(const Aws::String& value) { SetPolicyTypeName(value); return *this;}
+    inline PolicyTypeDescription& WithPolicyTypeName(const Aws::String& value) { SetPolicyTypeName(value); return *this;}
+
+    /*
+     <p>The name of the policy type.</p>
+    */
+    inline PolicyTypeDescription& WithPolicyTypeName(Aws::String&& value) { SetPolicyTypeName(value); return *this;}
 
     /*
      <p>The name of the policy type.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>A description of the policy type.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A description of the policy type.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A description of the policy type.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description of the policy type.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>A description of the policy type.</p>
     */
-    inline PolicyTypeDescription&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline PolicyTypeDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A description of the policy type.</p>
+    */
+    inline PolicyTypeDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A description of the policy type.</p>
@@ -97,6 +119,7 @@ namespace Model
      <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     */
     inline const Aws::Vector<PolicyAttributeTypeDescription>& GetPolicyAttributeTypeDescriptions() const{ return m_policyAttributeTypeDescriptions; }
+
     /*
      <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     */
@@ -105,12 +128,27 @@ namespace Model
     /*
      <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     */
-    inline PolicyTypeDescription&  WithPolicyAttributeTypeDescriptions(const Aws::Vector<PolicyAttributeTypeDescription>& value) { SetPolicyAttributeTypeDescriptions(value); return *this;}
+    inline void SetPolicyAttributeTypeDescriptions(Aws::Vector<PolicyAttributeTypeDescription>&& value) { m_policyAttributeTypeDescriptionsHasBeenSet = true; m_policyAttributeTypeDescriptions = value; }
+
+    /*
+     <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
+    */
+    inline PolicyTypeDescription& WithPolicyAttributeTypeDescriptions(const Aws::Vector<PolicyAttributeTypeDescription>& value) { SetPolicyAttributeTypeDescriptions(value); return *this;}
+
+    /*
+     <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
+    */
+    inline PolicyTypeDescription& WithPolicyAttributeTypeDescriptions(Aws::Vector<PolicyAttributeTypeDescription>&& value) { SetPolicyAttributeTypeDescriptions(value); return *this;}
 
     /*
      <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     */
     inline PolicyTypeDescription& AddPolicyAttributeTypeDescriptions(const PolicyAttributeTypeDescription& value) { m_policyAttributeTypeDescriptionsHasBeenSet = true; m_policyAttributeTypeDescriptions.push_back(value); return *this; }
+
+    /*
+     <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
+    */
+    inline PolicyTypeDescription& AddPolicyAttributeTypeDescriptions(PolicyAttributeTypeDescription&& value) { m_policyAttributeTypeDescriptionsHasBeenSet = true; m_policyAttributeTypeDescriptions.push_back(value); return *this; }
 
   private:
     Aws::String m_policyTypeName;

@@ -44,10 +44,16 @@ namespace Model
      <p>A unique identifier for the session</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>A unique identifier for the session</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>A unique identifier for the session</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>A unique identifier for the session</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>A unique identifier for the session</p>
     */
-    inline Session&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Session& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>A unique identifier for the session</p>
+    */
+    inline Session& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>A unique identifier for the session</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>The duration of the session.</p>
     */
     inline long long GetDuration() const{ return m_duration; }
+
     /*
      <p>The duration of the session.</p>
     */
@@ -76,16 +88,22 @@ namespace Model
     /*
      <p>The duration of the session.</p>
     */
-    inline Session&  WithDuration(long long value) { SetDuration(value); return *this;}
+    inline Session& WithDuration(long long value) { SetDuration(value); return *this;}
 
     /*
      <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
     inline const Aws::String& GetStartTimestamp() const{ return m_startTimestamp; }
+
     /*
      <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
     inline void SetStartTimestamp(const Aws::String& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+
+    /*
+     <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
+    */
+    inline void SetStartTimestamp(Aws::String&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /*
      <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
@@ -95,7 +113,12 @@ namespace Model
     /*
      <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
-    inline Session&  WithStartTimestamp(const Aws::String& value) { SetStartTimestamp(value); return *this;}
+    inline Session& WithStartTimestamp(const Aws::String& value) { SetStartTimestamp(value); return *this;}
+
+    /*
+     <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
+    */
+    inline Session& WithStartTimestamp(Aws::String&& value) { SetStartTimestamp(value); return *this;}
 
     /*
      <p>The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
@@ -106,10 +129,16 @@ namespace Model
      <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
     inline const Aws::String& GetStopTimestamp() const{ return m_stopTimestamp; }
+
     /*
      <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
     inline void SetStopTimestamp(const Aws::String& value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp = value; }
+
+    /*
+     <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
+    */
+    inline void SetStopTimestamp(Aws::String&& value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp = value; }
 
     /*
      <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
@@ -119,7 +148,12 @@ namespace Model
     /*
      <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
-    inline Session&  WithStopTimestamp(const Aws::String& value) { SetStopTimestamp(value); return *this;}
+    inline Session& WithStopTimestamp(const Aws::String& value) { SetStopTimestamp(value); return *this;}
+
+    /*
+     <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
+    */
+    inline Session& WithStopTimestamp(Aws::String&& value) { SetStopTimestamp(value); return *this;}
 
     /*
      <p>The time the event terminated in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>

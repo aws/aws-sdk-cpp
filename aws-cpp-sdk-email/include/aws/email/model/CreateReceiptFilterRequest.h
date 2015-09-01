@@ -35,11 +35,18 @@ namespace Model
 
     
     inline const ReceiptFilter& GetFilter() const{ return m_filter; }
+
     
     inline void SetFilter(const ReceiptFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     
-    inline CreateReceiptFilterRequest&  WithFilter(const ReceiptFilter& value) { SetFilter(value); return *this;}
+    inline void SetFilter(ReceiptFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline CreateReceiptFilterRequest& WithFilter(const ReceiptFilter& value) { SetFilter(value); return *this;}
+
+    
+    inline CreateReceiptFilterRequest& WithFilter(ReceiptFilter&& value) { SetFilter(value); return *this;}
 
   private:
     ReceiptFilter m_filter;

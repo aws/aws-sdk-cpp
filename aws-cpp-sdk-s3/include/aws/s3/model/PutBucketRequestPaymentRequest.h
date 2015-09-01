@@ -38,39 +38,60 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline PutBucketRequestPaymentRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline PutBucketRequestPaymentRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline PutBucketRequestPaymentRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline PutBucketRequestPaymentRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
     
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     
-    inline PutBucketRequestPaymentRequest&  WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+    inline PutBucketRequestPaymentRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    
+    inline PutBucketRequestPaymentRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
 
     
     inline PutBucketRequestPaymentRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
     
     inline const RequestPaymentConfiguration& GetRequestPaymentConfiguration() const{ return m_requestPaymentConfiguration; }
+
     
     inline void SetRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { m_requestPaymentConfigurationHasBeenSet = true; m_requestPaymentConfiguration = value; }
 
     
-    inline PutBucketRequestPaymentRequest&  WithRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { SetRequestPaymentConfiguration(value); return *this;}
+    inline void SetRequestPaymentConfiguration(RequestPaymentConfiguration&& value) { m_requestPaymentConfigurationHasBeenSet = true; m_requestPaymentConfiguration = value; }
+
+    
+    inline PutBucketRequestPaymentRequest& WithRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { SetRequestPaymentConfiguration(value); return *this;}
+
+    
+    inline PutBucketRequestPaymentRequest& WithRequestPaymentConfiguration(RequestPaymentConfiguration&& value) { SetRequestPaymentConfiguration(value); return *this;}
 
   private:
     Aws::String m_bucket;

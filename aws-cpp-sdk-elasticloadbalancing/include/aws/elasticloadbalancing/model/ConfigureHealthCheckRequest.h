@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline ConfigureHealthCheckRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline ConfigureHealthCheckRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline ConfigureHealthCheckRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The configuration information for the new health check.</p>
     */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+
     /*
      <p>The configuration information for the new health check.</p>
     */
@@ -70,7 +82,17 @@ namespace Model
     /*
      <p>The configuration information for the new health check.</p>
     */
-    inline ConfigureHealthCheckRequest&  WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
+
+    /*
+     <p>The configuration information for the new health check.</p>
+    */
+    inline ConfigureHealthCheckRequest& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+
+    /*
+     <p>The configuration information for the new health check.</p>
+    */
+    inline ConfigureHealthCheckRequest& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 
   private:
     Aws::String m_loadBalancerName;

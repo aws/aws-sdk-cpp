@@ -37,10 +37,16 @@ namespace Model
      <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+
     /*
      <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+
+    /*
+     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
+    */
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
     */
-    inline PurgeQueueRequest&  WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+    inline PurgeQueueRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+
+    /*
+     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
+    */
+    inline PurgeQueueRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /*
      <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>

@@ -61,42 +61,77 @@ ReservedNodeOffering& ReservedNodeOffering::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode reservedNodeOfferingIdNode = resultNode.FirstChild("ReservedNodeOfferingId");
+    if(reservedNodeOfferingIdNode.IsNull())
+    {
+      reservedNodeOfferingIdNode = resultNode;
+    }
+
     if(!reservedNodeOfferingIdNode.IsNull())
     {
       m_reservedNodeOfferingId = StringUtils::Trim(reservedNodeOfferingIdNode.GetText().c_str());
       m_reservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
+    if(nodeTypeNode.IsNull())
+    {
+      nodeTypeNode = resultNode;
+    }
+
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
+    if(durationNode.IsNull())
+    {
+      durationNode = resultNode;
+    }
+
     if(!durationNode.IsNull())
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
+    if(fixedPriceNode.IsNull())
+    {
+      fixedPriceNode = resultNode;
+    }
+
     if(!fixedPriceNode.IsNull())
     {
       m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(fixedPriceNode.GetText().c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
+    if(usagePriceNode.IsNull())
+    {
+      usagePriceNode = resultNode;
+    }
+
     if(!usagePriceNode.IsNull())
     {
       m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(usagePriceNode.GetText().c_str()).c_str());
       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
+    if(currencyCodeNode.IsNull())
+    {
+      currencyCodeNode = resultNode;
+    }
+
     if(!currencyCodeNode.IsNull())
     {
       m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
+    if(offeringTypeNode.IsNull())
+    {
+      offeringTypeNode = resultNode;
+    }
+
     if(!offeringTypeNode.IsNull())
     {
       m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());

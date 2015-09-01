@@ -45,10 +45,16 @@ namespace Model
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    /*
+     Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
+    */
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
@@ -58,7 +64,12 @@ namespace Model
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
     */
-    inline Destination&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline Destination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    /*
+     Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
+    */
+    inline Destination& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.

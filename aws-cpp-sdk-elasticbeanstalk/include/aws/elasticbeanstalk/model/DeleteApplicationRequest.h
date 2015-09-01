@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the application to delete.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of the application to delete.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of the application to delete.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application to delete.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the application to delete.</p>
     */
-    inline DeleteApplicationRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline DeleteApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of the application to delete.</p>
+    */
+    inline DeleteApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of the application to delete.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>When set to true, running environments will be terminated before deleting the application.</p>
     */
     inline bool GetTerminateEnvByForce() const{ return m_terminateEnvByForce; }
+
     /*
      <p>When set to true, running environments will be terminated before deleting the application.</p>
     */
@@ -70,7 +82,7 @@ namespace Model
     /*
      <p>When set to true, running environments will be terminated before deleting the application.</p>
     */
-    inline DeleteApplicationRequest&  WithTerminateEnvByForce(bool value) { SetTerminateEnvByForce(value); return *this;}
+    inline DeleteApplicationRequest& WithTerminateEnvByForce(bool value) { SetTerminateEnvByForce(value); return *this;}
 
   private:
     Aws::String m_applicationName;

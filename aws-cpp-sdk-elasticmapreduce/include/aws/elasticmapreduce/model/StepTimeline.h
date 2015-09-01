@@ -43,6 +43,7 @@ namespace Model
      <p>The date and time when the cluster step was created. </p>
     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
+
     /*
      <p>The date and time when the cluster step was created. </p>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The date and time when the cluster step was created. </p>
     */
-    inline StepTimeline&  WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline StepTimeline& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
     /*
      <p>The date and time when the cluster step execution started. </p>
     */
     inline double GetStartDateTime() const{ return m_startDateTime; }
+
     /*
      <p>The date and time when the cluster step execution started. </p>
     */
@@ -65,12 +67,13 @@ namespace Model
     /*
      <p>The date and time when the cluster step execution started. </p>
     */
-    inline StepTimeline&  WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
+    inline StepTimeline& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
 
     /*
      <p>The date and time when the cluster step execution completed or failed. </p>
     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
+
     /*
      <p>The date and time when the cluster step execution completed or failed. </p>
     */
@@ -79,7 +82,7 @@ namespace Model
     /*
      <p>The date and time when the cluster step execution completed or failed. </p>
     */
-    inline StepTimeline&  WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline StepTimeline& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
   private:
     double m_creationDateTime;

@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     */
     inline const Aws::Vector<Command>& GetCommands() const{ return m_commands; }
+
     /*
      <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     */
-    inline DescribeCommandsResult&  WithCommands(const Aws::Vector<Command>& value) { SetCommands(value); return *this;}
+    inline void SetCommands(Aws::Vector<Command>&& value) { m_commands = value; }
+
+    /*
+     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    */
+    inline DescribeCommandsResult& WithCommands(const Aws::Vector<Command>& value) { SetCommands(value); return *this;}
+
+    /*
+     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    */
+    inline DescribeCommandsResult& WithCommands(Aws::Vector<Command>&& value) { SetCommands(value); return *this;}
 
     /*
      <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     */
     inline DescribeCommandsResult& AddCommands(const Command& value) { m_commands.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    */
+    inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(value); return *this; }
 
   private:
     Aws::Vector<Command> m_commands;

@@ -39,10 +39,16 @@ namespace Model
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
-    inline AddTagsToVaultRequest&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline AddTagsToVaultRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline AddTagsToVaultRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The name of the vault.</p>
     */
     inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+
     /*
      <p>The name of the vault.</p>
     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /*
      <p>The name of the vault.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The name of the vault.</p>
     */
-    inline AddTagsToVaultRequest&  WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+    inline AddTagsToVaultRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline AddTagsToVaultRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
 
     /*
      <p>The name of the vault.</p>
@@ -87,6 +109,7 @@ namespace Model
      <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
     /*
      <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
     */
@@ -95,12 +118,47 @@ namespace Model
     /*
      <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
     */
-    inline AddTagsToVaultRequest&  WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
     */
     inline AddTagsToVaultRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /*
+     <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    */
+    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
 
     /*
      <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>

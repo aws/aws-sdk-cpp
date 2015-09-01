@@ -294,19 +294,19 @@ namespace Model
         void GetMetricStatisticsAsync(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::ListHostInfoOutcome ListHostInfo(const Model::ListHostInfoRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::ListHostInfoOutcomeCallable ListHostInfoCallable(const Model::ListHostInfoRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -370,19 +370,19 @@ namespace Model
         void PutMetricDataAsync(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::PutMetricDataBatchOutcome PutMetricDataBatch(const Model::PutMetricDataBatchRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::PutMetricDataBatchOutcomeCallable PutMetricDataBatchCallable(const Model::PutMetricDataBatchRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */

@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the option group option. </p>
     */
     inline const Aws::String& GetSettingName() const{ return m_settingName; }
+
     /*
      <p> The name of the option group option. </p>
     */
     inline void SetSettingName(const Aws::String& value) { m_settingNameHasBeenSet = true; m_settingName = value; }
+
+    /*
+     <p> The name of the option group option. </p>
+    */
+    inline void SetSettingName(Aws::String&& value) { m_settingNameHasBeenSet = true; m_settingName = value; }
 
     /*
      <p> The name of the option group option. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the option group option. </p>
     */
-    inline OptionGroupOptionSetting&  WithSettingName(const Aws::String& value) { SetSettingName(value); return *this;}
+    inline OptionGroupOptionSetting& WithSettingName(const Aws::String& value) { SetSettingName(value); return *this;}
+
+    /*
+     <p> The name of the option group option. </p>
+    */
+    inline OptionGroupOptionSetting& WithSettingName(Aws::String&& value) { SetSettingName(value); return *this;}
 
     /*
      <p> The name of the option group option. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The description of the option group option. </p>
     */
     inline const Aws::String& GetSettingDescription() const{ return m_settingDescription; }
+
     /*
      <p> The description of the option group option. </p>
     */
     inline void SetSettingDescription(const Aws::String& value) { m_settingDescriptionHasBeenSet = true; m_settingDescription = value; }
+
+    /*
+     <p> The description of the option group option. </p>
+    */
+    inline void SetSettingDescription(Aws::String&& value) { m_settingDescriptionHasBeenSet = true; m_settingDescription = value; }
 
     /*
      <p> The description of the option group option. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The description of the option group option. </p>
     */
-    inline OptionGroupOptionSetting&  WithSettingDescription(const Aws::String& value) { SetSettingDescription(value); return *this;}
+    inline OptionGroupOptionSetting& WithSettingDescription(const Aws::String& value) { SetSettingDescription(value); return *this;}
+
+    /*
+     <p> The description of the option group option. </p>
+    */
+    inline OptionGroupOptionSetting& WithSettingDescription(Aws::String&& value) { SetSettingDescription(value); return *this;}
 
     /*
      <p> The description of the option group option. </p>
@@ -95,10 +117,16 @@ namespace Model
      <p> The default value for the option group option. </p>
     */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
     /*
      <p> The default value for the option group option. </p>
     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    /*
+     <p> The default value for the option group option. </p>
+    */
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /*
      <p> The default value for the option group option. </p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p> The default value for the option group option. </p>
     */
-    inline OptionGroupOptionSetting&  WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+    inline OptionGroupOptionSetting& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    /*
+     <p> The default value for the option group option. </p>
+    */
+    inline OptionGroupOptionSetting& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
 
     /*
      <p> The default value for the option group option. </p>
@@ -119,10 +152,16 @@ namespace Model
      <p> The DB engine specific parameter type for the option group option. </p>
     */
     inline const Aws::String& GetApplyType() const{ return m_applyType; }
+
     /*
      <p> The DB engine specific parameter type for the option group option. </p>
     */
     inline void SetApplyType(const Aws::String& value) { m_applyTypeHasBeenSet = true; m_applyType = value; }
+
+    /*
+     <p> The DB engine specific parameter type for the option group option. </p>
+    */
+    inline void SetApplyType(Aws::String&& value) { m_applyTypeHasBeenSet = true; m_applyType = value; }
 
     /*
      <p> The DB engine specific parameter type for the option group option. </p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p> The DB engine specific parameter type for the option group option. </p>
     */
-    inline OptionGroupOptionSetting&  WithApplyType(const Aws::String& value) { SetApplyType(value); return *this;}
+    inline OptionGroupOptionSetting& WithApplyType(const Aws::String& value) { SetApplyType(value); return *this;}
+
+    /*
+     <p> The DB engine specific parameter type for the option group option. </p>
+    */
+    inline OptionGroupOptionSetting& WithApplyType(Aws::String&& value) { SetApplyType(value); return *this;}
 
     /*
      <p> The DB engine specific parameter type for the option group option. </p>
@@ -143,10 +187,16 @@ namespace Model
      <p> Indicates the acceptable values for the option group option. </p>
     */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+
     /*
      <p> Indicates the acceptable values for the option group option. </p>
     */
     inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
+
+    /*
+     <p> Indicates the acceptable values for the option group option. </p>
+    */
+    inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /*
      <p> Indicates the acceptable values for the option group option. </p>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p> Indicates the acceptable values for the option group option. </p>
     */
-    inline OptionGroupOptionSetting&  WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
+    inline OptionGroupOptionSetting& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
+
+    /*
+     <p> Indicates the acceptable values for the option group option. </p>
+    */
+    inline OptionGroupOptionSetting& WithAllowedValues(Aws::String&& value) { SetAllowedValues(value); return *this;}
 
     /*
      <p> Indicates the acceptable values for the option group option. </p>
@@ -167,6 +222,7 @@ namespace Model
      <p> Boolean value where true indicates that this option group option can be changed from the default value. </p>
     */
     inline bool GetIsModifiable() const{ return m_isModifiable; }
+
     /*
      <p> Boolean value where true indicates that this option group option can be changed from the default value. </p>
     */
@@ -175,7 +231,7 @@ namespace Model
     /*
      <p> Boolean value where true indicates that this option group option can be changed from the default value. </p>
     */
-    inline OptionGroupOptionSetting&  WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
+    inline OptionGroupOptionSetting& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
   private:
     Aws::String m_settingName;

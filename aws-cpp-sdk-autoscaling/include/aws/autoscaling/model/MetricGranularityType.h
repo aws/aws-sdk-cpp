@@ -47,10 +47,16 @@ namespace Model
      <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     */
     inline const Aws::String& GetGranularity() const{ return m_granularity; }
+
     /*
      <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     */
     inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
+
+    /*
+     <p>The granularity. The only valid value is <code>1Minute</code>.</p>
+    */
+    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /*
      <p>The granularity. The only valid value is <code>1Minute</code>.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     */
-    inline MetricGranularityType&  WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
+    inline MetricGranularityType& WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
+
+    /*
+     <p>The granularity. The only valid value is <code>1Minute</code>.</p>
+    */
+    inline MetricGranularityType& WithGranularity(Aws::String&& value) { SetGranularity(value); return *this;}
 
     /*
      <p>The granularity. The only valid value is <code>1Minute</code>.</p>

@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline AttachLoadBalancerToSubnetsRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline AttachLoadBalancerToSubnetsRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline AttachLoadBalancerToSubnetsRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
     /*
      <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
     */
@@ -70,12 +82,27 @@ namespace Model
     /*
      <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
     */
-    inline AttachLoadBalancerToSubnetsRequest&  WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+
+    /*
+     <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
+    */
+    inline AttachLoadBalancerToSubnetsRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+
+    /*
+     <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
+    */
+    inline AttachLoadBalancerToSubnetsRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
 
     /*
      <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
     */
     inline AttachLoadBalancerToSubnetsRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>
+    */
+    inline AttachLoadBalancerToSubnetsRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /*
      <p>The IDs of the subnets to add for the load balancer. You can add only one subnet per Availability Zone.</p>

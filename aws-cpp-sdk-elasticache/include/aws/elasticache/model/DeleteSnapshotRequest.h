@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the snapshot to be deleted.</p>
     */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
     /*
      <p>The name of the snapshot to be deleted.</p>
     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+
+    /*
+     <p>The name of the snapshot to be deleted.</p>
+    */
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /*
      <p>The name of the snapshot to be deleted.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the snapshot to be deleted.</p>
     */
-    inline DeleteSnapshotRequest&  WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
+    inline DeleteSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
+
+    /*
+     <p>The name of the snapshot to be deleted.</p>
+    */
+    inline DeleteSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
 
     /*
      <p>The name of the snapshot to be deleted.</p>

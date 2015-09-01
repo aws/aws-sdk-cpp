@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the role to update.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name of the role to update.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name of the role to update.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to update.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the role to update.</p>
     */
-    inline UpdateAssumeRolePolicyRequest&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline UpdateAssumeRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name of the role to update.</p>
+    */
+    inline UpdateAssumeRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name of the role to update.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The policy that grants an entity permission to assume the role.</p>
     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+
+    /*
+     <p>The policy that grants an entity permission to assume the role.</p>
+    */
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
     */
-    inline UpdateAssumeRolePolicyRequest&  WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+    inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+
+    /*
+     <p>The policy that grants an entity permission to assume the role.</p>
+    */
+    inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /*
      <p>The policy that grants an entity permission to assume the role.</p>

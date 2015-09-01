@@ -47,6 +47,7 @@ namespace Model
      <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
     */
     inline const Aws::Vector<Aws::String>& GetClusterArns() const{ return m_clusterArns; }
+
     /*
      <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
     */
-    inline ListClustersResult&  WithClusterArns(const Aws::Vector<Aws::String>& value) { SetClusterArns(value); return *this;}
+    inline void SetClusterArns(Aws::Vector<Aws::String>&& value) { m_clusterArns = value; }
+
+    /*
+     <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
+    */
+    inline ListClustersResult& WithClusterArns(const Aws::Vector<Aws::String>& value) { SetClusterArns(value); return *this;}
+
+    /*
+     <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
+    */
+    inline ListClustersResult& WithClusterArns(Aws::Vector<Aws::String>&& value) { SetClusterArns(value); return *this;}
 
     /*
      <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
     */
     inline ListClustersResult& AddClusterArns(const Aws::String& value) { m_clusterArns.push_back(value); return *this; }
+
+    /*
+     <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
+    */
+    inline ListClustersResult& AddClusterArns(Aws::String&& value) { m_clusterArns.push_back(value); return *this; }
 
     /*
      <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     */
-    inline ListClustersResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    */
+    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

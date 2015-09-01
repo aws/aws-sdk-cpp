@@ -39,10 +39,16 @@ namespace Model
      <p>The user's SSH public key.</p>
     */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
     /*
      <p>The user's SSH public key.</p>
     */
     inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+
+    /*
+     <p>The user's SSH public key.</p>
+    */
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
 
     /*
      <p>The user's SSH public key.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The user's SSH public key.</p>
     */
-    inline UpdateMyUserProfileRequest&  WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+    inline UpdateMyUserProfileRequest& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+
+    /*
+     <p>The user's SSH public key.</p>
+    */
+    inline UpdateMyUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(value); return *this;}
 
     /*
      <p>The user's SSH public key.</p>

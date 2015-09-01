@@ -47,10 +47,16 @@ namespace Model
      <p>The topic's ARN.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The topic's ARN.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The topic's ARN.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The topic's ARN.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The topic's ARN.</p>
     */
-    inline Topic&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline Topic& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The topic's ARN.</p>
+    */
+    inline Topic& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The topic's ARN.</p>

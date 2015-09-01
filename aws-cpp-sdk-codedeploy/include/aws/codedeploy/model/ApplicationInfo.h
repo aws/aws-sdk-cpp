@@ -44,10 +44,16 @@ namespace Model
      <p>The application ID.</p>
     */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
     /*
      <p>The application ID.</p>
     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
+
+    /*
+     <p>The application ID.</p>
+    */
+    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /*
      <p>The application ID.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The application ID.</p>
     */
-    inline ApplicationInfo&  WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+    inline ApplicationInfo& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+
+    /*
+     <p>The application ID.</p>
+    */
+    inline ApplicationInfo& WithApplicationId(Aws::String&& value) { SetApplicationId(value); return *this;}
 
     /*
      <p>The application ID.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The application name.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The application name.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The application name.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The application name.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The application name.</p>
     */
-    inline ApplicationInfo&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline ApplicationInfo& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The application name.</p>
+    */
+    inline ApplicationInfo& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The application name.</p>
@@ -92,6 +114,7 @@ namespace Model
      <p>The time that the application was created.</p>
     */
     inline double GetCreateTime() const{ return m_createTime; }
+
     /*
      <p>The time that the application was created.</p>
     */
@@ -100,12 +123,13 @@ namespace Model
     /*
      <p>The time that the application was created.</p>
     */
-    inline ApplicationInfo&  WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline ApplicationInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 
     /*
      <p>True if the user has authenticated with GitHub for the specified application; otherwise, false.</p>
     */
     inline bool GetLinkedToGitHub() const{ return m_linkedToGitHub; }
+
     /*
      <p>True if the user has authenticated with GitHub for the specified application; otherwise, false.</p>
     */
@@ -114,7 +138,7 @@ namespace Model
     /*
      <p>True if the user has authenticated with GitHub for the specified application; otherwise, false.</p>
     */
-    inline ApplicationInfo&  WithLinkedToGitHub(bool value) { SetLinkedToGitHub(value); return *this;}
+    inline ApplicationInfo& WithLinkedToGitHub(bool value) { SetLinkedToGitHub(value); return *this;}
 
   private:
     Aws::String m_applicationId;

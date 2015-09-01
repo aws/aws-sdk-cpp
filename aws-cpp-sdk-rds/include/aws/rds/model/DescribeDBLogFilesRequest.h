@@ -40,10 +40,16 @@ namespace Model
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+
+    /*
+     <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline DescribeDBLogFilesRequest&  WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+
+    /*
+     <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline DescribeDBLogFilesRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -64,10 +75,16 @@ namespace Model
      <p> Filters the available log files for log file names that contain the specified string. </p>
     */
     inline const Aws::String& GetFilenameContains() const{ return m_filenameContains; }
+
     /*
      <p> Filters the available log files for log file names that contain the specified string. </p>
     */
     inline void SetFilenameContains(const Aws::String& value) { m_filenameContainsHasBeenSet = true; m_filenameContains = value; }
+
+    /*
+     <p> Filters the available log files for log file names that contain the specified string. </p>
+    */
+    inline void SetFilenameContains(Aws::String&& value) { m_filenameContainsHasBeenSet = true; m_filenameContains = value; }
 
     /*
      <p> Filters the available log files for log file names that contain the specified string. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> Filters the available log files for log file names that contain the specified string. </p>
     */
-    inline DescribeDBLogFilesRequest&  WithFilenameContains(const Aws::String& value) { SetFilenameContains(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithFilenameContains(const Aws::String& value) { SetFilenameContains(value); return *this;}
+
+    /*
+     <p> Filters the available log files for log file names that contain the specified string. </p>
+    */
+    inline DescribeDBLogFilesRequest& WithFilenameContains(Aws::String&& value) { SetFilenameContains(value); return *this;}
 
     /*
      <p> Filters the available log files for log file names that contain the specified string. </p>
@@ -88,6 +110,7 @@ namespace Model
      <p> Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds. </p>
     */
     inline long long GetFileLastWritten() const{ return m_fileLastWritten; }
+
     /*
      <p> Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds. </p>
     */
@@ -96,12 +119,13 @@ namespace Model
     /*
      <p> Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds. </p>
     */
-    inline DescribeDBLogFilesRequest&  WithFileLastWritten(long long value) { SetFileLastWritten(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithFileLastWritten(long long value) { SetFileLastWritten(value); return *this;}
 
     /*
      <p> Filters the available log files for files larger than the specified size. </p>
     */
     inline long long GetFileSize() const{ return m_fileSize; }
+
     /*
      <p> Filters the available log files for files larger than the specified size. </p>
     */
@@ -110,12 +134,13 @@ namespace Model
     /*
      <p> Filters the available log files for files larger than the specified size. </p>
     */
-    inline DescribeDBLogFilesRequest&  WithFileSize(long long value) { SetFileSize(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithFileSize(long long value) { SetFileSize(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
     /*
      <p>This parameter is not currently supported.</p>
     */
@@ -124,7 +149,17 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline DescribeDBLogFilesRequest&  WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeDBLogFilesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeDBLogFilesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -132,9 +167,15 @@ namespace Model
     inline DescribeDBLogFilesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline DescribeDBLogFilesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /*
      <p> The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
+
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     */
@@ -143,16 +184,22 @@ namespace Model
     /*
      <p> The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     */
-    inline DescribeDBLogFilesRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /*
      <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>
@@ -162,7 +209,12 @@ namespace Model
     /*
      <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>
     */
-    inline DescribeDBLogFilesRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>
+    */
+    inline DescribeDBLogFilesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords. </p>

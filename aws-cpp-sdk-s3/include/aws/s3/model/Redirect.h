@@ -46,10 +46,16 @@ namespace Model
      The host name to use in the redirect request.
     */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
+
     /*
      The host name to use in the redirect request.
     */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
+
+    /*
+     The host name to use in the redirect request.
+    */
+    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /*
      The host name to use in the redirect request.
@@ -59,7 +65,12 @@ namespace Model
     /*
      The host name to use in the redirect request.
     */
-    inline Redirect&  WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
+    inline Redirect& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
+
+    /*
+     The host name to use in the redirect request.
+    */
+    inline Redirect& WithHostName(Aws::String&& value) { SetHostName(value); return *this;}
 
     /*
      The host name to use in the redirect request.
@@ -70,10 +81,16 @@ namespace Model
      The HTTP redirect code to use on the response. Not required if one of the siblings is present.
     */
     inline const Aws::String& GetHttpRedirectCode() const{ return m_httpRedirectCode; }
+
     /*
      The HTTP redirect code to use on the response. Not required if one of the siblings is present.
     */
     inline void SetHttpRedirectCode(const Aws::String& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = value; }
+
+    /*
+     The HTTP redirect code to use on the response. Not required if one of the siblings is present.
+    */
+    inline void SetHttpRedirectCode(Aws::String&& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = value; }
 
     /*
      The HTTP redirect code to use on the response. Not required if one of the siblings is present.
@@ -83,7 +100,12 @@ namespace Model
     /*
      The HTTP redirect code to use on the response. Not required if one of the siblings is present.
     */
-    inline Redirect&  WithHttpRedirectCode(const Aws::String& value) { SetHttpRedirectCode(value); return *this;}
+    inline Redirect& WithHttpRedirectCode(const Aws::String& value) { SetHttpRedirectCode(value); return *this;}
+
+    /*
+     The HTTP redirect code to use on the response. Not required if one of the siblings is present.
+    */
+    inline Redirect& WithHttpRedirectCode(Aws::String&& value) { SetHttpRedirectCode(value); return *this;}
 
     /*
      The HTTP redirect code to use on the response. Not required if one of the siblings is present.
@@ -94,6 +116,7 @@ namespace Model
      Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
     */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
+
     /*
      Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
     */
@@ -102,16 +125,32 @@ namespace Model
     /*
      Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
     */
-    inline Redirect&  WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
+    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /*
+     Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
+    */
+    inline Redirect& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
+
+    /*
+     Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
+    */
+    inline Redirect& WithProtocol(Protocol&& value) { SetProtocol(value); return *this;}
 
     /*
      The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
     */
     inline const Aws::String& GetReplaceKeyPrefixWith() const{ return m_replaceKeyPrefixWith; }
+
     /*
      The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
     */
     inline void SetReplaceKeyPrefixWith(const Aws::String& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = value; }
+
+    /*
+     The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+    */
+    inline void SetReplaceKeyPrefixWith(Aws::String&& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = value; }
 
     /*
      The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
@@ -121,7 +160,12 @@ namespace Model
     /*
      The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
     */
-    inline Redirect&  WithReplaceKeyPrefixWith(const Aws::String& value) { SetReplaceKeyPrefixWith(value); return *this;}
+    inline Redirect& WithReplaceKeyPrefixWith(const Aws::String& value) { SetReplaceKeyPrefixWith(value); return *this;}
+
+    /*
+     The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+    */
+    inline Redirect& WithReplaceKeyPrefixWith(Aws::String&& value) { SetReplaceKeyPrefixWith(value); return *this;}
 
     /*
      The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the docs/ folder) to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
@@ -132,10 +176,16 @@ namespace Model
      The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.
     */
     inline const Aws::String& GetReplaceKeyWith() const{ return m_replaceKeyWith; }
+
     /*
      The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.
     */
     inline void SetReplaceKeyWith(const Aws::String& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = value; }
+
+    /*
+     The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.
+    */
+    inline void SetReplaceKeyWith(Aws::String&& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = value; }
 
     /*
      The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.
@@ -145,7 +195,12 @@ namespace Model
     /*
      The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.
     */
-    inline Redirect&  WithReplaceKeyWith(const Aws::String& value) { SetReplaceKeyWith(value); return *this;}
+    inline Redirect& WithReplaceKeyWith(const Aws::String& value) { SetReplaceKeyWith(value); return *this;}
+
+    /*
+     The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.
+    */
+    inline Redirect& WithReplaceKeyWith(Aws::String&& value) { SetReplaceKeyWith(value); return *this;}
 
     /*
      The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the sibling is present. Can be present only if ReplaceKeyPrefixWith is not provided.

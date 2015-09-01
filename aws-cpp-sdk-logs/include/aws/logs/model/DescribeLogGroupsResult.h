@@ -46,25 +46,42 @@ namespace Model
 
     
     inline const Aws::Vector<LogGroup>& GetLogGroups() const{ return m_logGroups; }
+
     
     inline void SetLogGroups(const Aws::Vector<LogGroup>& value) { m_logGroups = value; }
 
     
-    inline DescribeLogGroupsResult&  WithLogGroups(const Aws::Vector<LogGroup>& value) { SetLogGroups(value); return *this;}
+    inline void SetLogGroups(Aws::Vector<LogGroup>&& value) { m_logGroups = value; }
+
+    
+    inline DescribeLogGroupsResult& WithLogGroups(const Aws::Vector<LogGroup>& value) { SetLogGroups(value); return *this;}
+
+    
+    inline DescribeLogGroupsResult& WithLogGroups(Aws::Vector<LogGroup>&& value) { SetLogGroups(value); return *this;}
 
     
     inline DescribeLogGroupsResult& AddLogGroups(const LogGroup& value) { m_logGroups.push_back(value); return *this; }
 
     
+    inline DescribeLogGroupsResult& AddLogGroups(LogGroup&& value) { m_logGroups.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     
-    inline DescribeLogGroupsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLogGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline DescribeLogGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline DescribeLogGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

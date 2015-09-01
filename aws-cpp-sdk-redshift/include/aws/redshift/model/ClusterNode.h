@@ -47,10 +47,16 @@ namespace Model
      <p>Whether the node is a leader node or a compute node.</p>
     */
     inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
+
     /*
      <p>Whether the node is a leader node or a compute node.</p>
     */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
+
+    /*
+     <p>Whether the node is a leader node or a compute node.</p>
+    */
+    inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
     /*
      <p>Whether the node is a leader node or a compute node.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>Whether the node is a leader node or a compute node.</p>
     */
-    inline ClusterNode&  WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
+    inline ClusterNode& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
+
+    /*
+     <p>Whether the node is a leader node or a compute node.</p>
+    */
+    inline ClusterNode& WithNodeRole(Aws::String&& value) { SetNodeRole(value); return *this;}
 
     /*
      <p>Whether the node is a leader node or a compute node.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The private IP address of a node within a cluster.</p>
     */
     inline const Aws::String& GetPrivateIPAddress() const{ return m_privateIPAddress; }
+
     /*
      <p>The private IP address of a node within a cluster.</p>
     */
     inline void SetPrivateIPAddress(const Aws::String& value) { m_privateIPAddressHasBeenSet = true; m_privateIPAddress = value; }
+
+    /*
+     <p>The private IP address of a node within a cluster.</p>
+    */
+    inline void SetPrivateIPAddress(Aws::String&& value) { m_privateIPAddressHasBeenSet = true; m_privateIPAddress = value; }
 
     /*
      <p>The private IP address of a node within a cluster.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The private IP address of a node within a cluster.</p>
     */
-    inline ClusterNode&  WithPrivateIPAddress(const Aws::String& value) { SetPrivateIPAddress(value); return *this;}
+    inline ClusterNode& WithPrivateIPAddress(const Aws::String& value) { SetPrivateIPAddress(value); return *this;}
+
+    /*
+     <p>The private IP address of a node within a cluster.</p>
+    */
+    inline ClusterNode& WithPrivateIPAddress(Aws::String&& value) { SetPrivateIPAddress(value); return *this;}
 
     /*
      <p>The private IP address of a node within a cluster.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The public IP address of a node within a cluster.</p>
     */
     inline const Aws::String& GetPublicIPAddress() const{ return m_publicIPAddress; }
+
     /*
      <p>The public IP address of a node within a cluster.</p>
     */
     inline void SetPublicIPAddress(const Aws::String& value) { m_publicIPAddressHasBeenSet = true; m_publicIPAddress = value; }
+
+    /*
+     <p>The public IP address of a node within a cluster.</p>
+    */
+    inline void SetPublicIPAddress(Aws::String&& value) { m_publicIPAddressHasBeenSet = true; m_publicIPAddress = value; }
 
     /*
      <p>The public IP address of a node within a cluster.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The public IP address of a node within a cluster.</p>
     */
-    inline ClusterNode&  WithPublicIPAddress(const Aws::String& value) { SetPublicIPAddress(value); return *this;}
+    inline ClusterNode& WithPublicIPAddress(const Aws::String& value) { SetPublicIPAddress(value); return *this;}
+
+    /*
+     <p>The public IP address of a node within a cluster.</p>
+    */
+    inline ClusterNode& WithPublicIPAddress(Aws::String&& value) { SetPublicIPAddress(value); return *this;}
 
     /*
      <p>The public IP address of a node within a cluster.</p>

@@ -45,6 +45,7 @@ namespace Model
      Specifies the region where the bucket will be created. If you don't specify a region, the bucket will be created in US Standard.
     */
     inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
+
     /*
      Specifies the region where the bucket will be created. If you don't specify a region, the bucket will be created in US Standard.
     */
@@ -53,7 +54,17 @@ namespace Model
     /*
      Specifies the region where the bucket will be created. If you don't specify a region, the bucket will be created in US Standard.
     */
-    inline CreateBucketConfiguration&  WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
+    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
+
+    /*
+     Specifies the region where the bucket will be created. If you don't specify a region, the bucket will be created in US Standard.
+    */
+    inline CreateBucketConfiguration& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
+
+    /*
+     Specifies the region where the bucket will be created. If you don't specify a region, the bucket will be created in US Standard.
+    */
+    inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(value); return *this;}
 
   private:
     BucketLocationConstraint m_locationConstraint;

@@ -49,6 +49,7 @@ namespace Model
      <p> A list of metrics used to generate statistics for an AWS account. </p>
     */
     inline const Aws::Vector<Metric>& GetMetrics() const{ return m_metrics; }
+
     /*
      <p> A list of metrics used to generate statistics for an AWS account. </p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p> A list of metrics used to generate statistics for an AWS account. </p>
     */
-    inline ListMetricsResult&  WithMetrics(const Aws::Vector<Metric>& value) { SetMetrics(value); return *this;}
+    inline void SetMetrics(Aws::Vector<Metric>&& value) { m_metrics = value; }
+
+    /*
+     <p> A list of metrics used to generate statistics for an AWS account. </p>
+    */
+    inline ListMetricsResult& WithMetrics(const Aws::Vector<Metric>& value) { SetMetrics(value); return *this;}
+
+    /*
+     <p> A list of metrics used to generate statistics for an AWS account. </p>
+    */
+    inline ListMetricsResult& WithMetrics(Aws::Vector<Metric>&& value) { SetMetrics(value); return *this;}
 
     /*
      <p> A list of metrics used to generate statistics for an AWS account. </p>
@@ -65,13 +76,24 @@ namespace Model
     inline ListMetricsResult& AddMetrics(const Metric& value) { m_metrics.push_back(value); return *this; }
 
     /*
+     <p> A list of metrics used to generate statistics for an AWS account. </p>
+    */
+    inline ListMetricsResult& AddMetrics(Metric&& value) { m_metrics.push_back(value); return *this; }
+
+    /*
      <p> A string that marks the start of the next batch of returned results. </p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p> A string that marks the start of the next batch of returned results. </p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p> A string that marks the start of the next batch of returned results. </p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p> A string that marks the start of the next batch of returned results. </p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p> A string that marks the start of the next batch of returned results. </p>
     */
-    inline ListMetricsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p> A string that marks the start of the next batch of returned results. </p>
+    */
+    inline ListMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p> A string that marks the start of the next batch of returned results. </p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListMetricsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListMetricsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListMetricsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Metric> m_metrics;

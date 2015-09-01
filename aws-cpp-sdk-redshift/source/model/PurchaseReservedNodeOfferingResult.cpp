@@ -42,6 +42,11 @@ PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode reservedNodeNode = resultNode.FirstChild("ReservedNode");
+    if(reservedNodeNode.IsNull())
+    {
+      reservedNodeNode = resultNode;
+    }
+
     if(!reservedNodeNode.IsNull())
     {
       m_reservedNode = reservedNodeNode;

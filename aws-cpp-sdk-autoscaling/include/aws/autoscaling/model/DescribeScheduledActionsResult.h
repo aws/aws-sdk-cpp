@@ -49,6 +49,7 @@ namespace Model
      <p>The scheduled actions.</p>
     */
     inline const Aws::Vector<ScheduledUpdateGroupAction>& GetScheduledUpdateGroupActions() const{ return m_scheduledUpdateGroupActions; }
+
     /*
      <p>The scheduled actions.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The scheduled actions.</p>
     */
-    inline DescribeScheduledActionsResult&  WithScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupAction>& value) { SetScheduledUpdateGroupActions(value); return *this;}
+    inline void SetScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupAction>&& value) { m_scheduledUpdateGroupActions = value; }
+
+    /*
+     <p>The scheduled actions.</p>
+    */
+    inline DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupAction>& value) { SetScheduledUpdateGroupActions(value); return *this;}
+
+    /*
+     <p>The scheduled actions.</p>
+    */
+    inline DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupAction>&& value) { SetScheduledUpdateGroupActions(value); return *this;}
 
     /*
      <p>The scheduled actions.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(const ScheduledUpdateGroupAction& value) { m_scheduledUpdateGroupActions.push_back(value); return *this; }
 
     /*
+     <p>The scheduled actions.</p>
+    */
+    inline DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(ScheduledUpdateGroupAction&& value) { m_scheduledUpdateGroupActions.push_back(value); return *this; }
+
+    /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
-    inline DescribeScheduledActionsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeScheduledActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline DescribeScheduledActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeScheduledActionsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeScheduledActionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeScheduledActionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ScheduledUpdateGroupAction> m_scheduledUpdateGroupActions;

@@ -46,10 +46,16 @@ namespace Model
      <p> The lock ID, which is used to complete the vault locking process.</p>
     */
     inline const Aws::String& GetLockId() const{ return m_lockId; }
+
     /*
      <p> The lock ID, which is used to complete the vault locking process.</p>
     */
     inline void SetLockId(const Aws::String& value) { m_lockId = value; }
+
+    /*
+     <p> The lock ID, which is used to complete the vault locking process.</p>
+    */
+    inline void SetLockId(Aws::String&& value) { m_lockId = value; }
 
     /*
      <p> The lock ID, which is used to complete the vault locking process.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p> The lock ID, which is used to complete the vault locking process.</p>
     */
-    inline InitiateVaultLockResult&  WithLockId(const Aws::String& value) { SetLockId(value); return *this;}
+    inline InitiateVaultLockResult& WithLockId(const Aws::String& value) { SetLockId(value); return *this;}
+
+    /*
+     <p> The lock ID, which is used to complete the vault locking process.</p>
+    */
+    inline InitiateVaultLockResult& WithLockId(Aws::String&& value) { SetLockId(value); return *this;}
 
     /*
      <p> The lock ID, which is used to complete the vault locking process.</p>

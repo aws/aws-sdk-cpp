@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iam/model/statusType.h>
+#include <aws/iam/model/StatusType.h>
 
 namespace Aws
 {
@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the IAM user associated with the SSH public key.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
-    inline SSHPublicKey&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline SSHPublicKey& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the IAM user associated with the SSH public key.</p>
+    */
+    inline SSHPublicKey& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The unique identifier for the SSH public key.</p>
     */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
+
     /*
      <p>The unique identifier for the SSH public key.</p>
     */
     inline void SetSSHPublicKeyId(const Aws::String& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
+
+    /*
+     <p>The unique identifier for the SSH public key.</p>
+    */
+    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
 
     /*
      <p>The unique identifier for the SSH public key.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The unique identifier for the SSH public key.</p>
     */
-    inline SSHPublicKey&  WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
+    inline SSHPublicKey& WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the SSH public key.</p>
+    */
+    inline SSHPublicKey& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
 
     /*
      <p>The unique identifier for the SSH public key.</p>
@@ -96,10 +118,16 @@ namespace Model
      <p>The MD5 message digest of the SSH public key.</p>
     */
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
+
     /*
      <p>The MD5 message digest of the SSH public key.</p>
     */
     inline void SetFingerprint(const Aws::String& value) { m_fingerprintHasBeenSet = true; m_fingerprint = value; }
+
+    /*
+     <p>The MD5 message digest of the SSH public key.</p>
+    */
+    inline void SetFingerprint(Aws::String&& value) { m_fingerprintHasBeenSet = true; m_fingerprint = value; }
 
     /*
      <p>The MD5 message digest of the SSH public key.</p>
@@ -109,7 +137,12 @@ namespace Model
     /*
      <p>The MD5 message digest of the SSH public key.</p>
     */
-    inline SSHPublicKey&  WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
+    inline SSHPublicKey& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
+
+    /*
+     <p>The MD5 message digest of the SSH public key.</p>
+    */
+    inline SSHPublicKey& WithFingerprint(Aws::String&& value) { SetFingerprint(value); return *this;}
 
     /*
      <p>The MD5 message digest of the SSH public key.</p>
@@ -120,10 +153,16 @@ namespace Model
      <p>The SSH public key.</p>
     */
     inline const Aws::String& GetSSHPublicKeyBody() const{ return m_sSHPublicKeyBody; }
+
     /*
      <p>The SSH public key.</p>
     */
     inline void SetSSHPublicKeyBody(const Aws::String& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = value; }
+
+    /*
+     <p>The SSH public key.</p>
+    */
+    inline void SetSSHPublicKeyBody(Aws::String&& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = value; }
 
     /*
      <p>The SSH public key.</p>
@@ -133,7 +172,12 @@ namespace Model
     /*
      <p>The SSH public key.</p>
     */
-    inline SSHPublicKey&  WithSSHPublicKeyBody(const Aws::String& value) { SetSSHPublicKeyBody(value); return *this;}
+    inline SSHPublicKey& WithSSHPublicKeyBody(const Aws::String& value) { SetSSHPublicKeyBody(value); return *this;}
+
+    /*
+     <p>The SSH public key.</p>
+    */
+    inline SSHPublicKey& WithSSHPublicKeyBody(Aws::String&& value) { SetSSHPublicKeyBody(value); return *this;}
 
     /*
      <p>The SSH public key.</p>
@@ -143,21 +187,33 @@ namespace Model
     /*
      <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
     */
-    inline const statusType& GetStatus() const{ return m_status; }
-    /*
-     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
-    */
-    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline const StatusType& GetStatus() const{ return m_status; }
 
     /*
      <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
     */
-    inline SSHPublicKey&  WithStatus(const statusType& value) { SetStatus(value); return *this;}
+    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
+    */
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
+    */
+    inline SSHPublicKey& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
+    */
+    inline SSHPublicKey& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     */
     inline double GetUploadDate() const{ return m_uploadDate; }
+
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     */
@@ -166,7 +222,7 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     */
-    inline SSHPublicKey&  WithUploadDate(double value) { SetUploadDate(value); return *this;}
+    inline SSHPublicKey& WithUploadDate(double value) { SetUploadDate(value); return *this;}
 
   private:
     Aws::String m_userName;
@@ -177,7 +233,7 @@ namespace Model
     bool m_fingerprintHasBeenSet;
     Aws::String m_sSHPublicKeyBody;
     bool m_sSHPublicKeyBodyHasBeenSet;
-    statusType m_status;
+    StatusType m_status;
     bool m_statusHasBeenSet;
     double m_uploadDate;
     bool m_uploadDateHasBeenSet;

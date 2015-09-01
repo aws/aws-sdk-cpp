@@ -48,6 +48,7 @@ namespace Model
      <p>The list of instances for the cluster and given filters.</p>
     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
     /*
      <p>The list of instances for the cluster and given filters.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The list of instances for the cluster and given filters.</p>
     */
-    inline ListInstancesResult&  WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
+
+    /*
+     <p>The list of instances for the cluster and given filters.</p>
+    */
+    inline ListInstancesResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+
+    /*
+     <p>The list of instances for the cluster and given filters.</p>
+    */
+    inline ListInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
     /*
      <p>The list of instances for the cluster and given filters.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListInstancesResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
 
     /*
+     <p>The list of instances for the cluster and given filters.</p>
+    */
+    inline ListInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
-    inline ListInstancesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListInstancesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline ListInstancesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>

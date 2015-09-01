@@ -48,6 +48,7 @@ namespace Model
      <p>The bootstrap actions associated with the cluster .</p>
     */
     inline const Aws::Vector<Command>& GetBootstrapActions() const{ return m_bootstrapActions; }
+
     /*
      <p>The bootstrap actions associated with the cluster .</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The bootstrap actions associated with the cluster .</p>
     */
-    inline ListBootstrapActionsResult&  WithBootstrapActions(const Aws::Vector<Command>& value) { SetBootstrapActions(value); return *this;}
+    inline void SetBootstrapActions(Aws::Vector<Command>&& value) { m_bootstrapActions = value; }
+
+    /*
+     <p>The bootstrap actions associated with the cluster .</p>
+    */
+    inline ListBootstrapActionsResult& WithBootstrapActions(const Aws::Vector<Command>& value) { SetBootstrapActions(value); return *this;}
+
+    /*
+     <p>The bootstrap actions associated with the cluster .</p>
+    */
+    inline ListBootstrapActionsResult& WithBootstrapActions(Aws::Vector<Command>&& value) { SetBootstrapActions(value); return *this;}
 
     /*
      <p>The bootstrap actions associated with the cluster .</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListBootstrapActionsResult& AddBootstrapActions(const Command& value) { m_bootstrapActions.push_back(value); return *this; }
 
     /*
+     <p>The bootstrap actions associated with the cluster .</p>
+    */
+    inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve .</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>
     */
-    inline ListBootstrapActionsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListBootstrapActionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve .</p>
+    */
+    inline ListBootstrapActionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve .</p>

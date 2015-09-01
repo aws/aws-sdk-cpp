@@ -46,10 +46,16 @@ namespace Model
      <p>The user's IAM ARN.</p>
     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
     /*
      <p>The user's IAM ARN.</p>
     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArn = value; }
+
+    /*
+     <p>The user's IAM ARN.</p>
+    */
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArn = value; }
 
     /*
      <p>The user's IAM ARN.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline CreateUserProfileResult&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+    inline CreateUserProfileResult& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+
+    /*
+     <p>The user's IAM ARN.</p>
+    */
+    inline CreateUserProfileResult& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /*
      <p>The user's IAM ARN.</p>

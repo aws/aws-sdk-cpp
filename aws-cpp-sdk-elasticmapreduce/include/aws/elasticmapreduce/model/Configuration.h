@@ -47,10 +47,16 @@ namespace Model
      <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
     */
     inline const Aws::String& GetClassification() const{ return m_classification; }
+
     /*
      <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
     */
     inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
+
+    /*
+     <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
+    */
+    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = value; }
 
     /*
      <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
     */
-    inline Configuration&  WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
+    inline Configuration& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
+
+    /*
+     <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
+    */
+    inline Configuration& WithClassification(Aws::String&& value) { SetClassification(value); return *this;}
 
     /*
      <p>The classification of a configuration. For more information see, <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html">Amazon EMR Configurations</a>. </p>
@@ -71,6 +82,7 @@ namespace Model
      <p>A list of configurations you apply to this configuration object. </p>
     */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
     /*
      <p>A list of configurations you apply to this configuration object. </p>
     */
@@ -79,7 +91,17 @@ namespace Model
     /*
      <p>A list of configurations you apply to this configuration object. </p>
     */
-    inline Configuration&  WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+
+    /*
+     <p>A list of configurations you apply to this configuration object. </p>
+    */
+    inline Configuration& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+
+    /*
+     <p>A list of configurations you apply to this configuration object. </p>
+    */
+    inline Configuration& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
 
     /*
      <p>A list of configurations you apply to this configuration object. </p>
@@ -87,9 +109,15 @@ namespace Model
     inline Configuration& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /*
+     <p>A list of configurations you apply to this configuration object. </p>
+    */
+    inline Configuration& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+
+    /*
      <p>A set of properties supplied to the Configuration object.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
+
     /*
      <p>A set of properties supplied to the Configuration object.</p>
     */
@@ -98,12 +126,47 @@ namespace Model
     /*
      <p>A set of properties supplied to the Configuration object.</p>
     */
-    inline Configuration&  WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
+    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(value); return *this;}
 
     /*
      <p>A set of properties supplied to the Configuration object.</p>
     */
     inline Configuration& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+
+    /*
+     <p>A set of properties supplied to the Configuration object.</p>
+    */
+    inline Configuration& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
 
     /*
      <p>A set of properties supplied to the Configuration object.</p>

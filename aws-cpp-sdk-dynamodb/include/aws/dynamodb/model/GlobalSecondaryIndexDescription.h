@@ -49,10 +49,16 @@ namespace Model
      <p>The name of the global secondary index.</p>
     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
     /*
      <p>The name of the global secondary index.</p>
     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+
+    /*
+     <p>The name of the global secondary index.</p>
+    */
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /*
      <p>The name of the global secondary index.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The name of the global secondary index.</p>
     */
-    inline GlobalSecondaryIndexDescription&  WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+    inline GlobalSecondaryIndexDescription& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /*
+     <p>The name of the global secondary index.</p>
+    */
+    inline GlobalSecondaryIndexDescription& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
     /*
      <p>The name of the global secondary index.</p>
@@ -73,6 +84,7 @@ namespace Model
      <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+
     /*
      <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
@@ -81,25 +93,48 @@ namespace Model
     /*
      <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
-    inline GlobalSecondaryIndexDescription&  WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
+    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
+
+    /*
+     <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
+    */
+    inline GlobalSecondaryIndexDescription& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
+
+    /*
+     <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
+    */
+    inline GlobalSecondaryIndexDescription& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(value); return *this;}
 
     /*
      <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
     inline GlobalSecondaryIndexDescription& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
+    /*
+     <p>The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
+    */
+    inline GlobalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
+
     
     inline const Projection& GetProjection() const{ return m_projection; }
+
     
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
     
-    inline GlobalSecondaryIndexDescription&  WithProjection(const Projection& value) { SetProjection(value); return *this;}
+    inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
+
+    
+    inline GlobalSecondaryIndexDescription& WithProjection(const Projection& value) { SetProjection(value); return *this;}
+
+    
+    inline GlobalSecondaryIndexDescription& WithProjection(Projection&& value) { SetProjection(value); return *this;}
 
     /*
      <p>The current state of the global secondary index:</p> <ul> <li> <p><i>CREATING</i> - The index is being created.</p> </li> <li> <p><i>UPDATING</i> - The index is being updated.</p> </li> <li> <p><i>DELETING</i> - The index is being deleted.</p> </li> <li> <p><i>ACTIVE</i> - The index is ready for use.</p> </li> </ul>
     */
     inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+
     /*
      <p>The current state of the global secondary index:</p> <ul> <li> <p><i>CREATING</i> - The index is being created.</p> </li> <li> <p><i>UPDATING</i> - The index is being updated.</p> </li> <li> <p><i>DELETING</i> - The index is being deleted.</p> </li> <li> <p><i>ACTIVE</i> - The index is ready for use.</p> </li> </ul>
     */
@@ -108,12 +143,23 @@ namespace Model
     /*
      <p>The current state of the global secondary index:</p> <ul> <li> <p><i>CREATING</i> - The index is being created.</p> </li> <li> <p><i>UPDATING</i> - The index is being updated.</p> </li> <li> <p><i>DELETING</i> - The index is being deleted.</p> </li> <li> <p><i>ACTIVE</i> - The index is ready for use.</p> </li> </ul>
     */
-    inline GlobalSecondaryIndexDescription&  WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
+    inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
+
+    /*
+     <p>The current state of the global secondary index:</p> <ul> <li> <p><i>CREATING</i> - The index is being created.</p> </li> <li> <p><i>UPDATING</i> - The index is being updated.</p> </li> <li> <p><i>DELETING</i> - The index is being deleted.</p> </li> <li> <p><i>ACTIVE</i> - The index is ready for use.</p> </li> </ul>
+    */
+    inline GlobalSecondaryIndexDescription& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
+
+    /*
+     <p>The current state of the global secondary index:</p> <ul> <li> <p><i>CREATING</i> - The index is being created.</p> </li> <li> <p><i>UPDATING</i> - The index is being updated.</p> </li> <li> <p><i>DELETING</i> - The index is being deleted.</p> </li> <li> <p><i>ACTIVE</i> - The index is ready for use.</p> </li> </ul>
+    */
+    inline GlobalSecondaryIndexDescription& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(value); return *this;}
 
     /*
      <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a hash key attribute cannot have any duplicates.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.</p> <note><p>For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i> output.</p></note>
     */
     inline bool GetBackfilling() const{ return m_backfilling; }
+
     /*
      <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a hash key attribute cannot have any duplicates.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.</p> <note><p>For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i> output.</p></note>
     */
@@ -122,20 +168,28 @@ namespace Model
     /*
      <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a hash key attribute cannot have any duplicates.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.</p> <note><p>For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i> output.</p></note>
     */
-    inline GlobalSecondaryIndexDescription&  WithBackfilling(bool value) { SetBackfilling(value); return *this;}
+    inline GlobalSecondaryIndexDescription& WithBackfilling(bool value) { SetBackfilling(value); return *this;}
 
     
     inline const ProvisionedThroughputDescription& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
     
     inline void SetProvisionedThroughput(const ProvisionedThroughputDescription& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
     
-    inline GlobalSecondaryIndexDescription&  WithProvisionedThroughput(const ProvisionedThroughputDescription& value) { SetProvisionedThroughput(value); return *this;}
+    inline void SetProvisionedThroughput(ProvisionedThroughputDescription&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    
+    inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(const ProvisionedThroughputDescription& value) { SetProvisionedThroughput(value); return *this;}
+
+    
+    inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(ProvisionedThroughputDescription&& value) { SetProvisionedThroughput(value); return *this;}
 
     /*
      <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </p>
     */
     inline long long GetIndexSizeBytes() const{ return m_indexSizeBytes; }
+
     /*
      <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </p>
     */
@@ -144,12 +198,13 @@ namespace Model
     /*
      <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </p>
     */
-    inline GlobalSecondaryIndexDescription&  WithIndexSizeBytes(long long value) { SetIndexSizeBytes(value); return *this;}
+    inline GlobalSecondaryIndexDescription& WithIndexSizeBytes(long long value) { SetIndexSizeBytes(value); return *this;}
 
     /*
      <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </p>
     */
     inline long long GetItemCount() const{ return m_itemCount; }
+
     /*
      <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </p>
     */
@@ -158,16 +213,22 @@ namespace Model
     /*
      <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. </p>
     */
-    inline GlobalSecondaryIndexDescription&  WithItemCount(long long value) { SetItemCount(value); return *this;}
+    inline GlobalSecondaryIndexDescription& WithItemCount(long long value) { SetItemCount(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     */
     inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     */
     inline void SetIndexArn(const Aws::String& value) { m_indexArnHasBeenSet = true; m_indexArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
+    inline void SetIndexArn(Aws::String&& value) { m_indexArnHasBeenSet = true; m_indexArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
@@ -177,7 +238,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     */
-    inline GlobalSecondaryIndexDescription&  WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
+    inline GlobalSecondaryIndexDescription& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
+    inline GlobalSecondaryIndexDescription& WithIndexArn(Aws::String&& value) { SetIndexArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>

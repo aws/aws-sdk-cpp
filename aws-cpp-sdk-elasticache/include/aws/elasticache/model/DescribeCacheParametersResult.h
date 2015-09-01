@@ -50,10 +50,16 @@ namespace Model
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -63,7 +69,12 @@ namespace Model
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
-    inline DescribeCacheParametersResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeCacheParametersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline DescribeCacheParametersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -74,6 +85,7 @@ namespace Model
      <p>A list of <a>Parameter</a> instances.</p>
     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
     /*
      <p>A list of <a>Parameter</a> instances.</p>
     */
@@ -82,7 +94,17 @@ namespace Model
     /*
      <p>A list of <a>Parameter</a> instances.</p>
     */
-    inline DescribeCacheParametersResult&  WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+
+    /*
+     <p>A list of <a>Parameter</a> instances.</p>
+    */
+    inline DescribeCacheParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
+
+    /*
+     <p>A list of <a>Parameter</a> instances.</p>
+    */
+    inline DescribeCacheParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /*
      <p>A list of <a>Parameter</a> instances.</p>
@@ -90,9 +112,15 @@ namespace Model
     inline DescribeCacheParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /*
+     <p>A list of <a>Parameter</a> instances.</p>
+    */
+    inline DescribeCacheParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+
+    /*
      <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     */
     inline const Aws::Vector<CacheNodeTypeSpecificParameter>& GetCacheNodeTypeSpecificParameters() const{ return m_cacheNodeTypeSpecificParameters; }
+
     /*
      <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     */
@@ -101,20 +129,42 @@ namespace Model
     /*
      <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     */
-    inline DescribeCacheParametersResult&  WithCacheNodeTypeSpecificParameters(const Aws::Vector<CacheNodeTypeSpecificParameter>& value) { SetCacheNodeTypeSpecificParameters(value); return *this;}
+    inline void SetCacheNodeTypeSpecificParameters(Aws::Vector<CacheNodeTypeSpecificParameter>&& value) { m_cacheNodeTypeSpecificParameters = value; }
+
+    /*
+     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    */
+    inline DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(const Aws::Vector<CacheNodeTypeSpecificParameter>& value) { SetCacheNodeTypeSpecificParameters(value); return *this;}
+
+    /*
+     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    */
+    inline DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(Aws::Vector<CacheNodeTypeSpecificParameter>&& value) { SetCacheNodeTypeSpecificParameters(value); return *this;}
 
     /*
      <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     */
     inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(const CacheNodeTypeSpecificParameter& value) { m_cacheNodeTypeSpecificParameters.push_back(value); return *this; }
 
+    /*
+     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    */
+    inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter&& value) { m_cacheNodeTypeSpecificParameters.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeCacheParametersResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeCacheParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeCacheParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

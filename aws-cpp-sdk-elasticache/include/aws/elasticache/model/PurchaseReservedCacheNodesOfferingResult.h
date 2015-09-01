@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ReservedCacheNode& GetReservedCacheNode() const{ return m_reservedCacheNode; }
+
     
     inline void SetReservedCacheNode(const ReservedCacheNode& value) { m_reservedCacheNode = value; }
 
     
-    inline PurchaseReservedCacheNodesOfferingResult&  WithReservedCacheNode(const ReservedCacheNode& value) { SetReservedCacheNode(value); return *this;}
+    inline void SetReservedCacheNode(ReservedCacheNode&& value) { m_reservedCacheNode = value; }
+
+    
+    inline PurchaseReservedCacheNodesOfferingResult& WithReservedCacheNode(const ReservedCacheNode& value) { SetReservedCacheNode(value); return *this;}
+
+    
+    inline PurchaseReservedCacheNodesOfferingResult& WithReservedCacheNode(ReservedCacheNode&& value) { SetReservedCacheNode(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline PurchaseReservedCacheNodesOfferingResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline PurchaseReservedCacheNodesOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline PurchaseReservedCacheNodesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReservedCacheNode m_reservedCacheNode;

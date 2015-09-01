@@ -47,6 +47,7 @@ namespace Model
      <p>A list of deployment IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetDeployments() const{ return m_deployments; }
+
     /*
      <p>A list of deployment IDs.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A list of deployment IDs.</p>
     */
-    inline ListDeploymentsResult&  WithDeployments(const Aws::Vector<Aws::String>& value) { SetDeployments(value); return *this;}
+    inline void SetDeployments(Aws::Vector<Aws::String>&& value) { m_deployments = value; }
+
+    /*
+     <p>A list of deployment IDs.</p>
+    */
+    inline ListDeploymentsResult& WithDeployments(const Aws::Vector<Aws::String>& value) { SetDeployments(value); return *this;}
+
+    /*
+     <p>A list of deployment IDs.</p>
+    */
+    inline ListDeploymentsResult& WithDeployments(Aws::Vector<Aws::String>&& value) { SetDeployments(value); return *this;}
 
     /*
      <p>A list of deployment IDs.</p>
     */
     inline ListDeploymentsResult& AddDeployments(const Aws::String& value) { m_deployments.push_back(value); return *this; }
+
+    /*
+     <p>A list of deployment IDs.</p>
+    */
+    inline ListDeploymentsResult& AddDeployments(Aws::String&& value) { m_deployments.push_back(value); return *this; }
 
     /*
      <p>A list of deployment IDs.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     */
-    inline ListDeploymentsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
+    inline ListDeploymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>

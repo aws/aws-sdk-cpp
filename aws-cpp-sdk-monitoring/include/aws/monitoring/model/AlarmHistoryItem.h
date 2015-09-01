@@ -48,10 +48,16 @@ namespace Model
      <p> The descriptive name for the alarm. </p>
     */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+
     /*
      <p> The descriptive name for the alarm. </p>
     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+
+    /*
+     <p> The descriptive name for the alarm. </p>
+    */
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /*
      <p> The descriptive name for the alarm. </p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p> The descriptive name for the alarm. </p>
     */
-    inline AlarmHistoryItem&  WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+    inline AlarmHistoryItem& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+
+    /*
+     <p> The descriptive name for the alarm. </p>
+    */
+    inline AlarmHistoryItem& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
 
     /*
      <p> The descriptive name for the alarm. </p>
@@ -72,6 +83,7 @@ namespace Model
      <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
     inline double GetTimestamp() const{ return m_timestamp; }
+
     /*
      <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
@@ -80,12 +92,13 @@ namespace Model
     /*
      <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline AlarmHistoryItem&  WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline AlarmHistoryItem& WithTimestamp(double value) { SetTimestamp(value); return *this;}
 
     /*
      <p> The type of alarm history item. </p>
     */
     inline const HistoryItemType& GetHistoryItemType() const{ return m_historyItemType; }
+
     /*
      <p> The type of alarm history item. </p>
     */
@@ -94,16 +107,32 @@ namespace Model
     /*
      <p> The type of alarm history item. </p>
     */
-    inline AlarmHistoryItem&  WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
+    inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
+
+    /*
+     <p> The type of alarm history item. </p>
+    */
+    inline AlarmHistoryItem& WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
+
+    /*
+     <p> The type of alarm history item. </p>
+    */
+    inline AlarmHistoryItem& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(value); return *this;}
 
     /*
      <p> A human-readable summary of the alarm history. </p>
     */
     inline const Aws::String& GetHistorySummary() const{ return m_historySummary; }
+
     /*
      <p> A human-readable summary of the alarm history. </p>
     */
     inline void SetHistorySummary(const Aws::String& value) { m_historySummaryHasBeenSet = true; m_historySummary = value; }
+
+    /*
+     <p> A human-readable summary of the alarm history. </p>
+    */
+    inline void SetHistorySummary(Aws::String&& value) { m_historySummaryHasBeenSet = true; m_historySummary = value; }
 
     /*
      <p> A human-readable summary of the alarm history. </p>
@@ -113,7 +142,12 @@ namespace Model
     /*
      <p> A human-readable summary of the alarm history. </p>
     */
-    inline AlarmHistoryItem&  WithHistorySummary(const Aws::String& value) { SetHistorySummary(value); return *this;}
+    inline AlarmHistoryItem& WithHistorySummary(const Aws::String& value) { SetHistorySummary(value); return *this;}
+
+    /*
+     <p> A human-readable summary of the alarm history. </p>
+    */
+    inline AlarmHistoryItem& WithHistorySummary(Aws::String&& value) { SetHistorySummary(value); return *this;}
 
     /*
      <p> A human-readable summary of the alarm history. </p>
@@ -124,10 +158,16 @@ namespace Model
      <p> Machine-readable data about the alarm in JSON format. </p>
     */
     inline const Aws::String& GetHistoryData() const{ return m_historyData; }
+
     /*
      <p> Machine-readable data about the alarm in JSON format. </p>
     */
     inline void SetHistoryData(const Aws::String& value) { m_historyDataHasBeenSet = true; m_historyData = value; }
+
+    /*
+     <p> Machine-readable data about the alarm in JSON format. </p>
+    */
+    inline void SetHistoryData(Aws::String&& value) { m_historyDataHasBeenSet = true; m_historyData = value; }
 
     /*
      <p> Machine-readable data about the alarm in JSON format. </p>
@@ -137,7 +177,12 @@ namespace Model
     /*
      <p> Machine-readable data about the alarm in JSON format. </p>
     */
-    inline AlarmHistoryItem&  WithHistoryData(const Aws::String& value) { SetHistoryData(value); return *this;}
+    inline AlarmHistoryItem& WithHistoryData(const Aws::String& value) { SetHistoryData(value); return *this;}
+
+    /*
+     <p> Machine-readable data about the alarm in JSON format. </p>
+    */
+    inline AlarmHistoryItem& WithHistoryData(Aws::String&& value) { SetHistoryData(value); return *this;}
 
     /*
      <p> Machine-readable data about the alarm in JSON format. </p>

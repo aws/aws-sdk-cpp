@@ -38,10 +38,16 @@ namespace Model
      <p> The prefix used when this CNAME is reserved. </p>
     */
     inline const Aws::String& GetCNAMEPrefix() const{ return m_cNAMEPrefix; }
+
     /*
      <p> The prefix used when this CNAME is reserved. </p>
     */
     inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
+
+    /*
+     <p> The prefix used when this CNAME is reserved. </p>
+    */
+    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
 
     /*
      <p> The prefix used when this CNAME is reserved. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The prefix used when this CNAME is reserved. </p>
     */
-    inline CheckDNSAvailabilityRequest&  WithCNAMEPrefix(const Aws::String& value) { SetCNAMEPrefix(value); return *this;}
+    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(const Aws::String& value) { SetCNAMEPrefix(value); return *this;}
+
+    /*
+     <p> The prefix used when this CNAME is reserved. </p>
+    */
+    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(value); return *this;}
 
     /*
      <p> The prefix used when this CNAME is reserved. </p>

@@ -43,12 +43,22 @@ OptionRestrictionRegex& OptionRestrictionRegex::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode patternNode = resultNode.FirstChild("Pattern");
+    if(patternNode.IsNull())
+    {
+      patternNode = resultNode;
+    }
+
     if(!patternNode.IsNull())
     {
       m_pattern = StringUtils::Trim(patternNode.GetText().c_str());
       m_patternHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
+    if(labelNode.IsNull())
+    {
+      labelNode = resultNode;
+    }
+
     if(!labelNode.IsNull())
     {
       m_label = StringUtils::Trim(labelNode.GetText().c_str());

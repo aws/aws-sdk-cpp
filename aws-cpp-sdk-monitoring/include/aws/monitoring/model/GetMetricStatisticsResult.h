@@ -49,10 +49,16 @@ namespace Model
      <p> A label describing the specified metric. </p>
     */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
     /*
      <p> A label describing the specified metric. </p>
     */
     inline void SetLabel(const Aws::String& value) { m_label = value; }
+
+    /*
+     <p> A label describing the specified metric. </p>
+    */
+    inline void SetLabel(Aws::String&& value) { m_label = value; }
 
     /*
      <p> A label describing the specified metric. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> A label describing the specified metric. </p>
     */
-    inline GetMetricStatisticsResult&  WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+    inline GetMetricStatisticsResult& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /*
+     <p> A label describing the specified metric. </p>
+    */
+    inline GetMetricStatisticsResult& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
 
     /*
      <p> A label describing the specified metric. </p>
@@ -73,6 +84,7 @@ namespace Model
      <p> The datapoints for the specified metric. </p>
     */
     inline const Aws::Vector<Datapoint>& GetDatapoints() const{ return m_datapoints; }
+
     /*
      <p> The datapoints for the specified metric. </p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p> The datapoints for the specified metric. </p>
     */
-    inline GetMetricStatisticsResult&  WithDatapoints(const Aws::Vector<Datapoint>& value) { SetDatapoints(value); return *this;}
+    inline void SetDatapoints(Aws::Vector<Datapoint>&& value) { m_datapoints = value; }
+
+    /*
+     <p> The datapoints for the specified metric. </p>
+    */
+    inline GetMetricStatisticsResult& WithDatapoints(const Aws::Vector<Datapoint>& value) { SetDatapoints(value); return *this;}
+
+    /*
+     <p> The datapoints for the specified metric. </p>
+    */
+    inline GetMetricStatisticsResult& WithDatapoints(Aws::Vector<Datapoint>&& value) { SetDatapoints(value); return *this;}
 
     /*
      <p> The datapoints for the specified metric. </p>
     */
     inline GetMetricStatisticsResult& AddDatapoints(const Datapoint& value) { m_datapoints.push_back(value); return *this; }
 
+    /*
+     <p> The datapoints for the specified metric. </p>
+    */
+    inline GetMetricStatisticsResult& AddDatapoints(Datapoint&& value) { m_datapoints.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetMetricStatisticsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetMetricStatisticsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetMetricStatisticsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_label;

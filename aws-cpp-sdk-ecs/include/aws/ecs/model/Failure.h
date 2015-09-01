@@ -44,10 +44,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the failed resource.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     */
-    inline Failure&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline Failure& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+    */
+    inline Failure& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the failed resource.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The reason for the failure.</p>
     */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
     /*
      <p>The reason for the failure.</p>
     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /*
+     <p>The reason for the failure.</p>
+    */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /*
      <p>The reason for the failure.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The reason for the failure.</p>
     */
-    inline Failure&  WithReason(const Aws::String& value) { SetReason(value); return *this;}
+    inline Failure& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /*
+     <p>The reason for the failure.</p>
+    */
+    inline Failure& WithReason(Aws::String&& value) { SetReason(value); return *this;}
 
     /*
      <p>The reason for the failure.</p>

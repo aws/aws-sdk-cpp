@@ -47,6 +47,7 @@ namespace Model
      <p>A list of application names.</p>
     */
     inline const Aws::Vector<Aws::String>& GetApplications() const{ return m_applications; }
+
     /*
      <p>A list of application names.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A list of application names.</p>
     */
-    inline ListApplicationsResult&  WithApplications(const Aws::Vector<Aws::String>& value) { SetApplications(value); return *this;}
+    inline void SetApplications(Aws::Vector<Aws::String>&& value) { m_applications = value; }
+
+    /*
+     <p>A list of application names.</p>
+    */
+    inline ListApplicationsResult& WithApplications(const Aws::Vector<Aws::String>& value) { SetApplications(value); return *this;}
+
+    /*
+     <p>A list of application names.</p>
+    */
+    inline ListApplicationsResult& WithApplications(Aws::Vector<Aws::String>&& value) { SetApplications(value); return *this;}
 
     /*
      <p>A list of application names.</p>
     */
     inline ListApplicationsResult& AddApplications(const Aws::String& value) { m_applications.push_back(value); return *this; }
+
+    /*
+     <p>A list of application names.</p>
+    */
+    inline ListApplicationsResult& AddApplications(Aws::String&& value) { m_applications.push_back(value); return *this; }
 
     /*
      <p>A list of application names.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     */
-    inline ListApplicationsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>
+    */
+    inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list applications call to return the next set of applications in the list.</p>

@@ -52,30 +52,55 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
+    if(serialNumberNode.IsNull())
+    {
+      serialNumberNode = resultNode;
+    }
+
     if(!serialNumberNode.IsNull())
     {
       m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
       m_serialNumberHasBeenSet = true;
     }
     XmlNode base32StringSeedNode = resultNode.FirstChild("Base32StringSeed");
+    if(base32StringSeedNode.IsNull())
+    {
+      base32StringSeedNode = resultNode;
+    }
+
     if(!base32StringSeedNode.IsNull())
     {
       m_base32StringSeed = HashingUtils::Base64Decode(StringUtils::Trim(base32StringSeedNode.GetText().c_str()));
       m_base32StringSeedHasBeenSet = true;
     }
     XmlNode qRCodePNGNode = resultNode.FirstChild("QRCodePNG");
+    if(qRCodePNGNode.IsNull())
+    {
+      qRCodePNGNode = resultNode;
+    }
+
     if(!qRCodePNGNode.IsNull())
     {
       m_qRCodePNG = HashingUtils::Base64Decode(StringUtils::Trim(qRCodePNGNode.GetText().c_str()));
       m_qRCodePNGHasBeenSet = true;
     }
     XmlNode userNode = resultNode.FirstChild("User");
+    if(userNode.IsNull())
+    {
+      userNode = resultNode;
+    }
+
     if(!userNode.IsNull())
     {
       m_user = userNode;
       m_userHasBeenSet = true;
     }
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
+    if(enableDateNode.IsNull())
+    {
+      enableDateNode = resultNode;
+    }
+
     if(!enableDateNode.IsNull())
     {
       m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());

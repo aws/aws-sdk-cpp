@@ -47,6 +47,7 @@ namespace Model
      The distribution's information.
     */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
+
     /*
      The distribution's information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The distribution's information.
     */
-    inline CreateDistribution2015_04_17Result&  WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
+    inline void SetDistribution(Distribution&& value) { m_distribution = value; }
+
+    /*
+     The distribution's information.
+    */
+    inline CreateDistribution2015_04_17Result& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
+
+    /*
+     The distribution's information.
+    */
+    inline CreateDistribution2015_04_17Result& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
 
     /*
      The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /*
+     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+    */
+    inline void SetLocation(Aws::String&& value) { m_location = value; }
 
     /*
      The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
     */
-    inline CreateDistribution2015_04_17Result&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline CreateDistribution2015_04_17Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+    */
+    inline CreateDistribution2015_04_17Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
@@ -85,10 +107,16 @@ namespace Model
      The current version of the distribution created.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the distribution created.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the distribution created.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the distribution created.
@@ -98,7 +126,12 @@ namespace Model
     /*
      The current version of the distribution created.
     */
-    inline CreateDistribution2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline CreateDistribution2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the distribution created.
+    */
+    inline CreateDistribution2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the distribution created.

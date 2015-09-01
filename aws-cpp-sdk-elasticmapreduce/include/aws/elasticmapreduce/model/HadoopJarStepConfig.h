@@ -46,6 +46,7 @@ namespace Model
      <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
     */
     inline const Aws::Vector<KeyValue>& GetProperties() const{ return m_properties; }
+
     /*
      <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
     */
-    inline HadoopJarStepConfig&  WithProperties(const Aws::Vector<KeyValue>& value) { SetProperties(value); return *this;}
+    inline void SetProperties(Aws::Vector<KeyValue>&& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+
+    /*
+     <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
+    */
+    inline HadoopJarStepConfig& WithProperties(const Aws::Vector<KeyValue>& value) { SetProperties(value); return *this;}
+
+    /*
+     <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
+    */
+    inline HadoopJarStepConfig& WithProperties(Aws::Vector<KeyValue>&& value) { SetProperties(value); return *this;}
 
     /*
      <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
@@ -62,13 +73,24 @@ namespace Model
     inline HadoopJarStepConfig& AddProperties(const KeyValue& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
 
     /*
+     <p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
+    */
+    inline HadoopJarStepConfig& AddProperties(KeyValue&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
+
+    /*
      <p>A path to a JAR file run during the step.</p>
     */
     inline const Aws::String& GetJar() const{ return m_jar; }
+
     /*
      <p>A path to a JAR file run during the step.</p>
     */
     inline void SetJar(const Aws::String& value) { m_jarHasBeenSet = true; m_jar = value; }
+
+    /*
+     <p>A path to a JAR file run during the step.</p>
+    */
+    inline void SetJar(Aws::String&& value) { m_jarHasBeenSet = true; m_jar = value; }
 
     /*
      <p>A path to a JAR file run during the step.</p>
@@ -78,7 +100,12 @@ namespace Model
     /*
      <p>A path to a JAR file run during the step.</p>
     */
-    inline HadoopJarStepConfig&  WithJar(const Aws::String& value) { SetJar(value); return *this;}
+    inline HadoopJarStepConfig& WithJar(const Aws::String& value) { SetJar(value); return *this;}
+
+    /*
+     <p>A path to a JAR file run during the step.</p>
+    */
+    inline HadoopJarStepConfig& WithJar(Aws::String&& value) { SetJar(value); return *this;}
 
     /*
      <p>A path to a JAR file run during the step.</p>
@@ -89,10 +116,16 @@ namespace Model
      <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
     */
     inline const Aws::String& GetMainClass() const{ return m_mainClass; }
+
     /*
      <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
     */
     inline void SetMainClass(const Aws::String& value) { m_mainClassHasBeenSet = true; m_mainClass = value; }
+
+    /*
+     <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
+    */
+    inline void SetMainClass(Aws::String&& value) { m_mainClassHasBeenSet = true; m_mainClass = value; }
 
     /*
      <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
@@ -102,7 +135,12 @@ namespace Model
     /*
      <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
     */
-    inline HadoopJarStepConfig&  WithMainClass(const Aws::String& value) { SetMainClass(value); return *this;}
+    inline HadoopJarStepConfig& WithMainClass(const Aws::String& value) { SetMainClass(value); return *this;}
+
+    /*
+     <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
+    */
+    inline HadoopJarStepConfig& WithMainClass(Aws::String&& value) { SetMainClass(value); return *this;}
 
     /*
      <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
@@ -113,6 +151,7 @@ namespace Model
      <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+
     /*
      <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     */
@@ -121,12 +160,27 @@ namespace Model
     /*
      <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     */
-    inline HadoopJarStepConfig&  WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
+    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = value; }
+
+    /*
+     <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
+    */
+    inline HadoopJarStepConfig& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
+
+    /*
+     <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
+    */
+    inline HadoopJarStepConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(value); return *this;}
 
     /*
      <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     */
     inline HadoopJarStepConfig& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+
+    /*
+     <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
+    */
+    inline HadoopJarStepConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
     /*
      <p>A list of command line arguments passed to the JAR file's main function when executed.</p>

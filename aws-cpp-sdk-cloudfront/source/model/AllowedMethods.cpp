@@ -47,6 +47,11 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
+    if(quantityNode.IsNull())
+    {
+      quantityNode = resultNode;
+    }
+
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
@@ -65,6 +70,11 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
       m_itemsHasBeenSet = true;
     }
     XmlNode cachedMethodsNode = resultNode.FirstChild("CachedMethods");
+    if(cachedMethodsNode.IsNull())
+    {
+      cachedMethodsNode = resultNode;
+    }
+
     if(!cachedMethodsNode.IsNull())
     {
       m_cachedMethods = cachedMethodsNode;
@@ -88,9 +98,10 @@ void AllowedMethods::AddToNode(XmlNode& parentNode) const
 
   if(m_itemsHasBeenSet)
   {
+   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
    for(const auto& item : m_items)
    {
-     XmlNode itemsNode = parentNode.CreateChildElement("Method");
+     XmlNode itemsNode = itemsParentNode.CreateChildElement("Method");
      itemsNode.SetText(MethodMapper::GetNameForMethod(item));
    }
   }

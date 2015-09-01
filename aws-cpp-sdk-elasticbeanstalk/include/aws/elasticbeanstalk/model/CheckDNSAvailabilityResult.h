@@ -47,6 +47,7 @@ namespace Model
      <p> Indicates if the specified CNAME is available: </p> <enumValues> <value name="true"> <p> <code>true</code> : The CNAME is available. </p> </value> <value name="false"> <p> <code>true</code> : The CNAME is not available. </p> </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
     */
     inline bool GetAvailable() const{ return m_available; }
+
     /*
      <p> Indicates if the specified CNAME is available: </p> <enumValues> <value name="true"> <p> <code>true</code> : The CNAME is available. </p> </value> <value name="false"> <p> <code>true</code> : The CNAME is not available. </p> </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
     */
@@ -55,16 +56,22 @@ namespace Model
     /*
      <p> Indicates if the specified CNAME is available: </p> <enumValues> <value name="true"> <p> <code>true</code> : The CNAME is available. </p> </value> <value name="false"> <p> <code>true</code> : The CNAME is not available. </p> </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
     */
-    inline CheckDNSAvailabilityResult&  WithAvailable(bool value) { SetAvailable(value); return *this;}
+    inline CheckDNSAvailabilityResult& WithAvailable(bool value) { SetAvailable(value); return *this;}
 
     /*
      <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
     */
     inline const Aws::String& GetFullyQualifiedCNAME() const{ return m_fullyQualifiedCNAME; }
+
     /*
      <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
     */
     inline void SetFullyQualifiedCNAME(const Aws::String& value) { m_fullyQualifiedCNAME = value; }
+
+    /*
+     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
+    */
+    inline void SetFullyQualifiedCNAME(Aws::String&& value) { m_fullyQualifiedCNAME = value; }
 
     /*
      <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
@@ -74,7 +81,12 @@ namespace Model
     /*
      <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
     */
-    inline CheckDNSAvailabilityResult&  WithFullyQualifiedCNAME(const Aws::String& value) { SetFullyQualifiedCNAME(value); return *this;}
+    inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(const Aws::String& value) { SetFullyQualifiedCNAME(value); return *this;}
+
+    /*
+     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
+    */
+    inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(Aws::String&& value) { SetFullyQualifiedCNAME(value); return *this;}
 
     /*
      <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
@@ -83,11 +95,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CheckDNSAvailabilityResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CheckDNSAvailabilityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CheckDNSAvailabilityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     bool m_available;

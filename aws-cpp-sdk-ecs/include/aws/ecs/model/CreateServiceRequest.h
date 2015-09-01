@@ -41,10 +41,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
-    inline CreateServiceRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline CreateServiceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline CreateServiceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -65,10 +76,16 @@ namespace Model
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
     */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+
+    /*
+     <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
+    */
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
@@ -78,7 +95,12 @@ namespace Model
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
     */
-    inline CreateServiceRequest&  WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
+    inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
+
+    /*
+     <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
+    */
+    inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
 
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a region or across multiple regions.</p>
@@ -89,10 +111,16 @@ namespace Model
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+
+    /*
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
+    */
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
@@ -102,7 +130,12 @@ namespace Model
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
-    inline CreateServiceRequest&  WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
+    inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
+
+    /*
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
+    */
+    inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
@@ -113,6 +146,7 @@ namespace Model
      <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
     */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
+
     /*
      <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
     */
@@ -121,7 +155,17 @@ namespace Model
     /*
      <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
     */
-    inline CreateServiceRequest&  WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
+    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
+
+    /*
+     <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
+    */
+    inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
+
+    /*
+     <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
+    */
+    inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(value); return *this;}
 
     /*
      <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
@@ -129,9 +173,15 @@ namespace Model
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /*
+     <p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
+    */
+    inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
+
+    /*
      <p>The number of instantiations of the specified task definition that you would like to place and keep running on your cluster.</p>
     */
     inline long GetDesiredCount() const{ return m_desiredCount; }
+
     /*
      <p>The number of instantiations of the specified task definition that you would like to place and keep running on your cluster.</p>
     */
@@ -140,16 +190,22 @@ namespace Model
     /*
      <p>The number of instantiations of the specified task definition that you would like to place and keep running on your cluster.</p>
     */
-    inline CreateServiceRequest&  WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
+    inline CreateServiceRequest& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
 
     /*
      <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
     /*
      <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /*
+     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
+    */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /*
      <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
@@ -159,7 +215,12 @@ namespace Model
     /*
      <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
     */
-    inline CreateServiceRequest&  WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateServiceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /*
+     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
+    */
+    inline CreateServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
 
     /*
      <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.</p>
@@ -170,10 +231,16 @@ namespace Model
      <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>
     */
     inline const Aws::String& GetRole() const{ return m_role; }
+
     /*
      <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>
     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /*
+     <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>
+    */
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>
@@ -183,7 +250,12 @@ namespace Model
     /*
      <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>
     */
-    inline CreateServiceRequest&  WithRole(const Aws::String& value) { SetRole(value); return *this;}
+    inline CreateServiceRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
+
+    /*
+     <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>
+    */
+    inline CreateServiceRequest& WithRole(Aws::String&& value) { SetRole(value); return *this;}
 
     /*
      <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon ECS container agent to make calls to your load balancer on your behalf. This parameter is only required if you are using a load balancer with your service.</p>

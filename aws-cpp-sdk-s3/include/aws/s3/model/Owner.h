@@ -43,28 +43,42 @@ namespace Model
 
     
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
     
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     
-    inline Owner&  WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline Owner& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    
+    inline Owner& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
 
     
     inline Owner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
     
     inline const Aws::String& GetID() const{ return m_iD; }
+
     
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
+
+    
+    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     
-    inline Owner&  WithID(const Aws::String& value) { SetID(value); return *this;}
+    inline Owner& WithID(const Aws::String& value) { SetID(value); return *this;}
+
+    
+    inline Owner& WithID(Aws::String&& value) { SetID(value); return *this;}
 
     
     inline Owner& WithID(const char* value) { SetID(value); return *this;}

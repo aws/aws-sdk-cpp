@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ReceiptRule& GetRule() const{ return m_rule; }
+
     
     inline void SetRule(const ReceiptRule& value) { m_rule = value; }
 
     
-    inline DescribeReceiptRuleResult&  WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
+    inline void SetRule(ReceiptRule&& value) { m_rule = value; }
+
+    
+    inline DescribeReceiptRuleResult& WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
+
+    
+    inline DescribeReceiptRuleResult& WithRule(ReceiptRule&& value) { SetRule(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeReceiptRuleResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeReceiptRuleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeReceiptRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReceiptRule m_rule;

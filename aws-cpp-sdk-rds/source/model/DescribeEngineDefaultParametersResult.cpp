@@ -42,6 +42,11 @@ DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::op
   if(!resultNode.IsNull())
   {
     XmlNode engineDefaultsNode = resultNode.FirstChild("EngineDefaults");
+    if(engineDefaultsNode.IsNull())
+    {
+      engineDefaultsNode = resultNode;
+    }
+
     if(!engineDefaultsNode.IsNull())
     {
       m_engineDefaults = engineDefaultsNode;

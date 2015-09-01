@@ -34,7 +34,11 @@ namespace Transfer
 
 static const char* ALLOCATION_TAG = "TransferAPI";
 
+static const uint32_t DOWNLOAD_RETRY_MAX = 2;
+static const float DOWNLOAD_RETRY_THRESHOLD = 10.0f;
+
 DownloadFileRequest::DownloadFileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client) : S3FileRequest(fileName, bucketName, keyName, s3Client),
+m_retries(0),
 m_gotContents(false)
 {
 
@@ -77,9 +81,26 @@ bool DownloadFileRequest::DoSingleObjectDownload()
 
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<DownloadFileContext>(ALLOCATION_TAG, shared_from_this());
 
-    GetS3Client()->GetObjectAsync(getObjectRequest, &TransferClient::OnGetObject, context);
+    GetS3Client()->GetObjectAsync(getObjectRequest, &TransferClient::OnDownloadGetObject, context);
 
     return false;
+}
+
+bool DownloadFileRequest::DoRetry()
+{
+    if (m_retries >= DOWNLOAD_RETRY_MAX)
+    {
+        return false;
+    }
+    if (GetProgress() > DOWNLOAD_RETRY_THRESHOLD)
+    {
+        // Let's let the user decide at this point what to do
+        return false;
+    }
+    ++m_retries;
+    ClearProgress();
+    DoSingleObjectDownload();
+    return true;
 }
 
 bool DownloadFileRequest::HandleGetObjectOutcome(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::GetObjectOutcome& outcome)
@@ -90,6 +111,14 @@ bool DownloadFileRequest::HandleGetObjectOutcome(const Aws::S3::Model::GetObject
     {
         CompletionSuccess();
         return true;
+    }
+    else
+    {
+        if (DoRetry())
+        {
+            // We're trying again
+            return false;
+        }
     }
     CompletionFailure(outcome.GetError().GetMessage().c_str());
     return false;
@@ -107,7 +136,7 @@ void DownloadFileRequest::GetContents()
 
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<DownloadFileContext>(ALLOCATION_TAG, shared_from_this());
 
-    GetS3Client()->ListObjectsAsync(listObjectsRequest, &TransferClient::OnListObjects, context);
+    GetS3Client()->ListObjectsAsync(listObjectsRequest, &TransferClient::OnDownloadListObjects, context);
 }
 
 bool DownloadFileRequest::HandleListObjectsOutcome(const Aws::S3::Model::ListObjectsRequest& request, const Aws::S3::Model::ListObjectsOutcome& outcome)

@@ -49,10 +49,16 @@ namespace Model
      <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
-    inline DescribeDBClusterSnapshotsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeDBClusterSnapshotsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    */
+    inline DescribeDBClusterSnapshotsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -73,6 +84,7 @@ namespace Model
      <p> Provides a list of DB cluster snapshots for the user. </p>
     */
     inline const Aws::Vector<DBClusterSnapshot>& GetDBClusterSnapshots() const{ return m_dBClusterSnapshots; }
+
     /*
      <p> Provides a list of DB cluster snapshots for the user. </p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p> Provides a list of DB cluster snapshots for the user. </p>
     */
-    inline DescribeDBClusterSnapshotsResult&  WithDBClusterSnapshots(const Aws::Vector<DBClusterSnapshot>& value) { SetDBClusterSnapshots(value); return *this;}
+    inline void SetDBClusterSnapshots(Aws::Vector<DBClusterSnapshot>&& value) { m_dBClusterSnapshots = value; }
+
+    /*
+     <p> Provides a list of DB cluster snapshots for the user. </p>
+    */
+    inline DescribeDBClusterSnapshotsResult& WithDBClusterSnapshots(const Aws::Vector<DBClusterSnapshot>& value) { SetDBClusterSnapshots(value); return *this;}
+
+    /*
+     <p> Provides a list of DB cluster snapshots for the user. </p>
+    */
+    inline DescribeDBClusterSnapshotsResult& WithDBClusterSnapshots(Aws::Vector<DBClusterSnapshot>&& value) { SetDBClusterSnapshots(value); return *this;}
 
     /*
      <p> Provides a list of DB cluster snapshots for the user. </p>
     */
     inline DescribeDBClusterSnapshotsResult& AddDBClusterSnapshots(const DBClusterSnapshot& value) { m_dBClusterSnapshots.push_back(value); return *this; }
 
+    /*
+     <p> Provides a list of DB cluster snapshots for the user. </p>
+    */
+    inline DescribeDBClusterSnapshotsResult& AddDBClusterSnapshots(DBClusterSnapshot&& value) { m_dBClusterSnapshots.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeDBClusterSnapshotsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeDBClusterSnapshotsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeDBClusterSnapshotsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

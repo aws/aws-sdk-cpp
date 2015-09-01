@@ -42,6 +42,11 @@ CopyDBClusterSnapshotResult& CopyDBClusterSnapshotResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterSnapshotNode = resultNode.FirstChild("DBClusterSnapshot");
+    if(dBClusterSnapshotNode.IsNull())
+    {
+      dBClusterSnapshotNode = resultNode;
+    }
+
     if(!dBClusterSnapshotNode.IsNull())
     {
       m_dBClusterSnapshot = dBClusterSnapshotNode;

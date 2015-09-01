@@ -46,6 +46,7 @@ namespace Model
      Each active trusted signer.
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      Each active trusted signer.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      Each active trusted signer.
     */
-    inline ActiveTrustedSigners&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline ActiveTrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /*
      The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
     */
-    inline ActiveTrustedSigners&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline ActiveTrustedSigners& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
     */
     inline const Aws::Vector<Signer>& GetItems() const{ return m_items; }
+
     /*
      A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
     */
@@ -82,12 +85,27 @@ namespace Model
     /*
      A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
     */
-    inline ActiveTrustedSigners&  WithItems(const Aws::Vector<Signer>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Signer>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
+    */
+    inline ActiveTrustedSigners& WithItems(const Aws::Vector<Signer>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
+    */
+    inline ActiveTrustedSigners& WithItems(Aws::Vector<Signer>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
     */
     inline ActiveTrustedSigners& AddItems(const Signer& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.
+    */
+    inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     bool m_enabled;

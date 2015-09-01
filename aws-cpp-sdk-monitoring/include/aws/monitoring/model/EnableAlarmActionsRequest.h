@@ -38,6 +38,7 @@ namespace Model
      <p> The names of the alarms to enable actions for. </p>
     */
     inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
+
     /*
      <p> The names of the alarms to enable actions for. </p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p> The names of the alarms to enable actions for. </p>
     */
-    inline EnableAlarmActionsRequest&  WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
+    inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
+
+    /*
+     <p> The names of the alarms to enable actions for. </p>
+    */
+    inline EnableAlarmActionsRequest& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
+
+    /*
+     <p> The names of the alarms to enable actions for. </p>
+    */
+    inline EnableAlarmActionsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(value); return *this;}
 
     /*
      <p> The names of the alarms to enable actions for. </p>
     */
     inline EnableAlarmActionsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
+
+    /*
+     <p> The names of the alarms to enable actions for. </p>
+    */
+    inline EnableAlarmActionsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /*
      <p> The names of the alarms to enable actions for. </p>

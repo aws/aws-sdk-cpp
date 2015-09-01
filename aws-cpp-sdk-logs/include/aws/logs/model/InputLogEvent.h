@@ -42,22 +42,30 @@ namespace Model
 
     
     inline long long GetTimestamp() const{ return m_timestamp; }
+
     
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     
-    inline InputLogEvent&  WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+    inline InputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
     
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     
-    inline InputLogEvent&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline InputLogEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    
+    inline InputLogEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     
     inline InputLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}

@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the table to describe.</p>
     */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
+
     /*
      <p> The name of the table to describe.</p>
     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+
+    /*
+     <p> The name of the table to describe.</p>
+    */
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /*
      <p> The name of the table to describe.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the table to describe.</p>
     */
-    inline DescribeTableRequest&  WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
+    inline DescribeTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
+
+    /*
+     <p> The name of the table to describe.</p>
+    */
+    inline DescribeTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
 
     /*
      <p> The name of the table to describe.</p>

@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the load balancer attributes.</p>
     */
     inline const LoadBalancerAttributes& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
+
     /*
      <p>Information about the load balancer attributes.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the load balancer attributes.</p>
     */
-    inline DescribeLoadBalancerAttributesResult&  WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
+    inline void SetLoadBalancerAttributes(LoadBalancerAttributes&& value) { m_loadBalancerAttributes = value; }
+
+    /*
+     <p>Information about the load balancer attributes.</p>
+    */
+    inline DescribeLoadBalancerAttributesResult& WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
+
+    /*
+     <p>Information about the load balancer attributes.</p>
+    */
+    inline DescribeLoadBalancerAttributesResult& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLoadBalancerAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLoadBalancerAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLoadBalancerAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     LoadBalancerAttributes m_loadBalancerAttributes;

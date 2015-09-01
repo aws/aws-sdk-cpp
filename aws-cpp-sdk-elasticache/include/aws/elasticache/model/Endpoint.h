@@ -47,10 +47,16 @@ namespace Model
      <p>The DNS hostname of the cache node.</p>
     */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
     /*
      <p>The DNS hostname of the cache node.</p>
     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
+
+    /*
+     <p>The DNS hostname of the cache node.</p>
+    */
+    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /*
      <p>The DNS hostname of the cache node.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The DNS hostname of the cache node.</p>
     */
-    inline Endpoint&  WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+    inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+
+    /*
+     <p>The DNS hostname of the cache node.</p>
+    */
+    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
     /*
      <p>The DNS hostname of the cache node.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The port number that the cache engine is listening on.</p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p>The port number that the cache engine is listening on.</p>
     */
@@ -79,7 +91,7 @@ namespace Model
     /*
      <p>The port number that the cache engine is listening on.</p>
     */
-    inline Endpoint&  WithPort(long value) { SetPort(value); return *this;}
+    inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
 
   private:
     Aws::String m_address;

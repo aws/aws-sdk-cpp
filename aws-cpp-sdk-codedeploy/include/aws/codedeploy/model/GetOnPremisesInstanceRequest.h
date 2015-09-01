@@ -40,10 +40,16 @@ namespace Model
      <p>The name of the on-premises instance to get information about</p>
     */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
     /*
      <p>The name of the on-premises instance to get information about</p>
     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /*
      <p>The name of the on-premises instance to get information about</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of the on-premises instance to get information about</p>
     */
-    inline GetOnPremisesInstanceRequest&  WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+    inline GetOnPremisesInstanceRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
+    inline GetOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
 
     /*
      <p>The name of the on-premises instance to get information about</p>

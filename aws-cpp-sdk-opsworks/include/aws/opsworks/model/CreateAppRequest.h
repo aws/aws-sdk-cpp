@@ -47,10 +47,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline CreateAppRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline CreateAppRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline CreateAppRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The app's short name.</p>
     */
     inline const Aws::String& GetShortname() const{ return m_shortname; }
+
     /*
      <p>The app's short name.</p>
     */
     inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
+
+    /*
+     <p>The app's short name.</p>
+    */
+    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
     /*
      <p>The app's short name.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The app's short name.</p>
     */
-    inline CreateAppRequest&  WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
+    inline CreateAppRequest& WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
+
+    /*
+     <p>The app's short name.</p>
+    */
+    inline CreateAppRequest& WithShortname(Aws::String&& value) { SetShortname(value); return *this;}
 
     /*
      <p>The app's short name.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The app name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The app name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The app name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The app name.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The app name.</p>
     */
-    inline CreateAppRequest&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline CreateAppRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The app name.</p>
+    */
+    inline CreateAppRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The app name.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>A description of the app.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A description of the app.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A description of the app.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description of the app.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>A description of the app.</p>
     */
-    inline CreateAppRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateAppRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A description of the app.</p>
+    */
+    inline CreateAppRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A description of the app.</p>
@@ -143,6 +187,7 @@ namespace Model
      <p>The app's data source.</p>
     */
     inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+
     /*
      <p>The app's data source.</p>
     */
@@ -151,7 +196,17 @@ namespace Model
     /*
      <p>The app's data source.</p>
     */
-    inline CreateAppRequest&  WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
+    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+
+    /*
+     <p>The app's data source.</p>
+    */
+    inline CreateAppRequest& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
+
+    /*
+     <p>The app's data source.</p>
+    */
+    inline CreateAppRequest& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(value); return *this;}
 
     /*
      <p>The app's data source.</p>
@@ -159,9 +214,15 @@ namespace Model
     inline CreateAppRequest& AddDataSources(const DataSource& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
 
     /*
+     <p>The app's data source.</p>
+    */
+    inline CreateAppRequest& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
+
+    /*
      <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     */
     inline const AppType& GetType() const{ return m_type; }
+
     /*
      <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     */
@@ -170,12 +231,23 @@ namespace Model
     /*
      <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     */
-    inline CreateAppRequest&  WithType(const AppType& value) { SetType(value); return *this;}
+    inline void SetType(AppType&& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    */
+    inline CreateAppRequest& WithType(const AppType& value) { SetType(value); return *this;}
+
+    /*
+     <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    */
+    inline CreateAppRequest& WithType(AppType&& value) { SetType(value); return *this;}
 
     /*
      <p>A <code>Source</code> object that specifies the app repository.</p>
     */
     inline const Source& GetAppSource() const{ return m_appSource; }
+
     /*
      <p>A <code>Source</code> object that specifies the app repository.</p>
     */
@@ -184,12 +256,23 @@ namespace Model
     /*
      <p>A <code>Source</code> object that specifies the app repository.</p>
     */
-    inline CreateAppRequest&  WithAppSource(const Source& value) { SetAppSource(value); return *this;}
+    inline void SetAppSource(Source&& value) { m_appSourceHasBeenSet = true; m_appSource = value; }
+
+    /*
+     <p>A <code>Source</code> object that specifies the app repository.</p>
+    */
+    inline CreateAppRequest& WithAppSource(const Source& value) { SetAppSource(value); return *this;}
+
+    /*
+     <p>A <code>Source</code> object that specifies the app repository.</p>
+    */
+    inline CreateAppRequest& WithAppSource(Source&& value) { SetAppSource(value); return *this;}
 
     /*
      <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     */
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
+
     /*
      <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     */
@@ -198,12 +281,27 @@ namespace Model
     /*
      <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     */
-    inline CreateAppRequest&  WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
+    inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = value; }
+
+    /*
+     <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    */
+    inline CreateAppRequest& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
+
+    /*
+     <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    */
+    inline CreateAppRequest& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(value); return *this;}
 
     /*
      <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     */
     inline CreateAppRequest& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
+
+    /*
+     <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    */
+    inline CreateAppRequest& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
     /*
      <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
@@ -214,6 +312,7 @@ namespace Model
      <p>Whether to enable SSL for the app.</p>
     */
     inline bool GetEnableSsl() const{ return m_enableSsl; }
+
     /*
      <p>Whether to enable SSL for the app.</p>
     */
@@ -222,12 +321,13 @@ namespace Model
     /*
      <p>Whether to enable SSL for the app.</p>
     */
-    inline CreateAppRequest&  WithEnableSsl(bool value) { SetEnableSsl(value); return *this;}
+    inline CreateAppRequest& WithEnableSsl(bool value) { SetEnableSsl(value); return *this;}
 
     /*
      <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     */
     inline const SslConfiguration& GetSslConfiguration() const{ return m_sslConfiguration; }
+
     /*
      <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     */
@@ -236,12 +336,23 @@ namespace Model
     /*
      <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     */
-    inline CreateAppRequest&  WithSslConfiguration(const SslConfiguration& value) { SetSslConfiguration(value); return *this;}
+    inline void SetSslConfiguration(SslConfiguration&& value) { m_sslConfigurationHasBeenSet = true; m_sslConfiguration = value; }
+
+    /*
+     <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    */
+    inline CreateAppRequest& WithSslConfiguration(const SslConfiguration& value) { SetSslConfiguration(value); return *this;}
+
+    /*
+     <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    */
+    inline CreateAppRequest& WithSslConfiguration(SslConfiguration&& value) { SetSslConfiguration(value); return *this;}
 
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
     inline const Aws::Map<AppAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
+
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
@@ -250,12 +361,42 @@ namespace Model
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
-    inline CreateAppRequest&  WithAttributes(const Aws::Map<AppAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Map<AppAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline CreateAppRequest& WithAttributes(const Aws::Map<AppAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline CreateAppRequest& WithAttributes(Aws::Map<AppAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
     inline CreateAppRequest& AddAttributes(const AppAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline CreateAppRequest& AddAttributes(AppAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline CreateAppRequest& AddAttributes(const AppAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline CreateAppRequest& AddAttributes(AppAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline CreateAppRequest& AddAttributes(AppAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
@@ -266,6 +407,7 @@ namespace Model
      <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
     */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const{ return m_environment; }
+
     /*
      <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
     */
@@ -274,12 +416,27 @@ namespace Model
     /*
      <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
     */
-    inline CreateAppRequest&  WithEnvironment(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironment(value); return *this;}
+    inline void SetEnvironment(Aws::Vector<EnvironmentVariable>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /*
+     <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
+    */
+    inline CreateAppRequest& WithEnvironment(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironment(value); return *this;}
+
+    /*
+     <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
+    */
+    inline CreateAppRequest& WithEnvironment(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironment(value); return *this;}
 
     /*
      <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
     */
     inline CreateAppRequest& AddEnvironment(const EnvironmentVariable& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> <p> There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 10KB)." </p> <note>This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables, you cannot modify the stack's Chef version.</note>
+    */
+    inline CreateAppRequest& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
   private:
     Aws::String m_stackId;

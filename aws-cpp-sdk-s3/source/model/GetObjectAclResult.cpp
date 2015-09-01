@@ -42,6 +42,11 @@ GetObjectAclResult& GetObjectAclResult::operator =(const AmazonWebServiceResult<
   if(!resultNode.IsNull())
   {
     XmlNode ownerNode = resultNode.FirstChild("Owner");
+    if(ownerNode.IsNull())
+    {
+      ownerNode = resultNode;
+    }
+
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;

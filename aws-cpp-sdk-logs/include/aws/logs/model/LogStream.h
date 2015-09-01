@@ -42,85 +42,111 @@ namespace Model
 
     
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
     
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+
+    
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     
-    inline LogStream&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+    inline LogStream& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+
+    
+    inline LogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
     
     inline LogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
     
     inline long long GetCreationTime() const{ return m_creationTime; }
+
     
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     
-    inline LogStream&  WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+    inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     
     inline long long GetFirstEventTimestamp() const{ return m_firstEventTimestamp; }
+
     
     inline void SetFirstEventTimestamp(long long value) { m_firstEventTimestampHasBeenSet = true; m_firstEventTimestamp = value; }
 
     
-    inline LogStream&  WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
+    inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
 
     
     inline long long GetLastEventTimestamp() const{ return m_lastEventTimestamp; }
+
     
     inline void SetLastEventTimestamp(long long value) { m_lastEventTimestampHasBeenSet = true; m_lastEventTimestamp = value; }
 
     
-    inline LogStream&  WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
+    inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 
     
     inline long long GetLastIngestionTime() const{ return m_lastIngestionTime; }
+
     
     inline void SetLastIngestionTime(long long value) { m_lastIngestionTimeHasBeenSet = true; m_lastIngestionTime = value; }
 
     
-    inline LogStream&  WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
+    inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
 
     
     inline const Aws::String& GetUploadSequenceToken() const{ return m_uploadSequenceToken; }
+
     
     inline void SetUploadSequenceToken(const Aws::String& value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken = value; }
+
+    
+    inline void SetUploadSequenceToken(Aws::String&& value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken = value; }
 
     
     inline void SetUploadSequenceToken(const char* value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken.assign(value); }
 
     
-    inline LogStream&  WithUploadSequenceToken(const Aws::String& value) { SetUploadSequenceToken(value); return *this;}
+    inline LogStream& WithUploadSequenceToken(const Aws::String& value) { SetUploadSequenceToken(value); return *this;}
+
+    
+    inline LogStream& WithUploadSequenceToken(Aws::String&& value) { SetUploadSequenceToken(value); return *this;}
 
     
     inline LogStream& WithUploadSequenceToken(const char* value) { SetUploadSequenceToken(value); return *this;}
 
     
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     
-    inline LogStream&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline LogStream& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline LogStream& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     
     inline LogStream& WithArn(const char* value) { SetArn(value); return *this;}
 
     
     inline long long GetStoredBytes() const{ return m_storedBytes; }
+
     
     inline void SetStoredBytes(long long value) { m_storedBytesHasBeenSet = true; m_storedBytes = value; }
 
     
-    inline LogStream&  WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
+    inline LogStream& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
   private:
     Aws::String m_logStreamName;

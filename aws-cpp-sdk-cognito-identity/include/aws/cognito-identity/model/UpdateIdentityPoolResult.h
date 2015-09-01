@@ -48,10 +48,16 @@ namespace Model
      An identity pool ID in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      An identity pool ID in the format REGION:GUID.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -61,7 +67,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline UpdateIdentityPoolResult&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline UpdateIdentityPoolResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     An identity pool ID in the format REGION:GUID.
+    */
+    inline UpdateIdentityPoolResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -72,10 +83,16 @@ namespace Model
      <p>A string that you provide.</p>
     */
     inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
+
     /*
      <p>A string that you provide.</p>
     */
     inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolName = value; }
+
+    /*
+     <p>A string that you provide.</p>
+    */
+    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolName = value; }
 
     /*
      <p>A string that you provide.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>A string that you provide.</p>
     */
-    inline UpdateIdentityPoolResult&  WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
+    inline UpdateIdentityPoolResult& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
+
+    /*
+     <p>A string that you provide.</p>
+    */
+    inline UpdateIdentityPoolResult& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(value); return *this;}
 
     /*
      <p>A string that you provide.</p>
@@ -96,6 +118,7 @@ namespace Model
      TRUE if the identity pool supports unauthenticated logins.
     */
     inline bool GetAllowUnauthenticatedIdentities() const{ return m_allowUnauthenticatedIdentities; }
+
     /*
      TRUE if the identity pool supports unauthenticated logins.
     */
@@ -104,12 +127,13 @@ namespace Model
     /*
      TRUE if the identity pool supports unauthenticated logins.
     */
-    inline UpdateIdentityPoolResult&  WithAllowUnauthenticatedIdentities(bool value) { SetAllowUnauthenticatedIdentities(value); return *this;}
+    inline UpdateIdentityPoolResult& WithAllowUnauthenticatedIdentities(bool value) { SetAllowUnauthenticatedIdentities(value); return *this;}
 
     /*
      <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupportedLoginProviders() const{ return m_supportedLoginProviders; }
+
     /*
      <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
     */
@@ -118,12 +142,47 @@ namespace Model
     /*
      <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
     */
-    inline UpdateIdentityPoolResult&  WithSupportedLoginProviders(const Aws::Map<Aws::String, Aws::String>& value) { SetSupportedLoginProviders(value); return *this;}
+    inline void SetSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { m_supportedLoginProviders = value; }
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& WithSupportedLoginProviders(const Aws::Map<Aws::String, Aws::String>& value) { SetSupportedLoginProviders(value); return *this;}
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& WithSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { SetSupportedLoginProviders(value); return *this;}
 
     /*
      <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
     */
     inline UpdateIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, const Aws::String& value) { m_supportedLoginProviders[key] = value; return *this; }
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const Aws::String& value) { m_supportedLoginProviders[key] = value; return *this; }
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, Aws::String&& value) { m_supportedLoginProviders[key] = value; return *this; }
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, Aws::String&& value) { m_supportedLoginProviders[key] = value; return *this; }
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& AddSupportedLoginProviders(const char* key, Aws::String&& value) { m_supportedLoginProviders[key] = value; return *this; }
+
+    /*
+     <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    */
+    inline UpdateIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const char* value) { m_supportedLoginProviders[key] = value; return *this; }
 
     /*
      <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -134,10 +193,16 @@ namespace Model
      <p>The "domain" by which Cognito will refer to your users.</p>
     */
     inline const Aws::String& GetDeveloperProviderName() const{ return m_developerProviderName; }
+
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
     */
     inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderName = value; }
+
+    /*
+     <p>The "domain" by which Cognito will refer to your users.</p>
+    */
+    inline void SetDeveloperProviderName(Aws::String&& value) { m_developerProviderName = value; }
 
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
@@ -147,7 +212,12 @@ namespace Model
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
     */
-    inline UpdateIdentityPoolResult&  WithDeveloperProviderName(const Aws::String& value) { SetDeveloperProviderName(value); return *this;}
+    inline UpdateIdentityPoolResult& WithDeveloperProviderName(const Aws::String& value) { SetDeveloperProviderName(value); return *this;}
+
+    /*
+     <p>The "domain" by which Cognito will refer to your users.</p>
+    */
+    inline UpdateIdentityPoolResult& WithDeveloperProviderName(Aws::String&& value) { SetDeveloperProviderName(value); return *this;}
 
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
@@ -158,6 +228,7 @@ namespace Model
      <p>A list of OpendID Connect provider ARNs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetOpenIdConnectProviderARNs() const{ return m_openIdConnectProviderARNs; }
+
     /*
      <p>A list of OpendID Connect provider ARNs.</p>
     */
@@ -166,12 +237,27 @@ namespace Model
     /*
      <p>A list of OpendID Connect provider ARNs.</p>
     */
-    inline UpdateIdentityPoolResult&  WithOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { SetOpenIdConnectProviderARNs(value); return *this;}
+    inline void SetOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { m_openIdConnectProviderARNs = value; }
+
+    /*
+     <p>A list of OpendID Connect provider ARNs.</p>
+    */
+    inline UpdateIdentityPoolResult& WithOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { SetOpenIdConnectProviderARNs(value); return *this;}
+
+    /*
+     <p>A list of OpendID Connect provider ARNs.</p>
+    */
+    inline UpdateIdentityPoolResult& WithOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { SetOpenIdConnectProviderARNs(value); return *this;}
 
     /*
      <p>A list of OpendID Connect provider ARNs.</p>
     */
     inline UpdateIdentityPoolResult& AddOpenIdConnectProviderARNs(const Aws::String& value) { m_openIdConnectProviderARNs.push_back(value); return *this; }
+
+    /*
+     <p>A list of OpendID Connect provider ARNs.</p>
+    */
+    inline UpdateIdentityPoolResult& AddOpenIdConnectProviderARNs(Aws::String&& value) { m_openIdConnectProviderARNs.push_back(value); return *this; }
 
     /*
      <p>A list of OpendID Connect provider ARNs.</p>

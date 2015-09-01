@@ -45,6 +45,7 @@ namespace Model
      A Boolean value that specifies whether key rotation is enabled.
     */
     inline bool GetKeyRotationEnabled() const{ return m_keyRotationEnabled; }
+
     /*
      A Boolean value that specifies whether key rotation is enabled.
     */
@@ -53,7 +54,7 @@ namespace Model
     /*
      A Boolean value that specifies whether key rotation is enabled.
     */
-    inline GetKeyRotationStatusResult&  WithKeyRotationEnabled(bool value) { SetKeyRotationEnabled(value); return *this;}
+    inline GetKeyRotationStatusResult& WithKeyRotationEnabled(bool value) { SetKeyRotationEnabled(value); return *this;}
 
   private:
     bool m_keyRotationEnabled;

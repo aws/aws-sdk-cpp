@@ -51,30 +51,55 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
+    if(resourceIdNode.IsNull())
+    {
+      resourceIdNode = resultNode;
+    }
+
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
+    if(resourceTypeNode.IsNull())
+    {
+      resourceTypeNode = resultNode;
+    }
+
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
+    if(keyNode.IsNull())
+    {
+      keyNode = resultNode;
+    }
+
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
+    if(valueNode.IsNull())
+    {
+      valueNode = resultNode;
+    }
+
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::Trim(valueNode.GetText().c_str());
       m_valueHasBeenSet = true;
     }
     XmlNode propagateAtLaunchNode = resultNode.FirstChild("PropagateAtLaunch");
+    if(propagateAtLaunchNode.IsNull())
+    {
+      propagateAtLaunchNode = resultNode;
+    }
+
     if(!propagateAtLaunchNode.IsNull())
     {
       m_propagateAtLaunch = StringUtils::ConvertToBool(StringUtils::Trim(propagateAtLaunchNode.GetText().c_str()).c_str());

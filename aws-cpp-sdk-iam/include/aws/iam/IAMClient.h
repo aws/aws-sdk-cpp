@@ -1520,19 +1520,19 @@ namespace Model
         void GetAccountSummaryAsync(const Model::GetAccountSummaryRequest& request, const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::GetContextKeysForPolicyOutcome GetContextKeysForPolicy(const Model::GetContextKeysForPolicyRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::GetContextKeysForPolicyOutcomeCallable GetContextKeysForPolicyCallable(const Model::GetContextKeysForPolicyRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
@@ -2432,19 +2432,19 @@ namespace Model
         void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            ${operation.documentation}
+            
         */
         Model::SimulatePolicyOutcome SimulatePolicy(const Model::SimulatePolicyRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
         Model::SimulatePolicyOutcomeCallable SimulatePolicyCallable(const Model::SimulatePolicyRequest& request) const;
 
         /*
-            ${operation.documentation}
+            
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */

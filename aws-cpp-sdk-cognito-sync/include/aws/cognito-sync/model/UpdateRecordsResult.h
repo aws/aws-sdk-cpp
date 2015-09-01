@@ -47,6 +47,7 @@ namespace Model
      A list of records that have been updated.
     */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
+
     /*
      A list of records that have been updated.
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      A list of records that have been updated.
     */
-    inline UpdateRecordsResult&  WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
+    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = value; }
+
+    /*
+     A list of records that have been updated.
+    */
+    inline UpdateRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
+
+    /*
+     A list of records that have been updated.
+    */
+    inline UpdateRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(value); return *this;}
 
     /*
      A list of records that have been updated.
     */
     inline UpdateRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
+
+    /*
+     A list of records that have been updated.
+    */
+    inline UpdateRecordsResult& AddRecords(Record&& value) { m_records.push_back(value); return *this; }
 
   private:
     Aws::Vector<Record> m_records;

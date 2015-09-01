@@ -46,6 +46,7 @@ namespace Model
      <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     */
@@ -54,7 +55,7 @@ namespace Model
     /*
      <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     */
-    inline CrossZoneLoadBalancing&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline CrossZoneLoadBalancing& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
     bool m_enabled;

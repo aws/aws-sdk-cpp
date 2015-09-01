@@ -45,14 +45,24 @@ namespace Model
 
     
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+
     
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rules = value; }
 
     
-    inline GetBucketLifecycleResult&  WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
+    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = value; }
+
+    
+    inline GetBucketLifecycleResult& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
+
+    
+    inline GetBucketLifecycleResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(value); return *this;}
 
     
     inline GetBucketLifecycleResult& AddRules(const Rule& value) { m_rules.push_back(value); return *this; }
+
+    
+    inline GetBucketLifecycleResult& AddRules(Rule&& value) { m_rules.push_back(value); return *this; }
 
   private:
     Aws::Vector<Rule> m_rules;

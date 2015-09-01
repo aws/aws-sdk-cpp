@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const ContainerInstance& GetContainerInstance() const{ return m_containerInstance; }
+
     
     inline void SetContainerInstance(const ContainerInstance& value) { m_containerInstance = value; }
 
     
-    inline RegisterContainerInstanceResult&  WithContainerInstance(const ContainerInstance& value) { SetContainerInstance(value); return *this;}
+    inline void SetContainerInstance(ContainerInstance&& value) { m_containerInstance = value; }
+
+    
+    inline RegisterContainerInstanceResult& WithContainerInstance(const ContainerInstance& value) { SetContainerInstance(value); return *this;}
+
+    
+    inline RegisterContainerInstanceResult& WithContainerInstance(ContainerInstance&& value) { SetContainerInstance(value); return *this;}
 
   private:
     ContainerInstance m_containerInstance;

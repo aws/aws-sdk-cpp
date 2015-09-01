@@ -55,30 +55,55 @@ Ebs& Ebs::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
+    if(snapshotIdNode.IsNull())
+    {
+      snapshotIdNode = resultNode;
+    }
+
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
       m_snapshotIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("VolumeSize");
+    if(volumeSizeNode.IsNull())
+    {
+      volumeSizeNode = resultNode;
+    }
+
     if(!volumeSizeNode.IsNull())
     {
       m_volumeSize = StringUtils::ConvertToInt32(StringUtils::Trim(volumeSizeNode.GetText().c_str()).c_str());
       m_volumeSizeHasBeenSet = true;
     }
     XmlNode volumeTypeNode = resultNode.FirstChild("VolumeType");
+    if(volumeTypeNode.IsNull())
+    {
+      volumeTypeNode = resultNode;
+    }
+
     if(!volumeTypeNode.IsNull())
     {
       m_volumeType = StringUtils::Trim(volumeTypeNode.GetText().c_str());
       m_volumeTypeHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("DeleteOnTermination");
+    if(deleteOnTerminationNode.IsNull())
+    {
+      deleteOnTerminationNode = resultNode;
+    }
+
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
+    if(iopsNode.IsNull())
+    {
+      iopsNode = resultNode;
+    }
+
     if(!iopsNode.IsNull())
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());

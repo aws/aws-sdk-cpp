@@ -49,6 +49,7 @@ namespace Model
      <p>A list of subscriptions.</p>
     */
     inline const Aws::Vector<Subscription>& GetSubscriptions() const{ return m_subscriptions; }
+
     /*
      <p>A list of subscriptions.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A list of subscriptions.</p>
     */
-    inline ListSubscriptionsByTopicResult&  WithSubscriptions(const Aws::Vector<Subscription>& value) { SetSubscriptions(value); return *this;}
+    inline void SetSubscriptions(Aws::Vector<Subscription>&& value) { m_subscriptions = value; }
+
+    /*
+     <p>A list of subscriptions.</p>
+    */
+    inline ListSubscriptionsByTopicResult& WithSubscriptions(const Aws::Vector<Subscription>& value) { SetSubscriptions(value); return *this;}
+
+    /*
+     <p>A list of subscriptions.</p>
+    */
+    inline ListSubscriptionsByTopicResult& WithSubscriptions(Aws::Vector<Subscription>&& value) { SetSubscriptions(value); return *this;}
 
     /*
      <p>A list of subscriptions.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline ListSubscriptionsByTopicResult& AddSubscriptions(const Subscription& value) { m_subscriptions.push_back(value); return *this; }
 
     /*
+     <p>A list of subscriptions.</p>
+    */
+    inline ListSubscriptionsByTopicResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(value); return *this; }
+
+    /*
      <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     */
-    inline ListSubscriptionsByTopicResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListSubscriptionsByTopicResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
+    */
+    inline ListSubscriptionsByTopicResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListSubscriptionsByTopicResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListSubscriptionsByTopicResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListSubscriptionsByTopicResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Subscription> m_subscriptions;

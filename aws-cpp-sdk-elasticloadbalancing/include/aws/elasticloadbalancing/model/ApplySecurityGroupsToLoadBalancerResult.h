@@ -48,6 +48,7 @@ namespace Model
      <p>The IDs of the security groups associated with the load balancer.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
     /*
      <p>The IDs of the security groups associated with the load balancer.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The IDs of the security groups associated with the load balancer.</p>
     */
-    inline ApplySecurityGroupsToLoadBalancerResult&  WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroups = value; }
+
+    /*
+     <p>The IDs of the security groups associated with the load balancer.</p>
+    */
+    inline ApplySecurityGroupsToLoadBalancerResult& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+
+    /*
+     <p>The IDs of the security groups associated with the load balancer.</p>
+    */
+    inline ApplySecurityGroupsToLoadBalancerResult& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
 
     /*
      <p>The IDs of the security groups associated with the load balancer.</p>
@@ -66,15 +77,27 @@ namespace Model
     /*
      <p>The IDs of the security groups associated with the load balancer.</p>
     */
+    inline ApplySecurityGroupsToLoadBalancerResult& AddSecurityGroups(Aws::String&& value) { m_securityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the security groups associated with the load balancer.</p>
+    */
     inline ApplySecurityGroupsToLoadBalancerResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ApplySecurityGroupsToLoadBalancerResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ApplySecurityGroupsToLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ApplySecurityGroupsToLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_securityGroups;

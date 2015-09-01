@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the log group to create.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The name of the log group to create.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The name of the log group to create.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The name of the log group to create.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the log group to create.</p>
     */
-    inline CreateLogGroupRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline CreateLogGroupRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The name of the log group to create.</p>
+    */
+    inline CreateLogGroupRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The name of the log group to create.</p>

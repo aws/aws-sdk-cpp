@@ -44,10 +44,16 @@ namespace Model
      <p>The command ID.</p>
     */
     inline const Aws::String& GetCommandId() const{ return m_commandId; }
+
     /*
      <p>The command ID.</p>
     */
     inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
+
+    /*
+     <p>The command ID.</p>
+    */
+    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /*
      <p>The command ID.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The command ID.</p>
     */
-    inline Command&  WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
+    inline Command& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
+
+    /*
+     <p>The command ID.</p>
+    */
+    inline Command& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
 
     /*
      <p>The command ID.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The ID of the instance where the command was executed.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The ID of the instance where the command was executed.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The ID of the instance where the command was executed.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the instance where the command was executed.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The ID of the instance where the command was executed.</p>
     */
-    inline Command&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline Command& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The ID of the instance where the command was executed.</p>
+    */
+    inline Command& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The ID of the instance where the command was executed.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The command deployment ID.</p>
     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
     /*
      <p>The command deployment ID.</p>
     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /*
+     <p>The command deployment ID.</p>
+    */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /*
      <p>The command deployment ID.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The command deployment ID.</p>
     */
-    inline Command&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+    inline Command& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /*
+     <p>The command deployment ID.</p>
+    */
+    inline Command& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /*
      <p>The command deployment ID.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>Date and time when the command was run.</p>
     */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
     /*
      <p>Date and time when the command was run.</p>
     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /*
+     <p>Date and time when the command was run.</p>
+    */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /*
      <p>Date and time when the command was run.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>Date and time when the command was run.</p>
     */
-    inline Command&  WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+    inline Command& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /*
+     <p>Date and time when the command was run.</p>
+    */
+    inline Command& WithCreatedAt(Aws::String&& value) { SetCreatedAt(value); return *this;}
 
     /*
      <p>Date and time when the command was run.</p>
@@ -140,10 +184,16 @@ namespace Model
      <p>Date and time when the command was acknowledged.</p>
     */
     inline const Aws::String& GetAcknowledgedAt() const{ return m_acknowledgedAt; }
+
     /*
      <p>Date and time when the command was acknowledged.</p>
     */
     inline void SetAcknowledgedAt(const Aws::String& value) { m_acknowledgedAtHasBeenSet = true; m_acknowledgedAt = value; }
+
+    /*
+     <p>Date and time when the command was acknowledged.</p>
+    */
+    inline void SetAcknowledgedAt(Aws::String&& value) { m_acknowledgedAtHasBeenSet = true; m_acknowledgedAt = value; }
 
     /*
      <p>Date and time when the command was acknowledged.</p>
@@ -153,7 +203,12 @@ namespace Model
     /*
      <p>Date and time when the command was acknowledged.</p>
     */
-    inline Command&  WithAcknowledgedAt(const Aws::String& value) { SetAcknowledgedAt(value); return *this;}
+    inline Command& WithAcknowledgedAt(const Aws::String& value) { SetAcknowledgedAt(value); return *this;}
+
+    /*
+     <p>Date and time when the command was acknowledged.</p>
+    */
+    inline Command& WithAcknowledgedAt(Aws::String&& value) { SetAcknowledgedAt(value); return *this;}
 
     /*
      <p>Date and time when the command was acknowledged.</p>
@@ -164,10 +219,16 @@ namespace Model
      <p>Date when the command completed.</p>
     */
     inline const Aws::String& GetCompletedAt() const{ return m_completedAt; }
+
     /*
      <p>Date when the command completed.</p>
     */
     inline void SetCompletedAt(const Aws::String& value) { m_completedAtHasBeenSet = true; m_completedAt = value; }
+
+    /*
+     <p>Date when the command completed.</p>
+    */
+    inline void SetCompletedAt(Aws::String&& value) { m_completedAtHasBeenSet = true; m_completedAt = value; }
 
     /*
      <p>Date when the command completed.</p>
@@ -177,7 +238,12 @@ namespace Model
     /*
      <p>Date when the command completed.</p>
     */
-    inline Command&  WithCompletedAt(const Aws::String& value) { SetCompletedAt(value); return *this;}
+    inline Command& WithCompletedAt(const Aws::String& value) { SetCompletedAt(value); return *this;}
+
+    /*
+     <p>Date when the command completed.</p>
+    */
+    inline Command& WithCompletedAt(Aws::String&& value) { SetCompletedAt(value); return *this;}
 
     /*
      <p>Date when the command completed.</p>
@@ -188,10 +254,16 @@ namespace Model
      <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
@@ -201,7 +273,12 @@ namespace Model
     /*
      <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
     */
-    inline Command&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline Command& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
+    */
+    inline Command& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The command status:</p> <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
@@ -212,6 +289,7 @@ namespace Model
      <p>The command exit code.</p>
     */
     inline long GetExitCode() const{ return m_exitCode; }
+
     /*
      <p>The command exit code.</p>
     */
@@ -220,16 +298,22 @@ namespace Model
     /*
      <p>The command exit code.</p>
     */
-    inline Command&  WithExitCode(long value) { SetExitCode(value); return *this;}
+    inline Command& WithExitCode(long value) { SetExitCode(value); return *this;}
 
     /*
      <p>The URL of the command log.</p>
     */
     inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
+
     /*
      <p>The URL of the command log.</p>
     */
     inline void SetLogUrl(const Aws::String& value) { m_logUrlHasBeenSet = true; m_logUrl = value; }
+
+    /*
+     <p>The URL of the command log.</p>
+    */
+    inline void SetLogUrl(Aws::String&& value) { m_logUrlHasBeenSet = true; m_logUrl = value; }
 
     /*
      <p>The URL of the command log.</p>
@@ -239,7 +323,12 @@ namespace Model
     /*
      <p>The URL of the command log.</p>
     */
-    inline Command&  WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
+    inline Command& WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
+
+    /*
+     <p>The URL of the command log.</p>
+    */
+    inline Command& WithLogUrl(Aws::String&& value) { SetLogUrl(value); return *this;}
 
     /*
      <p>The URL of the command log.</p>
@@ -250,10 +339,16 @@ namespace Model
      <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>
     */
     inline const Aws::String& GetType() const{ return m_type; }
+
     /*
      <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>
     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>
+    */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>
@@ -263,7 +358,12 @@ namespace Model
     /*
      <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>
     */
-    inline Command&  WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline Command& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /*
+     <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>
+    */
+    inline Command& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /*
      <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code> </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code> </li> </ul>

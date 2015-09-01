@@ -41,6 +41,11 @@ EnvironmentResourcesDescription& EnvironmentResourcesDescription::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNode = resultNode.FirstChild("LoadBalancer");
+    if(loadBalancerNode.IsNull())
+    {
+      loadBalancerNode = resultNode;
+    }
+
     if(!loadBalancerNode.IsNull())
     {
       m_loadBalancer = loadBalancerNode;

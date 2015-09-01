@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const DBSecurityGroup& GetDBSecurityGroup() const{ return m_dBSecurityGroup; }
+
     
     inline void SetDBSecurityGroup(const DBSecurityGroup& value) { m_dBSecurityGroup = value; }
 
     
-    inline CreateDBSecurityGroupResult&  WithDBSecurityGroup(const DBSecurityGroup& value) { SetDBSecurityGroup(value); return *this;}
+    inline void SetDBSecurityGroup(DBSecurityGroup&& value) { m_dBSecurityGroup = value; }
+
+    
+    inline CreateDBSecurityGroupResult& WithDBSecurityGroup(const DBSecurityGroup& value) { SetDBSecurityGroup(value); return *this;}
+
+    
+    inline CreateDBSecurityGroupResult& WithDBSecurityGroup(DBSecurityGroup&& value) { SetDBSecurityGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateDBSecurityGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateDBSecurityGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateDBSecurityGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     DBSecurityGroup m_dBSecurityGroup;

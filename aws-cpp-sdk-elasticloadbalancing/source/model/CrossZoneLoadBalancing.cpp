@@ -43,6 +43,11 @@ CrossZoneLoadBalancing& CrossZoneLoadBalancing::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
+    if(enabledNode.IsNull())
+    {
+      enabledNode = resultNode;
+    }
+
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());

@@ -45,12 +45,22 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode addressNode = resultNode.FirstChild("Address");
+    if(addressNode.IsNull())
+    {
+      addressNode = resultNode;
+    }
+
     if(!addressNode.IsNull())
     {
       m_address = StringUtils::Trim(addressNode.GetText().c_str());
       m_addressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
+    if(portNode.IsNull())
+    {
+      portNode = resultNode;
+    }
+
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());

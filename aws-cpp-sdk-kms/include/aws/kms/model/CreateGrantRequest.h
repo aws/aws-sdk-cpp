@@ -42,10 +42,16 @@ namespace Model
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    /*
+     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
+    */
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
-    inline CreateGrantRequest&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline CreateGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /*
+     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
+    */
+    inline CreateGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
@@ -66,10 +77,16 @@ namespace Model
      <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
     */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+
     /*
      <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
     */
     inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
+
+    /*
+     <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
+    */
+    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
     /*
      <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
@@ -79,7 +96,12 @@ namespace Model
     /*
      <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
     */
-    inline CreateGrantRequest&  WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
+    inline CreateGrantRequest& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
+
+    /*
+     <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
+    */
+    inline CreateGrantRequest& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(value); return *this;}
 
     /*
      <p>Principal given permission by the grant to use the key identified by the <code>keyId</code> parameter.</p>
@@ -90,10 +112,16 @@ namespace Model
      <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
     */
     inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
+
     /*
      <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
     */
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
+
+    /*
+     <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
+    */
+    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
     /*
      <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
@@ -103,7 +131,12 @@ namespace Model
     /*
      <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
     */
-    inline CreateGrantRequest&  WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
+    inline CreateGrantRequest& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
+
+    /*
+     <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
+    */
+    inline CreateGrantRequest& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(value); return *this;}
 
     /*
      <p>Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.</p>
@@ -114,6 +147,7 @@ namespace Model
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
     */
     inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
+
     /*
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
     */
@@ -122,7 +156,17 @@ namespace Model
     /*
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
     */
-    inline CreateGrantRequest&  WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
+    inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
+
+    /*
+     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
+    */
+    inline CreateGrantRequest& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
+
+    /*
+     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
+    */
+    inline CreateGrantRequest& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(value); return *this;}
 
     /*
      <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
@@ -130,9 +174,15 @@ namespace Model
     inline CreateGrantRequest& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /*
+     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol> </p>
+    */
+    inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
+
+    /*
      <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
     */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
+
     /*
      <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
     */
@@ -141,12 +191,23 @@ namespace Model
     /*
      <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
     */
-    inline CreateGrantRequest&  WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
+    inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
+
+    /*
+     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
+    */
+    inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
+
+    /*
+     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
+    */
+    inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(value); return *this;}
 
     /*
      <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
     */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+
     /*
      <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
     */
@@ -155,7 +216,17 @@ namespace Model
     /*
      <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
     */
-    inline CreateGrantRequest&  WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
+    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
+
+    /*
+     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
+    */
+    inline CreateGrantRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
+
+    /*
+     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
+    */
+    inline CreateGrantRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
 
     /*
      <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
@@ -165,18 +236,30 @@ namespace Model
     /*
      <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
     */
+    inline CreateGrantRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+
+    /*
+     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
+    */
     inline CreateGrantRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline CreateGrantRequest&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline CreateGrantRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline CreateGrantRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline CreateGrantRequest& WithName(const char* value) { SetName(value); return *this;}

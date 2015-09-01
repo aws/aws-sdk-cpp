@@ -43,6 +43,7 @@ namespace Model
      <p>The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an instance.</p>
     */
     inline long GetExecutionTimeout() const{ return m_executionTimeout; }
+
     /*
      <p>The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an instance.</p>
     */
@@ -51,12 +52,13 @@ namespace Model
     /*
      <p>The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an instance.</p>
     */
-    inline ShutdownEventConfiguration&  WithExecutionTimeout(long value) { SetExecutionTimeout(value); return *this;}
+    inline ShutdownEventConfiguration& WithExecutionTimeout(long value) { SetExecutionTimeout(value); return *this;}
 
     /*
      <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     */
     inline bool GetDelayUntilElbConnectionsDrained() const{ return m_delayUntilElbConnectionsDrained; }
+
     /*
      <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     */
@@ -65,7 +67,7 @@ namespace Model
     /*
      <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     */
-    inline ShutdownEventConfiguration&  WithDelayUntilElbConnectionsDrained(bool value) { SetDelayUntilElbConnectionsDrained(value); return *this;}
+    inline ShutdownEventConfiguration& WithDelayUntilElbConnectionsDrained(bool value) { SetDelayUntilElbConnectionsDrained(value); return *this;}
 
   private:
     long m_executionTimeout;

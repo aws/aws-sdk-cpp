@@ -48,6 +48,7 @@ namespace Model
      <p>The list of container instances.</p>
     */
     inline const Aws::Vector<ContainerInstance>& GetContainerInstances() const{ return m_containerInstances; }
+
     /*
      <p>The list of container instances.</p>
     */
@@ -56,23 +57,48 @@ namespace Model
     /*
      <p>The list of container instances.</p>
     */
-    inline DescribeContainerInstancesResult&  WithContainerInstances(const Aws::Vector<ContainerInstance>& value) { SetContainerInstances(value); return *this;}
+    inline void SetContainerInstances(Aws::Vector<ContainerInstance>&& value) { m_containerInstances = value; }
+
+    /*
+     <p>The list of container instances.</p>
+    */
+    inline DescribeContainerInstancesResult& WithContainerInstances(const Aws::Vector<ContainerInstance>& value) { SetContainerInstances(value); return *this;}
+
+    /*
+     <p>The list of container instances.</p>
+    */
+    inline DescribeContainerInstancesResult& WithContainerInstances(Aws::Vector<ContainerInstance>&& value) { SetContainerInstances(value); return *this;}
 
     /*
      <p>The list of container instances.</p>
     */
     inline DescribeContainerInstancesResult& AddContainerInstances(const ContainerInstance& value) { m_containerInstances.push_back(value); return *this; }
 
+    /*
+     <p>The list of container instances.</p>
+    */
+    inline DescribeContainerInstancesResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(value); return *this; }
+
     
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
+
     
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
     
-    inline DescribeContainerInstancesResult&  WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+
+    
+    inline DescribeContainerInstancesResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+
+    
+    inline DescribeContainerInstancesResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
     
     inline DescribeContainerInstancesResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
+
+    
+    inline DescribeContainerInstancesResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:
     Aws::Vector<ContainerInstance> m_containerInstances;

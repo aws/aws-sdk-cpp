@@ -45,6 +45,7 @@ namespace Model
      <p>The state of the job flow step.</p>
     */
     inline const StepExecutionState& GetState() const{ return m_state; }
+
     /*
      <p>The state of the job flow step.</p>
     */
@@ -53,12 +54,23 @@ namespace Model
     /*
      <p>The state of the job flow step.</p>
     */
-    inline StepExecutionStatusDetail&  WithState(const StepExecutionState& value) { SetState(value); return *this;}
+    inline void SetState(StepExecutionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p>The state of the job flow step.</p>
+    */
+    inline StepExecutionStatusDetail& WithState(const StepExecutionState& value) { SetState(value); return *this;}
+
+    /*
+     <p>The state of the job flow step.</p>
+    */
+    inline StepExecutionStatusDetail& WithState(StepExecutionState&& value) { SetState(value); return *this;}
 
     /*
      <p>The creation date and time of the step.</p>
     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
+
     /*
      <p>The creation date and time of the step.</p>
     */
@@ -67,12 +79,13 @@ namespace Model
     /*
      <p>The creation date and time of the step.</p>
     */
-    inline StepExecutionStatusDetail&  WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline StepExecutionStatusDetail& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
     /*
      <p>The start date and time of the step.</p>
     */
     inline double GetStartDateTime() const{ return m_startDateTime; }
+
     /*
      <p>The start date and time of the step.</p>
     */
@@ -81,12 +94,13 @@ namespace Model
     /*
      <p>The start date and time of the step.</p>
     */
-    inline StepExecutionStatusDetail&  WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
+    inline StepExecutionStatusDetail& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
 
     /*
      <p>The completion date and time of the step.</p>
     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
+
     /*
      <p>The completion date and time of the step.</p>
     */
@@ -95,16 +109,22 @@ namespace Model
     /*
      <p>The completion date and time of the step.</p>
     */
-    inline StepExecutionStatusDetail&  WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline StepExecutionStatusDetail& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
     /*
      <p>A description of the step's current state.</p>
     */
     inline const Aws::String& GetLastStateChangeReason() const{ return m_lastStateChangeReason; }
+
     /*
      <p>A description of the step's current state.</p>
     */
     inline void SetLastStateChangeReason(const Aws::String& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
+
+    /*
+     <p>A description of the step's current state.</p>
+    */
+    inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
 
     /*
      <p>A description of the step's current state.</p>
@@ -114,7 +134,12 @@ namespace Model
     /*
      <p>A description of the step's current state.</p>
     */
-    inline StepExecutionStatusDetail&  WithLastStateChangeReason(const Aws::String& value) { SetLastStateChangeReason(value); return *this;}
+    inline StepExecutionStatusDetail& WithLastStateChangeReason(const Aws::String& value) { SetLastStateChangeReason(value); return *this;}
+
+    /*
+     <p>A description of the step's current state.</p>
+    */
+    inline StepExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(value); return *this;}
 
     /*
      <p>A description of the step's current state.</p>

@@ -55,24 +55,44 @@ StatisticSet& StatisticSet::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
+    if(sampleCountNode.IsNull())
+    {
+      sampleCountNode = resultNode;
+    }
+
     if(!sampleCountNode.IsNull())
     {
       m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(sampleCountNode.GetText().c_str()).c_str());
       m_sampleCountHasBeenSet = true;
     }
     XmlNode sumNode = resultNode.FirstChild("Sum");
+    if(sumNode.IsNull())
+    {
+      sumNode = resultNode;
+    }
+
     if(!sumNode.IsNull())
     {
       m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(sumNode.GetText().c_str()).c_str());
       m_sumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
+    if(minimumNode.IsNull())
+    {
+      minimumNode = resultNode;
+    }
+
     if(!minimumNode.IsNull())
     {
       m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(minimumNode.GetText().c_str()).c_str());
       m_minimumHasBeenSet = true;
     }
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
+    if(maximumNode.IsNull())
+    {
+      maximumNode = resultNode;
+    }
+
     if(!maximumNode.IsNull())
     {
       m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(maximumNode.GetText().c_str()).c_str());

@@ -49,24 +49,44 @@ DBSubnetGroup& DBSubnetGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dBSubnetGroupNameNode = resultNode.FirstChild("DBSubnetGroupName");
+    if(dBSubnetGroupNameNode.IsNull())
+    {
+      dBSubnetGroupNameNode = resultNode;
+    }
+
     if(!dBSubnetGroupNameNode.IsNull())
     {
       m_dBSubnetGroupName = StringUtils::Trim(dBSubnetGroupNameNode.GetText().c_str());
       m_dBSubnetGroupNameHasBeenSet = true;
     }
     XmlNode dBSubnetGroupDescriptionNode = resultNode.FirstChild("DBSubnetGroupDescription");
+    if(dBSubnetGroupDescriptionNode.IsNull())
+    {
+      dBSubnetGroupDescriptionNode = resultNode;
+    }
+
     if(!dBSubnetGroupDescriptionNode.IsNull())
     {
       m_dBSubnetGroupDescription = StringUtils::Trim(dBSubnetGroupDescriptionNode.GetText().c_str());
       m_dBSubnetGroupDescriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
+    if(vpcIdNode.IsNull())
+    {
+      vpcIdNode = resultNode;
+    }
+
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode subnetGroupStatusNode = resultNode.FirstChild("SubnetGroupStatus");
+    if(subnetGroupStatusNode.IsNull())
+    {
+      subnetGroupStatusNode = resultNode;
+    }
+
     if(!subnetGroupStatusNode.IsNull())
     {
       m_subnetGroupStatus = StringUtils::Trim(subnetGroupStatusNode.GetText().c_str());

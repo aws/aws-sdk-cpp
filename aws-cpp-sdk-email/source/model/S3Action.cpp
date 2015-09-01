@@ -47,24 +47,44 @@ S3Action& S3Action::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
+    if(topicArnNode.IsNull())
+    {
+      topicArnNode = resultNode;
+    }
+
     if(!topicArnNode.IsNull())
     {
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
     }
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
+    if(bucketNameNode.IsNull())
+    {
+      bucketNameNode = resultNode;
+    }
+
     if(!bucketNameNode.IsNull())
     {
       m_bucketName = StringUtils::Trim(bucketNameNode.GetText().c_str());
       m_bucketNameHasBeenSet = true;
     }
     XmlNode objectKeyPrefixNode = resultNode.FirstChild("ObjectKeyPrefix");
+    if(objectKeyPrefixNode.IsNull())
+    {
+      objectKeyPrefixNode = resultNode;
+    }
+
     if(!objectKeyPrefixNode.IsNull())
     {
       m_objectKeyPrefix = StringUtils::Trim(objectKeyPrefixNode.GetText().c_str());
       m_objectKeyPrefixHasBeenSet = true;
     }
     XmlNode kmsKeyArnNode = resultNode.FirstChild("KmsKeyArn");
+    if(kmsKeyArnNode.IsNull())
+    {
+      kmsKeyArnNode = resultNode;
+    }
+
     if(!kmsKeyArnNode.IsNull())
     {
       m_kmsKeyArn = StringUtils::Trim(kmsKeyArnNode.GetText().c_str());

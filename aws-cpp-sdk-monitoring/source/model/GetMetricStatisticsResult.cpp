@@ -42,6 +42,11 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode labelNode = resultNode.FirstChild("Label");
+    if(labelNode.IsNull())
+    {
+      labelNode = resultNode;
+    }
+
     if(!labelNode.IsNull())
     {
       m_label = StringUtils::Trim(labelNode.GetText().c_str());

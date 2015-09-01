@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
     */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
+
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
+
+    /*
+     <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
+    */
+    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
     */
-    inline RemoveSourceIdentifierFromSubscriptionRequest&  WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
+    inline RemoveSourceIdentifierFromSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
+
+    /*
+     <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
+    */
+    inline RemoveSourceIdentifierFromSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
 
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
     */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+
+    /*
+     <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
+    */
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
     */
-    inline RemoveSourceIdentifierFromSubscriptionRequest&  WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+    inline RemoveSourceIdentifierFromSubscriptionRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+
+    /*
+     <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
+    */
+    inline RemoveSourceIdentifierFromSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>

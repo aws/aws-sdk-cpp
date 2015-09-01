@@ -49,10 +49,16 @@ namespace Model
      The name of the item.
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      The name of the item.
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     The name of the item.
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the item.
@@ -62,7 +68,12 @@ namespace Model
     /*
      The name of the item.
     */
-    inline Item&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Item& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     The name of the item.
+    */
+    inline Item& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      The name of the item.
@@ -73,10 +84,16 @@ namespace Model
      <p></p>
     */
     inline const Aws::String& GetAlternateNameEncoding() const{ return m_alternateNameEncoding; }
+
     /*
      <p></p>
     */
     inline void SetAlternateNameEncoding(const Aws::String& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
 
     /*
      <p></p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p></p>
     */
-    inline Item&  WithAlternateNameEncoding(const Aws::String& value) { SetAlternateNameEncoding(value); return *this;}
+    inline Item& WithAlternateNameEncoding(const Aws::String& value) { SetAlternateNameEncoding(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline Item& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(value); return *this;}
 
     /*
      <p></p>
@@ -97,6 +119,7 @@ namespace Model
      A list of attributes.
     */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
     /*
      A list of attributes.
     */
@@ -105,12 +128,27 @@ namespace Model
     /*
      A list of attributes.
     */
-    inline Item&  WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /*
+     A list of attributes.
+    */
+    inline Item& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
+
+    /*
+     A list of attributes.
+    */
+    inline Item& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
     /*
      A list of attributes.
     */
     inline Item& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+
+    /*
+     A list of attributes.
+    */
+    inline Item& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_name;

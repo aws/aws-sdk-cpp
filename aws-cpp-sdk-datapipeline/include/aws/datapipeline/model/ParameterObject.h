@@ -46,10 +46,16 @@ namespace Model
      <p>The ID of the parameter object. </p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The ID of the parameter object. </p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The ID of the parameter object. </p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the parameter object. </p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The ID of the parameter object. </p>
     */
-    inline ParameterObject&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ParameterObject& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The ID of the parameter object. </p>
+    */
+    inline ParameterObject& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The ID of the parameter object. </p>
@@ -70,6 +81,7 @@ namespace Model
      <p>The attributes of the parameter object.</p>
     */
     inline const Aws::Vector<ParameterAttribute>& GetAttributes() const{ return m_attributes; }
+
     /*
      <p>The attributes of the parameter object.</p>
     */
@@ -78,12 +90,27 @@ namespace Model
     /*
      <p>The attributes of the parameter object.</p>
     */
-    inline ParameterObject&  WithAttributes(const Aws::Vector<ParameterAttribute>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Vector<ParameterAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /*
+     <p>The attributes of the parameter object.</p>
+    */
+    inline ParameterObject& WithAttributes(const Aws::Vector<ParameterAttribute>& value) { SetAttributes(value); return *this;}
+
+    /*
+     <p>The attributes of the parameter object.</p>
+    */
+    inline ParameterObject& WithAttributes(Aws::Vector<ParameterAttribute>&& value) { SetAttributes(value); return *this;}
 
     /*
      <p>The attributes of the parameter object.</p>
     */
     inline ParameterObject& AddAttributes(const ParameterAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+
+    /*
+     <p>The attributes of the parameter object.</p>
+    */
+    inline ParameterObject& AddAttributes(ParameterAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_id;

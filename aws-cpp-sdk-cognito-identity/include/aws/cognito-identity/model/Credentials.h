@@ -44,10 +44,16 @@ namespace Model
      <p>The Access Key portion of the credentials.</p>
     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
     /*
      <p>The Access Key portion of the credentials.</p>
     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /*
+     <p>The Access Key portion of the credentials.</p>
+    */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The Access Key portion of the credentials.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The Access Key portion of the credentials.</p>
     */
-    inline Credentials&  WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+    inline Credentials& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /*
+     <p>The Access Key portion of the credentials.</p>
+    */
+    inline Credentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /*
      <p>The Access Key portion of the credentials.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The Secret Access Key portion of the credentials</p>
     */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
+
     /*
      <p>The Secret Access Key portion of the credentials</p>
     */
     inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
+
+    /*
+     <p>The Secret Access Key portion of the credentials</p>
+    */
+    inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
 
     /*
      <p>The Secret Access Key portion of the credentials</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The Secret Access Key portion of the credentials</p>
     */
-    inline Credentials&  WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
+    inline Credentials& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
+
+    /*
+     <p>The Secret Access Key portion of the credentials</p>
+    */
+    inline Credentials& WithSecretKey(Aws::String&& value) { SetSecretKey(value); return *this;}
 
     /*
      <p>The Secret Access Key portion of the credentials</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The Session Token portion of the credentials</p>
     */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+
     /*
      <p>The Session Token portion of the credentials</p>
     */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
+
+    /*
+     <p>The Session Token portion of the credentials</p>
+    */
+    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
     /*
      <p>The Session Token portion of the credentials</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The Session Token portion of the credentials</p>
     */
-    inline Credentials&  WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
+    inline Credentials& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
+
+    /*
+     <p>The Session Token portion of the credentials</p>
+    */
+    inline Credentials& WithSessionToken(Aws::String&& value) { SetSessionToken(value); return *this;}
 
     /*
      <p>The Session Token portion of the credentials</p>
@@ -116,6 +149,7 @@ namespace Model
      <p>The date at which these credentials will expire.</p>
     */
     inline double GetExpiration() const{ return m_expiration; }
+
     /*
      <p>The date at which these credentials will expire.</p>
     */
@@ -124,7 +158,7 @@ namespace Model
     /*
      <p>The date at which these credentials will expire.</p>
     */
-    inline Credentials&  WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline Credentials& WithExpiration(double value) { SetExpiration(value); return *this;}
 
   private:
     Aws::String m_accessKeyId;

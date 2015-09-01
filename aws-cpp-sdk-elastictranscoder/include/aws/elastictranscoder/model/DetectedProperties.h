@@ -44,6 +44,7 @@ namespace Model
      <p>The detected width of the input file, in pixels.</p>
     */
     inline long GetWidth() const{ return m_width; }
+
     /*
      <p>The detected width of the input file, in pixels.</p>
     */
@@ -52,12 +53,13 @@ namespace Model
     /*
      <p>The detected width of the input file, in pixels.</p>
     */
-    inline DetectedProperties&  WithWidth(long value) { SetWidth(value); return *this;}
+    inline DetectedProperties& WithWidth(long value) { SetWidth(value); return *this;}
 
     /*
      <p>The detected height of the input file, in pixels.</p>
     */
     inline long GetHeight() const{ return m_height; }
+
     /*
      <p>The detected height of the input file, in pixels.</p>
     */
@@ -66,16 +68,22 @@ namespace Model
     /*
      <p>The detected height of the input file, in pixels.</p>
     */
-    inline DetectedProperties&  WithHeight(long value) { SetHeight(value); return *this;}
+    inline DetectedProperties& WithHeight(long value) { SetHeight(value); return *this;}
 
     /*
      <p>The detected frame rate of the input file, in frames per second.</p>
     */
     inline const Aws::String& GetFrameRate() const{ return m_frameRate; }
+
     /*
      <p>The detected frame rate of the input file, in frames per second.</p>
     */
     inline void SetFrameRate(const Aws::String& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
+
+    /*
+     <p>The detected frame rate of the input file, in frames per second.</p>
+    */
+    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
 
     /*
      <p>The detected frame rate of the input file, in frames per second.</p>
@@ -85,7 +93,12 @@ namespace Model
     /*
      <p>The detected frame rate of the input file, in frames per second.</p>
     */
-    inline DetectedProperties&  WithFrameRate(const Aws::String& value) { SetFrameRate(value); return *this;}
+    inline DetectedProperties& WithFrameRate(const Aws::String& value) { SetFrameRate(value); return *this;}
+
+    /*
+     <p>The detected frame rate of the input file, in frames per second.</p>
+    */
+    inline DetectedProperties& WithFrameRate(Aws::String&& value) { SetFrameRate(value); return *this;}
 
     /*
      <p>The detected frame rate of the input file, in frames per second.</p>
@@ -96,6 +109,7 @@ namespace Model
      <p>The detected file size of the input file, in bytes.</p>
     */
     inline long long GetFileSize() const{ return m_fileSize; }
+
     /*
      <p>The detected file size of the input file, in bytes.</p>
     */
@@ -104,12 +118,13 @@ namespace Model
     /*
      <p>The detected file size of the input file, in bytes.</p>
     */
-    inline DetectedProperties&  WithFileSize(long long value) { SetFileSize(value); return *this;}
+    inline DetectedProperties& WithFileSize(long long value) { SetFileSize(value); return *this;}
 
     /*
      <p>The detected duration of the input file, in milliseconds.</p>
     */
     inline long long GetDurationMillis() const{ return m_durationMillis; }
+
     /*
      <p>The detected duration of the input file, in milliseconds.</p>
     */
@@ -118,7 +133,7 @@ namespace Model
     /*
      <p>The detected duration of the input file, in milliseconds.</p>
     */
-    inline DetectedProperties&  WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+    inline DetectedProperties& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
   private:
     long m_width;

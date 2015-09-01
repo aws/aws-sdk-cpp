@@ -42,10 +42,16 @@ namespace Model
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -55,7 +61,12 @@ namespace Model
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
-    inline UpdateRecordsRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline UpdateRecordsRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline UpdateRecordsRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -66,10 +77,16 @@ namespace Model
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -79,7 +96,12 @@ namespace Model
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
-    inline UpdateRecordsRequest&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline UpdateRecordsRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline UpdateRecordsRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -90,10 +112,16 @@ namespace Model
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
+
+    /*
+     A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    */
+    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -103,7 +131,12 @@ namespace Model
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
-    inline UpdateRecordsRequest&  WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+    inline UpdateRecordsRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+
+    /*
+     A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    */
+    inline UpdateRecordsRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(value); return *this;}
 
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -114,10 +147,16 @@ namespace Model
      <p>The unique ID generated for this device by Cognito.</p>
     */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
+
+    /*
+     <p>The unique ID generated for this device by Cognito.</p>
+    */
+    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>
@@ -127,7 +166,12 @@ namespace Model
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
-    inline UpdateRecordsRequest&  WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+    inline UpdateRecordsRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+
+    /*
+     <p>The unique ID generated for this device by Cognito.</p>
+    */
+    inline UpdateRecordsRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(value); return *this;}
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>
@@ -138,6 +182,7 @@ namespace Model
      A list of patch operations.
     */
     inline const Aws::Vector<RecordPatch>& GetRecordPatches() const{ return m_recordPatches; }
+
     /*
      A list of patch operations.
     */
@@ -146,7 +191,17 @@ namespace Model
     /*
      A list of patch operations.
     */
-    inline UpdateRecordsRequest&  WithRecordPatches(const Aws::Vector<RecordPatch>& value) { SetRecordPatches(value); return *this;}
+    inline void SetRecordPatches(Aws::Vector<RecordPatch>&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches = value; }
+
+    /*
+     A list of patch operations.
+    */
+    inline UpdateRecordsRequest& WithRecordPatches(const Aws::Vector<RecordPatch>& value) { SetRecordPatches(value); return *this;}
+
+    /*
+     A list of patch operations.
+    */
+    inline UpdateRecordsRequest& WithRecordPatches(Aws::Vector<RecordPatch>&& value) { SetRecordPatches(value); return *this;}
 
     /*
      A list of patch operations.
@@ -154,13 +209,24 @@ namespace Model
     inline UpdateRecordsRequest& AddRecordPatches(const RecordPatch& value) { m_recordPatchesHasBeenSet = true; m_recordPatches.push_back(value); return *this; }
 
     /*
+     A list of patch operations.
+    */
+    inline UpdateRecordsRequest& AddRecordPatches(RecordPatch&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches.push_back(value); return *this; }
+
+    /*
      The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     */
     inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
+
     /*
      The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     */
     inline void SetSyncSessionToken(const Aws::String& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = value; }
+
+    /*
+     The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+    */
+    inline void SetSyncSessionToken(Aws::String&& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = value; }
 
     /*
      The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
@@ -170,7 +236,12 @@ namespace Model
     /*
      The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     */
-    inline UpdateRecordsRequest&  WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
+    inline UpdateRecordsRequest& WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
+
+    /*
+     The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+    */
+    inline UpdateRecordsRequest& WithSyncSessionToken(Aws::String&& value) { SetSyncSessionToken(value); return *this;}
 
     /*
      The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
@@ -181,10 +252,16 @@ namespace Model
      Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+
     /*
      Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
+
+    /*
+     Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
+    */
+    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /*
      Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
@@ -194,7 +271,12 @@ namespace Model
     /*
      Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     */
-    inline UpdateRecordsRequest&  WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
+    inline UpdateRecordsRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
+
+    /*
+     Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
+    */
+    inline UpdateRecordsRequest& WithClientContext(Aws::String&& value) { SetClientContext(value); return *this;}
 
     /*
      Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.

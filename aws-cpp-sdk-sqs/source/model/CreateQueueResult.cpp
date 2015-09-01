@@ -42,6 +42,11 @@ CreateQueueResult& CreateQueueResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode queueUrlNode = resultNode.FirstChild("QueueUrl");
+    if(queueUrlNode.IsNull())
+    {
+      queueUrlNode = resultNode;
+    }
+
     if(!queueUrlNode.IsNull())
     {
       m_queueUrl = StringUtils::Trim(queueUrlNode.GetText().c_str());

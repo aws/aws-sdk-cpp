@@ -46,25 +46,42 @@ namespace Model
 
     
     inline const Aws::Vector<SubscriptionFilter>& GetSubscriptionFilters() const{ return m_subscriptionFilters; }
+
     
     inline void SetSubscriptionFilters(const Aws::Vector<SubscriptionFilter>& value) { m_subscriptionFilters = value; }
 
     
-    inline DescribeSubscriptionFiltersResult&  WithSubscriptionFilters(const Aws::Vector<SubscriptionFilter>& value) { SetSubscriptionFilters(value); return *this;}
+    inline void SetSubscriptionFilters(Aws::Vector<SubscriptionFilter>&& value) { m_subscriptionFilters = value; }
+
+    
+    inline DescribeSubscriptionFiltersResult& WithSubscriptionFilters(const Aws::Vector<SubscriptionFilter>& value) { SetSubscriptionFilters(value); return *this;}
+
+    
+    inline DescribeSubscriptionFiltersResult& WithSubscriptionFilters(Aws::Vector<SubscriptionFilter>&& value) { SetSubscriptionFilters(value); return *this;}
 
     
     inline DescribeSubscriptionFiltersResult& AddSubscriptionFilters(const SubscriptionFilter& value) { m_subscriptionFilters.push_back(value); return *this; }
 
     
+    inline DescribeSubscriptionFiltersResult& AddSubscriptionFilters(SubscriptionFilter&& value) { m_subscriptionFilters.push_back(value); return *this; }
+
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     
-    inline DescribeSubscriptionFiltersResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeSubscriptionFiltersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    
+    inline DescribeSubscriptionFiltersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     
     inline DescribeSubscriptionFiltersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

@@ -47,10 +47,16 @@ namespace Model
      <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
     */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
+
     /*
      <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
     */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
+
+    /*
+     <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
+    */
+    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = value; }
 
     /*
      <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
     */
-    inline OptionRestrictionRegex&  WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
+    inline OptionRestrictionRegex& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
+
+    /*
+     <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
+    */
+    inline OptionRestrictionRegex& WithPattern(Aws::String&& value) { SetPattern(value); return *this;}
 
     /*
      <p> The regular expression pattern that a string configuration option value with this restriction must match. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> A unique name representing this regular expression. </p>
     */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
     /*
      <p> A unique name representing this regular expression. </p>
     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
+
+    /*
+     <p> A unique name representing this regular expression. </p>
+    */
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /*
      <p> A unique name representing this regular expression. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> A unique name representing this regular expression. </p>
     */
-    inline OptionRestrictionRegex&  WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+    inline OptionRestrictionRegex& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /*
+     <p> A unique name representing this regular expression. </p>
+    */
+    inline OptionRestrictionRegex& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
 
     /*
      <p> A unique name representing this regular expression. </p>

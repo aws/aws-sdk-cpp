@@ -44,10 +44,16 @@ namespace Model
      <p>The operating system family.</p>
     */
     inline const Aws::String& GetFamily() const{ return m_family; }
+
     /*
      <p>The operating system family.</p>
     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
+
+    /*
+     <p>The operating system family.</p>
+    */
+    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /*
      <p>The operating system family.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The operating system family.</p>
     */
-    inline ReportedOs&  WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
+    inline ReportedOs& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
+
+    /*
+     <p>The operating system family.</p>
+    */
+    inline ReportedOs& WithFamily(Aws::String&& value) { SetFamily(value); return *this;}
 
     /*
      <p>The operating system family.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The operating system name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The operating system name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The operating system name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The operating system name.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The operating system name.</p>
     */
-    inline ReportedOs&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ReportedOs& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The operating system name.</p>
+    */
+    inline ReportedOs& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The operating system name.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The operating system version.</p>
     */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
     /*
      <p>The operating system version.</p>
     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>The operating system version.</p>
+    */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /*
      <p>The operating system version.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The operating system version.</p>
     */
-    inline ReportedOs&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline ReportedOs& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>The operating system version.</p>
+    */
+    inline ReportedOs& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /*
      <p>The operating system version.</p>

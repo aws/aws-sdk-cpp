@@ -47,10 +47,16 @@ namespace Model
      <p> Specifies the DNS address of the DB instance. </p>
     */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
     /*
      <p> Specifies the DNS address of the DB instance. </p>
     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
+
+    /*
+     <p> Specifies the DNS address of the DB instance. </p>
+    */
+    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /*
      <p> Specifies the DNS address of the DB instance. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> Specifies the DNS address of the DB instance. </p>
     */
-    inline Endpoint&  WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+    inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+
+    /*
+     <p> Specifies the DNS address of the DB instance. </p>
+    */
+    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
     /*
      <p> Specifies the DNS address of the DB instance. </p>
@@ -71,6 +82,7 @@ namespace Model
      <p> Specifies the port that the database engine is listening on. </p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p> Specifies the port that the database engine is listening on. </p>
     */
@@ -79,16 +91,22 @@ namespace Model
     /*
      <p> Specifies the port that the database engine is listening on. </p>
     */
-    inline Endpoint&  WithPort(long value) { SetPort(value); return *this;}
+    inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
 
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
@@ -98,7 +116,12 @@ namespace Model
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     */
-    inline Endpoint&  WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+    inline Endpoint& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline Endpoint& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
 
     /*
      <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>

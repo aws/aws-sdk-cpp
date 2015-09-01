@@ -48,6 +48,7 @@ namespace Model
      The identity pools returned by the ListIdentityPools action.
     */
     inline const Aws::Vector<IdentityPoolShortDescription>& GetIdentityPools() const{ return m_identityPools; }
+
     /*
      The identity pools returned by the ListIdentityPools action.
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      The identity pools returned by the ListIdentityPools action.
     */
-    inline ListIdentityPoolsResult&  WithIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { SetIdentityPools(value); return *this;}
+    inline void SetIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { m_identityPools = value; }
+
+    /*
+     The identity pools returned by the ListIdentityPools action.
+    */
+    inline ListIdentityPoolsResult& WithIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { SetIdentityPools(value); return *this;}
+
+    /*
+     The identity pools returned by the ListIdentityPools action.
+    */
+    inline ListIdentityPoolsResult& WithIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { SetIdentityPools(value); return *this;}
 
     /*
      The identity pools returned by the ListIdentityPools action.
@@ -64,13 +75,24 @@ namespace Model
     inline ListIdentityPoolsResult& AddIdentityPools(const IdentityPoolShortDescription& value) { m_identityPools.push_back(value); return *this; }
 
     /*
+     The identity pools returned by the ListIdentityPools action.
+    */
+    inline ListIdentityPoolsResult& AddIdentityPools(IdentityPoolShortDescription&& value) { m_identityPools.push_back(value); return *this; }
+
+    /*
      A pagination token.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     A pagination token.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      A pagination token.
@@ -80,7 +102,12 @@ namespace Model
     /*
      A pagination token.
     */
-    inline ListIdentityPoolsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListIdentityPoolsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token.
+    */
+    inline ListIdentityPoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token.

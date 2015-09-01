@@ -49,10 +49,16 @@ namespace Model
      <p>The application name.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The application name.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The application name.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The application name.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The application name.</p>
     */
-    inline DeploymentGroupInfo&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline DeploymentGroupInfo& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The application name.</p>
+    */
+    inline DeploymentGroupInfo& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The application name.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The deployment group ID.</p>
     */
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
+
     /*
      <p>The deployment group ID.</p>
     */
     inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupIdHasBeenSet = true; m_deploymentGroupId = value; }
+
+    /*
+     <p>The deployment group ID.</p>
+    */
+    inline void SetDeploymentGroupId(Aws::String&& value) { m_deploymentGroupIdHasBeenSet = true; m_deploymentGroupId = value; }
 
     /*
      <p>The deployment group ID.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The deployment group ID.</p>
     */
-    inline DeploymentGroupInfo&  WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
+    inline DeploymentGroupInfo& WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
+
+    /*
+     <p>The deployment group ID.</p>
+    */
+    inline DeploymentGroupInfo& WithDeploymentGroupId(Aws::String&& value) { SetDeploymentGroupId(value); return *this;}
 
     /*
      <p>The deployment group ID.</p>
@@ -97,10 +119,16 @@ namespace Model
      <p>The deployment group name.</p>
     */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
+
     /*
      <p>The deployment group name.</p>
     */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
+
+    /*
+     <p>The deployment group name.</p>
+    */
+    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /*
      <p>The deployment group name.</p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p>The deployment group name.</p>
     */
-    inline DeploymentGroupInfo&  WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
+    inline DeploymentGroupInfo& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
+
+    /*
+     <p>The deployment group name.</p>
+    */
+    inline DeploymentGroupInfo& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(value); return *this;}
 
     /*
      <p>The deployment group name.</p>
@@ -121,10 +154,16 @@ namespace Model
      <p>The deployment configuration name.</p>
     */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
     /*
      <p>The deployment configuration name.</p>
     */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
+
+    /*
+     <p>The deployment configuration name.</p>
+    */
+    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /*
      <p>The deployment configuration name.</p>
@@ -134,7 +173,12 @@ namespace Model
     /*
      <p>The deployment configuration name.</p>
     */
-    inline DeploymentGroupInfo&  WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
+    inline DeploymentGroupInfo& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
+
+    /*
+     <p>The deployment configuration name.</p>
+    */
+    inline DeploymentGroupInfo& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(value); return *this;}
 
     /*
      <p>The deployment configuration name.</p>
@@ -145,6 +189,7 @@ namespace Model
      <p>The Amazon EC2 tags to filter on.</p>
     */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
+
     /*
      <p>The Amazon EC2 tags to filter on.</p>
     */
@@ -153,7 +198,17 @@ namespace Model
     /*
      <p>The Amazon EC2 tags to filter on.</p>
     */
-    inline DeploymentGroupInfo&  WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
+    inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
+
+    /*
+     <p>The Amazon EC2 tags to filter on.</p>
+    */
+    inline DeploymentGroupInfo& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
+
+    /*
+     <p>The Amazon EC2 tags to filter on.</p>
+    */
+    inline DeploymentGroupInfo& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(value); return *this;}
 
     /*
      <p>The Amazon EC2 tags to filter on.</p>
@@ -161,9 +216,15 @@ namespace Model
     inline DeploymentGroupInfo& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /*
+     <p>The Amazon EC2 tags to filter on.</p>
+    */
+    inline DeploymentGroupInfo& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
+
+    /*
      <p>The on-premises instance tags to filter on.</p>
     */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
+
     /*
      <p>The on-premises instance tags to filter on.</p>
     */
@@ -172,7 +233,17 @@ namespace Model
     /*
      <p>The on-premises instance tags to filter on.</p>
     */
-    inline DeploymentGroupInfo&  WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
+    inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
+
+    /*
+     <p>The on-premises instance tags to filter on.</p>
+    */
+    inline DeploymentGroupInfo& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
+
+    /*
+     <p>The on-premises instance tags to filter on.</p>
+    */
+    inline DeploymentGroupInfo& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /*
      <p>The on-premises instance tags to filter on.</p>
@@ -180,9 +251,15 @@ namespace Model
     inline DeploymentGroupInfo& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /*
+     <p>The on-premises instance tags to filter on.</p>
+    */
+    inline DeploymentGroupInfo& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
+
+    /*
      <p>A list of associated Auto Scaling groups.</p>
     */
     inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+
     /*
      <p>A list of associated Auto Scaling groups.</p>
     */
@@ -191,7 +268,17 @@ namespace Model
     /*
      <p>A list of associated Auto Scaling groups.</p>
     */
-    inline DeploymentGroupInfo&  WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
+    inline void SetAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
+
+    /*
+     <p>A list of associated Auto Scaling groups.</p>
+    */
+    inline DeploymentGroupInfo& WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
+
+    /*
+     <p>A list of associated Auto Scaling groups.</p>
+    */
+    inline DeploymentGroupInfo& WithAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { SetAutoScalingGroups(value); return *this;}
 
     /*
      <p>A list of associated Auto Scaling groups.</p>
@@ -199,13 +286,24 @@ namespace Model
     inline DeploymentGroupInfo& AddAutoScalingGroups(const AutoScalingGroup& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
     /*
+     <p>A list of associated Auto Scaling groups.</p>
+    */
+    inline DeploymentGroupInfo& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
+
+    /*
      <p>A service role ARN.</p>
     */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
     /*
      <p>A service role ARN.</p>
     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+
+    /*
+     <p>A service role ARN.</p>
+    */
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /*
      <p>A service role ARN.</p>
@@ -215,7 +313,12 @@ namespace Model
     /*
      <p>A service role ARN.</p>
     */
-    inline DeploymentGroupInfo&  WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
+    inline DeploymentGroupInfo& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
+
+    /*
+     <p>A service role ARN.</p>
+    */
+    inline DeploymentGroupInfo& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
 
     /*
      <p>A service role ARN.</p>
@@ -226,6 +329,7 @@ namespace Model
      <p>Information about the deployment group's target revision, including the revision's type and its location.</p>
     */
     inline const RevisionLocation& GetTargetRevision() const{ return m_targetRevision; }
+
     /*
      <p>Information about the deployment group's target revision, including the revision's type and its location.</p>
     */
@@ -234,7 +338,17 @@ namespace Model
     /*
      <p>Information about the deployment group's target revision, including the revision's type and its location.</p>
     */
-    inline DeploymentGroupInfo&  WithTargetRevision(const RevisionLocation& value) { SetTargetRevision(value); return *this;}
+    inline void SetTargetRevision(RevisionLocation&& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = value; }
+
+    /*
+     <p>Information about the deployment group's target revision, including the revision's type and its location.</p>
+    */
+    inline DeploymentGroupInfo& WithTargetRevision(const RevisionLocation& value) { SetTargetRevision(value); return *this;}
+
+    /*
+     <p>Information about the deployment group's target revision, including the revision's type and its location.</p>
+    */
+    inline DeploymentGroupInfo& WithTargetRevision(RevisionLocation&& value) { SetTargetRevision(value); return *this;}
 
   private:
     Aws::String m_applicationName;

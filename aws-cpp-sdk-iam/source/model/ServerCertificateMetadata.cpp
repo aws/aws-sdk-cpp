@@ -55,36 +55,66 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
+    if(pathNode.IsNull())
+    {
+      pathNode = resultNode;
+    }
+
     if(!pathNode.IsNull())
     {
       m_path = StringUtils::Trim(pathNode.GetText().c_str());
       m_pathHasBeenSet = true;
     }
     XmlNode serverCertificateNameNode = resultNode.FirstChild("ServerCertificateName");
+    if(serverCertificateNameNode.IsNull())
+    {
+      serverCertificateNameNode = resultNode;
+    }
+
     if(!serverCertificateNameNode.IsNull())
     {
       m_serverCertificateName = StringUtils::Trim(serverCertificateNameNode.GetText().c_str());
       m_serverCertificateNameHasBeenSet = true;
     }
     XmlNode serverCertificateIdNode = resultNode.FirstChild("ServerCertificateId");
+    if(serverCertificateIdNode.IsNull())
+    {
+      serverCertificateIdNode = resultNode;
+    }
+
     if(!serverCertificateIdNode.IsNull())
     {
       m_serverCertificateId = StringUtils::Trim(serverCertificateIdNode.GetText().c_str());
       m_serverCertificateIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
+    if(arnNode.IsNull())
+    {
+      arnNode = resultNode;
+    }
+
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());
       m_arnHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
+    if(uploadDateNode.IsNull())
+    {
+      uploadDateNode = resultNode;
+    }
+
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());
       m_uploadDateHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
+    if(expirationNode.IsNull())
+    {
+      expirationNode = resultNode;
+    }
+
     if(!expirationNode.IsNull())
     {
       m_expiration = StringUtils::ConvertToDouble(StringUtils::Trim(expirationNode.GetText().c_str()).c_str());

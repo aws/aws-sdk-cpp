@@ -37,10 +37,16 @@ namespace Model
      The name of the domain to delete.
     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
     /*
      The name of the domain to delete.
     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /*
+     The name of the domain to delete.
+    */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain to delete.
@@ -50,7 +56,12 @@ namespace Model
     /*
      The name of the domain to delete.
     */
-    inline DeleteDomainRequest&  WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline DeleteDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /*
+     The name of the domain to delete.
+    */
+    inline DeleteDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /*
      The name of the domain to delete.

@@ -45,28 +45,42 @@ namespace Model
 
     
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline ExtensionField&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ExtensionField& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline ExtensionField& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline ExtensionField& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline const Aws::String& GetValue() const{ return m_value; }
+
     
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     
-    inline ExtensionField&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline ExtensionField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    
+    inline ExtensionField& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     
     inline ExtensionField& WithValue(const char* value) { SetValue(value); return *this;}

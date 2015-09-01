@@ -36,6 +36,7 @@ namespace Model
      <p>The minimum number of characters allowed in an IAM user password.</p> <p>Default value: 6</p>
     */
     inline long GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
+
     /*
      <p>The minimum number of characters allowed in an IAM user password.</p> <p>Default value: 6</p>
     */
@@ -44,12 +45,13 @@ namespace Model
     /*
      <p>The minimum number of characters allowed in an IAM user password.</p> <p>Default value: 6</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithMinimumPasswordLength(long value) { SetMinimumPasswordLength(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithMinimumPasswordLength(long value) { SetMinimumPasswordLength(value); return *this;}
 
     /*
      <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp;amp; * ( ) _ + - = [ ] { } | '</p> <p>Default value: false</p>
     */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
+
     /*
      <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp;amp; * ( ) _ + - = [ ] { } | '</p> <p>Default value: false</p>
     */
@@ -58,12 +60,13 @@ namespace Model
     /*
      <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp;amp; * ( ) _ + - = [ ] { } | '</p> <p>Default value: false</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
     /*
      <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p> <p>Default value: false</p>
     */
     inline bool GetRequireNumbers() const{ return m_requireNumbers; }
+
     /*
      <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p> <p>Default value: false</p>
     */
@@ -72,12 +75,13 @@ namespace Model
     /*
      <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p> <p>Default value: false</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
 
     /*
      <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p> <p>Default value: false</p>
     */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
+
     /*
      <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p> <p>Default value: false</p>
     */
@@ -86,12 +90,13 @@ namespace Model
     /*
      <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p> <p>Default value: false</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
 
     /*
      <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p> <p>Default value: false</p>
     */
     inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
+
     /*
      <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p> <p>Default value: false</p>
     */
@@ -100,12 +105,13 @@ namespace Model
     /*
      <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p> <p>Default value: false</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
 
     /*
      <p> Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. </p> <p>Default value: false</p>
     */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
+
     /*
      <p> Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. </p> <p>Default value: false</p>
     */
@@ -114,12 +120,13 @@ namespace Model
     /*
      <p> Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. </p> <p>Default value: false</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
 
     /*
      <p>The number of days that an IAM user password is valid. The default value of 0 means IAM user passwords never expire.</p> <p>Default value: 0</p>
     */
     inline long GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+
     /*
      <p>The number of days that an IAM user password is valid. The default value of 0 means IAM user passwords never expire.</p> <p>Default value: 0</p>
     */
@@ -128,12 +135,13 @@ namespace Model
     /*
      <p>The number of days that an IAM user password is valid. The default value of 0 means IAM user passwords never expire.</p> <p>Default value: 0</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithMaxPasswordAge(long value) { SetMaxPasswordAge(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithMaxPasswordAge(long value) { SetMaxPasswordAge(value); return *this;}
 
     /*
      <p>Specifies the number of previous passwords that IAM users are prevented from reusing. The default value of 0 means IAM users are not prevented from reusing previous passwords.</p> <p>Default value: 0</p>
     */
     inline long GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
+
     /*
      <p>Specifies the number of previous passwords that IAM users are prevented from reusing. The default value of 0 means IAM users are not prevented from reusing previous passwords.</p> <p>Default value: 0</p>
     */
@@ -142,12 +150,13 @@ namespace Model
     /*
      <p>Specifies the number of previous passwords that IAM users are prevented from reusing. The default value of 0 means IAM users are not prevented from reusing previous passwords.</p> <p>Default value: 0</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithPasswordReusePrevention(long value) { SetPasswordReusePrevention(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithPasswordReusePrevention(long value) { SetPasswordReusePrevention(value); return *this;}
 
     /*
      <p>Prevents IAM users from setting a new password after their password has expired.</p> <p>Default value: false</p>
     */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
+
     /*
      <p>Prevents IAM users from setting a new password after their password has expired.</p> <p>Default value: false</p>
     */
@@ -156,7 +165,7 @@ namespace Model
     /*
      <p>Prevents IAM users from setting a new password after their password has expired.</p> <p>Default value: false</p>
     */
-    inline UpdateAccountPasswordPolicyRequest&  WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 
   private:
     long m_minimumPasswordLength;

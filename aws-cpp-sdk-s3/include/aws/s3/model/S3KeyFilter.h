@@ -44,14 +44,24 @@ namespace Model
 
     
     inline const Aws::Vector<FilterRule>& GetFilterRules() const{ return m_filterRules; }
+
     
     inline void SetFilterRules(const Aws::Vector<FilterRule>& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
 
     
-    inline S3KeyFilter&  WithFilterRules(const Aws::Vector<FilterRule>& value) { SetFilterRules(value); return *this;}
+    inline void SetFilterRules(Aws::Vector<FilterRule>&& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
+
+    
+    inline S3KeyFilter& WithFilterRules(const Aws::Vector<FilterRule>& value) { SetFilterRules(value); return *this;}
+
+    
+    inline S3KeyFilter& WithFilterRules(Aws::Vector<FilterRule>&& value) { SetFilterRules(value); return *this;}
 
     
     inline S3KeyFilter& AddFilterRules(const FilterRule& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(value); return *this; }
+
+    
+    inline S3KeyFilter& AddFilterRules(FilterRule&& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(value); return *this; }
 
   private:
     Aws::Vector<FilterRule> m_filterRules;

@@ -45,6 +45,7 @@ namespace Model
      The constraint equals the full encryption context.
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextSubset() const{ return m_encryptionContextSubset; }
+
     /*
      The constraint equals the full encryption context.
     */
@@ -53,12 +54,47 @@ namespace Model
     /*
      The constraint equals the full encryption context.
     */
-    inline GrantConstraints&  WithEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextSubset(value); return *this;}
+    inline void SetEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& WithEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextSubset(value); return *this;}
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& WithEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextSubset(value); return *this;}
 
     /*
      The constraint equals the full encryption context.
     */
     inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& AddEncryptionContextSubset(const char* key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+
+    /*
+     The constraint equals the full encryption context.
+    */
+    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
     /*
      The constraint equals the full encryption context.
@@ -69,6 +105,7 @@ namespace Model
      The constraint contains additional key/value pairs that serve to further limit the grant.
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextEquals() const{ return m_encryptionContextEquals; }
+
     /*
      The constraint contains additional key/value pairs that serve to further limit the grant.
     */
@@ -77,12 +114,47 @@ namespace Model
     /*
      The constraint contains additional key/value pairs that serve to further limit the grant.
     */
-    inline GrantConstraints&  WithEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextEquals(value); return *this;}
+    inline void SetEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = value; }
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& WithEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextEquals(value); return *this;}
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& WithEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextEquals(value); return *this;}
 
     /*
      The constraint contains additional key/value pairs that serve to further limit the grant.
     */
     inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& AddEncryptionContextEquals(const char* key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+
+    /*
+     The constraint contains additional key/value pairs that serve to further limit the grant.
+    */
+    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
     /*
      The constraint contains additional key/value pairs that serve to further limit the grant.

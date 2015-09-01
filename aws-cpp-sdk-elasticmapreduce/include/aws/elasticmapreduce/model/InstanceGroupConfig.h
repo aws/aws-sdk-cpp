@@ -48,10 +48,16 @@ namespace Model
      <p>Friendly name given to the instance group.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>Friendly name given to the instance group.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>Friendly name given to the instance group.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>Friendly name given to the instance group.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>Friendly name given to the instance group.</p>
     */
-    inline InstanceGroupConfig&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline InstanceGroupConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>Friendly name given to the instance group.</p>
+    */
+    inline InstanceGroupConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>Friendly name given to the instance group.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
     */
     inline const MarketType& GetMarket() const{ return m_market; }
+
     /*
      <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
     */
@@ -80,12 +92,23 @@ namespace Model
     /*
      <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
     */
-    inline InstanceGroupConfig&  WithMarket(const MarketType& value) { SetMarket(value); return *this;}
+    inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = value; }
+
+    /*
+     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+    */
+    inline InstanceGroupConfig& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
+
+    /*
+     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+    */
+    inline InstanceGroupConfig& WithMarket(MarketType&& value) { SetMarket(value); return *this;}
 
     /*
      <p>The role of the instance group in the cluster.</p>
     */
     inline const InstanceRoleType& GetInstanceRole() const{ return m_instanceRole; }
+
     /*
      <p>The role of the instance group in the cluster.</p>
     */
@@ -94,16 +117,32 @@ namespace Model
     /*
      <p>The role of the instance group in the cluster.</p>
     */
-    inline InstanceGroupConfig&  WithInstanceRole(const InstanceRoleType& value) { SetInstanceRole(value); return *this;}
+    inline void SetInstanceRole(InstanceRoleType&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
+
+    /*
+     <p>The role of the instance group in the cluster.</p>
+    */
+    inline InstanceGroupConfig& WithInstanceRole(const InstanceRoleType& value) { SetInstanceRole(value); return *this;}
+
+    /*
+     <p>The role of the instance group in the cluster.</p>
+    */
+    inline InstanceGroupConfig& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(value); return *this;}
 
     /*
      <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
     */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
+
     /*
      <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
     */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
+
+    /*
+     <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
+    */
+    inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /*
      <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
@@ -113,7 +152,12 @@ namespace Model
     /*
      <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
     */
-    inline InstanceGroupConfig&  WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
+    inline InstanceGroupConfig& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
+
+    /*
+     <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
+    */
+    inline InstanceGroupConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(value); return *this;}
 
     /*
      <p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>
@@ -124,10 +168,16 @@ namespace Model
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
     */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /*
+     <p>The Amazon EC2 instance type for all instances in the instance group. </p>
+    */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
@@ -137,7 +187,12 @@ namespace Model
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
     */
-    inline InstanceGroupConfig&  WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+    inline InstanceGroupConfig& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /*
+     <p>The Amazon EC2 instance type for all instances in the instance group. </p>
+    */
+    inline InstanceGroupConfig& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
@@ -148,6 +203,7 @@ namespace Model
      <p>Target number of instances for the instance group. </p>
     */
     inline long GetInstanceCount() const{ return m_instanceCount; }
+
     /*
      <p>Target number of instances for the instance group. </p>
     */
@@ -156,12 +212,13 @@ namespace Model
     /*
      <p>Target number of instances for the instance group. </p>
     */
-    inline InstanceGroupConfig&  WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline InstanceGroupConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
 
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     */
@@ -170,12 +227,27 @@ namespace Model
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     */
-    inline InstanceGroupConfig&  WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
+    */
+    inline InstanceGroupConfig& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
+    */
+    inline InstanceGroupConfig& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
 
     /*
      <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     */
     inline InstanceGroupConfig& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
+    */
+    inline InstanceGroupConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
   private:
     Aws::String m_name;

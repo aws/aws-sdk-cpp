@@ -46,10 +46,16 @@ namespace Model
      <p>A unique deployment group ID.</p>
     */
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
+
     /*
      <p>A unique deployment group ID.</p>
     */
     inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupId = value; }
+
+    /*
+     <p>A unique deployment group ID.</p>
+    */
+    inline void SetDeploymentGroupId(Aws::String&& value) { m_deploymentGroupId = value; }
 
     /*
      <p>A unique deployment group ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A unique deployment group ID.</p>
     */
-    inline CreateDeploymentGroupResult&  WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
+    inline CreateDeploymentGroupResult& WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
+
+    /*
+     <p>A unique deployment group ID.</p>
+    */
+    inline CreateDeploymentGroupResult& WithDeploymentGroupId(Aws::String&& value) { SetDeploymentGroupId(value); return *this;}
 
     /*
      <p>A unique deployment group ID.</p>

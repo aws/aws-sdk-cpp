@@ -47,10 +47,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+    */
+    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     */
-    inline CreateSAMLProviderResult&  WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
+    inline CreateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+    */
+    inline CreateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -69,11 +80,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateSAMLProviderResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_sAMLProviderArn;

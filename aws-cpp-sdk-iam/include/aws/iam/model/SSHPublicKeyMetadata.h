@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iam/model/statusType.h>
+#include <aws/iam/model/StatusType.h>
 
 namespace Aws
 {
@@ -48,10 +48,16 @@ namespace Model
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the IAM user associated with the SSH public key.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
     */
-    inline SSHPublicKeyMetadata&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline SSHPublicKeyMetadata& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the IAM user associated with the SSH public key.</p>
+    */
+    inline SSHPublicKeyMetadata& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the IAM user associated with the SSH public key.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The unique identifier for the SSH public key.</p>
     */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
+
     /*
      <p>The unique identifier for the SSH public key.</p>
     */
     inline void SetSSHPublicKeyId(const Aws::String& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
+
+    /*
+     <p>The unique identifier for the SSH public key.</p>
+    */
+    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
 
     /*
      <p>The unique identifier for the SSH public key.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The unique identifier for the SSH public key.</p>
     */
-    inline SSHPublicKeyMetadata&  WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
+    inline SSHPublicKeyMetadata& WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the SSH public key.</p>
+    */
+    inline SSHPublicKeyMetadata& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
 
     /*
      <p>The unique identifier for the SSH public key.</p>
@@ -95,21 +117,33 @@ namespace Model
     /*
      <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
     */
-    inline const statusType& GetStatus() const{ return m_status; }
-    /*
-     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
-    */
-    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline const StatusType& GetStatus() const{ return m_status; }
 
     /*
      <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
     */
-    inline SSHPublicKeyMetadata&  WithStatus(const statusType& value) { SetStatus(value); return *this;}
+    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
+    */
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
+    */
+    inline SSHPublicKeyMetadata& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.</p>
+    */
+    inline SSHPublicKeyMetadata& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     */
     inline double GetUploadDate() const{ return m_uploadDate; }
+
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     */
@@ -118,14 +152,14 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     */
-    inline SSHPublicKeyMetadata&  WithUploadDate(double value) { SetUploadDate(value); return *this;}
+    inline SSHPublicKeyMetadata& WithUploadDate(double value) { SetUploadDate(value); return *this;}
 
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet;
-    statusType m_status;
+    StatusType m_status;
     bool m_statusHasBeenSet;
     double m_uploadDate;
     bool m_uploadDateHasBeenSet;

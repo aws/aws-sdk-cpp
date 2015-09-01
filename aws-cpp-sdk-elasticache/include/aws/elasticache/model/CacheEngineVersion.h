@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the cache engine.</p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p>The name of the cache engine.</p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p>The name of the cache engine.</p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p>The name of the cache engine.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the cache engine.</p>
     */
-    inline CacheEngineVersion&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline CacheEngineVersion& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p>The name of the cache engine.</p>
+    */
+    inline CacheEngineVersion& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p>The name of the cache engine.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The version number of the cache engine.</p>
     */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
     /*
      <p>The version number of the cache engine.</p>
     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /*
+     <p>The version number of the cache engine.</p>
+    */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /*
      <p>The version number of the cache engine.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The version number of the cache engine.</p>
     */
-    inline CacheEngineVersion&  WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline CacheEngineVersion& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /*
+     <p>The version number of the cache engine.</p>
+    */
+    inline CacheEngineVersion& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /*
      <p>The version number of the cache engine.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The name of the cache parameter group family associated with this cache engine.</p>
     */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
+
     /*
      <p>The name of the cache parameter group family associated with this cache engine.</p>
     */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
+
+    /*
+     <p>The name of the cache parameter group family associated with this cache engine.</p>
+    */
+    inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /*
      <p>The name of the cache parameter group family associated with this cache engine.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group family associated with this cache engine.</p>
     */
-    inline CacheEngineVersion&  WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+    inline CacheEngineVersion& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+
+    /*
+     <p>The name of the cache parameter group family associated with this cache engine.</p>
+    */
+    inline CacheEngineVersion& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /*
      <p>The name of the cache parameter group family associated with this cache engine.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The description of the cache engine.</p>
     */
     inline const Aws::String& GetCacheEngineDescription() const{ return m_cacheEngineDescription; }
+
     /*
      <p>The description of the cache engine.</p>
     */
     inline void SetCacheEngineDescription(const Aws::String& value) { m_cacheEngineDescriptionHasBeenSet = true; m_cacheEngineDescription = value; }
+
+    /*
+     <p>The description of the cache engine.</p>
+    */
+    inline void SetCacheEngineDescription(Aws::String&& value) { m_cacheEngineDescriptionHasBeenSet = true; m_cacheEngineDescription = value; }
 
     /*
      <p>The description of the cache engine.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The description of the cache engine.</p>
     */
-    inline CacheEngineVersion&  WithCacheEngineDescription(const Aws::String& value) { SetCacheEngineDescription(value); return *this;}
+    inline CacheEngineVersion& WithCacheEngineDescription(const Aws::String& value) { SetCacheEngineDescription(value); return *this;}
+
+    /*
+     <p>The description of the cache engine.</p>
+    */
+    inline CacheEngineVersion& WithCacheEngineDescription(Aws::String&& value) { SetCacheEngineDescription(value); return *this;}
 
     /*
      <p>The description of the cache engine.</p>
@@ -143,10 +187,16 @@ namespace Model
      <p>The description of the cache engine version.</p>
     */
     inline const Aws::String& GetCacheEngineVersionDescription() const{ return m_cacheEngineVersionDescription; }
+
     /*
      <p>The description of the cache engine version.</p>
     */
     inline void SetCacheEngineVersionDescription(const Aws::String& value) { m_cacheEngineVersionDescriptionHasBeenSet = true; m_cacheEngineVersionDescription = value; }
+
+    /*
+     <p>The description of the cache engine version.</p>
+    */
+    inline void SetCacheEngineVersionDescription(Aws::String&& value) { m_cacheEngineVersionDescriptionHasBeenSet = true; m_cacheEngineVersionDescription = value; }
 
     /*
      <p>The description of the cache engine version.</p>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p>The description of the cache engine version.</p>
     */
-    inline CacheEngineVersion&  WithCacheEngineVersionDescription(const Aws::String& value) { SetCacheEngineVersionDescription(value); return *this;}
+    inline CacheEngineVersion& WithCacheEngineVersionDescription(const Aws::String& value) { SetCacheEngineVersionDescription(value); return *this;}
+
+    /*
+     <p>The description of the cache engine version.</p>
+    */
+    inline CacheEngineVersion& WithCacheEngineVersionDescription(Aws::String&& value) { SetCacheEngineVersionDescription(value); return *this;}
 
     /*
      <p>The description of the cache engine version.</p>

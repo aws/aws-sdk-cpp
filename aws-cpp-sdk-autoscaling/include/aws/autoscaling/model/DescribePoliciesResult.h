@@ -49,6 +49,7 @@ namespace Model
      <p>The scaling policies.</p>
     */
     inline const Aws::Vector<ScalingPolicy>& GetScalingPolicies() const{ return m_scalingPolicies; }
+
     /*
      <p>The scaling policies.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The scaling policies.</p>
     */
-    inline DescribePoliciesResult&  WithScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { SetScalingPolicies(value); return *this;}
+    inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = value; }
+
+    /*
+     <p>The scaling policies.</p>
+    */
+    inline DescribePoliciesResult& WithScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { SetScalingPolicies(value); return *this;}
+
+    /*
+     <p>The scaling policies.</p>
+    */
+    inline DescribePoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(value); return *this;}
 
     /*
      <p>The scaling policies.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribePoliciesResult& AddScalingPolicies(const ScalingPolicy& value) { m_scalingPolicies.push_back(value); return *this; }
 
     /*
+     <p>The scaling policies.</p>
+    */
+    inline DescribePoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(value); return *this; }
+
+    /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
-    inline DescribePoliciesResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribePoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline DescribePoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribePoliciesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribePoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribePoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<ScalingPolicy> m_scalingPolicies;

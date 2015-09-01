@@ -39,10 +39,16 @@ namespace Model
      <p>The name of the log group under which the log stream is to be created.</p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     /*
      <p>The name of the log group under which the log stream is to be created.</p>
     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /*
+     <p>The name of the log group under which the log stream is to be created.</p>
+    */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
      <p>The name of the log group under which the log stream is to be created.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of the log group under which the log stream is to be created.</p>
     */
-    inline CreateLogStreamRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline CreateLogStreamRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /*
+     <p>The name of the log group under which the log stream is to be created.</p>
+    */
+    inline CreateLogStreamRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /*
      <p>The name of the log group under which the log stream is to be created.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The name of the log stream to create.</p>
     */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
     /*
      <p>The name of the log stream to create.</p>
     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+
+    /*
+     <p>The name of the log stream to create.</p>
+    */
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /*
      <p>The name of the log stream to create.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The name of the log stream to create.</p>
     */
-    inline CreateLogStreamRequest&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+    inline CreateLogStreamRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+
+    /*
+     <p>The name of the log stream to create.</p>
+    */
+    inline CreateLogStreamRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
     /*
      <p>The name of the log stream to create.</p>

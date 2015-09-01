@@ -49,10 +49,16 @@ namespace Model
      <p>The name of the policy.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The name of the policy.</p>
     */
-    inline PolicyDescription&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline PolicyDescription& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy.</p>
+    */
+    inline PolicyDescription& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>The name of the policy type.</p>
     */
     inline const Aws::String& GetPolicyTypeName() const{ return m_policyTypeName; }
+
     /*
      <p>The name of the policy type.</p>
     */
     inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
+
+    /*
+     <p>The name of the policy type.</p>
+    */
+    inline void SetPolicyTypeName(Aws::String&& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
     /*
      <p>The name of the policy type.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>The name of the policy type.</p>
     */
-    inline PolicyDescription&  WithPolicyTypeName(const Aws::String& value) { SetPolicyTypeName(value); return *this;}
+    inline PolicyDescription& WithPolicyTypeName(const Aws::String& value) { SetPolicyTypeName(value); return *this;}
+
+    /*
+     <p>The name of the policy type.</p>
+    */
+    inline PolicyDescription& WithPolicyTypeName(Aws::String&& value) { SetPolicyTypeName(value); return *this;}
 
     /*
      <p>The name of the policy type.</p>
@@ -97,6 +119,7 @@ namespace Model
      <p>The policy attributes.</p>
     */
     inline const Aws::Vector<PolicyAttributeDescription>& GetPolicyAttributeDescriptions() const{ return m_policyAttributeDescriptions; }
+
     /*
      <p>The policy attributes.</p>
     */
@@ -105,12 +128,27 @@ namespace Model
     /*
      <p>The policy attributes.</p>
     */
-    inline PolicyDescription&  WithPolicyAttributeDescriptions(const Aws::Vector<PolicyAttributeDescription>& value) { SetPolicyAttributeDescriptions(value); return *this;}
+    inline void SetPolicyAttributeDescriptions(Aws::Vector<PolicyAttributeDescription>&& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions = value; }
+
+    /*
+     <p>The policy attributes.</p>
+    */
+    inline PolicyDescription& WithPolicyAttributeDescriptions(const Aws::Vector<PolicyAttributeDescription>& value) { SetPolicyAttributeDescriptions(value); return *this;}
+
+    /*
+     <p>The policy attributes.</p>
+    */
+    inline PolicyDescription& WithPolicyAttributeDescriptions(Aws::Vector<PolicyAttributeDescription>&& value) { SetPolicyAttributeDescriptions(value); return *this;}
 
     /*
      <p>The policy attributes.</p>
     */
     inline PolicyDescription& AddPolicyAttributeDescriptions(const PolicyAttributeDescription& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions.push_back(value); return *this; }
+
+    /*
+     <p>The policy attributes.</p>
+    */
+    inline PolicyDescription& AddPolicyAttributeDescriptions(PolicyAttributeDescription&& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions.push_back(value); return *this; }
 
   private:
     Aws::String m_policyName;

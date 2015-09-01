@@ -39,10 +39,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     */
-    inline UpdateContainerAgentRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline UpdateContainerAgentRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline UpdateContainerAgentRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
     */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
+
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
     */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
+
+    /*
+     <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
+    */
+    inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
     */
-    inline UpdateContainerAgentRequest&  WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
+    inline UpdateContainerAgentRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
+
+    /*
+     <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
+    */
+    inline UpdateContainerAgentRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(value); return *this;}
 
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>

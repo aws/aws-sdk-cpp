@@ -37,6 +37,7 @@ namespace Model
      The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
     */
     inline long GetMaxNumberOfDomains() const{ return m_maxNumberOfDomains; }
+
     /*
      The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
     */
@@ -45,16 +46,22 @@ namespace Model
     /*
      The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
     */
-    inline ListDomainsRequest&  WithMaxNumberOfDomains(long value) { SetMaxNumberOfDomains(value); return *this;}
+    inline ListDomainsRequest& WithMaxNumberOfDomains(long value) { SetMaxNumberOfDomains(value); return *this;}
 
     /*
      A string informing Amazon SimpleDB where to start the next list of domain names.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A string informing Amazon SimpleDB where to start the next list of domain names.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     A string informing Amazon SimpleDB where to start the next list of domain names.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      A string informing Amazon SimpleDB where to start the next list of domain names.
@@ -64,7 +71,12 @@ namespace Model
     /*
      A string informing Amazon SimpleDB where to start the next list of domain names.
     */
-    inline ListDomainsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A string informing Amazon SimpleDB where to start the next list of domain names.
+    */
+    inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A string informing Amazon SimpleDB where to start the next list of domain names.

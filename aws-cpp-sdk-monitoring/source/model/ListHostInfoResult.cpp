@@ -42,21 +42,41 @@ ListHostInfoResult& ListHostInfoResult::operator =(const AmazonWebServiceResult<
   if(!resultNode.IsNull())
   {
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
+    if(hostNameNode.IsNull())
+    {
+      hostNameNode = resultNode;
+    }
+
     if(!hostNameNode.IsNull())
     {
       m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
+    if(stackNameNode.IsNull())
+    {
+      stackNameNode = resultNode;
+    }
+
     if(!stackNameNode.IsNull())
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
     }
     XmlNode marketplaceNode = resultNode.FirstChild("Marketplace");
+    if(marketplaceNode.IsNull())
+    {
+      marketplaceNode = resultNode;
+    }
+
     if(!marketplaceNode.IsNull())
     {
       m_marketplace = StringUtils::Trim(marketplaceNode.GetText().c_str());
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
+    if(regionNode.IsNull())
+    {
+      regionNode = resultNode;
+    }
+
     if(!regionNode.IsNull())
     {
       m_region = StringUtils::Trim(regionNode.GetText().c_str());

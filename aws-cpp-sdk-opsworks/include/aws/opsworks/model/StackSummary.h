@@ -45,10 +45,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline StackSummary&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline StackSummary& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline StackSummary& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The stack name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The stack name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The stack name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The stack name.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The stack name.</p>
     */
-    inline StackSummary&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StackSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The stack name.</p>
+    */
+    inline StackSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The stack name.</p>
@@ -93,10 +115,16 @@ namespace Model
      <p>The stack's ARN.</p>
     */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
     /*
      <p>The stack's ARN.</p>
     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The stack's ARN.</p>
@@ -106,7 +134,12 @@ namespace Model
     /*
      <p>The stack's ARN.</p>
     */
-    inline StackSummary&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline StackSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline StackSummary& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /*
      <p>The stack's ARN.</p>
@@ -117,6 +150,7 @@ namespace Model
      <p>The number of layers.</p>
     */
     inline long GetLayersCount() const{ return m_layersCount; }
+
     /*
      <p>The number of layers.</p>
     */
@@ -125,12 +159,13 @@ namespace Model
     /*
      <p>The number of layers.</p>
     */
-    inline StackSummary&  WithLayersCount(long value) { SetLayersCount(value); return *this;}
+    inline StackSummary& WithLayersCount(long value) { SetLayersCount(value); return *this;}
 
     /*
      <p>The number of apps.</p>
     */
     inline long GetAppsCount() const{ return m_appsCount; }
+
     /*
      <p>The number of apps.</p>
     */
@@ -139,12 +174,13 @@ namespace Model
     /*
      <p>The number of apps.</p>
     */
-    inline StackSummary&  WithAppsCount(long value) { SetAppsCount(value); return *this;}
+    inline StackSummary& WithAppsCount(long value) { SetAppsCount(value); return *this;}
 
     /*
      <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     */
     inline const InstancesCount& GetInstancesCount() const{ return m_instancesCount; }
+
     /*
      <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     */
@@ -153,7 +189,17 @@ namespace Model
     /*
      <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     */
-    inline StackSummary&  WithInstancesCount(const InstancesCount& value) { SetInstancesCount(value); return *this;}
+    inline void SetInstancesCount(InstancesCount&& value) { m_instancesCountHasBeenSet = true; m_instancesCount = value; }
+
+    /*
+     <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    */
+    inline StackSummary& WithInstancesCount(const InstancesCount& value) { SetInstancesCount(value); return *this;}
+
+    /*
+     <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    */
+    inline StackSummary& WithInstancesCount(InstancesCount&& value) { SetInstancesCount(value); return *this;}
 
   private:
     Aws::String m_stackId;

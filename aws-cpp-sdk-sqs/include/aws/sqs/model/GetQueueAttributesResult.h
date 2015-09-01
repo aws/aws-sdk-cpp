@@ -49,6 +49,7 @@ namespace Model
      <p>A map of attributes to the respective values.</p>
     */
     inline const Aws::Map<QueueAttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
+
     /*
      <p>A map of attributes to the respective values.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A map of attributes to the respective values.</p>
     */
-    inline GetQueueAttributesResult&  WithAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { m_attributes = value; }
+
+    /*
+     <p>A map of attributes to the respective values.</p>
+    */
+    inline GetQueueAttributesResult& WithAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
+
+    /*
+     <p>A map of attributes to the respective values.</p>
+    */
+    inline GetQueueAttributesResult& WithAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /*
      <p>A map of attributes to the respective values.</p>
@@ -67,15 +78,42 @@ namespace Model
     /*
      <p>A map of attributes to the respective values.</p>
     */
+    inline GetQueueAttributesResult& AddAttributes(QueueAttributeName&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A map of attributes to the respective values.</p>
+    */
+    inline GetQueueAttributesResult& AddAttributes(const QueueAttributeName& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A map of attributes to the respective values.</p>
+    */
+    inline GetQueueAttributesResult& AddAttributes(QueueAttributeName&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A map of attributes to the respective values.</p>
+    */
+    inline GetQueueAttributesResult& AddAttributes(QueueAttributeName&& key, const char* value) { m_attributes[key] = value; return *this; }
+
+    /*
+     <p>A map of attributes to the respective values.</p>
+    */
     inline GetQueueAttributesResult& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributes[key] = value; return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetQueueAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetQueueAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetQueueAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Map<QueueAttributeName, Aws::String> m_attributes;

@@ -45,25 +45,33 @@ namespace Model
 
     
     inline const Aws::String& GetName() const{ return m_name; }
+
     
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline ReceiptRuleSetMetadata&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ReceiptRuleSetMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline ReceiptRuleSetMetadata& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
     inline ReceiptRuleSetMetadata& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline double GetCreatedTimestamp() const{ return m_createdTimestamp; }
+
     
     inline void SetCreatedTimestamp(double value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     
-    inline ReceiptRuleSetMetadata&  WithCreatedTimestamp(double value) { SetCreatedTimestamp(value); return *this;}
+    inline ReceiptRuleSetMetadata& WithCreatedTimestamp(double value) { SetCreatedTimestamp(value); return *this;}
 
   private:
     Aws::String m_name;

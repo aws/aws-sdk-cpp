@@ -44,6 +44,7 @@ namespace Model
      <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     */
     inline const ShutdownEventConfiguration& GetShutdown() const{ return m_shutdown; }
+
     /*
      <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     */
@@ -52,7 +53,17 @@ namespace Model
     /*
      <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     */
-    inline LifecycleEventConfiguration&  WithShutdown(const ShutdownEventConfiguration& value) { SetShutdown(value); return *this;}
+    inline void SetShutdown(ShutdownEventConfiguration&& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
+
+    /*
+     <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
+    */
+    inline LifecycleEventConfiguration& WithShutdown(const ShutdownEventConfiguration& value) { SetShutdown(value); return *this;}
+
+    /*
+     <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
+    */
+    inline LifecycleEventConfiguration& WithShutdown(ShutdownEventConfiguration&& value) { SetShutdown(value); return *this;}
 
   private:
     ShutdownEventConfiguration m_shutdown;

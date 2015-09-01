@@ -37,10 +37,16 @@ namespace Model
      <p>The ARN of the topic you want to delete.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The ARN of the topic you want to delete.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The ARN of the topic you want to delete.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic you want to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The ARN of the topic you want to delete.</p>
     */
-    inline DeleteTopicRequest&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline DeleteTopicRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The ARN of the topic you want to delete.</p>
+    */
+    inline DeleteTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The ARN of the topic you want to delete.</p>

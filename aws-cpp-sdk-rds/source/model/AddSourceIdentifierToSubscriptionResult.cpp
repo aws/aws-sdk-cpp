@@ -42,6 +42,11 @@ AddSourceIdentifierToSubscriptionResult& AddSourceIdentifierToSubscriptionResult
   if(!resultNode.IsNull())
   {
     XmlNode eventSubscriptionNode = resultNode.FirstChild("EventSubscription");
+    if(eventSubscriptionNode.IsNull())
+    {
+      eventSubscriptionNode = resultNode;
+    }
+
     if(!eventSubscriptionNode.IsNull())
     {
       m_eventSubscription = eventSubscriptionNode;

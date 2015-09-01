@@ -47,10 +47,16 @@ namespace Model
      <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
     */
-    inline EC2SecurityGroup&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline EC2SecurityGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
+    */
+    inline EC2SecurityGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p> Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> Specifies the name of the EC2 security group. </p>
     */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
+
     /*
      <p> Specifies the name of the EC2 security group. </p>
     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
+
+    /*
+     <p> Specifies the name of the EC2 security group. </p>
+    */
+    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /*
      <p> Specifies the name of the EC2 security group. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> Specifies the name of the EC2 security group. </p>
     */
-    inline EC2SecurityGroup&  WithEC2SecurityGroupName(const Aws::String& value) { SetEC2SecurityGroupName(value); return *this;}
+    inline EC2SecurityGroup& WithEC2SecurityGroupName(const Aws::String& value) { SetEC2SecurityGroupName(value); return *this;}
+
+    /*
+     <p> Specifies the name of the EC2 security group. </p>
+    */
+    inline EC2SecurityGroup& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
 
     /*
      <p> Specifies the name of the EC2 security group. </p>
@@ -95,10 +117,16 @@ namespace Model
      <p> Specifies the id of the EC2 security group. </p>
     */
     inline const Aws::String& GetEC2SecurityGroupId() const{ return m_eC2SecurityGroupId; }
+
     /*
      <p> Specifies the id of the EC2 security group. </p>
     */
     inline void SetEC2SecurityGroupId(const Aws::String& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = value; }
+
+    /*
+     <p> Specifies the id of the EC2 security group. </p>
+    */
+    inline void SetEC2SecurityGroupId(Aws::String&& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = value; }
 
     /*
      <p> Specifies the id of the EC2 security group. </p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p> Specifies the id of the EC2 security group. </p>
     */
-    inline EC2SecurityGroup&  WithEC2SecurityGroupId(const Aws::String& value) { SetEC2SecurityGroupId(value); return *this;}
+    inline EC2SecurityGroup& WithEC2SecurityGroupId(const Aws::String& value) { SetEC2SecurityGroupId(value); return *this;}
+
+    /*
+     <p> Specifies the id of the EC2 security group. </p>
+    */
+    inline EC2SecurityGroup& WithEC2SecurityGroupId(Aws::String&& value) { SetEC2SecurityGroupId(value); return *this;}
 
     /*
      <p> Specifies the id of the EC2 security group. </p>
@@ -119,10 +152,16 @@ namespace Model
      <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
     */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
+
     /*
      <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
     */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
+
+    /*
+     <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    */
+    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /*
      <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
     */
-    inline EC2SecurityGroup&  WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
+    inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
+
+    /*
+     <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    */
+    inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
     /*
      <p> Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>

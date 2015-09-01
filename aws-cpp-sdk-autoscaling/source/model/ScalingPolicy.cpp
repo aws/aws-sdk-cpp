@@ -75,54 +75,99 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
+    if(autoScalingGroupNameNode.IsNull())
+    {
+      autoScalingGroupNameNode = resultNode;
+    }
+
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
+    if(policyNameNode.IsNull())
+    {
+      policyNameNode = resultNode;
+    }
+
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
+    if(policyARNNode.IsNull())
+    {
+      policyARNNode = resultNode;
+    }
+
     if(!policyARNNode.IsNull())
     {
       m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());
       m_policyARNHasBeenSet = true;
     }
     XmlNode policyTypeNode = resultNode.FirstChild("PolicyType");
+    if(policyTypeNode.IsNull())
+    {
+      policyTypeNode = resultNode;
+    }
+
     if(!policyTypeNode.IsNull())
     {
       m_policyType = StringUtils::Trim(policyTypeNode.GetText().c_str());
       m_policyTypeHasBeenSet = true;
     }
     XmlNode adjustmentTypeNode = resultNode.FirstChild("AdjustmentType");
+    if(adjustmentTypeNode.IsNull())
+    {
+      adjustmentTypeNode = resultNode;
+    }
+
     if(!adjustmentTypeNode.IsNull())
     {
       m_adjustmentType = StringUtils::Trim(adjustmentTypeNode.GetText().c_str());
       m_adjustmentTypeHasBeenSet = true;
     }
     XmlNode minAdjustmentStepNode = resultNode.FirstChild("MinAdjustmentStep");
+    if(minAdjustmentStepNode.IsNull())
+    {
+      minAdjustmentStepNode = resultNode;
+    }
+
     if(!minAdjustmentStepNode.IsNull())
     {
       m_minAdjustmentStep = StringUtils::ConvertToInt32(StringUtils::Trim(minAdjustmentStepNode.GetText().c_str()).c_str());
       m_minAdjustmentStepHasBeenSet = true;
     }
     XmlNode minAdjustmentMagnitudeNode = resultNode.FirstChild("MinAdjustmentMagnitude");
+    if(minAdjustmentMagnitudeNode.IsNull())
+    {
+      minAdjustmentMagnitudeNode = resultNode;
+    }
+
     if(!minAdjustmentMagnitudeNode.IsNull())
     {
       m_minAdjustmentMagnitude = StringUtils::ConvertToInt32(StringUtils::Trim(minAdjustmentMagnitudeNode.GetText().c_str()).c_str());
       m_minAdjustmentMagnitudeHasBeenSet = true;
     }
     XmlNode scalingAdjustmentNode = resultNode.FirstChild("ScalingAdjustment");
+    if(scalingAdjustmentNode.IsNull())
+    {
+      scalingAdjustmentNode = resultNode;
+    }
+
     if(!scalingAdjustmentNode.IsNull())
     {
       m_scalingAdjustment = StringUtils::ConvertToInt32(StringUtils::Trim(scalingAdjustmentNode.GetText().c_str()).c_str());
       m_scalingAdjustmentHasBeenSet = true;
     }
     XmlNode cooldownNode = resultNode.FirstChild("Cooldown");
+    if(cooldownNode.IsNull())
+    {
+      cooldownNode = resultNode;
+    }
+
     if(!cooldownNode.IsNull())
     {
       m_cooldown = StringUtils::ConvertToInt32(StringUtils::Trim(cooldownNode.GetText().c_str()).c_str());
@@ -141,12 +186,22 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
       m_stepAdjustmentsHasBeenSet = true;
     }
     XmlNode metricAggregationTypeNode = resultNode.FirstChild("MetricAggregationType");
+    if(metricAggregationTypeNode.IsNull())
+    {
+      metricAggregationTypeNode = resultNode;
+    }
+
     if(!metricAggregationTypeNode.IsNull())
     {
       m_metricAggregationType = StringUtils::Trim(metricAggregationTypeNode.GetText().c_str());
       m_metricAggregationTypeHasBeenSet = true;
     }
     XmlNode estimatedInstanceWarmupNode = resultNode.FirstChild("EstimatedInstanceWarmup");
+    if(estimatedInstanceWarmupNode.IsNull())
+    {
+      estimatedInstanceWarmupNode = resultNode;
+    }
+
     if(!estimatedInstanceWarmupNode.IsNull())
     {
       m_estimatedInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(estimatedInstanceWarmupNode.GetText().c_str()).c_str());

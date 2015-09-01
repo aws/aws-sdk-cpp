@@ -42,6 +42,11 @@ CreateSnapshotCopyGrantResult& CreateSnapshotCopyGrantResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode snapshotCopyGrantNode = resultNode.FirstChild("SnapshotCopyGrant");
+    if(snapshotCopyGrantNode.IsNull())
+    {
+      snapshotCopyGrantNode = resultNode;
+    }
+
     if(!snapshotCopyGrantNode.IsNull())
     {
       m_snapshotCopyGrant = snapshotCopyGrantNode;

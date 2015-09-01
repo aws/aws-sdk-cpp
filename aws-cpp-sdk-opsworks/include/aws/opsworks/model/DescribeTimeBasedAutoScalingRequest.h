@@ -40,6 +40,7 @@ namespace Model
      <p>An array of instance IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
     /*
      <p>An array of instance IDs.</p>
     */
@@ -48,12 +49,27 @@ namespace Model
     /*
      <p>An array of instance IDs.</p>
     */
-    inline DescribeTimeBasedAutoScalingRequest&  WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+
+    /*
+     <p>An array of instance IDs.</p>
+    */
+    inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+
+    /*
+     <p>An array of instance IDs.</p>
+    */
+    inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /*
      <p>An array of instance IDs.</p>
     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
+    /*
+     <p>An array of instance IDs.</p>
+    */
+    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /*
      <p>An array of instance IDs.</p>

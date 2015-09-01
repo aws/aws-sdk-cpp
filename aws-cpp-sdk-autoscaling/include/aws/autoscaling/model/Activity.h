@@ -48,10 +48,16 @@ namespace Model
      <p>The ID of the activity.</p>
     */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
+
     /*
      <p>The ID of the activity.</p>
     */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
+
+    /*
+     <p>The ID of the activity.</p>
+    */
+    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
     /*
      <p>The ID of the activity.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The ID of the activity.</p>
     */
-    inline Activity&  WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
+    inline Activity& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
+
+    /*
+     <p>The ID of the activity.</p>
+    */
+    inline Activity& WithActivityId(Aws::String&& value) { SetActivityId(value); return *this;}
 
     /*
      <p>The ID of the activity.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>The name of the Auto Scaling group.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline Activity&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline Activity& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group.</p>
+    */
+    inline Activity& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -96,10 +118,16 @@ namespace Model
      <p>A friendly, more verbose description of the activity.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A friendly, more verbose description of the activity.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A friendly, more verbose description of the activity.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A friendly, more verbose description of the activity.</p>
@@ -109,7 +137,12 @@ namespace Model
     /*
      <p>A friendly, more verbose description of the activity.</p>
     */
-    inline Activity&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline Activity& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A friendly, more verbose description of the activity.</p>
+    */
+    inline Activity& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A friendly, more verbose description of the activity.</p>
@@ -120,10 +153,16 @@ namespace Model
      <p>The reason the activity began.</p>
     */
     inline const Aws::String& GetCause() const{ return m_cause; }
+
     /*
      <p>The reason the activity began.</p>
     */
     inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
+
+    /*
+     <p>The reason the activity began.</p>
+    */
+    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = value; }
 
     /*
      <p>The reason the activity began.</p>
@@ -133,7 +172,12 @@ namespace Model
     /*
      <p>The reason the activity began.</p>
     */
-    inline Activity&  WithCause(const Aws::String& value) { SetCause(value); return *this;}
+    inline Activity& WithCause(const Aws::String& value) { SetCause(value); return *this;}
+
+    /*
+     <p>The reason the activity began.</p>
+    */
+    inline Activity& WithCause(Aws::String&& value) { SetCause(value); return *this;}
 
     /*
      <p>The reason the activity began.</p>
@@ -144,6 +188,7 @@ namespace Model
      <p>The start time of the activity.</p>
     */
     inline double GetStartTime() const{ return m_startTime; }
+
     /*
      <p>The start time of the activity.</p>
     */
@@ -152,12 +197,13 @@ namespace Model
     /*
      <p>The start time of the activity.</p>
     */
-    inline Activity&  WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline Activity& WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /*
      <p>The end time of the activity.</p>
     */
     inline double GetEndTime() const{ return m_endTime; }
+
     /*
      <p>The end time of the activity.</p>
     */
@@ -166,12 +212,13 @@ namespace Model
     /*
      <p>The end time of the activity.</p>
     */
-    inline Activity&  WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline Activity& WithEndTime(double value) { SetEndTime(value); return *this;}
 
     /*
      <p>The current status of the activity.</p>
     */
     inline const ScalingActivityStatusCode& GetStatusCode() const{ return m_statusCode; }
+
     /*
      <p>The current status of the activity.</p>
     */
@@ -180,16 +227,32 @@ namespace Model
     /*
      <p>The current status of the activity.</p>
     */
-    inline Activity&  WithStatusCode(const ScalingActivityStatusCode& value) { SetStatusCode(value); return *this;}
+    inline void SetStatusCode(ScalingActivityStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+
+    /*
+     <p>The current status of the activity.</p>
+    */
+    inline Activity& WithStatusCode(const ScalingActivityStatusCode& value) { SetStatusCode(value); return *this;}
+
+    /*
+     <p>The current status of the activity.</p>
+    */
+    inline Activity& WithStatusCode(ScalingActivityStatusCode&& value) { SetStatusCode(value); return *this;}
 
     /*
      <p>A friendly, more verbose description of the activity status.</p>
     */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
     /*
      <p>A friendly, more verbose description of the activity status.</p>
     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /*
+     <p>A friendly, more verbose description of the activity status.</p>
+    */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /*
      <p>A friendly, more verbose description of the activity status.</p>
@@ -199,7 +262,12 @@ namespace Model
     /*
      <p>A friendly, more verbose description of the activity status.</p>
     */
-    inline Activity&  WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+    inline Activity& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /*
+     <p>A friendly, more verbose description of the activity status.</p>
+    */
+    inline Activity& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
 
     /*
      <p>A friendly, more verbose description of the activity status.</p>
@@ -210,6 +278,7 @@ namespace Model
      <p>A value between 0 and 100 that indicates the progress of the activity.</p>
     */
     inline long GetProgress() const{ return m_progress; }
+
     /*
      <p>A value between 0 and 100 that indicates the progress of the activity.</p>
     */
@@ -218,16 +287,22 @@ namespace Model
     /*
      <p>A value between 0 and 100 that indicates the progress of the activity.</p>
     */
-    inline Activity&  WithProgress(long value) { SetProgress(value); return *this;}
+    inline Activity& WithProgress(long value) { SetProgress(value); return *this;}
 
     /*
      <p>The details about the activity.</p>
     */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
     /*
      <p>The details about the activity.</p>
     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
+
+    /*
+     <p>The details about the activity.</p>
+    */
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /*
      <p>The details about the activity.</p>
@@ -237,7 +312,12 @@ namespace Model
     /*
      <p>The details about the activity.</p>
     */
-    inline Activity&  WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
+    inline Activity& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
+
+    /*
+     <p>The details about the activity.</p>
+    */
+    inline Activity& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
 
     /*
      <p>The details about the activity.</p>

@@ -51,10 +51,16 @@ namespace Model
      <p> The name of the solution stack this configuration set uses. </p>
     */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
+
     /*
      <p> The name of the solution stack this configuration set uses. </p>
     */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
+
+    /*
+     <p> The name of the solution stack this configuration set uses. </p>
+    */
+    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /*
      <p> The name of the solution stack this configuration set uses. </p>
@@ -64,7 +70,12 @@ namespace Model
     /*
      <p> The name of the solution stack this configuration set uses. </p>
     */
-    inline ConfigurationSettingsDescription&  WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
+    inline ConfigurationSettingsDescription& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
+
+    /*
+     <p> The name of the solution stack this configuration set uses. </p>
+    */
+    inline ConfigurationSettingsDescription& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /*
      <p> The name of the solution stack this configuration set uses. </p>
@@ -75,10 +86,16 @@ namespace Model
      <p> The name of the application associated with this configuration set. </p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p> The name of the application associated with this configuration set. </p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p> The name of the application associated with this configuration set. </p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application associated with this configuration set. </p>
@@ -88,7 +105,12 @@ namespace Model
     /*
      <p> The name of the application associated with this configuration set. </p>
     */
-    inline ConfigurationSettingsDescription&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline ConfigurationSettingsDescription& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p> The name of the application associated with this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p> The name of the application associated with this configuration set. </p>
@@ -99,10 +121,16 @@ namespace Model
      <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
     /*
      <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /*
+     <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
@@ -112,7 +140,12 @@ namespace Model
     /*
      <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     */
-    inline ConfigurationSettingsDescription&  WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+    inline ConfigurationSettingsDescription& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /*
+     <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /*
      <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
@@ -123,10 +156,16 @@ namespace Model
      <p> Describes this configuration set. </p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p> Describes this configuration set. </p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p> Describes this configuration set. </p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p> Describes this configuration set. </p>
@@ -136,7 +175,12 @@ namespace Model
     /*
      <p> Describes this configuration set. </p>
     */
-    inline ConfigurationSettingsDescription&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline ConfigurationSettingsDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p> Describes this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p> Describes this configuration set. </p>
@@ -147,10 +191,16 @@ namespace Model
      <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
     /*
      <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /*
+     <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
@@ -160,7 +210,12 @@ namespace Model
     /*
      <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     */
-    inline ConfigurationSettingsDescription&  WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+    inline ConfigurationSettingsDescription& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /*
+     <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /*
      <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
@@ -171,6 +226,7 @@ namespace Model
      <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> <enumValues> <value name="null"> <p> <code>null</code>: This configuration is not associated with a running environment. </p> </value> <value name="pending"> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </p> </value> <value name="deployed"> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </p> </value> <value name="failed"> <p> <code>failed</code>: This is a draft configuration, that failed to successfully deploy. </p> </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated with a running environment. </li> <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li> <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy. </li> </ul>
     */
     inline const ConfigurationDeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
+
     /*
      <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> <enumValues> <value name="null"> <p> <code>null</code>: This configuration is not associated with a running environment. </p> </value> <value name="pending"> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </p> </value> <value name="deployed"> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </p> </value> <value name="failed"> <p> <code>failed</code>: This is a draft configuration, that failed to successfully deploy. </p> </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated with a running environment. </li> <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li> <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy. </li> </ul>
     */
@@ -179,12 +235,23 @@ namespace Model
     /*
      <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> <enumValues> <value name="null"> <p> <code>null</code>: This configuration is not associated with a running environment. </p> </value> <value name="pending"> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </p> </value> <value name="deployed"> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </p> </value> <value name="failed"> <p> <code>failed</code>: This is a draft configuration, that failed to successfully deploy. </p> </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated with a running environment. </li> <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li> <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy. </li> </ul>
     */
-    inline ConfigurationSettingsDescription&  WithDeploymentStatus(const ConfigurationDeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
+    inline void SetDeploymentStatus(ConfigurationDeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
+
+    /*
+     <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> <enumValues> <value name="null"> <p> <code>null</code>: This configuration is not associated with a running environment. </p> </value> <value name="pending"> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </p> </value> <value name="deployed"> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </p> </value> <value name="failed"> <p> <code>failed</code>: This is a draft configuration, that failed to successfully deploy. </p> </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated with a running environment. </li> <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li> <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy. </li> </ul>
+    */
+    inline ConfigurationSettingsDescription& WithDeploymentStatus(const ConfigurationDeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
+
+    /*
+     <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> <enumValues> <value name="null"> <p> <code>null</code>: This configuration is not associated with a running environment. </p> </value> <value name="pending"> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </p> </value> <value name="deployed"> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </p> </value> <value name="failed"> <p> <code>failed</code>: This is a draft configuration, that failed to successfully deploy. </p> </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated with a running environment. </li> <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li> <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy. </li> </ul>
+    */
+    inline ConfigurationSettingsDescription& WithDeploymentStatus(ConfigurationDeploymentStatus&& value) { SetDeploymentStatus(value); return *this;}
 
     /*
      <p> The date (in UTC time) when this configuration set was created. </p>
     */
     inline double GetDateCreated() const{ return m_dateCreated; }
+
     /*
      <p> The date (in UTC time) when this configuration set was created. </p>
     */
@@ -193,12 +260,13 @@ namespace Model
     /*
      <p> The date (in UTC time) when this configuration set was created. </p>
     */
-    inline ConfigurationSettingsDescription&  WithDateCreated(double value) { SetDateCreated(value); return *this;}
+    inline ConfigurationSettingsDescription& WithDateCreated(double value) { SetDateCreated(value); return *this;}
 
     /*
      <p> The date (in UTC time) when this configuration set was last modified. </p>
     */
     inline double GetDateUpdated() const{ return m_dateUpdated; }
+
     /*
      <p> The date (in UTC time) when this configuration set was last modified. </p>
     */
@@ -207,12 +275,13 @@ namespace Model
     /*
      <p> The date (in UTC time) when this configuration set was last modified. </p>
     */
-    inline ConfigurationSettingsDescription&  WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
+    inline ConfigurationSettingsDescription& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
 
     /*
      <p> A list of the configuration options and their values in this configuration set. </p>
     */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
     /*
      <p> A list of the configuration options and their values in this configuration set. </p>
     */
@@ -221,20 +290,42 @@ namespace Model
     /*
      <p> A list of the configuration options and their values in this configuration set. </p>
     */
-    inline ConfigurationSettingsDescription&  WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+
+    /*
+     <p> A list of the configuration options and their values in this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
+
+    /*
+     <p> A list of the configuration options and their values in this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /*
      <p> A list of the configuration options and their values in this configuration set. </p>
     */
     inline ConfigurationSettingsDescription& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
+    /*
+     <p> A list of the configuration options and their values in this configuration set. </p>
+    */
+    inline ConfigurationSettingsDescription& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
 
     
-    inline ConfigurationSettingsDescription&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
+
+    
+    inline ConfigurationSettingsDescription& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ConfigurationSettingsDescription& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_solutionStackName;

@@ -49,24 +49,44 @@ IdentityNotificationAttributes& IdentityNotificationAttributes::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode bounceTopicNode = resultNode.FirstChild("BounceTopic");
+    if(bounceTopicNode.IsNull())
+    {
+      bounceTopicNode = resultNode;
+    }
+
     if(!bounceTopicNode.IsNull())
     {
       m_bounceTopic = StringUtils::Trim(bounceTopicNode.GetText().c_str());
       m_bounceTopicHasBeenSet = true;
     }
     XmlNode complaintTopicNode = resultNode.FirstChild("ComplaintTopic");
+    if(complaintTopicNode.IsNull())
+    {
+      complaintTopicNode = resultNode;
+    }
+
     if(!complaintTopicNode.IsNull())
     {
       m_complaintTopic = StringUtils::Trim(complaintTopicNode.GetText().c_str());
       m_complaintTopicHasBeenSet = true;
     }
     XmlNode deliveryTopicNode = resultNode.FirstChild("DeliveryTopic");
+    if(deliveryTopicNode.IsNull())
+    {
+      deliveryTopicNode = resultNode;
+    }
+
     if(!deliveryTopicNode.IsNull())
     {
       m_deliveryTopic = StringUtils::Trim(deliveryTopicNode.GetText().c_str());
       m_deliveryTopicHasBeenSet = true;
     }
     XmlNode forwardingEnabledNode = resultNode.FirstChild("ForwardingEnabled");
+    if(forwardingEnabledNode.IsNull())
+    {
+      forwardingEnabledNode = resultNode;
+    }
+
     if(!forwardingEnabledNode.IsNull())
     {
       m_forwardingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(forwardingEnabledNode.GetText().c_str()).c_str());

@@ -39,10 +39,16 @@ namespace Model
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+
+    /*
+     <p>The URL of the Amazon SQS queue to take action on.</p>
+    */
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline ChangeMessageVisibilityBatchRequest&  WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+    inline ChangeMessageVisibilityBatchRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
+
+    /*
+     <p>The URL of the Amazon SQS queue to take action on.</p>
+    */
+    inline ChangeMessageVisibilityBatchRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     */
     inline const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& GetEntries() const{ return m_entries; }
+
     /*
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     */
@@ -71,12 +83,27 @@ namespace Model
     /*
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     */
-    inline ChangeMessageVisibilityBatchRequest&  WithEntries(const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& value) { SetEntries(value); return *this;}
+    inline void SetEntries(Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = value; }
+
+    /*
+     <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    */
+    inline ChangeMessageVisibilityBatchRequest& WithEntries(const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& value) { SetEntries(value); return *this;}
+
+    /*
+     <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    */
+    inline ChangeMessageVisibilityBatchRequest& WithEntries(Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>&& value) { SetEntries(value); return *this;}
 
     /*
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     */
     inline ChangeMessageVisibilityBatchRequest& AddEntries(const ChangeMessageVisibilityBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
+
+    /*
+     <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    */
+    inline ChangeMessageVisibilityBatchRequest& AddEntries(ChangeMessageVisibilityBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
   private:
     Aws::String m_queueUrl;

@@ -42,6 +42,11 @@ UpdateApplicationResult& UpdateApplicationResult::operator =(const AmazonWebServ
   if(!resultNode.IsNull())
   {
     XmlNode applicationNode = resultNode.FirstChild("Application");
+    if(applicationNode.IsNull())
+    {
+      applicationNode = resultNode;
+    }
+
     if(!applicationNode.IsNull())
     {
       m_application = applicationNode;

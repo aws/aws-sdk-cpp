@@ -42,10 +42,16 @@ namespace Model
      <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
+
     /*
      <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
+
+    /*
+     <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
+    */
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
 
     /*
      <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
     */
-    inline AddJobFlowStepsRequest&  WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+    inline AddJobFlowStepsRequest& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
+
+    /*
+     <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
+    */
+    inline AddJobFlowStepsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
     /*
      <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
@@ -66,6 +77,7 @@ namespace Model
      <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
     */
     inline const Aws::Vector<StepConfig>& GetSteps() const{ return m_steps; }
+
     /*
      <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
     */
@@ -74,12 +86,27 @@ namespace Model
     /*
      <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
     */
-    inline AddJobFlowStepsRequest&  WithSteps(const Aws::Vector<StepConfig>& value) { SetSteps(value); return *this;}
+    inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = value; }
+
+    /*
+     <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+    */
+    inline AddJobFlowStepsRequest& WithSteps(const Aws::Vector<StepConfig>& value) { SetSteps(value); return *this;}
+
+    /*
+     <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+    */
+    inline AddJobFlowStepsRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(value); return *this;}
 
     /*
      <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
     */
     inline AddJobFlowStepsRequest& AddSteps(const StepConfig& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
+
+    /*
+     <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+    */
+    inline AddJobFlowStepsRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
 
   private:
     Aws::String m_jobFlowId;

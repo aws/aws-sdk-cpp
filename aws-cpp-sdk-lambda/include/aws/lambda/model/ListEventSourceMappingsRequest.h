@@ -43,10 +43,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
+    */
+    inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
@@ -56,7 +62,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     */
-    inline ListEventSourceMappingsRequest&  WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
+    */
+    inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
@@ -67,10 +78,16 @@ namespace Model
      <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+
     /*
      <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+
+    /*
+     <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
+    */
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -80,7 +97,12 @@ namespace Model
     /*
      <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline ListEventSourceMappingsRequest&  WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
+
+    /*
+     <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
+    */
+    inline ListEventSourceMappingsRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /*
      <p>The name of the Lambda function.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -91,10 +113,16 @@ namespace Model
      <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
@@ -104,7 +132,12 @@ namespace Model
     /*
      <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
     */
-    inline ListEventSourceMappingsRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
+    */
+    inline ListEventSourceMappingsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code> operation. If present, specifies to continue the list from where the returning call left off. </p>
@@ -115,6 +148,7 @@ namespace Model
      <p>Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.</p>
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      <p>Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.</p>
     */
@@ -123,7 +157,7 @@ namespace Model
     /*
      <p>Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.</p>
     */
-    inline ListEventSourceMappingsRequest&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_eventSourceArn;

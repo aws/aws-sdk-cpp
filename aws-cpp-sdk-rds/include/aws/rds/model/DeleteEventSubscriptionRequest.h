@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the RDS event notification subscription you want to delete.</p>
     */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
+
     /*
      <p>The name of the RDS event notification subscription you want to delete.</p>
     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
+
+    /*
+     <p>The name of the RDS event notification subscription you want to delete.</p>
+    */
+    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /*
      <p>The name of the RDS event notification subscription you want to delete.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the RDS event notification subscription you want to delete.</p>
     */
-    inline DeleteEventSubscriptionRequest&  WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
+    inline DeleteEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
+
+    /*
+     <p>The name of the RDS event notification subscription you want to delete.</p>
+    */
+    inline DeleteEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
 
     /*
      <p>The name of the RDS event notification subscription you want to delete.</p>

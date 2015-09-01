@@ -37,10 +37,16 @@ namespace Model
      <p>The encoded message that was returned with the response.</p>
     */
     inline const Aws::String& GetEncodedMessage() const{ return m_encodedMessage; }
+
     /*
      <p>The encoded message that was returned with the response.</p>
     */
     inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessageHasBeenSet = true; m_encodedMessage = value; }
+
+    /*
+     <p>The encoded message that was returned with the response.</p>
+    */
+    inline void SetEncodedMessage(Aws::String&& value) { m_encodedMessageHasBeenSet = true; m_encodedMessage = value; }
 
     /*
      <p>The encoded message that was returned with the response.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The encoded message that was returned with the response.</p>
     */
-    inline DecodeAuthorizationMessageRequest&  WithEncodedMessage(const Aws::String& value) { SetEncodedMessage(value); return *this;}
+    inline DecodeAuthorizationMessageRequest& WithEncodedMessage(const Aws::String& value) { SetEncodedMessage(value); return *this;}
+
+    /*
+     <p>The encoded message that was returned with the response.</p>
+    */
+    inline DecodeAuthorizationMessageRequest& WithEncodedMessage(Aws::String&& value) { SetEncodedMessage(value); return *this;}
 
     /*
      <p>The encoded message that was returned with the response.</p>

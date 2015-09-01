@@ -73,24 +73,44 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
+    if(loadBalancerNameNode.IsNull())
+    {
+      loadBalancerNameNode = resultNode;
+    }
+
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
+    if(dNSNameNode.IsNull())
+    {
+      dNSNameNode = resultNode;
+    }
+
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());
       m_dNSNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneNameNode = resultNode.FirstChild("CanonicalHostedZoneName");
+    if(canonicalHostedZoneNameNode.IsNull())
+    {
+      canonicalHostedZoneNameNode = resultNode;
+    }
+
     if(!canonicalHostedZoneNameNode.IsNull())
     {
       m_canonicalHostedZoneName = StringUtils::Trim(canonicalHostedZoneNameNode.GetText().c_str());
       m_canonicalHostedZoneNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneNameIDNode = resultNode.FirstChild("CanonicalHostedZoneNameID");
+    if(canonicalHostedZoneNameIDNode.IsNull())
+    {
+      canonicalHostedZoneNameIDNode = resultNode;
+    }
+
     if(!canonicalHostedZoneNameIDNode.IsNull())
     {
       m_canonicalHostedZoneNameID = StringUtils::Trim(canonicalHostedZoneNameIDNode.GetText().c_str());
@@ -109,6 +129,11 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_listenerDescriptionsHasBeenSet = true;
     }
     XmlNode policiesNode = resultNode.FirstChild("Policies");
+    if(policiesNode.IsNull())
+    {
+      policiesNode = resultNode;
+    }
+
     if(!policiesNode.IsNull())
     {
       m_policies = policiesNode;
@@ -151,6 +176,11 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_subnetsHasBeenSet = true;
     }
     XmlNode vPCIdNode = resultNode.FirstChild("VPCId");
+    if(vPCIdNode.IsNull())
+    {
+      vPCIdNode = resultNode;
+    }
+
     if(!vPCIdNode.IsNull())
     {
       m_vPCId = StringUtils::Trim(vPCIdNode.GetText().c_str());
@@ -169,12 +199,22 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_instancesHasBeenSet = true;
     }
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
+    if(healthCheckNode.IsNull())
+    {
+      healthCheckNode = resultNode;
+    }
+
     if(!healthCheckNode.IsNull())
     {
       m_healthCheck = healthCheckNode;
       m_healthCheckHasBeenSet = true;
     }
     XmlNode sourceSecurityGroupNode = resultNode.FirstChild("SourceSecurityGroup");
+    if(sourceSecurityGroupNode.IsNull())
+    {
+      sourceSecurityGroupNode = resultNode;
+    }
+
     if(!sourceSecurityGroupNode.IsNull())
     {
       m_sourceSecurityGroup = sourceSecurityGroupNode;
@@ -193,12 +233,22 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_securityGroupsHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
+    if(createdTimeNode.IsNull())
+    {
+      createdTimeNode = resultNode;
+    }
+
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
       m_createdTimeHasBeenSet = true;
     }
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
+    if(schemeNode.IsNull())
+    {
+      schemeNode = resultNode;
+    }
+
     if(!schemeNode.IsNull())
     {
       m_scheme = StringUtils::Trim(schemeNode.GetText().c_str());

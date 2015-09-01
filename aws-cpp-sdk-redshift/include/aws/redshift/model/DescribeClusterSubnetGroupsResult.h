@@ -49,10 +49,16 @@ namespace Model
      <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     */
-    inline DescribeClusterSubnetGroupsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeClusterSubnetGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    */
+    inline DescribeClusterSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
@@ -73,6 +84,7 @@ namespace Model
      <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
     */
     inline const Aws::Vector<ClusterSubnetGroup>& GetClusterSubnetGroups() const{ return m_clusterSubnetGroups; }
+
     /*
      <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
     */
-    inline DescribeClusterSubnetGroupsResult&  WithClusterSubnetGroups(const Aws::Vector<ClusterSubnetGroup>& value) { SetClusterSubnetGroups(value); return *this;}
+    inline void SetClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { m_clusterSubnetGroups = value; }
+
+    /*
+     <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
+    */
+    inline DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(const Aws::Vector<ClusterSubnetGroup>& value) { SetClusterSubnetGroups(value); return *this;}
+
+    /*
+     <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
+    */
+    inline DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { SetClusterSubnetGroups(value); return *this;}
 
     /*
      <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
     */
     inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(const ClusterSubnetGroup& value) { m_clusterSubnetGroups.push_back(value); return *this; }
 
+    /*
+     <p> A list of <a>ClusterSubnetGroup</a> instances. </p>
+    */
+    inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(ClusterSubnetGroup&& value) { m_clusterSubnetGroups.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeClusterSubnetGroupsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

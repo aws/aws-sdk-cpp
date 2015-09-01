@@ -37,10 +37,16 @@ namespace Model
      <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     */
     inline const Aws::String& GetQueueNamePrefix() const{ return m_queueNamePrefix; }
+
     /*
      <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     */
     inline void SetQueueNamePrefix(const Aws::String& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
+
+    /*
+     <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+    */
+    inline void SetQueueNamePrefix(Aws::String&& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
 
     /*
      <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     */
-    inline ListQueuesRequest&  WithQueueNamePrefix(const Aws::String& value) { SetQueueNamePrefix(value); return *this;}
+    inline ListQueuesRequest& WithQueueNamePrefix(const Aws::String& value) { SetQueueNamePrefix(value); return *this;}
+
+    /*
+     <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+    */
+    inline ListQueuesRequest& WithQueueNamePrefix(Aws::String&& value) { SetQueueNamePrefix(value); return *this;}
 
     /*
      <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>

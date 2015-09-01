@@ -45,18 +45,33 @@ OptionSpecification& OptionSpecification::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode resourceNameNode = resultNode.FirstChild("ResourceName");
+    if(resourceNameNode.IsNull())
+    {
+      resourceNameNode = resultNode;
+    }
+
     if(!resourceNameNode.IsNull())
     {
       m_resourceName = StringUtils::Trim(resourceNameNode.GetText().c_str());
       m_resourceNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
+    if(namespaceNode.IsNull())
+    {
+      namespaceNode = resultNode;
+    }
+
     if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
+    if(optionNameNode.IsNull())
+    {
+      optionNameNode = resultNode;
+    }
+
     if(!optionNameNode.IsNull())
     {
       m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());

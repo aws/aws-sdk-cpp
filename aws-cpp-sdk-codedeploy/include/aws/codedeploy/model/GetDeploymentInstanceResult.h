@@ -46,6 +46,7 @@ namespace Model
      <p>Information about the instance.</p>
     */
     inline const InstanceSummary& GetInstanceSummary() const{ return m_instanceSummary; }
+
     /*
      <p>Information about the instance.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>Information about the instance.</p>
     */
-    inline GetDeploymentInstanceResult&  WithInstanceSummary(const InstanceSummary& value) { SetInstanceSummary(value); return *this;}
+    inline void SetInstanceSummary(InstanceSummary&& value) { m_instanceSummary = value; }
+
+    /*
+     <p>Information about the instance.</p>
+    */
+    inline GetDeploymentInstanceResult& WithInstanceSummary(const InstanceSummary& value) { SetInstanceSummary(value); return *this;}
+
+    /*
+     <p>Information about the instance.</p>
+    */
+    inline GetDeploymentInstanceResult& WithInstanceSummary(InstanceSummary&& value) { SetInstanceSummary(value); return *this;}
 
   private:
     InstanceSummary m_instanceSummary;

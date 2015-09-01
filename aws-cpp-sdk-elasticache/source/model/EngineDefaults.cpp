@@ -47,12 +47,22 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupFamilyNode = resultNode.FirstChild("CacheParameterGroupFamily");
+    if(cacheParameterGroupFamilyNode.IsNull())
+    {
+      cacheParameterGroupFamilyNode = resultNode;
+    }
+
     if(!cacheParameterGroupFamilyNode.IsNull())
     {
       m_cacheParameterGroupFamily = StringUtils::Trim(cacheParameterGroupFamilyNode.GetText().c_str());
       m_cacheParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
+    if(markerNode.IsNull())
+    {
+      markerNode = resultNode;
+    }
+
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

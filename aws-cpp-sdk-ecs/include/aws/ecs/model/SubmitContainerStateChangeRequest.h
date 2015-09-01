@@ -41,10 +41,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.</p>
@@ -65,10 +76,16 @@ namespace Model
      <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     */
     inline const Aws::String& GetTask() const{ return m_task; }
+
     /*
      <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
+
+    /*
+     <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
+    */
+    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /*
      <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
@@ -78,7 +95,12 @@ namespace Model
     /*
      <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithTask(const Aws::String& value) { SetTask(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
+
+    /*
+     <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithTask(Aws::String&& value) { SetTask(value); return *this;}
 
     /*
      <p>The task UUID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
@@ -89,10 +111,16 @@ namespace Model
      <p>The name of the container.</p>
     */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
+
     /*
      <p>The name of the container.</p>
     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
+
+    /*
+     <p>The name of the container.</p>
+    */
+    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /*
      <p>The name of the container.</p>
@@ -102,7 +130,12 @@ namespace Model
     /*
      <p>The name of the container.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
+
+    /*
+     <p>The name of the container.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithContainerName(Aws::String&& value) { SetContainerName(value); return *this;}
 
     /*
      <p>The name of the container.</p>
@@ -113,10 +146,16 @@ namespace Model
      <p>The status of the state change request.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The status of the state change request.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the state change request.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The status of the state change request.</p>
@@ -126,7 +165,12 @@ namespace Model
     /*
      <p>The status of the state change request.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the state change request.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The status of the state change request.</p>
@@ -137,6 +181,7 @@ namespace Model
      <p>The exit code returned for the state change request.</p>
     */
     inline long GetExitCode() const{ return m_exitCode; }
+
     /*
      <p>The exit code returned for the state change request.</p>
     */
@@ -145,16 +190,22 @@ namespace Model
     /*
      <p>The exit code returned for the state change request.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithExitCode(long value) { SetExitCode(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithExitCode(long value) { SetExitCode(value); return *this;}
 
     /*
      <p>The reason for the state change request.</p>
     */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
     /*
      <p>The reason for the state change request.</p>
     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /*
+     <p>The reason for the state change request.</p>
+    */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /*
      <p>The reason for the state change request.</p>
@@ -164,7 +215,12 @@ namespace Model
     /*
      <p>The reason for the state change request.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithReason(const Aws::String& value) { SetReason(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /*
+     <p>The reason for the state change request.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
 
     /*
      <p>The reason for the state change request.</p>
@@ -175,6 +231,7 @@ namespace Model
      <p>The network bindings of the container.</p>
     */
     inline const Aws::Vector<NetworkBinding>& GetNetworkBindings() const{ return m_networkBindings; }
+
     /*
      <p>The network bindings of the container.</p>
     */
@@ -183,12 +240,27 @@ namespace Model
     /*
      <p>The network bindings of the container.</p>
     */
-    inline SubmitContainerStateChangeRequest&  WithNetworkBindings(const Aws::Vector<NetworkBinding>& value) { SetNetworkBindings(value); return *this;}
+    inline void SetNetworkBindings(Aws::Vector<NetworkBinding>&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings = value; }
+
+    /*
+     <p>The network bindings of the container.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithNetworkBindings(const Aws::Vector<NetworkBinding>& value) { SetNetworkBindings(value); return *this;}
+
+    /*
+     <p>The network bindings of the container.</p>
+    */
+    inline SubmitContainerStateChangeRequest& WithNetworkBindings(Aws::Vector<NetworkBinding>&& value) { SetNetworkBindings(value); return *this;}
 
     /*
      <p>The network bindings of the container.</p>
     */
     inline SubmitContainerStateChangeRequest& AddNetworkBindings(const NetworkBinding& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(value); return *this; }
+
+    /*
+     <p>The network bindings of the container.</p>
+    */
+    inline SubmitContainerStateChangeRequest& AddNetworkBindings(NetworkBinding&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(value); return *this; }
 
   private:
     Aws::String m_cluster;

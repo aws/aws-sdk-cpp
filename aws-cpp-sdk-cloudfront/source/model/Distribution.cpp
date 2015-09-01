@@ -57,42 +57,77 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
+    if(lastModifiedTimeNode.IsNull())
+    {
+      lastModifiedTimeNode = resultNode;
+    }
+
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode inProgressInvalidationBatchesNode = resultNode.FirstChild("InProgressInvalidationBatches");
+    if(inProgressInvalidationBatchesNode.IsNull())
+    {
+      inProgressInvalidationBatchesNode = resultNode;
+    }
+
     if(!inProgressInvalidationBatchesNode.IsNull())
     {
       m_inProgressInvalidationBatches = StringUtils::ConvertToInt32(StringUtils::Trim(inProgressInvalidationBatchesNode.GetText().c_str()).c_str());
       m_inProgressInvalidationBatchesHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
+    if(domainNameNode.IsNull())
+    {
+      domainNameNode = resultNode;
+    }
+
     if(!domainNameNode.IsNull())
     {
       m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
       m_domainNameHasBeenSet = true;
     }
     XmlNode activeTrustedSignersNode = resultNode.FirstChild("ActiveTrustedSigners");
+    if(activeTrustedSignersNode.IsNull())
+    {
+      activeTrustedSignersNode = resultNode;
+    }
+
     if(!activeTrustedSignersNode.IsNull())
     {
       m_activeTrustedSigners = activeTrustedSignersNode;
       m_activeTrustedSignersHasBeenSet = true;
     }
     XmlNode distributionConfigNode = resultNode.FirstChild("DistributionConfig");
+    if(distributionConfigNode.IsNull())
+    {
+      distributionConfigNode = resultNode;
+    }
+
     if(!distributionConfigNode.IsNull())
     {
       m_distributionConfig = distributionConfigNode;

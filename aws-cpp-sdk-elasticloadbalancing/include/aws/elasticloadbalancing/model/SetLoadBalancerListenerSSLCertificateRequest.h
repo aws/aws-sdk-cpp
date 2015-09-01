@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline SetLoadBalancerListenerSSLCertificateRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -61,6 +72,7 @@ namespace Model
      <p>The port that uses the specified SSL certificate.</p>
     */
     inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+
     /*
      <p>The port that uses the specified SSL certificate.</p>
     */
@@ -69,16 +81,22 @@ namespace Model
     /*
      <p>The port that uses the specified SSL certificate.</p>
     */
-    inline SetLoadBalancerListenerSSLCertificateRequest&  WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
+    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     */
     inline const Aws::String& GetSSLCertificateId() const{ return m_sSLCertificateId; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     */
     inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    */
+    inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -88,7 +106,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     */
-    inline SetLoadBalancerListenerSSLCertificateRequest&  WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
+    inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    */
+    inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>

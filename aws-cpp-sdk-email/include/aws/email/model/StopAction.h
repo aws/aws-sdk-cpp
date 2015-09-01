@@ -46,25 +46,39 @@ namespace Model
 
     
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     
-    inline StopAction&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline StopAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    
+    inline StopAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     
     inline StopAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     
     inline const StopTarget& GetTarget() const{ return m_target; }
+
     
     inline void SetTarget(const StopTarget& value) { m_targetHasBeenSet = true; m_target = value; }
 
     
-    inline StopAction&  WithTarget(const StopTarget& value) { SetTarget(value); return *this;}
+    inline void SetTarget(StopTarget&& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    
+    inline StopAction& WithTarget(const StopTarget& value) { SetTarget(value); return *this;}
+
+    
+    inline StopAction& WithTarget(StopTarget&& value) { SetTarget(value); return *this;}
 
   private:
     Aws::String m_topicArn;

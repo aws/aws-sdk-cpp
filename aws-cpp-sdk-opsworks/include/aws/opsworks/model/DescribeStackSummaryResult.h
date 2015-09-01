@@ -46,6 +46,7 @@ namespace Model
      <p>A <code>StackSummary</code> object that contains the results.</p>
     */
     inline const StackSummary& GetStackSummary() const{ return m_stackSummary; }
+
     /*
      <p>A <code>StackSummary</code> object that contains the results.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A <code>StackSummary</code> object that contains the results.</p>
     */
-    inline DescribeStackSummaryResult&  WithStackSummary(const StackSummary& value) { SetStackSummary(value); return *this;}
+    inline void SetStackSummary(StackSummary&& value) { m_stackSummary = value; }
+
+    /*
+     <p>A <code>StackSummary</code> object that contains the results.</p>
+    */
+    inline DescribeStackSummaryResult& WithStackSummary(const StackSummary& value) { SetStackSummary(value); return *this;}
+
+    /*
+     <p>A <code>StackSummary</code> object that contains the results.</p>
+    */
+    inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(value); return *this;}
 
   private:
     StackSummary m_stackSummary;

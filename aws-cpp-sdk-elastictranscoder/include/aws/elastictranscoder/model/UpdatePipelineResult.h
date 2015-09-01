@@ -46,16 +46,24 @@ namespace Model
 
     
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
+
     
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
 
     
-    inline UpdatePipelineResult&  WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
+    inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
+
+    
+    inline UpdatePipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
+
+    
+    inline UpdatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
 
     /*
      <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     */
     inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
+
     /*
      <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     */
@@ -64,12 +72,27 @@ namespace Model
     /*
      <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     */
-    inline UpdatePipelineResult&  WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
+    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = value; }
+
+    /*
+     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    */
+    inline UpdatePipelineResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
+
+    /*
+     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    */
+    inline UpdatePipelineResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(value); return *this;}
 
     /*
      <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     */
     inline UpdatePipelineResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
+
+    /*
+     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    */
+    inline UpdatePipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(value); return *this; }
 
   private:
     Pipeline m_pipeline;

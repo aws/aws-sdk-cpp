@@ -53,42 +53,77 @@ ReceiptAction& ReceiptAction::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode s3ActionNode = resultNode.FirstChild("S3Action");
+    if(s3ActionNode.IsNull())
+    {
+      s3ActionNode = resultNode;
+    }
+
     if(!s3ActionNode.IsNull())
     {
       m_s3Action = s3ActionNode;
       m_s3ActionHasBeenSet = true;
     }
     XmlNode bounceActionNode = resultNode.FirstChild("BounceAction");
+    if(bounceActionNode.IsNull())
+    {
+      bounceActionNode = resultNode;
+    }
+
     if(!bounceActionNode.IsNull())
     {
       m_bounceAction = bounceActionNode;
       m_bounceActionHasBeenSet = true;
     }
     XmlNode workmailActionNode = resultNode.FirstChild("WorkmailAction");
+    if(workmailActionNode.IsNull())
+    {
+      workmailActionNode = resultNode;
+    }
+
     if(!workmailActionNode.IsNull())
     {
       m_workmailAction = workmailActionNode;
       m_workmailActionHasBeenSet = true;
     }
     XmlNode lambdaActionNode = resultNode.FirstChild("LambdaAction");
+    if(lambdaActionNode.IsNull())
+    {
+      lambdaActionNode = resultNode;
+    }
+
     if(!lambdaActionNode.IsNull())
     {
       m_lambdaAction = lambdaActionNode;
       m_lambdaActionHasBeenSet = true;
     }
     XmlNode stopActionNode = resultNode.FirstChild("StopAction");
+    if(stopActionNode.IsNull())
+    {
+      stopActionNode = resultNode;
+    }
+
     if(!stopActionNode.IsNull())
     {
       m_stopAction = stopActionNode;
       m_stopActionHasBeenSet = true;
     }
     XmlNode addHeaderActionNode = resultNode.FirstChild("AddHeaderAction");
+    if(addHeaderActionNode.IsNull())
+    {
+      addHeaderActionNode = resultNode;
+    }
+
     if(!addHeaderActionNode.IsNull())
     {
       m_addHeaderAction = addHeaderActionNode;
       m_addHeaderActionHasBeenSet = true;
     }
     XmlNode sNSActionNode = resultNode.FirstChild("SNSAction");
+    if(sNSActionNode.IsNull())
+    {
+      sNSActionNode = resultNode;
+    }
+
     if(!sNSActionNode.IsNull())
     {
       m_sNSAction = sNSActionNode;

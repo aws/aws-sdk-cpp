@@ -42,6 +42,7 @@ namespace Model
      <p>The creation date and time beginning value filter for listing clusters .</p>
     */
     inline double GetCreatedAfter() const{ return m_createdAfter; }
+
     /*
      <p>The creation date and time beginning value filter for listing clusters .</p>
     */
@@ -50,12 +51,13 @@ namespace Model
     /*
      <p>The creation date and time beginning value filter for listing clusters .</p>
     */
-    inline ListClustersRequest&  WithCreatedAfter(double value) { SetCreatedAfter(value); return *this;}
+    inline ListClustersRequest& WithCreatedAfter(double value) { SetCreatedAfter(value); return *this;}
 
     /*
      <p>The creation date and time end value filter for listing clusters .</p>
     */
     inline double GetCreatedBefore() const{ return m_createdBefore; }
+
     /*
      <p>The creation date and time end value filter for listing clusters .</p>
     */
@@ -64,12 +66,13 @@ namespace Model
     /*
      <p>The creation date and time end value filter for listing clusters .</p>
     */
-    inline ListClustersRequest&  WithCreatedBefore(double value) { SetCreatedBefore(value); return *this;}
+    inline ListClustersRequest& WithCreatedBefore(double value) { SetCreatedBefore(value); return *this;}
 
     /*
      <p>The cluster state filters to apply when listing clusters. </p>
     */
     inline const Aws::Vector<ClusterState>& GetClusterStates() const{ return m_clusterStates; }
+
     /*
      <p>The cluster state filters to apply when listing clusters. </p>
     */
@@ -78,7 +81,17 @@ namespace Model
     /*
      <p>The cluster state filters to apply when listing clusters. </p>
     */
-    inline ListClustersRequest&  WithClusterStates(const Aws::Vector<ClusterState>& value) { SetClusterStates(value); return *this;}
+    inline void SetClusterStates(Aws::Vector<ClusterState>&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = value; }
+
+    /*
+     <p>The cluster state filters to apply when listing clusters. </p>
+    */
+    inline ListClustersRequest& WithClusterStates(const Aws::Vector<ClusterState>& value) { SetClusterStates(value); return *this;}
+
+    /*
+     <p>The cluster state filters to apply when listing clusters. </p>
+    */
+    inline ListClustersRequest& WithClusterStates(Aws::Vector<ClusterState>&& value) { SetClusterStates(value); return *this;}
 
     /*
      <p>The cluster state filters to apply when listing clusters. </p>
@@ -86,13 +99,24 @@ namespace Model
     inline ListClustersRequest& AddClusterStates(const ClusterState& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(value); return *this; }
 
     /*
+     <p>The cluster state filters to apply when listing clusters. </p>
+    */
+    inline ListClustersRequest& AddClusterStates(ClusterState&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
@@ -102,7 +126,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>
     */
-    inline ListClustersRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListClustersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve. </p>
+    */
+    inline ListClustersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve. </p>

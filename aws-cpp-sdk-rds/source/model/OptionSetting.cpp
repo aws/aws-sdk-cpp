@@ -61,54 +61,99 @@ OptionSetting& OptionSetting::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
+    if(nameNode.IsNull())
+    {
+      nameNode = resultNode;
+    }
+
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
+    if(valueNode.IsNull())
+    {
+      valueNode = resultNode;
+    }
+
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::Trim(valueNode.GetText().c_str());
       m_valueHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
+    if(defaultValueNode.IsNull())
+    {
+      defaultValueNode = resultNode;
+    }
+
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
+    if(applyTypeNode.IsNull())
+    {
+      applyTypeNode = resultNode;
+    }
+
     if(!applyTypeNode.IsNull())
     {
       m_applyType = StringUtils::Trim(applyTypeNode.GetText().c_str());
       m_applyTypeHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
+    if(dataTypeNode.IsNull())
+    {
+      dataTypeNode = resultNode;
+    }
+
     if(!dataTypeNode.IsNull())
     {
       m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
       m_dataTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
+    if(allowedValuesNode.IsNull())
+    {
+      allowedValuesNode = resultNode;
+    }
+
     if(!allowedValuesNode.IsNull())
     {
       m_allowedValues = StringUtils::Trim(allowedValuesNode.GetText().c_str());
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
+    if(isModifiableNode.IsNull())
+    {
+      isModifiableNode = resultNode;
+    }
+
     if(!isModifiableNode.IsNull())
     {
       m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());
       m_isModifiableHasBeenSet = true;
     }
     XmlNode isCollectionNode = resultNode.FirstChild("IsCollection");
+    if(isCollectionNode.IsNull())
+    {
+      isCollectionNode = resultNode;
+    }
+
     if(!isCollectionNode.IsNull())
     {
       m_isCollection = StringUtils::ConvertToBool(StringUtils::Trim(isCollectionNode.GetText().c_str()).c_str());

@@ -47,6 +47,7 @@ namespace Model
      <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
     */
     inline const Aws::Vector<Aws::String>& GetDeploymentConfigsList() const{ return m_deploymentConfigsList; }
+
     /*
      <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
     */
-    inline ListDeploymentConfigsResult&  WithDeploymentConfigsList(const Aws::Vector<Aws::String>& value) { SetDeploymentConfigsList(value); return *this;}
+    inline void SetDeploymentConfigsList(Aws::Vector<Aws::String>&& value) { m_deploymentConfigsList = value; }
+
+    /*
+     <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
+    */
+    inline ListDeploymentConfigsResult& WithDeploymentConfigsList(const Aws::Vector<Aws::String>& value) { SetDeploymentConfigsList(value); return *this;}
+
+    /*
+     <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
+    */
+    inline ListDeploymentConfigsResult& WithDeploymentConfigsList(Aws::Vector<Aws::String>&& value) { SetDeploymentConfigsList(value); return *this;}
 
     /*
      <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
     */
     inline ListDeploymentConfigsResult& AddDeploymentConfigsList(const Aws::String& value) { m_deploymentConfigsList.push_back(value); return *this; }
+
+    /*
+     <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
+    */
+    inline ListDeploymentConfigsResult& AddDeploymentConfigsList(Aws::String&& value) { m_deploymentConfigsList.push_back(value); return *this; }
 
     /*
      <p>A list of deployment configurations, including the built-in configurations such as CodeDeployDefault.OneAtATime.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
     */
-    inline ListDeploymentConfigsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
+    */
+    inline ListDeploymentConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>

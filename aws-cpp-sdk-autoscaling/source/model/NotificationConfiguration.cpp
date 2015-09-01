@@ -45,18 +45,33 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
+    if(autoScalingGroupNameNode.IsNull())
+    {
+      autoScalingGroupNameNode = resultNode;
+    }
+
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode topicARNNode = resultNode.FirstChild("TopicARN");
+    if(topicARNNode.IsNull())
+    {
+      topicARNNode = resultNode;
+    }
+
     if(!topicARNNode.IsNull())
     {
       m_topicARN = StringUtils::Trim(topicARNNode.GetText().c_str());
       m_topicARNHasBeenSet = true;
     }
     XmlNode notificationTypeNode = resultNode.FirstChild("NotificationType");
+    if(notificationTypeNode.IsNull())
+    {
+      notificationTypeNode = resultNode;
+    }
+
     if(!notificationTypeNode.IsNull())
     {
       m_notificationType = StringUtils::Trim(notificationTypeNode.GetText().c_str());

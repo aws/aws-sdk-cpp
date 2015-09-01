@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the on-premises instances.</p>
     */
     inline const Aws::Vector<InstanceInfo>& GetInstanceInfos() const{ return m_instanceInfos; }
+
     /*
      <p>Information about the on-premises instances.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>Information about the on-premises instances.</p>
     */
-    inline BatchGetOnPremisesInstancesResult&  WithInstanceInfos(const Aws::Vector<InstanceInfo>& value) { SetInstanceInfos(value); return *this;}
+    inline void SetInstanceInfos(Aws::Vector<InstanceInfo>&& value) { m_instanceInfos = value; }
+
+    /*
+     <p>Information about the on-premises instances.</p>
+    */
+    inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(const Aws::Vector<InstanceInfo>& value) { SetInstanceInfos(value); return *this;}
+
+    /*
+     <p>Information about the on-premises instances.</p>
+    */
+    inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(Aws::Vector<InstanceInfo>&& value) { SetInstanceInfos(value); return *this;}
 
     /*
      <p>Information about the on-premises instances.</p>
     */
     inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(const InstanceInfo& value) { m_instanceInfos.push_back(value); return *this; }
+
+    /*
+     <p>Information about the on-premises instances.</p>
+    */
+    inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfo&& value) { m_instanceInfos.push_back(value); return *this; }
 
   private:
     Aws::Vector<InstanceInfo> m_instanceInfos;

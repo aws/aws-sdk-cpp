@@ -53,30 +53,55 @@ DeleteMarkerEntry& DeleteMarkerEntry::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode ownerNode = resultNode.FirstChild("Owner");
+    if(ownerNode.IsNull())
+    {
+      ownerNode = resultNode;
+    }
+
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
+    if(keyNode.IsNull())
+    {
+      keyNode = resultNode;
+    }
+
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
+    if(versionIdNode.IsNull())
+    {
+      versionIdNode = resultNode;
+    }
+
     if(!versionIdNode.IsNull())
     {
       m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
       m_versionIdHasBeenSet = true;
     }
     XmlNode isLatestNode = resultNode.FirstChild("IsLatest");
+    if(isLatestNode.IsNull())
+    {
+      isLatestNode = resultNode;
+    }
+
     if(!isLatestNode.IsNull())
     {
       m_isLatest = StringUtils::ConvertToBool(StringUtils::Trim(isLatestNode.GetText().c_str()).c_str());
       m_isLatestHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
+    if(lastModifiedNode.IsNull())
+    {
+      lastModifiedNode = resultNode;
+    }
+
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());

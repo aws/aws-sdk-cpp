@@ -44,10 +44,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline CreateInstanceRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline CreateInstanceRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline CreateInstanceRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>An array that contains the instance's layer IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
     /*
      <p>An array that contains the instance's layer IDs.</p>
     */
@@ -76,12 +88,27 @@ namespace Model
     /*
      <p>An array that contains the instance's layer IDs.</p>
     */
-    inline CreateInstanceRequest&  WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /*
+     <p>An array that contains the instance's layer IDs.</p>
+    */
+    inline CreateInstanceRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+
+    /*
+     <p>An array that contains the instance's layer IDs.</p>
+    */
+    inline CreateInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
 
     /*
      <p>An array that contains the instance's layer IDs.</p>
     */
     inline CreateInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /*
+     <p>An array that contains the instance's layer IDs.</p>
+    */
+    inline CreateInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>An array that contains the instance's layer IDs.</p>
@@ -92,10 +119,16 @@ namespace Model
      <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
     /*
      <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /*
+     <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
@@ -105,7 +138,12 @@ namespace Model
     /*
      <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     */
-    inline CreateInstanceRequest&  WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+    inline CreateInstanceRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /*
+     <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    */
+    inline CreateInstanceRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /*
      <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
@@ -116,6 +154,7 @@ namespace Model
      <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     */
     inline const AutoScalingType& GetAutoScalingType() const{ return m_autoScalingType; }
+
     /*
      <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     */
@@ -124,16 +163,32 @@ namespace Model
     /*
      <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     */
-    inline CreateInstanceRequest&  WithAutoScalingType(const AutoScalingType& value) { SetAutoScalingType(value); return *this;}
+    inline void SetAutoScalingType(AutoScalingType&& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
+
+    /*
+     <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    */
+    inline CreateInstanceRequest& WithAutoScalingType(const AutoScalingType& value) { SetAutoScalingType(value); return *this;}
+
+    /*
+     <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    */
+    inline CreateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(value); return *this;}
 
     /*
      <p>The instance host name.</p>
     */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
+
     /*
      <p>The instance host name.</p>
     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+
+    /*
+     <p>The instance host name.</p>
+    */
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /*
      <p>The instance host name.</p>
@@ -143,7 +198,12 @@ namespace Model
     /*
      <p>The instance host name.</p>
     */
-    inline CreateInstanceRequest&  WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+    inline CreateInstanceRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+
+    /*
+     <p>The instance host name.</p>
+    */
+    inline CreateInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
 
     /*
      <p>The instance host name.</p>
@@ -154,10 +214,16 @@ namespace Model
      <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     */
     inline const Aws::String& GetOs() const{ return m_os; }
+
     /*
      <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     */
     inline void SetOs(const Aws::String& value) { m_osHasBeenSet = true; m_os = value; }
+
+    /*
+     <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    */
+    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = value; }
 
     /*
      <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
@@ -167,7 +233,12 @@ namespace Model
     /*
      <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     */
-    inline CreateInstanceRequest&  WithOs(const Aws::String& value) { SetOs(value); return *this;}
+    inline CreateInstanceRequest& WithOs(const Aws::String& value) { SetOs(value); return *this;}
+
+    /*
+     <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    */
+    inline CreateInstanceRequest& WithOs(Aws::String&& value) { SetOs(value); return *this;}
 
     /*
      <p>The instance's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
@@ -178,10 +249,16 @@ namespace Model
      <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
     */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
+
     /*
      <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
+
+    /*
+     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
+    */
+    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /*
      <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
@@ -191,7 +268,12 @@ namespace Model
     /*
      <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
     */
-    inline CreateInstanceRequest&  WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
+    inline CreateInstanceRequest& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
+
+    /*
+     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
+    */
+    inline CreateInstanceRequest& WithAmiId(Aws::String&& value) { SetAmiId(value); return *this;}
 
     /*
      <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
@@ -202,10 +284,16 @@ namespace Model
      <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
+
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
+
+    /*
+     <p>The instance's Amazon EC2 key-pair name.</p>
+    */
+    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
 
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
@@ -215,7 +303,12 @@ namespace Model
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
     */
-    inline CreateInstanceRequest&  WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
+    inline CreateInstanceRequest& WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
+
+    /*
+     <p>The instance's Amazon EC2 key-pair name.</p>
+    */
+    inline CreateInstanceRequest& WithSshKeyName(Aws::String&& value) { SetSshKeyName(value); return *this;}
 
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
@@ -226,10 +319,16 @@ namespace Model
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -239,7 +338,12 @@ namespace Model
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
-    inline CreateInstanceRequest&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline CreateInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -250,10 +354,16 @@ namespace Model
      <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
     */
     inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
+
     /*
      <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
     */
     inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
+
+    /*
+     <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+    */
+    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /*
      <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
@@ -263,7 +373,12 @@ namespace Model
     /*
      <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
     */
-    inline CreateInstanceRequest&  WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
+    inline CreateInstanceRequest& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
+
+    /*
+     <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+    */
+    inline CreateInstanceRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(value); return *this;}
 
     /*
      <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
@@ -274,10 +389,16 @@ namespace Model
      <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
     */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
     /*
      <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /*
+     <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
+    */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /*
      <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
@@ -287,7 +408,12 @@ namespace Model
     /*
      <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
     */
-    inline CreateInstanceRequest&  WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+    inline CreateInstanceRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /*
+     <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
+    */
+    inline CreateInstanceRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
     /*
      <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet. </p>
@@ -298,6 +424,7 @@ namespace Model
      <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     */
     inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
     /*
      <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     */
@@ -306,12 +433,23 @@ namespace Model
     /*
      <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     */
-    inline CreateInstanceRequest&  WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /*
+     <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    */
+    inline CreateInstanceRequest& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /*
+     <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    */
+    inline CreateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(value); return *this;}
 
     /*
      <p>The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     */
     inline const RootDeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
+
     /*
      <p>The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     */
@@ -320,12 +458,23 @@ namespace Model
     /*
      <p>The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     */
-    inline CreateInstanceRequest&  WithRootDeviceType(const RootDeviceType& value) { SetRootDeviceType(value); return *this;}
+    inline void SetRootDeviceType(RootDeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
+
+    /*
+     <p>The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    */
+    inline CreateInstanceRequest& WithRootDeviceType(const RootDeviceType& value) { SetRootDeviceType(value); return *this;}
+
+    /*
+     <p>The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    */
+    inline CreateInstanceRequest& WithRootDeviceType(RootDeviceType&& value) { SetRootDeviceType(value); return *this;}
 
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
     */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
     */
@@ -334,7 +483,17 @@ namespace Model
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
     */
-    inline CreateInstanceRequest&  WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+
+    /*
+     <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
+    */
+    inline CreateInstanceRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /*
+     <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
+    */
+    inline CreateInstanceRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
 
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
@@ -342,9 +501,15 @@ namespace Model
     inline CreateInstanceRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /*
+     <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>.</p>
+    */
+    inline CreateInstanceRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+
+    /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p> </note>
     */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
+
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p> </note>
     */
@@ -353,12 +518,13 @@ namespace Model
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p> </note>
     */
-    inline CreateInstanceRequest&  WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
+    inline CreateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
     /*
      <p>Whether to create an Amazon EBS-optimized instance.</p>
     */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+
     /*
      <p>Whether to create an Amazon EBS-optimized instance.</p>
     */
@@ -367,16 +533,22 @@ namespace Model
     /*
      <p>Whether to create an Amazon EBS-optimized instance.</p>
     */
-    inline CreateInstanceRequest&  WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+    inline CreateInstanceRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /*
      <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
     */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
     /*
      <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+    */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /*
      <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
@@ -386,7 +558,12 @@ namespace Model
     /*
      <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
     */
-    inline CreateInstanceRequest&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+    inline CreateInstanceRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+    */
+    inline CreateInstanceRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
 
     /*
      <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li> <li> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li> </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>

@@ -43,12 +43,22 @@ PolicyAttribute& PolicyAttribute::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
+    if(attributeNameNode.IsNull())
+    {
+      attributeNameNode = resultNode;
+    }
+
     if(!attributeNameNode.IsNull())
     {
       m_attributeName = StringUtils::Trim(attributeNameNode.GetText().c_str());
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValueNode = resultNode.FirstChild("AttributeValue");
+    if(attributeValueNode.IsNull())
+    {
+      attributeValueNode = resultNode;
+    }
+
     if(!attributeValueNode.IsNull())
     {
       m_attributeValue = StringUtils::Trim(attributeValueNode.GetText().c_str());

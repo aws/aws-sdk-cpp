@@ -48,6 +48,7 @@ namespace Model
      <p>The port on which the back-end server is listening.</p>
     */
     inline long GetInstancePort() const{ return m_instancePort; }
+
     /*
      <p>The port on which the back-end server is listening.</p>
     */
@@ -56,12 +57,13 @@ namespace Model
     /*
      <p>The port on which the back-end server is listening.</p>
     */
-    inline BackendServerDescription&  WithInstancePort(long value) { SetInstancePort(value); return *this;}
+    inline BackendServerDescription& WithInstancePort(long value) { SetInstancePort(value); return *this;}
 
     /*
      <p>The names of the policies enabled for the back-end server.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
     /*
      <p>The names of the policies enabled for the back-end server.</p>
     */
@@ -70,12 +72,27 @@ namespace Model
     /*
      <p>The names of the policies enabled for the back-end server.</p>
     */
-    inline BackendServerDescription&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+
+    /*
+     <p>The names of the policies enabled for the back-end server.</p>
+    */
+    inline BackendServerDescription& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
+
+    /*
+     <p>The names of the policies enabled for the back-end server.</p>
+    */
+    inline BackendServerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /*
      <p>The names of the policies enabled for the back-end server.</p>
     */
     inline BackendServerDescription& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the policies enabled for the back-end server.</p>
+    */
+    inline BackendServerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /*
      <p>The names of the policies enabled for the back-end server.</p>

@@ -49,13 +49,21 @@ namespace Model
 
     
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
     
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline GetObjectTorrentResult&  WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+
+    
+    inline GetObjectTorrentResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline GetObjectTorrentResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
 
   private:
     Utils::Stream::ResponseStream m_body;

@@ -22,19 +22,19 @@ namespace IAM
 {
 namespace Model
 {
-  enum class statusType
+  enum class StatusType
   {
     NOT_SET,
     Active,
     Inactive
   };
 
-namespace statusTypeMapper
+namespace StatusTypeMapper
 {
-AWS_IAM_API statusType GetstatusTypeForName(const Aws::String& name);
+AWS_IAM_API StatusType GetStatusTypeForName(const Aws::String& name);
 
-AWS_IAM_API Aws::String GetNameForstatusType(statusType value);
-} // namespace statusTypeMapper
+AWS_IAM_API Aws::String GetNameForStatusType(StatusType value);
+} // namespace StatusTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

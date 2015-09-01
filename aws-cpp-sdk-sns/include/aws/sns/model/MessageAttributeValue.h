@@ -48,10 +48,16 @@ namespace Model
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
+
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /*
+     <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
+    */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
-    inline MessageAttributeValue&  WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+    inline MessageAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /*
+     <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
+    */
+    inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(value); return *this;}
 
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
@@ -72,10 +83,16 @@ namespace Model
      <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
     /*
      <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+
+    /*
+     <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    */
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /*
      <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
@@ -85,7 +102,12 @@ namespace Model
     /*
      <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     */
-    inline MessageAttributeValue&  WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+    inline MessageAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+
+    /*
+     <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    */
+    inline MessageAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
 
     /*
      <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
@@ -96,6 +118,7 @@ namespace Model
      <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     */
     inline const Aws::Utils::ByteBuffer& GetBinaryValue() const{ return m_binaryValue; }
+
     /*
      <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     */
@@ -104,7 +127,17 @@ namespace Model
     /*
      <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     */
-    inline MessageAttributeValue&  WithBinaryValue(const Aws::Utils::ByteBuffer& value) { SetBinaryValue(value); return *this;}
+    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
+
+    /*
+     <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
+    */
+    inline MessageAttributeValue& WithBinaryValue(const Aws::Utils::ByteBuffer& value) { SetBinaryValue(value); return *this;}
+
+    /*
+     <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
+    */
+    inline MessageAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(value); return *this;}
 
   private:
     Aws::String m_dataType;

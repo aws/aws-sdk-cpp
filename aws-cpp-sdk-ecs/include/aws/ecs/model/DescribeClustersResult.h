@@ -48,6 +48,7 @@ namespace Model
      <p>The list of clusters.</p>
     */
     inline const Aws::Vector<Cluster>& GetClusters() const{ return m_clusters; }
+
     /*
      <p>The list of clusters.</p>
     */
@@ -56,23 +57,48 @@ namespace Model
     /*
      <p>The list of clusters.</p>
     */
-    inline DescribeClustersResult&  WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
+    inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = value; }
+
+    /*
+     <p>The list of clusters.</p>
+    */
+    inline DescribeClustersResult& WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
+
+    /*
+     <p>The list of clusters.</p>
+    */
+    inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(value); return *this;}
 
     /*
      <p>The list of clusters.</p>
     */
     inline DescribeClustersResult& AddClusters(const Cluster& value) { m_clusters.push_back(value); return *this; }
 
+    /*
+     <p>The list of clusters.</p>
+    */
+    inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(value); return *this; }
+
     
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
+
     
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
     
-    inline DescribeClustersResult&  WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+
+    
+    inline DescribeClustersResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+
+    
+    inline DescribeClustersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
     
     inline DescribeClustersResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
+
+    
+    inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:
     Aws::Vector<Cluster> m_clusters;

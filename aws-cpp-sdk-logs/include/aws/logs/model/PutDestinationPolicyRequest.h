@@ -39,10 +39,16 @@ namespace Model
      <p>A name for an existing destination.</p>
     */
     inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+
     /*
      <p>A name for an existing destination.</p>
     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
+
+    /*
+     <p>A name for an existing destination.</p>
+    */
+    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /*
      <p>A name for an existing destination.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>A name for an existing destination.</p>
     */
-    inline PutDestinationPolicyRequest&  WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
+    inline PutDestinationPolicyRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
+
+    /*
+     <p>A name for an existing destination.</p>
+    */
+    inline PutDestinationPolicyRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
 
     /*
      <p>A name for an existing destination.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
     */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
+
     /*
      <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
     */
     inline void SetAccessPolicy(const Aws::String& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
+
+    /*
+     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
+    */
+    inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
     /*
      <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
     */
-    inline PutDestinationPolicyRequest&  WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
+    inline PutDestinationPolicyRequest& WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
+
+    /*
+     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
+    */
+    inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(value); return *this;}
 
     /*
      <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>

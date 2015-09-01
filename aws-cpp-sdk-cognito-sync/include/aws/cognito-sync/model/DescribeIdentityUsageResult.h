@@ -46,6 +46,7 @@ namespace Model
      Usage information for the identity.
     */
     inline const IdentityUsage& GetIdentityUsage() const{ return m_identityUsage; }
+
     /*
      Usage information for the identity.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      Usage information for the identity.
     */
-    inline DescribeIdentityUsageResult&  WithIdentityUsage(const IdentityUsage& value) { SetIdentityUsage(value); return *this;}
+    inline void SetIdentityUsage(IdentityUsage&& value) { m_identityUsage = value; }
+
+    /*
+     Usage information for the identity.
+    */
+    inline DescribeIdentityUsageResult& WithIdentityUsage(const IdentityUsage& value) { SetIdentityUsage(value); return *this;}
+
+    /*
+     Usage information for the identity.
+    */
+    inline DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsage&& value) { SetIdentityUsage(value); return *this;}
 
   private:
     IdentityUsage m_identityUsage;

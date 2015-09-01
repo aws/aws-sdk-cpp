@@ -45,10 +45,16 @@ namespace Model
      <p>The IP address that the container is bound to on the container instance.</p>
     */
     inline const Aws::String& GetBindIP() const{ return m_bindIP; }
+
     /*
      <p>The IP address that the container is bound to on the container instance.</p>
     */
     inline void SetBindIP(const Aws::String& value) { m_bindIPHasBeenSet = true; m_bindIP = value; }
+
+    /*
+     <p>The IP address that the container is bound to on the container instance.</p>
+    */
+    inline void SetBindIP(Aws::String&& value) { m_bindIPHasBeenSet = true; m_bindIP = value; }
 
     /*
      <p>The IP address that the container is bound to on the container instance.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The IP address that the container is bound to on the container instance.</p>
     */
-    inline NetworkBinding&  WithBindIP(const Aws::String& value) { SetBindIP(value); return *this;}
+    inline NetworkBinding& WithBindIP(const Aws::String& value) { SetBindIP(value); return *this;}
+
+    /*
+     <p>The IP address that the container is bound to on the container instance.</p>
+    */
+    inline NetworkBinding& WithBindIP(Aws::String&& value) { SetBindIP(value); return *this;}
 
     /*
      <p>The IP address that the container is bound to on the container instance.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>The port number on the container that is be used with the network binding.</p>
     */
     inline long GetContainerPort() const{ return m_containerPort; }
+
     /*
      <p>The port number on the container that is be used with the network binding.</p>
     */
@@ -77,12 +89,13 @@ namespace Model
     /*
      <p>The port number on the container that is be used with the network binding.</p>
     */
-    inline NetworkBinding&  WithContainerPort(long value) { SetContainerPort(value); return *this;}
+    inline NetworkBinding& WithContainerPort(long value) { SetContainerPort(value); return *this;}
 
     /*
      <p>The port number on the host that is used with the network binding.</p>
     */
     inline long GetHostPort() const{ return m_hostPort; }
+
     /*
      <p>The port number on the host that is used with the network binding.</p>
     */
@@ -91,12 +104,13 @@ namespace Model
     /*
      <p>The port number on the host that is used with the network binding.</p>
     */
-    inline NetworkBinding&  WithHostPort(long value) { SetHostPort(value); return *this;}
+    inline NetworkBinding& WithHostPort(long value) { SetHostPort(value); return *this;}
 
     /*
      <p>The protocol used for the network binding.</p>
     */
     inline const TransportProtocol& GetProtocol() const{ return m_protocol; }
+
     /*
      <p>The protocol used for the network binding.</p>
     */
@@ -105,7 +119,17 @@ namespace Model
     /*
      <p>The protocol used for the network binding.</p>
     */
-    inline NetworkBinding&  WithProtocol(const TransportProtocol& value) { SetProtocol(value); return *this;}
+    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /*
+     <p>The protocol used for the network binding.</p>
+    */
+    inline NetworkBinding& WithProtocol(const TransportProtocol& value) { SetProtocol(value); return *this;}
+
+    /*
+     <p>The protocol used for the network binding.</p>
+    */
+    inline NetworkBinding& WithProtocol(TransportProtocol&& value) { SetProtocol(value); return *this;}
 
   private:
     Aws::String m_bindIP;

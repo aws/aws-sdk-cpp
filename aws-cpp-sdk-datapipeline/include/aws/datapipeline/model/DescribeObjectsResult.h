@@ -48,6 +48,7 @@ namespace Model
      <p>An array of object definitions.</p>
     */
     inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
+
     /*
      <p>An array of object definitions.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>An array of object definitions.</p>
     */
-    inline DescribeObjectsResult&  WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
+    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = value; }
+
+    /*
+     <p>An array of object definitions.</p>
+    */
+    inline DescribeObjectsResult& WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
+
+    /*
+     <p>An array of object definitions.</p>
+    */
+    inline DescribeObjectsResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
 
     /*
      <p>An array of object definitions.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline DescribeObjectsResult& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjects.push_back(value); return *this; }
 
     /*
+     <p>An array of object definitions.</p>
+    */
+    inline DescribeObjectsResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(value); return *this; }
+
+    /*
      <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     */
-    inline DescribeObjectsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeObjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
+    */
+    inline DescribeObjectsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
@@ -91,6 +118,7 @@ namespace Model
      <p>Indicates whether there are more results to return.</p>
     */
     inline bool GetHasMoreResults() const{ return m_hasMoreResults; }
+
     /*
      <p>Indicates whether there are more results to return.</p>
     */
@@ -99,7 +127,7 @@ namespace Model
     /*
      <p>Indicates whether there are more results to return.</p>
     */
-    inline DescribeObjectsResult&  WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
+    inline DescribeObjectsResult& WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
 
   private:
     Aws::Vector<PipelineObject> m_pipelineObjects;

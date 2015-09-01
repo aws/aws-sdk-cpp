@@ -42,10 +42,16 @@ namespace Model
      <p>The unique ID of a deployment.</p>
     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
     /*
      <p>The unique ID of a deployment.</p>
     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /*
      <p>The unique ID of a deployment.</p>
@@ -55,7 +61,12 @@ namespace Model
     /*
      <p>The unique ID of a deployment.</p>
     */
-    inline ListDeploymentInstancesRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+    inline ListDeploymentInstancesRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
+    inline ListDeploymentInstancesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /*
      <p>The unique ID of a deployment.</p>
@@ -66,10 +77,16 @@ namespace Model
      <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
@@ -79,7 +96,12 @@ namespace Model
     /*
      <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
     */
-    inline ListDeploymentInstancesRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
+    */
+    inline ListDeploymentInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
@@ -90,6 +112,7 @@ namespace Model
      <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
     */
     inline const Aws::Vector<InstanceStatus>& GetInstanceStatusFilter() const{ return m_instanceStatusFilter; }
+
     /*
      <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
     */
@@ -98,12 +121,27 @@ namespace Model
     /*
      <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
     */
-    inline ListDeploymentInstancesRequest&  WithInstanceStatusFilter(const Aws::Vector<InstanceStatus>& value) { SetInstanceStatusFilter(value); return *this;}
+    inline void SetInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter = value; }
+
+    /*
+     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
+    */
+    inline ListDeploymentInstancesRequest& WithInstanceStatusFilter(const Aws::Vector<InstanceStatus>& value) { SetInstanceStatusFilter(value); return *this;}
+
+    /*
+     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
+    */
+    inline ListDeploymentInstancesRequest& WithInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { SetInstanceStatusFilter(value); return *this;}
 
     /*
      <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
     */
     inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(const InstanceStatus& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
+
+    /*
+     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
+    */
+    inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(InstanceStatus&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
 
   private:
     Aws::String m_deploymentId;

@@ -38,10 +38,16 @@ namespace Model
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+
+    /*
+     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    */
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     */
-    inline SubscribeToDatasetRequest&  WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+    inline SubscribeToDatasetRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
+
+    /*
+     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    */
+    inline SubscribeToDatasetRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>Unique ID for this identity.</p>
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      <p>Unique ID for this identity.</p>
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+
+    /*
+     <p>Unique ID for this identity.</p>
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>Unique ID for this identity.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>Unique ID for this identity.</p>
     */
-    inline SubscribeToDatasetRequest&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline SubscribeToDatasetRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     <p>Unique ID for this identity.</p>
+    */
+    inline SubscribeToDatasetRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      <p>Unique ID for this identity.</p>
@@ -86,10 +108,16 @@ namespace Model
      <p>The name of the dataset to subcribe to.</p>
     */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+
     /*
      <p>The name of the dataset to subcribe to.</p>
     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
+
+    /*
+     <p>The name of the dataset to subcribe to.</p>
+    */
+    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /*
      <p>The name of the dataset to subcribe to.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>The name of the dataset to subcribe to.</p>
     */
-    inline SubscribeToDatasetRequest&  WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+    inline SubscribeToDatasetRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+
+    /*
+     <p>The name of the dataset to subcribe to.</p>
+    */
+    inline SubscribeToDatasetRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(value); return *this;}
 
     /*
      <p>The name of the dataset to subcribe to.</p>
@@ -110,10 +143,16 @@ namespace Model
      <p>The unique ID generated for this device by Cognito.</p>
     */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
+
+    /*
+     <p>The unique ID generated for this device by Cognito.</p>
+    */
+    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>
@@ -123,7 +162,12 @@ namespace Model
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
-    inline SubscribeToDatasetRequest&  WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+    inline SubscribeToDatasetRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+
+    /*
+     <p>The unique ID generated for this device by Cognito.</p>
+    */
+    inline SubscribeToDatasetRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(value); return *this;}
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>

@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
     */
-    inline LoginProfile&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline LoginProfile& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
+    */
+    inline LoginProfile& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The date when the password for the user was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date when the password for the user was created.</p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p>The date when the password for the user was created.</p>
     */
-    inline LoginProfile&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline LoginProfile& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
     /*
      <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     */
     inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
+
     /*
      <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     */
@@ -93,7 +106,7 @@ namespace Model
     /*
      <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     */
-    inline LoginProfile&  WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
+    inline LoginProfile& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
 
   private:
     Aws::String m_userName;

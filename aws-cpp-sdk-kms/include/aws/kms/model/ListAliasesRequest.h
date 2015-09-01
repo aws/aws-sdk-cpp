@@ -39,6 +39,7 @@ namespace Model
      <p>Specify this parameter when paginating results to indicate the maximum number of aliases you want in each response. If there are additional aliases beyond the maximum you specify, the <code>Truncated</code> response element will be set to <code>true.</code> </p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p>Specify this parameter when paginating results to indicate the maximum number of aliases you want in each response. If there are additional aliases beyond the maximum you specify, the <code>Truncated</code> response element will be set to <code>true.</code> </p>
     */
@@ -47,16 +48,22 @@ namespace Model
     /*
      <p>Specify this parameter when paginating results to indicate the maximum number of aliases you want in each response. If there are additional aliases beyond the maximum you specify, the <code>Truncated</code> response element will be set to <code>true.</code> </p>
     */
-    inline ListAliasesRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListAliasesRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
     /*
      <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>
@@ -66,7 +73,12 @@ namespace Model
     /*
      <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>
     */
-    inline ListAliasesRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListAliasesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>
+    */
+    inline ListAliasesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>NextMarker</code> element in the response you just received. </p>

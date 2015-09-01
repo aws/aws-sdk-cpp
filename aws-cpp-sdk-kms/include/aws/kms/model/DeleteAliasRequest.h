@@ -39,10 +39,16 @@ namespace Model
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
     */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
     */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
+
+    /*
+     <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
+    */
+    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
     */
-    inline DeleteAliasRequest&  WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
+    inline DeleteAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
+
+    /*
+     <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
+    */
+    inline DeleteAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(value); return *this;}
 
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>

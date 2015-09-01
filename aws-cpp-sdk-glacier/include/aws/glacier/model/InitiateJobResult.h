@@ -46,10 +46,16 @@ namespace Model
      <p>The relative URI path of the job.</p>
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      <p>The relative URI path of the job.</p>
     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /*
+     <p>The relative URI path of the job.</p>
+    */
+    inline void SetLocation(Aws::String&& value) { m_location = value; }
 
     /*
      <p>The relative URI path of the job.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The relative URI path of the job.</p>
     */
-    inline InitiateJobResult&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline InitiateJobResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     <p>The relative URI path of the job.</p>
+    */
+    inline InitiateJobResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      <p>The relative URI path of the job.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The ID of the job.</p>
     */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
     /*
      <p>The ID of the job.</p>
     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
+
+    /*
+     <p>The ID of the job.</p>
+    */
+    inline void SetJobId(Aws::String&& value) { m_jobId = value; }
 
     /*
      <p>The ID of the job.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The ID of the job.</p>
     */
-    inline InitiateJobResult&  WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline InitiateJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+
+    /*
+     <p>The ID of the job.</p>
+    */
+    inline InitiateJobResult& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
 
     /*
      <p>The ID of the job.</p>

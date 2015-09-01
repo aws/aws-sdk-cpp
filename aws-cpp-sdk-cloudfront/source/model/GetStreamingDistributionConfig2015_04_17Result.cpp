@@ -42,6 +42,11 @@ GetStreamingDistributionConfig2015_04_17Result& GetStreamingDistributionConfig20
   if(!resultNode.IsNull())
   {
     XmlNode streamingDistributionConfigNode = resultNode.FirstChild("StreamingDistributionConfig");
+    if(streamingDistributionConfigNode.IsNull())
+    {
+      streamingDistributionConfigNode = resultNode;
+    }
+
     if(!streamingDistributionConfigNode.IsNull())
     {
       m_streamingDistributionConfig = streamingDistributionConfigNode;

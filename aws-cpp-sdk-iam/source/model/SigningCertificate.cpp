@@ -51,30 +51,55 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode certificateIdNode = resultNode.FirstChild("CertificateId");
+    if(certificateIdNode.IsNull())
+    {
+      certificateIdNode = resultNode;
+    }
+
     if(!certificateIdNode.IsNull())
     {
       m_certificateId = StringUtils::Trim(certificateIdNode.GetText().c_str());
       m_certificateIdHasBeenSet = true;
     }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
+    if(certificateBodyNode.IsNull())
+    {
+      certificateBodyNode = resultNode;
+    }
+
     if(!certificateBodyNode.IsNull())
     {
       m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
       m_certificateBodyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
-      m_status = statusTypeMapper::GetstatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
+    if(uploadDateNode.IsNull())
+    {
+      uploadDateNode = resultNode;
+    }
+
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());
@@ -101,7 +126,7 @@ void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
   if(m_uploadDateHasBeenSet)
   {
@@ -125,7 +150,7 @@ void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+      oStream << location << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
   if(m_uploadDateHasBeenSet)
   {

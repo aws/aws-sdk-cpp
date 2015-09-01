@@ -47,10 +47,16 @@ namespace Model
      <p>The ID of the instance.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The ID of the instance.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The ID of the instance.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the instance.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The ID of the instance.</p>
     */
-    inline AutoScalingInstanceDetails&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline AutoScalingInstanceDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The ID of the instance.</p>
+    */
+    inline AutoScalingInstanceDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The ID of the instance.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The name of the Auto Scaling group associated with the instance.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group associated with the instance.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
     */
-    inline AutoScalingInstanceDetails&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline AutoScalingInstanceDetails& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group associated with the instance.</p>
+    */
+    inline AutoScalingInstanceDetails& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The Availability Zone for the instance.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p>The Availability Zone for the instance.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p>The Availability Zone for the instance.</p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The Availability Zone for the instance.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The Availability Zone for the instance.</p>
     */
-    inline AutoScalingInstanceDetails&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline AutoScalingInstanceDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The Availability Zone for the instance.</p>
+    */
+    inline AutoScalingInstanceDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p>The Availability Zone for the instance.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
+
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
+
+    /*
+     <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+    */
+    inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
-    inline AutoScalingInstanceDetails&  WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
+    inline AutoScalingInstanceDetails& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
+
+    /*
+     <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+    */
+    inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(value); return *this;}
 
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -143,10 +187,16 @@ namespace Model
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
     */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
+
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
     */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+
+    /*
+     <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+    */
+    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
     */
-    inline AutoScalingInstanceDetails&  WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
+    inline AutoScalingInstanceDetails& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
+
+    /*
+     <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+    */
+    inline AutoScalingInstanceDetails& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
 
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
@@ -167,10 +222,16 @@ namespace Model
      <p>The launch configuration associated with the instance.</p>
     */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
+
     /*
      <p>The launch configuration associated with the instance.</p>
     */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
+
+    /*
+     <p>The launch configuration associated with the instance.</p>
+    */
+    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The launch configuration associated with the instance.</p>
@@ -180,7 +241,12 @@ namespace Model
     /*
      <p>The launch configuration associated with the instance.</p>
     */
-    inline AutoScalingInstanceDetails&  WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+    inline AutoScalingInstanceDetails& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+
+    /*
+     <p>The launch configuration associated with the instance.</p>
+    */
+    inline AutoScalingInstanceDetails& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(value); return *this;}
 
     /*
      <p>The launch configuration associated with the instance.</p>

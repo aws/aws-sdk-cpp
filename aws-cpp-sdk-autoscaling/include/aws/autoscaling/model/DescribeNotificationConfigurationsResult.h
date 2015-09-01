@@ -49,6 +49,7 @@ namespace Model
      <p>The notification configurations.</p>
     */
     inline const Aws::Vector<NotificationConfiguration>& GetNotificationConfigurations() const{ return m_notificationConfigurations; }
+
     /*
      <p>The notification configurations.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>The notification configurations.</p>
     */
-    inline DescribeNotificationConfigurationsResult&  WithNotificationConfigurations(const Aws::Vector<NotificationConfiguration>& value) { SetNotificationConfigurations(value); return *this;}
+    inline void SetNotificationConfigurations(Aws::Vector<NotificationConfiguration>&& value) { m_notificationConfigurations = value; }
+
+    /*
+     <p>The notification configurations.</p>
+    */
+    inline DescribeNotificationConfigurationsResult& WithNotificationConfigurations(const Aws::Vector<NotificationConfiguration>& value) { SetNotificationConfigurations(value); return *this;}
+
+    /*
+     <p>The notification configurations.</p>
+    */
+    inline DescribeNotificationConfigurationsResult& WithNotificationConfigurations(Aws::Vector<NotificationConfiguration>&& value) { SetNotificationConfigurations(value); return *this;}
 
     /*
      <p>The notification configurations.</p>
@@ -65,13 +76,24 @@ namespace Model
     inline DescribeNotificationConfigurationsResult& AddNotificationConfigurations(const NotificationConfiguration& value) { m_notificationConfigurations.push_back(value); return *this; }
 
     /*
+     <p>The notification configurations.</p>
+    */
+    inline DescribeNotificationConfigurationsResult& AddNotificationConfigurations(NotificationConfiguration&& value) { m_notificationConfigurations.push_back(value); return *this; }
+
+    /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -81,7 +103,12 @@ namespace Model
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     */
-    inline DescribeNotificationConfigurationsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeNotificationConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    */
+    inline DescribeNotificationConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -90,11 +117,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeNotificationConfigurationsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeNotificationConfigurationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeNotificationConfigurationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<NotificationConfiguration> m_notificationConfigurations;

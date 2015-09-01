@@ -42,81 +42,117 @@ namespace Model
 
     
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
     
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+
+    
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     
-    inline SubscriptionFilter&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+    inline SubscriptionFilter& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
+
+    
+    inline SubscriptionFilter& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
     
     inline SubscriptionFilter& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
     
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
     
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     
-    inline SubscriptionFilter&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+    inline SubscriptionFilter& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    
+    inline SubscriptionFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     
     inline SubscriptionFilter& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+
     
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+
+    
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
 
     
-    inline SubscriptionFilter&  WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+    inline SubscriptionFilter& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
+
+    
+    inline SubscriptionFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
 
     
     inline SubscriptionFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
     
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+
     
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
+
+    
+    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
     
-    inline SubscriptionFilter&  WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
+    inline SubscriptionFilter& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
+
+    
+    inline SubscriptionFilter& WithDestinationArn(Aws::String&& value) { SetDestinationArn(value); return *this;}
 
     
     inline SubscriptionFilter& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
     
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
     
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     
-    inline SubscriptionFilter&  WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline SubscriptionFilter& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    
+    inline SubscriptionFilter& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     
     inline SubscriptionFilter& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
     
     inline long long GetCreationTime() const{ return m_creationTime; }
+
     
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     
-    inline SubscriptionFilter&  WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+    inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
   private:
     Aws::String m_filterName;

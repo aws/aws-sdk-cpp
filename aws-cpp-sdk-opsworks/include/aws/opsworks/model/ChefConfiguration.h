@@ -44,6 +44,7 @@ namespace Model
      <p>Whether to enable Berkshelf.</p>
     */
     inline bool GetManageBerkshelf() const{ return m_manageBerkshelf; }
+
     /*
      <p>Whether to enable Berkshelf.</p>
     */
@@ -52,16 +53,22 @@ namespace Model
     /*
      <p>Whether to enable Berkshelf.</p>
     */
-    inline ChefConfiguration&  WithManageBerkshelf(bool value) { SetManageBerkshelf(value); return *this;}
+    inline ChefConfiguration& WithManageBerkshelf(bool value) { SetManageBerkshelf(value); return *this;}
 
     /*
      <p>The Berkshelf version.</p>
     */
     inline const Aws::String& GetBerkshelfVersion() const{ return m_berkshelfVersion; }
+
     /*
      <p>The Berkshelf version.</p>
     */
     inline void SetBerkshelfVersion(const Aws::String& value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion = value; }
+
+    /*
+     <p>The Berkshelf version.</p>
+    */
+    inline void SetBerkshelfVersion(Aws::String&& value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion = value; }
 
     /*
      <p>The Berkshelf version.</p>
@@ -71,7 +78,12 @@ namespace Model
     /*
      <p>The Berkshelf version.</p>
     */
-    inline ChefConfiguration&  WithBerkshelfVersion(const Aws::String& value) { SetBerkshelfVersion(value); return *this;}
+    inline ChefConfiguration& WithBerkshelfVersion(const Aws::String& value) { SetBerkshelfVersion(value); return *this;}
+
+    /*
+     <p>The Berkshelf version.</p>
+    */
+    inline ChefConfiguration& WithBerkshelfVersion(Aws::String&& value) { SetBerkshelfVersion(value); return *this;}
 
     /*
      <p>The Berkshelf version.</p>

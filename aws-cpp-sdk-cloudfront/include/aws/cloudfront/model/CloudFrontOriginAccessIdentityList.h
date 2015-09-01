@@ -47,10 +47,16 @@ namespace Model
      The value you provided for the Marker request parameter.
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      The value you provided for the Marker request parameter.
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     The value you provided for the Marker request parameter.
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      The value you provided for the Marker request parameter.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The value you provided for the Marker request parameter.
     */
-    inline CloudFrontOriginAccessIdentityList&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline CloudFrontOriginAccessIdentityList& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     The value you provided for the Marker request parameter.
+    */
+    inline CloudFrontOriginAccessIdentityList& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      The value you provided for the Marker request parameter.
@@ -71,10 +82,16 @@ namespace Model
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
+
+    /*
+     If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
+    */
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
@@ -84,7 +101,12 @@ namespace Model
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
     */
-    inline CloudFrontOriginAccessIdentityList&  WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+    inline CloudFrontOriginAccessIdentityList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+
+    /*
+     If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
+    */
+    inline CloudFrontOriginAccessIdentityList& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your origin access identities where they left off.
@@ -95,6 +117,7 @@ namespace Model
      The value you provided for the MaxItems request parameter.
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      The value you provided for the MaxItems request parameter.
     */
@@ -103,12 +126,13 @@ namespace Model
     /*
      The value you provided for the MaxItems request parameter.
     */
-    inline CloudFrontOriginAccessIdentityList&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline CloudFrontOriginAccessIdentityList& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
     /*
      A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the list.
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the list.
     */
@@ -117,12 +141,13 @@ namespace Model
     /*
      A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the list.
     */
-    inline CloudFrontOriginAccessIdentityList&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline CloudFrontOriginAccessIdentityList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      The number of CloudFront origin access identities that were created by the current AWS account.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of CloudFront origin access identities that were created by the current AWS account.
     */
@@ -131,12 +156,13 @@ namespace Model
     /*
      The number of CloudFront origin access identities that were created by the current AWS account.
     */
-    inline CloudFrontOriginAccessIdentityList&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CloudFrontOriginAccessIdentityList& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
     */
     inline const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& GetItems() const{ return m_items; }
+
     /*
      A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
     */
@@ -145,12 +171,27 @@ namespace Model
     /*
      A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
     */
-    inline CloudFrontOriginAccessIdentityList&  WithItems(const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<CloudFrontOriginAccessIdentitySummary>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
+    */
+    inline CloudFrontOriginAccessIdentityList& WithItems(const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
+    */
+    inline CloudFrontOriginAccessIdentityList& WithItems(Aws::Vector<CloudFrontOriginAccessIdentitySummary>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
     */
     inline CloudFrontOriginAccessIdentityList& AddItems(const CloudFrontOriginAccessIdentitySummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the current AWS account.
+    */
+    inline CloudFrontOriginAccessIdentityList& AddItems(CloudFrontOriginAccessIdentitySummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     Aws::String m_marker;

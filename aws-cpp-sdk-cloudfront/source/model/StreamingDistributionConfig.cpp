@@ -57,48 +57,88 @@ StreamingDistributionConfig& StreamingDistributionConfig::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
+    if(callerReferenceNode.IsNull())
+    {
+      callerReferenceNode = resultNode;
+    }
+
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode s3OriginNode = resultNode.FirstChild("S3Origin");
+    if(s3OriginNode.IsNull())
+    {
+      s3OriginNode = resultNode;
+    }
+
     if(!s3OriginNode.IsNull())
     {
       m_s3Origin = s3OriginNode;
       m_s3OriginHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
+    if(aliasesNode.IsNull())
+    {
+      aliasesNode = resultNode;
+    }
+
     if(!aliasesNode.IsNull())
     {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
+    if(commentNode.IsNull())
+    {
+      commentNode = resultNode;
+    }
+
     if(!commentNode.IsNull())
     {
       m_comment = StringUtils::Trim(commentNode.GetText().c_str());
       m_commentHasBeenSet = true;
     }
     XmlNode loggingNode = resultNode.FirstChild("Logging");
+    if(loggingNode.IsNull())
+    {
+      loggingNode = resultNode;
+    }
+
     if(!loggingNode.IsNull())
     {
       m_logging = loggingNode;
       m_loggingHasBeenSet = true;
     }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
+    if(trustedSignersNode.IsNull())
+    {
+      trustedSignersNode = resultNode;
+    }
+
     if(!trustedSignersNode.IsNull())
     {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
+    if(priceClassNode.IsNull())
+    {
+      priceClassNode = resultNode;
+    }
+
     if(!priceClassNode.IsNull())
     {
       m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
+    if(enabledNode.IsNull())
+    {
+      enabledNode = resultNode;
+    }
+
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());

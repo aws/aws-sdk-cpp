@@ -42,6 +42,11 @@ FailoverDBClusterResult& FailoverDBClusterResult::operator =(const AmazonWebServ
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterNode = resultNode.FirstChild("DBCluster");
+    if(dBClusterNode.IsNull())
+    {
+      dBClusterNode = resultNode;
+    }
+
     if(!dBClusterNode.IsNull())
     {
       m_dBCluster = dBClusterNode;

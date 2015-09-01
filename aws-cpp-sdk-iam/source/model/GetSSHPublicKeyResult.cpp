@@ -42,6 +42,11 @@ GetSSHPublicKeyResult& GetSSHPublicKeyResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode sSHPublicKeyNode = resultNode.FirstChild("SSHPublicKey");
+    if(sSHPublicKeyNode.IsNull())
+    {
+      sSHPublicKeyNode = resultNode;
+    }
+
     if(!sSHPublicKeyNode.IsNull())
     {
       m_sSHPublicKey = sSHPublicKeyNode;

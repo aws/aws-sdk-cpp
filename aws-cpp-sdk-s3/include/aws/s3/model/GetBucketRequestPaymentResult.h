@@ -46,6 +46,7 @@ namespace Model
      Specifies who pays for the download and request fees.
     */
     inline const Payer& GetPayer() const{ return m_payer; }
+
     /*
      Specifies who pays for the download and request fees.
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      Specifies who pays for the download and request fees.
     */
-    inline GetBucketRequestPaymentResult&  WithPayer(const Payer& value) { SetPayer(value); return *this;}
+    inline void SetPayer(Payer&& value) { m_payer = value; }
+
+    /*
+     Specifies who pays for the download and request fees.
+    */
+    inline GetBucketRequestPaymentResult& WithPayer(const Payer& value) { SetPayer(value); return *this;}
+
+    /*
+     Specifies who pays for the download and request fees.
+    */
+    inline GetBucketRequestPaymentResult& WithPayer(Payer&& value) { SetPayer(value); return *this;}
 
   private:
     Payer m_payer;

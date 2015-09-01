@@ -48,6 +48,7 @@ namespace Model
      <p>The list of tasks.</p>
     */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
+
     /*
      <p>The list of tasks.</p>
     */
@@ -56,23 +57,48 @@ namespace Model
     /*
      <p>The list of tasks.</p>
     */
-    inline DescribeTasksResult&  WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
+    inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = value; }
+
+    /*
+     <p>The list of tasks.</p>
+    */
+    inline DescribeTasksResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
+
+    /*
+     <p>The list of tasks.</p>
+    */
+    inline DescribeTasksResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(value); return *this;}
 
     /*
      <p>The list of tasks.</p>
     */
     inline DescribeTasksResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
 
+    /*
+     <p>The list of tasks.</p>
+    */
+    inline DescribeTasksResult& AddTasks(Task&& value) { m_tasks.push_back(value); return *this; }
+
     
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
+
     
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
     
-    inline DescribeTasksResult&  WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+
+    
+    inline DescribeTasksResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
+
+    
+    inline DescribeTasksResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
     
     inline DescribeTasksResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
+
+    
+    inline DescribeTasksResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:
     Aws::Vector<Task> m_tasks;

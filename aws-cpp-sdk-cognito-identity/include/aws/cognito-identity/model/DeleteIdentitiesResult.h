@@ -47,6 +47,7 @@ namespace Model
      <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     */
     inline const Aws::Vector<UnprocessedIdentityId>& GetUnprocessedIdentityIds() const{ return m_unprocessedIdentityIds; }
+
     /*
      <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     */
-    inline DeleteIdentitiesResult&  WithUnprocessedIdentityIds(const Aws::Vector<UnprocessedIdentityId>& value) { SetUnprocessedIdentityIds(value); return *this;}
+    inline void SetUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { m_unprocessedIdentityIds = value; }
+
+    /*
+     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
+    */
+    inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(const Aws::Vector<UnprocessedIdentityId>& value) { SetUnprocessedIdentityIds(value); return *this;}
+
+    /*
+     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
+    */
+    inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { SetUnprocessedIdentityIds(value); return *this;}
 
     /*
      <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     */
     inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(const UnprocessedIdentityId& value) { m_unprocessedIdentityIds.push_back(value); return *this; }
+
+    /*
+     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
+    */
+    inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(UnprocessedIdentityId&& value) { m_unprocessedIdentityIds.push_back(value); return *this; }
 
   private:
     Aws::Vector<UnprocessedIdentityId> m_unprocessedIdentityIds;

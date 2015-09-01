@@ -38,39 +38,60 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline PutBucketTaggingRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline PutBucketTaggingRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline PutBucketTaggingRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline PutBucketTaggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
     
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     
-    inline PutBucketTaggingRequest&  WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+    inline PutBucketTaggingRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    
+    inline PutBucketTaggingRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
 
     
     inline PutBucketTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
     
     inline const Tagging& GetTagging() const{ return m_tagging; }
+
     
     inline void SetTagging(const Tagging& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     
-    inline PutBucketTaggingRequest&  WithTagging(const Tagging& value) { SetTagging(value); return *this;}
+    inline void SetTagging(Tagging&& value) { m_taggingHasBeenSet = true; m_tagging = value; }
+
+    
+    inline PutBucketTaggingRequest& WithTagging(const Tagging& value) { SetTagging(value); return *this;}
+
+    
+    inline PutBucketTaggingRequest& WithTagging(Tagging&& value) { SetTagging(value); return *this;}
 
   private:
     Aws::String m_bucket;

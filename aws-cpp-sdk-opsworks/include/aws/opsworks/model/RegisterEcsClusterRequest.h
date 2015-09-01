@@ -39,10 +39,16 @@ namespace Model
      <p>The cluster's ARN.</p>
     */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+
     /*
      <p>The cluster's ARN.</p>
     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
+
+    /*
+     <p>The cluster's ARN.</p>
+    */
+    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /*
      <p>The cluster's ARN.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The cluster's ARN.</p>
     */
-    inline RegisterEcsClusterRequest&  WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+    inline RegisterEcsClusterRequest& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+
+    /*
+     <p>The cluster's ARN.</p>
+    */
+    inline RegisterEcsClusterRequest& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
 
     /*
      <p>The cluster's ARN.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline RegisterEcsClusterRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline RegisterEcsClusterRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline RegisterEcsClusterRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>

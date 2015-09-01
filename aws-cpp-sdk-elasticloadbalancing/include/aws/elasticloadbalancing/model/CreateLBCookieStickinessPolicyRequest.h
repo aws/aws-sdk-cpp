@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline CreateLBCookieStickinessPolicyRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
     */
-    inline CreateLBCookieStickinessPolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
+    */
+    inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
@@ -85,6 +107,7 @@ namespace Model
      <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the sticky session lasts for the duration of the browser session.</p>
     */
     inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
+
     /*
      <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the sticky session lasts for the duration of the browser session.</p>
     */
@@ -93,7 +116,7 @@ namespace Model
     /*
      <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the sticky session lasts for the duration of the browser session.</p>
     */
-    inline CreateLBCookieStickinessPolicyRequest&  WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
+    inline CreateLBCookieStickinessPolicyRequest& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
 
   private:
     Aws::String m_loadBalancerName;

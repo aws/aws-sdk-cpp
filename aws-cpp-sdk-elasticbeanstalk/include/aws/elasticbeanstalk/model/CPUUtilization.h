@@ -46,6 +46,7 @@ namespace Model
      <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     */
     inline double GetUser() const{ return m_user; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithUser(double value) { SetUser(value); return *this;}
+    inline CPUUtilization& WithUser(double value) { SetUser(value); return *this;}
 
     /*
      <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     */
     inline double GetNice() const{ return m_nice; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithNice(double value) { SetNice(value); return *this;}
+    inline CPUUtilization& WithNice(double value) { SetNice(value); return *this;}
 
     /*
      <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     */
     inline double GetSystem() const{ return m_system; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithSystem(double value) { SetSystem(value); return *this;}
+    inline CPUUtilization& WithSystem(double value) { SetSystem(value); return *this;}
 
     /*
      <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     */
     inline double GetIdle() const{ return m_idle; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     */
@@ -96,12 +100,13 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithIdle(double value) { SetIdle(value); return *this;}
+    inline CPUUtilization& WithIdle(double value) { SetIdle(value); return *this;}
 
     /*
      <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     */
     inline double GetIOWait() const{ return m_iOWait; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     */
@@ -110,12 +115,13 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithIOWait(double value) { SetIOWait(value); return *this;}
+    inline CPUUtilization& WithIOWait(double value) { SetIOWait(value); return *this;}
 
     /*
      <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     */
     inline double GetIRQ() const{ return m_iRQ; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     */
@@ -124,12 +130,13 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithIRQ(double value) { SetIRQ(value); return *this;}
+    inline CPUUtilization& WithIRQ(double value) { SetIRQ(value); return *this;}
 
     /*
      <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     */
     inline double GetSoftIRQ() const{ return m_softIRQ; }
+
     /*
      <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     */
@@ -138,7 +145,7 @@ namespace Model
     /*
      <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     */
-    inline CPUUtilization&  WithSoftIRQ(double value) { SetSoftIRQ(value); return *this;}
+    inline CPUUtilization& WithSoftIRQ(double value) { SetSoftIRQ(value); return *this;}
 
   private:
     double m_user;

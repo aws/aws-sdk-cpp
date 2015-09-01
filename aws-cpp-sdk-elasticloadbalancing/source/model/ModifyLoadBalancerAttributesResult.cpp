@@ -42,11 +42,21 @@ ModifyLoadBalancerAttributesResult& ModifyLoadBalancerAttributesResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
+    if(loadBalancerNameNode.IsNull())
+    {
+      loadBalancerNameNode = resultNode;
+    }
+
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
     }
     XmlNode loadBalancerAttributesNode = resultNode.FirstChild("LoadBalancerAttributes");
+    if(loadBalancerAttributesNode.IsNull())
+    {
+      loadBalancerAttributesNode = resultNode;
+    }
+
     if(!loadBalancerAttributesNode.IsNull())
     {
       m_loadBalancerAttributes = loadBalancerAttributesNode;

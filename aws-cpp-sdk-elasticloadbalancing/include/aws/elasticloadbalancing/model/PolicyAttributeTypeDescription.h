@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the attribute.</p>
     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
     /*
      <p>The name of the attribute.</p>
     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+
+    /*
+     <p>The name of the attribute.</p>
+    */
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of the attribute.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the attribute.</p>
     */
-    inline PolicyAttributeTypeDescription&  WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+    inline PolicyAttributeTypeDescription& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+
+    /*
+     <p>The name of the attribute.</p>
+    */
+    inline PolicyAttributeTypeDescription& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /*
      <p>The name of the attribute.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
     */
     inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
+
     /*
      <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
     */
     inline void SetAttributeType(const Aws::String& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
+
+    /*
+     <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
+    */
+    inline void SetAttributeType(Aws::String&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /*
      <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
     */
-    inline PolicyAttributeTypeDescription&  WithAttributeType(const Aws::String& value) { SetAttributeType(value); return *this;}
+    inline PolicyAttributeTypeDescription& WithAttributeType(const Aws::String& value) { SetAttributeType(value); return *this;}
+
+    /*
+     <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
+    */
+    inline PolicyAttributeTypeDescription& WithAttributeType(Aws::String&& value) { SetAttributeType(value); return *this;}
 
     /*
      <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>A description of the attribute.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A description of the attribute.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A description of the attribute.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description of the attribute.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>A description of the attribute.</p>
     */
-    inline PolicyAttributeTypeDescription&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline PolicyAttributeTypeDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A description of the attribute.</p>
+    */
+    inline PolicyAttributeTypeDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A description of the attribute.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The default value of the attribute, if applicable.</p>
     */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
     /*
      <p>The default value of the attribute, if applicable.</p>
     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    /*
+     <p>The default value of the attribute, if applicable.</p>
+    */
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /*
      <p>The default value of the attribute, if applicable.</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The default value of the attribute, if applicable.</p>
     */
-    inline PolicyAttributeTypeDescription&  WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+    inline PolicyAttributeTypeDescription& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    /*
+     <p>The default value of the attribute, if applicable.</p>
+    */
+    inline PolicyAttributeTypeDescription& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
 
     /*
      <p>The default value of the attribute, if applicable.</p>
@@ -143,10 +187,16 @@ namespace Model
      <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
     */
     inline const Aws::String& GetCardinality() const{ return m_cardinality; }
+
     /*
      <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
     */
     inline void SetCardinality(const Aws::String& value) { m_cardinalityHasBeenSet = true; m_cardinality = value; }
+
+    /*
+     <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
+    */
+    inline void SetCardinality(Aws::String&& value) { m_cardinalityHasBeenSet = true; m_cardinality = value; }
 
     /*
      <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
     */
-    inline PolicyAttributeTypeDescription&  WithCardinality(const Aws::String& value) { SetCardinality(value); return *this;}
+    inline PolicyAttributeTypeDescription& WithCardinality(const Aws::String& value) { SetCardinality(value); return *this;}
+
+    /*
+     <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
+    */
+    inline PolicyAttributeTypeDescription& WithCardinality(Aws::String&& value) { SetCardinality(value); return *this;}
 
     /*
      <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>

@@ -53,10 +53,16 @@ namespace Model
      <p>The name of this environment.</p>
     */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
     /*
      <p>The name of this environment.</p>
     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /*
+     <p>The name of this environment.</p>
+    */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p>The name of this environment.</p>
@@ -66,7 +72,12 @@ namespace Model
     /*
      <p>The name of this environment.</p>
     */
-    inline EnvironmentDescription&  WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+    inline EnvironmentDescription& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /*
+     <p>The name of this environment.</p>
+    */
+    inline EnvironmentDescription& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /*
      <p>The name of this environment.</p>
@@ -77,10 +88,16 @@ namespace Model
      <p> The ID of this environment. </p>
     */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
     /*
      <p> The ID of this environment. </p>
     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+
+    /*
+     <p> The ID of this environment. </p>
+    */
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /*
      <p> The ID of this environment. </p>
@@ -90,7 +107,12 @@ namespace Model
     /*
      <p> The ID of this environment. </p>
     */
-    inline EnvironmentDescription&  WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
+    inline EnvironmentDescription& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
+
+    /*
+     <p> The ID of this environment. </p>
+    */
+    inline EnvironmentDescription& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /*
      <p> The ID of this environment. </p>
@@ -101,10 +123,16 @@ namespace Model
      <p>The name of the application associated with this environment.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The name of the application associated with this environment.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The name of the application associated with this environment.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application associated with this environment.</p>
@@ -114,7 +142,12 @@ namespace Model
     /*
      <p>The name of the application associated with this environment.</p>
     */
-    inline EnvironmentDescription&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline EnvironmentDescription& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The name of the application associated with this environment.</p>
+    */
+    inline EnvironmentDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The name of the application associated with this environment.</p>
@@ -125,10 +158,16 @@ namespace Model
      <p>The application version deployed in this environment.</p>
     */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
     /*
      <p>The application version deployed in this environment.</p>
     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+
+    /*
+     <p>The application version deployed in this environment.</p>
+    */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /*
      <p>The application version deployed in this environment.</p>
@@ -138,7 +177,12 @@ namespace Model
     /*
      <p>The application version deployed in this environment.</p>
     */
-    inline EnvironmentDescription&  WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+    inline EnvironmentDescription& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /*
+     <p>The application version deployed in this environment.</p>
+    */
+    inline EnvironmentDescription& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /*
      <p>The application version deployed in this environment.</p>
@@ -149,10 +193,16 @@ namespace Model
      <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
     */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
+
     /*
      <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
     */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
+
+    /*
+     <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    */
+    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /*
      <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
@@ -162,7 +212,12 @@ namespace Model
     /*
      <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
     */
-    inline EnvironmentDescription&  WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
+    inline EnvironmentDescription& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
+
+    /*
+     <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    */
+    inline EnvironmentDescription& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /*
      <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
@@ -173,10 +228,16 @@ namespace Model
      <p> The name of the configuration template used to originally launch this environment. </p>
     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
     /*
      <p> The name of the configuration template used to originally launch this environment. </p>
     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /*
+     <p> The name of the configuration template used to originally launch this environment. </p>
+    */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p> The name of the configuration template used to originally launch this environment. </p>
@@ -186,7 +247,12 @@ namespace Model
     /*
      <p> The name of the configuration template used to originally launch this environment. </p>
     */
-    inline EnvironmentDescription&  WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+    inline EnvironmentDescription& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /*
+     <p> The name of the configuration template used to originally launch this environment. </p>
+    */
+    inline EnvironmentDescription& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /*
      <p> The name of the configuration template used to originally launch this environment. </p>
@@ -197,10 +263,16 @@ namespace Model
      <p>Describes this environment.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>Describes this environment.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>Describes this environment.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>Describes this environment.</p>
@@ -210,7 +282,12 @@ namespace Model
     /*
      <p>Describes this environment.</p>
     */
-    inline EnvironmentDescription&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline EnvironmentDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>Describes this environment.</p>
+    */
+    inline EnvironmentDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>Describes this environment.</p>
@@ -221,10 +298,16 @@ namespace Model
      <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     */
     inline const Aws::String& GetEndpointURL() const{ return m_endpointURL; }
+
     /*
      <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     */
     inline void SetEndpointURL(const Aws::String& value) { m_endpointURLHasBeenSet = true; m_endpointURL = value; }
+
+    /*
+     <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    */
+    inline void SetEndpointURL(Aws::String&& value) { m_endpointURLHasBeenSet = true; m_endpointURL = value; }
 
     /*
      <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
@@ -234,7 +317,12 @@ namespace Model
     /*
      <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     */
-    inline EnvironmentDescription&  WithEndpointURL(const Aws::String& value) { SetEndpointURL(value); return *this;}
+    inline EnvironmentDescription& WithEndpointURL(const Aws::String& value) { SetEndpointURL(value); return *this;}
+
+    /*
+     <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    */
+    inline EnvironmentDescription& WithEndpointURL(Aws::String&& value) { SetEndpointURL(value); return *this;}
 
     /*
      <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
@@ -245,10 +333,16 @@ namespace Model
      <p> The URL to the CNAME for this environment. </p>
     */
     inline const Aws::String& GetCNAME() const{ return m_cNAME; }
+
     /*
      <p> The URL to the CNAME for this environment. </p>
     */
     inline void SetCNAME(const Aws::String& value) { m_cNAMEHasBeenSet = true; m_cNAME = value; }
+
+    /*
+     <p> The URL to the CNAME for this environment. </p>
+    */
+    inline void SetCNAME(Aws::String&& value) { m_cNAMEHasBeenSet = true; m_cNAME = value; }
 
     /*
      <p> The URL to the CNAME for this environment. </p>
@@ -258,7 +352,12 @@ namespace Model
     /*
      <p> The URL to the CNAME for this environment. </p>
     */
-    inline EnvironmentDescription&  WithCNAME(const Aws::String& value) { SetCNAME(value); return *this;}
+    inline EnvironmentDescription& WithCNAME(const Aws::String& value) { SetCNAME(value); return *this;}
+
+    /*
+     <p> The URL to the CNAME for this environment. </p>
+    */
+    inline EnvironmentDescription& WithCNAME(Aws::String&& value) { SetCNAME(value); return *this;}
 
     /*
      <p> The URL to the CNAME for this environment. </p>
@@ -269,6 +368,7 @@ namespace Model
      <p>The creation date for this environment.</p>
     */
     inline double GetDateCreated() const{ return m_dateCreated; }
+
     /*
      <p>The creation date for this environment.</p>
     */
@@ -277,12 +377,13 @@ namespace Model
     /*
      <p>The creation date for this environment.</p>
     */
-    inline EnvironmentDescription&  WithDateCreated(double value) { SetDateCreated(value); return *this;}
+    inline EnvironmentDescription& WithDateCreated(double value) { SetDateCreated(value); return *this;}
 
     /*
      <p>The last modified date for this environment.</p>
     */
     inline double GetDateUpdated() const{ return m_dateUpdated; }
+
     /*
      <p>The last modified date for this environment.</p>
     */
@@ -291,12 +392,13 @@ namespace Model
     /*
      <p>The last modified date for this environment.</p>
     */
-    inline EnvironmentDescription&  WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
+    inline EnvironmentDescription& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
 
     /*
      <p> The current operational status of the environment: </p> <ul> <li> <code>Launching</code>: Environment is in the process of initial deployment. </li> <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version. </li> <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate. </li> <li> <code>Terminating</code>: Environment is in the shut-down process. </li> <li> <code>Terminated</code>: Environment is not running. </li> </ul>
     */
     inline const EnvironmentStatus& GetStatus() const{ return m_status; }
+
     /*
      <p> The current operational status of the environment: </p> <ul> <li> <code>Launching</code>: Environment is in the process of initial deployment. </li> <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version. </li> <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate. </li> <li> <code>Terminating</code>: Environment is in the shut-down process. </li> <li> <code>Terminated</code>: Environment is not running. </li> </ul>
     */
@@ -305,12 +407,23 @@ namespace Model
     /*
      <p> The current operational status of the environment: </p> <ul> <li> <code>Launching</code>: Environment is in the process of initial deployment. </li> <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version. </li> <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate. </li> <li> <code>Terminating</code>: Environment is in the shut-down process. </li> <li> <code>Terminated</code>: Environment is not running. </li> </ul>
     */
-    inline EnvironmentDescription&  WithStatus(const EnvironmentStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(EnvironmentStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> The current operational status of the environment: </p> <ul> <li> <code>Launching</code>: Environment is in the process of initial deployment. </li> <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version. </li> <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate. </li> <li> <code>Terminating</code>: Environment is in the shut-down process. </li> <li> <code>Terminated</code>: Environment is not running. </li> </ul>
+    */
+    inline EnvironmentDescription& WithStatus(const EnvironmentStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> The current operational status of the environment: </p> <ul> <li> <code>Launching</code>: Environment is in the process of initial deployment. </li> <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version. </li> <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate. </li> <li> <code>Terminating</code>: Environment is in the shut-down process. </li> <li> <code>Terminated</code>: Environment is not running. </li> </ul>
+    */
+    inline EnvironmentDescription& WithStatus(EnvironmentStatus&& value) { SetStatus(value); return *this;}
 
     /*
      <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> <p> <code>true:</code> There is an update in progress. </p> <p> <code>false:</code> There are no updates currently in progress. </p>
     */
     inline bool GetAbortableOperationInProgress() const{ return m_abortableOperationInProgress; }
+
     /*
      <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> <p> <code>true:</code> There is an update in progress. </p> <p> <code>false:</code> There are no updates currently in progress. </p>
     */
@@ -319,12 +432,13 @@ namespace Model
     /*
      <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> <p> <code>true:</code> There is an update in progress. </p> <p> <code>false:</code> There are no updates currently in progress. </p>
     */
-    inline EnvironmentDescription&  WithAbortableOperationInProgress(bool value) { SetAbortableOperationInProgress(value); return *this;}
+    inline EnvironmentDescription& WithAbortableOperationInProgress(bool value) { SetAbortableOperationInProgress(value); return *this;}
 
     /*
      <p> Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment: </p> <enumValues> <value name="Red"> <p> <code>Red</code> : Indicates the environment is not working. </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that something is wrong, the application might not be available, but the instances appear running. </p> </value> <value name="Green"> <p> <code>Green</code>: Indicates the environment is healthy and fully functional. </p> </value> </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request. </li> </ul> <p> Default: <code>Grey</code> </p>
     */
     inline const EnvironmentHealth& GetHealth() const{ return m_health; }
+
     /*
      <p> Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment: </p> <enumValues> <value name="Red"> <p> <code>Red</code> : Indicates the environment is not working. </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that something is wrong, the application might not be available, but the instances appear running. </p> </value> <value name="Green"> <p> <code>Green</code>: Indicates the environment is healthy and fully functional. </p> </value> </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request. </li> </ul> <p> Default: <code>Grey</code> </p>
     */
@@ -333,12 +447,23 @@ namespace Model
     /*
      <p> Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment: </p> <enumValues> <value name="Red"> <p> <code>Red</code> : Indicates the environment is not working. </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that something is wrong, the application might not be available, but the instances appear running. </p> </value> <value name="Green"> <p> <code>Green</code>: Indicates the environment is healthy and fully functional. </p> </value> </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request. </li> </ul> <p> Default: <code>Grey</code> </p>
     */
-    inline EnvironmentDescription&  WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
+    inline void SetHealth(EnvironmentHealth&& value) { m_healthHasBeenSet = true; m_health = value; }
+
+    /*
+     <p> Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment: </p> <enumValues> <value name="Red"> <p> <code>Red</code> : Indicates the environment is not working. </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that something is wrong, the application might not be available, but the instances appear running. </p> </value> <value name="Green"> <p> <code>Green</code>: Indicates the environment is healthy and fully functional. </p> </value> </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request. </li> </ul> <p> Default: <code>Grey</code> </p>
+    */
+    inline EnvironmentDescription& WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
+
+    /*
+     <p> Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment: </p> <enumValues> <value name="Red"> <p> <code>Red</code> : Indicates the environment is not working. </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that something is wrong, the application might not be available, but the instances appear running. </p> </value> <value name="Green"> <p> <code>Green</code>: Indicates the environment is healthy and fully functional. </p> </value> </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request. </li> </ul> <p> Default: <code>Grey</code> </p>
+    */
+    inline EnvironmentDescription& WithHealth(EnvironmentHealth&& value) { SetHealth(value); return *this;}
 
     /*
      <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     */
     inline const EnvironmentHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+
     /*
      <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     */
@@ -347,12 +472,23 @@ namespace Model
     /*
      <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     */
-    inline EnvironmentDescription&  WithHealthStatus(const EnvironmentHealthStatus& value) { SetHealthStatus(value); return *this;}
+    inline void SetHealthStatus(EnvironmentHealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+
+    /*
+     <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    */
+    inline EnvironmentDescription& WithHealthStatus(const EnvironmentHealthStatus& value) { SetHealthStatus(value); return *this;}
+
+    /*
+     <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    */
+    inline EnvironmentDescription& WithHealthStatus(EnvironmentHealthStatus&& value) { SetHealthStatus(value); return *this;}
 
     /*
      <p>The description of the AWS resources used by this environment.</p>
     */
     inline const EnvironmentResourcesDescription& GetResources() const{ return m_resources; }
+
     /*
      <p>The description of the AWS resources used by this environment.</p>
     */
@@ -361,12 +497,23 @@ namespace Model
     /*
      <p>The description of the AWS resources used by this environment.</p>
     */
-    inline EnvironmentDescription&  WithResources(const EnvironmentResourcesDescription& value) { SetResources(value); return *this;}
+    inline void SetResources(EnvironmentResourcesDescription&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+
+    /*
+     <p>The description of the AWS resources used by this environment.</p>
+    */
+    inline EnvironmentDescription& WithResources(const EnvironmentResourcesDescription& value) { SetResources(value); return *this;}
+
+    /*
+     <p>The description of the AWS resources used by this environment.</p>
+    */
+    inline EnvironmentDescription& WithResources(EnvironmentResourcesDescription&& value) { SetResources(value); return *this;}
 
     /*
      <p>Describes the current tier of this environment.</p>
     */
     inline const EnvironmentTier& GetTier() const{ return m_tier; }
+
     /*
      <p>Describes the current tier of this environment.</p>
     */
@@ -375,15 +522,32 @@ namespace Model
     /*
      <p>Describes the current tier of this environment.</p>
     */
-    inline EnvironmentDescription&  WithTier(const EnvironmentTier& value) { SetTier(value); return *this;}
+    inline void SetTier(EnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /*
+     <p>Describes the current tier of this environment.</p>
+    */
+    inline EnvironmentDescription& WithTier(const EnvironmentTier& value) { SetTier(value); return *this;}
+
+    /*
+     <p>Describes the current tier of this environment.</p>
+    */
+    inline EnvironmentDescription& WithTier(EnvironmentTier&& value) { SetTier(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
 
     
-    inline EnvironmentDescription&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
+
+    
+    inline EnvironmentDescription& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline EnvironmentDescription& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_environmentName;

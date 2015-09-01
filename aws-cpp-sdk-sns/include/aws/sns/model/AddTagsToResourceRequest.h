@@ -37,28 +37,45 @@ namespace Model
 
     
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
     
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     
-    inline AddTagsToResourceRequest&  WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+    inline AddTagsToResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    
+    inline AddTagsToResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
 
     
     inline AddTagsToResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline AddTagsToResourceRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    
+    inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    
+    inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceArn;

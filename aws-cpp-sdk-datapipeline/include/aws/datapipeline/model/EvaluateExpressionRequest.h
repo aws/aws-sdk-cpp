@@ -40,10 +40,16 @@ namespace Model
      <p>The ID of the pipeline.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline EvaluateExpressionRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline EvaluateExpressionRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline.</p>
+    */
+    inline EvaluateExpressionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The ID of the object.</p>
     */
     inline const Aws::String& GetObjectId() const{ return m_objectId; }
+
     /*
      <p>The ID of the object.</p>
     */
     inline void SetObjectId(const Aws::String& value) { m_objectIdHasBeenSet = true; m_objectId = value; }
+
+    /*
+     <p>The ID of the object.</p>
+    */
+    inline void SetObjectId(Aws::String&& value) { m_objectIdHasBeenSet = true; m_objectId = value; }
 
     /*
      <p>The ID of the object.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The ID of the object.</p>
     */
-    inline EvaluateExpressionRequest&  WithObjectId(const Aws::String& value) { SetObjectId(value); return *this;}
+    inline EvaluateExpressionRequest& WithObjectId(const Aws::String& value) { SetObjectId(value); return *this;}
+
+    /*
+     <p>The ID of the object.</p>
+    */
+    inline EvaluateExpressionRequest& WithObjectId(Aws::String&& value) { SetObjectId(value); return *this;}
 
     /*
      <p>The ID of the object.</p>
@@ -88,10 +110,16 @@ namespace Model
      <p>The expression to evaluate.</p>
     */
     inline const Aws::String& GetExpression() const{ return m_expression; }
+
     /*
      <p>The expression to evaluate.</p>
     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
+
+    /*
+     <p>The expression to evaluate.</p>
+    */
+    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /*
      <p>The expression to evaluate.</p>
@@ -101,7 +129,12 @@ namespace Model
     /*
      <p>The expression to evaluate.</p>
     */
-    inline EvaluateExpressionRequest&  WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
+    inline EvaluateExpressionRequest& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
+
+    /*
+     <p>The expression to evaluate.</p>
+    */
+    inline EvaluateExpressionRequest& WithExpression(Aws::String&& value) { SetExpression(value); return *this;}
 
     /*
      <p>The expression to evaluate.</p>

@@ -47,10 +47,16 @@ namespace Model
      <p> The version number used by the cluster. </p>
     */
     inline const Aws::String& GetClusterVersion() const{ return m_clusterVersion; }
+
     /*
      <p> The version number used by the cluster. </p>
     */
     inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+
+    /*
+     <p> The version number used by the cluster. </p>
+    */
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
 
     /*
      <p> The version number used by the cluster. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The version number used by the cluster. </p>
     */
-    inline ClusterVersion&  WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
+    inline ClusterVersion& WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
+
+    /*
+     <p> The version number used by the cluster. </p>
+    */
+    inline ClusterVersion& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
 
     /*
      <p> The version number used by the cluster. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The name of the cluster parameter group family for the cluster. </p>
     */
     inline const Aws::String& GetClusterParameterGroupFamily() const{ return m_clusterParameterGroupFamily; }
+
     /*
      <p> The name of the cluster parameter group family for the cluster. </p>
     */
     inline void SetClusterParameterGroupFamily(const Aws::String& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = value; }
+
+    /*
+     <p> The name of the cluster parameter group family for the cluster. </p>
+    */
+    inline void SetClusterParameterGroupFamily(Aws::String&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = value; }
 
     /*
      <p> The name of the cluster parameter group family for the cluster. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The name of the cluster parameter group family for the cluster. </p>
     */
-    inline ClusterVersion&  WithClusterParameterGroupFamily(const Aws::String& value) { SetClusterParameterGroupFamily(value); return *this;}
+    inline ClusterVersion& WithClusterParameterGroupFamily(const Aws::String& value) { SetClusterParameterGroupFamily(value); return *this;}
+
+    /*
+     <p> The name of the cluster parameter group family for the cluster. </p>
+    */
+    inline ClusterVersion& WithClusterParameterGroupFamily(Aws::String&& value) { SetClusterParameterGroupFamily(value); return *this;}
 
     /*
      <p> The name of the cluster parameter group family for the cluster. </p>
@@ -95,10 +117,16 @@ namespace Model
      <p> The description of the cluster version. </p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p> The description of the cluster version. </p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p> The description of the cluster version. </p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p> The description of the cluster version. </p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p> The description of the cluster version. </p>
     */
-    inline ClusterVersion&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline ClusterVersion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p> The description of the cluster version. </p>
+    */
+    inline ClusterVersion& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p> The description of the cluster version. </p>

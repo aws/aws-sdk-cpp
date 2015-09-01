@@ -49,10 +49,16 @@ namespace Model
      <p> The namespace of the metric. </p>
     */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
     /*
      <p> The namespace of the metric. </p>
     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /*
+     <p> The namespace of the metric. </p>
+    */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> The namespace of the metric. </p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p> The namespace of the metric. </p>
     */
-    inline Metric&  WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+    inline Metric& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /*
+     <p> The namespace of the metric. </p>
+    */
+    inline Metric& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /*
      <p> The namespace of the metric. </p>
@@ -73,10 +84,16 @@ namespace Model
      <p> The name of the metric. </p>
     */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
     /*
      <p> The name of the metric. </p>
     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+
+    /*
+     <p> The name of the metric. </p>
+    */
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /*
      <p> The name of the metric. </p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p> The name of the metric. </p>
     */
-    inline Metric&  WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+    inline Metric& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+
+    /*
+     <p> The name of the metric. </p>
+    */
+    inline Metric& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
     /*
      <p> The name of the metric. </p>
@@ -97,6 +119,7 @@ namespace Model
      <p> A list of dimensions associated with the metric. </p>
     */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+
     /*
      <p> A list of dimensions associated with the metric. </p>
     */
@@ -105,12 +128,27 @@ namespace Model
     /*
      <p> A list of dimensions associated with the metric. </p>
     */
-    inline Metric&  WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
+    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+
+    /*
+     <p> A list of dimensions associated with the metric. </p>
+    */
+    inline Metric& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
+
+    /*
+     <p> A list of dimensions associated with the metric. </p>
+    */
+    inline Metric& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
     /*
      <p> A list of dimensions associated with the metric. </p>
     */
     inline Metric& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+
+    /*
+     <p> A list of dimensions associated with the metric. </p>
+    */
+    inline Metric& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
   private:
     Aws::String m_namespace;

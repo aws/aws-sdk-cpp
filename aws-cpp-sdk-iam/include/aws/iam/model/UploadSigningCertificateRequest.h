@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user the signing certificate is for.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user the signing certificate is for.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user the signing certificate is for.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user the signing certificate is for.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user the signing certificate is for.</p>
     */
-    inline UploadSigningCertificateRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline UploadSigningCertificateRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user the signing certificate is for.</p>
+    */
+    inline UploadSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user the signing certificate is for.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The contents of the signing certificate.</p>
     */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
+
     /*
      <p>The contents of the signing certificate.</p>
     */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
+
+    /*
+     <p>The contents of the signing certificate.</p>
+    */
+    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /*
      <p>The contents of the signing certificate.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The contents of the signing certificate.</p>
     */
-    inline UploadSigningCertificateRequest&  WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
+    inline UploadSigningCertificateRequest& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
+
+    /*
+     <p>The contents of the signing certificate.</p>
+    */
+    inline UploadSigningCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
 
     /*
      <p>The contents of the signing certificate.</p>

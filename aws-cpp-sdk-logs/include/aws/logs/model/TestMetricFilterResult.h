@@ -45,14 +45,24 @@ namespace Model
 
     
     inline const Aws::Vector<MetricFilterMatchRecord>& GetMatches() const{ return m_matches; }
+
     
     inline void SetMatches(const Aws::Vector<MetricFilterMatchRecord>& value) { m_matches = value; }
 
     
-    inline TestMetricFilterResult&  WithMatches(const Aws::Vector<MetricFilterMatchRecord>& value) { SetMatches(value); return *this;}
+    inline void SetMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { m_matches = value; }
+
+    
+    inline TestMetricFilterResult& WithMatches(const Aws::Vector<MetricFilterMatchRecord>& value) { SetMatches(value); return *this;}
+
+    
+    inline TestMetricFilterResult& WithMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { SetMatches(value); return *this;}
 
     
     inline TestMetricFilterResult& AddMatches(const MetricFilterMatchRecord& value) { m_matches.push_back(value); return *this; }
+
+    
+    inline TestMetricFilterResult& AddMatches(MetricFilterMatchRecord&& value) { m_matches.push_back(value); return *this; }
 
   private:
     Aws::Vector<MetricFilterMatchRecord> m_matches;

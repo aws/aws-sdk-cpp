@@ -41,6 +41,7 @@ namespace Model
      <p>Instance groups to change.</p>
     */
     inline const Aws::Vector<InstanceGroupModifyConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+
     /*
      <p>Instance groups to change.</p>
     */
@@ -49,12 +50,27 @@ namespace Model
     /*
      <p>Instance groups to change.</p>
     */
-    inline ModifyInstanceGroupsRequest&  WithInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { SetInstanceGroups(value); return *this;}
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
+
+    /*
+     <p>Instance groups to change.</p>
+    */
+    inline ModifyInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { SetInstanceGroups(value); return *this;}
+
+    /*
+     <p>Instance groups to change.</p>
+    */
+    inline ModifyInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { SetInstanceGroups(value); return *this;}
 
     /*
      <p>Instance groups to change.</p>
     */
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupModifyConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
+
+    /*
+     <p>Instance groups to change.</p>
+    */
+    inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
   private:
     Aws::Vector<InstanceGroupModifyConfig> m_instanceGroups;

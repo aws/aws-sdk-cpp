@@ -43,12 +43,22 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
   if(!resultNode.IsNull())
   {
     XmlNode primaryClusterIdNode = resultNode.FirstChild("PrimaryClusterId");
+    if(primaryClusterIdNode.IsNull())
+    {
+      primaryClusterIdNode = resultNode;
+    }
+
     if(!primaryClusterIdNode.IsNull())
     {
       m_primaryClusterId = StringUtils::Trim(primaryClusterIdNode.GetText().c_str());
       m_primaryClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverStatusNode = resultNode.FirstChild("AutomaticFailoverStatus");
+    if(automaticFailoverStatusNode.IsNull())
+    {
+      automaticFailoverStatusNode = resultNode;
+    }
+
     if(!automaticFailoverStatusNode.IsNull())
     {
       m_automaticFailoverStatus = PendingAutomaticFailoverStatusMapper::GetPendingAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverStatusNode.GetText().c_str()).c_str());

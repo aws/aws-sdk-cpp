@@ -47,10 +47,16 @@ namespace Model
      <p>The XML metadata document that includes information about an identity provider.</p>
     */
     inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
+
     /*
      <p>The XML metadata document that includes information about an identity provider.</p>
     */
     inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocument = value; }
+
+    /*
+     <p>The XML metadata document that includes information about an identity provider.</p>
+    */
+    inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocument = value; }
 
     /*
      <p>The XML metadata document that includes information about an identity provider.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The XML metadata document that includes information about an identity provider.</p>
     */
-    inline GetSAMLProviderResult&  WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
+    inline GetSAMLProviderResult& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
+
+    /*
+     <p>The XML metadata document that includes information about an identity provider.</p>
+    */
+    inline GetSAMLProviderResult& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(value); return *this;}
 
     /*
      <p>The XML metadata document that includes information about an identity provider.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The date and time when the SAML provider was created.</p>
     */
     inline double GetCreateDate() const{ return m_createDate; }
+
     /*
      <p>The date and time when the SAML provider was created.</p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p>The date and time when the SAML provider was created.</p>
     */
-    inline GetSAMLProviderResult&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline GetSAMLProviderResult& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
     /*
      <p>The expiration date and time for the SAML provider.</p>
     */
     inline double GetValidUntil() const{ return m_validUntil; }
+
     /*
      <p>The expiration date and time for the SAML provider.</p>
     */
@@ -93,15 +106,22 @@ namespace Model
     /*
      <p>The expiration date and time for the SAML provider.</p>
     */
-    inline GetSAMLProviderResult&  WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline GetSAMLProviderResult& WithValidUntil(double value) { SetValidUntil(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetSAMLProviderResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_sAMLMetadataDocument;

@@ -42,6 +42,11 @@ AuthorizeDBSecurityGroupIngressResult& AuthorizeDBSecurityGroupIngressResult::op
   if(!resultNode.IsNull())
   {
     XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
+    if(dBSecurityGroupNode.IsNull())
+    {
+      dBSecurityGroupNode = resultNode;
+    }
+
     if(!dBSecurityGroupNode.IsNull())
     {
       m_dBSecurityGroup = dBSecurityGroupNode;

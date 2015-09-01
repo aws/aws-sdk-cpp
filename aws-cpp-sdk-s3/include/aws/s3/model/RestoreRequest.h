@@ -44,6 +44,7 @@ namespace Model
      Lifetime of the active copy in days
     */
     inline long GetDays() const{ return m_days; }
+
     /*
      Lifetime of the active copy in days
     */
@@ -52,7 +53,7 @@ namespace Model
     /*
      Lifetime of the active copy in days
     */
-    inline RestoreRequest&  WithDays(long value) { SetDays(value); return *this;}
+    inline RestoreRequest& WithDays(long value) { SetDays(value); return *this;}
 
   private:
     long m_days;

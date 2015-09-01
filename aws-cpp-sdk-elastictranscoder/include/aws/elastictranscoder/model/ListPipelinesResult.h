@@ -48,6 +48,7 @@ namespace Model
      <p>An array of <code>Pipeline</code> objects.</p>
     */
     inline const Aws::Vector<Pipeline>& GetPipelines() const{ return m_pipelines; }
+
     /*
      <p>An array of <code>Pipeline</code> objects.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>An array of <code>Pipeline</code> objects.</p>
     */
-    inline ListPipelinesResult&  WithPipelines(const Aws::Vector<Pipeline>& value) { SetPipelines(value); return *this;}
+    inline void SetPipelines(Aws::Vector<Pipeline>&& value) { m_pipelines = value; }
+
+    /*
+     <p>An array of <code>Pipeline</code> objects.</p>
+    */
+    inline ListPipelinesResult& WithPipelines(const Aws::Vector<Pipeline>& value) { SetPipelines(value); return *this;}
+
+    /*
+     <p>An array of <code>Pipeline</code> objects.</p>
+    */
+    inline ListPipelinesResult& WithPipelines(Aws::Vector<Pipeline>&& value) { SetPipelines(value); return *this;}
 
     /*
      <p>An array of <code>Pipeline</code> objects.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListPipelinesResult& AddPipelines(const Pipeline& value) { m_pipelines.push_back(value); return *this; }
 
     /*
+     <p>An array of <code>Pipeline</code> objects.</p>
+    */
+    inline ListPipelinesResult& AddPipelines(Pipeline&& value) { m_pipelines.push_back(value); return *this; }
+
+    /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
+
+    /*
+     <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    */
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
 
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     */
-    inline ListPipelinesResult&  WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+    inline ListPipelinesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+
+    /*
+     <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    */
+    inline ListPipelinesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
 
     /*
      <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>

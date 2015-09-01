@@ -44,10 +44,16 @@ namespace Model
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     */
-    inline EnvironmentVariable&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline EnvironmentVariable& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
+    */
+    inline EnvironmentVariable& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     */
-    inline EnvironmentVariable&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline EnvironmentVariable& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
+    */
+    inline EnvironmentVariable& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
@@ -92,6 +114,7 @@ namespace Model
      <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     */
     inline bool GetSecure() const{ return m_secure; }
+
     /*
      <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     */
@@ -100,7 +123,7 @@ namespace Model
     /*
      <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     */
-    inline EnvironmentVariable&  WithSecure(bool value) { SetSecure(value); return *this;}
+    inline EnvironmentVariable& WithSecure(bool value) { SetSecure(value); return *this;}
 
   private:
     Aws::String m_key;

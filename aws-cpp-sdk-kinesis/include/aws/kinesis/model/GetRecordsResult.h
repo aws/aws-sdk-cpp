@@ -48,6 +48,7 @@ namespace Model
      <P>The data records retrieved from the shard.</P>
     */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
+
     /*
      <P>The data records retrieved from the shard.</P>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <P>The data records retrieved from the shard.</P>
     */
-    inline GetRecordsResult&  WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
+    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = value; }
+
+    /*
+     <P>The data records retrieved from the shard.</P>
+    */
+    inline GetRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
+
+    /*
+     <P>The data records retrieved from the shard.</P>
+    */
+    inline GetRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(value); return *this;}
 
     /*
      <P>The data records retrieved from the shard.</P>
@@ -64,13 +75,24 @@ namespace Model
     inline GetRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
 
     /*
+     <P>The data records retrieved from the shard.</P>
+    */
+    inline GetRecordsResult& AddRecords(Record&& value) { m_records.push_back(value); return *this; }
+
+    /*
      <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
     */
     inline const Aws::String& GetNextShardIterator() const{ return m_nextShardIterator; }
+
     /*
      <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
     */
     inline void SetNextShardIterator(const Aws::String& value) { m_nextShardIterator = value; }
+
+    /*
+     <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
+    */
+    inline void SetNextShardIterator(Aws::String&& value) { m_nextShardIterator = value; }
 
     /*
      <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
     */
-    inline GetRecordsResult&  WithNextShardIterator(const Aws::String& value) { SetNextShardIterator(value); return *this;}
+    inline GetRecordsResult& WithNextShardIterator(const Aws::String& value) { SetNextShardIterator(value); return *this;}
+
+    /*
+     <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
+    */
+    inline GetRecordsResult& WithNextShardIterator(Aws::String&& value) { SetNextShardIterator(value); return *this;}
 
     /*
      <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>
@@ -91,6 +118,7 @@ namespace Model
      <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>
     */
     inline long long GetMillisBehindLatest() const{ return m_millisBehindLatest; }
+
     /*
      <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>
     */
@@ -99,7 +127,7 @@ namespace Model
     /*
      <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>
     */
-    inline GetRecordsResult&  WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
+    inline GetRecordsResult& WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
 
   private:
     Aws::Vector<Record> m_records;

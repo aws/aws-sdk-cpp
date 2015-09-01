@@ -47,6 +47,7 @@ namespace Model
      The streaming distribution's information.
     */
     inline const StreamingDistribution& GetStreamingDistribution() const{ return m_streamingDistribution; }
+
     /*
      The streaming distribution's information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The streaming distribution's information.
     */
-    inline CreateStreamingDistribution2015_04_17Result&  WithStreamingDistribution(const StreamingDistribution& value) { SetStreamingDistribution(value); return *this;}
+    inline void SetStreamingDistribution(StreamingDistribution&& value) { m_streamingDistribution = value; }
+
+    /*
+     The streaming distribution's information.
+    */
+    inline CreateStreamingDistribution2015_04_17Result& WithStreamingDistribution(const StreamingDistribution& value) { SetStreamingDistribution(value); return *this;}
+
+    /*
+     The streaming distribution's information.
+    */
+    inline CreateStreamingDistribution2015_04_17Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(value); return *this;}
 
     /*
      The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
     */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
     /*
      The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /*
+     The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+    */
+    inline void SetLocation(Aws::String&& value) { m_location = value; }
 
     /*
      The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
     */
-    inline CreateStreamingDistribution2015_04_17Result&  WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline CreateStreamingDistribution2015_04_17Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /*
+     The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+    */
+    inline CreateStreamingDistribution2015_04_17Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
     /*
      The fully qualified URI of the new streaming distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
@@ -85,10 +107,16 @@ namespace Model
      The current version of the streaming distribution created.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the streaming distribution created.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the streaming distribution created.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the streaming distribution created.
@@ -98,7 +126,12 @@ namespace Model
     /*
      The current version of the streaming distribution created.
     */
-    inline CreateStreamingDistribution2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline CreateStreamingDistribution2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the streaming distribution created.
+    */
+    inline CreateStreamingDistribution2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the streaming distribution created.

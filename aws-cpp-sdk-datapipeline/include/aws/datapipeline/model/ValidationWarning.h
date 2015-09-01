@@ -45,10 +45,16 @@ namespace Model
      <p>The identifier of the object that contains the validation warning.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The identifier of the object that contains the validation warning.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The identifier of the object that contains the validation warning.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the object that contains the validation warning.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The identifier of the object that contains the validation warning.</p>
     */
-    inline ValidationWarning&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ValidationWarning& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The identifier of the object that contains the validation warning.</p>
+    */
+    inline ValidationWarning& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The identifier of the object that contains the validation warning.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>A description of the validation warning.</p>
     */
     inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+
     /*
      <p>A description of the validation warning.</p>
     */
@@ -77,12 +89,27 @@ namespace Model
     /*
      <p>A description of the validation warning.</p>
     */
-    inline ValidationWarning&  WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = value; }
+
+    /*
+     <p>A description of the validation warning.</p>
+    */
+    inline ValidationWarning& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
+
+    /*
+     <p>A description of the validation warning.</p>
+    */
+    inline ValidationWarning& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
 
     /*
      <p>A description of the validation warning.</p>
     */
     inline ValidationWarning& AddWarnings(const Aws::String& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+
+    /*
+     <p>A description of the validation warning.</p>
+    */
+    inline ValidationWarning& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
 
     /*
      <p>A description of the validation warning.</p>

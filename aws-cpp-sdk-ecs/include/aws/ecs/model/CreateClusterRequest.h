@@ -39,10 +39,16 @@ namespace Model
      <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+
     /*
      <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
+
+    /*
+     <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    */
+    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /*
      <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
-    inline CreateClusterRequest&  WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
+    inline CreateClusterRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
+
+    /*
+     <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    */
+    inline CreateClusterRequest& WithClusterName(Aws::String&& value) { SetClusterName(value); return *this;}
 
     /*
      <p>The name of your cluster. If you do not specify a name for your cluster, you will create a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>

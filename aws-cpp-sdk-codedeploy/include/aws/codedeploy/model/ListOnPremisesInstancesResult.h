@@ -47,6 +47,7 @@ namespace Model
      <p>The list of matching on-premises instance names.</p>
     */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+
     /*
      <p>The list of matching on-premises instance names.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>The list of matching on-premises instance names.</p>
     */
-    inline ListOnPremisesInstancesResult&  WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
+    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNames = value; }
+
+    /*
+     <p>The list of matching on-premises instance names.</p>
+    */
+    inline ListOnPremisesInstancesResult& WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
+
+    /*
+     <p>The list of matching on-premises instance names.</p>
+    */
+    inline ListOnPremisesInstancesResult& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(value); return *this;}
 
     /*
      <p>The list of matching on-premises instance names.</p>
     */
     inline ListOnPremisesInstancesResult& AddInstanceNames(const Aws::String& value) { m_instanceNames.push_back(value); return *this; }
+
+    /*
+     <p>The list of matching on-premises instance names.</p>
+    */
+    inline ListOnPremisesInstancesResult& AddInstanceNames(Aws::String&& value) { m_instanceNames.push_back(value); return *this; }
 
     /*
      <p>The list of matching on-premises instance names.</p>
@@ -71,10 +87,16 @@ namespace Model
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
@@ -84,7 +106,12 @@ namespace Model
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     */
-    inline ListOnPremisesInstancesResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListOnPremisesInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
+    */
+    inline ListOnPremisesInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>

@@ -48,6 +48,7 @@ namespace Model
      A set of datasets.
     */
     inline const Aws::Vector<Dataset>& GetDatasets() const{ return m_datasets; }
+
     /*
      A set of datasets.
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      A set of datasets.
     */
-    inline ListDatasetsResult&  WithDatasets(const Aws::Vector<Dataset>& value) { SetDatasets(value); return *this;}
+    inline void SetDatasets(Aws::Vector<Dataset>&& value) { m_datasets = value; }
+
+    /*
+     A set of datasets.
+    */
+    inline ListDatasetsResult& WithDatasets(const Aws::Vector<Dataset>& value) { SetDatasets(value); return *this;}
+
+    /*
+     A set of datasets.
+    */
+    inline ListDatasetsResult& WithDatasets(Aws::Vector<Dataset>&& value) { SetDatasets(value); return *this;}
 
     /*
      A set of datasets.
@@ -64,9 +75,15 @@ namespace Model
     inline ListDatasetsResult& AddDatasets(const Dataset& value) { m_datasets.push_back(value); return *this; }
 
     /*
+     A set of datasets.
+    */
+    inline ListDatasetsResult& AddDatasets(Dataset&& value) { m_datasets.push_back(value); return *this; }
+
+    /*
      Number of datasets returned.
     */
     inline long GetCount() const{ return m_count; }
+
     /*
      Number of datasets returned.
     */
@@ -75,16 +92,22 @@ namespace Model
     /*
      Number of datasets returned.
     */
-    inline ListDatasetsResult&  WithCount(long value) { SetCount(value); return *this;}
+    inline ListDatasetsResult& WithCount(long value) { SetCount(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token for obtaining the next page of results.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      A pagination token for obtaining the next page of results.
@@ -94,7 +117,12 @@ namespace Model
     /*
      A pagination token for obtaining the next page of results.
     */
-    inline ListDatasetsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDatasetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline ListDatasetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.

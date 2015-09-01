@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the group the policy is associated with.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name of the group the policy is associated with.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name of the group the policy is associated with.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group the policy is associated with.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the group the policy is associated with.</p>
     */
-    inline GetGroupPolicyRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline GetGroupPolicyRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group the policy is associated with.</p>
+    */
+    inline GetGroupPolicyRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name of the group the policy is associated with.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the policy document to get.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy document to get.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy document to get.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document to get.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the policy document to get.</p>
     */
-    inline GetGroupPolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline GetGroupPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy document to get.</p>
+    */
+    inline GetGroupPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy document to get.</p>

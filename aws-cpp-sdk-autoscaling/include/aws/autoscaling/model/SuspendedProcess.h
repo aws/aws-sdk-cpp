@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the suspended process.</p>
     */
     inline const Aws::String& GetProcessName() const{ return m_processName; }
+
     /*
      <p>The name of the suspended process.</p>
     */
     inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
+
+    /*
+     <p>The name of the suspended process.</p>
+    */
+    inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
     /*
      <p>The name of the suspended process.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the suspended process.</p>
     */
-    inline SuspendedProcess&  WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
+    inline SuspendedProcess& WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
+
+    /*
+     <p>The name of the suspended process.</p>
+    */
+    inline SuspendedProcess& WithProcessName(Aws::String&& value) { SetProcessName(value); return *this;}
 
     /*
      <p>The name of the suspended process.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The reason that the process was suspended.</p>
     */
     inline const Aws::String& GetSuspensionReason() const{ return m_suspensionReason; }
+
     /*
      <p>The reason that the process was suspended.</p>
     */
     inline void SetSuspensionReason(const Aws::String& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = value; }
+
+    /*
+     <p>The reason that the process was suspended.</p>
+    */
+    inline void SetSuspensionReason(Aws::String&& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = value; }
 
     /*
      <p>The reason that the process was suspended.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The reason that the process was suspended.</p>
     */
-    inline SuspendedProcess&  WithSuspensionReason(const Aws::String& value) { SetSuspensionReason(value); return *this;}
+    inline SuspendedProcess& WithSuspensionReason(const Aws::String& value) { SetSuspensionReason(value); return *this;}
+
+    /*
+     <p>The reason that the process was suspended.</p>
+    */
+    inline SuspendedProcess& WithSuspensionReason(Aws::String&& value) { SetSuspensionReason(value); return *this;}
 
     /*
      <p>The reason that the process was suspended.</p>

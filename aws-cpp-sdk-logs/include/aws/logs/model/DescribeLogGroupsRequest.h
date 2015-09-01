@@ -39,10 +39,16 @@ namespace Model
      <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
     inline const Aws::String& GetLogGroupNamePrefix() const{ return m_logGroupNamePrefix; }
+
     /*
      <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
     inline void SetLogGroupNamePrefix(const Aws::String& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
+
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
+    inline void SetLogGroupNamePrefix(Aws::String&& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
 
     /*
      <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
     */
-    inline DescribeLogGroupsRequest&  WithLogGroupNamePrefix(const Aws::String& value) { SetLogGroupNamePrefix(value); return *this;}
+    inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const Aws::String& value) { SetLogGroupNamePrefix(value); return *this;}
+
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
+    inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(Aws::String&& value) { SetLogGroupNamePrefix(value); return *this;}
 
     /*
      <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
     */
-    inline DescribeLogGroupsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeLogGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
+    */
+    inline DescribeLogGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
@@ -87,6 +109,7 @@ namespace Model
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
     inline long GetLimit() const{ return m_limit; }
+
     /*
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
@@ -95,7 +118,7 @@ namespace Model
     /*
      <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
     */
-    inline DescribeLogGroupsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeLogGroupsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_logGroupNamePrefix;

@@ -49,10 +49,16 @@ namespace Model
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
     */
-    inline DescribeReplicationGroupsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeReplicationGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>Provides an identifier to allow retrieval of paginated results.</p>
+    */
+    inline DescribeReplicationGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -73,6 +84,7 @@ namespace Model
      <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
     */
     inline const Aws::Vector<ReplicationGroup>& GetReplicationGroups() const{ return m_replicationGroups; }
+
     /*
      <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
     */
@@ -81,20 +93,42 @@ namespace Model
     /*
      <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
     */
-    inline DescribeReplicationGroupsResult&  WithReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { SetReplicationGroups(value); return *this;}
+    inline void SetReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { m_replicationGroups = value; }
+
+    /*
+     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    */
+    inline DescribeReplicationGroupsResult& WithReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { SetReplicationGroups(value); return *this;}
+
+    /*
+     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    */
+    inline DescribeReplicationGroupsResult& WithReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { SetReplicationGroups(value); return *this;}
 
     /*
      <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
     */
     inline DescribeReplicationGroupsResult& AddReplicationGroups(const ReplicationGroup& value) { m_replicationGroups.push_back(value); return *this; }
 
+    /*
+     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    */
+    inline DescribeReplicationGroupsResult& AddReplicationGroups(ReplicationGroup&& value) { m_replicationGroups.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeReplicationGroupsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeReplicationGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeReplicationGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_marker;

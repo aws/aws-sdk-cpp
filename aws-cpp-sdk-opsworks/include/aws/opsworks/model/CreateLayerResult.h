@@ -46,10 +46,16 @@ namespace Model
      <p>The layer ID.</p>
     */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
     /*
      <p>The layer ID.</p>
     */
     inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline void SetLayerId(Aws::String&& value) { m_layerId = value; }
 
     /*
      <p>The layer ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The layer ID.</p>
     */
-    inline CreateLayerResult&  WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+    inline CreateLayerResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline CreateLayerResult& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
 
     /*
      <p>The layer ID.</p>

@@ -47,50 +47,75 @@ namespace Model
 
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
     
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     
-    inline MetricDataBatch&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline MetricDataBatch& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    
+    inline MetricDataBatch& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     
     inline MetricDataBatch& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
     
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
     
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     
-    inline MetricDataBatch&  WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+    inline MetricDataBatch& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    
+    inline MetricDataBatch& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     
     inline MetricDataBatch& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
+
     
     inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     
-    inline MetricDataBatch&  WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
+    inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
+
+    
+    inline MetricDataBatch& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
+
+    
+    inline MetricDataBatch& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(value); return *this;}
 
     
     inline MetricDataBatch& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 
     
+    inline MetricDataBatch& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
+
+    
     inline bool GetAutoDecompose() const{ return m_autoDecompose; }
+
     
     inline void SetAutoDecompose(bool value) { m_autoDecomposeHasBeenSet = true; m_autoDecompose = value; }
 
     
-    inline MetricDataBatch&  WithAutoDecompose(bool value) { SetAutoDecompose(value); return *this;}
+    inline MetricDataBatch& WithAutoDecompose(bool value) { SetAutoDecompose(value); return *this;}
 
   private:
     Aws::String m_accountId;

@@ -45,28 +45,42 @@ namespace Model
 
     
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     
-    inline WorkmailAction&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline WorkmailAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    
+    inline WorkmailAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     
     inline WorkmailAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     
     inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
+
     
     inline void SetOrganizationArn(const Aws::String& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
+
+    
+    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
 
     
     inline void SetOrganizationArn(const char* value) { m_organizationArnHasBeenSet = true; m_organizationArn.assign(value); }
 
     
-    inline WorkmailAction&  WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
+    inline WorkmailAction& WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
+
+    
+    inline WorkmailAction& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(value); return *this;}
 
     
     inline WorkmailAction& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}

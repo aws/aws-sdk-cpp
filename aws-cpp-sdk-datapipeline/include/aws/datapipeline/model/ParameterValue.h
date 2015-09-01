@@ -44,10 +44,16 @@ namespace Model
      <p>The ID of the parameter value.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The ID of the parameter value.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The ID of the parameter value.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the parameter value.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The ID of the parameter value.</p>
     */
-    inline ParameterValue&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ParameterValue& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The ID of the parameter value.</p>
+    */
+    inline ParameterValue& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The ID of the parameter value.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The field value, expressed as a String.</p>
     */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
     /*
      <p>The field value, expressed as a String.</p>
     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+
+    /*
+     <p>The field value, expressed as a String.</p>
+    */
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /*
      <p>The field value, expressed as a String.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The field value, expressed as a String.</p>
     */
-    inline ParameterValue&  WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+    inline ParameterValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+
+    /*
+     <p>The field value, expressed as a String.</p>
+    */
+    inline ParameterValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
 
     /*
      <p>The field value, expressed as a String.</p>

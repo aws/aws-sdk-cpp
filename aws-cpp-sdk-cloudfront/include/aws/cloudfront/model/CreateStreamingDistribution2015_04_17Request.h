@@ -38,6 +38,7 @@ namespace Model
      The streaming distribution's configuration information.
     */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
+
     /*
      The streaming distribution's configuration information.
     */
@@ -46,7 +47,17 @@ namespace Model
     /*
      The streaming distribution's configuration information.
     */
-    inline CreateStreamingDistribution2015_04_17Request&  WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
+    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
+
+    /*
+     The streaming distribution's configuration information.
+    */
+    inline CreateStreamingDistribution2015_04_17Request& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
+
+    /*
+     The streaming distribution's configuration information.
+    */
+    inline CreateStreamingDistribution2015_04_17Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(value); return *this;}
 
   private:
     StreamingDistributionConfig m_streamingDistributionConfig;

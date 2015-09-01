@@ -48,6 +48,7 @@ namespace Model
      <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
     */
     inline const Content& GetSubject() const{ return m_subject; }
+
     /*
      <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
     */
@@ -56,12 +57,23 @@ namespace Model
     /*
      <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
     */
-    inline Message&  WithSubject(const Content& value) { SetSubject(value); return *this;}
+    inline void SetSubject(Content&& value) { m_subjectHasBeenSet = true; m_subject = value; }
+
+    /*
+     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    */
+    inline Message& WithSubject(const Content& value) { SetSubject(value); return *this;}
+
+    /*
+     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    */
+    inline Message& WithSubject(Content&& value) { SetSubject(value); return *this;}
 
     /*
      <p>The message body.</p>
     */
     inline const Body& GetBody() const{ return m_body; }
+
     /*
      <p>The message body.</p>
     */
@@ -70,7 +82,17 @@ namespace Model
     /*
      <p>The message body.</p>
     */
-    inline Message&  WithBody(const Body& value) { SetBody(value); return *this;}
+    inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = value; }
+
+    /*
+     <p>The message body.</p>
+    */
+    inline Message& WithBody(const Body& value) { SetBody(value); return *this;}
+
+    /*
+     <p>The message body.</p>
+    */
+    inline Message& WithBody(Body&& value) { SetBody(value); return *this;}
 
   private:
     Content m_subject;

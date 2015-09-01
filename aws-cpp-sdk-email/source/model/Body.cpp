@@ -43,12 +43,22 @@ Body& Body::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode textNode = resultNode.FirstChild("Text");
+    if(textNode.IsNull())
+    {
+      textNode = resultNode;
+    }
+
     if(!textNode.IsNull())
     {
       m_text = textNode;
       m_textHasBeenSet = true;
     }
     XmlNode htmlNode = resultNode.FirstChild("Html");
+    if(htmlNode.IsNull())
+    {
+      htmlNode = resultNode;
+    }
+
     if(!htmlNode.IsNull())
     {
       m_html = htmlNode;

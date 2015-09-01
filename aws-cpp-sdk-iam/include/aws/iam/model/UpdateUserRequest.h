@@ -37,10 +37,16 @@ namespace Model
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
     */
-    inline UpdateUserRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline UpdateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
+    */
+    inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
@@ -61,10 +72,16 @@ namespace Model
      <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
     */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
+
     /*
      <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
     */
     inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
+
+    /*
+     <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
+    */
+    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /*
      <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
     */
-    inline UpdateUserRequest&  WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
+    inline UpdateUserRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
+
+    /*
+     <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
+    */
+    inline UpdateUserRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
 
     /*
      <p>New path for the user. Include this parameter only if you're changing the user's path.</p>
@@ -85,10 +107,16 @@ namespace Model
      <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     */
     inline const Aws::String& GetNewUserName() const{ return m_newUserName; }
+
     /*
      <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     */
     inline void SetNewUserName(const Aws::String& value) { m_newUserNameHasBeenSet = true; m_newUserName = value; }
+
+    /*
+     <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
+    */
+    inline void SetNewUserName(Aws::String&& value) { m_newUserNameHasBeenSet = true; m_newUserName = value; }
 
     /*
      <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     */
-    inline UpdateUserRequest&  WithNewUserName(const Aws::String& value) { SetNewUserName(value); return *this;}
+    inline UpdateUserRequest& WithNewUserName(const Aws::String& value) { SetNewUserName(value); return *this;}
+
+    /*
+     <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
+    */
+    inline UpdateUserRequest& WithNewUserName(Aws::String&& value) { SetNewUserName(value); return *this;}
 
     /*
      <p>New name for the user. Include this parameter only if you're changing the user's name.</p>

@@ -48,6 +48,7 @@ namespace Model
      A list of all records.
     */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
+
     /*
      A list of all records.
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      A list of all records.
     */
-    inline ListRecordsResult&  WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
+    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = value; }
+
+    /*
+     A list of all records.
+    */
+    inline ListRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
+
+    /*
+     A list of all records.
+    */
+    inline ListRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(value); return *this;}
 
     /*
      A list of all records.
@@ -64,13 +75,24 @@ namespace Model
     inline ListRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
 
     /*
+     A list of all records.
+    */
+    inline ListRecordsResult& AddRecords(Record&& value) { m_records.push_back(value); return *this; }
+
+    /*
      A pagination token for obtaining the next page of results.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token for obtaining the next page of results.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /*
      A pagination token for obtaining the next page of results.
@@ -80,7 +102,12 @@ namespace Model
     /*
      A pagination token for obtaining the next page of results.
     */
-    inline ListRecordsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListRecordsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token for obtaining the next page of results.
+    */
+    inline ListRecordsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token for obtaining the next page of results.
@@ -91,6 +118,7 @@ namespace Model
      Total number of records.
     */
     inline long GetCount() const{ return m_count; }
+
     /*
      Total number of records.
     */
@@ -99,12 +127,13 @@ namespace Model
     /*
      Total number of records.
     */
-    inline ListRecordsResult&  WithCount(long value) { SetCount(value); return *this;}
+    inline ListRecordsResult& WithCount(long value) { SetCount(value); return *this;}
 
     /*
      Server sync count for this dataset.
     */
     inline long long GetDatasetSyncCount() const{ return m_datasetSyncCount; }
+
     /*
      Server sync count for this dataset.
     */
@@ -113,16 +142,22 @@ namespace Model
     /*
      Server sync count for this dataset.
     */
-    inline ListRecordsResult&  WithDatasetSyncCount(long long value) { SetDatasetSyncCount(value); return *this;}
+    inline ListRecordsResult& WithDatasetSyncCount(long long value) { SetDatasetSyncCount(value); return *this;}
 
     /*
      The user/device that made the last change to this record.
     */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
     /*
      The user/device that made the last change to this record.
     */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedBy = value; }
+
+    /*
+     The user/device that made the last change to this record.
+    */
+    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedBy = value; }
 
     /*
      The user/device that made the last change to this record.
@@ -132,7 +167,12 @@ namespace Model
     /*
      The user/device that made the last change to this record.
     */
-    inline ListRecordsResult&  WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
+    inline ListRecordsResult& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
+
+    /*
+     The user/device that made the last change to this record.
+    */
+    inline ListRecordsResult& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(value); return *this;}
 
     /*
      The user/device that made the last change to this record.
@@ -143,6 +183,7 @@ namespace Model
      Names of merged datasets.
     */
     inline const Aws::Vector<Aws::String>& GetMergedDatasetNames() const{ return m_mergedDatasetNames; }
+
     /*
      Names of merged datasets.
     */
@@ -151,12 +192,27 @@ namespace Model
     /*
      Names of merged datasets.
     */
-    inline ListRecordsResult&  WithMergedDatasetNames(const Aws::Vector<Aws::String>& value) { SetMergedDatasetNames(value); return *this;}
+    inline void SetMergedDatasetNames(Aws::Vector<Aws::String>&& value) { m_mergedDatasetNames = value; }
+
+    /*
+     Names of merged datasets.
+    */
+    inline ListRecordsResult& WithMergedDatasetNames(const Aws::Vector<Aws::String>& value) { SetMergedDatasetNames(value); return *this;}
+
+    /*
+     Names of merged datasets.
+    */
+    inline ListRecordsResult& WithMergedDatasetNames(Aws::Vector<Aws::String>&& value) { SetMergedDatasetNames(value); return *this;}
 
     /*
      Names of merged datasets.
     */
     inline ListRecordsResult& AddMergedDatasetNames(const Aws::String& value) { m_mergedDatasetNames.push_back(value); return *this; }
+
+    /*
+     Names of merged datasets.
+    */
+    inline ListRecordsResult& AddMergedDatasetNames(Aws::String&& value) { m_mergedDatasetNames.push_back(value); return *this; }
 
     /*
      Names of merged datasets.
@@ -167,6 +223,7 @@ namespace Model
      Indicates whether the dataset exists.
     */
     inline bool GetDatasetExists() const{ return m_datasetExists; }
+
     /*
      Indicates whether the dataset exists.
     */
@@ -175,12 +232,13 @@ namespace Model
     /*
      Indicates whether the dataset exists.
     */
-    inline ListRecordsResult&  WithDatasetExists(bool value) { SetDatasetExists(value); return *this;}
+    inline ListRecordsResult& WithDatasetExists(bool value) { SetDatasetExists(value); return *this;}
 
     /*
      A boolean value specifying whether to delete the dataset locally.
     */
     inline bool GetDatasetDeletedAfterRequestedSyncCount() const{ return m_datasetDeletedAfterRequestedSyncCount; }
+
     /*
      A boolean value specifying whether to delete the dataset locally.
     */
@@ -189,16 +247,22 @@ namespace Model
     /*
      A boolean value specifying whether to delete the dataset locally.
     */
-    inline ListRecordsResult&  WithDatasetDeletedAfterRequestedSyncCount(bool value) { SetDatasetDeletedAfterRequestedSyncCount(value); return *this;}
+    inline ListRecordsResult& WithDatasetDeletedAfterRequestedSyncCount(bool value) { SetDatasetDeletedAfterRequestedSyncCount(value); return *this;}
 
     /*
      A token containing a session ID, identity ID, and expiration.
     */
     inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
+
     /*
      A token containing a session ID, identity ID, and expiration.
     */
     inline void SetSyncSessionToken(const Aws::String& value) { m_syncSessionToken = value; }
+
+    /*
+     A token containing a session ID, identity ID, and expiration.
+    */
+    inline void SetSyncSessionToken(Aws::String&& value) { m_syncSessionToken = value; }
 
     /*
      A token containing a session ID, identity ID, and expiration.
@@ -208,7 +272,12 @@ namespace Model
     /*
      A token containing a session ID, identity ID, and expiration.
     */
-    inline ListRecordsResult&  WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
+    inline ListRecordsResult& WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
+
+    /*
+     A token containing a session ID, identity ID, and expiration.
+    */
+    inline ListRecordsResult& WithSyncSessionToken(Aws::String&& value) { SetSyncSessionToken(value); return *this;}
 
     /*
      A token containing a session ID, identity ID, and expiration.

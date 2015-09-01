@@ -45,6 +45,7 @@ namespace Model
      <p>List of SNS platform application ARNs that could be used by clients.</p>
     */
     inline const Aws::Vector<Aws::String>& GetApplicationArns() const{ return m_applicationArns; }
+
     /*
      <p>List of SNS platform application ARNs that could be used by clients.</p>
     */
@@ -53,12 +54,27 @@ namespace Model
     /*
      <p>List of SNS platform application ARNs that could be used by clients.</p>
     */
-    inline PushSync&  WithApplicationArns(const Aws::Vector<Aws::String>& value) { SetApplicationArns(value); return *this;}
+    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = value; }
+
+    /*
+     <p>List of SNS platform application ARNs that could be used by clients.</p>
+    */
+    inline PushSync& WithApplicationArns(const Aws::Vector<Aws::String>& value) { SetApplicationArns(value); return *this;}
+
+    /*
+     <p>List of SNS platform application ARNs that could be used by clients.</p>
+    */
+    inline PushSync& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(value); return *this;}
 
     /*
      <p>List of SNS platform application ARNs that could be used by clients.</p>
     */
     inline PushSync& AddApplicationArns(const Aws::String& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
+
+    /*
+     <p>List of SNS platform application ARNs that could be used by clients.</p>
+    */
+    inline PushSync& AddApplicationArns(Aws::String&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
 
     /*
      <p>List of SNS platform application ARNs that could be used by clients.</p>
@@ -69,10 +85,16 @@ namespace Model
      <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
     /*
      <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /*
+     <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
+    */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /*
      <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
@@ -82,7 +104,12 @@ namespace Model
     /*
      <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     */
-    inline PushSync&  WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline PushSync& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /*
+     <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
+    */
+    inline PushSync& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /*
      <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>

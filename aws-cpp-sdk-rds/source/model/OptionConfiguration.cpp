@@ -51,12 +51,22 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
+    if(optionNameNode.IsNull())
+    {
+      optionNameNode = resultNode;
+    }
+
     if(!optionNameNode.IsNull())
     {
       m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());
       m_optionNameHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
+    if(portNode.IsNull())
+    {
+      portNode = resultNode;
+    }
+
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());

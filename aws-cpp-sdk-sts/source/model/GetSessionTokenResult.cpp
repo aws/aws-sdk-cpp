@@ -42,6 +42,11 @@ GetSessionTokenResult& GetSessionTokenResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
+    if(credentialsNode.IsNull())
+    {
+      credentialsNode = resultNode;
+    }
+
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;

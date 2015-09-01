@@ -47,18 +47,33 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
+    if(serialNumberNode.IsNull())
+    {
+      serialNumberNode = resultNode;
+    }
+
     if(!serialNumberNode.IsNull())
     {
       m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
       m_serialNumberHasBeenSet = true;
     }
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
+    if(enableDateNode.IsNull())
+    {
+      enableDateNode = resultNode;
+    }
+
     if(!enableDateNode.IsNull())
     {
       m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());

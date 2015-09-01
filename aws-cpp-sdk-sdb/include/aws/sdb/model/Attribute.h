@@ -47,10 +47,16 @@ namespace Model
      The name of the attribute.
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      The name of the attribute.
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     The name of the attribute.
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the attribute.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The name of the attribute.
     */
-    inline Attribute&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Attribute& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     The name of the attribute.
+    */
+    inline Attribute& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      The name of the attribute.
@@ -71,10 +82,16 @@ namespace Model
      <p></p>
     */
     inline const Aws::String& GetAlternateNameEncoding() const{ return m_alternateNameEncoding; }
+
     /*
      <p></p>
     */
     inline void SetAlternateNameEncoding(const Aws::String& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
 
     /*
      <p></p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p></p>
     */
-    inline Attribute&  WithAlternateNameEncoding(const Aws::String& value) { SetAlternateNameEncoding(value); return *this;}
+    inline Attribute& WithAlternateNameEncoding(const Aws::String& value) { SetAlternateNameEncoding(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline Attribute& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(value); return *this;}
 
     /*
      <p></p>
@@ -95,10 +117,16 @@ namespace Model
      The value of the attribute.
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      The value of the attribute.
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     The value of the attribute.
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      The value of the attribute.
@@ -108,7 +136,12 @@ namespace Model
     /*
      The value of the attribute.
     */
-    inline Attribute&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline Attribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     The value of the attribute.
+    */
+    inline Attribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      The value of the attribute.
@@ -119,10 +152,16 @@ namespace Model
      <p></p>
     */
     inline const Aws::String& GetAlternateValueEncoding() const{ return m_alternateValueEncoding; }
+
     /*
      <p></p>
     */
     inline void SetAlternateValueEncoding(const Aws::String& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetAlternateValueEncoding(Aws::String&& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = value; }
 
     /*
      <p></p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p></p>
     */
-    inline Attribute&  WithAlternateValueEncoding(const Aws::String& value) { SetAlternateValueEncoding(value); return *this;}
+    inline Attribute& WithAlternateValueEncoding(const Aws::String& value) { SetAlternateValueEncoding(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline Attribute& WithAlternateValueEncoding(Aws::String&& value) { SetAlternateValueEncoding(value); return *this;}
 
     /*
      <p></p>

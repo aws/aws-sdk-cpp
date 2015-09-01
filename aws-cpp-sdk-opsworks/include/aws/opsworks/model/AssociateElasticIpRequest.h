@@ -39,10 +39,16 @@ namespace Model
      <p>The Elastic IP address.</p>
     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+
     /*
      <p>The Elastic IP address.</p>
     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+
+    /*
+     <p>The Elastic IP address.</p>
+    */
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /*
      <p>The Elastic IP address.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The Elastic IP address.</p>
     */
-    inline AssociateElasticIpRequest&  WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+    inline AssociateElasticIpRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p>The Elastic IP address.</p>
+    */
+    inline AssociateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
 
     /*
      <p>The Elastic IP address.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline AssociateElasticIpRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline AssociateElasticIpRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline AssociateElasticIpRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>

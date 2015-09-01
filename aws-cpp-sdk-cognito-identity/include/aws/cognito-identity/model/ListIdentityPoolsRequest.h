@@ -40,6 +40,7 @@ namespace Model
      The maximum number of identities to return.
     */
     inline long GetMaxResults() const{ return m_maxResults; }
+
     /*
      The maximum number of identities to return.
     */
@@ -48,16 +49,22 @@ namespace Model
     /*
      The maximum number of identities to return.
     */
-    inline ListIdentityPoolsRequest&  WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListIdentityPoolsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
     /*
      A pagination token.
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      A pagination token.
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     A pagination token.
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      A pagination token.
@@ -67,7 +74,12 @@ namespace Model
     /*
      A pagination token.
     */
-    inline ListIdentityPoolsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListIdentityPoolsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     A pagination token.
+    */
+    inline ListIdentityPoolsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      A pagination token.

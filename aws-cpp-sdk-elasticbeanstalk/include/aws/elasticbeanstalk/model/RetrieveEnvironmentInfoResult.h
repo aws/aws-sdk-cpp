@@ -48,6 +48,7 @@ namespace Model
      <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
     */
     inline const Aws::Vector<EnvironmentInfoDescription>& GetEnvironmentInfo() const{ return m_environmentInfo; }
+
     /*
      <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
     */
-    inline RetrieveEnvironmentInfoResult&  WithEnvironmentInfo(const Aws::Vector<EnvironmentInfoDescription>& value) { SetEnvironmentInfo(value); return *this;}
+    inline void SetEnvironmentInfo(Aws::Vector<EnvironmentInfoDescription>&& value) { m_environmentInfo = value; }
+
+    /*
+     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+    */
+    inline RetrieveEnvironmentInfoResult& WithEnvironmentInfo(const Aws::Vector<EnvironmentInfoDescription>& value) { SetEnvironmentInfo(value); return *this;}
+
+    /*
+     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+    */
+    inline RetrieveEnvironmentInfoResult& WithEnvironmentInfo(Aws::Vector<EnvironmentInfoDescription>&& value) { SetEnvironmentInfo(value); return *this;}
 
     /*
      <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
     */
     inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(const EnvironmentInfoDescription& value) { m_environmentInfo.push_back(value); return *this; }
 
+    /*
+     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+    */
+    inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(EnvironmentInfoDescription&& value) { m_environmentInfo.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline RetrieveEnvironmentInfoResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline RetrieveEnvironmentInfoResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline RetrieveEnvironmentInfoResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<EnvironmentInfoDescription> m_environmentInfo;

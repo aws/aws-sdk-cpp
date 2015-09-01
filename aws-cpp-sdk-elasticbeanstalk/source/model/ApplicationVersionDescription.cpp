@@ -55,36 +55,66 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
   if(!resultNode.IsNull())
   {
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
+    if(applicationNameNode.IsNull())
+    {
+      applicationNameNode = resultNode;
+    }
+
     if(!applicationNameNode.IsNull())
     {
       m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
       m_applicationNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(descriptionNode.IsNull())
+    {
+      descriptionNode = resultNode;
+    }
+
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
+    if(versionLabelNode.IsNull())
+    {
+      versionLabelNode = resultNode;
+    }
+
     if(!versionLabelNode.IsNull())
     {
       m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
       m_versionLabelHasBeenSet = true;
     }
     XmlNode sourceBundleNode = resultNode.FirstChild("SourceBundle");
+    if(sourceBundleNode.IsNull())
+    {
+      sourceBundleNode = resultNode;
+    }
+
     if(!sourceBundleNode.IsNull())
     {
       m_sourceBundle = sourceBundleNode;
       m_sourceBundleHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
+    if(dateCreatedNode.IsNull())
+    {
+      dateCreatedNode = resultNode;
+    }
+
     if(!dateCreatedNode.IsNull())
     {
       m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
+    if(dateUpdatedNode.IsNull())
+    {
+      dateUpdatedNode = resultNode;
+    }
+
     if(!dateUpdatedNode.IsNull())
     {
       m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());

@@ -44,11 +44,18 @@ namespace Model
 
     
     inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
+
     
     inline void SetTaskDefinition(const TaskDefinition& value) { m_taskDefinition = value; }
 
     
-    inline RegisterTaskDefinitionResult&  WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
+    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
+
+    
+    inline RegisterTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
+
+    
+    inline RegisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
 
   private:
     TaskDefinition m_taskDefinition;

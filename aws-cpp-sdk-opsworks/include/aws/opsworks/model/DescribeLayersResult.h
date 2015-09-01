@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>Layer</code> objects that describe the layers.</p>
     */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
+
     /*
      <p>An array of <code>Layer</code> objects that describe the layers.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>Layer</code> objects that describe the layers.</p>
     */
-    inline DescribeLayersResult&  WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
+    inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = value; }
+
+    /*
+     <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    */
+    inline DescribeLayersResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
+
+    /*
+     <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    */
+    inline DescribeLayersResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(value); return *this;}
 
     /*
      <p>An array of <code>Layer</code> objects that describe the layers.</p>
     */
     inline DescribeLayersResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    */
+    inline DescribeLayersResult& AddLayers(Layer&& value) { m_layers.push_back(value); return *this; }
 
   private:
     Aws::Vector<Layer> m_layers;

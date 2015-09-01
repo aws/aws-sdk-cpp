@@ -38,6 +38,7 @@ namespace Model
      <p>The names of the load balancers.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
+
     /*
      <p>The names of the load balancers.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>The names of the load balancers.</p>
     */
-    inline DescribeLoadBalancersRequest&  WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
+    inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
+
+    /*
+     <p>The names of the load balancers.</p>
+    */
+    inline DescribeLoadBalancersRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
+
+    /*
+     <p>The names of the load balancers.</p>
+    */
+    inline DescribeLoadBalancersRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(value); return *this;}
 
     /*
      <p>The names of the load balancers.</p>
     */
     inline DescribeLoadBalancersRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the load balancers.</p>
+    */
+    inline DescribeLoadBalancersRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /*
      <p>The names of the load balancers.</p>
@@ -62,10 +78,16 @@ namespace Model
      <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -75,7 +97,12 @@ namespace Model
     /*
      <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     */
-    inline DescribeLoadBalancersRequest&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeLoadBalancersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    */
+    inline DescribeLoadBalancersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -86,6 +113,7 @@ namespace Model
      <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     */
     inline long GetPageSize() const{ return m_pageSize; }
+
     /*
      <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     */
@@ -94,7 +122,7 @@ namespace Model
     /*
      <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     */
-    inline DescribeLoadBalancersRequest&  WithPageSize(long value) { SetPageSize(value); return *this;}
+    inline DescribeLoadBalancersRequest& WithPageSize(long value) { SetPageSize(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_loadBalancerNames;

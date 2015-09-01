@@ -46,6 +46,7 @@ namespace Model
      <p>The full description of your service following the create call.</p>
     */
     inline const Service& GetService() const{ return m_service; }
+
     /*
      <p>The full description of your service following the create call.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>The full description of your service following the create call.</p>
     */
-    inline CreateServiceResult&  WithService(const Service& value) { SetService(value); return *this;}
+    inline void SetService(Service&& value) { m_service = value; }
+
+    /*
+     <p>The full description of your service following the create call.</p>
+    */
+    inline CreateServiceResult& WithService(const Service& value) { SetService(value); return *this;}
+
+    /*
+     <p>The full description of your service following the create call.</p>
+    */
+    inline CreateServiceResult& WithService(Service&& value) { SetService(value); return *this;}
 
   private:
     Service m_service;

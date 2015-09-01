@@ -45,10 +45,16 @@ namespace Model
      <p>The layer ID.</p>
     */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
     /*
      <p>The layer ID.</p>
     */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /*
      <p>The layer ID.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The layer ID.</p>
     */
-    inline UpdateLayerRequest&  WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+    inline UpdateLayerRequest& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline UpdateLayerRequest& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
 
     /*
      <p>The layer ID.</p>
@@ -69,10 +80,16 @@ namespace Model
      <p>The layer name, which is used by the console.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The layer name, which is used by the console.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The layer name, which is used by the console.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The layer name, which is used by the console.</p>
@@ -82,7 +99,12 @@ namespace Model
     /*
      <p>The layer name, which is used by the console.</p>
     */
-    inline UpdateLayerRequest&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline UpdateLayerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The layer name, which is used by the console.</p>
+    */
+    inline UpdateLayerRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The layer name, which is used by the console.</p>
@@ -93,10 +115,16 @@ namespace Model
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
     */
     inline const Aws::String& GetShortname() const{ return m_shortname; }
+
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
     */
     inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
+
+    /*
+     <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
+    */
+    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
@@ -106,7 +134,12 @@ namespace Model
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
     */
-    inline UpdateLayerRequest&  WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
+    inline UpdateLayerRequest& WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
+
+    /*
+     <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
+    */
+    inline UpdateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(value); return *this;}
 
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
@@ -117,6 +150,7 @@ namespace Model
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
     inline const Aws::Map<LayerAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
+
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
@@ -125,12 +159,42 @@ namespace Model
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
-    inline UpdateLayerRequest&  WithAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline UpdateLayerRequest& WithAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline UpdateLayerRequest& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     */
     inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+
+    /*
+     <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    */
+    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /*
      <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
@@ -141,10 +205,16 @@ namespace Model
      <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
     inline const Aws::String& GetCustomInstanceProfileArn() const{ return m_customInstanceProfileArn; }
+
     /*
      <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
     inline void SetCustomInstanceProfileArn(const Aws::String& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = value; }
+
+    /*
+     <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    */
+    inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = value; }
 
     /*
      <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -154,7 +224,12 @@ namespace Model
     /*
      <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
-    inline UpdateLayerRequest&  WithCustomInstanceProfileArn(const Aws::String& value) { SetCustomInstanceProfileArn(value); return *this;}
+    inline UpdateLayerRequest& WithCustomInstanceProfileArn(const Aws::String& value) { SetCustomInstanceProfileArn(value); return *this;}
+
+    /*
+     <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    */
+    inline UpdateLayerRequest& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(value); return *this;}
 
     /*
      <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -165,10 +240,16 @@ namespace Model
      <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
+
     /*
      <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+
+    /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
     /*
      <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
@@ -178,7 +259,12 @@ namespace Model
     /*
      <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     */
-    inline UpdateLayerRequest&  WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
+    inline UpdateLayerRequest& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
+
+    /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline UpdateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
 
     /*
      <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
@@ -189,6 +275,7 @@ namespace Model
      <p>An array containing the layer's custom security group IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetCustomSecurityGroupIds() const{ return m_customSecurityGroupIds; }
+
     /*
      <p>An array containing the layer's custom security group IDs.</p>
     */
@@ -197,12 +284,27 @@ namespace Model
     /*
      <p>An array containing the layer's custom security group IDs.</p>
     */
-    inline UpdateLayerRequest&  WithCustomSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetCustomSecurityGroupIds(value); return *this;}
+    inline void SetCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds = value; }
+
+    /*
+     <p>An array containing the layer's custom security group IDs.</p>
+    */
+    inline UpdateLayerRequest& WithCustomSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetCustomSecurityGroupIds(value); return *this;}
+
+    /*
+     <p>An array containing the layer's custom security group IDs.</p>
+    */
+    inline UpdateLayerRequest& WithCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetCustomSecurityGroupIds(value); return *this;}
 
     /*
      <p>An array containing the layer's custom security group IDs.</p>
     */
     inline UpdateLayerRequest& AddCustomSecurityGroupIds(const Aws::String& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p>An array containing the layer's custom security group IDs.</p>
+    */
+    inline UpdateLayerRequest& AddCustomSecurityGroupIds(Aws::String&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(value); return *this; }
 
     /*
      <p>An array containing the layer's custom security group IDs.</p>
@@ -213,6 +315,7 @@ namespace Model
      <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPackages() const{ return m_packages; }
+
     /*
      <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
     */
@@ -221,12 +324,27 @@ namespace Model
     /*
      <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
     */
-    inline UpdateLayerRequest&  WithPackages(const Aws::Vector<Aws::String>& value) { SetPackages(value); return *this;}
+    inline void SetPackages(Aws::Vector<Aws::String>&& value) { m_packagesHasBeenSet = true; m_packages = value; }
+
+    /*
+     <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    */
+    inline UpdateLayerRequest& WithPackages(const Aws::Vector<Aws::String>& value) { SetPackages(value); return *this;}
+
+    /*
+     <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    */
+    inline UpdateLayerRequest& WithPackages(Aws::Vector<Aws::String>&& value) { SetPackages(value); return *this;}
 
     /*
      <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
     */
     inline UpdateLayerRequest& AddPackages(const Aws::String& value) { m_packagesHasBeenSet = true; m_packages.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    */
+    inline UpdateLayerRequest& AddPackages(Aws::String&& value) { m_packagesHasBeenSet = true; m_packages.push_back(value); return *this; }
 
     /*
      <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
@@ -237,6 +355,7 @@ namespace Model
      <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     */
     inline const Aws::Vector<VolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+
     /*
      <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     */
@@ -245,7 +364,17 @@ namespace Model
     /*
      <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     */
-    inline UpdateLayerRequest&  WithVolumeConfigurations(const Aws::Vector<VolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+    inline void SetVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+
+    /*
+     <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    */
+    inline UpdateLayerRequest& WithVolumeConfigurations(const Aws::Vector<VolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+
+    /*
+     <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    */
+    inline UpdateLayerRequest& WithVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { SetVolumeConfigurations(value); return *this;}
 
     /*
      <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
@@ -253,9 +382,15 @@ namespace Model
     inline UpdateLayerRequest& AddVolumeConfigurations(const VolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
 
     /*
+     <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    */
+    inline UpdateLayerRequest& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+
+    /*
      <p>Whether to disable auto healing for the layer.</p>
     */
     inline bool GetEnableAutoHealing() const{ return m_enableAutoHealing; }
+
     /*
      <p>Whether to disable auto healing for the layer.</p>
     */
@@ -264,12 +399,13 @@ namespace Model
     /*
      <p>Whether to disable auto healing for the layer.</p>
     */
-    inline UpdateLayerRequest&  WithEnableAutoHealing(bool value) { SetEnableAutoHealing(value); return *this;}
+    inline UpdateLayerRequest& WithEnableAutoHealing(bool value) { SetEnableAutoHealing(value); return *this;}
 
     /*
      <p>Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     */
     inline bool GetAutoAssignElasticIps() const{ return m_autoAssignElasticIps; }
+
     /*
      <p>Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     */
@@ -278,12 +414,13 @@ namespace Model
     /*
      <p>Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     */
-    inline UpdateLayerRequest&  WithAutoAssignElasticIps(bool value) { SetAutoAssignElasticIps(value); return *this;}
+    inline UpdateLayerRequest& WithAutoAssignElasticIps(bool value) { SetAutoAssignElasticIps(value); return *this;}
 
     /*
      <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     */
     inline bool GetAutoAssignPublicIps() const{ return m_autoAssignPublicIps; }
+
     /*
      <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     */
@@ -292,12 +429,13 @@ namespace Model
     /*
      <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     */
-    inline UpdateLayerRequest&  WithAutoAssignPublicIps(bool value) { SetAutoAssignPublicIps(value); return *this;}
+    inline UpdateLayerRequest& WithAutoAssignPublicIps(bool value) { SetAutoAssignPublicIps(value); return *this;}
 
     /*
      <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     */
     inline const Recipes& GetCustomRecipes() const{ return m_customRecipes; }
+
     /*
      <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     */
@@ -306,12 +444,23 @@ namespace Model
     /*
      <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     */
-    inline UpdateLayerRequest&  WithCustomRecipes(const Recipes& value) { SetCustomRecipes(value); return *this;}
+    inline void SetCustomRecipes(Recipes&& value) { m_customRecipesHasBeenSet = true; m_customRecipes = value; }
+
+    /*
+     <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    */
+    inline UpdateLayerRequest& WithCustomRecipes(const Recipes& value) { SetCustomRecipes(value); return *this;}
+
+    /*
+     <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    */
+    inline UpdateLayerRequest& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(value); return *this;}
 
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
+
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
@@ -320,12 +469,13 @@ namespace Model
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
-    inline UpdateLayerRequest&  WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
+    inline UpdateLayerRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
     /*
      <p>Whether to use Amazon EBS-optimized instances.</p>
     */
     inline bool GetUseEbsOptimizedInstances() const{ return m_useEbsOptimizedInstances; }
+
     /*
      <p>Whether to use Amazon EBS-optimized instances.</p>
     */
@@ -334,12 +484,13 @@ namespace Model
     /*
      <p>Whether to use Amazon EBS-optimized instances.</p>
     */
-    inline UpdateLayerRequest&  WithUseEbsOptimizedInstances(bool value) { SetUseEbsOptimizedInstances(value); return *this;}
+    inline UpdateLayerRequest& WithUseEbsOptimizedInstances(bool value) { SetUseEbsOptimizedInstances(value); return *this;}
 
     /*
      <p></p>
     */
     inline const LifecycleEventConfiguration& GetLifecycleEventConfiguration() const{ return m_lifecycleEventConfiguration; }
+
     /*
      <p></p>
     */
@@ -348,7 +499,17 @@ namespace Model
     /*
      <p></p>
     */
-    inline UpdateLayerRequest&  WithLifecycleEventConfiguration(const LifecycleEventConfiguration& value) { SetLifecycleEventConfiguration(value); return *this;}
+    inline void SetLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = value; }
+
+    /*
+     <p></p>
+    */
+    inline UpdateLayerRequest& WithLifecycleEventConfiguration(const LifecycleEventConfiguration& value) { SetLifecycleEventConfiguration(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline UpdateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(value); return *this;}
 
   private:
     Aws::String m_layerId;

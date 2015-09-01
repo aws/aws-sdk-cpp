@@ -45,10 +45,16 @@ namespace Model
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
     */
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
     */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
+
+    /*
+     <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+    */
+    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
     */
-    inline Record&  WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
+    inline Record& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
+
+    /*
+     <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+    */
+    inline Record& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(value); return *this;}
 
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
@@ -67,16 +78,18 @@ namespace Model
 
     
     inline double GetApproximateArrivalTimestamp() const{ return m_approximateArrivalTimestamp; }
+
     
     inline void SetApproximateArrivalTimestamp(double value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
 
     
-    inline Record&  WithApproximateArrivalTimestamp(double value) { SetApproximateArrivalTimestamp(value); return *this;}
+    inline Record& WithApproximateArrivalTimestamp(double value) { SetApproximateArrivalTimestamp(value); return *this;}
 
     /*
      <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
     */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
     /*
      <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
     */
@@ -85,16 +98,32 @@ namespace Model
     /*
      <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
     */
-    inline Record&  WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
+
+    /*
+     <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
+    */
+    inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
+
+    /*
+     <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
+    */
+    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
 
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
     */
     inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
+
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
     */
     inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
+
+    /*
+     <p>Identifies which shard in the stream the data record is assigned to.</p>
+    */
+    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
 
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
@@ -104,7 +133,12 @@ namespace Model
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
     */
-    inline Record&  WithPartitionKey(const Aws::String& value) { SetPartitionKey(value); return *this;}
+    inline Record& WithPartitionKey(const Aws::String& value) { SetPartitionKey(value); return *this;}
+
+    /*
+     <p>Identifies which shard in the stream the data record is assigned to.</p>
+    */
+    inline Record& WithPartitionKey(Aws::String&& value) { SetPartitionKey(value); return *this;}
 
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>

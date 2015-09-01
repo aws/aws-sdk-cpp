@@ -45,10 +45,16 @@ namespace Model
      <p>The identifier of the object that contains the validation error.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The identifier of the object that contains the validation error.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The identifier of the object that contains the validation error.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the object that contains the validation error.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The identifier of the object that contains the validation error.</p>
     */
-    inline ValidationError&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline ValidationError& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The identifier of the object that contains the validation error.</p>
+    */
+    inline ValidationError& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The identifier of the object that contains the validation error.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>A description of the validation error.</p>
     */
     inline const Aws::Vector<Aws::String>& GetErrors() const{ return m_errors; }
+
     /*
      <p>A description of the validation error.</p>
     */
@@ -77,12 +89,27 @@ namespace Model
     /*
      <p>A description of the validation error.</p>
     */
-    inline ValidationError&  WithErrors(const Aws::Vector<Aws::String>& value) { SetErrors(value); return *this;}
+    inline void SetErrors(Aws::Vector<Aws::String>&& value) { m_errorsHasBeenSet = true; m_errors = value; }
+
+    /*
+     <p>A description of the validation error.</p>
+    */
+    inline ValidationError& WithErrors(const Aws::Vector<Aws::String>& value) { SetErrors(value); return *this;}
+
+    /*
+     <p>A description of the validation error.</p>
+    */
+    inline ValidationError& WithErrors(Aws::Vector<Aws::String>&& value) { SetErrors(value); return *this;}
 
     /*
      <p>A description of the validation error.</p>
     */
     inline ValidationError& AddErrors(const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+
+    /*
+     <p>A description of the validation error.</p>
+    */
+    inline ValidationError& AddErrors(Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
 
     /*
      <p>A description of the validation error.</p>

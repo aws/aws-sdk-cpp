@@ -55,6 +55,7 @@ using namespace Aws::Utils::Xml;
 
 static const char* SERVICE_NAME = "sqs";
 static const char* ALLOCATION_TAG = "SQSClient";
+
 SQSClient::SQSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), SERVICE_NAME, clientConfiguration.region),

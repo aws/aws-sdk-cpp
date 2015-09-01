@@ -38,10 +38,16 @@ namespace Model
      <p>PlatformApplicationArn of platform application object to delete.</p>
     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
+
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>
     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
+
+    /*
+     <p>PlatformApplicationArn of platform application object to delete.</p>
+    */
+    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>
     */
-    inline DeletePlatformApplicationRequest&  WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+    inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
+
+    /*
+     <p>PlatformApplicationArn of platform application object to delete.</p>
+    */
+    inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>

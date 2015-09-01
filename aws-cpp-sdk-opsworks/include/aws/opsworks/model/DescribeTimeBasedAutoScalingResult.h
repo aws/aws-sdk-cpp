@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     */
     inline const Aws::Vector<TimeBasedAutoScalingConfiguration>& GetTimeBasedAutoScalingConfigurations() const{ return m_timeBasedAutoScalingConfigurations; }
+
     /*
      <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     */
-    inline DescribeTimeBasedAutoScalingResult&  WithTimeBasedAutoScalingConfigurations(const Aws::Vector<TimeBasedAutoScalingConfiguration>& value) { SetTimeBasedAutoScalingConfigurations(value); return *this;}
+    inline void SetTimeBasedAutoScalingConfigurations(Aws::Vector<TimeBasedAutoScalingConfiguration>&& value) { m_timeBasedAutoScalingConfigurations = value; }
+
+    /*
+     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
+    */
+    inline DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(const Aws::Vector<TimeBasedAutoScalingConfiguration>& value) { SetTimeBasedAutoScalingConfigurations(value); return *this;}
+
+    /*
+     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
+    */
+    inline DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(Aws::Vector<TimeBasedAutoScalingConfiguration>&& value) { SetTimeBasedAutoScalingConfigurations(value); return *this;}
 
     /*
      <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     */
     inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(const TimeBasedAutoScalingConfiguration& value) { m_timeBasedAutoScalingConfigurations.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
+    */
+    inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfiguration&& value) { m_timeBasedAutoScalingConfigurations.push_back(value); return *this; }
 
   private:
     Aws::Vector<TimeBasedAutoScalingConfiguration> m_timeBasedAutoScalingConfigurations;

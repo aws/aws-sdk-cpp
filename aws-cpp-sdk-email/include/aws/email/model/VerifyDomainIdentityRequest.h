@@ -38,10 +38,16 @@ namespace Model
      <p>The domain to be verified.</p>
     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
+
     /*
      <p>The domain to be verified.</p>
     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /*
+     <p>The domain to be verified.</p>
+    */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /*
      <p>The domain to be verified.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The domain to be verified.</p>
     */
-    inline VerifyDomainIdentityRequest&  WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+    inline VerifyDomainIdentityRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /*
+     <p>The domain to be verified.</p>
+    */
+    inline VerifyDomainIdentityRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
     /*
      <p>The domain to be verified.</p>

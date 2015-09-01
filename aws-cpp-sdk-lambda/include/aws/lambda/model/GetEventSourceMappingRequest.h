@@ -37,10 +37,16 @@ namespace Model
      <p>The AWS Lambda assigned ID of the event source mapping.</p>
     */
     inline const Aws::String& GetUUID() const{ return m_uUID; }
+
     /*
      <p>The AWS Lambda assigned ID of the event source mapping.</p>
     */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
+
+    /*
+     <p>The AWS Lambda assigned ID of the event source mapping.</p>
+    */
+    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /*
      <p>The AWS Lambda assigned ID of the event source mapping.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The AWS Lambda assigned ID of the event source mapping.</p>
     */
-    inline GetEventSourceMappingRequest&  WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
+    inline GetEventSourceMappingRequest& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
+
+    /*
+     <p>The AWS Lambda assigned ID of the event source mapping.</p>
+    */
+    inline GetEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(value); return *this;}
 
     /*
      <p>The AWS Lambda assigned ID of the event source mapping.</p>

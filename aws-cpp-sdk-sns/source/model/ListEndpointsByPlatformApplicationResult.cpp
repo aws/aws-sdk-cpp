@@ -47,12 +47,17 @@ ListEndpointsByPlatformApplicationResult& ListEndpointsByPlatformApplicationResu
       XmlNode endpointsMember = endpointsNode.FirstChild("member");
       while(!endpointsMember.IsNull())
       {
-        m_endpoints.push_back(endpointsMember);
+        m_endpoints.push_back(StringUtils::Trim(endpointsMember.GetText().c_str()));
         endpointsMember = endpointsMember.NextNode("member");
       }
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
+    if(nextTokenNode.IsNull())
+    {
+      nextTokenNode = resultNode;
+    }
+
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

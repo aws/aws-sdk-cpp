@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
+
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /*
+     <p>The name of the domain to be verified for Easy DKIM signing.</p>
+    */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
     */
-    inline VerifyDomainDkimRequest&  WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+    inline VerifyDomainDkimRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /*
+     <p>The name of the domain to be verified for Easy DKIM signing.</p>
+    */
+    inline VerifyDomainDkimRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>

@@ -42,6 +42,11 @@ DescribeDefaultClusterParametersResult& DescribeDefaultClusterParametersResult::
   if(!resultNode.IsNull())
   {
     XmlNode defaultClusterParametersNode = resultNode.FirstChild("DefaultClusterParameters");
+    if(defaultClusterParametersNode.IsNull())
+    {
+      defaultClusterParametersNode = resultNode;
+    }
+
     if(!defaultClusterParametersNode.IsNull())
     {
       m_defaultClusterParameters = defaultClusterParametersNode;

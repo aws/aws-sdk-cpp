@@ -42,6 +42,11 @@ CreateCacheParameterGroupResult& CreateCacheParameterGroupResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupNode = resultNode.FirstChild("CacheParameterGroup");
+    if(cacheParameterGroupNode.IsNull())
+    {
+      cacheParameterGroupNode = resultNode;
+    }
+
     if(!cacheParameterGroupNode.IsNull())
     {
       m_cacheParameterGroup = cacheParameterGroupNode;

@@ -38,6 +38,7 @@ namespace Model
      <p> A list of alarms to be deleted. </p>
     */
     inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
+
     /*
      <p> A list of alarms to be deleted. </p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p> A list of alarms to be deleted. </p>
     */
-    inline DeleteAlarmsRequest&  WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
+    inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
+
+    /*
+     <p> A list of alarms to be deleted. </p>
+    */
+    inline DeleteAlarmsRequest& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
+
+    /*
+     <p> A list of alarms to be deleted. </p>
+    */
+    inline DeleteAlarmsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(value); return *this;}
 
     /*
      <p> A list of alarms to be deleted. </p>
     */
     inline DeleteAlarmsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
+
+    /*
+     <p> A list of alarms to be deleted. </p>
+    */
+    inline DeleteAlarmsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /*
      <p> A list of alarms to be deleted. </p>

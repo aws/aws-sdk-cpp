@@ -48,10 +48,16 @@ namespace Model
      <p>This parameter is not currently supported.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>This parameter is not currently supported.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline Filter&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline Filter& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>This parameter is not currently supported.</p>
     */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
     /*
      <p>This parameter is not currently supported.</p>
     */
@@ -80,12 +92,27 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline Filter&  WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
 
     /*
      <p>This parameter is not currently supported.</p>
     */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
+    /*
+     <p>This parameter is not currently supported.</p>
+    */
+    inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /*
      <p>This parameter is not currently supported.</p>

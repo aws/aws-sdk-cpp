@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const DBCluster& GetDBCluster() const{ return m_dBCluster; }
+
     
     inline void SetDBCluster(const DBCluster& value) { m_dBCluster = value; }
 
     
-    inline RestoreDBClusterToPointInTimeResult&  WithDBCluster(const DBCluster& value) { SetDBCluster(value); return *this;}
+    inline void SetDBCluster(DBCluster&& value) { m_dBCluster = value; }
+
+    
+    inline RestoreDBClusterToPointInTimeResult& WithDBCluster(const DBCluster& value) { SetDBCluster(value); return *this;}
+
+    
+    inline RestoreDBClusterToPointInTimeResult& WithDBCluster(DBCluster&& value) { SetDBCluster(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline RestoreDBClusterToPointInTimeResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline RestoreDBClusterToPointInTimeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline RestoreDBClusterToPointInTimeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     DBCluster m_dBCluster;

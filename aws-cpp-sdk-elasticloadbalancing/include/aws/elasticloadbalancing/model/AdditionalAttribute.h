@@ -47,10 +47,16 @@ namespace Model
      <p>This parameter is reserved.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>This parameter is reserved.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>This parameter is reserved.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>This parameter is reserved.</p>
     */
-    inline AdditionalAttribute&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline AdditionalAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline AdditionalAttribute& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>This parameter is reserved.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>This parameter is reserved.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>This parameter is reserved.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>This parameter is reserved.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>This parameter is reserved.</p>
     */
-    inline AdditionalAttribute&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline AdditionalAttribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>This parameter is reserved.</p>
+    */
+    inline AdditionalAttribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>This parameter is reserved.</p>

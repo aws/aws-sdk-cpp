@@ -44,10 +44,16 @@ namespace Model
      <p>The error ID.</p>
     */
     inline const Aws::String& GetServiceErrorId() const{ return m_serviceErrorId; }
+
     /*
      <p>The error ID.</p>
     */
     inline void SetServiceErrorId(const Aws::String& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = value; }
+
+    /*
+     <p>The error ID.</p>
+    */
+    inline void SetServiceErrorId(Aws::String&& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = value; }
 
     /*
      <p>The error ID.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The error ID.</p>
     */
-    inline ServiceError&  WithServiceErrorId(const Aws::String& value) { SetServiceErrorId(value); return *this;}
+    inline ServiceError& WithServiceErrorId(const Aws::String& value) { SetServiceErrorId(value); return *this;}
+
+    /*
+     <p>The error ID.</p>
+    */
+    inline ServiceError& WithServiceErrorId(Aws::String&& value) { SetServiceErrorId(value); return *this;}
 
     /*
      <p>The error ID.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline ServiceError&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline ServiceError& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline ServiceError& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline ServiceError&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline ServiceError& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline ServiceError& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>The error type.</p>
     */
     inline const Aws::String& GetType() const{ return m_type; }
+
     /*
      <p>The error type.</p>
     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /*
+     <p>The error type.</p>
+    */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The error type.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>The error type.</p>
     */
-    inline ServiceError&  WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline ServiceError& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /*
+     <p>The error type.</p>
+    */
+    inline ServiceError& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /*
      <p>The error type.</p>
@@ -140,10 +184,16 @@ namespace Model
      <p>A message that describes the error.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>A message that describes the error.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>A message that describes the error.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>A message that describes the error.</p>
@@ -153,7 +203,12 @@ namespace Model
     /*
      <p>A message that describes the error.</p>
     */
-    inline ServiceError&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline ServiceError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>A message that describes the error.</p>
+    */
+    inline ServiceError& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>A message that describes the error.</p>
@@ -164,10 +219,16 @@ namespace Model
      <p>When the error occurred.</p>
     */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
     /*
      <p>When the error occurred.</p>
     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /*
+     <p>When the error occurred.</p>
+    */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /*
      <p>When the error occurred.</p>
@@ -177,7 +238,12 @@ namespace Model
     /*
      <p>When the error occurred.</p>
     */
-    inline ServiceError&  WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+    inline ServiceError& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /*
+     <p>When the error occurred.</p>
+    */
+    inline ServiceError& WithCreatedAt(Aws::String&& value) { SetCreatedAt(value); return *this;}
 
     /*
      <p>When the error occurred.</p>

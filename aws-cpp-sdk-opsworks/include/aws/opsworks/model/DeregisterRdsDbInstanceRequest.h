@@ -39,10 +39,16 @@ namespace Model
      <p>The Amazon RDS instance's ARN.</p>
     */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
+
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
+
+    /*
+     <p>The Amazon RDS instance's ARN.</p>
+    */
+    inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
-    inline DeregisterRdsDbInstanceRequest&  WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
+    inline DeregisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
+
+    /*
+     <p>The Amazon RDS instance's ARN.</p>
+    */
+    inline DeregisterRdsDbInstanceRequest& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(value); return *this;}
 
     /*
      <p>The Amazon RDS instance's ARN.</p>

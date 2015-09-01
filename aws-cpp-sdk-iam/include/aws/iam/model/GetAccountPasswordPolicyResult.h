@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const PasswordPolicy& GetPasswordPolicy() const{ return m_passwordPolicy; }
+
     
     inline void SetPasswordPolicy(const PasswordPolicy& value) { m_passwordPolicy = value; }
 
     
-    inline GetAccountPasswordPolicyResult&  WithPasswordPolicy(const PasswordPolicy& value) { SetPasswordPolicy(value); return *this;}
+    inline void SetPasswordPolicy(PasswordPolicy&& value) { m_passwordPolicy = value; }
+
+    
+    inline GetAccountPasswordPolicyResult& WithPasswordPolicy(const PasswordPolicy& value) { SetPasswordPolicy(value); return *this;}
+
+    
+    inline GetAccountPasswordPolicyResult& WithPasswordPolicy(PasswordPolicy&& value) { SetPasswordPolicy(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetAccountPasswordPolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetAccountPasswordPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetAccountPasswordPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     PasswordPolicy m_passwordPolicy;

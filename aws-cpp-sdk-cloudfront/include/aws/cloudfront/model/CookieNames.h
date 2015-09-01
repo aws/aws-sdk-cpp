@@ -46,6 +46,7 @@ namespace Model
      The number of whitelisted cookies for this cache behavior.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of whitelisted cookies for this cache behavior.
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      The number of whitelisted cookies for this cache behavior.
     */
-    inline CookieNames&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CookieNames& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
     */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
     /*
      Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
     */
@@ -68,12 +70,27 @@ namespace Model
     /*
      Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
     */
-    inline CookieNames&  WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
+    */
+    inline CookieNames& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
+
+    /*
+     Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
+    */
+    inline CookieNames& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
 
     /*
      Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
     */
     inline CookieNames& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
+    */
+    inline CookieNames& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /*
      Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.

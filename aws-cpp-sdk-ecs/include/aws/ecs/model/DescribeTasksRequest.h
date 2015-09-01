@@ -40,10 +40,16 @@ namespace Model
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     */
-    inline DescribeTasksRequest&  WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+    inline DescribeTasksRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
+    */
+    inline DescribeTasksRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task you want to describe. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -64,6 +75,7 @@ namespace Model
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
     inline const Aws::Vector<Aws::String>& GetTasks() const{ return m_tasks; }
+
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
@@ -72,12 +84,27 @@ namespace Model
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline DescribeTasksRequest&  WithTasks(const Aws::Vector<Aws::String>& value) { SetTasks(value); return *this;}
+    inline void SetTasks(Aws::Vector<Aws::String>&& value) { m_tasksHasBeenSet = true; m_tasks = value; }
+
+    /*
+     <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
+    */
+    inline DescribeTasksRequest& WithTasks(const Aws::Vector<Aws::String>& value) { SetTasks(value); return *this;}
+
+    /*
+     <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
+    */
+    inline DescribeTasksRequest& WithTasks(Aws::Vector<Aws::String>&& value) { SetTasks(value); return *this;}
 
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
     inline DescribeTasksRequest& AddTasks(const Aws::String& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
+
+    /*
+     <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
+    */
+    inline DescribeTasksRequest& AddTasks(Aws::String&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
 
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>

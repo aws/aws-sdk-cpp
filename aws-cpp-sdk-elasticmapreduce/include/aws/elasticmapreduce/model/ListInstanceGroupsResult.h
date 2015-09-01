@@ -48,6 +48,7 @@ namespace Model
      <p>The list of instance groups for the cluster and given filters.</p>
     */
     inline const Aws::Vector<InstanceGroup>& GetInstanceGroups() const{ return m_instanceGroups; }
+
     /*
      <p>The list of instance groups for the cluster and given filters.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>The list of instance groups for the cluster and given filters.</p>
     */
-    inline ListInstanceGroupsResult&  WithInstanceGroups(const Aws::Vector<InstanceGroup>& value) { SetInstanceGroups(value); return *this;}
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroup>&& value) { m_instanceGroups = value; }
+
+    /*
+     <p>The list of instance groups for the cluster and given filters.</p>
+    */
+    inline ListInstanceGroupsResult& WithInstanceGroups(const Aws::Vector<InstanceGroup>& value) { SetInstanceGroups(value); return *this;}
+
+    /*
+     <p>The list of instance groups for the cluster and given filters.</p>
+    */
+    inline ListInstanceGroupsResult& WithInstanceGroups(Aws::Vector<InstanceGroup>&& value) { SetInstanceGroups(value); return *this;}
 
     /*
      <p>The list of instance groups for the cluster and given filters.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListInstanceGroupsResult& AddInstanceGroups(const InstanceGroup& value) { m_instanceGroups.push_back(value); return *this; }
 
     /*
+     <p>The list of instance groups for the cluster and given filters.</p>
+    */
+    inline ListInstanceGroupsResult& AddInstanceGroups(InstanceGroup&& value) { m_instanceGroups.push_back(value); return *this; }
+
+    /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>
     */
-    inline ListInstanceGroupsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListInstanceGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>The pagination token that indicates the next set of results to retrieve.</p>
+    */
+    inline ListInstanceGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>The pagination token that indicates the next set of results to retrieve.</p>

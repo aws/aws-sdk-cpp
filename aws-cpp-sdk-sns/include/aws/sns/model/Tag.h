@@ -45,28 +45,42 @@ namespace Model
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline Tag&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
     
     inline const Aws::String& GetValue() const{ return m_value; }
+
     
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     
-    inline Tag&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    
+    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}

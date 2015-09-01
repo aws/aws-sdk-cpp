@@ -48,6 +48,7 @@ namespace Model
      <p>Information about the policies.</p>
     */
     inline const Aws::Vector<PolicyDescription>& GetPolicyDescriptions() const{ return m_policyDescriptions; }
+
     /*
      <p>Information about the policies.</p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p>Information about the policies.</p>
     */
-    inline DescribeLoadBalancerPoliciesResult&  WithPolicyDescriptions(const Aws::Vector<PolicyDescription>& value) { SetPolicyDescriptions(value); return *this;}
+    inline void SetPolicyDescriptions(Aws::Vector<PolicyDescription>&& value) { m_policyDescriptions = value; }
+
+    /*
+     <p>Information about the policies.</p>
+    */
+    inline DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(const Aws::Vector<PolicyDescription>& value) { SetPolicyDescriptions(value); return *this;}
+
+    /*
+     <p>Information about the policies.</p>
+    */
+    inline DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(Aws::Vector<PolicyDescription>&& value) { SetPolicyDescriptions(value); return *this;}
 
     /*
      <p>Information about the policies.</p>
     */
     inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(const PolicyDescription& value) { m_policyDescriptions.push_back(value); return *this; }
 
+    /*
+     <p>Information about the policies.</p>
+    */
+    inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(PolicyDescription&& value) { m_policyDescriptions.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeLoadBalancerPoliciesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeLoadBalancerPoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeLoadBalancerPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<PolicyDescription> m_policyDescriptions;

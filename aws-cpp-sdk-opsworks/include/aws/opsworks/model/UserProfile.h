@@ -44,10 +44,16 @@ namespace Model
      <p>The user's IAM ARN.</p>
     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
     /*
      <p>The user's IAM ARN.</p>
     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+
+    /*
+     <p>The user's IAM ARN.</p>
+    */
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The user's IAM ARN.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline UserProfile&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+    inline UserProfile& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+
+    /*
+     <p>The user's IAM ARN.</p>
+    */
+    inline UserProfile& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /*
      <p>The user's IAM ARN.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The user's name.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The user's name.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The user's name.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The user's name.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The user's name.</p>
     */
-    inline UserProfile&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline UserProfile& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The user's name.</p>
+    */
+    inline UserProfile& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The user's name.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The user's SSH user name.</p>
     */
     inline const Aws::String& GetSshUsername() const{ return m_sshUsername; }
+
     /*
      <p>The user's SSH user name.</p>
     */
     inline void SetSshUsername(const Aws::String& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
+
+    /*
+     <p>The user's SSH user name.</p>
+    */
+    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
 
     /*
      <p>The user's SSH user name.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The user's SSH user name.</p>
     */
-    inline UserProfile&  WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
+    inline UserProfile& WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
+
+    /*
+     <p>The user's SSH user name.</p>
+    */
+    inline UserProfile& WithSshUsername(Aws::String&& value) { SetSshUsername(value); return *this;}
 
     /*
      <p>The user's SSH user name.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>The user's SSH public key.</p>
     */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
     /*
      <p>The user's SSH public key.</p>
     */
     inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+
+    /*
+     <p>The user's SSH public key.</p>
+    */
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
 
     /*
      <p>The user's SSH public key.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>The user's SSH public key.</p>
     */
-    inline UserProfile&  WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+    inline UserProfile& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+
+    /*
+     <p>The user's SSH public key.</p>
+    */
+    inline UserProfile& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(value); return *this;}
 
     /*
      <p>The user's SSH public key.</p>
@@ -140,6 +184,7 @@ namespace Model
      <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     */
     inline bool GetAllowSelfManagement() const{ return m_allowSelfManagement; }
+
     /*
      <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     */
@@ -148,7 +193,7 @@ namespace Model
     /*
      <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     */
-    inline UserProfile&  WithAllowSelfManagement(bool value) { SetAllowSelfManagement(value); return *this;}
+    inline UserProfile& WithAllowSelfManagement(bool value) { SetAllowSelfManagement(value); return *this;}
 
   private:
     Aws::String m_iamUserArn;

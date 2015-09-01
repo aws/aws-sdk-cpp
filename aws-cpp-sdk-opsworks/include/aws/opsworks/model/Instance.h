@@ -51,10 +51,16 @@ namespace Model
      <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
     /*
      <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /*
      <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
@@ -64,7 +70,12 @@ namespace Model
     /*
      <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     */
-    inline Instance&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+    inline Instance& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
+    inline Instance& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
 
     /*
      <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
@@ -75,10 +86,16 @@ namespace Model
      <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
+
     /*
      <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
+
+    /*
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+    */
+    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /*
      <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
@@ -88,7 +105,12 @@ namespace Model
     /*
      <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
-    inline Instance&  WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
+    inline Instance& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
+
+    /*
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+    */
+    inline Instance& WithAmiId(Aws::String&& value) { SetAmiId(value); return *this;}
 
     /*
      <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
@@ -99,6 +121,7 @@ namespace Model
      <p>The instance architecture: "i386" or "x86_64".</p>
     */
     inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
     /*
      <p>The instance architecture: "i386" or "x86_64".</p>
     */
@@ -107,12 +130,23 @@ namespace Model
     /*
      <p>The instance architecture: "i386" or "x86_64".</p>
     */
-    inline Instance&  WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /*
+     <p>The instance architecture: "i386" or "x86_64".</p>
+    */
+    inline Instance& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /*
+     <p>The instance architecture: "i386" or "x86_64".</p>
+    */
+    inline Instance& WithArchitecture(Architecture&& value) { SetArchitecture(value); return *this;}
 
     /*
      <p>For load-based or time-based instances, the type.</p>
     */
     inline const AutoScalingType& GetAutoScalingType() const{ return m_autoScalingType; }
+
     /*
      <p>For load-based or time-based instances, the type.</p>
     */
@@ -121,16 +155,32 @@ namespace Model
     /*
      <p>For load-based or time-based instances, the type.</p>
     */
-    inline Instance&  WithAutoScalingType(const AutoScalingType& value) { SetAutoScalingType(value); return *this;}
+    inline void SetAutoScalingType(AutoScalingType&& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
+
+    /*
+     <p>For load-based or time-based instances, the type.</p>
+    */
+    inline Instance& WithAutoScalingType(const AutoScalingType& value) { SetAutoScalingType(value); return *this;}
+
+    /*
+     <p>For load-based or time-based instances, the type.</p>
+    */
+    inline Instance& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(value); return *this;}
 
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -140,7 +190,12 @@ namespace Model
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     */
-    inline Instance&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline Instance& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    */
+    inline Instance& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p>The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -151,6 +206,7 @@ namespace Model
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     */
@@ -159,7 +215,17 @@ namespace Model
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     */
-    inline Instance&  WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+
+    /*
+     <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
+    */
+    inline Instance& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /*
+     <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
+    */
+    inline Instance& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
 
     /*
      <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
@@ -167,13 +233,24 @@ namespace Model
     inline Instance& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /*
+     <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
+    */
+    inline Instance& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+
+    /*
      <p>The time that the instance was created.</p>
     */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
     /*
      <p>The time that the instance was created.</p>
     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /*
+     <p>The time that the instance was created.</p>
+    */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /*
      <p>The time that the instance was created.</p>
@@ -183,7 +260,12 @@ namespace Model
     /*
      <p>The time that the instance was created.</p>
     */
-    inline Instance&  WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+    inline Instance& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /*
+     <p>The time that the instance was created.</p>
+    */
+    inline Instance& WithCreatedAt(Aws::String&& value) { SetCreatedAt(value); return *this;}
 
     /*
      <p>The time that the instance was created.</p>
@@ -194,6 +276,7 @@ namespace Model
      <p>Whether this is an Amazon EBS-optimized instance.</p>
     */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+
     /*
      <p>Whether this is an Amazon EBS-optimized instance.</p>
     */
@@ -202,16 +285,22 @@ namespace Model
     /*
      <p>Whether this is an Amazon EBS-optimized instance.</p>
     */
-    inline Instance&  WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+    inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /*
      <p>The ID of the associated Amazon EC2 instance.</p>
     */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
     /*
      <p>The ID of the associated Amazon EC2 instance.</p>
     */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
+
+    /*
+     <p>The ID of the associated Amazon EC2 instance.</p>
+    */
+    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /*
      <p>The ID of the associated Amazon EC2 instance.</p>
@@ -221,7 +310,12 @@ namespace Model
     /*
      <p>The ID of the associated Amazon EC2 instance.</p>
     */
-    inline Instance&  WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+    inline Instance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+
+    /*
+     <p>The ID of the associated Amazon EC2 instance.</p>
+    */
+    inline Instance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(value); return *this;}
 
     /*
      <p>The ID of the associated Amazon EC2 instance.</p>
@@ -232,10 +326,16 @@ namespace Model
      <p>For container instances, the Amazon ECS cluster's ARN.</p>
     */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+
     /*
      <p>For container instances, the Amazon ECS cluster's ARN.</p>
     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
+
+    /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /*
      <p>For container instances, the Amazon ECS cluster's ARN.</p>
@@ -245,7 +345,12 @@ namespace Model
     /*
      <p>For container instances, the Amazon ECS cluster's ARN.</p>
     */
-    inline Instance&  WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+    inline Instance& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+
+    /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline Instance& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
 
     /*
      <p>For container instances, the Amazon ECS cluster's ARN.</p>
@@ -256,10 +361,16 @@ namespace Model
      <p>For container instances, the instance's ARN.</p>
     */
     inline const Aws::String& GetEcsContainerInstanceArn() const{ return m_ecsContainerInstanceArn; }
+
     /*
      <p>For container instances, the instance's ARN.</p>
     */
     inline void SetEcsContainerInstanceArn(const Aws::String& value) { m_ecsContainerInstanceArnHasBeenSet = true; m_ecsContainerInstanceArn = value; }
+
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline void SetEcsContainerInstanceArn(Aws::String&& value) { m_ecsContainerInstanceArnHasBeenSet = true; m_ecsContainerInstanceArn = value; }
 
     /*
      <p>For container instances, the instance's ARN.</p>
@@ -269,7 +380,12 @@ namespace Model
     /*
      <p>For container instances, the instance's ARN.</p>
     */
-    inline Instance&  WithEcsContainerInstanceArn(const Aws::String& value) { SetEcsContainerInstanceArn(value); return *this;}
+    inline Instance& WithEcsContainerInstanceArn(const Aws::String& value) { SetEcsContainerInstanceArn(value); return *this;}
+
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline Instance& WithEcsContainerInstanceArn(Aws::String&& value) { SetEcsContainerInstanceArn(value); return *this;}
 
     /*
      <p>For container instances, the instance's ARN.</p>
@@ -280,10 +396,16 @@ namespace Model
      <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+
     /*
      <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+
+    /*
+     <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    */
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /*
      <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
@@ -293,7 +415,12 @@ namespace Model
     /*
      <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
     */
-    inline Instance&  WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+    inline Instance& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    */
+    inline Instance& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
 
     /*
      <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
@@ -304,10 +431,16 @@ namespace Model
      <p>The instance host name.</p>
     */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
+
     /*
      <p>The instance host name.</p>
     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+
+    /*
+     <p>The instance host name.</p>
+    */
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /*
      <p>The instance host name.</p>
@@ -317,7 +450,12 @@ namespace Model
     /*
      <p>The instance host name.</p>
     */
-    inline Instance&  WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+    inline Instance& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
+
+    /*
+     <p>The instance host name.</p>
+    */
+    inline Instance& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
 
     /*
      <p>The instance host name.</p>
@@ -328,10 +466,16 @@ namespace Model
      <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline const Aws::String& GetInfrastructureClass() const{ return m_infrastructureClass; }
+
     /*
      <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline void SetInfrastructureClass(const Aws::String& value) { m_infrastructureClassHasBeenSet = true; m_infrastructureClass = value; }
+
+    /*
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
+    */
+    inline void SetInfrastructureClass(Aws::String&& value) { m_infrastructureClassHasBeenSet = true; m_infrastructureClass = value; }
 
     /*
      <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
@@ -341,7 +485,12 @@ namespace Model
     /*
      <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
-    inline Instance&  WithInfrastructureClass(const Aws::String& value) { SetInfrastructureClass(value); return *this;}
+    inline Instance& WithInfrastructureClass(const Aws::String& value) { SetInfrastructureClass(value); return *this;}
+
+    /*
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
+    */
+    inline Instance& WithInfrastructureClass(Aws::String&& value) { SetInfrastructureClass(value); return *this;}
 
     /*
      <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
@@ -352,6 +501,7 @@ namespace Model
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
+
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
@@ -360,16 +510,22 @@ namespace Model
     /*
      <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
-    inline Instance&  WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
+    inline Instance& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
     /*
      <p>The instance ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
@@ -379,7 +535,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline Instance&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance ID.</p>
+    */
+    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance ID.</p>
@@ -390,10 +551,16 @@ namespace Model
      <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
     inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
+
     /*
      <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
     inline void SetInstanceProfileArn(const Aws::String& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
+
+    /*
+     <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    */
+    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
 
     /*
      <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -403,7 +570,12 @@ namespace Model
     /*
      <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
-    inline Instance&  WithInstanceProfileArn(const Aws::String& value) { SetInstanceProfileArn(value); return *this;}
+    inline Instance& WithInstanceProfileArn(const Aws::String& value) { SetInstanceProfileArn(value); return *this;}
+
+    /*
+     <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    */
+    inline Instance& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(value); return *this;}
 
     /*
      <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -414,10 +586,16 @@ namespace Model
      <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
     /*
      <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /*
+     <p>The instance type, such as <code>t2.micro</code>.</p>
+    */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>The instance type, such as <code>t2.micro</code>.</p>
@@ -427,7 +605,12 @@ namespace Model
     /*
      <p>The instance type, such as <code>t2.micro</code>.</p>
     */
-    inline Instance&  WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+    inline Instance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /*
+     <p>The instance type, such as <code>t2.micro</code>.</p>
+    */
+    inline Instance& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /*
      <p>The instance type, such as <code>t2.micro</code>.</p>
@@ -438,10 +621,16 @@ namespace Model
      <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
     */
     inline const Aws::String& GetLastServiceErrorId() const{ return m_lastServiceErrorId; }
+
     /*
      <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
     */
     inline void SetLastServiceErrorId(const Aws::String& value) { m_lastServiceErrorIdHasBeenSet = true; m_lastServiceErrorId = value; }
+
+    /*
+     <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
+    */
+    inline void SetLastServiceErrorId(Aws::String&& value) { m_lastServiceErrorIdHasBeenSet = true; m_lastServiceErrorId = value; }
 
     /*
      <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
@@ -451,7 +640,12 @@ namespace Model
     /*
      <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
     */
-    inline Instance&  WithLastServiceErrorId(const Aws::String& value) { SetLastServiceErrorId(value); return *this;}
+    inline Instance& WithLastServiceErrorId(const Aws::String& value) { SetLastServiceErrorId(value); return *this;}
+
+    /*
+     <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
+    */
+    inline Instance& WithLastServiceErrorId(Aws::String&& value) { SetLastServiceErrorId(value); return *this;}
 
     /*
      <p>The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.</p>
@@ -462,6 +656,7 @@ namespace Model
      <p>An array containing the instance layer IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
     /*
      <p>An array containing the instance layer IDs.</p>
     */
@@ -470,12 +665,27 @@ namespace Model
     /*
      <p>An array containing the instance layer IDs.</p>
     */
-    inline Instance&  WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /*
+     <p>An array containing the instance layer IDs.</p>
+    */
+    inline Instance& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+
+    /*
+     <p>An array containing the instance layer IDs.</p>
+    */
+    inline Instance& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
 
     /*
      <p>An array containing the instance layer IDs.</p>
     */
     inline Instance& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /*
+     <p>An array containing the instance layer IDs.</p>
+    */
+    inline Instance& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>An array containing the instance layer IDs.</p>
@@ -486,10 +696,16 @@ namespace Model
      <p>The instance's operating system.</p>
     */
     inline const Aws::String& GetOs() const{ return m_os; }
+
     /*
      <p>The instance's operating system.</p>
     */
     inline void SetOs(const Aws::String& value) { m_osHasBeenSet = true; m_os = value; }
+
+    /*
+     <p>The instance's operating system.</p>
+    */
+    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = value; }
 
     /*
      <p>The instance's operating system.</p>
@@ -499,7 +715,12 @@ namespace Model
     /*
      <p>The instance's operating system.</p>
     */
-    inline Instance&  WithOs(const Aws::String& value) { SetOs(value); return *this;}
+    inline Instance& WithOs(const Aws::String& value) { SetOs(value); return *this;}
+
+    /*
+     <p>The instance's operating system.</p>
+    */
+    inline Instance& WithOs(Aws::String&& value) { SetOs(value); return *this;}
 
     /*
      <p>The instance's operating system.</p>
@@ -510,10 +731,16 @@ namespace Model
      <p>The instance's platform.</p>
     */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
     /*
      <p>The instance's platform.</p>
     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
+
+    /*
+     <p>The instance's platform.</p>
+    */
+    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /*
      <p>The instance's platform.</p>
@@ -523,7 +750,12 @@ namespace Model
     /*
      <p>The instance's platform.</p>
     */
-    inline Instance&  WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
+    inline Instance& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
+
+    /*
+     <p>The instance's platform.</p>
+    */
+    inline Instance& WithPlatform(Aws::String&& value) { SetPlatform(value); return *this;}
 
     /*
      <p>The instance's platform.</p>
@@ -534,10 +766,16 @@ namespace Model
      <p>The The instance's private DNS name.</p>
     */
     inline const Aws::String& GetPrivateDns() const{ return m_privateDns; }
+
     /*
      <p>The The instance's private DNS name.</p>
     */
     inline void SetPrivateDns(const Aws::String& value) { m_privateDnsHasBeenSet = true; m_privateDns = value; }
+
+    /*
+     <p>The The instance's private DNS name.</p>
+    */
+    inline void SetPrivateDns(Aws::String&& value) { m_privateDnsHasBeenSet = true; m_privateDns = value; }
 
     /*
      <p>The The instance's private DNS name.</p>
@@ -547,7 +785,12 @@ namespace Model
     /*
      <p>The The instance's private DNS name.</p>
     */
-    inline Instance&  WithPrivateDns(const Aws::String& value) { SetPrivateDns(value); return *this;}
+    inline Instance& WithPrivateDns(const Aws::String& value) { SetPrivateDns(value); return *this;}
+
+    /*
+     <p>The The instance's private DNS name.</p>
+    */
+    inline Instance& WithPrivateDns(Aws::String&& value) { SetPrivateDns(value); return *this;}
 
     /*
      <p>The The instance's private DNS name.</p>
@@ -558,10 +801,16 @@ namespace Model
      <p>The instance's private IP address.</p>
     */
     inline const Aws::String& GetPrivateIp() const{ return m_privateIp; }
+
     /*
      <p>The instance's private IP address.</p>
     */
     inline void SetPrivateIp(const Aws::String& value) { m_privateIpHasBeenSet = true; m_privateIp = value; }
+
+    /*
+     <p>The instance's private IP address.</p>
+    */
+    inline void SetPrivateIp(Aws::String&& value) { m_privateIpHasBeenSet = true; m_privateIp = value; }
 
     /*
      <p>The instance's private IP address.</p>
@@ -571,7 +820,12 @@ namespace Model
     /*
      <p>The instance's private IP address.</p>
     */
-    inline Instance&  WithPrivateIp(const Aws::String& value) { SetPrivateIp(value); return *this;}
+    inline Instance& WithPrivateIp(const Aws::String& value) { SetPrivateIp(value); return *this;}
+
+    /*
+     <p>The instance's private IP address.</p>
+    */
+    inline Instance& WithPrivateIp(Aws::String&& value) { SetPrivateIp(value); return *this;}
 
     /*
      <p>The instance's private IP address.</p>
@@ -582,10 +836,16 @@ namespace Model
      <p>The instance public DNS name.</p>
     */
     inline const Aws::String& GetPublicDns() const{ return m_publicDns; }
+
     /*
      <p>The instance public DNS name.</p>
     */
     inline void SetPublicDns(const Aws::String& value) { m_publicDnsHasBeenSet = true; m_publicDns = value; }
+
+    /*
+     <p>The instance public DNS name.</p>
+    */
+    inline void SetPublicDns(Aws::String&& value) { m_publicDnsHasBeenSet = true; m_publicDns = value; }
 
     /*
      <p>The instance public DNS name.</p>
@@ -595,7 +855,12 @@ namespace Model
     /*
      <p>The instance public DNS name.</p>
     */
-    inline Instance&  WithPublicDns(const Aws::String& value) { SetPublicDns(value); return *this;}
+    inline Instance& WithPublicDns(const Aws::String& value) { SetPublicDns(value); return *this;}
+
+    /*
+     <p>The instance public DNS name.</p>
+    */
+    inline Instance& WithPublicDns(Aws::String&& value) { SetPublicDns(value); return *this;}
 
     /*
      <p>The instance public DNS name.</p>
@@ -606,10 +871,16 @@ namespace Model
      <p>The instance public IP address.</p>
     */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
     /*
      <p>The instance public IP address.</p>
     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+
+    /*
+     <p>The instance public IP address.</p>
+    */
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /*
      <p>The instance public IP address.</p>
@@ -619,7 +890,12 @@ namespace Model
     /*
      <p>The instance public IP address.</p>
     */
-    inline Instance&  WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
+    inline Instance& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
+
+    /*
+     <p>The instance public IP address.</p>
+    */
+    inline Instance& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
 
     /*
      <p>The instance public IP address.</p>
@@ -630,10 +906,16 @@ namespace Model
      <p>For registered instances, who performed the registration.</p>
     */
     inline const Aws::String& GetRegisteredBy() const{ return m_registeredBy; }
+
     /*
      <p>For registered instances, who performed the registration.</p>
     */
     inline void SetRegisteredBy(const Aws::String& value) { m_registeredByHasBeenSet = true; m_registeredBy = value; }
+
+    /*
+     <p>For registered instances, who performed the registration.</p>
+    */
+    inline void SetRegisteredBy(Aws::String&& value) { m_registeredByHasBeenSet = true; m_registeredBy = value; }
 
     /*
      <p>For registered instances, who performed the registration.</p>
@@ -643,7 +925,12 @@ namespace Model
     /*
      <p>For registered instances, who performed the registration.</p>
     */
-    inline Instance&  WithRegisteredBy(const Aws::String& value) { SetRegisteredBy(value); return *this;}
+    inline Instance& WithRegisteredBy(const Aws::String& value) { SetRegisteredBy(value); return *this;}
+
+    /*
+     <p>For registered instances, who performed the registration.</p>
+    */
+    inline Instance& WithRegisteredBy(Aws::String&& value) { SetRegisteredBy(value); return *this;}
 
     /*
      <p>For registered instances, who performed the registration.</p>
@@ -654,10 +941,16 @@ namespace Model
      <p>The instance's reported AWS OpsWorks agent version.</p>
     */
     inline const Aws::String& GetReportedAgentVersion() const{ return m_reportedAgentVersion; }
+
     /*
      <p>The instance's reported AWS OpsWorks agent version.</p>
     */
     inline void SetReportedAgentVersion(const Aws::String& value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion = value; }
+
+    /*
+     <p>The instance's reported AWS OpsWorks agent version.</p>
+    */
+    inline void SetReportedAgentVersion(Aws::String&& value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion = value; }
 
     /*
      <p>The instance's reported AWS OpsWorks agent version.</p>
@@ -667,7 +960,12 @@ namespace Model
     /*
      <p>The instance's reported AWS OpsWorks agent version.</p>
     */
-    inline Instance&  WithReportedAgentVersion(const Aws::String& value) { SetReportedAgentVersion(value); return *this;}
+    inline Instance& WithReportedAgentVersion(const Aws::String& value) { SetReportedAgentVersion(value); return *this;}
+
+    /*
+     <p>The instance's reported AWS OpsWorks agent version.</p>
+    */
+    inline Instance& WithReportedAgentVersion(Aws::String&& value) { SetReportedAgentVersion(value); return *this;}
 
     /*
      <p>The instance's reported AWS OpsWorks agent version.</p>
@@ -678,6 +976,7 @@ namespace Model
      <p>For registered instances, the reported operating system.</p>
     */
     inline const ReportedOs& GetReportedOs() const{ return m_reportedOs; }
+
     /*
      <p>For registered instances, the reported operating system.</p>
     */
@@ -686,12 +985,23 @@ namespace Model
     /*
      <p>For registered instances, the reported operating system.</p>
     */
-    inline Instance&  WithReportedOs(const ReportedOs& value) { SetReportedOs(value); return *this;}
+    inline void SetReportedOs(ReportedOs&& value) { m_reportedOsHasBeenSet = true; m_reportedOs = value; }
+
+    /*
+     <p>For registered instances, the reported operating system.</p>
+    */
+    inline Instance& WithReportedOs(const ReportedOs& value) { SetReportedOs(value); return *this;}
+
+    /*
+     <p>For registered instances, the reported operating system.</p>
+    */
+    inline Instance& WithReportedOs(ReportedOs&& value) { SetReportedOs(value); return *this;}
 
     /*
      <p>The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     */
     inline const RootDeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
+
     /*
      <p>The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     */
@@ -700,16 +1010,32 @@ namespace Model
     /*
      <p>The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     */
-    inline Instance&  WithRootDeviceType(const RootDeviceType& value) { SetRootDeviceType(value); return *this;}
+    inline void SetRootDeviceType(RootDeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
+
+    /*
+     <p>The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    */
+    inline Instance& WithRootDeviceType(const RootDeviceType& value) { SetRootDeviceType(value); return *this;}
+
+    /*
+     <p>The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    */
+    inline Instance& WithRootDeviceType(RootDeviceType&& value) { SetRootDeviceType(value); return *this;}
 
     /*
      <p>The root device volume ID.</p>
     */
     inline const Aws::String& GetRootDeviceVolumeId() const{ return m_rootDeviceVolumeId; }
+
     /*
      <p>The root device volume ID.</p>
     */
     inline void SetRootDeviceVolumeId(const Aws::String& value) { m_rootDeviceVolumeIdHasBeenSet = true; m_rootDeviceVolumeId = value; }
+
+    /*
+     <p>The root device volume ID.</p>
+    */
+    inline void SetRootDeviceVolumeId(Aws::String&& value) { m_rootDeviceVolumeIdHasBeenSet = true; m_rootDeviceVolumeId = value; }
 
     /*
      <p>The root device volume ID.</p>
@@ -719,7 +1045,12 @@ namespace Model
     /*
      <p>The root device volume ID.</p>
     */
-    inline Instance&  WithRootDeviceVolumeId(const Aws::String& value) { SetRootDeviceVolumeId(value); return *this;}
+    inline Instance& WithRootDeviceVolumeId(const Aws::String& value) { SetRootDeviceVolumeId(value); return *this;}
+
+    /*
+     <p>The root device volume ID.</p>
+    */
+    inline Instance& WithRootDeviceVolumeId(Aws::String&& value) { SetRootDeviceVolumeId(value); return *this;}
 
     /*
      <p>The root device volume ID.</p>
@@ -730,6 +1061,7 @@ namespace Model
      <p>An array containing the instance security group IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
     /*
      <p>An array containing the instance security group IDs.</p>
     */
@@ -738,12 +1070,27 @@ namespace Model
     /*
      <p>An array containing the instance security group IDs.</p>
     */
-    inline Instance&  WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /*
+     <p>An array containing the instance security group IDs.</p>
+    */
+    inline Instance& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+
+    /*
+     <p>An array containing the instance security group IDs.</p>
+    */
+    inline Instance& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
 
     /*
      <p>An array containing the instance security group IDs.</p>
     */
     inline Instance& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p>An array containing the instance security group IDs.</p>
+    */
+    inline Instance& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /*
      <p>An array containing the instance security group IDs.</p>
@@ -754,10 +1101,16 @@ namespace Model
      <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline const Aws::String& GetSshHostDsaKeyFingerprint() const{ return m_sshHostDsaKeyFingerprint; }
+
     /*
      <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline void SetSshHostDsaKeyFingerprint(const Aws::String& value) { m_sshHostDsaKeyFingerprintHasBeenSet = true; m_sshHostDsaKeyFingerprint = value; }
+
+    /*
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
+    */
+    inline void SetSshHostDsaKeyFingerprint(Aws::String&& value) { m_sshHostDsaKeyFingerprintHasBeenSet = true; m_sshHostDsaKeyFingerprint = value; }
 
     /*
      <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
@@ -767,7 +1120,12 @@ namespace Model
     /*
      <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
-    inline Instance&  WithSshHostDsaKeyFingerprint(const Aws::String& value) { SetSshHostDsaKeyFingerprint(value); return *this;}
+    inline Instance& WithSshHostDsaKeyFingerprint(const Aws::String& value) { SetSshHostDsaKeyFingerprint(value); return *this;}
+
+    /*
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
+    */
+    inline Instance& WithSshHostDsaKeyFingerprint(Aws::String&& value) { SetSshHostDsaKeyFingerprint(value); return *this;}
 
     /*
      <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
@@ -778,10 +1136,16 @@ namespace Model
      <p>The SSH key's RSA fingerprint.</p>
     */
     inline const Aws::String& GetSshHostRsaKeyFingerprint() const{ return m_sshHostRsaKeyFingerprint; }
+
     /*
      <p>The SSH key's RSA fingerprint.</p>
     */
     inline void SetSshHostRsaKeyFingerprint(const Aws::String& value) { m_sshHostRsaKeyFingerprintHasBeenSet = true; m_sshHostRsaKeyFingerprint = value; }
+
+    /*
+     <p>The SSH key's RSA fingerprint.</p>
+    */
+    inline void SetSshHostRsaKeyFingerprint(Aws::String&& value) { m_sshHostRsaKeyFingerprintHasBeenSet = true; m_sshHostRsaKeyFingerprint = value; }
 
     /*
      <p>The SSH key's RSA fingerprint.</p>
@@ -791,7 +1155,12 @@ namespace Model
     /*
      <p>The SSH key's RSA fingerprint.</p>
     */
-    inline Instance&  WithSshHostRsaKeyFingerprint(const Aws::String& value) { SetSshHostRsaKeyFingerprint(value); return *this;}
+    inline Instance& WithSshHostRsaKeyFingerprint(const Aws::String& value) { SetSshHostRsaKeyFingerprint(value); return *this;}
+
+    /*
+     <p>The SSH key's RSA fingerprint.</p>
+    */
+    inline Instance& WithSshHostRsaKeyFingerprint(Aws::String&& value) { SetSshHostRsaKeyFingerprint(value); return *this;}
 
     /*
      <p>The SSH key's RSA fingerprint.</p>
@@ -802,10 +1171,16 @@ namespace Model
      <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
+
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
+
+    /*
+     <p>The instance's Amazon EC2 key-pair name.</p>
+    */
+    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
 
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
@@ -815,7 +1190,12 @@ namespace Model
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
     */
-    inline Instance&  WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
+    inline Instance& WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
+
+    /*
+     <p>The instance's Amazon EC2 key-pair name.</p>
+    */
+    inline Instance& WithSshKeyName(Aws::String&& value) { SetSshKeyName(value); return *this;}
 
     /*
      <p>The instance's Amazon EC2 key-pair name.</p>
@@ -826,10 +1206,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -839,7 +1225,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline Instance&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline Instance& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline Instance& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -850,10 +1241,16 @@ namespace Model
      <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
@@ -863,7 +1260,12 @@ namespace Model
     /*
      <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
     */
-    inline Instance&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline Instance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
+    */
+    inline Instance& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li> <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code> </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code> </li> <li> <code>terminating</code> </li> </ul>
@@ -874,10 +1276,16 @@ namespace Model
      <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
     /*
      <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /*
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
+    */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /*
      <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
@@ -887,7 +1295,12 @@ namespace Model
     /*
      <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
-    inline Instance&  WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+    inline Instance& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /*
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
+    */
+    inline Instance& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
     /*
      <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
@@ -898,6 +1311,7 @@ namespace Model
      <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     */
     inline const VirtualizationType& GetVirtualizationType() const{ return m_virtualizationType; }
+
     /*
      <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     */
@@ -906,7 +1320,17 @@ namespace Model
     /*
      <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     */
-    inline Instance&  WithVirtualizationType(const VirtualizationType& value) { SetVirtualizationType(value); return *this;}
+    inline void SetVirtualizationType(VirtualizationType&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
+
+    /*
+     <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
+    */
+    inline Instance& WithVirtualizationType(const VirtualizationType& value) { SetVirtualizationType(value); return *this;}
+
+    /*
+     <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
+    */
+    inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(value); return *this;}
 
   private:
     Aws::String m_agentVersion;

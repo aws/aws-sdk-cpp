@@ -41,6 +41,7 @@ namespace Model
      <p>A list of job flows to be shutdown.</p>
     */
     inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
+
     /*
      <p>A list of job flows to be shutdown.</p>
     */
@@ -49,12 +50,27 @@ namespace Model
     /*
      <p>A list of job flows to be shutdown.</p>
     */
-    inline TerminateJobFlowsRequest&  WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
+    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
+
+    /*
+     <p>A list of job flows to be shutdown.</p>
+    */
+    inline TerminateJobFlowsRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
+
+    /*
+     <p>A list of job flows to be shutdown.</p>
+    */
+    inline TerminateJobFlowsRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(value); return *this;}
 
     /*
      <p>A list of job flows to be shutdown.</p>
     */
     inline TerminateJobFlowsRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+
+    /*
+     <p>A list of job flows to be shutdown.</p>
+    */
+    inline TerminateJobFlowsRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
     /*
      <p>A list of job flows to be shutdown.</p>

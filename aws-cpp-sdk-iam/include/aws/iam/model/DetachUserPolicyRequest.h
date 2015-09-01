@@ -37,10 +37,16 @@ namespace Model
      <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
     */
-    inline DetachUserPolicyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline DetachUserPolicyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
+    */
+    inline DetachUserPolicyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
@@ -59,14 +70,21 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
-    inline DetachUserPolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+    inline DetachUserPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    
+    inline DetachUserPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
     
     inline DetachUserPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}

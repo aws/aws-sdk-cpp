@@ -44,10 +44,16 @@ namespace Model
      <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
     */
     inline const Aws::String& GetStrategy() const{ return m_strategy; }
+
     /*
      <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
     */
     inline void SetStrategy(const Aws::String& value) { m_strategyHasBeenSet = true; m_strategy = value; }
+
+    /*
+     <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
+    */
+    inline void SetStrategy(Aws::String&& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /*
      <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
     */
-    inline DataRetrievalRule&  WithStrategy(const Aws::String& value) { SetStrategy(value); return *this;}
+    inline DataRetrievalRule& WithStrategy(const Aws::String& value) { SetStrategy(value); return *this;}
+
+    /*
+     <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
+    */
+    inline DataRetrievalRule& WithStrategy(Aws::String&& value) { SetStrategy(value); return *this;}
 
     /*
      <p>The type of data retrieval policy to set.</p> <p>Valid values: BytesPerHour|FreeTier|None</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>The maximum number of bytes that can be retrieved in an hour.</p> <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     */
     inline long long GetBytesPerHour() const{ return m_bytesPerHour; }
+
     /*
      <p>The maximum number of bytes that can be retrieved in an hour.</p> <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     */
@@ -76,7 +88,7 @@ namespace Model
     /*
      <p>The maximum number of bytes that can be retrieved in an hour.</p> <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     */
-    inline DataRetrievalRule&  WithBytesPerHour(long long value) { SetBytesPerHour(value); return *this;}
+    inline DataRetrievalRule& WithBytesPerHour(long long value) { SetBytesPerHour(value); return *this;}
 
   private:
     Aws::String m_strategy;

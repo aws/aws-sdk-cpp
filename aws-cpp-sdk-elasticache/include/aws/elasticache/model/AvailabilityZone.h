@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the Availability Zone.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the Availability Zone.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the Availability Zone.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the Availability Zone.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the Availability Zone.</p>
     */
-    inline AvailabilityZone&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline AvailabilityZone& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the Availability Zone.</p>
+    */
+    inline AvailabilityZone& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the Availability Zone.</p>

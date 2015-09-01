@@ -43,56 +43,84 @@ namespace Model
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline Error&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline Error& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline Error& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline Error& WithKey(const char* value) { SetKey(value); return *this;}
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     
-    inline Error&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline Error& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    
+    inline Error& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     
     inline Error& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
     
     inline const Aws::String& GetCode() const{ return m_code; }
+
     
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     
-    inline Error&  WithCode(const Aws::String& value) { SetCode(value); return *this;}
+    inline Error& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+
+    
+    inline Error& WithCode(Aws::String&& value) { SetCode(value); return *this;}
 
     
     inline Error& WithCode(const char* value) { SetCode(value); return *this;}
 
     
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     
-    inline Error&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline Error& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    
+    inline Error& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     
     inline Error& WithMessage(const char* value) { SetMessage(value); return *this;}

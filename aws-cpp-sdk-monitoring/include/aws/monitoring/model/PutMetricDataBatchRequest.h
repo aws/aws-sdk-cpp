@@ -36,14 +36,24 @@ namespace Model
 
     
     inline const Aws::Vector<MetricDataBatch>& GetMetricDataBatches() const{ return m_metricDataBatches; }
+
     
     inline void SetMetricDataBatches(const Aws::Vector<MetricDataBatch>& value) { m_metricDataBatchesHasBeenSet = true; m_metricDataBatches = value; }
 
     
-    inline PutMetricDataBatchRequest&  WithMetricDataBatches(const Aws::Vector<MetricDataBatch>& value) { SetMetricDataBatches(value); return *this;}
+    inline void SetMetricDataBatches(Aws::Vector<MetricDataBatch>&& value) { m_metricDataBatchesHasBeenSet = true; m_metricDataBatches = value; }
+
+    
+    inline PutMetricDataBatchRequest& WithMetricDataBatches(const Aws::Vector<MetricDataBatch>& value) { SetMetricDataBatches(value); return *this;}
+
+    
+    inline PutMetricDataBatchRequest& WithMetricDataBatches(Aws::Vector<MetricDataBatch>&& value) { SetMetricDataBatches(value); return *this;}
 
     
     inline PutMetricDataBatchRequest& AddMetricDataBatches(const MetricDataBatch& value) { m_metricDataBatchesHasBeenSet = true; m_metricDataBatches.push_back(value); return *this; }
+
+    
+    inline PutMetricDataBatchRequest& AddMetricDataBatches(MetricDataBatch&& value) { m_metricDataBatchesHasBeenSet = true; m_metricDataBatches.push_back(value); return *this; }
 
   private:
     Aws::Vector<MetricDataBatch> m_metricDataBatches;

@@ -48,6 +48,7 @@ namespace Model
      <p>A list of aliases associated with the account.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAccountAliases() const{ return m_accountAliases; }
+
     /*
      <p>A list of aliases associated with the account.</p>
     */
@@ -56,12 +57,27 @@ namespace Model
     /*
      <p>A list of aliases associated with the account.</p>
     */
-    inline ListAccountAliasesResult&  WithAccountAliases(const Aws::Vector<Aws::String>& value) { SetAccountAliases(value); return *this;}
+    inline void SetAccountAliases(Aws::Vector<Aws::String>&& value) { m_accountAliases = value; }
+
+    /*
+     <p>A list of aliases associated with the account.</p>
+    */
+    inline ListAccountAliasesResult& WithAccountAliases(const Aws::Vector<Aws::String>& value) { SetAccountAliases(value); return *this;}
+
+    /*
+     <p>A list of aliases associated with the account.</p>
+    */
+    inline ListAccountAliasesResult& WithAccountAliases(Aws::Vector<Aws::String>&& value) { SetAccountAliases(value); return *this;}
 
     /*
      <p>A list of aliases associated with the account.</p>
     */
     inline ListAccountAliasesResult& AddAccountAliases(const Aws::String& value) { m_accountAliases.push_back(value); return *this; }
+
+    /*
+     <p>A list of aliases associated with the account.</p>
+    */
+    inline ListAccountAliasesResult& AddAccountAliases(Aws::String&& value) { m_accountAliases.push_back(value); return *this; }
 
     /*
      <p>A list of aliases associated with the account.</p>
@@ -72,6 +88,7 @@ namespace Model
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
@@ -80,16 +97,22 @@ namespace Model
     /*
      <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
     */
-    inline ListAccountAliasesResult&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline ListAccountAliasesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -99,7 +122,12 @@ namespace Model
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     */
-    inline ListAccountAliasesResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListAccountAliasesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    */
+    inline ListAccountAliasesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -108,11 +136,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListAccountAliasesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListAccountAliasesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListAccountAliasesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_accountAliases;

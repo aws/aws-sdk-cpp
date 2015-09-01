@@ -47,18 +47,33 @@ WebsiteConfiguration& WebsiteConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode errorDocumentNode = resultNode.FirstChild("ErrorDocument");
+    if(errorDocumentNode.IsNull())
+    {
+      errorDocumentNode = resultNode;
+    }
+
     if(!errorDocumentNode.IsNull())
     {
       m_errorDocument = errorDocumentNode;
       m_errorDocumentHasBeenSet = true;
     }
     XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
+    if(indexDocumentNode.IsNull())
+    {
+      indexDocumentNode = resultNode;
+    }
+
     if(!indexDocumentNode.IsNull())
     {
       m_indexDocument = indexDocumentNode;
       m_indexDocumentHasBeenSet = true;
     }
     XmlNode redirectAllRequestsToNode = resultNode.FirstChild("RedirectAllRequestsTo");
+    if(redirectAllRequestsToNode.IsNull())
+    {
+      redirectAllRequestsToNode = resultNode;
+    }
+
     if(!redirectAllRequestsToNode.IsNull())
     {
       m_redirectAllRequestsTo = redirectAllRequestsToNode;
@@ -104,9 +119,10 @@ void WebsiteConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_routingRulesHasBeenSet)
   {
+   XmlNode routingRulesParentNode = parentNode.CreateChildElement("RoutingRules");
    for(const auto& item : m_routingRules)
    {
-     XmlNode routingRulesNode = parentNode.CreateChildElement("RoutingRule");
+     XmlNode routingRulesNode = routingRulesParentNode.CreateChildElement("RoutingRule");
      item.AddToNode(routingRulesNode);
    }
   }

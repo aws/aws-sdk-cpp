@@ -37,10 +37,16 @@ namespace Model
      <p>The IAM user's current password.</p>
     */
     inline const Aws::String& GetOldPassword() const{ return m_oldPassword; }
+
     /*
      <p>The IAM user's current password.</p>
     */
     inline void SetOldPassword(const Aws::String& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = value; }
+
+    /*
+     <p>The IAM user's current password.</p>
+    */
+    inline void SetOldPassword(Aws::String&& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = value; }
 
     /*
      <p>The IAM user's current password.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The IAM user's current password.</p>
     */
-    inline ChangePasswordRequest&  WithOldPassword(const Aws::String& value) { SetOldPassword(value); return *this;}
+    inline ChangePasswordRequest& WithOldPassword(const Aws::String& value) { SetOldPassword(value); return *this;}
+
+    /*
+     <p>The IAM user's current password.</p>
+    */
+    inline ChangePasswordRequest& WithOldPassword(Aws::String&& value) { SetOldPassword(value); return *this;}
 
     /*
      <p>The IAM user's current password.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
     */
     inline const Aws::String& GetNewPassword() const{ return m_newPassword; }
+
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
     */
     inline void SetNewPassword(const Aws::String& value) { m_newPasswordHasBeenSet = true; m_newPassword = value; }
+
+    /*
+     <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
+    */
+    inline void SetNewPassword(Aws::String&& value) { m_newPasswordHasBeenSet = true; m_newPassword = value; }
 
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
     */
-    inline ChangePasswordRequest&  WithNewPassword(const Aws::String& value) { SetNewPassword(value); return *this;}
+    inline ChangePasswordRequest& WithNewPassword(const Aws::String& value) { SetNewPassword(value); return *this;}
+
+    /*
+     <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
+    */
+    inline ChangePasswordRequest& WithNewPassword(Aws::String&& value) { SetNewPassword(value); return *this;}
 
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>

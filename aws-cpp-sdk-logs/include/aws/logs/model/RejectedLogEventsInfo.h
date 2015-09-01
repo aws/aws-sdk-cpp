@@ -41,27 +41,30 @@ namespace Model
 
     
     inline long GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
+
     
     inline void SetTooNewLogEventStartIndex(long value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
 
     
-    inline RejectedLogEventsInfo&  WithTooNewLogEventStartIndex(long value) { SetTooNewLogEventStartIndex(value); return *this;}
+    inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(long value) { SetTooNewLogEventStartIndex(value); return *this;}
 
     
     inline long GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
+
     
     inline void SetTooOldLogEventEndIndex(long value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
     
-    inline RejectedLogEventsInfo&  WithTooOldLogEventEndIndex(long value) { SetTooOldLogEventEndIndex(value); return *this;}
+    inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(long value) { SetTooOldLogEventEndIndex(value); return *this;}
 
     
     inline long GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
+
     
     inline void SetExpiredLogEventEndIndex(long value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
 
     
-    inline RejectedLogEventsInfo&  WithExpiredLogEventEndIndex(long value) { SetExpiredLogEventEndIndex(value); return *this;}
+    inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(long value) { SetExpiredLogEventEndIndex(value); return *this;}
 
   private:
     long m_tooNewLogEventStartIndex;

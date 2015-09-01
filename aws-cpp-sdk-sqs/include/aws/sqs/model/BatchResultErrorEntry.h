@@ -47,10 +47,16 @@ namespace Model
      <p>The id of an entry in a batch request.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>The id of an entry in a batch request.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The id of an entry in a batch request.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The id of an entry in a batch request.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The id of an entry in a batch request.</p>
     */
-    inline BatchResultErrorEntry&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline BatchResultErrorEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The id of an entry in a batch request.</p>
+    */
+    inline BatchResultErrorEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>The id of an entry in a batch request.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>Whether the error happened due to the sender's fault.</p>
     */
     inline bool GetSenderFault() const{ return m_senderFault; }
+
     /*
      <p>Whether the error happened due to the sender's fault.</p>
     */
@@ -79,16 +91,22 @@ namespace Model
     /*
      <p>Whether the error happened due to the sender's fault.</p>
     */
-    inline BatchResultErrorEntry&  WithSenderFault(bool value) { SetSenderFault(value); return *this;}
+    inline BatchResultErrorEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
 
     /*
      <p>An error code representing why the action failed on this entry.</p>
     */
     inline const Aws::String& GetCode() const{ return m_code; }
+
     /*
      <p>An error code representing why the action failed on this entry.</p>
     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /*
+     <p>An error code representing why the action failed on this entry.</p>
+    */
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /*
      <p>An error code representing why the action failed on this entry.</p>
@@ -98,7 +116,12 @@ namespace Model
     /*
      <p>An error code representing why the action failed on this entry.</p>
     */
-    inline BatchResultErrorEntry&  WithCode(const Aws::String& value) { SetCode(value); return *this;}
+    inline BatchResultErrorEntry& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+
+    /*
+     <p>An error code representing why the action failed on this entry.</p>
+    */
+    inline BatchResultErrorEntry& WithCode(Aws::String&& value) { SetCode(value); return *this;}
 
     /*
      <p>An error code representing why the action failed on this entry.</p>
@@ -109,10 +132,16 @@ namespace Model
      <p>A message explaining why the action failed on this entry.</p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p>A message explaining why the action failed on this entry.</p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p>A message explaining why the action failed on this entry.</p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>A message explaining why the action failed on this entry.</p>
@@ -122,7 +151,12 @@ namespace Model
     /*
      <p>A message explaining why the action failed on this entry.</p>
     */
-    inline BatchResultErrorEntry&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline BatchResultErrorEntry& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p>A message explaining why the action failed on this entry.</p>
+    */
+    inline BatchResultErrorEntry& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p>A message explaining why the action failed on this entry.</p>

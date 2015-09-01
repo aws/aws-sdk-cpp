@@ -46,10 +46,16 @@ namespace Model
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
@@ -59,7 +65,12 @@ namespace Model
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
     */
-    inline Invalidation&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Invalidation& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+    */
+    inline Invalidation& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
@@ -70,10 +81,16 @@ namespace Model
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
@@ -83,7 +100,12 @@ namespace Model
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
     */
-    inline Invalidation&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline Invalidation& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+    */
+    inline Invalidation& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
@@ -94,6 +116,7 @@ namespace Model
      The date and time the invalidation request was first made.
     */
     inline double GetCreateTime() const{ return m_createTime; }
+
     /*
      The date and time the invalidation request was first made.
     */
@@ -102,12 +125,13 @@ namespace Model
     /*
      The date and time the invalidation request was first made.
     */
-    inline Invalidation&  WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline Invalidation& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 
     /*
      The current invalidation information for the batch request.
     */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
+
     /*
      The current invalidation information for the batch request.
     */
@@ -116,7 +140,17 @@ namespace Model
     /*
      The current invalidation information for the batch request.
     */
-    inline Invalidation&  WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
+    inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
+
+    /*
+     The current invalidation information for the batch request.
+    */
+    inline Invalidation& WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
+
+    /*
+     The current invalidation information for the batch request.
+    */
+    inline Invalidation& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(value); return *this;}
 
   private:
     Aws::String m_id;

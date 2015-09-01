@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the lifecycle hook.</p>
     */
     inline const Aws::String& GetLifecycleHookName() const{ return m_lifecycleHookName; }
+
     /*
      <p>The name of the lifecycle hook.</p>
     */
     inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
+
+    /*
+     <p>The name of the lifecycle hook.</p>
+    */
+    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /*
      <p>The name of the lifecycle hook.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the lifecycle hook.</p>
     */
-    inline RecordLifecycleActionHeartbeatRequest&  WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
+    inline RecordLifecycleActionHeartbeatRequest& WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
+
+    /*
+     <p>The name of the lifecycle hook.</p>
+    */
+    inline RecordLifecycleActionHeartbeatRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(value); return *this;}
 
     /*
      <p>The name of the lifecycle hook.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The name of the Auto Scaling group for the hook.</p>
     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the Auto Scaling group for the hook.</p>
+    */
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
     */
-    inline RecordLifecycleActionHeartbeatRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+    inline RecordLifecycleActionHeartbeatRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the Auto Scaling group for the hook.</p>
+    */
+    inline RecordLifecycleActionHeartbeatRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
@@ -85,10 +107,16 @@ namespace Model
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
     */
     inline const Aws::String& GetLifecycleActionToken() const{ return m_lifecycleActionToken; }
+
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
     */
     inline void SetLifecycleActionToken(const Aws::String& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = value; }
+
+    /*
+     <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
+    */
+    inline void SetLifecycleActionToken(Aws::String&& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = value; }
 
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
     */
-    inline RecordLifecycleActionHeartbeatRequest&  WithLifecycleActionToken(const Aws::String& value) { SetLifecycleActionToken(value); return *this;}
+    inline RecordLifecycleActionHeartbeatRequest& WithLifecycleActionToken(const Aws::String& value) { SetLifecycleActionToken(value); return *this;}
+
+    /*
+     <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
+    */
+    inline RecordLifecycleActionHeartbeatRequest& WithLifecycleActionToken(Aws::String&& value) { SetLifecycleActionToken(value); return *this;}
 
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>

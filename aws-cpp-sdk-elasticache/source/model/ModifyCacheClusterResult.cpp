@@ -42,6 +42,11 @@ ModifyCacheClusterResult& ModifyCacheClusterResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode cacheClusterNode = resultNode.FirstChild("CacheCluster");
+    if(cacheClusterNode.IsNull())
+    {
+      cacheClusterNode = resultNode;
+    }
+
     if(!cacheClusterNode.IsNull())
     {
       m_cacheCluster = cacheClusterNode;

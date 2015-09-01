@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
     */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+
+    /*
+     <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
+    */
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
     */
-    inline DeleteCacheParameterGroupRequest&  WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+    inline DeleteCacheParameterGroupRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+
+    /*
+     <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
+    */
+    inline DeleteCacheParameterGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
 
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>

@@ -47,10 +47,16 @@ namespace Model
      <p>The name (friendly name, not ARN) identifying the role.</p>
     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
     /*
      <p>The name (friendly name, not ARN) identifying the role.</p>
     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the role.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the role.</p>
     */
-    inline PolicyRole&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+    inline PolicyRole& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline PolicyRole& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /*
      <p>The name (friendly name, not ARN) identifying the role.</p>

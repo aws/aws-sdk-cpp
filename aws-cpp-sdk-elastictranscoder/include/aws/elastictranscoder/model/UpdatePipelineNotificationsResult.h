@@ -46,6 +46,7 @@ namespace Model
      <p>A section of the response body that provides information about the pipeline.</p>
     */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
+
     /*
      <p>A section of the response body that provides information about the pipeline.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>A section of the response body that provides information about the pipeline.</p>
     */
-    inline UpdatePipelineNotificationsResult&  WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
+    inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
+
+    /*
+     <p>A section of the response body that provides information about the pipeline.</p>
+    */
+    inline UpdatePipelineNotificationsResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
+
+    /*
+     <p>A section of the response body that provides information about the pipeline.</p>
+    */
+    inline UpdatePipelineNotificationsResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
 
   private:
     Pipeline m_pipeline;

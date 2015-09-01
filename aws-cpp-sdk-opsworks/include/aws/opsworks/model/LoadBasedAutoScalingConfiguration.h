@@ -45,10 +45,16 @@ namespace Model
      <p>The layer ID.</p>
     */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
     /*
      <p>The layer ID.</p>
     */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /*
      <p>The layer ID.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>The layer ID.</p>
     */
-    inline LoadBasedAutoScalingConfiguration&  WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+    inline LoadBasedAutoScalingConfiguration& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+
+    /*
+     <p>The layer ID.</p>
+    */
+    inline LoadBasedAutoScalingConfiguration& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
 
     /*
      <p>The layer ID.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>Whether load-based auto scaling is enabled for the layer.</p>
     */
     inline bool GetEnable() const{ return m_enable; }
+
     /*
      <p>Whether load-based auto scaling is enabled for the layer.</p>
     */
@@ -77,12 +89,13 @@ namespace Model
     /*
      <p>Whether load-based auto scaling is enabled for the layer.</p>
     */
-    inline LoadBasedAutoScalingConfiguration&  WithEnable(bool value) { SetEnable(value); return *this;}
+    inline LoadBasedAutoScalingConfiguration& WithEnable(bool value) { SetEnable(value); return *this;}
 
     /*
      <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks increases the number of instances.</p>
     */
     inline const AutoScalingThresholds& GetUpScaling() const{ return m_upScaling; }
+
     /*
      <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks increases the number of instances.</p>
     */
@@ -91,12 +104,23 @@ namespace Model
     /*
      <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks increases the number of instances.</p>
     */
-    inline LoadBasedAutoScalingConfiguration&  WithUpScaling(const AutoScalingThresholds& value) { SetUpScaling(value); return *this;}
+    inline void SetUpScaling(AutoScalingThresholds&& value) { m_upScalingHasBeenSet = true; m_upScaling = value; }
+
+    /*
+     <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks increases the number of instances.</p>
+    */
+    inline LoadBasedAutoScalingConfiguration& WithUpScaling(const AutoScalingThresholds& value) { SetUpScaling(value); return *this;}
+
+    /*
+     <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks increases the number of instances.</p>
+    */
+    inline LoadBasedAutoScalingConfiguration& WithUpScaling(AutoScalingThresholds&& value) { SetUpScaling(value); return *this;}
 
     /*
      <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks reduces the number of instances.</p>
     */
     inline const AutoScalingThresholds& GetDownScaling() const{ return m_downScaling; }
+
     /*
      <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks reduces the number of instances.</p>
     */
@@ -105,7 +129,17 @@ namespace Model
     /*
      <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks reduces the number of instances.</p>
     */
-    inline LoadBasedAutoScalingConfiguration&  WithDownScaling(const AutoScalingThresholds& value) { SetDownScaling(value); return *this;}
+    inline void SetDownScaling(AutoScalingThresholds&& value) { m_downScalingHasBeenSet = true; m_downScaling = value; }
+
+    /*
+     <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks reduces the number of instances.</p>
+    */
+    inline LoadBasedAutoScalingConfiguration& WithDownScaling(const AutoScalingThresholds& value) { SetDownScaling(value); return *this;}
+
+    /*
+     <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks reduces the number of instances.</p>
+    */
+    inline LoadBasedAutoScalingConfiguration& WithDownScaling(AutoScalingThresholds&& value) { SetDownScaling(value); return *this;}
 
   private:
     Aws::String m_layerId;

@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the group to delete.</p>
     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
     /*
      <p>The name of the group to delete.</p>
     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /*
+     <p>The name of the group to delete.</p>
+    */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the group to delete.</p>
     */
-    inline DeleteGroupRequest&  WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline DeleteGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group to delete.</p>
+    */
+    inline DeleteGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /*
      <p>The name of the group to delete.</p>

@@ -46,39 +46,60 @@ namespace Model
 
     
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     
-    inline LambdaAction&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline LambdaAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    
+    inline LambdaAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     
     inline LambdaAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+
     
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
+
+    
+    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
 
     
-    inline LambdaAction&  WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
+    inline LambdaAction& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
+
+    
+    inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(value); return *this;}
 
     
     inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
     
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
+
     
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
     
-    inline LambdaAction&  WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
+    inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
+
+    
+    inline LambdaAction& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
+
+    
+    inline LambdaAction& WithInvocationType(InvocationType&& value) { SetInvocationType(value); return *this;}
 
   private:
     Aws::String m_topicArn;

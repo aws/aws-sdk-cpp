@@ -47,10 +47,16 @@ namespace Model
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /*
+     <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
+    */
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     */
-    inline Listener&  WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+    inline Listener& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+
+    /*
+     <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
+    */
+    inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
 
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The port on which the load balancer is listening. The supported ports are: 25, 80, 443, 465, 587, and 1024-65535.</p>
     */
     inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+
     /*
      <p>The port on which the load balancer is listening. The supported ports are: 25, 80, 443, 465, 587, and 1024-65535.</p>
     */
@@ -79,16 +91,22 @@ namespace Model
     /*
      <p>The port on which the load balancer is listening. The supported ports are: 25, 80, 443, 465, 587, and 1024-65535.</p>
     */
-    inline Listener&  WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
+    inline Listener& WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
 
     /*
      <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     */
     inline const Aws::String& GetInstanceProtocol() const{ return m_instanceProtocol; }
+
     /*
      <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     */
     inline void SetInstanceProtocol(const Aws::String& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
+
+    /*
+     <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    */
+    inline void SetInstanceProtocol(Aws::String&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
 
     /*
      <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
@@ -98,7 +116,12 @@ namespace Model
     /*
      <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     */
-    inline Listener&  WithInstanceProtocol(const Aws::String& value) { SetInstanceProtocol(value); return *this;}
+    inline Listener& WithInstanceProtocol(const Aws::String& value) { SetInstanceProtocol(value); return *this;}
+
+    /*
+     <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    */
+    inline Listener& WithInstanceProtocol(Aws::String&& value) { SetInstanceProtocol(value); return *this;}
 
     /*
      <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
@@ -109,6 +132,7 @@ namespace Model
      <p>The port on which the instance is listening.</p>
     */
     inline long GetInstancePort() const{ return m_instancePort; }
+
     /*
      <p>The port on which the instance is listening.</p>
     */
@@ -117,16 +141,22 @@ namespace Model
     /*
      <p>The port on which the instance is listening.</p>
     */
-    inline Listener&  WithInstancePort(long value) { SetInstancePort(value); return *this;}
+    inline Listener& WithInstancePort(long value) { SetInstancePort(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     */
     inline const Aws::String& GetSSLCertificateId() const{ return m_sSLCertificateId; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     */
     inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the server certificate.</p>
+    */
+    inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the server certificate.</p>
@@ -136,7 +166,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     */
-    inline Listener&  WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
+    inline Listener& WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the server certificate.</p>
+    */
+    inline Listener& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the server certificate.</p>

@@ -48,10 +48,16 @@ namespace Model
      <p> A message describing the error or warning. </p>
     */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
     /*
      <p> A message describing the error or warning. </p>
     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p> A message describing the error or warning. </p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p> A message describing the error or warning. </p>
     */
-    inline ValidationMessage&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline ValidationMessage& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline ValidationMessage& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /*
      <p> A message describing the error or warning. </p>
@@ -72,6 +83,7 @@ namespace Model
      <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
     */
     inline const ValidationSeverity& GetSeverity() const{ return m_severity; }
+
     /*
      <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
     */
@@ -80,16 +92,32 @@ namespace Model
     /*
      <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
     */
-    inline ValidationMessage&  WithSeverity(const ValidationSeverity& value) { SetSeverity(value); return *this;}
+    inline void SetSeverity(ValidationSeverity&& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /*
+     <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
+    */
+    inline ValidationMessage& WithSeverity(const ValidationSeverity& value) { SetSeverity(value); return *this;}
+
+    /*
+     <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
+    */
+    inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(value); return *this;}
 
     /*
      <p></p>
     */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
     /*
      <p></p>
     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p></p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p></p>
     */
-    inline ValidationMessage&  WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+    inline ValidationMessage& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline ValidationMessage& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /*
      <p></p>
@@ -110,10 +143,16 @@ namespace Model
      <p></p>
     */
     inline const Aws::String& GetOptionName() const{ return m_optionName; }
+
     /*
      <p></p>
     */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /*
      <p></p>
@@ -123,7 +162,12 @@ namespace Model
     /*
      <p></p>
     */
-    inline ValidationMessage&  WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
+    inline ValidationMessage& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline ValidationMessage& WithOptionName(Aws::String&& value) { SetOptionName(value); return *this;}
 
     /*
      <p></p>

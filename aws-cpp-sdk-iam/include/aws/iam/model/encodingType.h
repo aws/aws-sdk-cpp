@@ -22,19 +22,19 @@ namespace IAM
 {
 namespace Model
 {
-  enum class encodingType
+  enum class EncodingType
   {
     NOT_SET,
     SSH,
     PEM
   };
 
-namespace encodingTypeMapper
+namespace EncodingTypeMapper
 {
-AWS_IAM_API encodingType GetencodingTypeForName(const Aws::String& name);
+AWS_IAM_API EncodingType GetEncodingTypeForName(const Aws::String& name);
 
-AWS_IAM_API Aws::String GetNameForencodingType(encodingType value);
-} // namespace encodingTypeMapper
+AWS_IAM_API Aws::String GetNameForEncodingType(EncodingType value);
+} // namespace EncodingTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

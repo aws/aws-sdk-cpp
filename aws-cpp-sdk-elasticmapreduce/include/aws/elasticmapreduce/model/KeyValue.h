@@ -44,10 +44,16 @@ namespace Model
      <p>The unique identifier of a key value pair.</p>
     */
     inline const Aws::String& GetKey() const{ return m_key; }
+
     /*
      <p>The unique identifier of a key value pair.</p>
     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /*
+     <p>The unique identifier of a key value pair.</p>
+    */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The unique identifier of a key value pair.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The unique identifier of a key value pair.</p>
     */
-    inline KeyValue&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline KeyValue& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /*
+     <p>The unique identifier of a key value pair.</p>
+    */
+    inline KeyValue& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /*
      <p>The unique identifier of a key value pair.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The value part of the identified key.</p>
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      <p>The value part of the identified key.</p>
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     <p>The value part of the identified key.</p>
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>The value part of the identified key.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The value part of the identified key.</p>
     */
-    inline KeyValue&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline KeyValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     <p>The value part of the identified key.</p>
+    */
+    inline KeyValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      <p>The value part of the identified key.</p>

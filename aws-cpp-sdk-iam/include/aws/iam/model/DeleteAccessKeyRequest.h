@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user whose key you want to delete.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user whose key you want to delete.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user whose key you want to delete.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose key you want to delete.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user whose key you want to delete.</p>
     */
-    inline DeleteAccessKeyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline DeleteAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user whose key you want to delete.</p>
+    */
+    inline DeleteAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user whose key you want to delete.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
     /*
      <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /*
+     <p>The access key ID for the access key ID and secret access key you want to delete.</p>
+    */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The access key ID for the access key ID and secret access key you want to delete.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     */
-    inline DeleteAccessKeyRequest&  WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+    inline DeleteAccessKeyRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /*
+     <p>The access key ID for the access key ID and secret access key you want to delete.</p>
+    */
+    inline DeleteAccessKeyRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /*
      <p>The access key ID for the access key ID and secret access key you want to delete.</p>

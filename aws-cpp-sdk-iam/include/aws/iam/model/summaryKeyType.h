@@ -22,7 +22,7 @@ namespace IAM
 {
 namespace Model
 {
-  enum class summaryKeyType
+  enum class SummaryKeyType
   {
     NOT_SET,
     Users,
@@ -52,12 +52,12 @@ namespace Model
     VersionsPerPolicyQuota
   };
 
-namespace summaryKeyTypeMapper
+namespace SummaryKeyTypeMapper
 {
-AWS_IAM_API summaryKeyType GetsummaryKeyTypeForName(const Aws::String& name);
+AWS_IAM_API SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name);
 
-AWS_IAM_API Aws::String GetNameForsummaryKeyType(summaryKeyType value);
-} // namespace summaryKeyTypeMapper
+AWS_IAM_API Aws::String GetNameForSummaryKeyType(SummaryKeyType value);
+} // namespace SummaryKeyTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

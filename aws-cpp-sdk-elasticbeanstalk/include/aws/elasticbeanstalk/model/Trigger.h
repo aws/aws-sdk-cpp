@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the trigger.</p>
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      <p>The name of the trigger.</p>
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the trigger.</p>
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the trigger.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the trigger.</p>
     */
-    inline Trigger&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline Trigger& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the trigger.</p>
+    */
+    inline Trigger& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      <p>The name of the trigger.</p>

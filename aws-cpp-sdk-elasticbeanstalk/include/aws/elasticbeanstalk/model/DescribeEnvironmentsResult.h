@@ -48,6 +48,7 @@ namespace Model
      <p> Returns an <a>EnvironmentDescription</a> list. </p>
     */
     inline const Aws::Vector<EnvironmentDescription>& GetEnvironments() const{ return m_environments; }
+
     /*
      <p> Returns an <a>EnvironmentDescription</a> list. </p>
     */
@@ -56,20 +57,42 @@ namespace Model
     /*
      <p> Returns an <a>EnvironmentDescription</a> list. </p>
     */
-    inline DescribeEnvironmentsResult&  WithEnvironments(const Aws::Vector<EnvironmentDescription>& value) { SetEnvironments(value); return *this;}
+    inline void SetEnvironments(Aws::Vector<EnvironmentDescription>&& value) { m_environments = value; }
+
+    /*
+     <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    */
+    inline DescribeEnvironmentsResult& WithEnvironments(const Aws::Vector<EnvironmentDescription>& value) { SetEnvironments(value); return *this;}
+
+    /*
+     <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    */
+    inline DescribeEnvironmentsResult& WithEnvironments(Aws::Vector<EnvironmentDescription>&& value) { SetEnvironments(value); return *this;}
 
     /*
      <p> Returns an <a>EnvironmentDescription</a> list. </p>
     */
     inline DescribeEnvironmentsResult& AddEnvironments(const EnvironmentDescription& value) { m_environments.push_back(value); return *this; }
 
+    /*
+     <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    */
+    inline DescribeEnvironmentsResult& AddEnvironments(EnvironmentDescription&& value) { m_environments.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeEnvironmentsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeEnvironmentsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeEnvironmentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<EnvironmentDescription> m_environments;

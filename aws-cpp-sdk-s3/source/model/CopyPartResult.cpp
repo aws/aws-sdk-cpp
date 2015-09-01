@@ -45,12 +45,22 @@ CopyPartResult& CopyPartResult::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode eTagNode = resultNode.FirstChild("ETag");
+    if(eTagNode.IsNull())
+    {
+      eTagNode = resultNode;
+    }
+
     if(!eTagNode.IsNull())
     {
       m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
       m_eTagHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
+    if(lastModifiedNode.IsNull())
+    {
+      lastModifiedNode = resultNode;
+    }
+
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());

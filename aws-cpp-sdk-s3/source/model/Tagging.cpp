@@ -62,9 +62,10 @@ void Tagging::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_tagSetHasBeenSet)
   {
+   XmlNode tagSetParentNode = parentNode.CreateChildElement("TagSet");
    for(const auto& item : m_tagSet)
    {
-     XmlNode tagSetNode = parentNode.CreateChildElement("Tag");
+     XmlNode tagSetNode = tagSetParentNode.CreateChildElement("Tag");
      item.AddToNode(tagSetNode);
    }
   }

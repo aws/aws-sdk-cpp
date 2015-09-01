@@ -39,10 +39,16 @@ namespace Model
      <p>The stack ID.</p>
     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
     /*
      <p>The stack ID.</p>
     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline SetPermissionRequest&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+    inline SetPermissionRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline SetPermissionRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
     /*
      <p>The stack ID.</p>
@@ -63,10 +74,16 @@ namespace Model
      <p>The user's IAM ARN.</p>
     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
     /*
      <p>The user's IAM ARN.</p>
     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+
+    /*
+     <p>The user's IAM ARN.</p>
+    */
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The user's IAM ARN.</p>
@@ -76,7 +93,12 @@ namespace Model
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline SetPermissionRequest&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+    inline SetPermissionRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
+
+    /*
+     <p>The user's IAM ARN.</p>
+    */
+    inline SetPermissionRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /*
      <p>The user's IAM ARN.</p>
@@ -87,6 +109,7 @@ namespace Model
      <p>The user is allowed to use SSH to communicate with the instance.</p>
     */
     inline bool GetAllowSsh() const{ return m_allowSsh; }
+
     /*
      <p>The user is allowed to use SSH to communicate with the instance.</p>
     */
@@ -95,12 +118,13 @@ namespace Model
     /*
      <p>The user is allowed to use SSH to communicate with the instance.</p>
     */
-    inline SetPermissionRequest&  WithAllowSsh(bool value) { SetAllowSsh(value); return *this;}
+    inline SetPermissionRequest& WithAllowSsh(bool value) { SetAllowSsh(value); return *this;}
 
     /*
      <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     */
     inline bool GetAllowSudo() const{ return m_allowSudo; }
+
     /*
      <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     */
@@ -109,16 +133,22 @@ namespace Model
     /*
      <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     */
-    inline SetPermissionRequest&  WithAllowSudo(bool value) { SetAllowSudo(value); return *this;}
+    inline SetPermissionRequest& WithAllowSudo(bool value) { SetAllowSudo(value); return *this;}
 
     /*
      <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline const Aws::String& GetLevel() const{ return m_level; }
+
     /*
      <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline void SetLevel(const Aws::String& value) { m_levelHasBeenSet = true; m_level = value; }
+
+    /*
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    */
+    inline void SetLevel(Aws::String&& value) { m_levelHasBeenSet = true; m_level = value; }
 
     /*
      <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -128,7 +158,12 @@ namespace Model
     /*
      <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
-    inline SetPermissionRequest&  WithLevel(const Aws::String& value) { SetLevel(value); return *this;}
+    inline SetPermissionRequest& WithLevel(const Aws::String& value) { SetLevel(value); return *this;}
+
+    /*
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    */
+    inline SetPermissionRequest& WithLevel(Aws::String&& value) { SetLevel(value); return *this;}
 
     /*
      <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>

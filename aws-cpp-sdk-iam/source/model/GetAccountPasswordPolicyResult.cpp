@@ -42,6 +42,11 @@ GetAccountPasswordPolicyResult& GetAccountPasswordPolicyResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode passwordPolicyNode = resultNode.FirstChild("PasswordPolicy");
+    if(passwordPolicyNode.IsNull())
+    {
+      passwordPolicyNode = resultNode;
+    }
+
     if(!passwordPolicyNode.IsNull())
     {
       m_passwordPolicy = passwordPolicyNode;

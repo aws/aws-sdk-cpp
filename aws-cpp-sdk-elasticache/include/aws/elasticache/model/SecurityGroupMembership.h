@@ -47,10 +47,16 @@ namespace Model
      <p>The identifier of the cache security group.</p>
     */
     inline const Aws::String& GetSecurityGroupId() const{ return m_securityGroupId; }
+
     /*
      <p>The identifier of the cache security group.</p>
     */
     inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
+
+    /*
+     <p>The identifier of the cache security group.</p>
+    */
+    inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
 
     /*
      <p>The identifier of the cache security group.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The identifier of the cache security group.</p>
     */
-    inline SecurityGroupMembership&  WithSecurityGroupId(const Aws::String& value) { SetSecurityGroupId(value); return *this;}
+    inline SecurityGroupMembership& WithSecurityGroupId(const Aws::String& value) { SetSecurityGroupId(value); return *this;}
+
+    /*
+     <p>The identifier of the cache security group.</p>
+    */
+    inline SecurityGroupMembership& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(value); return *this;}
 
     /*
      <p>The identifier of the cache security group.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
     */
-    inline SecurityGroupMembership&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline SecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
+    */
+    inline SecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>

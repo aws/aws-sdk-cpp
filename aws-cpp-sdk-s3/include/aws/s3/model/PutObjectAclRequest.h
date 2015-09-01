@@ -42,6 +42,7 @@ namespace Model
      The canned ACL to apply to the object.
     */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
+
     /*
      The canned ACL to apply to the object.
     */
@@ -50,40 +51,71 @@ namespace Model
     /*
      The canned ACL to apply to the object.
     */
-    inline PutObjectAclRequest&  WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
+    inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = value; }
+
+    /*
+     The canned ACL to apply to the object.
+    */
+    inline PutObjectAclRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
+
+    /*
+     The canned ACL to apply to the object.
+    */
+    inline PutObjectAclRequest& WithACL(ObjectCannedACL&& value) { SetACL(value); return *this;}
 
     
     inline const AccessControlPolicy& GetAccessControlPolicy() const{ return m_accessControlPolicy; }
+
     
     inline void SetAccessControlPolicy(const AccessControlPolicy& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = value; }
 
     
-    inline PutObjectAclRequest&  WithAccessControlPolicy(const AccessControlPolicy& value) { SetAccessControlPolicy(value); return *this;}
+    inline void SetAccessControlPolicy(AccessControlPolicy&& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = value; }
+
+    
+    inline PutObjectAclRequest& WithAccessControlPolicy(const AccessControlPolicy& value) { SetAccessControlPolicy(value); return *this;}
+
+    
+    inline PutObjectAclRequest& WithAccessControlPolicy(AccessControlPolicy&& value) { SetAccessControlPolicy(value); return *this;}
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline PutObjectAclRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline PutObjectAclRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline PutObjectAclRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline PutObjectAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
     
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     
-    inline PutObjectAclRequest&  WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+    inline PutObjectAclRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    
+    inline PutObjectAclRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
 
     
     inline PutObjectAclRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
@@ -92,10 +124,16 @@ namespace Model
      Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
     */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
+
     /*
      Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
     */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
+
+    /*
+     Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
+    */
+    inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /*
      Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
@@ -105,7 +143,12 @@ namespace Model
     /*
      Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
     */
-    inline PutObjectAclRequest&  WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
+    inline PutObjectAclRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
+
+    /*
+     Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
+    */
+    inline PutObjectAclRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(value); return *this;}
 
     /*
      Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.
@@ -116,10 +159,16 @@ namespace Model
      Allows grantee to list the objects in the bucket.
     */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
+
     /*
      Allows grantee to list the objects in the bucket.
     */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
+
+    /*
+     Allows grantee to list the objects in the bucket.
+    */
+    inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /*
      Allows grantee to list the objects in the bucket.
@@ -129,7 +178,12 @@ namespace Model
     /*
      Allows grantee to list the objects in the bucket.
     */
-    inline PutObjectAclRequest&  WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
+    inline PutObjectAclRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
+
+    /*
+     Allows grantee to list the objects in the bucket.
+    */
+    inline PutObjectAclRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(value); return *this;}
 
     /*
      Allows grantee to list the objects in the bucket.
@@ -140,10 +194,16 @@ namespace Model
      Allows grantee to read the bucket ACL.
     */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
+
     /*
      Allows grantee to read the bucket ACL.
     */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
+
+    /*
+     Allows grantee to read the bucket ACL.
+    */
+    inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /*
      Allows grantee to read the bucket ACL.
@@ -153,7 +213,12 @@ namespace Model
     /*
      Allows grantee to read the bucket ACL.
     */
-    inline PutObjectAclRequest&  WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
+    inline PutObjectAclRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
+
+    /*
+     Allows grantee to read the bucket ACL.
+    */
+    inline PutObjectAclRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(value); return *this;}
 
     /*
      Allows grantee to read the bucket ACL.
@@ -164,10 +229,16 @@ namespace Model
      Allows grantee to create, overwrite, and delete any object in the bucket.
     */
     inline const Aws::String& GetGrantWrite() const{ return m_grantWrite; }
+
     /*
      Allows grantee to create, overwrite, and delete any object in the bucket.
     */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
+
+    /*
+     Allows grantee to create, overwrite, and delete any object in the bucket.
+    */
+    inline void SetGrantWrite(Aws::String&& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /*
      Allows grantee to create, overwrite, and delete any object in the bucket.
@@ -177,7 +248,12 @@ namespace Model
     /*
      Allows grantee to create, overwrite, and delete any object in the bucket.
     */
-    inline PutObjectAclRequest&  WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
+    inline PutObjectAclRequest& WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
+
+    /*
+     Allows grantee to create, overwrite, and delete any object in the bucket.
+    */
+    inline PutObjectAclRequest& WithGrantWrite(Aws::String&& value) { SetGrantWrite(value); return *this;}
 
     /*
      Allows grantee to create, overwrite, and delete any object in the bucket.
@@ -188,10 +264,16 @@ namespace Model
      Allows grantee to write the ACL for the applicable bucket.
     */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
+
     /*
      Allows grantee to write the ACL for the applicable bucket.
     */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
+
+    /*
+     Allows grantee to write the ACL for the applicable bucket.
+    */
+    inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /*
      Allows grantee to write the ACL for the applicable bucket.
@@ -201,7 +283,12 @@ namespace Model
     /*
      Allows grantee to write the ACL for the applicable bucket.
     */
-    inline PutObjectAclRequest&  WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
+    inline PutObjectAclRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
+
+    /*
+     Allows grantee to write the ACL for the applicable bucket.
+    */
+    inline PutObjectAclRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(value); return *this;}
 
     /*
      Allows grantee to write the ACL for the applicable bucket.
@@ -210,25 +297,39 @@ namespace Model
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
+
     
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
-    inline PutObjectAclRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline PutObjectAclRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline PutObjectAclRequest& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     
     inline PutObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+
     
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
-    inline PutObjectAclRequest&  WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline PutObjectAclRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+
+    
+    inline PutObjectAclRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
   private:
     ObjectCannedACL m_aCL;

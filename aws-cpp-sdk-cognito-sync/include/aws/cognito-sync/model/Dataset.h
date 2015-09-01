@@ -44,10 +44,16 @@ namespace Model
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -57,7 +63,12 @@ namespace Model
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     */
-    inline Dataset&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline Dataset& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    */
+    inline Dataset& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -68,10 +79,16 @@ namespace Model
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
+
+    /*
+     A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    */
+    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -81,7 +98,12 @@ namespace Model
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     */
-    inline Dataset&  WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+    inline Dataset& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
+
+    /*
+     A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    */
+    inline Dataset& WithDatasetName(Aws::String&& value) { SetDatasetName(value); return *this;}
 
     /*
      A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -92,6 +114,7 @@ namespace Model
      Date on which the dataset was created.
     */
     inline double GetCreationDate() const{ return m_creationDate; }
+
     /*
      Date on which the dataset was created.
     */
@@ -100,12 +123,13 @@ namespace Model
     /*
      Date on which the dataset was created.
     */
-    inline Dataset&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline Dataset& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
     /*
      Date when the dataset was last modified.
     */
     inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
     /*
      Date when the dataset was last modified.
     */
@@ -114,16 +138,22 @@ namespace Model
     /*
      Date when the dataset was last modified.
     */
-    inline Dataset&  WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline Dataset& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
     /*
      The device that made the last change to this dataset.
     */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
     /*
      The device that made the last change to this dataset.
     */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
+
+    /*
+     The device that made the last change to this dataset.
+    */
+    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /*
      The device that made the last change to this dataset.
@@ -133,7 +163,12 @@ namespace Model
     /*
      The device that made the last change to this dataset.
     */
-    inline Dataset&  WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
+    inline Dataset& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
+
+    /*
+     The device that made the last change to this dataset.
+    */
+    inline Dataset& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(value); return *this;}
 
     /*
      The device that made the last change to this dataset.
@@ -144,6 +179,7 @@ namespace Model
      Total size in bytes of the records in this dataset.
     */
     inline long long GetDataStorage() const{ return m_dataStorage; }
+
     /*
      Total size in bytes of the records in this dataset.
     */
@@ -152,12 +188,13 @@ namespace Model
     /*
      Total size in bytes of the records in this dataset.
     */
-    inline Dataset&  WithDataStorage(long long value) { SetDataStorage(value); return *this;}
+    inline Dataset& WithDataStorage(long long value) { SetDataStorage(value); return *this;}
 
     /*
      Number of records in this dataset.
     */
     inline long long GetNumRecords() const{ return m_numRecords; }
+
     /*
      Number of records in this dataset.
     */
@@ -166,7 +203,7 @@ namespace Model
     /*
      Number of records in this dataset.
     */
-    inline Dataset&  WithNumRecords(long long value) { SetNumRecords(value); return *this;}
+    inline Dataset& WithNumRecords(long long value) { SetNumRecords(value); return *this;}
 
   private:
     Aws::String m_identityId;

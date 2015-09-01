@@ -43,12 +43,22 @@ Message& Message::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode subjectNode = resultNode.FirstChild("Subject");
+    if(subjectNode.IsNull())
+    {
+      subjectNode = resultNode;
+    }
+
     if(!subjectNode.IsNull())
     {
       m_subject = subjectNode;
       m_subjectHasBeenSet = true;
     }
     XmlNode bodyNode = resultNode.FirstChild("Body");
+    if(bodyNode.IsNull())
+    {
+      bodyNode = resultNode;
+    }
+
     if(!bodyNode.IsNull())
     {
       m_body = bodyNode;

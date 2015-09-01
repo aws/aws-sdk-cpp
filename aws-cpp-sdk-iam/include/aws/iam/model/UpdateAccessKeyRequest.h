@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iam/model/statusType.h>
+#include <aws/iam/model/StatusType.h>
 
 namespace Aws
 {
@@ -38,10 +38,16 @@ namespace Model
      <p>The name of the user whose key you want to update.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user whose key you want to update.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user whose key you want to update.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose key you want to update.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The name of the user whose key you want to update.</p>
     */
-    inline UpdateAccessKeyRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline UpdateAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user whose key you want to update.</p>
+    */
+    inline UpdateAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user whose key you want to update.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The access key ID of the secret access key you want to update.</p>
     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
     /*
      <p>The access key ID of the secret access key you want to update.</p>
     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /*
+     <p>The access key ID of the secret access key you want to update.</p>
+    */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The access key ID of the secret access key you want to update.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The access key ID of the secret access key you want to update.</p>
     */
-    inline UpdateAccessKeyRequest&  WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+    inline UpdateAccessKeyRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /*
+     <p>The access key ID of the secret access key you want to update.</p>
+    */
+    inline UpdateAccessKeyRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /*
      <p>The access key ID of the secret access key you want to update.</p>
@@ -85,23 +107,34 @@ namespace Model
     /*
      <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
     */
-    inline const statusType& GetStatus() const{ return m_status; }
-    /*
-     <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
-    */
-    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline const StatusType& GetStatus() const{ return m_status; }
 
     /*
      <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
     */
-    inline UpdateAccessKeyRequest&  WithStatus(const statusType& value) { SetStatus(value); return *this;}
+    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
+    */
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
+    */
+    inline UpdateAccessKeyRequest& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
+    */
+    inline UpdateAccessKeyRequest& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
 
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
-    statusType m_status;
+    StatusType m_status;
     bool m_statusHasBeenSet;
   };
 

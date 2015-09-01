@@ -55,6 +55,11 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
+    if(metricNameNode.IsNull())
+    {
+      metricNameNode = resultNode;
+    }
+
     if(!metricNameNode.IsNull())
     {
       m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
@@ -73,24 +78,44 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       m_dimensionsHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
+    if(timestampNode.IsNull())
+    {
+      timestampNode = resultNode;
+    }
+
     if(!timestampNode.IsNull())
     {
       m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
+    if(valueNode.IsNull())
+    {
+      valueNode = resultNode;
+    }
+
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
       m_valueHasBeenSet = true;
     }
     XmlNode statisticValuesNode = resultNode.FirstChild("StatisticValues");
+    if(statisticValuesNode.IsNull())
+    {
+      statisticValuesNode = resultNode;
+    }
+
     if(!statisticValuesNode.IsNull())
     {
       m_statisticValues = statisticValuesNode;
       m_statisticValuesHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
+    if(unitNode.IsNull())
+    {
+      unitNode = resultNode;
+    }
+
     if(!unitNode.IsNull())
     {
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());

@@ -40,10 +40,16 @@ namespace Model
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
+
+    /*
+     <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline CreateClusterSnapshotRequest&  WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+    inline CreateClusterSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline CreateClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
 
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
@@ -64,10 +75,16 @@ namespace Model
      <p> The cluster identifier for which you want a snapshot. </p>
     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /*
+     <p> The cluster identifier for which you want a snapshot. </p>
+    */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
     */
-    inline CreateClusterSnapshotRequest&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline CreateClusterSnapshotRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The cluster identifier for which you want a snapshot. </p>
+    */
+    inline CreateClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
@@ -88,6 +110,7 @@ namespace Model
      <p>A list of tag instances.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>A list of tag instances.</p>
     */
@@ -96,12 +119,27 @@ namespace Model
     /*
      <p>A list of tag instances.</p>
     */
-    inline CreateClusterSnapshotRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>A list of tag instances.</p>
+    */
+    inline CreateClusterSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tag instances.</p>
+    */
+    inline CreateClusterSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>A list of tag instances.</p>
     */
     inline CreateClusterSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>A list of tag instances.</p>
+    */
+    inline CreateClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_snapshotIdentifier;

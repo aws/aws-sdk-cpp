@@ -45,10 +45,16 @@ namespace Model
      The unique ID for an invalidation request.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The unique ID for an invalidation request.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The unique ID for an invalidation request.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The unique ID for an invalidation request.
@@ -58,7 +64,12 @@ namespace Model
     /*
      The unique ID for an invalidation request.
     */
-    inline InvalidationSummary&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline InvalidationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The unique ID for an invalidation request.
+    */
+    inline InvalidationSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The unique ID for an invalidation request.
@@ -67,20 +78,27 @@ namespace Model
 
     
     inline double GetCreateTime() const{ return m_createTime; }
+
     
     inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     
-    inline InvalidationSummary&  WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline InvalidationSummary& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 
     /*
      The status of an invalidation request.
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      The status of an invalidation request.
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     The status of an invalidation request.
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The status of an invalidation request.
@@ -90,7 +108,12 @@ namespace Model
     /*
      The status of an invalidation request.
     */
-    inline InvalidationSummary&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline InvalidationSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     The status of an invalidation request.
+    */
+    inline InvalidationSummary& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      The status of an invalidation request.

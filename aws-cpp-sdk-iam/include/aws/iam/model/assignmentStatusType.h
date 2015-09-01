@@ -22,7 +22,7 @@ namespace IAM
 {
 namespace Model
 {
-  enum class assignmentStatusType
+  enum class AssignmentStatusType
   {
     NOT_SET,
     Assigned,
@@ -30,12 +30,12 @@ namespace Model
     Any
   };
 
-namespace assignmentStatusTypeMapper
+namespace AssignmentStatusTypeMapper
 {
-AWS_IAM_API assignmentStatusType GetassignmentStatusTypeForName(const Aws::String& name);
+AWS_IAM_API AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name);
 
-AWS_IAM_API Aws::String GetNameForassignmentStatusType(assignmentStatusType value);
-} // namespace assignmentStatusTypeMapper
+AWS_IAM_API Aws::String GetNameForAssignmentStatusType(AssignmentStatusType value);
+} // namespace AssignmentStatusTypeMapper
 } // namespace Model
 } // namespace IAM
 } // namespace Aws

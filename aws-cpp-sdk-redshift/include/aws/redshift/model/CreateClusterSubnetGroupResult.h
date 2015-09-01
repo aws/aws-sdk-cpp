@@ -45,19 +45,33 @@ namespace Model
 
     
     inline const ClusterSubnetGroup& GetClusterSubnetGroup() const{ return m_clusterSubnetGroup; }
+
     
     inline void SetClusterSubnetGroup(const ClusterSubnetGroup& value) { m_clusterSubnetGroup = value; }
 
     
-    inline CreateClusterSubnetGroupResult&  WithClusterSubnetGroup(const ClusterSubnetGroup& value) { SetClusterSubnetGroup(value); return *this;}
+    inline void SetClusterSubnetGroup(ClusterSubnetGroup&& value) { m_clusterSubnetGroup = value; }
+
+    
+    inline CreateClusterSubnetGroupResult& WithClusterSubnetGroup(const ClusterSubnetGroup& value) { SetClusterSubnetGroup(value); return *this;}
+
+    
+    inline CreateClusterSubnetGroupResult& WithClusterSubnetGroup(ClusterSubnetGroup&& value) { SetClusterSubnetGroup(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline CreateClusterSubnetGroupResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline CreateClusterSubnetGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline CreateClusterSubnetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ClusterSubnetGroup m_clusterSubnetGroup;

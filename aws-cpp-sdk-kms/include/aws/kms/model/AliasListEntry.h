@@ -44,10 +44,16 @@ namespace Model
      <p>String that contains the alias.</p>
     */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+
     /*
      <p>String that contains the alias.</p>
     */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
+
+    /*
+     <p>String that contains the alias.</p>
+    */
+    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /*
      <p>String that contains the alias.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>String that contains the alias.</p>
     */
-    inline AliasListEntry&  WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
+    inline AliasListEntry& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
+
+    /*
+     <p>String that contains the alias.</p>
+    */
+    inline AliasListEntry& WithAliasName(Aws::String&& value) { SetAliasName(value); return *this;}
 
     /*
      <p>String that contains the alias.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>String that contains the key ARN.</p>
     */
     inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
+
     /*
      <p>String that contains the key ARN.</p>
     */
     inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
+
+    /*
+     <p>String that contains the key ARN.</p>
+    */
+    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
 
     /*
      <p>String that contains the key ARN.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>String that contains the key ARN.</p>
     */
-    inline AliasListEntry&  WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
+    inline AliasListEntry& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
+
+    /*
+     <p>String that contains the key ARN.</p>
+    */
+    inline AliasListEntry& WithAliasArn(Aws::String&& value) { SetAliasArn(value); return *this;}
 
     /*
      <p>String that contains the key ARN.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>String that contains the key identifier pointed to by the alias.</p>
     */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
+
     /*
      <p>String that contains the key identifier pointed to by the alias.</p>
     */
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
+
+    /*
+     <p>String that contains the key identifier pointed to by the alias.</p>
+    */
+    inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /*
      <p>String that contains the key identifier pointed to by the alias.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>String that contains the key identifier pointed to by the alias.</p>
     */
-    inline AliasListEntry&  WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
+    inline AliasListEntry& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
+
+    /*
+     <p>String that contains the key identifier pointed to by the alias.</p>
+    */
+    inline AliasListEntry& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(value); return *this;}
 
     /*
      <p>String that contains the key identifier pointed to by the alias.</p>

@@ -42,6 +42,11 @@ CreateHsmConfigurationResult& CreateHsmConfigurationResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode hsmConfigurationNode = resultNode.FirstChild("HsmConfiguration");
+    if(hsmConfigurationNode.IsNull())
+    {
+      hsmConfigurationNode = resultNode;
+    }
+
     if(!hsmConfigurationNode.IsNull())
     {
       m_hsmConfiguration = hsmConfigurationNode;

@@ -47,6 +47,7 @@ namespace Model
      <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
     */
     inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
+
     /*
      <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
     */
@@ -55,12 +56,27 @@ namespace Model
     /*
      <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
     */
-    inline DescribePermissionsResult&  WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
+    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissions = value; }
+
+    /*
+     <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
+    */
+    inline DescribePermissionsResult& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
+
+    /*
+     <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
+    */
+    inline DescribePermissionsResult& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(value); return *this;}
 
     /*
      <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
     */
     inline DescribePermissionsResult& AddPermissions(const Permission& value) { m_permissions.push_back(value); return *this; }
+
+    /*
+     <p>An array of <code>Permission</code> objects that describe the stack permissions.</p> <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</li> </ul>
+    */
+    inline DescribePermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(value); return *this; }
 
   private:
     Aws::Vector<Permission> m_permissions;

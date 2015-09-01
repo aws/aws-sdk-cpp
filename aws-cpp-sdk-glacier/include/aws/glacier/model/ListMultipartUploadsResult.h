@@ -48,6 +48,7 @@ namespace Model
      <p>A list of in-progress multipart uploads.</p>
     */
     inline const Aws::Vector<UploadListElement>& GetUploadsList() const{ return m_uploadsList; }
+
     /*
      <p>A list of in-progress multipart uploads.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>A list of in-progress multipart uploads.</p>
     */
-    inline ListMultipartUploadsResult&  WithUploadsList(const Aws::Vector<UploadListElement>& value) { SetUploadsList(value); return *this;}
+    inline void SetUploadsList(Aws::Vector<UploadListElement>&& value) { m_uploadsList = value; }
+
+    /*
+     <p>A list of in-progress multipart uploads.</p>
+    */
+    inline ListMultipartUploadsResult& WithUploadsList(const Aws::Vector<UploadListElement>& value) { SetUploadsList(value); return *this;}
+
+    /*
+     <p>A list of in-progress multipart uploads.</p>
+    */
+    inline ListMultipartUploadsResult& WithUploadsList(Aws::Vector<UploadListElement>&& value) { SetUploadsList(value); return *this;}
 
     /*
      <p>A list of in-progress multipart uploads.</p>
@@ -64,13 +75,24 @@ namespace Model
     inline ListMultipartUploadsResult& AddUploadsList(const UploadListElement& value) { m_uploadsList.push_back(value); return *this; }
 
     /*
+     <p>A list of in-progress multipart uploads.</p>
+    */
+    inline ListMultipartUploadsResult& AddUploadsList(UploadListElement&& value) { m_uploadsList.push_back(value); return *this; }
+
+    /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
@@ -80,7 +102,12 @@ namespace Model
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     */
-    inline ListMultipartUploadsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline ListMultipartUploadsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
+    */
+    inline ListMultipartUploadsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>

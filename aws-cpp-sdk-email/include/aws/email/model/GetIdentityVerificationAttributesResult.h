@@ -49,6 +49,7 @@ namespace Model
      <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     */
     inline const Aws::Map<Aws::String, IdentityVerificationAttributes>& GetVerificationAttributes() const{ return m_verificationAttributes; }
+
     /*
      <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     */
@@ -57,7 +58,17 @@ namespace Model
     /*
      <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     */
-    inline GetIdentityVerificationAttributesResult&  WithVerificationAttributes(const Aws::Map<Aws::String, IdentityVerificationAttributes>& value) { SetVerificationAttributes(value); return *this;}
+    inline void SetVerificationAttributes(Aws::Map<Aws::String, IdentityVerificationAttributes>&& value) { m_verificationAttributes = value; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& WithVerificationAttributes(const Aws::Map<Aws::String, IdentityVerificationAttributes>& value) { SetVerificationAttributes(value); return *this;}
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& WithVerificationAttributes(Aws::Map<Aws::String, IdentityVerificationAttributes>&& value) { SetVerificationAttributes(value); return *this;}
 
     /*
      <p>A map of Identities to IdentityVerificationAttributes objects.</p>
@@ -67,15 +78,42 @@ namespace Model
     /*
      <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     */
+    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(Aws::String&& key, const IdentityVerificationAttributes& value) { m_verificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const Aws::String& key, IdentityVerificationAttributes&& value) { m_verificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(Aws::String&& key, IdentityVerificationAttributes&& value) { m_verificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const char* key, IdentityVerificationAttributes&& value) { m_verificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
     inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const char* key, const IdentityVerificationAttributes& value) { m_verificationAttributes[key] = value; return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetIdentityVerificationAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetIdentityVerificationAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetIdentityVerificationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Map<Aws::String, IdentityVerificationAttributes> m_verificationAttributes;

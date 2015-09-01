@@ -40,10 +40,16 @@ namespace Model
      <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
     /*
      <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
+
+    /*
+     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
+    */
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /*
      <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
     */
-    inline CreateKeyRequest&  WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+    inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
+    */
+    inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /*
      <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
@@ -64,10 +75,16 @@ namespace Model
      <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
     */
-    inline CreateKeyRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
+    */
+    inline CreateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
@@ -88,6 +110,7 @@ namespace Model
      <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
     */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
+
     /*
      <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
     */
@@ -96,7 +119,17 @@ namespace Model
     /*
      <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
     */
-    inline CreateKeyRequest&  WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
+    inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
+
+    /*
+     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
+    */
+    inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
+
+    /*
+     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
+    */
+    inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(value); return *this;}
 
   private:
     Aws::String m_policy;

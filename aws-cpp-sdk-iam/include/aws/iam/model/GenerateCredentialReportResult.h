@@ -48,6 +48,7 @@ namespace Model
      <p>Information about the state of the credential report.</p>
     */
     inline const ReportStateType& GetState() const{ return m_state; }
+
     /*
      <p>Information about the state of the credential report.</p>
     */
@@ -56,16 +57,32 @@ namespace Model
     /*
      <p>Information about the state of the credential report.</p>
     */
-    inline GenerateCredentialReportResult&  WithState(const ReportStateType& value) { SetState(value); return *this;}
+    inline void SetState(ReportStateType&& value) { m_state = value; }
+
+    /*
+     <p>Information about the state of the credential report.</p>
+    */
+    inline GenerateCredentialReportResult& WithState(const ReportStateType& value) { SetState(value); return *this;}
+
+    /*
+     <p>Information about the state of the credential report.</p>
+    */
+    inline GenerateCredentialReportResult& WithState(ReportStateType&& value) { SetState(value); return *this;}
 
     /*
      <p>Information about the credential report.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>Information about the credential report.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /*
+     <p>Information about the credential report.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_description = value; }
 
     /*
      <p>Information about the credential report.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>Information about the credential report.</p>
     */
-    inline GenerateCredentialReportResult&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline GenerateCredentialReportResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>Information about the credential report.</p>
+    */
+    inline GenerateCredentialReportResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>Information about the credential report.</p>
@@ -84,11 +106,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GenerateCredentialReportResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GenerateCredentialReportResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GenerateCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ReportStateType m_state;

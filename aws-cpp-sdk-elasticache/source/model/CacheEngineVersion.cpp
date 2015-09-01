@@ -49,30 +49,55 @@ CacheEngineVersion& CacheEngineVersion::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(engineNode.IsNull())
+    {
+      engineNode = resultNode;
+    }
+
     if(!engineNode.IsNull())
     {
       m_engine = StringUtils::Trim(engineNode.GetText().c_str());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
+    if(engineVersionNode.IsNull())
+    {
+      engineVersionNode = resultNode;
+    }
+
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode cacheParameterGroupFamilyNode = resultNode.FirstChild("CacheParameterGroupFamily");
+    if(cacheParameterGroupFamilyNode.IsNull())
+    {
+      cacheParameterGroupFamilyNode = resultNode;
+    }
+
     if(!cacheParameterGroupFamilyNode.IsNull())
     {
       m_cacheParameterGroupFamily = StringUtils::Trim(cacheParameterGroupFamilyNode.GetText().c_str());
       m_cacheParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode cacheEngineDescriptionNode = resultNode.FirstChild("CacheEngineDescription");
+    if(cacheEngineDescriptionNode.IsNull())
+    {
+      cacheEngineDescriptionNode = resultNode;
+    }
+
     if(!cacheEngineDescriptionNode.IsNull())
     {
       m_cacheEngineDescription = StringUtils::Trim(cacheEngineDescriptionNode.GetText().c_str());
       m_cacheEngineDescriptionHasBeenSet = true;
     }
     XmlNode cacheEngineVersionDescriptionNode = resultNode.FirstChild("CacheEngineVersionDescription");
+    if(cacheEngineVersionDescriptionNode.IsNull())
+    {
+      cacheEngineVersionDescriptionNode = resultNode;
+    }
+
     if(!cacheEngineVersionDescriptionNode.IsNull())
     {
       m_cacheEngineVersionDescription = StringUtils::Trim(cacheEngineVersionDescriptionNode.GetText().c_str());

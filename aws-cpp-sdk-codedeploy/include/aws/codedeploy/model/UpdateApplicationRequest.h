@@ -40,10 +40,16 @@ namespace Model
      <p>The current name of the application that you want to change.</p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p>The current name of the application that you want to change.</p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p>The current name of the application that you want to change.</p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The current name of the application that you want to change.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The current name of the application that you want to change.</p>
     */
-    inline UpdateApplicationRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline UpdateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p>The current name of the application that you want to change.</p>
+    */
+    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p>The current name of the application that you want to change.</p>
@@ -64,10 +75,16 @@ namespace Model
      <p>The new name that you want to change the application to.</p>
     */
     inline const Aws::String& GetNewApplicationName() const{ return m_newApplicationName; }
+
     /*
      <p>The new name that you want to change the application to.</p>
     */
     inline void SetNewApplicationName(const Aws::String& value) { m_newApplicationNameHasBeenSet = true; m_newApplicationName = value; }
+
+    /*
+     <p>The new name that you want to change the application to.</p>
+    */
+    inline void SetNewApplicationName(Aws::String&& value) { m_newApplicationNameHasBeenSet = true; m_newApplicationName = value; }
 
     /*
      <p>The new name that you want to change the application to.</p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p>The new name that you want to change the application to.</p>
     */
-    inline UpdateApplicationRequest&  WithNewApplicationName(const Aws::String& value) { SetNewApplicationName(value); return *this;}
+    inline UpdateApplicationRequest& WithNewApplicationName(const Aws::String& value) { SetNewApplicationName(value); return *this;}
+
+    /*
+     <p>The new name that you want to change the application to.</p>
+    */
+    inline UpdateApplicationRequest& WithNewApplicationName(Aws::String&& value) { SetNewApplicationName(value); return *this;}
 
     /*
      <p>The new name that you want to change the application to.</p>

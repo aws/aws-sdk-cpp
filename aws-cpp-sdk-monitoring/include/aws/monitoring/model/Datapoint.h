@@ -47,6 +47,7 @@ namespace Model
      <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
     inline double GetTimestamp() const{ return m_timestamp; }
+
     /*
      <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
@@ -55,12 +56,13 @@ namespace Model
     /*
      <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline Datapoint&  WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline Datapoint& WithTimestamp(double value) { SetTimestamp(value); return *this;}
 
     /*
      <p> The number of metric values that contributed to the aggregate value of this datapoint. </p>
     */
     inline double GetSampleCount() const{ return m_sampleCount; }
+
     /*
      <p> The number of metric values that contributed to the aggregate value of this datapoint. </p>
     */
@@ -69,12 +71,13 @@ namespace Model
     /*
      <p> The number of metric values that contributed to the aggregate value of this datapoint. </p>
     */
-    inline Datapoint&  WithSampleCount(double value) { SetSampleCount(value); return *this;}
+    inline Datapoint& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
     /*
      <p> The average of metric values that correspond to the datapoint. </p>
     */
     inline double GetAverage() const{ return m_average; }
+
     /*
      <p> The average of metric values that correspond to the datapoint. </p>
     */
@@ -83,12 +86,13 @@ namespace Model
     /*
      <p> The average of metric values that correspond to the datapoint. </p>
     */
-    inline Datapoint&  WithAverage(double value) { SetAverage(value); return *this;}
+    inline Datapoint& WithAverage(double value) { SetAverage(value); return *this;}
 
     /*
      <p> The sum of metric values used for the datapoint. </p>
     */
     inline double GetSum() const{ return m_sum; }
+
     /*
      <p> The sum of metric values used for the datapoint. </p>
     */
@@ -97,12 +101,13 @@ namespace Model
     /*
      <p> The sum of metric values used for the datapoint. </p>
     */
-    inline Datapoint&  WithSum(double value) { SetSum(value); return *this;}
+    inline Datapoint& WithSum(double value) { SetSum(value); return *this;}
 
     /*
      <p> The minimum metric value used for the datapoint. </p>
     */
     inline double GetMinimum() const{ return m_minimum; }
+
     /*
      <p> The minimum metric value used for the datapoint. </p>
     */
@@ -111,12 +116,13 @@ namespace Model
     /*
      <p> The minimum metric value used for the datapoint. </p>
     */
-    inline Datapoint&  WithMinimum(double value) { SetMinimum(value); return *this;}
+    inline Datapoint& WithMinimum(double value) { SetMinimum(value); return *this;}
 
     /*
      <p> The maximum of the metric value used for the datapoint. </p>
     */
     inline double GetMaximum() const{ return m_maximum; }
+
     /*
      <p> The maximum of the metric value used for the datapoint. </p>
     */
@@ -125,12 +131,13 @@ namespace Model
     /*
      <p> The maximum of the metric value used for the datapoint. </p>
     */
-    inline Datapoint&  WithMaximum(double value) { SetMaximum(value); return *this;}
+    inline Datapoint& WithMaximum(double value) { SetMaximum(value); return *this;}
 
     /*
      <p> The standard unit used for the datapoint. </p>
     */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
+
     /*
      <p> The standard unit used for the datapoint. </p>
     */
@@ -139,7 +146,17 @@ namespace Model
     /*
      <p> The standard unit used for the datapoint. </p>
     */
-    inline Datapoint&  WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
+    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
+
+    /*
+     <p> The standard unit used for the datapoint. </p>
+    */
+    inline Datapoint& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
+
+    /*
+     <p> The standard unit used for the datapoint. </p>
+    */
+    inline Datapoint& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 
   private:
     double m_timestamp;

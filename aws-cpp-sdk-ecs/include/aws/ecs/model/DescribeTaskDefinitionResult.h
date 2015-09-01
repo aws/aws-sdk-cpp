@@ -46,6 +46,7 @@ namespace Model
      <p>The full task definition description.</p>
     */
     inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
+
     /*
      <p>The full task definition description.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>The full task definition description.</p>
     */
-    inline DescribeTaskDefinitionResult&  WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
+    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
+
+    /*
+     <p>The full task definition description.</p>
+    */
+    inline DescribeTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
+
+    /*
+     <p>The full task definition description.</p>
+    */
+    inline DescribeTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
 
   private:
     TaskDefinition m_taskDefinition;

@@ -47,10 +47,16 @@ namespace Model
      The value you provided for the Marker request parameter.
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      The value you provided for the Marker request parameter.
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     The value you provided for the Marker request parameter.
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      The value you provided for the Marker request parameter.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The value you provided for the Marker request parameter.
     */
-    inline DistributionList&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DistributionList& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     The value you provided for the Marker request parameter.
+    */
+    inline DistributionList& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      The value you provided for the Marker request parameter.
@@ -71,10 +82,16 @@ namespace Model
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
+
+    /*
+     If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
+    */
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
@@ -84,7 +101,12 @@ namespace Model
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
     */
-    inline DistributionList&  WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+    inline DistributionList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+
+    /*
+     If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
+    */
+    inline DistributionList& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
     /*
      If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.
@@ -95,6 +117,7 @@ namespace Model
      The value you provided for the MaxItems request parameter.
     */
     inline long GetMaxItems() const{ return m_maxItems; }
+
     /*
      The value you provided for the MaxItems request parameter.
     */
@@ -103,12 +126,13 @@ namespace Model
     /*
      The value you provided for the MaxItems request parameter.
     */
-    inline DistributionList&  WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline DistributionList& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
     /*
      A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in the list.
     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
     /*
      A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in the list.
     */
@@ -117,12 +141,13 @@ namespace Model
     /*
      A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in the list.
     */
-    inline DistributionList&  WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    inline DistributionList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /*
      The number of distributions that were created by the current AWS account.
     */
     inline long GetQuantity() const{ return m_quantity; }
+
     /*
      The number of distributions that were created by the current AWS account.
     */
@@ -131,12 +156,13 @@ namespace Model
     /*
      The number of distributions that were created by the current AWS account.
     */
-    inline DistributionList&  WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline DistributionList& WithQuantity(long value) { SetQuantity(value); return *this;}
 
     /*
      A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
     */
     inline const Aws::Vector<DistributionSummary>& GetItems() const{ return m_items; }
+
     /*
      A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
     */
@@ -145,12 +171,27 @@ namespace Model
     /*
      A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
     */
-    inline DistributionList&  WithItems(const Aws::Vector<DistributionSummary>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<DistributionSummary>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
+    */
+    inline DistributionList& WithItems(const Aws::Vector<DistributionSummary>& value) { SetItems(value); return *this;}
+
+    /*
+     A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
+    */
+    inline DistributionList& WithItems(Aws::Vector<DistributionSummary>&& value) { SetItems(value); return *this;}
 
     /*
      A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
     */
     inline DistributionList& AddItems(const DistributionSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.
+    */
+    inline DistributionList& AddItems(DistributionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     Aws::String m_marker;

@@ -49,10 +49,16 @@ namespace Model
      <p>The name of the Amazon Redshift HSM configuration.</p>
     */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
+
     /*
      <p>The name of the Amazon Redshift HSM configuration.</p>
     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+
+    /*
+     <p>The name of the Amazon Redshift HSM configuration.</p>
+    */
+    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /*
      <p>The name of the Amazon Redshift HSM configuration.</p>
@@ -62,7 +68,12 @@ namespace Model
     /*
      <p>The name of the Amazon Redshift HSM configuration.</p>
     */
-    inline HsmConfiguration&  WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
+    inline HsmConfiguration& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
+
+    /*
+     <p>The name of the Amazon Redshift HSM configuration.</p>
+    */
+    inline HsmConfiguration& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
     /*
      <p>The name of the Amazon Redshift HSM configuration.</p>
@@ -73,10 +84,16 @@ namespace Model
      <p>A text description of the HSM configuration.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A text description of the HSM configuration.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A text description of the HSM configuration.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A text description of the HSM configuration.</p>
@@ -86,7 +103,12 @@ namespace Model
     /*
      <p>A text description of the HSM configuration.</p>
     */
-    inline HsmConfiguration&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline HsmConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A text description of the HSM configuration.</p>
+    */
+    inline HsmConfiguration& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A text description of the HSM configuration.</p>
@@ -97,10 +119,16 @@ namespace Model
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     */
     inline const Aws::String& GetHsmIpAddress() const{ return m_hsmIpAddress; }
+
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     */
     inline void SetHsmIpAddress(const Aws::String& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = value; }
+
+    /*
+     <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    */
+    inline void SetHsmIpAddress(Aws::String&& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = value; }
 
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
@@ -110,7 +138,12 @@ namespace Model
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     */
-    inline HsmConfiguration&  WithHsmIpAddress(const Aws::String& value) { SetHsmIpAddress(value); return *this;}
+    inline HsmConfiguration& WithHsmIpAddress(const Aws::String& value) { SetHsmIpAddress(value); return *this;}
+
+    /*
+     <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    */
+    inline HsmConfiguration& WithHsmIpAddress(Aws::String&& value) { SetHsmIpAddress(value); return *this;}
 
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
@@ -121,10 +154,16 @@ namespace Model
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     */
     inline const Aws::String& GetHsmPartitionName() const{ return m_hsmPartitionName; }
+
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     */
     inline void SetHsmPartitionName(const Aws::String& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
+
+    /*
+     <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    */
+    inline void SetHsmPartitionName(Aws::String&& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
 
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
@@ -134,7 +173,12 @@ namespace Model
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     */
-    inline HsmConfiguration&  WithHsmPartitionName(const Aws::String& value) { SetHsmPartitionName(value); return *this;}
+    inline HsmConfiguration& WithHsmPartitionName(const Aws::String& value) { SetHsmPartitionName(value); return *this;}
+
+    /*
+     <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    */
+    inline HsmConfiguration& WithHsmPartitionName(Aws::String&& value) { SetHsmPartitionName(value); return *this;}
 
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
@@ -145,6 +189,7 @@ namespace Model
      <p>The list of tags for the HSM configuration.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>The list of tags for the HSM configuration.</p>
     */
@@ -153,12 +198,27 @@ namespace Model
     /*
      <p>The list of tags for the HSM configuration.</p>
     */
-    inline HsmConfiguration&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The list of tags for the HSM configuration.</p>
+    */
+    inline HsmConfiguration& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The list of tags for the HSM configuration.</p>
+    */
+    inline HsmConfiguration& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The list of tags for the HSM configuration.</p>
     */
     inline HsmConfiguration& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The list of tags for the HSM configuration.</p>
+    */
+    inline HsmConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_hsmConfigurationIdentifier;

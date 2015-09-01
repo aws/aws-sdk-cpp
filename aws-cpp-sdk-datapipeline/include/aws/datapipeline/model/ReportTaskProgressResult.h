@@ -45,6 +45,7 @@ namespace Model
      <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
     */
     inline bool GetCanceled() const{ return m_canceled; }
+
     /*
      <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
     */
@@ -53,7 +54,7 @@ namespace Model
     /*
      <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
     */
-    inline ReportTaskProgressResult&  WithCanceled(bool value) { SetCanceled(value); return *this;}
+    inline ReportTaskProgressResult& WithCanceled(bool value) { SetCanceled(value); return *this;}
 
   private:
     bool m_canceled;

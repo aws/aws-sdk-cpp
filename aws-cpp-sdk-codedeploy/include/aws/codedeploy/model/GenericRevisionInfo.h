@@ -45,10 +45,16 @@ namespace Model
      <p>A comment about the revision.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A comment about the revision.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A comment about the revision.</p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A comment about the revision.</p>
@@ -58,7 +64,12 @@ namespace Model
     /*
      <p>A comment about the revision.</p>
     */
-    inline GenericRevisionInfo&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline GenericRevisionInfo& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A comment about the revision.</p>
+    */
+    inline GenericRevisionInfo& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A comment about the revision.</p>
@@ -69,6 +80,7 @@ namespace Model
      <p>A list of deployment groups that use this revision.</p>
     */
     inline const Aws::Vector<Aws::String>& GetDeploymentGroups() const{ return m_deploymentGroups; }
+
     /*
      <p>A list of deployment groups that use this revision.</p>
     */
@@ -77,12 +89,27 @@ namespace Model
     /*
      <p>A list of deployment groups that use this revision.</p>
     */
-    inline GenericRevisionInfo&  WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
+    inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups = value; }
+
+    /*
+     <p>A list of deployment groups that use this revision.</p>
+    */
+    inline GenericRevisionInfo& WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
+
+    /*
+     <p>A list of deployment groups that use this revision.</p>
+    */
+    inline GenericRevisionInfo& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(value); return *this;}
 
     /*
      <p>A list of deployment groups that use this revision.</p>
     */
     inline GenericRevisionInfo& AddDeploymentGroups(const Aws::String& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.push_back(value); return *this; }
+
+    /*
+     <p>A list of deployment groups that use this revision.</p>
+    */
+    inline GenericRevisionInfo& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.push_back(value); return *this; }
 
     /*
      <p>A list of deployment groups that use this revision.</p>
@@ -93,6 +120,7 @@ namespace Model
      <p>When the revision was first used by AWS CodeDeploy.</p>
     */
     inline double GetFirstUsedTime() const{ return m_firstUsedTime; }
+
     /*
      <p>When the revision was first used by AWS CodeDeploy.</p>
     */
@@ -101,12 +129,13 @@ namespace Model
     /*
      <p>When the revision was first used by AWS CodeDeploy.</p>
     */
-    inline GenericRevisionInfo&  WithFirstUsedTime(double value) { SetFirstUsedTime(value); return *this;}
+    inline GenericRevisionInfo& WithFirstUsedTime(double value) { SetFirstUsedTime(value); return *this;}
 
     /*
      <p>When the revision was last used by AWS CodeDeploy.</p>
     */
     inline double GetLastUsedTime() const{ return m_lastUsedTime; }
+
     /*
      <p>When the revision was last used by AWS CodeDeploy.</p>
     */
@@ -115,12 +144,13 @@ namespace Model
     /*
      <p>When the revision was last used by AWS CodeDeploy.</p>
     */
-    inline GenericRevisionInfo&  WithLastUsedTime(double value) { SetLastUsedTime(value); return *this;}
+    inline GenericRevisionInfo& WithLastUsedTime(double value) { SetLastUsedTime(value); return *this;}
 
     /*
      <p>When the revision was registered with AWS CodeDeploy.</p>
     */
     inline double GetRegisterTime() const{ return m_registerTime; }
+
     /*
      <p>When the revision was registered with AWS CodeDeploy.</p>
     */
@@ -129,7 +159,7 @@ namespace Model
     /*
      <p>When the revision was registered with AWS CodeDeploy.</p>
     */
-    inline GenericRevisionInfo&  WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
+    inline GenericRevisionInfo& WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
 
   private:
     Aws::String m_description;

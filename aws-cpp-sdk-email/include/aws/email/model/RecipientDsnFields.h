@@ -50,10 +50,16 @@ namespace Model
      The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
     */
     inline const Aws::String& GetFinalRecipient() const{ return m_finalRecipient; }
+
     /*
      The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
     */
     inline void SetFinalRecipient(const Aws::String& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
+
+    /*
+     The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+    */
+    inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
 
     /*
      The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
@@ -63,7 +69,12 @@ namespace Model
     /*
      The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
     */
-    inline RecipientDsnFields&  WithFinalRecipient(const Aws::String& value) { SetFinalRecipient(value); return *this;}
+    inline RecipientDsnFields& WithFinalRecipient(const Aws::String& value) { SetFinalRecipient(value); return *this;}
+
+    /*
+     The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+    */
+    inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(value); return *this;}
 
     /*
      The transformed address that the message was ultimately delivered to (Final-Recipient in the DSN). If not specified, it will be set to the Recipient in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo needs to be a recipient of the original message being bounced. If specified, this needs to be just an email address (i.e. do not prepend with "rfc 822;").
@@ -74,6 +85,7 @@ namespace Model
      The action taken that failed while trying to deliver the message. This is required by RFC 3464.
     */
     inline const DsnAction& GetAction() const{ return m_action; }
+
     /*
      The action taken that failed while trying to deliver the message. This is required by RFC 3464.
     */
@@ -82,16 +94,32 @@ namespace Model
     /*
      The action taken that failed while trying to deliver the message. This is required by RFC 3464.
     */
-    inline RecipientDsnFields&  WithAction(const DsnAction& value) { SetAction(value); return *this;}
+    inline void SetAction(DsnAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /*
+     The action taken that failed while trying to deliver the message. This is required by RFC 3464.
+    */
+    inline RecipientDsnFields& WithAction(const DsnAction& value) { SetAction(value); return *this;}
+
+    /*
+     The action taken that failed while trying to deliver the message. This is required by RFC 3464.
+    */
+    inline RecipientDsnFields& WithAction(DsnAction&& value) { SetAction(value); return *this;}
 
     /*
      The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
     */
     inline const Aws::String& GetRemoteMta() const{ return m_remoteMta; }
+
     /*
      The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
     */
     inline void SetRemoteMta(const Aws::String& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = value; }
+
+    /*
+     The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
+    */
+    inline void SetRemoteMta(Aws::String&& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = value; }
 
     /*
      The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
@@ -101,7 +129,12 @@ namespace Model
     /*
      The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
     */
-    inline RecipientDsnFields&  WithRemoteMta(const Aws::String& value) { SetRemoteMta(value); return *this;}
+    inline RecipientDsnFields& WithRemoteMta(const Aws::String& value) { SetRemoteMta(value); return *this;}
+
+    /*
+     The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
+    */
+    inline RecipientDsnFields& WithRemoteMta(Aws::String&& value) { SetRemoteMta(value); return *this;}
 
     /*
      The MTA that the Remote MTA was attempting to deliver the message to. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). This really only applies to propagating synchronous bounces (which is where a remote MTA is involved).
@@ -112,10 +145,16 @@ namespace Model
      The status code that indicates what went wrong. This is required by RFC 3464.
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      The status code that indicates what went wrong. This is required by RFC 3464.
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     The status code that indicates what went wrong. This is required by RFC 3464.
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The status code that indicates what went wrong. This is required by RFC 3464.
@@ -125,7 +164,12 @@ namespace Model
     /*
      The status code that indicates what went wrong. This is required by RFC 3464.
     */
-    inline RecipientDsnFields&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline RecipientDsnFields& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     The status code that indicates what went wrong. This is required by RFC 3464.
+    */
+    inline RecipientDsnFields& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      The status code that indicates what went wrong. This is required by RFC 3464.
@@ -136,10 +180,16 @@ namespace Model
      Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
     */
     inline const Aws::String& GetDiagnosticCode() const{ return m_diagnosticCode; }
+
     /*
      Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
     */
     inline void SetDiagnosticCode(const Aws::String& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = value; }
+
+    /*
+     Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
+    */
+    inline void SetDiagnosticCode(Aws::String&& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = value; }
 
     /*
      Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
@@ -149,7 +199,12 @@ namespace Model
     /*
      Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
     */
-    inline RecipientDsnFields&  WithDiagnosticCode(const Aws::String& value) { SetDiagnosticCode(value); return *this;}
+    inline RecipientDsnFields& WithDiagnosticCode(const Aws::String& value) { SetDiagnosticCode(value); return *this;}
+
+    /*
+     Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
+    */
+    inline RecipientDsnFields& WithDiagnosticCode(Aws::String&& value) { SetDiagnosticCode(value); return *this;}
 
     /*
      Extended explanation of what went wrong, usually an SMTP response. See RFC 3463 for the correct formatting of this parameter.
@@ -160,6 +215,7 @@ namespace Model
      Time the final delivery attempt was made. It should be in RFC 822 date-time format if specified.
     */
     inline double GetLastAttemptDate() const{ return m_lastAttemptDate; }
+
     /*
      Time the final delivery attempt was made. It should be in RFC 822 date-time format if specified.
     */
@@ -168,12 +224,13 @@ namespace Model
     /*
      Time the final delivery attempt was made. It should be in RFC 822 date-time format if specified.
     */
-    inline RecipientDsnFields&  WithLastAttemptDate(double value) { SetLastAttemptDate(value); return *this;}
+    inline RecipientDsnFields& WithLastAttemptDate(double value) { SetLastAttemptDate(value); return *this;}
 
     /*
      Additional x-headers to include in the DSN.
     */
     inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
+
     /*
      Additional x-headers to include in the DSN.
     */
@@ -182,12 +239,27 @@ namespace Model
     /*
      Additional x-headers to include in the DSN.
     */
-    inline RecipientDsnFields&  WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
+    inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
+
+    /*
+     Additional x-headers to include in the DSN.
+    */
+    inline RecipientDsnFields& WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
+
+    /*
+     Additional x-headers to include in the DSN.
+    */
+    inline RecipientDsnFields& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(value); return *this;}
 
     /*
      Additional x-headers to include in the DSN.
     */
     inline RecipientDsnFields& AddExtensionFields(const ExtensionField& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
+
+    /*
+     Additional x-headers to include in the DSN.
+    */
+    inline RecipientDsnFields& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 
   private:
     Aws::String m_finalRecipient;

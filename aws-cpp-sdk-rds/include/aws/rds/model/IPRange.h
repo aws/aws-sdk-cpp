@@ -47,10 +47,16 @@ namespace Model
      <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
     */
-    inline IPRange&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline IPRange& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
+    */
+    inline IPRange& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> Specifies the IP range. </p>
     */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
+
     /*
      <p> Specifies the IP range. </p>
     */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
+
+    /*
+     <p> Specifies the IP range. </p>
+    */
+    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
     /*
      <p> Specifies the IP range. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> Specifies the IP range. </p>
     */
-    inline IPRange&  WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
+    inline IPRange& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
+
+    /*
+     <p> Specifies the IP range. </p>
+    */
+    inline IPRange& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
 
     /*
      <p> Specifies the IP range. </p>

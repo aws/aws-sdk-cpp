@@ -46,6 +46,7 @@ namespace Model
      <p>The full description of the deleted cluster.</p>
     */
     inline const Cluster& GetCluster() const{ return m_cluster; }
+
     /*
      <p>The full description of the deleted cluster.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>The full description of the deleted cluster.</p>
     */
-    inline DeleteClusterResult&  WithCluster(const Cluster& value) { SetCluster(value); return *this;}
+    inline void SetCluster(Cluster&& value) { m_cluster = value; }
+
+    /*
+     <p>The full description of the deleted cluster.</p>
+    */
+    inline DeleteClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>The full description of the deleted cluster.</p>
+    */
+    inline DeleteClusterResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
 
   private:
     Cluster m_cluster;

@@ -42,6 +42,11 @@ CreateInvalidation2015_04_17Result& CreateInvalidation2015_04_17Result::operator
   if(!resultNode.IsNull())
   {
     XmlNode invalidationNode = resultNode.FirstChild("Invalidation");
+    if(invalidationNode.IsNull())
+    {
+      invalidationNode = resultNode;
+    }
+
     if(!invalidationNode.IsNull())
     {
       m_invalidation = invalidationNode;

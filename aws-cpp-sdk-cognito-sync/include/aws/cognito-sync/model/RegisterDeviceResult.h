@@ -46,10 +46,16 @@ namespace Model
      <p>The unique ID generated for this device by Cognito.</p>
     */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
+
+    /*
+     <p>The unique ID generated for this device by Cognito.</p>
+    */
+    inline void SetDeviceId(Aws::String&& value) { m_deviceId = value; }
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
-    inline RegisterDeviceResult&  WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+    inline RegisterDeviceResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+
+    /*
+     <p>The unique ID generated for this device by Cognito.</p>
+    */
+    inline RegisterDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(value); return *this;}
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>

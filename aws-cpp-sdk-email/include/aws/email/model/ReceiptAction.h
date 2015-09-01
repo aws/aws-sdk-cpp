@@ -51,59 +51,108 @@ namespace Model
 
     
     inline const S3Action& GetS3Action() const{ return m_s3Action; }
+
     
     inline void SetS3Action(const S3Action& value) { m_s3ActionHasBeenSet = true; m_s3Action = value; }
 
     
-    inline ReceiptAction&  WithS3Action(const S3Action& value) { SetS3Action(value); return *this;}
+    inline void SetS3Action(S3Action&& value) { m_s3ActionHasBeenSet = true; m_s3Action = value; }
+
+    
+    inline ReceiptAction& WithS3Action(const S3Action& value) { SetS3Action(value); return *this;}
+
+    
+    inline ReceiptAction& WithS3Action(S3Action&& value) { SetS3Action(value); return *this;}
 
     
     inline const BounceAction& GetBounceAction() const{ return m_bounceAction; }
+
     
     inline void SetBounceAction(const BounceAction& value) { m_bounceActionHasBeenSet = true; m_bounceAction = value; }
 
     
-    inline ReceiptAction&  WithBounceAction(const BounceAction& value) { SetBounceAction(value); return *this;}
+    inline void SetBounceAction(BounceAction&& value) { m_bounceActionHasBeenSet = true; m_bounceAction = value; }
+
+    
+    inline ReceiptAction& WithBounceAction(const BounceAction& value) { SetBounceAction(value); return *this;}
+
+    
+    inline ReceiptAction& WithBounceAction(BounceAction&& value) { SetBounceAction(value); return *this;}
 
     
     inline const WorkmailAction& GetWorkmailAction() const{ return m_workmailAction; }
+
     
     inline void SetWorkmailAction(const WorkmailAction& value) { m_workmailActionHasBeenSet = true; m_workmailAction = value; }
 
     
-    inline ReceiptAction&  WithWorkmailAction(const WorkmailAction& value) { SetWorkmailAction(value); return *this;}
+    inline void SetWorkmailAction(WorkmailAction&& value) { m_workmailActionHasBeenSet = true; m_workmailAction = value; }
+
+    
+    inline ReceiptAction& WithWorkmailAction(const WorkmailAction& value) { SetWorkmailAction(value); return *this;}
+
+    
+    inline ReceiptAction& WithWorkmailAction(WorkmailAction&& value) { SetWorkmailAction(value); return *this;}
 
     
     inline const LambdaAction& GetLambdaAction() const{ return m_lambdaAction; }
+
     
     inline void SetLambdaAction(const LambdaAction& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = value; }
 
     
-    inline ReceiptAction&  WithLambdaAction(const LambdaAction& value) { SetLambdaAction(value); return *this;}
+    inline void SetLambdaAction(LambdaAction&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = value; }
+
+    
+    inline ReceiptAction& WithLambdaAction(const LambdaAction& value) { SetLambdaAction(value); return *this;}
+
+    
+    inline ReceiptAction& WithLambdaAction(LambdaAction&& value) { SetLambdaAction(value); return *this;}
 
     
     inline const StopAction& GetStopAction() const{ return m_stopAction; }
+
     
     inline void SetStopAction(const StopAction& value) { m_stopActionHasBeenSet = true; m_stopAction = value; }
 
     
-    inline ReceiptAction&  WithStopAction(const StopAction& value) { SetStopAction(value); return *this;}
+    inline void SetStopAction(StopAction&& value) { m_stopActionHasBeenSet = true; m_stopAction = value; }
+
+    
+    inline ReceiptAction& WithStopAction(const StopAction& value) { SetStopAction(value); return *this;}
+
+    
+    inline ReceiptAction& WithStopAction(StopAction&& value) { SetStopAction(value); return *this;}
 
     
     inline const AddHeaderAction& GetAddHeaderAction() const{ return m_addHeaderAction; }
+
     
     inline void SetAddHeaderAction(const AddHeaderAction& value) { m_addHeaderActionHasBeenSet = true; m_addHeaderAction = value; }
 
     
-    inline ReceiptAction&  WithAddHeaderAction(const AddHeaderAction& value) { SetAddHeaderAction(value); return *this;}
+    inline void SetAddHeaderAction(AddHeaderAction&& value) { m_addHeaderActionHasBeenSet = true; m_addHeaderAction = value; }
+
+    
+    inline ReceiptAction& WithAddHeaderAction(const AddHeaderAction& value) { SetAddHeaderAction(value); return *this;}
+
+    
+    inline ReceiptAction& WithAddHeaderAction(AddHeaderAction&& value) { SetAddHeaderAction(value); return *this;}
 
     
     inline const SNSAction& GetSNSAction() const{ return m_sNSAction; }
+
     
     inline void SetSNSAction(const SNSAction& value) { m_sNSActionHasBeenSet = true; m_sNSAction = value; }
 
     
-    inline ReceiptAction&  WithSNSAction(const SNSAction& value) { SetSNSAction(value); return *this;}
+    inline void SetSNSAction(SNSAction&& value) { m_sNSActionHasBeenSet = true; m_sNSAction = value; }
+
+    
+    inline ReceiptAction& WithSNSAction(const SNSAction& value) { SetSNSAction(value); return *this;}
+
+    
+    inline ReceiptAction& WithSNSAction(SNSAction&& value) { SetSNSAction(value); return *this;}
 
   private:
     S3Action m_s3Action;

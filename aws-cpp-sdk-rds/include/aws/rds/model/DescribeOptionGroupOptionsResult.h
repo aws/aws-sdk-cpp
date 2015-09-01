@@ -47,23 +47,39 @@ namespace Model
 
     
     inline const Aws::Vector<OptionGroupOption>& GetOptionGroupOptions() const{ return m_optionGroupOptions; }
+
     
     inline void SetOptionGroupOptions(const Aws::Vector<OptionGroupOption>& value) { m_optionGroupOptions = value; }
 
     
-    inline DescribeOptionGroupOptionsResult&  WithOptionGroupOptions(const Aws::Vector<OptionGroupOption>& value) { SetOptionGroupOptions(value); return *this;}
+    inline void SetOptionGroupOptions(Aws::Vector<OptionGroupOption>&& value) { m_optionGroupOptions = value; }
+
+    
+    inline DescribeOptionGroupOptionsResult& WithOptionGroupOptions(const Aws::Vector<OptionGroupOption>& value) { SetOptionGroupOptions(value); return *this;}
+
+    
+    inline DescribeOptionGroupOptionsResult& WithOptionGroupOptions(Aws::Vector<OptionGroupOption>&& value) { SetOptionGroupOptions(value); return *this;}
 
     
     inline DescribeOptionGroupOptionsResult& AddOptionGroupOptions(const OptionGroupOption& value) { m_optionGroupOptions.push_back(value); return *this; }
+
+    
+    inline DescribeOptionGroupOptionsResult& AddOptionGroupOptions(OptionGroupOption&& value) { m_optionGroupOptions.push_back(value); return *this; }
 
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
+
+    /*
+     <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -73,7 +89,12 @@ namespace Model
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     */
-    inline DescribeOptionGroupOptionsResult&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline DescribeOptionGroupOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    */
+    inline DescribeOptionGroupOptionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -82,11 +103,18 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline DescribeOptionGroupOptionsResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline DescribeOptionGroupOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DescribeOptionGroupOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<OptionGroupOption> m_optionGroupOptions;

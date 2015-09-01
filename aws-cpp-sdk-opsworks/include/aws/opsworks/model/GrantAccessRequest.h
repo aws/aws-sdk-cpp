@@ -39,10 +39,16 @@ namespace Model
      <p>The instance's AWS OpsWorks ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /*
+     <p>The instance's AWS OpsWorks ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>
@@ -52,7 +58,12 @@ namespace Model
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
-    inline GrantAccessRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline GrantAccessRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The instance's AWS OpsWorks ID.</p>
+    */
+    inline GrantAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>
@@ -63,6 +74,7 @@ namespace Model
      <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     */
     inline long GetValidForInMinutes() const{ return m_validForInMinutes; }
+
     /*
      <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     */
@@ -71,7 +83,7 @@ namespace Model
     /*
      <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     */
-    inline GrantAccessRequest&  WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
+    inline GrantAccessRequest& WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
 
   private:
     Aws::String m_instanceId;

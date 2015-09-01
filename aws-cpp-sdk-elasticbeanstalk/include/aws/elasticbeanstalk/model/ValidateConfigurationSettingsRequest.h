@@ -40,10 +40,16 @@ namespace Model
      <p> The name of the application that the configuration template or environment belongs to. </p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p> The name of the application that the configuration template or environment belongs to. </p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
     */
-    inline ValidateConfigurationSettingsRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p> The name of the application that the configuration template or environment belongs to. </p>
+    */
+    inline ValidateConfigurationSettingsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
@@ -64,10 +75,16 @@ namespace Model
      <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
     /*
      <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /*
+     <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
+    */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
     */
-    inline ValidateConfigurationSettingsRequest&  WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /*
+     <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
+    */
+    inline ValidateConfigurationSettingsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /*
      <p> The name of the configuration template to validate the settings against. </p> <p> Condition: You cannot specify both this and an environment name. </p>
@@ -88,10 +110,16 @@ namespace Model
      <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
     */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
     /*
      <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /*
+     <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
+    */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
@@ -101,7 +129,12 @@ namespace Model
     /*
      <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
     */
-    inline ValidateConfigurationSettingsRequest&  WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /*
+     <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
+    */
+    inline ValidateConfigurationSettingsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /*
      <p> The name of the environment to validate the settings against. </p> <p> Condition: You cannot specify both this and a configuration template name. </p>
@@ -112,6 +145,7 @@ namespace Model
      <p> A list of the options and desired values to evaluate. </p>
     */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
     /*
      <p> A list of the options and desired values to evaluate. </p>
     */
@@ -120,12 +154,27 @@ namespace Model
     /*
      <p> A list of the options and desired values to evaluate. </p>
     */
-    inline ValidateConfigurationSettingsRequest&  WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+
+    /*
+     <p> A list of the options and desired values to evaluate. </p>
+    */
+    inline ValidateConfigurationSettingsRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
+
+    /*
+     <p> A list of the options and desired values to evaluate. </p>
+    */
+    inline ValidateConfigurationSettingsRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /*
      <p> A list of the options and desired values to evaluate. </p>
     */
     inline ValidateConfigurationSettingsRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+
+    /*
+     <p> A list of the options and desired values to evaluate. </p>
+    */
+    inline ValidateConfigurationSettingsRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
   private:
     Aws::String m_applicationName;

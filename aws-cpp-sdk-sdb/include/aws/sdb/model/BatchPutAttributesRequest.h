@@ -39,10 +39,16 @@ namespace Model
      The name of the domain in which the attributes are being stored.
     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
     /*
      The name of the domain in which the attributes are being stored.
     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /*
+     The name of the domain in which the attributes are being stored.
+    */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain in which the attributes are being stored.
@@ -52,7 +58,12 @@ namespace Model
     /*
      The name of the domain in which the attributes are being stored.
     */
-    inline BatchPutAttributesRequest&  WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline BatchPutAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /*
+     The name of the domain in which the attributes are being stored.
+    */
+    inline BatchPutAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /*
      The name of the domain in which the attributes are being stored.
@@ -63,6 +74,7 @@ namespace Model
      A list of items on which to perform the operation.
     */
     inline const Aws::Vector<ReplaceableItem>& GetItems() const{ return m_items; }
+
     /*
      A list of items on which to perform the operation.
     */
@@ -71,12 +83,27 @@ namespace Model
     /*
      A list of items on which to perform the operation.
     */
-    inline BatchPutAttributesRequest&  WithItems(const Aws::Vector<ReplaceableItem>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<ReplaceableItem>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+
+    /*
+     A list of items on which to perform the operation.
+    */
+    inline BatchPutAttributesRequest& WithItems(const Aws::Vector<ReplaceableItem>& value) { SetItems(value); return *this;}
+
+    /*
+     A list of items on which to perform the operation.
+    */
+    inline BatchPutAttributesRequest& WithItems(Aws::Vector<ReplaceableItem>&& value) { SetItems(value); return *this;}
 
     /*
      A list of items on which to perform the operation.
     */
     inline BatchPutAttributesRequest& AddItems(const ReplaceableItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+
+    /*
+     A list of items on which to perform the operation.
+    */
+    inline BatchPutAttributesRequest& AddItems(ReplaceableItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     Aws::String m_domainName;

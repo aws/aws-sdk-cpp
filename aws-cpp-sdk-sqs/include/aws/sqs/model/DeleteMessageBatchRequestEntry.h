@@ -47,10 +47,16 @@ namespace Model
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
-    inline DeleteMessageBatchRequestEntry&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline DeleteMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
+    */
+    inline DeleteMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>A receipt handle.</p>
     */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
+
     /*
      <p>A receipt handle.</p>
     */
     inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
+
+    /*
+     <p>A receipt handle.</p>
+    */
+    inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
     /*
      <p>A receipt handle.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>A receipt handle.</p>
     */
-    inline DeleteMessageBatchRequestEntry&  WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
+    inline DeleteMessageBatchRequestEntry& WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
+
+    /*
+     <p>A receipt handle.</p>
+    */
+    inline DeleteMessageBatchRequestEntry& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(value); return *this;}
 
     /*
      <p>A receipt handle.</p>

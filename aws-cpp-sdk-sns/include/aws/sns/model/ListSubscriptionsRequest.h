@@ -38,10 +38,16 @@ namespace Model
      <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
     /*
      <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+    */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
      <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     */
-    inline ListSubscriptionsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListSubscriptionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+    */
+    inline ListSubscriptionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /*
      <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>

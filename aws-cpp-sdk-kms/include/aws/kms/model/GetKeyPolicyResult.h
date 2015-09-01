@@ -46,10 +46,16 @@ namespace Model
      <p>A policy document in JSON format.</p>
     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
     /*
      <p>A policy document in JSON format.</p>
     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
+
+    /*
+     <p>A policy document in JSON format.</p>
+    */
+    inline void SetPolicy(Aws::String&& value) { m_policy = value; }
 
     /*
      <p>A policy document in JSON format.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>A policy document in JSON format.</p>
     */
-    inline GetKeyPolicyResult&  WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+    inline GetKeyPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+
+    /*
+     <p>A policy document in JSON format.</p>
+    */
+    inline GetKeyPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /*
      <p>A policy document in JSON format.</p>

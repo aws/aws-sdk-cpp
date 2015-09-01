@@ -41,6 +41,11 @@ GetBucketReplicationResult& GetBucketReplicationResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode replicationConfigurationNode = resultNode.FirstChild("ReplicationConfiguration");
+    if(replicationConfigurationNode.IsNull())
+    {
+      replicationConfigurationNode = resultNode;
+    }
+
     if(!replicationConfigurationNode.IsNull())
     {
       m_replicationConfiguration = replicationConfigurationNode;

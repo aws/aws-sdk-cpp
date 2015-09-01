@@ -42,11 +42,21 @@ GetAccessKeyLastUsedResult& GetAccessKeyLastUsedResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
+    if(userNameNode.IsNull())
+    {
+      userNameNode = resultNode;
+    }
+
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
     }
     XmlNode accessKeyLastUsedNode = resultNode.FirstChild("AccessKeyLastUsed");
+    if(accessKeyLastUsedNode.IsNull())
+    {
+      accessKeyLastUsedNode = resultNode;
+    }
+
     if(!accessKeyLastUsedNode.IsNull())
     {
       m_accessKeyLastUsed = accessKeyLastUsedNode;

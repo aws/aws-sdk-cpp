@@ -47,10 +47,16 @@ namespace Model
      The name of the replaceable attribute.
     */
     inline const Aws::String& GetName() const{ return m_name; }
+
     /*
      The name of the replaceable attribute.
     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     The name of the replaceable attribute.
+    */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the replaceable attribute.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The name of the replaceable attribute.
     */
-    inline ReplaceableAttribute&  WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ReplaceableAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     The name of the replaceable attribute.
+    */
+    inline ReplaceableAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /*
      The name of the replaceable attribute.
@@ -71,10 +82,16 @@ namespace Model
      The value of the replaceable attribute.
     */
     inline const Aws::String& GetValue() const{ return m_value; }
+
     /*
      The value of the replaceable attribute.
     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /*
+     The value of the replaceable attribute.
+    */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      The value of the replaceable attribute.
@@ -84,7 +101,12 @@ namespace Model
     /*
      The value of the replaceable attribute.
     */
-    inline ReplaceableAttribute&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline ReplaceableAttribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /*
+     The value of the replaceable attribute.
+    */
+    inline ReplaceableAttribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /*
      The value of the replaceable attribute.
@@ -95,6 +117,7 @@ namespace Model
      A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.
     */
     inline bool GetReplace() const{ return m_replace; }
+
     /*
      A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.
     */
@@ -103,7 +126,7 @@ namespace Model
     /*
      A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.
     */
-    inline ReplaceableAttribute&  WithReplace(bool value) { SetReplace(value); return *this;}
+    inline ReplaceableAttribute& WithReplace(bool value) { SetReplace(value); return *this;}
 
   private:
     Aws::String m_name;

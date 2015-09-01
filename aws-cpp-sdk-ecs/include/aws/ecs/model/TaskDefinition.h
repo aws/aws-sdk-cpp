@@ -48,10 +48,16 @@ namespace Model
      <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
     */
     inline const Aws::String& GetTaskDefinitionArn() const{ return m_taskDefinitionArn; }
+
     /*
      <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
     */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
+
+    /*
+     <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
+    */
+    inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /*
      <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
     */
-    inline TaskDefinition&  WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
+    inline TaskDefinition& WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
+
+    /*
+     <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
+    */
+    inline TaskDefinition& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(value); return *this;}
 
     /*
      <p>The full Amazon Resource Name (ARN) of the of the task definition.</p>
@@ -72,6 +83,7 @@ namespace Model
      <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     */
     inline const Aws::Vector<ContainerDefinition>& GetContainerDefinitions() const{ return m_containerDefinitions; }
+
     /*
      <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     */
@@ -80,7 +92,17 @@ namespace Model
     /*
      <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     */
-    inline TaskDefinition&  WithContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { SetContainerDefinitions(value); return *this;}
+    inline void SetContainerDefinitions(Aws::Vector<ContainerDefinition>&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = value; }
+
+    /*
+     <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    */
+    inline TaskDefinition& WithContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { SetContainerDefinitions(value); return *this;}
+
+    /*
+     <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    */
+    inline TaskDefinition& WithContainerDefinitions(Aws::Vector<ContainerDefinition>&& value) { SetContainerDefinitions(value); return *this;}
 
     /*
      <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
@@ -88,13 +110,24 @@ namespace Model
     inline TaskDefinition& AddContainerDefinitions(const ContainerDefinition& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(value); return *this; }
 
     /*
+     <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information on container definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    */
+    inline TaskDefinition& AddContainerDefinitions(ContainerDefinition&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(value); return *this; }
+
+    /*
      <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
     */
     inline const Aws::String& GetFamily() const{ return m_family; }
+
     /*
      <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
+
+    /*
+     <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
+    */
+    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /*
      <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
@@ -104,7 +137,12 @@ namespace Model
     /*
      <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
     */
-    inline TaskDefinition&  WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
+    inline TaskDefinition& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
+
+    /*
+     <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
+    */
+    inline TaskDefinition& WithFamily(Aws::String&& value) { SetFamily(value); return *this;}
 
     /*
      <p>The family of your task definition. You can think of the <code>family</code> as the name of your task definition.</p>
@@ -115,6 +153,7 @@ namespace Model
      <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a new revision of a task definition in the same family, the revision value always increases by one (even if you have deregistered previous revisions in this family).</p>
     */
     inline long GetRevision() const{ return m_revision; }
+
     /*
      <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a new revision of a task definition in the same family, the revision value always increases by one (even if you have deregistered previous revisions in this family).</p>
     */
@@ -123,12 +162,13 @@ namespace Model
     /*
      <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a new revision of a task definition in the same family, the revision value always increases by one (even if you have deregistered previous revisions in this family).</p>
     */
-    inline TaskDefinition&  WithRevision(long value) { SetRevision(value); return *this;}
+    inline TaskDefinition& WithRevision(long value) { SetRevision(value); return *this;}
 
     /*
      <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+
     /*
      <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     */
@@ -137,7 +177,17 @@ namespace Model
     /*
      <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     */
-    inline TaskDefinition&  WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = value; }
+
+    /*
+     <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    */
+    inline TaskDefinition& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
+
+    /*
+     <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    */
+    inline TaskDefinition& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
 
     /*
      <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
@@ -145,9 +195,15 @@ namespace Model
     inline TaskDefinition& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
     /*
+     <p>The list of volumes in a task. For more information on volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    */
+    inline TaskDefinition& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
+
+    /*
      <p>The status of the task definition.</p>
     */
     inline const TaskDefinitionStatus& GetStatus() const{ return m_status; }
+
     /*
      <p>The status of the task definition.</p>
     */
@@ -156,7 +212,17 @@ namespace Model
     /*
      <p>The status of the task definition.</p>
     */
-    inline TaskDefinition&  WithStatus(const TaskDefinitionStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(TaskDefinitionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the task definition.</p>
+    */
+    inline TaskDefinition& WithStatus(const TaskDefinitionStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the task definition.</p>
+    */
+    inline TaskDefinition& WithStatus(TaskDefinitionStatus&& value) { SetStatus(value); return *this;}
 
   private:
     Aws::String m_taskDefinitionArn;

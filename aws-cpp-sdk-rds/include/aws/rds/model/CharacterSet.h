@@ -47,10 +47,16 @@ namespace Model
      <p> The name of the character set. </p>
     */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+
     /*
      <p> The name of the character set. </p>
     */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
+
+    /*
+     <p> The name of the character set. </p>
+    */
+    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /*
      <p> The name of the character set. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p> The name of the character set. </p>
     */
-    inline CharacterSet&  WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
+    inline CharacterSet& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
+
+    /*
+     <p> The name of the character set. </p>
+    */
+    inline CharacterSet& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(value); return *this;}
 
     /*
      <p> The name of the character set. </p>
@@ -71,10 +82,16 @@ namespace Model
      <p> The description of the character set. </p>
     */
     inline const Aws::String& GetCharacterSetDescription() const{ return m_characterSetDescription; }
+
     /*
      <p> The description of the character set. </p>
     */
     inline void SetCharacterSetDescription(const Aws::String& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = value; }
+
+    /*
+     <p> The description of the character set. </p>
+    */
+    inline void SetCharacterSetDescription(Aws::String&& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = value; }
 
     /*
      <p> The description of the character set. </p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p> The description of the character set. </p>
     */
-    inline CharacterSet&  WithCharacterSetDescription(const Aws::String& value) { SetCharacterSetDescription(value); return *this;}
+    inline CharacterSet& WithCharacterSetDescription(const Aws::String& value) { SetCharacterSetDescription(value); return *this;}
+
+    /*
+     <p> The description of the character set. </p>
+    */
+    inline CharacterSet& WithCharacterSetDescription(Aws::String&& value) { SetCharacterSetDescription(value); return *this;}
 
     /*
      <p> The description of the character set. </p>

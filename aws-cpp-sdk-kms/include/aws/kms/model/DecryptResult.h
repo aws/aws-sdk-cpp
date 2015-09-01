@@ -47,10 +47,16 @@ namespace Model
      <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
     /*
      <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
+
+    /*
+     <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
+    */
+    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
     /*
      <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
     */
-    inline DecryptResult&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+    inline DecryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /*
+     <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
+    */
+    inline DecryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /*
      <p>ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the operation. </p>
@@ -71,6 +82,7 @@ namespace Model
      <p>Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you didn't have permission to use it.</p>
     */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
+
     /*
      <p>Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you didn't have permission to use it.</p>
     */
@@ -79,7 +91,17 @@ namespace Model
     /*
      <p>Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you didn't have permission to use it.</p>
     */
-    inline DecryptResult&  WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
+    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = value; }
+
+    /*
+     <p>Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you didn't have permission to use it.</p>
+    */
+    inline DecryptResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
+
+    /*
+     <p>Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you didn't have permission to use it.</p>
+    */
+    inline DecryptResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
 
   private:
     Aws::String m_keyId;

@@ -42,6 +42,11 @@ PurchaseReservedCacheNodesOfferingResult& PurchaseReservedCacheNodesOfferingResu
   if(!resultNode.IsNull())
   {
     XmlNode reservedCacheNodeNode = resultNode.FirstChild("ReservedCacheNode");
+    if(reservedCacheNodeNode.IsNull())
+    {
+      reservedCacheNodeNode = resultNode;
+    }
+
     if(!reservedCacheNodeNode.IsNull())
     {
       m_reservedCacheNode = reservedCacheNodeNode;

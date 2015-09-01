@@ -44,10 +44,16 @@ namespace Model
      <p>The name of the log stream.</p>
     */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
     /*
      <p>The name of the log stream.</p>
     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+
+    /*
+     <p>The name of the log stream.</p>
+    */
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /*
      <p>The name of the log stream.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The name of the log stream.</p>
     */
-    inline SearchedLogStream&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+    inline SearchedLogStream& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+
+    /*
+     <p>The name of the log stream.</p>
+    */
+    inline SearchedLogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
     /*
      <p>The name of the log stream.</p>
@@ -68,6 +79,7 @@ namespace Model
      <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
     */
     inline bool GetSearchedCompletely() const{ return m_searchedCompletely; }
+
     /*
      <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
     */
@@ -76,7 +88,7 @@ namespace Model
     /*
      <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
     */
-    inline SearchedLogStream&  WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
+    inline SearchedLogStream& WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
 
   private:
     Aws::String m_logStreamName;

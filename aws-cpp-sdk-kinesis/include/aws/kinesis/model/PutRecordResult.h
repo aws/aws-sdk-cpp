@@ -46,10 +46,16 @@ namespace Model
      <p>The shard ID of the shard where the data record was placed.</p>
     */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
+
     /*
      <p>The shard ID of the shard where the data record was placed.</p>
     */
     inline void SetShardId(const Aws::String& value) { m_shardId = value; }
+
+    /*
+     <p>The shard ID of the shard where the data record was placed.</p>
+    */
+    inline void SetShardId(Aws::String&& value) { m_shardId = value; }
 
     /*
      <p>The shard ID of the shard where the data record was placed.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The shard ID of the shard where the data record was placed.</p>
     */
-    inline PutRecordResult&  WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
+    inline PutRecordResult& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
+
+    /*
+     <p>The shard ID of the shard where the data record was placed.</p>
+    */
+    inline PutRecordResult& WithShardId(Aws::String&& value) { SetShardId(value); return *this;}
 
     /*
      <p>The shard ID of the shard where the data record was placed.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
     */
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+
     /*
      <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
     */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumber = value; }
+
+    /*
+     <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
+    */
+    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumber = value; }
 
     /*
      <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
     */
-    inline PutRecordResult&  WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
+    inline PutRecordResult& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
+
+    /*
+     <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
+    */
+    inline PutRecordResult& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(value); return *this;}
 
     /*
      <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>

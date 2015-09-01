@@ -45,25 +45,39 @@ namespace Model
 
     
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
+
     
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
+
+    
+    inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
     
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
     
-    inline SendBounceResult&  WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+    inline SendBounceResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+
+    
+    inline SendBounceResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
     
     inline SendBounceResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline SendBounceResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline SendBounceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline SendBounceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::String m_messageId;

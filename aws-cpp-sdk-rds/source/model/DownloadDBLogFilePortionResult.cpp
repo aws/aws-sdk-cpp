@@ -44,16 +44,31 @@ DownloadDBLogFilePortionResult& DownloadDBLogFilePortionResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode logFileDataNode = resultNode.FirstChild("LogFileData");
+    if(logFileDataNode.IsNull())
+    {
+      logFileDataNode = resultNode;
+    }
+
     if(!logFileDataNode.IsNull())
     {
       m_logFileData = StringUtils::Trim(logFileDataNode.GetText().c_str());
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
+    if(markerNode.IsNull())
+    {
+      markerNode = resultNode;
+    }
+
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
     XmlNode additionalDataPendingNode = resultNode.FirstChild("AdditionalDataPending");
+    if(additionalDataPendingNode.IsNull())
+    {
+      additionalDataPendingNode = resultNode;
+    }
+
     if(!additionalDataPendingNode.IsNull())
     {
       m_additionalDataPending = StringUtils::ConvertToBool(StringUtils::Trim(additionalDataPendingNode.GetText().c_str()).c_str());

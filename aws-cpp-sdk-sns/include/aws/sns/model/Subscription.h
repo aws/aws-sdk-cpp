@@ -47,10 +47,16 @@ namespace Model
      <p>The subscription's ARN.</p>
     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
     /*
      <p>The subscription's ARN.</p>
     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
+
+    /*
+     <p>The subscription's ARN.</p>
+    */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /*
      <p>The subscription's ARN.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The subscription's ARN.</p>
     */
-    inline Subscription&  WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+    inline Subscription& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /*
+     <p>The subscription's ARN.</p>
+    */
+    inline Subscription& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
     /*
      <p>The subscription's ARN.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The subscription's owner.</p>
     */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
     /*
      <p>The subscription's owner.</p>
     */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /*
+     <p>The subscription's owner.</p>
+    */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /*
      <p>The subscription's owner.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The subscription's owner.</p>
     */
-    inline Subscription&  WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+    inline Subscription& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /*
+     <p>The subscription's owner.</p>
+    */
+    inline Subscription& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
 
     /*
      <p>The subscription's owner.</p>
@@ -95,10 +117,16 @@ namespace Model
      <p>The subscription's protocol.</p>
     */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
     /*
      <p>The subscription's protocol.</p>
     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /*
+     <p>The subscription's protocol.</p>
+    */
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /*
      <p>The subscription's protocol.</p>
@@ -108,7 +136,12 @@ namespace Model
     /*
      <p>The subscription's protocol.</p>
     */
-    inline Subscription&  WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+    inline Subscription& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+
+    /*
+     <p>The subscription's protocol.</p>
+    */
+    inline Subscription& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
 
     /*
      <p>The subscription's protocol.</p>
@@ -119,10 +152,16 @@ namespace Model
      <p>The subscription's endpoint (format depends on the protocol).</p>
     */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
     /*
      <p>The subscription's endpoint (format depends on the protocol).</p>
     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+
+    /*
+     <p>The subscription's endpoint (format depends on the protocol).</p>
+    */
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /*
      <p>The subscription's endpoint (format depends on the protocol).</p>
@@ -132,7 +171,12 @@ namespace Model
     /*
      <p>The subscription's endpoint (format depends on the protocol).</p>
     */
-    inline Subscription&  WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+    inline Subscription& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+
+    /*
+     <p>The subscription's endpoint (format depends on the protocol).</p>
+    */
+    inline Subscription& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
 
     /*
      <p>The subscription's endpoint (format depends on the protocol).</p>
@@ -143,10 +187,16 @@ namespace Model
      <p>The ARN of the subscription's topic.</p>
     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
     /*
      <p>The ARN of the subscription's topic.</p>
     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+
+    /*
+     <p>The ARN of the subscription's topic.</p>
+    */
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the subscription's topic.</p>
@@ -156,7 +206,12 @@ namespace Model
     /*
      <p>The ARN of the subscription's topic.</p>
     */
-    inline Subscription&  WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+    inline Subscription& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
+
+    /*
+     <p>The ARN of the subscription's topic.</p>
+    */
+    inline Subscription& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /*
      <p>The ARN of the subscription's topic.</p>

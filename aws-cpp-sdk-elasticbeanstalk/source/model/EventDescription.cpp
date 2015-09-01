@@ -57,48 +57,88 @@ EventDescription& EventDescription::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode eventDateNode = resultNode.FirstChild("EventDate");
+    if(eventDateNode.IsNull())
+    {
+      eventDateNode = resultNode;
+    }
+
     if(!eventDateNode.IsNull())
     {
       m_eventDate = StringUtils::ConvertToDouble(StringUtils::Trim(eventDateNode.GetText().c_str()).c_str());
       m_eventDateHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
+    if(messageNode.IsNull())
+    {
+      messageNode = resultNode;
+    }
+
     if(!messageNode.IsNull())
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
       m_messageHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
+    if(applicationNameNode.IsNull())
+    {
+      applicationNameNode = resultNode;
+    }
+
     if(!applicationNameNode.IsNull())
     {
       m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
       m_applicationNameHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
+    if(versionLabelNode.IsNull())
+    {
+      versionLabelNode = resultNode;
+    }
+
     if(!versionLabelNode.IsNull())
     {
       m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
       m_versionLabelHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
+    if(templateNameNode.IsNull())
+    {
+      templateNameNode = resultNode;
+    }
+
     if(!templateNameNode.IsNull())
     {
       m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
       m_templateNameHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
+    if(environmentNameNode.IsNull())
+    {
+      environmentNameNode = resultNode;
+    }
+
     if(!environmentNameNode.IsNull())
     {
       m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
       m_environmentNameHasBeenSet = true;
     }
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
+    if(requestIdNode.IsNull())
+    {
+      requestIdNode = resultNode;
+    }
+
     if(!requestIdNode.IsNull())
     {
       m_requestId = StringUtils::Trim(requestIdNode.GetText().c_str());
       m_requestIdHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
+    if(severityNode.IsNull())
+    {
+      severityNode = resultNode;
+    }
+
     if(!severityNode.IsNull())
     {
       m_severity = EventSeverityMapper::GetEventSeverityForName(StringUtils::Trim(severityNode.GetText().c_str()).c_str());

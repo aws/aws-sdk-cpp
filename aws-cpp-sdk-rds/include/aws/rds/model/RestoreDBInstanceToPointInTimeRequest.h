@@ -40,10 +40,16 @@ namespace Model
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
+
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
+
+    /*
+     <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -64,10 +75,16 @@ namespace Model
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
+
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
+
+    /*
+     <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -77,7 +94,12 @@ namespace Model
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
+
+    /*
+     <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -88,6 +110,7 @@ namespace Model
      <p> The date and time to restore from. </p> <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>Must be before the latest restorable time for the DB instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code></p>
     */
     inline double GetRestoreTime() const{ return m_restoreTime; }
+
     /*
      <p> The date and time to restore from. </p> <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>Must be before the latest restorable time for the DB instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code></p>
     */
@@ -96,12 +119,13 @@ namespace Model
     /*
      <p> The date and time to restore from. </p> <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>Must be before the latest restorable time for the DB instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code></p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithRestoreTime(double value) { SetRestoreTime(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(double value) { SetRestoreTime(value); return *this;}
 
     /*
      <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB instance is restored from the latest backup time. </p> <p>Default: <code>false</code></p> <p>Constraints: Cannot be specified if RestoreTime parameter is provided.</p>
     */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
+
     /*
      <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB instance is restored from the latest backup time. </p> <p>Default: <code>false</code></p> <p>Constraints: Cannot be specified if RestoreTime parameter is provided.</p>
     */
@@ -110,16 +134,22 @@ namespace Model
     /*
      <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB instance is restored from the latest backup time. </p> <p>Default: <code>false</code></p> <p>Constraints: Cannot be specified if RestoreTime parameter is provided.</p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
 
     /*
      <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
     */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
     /*
      <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+
+    /*
+     <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
+    */
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
      <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
@@ -129,7 +159,12 @@ namespace Model
     /*
      <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
+
+    /*
+     <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /*
      <p> The compute and memory capacity of the Amazon RDS DB instance. </p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p> <p>Default: The same DBInstanceClass as the original DB instance.</p>
@@ -140,6 +175,7 @@ namespace Model
      <p> The port number on which the database accepts connections. </p> <p>Constraints: Value must be <code>1150-65535</code></p> <p>Default: The same port as the original DB instance.</p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p> The port number on which the database accepts connections. </p> <p>Constraints: Value must be <code>1150-65535</code></p> <p>Default: The same port as the original DB instance.</p>
     */
@@ -148,16 +184,22 @@ namespace Model
     /*
      <p> The port number on which the database accepts connections. </p> <p>Constraints: Value must be <code>1150-65535</code></p> <p>Default: The same port as the original DB instance.</p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithPort(long value) { SetPort(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithPort(long value) { SetPort(value); return *this;}
 
     /*
      <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
     /*
      <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
@@ -167,7 +209,12 @@ namespace Model
     /*
      <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /*
      <p> The EC2 Availability Zone that the database instance will be created in. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p> <p>Example: <code>us-east-1a</code></p>
@@ -178,10 +225,16 @@ namespace Model
      <p> The DB subnet group name to use for the new instance. </p>
     */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
     /*
      <p> The DB subnet group name to use for the new instance. </p>
     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /*
+     <p> The DB subnet group name to use for the new instance. </p>
+    */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /*
      <p> The DB subnet group name to use for the new instance. </p>
@@ -191,7 +244,12 @@ namespace Model
     /*
      <p> The DB subnet group name to use for the new instance. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /*
+     <p> The DB subnet group name to use for the new instance. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /*
      <p> The DB subnet group name to use for the new instance. </p>
@@ -202,6 +260,7 @@ namespace Model
      <p> Specifies if the DB instance is a Multi-AZ deployment. </p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>.</p>
     */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
+
     /*
      <p> Specifies if the DB instance is a Multi-AZ deployment. </p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>.</p>
     */
@@ -210,12 +269,13 @@ namespace Model
     /*
      <p> Specifies if the DB instance is a Multi-AZ deployment. </p> <p>Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>.</p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
     /*
      <p> Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p> <p> Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default behavior in each case. </p> <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private. </p>
     */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+
     /*
      <p> Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p> <p> Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default behavior in each case. </p> <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private. </p>
     */
@@ -224,12 +284,13 @@ namespace Model
     /*
      <p> Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p> <p> Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default behavior in each case. </p> <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
     /*
      <p> Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window. </p>
     */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
     /*
      <p> Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window. </p>
     */
@@ -238,16 +299,22 @@ namespace Model
     /*
      <p> Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
     /*
      <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
     /*
      <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /*
+     <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    */
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /*
      <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
@@ -257,7 +324,12 @@ namespace Model
     /*
      <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+
+    /*
+     <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
 
     /*
      <p> License model information for the restored DB instance. </p> <p> Default: Same as source. </p> <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
@@ -268,10 +340,16 @@ namespace Model
      <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
     */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
+
     /*
      <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
     */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
+
+    /*
+     <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
+    */
+    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /*
      <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
@@ -281,7 +359,12 @@ namespace Model
     /*
      <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
+
+    /*
+     <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
 
     /*
      <p> The database name for the restored DB instance. </p> <note> <p>This parameter is not used for the MySQL engine.</p> </note>
@@ -292,10 +375,16 @@ namespace Model
      <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
@@ -305,7 +394,12 @@ namespace Model
     /*
      <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p> The database engine to use for the new instance. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p>
@@ -316,6 +410,7 @@ namespace Model
      <p> The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. </p> <p> Constraints: Must be an integer greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for the SQL Server database engine is not supported.</p>
     */
     inline long GetIops() const{ return m_iops; }
+
     /*
      <p> The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. </p> <p> Constraints: Must be an integer greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for the SQL Server database engine is not supported.</p>
     */
@@ -324,16 +419,22 @@ namespace Model
     /*
      <p> The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. </p> <p> Constraints: Must be an integer greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for the SQL Server database engine is not supported.</p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithIops(long value) { SetIops(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithIops(long value) { SetIops(value); return *this;}
 
     /*
      <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
     /*
      <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+
+    /*
+     <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
+    */
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
@@ -343,7 +444,12 @@ namespace Model
     /*
      <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+
+    /*
+     <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /*
      <p>The name of the option group to be used for the restored DB instance.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
@@ -354,6 +460,7 @@ namespace Model
      <p>True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
     */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
     /*
      <p>True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
     */
@@ -362,27 +469,43 @@ namespace Model
     /*
      <p>True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline RestoreDBInstanceToPointInTimeRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline RestoreDBInstanceToPointInTimeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    
+    inline RestoreDBInstanceToPointInTimeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     
     inline RestoreDBInstanceToPointInTimeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    
+    inline RestoreDBInstanceToPointInTimeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /*
      <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
     */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
     /*
      <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /*
+     <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
+    */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /*
      <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
@@ -392,7 +515,12 @@ namespace Model
     /*
      <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /*
+     <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
 
     /*
      <p> Specifies the storage type to be associated with the DB instance. </p> <p> Valid values: <code>standard | gp2 | io1</code></p> <p> If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code></p>
@@ -403,10 +531,16 @@ namespace Model
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
     */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
+
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
     */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
+
+    /*
+     <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
+    */
+    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
@@ -416,7 +550,12 @@ namespace Model
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
+
+    /*
+     <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
 
     /*
      <p> The ARN from the Key Store with which to associate the instance for TDE encryption. </p>
@@ -427,10 +566,16 @@ namespace Model
      <p> The password for the given ARN from the Key Store in order to access the device. </p>
     */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
+
     /*
      <p> The password for the given ARN from the Key Store in order to access the device. </p>
     */
     inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
+
+    /*
+     <p> The password for the given ARN from the Key Store in order to access the device. </p>
+    */
+    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
 
     /*
      <p> The password for the given ARN from the Key Store in order to access the device. </p>
@@ -440,7 +585,12 @@ namespace Model
     /*
      <p> The password for the given ARN from the Key Store in order to access the device. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
+
+    /*
+     <p> The password for the given ARN from the Key Store in order to access the device. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(value); return *this;}
 
     /*
      <p> The password for the given ARN from the Key Store in order to access the device. </p>
@@ -451,6 +601,7 @@ namespace Model
      <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
     */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
     /*
      <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
     */
@@ -459,12 +610,27 @@ namespace Model
     /*
      <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /*
      <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
     */
     inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /*
      <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
@@ -475,6 +641,7 @@ namespace Model
      <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
     */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
+
     /*
      <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
     */
@@ -483,12 +650,27 @@ namespace Model
     /*
      <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
+    inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(value); return *this;}
 
     /*
      <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
     */
     inline RestoreDBInstanceToPointInTimeRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /*
      <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
@@ -499,10 +681,16 @@ namespace Model
      <p> Specify the Active Directory Domain to restore the instance in. </p>
     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
+
     /*
      <p> Specify the Active Directory Domain to restore the instance in. </p>
     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /*
      <p> Specify the Active Directory Domain to restore the instance in. </p>
@@ -512,7 +700,12 @@ namespace Model
     /*
      <p> Specify the Active Directory Domain to restore the instance in. </p>
     */
-    inline RestoreDBInstanceToPointInTimeRequest&  WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
     /*
      <p> Specify the Active Directory Domain to restore the instance in. </p>

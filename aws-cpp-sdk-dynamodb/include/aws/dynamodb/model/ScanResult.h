@@ -50,6 +50,7 @@ namespace Model
      <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     */
     inline const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& GetItems() const{ return m_items; }
+
     /*
      <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     */
@@ -58,7 +59,17 @@ namespace Model
     /*
      <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     */
-    inline ScanResult&  WithItems(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { SetItems(value); return *this;}
+    inline void SetItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_items = value; }
+
+    /*
+     <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    */
+    inline ScanResult& WithItems(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { SetItems(value); return *this;}
+
+    /*
+     <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    */
+    inline ScanResult& WithItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { SetItems(value); return *this;}
 
     /*
      <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
@@ -66,9 +77,15 @@ namespace Model
     inline ScanResult& AddItems(const Aws::Map<Aws::String, AttributeValue>& value) { m_items.push_back(value); return *this; }
 
     /*
+     <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    */
+    inline ScanResult& AddItems(Aws::Map<Aws::String, AttributeValue>&& value) { m_items.push_back(value); return *this; }
+
+    /*
      <p>The number of items in the response.</p> <p>If you set <i>ScanFilter</i> in the request, then <i>Count</i> is the number of items returned after the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.</p> <p>If you did not use a filter in the request, then <i>Count</i> is the same as <i>ScannedCount</i>.</p>
     */
     inline long GetCount() const{ return m_count; }
+
     /*
      <p>The number of items in the response.</p> <p>If you set <i>ScanFilter</i> in the request, then <i>Count</i> is the number of items returned after the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.</p> <p>If you did not use a filter in the request, then <i>Count</i> is the same as <i>ScannedCount</i>.</p>
     */
@@ -77,12 +94,13 @@ namespace Model
     /*
      <p>The number of items in the response.</p> <p>If you set <i>ScanFilter</i> in the request, then <i>Count</i> is the number of items returned after the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.</p> <p>If you did not use a filter in the request, then <i>Count</i> is the same as <i>ScannedCount</i>.</p>
     */
-    inline ScanResult&  WithCount(long value) { SetCount(value); return *this;}
+    inline ScanResult& WithCount(long value) { SetCount(value); return *this;}
 
     /*
      <p>The number of items evaluated, before any <i>ScanFilter</i> is applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results indicates an inefficient <i>Scan</i> operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.</p>
     */
     inline long GetScannedCount() const{ return m_scannedCount; }
+
     /*
      <p>The number of items evaluated, before any <i>ScanFilter</i> is applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results indicates an inefficient <i>Scan</i> operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.</p>
     */
@@ -91,12 +109,13 @@ namespace Model
     /*
      <p>The number of items evaluated, before any <i>ScanFilter</i> is applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results indicates an inefficient <i>Scan</i> operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.</p>
     */
-    inline ScanResult&  WithScannedCount(long value) { SetScannedCount(value); return *this;}
+    inline ScanResult& WithScannedCount(long value) { SetScannedCount(value); return *this;}
 
     /*
      <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
     */
     inline const Aws::Map<Aws::String, AttributeValue>& GetLastEvaluatedKey() const{ return m_lastEvaluatedKey; }
+
     /*
      <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
     */
@@ -105,7 +124,17 @@ namespace Model
     /*
      <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
     */
-    inline ScanResult&  WithLastEvaluatedKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetLastEvaluatedKey(value); return *this;}
+    inline void SetLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_lastEvaluatedKey = value; }
+
+    /*
+     <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
+    */
+    inline ScanResult& WithLastEvaluatedKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetLastEvaluatedKey(value); return *this;}
+
+    /*
+     <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
+    */
+    inline ScanResult& WithLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetLastEvaluatedKey(value); return *this;}
 
     /*
      <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
@@ -115,15 +144,42 @@ namespace Model
     /*
      <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
     */
+    inline ScanResult& AddLastEvaluatedKey(Aws::String&& key, const AttributeValue& value) { m_lastEvaluatedKey[key] = value; return *this; }
+
+    /*
+     <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
+    */
+    inline ScanResult& AddLastEvaluatedKey(const Aws::String& key, AttributeValue&& value) { m_lastEvaluatedKey[key] = value; return *this; }
+
+    /*
+     <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
+    */
+    inline ScanResult& AddLastEvaluatedKey(Aws::String&& key, AttributeValue&& value) { m_lastEvaluatedKey[key] = value; return *this; }
+
+    /*
+     <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
+    */
+    inline ScanResult& AddLastEvaluatedKey(const char* key, AttributeValue&& value) { m_lastEvaluatedKey[key] = value; return *this; }
+
+    /*
+     <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> <p>If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.</p>
+    */
     inline ScanResult& AddLastEvaluatedKey(const char* key, const AttributeValue& value) { m_lastEvaluatedKey[key] = value; return *this; }
 
     
     inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
+
     
     inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
 
     
-    inline ScanResult&  WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
+    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = value; }
+
+    
+    inline ScanResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
+
+    
+    inline ScanResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(value); return *this;}
 
   private:
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;

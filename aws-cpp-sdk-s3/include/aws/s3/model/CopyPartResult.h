@@ -45,10 +45,16 @@ namespace Model
      Entity tag of the object.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      Entity tag of the object.
     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+
+    /*
+     Entity tag of the object.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /*
      Entity tag of the object.
@@ -58,7 +64,12 @@ namespace Model
     /*
      Entity tag of the object.
     */
-    inline CopyPartResult&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline CopyPartResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     Entity tag of the object.
+    */
+    inline CopyPartResult& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      Entity tag of the object.
@@ -69,6 +80,7 @@ namespace Model
      Date and time at which the object was uploaded.
     */
     inline double GetLastModified() const{ return m_lastModified; }
+
     /*
      Date and time at which the object was uploaded.
     */
@@ -77,7 +89,7 @@ namespace Model
     /*
      Date and time at which the object was uploaded.
     */
-    inline CopyPartResult&  WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline CopyPartResult& WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:
     Aws::String m_eTag;

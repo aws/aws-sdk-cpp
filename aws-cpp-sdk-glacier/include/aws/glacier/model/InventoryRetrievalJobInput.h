@@ -44,10 +44,16 @@ namespace Model
      <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
     */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
+
     /*
      <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
     */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+
+    /*
+     <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+    */
+    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /*
      <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
     */
-    inline InventoryRetrievalJobInput&  WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
+    inline InventoryRetrievalJobInput& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
+
+    /*
+     <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+    */
+    inline InventoryRetrievalJobInput& WithStartDate(Aws::String&& value) { SetStartDate(value); return *this;}
 
     /*
      <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
     */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
+
     /*
      <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
     */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
+
+    /*
+     <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+    */
+    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /*
      <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
     */
-    inline InventoryRetrievalJobInput&  WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
+    inline InventoryRetrievalJobInput& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
+
+    /*
+     <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+    */
+    inline InventoryRetrievalJobInput& WithEndDate(Aws::String&& value) { SetEndDate(value); return *this;}
 
     /*
      <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
     */
     inline const Aws::String& GetLimit() const{ return m_limit; }
+
     /*
      <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
     */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /*
+     <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
+    */
+    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /*
      <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
     */
-    inline InventoryRetrievalJobInput&  WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
+    inline InventoryRetrievalJobInput& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
+
+    /*
+     <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
+    */
+    inline InventoryRetrievalJobInput& WithLimit(Aws::String&& value) { SetLimit(value); return *this;}
 
     /*
      <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
@@ -116,10 +149,16 @@ namespace Model
      <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
     /*
      <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /*
+     <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
+    */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
@@ -129,7 +168,12 @@ namespace Model
     /*
      <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
     */
-    inline InventoryRetrievalJobInput&  WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+    inline InventoryRetrievalJobInput& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /*
+     <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
+    */
+    inline InventoryRetrievalJobInput& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /*
      <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>

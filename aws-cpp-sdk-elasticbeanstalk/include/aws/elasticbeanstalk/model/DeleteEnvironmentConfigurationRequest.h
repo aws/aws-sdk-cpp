@@ -38,10 +38,16 @@ namespace Model
      <p> The name of the application the environment is associated with. </p>
     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
     /*
      <p> The name of the application the environment is associated with. </p>
     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /*
+     <p> The name of the application the environment is associated with. </p>
+    */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application the environment is associated with. </p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p> The name of the application the environment is associated with. </p>
     */
-    inline DeleteEnvironmentConfigurationRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+    inline DeleteEnvironmentConfigurationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /*
+     <p> The name of the application the environment is associated with. </p>
+    */
+    inline DeleteEnvironmentConfigurationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /*
      <p> The name of the application the environment is associated with. </p>
@@ -62,10 +73,16 @@ namespace Model
      <p> The name of the environment to delete the draft configuration from. </p>
     */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
     /*
      <p> The name of the environment to delete the draft configuration from. </p>
     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /*
+     <p> The name of the environment to delete the draft configuration from. </p>
+    */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p> The name of the environment to delete the draft configuration from. </p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p> The name of the environment to delete the draft configuration from. </p>
     */
-    inline DeleteEnvironmentConfigurationRequest&  WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+    inline DeleteEnvironmentConfigurationRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /*
+     <p> The name of the environment to delete the draft configuration from. </p>
+    */
+    inline DeleteEnvironmentConfigurationRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /*
      <p> The name of the environment to delete the draft configuration from. </p>

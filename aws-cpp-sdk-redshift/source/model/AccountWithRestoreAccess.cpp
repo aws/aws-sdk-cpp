@@ -41,6 +41,11 @@ AccountWithRestoreAccess& AccountWithRestoreAccess::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
+    if(accountIdNode.IsNull())
+    {
+      accountIdNode = resultNode;
+    }
+
     if(!accountIdNode.IsNull())
     {
       m_accountId = StringUtils::Trim(accountIdNode.GetText().c_str());

@@ -46,10 +46,16 @@ namespace Model
      <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
     /*
      <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
+
+    /*
+     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
+    */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = value; }
 
     /*
      <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
     */
-    inline CreateDeploymentResult&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+    inline CreateDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /*
+     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
+    */
+    inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /*
      <p>The deployment ID, which can be used with other requests to identify the deployment.</p>

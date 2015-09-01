@@ -38,10 +38,16 @@ namespace Model
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+
+    /*
+     <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    */
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
-    inline DeleteReplicationGroupRequest&  WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
+    inline DeleteReplicationGroupRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
+
+    /*
+     <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    */
+    inline DeleteReplicationGroupRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
 
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -62,6 +73,7 @@ namespace Model
      <p>If set to <i>true</i>, all of the read replicas will be deleted, but the primary node will be retained.</p>
     */
     inline bool GetRetainPrimaryCluster() const{ return m_retainPrimaryCluster; }
+
     /*
      <p>If set to <i>true</i>, all of the read replicas will be deleted, but the primary node will be retained.</p>
     */
@@ -70,16 +82,22 @@ namespace Model
     /*
      <p>If set to <i>true</i>, all of the read replicas will be deleted, but the primary node will be retained.</p>
     */
-    inline DeleteReplicationGroupRequest&  WithRetainPrimaryCluster(bool value) { SetRetainPrimaryCluster(value); return *this;}
+    inline DeleteReplicationGroupRequest& WithRetainPrimaryCluster(bool value) { SetRetainPrimaryCluster(value); return *this;}
 
     /*
      <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>
     */
     inline const Aws::String& GetFinalSnapshotIdentifier() const{ return m_finalSnapshotIdentifier; }
+
     /*
      <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>
     */
     inline void SetFinalSnapshotIdentifier(const Aws::String& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
+
+    /*
+     <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>
+    */
+    inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
 
     /*
      <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>
@@ -89,7 +107,12 @@ namespace Model
     /*
      <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>
     */
-    inline DeleteReplicationGroupRequest&  WithFinalSnapshotIdentifier(const Aws::String& value) { SetFinalSnapshotIdentifier(value); return *this;}
+    inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(const Aws::String& value) { SetFinalSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>
+    */
+    inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(value); return *this;}
 
     /*
      <p>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</p>

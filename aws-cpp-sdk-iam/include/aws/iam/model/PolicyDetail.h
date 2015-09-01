@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the policy.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the policy.</p>
     */
-    inline PolicyDetail&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline PolicyDetail& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy.</p>
+    */
+    inline PolicyDetail& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The policy document.</p>
     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
     /*
      <p>The policy document.</p>
     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline PolicyDetail&  WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+    inline PolicyDetail& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline PolicyDetail& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /*
      <p>The policy document.</p>

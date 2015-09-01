@@ -46,6 +46,7 @@ namespace Model
      <p>This output contains the details for the requested cluster.</p>
     */
     inline const Cluster& GetCluster() const{ return m_cluster; }
+
     /*
      <p>This output contains the details for the requested cluster.</p>
     */
@@ -54,7 +55,17 @@ namespace Model
     /*
      <p>This output contains the details for the requested cluster.</p>
     */
-    inline DescribeClusterResult&  WithCluster(const Cluster& value) { SetCluster(value); return *this;}
+    inline void SetCluster(Cluster&& value) { m_cluster = value; }
+
+    /*
+     <p>This output contains the details for the requested cluster.</p>
+    */
+    inline DescribeClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
+
+    /*
+     <p>This output contains the details for the requested cluster.</p>
+    */
+    inline DescribeClusterResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
 
   private:
     Cluster m_cluster;

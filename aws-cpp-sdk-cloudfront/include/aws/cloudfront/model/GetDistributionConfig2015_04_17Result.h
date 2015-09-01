@@ -47,6 +47,7 @@ namespace Model
      The distribution's configuration information.
     */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
+
     /*
      The distribution's configuration information.
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      The distribution's configuration information.
     */
-    inline GetDistributionConfig2015_04_17Result&  WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
+    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfig = value; }
+
+    /*
+     The distribution's configuration information.
+    */
+    inline GetDistributionConfig2015_04_17Result& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
+
+    /*
+     The distribution's configuration information.
+    */
+    inline GetDistributionConfig2015_04_17Result& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /*
+     The current version of the configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
@@ -74,7 +91,12 @@ namespace Model
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.
     */
-    inline GetDistributionConfig2015_04_17Result&  WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline GetDistributionConfig2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /*
+     The current version of the configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline GetDistributionConfig2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
     /*
      The current version of the configuration. For example: E2QWRUHAPOMQZL.

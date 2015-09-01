@@ -46,6 +46,7 @@ namespace Model
      <p>The current state of the instance group.</p>
     */
     inline const InstanceGroupState& GetState() const{ return m_state; }
+
     /*
      <p>The current state of the instance group.</p>
     */
@@ -54,12 +55,23 @@ namespace Model
     /*
      <p>The current state of the instance group.</p>
     */
-    inline InstanceGroupStatus&  WithState(const InstanceGroupState& value) { SetState(value); return *this;}
+    inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p>The current state of the instance group.</p>
+    */
+    inline InstanceGroupStatus& WithState(const InstanceGroupState& value) { SetState(value); return *this;}
+
+    /*
+     <p>The current state of the instance group.</p>
+    */
+    inline InstanceGroupStatus& WithState(InstanceGroupState&& value) { SetState(value); return *this;}
 
     /*
      <p>The status change reason details for the instance group.</p>
     */
     inline const InstanceGroupStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+
     /*
      <p>The status change reason details for the instance group.</p>
     */
@@ -68,12 +80,23 @@ namespace Model
     /*
      <p>The status change reason details for the instance group.</p>
     */
-    inline InstanceGroupStatus&  WithStateChangeReason(const InstanceGroupStateChangeReason& value) { SetStateChangeReason(value); return *this;}
+    inline void SetStateChangeReason(InstanceGroupStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+
+    /*
+     <p>The status change reason details for the instance group.</p>
+    */
+    inline InstanceGroupStatus& WithStateChangeReason(const InstanceGroupStateChangeReason& value) { SetStateChangeReason(value); return *this;}
+
+    /*
+     <p>The status change reason details for the instance group.</p>
+    */
+    inline InstanceGroupStatus& WithStateChangeReason(InstanceGroupStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
 
     /*
      <p>The timeline of the instance group status over time.</p>
     */
     inline const InstanceGroupTimeline& GetTimeline() const{ return m_timeline; }
+
     /*
      <p>The timeline of the instance group status over time.</p>
     */
@@ -82,7 +105,17 @@ namespace Model
     /*
      <p>The timeline of the instance group status over time.</p>
     */
-    inline InstanceGroupStatus&  WithTimeline(const InstanceGroupTimeline& value) { SetTimeline(value); return *this;}
+    inline void SetTimeline(InstanceGroupTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+
+    /*
+     <p>The timeline of the instance group status over time.</p>
+    */
+    inline InstanceGroupStatus& WithTimeline(const InstanceGroupTimeline& value) { SetTimeline(value); return *this;}
+
+    /*
+     <p>The timeline of the instance group status over time.</p>
+    */
+    inline InstanceGroupStatus& WithTimeline(InstanceGroupTimeline&& value) { SetTimeline(value); return *this;}
 
   private:
     InstanceGroupState m_state;

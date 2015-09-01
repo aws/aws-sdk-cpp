@@ -38,10 +38,16 @@ namespace Model
      <p>The ARN of the subscription to modify.</p>
     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
     /*
      <p>The ARN of the subscription to modify.</p>
     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
+
+    /*
+     <p>The ARN of the subscription to modify.</p>
+    */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /*
      <p>The ARN of the subscription to modify.</p>
@@ -51,7 +57,12 @@ namespace Model
     /*
      <p>The ARN of the subscription to modify.</p>
     */
-    inline SetSubscriptionAttributesRequest&  WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+    inline SetSubscriptionAttributesRequest& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /*
+     <p>The ARN of the subscription to modify.</p>
+    */
+    inline SetSubscriptionAttributesRequest& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
     /*
      <p>The ARN of the subscription to modify.</p>
@@ -62,10 +73,16 @@ namespace Model
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+
+    /*
+     <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
+    */
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
     */
-    inline SetSubscriptionAttributesRequest&  WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+    inline SetSubscriptionAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
+
+    /*
+     <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
+    */
+    inline SetSubscriptionAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
@@ -86,10 +108,16 @@ namespace Model
      <p>The new value for the attribute in JSON format.</p>
     */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
     /*
      <p>The new value for the attribute in JSON format.</p>
     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
+
+    /*
+     <p>The new value for the attribute in JSON format.</p>
+    */
+    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
     /*
      <p>The new value for the attribute in JSON format.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>The new value for the attribute in JSON format.</p>
     */
-    inline SetSubscriptionAttributesRequest&  WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
+    inline SetSubscriptionAttributesRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
+
+    /*
+     <p>The new value for the attribute in JSON format.</p>
+    */
+    inline SetSubscriptionAttributesRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
 
     /*
      <p>The new value for the attribute in JSON format.</p>

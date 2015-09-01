@@ -44,10 +44,16 @@ namespace Model
      <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>
     */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+
     /*
      <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>
     */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
+
+    /*
+     <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>
+    */
+    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
 
     /*
      <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>
     */
-    inline HostVolumeProperties&  WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
+    inline HostVolumeProperties& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
+
+    /*
+     <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>
+    */
+    inline HostVolumeProperties& WithSourcePath(Aws::String&& value) { SetSourcePath(value); return *this;}
 
     /*
      <p>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you.</p>

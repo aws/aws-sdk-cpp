@@ -42,6 +42,11 @@ CreateStorageLocationResult& CreateStorageLocationResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
+    if(s3BucketNode.IsNull())
+    {
+      s3BucketNode = resultNode;
+    }
+
     if(!s3BucketNode.IsNull())
     {
       m_s3Bucket = StringUtils::Trim(s3BucketNode.GetText().c_str());

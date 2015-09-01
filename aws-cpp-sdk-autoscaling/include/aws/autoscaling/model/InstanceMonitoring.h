@@ -46,6 +46,7 @@ namespace Model
      <p>If <code>True</code>, instance monitoring is enabled.</p>
     */
     inline bool GetEnabled() const{ return m_enabled; }
+
     /*
      <p>If <code>True</code>, instance monitoring is enabled.</p>
     */
@@ -54,7 +55,7 @@ namespace Model
     /*
      <p>If <code>True</code>, instance monitoring is enabled.</p>
     */
-    inline InstanceMonitoring&  WithEnabled(bool value) { SetEnabled(value); return *this;}
+    inline InstanceMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
     bool m_enabled;

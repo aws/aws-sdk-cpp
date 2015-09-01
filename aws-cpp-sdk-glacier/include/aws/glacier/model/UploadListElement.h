@@ -44,10 +44,16 @@ namespace Model
      <p>The ID of a multipart upload.</p>
     */
     inline const Aws::String& GetMultipartUploadId() const{ return m_multipartUploadId; }
+
     /*
      <p>The ID of a multipart upload.</p>
     */
     inline void SetMultipartUploadId(const Aws::String& value) { m_multipartUploadIdHasBeenSet = true; m_multipartUploadId = value; }
+
+    /*
+     <p>The ID of a multipart upload.</p>
+    */
+    inline void SetMultipartUploadId(Aws::String&& value) { m_multipartUploadIdHasBeenSet = true; m_multipartUploadId = value; }
 
     /*
      <p>The ID of a multipart upload.</p>
@@ -57,7 +63,12 @@ namespace Model
     /*
      <p>The ID of a multipart upload.</p>
     */
-    inline UploadListElement&  WithMultipartUploadId(const Aws::String& value) { SetMultipartUploadId(value); return *this;}
+    inline UploadListElement& WithMultipartUploadId(const Aws::String& value) { SetMultipartUploadId(value); return *this;}
+
+    /*
+     <p>The ID of a multipart upload.</p>
+    */
+    inline UploadListElement& WithMultipartUploadId(Aws::String&& value) { SetMultipartUploadId(value); return *this;}
 
     /*
      <p>The ID of a multipart upload.</p>
@@ -68,10 +79,16 @@ namespace Model
      <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
     */
     inline const Aws::String& GetVaultARN() const{ return m_vaultARN; }
+
     /*
      <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
     */
     inline void SetVaultARN(const Aws::String& value) { m_vaultARNHasBeenSet = true; m_vaultARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
+    */
+    inline void SetVaultARN(Aws::String&& value) { m_vaultARNHasBeenSet = true; m_vaultARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
@@ -81,7 +98,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
     */
-    inline UploadListElement&  WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
+    inline UploadListElement& WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
+    */
+    inline UploadListElement& WithVaultARN(Aws::String&& value) { SetVaultARN(value); return *this;}
 
     /*
      <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
@@ -92,10 +114,16 @@ namespace Model
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     */
     inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
+
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     */
     inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
+
+    /*
+     <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    */
+    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
 
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
@@ -105,7 +133,12 @@ namespace Model
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     */
-    inline UploadListElement&  WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+    inline UploadListElement& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
+
+    /*
+     <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    */
+    inline UploadListElement& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(value); return *this;}
 
     /*
      <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
@@ -116,6 +149,7 @@ namespace Model
      <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
     */
     inline long long GetPartSizeInBytes() const{ return m_partSizeInBytes; }
+
     /*
      <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
     */
@@ -124,16 +158,22 @@ namespace Model
     /*
      <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
     */
-    inline UploadListElement&  WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
+    inline UploadListElement& WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
 
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
     */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /*
+     <p>The UTC time at which the multipart upload was initiated.</p>
+    */
+    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
@@ -143,7 +183,12 @@ namespace Model
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>
     */
-    inline UploadListElement&  WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+    inline UploadListElement& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+
+    /*
+     <p>The UTC time at which the multipart upload was initiated.</p>
+    */
+    inline UploadListElement& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
 
     /*
      <p>The UTC time at which the multipart upload was initiated.</p>

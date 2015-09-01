@@ -46,10 +46,16 @@ namespace Model
      Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
     */
     inline const Aws::String& GetAwsAccountNumber() const{ return m_awsAccountNumber; }
+
     /*
      Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
     */
     inline void SetAwsAccountNumber(const Aws::String& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
+
+    /*
+     Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
+    */
+    inline void SetAwsAccountNumber(Aws::String&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
 
     /*
      Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
@@ -59,7 +65,12 @@ namespace Model
     /*
      Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
     */
-    inline Signer&  WithAwsAccountNumber(const Aws::String& value) { SetAwsAccountNumber(value); return *this;}
+    inline Signer& WithAwsAccountNumber(const Aws::String& value) { SetAwsAccountNumber(value); return *this;}
+
+    /*
+     Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
+    */
+    inline Signer& WithAwsAccountNumber(Aws::String&& value) { SetAwsAccountNumber(value); return *this;}
 
     /*
      Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
@@ -70,6 +81,7 @@ namespace Model
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
     inline const KeyPairIds& GetKeyPairIds() const{ return m_keyPairIds; }
+
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
@@ -78,7 +90,17 @@ namespace Model
     /*
      A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
     */
-    inline Signer&  WithKeyPairIds(const KeyPairIds& value) { SetKeyPairIds(value); return *this;}
+    inline void SetKeyPairIds(KeyPairIds&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = value; }
+
+    /*
+     A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+    */
+    inline Signer& WithKeyPairIds(const KeyPairIds& value) { SetKeyPairIds(value); return *this;}
+
+    /*
+     A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+    */
+    inline Signer& WithKeyPairIds(KeyPairIds&& value) { SetKeyPairIds(value); return *this;}
 
   private:
     Aws::String m_awsAccountNumber;

@@ -47,6 +47,11 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode eventIdNode = resultNode.FirstChild("EventId");
+    if(eventIdNode.IsNull())
+    {
+      eventIdNode = resultNode;
+    }
+
     if(!eventIdNode.IsNull())
     {
       m_eventId = StringUtils::Trim(eventIdNode.GetText().c_str());
@@ -65,12 +70,22 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
       m_eventCategoriesHasBeenSet = true;
     }
     XmlNode eventDescriptionNode = resultNode.FirstChild("EventDescription");
+    if(eventDescriptionNode.IsNull())
+    {
+      eventDescriptionNode = resultNode;
+    }
+
     if(!eventDescriptionNode.IsNull())
     {
       m_eventDescription = StringUtils::Trim(eventDescriptionNode.GetText().c_str());
       m_eventDescriptionHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
+    if(severityNode.IsNull())
+    {
+      severityNode = resultNode;
+    }
+
     if(!severityNode.IsNull())
     {
       m_severity = StringUtils::Trim(severityNode.GetText().c_str());

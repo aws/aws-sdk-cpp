@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the user whose MFA device you want to resynchronize.</p>
     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
+
+    /*
+     <p>The name of the user whose MFA device you want to resynchronize.</p>
+    */
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
     */
-    inline ResyncMFADeviceRequest&  WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+    inline ResyncMFADeviceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
+
+    /*
+     <p>The name of the user whose MFA device you want to resynchronize.</p>
+    */
+    inline ResyncMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>Serial number that uniquely identifies the MFA device.</p>
     */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+
+    /*
+     <p>Serial number that uniquely identifies the MFA device.</p>
+    */
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
     */
-    inline ResyncMFADeviceRequest&  WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
+    inline ResyncMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
+
+    /*
+     <p>Serial number that uniquely identifies the MFA device.</p>
+    */
+    inline ResyncMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
@@ -85,10 +107,16 @@ namespace Model
      <p>An authentication code emitted by the device.</p>
     */
     inline const Aws::String& GetAuthenticationCode1() const{ return m_authenticationCode1; }
+
     /*
      <p>An authentication code emitted by the device.</p>
     */
     inline void SetAuthenticationCode1(const Aws::String& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = value; }
+
+    /*
+     <p>An authentication code emitted by the device.</p>
+    */
+    inline void SetAuthenticationCode1(Aws::String&& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = value; }
 
     /*
      <p>An authentication code emitted by the device.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p>An authentication code emitted by the device.</p>
     */
-    inline ResyncMFADeviceRequest&  WithAuthenticationCode1(const Aws::String& value) { SetAuthenticationCode1(value); return *this;}
+    inline ResyncMFADeviceRequest& WithAuthenticationCode1(const Aws::String& value) { SetAuthenticationCode1(value); return *this;}
+
+    /*
+     <p>An authentication code emitted by the device.</p>
+    */
+    inline ResyncMFADeviceRequest& WithAuthenticationCode1(Aws::String&& value) { SetAuthenticationCode1(value); return *this;}
 
     /*
      <p>An authentication code emitted by the device.</p>
@@ -109,10 +142,16 @@ namespace Model
      <p>A subsequent authentication code emitted by the device.</p>
     */
     inline const Aws::String& GetAuthenticationCode2() const{ return m_authenticationCode2; }
+
     /*
      <p>A subsequent authentication code emitted by the device.</p>
     */
     inline void SetAuthenticationCode2(const Aws::String& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = value; }
+
+    /*
+     <p>A subsequent authentication code emitted by the device.</p>
+    */
+    inline void SetAuthenticationCode2(Aws::String&& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = value; }
 
     /*
      <p>A subsequent authentication code emitted by the device.</p>
@@ -122,7 +161,12 @@ namespace Model
     /*
      <p>A subsequent authentication code emitted by the device.</p>
     */
-    inline ResyncMFADeviceRequest&  WithAuthenticationCode2(const Aws::String& value) { SetAuthenticationCode2(value); return *this;}
+    inline ResyncMFADeviceRequest& WithAuthenticationCode2(const Aws::String& value) { SetAuthenticationCode2(value); return *this;}
+
+    /*
+     <p>A subsequent authentication code emitted by the device.</p>
+    */
+    inline ResyncMFADeviceRequest& WithAuthenticationCode2(Aws::String&& value) { SetAuthenticationCode2(value); return *this;}
 
     /*
      <p>A subsequent authentication code emitted by the device.</p>

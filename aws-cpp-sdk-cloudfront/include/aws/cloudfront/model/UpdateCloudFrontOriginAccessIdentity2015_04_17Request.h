@@ -41,6 +41,7 @@ namespace Model
      The identity's configuration information.
     */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
+
     /*
      The identity's configuration information.
     */
@@ -49,16 +50,32 @@ namespace Model
     /*
      The identity's configuration information.
     */
-    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request&  WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
+    inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
+
+    /*
+     The identity's configuration information.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
+
+    /*
+     The identity's configuration information.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
 
     /*
      The identity's id.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The identity's id.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The identity's id.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identity's id.
@@ -68,7 +85,12 @@ namespace Model
     /*
      The identity's id.
     */
-    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The identity's id.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The identity's id.
@@ -79,10 +101,16 @@ namespace Model
      The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
     */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
     /*
      The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
     */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
+
+    /*
+     The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /*
      The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
@@ -92,7 +120,12 @@ namespace Model
     /*
      The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
     */
-    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request&  WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
+
+    /*
+     The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
+    */
+    inline UpdateCloudFrontOriginAccessIdentity2015_04_17Request& WithIfMatch(Aws::String&& value) { SetIfMatch(value); return *this;}
 
     /*
      The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.

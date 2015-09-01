@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the Amazon RDS quota for this AWS account.</p>
     */
     inline const Aws::String& GetAccountQuotaName() const{ return m_accountQuotaName; }
+
     /*
      <p>The name of the Amazon RDS quota for this AWS account.</p>
     */
     inline void SetAccountQuotaName(const Aws::String& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
+
+    /*
+     <p>The name of the Amazon RDS quota for this AWS account.</p>
+    */
+    inline void SetAccountQuotaName(Aws::String&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
 
     /*
      <p>The name of the Amazon RDS quota for this AWS account.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the Amazon RDS quota for this AWS account.</p>
     */
-    inline AccountQuota&  WithAccountQuotaName(const Aws::String& value) { SetAccountQuotaName(value); return *this;}
+    inline AccountQuota& WithAccountQuotaName(const Aws::String& value) { SetAccountQuotaName(value); return *this;}
+
+    /*
+     <p>The name of the Amazon RDS quota for this AWS account.</p>
+    */
+    inline AccountQuota& WithAccountQuotaName(Aws::String&& value) { SetAccountQuotaName(value); return *this;}
 
     /*
      <p>The name of the Amazon RDS quota for this AWS account.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>The amount currently used toward the quota maximum.</p>
     */
     inline long long GetUsed() const{ return m_used; }
+
     /*
      <p>The amount currently used toward the quota maximum.</p>
     */
@@ -79,12 +91,13 @@ namespace Model
     /*
      <p>The amount currently used toward the quota maximum.</p>
     */
-    inline AccountQuota&  WithUsed(long long value) { SetUsed(value); return *this;}
+    inline AccountQuota& WithUsed(long long value) { SetUsed(value); return *this;}
 
     /*
      <p>The maximum allowed value for the quota.</p>
     */
     inline long long GetMax() const{ return m_max; }
+
     /*
      <p>The maximum allowed value for the quota.</p>
     */
@@ -93,7 +106,7 @@ namespace Model
     /*
      <p>The maximum allowed value for the quota.</p>
     */
-    inline AccountQuota&  WithMax(long long value) { SetMax(value); return *this;}
+    inline AccountQuota& WithMax(long long value) { SetMax(value); return *this;}
 
   private:
     Aws::String m_accountQuotaName;

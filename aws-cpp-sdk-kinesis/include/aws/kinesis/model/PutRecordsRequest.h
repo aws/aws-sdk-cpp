@@ -42,6 +42,7 @@ namespace Model
      <p>The records associated with the request.</p>
     */
     inline const Aws::Vector<PutRecordsRequestEntry>& GetRecords() const{ return m_records; }
+
     /*
      <p>The records associated with the request.</p>
     */
@@ -50,7 +51,17 @@ namespace Model
     /*
      <p>The records associated with the request.</p>
     */
-    inline PutRecordsRequest&  WithRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { SetRecords(value); return *this;}
+    inline void SetRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { m_recordsHasBeenSet = true; m_records = value; }
+
+    /*
+     <p>The records associated with the request.</p>
+    */
+    inline PutRecordsRequest& WithRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { SetRecords(value); return *this;}
+
+    /*
+     <p>The records associated with the request.</p>
+    */
+    inline PutRecordsRequest& WithRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { SetRecords(value); return *this;}
 
     /*
      <p>The records associated with the request.</p>
@@ -58,13 +69,24 @@ namespace Model
     inline PutRecordsRequest& AddRecords(const PutRecordsRequestEntry& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
 
     /*
+     <p>The records associated with the request.</p>
+    */
+    inline PutRecordsRequest& AddRecords(PutRecordsRequestEntry&& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
+
+    /*
      <p>The stream name associated with the request.</p>
     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     /*
      <p>The stream name associated with the request.</p>
     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /*
+     <p>The stream name associated with the request.</p>
+    */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The stream name associated with the request.</p>
@@ -74,7 +96,12 @@ namespace Model
     /*
      <p>The stream name associated with the request.</p>
     */
-    inline PutRecordsRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline PutRecordsRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /*
+     <p>The stream name associated with the request.</p>
+    */
+    inline PutRecordsRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /*
      <p>The stream name associated with the request.</p>

@@ -41,6 +41,11 @@ OpenIDConnectProviderListEntry& OpenIDConnectProviderListEntry::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode arnNode = resultNode.FirstChild("Arn");
+    if(arnNode.IsNull())
+    {
+      arnNode = resultNode;
+    }
+
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());

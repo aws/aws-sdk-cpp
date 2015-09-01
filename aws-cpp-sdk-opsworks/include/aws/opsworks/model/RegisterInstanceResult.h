@@ -46,10 +46,16 @@ namespace Model
      <p>The registered instance's AWS OpsWorks ID.</p>
     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
     /*
      <p>The registered instance's AWS OpsWorks ID.</p>
     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+
+    /*
+     <p>The registered instance's AWS OpsWorks ID.</p>
+    */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
 
     /*
      <p>The registered instance's AWS OpsWorks ID.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>The registered instance's AWS OpsWorks ID.</p>
     */
-    inline RegisterInstanceResult&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline RegisterInstanceResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /*
+     <p>The registered instance's AWS OpsWorks ID.</p>
+    */
+    inline RegisterInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /*
      <p>The registered instance's AWS OpsWorks ID.</p>

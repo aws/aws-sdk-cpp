@@ -47,6 +47,7 @@ namespace Model
      <p>Information about the server certificate.</p>
     */
     inline const ServerCertificate& GetServerCertificate() const{ return m_serverCertificate; }
+
     /*
      <p>Information about the server certificate.</p>
     */
@@ -55,15 +56,32 @@ namespace Model
     /*
      <p>Information about the server certificate.</p>
     */
-    inline GetServerCertificateResult&  WithServerCertificate(const ServerCertificate& value) { SetServerCertificate(value); return *this;}
+    inline void SetServerCertificate(ServerCertificate&& value) { m_serverCertificate = value; }
+
+    /*
+     <p>Information about the server certificate.</p>
+    */
+    inline GetServerCertificateResult& WithServerCertificate(const ServerCertificate& value) { SetServerCertificate(value); return *this;}
+
+    /*
+     <p>Information about the server certificate.</p>
+    */
+    inline GetServerCertificateResult& WithServerCertificate(ServerCertificate&& value) { SetServerCertificate(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline GetServerCertificateResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline GetServerCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline GetServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ServerCertificate m_serverCertificate;

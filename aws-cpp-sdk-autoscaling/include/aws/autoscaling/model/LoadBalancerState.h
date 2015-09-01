@@ -47,10 +47,16 @@ namespace Model
      <p>The name of the load balancer.</p>
     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
     /*
      <p>The name of the load balancer.</p>
     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline LoadBalancerState&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+    inline LoadBalancerState& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p>
+    */
+    inline LoadBalancerState& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /*
      <p>The name of the load balancer.</p>
@@ -71,10 +82,16 @@ namespace Model
      <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>
     */
     inline const Aws::String& GetState() const{ return m_state; }
+
     /*
      <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>
     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /*
+     <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>
+    */
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /*
      <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>
@@ -84,7 +101,12 @@ namespace Model
     /*
      <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>
     */
-    inline LoadBalancerState&  WithState(const Aws::String& value) { SetState(value); return *this;}
+    inline LoadBalancerState& WithState(const Aws::String& value) { SetState(value); return *this;}
+
+    /*
+     <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>
+    */
+    inline LoadBalancerState& WithState(Aws::String&& value) { SetState(value); return *this;}
 
     /*
      <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The instances in the group are being registered with the load balancer.</p></li> <li><p><code>Added</code> - All instances in the group are registered with the load balancer.</p></li> <li><p><code>InService</code> - At least one instance in the group passed an ELB health check.</p></li> <li><p><code>Removing</code> - The instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li> </ul>

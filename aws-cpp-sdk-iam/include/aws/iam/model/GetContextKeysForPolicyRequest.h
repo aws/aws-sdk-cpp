@@ -36,28 +36,45 @@ namespace Model
 
     
     inline const Aws::String& GetGetPolicyFor() const{ return m_getPolicyFor; }
+
     
     inline void SetGetPolicyFor(const Aws::String& value) { m_getPolicyForHasBeenSet = true; m_getPolicyFor = value; }
+
+    
+    inline void SetGetPolicyFor(Aws::String&& value) { m_getPolicyForHasBeenSet = true; m_getPolicyFor = value; }
 
     
     inline void SetGetPolicyFor(const char* value) { m_getPolicyForHasBeenSet = true; m_getPolicyFor.assign(value); }
 
     
-    inline GetContextKeysForPolicyRequest&  WithGetPolicyFor(const Aws::String& value) { SetGetPolicyFor(value); return *this;}
+    inline GetContextKeysForPolicyRequest& WithGetPolicyFor(const Aws::String& value) { SetGetPolicyFor(value); return *this;}
+
+    
+    inline GetContextKeysForPolicyRequest& WithGetPolicyFor(Aws::String&& value) { SetGetPolicyFor(value); return *this;}
 
     
     inline GetContextKeysForPolicyRequest& WithGetPolicyFor(const char* value) { SetGetPolicyFor(value); return *this;}
 
     
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
+
     
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
     
-    inline GetContextKeysForPolicyRequest&  WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
+    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
+
+    
+    inline GetContextKeysForPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
+
+    
+    inline GetContextKeysForPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
 
     
     inline GetContextKeysForPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+
+    
+    inline GetContextKeysForPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
     
     inline GetContextKeysForPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }

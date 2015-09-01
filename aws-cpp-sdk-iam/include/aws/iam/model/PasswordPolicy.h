@@ -46,6 +46,7 @@ namespace Model
      <p>Minimum length to require for IAM user passwords.</p>
     */
     inline long GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
+
     /*
      <p>Minimum length to require for IAM user passwords.</p>
     */
@@ -54,12 +55,13 @@ namespace Model
     /*
      <p>Minimum length to require for IAM user passwords.</p>
     */
-    inline PasswordPolicy&  WithMinimumPasswordLength(long value) { SetMinimumPasswordLength(value); return *this;}
+    inline PasswordPolicy& WithMinimumPasswordLength(long value) { SetMinimumPasswordLength(value); return *this;}
 
     /*
      <p>Specifies whether to require symbols for IAM user passwords.</p>
     */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
+
     /*
      <p>Specifies whether to require symbols for IAM user passwords.</p>
     */
@@ -68,12 +70,13 @@ namespace Model
     /*
      <p>Specifies whether to require symbols for IAM user passwords.</p>
     */
-    inline PasswordPolicy&  WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
+    inline PasswordPolicy& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
     /*
      <p>Specifies whether to require numbers for IAM user passwords.</p>
     */
     inline bool GetRequireNumbers() const{ return m_requireNumbers; }
+
     /*
      <p>Specifies whether to require numbers for IAM user passwords.</p>
     */
@@ -82,12 +85,13 @@ namespace Model
     /*
      <p>Specifies whether to require numbers for IAM user passwords.</p>
     */
-    inline PasswordPolicy&  WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
+    inline PasswordPolicy& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
 
     /*
      <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
     */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
+
     /*
      <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
     */
@@ -96,12 +100,13 @@ namespace Model
     /*
      <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
     */
-    inline PasswordPolicy&  WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
+    inline PasswordPolicy& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
 
     /*
      <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
     */
     inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
+
     /*
      <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
     */
@@ -110,12 +115,13 @@ namespace Model
     /*
      <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
     */
-    inline PasswordPolicy&  WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
+    inline PasswordPolicy& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
 
     /*
      <p>Specifies whether IAM users are allowed to change their own password.</p>
     */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
+
     /*
      <p>Specifies whether IAM users are allowed to change their own password.</p>
     */
@@ -124,12 +130,13 @@ namespace Model
     /*
      <p>Specifies whether IAM users are allowed to change their own password.</p>
     */
-    inline PasswordPolicy&  WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
+    inline PasswordPolicy& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
 
     /*
      <p>Specifies whether IAM users are required to change their password after a specified number of days.</p>
     */
     inline bool GetExpirePasswords() const{ return m_expirePasswords; }
+
     /*
      <p>Specifies whether IAM users are required to change their password after a specified number of days.</p>
     */
@@ -138,12 +145,13 @@ namespace Model
     /*
      <p>Specifies whether IAM users are required to change their password after a specified number of days.</p>
     */
-    inline PasswordPolicy&  WithExpirePasswords(bool value) { SetExpirePasswords(value); return *this;}
+    inline PasswordPolicy& WithExpirePasswords(bool value) { SetExpirePasswords(value); return *this;}
 
     /*
      <p>The number of days that an IAM user password is valid.</p>
     */
     inline long GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+
     /*
      <p>The number of days that an IAM user password is valid.</p>
     */
@@ -152,12 +160,13 @@ namespace Model
     /*
      <p>The number of days that an IAM user password is valid.</p>
     */
-    inline PasswordPolicy&  WithMaxPasswordAge(long value) { SetMaxPasswordAge(value); return *this;}
+    inline PasswordPolicy& WithMaxPasswordAge(long value) { SetMaxPasswordAge(value); return *this;}
 
     /*
      <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     */
     inline long GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
+
     /*
      <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     */
@@ -166,12 +175,13 @@ namespace Model
     /*
      <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     */
-    inline PasswordPolicy&  WithPasswordReusePrevention(long value) { SetPasswordReusePrevention(value); return *this;}
+    inline PasswordPolicy& WithPasswordReusePrevention(long value) { SetPasswordReusePrevention(value); return *this;}
 
     /*
      <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
     */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
+
     /*
      <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
     */
@@ -180,7 +190,7 @@ namespace Model
     /*
      <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
     */
-    inline PasswordPolicy&  WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
+    inline PasswordPolicy& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 
   private:
     long m_minimumPasswordLength;

@@ -47,12 +47,22 @@ IdentityDkimAttributes& IdentityDkimAttributes::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode dkimEnabledNode = resultNode.FirstChild("DkimEnabled");
+    if(dkimEnabledNode.IsNull())
+    {
+      dkimEnabledNode = resultNode;
+    }
+
     if(!dkimEnabledNode.IsNull())
     {
       m_dkimEnabled = StringUtils::ConvertToBool(StringUtils::Trim(dkimEnabledNode.GetText().c_str()).c_str());
       m_dkimEnabledHasBeenSet = true;
     }
     XmlNode dkimVerificationStatusNode = resultNode.FirstChild("DkimVerificationStatus");
+    if(dkimVerificationStatusNode.IsNull())
+    {
+      dkimVerificationStatusNode = resultNode;
+    }
+
     if(!dkimVerificationStatusNode.IsNull())
     {
       m_dkimVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(dkimVerificationStatusNode.GetText().c_str()).c_str());

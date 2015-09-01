@@ -47,10 +47,16 @@ namespace Model
      A unique identifier in the format REGION:GUID.
     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
     /*
      A unique identifier in the format REGION:GUID.
     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+
+    /*
+     A unique identifier in the format REGION:GUID.
+    */
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
     /*
      A unique identifier in the format REGION:GUID.
@@ -60,7 +66,12 @@ namespace Model
     /*
      A unique identifier in the format REGION:GUID.
     */
-    inline DescribeIdentityResult&  WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+    inline DescribeIdentityResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
+
+    /*
+     A unique identifier in the format REGION:GUID.
+    */
+    inline DescribeIdentityResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /*
      A unique identifier in the format REGION:GUID.
@@ -71,6 +82,7 @@ namespace Model
      A set of optional name-value pairs that map provider names to provider tokens.
     */
     inline const Aws::Vector<Aws::String>& GetLogins() const{ return m_logins; }
+
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
     */
@@ -79,12 +91,27 @@ namespace Model
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
     */
-    inline DescribeIdentityResult&  WithLogins(const Aws::Vector<Aws::String>& value) { SetLogins(value); return *this;}
+    inline void SetLogins(Aws::Vector<Aws::String>&& value) { m_logins = value; }
+
+    /*
+     A set of optional name-value pairs that map provider names to provider tokens.
+    */
+    inline DescribeIdentityResult& WithLogins(const Aws::Vector<Aws::String>& value) { SetLogins(value); return *this;}
+
+    /*
+     A set of optional name-value pairs that map provider names to provider tokens.
+    */
+    inline DescribeIdentityResult& WithLogins(Aws::Vector<Aws::String>&& value) { SetLogins(value); return *this;}
 
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
     */
     inline DescribeIdentityResult& AddLogins(const Aws::String& value) { m_logins.push_back(value); return *this; }
+
+    /*
+     A set of optional name-value pairs that map provider names to provider tokens.
+    */
+    inline DescribeIdentityResult& AddLogins(Aws::String&& value) { m_logins.push_back(value); return *this; }
 
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
@@ -95,6 +122,7 @@ namespace Model
      <p>Date on which the identity was created.</p>
     */
     inline double GetCreationDate() const{ return m_creationDate; }
+
     /*
      <p>Date on which the identity was created.</p>
     */
@@ -103,12 +131,13 @@ namespace Model
     /*
      <p>Date on which the identity was created.</p>
     */
-    inline DescribeIdentityResult&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline DescribeIdentityResult& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
     /*
      <p>Date on which the identity was last modified.</p>
     */
     inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
     /*
      <p>Date on which the identity was last modified.</p>
     */
@@ -117,7 +146,7 @@ namespace Model
     /*
      <p>Date on which the identity was last modified.</p>
     */
-    inline DescribeIdentityResult&  WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline DescribeIdentityResult& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
   private:
     Aws::String m_identityId;

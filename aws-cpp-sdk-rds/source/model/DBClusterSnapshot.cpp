@@ -91,84 +91,154 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode dBClusterSnapshotIdentifierNode = resultNode.FirstChild("DBClusterSnapshotIdentifier");
+    if(dBClusterSnapshotIdentifierNode.IsNull())
+    {
+      dBClusterSnapshotIdentifierNode = resultNode;
+    }
+
     if(!dBClusterSnapshotIdentifierNode.IsNull())
     {
       m_dBClusterSnapshotIdentifier = StringUtils::Trim(dBClusterSnapshotIdentifierNode.GetText().c_str());
       m_dBClusterSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
+    if(dBClusterIdentifierNode.IsNull())
+    {
+      dBClusterIdentifierNode = resultNode;
+    }
+
     if(!dBClusterIdentifierNode.IsNull())
     {
       m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
+    if(snapshotCreateTimeNode.IsNull())
+    {
+      snapshotCreateTimeNode = resultNode;
+    }
+
     if(!snapshotCreateTimeNode.IsNull())
     {
       m_snapshotCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str());
       m_snapshotCreateTimeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(engineNode.IsNull())
+    {
+      engineNode = resultNode;
+    }
+
     if(!engineNode.IsNull())
     {
       m_engine = StringUtils::Trim(engineNode.GetText().c_str());
       m_engineHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
+    if(allocatedStorageNode.IsNull())
+    {
+      allocatedStorageNode = resultNode;
+    }
+
     if(!allocatedStorageNode.IsNull())
     {
       m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(allocatedStorageNode.GetText().c_str()).c_str());
       m_allocatedStorageHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
+    if(portNode.IsNull())
+    {
+      portNode = resultNode;
+    }
+
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
+    if(vpcIdNode.IsNull())
+    {
+      vpcIdNode = resultNode;
+    }
+
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
+    if(clusterCreateTimeNode.IsNull())
+    {
+      clusterCreateTimeNode = resultNode;
+    }
+
     if(!clusterCreateTimeNode.IsNull())
     {
       m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
+    if(masterUsernameNode.IsNull())
+    {
+      masterUsernameNode = resultNode;
+    }
+
     if(!masterUsernameNode.IsNull())
     {
       m_masterUsername = StringUtils::Trim(masterUsernameNode.GetText().c_str());
       m_masterUsernameHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
+    if(engineVersionNode.IsNull())
+    {
+      engineVersionNode = resultNode;
+    }
+
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
+    if(licenseModelNode.IsNull())
+    {
+      licenseModelNode = resultNode;
+    }
+
     if(!licenseModelNode.IsNull())
     {
       m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
       m_licenseModelHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
+    if(snapshotTypeNode.IsNull())
+    {
+      snapshotTypeNode = resultNode;
+    }
+
     if(!snapshotTypeNode.IsNull())
     {
       m_snapshotType = StringUtils::Trim(snapshotTypeNode.GetText().c_str());
       m_snapshotTypeHasBeenSet = true;
     }
     XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
+    if(percentProgressNode.IsNull())
+    {
+      percentProgressNode = resultNode;
+    }
+
     if(!percentProgressNode.IsNull())
     {
       m_percentProgress = StringUtils::ConvertToInt32(StringUtils::Trim(percentProgressNode.GetText().c_str()).c_str());

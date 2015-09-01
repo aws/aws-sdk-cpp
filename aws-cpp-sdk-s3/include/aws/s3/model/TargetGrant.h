@@ -44,16 +44,24 @@ namespace Model
 
     
     inline const Grantee& GetGrantee() const{ return m_grantee; }
+
     
     inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
 
     
-    inline TargetGrant&  WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
+    inline void SetGrantee(Grantee&& value) { m_granteeHasBeenSet = true; m_grantee = value; }
+
+    
+    inline TargetGrant& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
+
+    
+    inline TargetGrant& WithGrantee(Grantee&& value) { SetGrantee(value); return *this;}
 
     /*
      Logging permissions assigned to the Grantee for the bucket.
     */
     inline const BucketLogsPermission& GetPermission() const{ return m_permission; }
+
     /*
      Logging permissions assigned to the Grantee for the bucket.
     */
@@ -62,7 +70,17 @@ namespace Model
     /*
      Logging permissions assigned to the Grantee for the bucket.
     */
-    inline TargetGrant&  WithPermission(const BucketLogsPermission& value) { SetPermission(value); return *this;}
+    inline void SetPermission(BucketLogsPermission&& value) { m_permissionHasBeenSet = true; m_permission = value; }
+
+    /*
+     Logging permissions assigned to the Grantee for the bucket.
+    */
+    inline TargetGrant& WithPermission(const BucketLogsPermission& value) { SetPermission(value); return *this;}
+
+    /*
+     Logging permissions assigned to the Grantee for the bucket.
+    */
+    inline TargetGrant& WithPermission(BucketLogsPermission&& value) { SetPermission(value); return *this;}
 
   private:
     Grantee m_grantee;

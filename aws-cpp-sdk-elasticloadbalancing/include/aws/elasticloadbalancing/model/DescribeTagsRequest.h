@@ -38,6 +38,7 @@ namespace Model
      <p>The names of the load balancers.</p>
     */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
+
     /*
      <p>The names of the load balancers.</p>
     */
@@ -46,12 +47,27 @@ namespace Model
     /*
      <p>The names of the load balancers.</p>
     */
-    inline DescribeTagsRequest&  WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
+    inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
+
+    /*
+     <p>The names of the load balancers.</p>
+    */
+    inline DescribeTagsRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
+
+    /*
+     <p>The names of the load balancers.</p>
+    */
+    inline DescribeTagsRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(value); return *this;}
 
     /*
      <p>The names of the load balancers.</p>
     */
     inline DescribeTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of the load balancers.</p>
+    */
+    inline DescribeTagsRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /*
      <p>The names of the load balancers.</p>

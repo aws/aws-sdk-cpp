@@ -48,10 +48,16 @@ namespace Model
      <p> Specifies the identifier of the subnet. </p>
     */
     inline const Aws::String& GetSubnetIdentifier() const{ return m_subnetIdentifier; }
+
     /*
      <p> Specifies the identifier of the subnet. </p>
     */
     inline void SetSubnetIdentifier(const Aws::String& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
+
+    /*
+     <p> Specifies the identifier of the subnet. </p>
+    */
+    inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
     /*
      <p> Specifies the identifier of the subnet. </p>
@@ -61,7 +67,12 @@ namespace Model
     /*
      <p> Specifies the identifier of the subnet. </p>
     */
-    inline Subnet&  WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
+    inline Subnet& WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
+
+    /*
+     <p> Specifies the identifier of the subnet. </p>
+    */
+    inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(value); return *this;}
 
     /*
      <p> Specifies the identifier of the subnet. </p>
@@ -70,20 +81,33 @@ namespace Model
 
     
     inline const AvailabilityZone& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
+
     
     inline void SetSubnetAvailabilityZone(const AvailabilityZone& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
     
-    inline Subnet&  WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
+    inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
+
+    
+    inline Subnet& WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
+
+    
+    inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(value); return *this;}
 
     /*
      <p> Specifies the status of the subnet. </p>
     */
     inline const Aws::String& GetSubnetStatus() const{ return m_subnetStatus; }
+
     /*
      <p> Specifies the status of the subnet. </p>
     */
     inline void SetSubnetStatus(const Aws::String& value) { m_subnetStatusHasBeenSet = true; m_subnetStatus = value; }
+
+    /*
+     <p> Specifies the status of the subnet. </p>
+    */
+    inline void SetSubnetStatus(Aws::String&& value) { m_subnetStatusHasBeenSet = true; m_subnetStatus = value; }
 
     /*
      <p> Specifies the status of the subnet. </p>
@@ -93,7 +117,12 @@ namespace Model
     /*
      <p> Specifies the status of the subnet. </p>
     */
-    inline Subnet&  WithSubnetStatus(const Aws::String& value) { SetSubnetStatus(value); return *this;}
+    inline Subnet& WithSubnetStatus(const Aws::String& value) { SetSubnetStatus(value); return *this;}
+
+    /*
+     <p> Specifies the status of the subnet. </p>
+    */
+    inline Subnet& WithSubnetStatus(Aws::String&& value) { SetSubnetStatus(value); return *this;}
 
     /*
      <p> Specifies the status of the subnet. </p>

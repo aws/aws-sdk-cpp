@@ -41,6 +41,11 @@ AdjustmentType& AdjustmentType::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode adjustmentTypeNode = resultNode.FirstChild("AdjustmentType");
+    if(adjustmentTypeNode.IsNull())
+    {
+      adjustmentTypeNode = resultNode;
+    }
+
     if(!adjustmentTypeNode.IsNull())
     {
       m_adjustmentType = StringUtils::Trim(adjustmentTypeNode.GetText().c_str());

@@ -47,10 +47,16 @@ namespace Model
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
     inline const Aws::String& GetId() const{ return m_id; }
+
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     The identifier for the distribution. For example: EDFDVBD632BHDS5.
+    */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -60,7 +66,12 @@ namespace Model
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
-    inline Distribution&  WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline Distribution& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     The identifier for the distribution. For example: EDFDVBD632BHDS5.
+    */
+    inline Distribution& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -71,10 +82,16 @@ namespace Model
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
+    */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -84,7 +101,12 @@ namespace Model
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline Distribution&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+    inline Distribution& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
+    */
+    inline Distribution& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -95,6 +117,7 @@ namespace Model
      The date and time the distribution was last modified.
     */
     inline double GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
     /*
      The date and time the distribution was last modified.
     */
@@ -103,12 +126,13 @@ namespace Model
     /*
      The date and time the distribution was last modified.
     */
-    inline Distribution&  WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
+    inline Distribution& WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
 
     /*
      The number of invalidation batches currently in progress.
     */
     inline long GetInProgressInvalidationBatches() const{ return m_inProgressInvalidationBatches; }
+
     /*
      The number of invalidation batches currently in progress.
     */
@@ -117,16 +141,22 @@ namespace Model
     /*
      The number of invalidation batches currently in progress.
     */
-    inline Distribution&  WithInProgressInvalidationBatches(long value) { SetInProgressInvalidationBatches(value); return *this;}
+    inline Distribution& WithInProgressInvalidationBatches(long value) { SetInProgressInvalidationBatches(value); return *this;}
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /*
+     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+    */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
@@ -136,7 +166,12 @@ namespace Model
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
-    inline Distribution&  WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline Distribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /*
+     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+    */
+    inline Distribution& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
@@ -147,6 +182,7 @@ namespace Model
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
+
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
@@ -155,12 +191,23 @@ namespace Model
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
-    inline Distribution&  WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
+    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
+
+    /*
+     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+    */
+    inline Distribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
+
+    /*
+     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+    */
+    inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(value); return *this;}
 
     /*
      The current configuration information for the distribution.
     */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
+
     /*
      The current configuration information for the distribution.
     */
@@ -169,7 +216,17 @@ namespace Model
     /*
      The current configuration information for the distribution.
     */
-    inline Distribution&  WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
+    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
+
+    /*
+     The current configuration information for the distribution.
+    */
+    inline Distribution& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
+
+    /*
+     The current configuration information for the distribution.
+    */
+    inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
 
   private:
     Aws::String m_id;

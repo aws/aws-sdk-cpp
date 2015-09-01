@@ -37,10 +37,16 @@ namespace Model
      <p>The name of the policy document.</p>
     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
     /*
      <p>The name of the policy document.</p>
     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The name of the policy document.</p>
+    */
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document.</p>
@@ -50,7 +56,12 @@ namespace Model
     /*
      <p>The name of the policy document.</p>
     */
-    inline CreatePolicyRequest&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline CreatePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The name of the policy document.</p>
+    */
+    inline CreatePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /*
      <p>The name of the policy document.</p>
@@ -61,10 +72,16 @@ namespace Model
      <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
     */
     inline const Aws::String& GetPath() const{ return m_path; }
+
     /*
      <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
+    */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
     */
-    inline CreatePolicyRequest&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+    inline CreatePolicyRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
+    */
+    inline CreatePolicyRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /*
      <p>The path for the policy. </p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is optional. If it is not included, it defaults to a slash (/). </p>
@@ -85,10 +107,16 @@ namespace Model
      <p>The policy document.</p>
     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
     /*
      <p>The policy document.</p>
     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
@@ -98,7 +126,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline CreatePolicyRequest&  WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+    inline CreatePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
+
+    /*
+     <p>The policy document.</p>
+    */
+    inline CreatePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /*
      <p>The policy document.</p>
@@ -109,10 +142,16 @@ namespace Model
      <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
     /*
      <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>
+    */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>
@@ -122,7 +161,12 @@ namespace Model
     /*
      <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>
     */
-    inline CreatePolicyRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreatePolicyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>
+    */
+    inline CreatePolicyRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /*
      <p>A friendly description of the policy. </p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables." </p> <p>The policy description is immutable. After a value is assigned, it cannot be changed. </p>

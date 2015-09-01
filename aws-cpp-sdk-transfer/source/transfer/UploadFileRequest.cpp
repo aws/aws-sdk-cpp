@@ -21,7 +21,10 @@
 #include <aws/transfer/TransferContext.h>
 
 #include <aws/s3/model/CreateBucketRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
+#include <aws/s3/model/HeadObjectRequest.h>
+#include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 
@@ -46,17 +49,20 @@ static const char* ALLOCATION_TAG = "TransferAPI";
 
 static const uint32_t PART_RETRY_MAX = 2; // How many failures on a single part equates to a complete failure?
 
+static const uint32_t CONSISTENCY_RETRY_MAX = 20; // If we're checking for consistency in S3 we may need to perform HeadObject, GetObject, and ListObjects checks several times to ensure the object has propagated
 
 UploadFileRequest::UploadFileRequest(const Aws::String& fileName, 
                                      const Aws::String& bucketName, 
                                      const Aws::String& keyName, 
                                      const Aws::String& contentType, 
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
-                                     bool createBucket) :
+                                     bool createBucket,
+                                     bool doConsistencyChecks) :
 S3FileRequest(fileName, bucketName, keyName, s3Client),
 m_bytesRemaining(0),
 m_partCount(0),
 m_partsReturned(0),
+m_totalPartRetries(0),
 m_createBucket(createBucket),
 m_createBucketPending(false),
 m_bucketCreated(false),
@@ -67,7 +73,19 @@ m_bucketPropagated(false),
 m_totalParts(0),
 m_fileStream(fileName.c_str(), std::ios::binary | std::ios::ate),
 m_contentType(contentType),
-m_completeRetries(0)
+m_createMultipartRetries(0),
+m_createBucketRetries(0),
+m_completeRetries(0),
+m_singleRetry(0),
+m_doConsistencyChecks(doConsistencyChecks),
+m_sentConsistencyChecks(false),
+m_headObjectPassed(false),
+m_getObjectPassed(false),
+m_listObjectsPassed(false),
+m_headObjectRetries(0),
+m_getObjectRetries(0),
+m_listObjectsRetries(0),
+m_headBucketRetries(0)
 {
     if (m_fileStream.good() && m_fileStream.is_open())
     {
@@ -130,7 +148,14 @@ bool UploadFileRequest::HandleCreateBucketOutcome(const Aws::S3::Model::CreateBu
         {
             m_createBucket.store(false);
             m_createBucketPending.store(false);
+            ContinueUpload();
             return true;
+        }
+        if(m_createBucketRetries < PART_RETRY_MAX)
+        {
+            ++m_createBucketRetries;
+            CreateBucket();
+            return false;
         }
         CompletionFailure(createBucketOutcome.GetError().GetMessage().c_str());
         return false;
@@ -192,6 +217,12 @@ bool UploadFileRequest::HandleCreateMultipartUploadOutcome(const Aws::S3::Model:
     m_uploadId = outcome.GetResult().GetUploadId();
     if (!outcome.IsSuccess())
     {
+        if (m_createMultipartRetries < PART_RETRY_MAX)
+        {
+            ++m_createMultipartRetries;
+            CreateMultipartUpload();
+            return false;
+        }
         CompletionFailure(outcome.GetError().GetMessage().c_str());
         return false;
     }
@@ -267,6 +298,13 @@ bool UploadFileRequest::HandleHeadBucketOutcome(const Aws::S3::Model::HeadBucket
     }
 
     m_headBucketPending.store(false);
+    if (m_headBucketRetries < CONSISTENCY_RETRY_MAX)
+    {
+        ++m_headBucketRetries;
+        WaitForBucketToPropagate();
+        return false;
+    }
+
     // Do we want to retry this?
     CompletionFailure(outcome.GetError().GetMessage().c_str());
     return false;
@@ -285,6 +323,11 @@ uint32_t UploadFileRequest::GetPartsRemaining() const
     }
 
     return (GetTotalParts() - GetPartCount());
+}
+
+size_t UploadFileRequest::GetCompletedPartCount() const
+{
+    return m_completedParts.size();
 }
 
 void UploadFileRequest::SetResourceSet(std::shared_ptr<UploadBufferScopedResourceSetType>& bufferSet)
@@ -504,6 +547,7 @@ bool UploadFileRequest::RequestPart(uint32_t partId)
 
     PartRequestRecord& partRequest = partIter->second;
 
+    partRequest.m_retries++;
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
 
     GetS3Client()->UploadPartAsync(partRequest.m_partRequest, &TransferClient::OnUploadPartRequest, context);
@@ -599,7 +643,7 @@ bool UploadFileRequest::HandleCompleteMultipartUploadOutcome(const Aws::S3::Mode
 
     if (outcome.IsSuccess())
     {
-        CompletionSuccess();
+        CheckConsistencyCompletion();
         return true;
     }
 
@@ -621,8 +665,9 @@ void UploadFileRequest::HandlePartFailure(const Aws::S3::Model::UploadPartOutcom
 {
     if (!IsDone())
     {
-        if (!thisOutcome.IsSuccess() && partRequest.m_retries < PART_RETRY_MAX)
+        if (!thisOutcome.IsSuccess() && partRequest.m_retries <= PART_RETRY_MAX)
         {
+            SetLastFailure(thisOutcome.GetError().GetMessage().c_str());
             DoRetry(partRequest);
             return;
         }
@@ -634,9 +679,10 @@ void UploadFileRequest::HandlePartFailure(const Aws::S3::Model::UploadPartOutcom
 
 void UploadFileRequest::DoRetry(PartRequestRecord& partRequest)
 {
-    partRequest.m_retries++;
+    ++m_totalPartRetries;
     RequestPart(partRequest.m_partRequest.GetPartNumber());
 }
+
 void UploadFileRequest::PartReturned(PartRequestRecord& partRequest)
 {
     ++m_partsReturned;
@@ -652,6 +698,16 @@ void UploadFileRequest::PartReturned(PartRequestRecord& partRequest)
 uint32_t UploadFileRequest::GetPartsReturned() const
 {
     return m_partsReturned.load();
+}
+
+size_t UploadFileRequest::GetPendingParts() const
+{
+    return m_pendingParts.size();
+}
+
+uint32_t UploadFileRequest::GetTotalPartRetries() const
+{
+    return m_totalPartRetries.load();
 }
 
 bool UploadFileRequest::AllPartsReturned() const
@@ -721,11 +777,17 @@ bool UploadFileRequest::DoSingleObjectUpload(std::shared_ptr<Aws::IOStream>& str
     putObjectRequest.SetKey(GetKeyName());
 
     putObjectRequest.SetDataSentEventHandler(std::bind(&UploadFileRequest::OnDataSent, this, std::placeholders::_1, std::placeholders::_2));
+    
+    SendPutObjectRequest(putObjectRequest);
 
+    return true;
+}
+
+void UploadFileRequest::SendPutObjectRequest(const Aws::S3::Model::PutObjectRequest& request) 
+{
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
 
-    GetS3Client()->PutObjectAsync(putObjectRequest, &TransferClient::OnPutObject, context);
-    return true;
+    GetS3Client()->PutObjectAsync(request, &TransferClient::OnPutObject, context);
 }
 
 void UploadFileRequest::OnDataSent(const Aws::Http::HttpRequest*, long long amountSent)
@@ -742,15 +804,172 @@ bool UploadFileRequest::HandlePutObjectOutcome(const Aws::S3::Model::PutObjectRe
     if (outcome.IsSuccess() && (ss.str() == outcome.GetResult().GetETag()))
     {
         SingleUploadComplete();
-        CompletionSuccess();
+        CheckConsistencyCompletion();
         return true;
     }
 
+    if (m_singleRetry < PART_RETRY_MAX)
+    {
+        ++m_singleRetry;
+        SendPutObjectRequest(request);
+        return true;
+    }
     SingleUploadComplete();
     CompletionFailure(outcome.GetError().GetMessage().c_str());
     return false;
 }
 
+void UploadFileRequest::CheckGetObject()
+{
+    if (m_getObjectPassed.load())
+    {
+        return;
+    }
+
+    GetObjectRequest getObjectRequest;
+
+    getObjectRequest.SetBucket(GetBucketName());
+    getObjectRequest.SetKey(GetKeyName());
+
+    std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
+
+    GetS3Client()->GetObjectAsync(getObjectRequest, &TransferClient::OnUploadGetObject, context);
+}
+
+bool UploadFileRequest::HandleGetObjectOutcome(const Aws::S3::Model::GetObjectRequest& request,
+    const Aws::S3::Model::GetObjectOutcome& getObjectOutcome)
+{
+    AWS_UNREFERENCED_PARAM(request);
+
+    if (getObjectOutcome.IsSuccess())
+    {
+        m_getObjectPassed.store(true);
+        CheckConsistencyCompletion();
+        return true;
+    }
+
+    if (m_getObjectRetries < CONSISTENCY_RETRY_MAX)
+    {
+        ++m_getObjectRetries;
+
+        CheckGetObject();
+
+        return false;
+    }
+    CompletionFailure("Get object consistency failed.");
+    return false;
+}
+
+void UploadFileRequest::CheckHeadObject()
+{
+    if (m_headObjectPassed.load())
+    {
+        return;
+    }
+
+    HeadObjectRequest headObjectRequest;
+
+    headObjectRequest.SetBucket(GetBucketName());
+    headObjectRequest.SetKey(GetKeyName());
+
+    std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
+
+    GetS3Client()->HeadObjectAsync(headObjectRequest, &TransferClient::OnHeadObject, context);
+}
+
+bool UploadFileRequest::HandleHeadObjectOutcome(const Aws::S3::Model::HeadObjectRequest& request,
+    const Aws::S3::Model::HeadObjectOutcome& headObjectOutcome)
+{
+    AWS_UNREFERENCED_PARAM(request);
+
+    if (headObjectOutcome.IsSuccess())
+    {
+        m_headObjectPassed.store(true);
+        CheckConsistencyCompletion();
+        return true;
+    }
+
+    if (m_headObjectRetries < CONSISTENCY_RETRY_MAX)
+    {
+        ++m_headObjectRetries;
+
+        CheckHeadObject();
+
+        return false;
+    }
+    CompletionFailure("Head object consistency failed.");
+    return false;
+}
+
+void UploadFileRequest::CheckListObjects()
+{
+    if (m_listObjectsPassed.load())
+    {
+        return;
+    }
+
+    ListObjectsRequest listObjectsRequest;
+
+    listObjectsRequest.SetBucket(GetBucketName());
+
+    std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
+
+    GetS3Client()->ListObjectsAsync(listObjectsRequest, &TransferClient::OnUploadListObjects, context);
+}
+
+bool UploadFileRequest::HandleListObjectsOutcome(const Aws::S3::Model::ListObjectsRequest& request,
+    const Aws::S3::Model::ListObjectsOutcome& listObjectsOutcome)
+{
+    AWS_UNREFERENCED_PARAM(request);
+
+    if (listObjectsOutcome.IsSuccess())
+    {
+        auto entryIter = std::find_if(listObjectsOutcome.GetResult().GetContents().cbegin(), listObjectsOutcome.GetResult().GetContents().cend(), [&](const Aws::S3::Model::Object& thisObject) { return (thisObject.GetKey() == GetKeyName() && thisObject.GetSize() == GetFileSize()); });
+        if (entryIter != listObjectsOutcome.GetResult().GetContents().cend())
+        {
+            // Also add version checking
+            m_listObjectsPassed.store(true);
+            CheckConsistencyCompletion();
+            return true;
+        }
+    }
+
+    if (m_listObjectsRetries < CONSISTENCY_RETRY_MAX)
+    {
+        ++m_listObjectsRetries;
+
+        CheckListObjects();
+
+        return false;
+    }
+    CompletionFailure("List objects consistency failed.");
+    return false;
+}
+
+void UploadFileRequest::CheckConsistencyCompletion()
+{
+    if (!m_doConsistencyChecks)
+    {
+        // We don't care about these checks, carry through to success
+        CompletionSuccess();
+        return;
+    }
+
+    if (m_sentConsistencyChecks.load())
+    {
+        if (m_headObjectPassed && m_listObjectsPassed && m_getObjectPassed)
+        {
+            CompletionSuccess();
+        }
+        // Working on this
+        return;
+    }
+    m_sentConsistencyChecks.store(true);
+
+    CheckHeadObject();
+    CheckGetObject();
+    CheckListObjects();
+}
 
 } // namespace Transfer
 } // namespace Aws

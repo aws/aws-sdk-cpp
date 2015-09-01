@@ -46,6 +46,7 @@ namespace Model
      <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
     */
     inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
+
     /*
      <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
     */
@@ -54,23 +55,47 @@ namespace Model
     /*
      <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
     */
-    inline RevisionLocation&  WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
+    inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
+
+    /*
+     <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
+    */
+    inline RevisionLocation& WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
+
+    /*
+     <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
+    */
+    inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(value); return *this;}
 
     
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
+
     
     inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     
-    inline RevisionLocation&  WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
+    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
+
+    
+    inline RevisionLocation& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
+
+    
+    inline RevisionLocation& WithS3Location(S3Location&& value) { SetS3Location(value); return *this;}
 
     
     inline const GitHubLocation& GetGitHubLocation() const{ return m_gitHubLocation; }
+
     
     inline void SetGitHubLocation(const GitHubLocation& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = value; }
 
     
-    inline RevisionLocation&  WithGitHubLocation(const GitHubLocation& value) { SetGitHubLocation(value); return *this;}
+    inline void SetGitHubLocation(GitHubLocation&& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = value; }
+
+    
+    inline RevisionLocation& WithGitHubLocation(const GitHubLocation& value) { SetGitHubLocation(value); return *this;}
+
+    
+    inline RevisionLocation& WithGitHubLocation(GitHubLocation&& value) { SetGitHubLocation(value); return *this;}
 
   private:
     RevisionLocationType m_revisionType;

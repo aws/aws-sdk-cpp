@@ -47,6 +47,7 @@ namespace Model
      <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
     */
     inline const StopStatus& GetStatus() const{ return m_status; }
+
     /*
      <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
     */
@@ -55,16 +56,32 @@ namespace Model
     /*
      <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
     */
-    inline StopDeploymentResult&  WithStatus(const StopStatus& value) { SetStatus(value); return *this;}
+    inline void SetStatus(StopStatus&& value) { m_status = value; }
+
+    /*
+     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
+    */
+    inline StopDeploymentResult& WithStatus(const StopStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
+    */
+    inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(value); return *this;}
 
     /*
      <p>An accompanying status message.</p>
     */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
     /*
      <p>An accompanying status message.</p>
     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
+
+    /*
+     <p>An accompanying status message.</p>
+    */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = value; }
 
     /*
      <p>An accompanying status message.</p>
@@ -74,7 +91,12 @@ namespace Model
     /*
      <p>An accompanying status message.</p>
     */
-    inline StopDeploymentResult&  WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+    inline StopDeploymentResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /*
+     <p>An accompanying status message.</p>
+    */
+    inline StopDeploymentResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
 
     /*
      <p>An accompanying status message.</p>

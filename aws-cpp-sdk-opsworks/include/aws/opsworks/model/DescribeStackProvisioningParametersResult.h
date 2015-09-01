@@ -47,10 +47,16 @@ namespace Model
      <p>The AWS OpsWorks agent installer's URL.</p>
     */
     inline const Aws::String& GetAgentInstallerUrl() const{ return m_agentInstallerUrl; }
+
     /*
      <p>The AWS OpsWorks agent installer's URL.</p>
     */
     inline void SetAgentInstallerUrl(const Aws::String& value) { m_agentInstallerUrl = value; }
+
+    /*
+     <p>The AWS OpsWorks agent installer's URL.</p>
+    */
+    inline void SetAgentInstallerUrl(Aws::String&& value) { m_agentInstallerUrl = value; }
 
     /*
      <p>The AWS OpsWorks agent installer's URL.</p>
@@ -60,7 +66,12 @@ namespace Model
     /*
      <p>The AWS OpsWorks agent installer's URL.</p>
     */
-    inline DescribeStackProvisioningParametersResult&  WithAgentInstallerUrl(const Aws::String& value) { SetAgentInstallerUrl(value); return *this;}
+    inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(const Aws::String& value) { SetAgentInstallerUrl(value); return *this;}
+
+    /*
+     <p>The AWS OpsWorks agent installer's URL.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(Aws::String&& value) { SetAgentInstallerUrl(value); return *this;}
 
     /*
      <p>The AWS OpsWorks agent installer's URL.</p>
@@ -71,6 +82,7 @@ namespace Model
      <p>An embedded object that contains the provisioning parameters.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
     /*
      <p>An embedded object that contains the provisioning parameters.</p>
     */
@@ -79,12 +91,47 @@ namespace Model
     /*
      <p>An embedded object that contains the provisioning parameters.</p>
     */
-    inline DescribeStackProvisioningParametersResult&  WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parameters = value; }
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
 
     /*
      <p>An embedded object that contains the provisioning parameters.</p>
     */
     inline DescribeStackProvisioningParametersResult& AddParameters(const Aws::String& key, const Aws::String& value) { m_parameters[key] = value; return *this; }
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, const Aws::String& value) { m_parameters[key] = value; return *this; }
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& AddParameters(const Aws::String& key, Aws::String&& value) { m_parameters[key] = value; return *this; }
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, Aws::String&& value) { m_parameters[key] = value; return *this; }
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& AddParameters(const char* key, Aws::String&& value) { m_parameters[key] = value; return *this; }
+
+    /*
+     <p>An embedded object that contains the provisioning parameters.</p>
+    */
+    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, const char* value) { m_parameters[key] = value; return *this; }
 
     /*
      <p>An embedded object that contains the provisioning parameters.</p>

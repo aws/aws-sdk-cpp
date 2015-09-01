@@ -47,6 +47,7 @@ namespace Model
      Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
     */
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
+
     /*
      Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
     */
@@ -55,16 +56,22 @@ namespace Model
     /*
      Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
     */
-    inline DeleteObjectResult&  WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
+    inline DeleteObjectResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
 
     /*
      Returns the version ID of the delete marker created as a result of the DELETE operation.
     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
     /*
      Returns the version ID of the delete marker created as a result of the DELETE operation.
     */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
+
+    /*
+     Returns the version ID of the delete marker created as a result of the DELETE operation.
+    */
+    inline void SetVersionId(Aws::String&& value) { m_versionId = value; }
 
     /*
      Returns the version ID of the delete marker created as a result of the DELETE operation.
@@ -74,7 +81,12 @@ namespace Model
     /*
      Returns the version ID of the delete marker created as a result of the DELETE operation.
     */
-    inline DeleteObjectResult&  WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+    inline DeleteObjectResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /*
+     Returns the version ID of the delete marker created as a result of the DELETE operation.
+    */
+    inline DeleteObjectResult& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /*
      Returns the version ID of the delete marker created as a result of the DELETE operation.
@@ -83,11 +95,18 @@ namespace Model
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
     
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline DeleteObjectResult&  WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+
+    
+    inline DeleteObjectResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline DeleteObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
 
   private:
     bool m_deleteMarker;

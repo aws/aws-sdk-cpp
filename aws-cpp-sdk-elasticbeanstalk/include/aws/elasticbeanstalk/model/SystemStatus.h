@@ -46,16 +46,24 @@ namespace Model
 
     
     inline const CPUUtilization& GetCPUUtilization() const{ return m_cPUUtilization; }
+
     
     inline void SetCPUUtilization(const CPUUtilization& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
 
     
-    inline SystemStatus&  WithCPUUtilization(const CPUUtilization& value) { SetCPUUtilization(value); return *this;}
+    inline void SetCPUUtilization(CPUUtilization&& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
+
+    
+    inline SystemStatus& WithCPUUtilization(const CPUUtilization& value) { SetCPUUtilization(value); return *this;}
+
+    
+    inline SystemStatus& WithCPUUtilization(CPUUtilization&& value) { SetCPUUtilization(value); return *this;}
 
     /*
      <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     */
     inline const Aws::Vector<double>& GetLoadAverage() const{ return m_loadAverage; }
+
     /*
      <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     */
@@ -64,7 +72,17 @@ namespace Model
     /*
      <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     */
-    inline SystemStatus&  WithLoadAverage(const Aws::Vector<double>& value) { SetLoadAverage(value); return *this;}
+    inline void SetLoadAverage(Aws::Vector<double>&& value) { m_loadAverageHasBeenSet = true; m_loadAverage = value; }
+
+    /*
+     <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    */
+    inline SystemStatus& WithLoadAverage(const Aws::Vector<double>& value) { SetLoadAverage(value); return *this;}
+
+    /*
+     <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    */
+    inline SystemStatus& WithLoadAverage(Aws::Vector<double>&& value) { SetLoadAverage(value); return *this;}
 
     /*
      <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>

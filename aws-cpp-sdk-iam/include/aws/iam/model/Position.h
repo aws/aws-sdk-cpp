@@ -44,19 +44,21 @@ namespace Model
 
     
     inline long GetLine() const{ return m_line; }
+
     
     inline void SetLine(long value) { m_lineHasBeenSet = true; m_line = value; }
 
     
-    inline Position&  WithLine(long value) { SetLine(value); return *this;}
+    inline Position& WithLine(long value) { SetLine(value); return *this;}
 
     
     inline long GetColumn() const{ return m_column; }
+
     
     inline void SetColumn(long value) { m_columnHasBeenSet = true; m_column = value; }
 
     
-    inline Position&  WithColumn(long value) { SetColumn(value); return *this;}
+    inline Position& WithColumn(long value) { SetColumn(value); return *this;}
 
   private:
     long m_line;

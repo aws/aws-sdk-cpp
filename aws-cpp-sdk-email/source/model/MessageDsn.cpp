@@ -47,12 +47,22 @@ MessageDsn& MessageDsn::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode reportingMtaNode = resultNode.FirstChild("ReportingMta");
+    if(reportingMtaNode.IsNull())
+    {
+      reportingMtaNode = resultNode;
+    }
+
     if(!reportingMtaNode.IsNull())
     {
       m_reportingMta = StringUtils::Trim(reportingMtaNode.GetText().c_str());
       m_reportingMtaHasBeenSet = true;
     }
     XmlNode arrivalDateNode = resultNode.FirstChild("ArrivalDate");
+    if(arrivalDateNode.IsNull())
+    {
+      arrivalDateNode = resultNode;
+    }
+
     if(!arrivalDateNode.IsNull())
     {
       m_arrivalDate = StringUtils::ConvertToDouble(StringUtils::Trim(arrivalDateNode.GetText().c_str()).c_str());

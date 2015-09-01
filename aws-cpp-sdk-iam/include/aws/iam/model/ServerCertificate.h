@@ -48,6 +48,7 @@ namespace Model
      <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     */
     inline const ServerCertificateMetadata& GetServerCertificateMetadata() const{ return m_serverCertificateMetadata; }
+
     /*
      <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     */
@@ -56,16 +57,32 @@ namespace Model
     /*
      <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     */
-    inline ServerCertificate&  WithServerCertificateMetadata(const ServerCertificateMetadata& value) { SetServerCertificateMetadata(value); return *this;}
+    inline void SetServerCertificateMetadata(ServerCertificateMetadata&& value) { m_serverCertificateMetadataHasBeenSet = true; m_serverCertificateMetadata = value; }
+
+    /*
+     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
+    */
+    inline ServerCertificate& WithServerCertificateMetadata(const ServerCertificateMetadata& value) { SetServerCertificateMetadata(value); return *this;}
+
+    /*
+     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
+    */
+    inline ServerCertificate& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(value); return *this;}
 
     /*
      <p>The contents of the public key certificate.</p>
     */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
+
     /*
      <p>The contents of the public key certificate.</p>
     */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
+
+    /*
+     <p>The contents of the public key certificate.</p>
+    */
+    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /*
      <p>The contents of the public key certificate.</p>
@@ -75,7 +92,12 @@ namespace Model
     /*
      <p>The contents of the public key certificate.</p>
     */
-    inline ServerCertificate&  WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
+    inline ServerCertificate& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
+
+    /*
+     <p>The contents of the public key certificate.</p>
+    */
+    inline ServerCertificate& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
 
     /*
      <p>The contents of the public key certificate.</p>
@@ -86,10 +108,16 @@ namespace Model
      <p>The contents of the public key certificate chain.</p>
     */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
+
     /*
      <p>The contents of the public key certificate chain.</p>
     */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
+
+    /*
+     <p>The contents of the public key certificate chain.</p>
+    */
+    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /*
      <p>The contents of the public key certificate chain.</p>
@@ -99,7 +127,12 @@ namespace Model
     /*
      <p>The contents of the public key certificate chain.</p>
     */
-    inline ServerCertificate&  WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
+    inline ServerCertificate& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
+
+    /*
+     <p>The contents of the public key certificate chain.</p>
+    */
+    inline ServerCertificate& WithCertificateChain(Aws::String&& value) { SetCertificateChain(value); return *this;}
 
     /*
      <p>The contents of the public key certificate chain.</p>

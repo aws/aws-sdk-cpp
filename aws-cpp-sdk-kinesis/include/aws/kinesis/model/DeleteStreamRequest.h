@@ -40,10 +40,16 @@ namespace Model
      <p>The name of the stream to delete.</p>
     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
     /*
      <p>The name of the stream to delete.</p>
     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /*
+     <p>The name of the stream to delete.</p>
+    */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream to delete.</p>
@@ -53,7 +59,12 @@ namespace Model
     /*
      <p>The name of the stream to delete.</p>
     */
-    inline DeleteStreamRequest&  WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+    inline DeleteStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /*
+     <p>The name of the stream to delete.</p>
+    */
+    inline DeleteStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /*
      <p>The name of the stream to delete.</p>

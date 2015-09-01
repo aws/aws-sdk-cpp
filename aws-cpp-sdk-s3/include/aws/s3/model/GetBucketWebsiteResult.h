@@ -48,38 +48,69 @@ namespace Model
 
     
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
+
     
     inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsTo = value; }
 
     
-    inline GetBucketWebsiteResult&  WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
+    inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsTo = value; }
+
+    
+    inline GetBucketWebsiteResult& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
+
+    
+    inline GetBucketWebsiteResult& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(value); return *this;}
 
     
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
+
     
     inline void SetIndexDocument(const IndexDocument& value) { m_indexDocument = value; }
 
     
-    inline GetBucketWebsiteResult&  WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
+    inline void SetIndexDocument(IndexDocument&& value) { m_indexDocument = value; }
+
+    
+    inline GetBucketWebsiteResult& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
+
+    
+    inline GetBucketWebsiteResult& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(value); return *this;}
 
     
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
+
     
     inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocument = value; }
 
     
-    inline GetBucketWebsiteResult&  WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
+    inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocument = value; }
+
+    
+    inline GetBucketWebsiteResult& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
+
+    
+    inline GetBucketWebsiteResult& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(value); return *this;}
 
     
     inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
+
     
     inline void SetRoutingRules(const Aws::Vector<RoutingRule>& value) { m_routingRules = value; }
 
     
-    inline GetBucketWebsiteResult&  WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
+    inline void SetRoutingRules(Aws::Vector<RoutingRule>&& value) { m_routingRules = value; }
+
+    
+    inline GetBucketWebsiteResult& WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
+
+    
+    inline GetBucketWebsiteResult& WithRoutingRules(Aws::Vector<RoutingRule>&& value) { SetRoutingRules(value); return *this;}
 
     
     inline GetBucketWebsiteResult& AddRoutingRules(const RoutingRule& value) { m_routingRules.push_back(value); return *this; }
+
+    
+    inline GetBucketWebsiteResult& AddRoutingRules(RoutingRule&& value) { m_routingRules.push_back(value); return *this; }
 
   private:
     RedirectAllRequestsTo m_redirectAllRequestsTo;

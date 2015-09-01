@@ -47,24 +47,44 @@ Statement& Statement::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode sourcePolicyIdNode = resultNode.FirstChild("SourcePolicyId");
+    if(sourcePolicyIdNode.IsNull())
+    {
+      sourcePolicyIdNode = resultNode;
+    }
+
     if(!sourcePolicyIdNode.IsNull())
     {
       m_sourcePolicyId = StringUtils::Trim(sourcePolicyIdNode.GetText().c_str());
       m_sourcePolicyIdHasBeenSet = true;
     }
     XmlNode sourcePolicyTypeNode = resultNode.FirstChild("SourcePolicyType");
+    if(sourcePolicyTypeNode.IsNull())
+    {
+      sourcePolicyTypeNode = resultNode;
+    }
+
     if(!sourcePolicyTypeNode.IsNull())
     {
       m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(sourcePolicyTypeNode.GetText().c_str()).c_str());
       m_sourcePolicyTypeHasBeenSet = true;
     }
     XmlNode startPositionNode = resultNode.FirstChild("StartPosition");
+    if(startPositionNode.IsNull())
+    {
+      startPositionNode = resultNode;
+    }
+
     if(!startPositionNode.IsNull())
     {
       m_startPosition = startPositionNode;
       m_startPositionHasBeenSet = true;
     }
     XmlNode endPositionNode = resultNode.FirstChild("EndPosition");
+    if(endPositionNode.IsNull())
+    {
+      endPositionNode = resultNode;
+    }
+
     if(!endPositionNode.IsNull())
     {
       m_endPosition = endPositionNode;

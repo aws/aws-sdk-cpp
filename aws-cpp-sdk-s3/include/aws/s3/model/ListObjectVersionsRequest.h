@@ -42,14 +42,21 @@ namespace Model
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
     
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+
+    
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
-    inline ListObjectVersionsRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+    inline ListObjectVersionsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
+
+    
+    inline ListObjectVersionsRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     
     inline ListObjectVersionsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
@@ -58,10 +65,16 @@ namespace Model
      A delimiter is a character you use to group keys.
     */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+
     /*
      A delimiter is a character you use to group keys.
     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
+
+    /*
+     A delimiter is a character you use to group keys.
+    */
+    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /*
      A delimiter is a character you use to group keys.
@@ -71,7 +84,12 @@ namespace Model
     /*
      A delimiter is a character you use to group keys.
     */
-    inline ListObjectVersionsRequest&  WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
+    inline ListObjectVersionsRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
+
+    /*
+     A delimiter is a character you use to group keys.
+    */
+    inline ListObjectVersionsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
 
     /*
      A delimiter is a character you use to group keys.
@@ -80,20 +98,33 @@ namespace Model
 
     
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
+
     
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     
-    inline ListObjectVersionsRequest&  WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
+    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+
+    
+    inline ListObjectVersionsRequest& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
+
+    
+    inline ListObjectVersionsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
 
     /*
      Specifies the key to start with when listing objects in a bucket.
     */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
+
     /*
      Specifies the key to start with when listing objects in a bucket.
     */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
+
+    /*
+     Specifies the key to start with when listing objects in a bucket.
+    */
+    inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
 
     /*
      Specifies the key to start with when listing objects in a bucket.
@@ -103,7 +134,12 @@ namespace Model
     /*
      Specifies the key to start with when listing objects in a bucket.
     */
-    inline ListObjectVersionsRequest&  WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
+    inline ListObjectVersionsRequest& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
+
+    /*
+     Specifies the key to start with when listing objects in a bucket.
+    */
+    inline ListObjectVersionsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(value); return *this;}
 
     /*
      Specifies the key to start with when listing objects in a bucket.
@@ -114,6 +150,7 @@ namespace Model
      Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
     */
     inline long GetMaxKeys() const{ return m_maxKeys; }
+
     /*
      Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
     */
@@ -122,16 +159,22 @@ namespace Model
     /*
      Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
     */
-    inline ListObjectVersionsRequest&  WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
+    inline ListObjectVersionsRequest& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
 
     /*
      Limits the response to keys that begin with the specified prefix.
     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
     /*
      Limits the response to keys that begin with the specified prefix.
     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+
+    /*
+     Limits the response to keys that begin with the specified prefix.
+    */
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /*
      Limits the response to keys that begin with the specified prefix.
@@ -141,7 +184,12 @@ namespace Model
     /*
      Limits the response to keys that begin with the specified prefix.
     */
-    inline ListObjectVersionsRequest&  WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline ListObjectVersionsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+
+    /*
+     Limits the response to keys that begin with the specified prefix.
+    */
+    inline ListObjectVersionsRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
     /*
      Limits the response to keys that begin with the specified prefix.
@@ -152,10 +200,16 @@ namespace Model
      Specifies the object version you want to start listing from.
     */
     inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
+
     /*
      Specifies the object version you want to start listing from.
     */
     inline void SetVersionIdMarker(const Aws::String& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = value; }
+
+    /*
+     Specifies the object version you want to start listing from.
+    */
+    inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = value; }
 
     /*
      Specifies the object version you want to start listing from.
@@ -165,7 +219,12 @@ namespace Model
     /*
      Specifies the object version you want to start listing from.
     */
-    inline ListObjectVersionsRequest&  WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
+    inline ListObjectVersionsRequest& WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
+
+    /*
+     Specifies the object version you want to start listing from.
+    */
+    inline ListObjectVersionsRequest& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(value); return *this;}
 
     /*
      Specifies the object version you want to start listing from.

@@ -40,6 +40,7 @@ namespace Model
      <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
     */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
     */
@@ -48,12 +49,27 @@ namespace Model
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /*
+     <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /*
+     <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
 
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
     */
     inline RestoreDBClusterFromSnapshotRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
@@ -64,10 +80,16 @@ namespace Model
      <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
     /*
      <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+
+    /*
+     <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /*
      <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
@@ -77,7 +99,12 @@ namespace Model
     /*
      <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
+
+    /*
+     <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
 
     /*
      <p>The name of the DB cluster to create from the DB cluster snapshot. This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
@@ -88,10 +115,16 @@ namespace Model
      <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+
     /*
      <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
+
+    /*
+     <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -101,7 +134,12 @@ namespace Model
     /*
      <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
 
     /*
      <p>The identifier for the DB cluster snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -112,10 +150,16 @@ namespace Model
      <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
     /*
      <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /*
+     <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
+    */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
@@ -125,7 +169,12 @@ namespace Model
     /*
      <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /*
+     <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /*
      <p>The database engine to use for the new DB cluster. </p> <p>Default: The same as source</p> <p>Constraint: Must be compatible with the engine of the source</p>
@@ -136,10 +185,16 @@ namespace Model
      <p>The version of the database engine to use for the new DB cluster.</p>
     */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
     /*
      <p>The version of the database engine to use for the new DB cluster.</p>
     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /*
+     <p>The version of the database engine to use for the new DB cluster.</p>
+    */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /*
      <p>The version of the database engine to use for the new DB cluster.</p>
@@ -149,7 +204,12 @@ namespace Model
     /*
      <p>The version of the database engine to use for the new DB cluster.</p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /*
+     <p>The version of the database engine to use for the new DB cluster.</p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /*
      <p>The version of the database engine to use for the new DB cluster.</p>
@@ -160,6 +220,7 @@ namespace Model
      <p> The port number on which the new DB cluster accepts connections. </p> <p>Constraints: Value must be <code>1150-65535</code></p> <p>Default: The same port as the original DB cluster.</p>
     */
     inline long GetPort() const{ return m_port; }
+
     /*
      <p> The port number on which the new DB cluster accepts connections. </p> <p>Constraints: Value must be <code>1150-65535</code></p> <p>Default: The same port as the original DB cluster.</p>
     */
@@ -168,16 +229,22 @@ namespace Model
     /*
      <p> The port number on which the new DB cluster accepts connections. </p> <p>Constraints: Value must be <code>1150-65535</code></p> <p>Default: The same port as the original DB cluster.</p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithPort(long value) { SetPort(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithPort(long value) { SetPort(value); return *this;}
 
     /*
      <p>The name of the DB subnet group to use for the new DB cluster. </p>
     */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
     /*
      <p>The name of the DB subnet group to use for the new DB cluster. </p>
     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /*
+     <p>The name of the DB subnet group to use for the new DB cluster. </p>
+    */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /*
      <p>The name of the DB subnet group to use for the new DB cluster. </p>
@@ -187,7 +254,12 @@ namespace Model
     /*
      <p>The name of the DB subnet group to use for the new DB cluster. </p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /*
+     <p>The name of the DB subnet group to use for the new DB cluster. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /*
      <p>The name of the DB subnet group to use for the new DB cluster. </p>
@@ -198,10 +270,16 @@ namespace Model
      <p>The database name for the restored DB cluster. </p>
     */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
     /*
      <p>The database name for the restored DB cluster. </p>
     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+
+    /*
+     <p>The database name for the restored DB cluster. </p>
+    */
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /*
      <p>The database name for the restored DB cluster. </p>
@@ -211,7 +289,12 @@ namespace Model
     /*
      <p>The database name for the restored DB cluster. </p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+
+    /*
+     <p>The database name for the restored DB cluster. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
 
     /*
      <p>The database name for the restored DB cluster. </p>
@@ -222,10 +305,16 @@ namespace Model
      <p>The name of the option group to use for the restored DB cluster. </p>
     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
     /*
      <p>The name of the option group to use for the restored DB cluster. </p>
     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+
+    /*
+     <p>The name of the option group to use for the restored DB cluster. </p>
+    */
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p>The name of the option group to use for the restored DB cluster. </p>
@@ -235,7 +324,12 @@ namespace Model
     /*
      <p>The name of the option group to use for the restored DB cluster. </p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+
+    /*
+     <p>The name of the option group to use for the restored DB cluster. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /*
      <p>The name of the option group to use for the restored DB cluster. </p>
@@ -246,6 +340,7 @@ namespace Model
      <p> A list of VPC security groups that the new DB cluster will belong to. </p>
     */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
     /*
      <p> A list of VPC security groups that the new DB cluster will belong to. </p>
     */
@@ -254,12 +349,27 @@ namespace Model
     /*
      <p> A list of VPC security groups that the new DB cluster will belong to. </p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /*
+     <p> A list of VPC security groups that the new DB cluster will belong to. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /*
+     <p> A list of VPC security groups that the new DB cluster will belong to. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /*
      <p> A list of VPC security groups that the new DB cluster will belong to. </p>
     */
     inline RestoreDBClusterFromSnapshotRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p> A list of VPC security groups that the new DB cluster will belong to. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /*
      <p> A list of VPC security groups that the new DB cluster will belong to. </p>
@@ -270,6 +380,7 @@ namespace Model
      <p>The tags to be assigned to the restored DB cluster. </p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
     /*
      <p>The tags to be assigned to the restored DB cluster. </p>
     */
@@ -278,12 +389,27 @@ namespace Model
     /*
      <p>The tags to be assigned to the restored DB cluster. </p>
     */
-    inline RestoreDBClusterFromSnapshotRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>The tags to be assigned to the restored DB cluster. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>The tags to be assigned to the restored DB cluster. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
      <p>The tags to be assigned to the restored DB cluster. </p>
     */
     inline RestoreDBClusterFromSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The tags to be assigned to the restored DB cluster. </p>
+    */
+    inline RestoreDBClusterFromSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_availabilityZones;

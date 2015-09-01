@@ -48,6 +48,7 @@ namespace Model
      <p>A list of queue URLs, up to 1000 entries.</p>
     */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
+
     /*
      <p>A list of queue URLs, up to 1000 entries.</p>
     */
@@ -56,7 +57,17 @@ namespace Model
     /*
      <p>A list of queue URLs, up to 1000 entries.</p>
     */
-    inline ListQueuesResult&  WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
+    inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = value; }
+
+    /*
+     <p>A list of queue URLs, up to 1000 entries.</p>
+    */
+    inline ListQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
+
+    /*
+     <p>A list of queue URLs, up to 1000 entries.</p>
+    */
+    inline ListQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(value); return *this;}
 
     /*
      <p>A list of queue URLs, up to 1000 entries.</p>
@@ -66,15 +77,27 @@ namespace Model
     /*
      <p>A list of queue URLs, up to 1000 entries.</p>
     */
+    inline ListQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(value); return *this; }
+
+    /*
+     <p>A list of queue URLs, up to 1000 entries.</p>
+    */
     inline ListQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline ListQueuesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+
+    
+    inline ListQueuesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline ListQueuesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_queueUrls;

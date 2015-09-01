@@ -41,10 +41,16 @@ namespace Model
      <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
     */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
     /*
      <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+
+    /*
+     <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
+    */
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /*
      <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
@@ -54,7 +60,12 @@ namespace Model
     /*
      <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
     */
-    inline RemoveTagsRequest&  WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline RemoveTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+
+    /*
+     <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
+    */
+    inline RemoveTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /*
      <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>
@@ -65,6 +76,7 @@ namespace Model
      <p>A list of tag keys to remove from a resource.</p>
     */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
     /*
      <p>A list of tag keys to remove from a resource.</p>
     */
@@ -73,12 +85,27 @@ namespace Model
     /*
      <p>A list of tag keys to remove from a resource.</p>
     */
-    inline RemoveTagsRequest&  WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+
+    /*
+     <p>A list of tag keys to remove from a resource.</p>
+    */
+    inline RemoveTagsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+
+    /*
+     <p>A list of tag keys to remove from a resource.</p>
+    */
+    inline RemoveTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
 
     /*
      <p>A list of tag keys to remove from a resource.</p>
     */
     inline RemoveTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
+    /*
+     <p>A list of tag keys to remove from a resource.</p>
+    */
+    inline RemoveTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /*
      <p>A list of tag keys to remove from a resource.</p>

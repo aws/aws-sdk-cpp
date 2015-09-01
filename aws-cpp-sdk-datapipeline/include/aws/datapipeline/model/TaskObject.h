@@ -46,10 +46,16 @@ namespace Model
      <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
     */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
+
     /*
      <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+
+    /*
+     <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
+    */
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /*
      <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
@@ -59,7 +65,12 @@ namespace Model
     /*
      <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
     */
-    inline TaskObject&  WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+    inline TaskObject& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+
+    /*
+     <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
+    */
+    inline TaskObject& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
 
     /*
      <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
@@ -70,10 +81,16 @@ namespace Model
      <p>The ID of the pipeline that provided the task.</p>
     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+
     /*
      <p>The ID of the pipeline that provided the task.</p>
     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline that provided the task.</p>
+    */
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline that provided the task.</p>
@@ -83,7 +100,12 @@ namespace Model
     /*
      <p>The ID of the pipeline that provided the task.</p>
     */
-    inline TaskObject&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+    inline TaskObject& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline that provided the task.</p>
+    */
+    inline TaskObject& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /*
      <p>The ID of the pipeline that provided the task.</p>
@@ -94,10 +116,16 @@ namespace Model
      <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     */
     inline const Aws::String& GetAttemptId() const{ return m_attemptId; }
+
     /*
      <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     */
     inline void SetAttemptId(const Aws::String& value) { m_attemptIdHasBeenSet = true; m_attemptId = value; }
+
+    /*
+     <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
+    */
+    inline void SetAttemptId(Aws::String&& value) { m_attemptIdHasBeenSet = true; m_attemptId = value; }
 
     /*
      <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
@@ -107,7 +135,12 @@ namespace Model
     /*
      <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     */
-    inline TaskObject&  WithAttemptId(const Aws::String& value) { SetAttemptId(value); return *this;}
+    inline TaskObject& WithAttemptId(const Aws::String& value) { SetAttemptId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
+    */
+    inline TaskObject& WithAttemptId(Aws::String&& value) { SetAttemptId(value); return *this;}
 
     /*
      <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
@@ -118,6 +151,7 @@ namespace Model
      <p>Connection information for the location where the task runner will publish the output of the task.</p>
     */
     inline const Aws::Map<Aws::String, PipelineObject>& GetObjects() const{ return m_objects; }
+
     /*
      <p>Connection information for the location where the task runner will publish the output of the task.</p>
     */
@@ -126,12 +160,42 @@ namespace Model
     /*
      <p>Connection information for the location where the task runner will publish the output of the task.</p>
     */
-    inline TaskObject&  WithObjects(const Aws::Map<Aws::String, PipelineObject>& value) { SetObjects(value); return *this;}
+    inline void SetObjects(Aws::Map<Aws::String, PipelineObject>&& value) { m_objectsHasBeenSet = true; m_objects = value; }
+
+    /*
+     <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    */
+    inline TaskObject& WithObjects(const Aws::Map<Aws::String, PipelineObject>& value) { SetObjects(value); return *this;}
+
+    /*
+     <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    */
+    inline TaskObject& WithObjects(Aws::Map<Aws::String, PipelineObject>&& value) { SetObjects(value); return *this;}
 
     /*
      <p>Connection information for the location where the task runner will publish the output of the task.</p>
     */
     inline TaskObject& AddObjects(const Aws::String& key, const PipelineObject& value) { m_objectsHasBeenSet = true; m_objects[key] = value; return *this; }
+
+    /*
+     <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    */
+    inline TaskObject& AddObjects(Aws::String&& key, const PipelineObject& value) { m_objectsHasBeenSet = true; m_objects[key] = value; return *this; }
+
+    /*
+     <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    */
+    inline TaskObject& AddObjects(const Aws::String& key, PipelineObject&& value) { m_objectsHasBeenSet = true; m_objects[key] = value; return *this; }
+
+    /*
+     <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    */
+    inline TaskObject& AddObjects(Aws::String&& key, PipelineObject&& value) { m_objectsHasBeenSet = true; m_objects[key] = value; return *this; }
+
+    /*
+     <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    */
+    inline TaskObject& AddObjects(const char* key, PipelineObject&& value) { m_objectsHasBeenSet = true; m_objects[key] = value; return *this; }
 
     /*
      <p>Connection information for the location where the task runner will publish the output of the task.</p>
