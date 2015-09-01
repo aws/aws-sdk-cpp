@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.2.3)
 
 # Cmake invocation variables:
 #   CUSTOM_MEMORY_MANAGEMENT - if set to 1, generates the sdk project files with custom memory management enabled, otherwise disables it
@@ -398,7 +398,6 @@ add_subdirectory(aws-cpp-sdk-sns)
 add_subdirectory(aws-cpp-sdk-autoscaling)
 add_subdirectory(aws-cpp-sdk-cloudformation)
 add_subdirectory(aws-cpp-sdk-rds)
-add_subdirectory(aws-cpp-sdk-logging)
 add_subdirectory(aws-cpp-sdk-access-management)
 add_subdirectory(aws-cpp-sdk-transfer)
 add_subdirectory(aws-cpp-sdk-queues)
@@ -417,10 +416,10 @@ else()
     add_subdirectory(aws-cpp-sdk-dynamodb-integration-tests)
     add_subdirectory(aws-cpp-sdk-cognitoidentity-integration-tests)
     add_subdirectory(aws-cpp-sdk-sqs-integration-tests)
-    add_subdirectory(aws-cpp-sdk-lambda-integration-tests) 
+    add_subdirectory(aws-cpp-sdk-lambda-integration-tests)
     add_subdirectory(aws-cpp-sdk-s3-integration-tests)
     add_subdirectory(aws-cpp-sdk-identity-management-tests)
-    add_subdirectory(aws-cpp-sdk-logging-tests)
+    add_subdirectory(aws-cpp-sdk-cloudfront-integration-tests)
     add_subdirectory(aws-cpp-sdk-transfer-tests)
     add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
 

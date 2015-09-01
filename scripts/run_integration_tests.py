@@ -42,7 +42,6 @@ def Main():
         configDir = arguments["configuration"]
 
     dynamoDbTest = arguments["buildDir"] + "/aws-cpp-sdk-dynamodb-integration-tests/" + configDir + "/runDynamoDBIntegrationTests"
-    print "executing " + dynamoDbTest
     subprocess.check_call(dynamoDbTest)
 
     sqsTest = arguments["buildDir"] + "/aws-cpp-sdk-sqs-integration-tests/" + configDir + "/runSqsIntegrationTests"
@@ -58,8 +57,14 @@ def Main():
     subprocess.check_call(cognitoTest)
 
     transferTest = arguments["buildDir"] + "/aws-cpp-sdk-transfer-tests/" + configDir + "/runTransferIntegrationTests"
-    subprocess.check_call(transferTest)  
-    
+    subprocess.check_call(transferTest)
+
+    #These will cost you lots of money, don't run them unless you decide you want to test this functionality
+    #cloudFrontTests = arguments["buildDir"] + "/aws-cpp-sdk-cloudfront-integration-tests/" + configDir + "/runCloudfrontIntegrationTests"
+    #subprocess.check_call(cloudFrontTests)
+
+    #redshiftTests = arguments["buildDir"] + "/aws-cpp-sdk-redshift-integration-tests/" + configDir + "/runRedshiftIntegrationTests"
+    #subprocess.check_call(redshiftTests)
 
 # Run from powershell; make sure msbuild is in PATH environment variable  
 Main()
