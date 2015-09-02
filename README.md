@@ -3,6 +3,12 @@ The goal of the Aws Native SDK is to provide a modern C++ ( Version >= C++ 11) i
 
 This SDK has been specifically designed with game dev in mind, but we have also worked hard to maintain an interface that will work for systems engineering tasks as well as other projects that simply need the efficiency of native code.
 
+We are launching the AWS SDK for C++ in its current experimental state while we gather feedback from
+users and the open source community to harden the APIs. We also are adding support for individual services
+as we become more confident that the client generator can properly support each protocol. Support for more
+services will be coming in the near future. We invite our customers to follow along with our progress and join
+the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
+
 ###Building:
 
 ####Minimum Compiler Versions:
