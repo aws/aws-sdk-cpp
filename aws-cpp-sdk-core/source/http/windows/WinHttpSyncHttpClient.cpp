@@ -165,8 +165,9 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
 {
     wchar_t dwStatusCode[256];
     DWORD dwSize = sizeof(dwStatusCode);
+	memset(dwStatusCode, 0, dwSize);
 
-    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_STATUS_CODE, WINHTTP_HEADER_NAME_BY_INDEX, &dwStatusCode, &dwSize, 0);
+    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_STATUS_CODE, WINHTTP_HEADER_NAME_BY_INDEX, dwStatusCode, &dwSize, 0);
     response->SetResponseCode((HttpResponseCode)_wtoi(dwStatusCode));
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received response code " << dwStatusCode);
 
