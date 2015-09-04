@@ -110,7 +110,6 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
 
 void Origin::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_idHasBeenSet)
   {
    XmlNode idNode = parentNode.CreateChildElement("Id");

@@ -58,7 +58,6 @@ Restrictions& Restrictions::operator =(const XmlNode& xmlNode)
 
 void Restrictions::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_geoRestrictionHasBeenSet)
   {
    XmlNode geoRestrictionNode = parentNode.CreateChildElement("GeoRestriction");

@@ -64,7 +64,6 @@ void RestoreObjectRequest::AddQueryStringParameters(URI& uri) const
 Aws::Http::HeaderValueCollection RestoreObjectRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
   if(m_requestPayerHasBeenSet)
   {
    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));

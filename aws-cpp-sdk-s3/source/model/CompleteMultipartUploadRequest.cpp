@@ -64,7 +64,6 @@ void CompleteMultipartUploadRequest::AddQueryStringParameters(URI& uri) const
 Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
   if(m_requestPayerHasBeenSet)
   {
    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));

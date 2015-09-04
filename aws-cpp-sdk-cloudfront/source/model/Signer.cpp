@@ -71,7 +71,6 @@ Signer& Signer::operator =(const XmlNode& xmlNode)
 
 void Signer::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_awsAccountNumberHasBeenSet)
   {
    XmlNode awsAccountNumberNode = parentNode.CreateChildElement("AwsAccountNumber");

@@ -110,7 +110,6 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
 
 void Grantee::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_displayNameHasBeenSet)
   {
    XmlNode displayNameNode = parentNode.CreateChildElement("DisplayName");

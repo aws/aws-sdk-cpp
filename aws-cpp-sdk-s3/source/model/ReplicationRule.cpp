@@ -97,7 +97,6 @@ ReplicationRule& ReplicationRule::operator =(const XmlNode& xmlNode)
 
 void ReplicationRule::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_iDHasBeenSet)
   {
    XmlNode iDNode = parentNode.CreateChildElement("ID");

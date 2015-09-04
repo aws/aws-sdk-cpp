@@ -71,7 +71,6 @@ CookiePreference& CookiePreference::operator =(const XmlNode& xmlNode)
 
 void CookiePreference::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_forwardHasBeenSet)
   {
    XmlNode forwardNode = parentNode.CreateChildElement("Forward");

@@ -71,7 +71,6 @@ ObjectIdentifier& ObjectIdentifier::operator =(const XmlNode& xmlNode)
 
 void ObjectIdentifier::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_keyHasBeenSet)
   {
    XmlNode keyNode = parentNode.CreateChildElement("Key");

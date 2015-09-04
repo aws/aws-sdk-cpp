@@ -58,7 +58,6 @@ S3OriginConfig& S3OriginConfig::operator =(const XmlNode& xmlNode)
 
 void S3OriginConfig::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_originAccessIdentityHasBeenSet)
   {
    XmlNode originAccessIdentityNode = parentNode.CreateChildElement("OriginAccessIdentity");

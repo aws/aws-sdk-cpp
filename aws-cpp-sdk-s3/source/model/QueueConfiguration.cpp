@@ -98,7 +98,6 @@ QueueConfiguration& QueueConfiguration::operator =(const XmlNode& xmlNode)
 
 void QueueConfiguration::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_idHasBeenSet)
   {
    XmlNode idNode = parentNode.CreateChildElement("Id");

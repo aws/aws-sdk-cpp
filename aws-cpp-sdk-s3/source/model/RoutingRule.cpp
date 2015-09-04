@@ -71,7 +71,6 @@ RoutingRule& RoutingRule::operator =(const XmlNode& xmlNode)
 
 void RoutingRule::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_conditionHasBeenSet)
   {
    XmlNode conditionNode = parentNode.CreateChildElement("Condition");

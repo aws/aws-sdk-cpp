@@ -71,7 +71,6 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
 
 void InvalidationBatch::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_pathsHasBeenSet)
   {
    XmlNode pathsNode = parentNode.CreateChildElement("Paths");

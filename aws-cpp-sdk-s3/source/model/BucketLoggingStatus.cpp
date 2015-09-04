@@ -58,7 +58,6 @@ BucketLoggingStatus& BucketLoggingStatus::operator =(const XmlNode& xmlNode)
 
 void BucketLoggingStatus::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_loggingEnabledHasBeenSet)
   {
    XmlNode loggingEnabledNode = parentNode.CreateChildElement("LoggingEnabled");

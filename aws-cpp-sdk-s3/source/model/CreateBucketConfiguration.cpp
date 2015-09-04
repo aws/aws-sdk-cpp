@@ -58,7 +58,6 @@ CreateBucketConfiguration& CreateBucketConfiguration::operator =(const XmlNode& 
 
 void CreateBucketConfiguration::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_locationConstraintHasBeenSet)
   {
    XmlNode locationConstraintNode = parentNode.CreateChildElement("LocationConstraint");

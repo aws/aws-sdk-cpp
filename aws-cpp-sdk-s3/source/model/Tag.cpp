@@ -71,7 +71,6 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
 
 void Tag::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_keyHasBeenSet)
   {
    XmlNode keyNode = parentNode.CreateChildElement("Key");

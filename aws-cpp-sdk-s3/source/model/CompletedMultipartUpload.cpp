@@ -59,7 +59,6 @@ CompletedMultipartUpload& CompletedMultipartUpload::operator =(const XmlNode& xm
 
 void CompletedMultipartUpload::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_partsHasBeenSet)
   {
    for(const auto& item : m_parts)

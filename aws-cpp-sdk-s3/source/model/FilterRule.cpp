@@ -71,7 +71,6 @@ FilterRule& FilterRule::operator =(const XmlNode& xmlNode)
 
 void FilterRule::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_nameHasBeenSet)
   {
    XmlNode nameNode = parentNode.CreateChildElement("Name");

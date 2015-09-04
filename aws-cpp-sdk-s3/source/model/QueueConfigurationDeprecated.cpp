@@ -85,7 +85,6 @@ QueueConfigurationDeprecated& QueueConfigurationDeprecated::operator =(const Xml
 
 void QueueConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_idHasBeenSet)
   {
    XmlNode idNode = parentNode.CreateChildElement("Id");

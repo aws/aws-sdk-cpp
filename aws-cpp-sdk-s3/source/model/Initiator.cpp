@@ -71,7 +71,6 @@ Initiator& Initiator::operator =(const XmlNode& xmlNode)
 
 void Initiator::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_iDHasBeenSet)
   {
    XmlNode iDNode = parentNode.CreateChildElement("ID");

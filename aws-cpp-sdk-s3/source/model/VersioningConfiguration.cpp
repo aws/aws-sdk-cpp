@@ -71,7 +71,6 @@ VersioningConfiguration& VersioningConfiguration::operator =(const XmlNode& xmlN
 
 void VersioningConfiguration::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_mFADeleteHasBeenSet)
   {
    XmlNode mFADeleteNode = parentNode.CreateChildElement("MFADelete");

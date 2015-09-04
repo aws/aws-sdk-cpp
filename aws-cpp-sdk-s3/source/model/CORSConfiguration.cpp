@@ -59,7 +59,6 @@ CORSConfiguration& CORSConfiguration::operator =(const XmlNode& xmlNode)
 
 void CORSConfiguration::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_cORSRulesHasBeenSet)
   {
    for(const auto& item : m_cORSRules)

@@ -71,7 +71,6 @@ CloudFrontOriginAccessIdentityConfig& CloudFrontOriginAccessIdentityConfig::oper
 
 void CloudFrontOriginAccessIdentityConfig::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_callerReferenceHasBeenSet)
   {
    XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");

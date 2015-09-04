@@ -87,7 +87,6 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
 
 void NotificationConfiguration::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_topicConfigurationsHasBeenSet)
   {
    for(const auto& item : m_topicConfigurations)

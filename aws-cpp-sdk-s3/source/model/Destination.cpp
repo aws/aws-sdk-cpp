@@ -58,7 +58,6 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
 
 void Destination::AddToNode(XmlNode& parentNode) const
 {
-  Aws::StringStream ss;
   if(m_bucketHasBeenSet)
   {
    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
