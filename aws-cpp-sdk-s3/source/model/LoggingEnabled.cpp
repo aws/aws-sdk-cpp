@@ -85,6 +85,7 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
 
 void LoggingEnabled::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_targetBucketHasBeenSet)
   {
    XmlNode targetBucketNode = parentNode.CreateChildElement("TargetBucket");

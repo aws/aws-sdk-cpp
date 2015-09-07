@@ -72,6 +72,7 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
 
 void AccessControlPolicy::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_grantsHasBeenSet)
   {
    XmlNode grantsParentNode = parentNode.CreateChildElement("Grants");

@@ -136,6 +136,7 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
 
 void Rule::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_expirationHasBeenSet)
   {
    XmlNode expirationNode = parentNode.CreateChildElement("Expiration");

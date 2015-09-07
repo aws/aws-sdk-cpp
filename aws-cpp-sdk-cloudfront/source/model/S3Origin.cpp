@@ -71,6 +71,7 @@ S3Origin& S3Origin::operator =(const XmlNode& xmlNode)
 
 void S3Origin::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_domainNameHasBeenSet)
   {
    XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");

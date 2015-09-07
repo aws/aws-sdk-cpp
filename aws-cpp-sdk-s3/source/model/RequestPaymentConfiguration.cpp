@@ -58,6 +58,7 @@ RequestPaymentConfiguration& RequestPaymentConfiguration::operator =(const XmlNo
 
 void RequestPaymentConfiguration::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_payerHasBeenSet)
   {
    XmlNode payerNode = parentNode.CreateChildElement("Payer");

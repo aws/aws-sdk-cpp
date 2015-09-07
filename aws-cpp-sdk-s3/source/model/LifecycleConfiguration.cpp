@@ -59,6 +59,7 @@ LifecycleConfiguration& LifecycleConfiguration::operator =(const XmlNode& xmlNod
 
 void LifecycleConfiguration::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_rulesHasBeenSet)
   {
    for(const auto& item : m_rules)

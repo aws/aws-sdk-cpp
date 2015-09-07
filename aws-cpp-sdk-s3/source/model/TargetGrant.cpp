@@ -71,6 +71,7 @@ TargetGrant& TargetGrant::operator =(const XmlNode& xmlNode)
 
 void TargetGrant::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_granteeHasBeenSet)
   {
    XmlNode granteeNode = parentNode.CreateChildElement("Grantee");

@@ -71,6 +71,7 @@ Owner& Owner::operator =(const XmlNode& xmlNode)
 
 void Owner::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_displayNameHasBeenSet)
   {
    XmlNode displayNameNode = parentNode.CreateChildElement("DisplayName");

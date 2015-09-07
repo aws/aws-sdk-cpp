@@ -98,6 +98,7 @@ WebsiteConfiguration& WebsiteConfiguration::operator =(const XmlNode& xmlNode)
 
 void WebsiteConfiguration::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_errorDocumentHasBeenSet)
   {
    XmlNode errorDocumentNode = parentNode.CreateChildElement("ErrorDocument");

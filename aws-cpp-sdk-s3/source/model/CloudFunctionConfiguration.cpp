@@ -98,6 +98,7 @@ CloudFunctionConfiguration& CloudFunctionConfiguration::operator =(const XmlNode
 
 void CloudFunctionConfiguration::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_idHasBeenSet)
   {
    XmlNode idNode = parentNode.CreateChildElement("Id");

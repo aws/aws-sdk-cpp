@@ -269,6 +269,8 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
 {
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Final String to sign: " << stringToSign);
 
+    Aws::StringStream ss;
+
     //now we do the complicated part of deriving a signing key.
     Aws::String signingKey(SIGNING_KEY);
     signingKey.append(credentials.GetAWSSecretKey());

@@ -58,6 +58,7 @@ CommonPrefix& CommonPrefix::operator =(const XmlNode& xmlNode)
 
 void CommonPrefix::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_prefixHasBeenSet)
   {
    XmlNode prefixNode = parentNode.CreateChildElement("Prefix");

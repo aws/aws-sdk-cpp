@@ -58,6 +58,7 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
 
 void IndexDocument::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_suffixHasBeenSet)
   {
    XmlNode suffixNode = parentNode.CreateChildElement("Suffix");

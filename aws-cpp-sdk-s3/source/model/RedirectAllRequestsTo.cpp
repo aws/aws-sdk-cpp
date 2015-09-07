@@ -71,6 +71,7 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
 
 void RedirectAllRequestsTo::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_hostNameHasBeenSet)
   {
    XmlNode hostNameNode = parentNode.CreateChildElement("HostName");

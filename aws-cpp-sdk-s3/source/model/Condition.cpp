@@ -71,6 +71,7 @@ Condition& Condition::operator =(const XmlNode& xmlNode)
 
 void Condition::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_httpErrorCodeReturnedEqualsHasBeenSet)
   {
    XmlNode httpErrorCodeReturnedEqualsNode = parentNode.CreateChildElement("HttpErrorCodeReturnedEquals");

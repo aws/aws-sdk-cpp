@@ -110,6 +110,7 @@ Redirect& Redirect::operator =(const XmlNode& xmlNode)
 
 void Redirect::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_hostNameHasBeenSet)
   {
    XmlNode hostNameNode = parentNode.CreateChildElement("HostName");

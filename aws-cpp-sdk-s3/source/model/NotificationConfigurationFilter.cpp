@@ -58,6 +58,7 @@ NotificationConfigurationFilter& NotificationConfigurationFilter::operator =(con
 
 void NotificationConfigurationFilter::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_keyHasBeenSet)
   {
    XmlNode keyNode = parentNode.CreateChildElement("S3Key");

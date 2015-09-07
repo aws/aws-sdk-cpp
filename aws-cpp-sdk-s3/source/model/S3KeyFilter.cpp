@@ -59,6 +59,7 @@ S3KeyFilter& S3KeyFilter::operator =(const XmlNode& xmlNode)
 
 void S3KeyFilter::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_filterRulesHasBeenSet)
   {
    for(const auto& item : m_filterRules)

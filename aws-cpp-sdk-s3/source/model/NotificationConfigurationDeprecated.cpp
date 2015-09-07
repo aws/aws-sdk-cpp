@@ -84,6 +84,7 @@ NotificationConfigurationDeprecated& NotificationConfigurationDeprecated::operat
 
 void NotificationConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
 {
+  Aws::StringStream ss;
   if(m_topicConfigurationHasBeenSet)
   {
    XmlNode topicConfigurationNode = parentNode.CreateChildElement("TopicConfiguration");

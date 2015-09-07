@@ -90,7 +90,8 @@ bool DynamoDBDataRowBase::SetAttributeValue(const Aws::String& key, const Aws::D
 
 bool DynamoDBDataRowBase::WriteToDb(const std::unique_ptr<Aws::DynamoDB::DynamoDBClient>& dynamoClient)
 {
-  
+    std::stringstream attributeStringValue;
+
     PutItemRequest putItemRequest;
     putItemRequest.SetTableName(m_tableName);
 
