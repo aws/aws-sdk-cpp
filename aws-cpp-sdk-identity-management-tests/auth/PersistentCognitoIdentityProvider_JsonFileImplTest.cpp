@@ -42,12 +42,11 @@ using namespace Aws::Utils::Json;
 Aws::String ComputeIdentityFilePath()
 {
     static bool s_initialized = false;
-    static char s_tempName[L_tmpnam+1];
+    static char s_tempName[L_tmpnam];
 
     if(!s_initialized)
     {
-        s_tempName[0] = '.';
-        tmpnam_s(s_tempName + 1, L_tmpnam);
+        tmpnam_s(s_tempName, L_tmpnam);
         s_initialized = true;
     }
 

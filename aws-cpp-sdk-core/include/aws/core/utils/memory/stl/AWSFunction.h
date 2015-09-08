@@ -41,9 +41,9 @@ std::function< F > BuildFunction(const std::function< F > &f)
 template<typename F>
 std::function< F > BuildFunction(std::function< F > &&f) 
 {
-    // TODO: there seems to be no move c'tor that also takes an allocator !?
+    // TODO: there seems to be no move c'tor that also takes an allocator, do a copy instead of a move !
     //return std::function< F >( std::move(f), Aws::Allocator<void>() );
-    return std::function< F >(std::move(f));
+    return std::function< F >(std::allocator_arg_t(), Aws::Allocator<void>(), f);
 }
 
 } // namespace Aws
