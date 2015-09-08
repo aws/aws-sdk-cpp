@@ -42,13 +42,26 @@ using namespace Aws::Utils::Json;
 Aws::String ComputeIdentityFilePath()
 {
     static bool s_initialized = false;
-    static char s_tempName[L_tmpnam];
+    static Aws::String s_tempName;
 
-    if(!s_initialized)
+    if(s_tempName.empty())
     {
-        tmpnam_s(s_tempName, L_tmpnam);
-        s_initialized = true;
-    }
+        char tempName[L_tmpnam_s];
+        memset(tempName, 0x00, L_tmpnam_s);
+
+        tmpnam_s(tempName, L_tmpnam_s);
+        
+        // tmpnam_s() may return a file name that starts with a \ or an absolut path ...
+        if ((strlen(tempName) > 0) && (tempName[0] == '\\'))
+        {
+            s_tempName = '.';
+            s_tempName += tempName;
+        }
+        else
+        {
+            s_tempName = tempName;
+        }
+    }   
 
     return Aws::String(s_tempName);
 }
