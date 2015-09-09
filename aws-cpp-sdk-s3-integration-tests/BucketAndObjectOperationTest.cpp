@@ -35,6 +35,7 @@
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/ListObjectsRequest.h>
+#include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpClient.h>
@@ -59,6 +60,7 @@ namespace
 
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucket";
+    static const char* LOCATION_BUCKET_TEST_NAME = "loc";
     static const char* PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucket";
     static const char* PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucket";
     static const char* PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultipartbucket";
@@ -73,6 +75,7 @@ namespace
     {
     public:
         static std::shared_ptr<S3Client> Client;
+        static std::shared_ptr<S3Client> oregonClient;
         static std::shared_ptr<HttpClientFactory> ClientFactory;
         static std::shared_ptr<HttpClient> m_HttpClient;
         static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> Limiter;
@@ -82,7 +85,7 @@ namespace
 
         static void SetUpTestCase()
         {
-            TimeStamp = DateTime::CalculateGmtTimestampAsString("%Y%m%dT%H%M%Sz");
+            TimeStamp = DateTime::CalculateGmtTimestampAsString("%Y%m%dt%H%M%Sz");
             Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
             ClientFactory = Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG);
 
@@ -103,17 +106,21 @@ namespace
             }
 
             Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory);
+            config.region = Aws::Region::US_WEST_2;
+            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory);
             m_HttpClient = ClientFactory->CreateHttpClient(config);
         }
 
         static void TearDownTestCase()
         {
             DeleteBucket(CalculateBucketName(CREATE_BUCKET_TEST_NAME));
+            DeleteBucket(CalculateBucketName(LOCATION_BUCKET_TEST_NAME));
             DeleteBucket(CalculateBucketName(PUT_OBJECTS_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(PUT_MULTIPART_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(ERRORS_TESTING_BUCKET));
             Limiter = nullptr;
             Client = nullptr;
+            oregonClient = nullptr;
         }
 
         static std::shared_ptr<Aws::StringStream> Create5MbStreamForUploadPart(const char* partTag)
@@ -158,14 +165,14 @@ namespace
             ASSERT_EQ(ss.str(), outcome.GetResult().GetETag());
         }
 
-        static bool WaitForBucketToPropagate(const Aws::String& bucketName)
+        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client> client = Client)
         {
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
                 HeadBucketRequest headBucketRequest;
                 headBucketRequest.SetBucket(bucketName);
-                HeadBucketOutcome headBucketOutcome = Client->HeadBucket(headBucketRequest);
+                HeadBucketOutcome headBucketOutcome = client->HeadBucket(headBucketRequest);
                 if (headBucketOutcome.IsSuccess())
                 {
                     return true;
@@ -264,6 +271,7 @@ namespace
     };
 
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::Client(nullptr);
+    std::shared_ptr<S3Client> BucketAndObjectOperationTest::oregonClient(nullptr);
     std::shared_ptr<HttpClientFactory> BucketAndObjectOperationTest::ClientFactory(nullptr);
     std::shared_ptr<HttpClient> BucketAndObjectOperationTest::m_HttpClient(nullptr);
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> BucketAndObjectOperationTest::Limiter(nullptr);
@@ -324,6 +332,39 @@ namespace
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
         ASSERT_FALSE(bucketHeadSucceeded);
+    }
+
+    //Create a bucket somewhere other than US Standard and ensure the location is correctly shown later
+    TEST_F(BucketAndObjectOperationTest, TestBucketLocation)
+    {
+        Aws::String fullBucketName = CalculateBucketName(LOCATION_BUCKET_TEST_NAME);
+        HeadBucketRequest headBucketRequest;
+        headBucketRequest.SetBucket(fullBucketName);
+        HeadBucketOutcome headBucketOutcome = oregonClient->HeadBucket(headBucketRequest);
+        ASSERT_FALSE(headBucketOutcome.IsSuccess());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        CreateBucketConfiguration bucketConfiguration;
+        bucketConfiguration.SetLocationConstraint(BucketLocationConstraint::us_west_2);
+        createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
+
+        CreateBucketOutcome createBucketOutcome = oregonClient->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_FALSE(createBucketResult.GetLocation().empty());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, oregonClient));
+
+        GetBucketLocationRequest locationRequest;
+        locationRequest.SetBucket(fullBucketName);
+        auto locationOutcome = oregonClient->GetBucketLocation(locationRequest);
+        ASSERT_TRUE(locationOutcome.IsSuccess());
+        ASSERT_EQ(locationOutcome.GetResult().GetLocationConstraint(), BucketLocationConstraint::us_west_2);
+
+        DeleteBucketRequest deleteBucketRequest;
+        deleteBucketRequest.SetBucket(fullBucketName);
+        DeleteBucketOutcome deleteBucketOutcome = oregonClient->DeleteBucket(deleteBucketRequest);
+        ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperations)

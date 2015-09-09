@@ -36,16 +36,16 @@ const char* SEPARATOR = "://";
 } // namespace Http
 } // namespace Aws
 
-URI::URI() : scheme(Scheme::HTTP), port(HTTP_DEFAULT_PORT)
+URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT)
 {
 }
 
-URI::URI(const Aws::String& uri) : scheme(Scheme::HTTP), port(HTTP_DEFAULT_PORT)
+URI::URI(const Aws::String& uri) : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT)
 {
     ParseURIParts(uri);
 }
 
-URI::URI(const char* uri) : scheme(Scheme::HTTP), port(HTTP_DEFAULT_PORT)
+URI::URI(const char* uri) : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT)
 {
     ParseURIParts(uri);
 }
@@ -98,13 +98,13 @@ void URI::SetScheme(Scheme value)
 
     if (value == Scheme::HTTP)
     {
-        port = port == HTTPS_DEFAULT_PORT || port == 0 ? HTTP_DEFAULT_PORT : port;
-        scheme = value;
+        m_port = m_port == HTTPS_DEFAULT_PORT || m_port == 0 ? HTTP_DEFAULT_PORT : m_port;
+        m_scheme = value;
     }
     else if (value == Scheme::HTTPS)
     {
-        port = port == HTTP_DEFAULT_PORT || port == 0 ? HTTPS_DEFAULT_PORT : port;
-        scheme = value;
+        m_port = m_port == HTTP_DEFAULT_PORT || m_port == 0 ? HTTPS_DEFAULT_PORT : m_port;
+        m_scheme = value;
     }
 }
 
@@ -127,17 +127,17 @@ void URI::SetPath(const Aws::String& value, bool shouldEncode)
             ss << '/';
         }
 
-        path = ss.str();
+        m_path = ss.str();
     }
     else
     {
-        path = value;
+        m_path = value;
     }
 }
 
 Aws::String URI::GetUnEncodedPath() const
 {
-    return StringUtils::URLDecode(path.c_str());
+    return StringUtils::URLDecode(m_path.c_str());
 }
 
 QueryStringParameterCollection URI::GetQueryStringParameters(bool decode) const
@@ -202,7 +202,7 @@ void URI::CanonicalizeQueryString()
         queryStringStream << "?";
     }
 
-    if(queryString.find("=") != std::string::npos)
+    if(m_queryString.find("=") != std::string::npos)
     {
         for (QueryStringParameterCollection::iterator iter = sortedParameters.begin();
              iter != sortedParameters.end(); ++iter)
@@ -216,47 +216,47 @@ void URI::CanonicalizeQueryString()
             queryStringStream << iter->first << "=" << iter->second;
         }
 
-        queryString = queryStringStream.str();
+        m_queryString = queryStringStream.str();
     }
 }
 
 void URI::AddQueryStringParameter(const char* key, const Aws::String& value)
 {
-    if (queryString.size() <= 0)
+    if (m_queryString.size() <= 0)
     {
-        queryString.append("?");
+        m_queryString.append("?");
     }
     else
     {
-        queryString.append("&");
+        m_queryString.append("&");
     }
 
-    queryString.append(StringUtils::URLEncode(key) + "=" + StringUtils::URLEncode(value.c_str()));
+    m_queryString.append(StringUtils::URLEncode(key) + "=" + StringUtils::URLEncode(value.c_str()));
 }
 
 Aws::String URI::GetURIString(bool includeQueryString) const
 {
-    assert(authority.size() > 0);
+    assert(m_authority.size() > 0);
 
     Aws::StringStream ss;
-    ss << SchemeMapper::ToString(scheme) << SEPARATOR << authority;
+    ss << SchemeMapper::ToString(m_scheme) << SEPARATOR << m_authority;
 
-    if (scheme == Scheme::HTTP && port != HTTP_DEFAULT_PORT)
+    if (m_scheme == Scheme::HTTP && m_port != HTTP_DEFAULT_PORT)
     {
-        ss << ":" << port;
+        ss << ":" << m_port;
     }
-    else if (scheme == Scheme::HTTPS && port != HTTPS_DEFAULT_PORT)
+    else if (m_scheme == Scheme::HTTPS && m_port != HTTPS_DEFAULT_PORT)
     {
-        ss << ":" << port;
+        ss << ":" << m_port;
     }
 
-    if(path != "/")
+    if(m_path != "/")
     {
-        ss << path;
+        ss << m_path;
     }
 
     if(includeQueryString)
-        ss << queryString;
+        ss << m_queryString;
 
     return ss.str();
 }
@@ -389,23 +389,23 @@ void URI::ExtractAndSetQueryString(const Aws::String& uri)
 
     if (queryStart != Aws::String::npos)
     {
-        queryString = uri.substr(queryStart);
+        m_queryString = uri.substr(queryStart);
     }
 }
 
 Aws::String URI::GetFormParameters() const
 {
-    if(queryString.length() == 0)
+    if(m_queryString.length() == 0)
     {
         return "";
     }
     else
     {
-        return queryString.substr(1);
+        return m_queryString.substr(1);
     }
 }
 
 bool URI::CompareURIParts(const URI& other) const
 {
-    return scheme == other.scheme && authority == other.authority && path == other.path && queryString == other.queryString;
+    return m_scheme == other.m_scheme && m_authority == other.m_authority && m_path == other.m_path && m_queryString == other.m_queryString;
 }

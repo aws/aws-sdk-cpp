@@ -103,8 +103,8 @@ protected:
     {
         Aws::OFStream testFile;
         testFile.open(fileName.c_str());
-        auto putStringLength = putString.length();
-        for (unsigned i = putStringLength; i <= fileSize; i += putStringLength)
+        size_t putStringLength = putString.length();
+        for (size_t i = putStringLength; i <= fileSize; i += putStringLength)
         {
             testFile << putString;
         }
@@ -213,7 +213,7 @@ protected:
         {
             for (auto& thisResult : listOutcome.GetResult().GetContents())
             {
-                if (thisResult.GetKey() == requestPtr->GetKeyName() && thisResult.GetSize() == requestPtr->GetFileSize())
+                if (thisResult.GetKey() == requestPtr->GetKeyName() && static_cast<uint64_t>(thisResult.GetSize()) == requestPtr->GetFileSize())
                 {
                     return true;
                 }

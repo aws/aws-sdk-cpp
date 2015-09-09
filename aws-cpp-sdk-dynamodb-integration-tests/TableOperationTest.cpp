@@ -291,17 +291,26 @@ TEST_F(TableOperationTest, TestListTable)
     DeleteAllTables();
     CreateTable(SIMPLE_TABLE, 10, 10);
 
+    Aws::Vector<Aws::String> filteredTableNames;
+
     ListTablesRequest listTablesRequest;
     listTablesRequest.SetLimit(10);
-    ListTablesOutcome listTablesOutcome = m_client->ListTables(listTablesRequest);
-    EXPECT_TRUE(listTablesOutcome.IsSuccess());
 
-    Aws::Vector<Aws::String> filteredTableNames;
-    auto tableNames = listTablesOutcome.GetResult().GetTableNames();
-    std::copy_if(tableNames.cbegin(),
-                 tableNames.cend(),
-                 std::back_inserter(filteredTableNames),
-                 [](const Aws::String& tableName) { return tableName.find(TEST_TABLE_PREFIX) == 0; });
+    bool done = false;
+    while(!done)
+    {
+        ListTablesOutcome listTablesOutcome = m_client->ListTables(listTablesRequest);
+        EXPECT_TRUE(listTablesOutcome.IsSuccess());
+
+        auto tableNames = listTablesOutcome.GetResult().GetTableNames();
+        std::copy_if(tableNames.cbegin(),
+                     tableNames.cend(),
+                     std::back_inserter(filteredTableNames),
+                     [](const Aws::String& tableName) { return tableName.find(TEST_TABLE_PREFIX) == 0; });
+
+        listTablesRequest.SetExclusiveStartTableName(listTablesOutcome.GetResult().GetLastEvaluatedTableName());
+        done = listTablesRequest.GetExclusiveStartTableName().empty();
+    }
 
     EXPECT_EQ(1uL, filteredTableNames.size());
     if(filteredTableNames.size() > 0)
