@@ -26,28 +26,25 @@ namespace Aws
 {
 
 template<typename F>
-std::function< F > BuildFunction(const F &f) 
+std::function< F > BuildFunction(const F& f) 
 {
-    return std::function< F >( f, Aws::Allocator<void>() );
+    return std::function< F >( std::allocator_arg_t(), Aws::Allocator<void>(), f );
 }
 
 // some things, like bind results, don't implicity convert to direct function types, catch those with specializations
 template<typename F>
-std::function< F > BuildFunction(const std::function< F > &f) 
+std::function< F > BuildFunction(const std::function< F >& f) 
 {
-    return std::function< F >( f, Aws::Allocator<void>() );
+    return std::function< F >( std::allocator_arg_t(), Aws::Allocator<void>(), f );
 }
 
 template<typename F>
-std::function< F > BuildFunction(std::function< F > &&f) 
+std::function< F > BuildFunction(std::function< F >&& f) 
 {
-    return std::function< F >( std::move(f), Aws::Allocator<void>() );
+    return std::function< F >( std::allocator_arg_t(), Aws::Allocator<void>(), f );
 }
 
 } // namespace Aws
-
-#define AWS_BUILD_FUNCTION(func) Aws::BuildFunction(func)
-#define AWS_BUILD_TYPED_FUNCTION(func, type) Aws::BuildFunction<type>(func)
 
 #else // __GNUG__
 
@@ -64,20 +61,20 @@ F BuildFunction(F f)
 
 // some things, like bind results, don't implicity convert to direct function types, catch those with specializations
 template<typename F>
-std::function< F > BuildFunction(const std::function< F > &f)
+std::function< F > BuildFunction(const std::function< F >& f)
 {
   return std::function< F >( f );
 }
 
 template<typename F>
-std::function< F > BuildFunction(std::function< F > &&f)
+std::function< F > BuildFunction(std::function< F >&& f)
 {
   return std::function< F >( std::move(f));
 }
 
 } // namespace Aws
 
+#endif // __GNUG__
+
 #define AWS_BUILD_FUNCTION(func) Aws::BuildFunction(func)
 #define AWS_BUILD_TYPED_FUNCTION(func, type) Aws::BuildFunction<type>(func)
-
-#endif // __GNUG__

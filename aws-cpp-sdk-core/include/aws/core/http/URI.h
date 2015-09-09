@@ -63,7 +63,7 @@ public:
     /**
     * scheme or protocol e.g. http, https, ftp
     */
-    inline Scheme GetScheme() const { return scheme;}
+    inline Scheme GetScheme() const { return m_scheme;}
 
     /**
     * Sets scheme, if the port is incompaitible with this scheme, the port will automatically be set as well.
@@ -73,29 +73,29 @@ public:
     /**
     * Gets the domain portion of the uri
     */
-    inline const Aws::String& GetAuthority() const { return authority; }
+    inline const Aws::String& GetAuthority() const { return m_authority; }
 
     /**
     * Sets the domain portion of the uri
     */
-    inline void SetAuthority(const Aws::String& value) { authority = value; }
+    inline void SetAuthority(const Aws::String& value) { m_authority = value; }
 
     /**
     * Gets the port portion of the uri, defaults to 22 for ftp, 80 for http and 443 for https
     */
-    inline uint16_t GetPort() const { return port; }
+    inline uint16_t GetPort() const { return m_port; }
 
     /**
     * Sets the port portion of the uri, normally you will not have to do this. If the scheme is set to ftp, http
     * or https then the default ports will be set.
     */
-    inline void SetPort(uint16_t value) { port = value; }
+    inline void SetPort(uint16_t value) { m_port = value; }
 
     /**
     * Gets the path portion of the uri e.g. the portion after the first slash after the authority and prior to the
     * query string.
     */
-    inline const Aws::String& GetPath() const { return path; }
+    inline const Aws::String& GetPath() const { return m_path; }
 
     /**
     * Sets the path portion of the uri. URL encodes it if needed
@@ -110,7 +110,7 @@ public:
     /**
     * Gets the raw query string including the ?
     */
-    inline const Aws::String& GetQueryString() const { return queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
 
     Aws::String GetFormParameters() const;
 
@@ -144,11 +144,11 @@ private:
     void ExtractAndSetQueryString(const Aws::String& uri);
     bool CompareURIParts(const URI& other) const;
 
-    Scheme scheme;
-    Aws::String authority;
-    uint16_t port;
-    Aws::String path;
-    Aws::String queryString;
+    Scheme m_scheme;
+    Aws::String m_authority;
+    uint16_t m_port;
+    Aws::String m_path;
+    Aws::String m_queryString;
 };
 
 } // namespace Http

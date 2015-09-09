@@ -44,10 +44,22 @@ Aws::String ComputeIdentityFilePath()
     static bool s_initialized = false;
     static char s_tempName[L_tmpnam+1];
 
+	/*
+	Prior to VS 2014, tmpnam/tmpnam_s generated root level files ("\filename") which were not appropriate for our usage, so for the windows version, we prepended a '.' to make it a
+	tempfile in the current directory.  Starting with VS2014, the behavior of tmpnam/tmpnam_s was changed to be a full, valid filepath based on the 
+	current user ("C:\Users\username\AppData\Local\Temp\...").  
+
+	See the tmpnam section in http://blogs.msdn.com/b/vcblog/archive/2014/06/18/crt-features-fixes-and-breaking-changes-in-visual-studio-14-ctp1.aspx
+	for more details.
+	*/
     if(!s_initialized)
     {
+#if _MSC_VER >= 1900
+		tmpnam_s(s_tempName, L_tmpnam);
+#else
         s_tempName[0] = '.';
         tmpnam_s(s_tempName + 1, L_tmpnam);
+#endif // _MSC_VER
         s_initialized = true;
     }
 

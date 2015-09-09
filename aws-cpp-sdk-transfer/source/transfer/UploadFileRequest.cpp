@@ -924,7 +924,7 @@ bool UploadFileRequest::HandleListObjectsOutcome(const Aws::S3::Model::ListObjec
 
     if (listObjectsOutcome.IsSuccess())
     {
-        auto entryIter = std::find_if(listObjectsOutcome.GetResult().GetContents().cbegin(), listObjectsOutcome.GetResult().GetContents().cend(), [&](const Aws::S3::Model::Object& thisObject) { return (thisObject.GetKey() == GetKeyName() && thisObject.GetSize() == GetFileSize()); });
+        auto entryIter = std::find_if(listObjectsOutcome.GetResult().GetContents().cbegin(), listObjectsOutcome.GetResult().GetContents().cend(), [&](const Aws::S3::Model::Object& thisObject) { return (thisObject.GetKey() == GetKeyName() && static_cast<uint64_t>(thisObject.GetSize()) == GetFileSize()); });
         if (entryIter != listObjectsOutcome.GetResult().GetContents().cend())
         {
             // Also add version checking
