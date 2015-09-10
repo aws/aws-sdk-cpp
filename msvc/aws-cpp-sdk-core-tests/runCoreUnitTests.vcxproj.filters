@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\RunTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\aws\RegionMapperTest.cpp">
+      <Filter>Source Files\aws</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\aws\auth\AWSCredentialsProviderTest.cpp">
+      <Filter>Source Files\aws\auth</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\aws\client\AWSClientTest.cpp">
+      <Filter>Source Files\aws\client</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\aws\client\AWSErrorMashallerTest.cpp">
+      <Filter>Source Files\aws\client</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\aws\client\HttpSchemeMapperTest.cpp">
+      <Filter>Source Files\aws\client</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\http\HttpTypesMapperTest.cpp">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\http\URITest.cpp">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\HashingUtilsTest.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\OSVersionInfoTest.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\StringUtilsTest.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\json\JsonSerializerTest.cpp">
+      <Filter>Source Files\utils\json</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\xml\XmlSerializerTest.cpp">
+      <Filter>Source Files\utils\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\logging\LoggingTest.cpp">
+      <Filter>Source Files\utils\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\memory\MemoryTests.cpp">
+      <Filter>Source Files\utils\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\utils\ratelimiter\RateLimiterTests.cpp">
+      <Filter>Source Files\utils\ratelimiter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-core-tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files\utils\json">
+      <UniqueIdentifier>{22A8B7DE-FF14-4CF6-BC22-A5C90899FD9E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\xml">
+      <UniqueIdentifier>{31FB617B-19B6-4166-8699-26D6B96B8C77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\logging">
+      <UniqueIdentifier>{C53CA5A2-1075-454F-8F10-A4FDBD2A6F41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\memory">
+      <UniqueIdentifier>{559BDC3B-0DD6-4017-8628-B2447004AE7D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\ratelimiter">
+      <UniqueIdentifier>{F4A52439-2C08-4A9E-8902-9B2F831B341D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\aws\auth">
+      <UniqueIdentifier>{13F6C306-C08A-41BA-AC85-36CB0918118E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\aws\client">
+      <UniqueIdentifier>{2D094363-C30B-4CEC-BEC4-62B1D30681BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\aws">
+      <UniqueIdentifier>{733401F1-99D2-4301-947F-10C1F704C8AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\http">
+      <UniqueIdentifier>{E096AF7F-B6F4-424A-AF8D-91832D198A12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{8625B609-70EB-4314-8AF9-55AA93A39482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9F54614A-1E4F-4A1C-9E76-9A515735E366}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

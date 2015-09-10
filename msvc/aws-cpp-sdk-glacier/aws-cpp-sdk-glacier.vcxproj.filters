@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierEndpoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierErrorMarshaller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierErrors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\AbortMultipartUploadRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\AbortVaultLockRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ActionCode.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\AddTagsToVaultRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CompleteMultipartUploadRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CompleteMultipartUploadResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CompleteVaultLockRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CreateVaultRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CreateVaultResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DataRetrievalPolicy.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DataRetrievalRule.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteArchiveRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteVaultAccessPolicyRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteVaultNotificationsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteVaultRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeJobRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeJobResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeVaultOutput.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeVaultRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeVaultResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetDataRetrievalPolicyRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetDataRetrievalPolicyResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetJobOutputRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetJobOutputResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultAccessPolicyRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultAccessPolicyResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultLockRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultLockResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultNotificationsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultNotificationsResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GlacierJobDescription.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateJobRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateJobResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateMultipartUploadRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateMultipartUploadResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateVaultLockRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateVaultLockResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InventoryRetrievalJobDescription.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InventoryRetrievalJobInput.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\JobParameters.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListJobsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListJobsResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListMultipartUploadsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListMultipartUploadsResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListPartsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListPartsResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListTagsForVaultRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListTagsForVaultResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListVaultsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListVaultsResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\PartListElement.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\RemoveTagsFromVaultRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\SetDataRetrievalPolicyRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\SetVaultAccessPolicyRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\SetVaultNotificationsRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\StatusCode.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadArchiveRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadArchiveResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadListElement.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadMultipartPartRequest.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadMultipartPartResult.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\VaultAccessPolicy.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\VaultLockPolicy.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\VaultNotificationConfig.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierClient.h">
+      <Filter>Header Files\aws\glacier</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierEndpoint.h">
+      <Filter>Header Files\aws\glacier</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierErrorMarshaller.h">
+      <Filter>Header Files\aws\glacier</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierErrors.h">
+      <Filter>Header Files\aws\glacier</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierRequest.h">
+      <Filter>Header Files\aws\glacier</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\Glacier_EXPORTS.h">
+      <Filter>Header Files\aws\glacier</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\AbortMultipartUploadRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\AbortVaultLockRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ActionCode.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\AddTagsToVaultRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CompleteMultipartUploadRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CompleteMultipartUploadResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CompleteVaultLockRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CreateVaultRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CreateVaultResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DataRetrievalPolicy.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DataRetrievalRule.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteArchiveRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteVaultAccessPolicyRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteVaultNotificationsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteVaultRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeJobRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeJobResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeVaultOutput.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeVaultRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeVaultResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetDataRetrievalPolicyRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetDataRetrievalPolicyResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetJobOutputRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetJobOutputResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultAccessPolicyRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultAccessPolicyResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultLockRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultLockResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultNotificationsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultNotificationsResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GlacierJobDescription.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateJobRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateJobResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateMultipartUploadRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateMultipartUploadResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateVaultLockRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateVaultLockResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InventoryRetrievalJobDescription.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InventoryRetrievalJobInput.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\JobParameters.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListJobsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListJobsResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListMultipartUploadsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListMultipartUploadsResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListPartsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListPartsResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListTagsForVaultRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListTagsForVaultResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListVaultsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListVaultsResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\PartListElement.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\RemoveTagsFromVaultRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\SetDataRetrievalPolicyRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\SetVaultAccessPolicyRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\SetVaultNotificationsRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\StatusCode.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadArchiveRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadArchiveResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadListElement.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadMultipartPartRequest.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadMultipartPartResult.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\VaultAccessPolicy.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\VaultLockPolicy.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\VaultNotificationConfig.h">
+      <Filter>Header Files\aws\glacier\model</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files\aws">
+      <UniqueIdentifier>{F5310A37-6548-4CD4-A2EA-BD32953F688A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\aws\glacier\model">
+      <UniqueIdentifier>{9295A710-BDB0-43B7-8F46-705AE50704F3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{15755DFA-B6D7-4682-959C-829C167A65A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\aws\glacier">
+      <UniqueIdentifier>{855A2BD4-5877-4346-AB49-4E5A2A374FD6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9F54614A-1E4F-4A1C-9E76-9A515735E366}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{95B21F68-67F9-4D69-9F17-B59F64EF2A0D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
