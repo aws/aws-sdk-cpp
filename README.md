@@ -90,7 +90,7 @@ The Native SDK now offers developers the option of controlling how all memory al
 For example (note that the type signature of AllocateMemory is not set in stone and is open to debate/change based on SDK user needs):
 
 ```
-class MyMemoryManager : public Amazon::Utils::Memory::MemorySystemInterface
+class MyMemoryManager : public Aws::Utils::Memory::MemorySystemInterface
 {
   public:
     
@@ -108,11 +108,11 @@ And later in Main:
 int main(void)
 {
   MyMemoryManager sdkMemoryManager;
-  Amazon::Utils::Memory::InitializeAWSMemorySystem(sdkMemoryManager);
+  Aws::Utils::Memory::InitializeAWSMemorySystem(sdkMemoryManager);
 
   // ... do stuff
 
-  Amazon::Utils::Memory::ShutdownAWSMemorySystem();
+  Aws::Utils::Memory::ShutdownAWSMemorySystem();
 
   return 0;
 }
@@ -174,12 +174,12 @@ The SDK has configurable logging support. When initializing the logging system y
 
 To set the logging options, you'll need to initialize the logging system at the beginning of your program:
 
-`Amazon::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Amazon::Utils::Logging::DefaultLogSystem>("RunUnitTests", Amazon::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
+`Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
 
 If you do not call InitializeAWSLogging in your program, the SDK will not do any logging.
 Don't forget to shut it down at the end of your program:
 
-`Amazon::Utils::Logging::ShutdownAWSLogging();`
+`Aws::Utils::Logging::ShutdownAWSLogging();`
 
 For example, we do something like this in our integration tests:
 
@@ -194,10 +194,10 @@ For example, we do something like this in our integration tests:
 
 int main(int argc, char** argv)
 {
-  Amazon::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Amazon::Utils::Logging::DefaultLogSystem>("RunUnitTests", Amazon::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));
   ::testing::InitGoogleTest(&argc, argv);
   int exitCode = RUN_ALL_TESTS();
-  Amazon::Utils::Logging::ShutdownAWSLogging();
+  Aws::Utils::Logging::ShutdownAWSLogging();
   return exitCode;
 }
 ```
