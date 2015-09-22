@@ -37,7 +37,11 @@ DescribeConfigurationSettingsResult& DescribeConfigurationSettingsResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeConfigurationSettingsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeConfigurationSettingsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeConfigurationSettingsResult");
+  }
 
   if(!resultNode.IsNull())
   {

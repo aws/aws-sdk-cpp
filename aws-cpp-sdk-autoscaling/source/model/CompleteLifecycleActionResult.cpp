@@ -37,7 +37,11 @@ CompleteLifecycleActionResult& CompleteLifecycleActionResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CompleteLifecycleActionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CompleteLifecycleActionResult")
+  {
+    resultNode = rootNode.FirstChild("CompleteLifecycleActionResult");
+  }
 
   if(!resultNode.IsNull())
   {

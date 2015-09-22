@@ -37,7 +37,11 @@ GetIdentityDkimAttributesResult& GetIdentityDkimAttributesResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetIdentityDkimAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetIdentityDkimAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetIdentityDkimAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

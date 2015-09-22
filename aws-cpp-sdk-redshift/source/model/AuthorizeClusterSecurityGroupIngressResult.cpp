@@ -37,16 +37,15 @@ AuthorizeClusterSecurityGroupIngressResult& AuthorizeClusterSecurityGroupIngress
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AuthorizeClusterSecurityGroupIngressResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AuthorizeClusterSecurityGroupIngressResult")
+  {
+    resultNode = rootNode.FirstChild("AuthorizeClusterSecurityGroupIngressResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
-    if(clusterSecurityGroupNode.IsNull())
-    {
-      clusterSecurityGroupNode = resultNode;
-    }
-
     if(!clusterSecurityGroupNode.IsNull())
     {
       m_clusterSecurityGroup = clusterSecurityGroupNode;

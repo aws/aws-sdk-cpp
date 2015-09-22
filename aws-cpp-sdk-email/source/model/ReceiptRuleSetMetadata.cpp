@@ -45,22 +45,12 @@ ReceiptRuleSetMetadata& ReceiptRuleSetMetadata::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode createdTimestampNode = resultNode.FirstChild("CreatedTimestamp");
-    if(createdTimestampNode.IsNull())
-    {
-      createdTimestampNode = resultNode;
-    }
-
     if(!createdTimestampNode.IsNull())
     {
       m_createdTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimestampNode.GetText().c_str()).c_str());

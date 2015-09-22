@@ -37,16 +37,15 @@ DescribeActiveReceiptRuleSetResult& DescribeActiveReceiptRuleSetResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeActiveReceiptRuleSetResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeActiveReceiptRuleSetResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeActiveReceiptRuleSetResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
-    if(metadataNode.IsNull())
-    {
-      metadataNode = resultNode;
-    }
-
     if(!metadataNode.IsNull())
     {
       m_metadata = metadataNode;

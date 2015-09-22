@@ -41,11 +41,6 @@ S3OriginConfig& S3OriginConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode originAccessIdentityNode = resultNode.FirstChild("OriginAccessIdentity");
-    if(originAccessIdentityNode.IsNull())
-    {
-      originAccessIdentityNode = resultNode;
-    }
-
     if(!originAccessIdentityNode.IsNull())
     {
       m_originAccessIdentity = StringUtils::Trim(originAccessIdentityNode.GetText().c_str());

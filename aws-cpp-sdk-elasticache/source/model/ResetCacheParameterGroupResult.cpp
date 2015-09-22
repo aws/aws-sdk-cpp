@@ -37,16 +37,15 @@ ResetCacheParameterGroupResult& ResetCacheParameterGroupResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ResetCacheParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ResetCacheParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ResetCacheParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupNameNode = resultNode.FirstChild("CacheParameterGroupName");
-    if(cacheParameterGroupNameNode.IsNull())
-    {
-      cacheParameterGroupNameNode = resultNode;
-    }
-
     if(!cacheParameterGroupNameNode.IsNull())
     {
       m_cacheParameterGroupName = StringUtils::Trim(cacheParameterGroupNameNode.GetText().c_str());

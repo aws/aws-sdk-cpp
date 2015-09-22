@@ -55,44 +55,24 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
-    if(optionGroupNameNode.IsNull())
-    {
-      optionGroupNameNode = resultNode;
-    }
-
     if(!optionGroupNameNode.IsNull())
     {
       m_optionGroupName = StringUtils::Trim(optionGroupNameNode.GetText().c_str());
       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode optionGroupDescriptionNode = resultNode.FirstChild("OptionGroupDescription");
-    if(optionGroupDescriptionNode.IsNull())
-    {
-      optionGroupDescriptionNode = resultNode;
-    }
-
     if(!optionGroupDescriptionNode.IsNull())
     {
       m_optionGroupDescription = StringUtils::Trim(optionGroupDescriptionNode.GetText().c_str());
       m_optionGroupDescriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
-    if(engineNameNode.IsNull())
-    {
-      engineNameNode = resultNode;
-    }
-
     if(!engineNameNode.IsNull())
     {
       m_engineName = StringUtils::Trim(engineNameNode.GetText().c_str());
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
-    if(majorEngineVersionNode.IsNull())
-    {
-      majorEngineVersionNode = resultNode;
-    }
-
     if(!majorEngineVersionNode.IsNull())
     {
       m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
@@ -111,22 +91,12 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
       m_optionsHasBeenSet = true;
     }
     XmlNode allowsVpcAndNonVpcInstanceMembershipsNode = resultNode.FirstChild("AllowsVpcAndNonVpcInstanceMemberships");
-    if(allowsVpcAndNonVpcInstanceMembershipsNode.IsNull())
-    {
-      allowsVpcAndNonVpcInstanceMembershipsNode = resultNode;
-    }
-
     if(!allowsVpcAndNonVpcInstanceMembershipsNode.IsNull())
     {
       m_allowsVpcAndNonVpcInstanceMemberships = StringUtils::ConvertToBool(StringUtils::Trim(allowsVpcAndNonVpcInstanceMembershipsNode.GetText().c_str()).c_str());
       m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
-    if(vpcIdNode.IsNull())
-    {
-      vpcIdNode = resultNode;
-    }
-
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());

@@ -37,7 +37,11 @@ DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeAdjustmentTypesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeAdjustmentTypesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeAdjustmentTypesResult");
+  }
 
   if(!resultNode.IsNull())
   {

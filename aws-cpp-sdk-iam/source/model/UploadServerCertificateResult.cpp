@@ -37,16 +37,15 @@ UploadServerCertificateResult& UploadServerCertificateResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("UploadServerCertificateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "UploadServerCertificateResult")
+  {
+    resultNode = rootNode.FirstChild("UploadServerCertificateResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode serverCertificateMetadataNode = resultNode.FirstChild("ServerCertificateMetadata");
-    if(serverCertificateMetadataNode.IsNull())
-    {
-      serverCertificateMetadataNode = resultNode;
-    }
-
     if(!serverCertificateMetadataNode.IsNull())
     {
       m_serverCertificateMetadata = serverCertificateMetadataNode;

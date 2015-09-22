@@ -37,7 +37,11 @@ AttachLoadBalancersResult& AttachLoadBalancersResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AttachLoadBalancersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AttachLoadBalancersResult")
+  {
+    resultNode = rootNode.FirstChild("AttachLoadBalancersResult");
+  }
 
   if(!resultNode.IsNull())
   {

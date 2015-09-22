@@ -37,16 +37,15 @@ DeleteDBInstanceResult& DeleteDBInstanceResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteDBInstanceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteDBInstanceResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteDBInstanceResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

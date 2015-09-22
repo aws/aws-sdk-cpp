@@ -37,7 +37,11 @@ CreateAppCookieStickinessPolicyResult& CreateAppCookieStickinessPolicyResult::op
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateAppCookieStickinessPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateAppCookieStickinessPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("CreateAppCookieStickinessPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

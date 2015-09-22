@@ -37,16 +37,15 @@ CreateHsmClientCertificateResult& CreateHsmClientCertificateResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateHsmClientCertificateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateHsmClientCertificateResult")
+  {
+    resultNode = rootNode.FirstChild("CreateHsmClientCertificateResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode hsmClientCertificateNode = resultNode.FirstChild("HsmClientCertificate");
-    if(hsmClientCertificateNode.IsNull())
-    {
-      hsmClientCertificateNode = resultNode;
-    }
-
     if(!hsmClientCertificateNode.IsNull())
     {
       m_hsmClientCertificate = hsmClientCertificateNode;

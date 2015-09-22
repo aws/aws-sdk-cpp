@@ -37,7 +37,11 @@ PutIdentityPolicyResult& PutIdentityPolicyResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PutIdentityPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PutIdentityPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("PutIdentityPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

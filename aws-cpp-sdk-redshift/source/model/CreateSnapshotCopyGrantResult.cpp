@@ -37,16 +37,15 @@ CreateSnapshotCopyGrantResult& CreateSnapshotCopyGrantResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateSnapshotCopyGrantResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateSnapshotCopyGrantResult")
+  {
+    resultNode = rootNode.FirstChild("CreateSnapshotCopyGrantResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotCopyGrantNode = resultNode.FirstChild("SnapshotCopyGrant");
-    if(snapshotCopyGrantNode.IsNull())
-    {
-      snapshotCopyGrantNode = resultNode;
-    }
-
     if(!snapshotCopyGrantNode.IsNull())
     {
       m_snapshotCopyGrant = snapshotCopyGrantNode;

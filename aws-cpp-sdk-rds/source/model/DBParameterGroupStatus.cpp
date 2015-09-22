@@ -43,22 +43,12 @@ DBParameterGroupStatus& DBParameterGroupStatus::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
-    if(dBParameterGroupNameNode.IsNull())
-    {
-      dBParameterGroupNameNode = resultNode;
-    }
-
     if(!dBParameterGroupNameNode.IsNull())
     {
       m_dBParameterGroupName = StringUtils::Trim(dBParameterGroupNameNode.GetText().c_str());
       m_dBParameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
-    if(parameterApplyStatusNode.IsNull())
-    {
-      parameterApplyStatusNode = resultNode;
-    }
-
     if(!parameterApplyStatusNode.IsNull())
     {
       m_parameterApplyStatus = StringUtils::Trim(parameterApplyStatusNode.GetText().c_str());

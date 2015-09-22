@@ -37,16 +37,15 @@ PromoteReadReplicaResult& PromoteReadReplicaResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PromoteReadReplicaResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PromoteReadReplicaResult")
+  {
+    resultNode = rootNode.FirstChild("PromoteReadReplicaResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

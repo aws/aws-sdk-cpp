@@ -37,7 +37,11 @@ RetrieveEnvironmentInfoResult& RetrieveEnvironmentInfoResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RetrieveEnvironmentInfoResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RetrieveEnvironmentInfoResult")
+  {
+    resultNode = rootNode.FirstChild("RetrieveEnvironmentInfoResult");
+  }
 
   if(!resultNode.IsNull())
   {

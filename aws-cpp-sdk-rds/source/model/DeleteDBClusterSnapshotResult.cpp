@@ -37,16 +37,15 @@ DeleteDBClusterSnapshotResult& DeleteDBClusterSnapshotResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteDBClusterSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteDBClusterSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteDBClusterSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterSnapshotNode = resultNode.FirstChild("DBClusterSnapshot");
-    if(dBClusterSnapshotNode.IsNull())
-    {
-      dBClusterSnapshotNode = resultNode;
-    }
-
     if(!dBClusterSnapshotNode.IsNull())
     {
       m_dBClusterSnapshot = dBClusterSnapshotNode;

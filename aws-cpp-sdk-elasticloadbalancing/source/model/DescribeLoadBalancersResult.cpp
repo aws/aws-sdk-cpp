@@ -37,7 +37,11 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLoadBalancersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLoadBalancersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLoadBalancersResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
-    if(nextMarkerNode.IsNull())
-    {
-      nextMarkerNode = resultNode;
-    }
-
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());

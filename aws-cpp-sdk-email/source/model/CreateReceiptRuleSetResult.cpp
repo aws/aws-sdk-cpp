@@ -37,7 +37,11 @@ CreateReceiptRuleSetResult& CreateReceiptRuleSetResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateReceiptRuleSetResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateReceiptRuleSetResult")
+  {
+    resultNode = rootNode.FirstChild("CreateReceiptRuleSetResult");
+  }
 
   if(!resultNode.IsNull())
   {

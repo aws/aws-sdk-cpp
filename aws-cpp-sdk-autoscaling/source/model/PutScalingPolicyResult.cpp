@@ -37,16 +37,15 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PutScalingPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PutScalingPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("PutScalingPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
-    if(policyARNNode.IsNull())
-    {
-      policyARNNode = resultNode;
-    }
-
     if(!policyARNNode.IsNull())
     {
       m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());

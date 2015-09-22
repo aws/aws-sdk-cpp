@@ -37,16 +37,15 @@ AuthorizeCacheSecurityGroupIngressResult& AuthorizeCacheSecurityGroupIngressResu
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AuthorizeCacheSecurityGroupIngressResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AuthorizeCacheSecurityGroupIngressResult")
+  {
+    resultNode = rootNode.FirstChild("AuthorizeCacheSecurityGroupIngressResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
-    if(cacheSecurityGroupNode.IsNull())
-    {
-      cacheSecurityGroupNode = resultNode;
-    }
-
     if(!cacheSecurityGroupNode.IsNull())
     {
       m_cacheSecurityGroup = cacheSecurityGroupNode;

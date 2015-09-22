@@ -37,16 +37,15 @@ CreateTopicResult& CreateTopicResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateTopicResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateTopicResult")
+  {
+    resultNode = rootNode.FirstChild("CreateTopicResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
-    if(topicArnNode.IsNull())
-    {
-      topicArnNode = resultNode;
-    }
-
     if(!topicArnNode.IsNull())
     {
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());

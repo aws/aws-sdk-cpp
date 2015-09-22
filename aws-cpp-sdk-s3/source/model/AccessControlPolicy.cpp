@@ -55,11 +55,6 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
       m_grantsHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if(ownerNode.IsNull())
-    {
-      ownerNode = resultNode;
-    }
-
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;

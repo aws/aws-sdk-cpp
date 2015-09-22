@@ -37,16 +37,15 @@ UpdateApplicationResult& UpdateApplicationResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("UpdateApplicationResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "UpdateApplicationResult")
+  {
+    resultNode = rootNode.FirstChild("UpdateApplicationResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode applicationNode = resultNode.FirstChild("Application");
-    if(applicationNode.IsNull())
-    {
-      applicationNode = resultNode;
-    }
-
     if(!applicationNode.IsNull())
     {
       m_application = applicationNode;

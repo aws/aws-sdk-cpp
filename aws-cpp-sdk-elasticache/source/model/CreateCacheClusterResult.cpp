@@ -37,16 +37,15 @@ CreateCacheClusterResult& CreateCacheClusterResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateCacheClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateCacheClusterResult")
+  {
+    resultNode = rootNode.FirstChild("CreateCacheClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheClusterNode = resultNode.FirstChild("CacheCluster");
-    if(cacheClusterNode.IsNull())
-    {
-      cacheClusterNode = resultNode;
-    }
-
     if(!cacheClusterNode.IsNull())
     {
       m_cacheCluster = cacheClusterNode;

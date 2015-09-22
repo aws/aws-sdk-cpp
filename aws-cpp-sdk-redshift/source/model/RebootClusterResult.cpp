@@ -37,16 +37,15 @@ RebootClusterResult& RebootClusterResult::operator =(const AmazonWebServiceResul
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RebootClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RebootClusterResult")
+  {
+    resultNode = rootNode.FirstChild("RebootClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

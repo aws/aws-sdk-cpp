@@ -37,7 +37,11 @@ GetSubscriptionAttributesResult& GetSubscriptionAttributesResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetSubscriptionAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetSubscriptionAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetSubscriptionAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

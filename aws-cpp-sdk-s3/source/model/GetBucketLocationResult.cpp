@@ -30,27 +30,19 @@ GetBucketLocationResult::GetBucketLocationResult()
 
 GetBucketLocationResult::GetBucketLocationResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
-  *this = result;
+    *this = result;
 }
 
 GetBucketLocationResult& GetBucketLocationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
 {
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
+    const XmlDocument& xmlDocument = result.GetPayload();
+    XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
-    XmlNode locationConstraintNode = resultNode.FirstChild("LocationConstraint");
-    if(locationConstraintNode.IsNull())
+    if(!resultNode.IsNull())
     {
-      locationConstraintNode = resultNode;
+        m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(resultNode.GetText().c_str()).c_str());
     }
 
-    if(!locationConstraintNode.IsNull())
-    {
-      m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(locationConstraintNode.GetText().c_str()).c_str());
-    }
-  }
-
-  return *this;
+    return *this; 
 }
+

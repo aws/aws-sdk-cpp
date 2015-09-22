@@ -37,16 +37,15 @@ CreateOpenIDConnectProviderResult& CreateOpenIDConnectProviderResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateOpenIDConnectProviderResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateOpenIDConnectProviderResult")
+  {
+    resultNode = rootNode.FirstChild("CreateOpenIDConnectProviderResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode openIDConnectProviderArnNode = resultNode.FirstChild("OpenIDConnectProviderArn");
-    if(openIDConnectProviderArnNode.IsNull())
-    {
-      openIDConnectProviderArnNode = resultNode;
-    }
-
     if(!openIDConnectProviderArnNode.IsNull())
     {
       m_openIDConnectProviderArn = StringUtils::Trim(openIDConnectProviderArnNode.GetText().c_str());

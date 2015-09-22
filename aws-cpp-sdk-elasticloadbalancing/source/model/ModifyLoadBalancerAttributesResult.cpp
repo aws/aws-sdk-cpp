@@ -37,26 +37,20 @@ ModifyLoadBalancerAttributesResult& ModifyLoadBalancerAttributesResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyLoadBalancerAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyLoadBalancerAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyLoadBalancerAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
-    if(loadBalancerNameNode.IsNull())
-    {
-      loadBalancerNameNode = resultNode;
-    }
-
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
     }
     XmlNode loadBalancerAttributesNode = resultNode.FirstChild("LoadBalancerAttributes");
-    if(loadBalancerAttributesNode.IsNull())
-    {
-      loadBalancerAttributesNode = resultNode;
-    }
-
     if(!loadBalancerAttributesNode.IsNull())
     {
       m_loadBalancerAttributes = loadBalancerAttributesNode;

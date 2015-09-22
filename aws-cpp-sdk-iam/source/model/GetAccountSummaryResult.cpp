@@ -37,7 +37,11 @@ GetAccountSummaryResult& GetAccountSummaryResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetAccountSummaryResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetAccountSummaryResult")
+  {
+    resultNode = rootNode.FirstChild("GetAccountSummaryResult");
+  }
 
   if(!resultNode.IsNull())
   {

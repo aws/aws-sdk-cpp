@@ -37,16 +37,15 @@ DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DecodeAuthorizationMessageResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DecodeAuthorizationMessageResult")
+  {
+    resultNode = rootNode.FirstChild("DecodeAuthorizationMessageResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode decodedMessageNode = resultNode.FirstChild("DecodedMessage");
-    if(decodedMessageNode.IsNull())
-    {
-      decodedMessageNode = resultNode;
-    }
-
     if(!decodedMessageNode.IsNull())
     {
       m_decodedMessage = StringUtils::Trim(decodedMessageNode.GetText().c_str());

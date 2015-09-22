@@ -45,22 +45,12 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
-    if(protocolNode.IsNull())
-    {
-      protocolNode = resultNode;
-    }
-
     if(!protocolNode.IsNull())
     {
       m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
-    if(portNode.IsNull())
-    {
-      portNode = resultNode;
-    }
-
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());

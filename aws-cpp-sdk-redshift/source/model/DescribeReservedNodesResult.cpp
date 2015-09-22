@@ -37,16 +37,15 @@ DescribeReservedNodesResult& DescribeReservedNodesResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeReservedNodesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeReservedNodesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeReservedNodesResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

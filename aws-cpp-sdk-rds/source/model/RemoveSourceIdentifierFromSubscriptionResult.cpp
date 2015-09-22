@@ -37,16 +37,15 @@ RemoveSourceIdentifierFromSubscriptionResult& RemoveSourceIdentifierFromSubscrip
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RemoveSourceIdentifierFromSubscriptionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RemoveSourceIdentifierFromSubscriptionResult")
+  {
+    resultNode = rootNode.FirstChild("RemoveSourceIdentifierFromSubscriptionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode eventSubscriptionNode = resultNode.FirstChild("EventSubscription");
-    if(eventSubscriptionNode.IsNull())
-    {
-      eventSubscriptionNode = resultNode;
-    }
-
     if(!eventSubscriptionNode.IsNull())
     {
       m_eventSubscription = eventSubscriptionNode;

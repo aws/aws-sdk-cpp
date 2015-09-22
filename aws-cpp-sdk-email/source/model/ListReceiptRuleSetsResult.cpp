@@ -37,7 +37,11 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListReceiptRuleSetsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListReceiptRuleSetsResult")
+  {
+    resultNode = rootNode.FirstChild("ListReceiptRuleSetsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,21 +57,11 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
 
     }
     XmlNode nextPageTokenNode = resultNode.FirstChild("NextPageToken");
-    if(nextPageTokenNode.IsNull())
-    {
-      nextPageTokenNode = resultNode;
-    }
-
     if(!nextPageTokenNode.IsNull())
     {
       m_nextPageToken = StringUtils::Trim(nextPageTokenNode.GetText().c_str());
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

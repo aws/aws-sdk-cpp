@@ -43,22 +43,12 @@ AddHeaderAction& AddHeaderAction::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode headerNameNode = resultNode.FirstChild("HeaderName");
-    if(headerNameNode.IsNull())
-    {
-      headerNameNode = resultNode;
-    }
-
     if(!headerNameNode.IsNull())
     {
       m_headerName = StringUtils::Trim(headerNameNode.GetText().c_str());
       m_headerNameHasBeenSet = true;
     }
     XmlNode headerValueNode = resultNode.FirstChild("HeaderValue");
-    if(headerValueNode.IsNull())
-    {
-      headerValueNode = resultNode;
-    }
-
     if(!headerValueNode.IsNull())
     {
       m_headerValue = StringUtils::Trim(headerValueNode.GetText().c_str());

@@ -37,16 +37,15 @@ CreateGroupResult& CreateGroupResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode groupNode = resultNode.FirstChild("Group");
-    if(groupNode.IsNull())
-    {
-      groupNode = resultNode;
-    }
-
     if(!groupNode.IsNull())
     {
       m_group = groupNode;

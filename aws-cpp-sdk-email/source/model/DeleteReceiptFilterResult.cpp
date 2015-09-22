@@ -37,7 +37,11 @@ DeleteReceiptFilterResult& DeleteReceiptFilterResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteReceiptFilterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteReceiptFilterResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteReceiptFilterResult");
+  }
 
   if(!resultNode.IsNull())
   {

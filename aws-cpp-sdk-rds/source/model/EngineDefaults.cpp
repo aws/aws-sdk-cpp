@@ -45,22 +45,12 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
-    if(dBParameterGroupFamilyNode.IsNull())
-    {
-      dBParameterGroupFamilyNode = resultNode;
-    }
-
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = StringUtils::Trim(dBParameterGroupFamilyNode.GetText().c_str());
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

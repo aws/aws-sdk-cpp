@@ -37,7 +37,11 @@ DescribeClusterParametersResult& DescribeClusterParametersResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeClusterParametersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeClusterParametersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeClusterParametersResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeClusterParametersResult& DescribeClusterParametersResult::operator =(con
 
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

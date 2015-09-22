@@ -71,88 +71,48 @@ InstanceHealthSummary& InstanceHealthSummary::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode noDataNode = resultNode.FirstChild("NoData");
-    if(noDataNode.IsNull())
-    {
-      noDataNode = resultNode;
-    }
-
     if(!noDataNode.IsNull())
     {
       m_noData = StringUtils::ConvertToInt32(StringUtils::Trim(noDataNode.GetText().c_str()).c_str());
       m_noDataHasBeenSet = true;
     }
     XmlNode unknownNode = resultNode.FirstChild("Unknown");
-    if(unknownNode.IsNull())
-    {
-      unknownNode = resultNode;
-    }
-
     if(!unknownNode.IsNull())
     {
       m_unknown = StringUtils::ConvertToInt32(StringUtils::Trim(unknownNode.GetText().c_str()).c_str());
       m_unknownHasBeenSet = true;
     }
     XmlNode pendingNode = resultNode.FirstChild("Pending");
-    if(pendingNode.IsNull())
-    {
-      pendingNode = resultNode;
-    }
-
     if(!pendingNode.IsNull())
     {
       m_pending = StringUtils::ConvertToInt32(StringUtils::Trim(pendingNode.GetText().c_str()).c_str());
       m_pendingHasBeenSet = true;
     }
     XmlNode okNode = resultNode.FirstChild("Ok");
-    if(okNode.IsNull())
-    {
-      okNode = resultNode;
-    }
-
     if(!okNode.IsNull())
     {
       m_ok = StringUtils::ConvertToInt32(StringUtils::Trim(okNode.GetText().c_str()).c_str());
       m_okHasBeenSet = true;
     }
     XmlNode infoNode = resultNode.FirstChild("Info");
-    if(infoNode.IsNull())
-    {
-      infoNode = resultNode;
-    }
-
     if(!infoNode.IsNull())
     {
       m_info = StringUtils::ConvertToInt32(StringUtils::Trim(infoNode.GetText().c_str()).c_str());
       m_infoHasBeenSet = true;
     }
     XmlNode warningNode = resultNode.FirstChild("Warning");
-    if(warningNode.IsNull())
-    {
-      warningNode = resultNode;
-    }
-
     if(!warningNode.IsNull())
     {
       m_warning = StringUtils::ConvertToInt32(StringUtils::Trim(warningNode.GetText().c_str()).c_str());
       m_warningHasBeenSet = true;
     }
     XmlNode degradedNode = resultNode.FirstChild("Degraded");
-    if(degradedNode.IsNull())
-    {
-      degradedNode = resultNode;
-    }
-
     if(!degradedNode.IsNull())
     {
       m_degraded = StringUtils::ConvertToInt32(StringUtils::Trim(degradedNode.GetText().c_str()).c_str());
       m_degradedHasBeenSet = true;
     }
     XmlNode severeNode = resultNode.FirstChild("Severe");
-    if(severeNode.IsNull())
-    {
-      severeNode = resultNode;
-    }
-
     if(!severeNode.IsNull())
     {
       m_severe = StringUtils::ConvertToInt32(StringUtils::Trim(severeNode.GetText().c_str()).c_str());

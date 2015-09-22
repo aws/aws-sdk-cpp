@@ -494,6 +494,7 @@ protected:
 std::shared_ptr<S3Client> TransferTests::m_s3Client(nullptr);
 std::shared_ptr<TransferClient> TransferTests::m_transferClient(nullptr);
 
+
 // Basic test of a 5 meg file meaning it should be exactly at the limit of a single part upload
 TEST_F(TransferTests, SinglePartUploadTest)
 {
@@ -1000,6 +1001,43 @@ TEST_F(TransferTests, MultiDownloadTest)
     ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
     inFile.close();
     testStr.str("");
+
+}
+
+// Test to be sure our completion callbacks fire correctly
+TEST_F(TransferTests, CallbackTest)
+{
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(TEST_FILE_NAME);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    const bool cCreateBucket = true;
+    const bool cConsistencyChecks = true;
+    // Test with default behavior of using file name as key
+    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(SMALL_TEST_FILE_NAME, GetTestBucketName(), "", "", cCreateBucket, cConsistencyChecks);
+
+    bool testCallbackDone = false;
+
+    requestPtr->AddCompletionCallback([&]() { testCallbackDone = true; });
+
+    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be just under 5 megs
+
+    ASSERT_FALSE(testCallbackDone);
+    ASSERT_FALSE(requestPtr->IsDone());
+
+    WaitForUploadAndUpdate(requestPtr, 100.0f);
+
+    ASSERT_TRUE(requestPtr->IsDone());
+
+    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
+    ASSERT_TRUE(testCallbackDone);
 
 }
 

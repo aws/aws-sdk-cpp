@@ -37,26 +37,20 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GenerateCredentialReportResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GenerateCredentialReportResult")
+  {
+    resultNode = rootNode.FirstChild("GenerateCredentialReportResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode stateNode = resultNode.FirstChild("State");
-    if(stateNode.IsNull())
-    {
-      stateNode = resultNode;
-    }
-
     if(!stateNode.IsNull())
     {
       m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

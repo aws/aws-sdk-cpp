@@ -41,11 +41,6 @@ Restrictions& Restrictions::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode geoRestrictionNode = resultNode.FirstChild("GeoRestriction");
-    if(geoRestrictionNode.IsNull())
-    {
-      geoRestrictionNode = resultNode;
-    }
-
     if(!geoRestrictionNode.IsNull())
     {
       m_geoRestriction = geoRestrictionNode;

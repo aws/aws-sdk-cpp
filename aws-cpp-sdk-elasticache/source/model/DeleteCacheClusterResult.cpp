@@ -37,16 +37,15 @@ DeleteCacheClusterResult& DeleteCacheClusterResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteCacheClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteCacheClusterResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteCacheClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheClusterNode = resultNode.FirstChild("CacheCluster");
-    if(cacheClusterNode.IsNull())
-    {
-      cacheClusterNode = resultNode;
-    }
-
     if(!cacheClusterNode.IsNull())
     {
       m_cacheCluster = cacheClusterNode;

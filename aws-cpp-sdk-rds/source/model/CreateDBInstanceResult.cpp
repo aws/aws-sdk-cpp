@@ -37,16 +37,15 @@ CreateDBInstanceResult& CreateDBInstanceResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBInstanceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBInstanceResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBInstanceResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

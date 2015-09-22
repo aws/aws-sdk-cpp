@@ -66,7 +66,7 @@ class FairBoundedResourceManager : public ResourceManagerInterface< T >
 
         virtual void ReleaseResources(ResourceListType& resources) override;
 
-        virtual void AdjustResourceCount(uint32_t m_resourceCount);
+        virtual void AdjustResourceCount(uint32_t m_resourceCount) override;
 
         // Testing interface
         size_t GetWaiterCount();

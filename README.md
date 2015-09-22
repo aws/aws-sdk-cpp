@@ -59,7 +59,7 @@ Custom memory management defaults to off if static linking is enabled; because o
 
 #####STATIC_LINKING 
 
-By default, the build creates shared libs for each platform. If you want to statically link, specify this value as 1.
+By default, the build creates shared libs for each platform. If you want to statically link, specify this value as 1.  If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
 
 #####TARGET_ARCH
 
@@ -84,13 +84,17 @@ example:
 The individual service clients are very similar to the other SDKs such as Java and .NET after you get them constructed. Here We'll explain the details of how core works, how to use each feature, and then how to then construct an individual client.
 *aws-cpp-sdk-core* does the heavy lifting of the system. In fact, you can trivially write a client to connect to any AWS service using just core itself. The individual service clients just make things a bit easier for you.
 
+####Build Defines
+If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.  
+If you wish to install your own memory manager to handle allocations made by the SDK, you will need to pass the CUSTOM_MEMORY_MANAGEMENT cmake parameter (-DCUSTOM_MEMORY_MANAGEMENT) as well as define AWS_CUSTOM_MEMORY_MANAGEMENT in all build targets dependent on the SDK.
+
 ####Memory Management
 The Native SDK now offers developers the option of controlling how all memory allocation/deallocation is done within the library. This is currently done by implementing a subclass of MemorySystemInterface (see "aws/core/utils/memory/MemorySystemInterface.h") and installing a memory manager by calling InitializeAWSMemorySystem with an instance of your subclass. In the absence of a very compelling reason to do otherwise, the call to InitializeAWSMemorySystem should occur at the beginning of your application and a corresponding call to ShutdownAWSMemorySystem should occur at the end, right before exit.
 
 For example (note that the type signature of AllocateMemory is not set in stone and is open to debate/change based on SDK user needs):
 
 ```
-class MyMemoryManager : public Amazon::Utils::Memory::MemorySystemInterface
+class MyMemoryManager : public Aws::Utils::Memory::MemorySystemInterface
 {
   public:
     
@@ -108,11 +112,11 @@ And later in Main:
 int main(void)
 {
   MyMemoryManager sdkMemoryManager;
-  Amazon::Utils::Memory::InitializeAWSMemorySystem(sdkMemoryManager);
+  Aws::Utils::Memory::InitializeAWSMemorySystem(sdkMemoryManager);
 
   // ... do stuff
 
-  Amazon::Utils::Memory::ShutdownAWSMemorySystem();
+  Aws::Utils::Memory::ShutdownAWSMemorySystem();
 
   return 0;
 }
@@ -174,12 +178,12 @@ The SDK has configurable logging support. When initializing the logging system y
 
 To set the logging options, you'll need to initialize the logging system at the beginning of your program:
 
-`Amazon::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Amazon::Utils::Logging::DefaultLogSystem>("RunUnitTests", Amazon::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
+`Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
 
 If you do not call InitializeAWSLogging in your program, the SDK will not do any logging.
 Don't forget to shut it down at the end of your program:
 
-`Amazon::Utils::Logging::ShutdownAWSLogging();`
+`Aws::Utils::Logging::ShutdownAWSLogging();`
 
 For example, we do something like this in our integration tests:
 
@@ -194,10 +198,10 @@ For example, we do something like this in our integration tests:
 
 int main(int argc, char** argv)
 {
-  Amazon::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Amazon::Utils::Logging::DefaultLogSystem>("RunUnitTests", Amazon::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));
   ::testing::InitGoogleTest(&argc, argv);
   int exitCode = RUN_ALL_TESTS();
-  Amazon::Utils::Logging::ShutdownAWSLogging();
+  Aws::Utils::Logging::ShutdownAWSLogging();
   return exitCode;
 }
 ```

@@ -37,7 +37,11 @@ DetachLoadBalancerFromSubnetsResult& DetachLoadBalancerFromSubnetsResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DetachLoadBalancerFromSubnetsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DetachLoadBalancerFromSubnetsResult")
+  {
+    resultNode = rootNode.FirstChild("DetachLoadBalancerFromSubnetsResult");
+  }
 
   if(!resultNode.IsNull())
   {

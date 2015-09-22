@@ -37,16 +37,15 @@ TerminateInstanceInAutoScalingGroupResult& TerminateInstanceInAutoScalingGroupRe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("TerminateInstanceInAutoScalingGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "TerminateInstanceInAutoScalingGroupResult")
+  {
+    resultNode = rootNode.FirstChild("TerminateInstanceInAutoScalingGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode activityNode = resultNode.FirstChild("Activity");
-    if(activityNode.IsNull())
-    {
-      activityNode = resultNode;
-    }
-
     if(!activityNode.IsNull())
     {
       m_activity = activityNode;

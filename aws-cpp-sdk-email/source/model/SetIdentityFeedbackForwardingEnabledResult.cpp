@@ -37,7 +37,11 @@ SetIdentityFeedbackForwardingEnabledResult& SetIdentityFeedbackForwardingEnabled
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetIdentityFeedbackForwardingEnabledResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetIdentityFeedbackForwardingEnabledResult")
+  {
+    resultNode = rootNode.FirstChild("SetIdentityFeedbackForwardingEnabledResult");
+  }
 
   if(!resultNode.IsNull())
   {

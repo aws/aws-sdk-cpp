@@ -37,7 +37,11 @@ RemoveTagsResult& RemoveTagsResult::operator =(const AmazonWebServiceResult<XmlD
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RemoveTagsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RemoveTagsResult")
+  {
+    resultNode = rootNode.FirstChild("RemoveTagsResult");
+  }
 
   if(!resultNode.IsNull())
   {

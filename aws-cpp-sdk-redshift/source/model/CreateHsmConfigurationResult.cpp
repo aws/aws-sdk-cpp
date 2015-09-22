@@ -37,16 +37,15 @@ CreateHsmConfigurationResult& CreateHsmConfigurationResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateHsmConfigurationResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateHsmConfigurationResult")
+  {
+    resultNode = rootNode.FirstChild("CreateHsmConfigurationResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode hsmConfigurationNode = resultNode.FirstChild("HsmConfiguration");
-    if(hsmConfigurationNode.IsNull())
-    {
-      hsmConfigurationNode = resultNode;
-    }
-
     if(!hsmConfigurationNode.IsNull())
     {
       m_hsmConfiguration = hsmConfigurationNode;

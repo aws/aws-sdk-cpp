@@ -37,16 +37,15 @@ CreateInstanceProfileResult& CreateInstanceProfileResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateInstanceProfileResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateInstanceProfileResult")
+  {
+    resultNode = rootNode.FirstChild("CreateInstanceProfileResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode instanceProfileNode = resultNode.FirstChild("InstanceProfile");
-    if(instanceProfileNode.IsNull())
-    {
-      instanceProfileNode = resultNode;
-    }
-
     if(!instanceProfileNode.IsNull())
     {
       m_instanceProfile = instanceProfileNode;

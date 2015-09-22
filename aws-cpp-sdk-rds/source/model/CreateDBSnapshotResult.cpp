@@ -37,16 +37,15 @@ CreateDBSnapshotResult& CreateDBSnapshotResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBSnapshotNode = resultNode.FirstChild("DBSnapshot");
-    if(dBSnapshotNode.IsNull())
-    {
-      dBSnapshotNode = resultNode;
-    }
-
     if(!dBSnapshotNode.IsNull())
     {
       m_dBSnapshot = dBSnapshotNode;

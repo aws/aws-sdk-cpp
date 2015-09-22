@@ -37,46 +37,30 @@ ListHostInfoResult& ListHostInfoResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListHostInfoResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListHostInfoResult")
+  {
+    resultNode = rootNode.FirstChild("ListHostInfoResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
-    if(hostNameNode.IsNull())
-    {
-      hostNameNode = resultNode;
-    }
-
     if(!hostNameNode.IsNull())
     {
       m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
-    if(stackNameNode.IsNull())
-    {
-      stackNameNode = resultNode;
-    }
-
     if(!stackNameNode.IsNull())
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
     }
     XmlNode marketplaceNode = resultNode.FirstChild("Marketplace");
-    if(marketplaceNode.IsNull())
-    {
-      marketplaceNode = resultNode;
-    }
-
     if(!marketplaceNode.IsNull())
     {
       m_marketplace = StringUtils::Trim(marketplaceNode.GetText().c_str());
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
-    if(regionNode.IsNull())
-    {
-      regionNode = resultNode;
-    }
-
     if(!regionNode.IsNull())
     {
       m_region = StringUtils::Trim(regionNode.GetText().c_str());

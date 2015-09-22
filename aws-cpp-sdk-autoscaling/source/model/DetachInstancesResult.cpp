@@ -37,7 +37,11 @@ DetachInstancesResult& DetachInstancesResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DetachInstancesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DetachInstancesResult")
+  {
+    resultNode = rootNode.FirstChild("DetachInstancesResult");
+  }
 
   if(!resultNode.IsNull())
   {

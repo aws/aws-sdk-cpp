@@ -37,7 +37,11 @@ DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeScalingProcessTypesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeScalingProcessTypesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeScalingProcessTypesResult");
+  }
 
   if(!resultNode.IsNull())
   {

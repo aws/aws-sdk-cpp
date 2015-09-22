@@ -37,16 +37,15 @@ SendBounceResult& SendBounceResult::operator =(const AmazonWebServiceResult<XmlD
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SendBounceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SendBounceResult")
+  {
+    resultNode = rootNode.FirstChild("SendBounceResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    if(messageIdNode.IsNull())
-    {
-      messageIdNode = resultNode;
-    }
-
     if(!messageIdNode.IsNull())
     {
       m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());

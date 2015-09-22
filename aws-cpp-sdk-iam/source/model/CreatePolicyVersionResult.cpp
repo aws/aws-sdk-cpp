@@ -37,16 +37,15 @@ CreatePolicyVersionResult& CreatePolicyVersionResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreatePolicyVersionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreatePolicyVersionResult")
+  {
+    resultNode = rootNode.FirstChild("CreatePolicyVersionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode policyVersionNode = resultNode.FirstChild("PolicyVersion");
-    if(policyVersionNode.IsNull())
-    {
-      policyVersionNode = resultNode;
-    }
-
     if(!policyVersionNode.IsNull())
     {
       m_policyVersion = policyVersionNode;

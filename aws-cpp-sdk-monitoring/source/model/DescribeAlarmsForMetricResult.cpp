@@ -37,7 +37,11 @@ DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeAlarmsForMetricResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeAlarmsForMetricResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeAlarmsForMetricResult");
+  }
 
   if(!resultNode.IsNull())
   {

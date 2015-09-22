@@ -37,7 +37,11 @@ EnterStandbyResult& EnterStandbyResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("EnterStandbyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "EnterStandbyResult")
+  {
+    resultNode = rootNode.FirstChild("EnterStandbyResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ GetUserResult& GetUserResult::operator =(const AmazonWebServiceResult<XmlDocumen
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetUserResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetUserResult")
+  {
+    resultNode = rootNode.FirstChild("GetUserResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode userNode = resultNode.FirstChild("User");
-    if(userNode.IsNull())
-    {
-      userNode = resultNode;
-    }
-
     if(!userNode.IsNull())
     {
       m_user = userNode;

@@ -55,66 +55,36 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode engineNode = resultNode.FirstChild("Engine");
-    if(engineNode.IsNull())
-    {
-      engineNode = resultNode;
-    }
-
     if(!engineNode.IsNull())
     {
       m_engine = StringUtils::Trim(engineNode.GetText().c_str());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(engineVersionNode.IsNull())
-    {
-      engineVersionNode = resultNode;
-    }
-
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
-    if(dBParameterGroupFamilyNode.IsNull())
-    {
-      dBParameterGroupFamilyNode = resultNode;
-    }
-
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = StringUtils::Trim(dBParameterGroupFamilyNode.GetText().c_str());
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode dBEngineDescriptionNode = resultNode.FirstChild("DBEngineDescription");
-    if(dBEngineDescriptionNode.IsNull())
-    {
-      dBEngineDescriptionNode = resultNode;
-    }
-
     if(!dBEngineDescriptionNode.IsNull())
     {
       m_dBEngineDescription = StringUtils::Trim(dBEngineDescriptionNode.GetText().c_str());
       m_dBEngineDescriptionHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
-    if(dBEngineVersionDescriptionNode.IsNull())
-    {
-      dBEngineVersionDescriptionNode = resultNode;
-    }
-
     if(!dBEngineVersionDescriptionNode.IsNull())
     {
       m_dBEngineVersionDescription = StringUtils::Trim(dBEngineVersionDescriptionNode.GetText().c_str());
       m_dBEngineVersionDescriptionHasBeenSet = true;
     }
     XmlNode defaultCharacterSetNode = resultNode.FirstChild("DefaultCharacterSet");
-    if(defaultCharacterSetNode.IsNull())
-    {
-      defaultCharacterSetNode = resultNode;
-    }
-
     if(!defaultCharacterSetNode.IsNull())
     {
       m_defaultCharacterSet = defaultCharacterSetNode;

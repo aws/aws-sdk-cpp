@@ -37,16 +37,15 @@ DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::op
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeEngineDefaultParametersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeEngineDefaultParametersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeEngineDefaultParametersResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode engineDefaultsNode = resultNode.FirstChild("EngineDefaults");
-    if(engineDefaultsNode.IsNull())
-    {
-      engineDefaultsNode = resultNode;
-    }
-
     if(!engineDefaultsNode.IsNull())
     {
       m_engineDefaults = engineDefaultsNode;

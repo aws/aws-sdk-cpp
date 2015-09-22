@@ -43,22 +43,12 @@ Content& Content::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dataNode = resultNode.FirstChild("Data");
-    if(dataNode.IsNull())
-    {
-      dataNode = resultNode;
-    }
-
     if(!dataNode.IsNull())
     {
       m_data = StringUtils::Trim(dataNode.GetText().c_str());
       m_dataHasBeenSet = true;
     }
     XmlNode charsetNode = resultNode.FirstChild("Charset");
-    if(charsetNode.IsNull())
-    {
-      charsetNode = resultNode;
-    }
-
     if(!charsetNode.IsNull())
     {
       m_charset = StringUtils::Trim(charsetNode.GetText().c_str());

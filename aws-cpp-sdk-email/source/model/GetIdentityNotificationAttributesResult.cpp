@@ -37,7 +37,11 @@ GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetIdentityNotificationAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetIdentityNotificationAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetIdentityNotificationAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

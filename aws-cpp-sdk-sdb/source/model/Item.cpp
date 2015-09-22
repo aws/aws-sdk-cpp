@@ -45,22 +45,12 @@ Item& Item::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode alternateNameEncodingNode = resultNode.FirstChild("AlternateNameEncoding");
-    if(alternateNameEncodingNode.IsNull())
-    {
-      alternateNameEncodingNode = resultNode;
-    }
-
     if(!alternateNameEncodingNode.IsNull())
     {
       m_alternateNameEncoding = StringUtils::Trim(alternateNameEncodingNode.GetText().c_str());

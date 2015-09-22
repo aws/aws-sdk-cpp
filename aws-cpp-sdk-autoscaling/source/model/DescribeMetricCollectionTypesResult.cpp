@@ -37,7 +37,11 @@ DescribeMetricCollectionTypesResult& DescribeMetricCollectionTypesResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeMetricCollectionTypesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeMetricCollectionTypesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeMetricCollectionTypesResult");
+  }
 
   if(!resultNode.IsNull())
   {

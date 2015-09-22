@@ -37,16 +37,15 @@ CreateClusterSubnetGroupResult& CreateClusterSubnetGroupResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateClusterSubnetGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateClusterSubnetGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateClusterSubnetGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterSubnetGroupNode = resultNode.FirstChild("ClusterSubnetGroup");
-    if(clusterSubnetGroupNode.IsNull())
-    {
-      clusterSubnetGroupNode = resultNode;
-    }
-
     if(!clusterSubnetGroupNode.IsNull())
     {
       m_clusterSubnetGroup = clusterSubnetGroupNode;

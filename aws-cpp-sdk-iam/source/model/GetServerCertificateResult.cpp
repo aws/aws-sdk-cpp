@@ -37,16 +37,15 @@ GetServerCertificateResult& GetServerCertificateResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetServerCertificateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetServerCertificateResult")
+  {
+    resultNode = rootNode.FirstChild("GetServerCertificateResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode serverCertificateNode = resultNode.FirstChild("ServerCertificate");
-    if(serverCertificateNode.IsNull())
-    {
-      serverCertificateNode = resultNode;
-    }
-
     if(!serverCertificateNode.IsNull())
     {
       m_serverCertificate = serverCertificateNode;

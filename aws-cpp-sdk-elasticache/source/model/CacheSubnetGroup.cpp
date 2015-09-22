@@ -47,33 +47,18 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode cacheSubnetGroupNameNode = resultNode.FirstChild("CacheSubnetGroupName");
-    if(cacheSubnetGroupNameNode.IsNull())
-    {
-      cacheSubnetGroupNameNode = resultNode;
-    }
-
     if(!cacheSubnetGroupNameNode.IsNull())
     {
       m_cacheSubnetGroupName = StringUtils::Trim(cacheSubnetGroupNameNode.GetText().c_str());
       m_cacheSubnetGroupNameHasBeenSet = true;
     }
     XmlNode cacheSubnetGroupDescriptionNode = resultNode.FirstChild("CacheSubnetGroupDescription");
-    if(cacheSubnetGroupDescriptionNode.IsNull())
-    {
-      cacheSubnetGroupDescriptionNode = resultNode;
-    }
-
     if(!cacheSubnetGroupDescriptionNode.IsNull())
     {
       m_cacheSubnetGroupDescription = StringUtils::Trim(cacheSubnetGroupDescriptionNode.GetText().c_str());
       m_cacheSubnetGroupDescriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
-    if(vpcIdNode.IsNull())
-    {
-      vpcIdNode = resultNode;
-    }
-
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());

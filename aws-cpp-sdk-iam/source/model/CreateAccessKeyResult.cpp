@@ -37,16 +37,15 @@ CreateAccessKeyResult& CreateAccessKeyResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateAccessKeyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateAccessKeyResult")
+  {
+    resultNode = rootNode.FirstChild("CreateAccessKeyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode accessKeyNode = resultNode.FirstChild("AccessKey");
-    if(accessKeyNode.IsNull())
-    {
-      accessKeyNode = resultNode;
-    }
-
     if(!accessKeyNode.IsNull())
     {
       m_accessKey = accessKeyNode;

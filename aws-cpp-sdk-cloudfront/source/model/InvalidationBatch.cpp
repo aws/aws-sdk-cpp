@@ -43,22 +43,12 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathsNode = resultNode.FirstChild("Paths");
-    if(pathsNode.IsNull())
-    {
-      pathsNode = resultNode;
-    }
-
     if(!pathsNode.IsNull())
     {
       m_paths = pathsNode;
       m_pathsHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    if(callerReferenceNode.IsNull())
-    {
-      callerReferenceNode = resultNode;
-    }
-
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());

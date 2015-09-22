@@ -37,16 +37,15 @@ CreateCacheSecurityGroupResult& CreateCacheSecurityGroupResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateCacheSecurityGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateCacheSecurityGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateCacheSecurityGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
-    if(cacheSecurityGroupNode.IsNull())
-    {
-      cacheSecurityGroupNode = resultNode;
-    }
-
     if(!cacheSecurityGroupNode.IsNull())
     {
       m_cacheSecurityGroup = cacheSecurityGroupNode;

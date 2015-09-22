@@ -37,7 +37,11 @@ DescribeApplicationVersionsResult& DescribeApplicationVersionsResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeApplicationVersionsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeApplicationVersionsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeApplicationVersionsResult");
+  }
 
   if(!resultNode.IsNull())
   {

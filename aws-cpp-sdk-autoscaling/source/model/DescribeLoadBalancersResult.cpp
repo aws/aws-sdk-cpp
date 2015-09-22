@@ -37,7 +37,11 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLoadBalancersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLoadBalancersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLoadBalancersResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

@@ -69,77 +69,42 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
-    if(engineNameNode.IsNull())
-    {
-      engineNameNode = resultNode;
-    }
-
     if(!engineNameNode.IsNull())
     {
       m_engineName = StringUtils::Trim(engineNameNode.GetText().c_str());
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
-    if(majorEngineVersionNode.IsNull())
-    {
-      majorEngineVersionNode = resultNode;
-    }
-
     if(!majorEngineVersionNode.IsNull())
     {
       m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode minimumRequiredMinorEngineVersionNode = resultNode.FirstChild("MinimumRequiredMinorEngineVersion");
-    if(minimumRequiredMinorEngineVersionNode.IsNull())
-    {
-      minimumRequiredMinorEngineVersionNode = resultNode;
-    }
-
     if(!minimumRequiredMinorEngineVersionNode.IsNull())
     {
       m_minimumRequiredMinorEngineVersion = StringUtils::Trim(minimumRequiredMinorEngineVersionNode.GetText().c_str());
       m_minimumRequiredMinorEngineVersionHasBeenSet = true;
     }
     XmlNode portRequiredNode = resultNode.FirstChild("PortRequired");
-    if(portRequiredNode.IsNull())
-    {
-      portRequiredNode = resultNode;
-    }
-
     if(!portRequiredNode.IsNull())
     {
       m_portRequired = StringUtils::ConvertToBool(StringUtils::Trim(portRequiredNode.GetText().c_str()).c_str());
       m_portRequiredHasBeenSet = true;
     }
     XmlNode defaultPortNode = resultNode.FirstChild("DefaultPort");
-    if(defaultPortNode.IsNull())
-    {
-      defaultPortNode = resultNode;
-    }
-
     if(!defaultPortNode.IsNull())
     {
       m_defaultPort = StringUtils::ConvertToInt32(StringUtils::Trim(defaultPortNode.GetText().c_str()).c_str());
@@ -158,22 +123,12 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       m_optionsDependedOnHasBeenSet = true;
     }
     XmlNode persistentNode = resultNode.FirstChild("Persistent");
-    if(persistentNode.IsNull())
-    {
-      persistentNode = resultNode;
-    }
-
     if(!persistentNode.IsNull())
     {
       m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(persistentNode.GetText().c_str()).c_str());
       m_persistentHasBeenSet = true;
     }
     XmlNode permanentNode = resultNode.FirstChild("Permanent");
-    if(permanentNode.IsNull())
-    {
-      permanentNode = resultNode;
-    }
-
     if(!permanentNode.IsNull())
     {
       m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());

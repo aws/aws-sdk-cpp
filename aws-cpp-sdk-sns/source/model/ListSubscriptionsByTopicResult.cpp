@@ -37,7 +37,11 @@ ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListSubscriptionsByTopicResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListSubscriptionsByTopicResult")
+  {
+    resultNode = rootNode.FirstChild("ListSubscriptionsByTopicResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

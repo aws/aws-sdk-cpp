@@ -37,16 +37,15 @@ GetSessionTokenResult& GetSessionTokenResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetSessionTokenResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetSessionTokenResult")
+  {
+    resultNode = rootNode.FirstChild("GetSessionTokenResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
-    if(credentialsNode.IsNull())
-    {
-      credentialsNode = resultNode;
-    }
-
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;

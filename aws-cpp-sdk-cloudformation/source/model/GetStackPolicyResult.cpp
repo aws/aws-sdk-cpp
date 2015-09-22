@@ -37,16 +37,15 @@ GetStackPolicyResult& GetStackPolicyResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetStackPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetStackPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("GetStackPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode stackPolicyBodyNode = resultNode.FirstChild("StackPolicyBody");
-    if(stackPolicyBodyNode.IsNull())
-    {
-      stackPolicyBodyNode = resultNode;
-    }
-
     if(!stackPolicyBodyNode.IsNull())
     {
       m_stackPolicyBody = StringUtils::Trim(stackPolicyBodyNode.GetText().c_str());

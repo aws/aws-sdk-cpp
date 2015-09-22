@@ -37,16 +37,15 @@ AddSourceIdentifierToSubscriptionResult& AddSourceIdentifierToSubscriptionResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AddSourceIdentifierToSubscriptionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AddSourceIdentifierToSubscriptionResult")
+  {
+    resultNode = rootNode.FirstChild("AddSourceIdentifierToSubscriptionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode eventSubscriptionNode = resultNode.FirstChild("EventSubscription");
-    if(eventSubscriptionNode.IsNull())
-    {
-      eventSubscriptionNode = resultNode;
-    }
-
     if(!eventSubscriptionNode.IsNull())
     {
       m_eventSubscription = eventSubscriptionNode;

@@ -37,7 +37,11 @@ DeregisterInstancesFromLoadBalancerResult& DeregisterInstancesFromLoadBalancerRe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeregisterInstancesFromLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeregisterInstancesFromLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("DeregisterInstancesFromLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {

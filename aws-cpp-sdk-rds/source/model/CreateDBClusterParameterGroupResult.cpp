@@ -37,16 +37,15 @@ CreateDBClusterParameterGroupResult& CreateDBClusterParameterGroupResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBClusterParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBClusterParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBClusterParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterParameterGroupNode = resultNode.FirstChild("DBClusterParameterGroup");
-    if(dBClusterParameterGroupNode.IsNull())
-    {
-      dBClusterParameterGroupNode = resultNode;
-    }
-
     if(!dBClusterParameterGroupNode.IsNull())
     {
       m_dBClusterParameterGroup = dBClusterParameterGroupNode;

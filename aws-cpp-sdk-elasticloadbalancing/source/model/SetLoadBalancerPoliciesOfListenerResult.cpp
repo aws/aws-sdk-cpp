@@ -37,7 +37,11 @@ SetLoadBalancerPoliciesOfListenerResult& SetLoadBalancerPoliciesOfListenerResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetLoadBalancerPoliciesOfListenerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetLoadBalancerPoliciesOfListenerResult")
+  {
+    resultNode = rootNode.FirstChild("SetLoadBalancerPoliciesOfListenerResult");
+  }
 
   if(!resultNode.IsNull())
   {

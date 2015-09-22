@@ -37,7 +37,11 @@ DescribeAutoScalingGroupsResult& DescribeAutoScalingGroupsResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeAutoScalingGroupsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeAutoScalingGroupsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeAutoScalingGroupsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeAutoScalingGroupsResult& DescribeAutoScalingGroupsResult::operator =(con
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

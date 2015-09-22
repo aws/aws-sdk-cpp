@@ -37,16 +37,15 @@ CreateDBInstanceReadReplicaResult& CreateDBInstanceReadReplicaResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBInstanceReadReplicaResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBInstanceReadReplicaResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBInstanceReadReplicaResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

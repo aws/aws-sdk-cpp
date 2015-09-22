@@ -37,16 +37,15 @@ RotateEncryptionKeyResult& RotateEncryptionKeyResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RotateEncryptionKeyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RotateEncryptionKeyResult")
+  {
+    resultNode = rootNode.FirstChild("RotateEncryptionKeyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

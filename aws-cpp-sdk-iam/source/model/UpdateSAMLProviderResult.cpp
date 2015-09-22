@@ -37,16 +37,15 @@ UpdateSAMLProviderResult& UpdateSAMLProviderResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("UpdateSAMLProviderResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "UpdateSAMLProviderResult")
+  {
+    resultNode = rootNode.FirstChild("UpdateSAMLProviderResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode sAMLProviderArnNode = resultNode.FirstChild("SAMLProviderArn");
-    if(sAMLProviderArnNode.IsNull())
-    {
-      sAMLProviderArnNode = resultNode;
-    }
-
     if(!sAMLProviderArnNode.IsNull())
     {
       m_sAMLProviderArn = StringUtils::Trim(sAMLProviderArnNode.GetText().c_str());

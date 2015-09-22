@@ -37,7 +37,11 @@ PutLifecycleHookResult& PutLifecycleHookResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PutLifecycleHookResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PutLifecycleHookResult")
+  {
+    resultNode = rootNode.FirstChild("PutLifecycleHookResult");
+  }
 
   if(!resultNode.IsNull())
   {

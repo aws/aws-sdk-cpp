@@ -37,7 +37,11 @@ DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::oper
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeTerminationPolicyTypesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeTerminationPolicyTypesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeTerminationPolicyTypesResult");
+  }
 
   if(!resultNode.IsNull())
   {

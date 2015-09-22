@@ -51,55 +51,30 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
-    if(alarmNameNode.IsNull())
-    {
-      alarmNameNode = resultNode;
-    }
-
     if(!alarmNameNode.IsNull())
     {
       m_alarmName = StringUtils::Trim(alarmNameNode.GetText().c_str());
       m_alarmNameHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(timestampNode.IsNull())
-    {
-      timestampNode = resultNode;
-    }
-
     if(!timestampNode.IsNull())
     {
       m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode historyItemTypeNode = resultNode.FirstChild("HistoryItemType");
-    if(historyItemTypeNode.IsNull())
-    {
-      historyItemTypeNode = resultNode;
-    }
-
     if(!historyItemTypeNode.IsNull())
     {
       m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(historyItemTypeNode.GetText().c_str()).c_str());
       m_historyItemTypeHasBeenSet = true;
     }
     XmlNode historySummaryNode = resultNode.FirstChild("HistorySummary");
-    if(historySummaryNode.IsNull())
-    {
-      historySummaryNode = resultNode;
-    }
-
     if(!historySummaryNode.IsNull())
     {
       m_historySummary = StringUtils::Trim(historySummaryNode.GetText().c_str());
       m_historySummaryHasBeenSet = true;
     }
     XmlNode historyDataNode = resultNode.FirstChild("HistoryData");
-    if(historyDataNode.IsNull())
-    {
-      historyDataNode = resultNode;
-    }
-
     if(!historyDataNode.IsNull())
     {
       m_historyData = StringUtils::Trim(historyDataNode.GetText().c_str());

@@ -67,110 +67,60 @@ Policy& Policy::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
-    if(policyNameNode.IsNull())
-    {
-      policyNameNode = resultNode;
-    }
-
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyIdNode = resultNode.FirstChild("PolicyId");
-    if(policyIdNode.IsNull())
-    {
-      policyIdNode = resultNode;
-    }
-
     if(!policyIdNode.IsNull())
     {
       m_policyId = StringUtils::Trim(policyIdNode.GetText().c_str());
       m_policyIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    if(arnNode.IsNull())
-    {
-      arnNode = resultNode;
-    }
-
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());
       m_arnHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
-    if(pathNode.IsNull())
-    {
-      pathNode = resultNode;
-    }
-
     if(!pathNode.IsNull())
     {
       m_path = StringUtils::Trim(pathNode.GetText().c_str());
       m_pathHasBeenSet = true;
     }
     XmlNode defaultVersionIdNode = resultNode.FirstChild("DefaultVersionId");
-    if(defaultVersionIdNode.IsNull())
-    {
-      defaultVersionIdNode = resultNode;
-    }
-
     if(!defaultVersionIdNode.IsNull())
     {
       m_defaultVersionId = StringUtils::Trim(defaultVersionIdNode.GetText().c_str());
       m_defaultVersionIdHasBeenSet = true;
     }
     XmlNode attachmentCountNode = resultNode.FirstChild("AttachmentCount");
-    if(attachmentCountNode.IsNull())
-    {
-      attachmentCountNode = resultNode;
-    }
-
     if(!attachmentCountNode.IsNull())
     {
       m_attachmentCount = StringUtils::ConvertToInt32(StringUtils::Trim(attachmentCountNode.GetText().c_str()).c_str());
       m_attachmentCountHasBeenSet = true;
     }
     XmlNode isAttachableNode = resultNode.FirstChild("IsAttachable");
-    if(isAttachableNode.IsNull())
-    {
-      isAttachableNode = resultNode;
-    }
-
     if(!isAttachableNode.IsNull())
     {
       m_isAttachable = StringUtils::ConvertToBool(StringUtils::Trim(isAttachableNode.GetText().c_str()).c_str());
       m_isAttachableHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    if(createDateNode.IsNull())
-    {
-      createDateNode = resultNode;
-    }
-
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
       m_createDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
-    if(updateDateNode.IsNull())
-    {
-      updateDateNode = resultNode;
-    }
-
     if(!updateDateNode.IsNull())
     {
       m_updateDate = StringUtils::ConvertToDouble(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str());

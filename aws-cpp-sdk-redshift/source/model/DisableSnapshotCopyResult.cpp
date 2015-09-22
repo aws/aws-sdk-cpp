@@ -37,16 +37,15 @@ DisableSnapshotCopyResult& DisableSnapshotCopyResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DisableSnapshotCopyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DisableSnapshotCopyResult")
+  {
+    resultNode = rootNode.FirstChild("DisableSnapshotCopyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

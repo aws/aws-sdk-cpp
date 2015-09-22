@@ -37,7 +37,11 @@ SelectResult& SelectResult::operator =(const AmazonWebServiceResult<XmlDocument>
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SelectResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SelectResult")
+  {
+    resultNode = rootNode.FirstChild("SelectResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ SelectResult& SelectResult::operator =(const AmazonWebServiceResult<XmlDocument>
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

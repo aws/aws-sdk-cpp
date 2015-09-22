@@ -37,7 +37,11 @@ DeleteLifecycleHookResult& DeleteLifecycleHookResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteLifecycleHookResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteLifecycleHookResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteLifecycleHookResult");
+  }
 
   if(!resultNode.IsNull())
   {

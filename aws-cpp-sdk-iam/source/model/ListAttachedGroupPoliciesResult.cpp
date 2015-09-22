@@ -39,7 +39,11 @@ ListAttachedGroupPoliciesResult& ListAttachedGroupPoliciesResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListAttachedGroupPoliciesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListAttachedGroupPoliciesResult")
+  {
+    resultNode = rootNode.FirstChild("ListAttachedGroupPoliciesResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -55,21 +59,11 @@ ListAttachedGroupPoliciesResult& ListAttachedGroupPoliciesResult::operator =(con
 
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(isTruncatedNode.IsNull())
-    {
-      isTruncatedNode = resultNode;
-    }
-
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

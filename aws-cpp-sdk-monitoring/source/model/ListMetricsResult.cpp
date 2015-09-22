@@ -37,7 +37,11 @@ ListMetricsResult& ListMetricsResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListMetricsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListMetricsResult")
+  {
+    resultNode = rootNode.FirstChild("ListMetricsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ ListMetricsResult& ListMetricsResult::operator =(const AmazonWebServiceResult<Xm
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

@@ -37,7 +37,11 @@ GetEndpointAttributesResult& GetEndpointAttributesResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetEndpointAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetEndpointAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetEndpointAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

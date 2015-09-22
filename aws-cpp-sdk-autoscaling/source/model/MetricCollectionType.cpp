@@ -41,11 +41,6 @@ MetricCollectionType& MetricCollectionType::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode metricNode = resultNode.FirstChild("Metric");
-    if(metricNode.IsNull())
-    {
-      metricNode = resultNode;
-    }
-
     if(!metricNode.IsNull())
     {
       m_metric = StringUtils::Trim(metricNode.GetText().c_str());

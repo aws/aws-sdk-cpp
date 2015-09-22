@@ -37,7 +37,11 @@ ExitStandbyResult& ExitStandbyResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ExitStandbyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ExitStandbyResult")
+  {
+    resultNode = rootNode.FirstChild("ExitStandbyResult");
+  }
 
   if(!resultNode.IsNull())
   {

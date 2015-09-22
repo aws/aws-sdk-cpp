@@ -37,7 +37,11 @@ DeleteIdentityPolicyResult& DeleteIdentityPolicyResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteIdentityPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteIdentityPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteIdentityPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

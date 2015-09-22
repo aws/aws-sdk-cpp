@@ -37,7 +37,11 @@ SetActiveReceiptRuleSetResult& SetActiveReceiptRuleSetResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetActiveReceiptRuleSetResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetActiveReceiptRuleSetResult")
+  {
+    resultNode = rootNode.FirstChild("SetActiveReceiptRuleSetResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ UploadSSHPublicKeyResult& UploadSSHPublicKeyResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("UploadSSHPublicKeyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "UploadSSHPublicKeyResult")
+  {
+    resultNode = rootNode.FirstChild("UploadSSHPublicKeyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode sSHPublicKeyNode = resultNode.FirstChild("SSHPublicKey");
-    if(sSHPublicKeyNode.IsNull())
-    {
-      sSHPublicKeyNode = resultNode;
-    }
-
     if(!sSHPublicKeyNode.IsNull())
     {
       m_sSHPublicKey = sSHPublicKeyNode;

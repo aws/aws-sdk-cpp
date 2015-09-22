@@ -37,16 +37,15 @@ DeleteSnapshotResult& DeleteSnapshotResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;

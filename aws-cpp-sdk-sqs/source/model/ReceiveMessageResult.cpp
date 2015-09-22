@@ -37,7 +37,11 @@ ReceiveMessageResult& ReceiveMessageResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ReceiveMessageResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ReceiveMessageResult")
+  {
+    resultNode = rootNode.FirstChild("ReceiveMessageResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -49,55 +49,30 @@ BounceAction& BounceAction::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
-    if(topicArnNode.IsNull())
-    {
-      topicArnNode = resultNode;
-    }
-
     if(!topicArnNode.IsNull())
     {
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
     }
     XmlNode smtpReplyCodeNode = resultNode.FirstChild("SmtpReplyCode");
-    if(smtpReplyCodeNode.IsNull())
-    {
-      smtpReplyCodeNode = resultNode;
-    }
-
     if(!smtpReplyCodeNode.IsNull())
     {
       m_smtpReplyCode = StringUtils::Trim(smtpReplyCodeNode.GetText().c_str());
       m_smtpReplyCodeHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
-    if(statusCodeNode.IsNull())
-    {
-      statusCodeNode = resultNode;
-    }
-
     if(!statusCodeNode.IsNull())
     {
       m_statusCode = StringUtils::Trim(statusCodeNode.GetText().c_str());
       m_statusCodeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
-    if(messageNode.IsNull())
-    {
-      messageNode = resultNode;
-    }
-
     if(!messageNode.IsNull())
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
       m_messageHasBeenSet = true;
     }
     XmlNode senderNode = resultNode.FirstChild("Sender");
-    if(senderNode.IsNull())
-    {
-      senderNode = resultNode;
-    }
-
     if(!senderNode.IsNull())
     {
       m_sender = StringUtils::Trim(senderNode.GetText().c_str());

@@ -37,16 +37,15 @@ ApplyPendingMaintenanceActionResult& ApplyPendingMaintenanceActionResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ApplyPendingMaintenanceActionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ApplyPendingMaintenanceActionResult")
+  {
+    resultNode = rootNode.FirstChild("ApplyPendingMaintenanceActionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode resourcePendingMaintenanceActionsNode = resultNode.FirstChild("ResourcePendingMaintenanceActions");
-    if(resourcePendingMaintenanceActionsNode.IsNull())
-    {
-      resourcePendingMaintenanceActionsNode = resultNode;
-    }
-
     if(!resourcePendingMaintenanceActionsNode.IsNull())
     {
       m_resourcePendingMaintenanceActions = resourcePendingMaintenanceActionsNode;

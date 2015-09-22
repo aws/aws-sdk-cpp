@@ -37,16 +37,15 @@ ModifyCacheSubnetGroupResult& ModifyCacheSubnetGroupResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyCacheSubnetGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyCacheSubnetGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyCacheSubnetGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheSubnetGroupNode = resultNode.FirstChild("CacheSubnetGroup");
-    if(cacheSubnetGroupNode.IsNull())
-    {
-      cacheSubnetGroupNode = resultNode;
-    }
-
     if(!cacheSubnetGroupNode.IsNull())
     {
       m_cacheSubnetGroup = cacheSubnetGroupNode;

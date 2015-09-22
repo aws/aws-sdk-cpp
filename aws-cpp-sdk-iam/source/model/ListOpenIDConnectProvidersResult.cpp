@@ -37,7 +37,11 @@ ListOpenIDConnectProvidersResult& ListOpenIDConnectProvidersResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListOpenIDConnectProvidersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListOpenIDConnectProvidersResult")
+  {
+    resultNode = rootNode.FirstChild("ListOpenIDConnectProvidersResult");
+  }
 
   if(!resultNode.IsNull())
   {

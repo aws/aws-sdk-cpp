@@ -37,16 +37,15 @@ CreateLoadBalancerResult& CreateLoadBalancerResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("CreateLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
-    if(dNSNameNode.IsNull())
-    {
-      dNSNameNode = resultNode;
-    }
-
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());

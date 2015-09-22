@@ -49,55 +49,30 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(idNode.IsNull())
-    {
-      idNode = resultNode;
-    }
-
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    if(domainNameNode.IsNull())
-    {
-      domainNameNode = resultNode;
-    }
-
     if(!domainNameNode.IsNull())
     {
       m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
       m_domainNameHasBeenSet = true;
     }
     XmlNode originPathNode = resultNode.FirstChild("OriginPath");
-    if(originPathNode.IsNull())
-    {
-      originPathNode = resultNode;
-    }
-
     if(!originPathNode.IsNull())
     {
       m_originPath = StringUtils::Trim(originPathNode.GetText().c_str());
       m_originPathHasBeenSet = true;
     }
     XmlNode s3OriginConfigNode = resultNode.FirstChild("S3OriginConfig");
-    if(s3OriginConfigNode.IsNull())
-    {
-      s3OriginConfigNode = resultNode;
-    }
-
     if(!s3OriginConfigNode.IsNull())
     {
       m_s3OriginConfig = s3OriginConfigNode;
       m_s3OriginConfigHasBeenSet = true;
     }
     XmlNode customOriginConfigNode = resultNode.FirstChild("CustomOriginConfig");
-    if(customOriginConfigNode.IsNull())
-    {
-      customOriginConfigNode = resultNode;
-    }
-
     if(!customOriginConfigNode.IsNull())
     {
       m_customOriginConfig = customOriginConfigNode;

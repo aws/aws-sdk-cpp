@@ -37,7 +37,11 @@ ListStacksResult& ListStacksResult::operator =(const AmazonWebServiceResult<XmlD
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListStacksResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListStacksResult")
+  {
+    resultNode = rootNode.FirstChild("ListStacksResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ ListStacksResult& ListStacksResult::operator =(const AmazonWebServiceResult<XmlD
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

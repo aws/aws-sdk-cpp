@@ -41,16 +41,7 @@ UpdateCloudFrontOriginAccessIdentity2015_04_17Result& UpdateCloudFrontOriginAcce
 
   if(!resultNode.IsNull())
   {
-    XmlNode cloudFrontOriginAccessIdentityNode = resultNode.FirstChild("CloudFrontOriginAccessIdentity");
-    if(cloudFrontOriginAccessIdentityNode.IsNull())
-    {
-      cloudFrontOriginAccessIdentityNode = resultNode;
-    }
-
-    if(!cloudFrontOriginAccessIdentityNode.IsNull())
-    {
-      m_cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentityNode;
-    }
+    m_cloudFrontOriginAccessIdentity = resultNode;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -37,16 +37,15 @@ ConfigureHealthCheckResult& ConfigureHealthCheckResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ConfigureHealthCheckResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ConfigureHealthCheckResult")
+  {
+    resultNode = rootNode.FirstChild("ConfigureHealthCheckResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
-    if(healthCheckNode.IsNull())
-    {
-      healthCheckNode = resultNode;
-    }
-
     if(!healthCheckNode.IsNull())
     {
       m_healthCheck = healthCheckNode;

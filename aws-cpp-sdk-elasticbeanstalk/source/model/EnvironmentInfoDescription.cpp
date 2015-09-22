@@ -49,44 +49,24 @@ EnvironmentInfoDescription& EnvironmentInfoDescription::operator =(const XmlNode
   if(!resultNode.IsNull())
   {
     XmlNode infoTypeNode = resultNode.FirstChild("InfoType");
-    if(infoTypeNode.IsNull())
-    {
-      infoTypeNode = resultNode;
-    }
-
     if(!infoTypeNode.IsNull())
     {
       m_infoType = EnvironmentInfoTypeMapper::GetEnvironmentInfoTypeForName(StringUtils::Trim(infoTypeNode.GetText().c_str()).c_str());
       m_infoTypeHasBeenSet = true;
     }
     XmlNode ec2InstanceIdNode = resultNode.FirstChild("Ec2InstanceId");
-    if(ec2InstanceIdNode.IsNull())
-    {
-      ec2InstanceIdNode = resultNode;
-    }
-
     if(!ec2InstanceIdNode.IsNull())
     {
       m_ec2InstanceId = StringUtils::Trim(ec2InstanceIdNode.GetText().c_str());
       m_ec2InstanceIdHasBeenSet = true;
     }
     XmlNode sampleTimestampNode = resultNode.FirstChild("SampleTimestamp");
-    if(sampleTimestampNode.IsNull())
-    {
-      sampleTimestampNode = resultNode;
-    }
-
     if(!sampleTimestampNode.IsNull())
     {
       m_sampleTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(sampleTimestampNode.GetText().c_str()).c_str());
       m_sampleTimestampHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
-    if(messageNode.IsNull())
-    {
-      messageNode = resultNode;
-    }
-
     if(!messageNode.IsNull())
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());

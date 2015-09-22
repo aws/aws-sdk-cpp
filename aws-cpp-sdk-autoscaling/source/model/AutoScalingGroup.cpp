@@ -91,77 +91,42 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
-    if(autoScalingGroupNameNode.IsNull())
-    {
-      autoScalingGroupNameNode = resultNode;
-    }
-
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode autoScalingGroupARNNode = resultNode.FirstChild("AutoScalingGroupARN");
-    if(autoScalingGroupARNNode.IsNull())
-    {
-      autoScalingGroupARNNode = resultNode;
-    }
-
     if(!autoScalingGroupARNNode.IsNull())
     {
       m_autoScalingGroupARN = StringUtils::Trim(autoScalingGroupARNNode.GetText().c_str());
       m_autoScalingGroupARNHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
-    if(launchConfigurationNameNode.IsNull())
-    {
-      launchConfigurationNameNode = resultNode;
-    }
-
     if(!launchConfigurationNameNode.IsNull())
     {
       m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
-    if(minSizeNode.IsNull())
-    {
-      minSizeNode = resultNode;
-    }
-
     if(!minSizeNode.IsNull())
     {
       m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(minSizeNode.GetText().c_str()).c_str());
       m_minSizeHasBeenSet = true;
     }
     XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
-    if(maxSizeNode.IsNull())
-    {
-      maxSizeNode = resultNode;
-    }
-
     if(!maxSizeNode.IsNull())
     {
       m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxSizeNode.GetText().c_str()).c_str());
       m_maxSizeHasBeenSet = true;
     }
     XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
-    if(desiredCapacityNode.IsNull())
-    {
-      desiredCapacityNode = resultNode;
-    }
-
     if(!desiredCapacityNode.IsNull())
     {
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(desiredCapacityNode.GetText().c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
     }
     XmlNode defaultCooldownNode = resultNode.FirstChild("DefaultCooldown");
-    if(defaultCooldownNode.IsNull())
-    {
-      defaultCooldownNode = resultNode;
-    }
-
     if(!defaultCooldownNode.IsNull())
     {
       m_defaultCooldown = StringUtils::ConvertToInt32(StringUtils::Trim(defaultCooldownNode.GetText().c_str()).c_str());
@@ -192,22 +157,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_loadBalancerNamesHasBeenSet = true;
     }
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
-    if(healthCheckTypeNode.IsNull())
-    {
-      healthCheckTypeNode = resultNode;
-    }
-
     if(!healthCheckTypeNode.IsNull())
     {
       m_healthCheckType = StringUtils::Trim(healthCheckTypeNode.GetText().c_str());
       m_healthCheckTypeHasBeenSet = true;
     }
     XmlNode healthCheckGracePeriodNode = resultNode.FirstChild("HealthCheckGracePeriod");
-    if(healthCheckGracePeriodNode.IsNull())
-    {
-      healthCheckGracePeriodNode = resultNode;
-    }
-
     if(!healthCheckGracePeriodNode.IsNull())
     {
       m_healthCheckGracePeriod = StringUtils::ConvertToInt32(StringUtils::Trim(healthCheckGracePeriodNode.GetText().c_str()).c_str());
@@ -226,11 +181,6 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_instancesHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
-    if(createdTimeNode.IsNull())
-    {
-      createdTimeNode = resultNode;
-    }
-
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
@@ -249,22 +199,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_suspendedProcessesHasBeenSet = true;
     }
     XmlNode placementGroupNode = resultNode.FirstChild("PlacementGroup");
-    if(placementGroupNode.IsNull())
-    {
-      placementGroupNode = resultNode;
-    }
-
     if(!placementGroupNode.IsNull())
     {
       m_placementGroup = StringUtils::Trim(placementGroupNode.GetText().c_str());
       m_placementGroupHasBeenSet = true;
     }
     XmlNode vPCZoneIdentifierNode = resultNode.FirstChild("VPCZoneIdentifier");
-    if(vPCZoneIdentifierNode.IsNull())
-    {
-      vPCZoneIdentifierNode = resultNode;
-    }
-
     if(!vPCZoneIdentifierNode.IsNull())
     {
       m_vPCZoneIdentifier = StringUtils::Trim(vPCZoneIdentifierNode.GetText().c_str());
@@ -283,11 +223,6 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_enabledMetricsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

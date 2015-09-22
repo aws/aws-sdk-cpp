@@ -45,22 +45,12 @@ LBCookieStickinessPolicy& LBCookieStickinessPolicy::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
-    if(policyNameNode.IsNull())
-    {
-      policyNameNode = resultNode;
-    }
-
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
       m_policyNameHasBeenSet = true;
     }
     XmlNode cookieExpirationPeriodNode = resultNode.FirstChild("CookieExpirationPeriod");
-    if(cookieExpirationPeriodNode.IsNull())
-    {
-      cookieExpirationPeriodNode = resultNode;
-    }
-
     if(!cookieExpirationPeriodNode.IsNull())
     {
       m_cookieExpirationPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(cookieExpirationPeriodNode.GetText().c_str()).c_str());

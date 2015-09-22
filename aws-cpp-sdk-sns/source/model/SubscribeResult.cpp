@@ -37,16 +37,15 @@ SubscribeResult& SubscribeResult::operator =(const AmazonWebServiceResult<XmlDoc
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SubscribeResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SubscribeResult")
+  {
+    resultNode = rootNode.FirstChild("SubscribeResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode subscriptionArnNode = resultNode.FirstChild("SubscriptionArn");
-    if(subscriptionArnNode.IsNull())
-    {
-      subscriptionArnNode = resultNode;
-    }
-
     if(!subscriptionArnNode.IsNull())
     {
       m_subscriptionArn = StringUtils::Trim(subscriptionArnNode.GetText().c_str());

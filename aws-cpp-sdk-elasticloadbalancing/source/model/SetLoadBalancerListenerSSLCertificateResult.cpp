@@ -37,7 +37,11 @@ SetLoadBalancerListenerSSLCertificateResult& SetLoadBalancerListenerSSLCertifica
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetLoadBalancerListenerSSLCertificateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetLoadBalancerListenerSSLCertificateResult")
+  {
+    resultNode = rootNode.FirstChild("SetLoadBalancerListenerSSLCertificateResult");
+  }
 
   if(!resultNode.IsNull())
   {

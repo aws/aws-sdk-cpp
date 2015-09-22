@@ -37,7 +37,11 @@ DeleteLoadBalancerListenersResult& DeleteLoadBalancerListenersResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteLoadBalancerListenersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteLoadBalancerListenersResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteLoadBalancerListenersResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,7 +37,11 @@ ListIdentityPoliciesResult& ListIdentityPoliciesResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListIdentityPoliciesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListIdentityPoliciesResult")
+  {
+    resultNode = rootNode.FirstChild("ListIdentityPoliciesResult");
+  }
 
   if(!resultNode.IsNull())
   {

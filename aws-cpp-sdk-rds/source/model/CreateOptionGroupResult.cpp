@@ -37,16 +37,15 @@ CreateOptionGroupResult& CreateOptionGroupResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateOptionGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateOptionGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateOptionGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode optionGroupNode = resultNode.FirstChild("OptionGroup");
-    if(optionGroupNode.IsNull())
-    {
-      optionGroupNode = resultNode;
-    }
-
     if(!optionGroupNode.IsNull())
     {
       m_optionGroup = optionGroupNode;

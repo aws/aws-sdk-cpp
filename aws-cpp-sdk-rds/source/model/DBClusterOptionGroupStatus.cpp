@@ -43,22 +43,12 @@ DBClusterOptionGroupStatus& DBClusterOptionGroupStatus::operator =(const XmlNode
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterOptionGroupNameNode = resultNode.FirstChild("DBClusterOptionGroupName");
-    if(dBClusterOptionGroupNameNode.IsNull())
-    {
-      dBClusterOptionGroupNameNode = resultNode;
-    }
-
     if(!dBClusterOptionGroupNameNode.IsNull())
     {
       m_dBClusterOptionGroupName = StringUtils::Trim(dBClusterOptionGroupNameNode.GetText().c_str());
       m_dBClusterOptionGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

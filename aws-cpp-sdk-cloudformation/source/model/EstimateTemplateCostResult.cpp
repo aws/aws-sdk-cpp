@@ -37,16 +37,15 @@ EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("EstimateTemplateCostResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "EstimateTemplateCostResult")
+  {
+    resultNode = rootNode.FirstChild("EstimateTemplateCostResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode urlNode = resultNode.FirstChild("Url");
-    if(urlNode.IsNull())
-    {
-      urlNode = resultNode;
-    }
-
     if(!urlNode.IsNull())
     {
       m_url = StringUtils::Trim(urlNode.GetText().c_str());

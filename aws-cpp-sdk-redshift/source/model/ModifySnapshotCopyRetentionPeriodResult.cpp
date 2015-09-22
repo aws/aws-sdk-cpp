@@ -37,16 +37,15 @@ ModifySnapshotCopyRetentionPeriodResult& ModifySnapshotCopyRetentionPeriodResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifySnapshotCopyRetentionPeriodResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifySnapshotCopyRetentionPeriodResult")
+  {
+    resultNode = rootNode.FirstChild("ModifySnapshotCopyRetentionPeriodResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

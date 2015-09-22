@@ -45,33 +45,18 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode domainNode = resultNode.FirstChild("Domain");
-    if(domainNode.IsNull())
-    {
-      domainNode = resultNode;
-    }
-
     if(!domainNode.IsNull())
     {
       m_domain = StringUtils::Trim(domainNode.GetText().c_str());
       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode connectivityNode = resultNode.FirstChild("Connectivity");
-    if(connectivityNode.IsNull())
-    {
-      connectivityNode = resultNode;
-    }
-
     if(!connectivityNode.IsNull())
     {
       m_connectivity = StringUtils::Trim(connectivityNode.GetText().c_str());

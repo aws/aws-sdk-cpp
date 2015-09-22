@@ -37,16 +37,15 @@ SendRawEmailResult& SendRawEmailResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SendRawEmailResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SendRawEmailResult")
+  {
+    resultNode = rootNode.FirstChild("SendRawEmailResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    if(messageIdNode.IsNull())
-    {
-      messageIdNode = resultNode;
-    }
-
     if(!messageIdNode.IsNull())
     {
       m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());

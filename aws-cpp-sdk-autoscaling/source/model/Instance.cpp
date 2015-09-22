@@ -49,55 +49,30 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
-    if(instanceIdNode.IsNull())
-    {
-      instanceIdNode = resultNode;
-    }
-
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
-    if(availabilityZoneNode.IsNull())
-    {
-      availabilityZoneNode = resultNode;
-    }
-
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
-    if(lifecycleStateNode.IsNull())
-    {
-      lifecycleStateNode = resultNode;
-    }
-
     if(!lifecycleStateNode.IsNull())
     {
       m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(lifecycleStateNode.GetText().c_str()).c_str());
       m_lifecycleStateHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
-    if(healthStatusNode.IsNull())
-    {
-      healthStatusNode = resultNode;
-    }
-
     if(!healthStatusNode.IsNull())
     {
       m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
       m_healthStatusHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
-    if(launchConfigurationNameNode.IsNull())
-    {
-      launchConfigurationNameNode = resultNode;
-    }
-
     if(!launchConfigurationNameNode.IsNull())
     {
       m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());

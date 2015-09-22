@@ -37,7 +37,11 @@ ListQueuesResult& ListQueuesResult::operator =(const AmazonWebServiceResult<XmlD
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListQueuesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListQueuesResult")
+  {
+    resultNode = rootNode.FirstChild("ListQueuesResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ GetSSHPublicKeyResult& GetSSHPublicKeyResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetSSHPublicKeyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetSSHPublicKeyResult")
+  {
+    resultNode = rootNode.FirstChild("GetSSHPublicKeyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode sSHPublicKeyNode = resultNode.FirstChild("SSHPublicKey");
-    if(sSHPublicKeyNode.IsNull())
-    {
-      sSHPublicKeyNode = resultNode;
-    }
-
     if(!sSHPublicKeyNode.IsNull())
     {
       m_sSHPublicKey = sSHPublicKeyNode;

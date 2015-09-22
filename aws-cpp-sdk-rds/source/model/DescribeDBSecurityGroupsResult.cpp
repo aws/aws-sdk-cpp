@@ -37,16 +37,15 @@ DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeDBSecurityGroupsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeDBSecurityGroupsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeDBSecurityGroupsResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

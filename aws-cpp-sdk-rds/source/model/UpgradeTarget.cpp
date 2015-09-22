@@ -53,55 +53,30 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode engineNode = resultNode.FirstChild("Engine");
-    if(engineNode.IsNull())
-    {
-      engineNode = resultNode;
-    }
-
     if(!engineNode.IsNull())
     {
       m_engine = StringUtils::Trim(engineNode.GetText().c_str());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(engineVersionNode.IsNull())
-    {
-      engineVersionNode = resultNode;
-    }
-
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode autoUpgradeNode = resultNode.FirstChild("AutoUpgrade");
-    if(autoUpgradeNode.IsNull())
-    {
-      autoUpgradeNode = resultNode;
-    }
-
     if(!autoUpgradeNode.IsNull())
     {
       m_autoUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(autoUpgradeNode.GetText().c_str()).c_str());
       m_autoUpgradeHasBeenSet = true;
     }
     XmlNode isMajorVersionUpgradeNode = resultNode.FirstChild("IsMajorVersionUpgrade");
-    if(isMajorVersionUpgradeNode.IsNull())
-    {
-      isMajorVersionUpgradeNode = resultNode;
-    }
-
     if(!isMajorVersionUpgradeNode.IsNull())
     {
       m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(isMajorVersionUpgradeNode.GetText().c_str()).c_str());

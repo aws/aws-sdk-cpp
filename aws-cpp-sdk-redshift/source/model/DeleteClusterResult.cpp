@@ -37,16 +37,15 @@ DeleteClusterResult& DeleteClusterResult::operator =(const AmazonWebServiceResul
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteClusterResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

@@ -37,7 +37,11 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeTagsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeTagsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeTagsResult");
+  }
 
   if(!resultNode.IsNull())
   {

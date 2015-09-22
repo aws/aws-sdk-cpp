@@ -37,16 +37,15 @@ CreateStorageLocationResult& CreateStorageLocationResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateStorageLocationResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateStorageLocationResult")
+  {
+    resultNode = rootNode.FirstChild("CreateStorageLocationResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
-    if(s3BucketNode.IsNull())
-    {
-      s3BucketNode = resultNode;
-    }
-
     if(!s3BucketNode.IsNull())
     {
       m_s3Bucket = StringUtils::Trim(s3BucketNode.GetText().c_str());

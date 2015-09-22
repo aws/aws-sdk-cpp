@@ -37,16 +37,15 @@ UploadSigningCertificateResult& UploadSigningCertificateResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("UploadSigningCertificateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "UploadSigningCertificateResult")
+  {
+    resultNode = rootNode.FirstChild("UploadSigningCertificateResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode certificateNode = resultNode.FirstChild("Certificate");
-    if(certificateNode.IsNull())
-    {
-      certificateNode = resultNode;
-    }
-
     if(!certificateNode.IsNull())
     {
       m_certificate = certificateNode;

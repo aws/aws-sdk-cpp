@@ -37,16 +37,15 @@ ModifyReplicationGroupResult& ModifyReplicationGroupResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyReplicationGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyReplicationGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyReplicationGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode replicationGroupNode = resultNode.FirstChild("ReplicationGroup");
-    if(replicationGroupNode.IsNull())
-    {
-      replicationGroupNode = resultNode;
-    }
-
     if(!replicationGroupNode.IsNull())
     {
       m_replicationGroup = replicationGroupNode;

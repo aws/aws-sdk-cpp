@@ -37,7 +37,11 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeTagsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeTagsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeTagsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

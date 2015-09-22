@@ -37,7 +37,11 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeAccountAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeAccountAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeAccountAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

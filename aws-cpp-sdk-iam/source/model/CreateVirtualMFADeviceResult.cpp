@@ -37,16 +37,15 @@ CreateVirtualMFADeviceResult& CreateVirtualMFADeviceResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateVirtualMFADeviceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateVirtualMFADeviceResult")
+  {
+    resultNode = rootNode.FirstChild("CreateVirtualMFADeviceResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode virtualMFADeviceNode = resultNode.FirstChild("VirtualMFADevice");
-    if(virtualMFADeviceNode.IsNull())
-    {
-      virtualMFADeviceNode = resultNode;
-    }
-
     if(!virtualMFADeviceNode.IsNull())
     {
       m_virtualMFADevice = virtualMFADeviceNode;

@@ -37,16 +37,15 @@ DescribeDBEngineVersionsResult& DescribeDBEngineVersionsResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeDBEngineVersionsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeDBEngineVersionsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeDBEngineVersionsResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

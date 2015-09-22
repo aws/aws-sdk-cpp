@@ -37,16 +37,15 @@ ModifyDBClusterResult& ModifyDBClusterResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyDBClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyDBClusterResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyDBClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterNode = resultNode.FirstChild("DBCluster");
-    if(dBClusterNode.IsNull())
-    {
-      dBClusterNode = resultNode;
-    }
-
     if(!dBClusterNode.IsNull())
     {
       m_dBCluster = dBClusterNode;

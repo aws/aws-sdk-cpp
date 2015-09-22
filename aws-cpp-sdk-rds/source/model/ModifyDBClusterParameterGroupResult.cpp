@@ -37,16 +37,15 @@ ModifyDBClusterParameterGroupResult& ModifyDBClusterParameterGroupResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyDBClusterParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyDBClusterParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyDBClusterParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterParameterGroupNameNode = resultNode.FirstChild("DBClusterParameterGroupName");
-    if(dBClusterParameterGroupNameNode.IsNull())
-    {
-      dBClusterParameterGroupNameNode = resultNode;
-    }
-
     if(!dBClusterParameterGroupNameNode.IsNull())
     {
       m_dBClusterParameterGroupName = StringUtils::Trim(dBClusterParameterGroupNameNode.GetText().c_str());

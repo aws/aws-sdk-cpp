@@ -45,33 +45,18 @@ TaggedResource& TaggedResource::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode tagNode = resultNode.FirstChild("Tag");
-    if(tagNode.IsNull())
-    {
-      tagNode = resultNode;
-    }
-
     if(!tagNode.IsNull())
     {
       m_tag = tagNode;
       m_tagHasBeenSet = true;
     }
     XmlNode resourceNameNode = resultNode.FirstChild("ResourceName");
-    if(resourceNameNode.IsNull())
-    {
-      resourceNameNode = resultNode;
-    }
-
     if(!resourceNameNode.IsNull())
     {
       m_resourceName = StringUtils::Trim(resourceNameNode.GetText().c_str());
       m_resourceNameHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
-    if(resourceTypeNode.IsNull())
-    {
-      resourceTypeNode = resultNode;
-    }
-
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());

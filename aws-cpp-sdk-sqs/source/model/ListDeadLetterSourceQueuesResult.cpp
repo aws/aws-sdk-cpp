@@ -37,7 +37,11 @@ ListDeadLetterSourceQueuesResult& ListDeadLetterSourceQueuesResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListDeadLetterSourceQueuesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListDeadLetterSourceQueuesResult")
+  {
+    resultNode = rootNode.FirstChild("ListDeadLetterSourceQueuesResult");
+  }
 
   if(!resultNode.IsNull())
   {

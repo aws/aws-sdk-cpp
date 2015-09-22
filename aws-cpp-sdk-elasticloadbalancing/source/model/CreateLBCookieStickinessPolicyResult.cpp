@@ -37,7 +37,11 @@ CreateLBCookieStickinessPolicyResult& CreateLBCookieStickinessPolicyResult::oper
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateLBCookieStickinessPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateLBCookieStickinessPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("CreateLBCookieStickinessPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

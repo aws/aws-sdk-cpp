@@ -53,11 +53,6 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
-    if(environmentNameNode.IsNull())
-    {
-      environmentNameNode = resultNode;
-    }
-
     if(!environmentNameNode.IsNull())
     {
       m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());

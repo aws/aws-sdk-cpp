@@ -37,16 +37,15 @@ RevokeDBSecurityGroupIngressResult& RevokeDBSecurityGroupIngressResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RevokeDBSecurityGroupIngressResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RevokeDBSecurityGroupIngressResult")
+  {
+    resultNode = rootNode.FirstChild("RevokeDBSecurityGroupIngressResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
-    if(dBSecurityGroupNode.IsNull())
-    {
-      dBSecurityGroupNode = resultNode;
-    }
-
     if(!dBSecurityGroupNode.IsNull())
     {
       m_dBSecurityGroup = dBSecurityGroupNode;

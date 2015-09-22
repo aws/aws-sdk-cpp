@@ -37,7 +37,11 @@ AttachLoadBalancerToSubnetsResult& AttachLoadBalancerToSubnetsResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AttachLoadBalancerToSubnetsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AttachLoadBalancerToSubnetsResult")
+  {
+    resultNode = rootNode.FirstChild("AttachLoadBalancerToSubnetsResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ ModifyDBParameterGroupResult& ModifyDBParameterGroupResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyDBParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyDBParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyDBParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
-    if(dBParameterGroupNameNode.IsNull())
-    {
-      dBParameterGroupNameNode = resultNode;
-    }
-
     if(!dBParameterGroupNameNode.IsNull())
     {
       m_dBParameterGroupName = StringUtils::Trim(dBParameterGroupNameNode.GetText().c_str());

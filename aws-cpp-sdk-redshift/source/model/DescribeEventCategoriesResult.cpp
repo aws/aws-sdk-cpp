@@ -37,7 +37,11 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeEventCategoriesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeEventCategoriesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeEventCategoriesResult");
+  }
 
   if(!resultNode.IsNull())
   {

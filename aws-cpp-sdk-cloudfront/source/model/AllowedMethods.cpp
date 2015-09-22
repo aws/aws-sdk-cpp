@@ -47,11 +47,6 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    if(quantityNode.IsNull())
-    {
-      quantityNode = resultNode;
-    }
-
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
@@ -70,11 +65,6 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
       m_itemsHasBeenSet = true;
     }
     XmlNode cachedMethodsNode = resultNode.FirstChild("CachedMethods");
-    if(cachedMethodsNode.IsNull())
-    {
-      cachedMethodsNode = resultNode;
-    }
-
     if(!cachedMethodsNode.IsNull())
     {
       m_cachedMethods = cachedMethodsNode;

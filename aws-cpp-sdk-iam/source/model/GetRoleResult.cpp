@@ -37,16 +37,15 @@ GetRoleResult& GetRoleResult::operator =(const AmazonWebServiceResult<XmlDocumen
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetRoleResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetRoleResult")
+  {
+    resultNode = rootNode.FirstChild("GetRoleResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode roleNode = resultNode.FirstChild("Role");
-    if(roleNode.IsNull())
-    {
-      roleNode = resultNode;
-    }
-
     if(!roleNode.IsNull())
     {
       m_role = roleNode;

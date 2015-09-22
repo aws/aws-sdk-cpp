@@ -37,16 +37,15 @@ DescribeEngineDefaultClusterParametersResult& DescribeEngineDefaultClusterParame
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeEngineDefaultClusterParametersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeEngineDefaultClusterParametersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeEngineDefaultClusterParametersResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode engineDefaultsNode = resultNode.FirstChild("EngineDefaults");
-    if(engineDefaultsNode.IsNull())
-    {
-      engineDefaultsNode = resultNode;
-    }
-
     if(!engineDefaultsNode.IsNull())
     {
       m_engineDefaults = engineDefaultsNode;

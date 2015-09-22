@@ -43,22 +43,12 @@ CacheSecurityGroupMembership& CacheSecurityGroupMembership::operator =(const Xml
   if(!resultNode.IsNull())
   {
     XmlNode cacheSecurityGroupNameNode = resultNode.FirstChild("CacheSecurityGroupName");
-    if(cacheSecurityGroupNameNode.IsNull())
-    {
-      cacheSecurityGroupNameNode = resultNode;
-    }
-
     if(!cacheSecurityGroupNameNode.IsNull())
     {
       m_cacheSecurityGroupName = StringUtils::Trim(cacheSecurityGroupNameNode.GetText().c_str());
       m_cacheSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

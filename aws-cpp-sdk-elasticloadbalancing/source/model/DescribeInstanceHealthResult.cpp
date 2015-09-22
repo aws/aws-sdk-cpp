@@ -37,7 +37,11 @@ DescribeInstanceHealthResult& DescribeInstanceHealthResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeInstanceHealthResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeInstanceHealthResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeInstanceHealthResult");
+  }
 
   if(!resultNode.IsNull())
   {

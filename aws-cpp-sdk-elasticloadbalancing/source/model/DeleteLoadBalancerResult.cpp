@@ -37,7 +37,11 @@ DeleteLoadBalancerResult& DeleteLoadBalancerResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {

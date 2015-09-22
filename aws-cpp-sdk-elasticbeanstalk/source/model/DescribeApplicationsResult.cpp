@@ -37,7 +37,11 @@ DescribeApplicationsResult& DescribeApplicationsResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeApplicationsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeApplicationsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeApplicationsResult");
+  }
 
   if(!resultNode.IsNull())
   {

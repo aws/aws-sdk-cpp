@@ -43,11 +43,6 @@ ConnectionSettings& ConnectionSettings::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idleTimeoutNode = resultNode.FirstChild("IdleTimeout");
-    if(idleTimeoutNode.IsNull())
-    {
-      idleTimeoutNode = resultNode;
-    }
-
     if(!idleTimeoutNode.IsNull())
     {
       m_idleTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(idleTimeoutNode.GetText().c_str()).c_str());

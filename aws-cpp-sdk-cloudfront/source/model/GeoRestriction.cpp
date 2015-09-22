@@ -47,22 +47,12 @@ GeoRestriction& GeoRestriction::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode restrictionTypeNode = resultNode.FirstChild("RestrictionType");
-    if(restrictionTypeNode.IsNull())
-    {
-      restrictionTypeNode = resultNode;
-    }
-
     if(!restrictionTypeNode.IsNull())
     {
       m_restrictionType = GeoRestrictionTypeMapper::GetGeoRestrictionTypeForName(StringUtils::Trim(restrictionTypeNode.GetText().c_str()).c_str());
       m_restrictionTypeHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    if(quantityNode.IsNull())
-    {
-      quantityNode = resultNode;
-    }
-
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());

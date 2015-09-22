@@ -71,88 +71,48 @@ Latency& Latency::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode p999Node = resultNode.FirstChild("P999");
-    if(p999Node.IsNull())
-    {
-      p999Node = resultNode;
-    }
-
     if(!p999Node.IsNull())
     {
       m_p999 = StringUtils::ConvertToDouble(StringUtils::Trim(p999Node.GetText().c_str()).c_str());
       m_p999HasBeenSet = true;
     }
     XmlNode p99Node = resultNode.FirstChild("P99");
-    if(p99Node.IsNull())
-    {
-      p99Node = resultNode;
-    }
-
     if(!p99Node.IsNull())
     {
       m_p99 = StringUtils::ConvertToDouble(StringUtils::Trim(p99Node.GetText().c_str()).c_str());
       m_p99HasBeenSet = true;
     }
     XmlNode p95Node = resultNode.FirstChild("P95");
-    if(p95Node.IsNull())
-    {
-      p95Node = resultNode;
-    }
-
     if(!p95Node.IsNull())
     {
       m_p95 = StringUtils::ConvertToDouble(StringUtils::Trim(p95Node.GetText().c_str()).c_str());
       m_p95HasBeenSet = true;
     }
     XmlNode p90Node = resultNode.FirstChild("P90");
-    if(p90Node.IsNull())
-    {
-      p90Node = resultNode;
-    }
-
     if(!p90Node.IsNull())
     {
       m_p90 = StringUtils::ConvertToDouble(StringUtils::Trim(p90Node.GetText().c_str()).c_str());
       m_p90HasBeenSet = true;
     }
     XmlNode p85Node = resultNode.FirstChild("P85");
-    if(p85Node.IsNull())
-    {
-      p85Node = resultNode;
-    }
-
     if(!p85Node.IsNull())
     {
       m_p85 = StringUtils::ConvertToDouble(StringUtils::Trim(p85Node.GetText().c_str()).c_str());
       m_p85HasBeenSet = true;
     }
     XmlNode p75Node = resultNode.FirstChild("P75");
-    if(p75Node.IsNull())
-    {
-      p75Node = resultNode;
-    }
-
     if(!p75Node.IsNull())
     {
       m_p75 = StringUtils::ConvertToDouble(StringUtils::Trim(p75Node.GetText().c_str()).c_str());
       m_p75HasBeenSet = true;
     }
     XmlNode p50Node = resultNode.FirstChild("P50");
-    if(p50Node.IsNull())
-    {
-      p50Node = resultNode;
-    }
-
     if(!p50Node.IsNull())
     {
       m_p50 = StringUtils::ConvertToDouble(StringUtils::Trim(p50Node.GetText().c_str()).c_str());
       m_p50HasBeenSet = true;
     }
     XmlNode p10Node = resultNode.FirstChild("P10");
-    if(p10Node.IsNull())
-    {
-      p10Node = resultNode;
-    }
-
     if(!p10Node.IsNull())
     {
       m_p10 = StringUtils::ConvertToDouble(StringUtils::Trim(p10Node.GetText().c_str()).c_str());

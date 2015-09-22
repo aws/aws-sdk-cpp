@@ -37,7 +37,11 @@ ListReceiptFiltersResult& ListReceiptFiltersResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListReceiptFiltersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListReceiptFiltersResult")
+  {
+    resultNode = rootNode.FirstChild("ListReceiptFiltersResult");
+  }
 
   if(!resultNode.IsNull())
   {

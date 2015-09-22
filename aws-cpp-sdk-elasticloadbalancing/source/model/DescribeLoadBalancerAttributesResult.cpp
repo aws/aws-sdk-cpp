@@ -37,16 +37,15 @@ DescribeLoadBalancerAttributesResult& DescribeLoadBalancerAttributesResult::oper
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLoadBalancerAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLoadBalancerAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLoadBalancerAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerAttributesNode = resultNode.FirstChild("LoadBalancerAttributes");
-    if(loadBalancerAttributesNode.IsNull())
-    {
-      loadBalancerAttributesNode = resultNode;
-    }
-
     if(!loadBalancerAttributesNode.IsNull())
     {
       m_loadBalancerAttributes = loadBalancerAttributesNode;

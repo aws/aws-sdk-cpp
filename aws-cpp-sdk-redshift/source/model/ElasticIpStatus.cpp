@@ -43,22 +43,12 @@ ElasticIpStatus& ElasticIpStatus::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode elasticIpNode = resultNode.FirstChild("ElasticIp");
-    if(elasticIpNode.IsNull())
-    {
-      elasticIpNode = resultNode;
-    }
-
     if(!elasticIpNode.IsNull())
     {
       m_elasticIp = StringUtils::Trim(elasticIpNode.GetText().c_str());
       m_elasticIpHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

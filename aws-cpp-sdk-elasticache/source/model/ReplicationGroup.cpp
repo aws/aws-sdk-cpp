@@ -55,44 +55,24 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
-    if(replicationGroupIdNode.IsNull())
-    {
-      replicationGroupIdNode = resultNode;
-    }
-
     if(!replicationGroupIdNode.IsNull())
     {
       m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
-    if(pendingModifiedValuesNode.IsNull())
-    {
-      pendingModifiedValuesNode = resultNode;
-    }
-
     if(!pendingModifiedValuesNode.IsNull())
     {
       m_pendingModifiedValues = pendingModifiedValuesNode;
@@ -123,22 +103,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_nodeGroupsHasBeenSet = true;
     }
     XmlNode snapshottingClusterIdNode = resultNode.FirstChild("SnapshottingClusterId");
-    if(snapshottingClusterIdNode.IsNull())
-    {
-      snapshottingClusterIdNode = resultNode;
-    }
-
     if(!snapshottingClusterIdNode.IsNull())
     {
       m_snapshottingClusterId = StringUtils::Trim(snapshottingClusterIdNode.GetText().c_str());
       m_snapshottingClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
-    if(automaticFailoverNode.IsNull())
-    {
-      automaticFailoverNode = resultNode;
-    }
-
     if(!automaticFailoverNode.IsNull())
     {
       m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverNode.GetText().c_str()).c_str());

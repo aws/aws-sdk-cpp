@@ -49,44 +49,24 @@ ViewerCertificate& ViewerCertificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode iAMCertificateIdNode = resultNode.FirstChild("IAMCertificateId");
-    if(iAMCertificateIdNode.IsNull())
-    {
-      iAMCertificateIdNode = resultNode;
-    }
-
     if(!iAMCertificateIdNode.IsNull())
     {
       m_iAMCertificateId = StringUtils::Trim(iAMCertificateIdNode.GetText().c_str());
       m_iAMCertificateIdHasBeenSet = true;
     }
     XmlNode cloudFrontDefaultCertificateNode = resultNode.FirstChild("CloudFrontDefaultCertificate");
-    if(cloudFrontDefaultCertificateNode.IsNull())
-    {
-      cloudFrontDefaultCertificateNode = resultNode;
-    }
-
     if(!cloudFrontDefaultCertificateNode.IsNull())
     {
       m_cloudFrontDefaultCertificate = StringUtils::ConvertToBool(StringUtils::Trim(cloudFrontDefaultCertificateNode.GetText().c_str()).c_str());
       m_cloudFrontDefaultCertificateHasBeenSet = true;
     }
     XmlNode sSLSupportMethodNode = resultNode.FirstChild("SSLSupportMethod");
-    if(sSLSupportMethodNode.IsNull())
-    {
-      sSLSupportMethodNode = resultNode;
-    }
-
     if(!sSLSupportMethodNode.IsNull())
     {
       m_sSLSupportMethod = SSLSupportMethodMapper::GetSSLSupportMethodForName(StringUtils::Trim(sSLSupportMethodNode.GetText().c_str()).c_str());
       m_sSLSupportMethodHasBeenSet = true;
     }
     XmlNode minimumProtocolVersionNode = resultNode.FirstChild("MinimumProtocolVersion");
-    if(minimumProtocolVersionNode.IsNull())
-    {
-      minimumProtocolVersionNode = resultNode;
-    }
-
     if(!minimumProtocolVersionNode.IsNull())
     {
       m_minimumProtocolVersion = MinimumProtocolVersionMapper::GetMinimumProtocolVersionForName(StringUtils::Trim(minimumProtocolVersionNode.GetText().c_str()).c_str());

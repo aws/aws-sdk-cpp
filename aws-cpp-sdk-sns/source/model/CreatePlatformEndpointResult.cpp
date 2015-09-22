@@ -37,16 +37,15 @@ CreatePlatformEndpointResult& CreatePlatformEndpointResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreatePlatformEndpointResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreatePlatformEndpointResult")
+  {
+    resultNode = rootNode.FirstChild("CreatePlatformEndpointResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode endpointArnNode = resultNode.FirstChild("EndpointArn");
-    if(endpointArnNode.IsNull())
-    {
-      endpointArnNode = resultNode;
-    }
-
     if(!endpointArnNode.IsNull())
     {
       m_endpointArn = StringUtils::Trim(endpointArnNode.GetText().c_str());

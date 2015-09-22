@@ -53,66 +53,36 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
-    if(uploadIdNode.IsNull())
-    {
-      uploadIdNode = resultNode;
-    }
-
     if(!uploadIdNode.IsNull())
     {
       m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
       m_uploadIdHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
-    if(keyNode.IsNull())
-    {
-      keyNode = resultNode;
-    }
-
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
     XmlNode initiatedNode = resultNode.FirstChild("Initiated");
-    if(initiatedNode.IsNull())
-    {
-      initiatedNode = resultNode;
-    }
-
     if(!initiatedNode.IsNull())
     {
       m_initiated = StringUtils::ConvertToDouble(StringUtils::Trim(initiatedNode.GetText().c_str()).c_str());
       m_initiatedHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
-    if(storageClassNode.IsNull())
-    {
-      storageClassNode = resultNode;
-    }
-
     if(!storageClassNode.IsNull())
     {
       m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
       m_storageClassHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if(ownerNode.IsNull())
-    {
-      ownerNode = resultNode;
-    }
-
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;
     }
     XmlNode initiatorNode = resultNode.FirstChild("Initiator");
-    if(initiatorNode.IsNull())
-    {
-      initiatorNode = resultNode;
-    }
-
     if(!initiatorNode.IsNull())
     {
       m_initiator = initiatorNode;

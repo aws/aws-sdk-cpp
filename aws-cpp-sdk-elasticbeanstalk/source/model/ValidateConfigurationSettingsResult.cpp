@@ -37,7 +37,11 @@ ValidateConfigurationSettingsResult& ValidateConfigurationSettingsResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ValidateConfigurationSettingsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ValidateConfigurationSettingsResult")
+  {
+    resultNode = rootNode.FirstChild("ValidateConfigurationSettingsResult");
+  }
 
   if(!resultNode.IsNull())
   {

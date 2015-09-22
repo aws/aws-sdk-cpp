@@ -37,16 +37,15 @@ DeleteDBSnapshotResult& DeleteDBSnapshotResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteDBSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteDBSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteDBSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBSnapshotNode = resultNode.FirstChild("DBSnapshot");
-    if(dBSnapshotNode.IsNull())
-    {
-      dBSnapshotNode = resultNode;
-    }
-
     if(!dBSnapshotNode.IsNull())
     {
       m_dBSnapshot = dBSnapshotNode;

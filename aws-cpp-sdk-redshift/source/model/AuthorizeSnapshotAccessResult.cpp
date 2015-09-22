@@ -37,16 +37,15 @@ AuthorizeSnapshotAccessResult& AuthorizeSnapshotAccessResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AuthorizeSnapshotAccessResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AuthorizeSnapshotAccessResult")
+  {
+    resultNode = rootNode.FirstChild("AuthorizeSnapshotAccessResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;

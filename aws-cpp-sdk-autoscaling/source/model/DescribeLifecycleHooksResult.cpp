@@ -37,7 +37,11 @@ DescribeLifecycleHooksResult& DescribeLifecycleHooksResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLifecycleHooksResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLifecycleHooksResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLifecycleHooksResult");
+  }
 
   if(!resultNode.IsNull())
   {

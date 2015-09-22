@@ -37,7 +37,11 @@ DeleteIdentityResult& DeleteIdentityResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteIdentityResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteIdentityResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteIdentityResult");
+  }
 
   if(!resultNode.IsNull())
   {

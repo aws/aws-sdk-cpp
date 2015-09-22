@@ -37,16 +37,15 @@ EnableSnapshotCopyResult& EnableSnapshotCopyResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("EnableSnapshotCopyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "EnableSnapshotCopyResult")
+  {
+    resultNode = rootNode.FirstChild("EnableSnapshotCopyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

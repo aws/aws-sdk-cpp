@@ -20,7 +20,9 @@
 
 #include <aws/s3/S3Client.h>
 
+#include <list>
 #include <fstream>
+#include <functional>
 
 namespace Aws
 {
@@ -37,8 +39,11 @@ class TransferClient;
 class AWS_TRANSFER_API S3FileRequest
 {
 public:
+
+    using S3FileCompletionCallback = std::function < void() > ;
+
     S3FileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client);
-    ~S3FileRequest();
+    virtual ~S3FileRequest();
 
     // S3FileRequest defines this as progress out of file size - inherited classes that can't conform to this for some reason should derive their own
     virtual float GetProgress() const;
@@ -72,6 +77,10 @@ public:
     inline virtual uint64_t GetFileSize() const { return m_fileSize; }
 
     uint64_t GetProgressAmount() const;
+
+    // Add a callback to be fired on CompletionSuccess
+    void AddCompletionCallback(S3FileCompletionCallback addCallback);
+
 protected:
 
     const std::shared_ptr<Aws::S3::S3Client>& GetS3Client() const;
@@ -92,6 +101,9 @@ protected:
     void RegisterProgress(int64_t progressAmount);
 
 private:
+
+    void FireCompletionCallbacks();
+
     Aws::String m_fileName;
     Aws::String m_bucketName;
     Aws::String m_keyName;
@@ -105,9 +117,12 @@ private:
     std::atomic<bool> m_isDone;
     std::atomic<bool> m_completedSuccessfully;
 
+    std::mutex m_callbackMutex;
+
     bool m_cancelled;
     uint64_t m_fileSize;
     std::atomic<uint64_t> m_progress;
+    Aws::List<S3FileCompletionCallback> m_completionCallbacks;
 };
 
 } // namespace Transfer

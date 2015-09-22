@@ -37,16 +37,15 @@ PurchaseReservedDBInstancesOfferingResult& PurchaseReservedDBInstancesOfferingRe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PurchaseReservedDBInstancesOfferingResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PurchaseReservedDBInstancesOfferingResult")
+  {
+    resultNode = rootNode.FirstChild("PurchaseReservedDBInstancesOfferingResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode reservedDBInstanceNode = resultNode.FirstChild("ReservedDBInstance");
-    if(reservedDBInstanceNode.IsNull())
-    {
-      reservedDBInstanceNode = resultNode;
-    }
-
     if(!reservedDBInstanceNode.IsNull())
     {
       m_reservedDBInstance = reservedDBInstanceNode;

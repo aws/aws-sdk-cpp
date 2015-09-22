@@ -37,16 +37,15 @@ CreateClusterParameterGroupResult& CreateClusterParameterGroupResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateClusterParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateClusterParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateClusterParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterParameterGroupNode = resultNode.FirstChild("ClusterParameterGroup");
-    if(clusterParameterGroupNode.IsNull())
-    {
-      clusterParameterGroupNode = resultNode;
-    }
-
     if(!clusterParameterGroupNode.IsNull())
     {
       m_clusterParameterGroup = clusterParameterGroupNode;

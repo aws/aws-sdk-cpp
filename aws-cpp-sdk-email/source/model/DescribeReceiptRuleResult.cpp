@@ -37,16 +37,15 @@ DescribeReceiptRuleResult& DescribeReceiptRuleResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeReceiptRuleResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeReceiptRuleResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeReceiptRuleResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode ruleNode = resultNode.FirstChild("Rule");
-    if(ruleNode.IsNull())
-    {
-      ruleNode = resultNode;
-    }
-
     if(!ruleNode.IsNull())
     {
       m_rule = ruleNode;

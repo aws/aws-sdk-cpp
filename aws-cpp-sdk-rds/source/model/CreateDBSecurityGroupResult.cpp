@@ -37,16 +37,15 @@ CreateDBSecurityGroupResult& CreateDBSecurityGroupResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBSecurityGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBSecurityGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBSecurityGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
-    if(dBSecurityGroupNode.IsNull())
-    {
-      dBSecurityGroupNode = resultNode;
-    }
-
     if(!dBSecurityGroupNode.IsNull())
     {
       m_dBSecurityGroup = dBSecurityGroupNode;

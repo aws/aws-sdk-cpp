@@ -37,7 +37,11 @@ ApplySecurityGroupsToLoadBalancerResult& ApplySecurityGroupsToLoadBalancerResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ApplySecurityGroupsToLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ApplySecurityGroupsToLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("ApplySecurityGroupsToLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {

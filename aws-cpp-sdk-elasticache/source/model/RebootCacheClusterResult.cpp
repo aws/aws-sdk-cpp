@@ -37,16 +37,15 @@ RebootCacheClusterResult& RebootCacheClusterResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RebootCacheClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RebootCacheClusterResult")
+  {
+    resultNode = rootNode.FirstChild("RebootCacheClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheClusterNode = resultNode.FirstChild("CacheCluster");
-    if(cacheClusterNode.IsNull())
-    {
-      cacheClusterNode = resultNode;
-    }
-
     if(!cacheClusterNode.IsNull())
     {
       m_cacheCluster = cacheClusterNode;

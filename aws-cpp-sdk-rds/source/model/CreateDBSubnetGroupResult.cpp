@@ -37,16 +37,15 @@ CreateDBSubnetGroupResult& CreateDBSubnetGroupResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBSubnetGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBSubnetGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBSubnetGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBSubnetGroupNode = resultNode.FirstChild("DBSubnetGroup");
-    if(dBSubnetGroupNode.IsNull())
-    {
-      dBSubnetGroupNode = resultNode;
-    }
-
     if(!dBSubnetGroupNode.IsNull())
     {
       m_dBSubnetGroup = dBSubnetGroupNode;

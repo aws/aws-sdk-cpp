@@ -37,16 +37,15 @@ RebootDBInstanceResult& RebootDBInstanceResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RebootDBInstanceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RebootDBInstanceResult")
+  {
+    resultNode = rootNode.FirstChild("RebootDBInstanceResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

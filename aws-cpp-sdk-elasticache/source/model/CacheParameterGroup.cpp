@@ -45,33 +45,18 @@ CacheParameterGroup& CacheParameterGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupNameNode = resultNode.FirstChild("CacheParameterGroupName");
-    if(cacheParameterGroupNameNode.IsNull())
-    {
-      cacheParameterGroupNameNode = resultNode;
-    }
-
     if(!cacheParameterGroupNameNode.IsNull())
     {
       m_cacheParameterGroupName = StringUtils::Trim(cacheParameterGroupNameNode.GetText().c_str());
       m_cacheParameterGroupNameHasBeenSet = true;
     }
     XmlNode cacheParameterGroupFamilyNode = resultNode.FirstChild("CacheParameterGroupFamily");
-    if(cacheParameterGroupFamilyNode.IsNull())
-    {
-      cacheParameterGroupFamilyNode = resultNode;
-    }
-
     if(!cacheParameterGroupFamilyNode.IsNull())
     {
       m_cacheParameterGroupFamily = StringUtils::Trim(cacheParameterGroupFamilyNode.GetText().c_str());
       m_cacheParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

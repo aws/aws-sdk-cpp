@@ -37,16 +37,15 @@ GetPolicyResult& GetPolicyResult::operator =(const AmazonWebServiceResult<XmlDoc
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("GetPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode policyNode = resultNode.FirstChild("Policy");
-    if(policyNode.IsNull())
-    {
-      policyNode = resultNode;
-    }
-
     if(!policyNode.IsNull())
     {
       m_policy = policyNode;

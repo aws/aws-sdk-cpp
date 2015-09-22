@@ -53,55 +53,30 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode certificateIdentifierNode = resultNode.FirstChild("CertificateIdentifier");
-    if(certificateIdentifierNode.IsNull())
-    {
-      certificateIdentifierNode = resultNode;
-    }
-
     if(!certificateIdentifierNode.IsNull())
     {
       m_certificateIdentifier = StringUtils::Trim(certificateIdentifierNode.GetText().c_str());
       m_certificateIdentifierHasBeenSet = true;
     }
     XmlNode certificateTypeNode = resultNode.FirstChild("CertificateType");
-    if(certificateTypeNode.IsNull())
-    {
-      certificateTypeNode = resultNode;
-    }
-
     if(!certificateTypeNode.IsNull())
     {
       m_certificateType = StringUtils::Trim(certificateTypeNode.GetText().c_str());
       m_certificateTypeHasBeenSet = true;
     }
     XmlNode thumbprintNode = resultNode.FirstChild("Thumbprint");
-    if(thumbprintNode.IsNull())
-    {
-      thumbprintNode = resultNode;
-    }
-
     if(!thumbprintNode.IsNull())
     {
       m_thumbprint = StringUtils::Trim(thumbprintNode.GetText().c_str());
       m_thumbprintHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("ValidFrom");
-    if(validFromNode.IsNull())
-    {
-      validFromNode = resultNode;
-    }
-
     if(!validFromNode.IsNull())
     {
       m_validFrom = StringUtils::ConvertToDouble(StringUtils::Trim(validFromNode.GetText().c_str()).c_str());
       m_validFromHasBeenSet = true;
     }
     XmlNode validTillNode = resultNode.FirstChild("ValidTill");
-    if(validTillNode.IsNull())
-    {
-      validTillNode = resultNode;
-    }
-
     if(!validTillNode.IsNull())
     {
       m_validTill = StringUtils::ConvertToDouble(StringUtils::Trim(validTillNode.GetText().c_str()).c_str());

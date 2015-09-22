@@ -45,33 +45,18 @@ Output& Output::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode outputKeyNode = resultNode.FirstChild("OutputKey");
-    if(outputKeyNode.IsNull())
-    {
-      outputKeyNode = resultNode;
-    }
-
     if(!outputKeyNode.IsNull())
     {
       m_outputKey = StringUtils::Trim(outputKeyNode.GetText().c_str());
       m_outputKeyHasBeenSet = true;
     }
     XmlNode outputValueNode = resultNode.FirstChild("OutputValue");
-    if(outputValueNode.IsNull())
-    {
-      outputValueNode = resultNode;
-    }
-
     if(!outputValueNode.IsNull())
     {
       m_outputValue = StringUtils::Trim(outputValueNode.GetText().c_str());
       m_outputValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

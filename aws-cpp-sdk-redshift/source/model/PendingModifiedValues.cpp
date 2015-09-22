@@ -57,77 +57,42 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode masterUserPasswordNode = resultNode.FirstChild("MasterUserPassword");
-    if(masterUserPasswordNode.IsNull())
-    {
-      masterUserPasswordNode = resultNode;
-    }
-
     if(!masterUserPasswordNode.IsNull())
     {
       m_masterUserPassword = StringUtils::Trim(masterUserPasswordNode.GetText().c_str());
       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
-    if(nodeTypeNode.IsNull())
-    {
-      nodeTypeNode = resultNode;
-    }
-
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode numberOfNodesNode = resultNode.FirstChild("NumberOfNodes");
-    if(numberOfNodesNode.IsNull())
-    {
-      numberOfNodesNode = resultNode;
-    }
-
     if(!numberOfNodesNode.IsNull())
     {
       m_numberOfNodes = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfNodesNode.GetText().c_str()).c_str());
       m_numberOfNodesHasBeenSet = true;
     }
     XmlNode clusterTypeNode = resultNode.FirstChild("ClusterType");
-    if(clusterTypeNode.IsNull())
-    {
-      clusterTypeNode = resultNode;
-    }
-
     if(!clusterTypeNode.IsNull())
     {
       m_clusterType = StringUtils::Trim(clusterTypeNode.GetText().c_str());
       m_clusterTypeHasBeenSet = true;
     }
     XmlNode clusterVersionNode = resultNode.FirstChild("ClusterVersion");
-    if(clusterVersionNode.IsNull())
-    {
-      clusterVersionNode = resultNode;
-    }
-
     if(!clusterVersionNode.IsNull())
     {
       m_clusterVersion = StringUtils::Trim(clusterVersionNode.GetText().c_str());
       m_clusterVersionHasBeenSet = true;
     }
     XmlNode automatedSnapshotRetentionPeriodNode = resultNode.FirstChild("AutomatedSnapshotRetentionPeriod");
-    if(automatedSnapshotRetentionPeriodNode.IsNull())
-    {
-      automatedSnapshotRetentionPeriodNode = resultNode;
-    }
-
     if(!automatedSnapshotRetentionPeriodNode.IsNull())
     {
       m_automatedSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(automatedSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
       m_automatedSnapshotRetentionPeriodHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
-    if(clusterIdentifierNode.IsNull())
-    {
-      clusterIdentifierNode = resultNode;
-    }
-
     if(!clusterIdentifierNode.IsNull())
     {
       m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());

@@ -49,46 +49,30 @@ DescribeResizeResult& DescribeResizeResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeResizeResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeResizeResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeResizeResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode targetNodeTypeNode = resultNode.FirstChild("TargetNodeType");
-    if(targetNodeTypeNode.IsNull())
-    {
-      targetNodeTypeNode = resultNode;
-    }
-
     if(!targetNodeTypeNode.IsNull())
     {
       m_targetNodeType = StringUtils::Trim(targetNodeTypeNode.GetText().c_str());
     }
     XmlNode targetNumberOfNodesNode = resultNode.FirstChild("TargetNumberOfNodes");
-    if(targetNumberOfNodesNode.IsNull())
-    {
-      targetNumberOfNodesNode = resultNode;
-    }
-
     if(!targetNumberOfNodesNode.IsNull())
     {
       m_targetNumberOfNodes = StringUtils::ConvertToInt32(StringUtils::Trim(targetNumberOfNodesNode.GetText().c_str()).c_str());
     }
     XmlNode targetClusterTypeNode = resultNode.FirstChild("TargetClusterType");
-    if(targetClusterTypeNode.IsNull())
-    {
-      targetClusterTypeNode = resultNode;
-    }
-
     if(!targetClusterTypeNode.IsNull())
     {
       m_targetClusterType = StringUtils::Trim(targetClusterTypeNode.GetText().c_str());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
@@ -127,51 +111,26 @@ DescribeResizeResult& DescribeResizeResult::operator =(const AmazonWebServiceRes
 
     }
     XmlNode avgResizeRateInMegaBytesPerSecondNode = resultNode.FirstChild("AvgResizeRateInMegaBytesPerSecond");
-    if(avgResizeRateInMegaBytesPerSecondNode.IsNull())
-    {
-      avgResizeRateInMegaBytesPerSecondNode = resultNode;
-    }
-
     if(!avgResizeRateInMegaBytesPerSecondNode.IsNull())
     {
       m_avgResizeRateInMegaBytesPerSecond = StringUtils::ConvertToDouble(StringUtils::Trim(avgResizeRateInMegaBytesPerSecondNode.GetText().c_str()).c_str());
     }
     XmlNode totalResizeDataInMegaBytesNode = resultNode.FirstChild("TotalResizeDataInMegaBytes");
-    if(totalResizeDataInMegaBytesNode.IsNull())
-    {
-      totalResizeDataInMegaBytesNode = resultNode;
-    }
-
     if(!totalResizeDataInMegaBytesNode.IsNull())
     {
       m_totalResizeDataInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(totalResizeDataInMegaBytesNode.GetText().c_str()).c_str());
     }
     XmlNode progressInMegaBytesNode = resultNode.FirstChild("ProgressInMegaBytes");
-    if(progressInMegaBytesNode.IsNull())
-    {
-      progressInMegaBytesNode = resultNode;
-    }
-
     if(!progressInMegaBytesNode.IsNull())
     {
       m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(progressInMegaBytesNode.GetText().c_str()).c_str());
     }
     XmlNode elapsedTimeInSecondsNode = resultNode.FirstChild("ElapsedTimeInSeconds");
-    if(elapsedTimeInSecondsNode.IsNull())
-    {
-      elapsedTimeInSecondsNode = resultNode;
-    }
-
     if(!elapsedTimeInSecondsNode.IsNull())
     {
       m_elapsedTimeInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(elapsedTimeInSecondsNode.GetText().c_str()).c_str());
     }
     XmlNode estimatedTimeToCompletionInSecondsNode = resultNode.FirstChild("EstimatedTimeToCompletionInSeconds");
-    if(estimatedTimeToCompletionInSecondsNode.IsNull())
-    {
-      estimatedTimeToCompletionInSecondsNode = resultNode;
-    }
-
     if(!estimatedTimeToCompletionInSecondsNode.IsNull())
     {
       m_estimatedTimeToCompletionInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(estimatedTimeToCompletionInSecondsNode.GetText().c_str()).c_str());

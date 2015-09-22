@@ -18,12 +18,12 @@
 using namespace Aws::Utils;
 
 static const int s3_ReducedRedundancyLostObject_HASH = HashingUtils::HashString("s3:ReducedRedundancyLostObject");
-static const int s3_ObjectCreated___HASH = HashingUtils::HashString("s3:ObjectCreated:*");
+static const int s3_ObjectCreated_HASH = HashingUtils::HashString("s3:ObjectCreated:*");
 static const int s3_ObjectCreated_Put_HASH = HashingUtils::HashString("s3:ObjectCreated:Put");
 static const int s3_ObjectCreated_Post_HASH = HashingUtils::HashString("s3:ObjectCreated:Post");
 static const int s3_ObjectCreated_Copy_HASH = HashingUtils::HashString("s3:ObjectCreated:Copy");
 static const int s3_ObjectCreated_CompleteMultipartUpload_HASH = HashingUtils::HashString("s3:ObjectCreated:CompleteMultipartUpload");
-static const int s3_ObjectRemoved___HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
+static const int s3_ObjectRemoved_HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
 static const int s3_ObjectRemoved_Delete_HASH = HashingUtils::HashString("s3:ObjectRemoved:Delete");
 static const int s3_ObjectRemoved_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
 
@@ -43,9 +43,9 @@ Event GetEventForName(const Aws::String& name)
   {
     return Event::s3_ReducedRedundancyLostObject;
   }
-  else if (hashCode == s3_ObjectCreated___HASH)
+  else if (hashCode == s3_ObjectCreated_HASH)
   {
-    return Event::s3_ObjectCreated__;
+    return Event::s3_ObjectCreated;
   }
   else if (hashCode == s3_ObjectCreated_Put_HASH)
   {
@@ -63,9 +63,9 @@ Event GetEventForName(const Aws::String& name)
   {
     return Event::s3_ObjectCreated_CompleteMultipartUpload;
   }
-  else if (hashCode == s3_ObjectRemoved___HASH)
+  else if (hashCode == s3_ObjectRemoved_HASH)
   {
-    return Event::s3_ObjectRemoved__;
+    return Event::s3_ObjectRemoved;
   }
   else if (hashCode == s3_ObjectRemoved_Delete_HASH)
   {
@@ -85,7 +85,7 @@ Aws::String GetNameForEvent(Event value)
   {
   case Event::s3_ReducedRedundancyLostObject:
     return "s3:ReducedRedundancyLostObject";
-  case Event::s3_ObjectCreated__:
+  case Event::s3_ObjectCreated:
     return "s3:ObjectCreated:*";
   case Event::s3_ObjectCreated_Put:
     return "s3:ObjectCreated:Put";
@@ -95,7 +95,7 @@ Aws::String GetNameForEvent(Event value)
     return "s3:ObjectCreated:Copy";
   case Event::s3_ObjectCreated_CompleteMultipartUpload:
     return "s3:ObjectCreated:CompleteMultipartUpload";
-  case Event::s3_ObjectRemoved__:
+  case Event::s3_ObjectRemoved:
     return "s3:ObjectRemoved:*";
   case Event::s3_ObjectRemoved_Delete:
     return "s3:ObjectRemoved:Delete";

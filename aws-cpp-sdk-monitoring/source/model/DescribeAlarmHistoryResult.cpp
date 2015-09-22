@@ -37,7 +37,11 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeAlarmHistoryResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeAlarmHistoryResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeAlarmHistoryResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const AmazonW
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

@@ -37,7 +37,11 @@ GetAttributesResult& GetAttributesResult::operator =(const AmazonWebServiceResul
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

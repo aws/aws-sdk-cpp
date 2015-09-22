@@ -49,44 +49,24 @@ TemplateParameter& TemplateParameter::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode parameterKeyNode = resultNode.FirstChild("ParameterKey");
-    if(parameterKeyNode.IsNull())
-    {
-      parameterKeyNode = resultNode;
-    }
-
     if(!parameterKeyNode.IsNull())
     {
       m_parameterKey = StringUtils::Trim(parameterKeyNode.GetText().c_str());
       m_parameterKeyHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
-    if(defaultValueNode.IsNull())
-    {
-      defaultValueNode = resultNode;
-    }
-
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode noEchoNode = resultNode.FirstChild("NoEcho");
-    if(noEchoNode.IsNull())
-    {
-      noEchoNode = resultNode;
-    }
-
     if(!noEchoNode.IsNull())
     {
       m_noEcho = StringUtils::ConvertToBool(StringUtils::Trim(noEchoNode.GetText().c_str()).c_str());
       m_noEchoHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

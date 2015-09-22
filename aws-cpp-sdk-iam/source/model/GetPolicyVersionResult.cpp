@@ -37,16 +37,15 @@ GetPolicyVersionResult& GetPolicyVersionResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetPolicyVersionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetPolicyVersionResult")
+  {
+    resultNode = rootNode.FirstChild("GetPolicyVersionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode policyVersionNode = resultNode.FirstChild("PolicyVersion");
-    if(policyVersionNode.IsNull())
-    {
-      policyVersionNode = resultNode;
-    }
-
     if(!policyVersionNode.IsNull())
     {
       m_policyVersion = policyVersionNode;

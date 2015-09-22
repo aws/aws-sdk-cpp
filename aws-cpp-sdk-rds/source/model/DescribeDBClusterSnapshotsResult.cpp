@@ -37,16 +37,15 @@ DescribeDBClusterSnapshotsResult& DescribeDBClusterSnapshotsResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeDBClusterSnapshotsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeDBClusterSnapshotsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeDBClusterSnapshotsResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

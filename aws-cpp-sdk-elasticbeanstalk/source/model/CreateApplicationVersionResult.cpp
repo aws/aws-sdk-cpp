@@ -37,16 +37,15 @@ CreateApplicationVersionResult& CreateApplicationVersionResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateApplicationVersionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateApplicationVersionResult")
+  {
+    resultNode = rootNode.FirstChild("CreateApplicationVersionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode applicationVersionNode = resultNode.FirstChild("ApplicationVersion");
-    if(applicationVersionNode.IsNull())
-    {
-      applicationVersionNode = resultNode;
-    }
-
     if(!applicationVersionNode.IsNull())
     {
       m_applicationVersion = applicationVersionNode;

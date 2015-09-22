@@ -37,7 +37,11 @@ GetSendStatisticsResult& GetSendStatisticsResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetSendStatisticsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetSendStatisticsResult")
+  {
+    resultNode = rootNode.FirstChild("GetSendStatisticsResult");
+  }
 
   if(!resultNode.IsNull())
   {

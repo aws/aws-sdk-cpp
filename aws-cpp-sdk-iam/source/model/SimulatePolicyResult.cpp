@@ -37,7 +37,11 @@ SimulatePolicyResult& SimulatePolicyResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SimulatePolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SimulatePolicyResult")
+  {
+    resultNode = rootNode.FirstChild("SimulatePolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

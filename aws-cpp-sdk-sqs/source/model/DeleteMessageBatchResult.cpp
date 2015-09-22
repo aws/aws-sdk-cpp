@@ -37,7 +37,11 @@ DeleteMessageBatchResult& DeleteMessageBatchResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteMessageBatchResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteMessageBatchResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteMessageBatchResult");
+  }
 
   if(!resultNode.IsNull())
   {

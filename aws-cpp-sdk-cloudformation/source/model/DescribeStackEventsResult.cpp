@@ -37,7 +37,11 @@ DescribeStackEventsResult& DescribeStackEventsResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeStackEventsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeStackEventsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeStackEventsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeStackEventsResult& DescribeStackEventsResult::operator =(const AmazonWeb
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

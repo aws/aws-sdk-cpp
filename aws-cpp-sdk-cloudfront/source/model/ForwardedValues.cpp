@@ -47,33 +47,18 @@ ForwardedValues& ForwardedValues::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode queryStringNode = resultNode.FirstChild("QueryString");
-    if(queryStringNode.IsNull())
-    {
-      queryStringNode = resultNode;
-    }
-
     if(!queryStringNode.IsNull())
     {
       m_queryString = StringUtils::ConvertToBool(StringUtils::Trim(queryStringNode.GetText().c_str()).c_str());
       m_queryStringHasBeenSet = true;
     }
     XmlNode cookiesNode = resultNode.FirstChild("Cookies");
-    if(cookiesNode.IsNull())
-    {
-      cookiesNode = resultNode;
-    }
-
     if(!cookiesNode.IsNull())
     {
       m_cookies = cookiesNode;
       m_cookiesHasBeenSet = true;
     }
     XmlNode headersNode = resultNode.FirstChild("Headers");
-    if(headersNode.IsNull())
-    {
-      headersNode = resultNode;
-    }
-
     if(!headersNode.IsNull())
     {
       m_headers = headersNode;

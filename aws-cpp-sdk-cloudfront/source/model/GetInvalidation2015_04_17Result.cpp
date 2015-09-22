@@ -40,16 +40,7 @@ GetInvalidation2015_04_17Result& GetInvalidation2015_04_17Result::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode invalidationNode = resultNode.FirstChild("Invalidation");
-    if(invalidationNode.IsNull())
-    {
-      invalidationNode = resultNode;
-    }
-
-    if(!invalidationNode.IsNull())
-    {
-      m_invalidation = invalidationNode;
-    }
+    m_invalidation = resultNode;
   }
 
   return *this;

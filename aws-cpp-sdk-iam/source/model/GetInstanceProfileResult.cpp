@@ -37,16 +37,15 @@ GetInstanceProfileResult& GetInstanceProfileResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetInstanceProfileResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetInstanceProfileResult")
+  {
+    resultNode = rootNode.FirstChild("GetInstanceProfileResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode instanceProfileNode = resultNode.FirstChild("InstanceProfile");
-    if(instanceProfileNode.IsNull())
-    {
-      instanceProfileNode = resultNode;
-    }
-
     if(!instanceProfileNode.IsNull())
     {
       m_instanceProfile = instanceProfileNode;

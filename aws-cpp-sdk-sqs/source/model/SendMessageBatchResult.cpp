@@ -37,7 +37,11 @@ SendMessageBatchResult& SendMessageBatchResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SendMessageBatchResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SendMessageBatchResult")
+  {
+    resultNode = rootNode.FirstChild("SendMessageBatchResult");
+  }
 
   if(!resultNode.IsNull())
   {

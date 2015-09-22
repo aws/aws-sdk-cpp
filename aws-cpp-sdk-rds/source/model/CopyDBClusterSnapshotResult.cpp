@@ -37,16 +37,15 @@ CopyDBClusterSnapshotResult& CopyDBClusterSnapshotResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CopyDBClusterSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CopyDBClusterSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("CopyDBClusterSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterSnapshotNode = resultNode.FirstChild("DBClusterSnapshot");
-    if(dBClusterSnapshotNode.IsNull())
-    {
-      dBClusterSnapshotNode = resultNode;
-    }
-
     if(!dBClusterSnapshotNode.IsNull())
     {
       m_dBClusterSnapshot = dBClusterSnapshotNode;

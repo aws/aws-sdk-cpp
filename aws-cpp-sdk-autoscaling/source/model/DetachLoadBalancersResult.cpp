@@ -37,7 +37,11 @@ DetachLoadBalancersResult& DetachLoadBalancersResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DetachLoadBalancersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DetachLoadBalancersResult")
+  {
+    resultNode = rootNode.FirstChild("DetachLoadBalancersResult");
+  }
 
   if(!resultNode.IsNull())
   {

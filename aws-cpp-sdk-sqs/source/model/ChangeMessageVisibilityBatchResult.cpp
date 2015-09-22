@@ -37,7 +37,11 @@ ChangeMessageVisibilityBatchResult& ChangeMessageVisibilityBatchResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ChangeMessageVisibilityBatchResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ChangeMessageVisibilityBatchResult")
+  {
+    resultNode = rootNode.FirstChild("ChangeMessageVisibilityBatchResult");
+  }
 
   if(!resultNode.IsNull())
   {

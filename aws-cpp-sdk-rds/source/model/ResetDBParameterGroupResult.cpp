@@ -37,16 +37,15 @@ ResetDBParameterGroupResult& ResetDBParameterGroupResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ResetDBParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ResetDBParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ResetDBParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
-    if(dBParameterGroupNameNode.IsNull())
-    {
-      dBParameterGroupNameNode = resultNode;
-    }
-
     if(!dBParameterGroupNameNode.IsNull())
     {
       m_dBParameterGroupName = StringUtils::Trim(dBParameterGroupNameNode.GetText().c_str());

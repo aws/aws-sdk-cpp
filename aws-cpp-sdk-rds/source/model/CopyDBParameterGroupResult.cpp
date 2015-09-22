@@ -37,16 +37,15 @@ CopyDBParameterGroupResult& CopyDBParameterGroupResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CopyDBParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CopyDBParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CopyDBParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNode = resultNode.FirstChild("DBParameterGroup");
-    if(dBParameterGroupNode.IsNull())
-    {
-      dBParameterGroupNode = resultNode;
-    }
-
     if(!dBParameterGroupNode.IsNull())
     {
       m_dBParameterGroup = dBParameterGroupNode;

@@ -49,44 +49,24 @@ Event& Event::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode sourceIdentifierNode = resultNode.FirstChild("SourceIdentifier");
-    if(sourceIdentifierNode.IsNull())
-    {
-      sourceIdentifierNode = resultNode;
-    }
-
     if(!sourceIdentifierNode.IsNull())
     {
       m_sourceIdentifier = StringUtils::Trim(sourceIdentifierNode.GetText().c_str());
       m_sourceIdentifierHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
-    if(sourceTypeNode.IsNull())
-    {
-      sourceTypeNode = resultNode;
-    }
-
     if(!sourceTypeNode.IsNull())
     {
       m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(sourceTypeNode.GetText().c_str()).c_str());
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
-    if(messageNode.IsNull())
-    {
-      messageNode = resultNode;
-    }
-
     if(!messageNode.IsNull())
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
       m_messageHasBeenSet = true;
     }
     XmlNode dateNode = resultNode.FirstChild("Date");
-    if(dateNode.IsNull())
-    {
-      dateNode = resultNode;
-    }
-
     if(!dateNode.IsNull())
     {
       m_date = StringUtils::ConvertToDouble(StringUtils::Trim(dateNode.GetText().c_str()).c_str());

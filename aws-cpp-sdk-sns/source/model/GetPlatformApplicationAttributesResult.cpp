@@ -37,7 +37,11 @@ GetPlatformApplicationAttributesResult& GetPlatformApplicationAttributesResult::
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetPlatformApplicationAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetPlatformApplicationAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetPlatformApplicationAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ GetLoginProfileResult& GetLoginProfileResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetLoginProfileResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetLoginProfileResult")
+  {
+    resultNode = rootNode.FirstChild("GetLoginProfileResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode loginProfileNode = resultNode.FirstChild("LoginProfile");
-    if(loginProfileNode.IsNull())
-    {
-      loginProfileNode = resultNode;
-    }
-
     if(!loginProfileNode.IsNull())
     {
       m_loginProfile = loginProfileNode;

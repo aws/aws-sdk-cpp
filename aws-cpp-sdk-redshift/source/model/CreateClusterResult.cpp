@@ -37,16 +37,15 @@ CreateClusterResult& CreateClusterResult::operator =(const AmazonWebServiceResul
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateClusterResult")
+  {
+    resultNode = rootNode.FirstChild("CreateClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(clusterNode.IsNull())
-    {
-      clusterNode = resultNode;
-    }
-
     if(!clusterNode.IsNull())
     {
       m_cluster = clusterNode;

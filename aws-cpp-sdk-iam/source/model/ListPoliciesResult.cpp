@@ -39,7 +39,11 @@ ListPoliciesResult& ListPoliciesResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListPoliciesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListPoliciesResult")
+  {
+    resultNode = rootNode.FirstChild("ListPoliciesResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -55,21 +59,11 @@ ListPoliciesResult& ListPoliciesResult::operator =(const AmazonWebServiceResult<
 
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(isTruncatedNode.IsNull())
-    {
-      isTruncatedNode = resultNode;
-    }
-
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

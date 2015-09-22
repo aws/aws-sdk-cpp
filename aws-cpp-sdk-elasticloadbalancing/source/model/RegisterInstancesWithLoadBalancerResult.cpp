@@ -37,7 +37,11 @@ RegisterInstancesWithLoadBalancerResult& RegisterInstancesWithLoadBalancerResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RegisterInstancesWithLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RegisterInstancesWithLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("RegisterInstancesWithLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {

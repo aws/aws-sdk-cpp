@@ -40,16 +40,7 @@ ListDistributions2015_04_17Result& ListDistributions2015_04_17Result::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode distributionListNode = resultNode.FirstChild("DistributionList");
-    if(distributionListNode.IsNull())
-    {
-      distributionListNode = resultNode;
-    }
-
-    if(!distributionListNode.IsNull())
-    {
-      m_distributionList = distributionListNode;
-    }
+    m_distributionList = resultNode;
   }
 
   return *this;

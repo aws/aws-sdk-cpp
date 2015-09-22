@@ -37,16 +37,15 @@ RevokeSnapshotAccessResult& RevokeSnapshotAccessResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RevokeSnapshotAccessResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RevokeSnapshotAccessResult")
+  {
+    resultNode = rootNode.FirstChild("RevokeSnapshotAccessResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;

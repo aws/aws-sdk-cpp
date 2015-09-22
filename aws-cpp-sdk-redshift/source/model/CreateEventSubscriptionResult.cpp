@@ -37,16 +37,15 @@ CreateEventSubscriptionResult& CreateEventSubscriptionResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateEventSubscriptionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateEventSubscriptionResult")
+  {
+    resultNode = rootNode.FirstChild("CreateEventSubscriptionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode eventSubscriptionNode = resultNode.FirstChild("EventSubscription");
-    if(eventSubscriptionNode.IsNull())
-    {
-      eventSubscriptionNode = resultNode;
-    }
-
     if(!eventSubscriptionNode.IsNull())
     {
       m_eventSubscription = eventSubscriptionNode;

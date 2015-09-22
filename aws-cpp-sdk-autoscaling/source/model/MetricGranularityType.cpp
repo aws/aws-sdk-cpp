@@ -41,11 +41,6 @@ MetricGranularityType& MetricGranularityType::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode granularityNode = resultNode.FirstChild("Granularity");
-    if(granularityNode.IsNull())
-    {
-      granularityNode = resultNode;
-    }
-
     if(!granularityNode.IsNull())
     {
       m_granularity = StringUtils::Trim(granularityNode.GetText().c_str());

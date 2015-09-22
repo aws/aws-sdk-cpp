@@ -37,16 +37,15 @@ RestoreDBClusterToPointInTimeResult& RestoreDBClusterToPointInTimeResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RestoreDBClusterToPointInTimeResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RestoreDBClusterToPointInTimeResult")
+  {
+    resultNode = rootNode.FirstChild("RestoreDBClusterToPointInTimeResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterNode = resultNode.FirstChild("DBCluster");
-    if(dBClusterNode.IsNull())
-    {
-      dBClusterNode = resultNode;
-    }
-
     if(!dBClusterNode.IsNull())
     {
       m_dBCluster = dBClusterNode;

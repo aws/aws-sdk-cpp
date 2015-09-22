@@ -47,33 +47,18 @@ OrderableClusterOption& OrderableClusterOption::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode clusterVersionNode = resultNode.FirstChild("ClusterVersion");
-    if(clusterVersionNode.IsNull())
-    {
-      clusterVersionNode = resultNode;
-    }
-
     if(!clusterVersionNode.IsNull())
     {
       m_clusterVersion = StringUtils::Trim(clusterVersionNode.GetText().c_str());
       m_clusterVersionHasBeenSet = true;
     }
     XmlNode clusterTypeNode = resultNode.FirstChild("ClusterType");
-    if(clusterTypeNode.IsNull())
-    {
-      clusterTypeNode = resultNode;
-    }
-
     if(!clusterTypeNode.IsNull())
     {
       m_clusterType = StringUtils::Trim(clusterTypeNode.GetText().c_str());
       m_clusterTypeHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
-    if(nodeTypeNode.IsNull())
-    {
-      nodeTypeNode = resultNode;
-    }
-
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());

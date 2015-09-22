@@ -37,16 +37,15 @@ CreateQueueResult& CreateQueueResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateQueueResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateQueueResult")
+  {
+    resultNode = rootNode.FirstChild("CreateQueueResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode queueUrlNode = resultNode.FirstChild("QueueUrl");
-    if(queueUrlNode.IsNull())
-    {
-      queueUrlNode = resultNode;
-    }
-
     if(!queueUrlNode.IsNull())
     {
       m_queueUrl = StringUtils::Trim(queueUrlNode.GetText().c_str());

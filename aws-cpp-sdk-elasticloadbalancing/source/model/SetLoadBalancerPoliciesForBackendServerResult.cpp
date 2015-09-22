@@ -37,7 +37,11 @@ SetLoadBalancerPoliciesForBackendServerResult& SetLoadBalancerPoliciesForBackend
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetLoadBalancerPoliciesForBackendServerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetLoadBalancerPoliciesForBackendServerResult")
+  {
+    resultNode = rootNode.FirstChild("SetLoadBalancerPoliciesForBackendServerResult");
+  }
 
   if(!resultNode.IsNull())
   {

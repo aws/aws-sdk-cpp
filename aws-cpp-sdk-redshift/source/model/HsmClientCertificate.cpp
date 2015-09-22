@@ -45,22 +45,12 @@ HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hsmClientCertificateIdentifierNode = resultNode.FirstChild("HsmClientCertificateIdentifier");
-    if(hsmClientCertificateIdentifierNode.IsNull())
-    {
-      hsmClientCertificateIdentifierNode = resultNode;
-    }
-
     if(!hsmClientCertificateIdentifierNode.IsNull())
     {
       m_hsmClientCertificateIdentifier = StringUtils::Trim(hsmClientCertificateIdentifierNode.GetText().c_str());
       m_hsmClientCertificateIdentifierHasBeenSet = true;
     }
     XmlNode hsmClientCertificatePublicKeyNode = resultNode.FirstChild("HsmClientCertificatePublicKey");
-    if(hsmClientCertificatePublicKeyNode.IsNull())
-    {
-      hsmClientCertificatePublicKeyNode = resultNode;
-    }
-
     if(!hsmClientCertificatePublicKeyNode.IsNull())
     {
       m_hsmClientCertificatePublicKey = StringUtils::Trim(hsmClientCertificatePublicKeyNode.GetText().c_str());

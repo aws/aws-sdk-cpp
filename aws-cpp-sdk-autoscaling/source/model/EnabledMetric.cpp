@@ -43,22 +43,12 @@ EnabledMetric& EnabledMetric::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode metricNode = resultNode.FirstChild("Metric");
-    if(metricNode.IsNull())
-    {
-      metricNode = resultNode;
-    }
-
     if(!metricNode.IsNull())
     {
       m_metric = StringUtils::Trim(metricNode.GetText().c_str());
       m_metricHasBeenSet = true;
     }
     XmlNode granularityNode = resultNode.FirstChild("Granularity");
-    if(granularityNode.IsNull())
-    {
-      granularityNode = resultNode;
-    }
-
     if(!granularityNode.IsNull())
     {
       m_granularity = StringUtils::Trim(granularityNode.GetText().c_str());

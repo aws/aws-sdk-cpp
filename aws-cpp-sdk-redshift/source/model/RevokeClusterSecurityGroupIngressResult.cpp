@@ -37,16 +37,15 @@ RevokeClusterSecurityGroupIngressResult& RevokeClusterSecurityGroupIngressResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RevokeClusterSecurityGroupIngressResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RevokeClusterSecurityGroupIngressResult")
+  {
+    resultNode = rootNode.FirstChild("RevokeClusterSecurityGroupIngressResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
-    if(clusterSecurityGroupNode.IsNull())
-    {
-      clusterSecurityGroupNode = resultNode;
-    }
-
     if(!clusterSecurityGroupNode.IsNull())
     {
       m_clusterSecurityGroup = clusterSecurityGroupNode;

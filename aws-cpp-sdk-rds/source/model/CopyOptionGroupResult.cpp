@@ -37,16 +37,15 @@ CopyOptionGroupResult& CopyOptionGroupResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CopyOptionGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CopyOptionGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CopyOptionGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode optionGroupNode = resultNode.FirstChild("OptionGroup");
-    if(optionGroupNode.IsNull())
-    {
-      optionGroupNode = resultNode;
-    }
-
     if(!optionGroupNode.IsNull())
     {
       m_optionGroup = optionGroupNode;

@@ -75,44 +75,24 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode engineNode = resultNode.FirstChild("Engine");
-    if(engineNode.IsNull())
-    {
-      engineNode = resultNode;
-    }
-
     if(!engineNode.IsNull())
     {
       m_engine = StringUtils::Trim(engineNode.GetText().c_str());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(engineVersionNode.IsNull())
-    {
-      engineVersionNode = resultNode;
-    }
-
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
-    if(dBInstanceClassNode.IsNull())
-    {
-      dBInstanceClassNode = resultNode;
-    }
-
     if(!dBInstanceClassNode.IsNull())
     {
       m_dBInstanceClass = StringUtils::Trim(dBInstanceClassNode.GetText().c_str());
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
-    if(licenseModelNode.IsNull())
-    {
-      licenseModelNode = resultNode;
-    }
-
     if(!licenseModelNode.IsNull())
     {
       m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
@@ -131,77 +111,42 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode multiAZCapableNode = resultNode.FirstChild("MultiAZCapable");
-    if(multiAZCapableNode.IsNull())
-    {
-      multiAZCapableNode = resultNode;
-    }
-
     if(!multiAZCapableNode.IsNull())
     {
       m_multiAZCapable = StringUtils::ConvertToBool(StringUtils::Trim(multiAZCapableNode.GetText().c_str()).c_str());
       m_multiAZCapableHasBeenSet = true;
     }
     XmlNode readReplicaCapableNode = resultNode.FirstChild("ReadReplicaCapable");
-    if(readReplicaCapableNode.IsNull())
-    {
-      readReplicaCapableNode = resultNode;
-    }
-
     if(!readReplicaCapableNode.IsNull())
     {
       m_readReplicaCapable = StringUtils::ConvertToBool(StringUtils::Trim(readReplicaCapableNode.GetText().c_str()).c_str());
       m_readReplicaCapableHasBeenSet = true;
     }
     XmlNode vpcNode = resultNode.FirstChild("Vpc");
-    if(vpcNode.IsNull())
-    {
-      vpcNode = resultNode;
-    }
-
     if(!vpcNode.IsNull())
     {
       m_vpc = StringUtils::ConvertToBool(StringUtils::Trim(vpcNode.GetText().c_str()).c_str());
       m_vpcHasBeenSet = true;
     }
     XmlNode supportsStorageEncryptionNode = resultNode.FirstChild("SupportsStorageEncryption");
-    if(supportsStorageEncryptionNode.IsNull())
-    {
-      supportsStorageEncryptionNode = resultNode;
-    }
-
     if(!supportsStorageEncryptionNode.IsNull())
     {
       m_supportsStorageEncryption = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageEncryptionNode.GetText().c_str()).c_str());
       m_supportsStorageEncryptionHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(storageTypeNode.IsNull())
-    {
-      storageTypeNode = resultNode;
-    }
-
     if(!storageTypeNode.IsNull())
     {
       m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
       m_storageTypeHasBeenSet = true;
     }
     XmlNode supportsIopsNode = resultNode.FirstChild("SupportsIops");
-    if(supportsIopsNode.IsNull())
-    {
-      supportsIopsNode = resultNode;
-    }
-
     if(!supportsIopsNode.IsNull())
     {
       m_supportsIops = StringUtils::ConvertToBool(StringUtils::Trim(supportsIopsNode.GetText().c_str()).c_str());
       m_supportsIopsHasBeenSet = true;
     }
     XmlNode supportsEnhancedMonitoringNode = resultNode.FirstChild("SupportsEnhancedMonitoring");
-    if(supportsEnhancedMonitoringNode.IsNull())
-    {
-      supportsEnhancedMonitoringNode = resultNode;
-    }
-
     if(!supportsEnhancedMonitoringNode.IsNull())
     {
       m_supportsEnhancedMonitoring = StringUtils::ConvertToBool(StringUtils::Trim(supportsEnhancedMonitoringNode.GetText().c_str()).c_str());

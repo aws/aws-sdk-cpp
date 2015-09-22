@@ -37,7 +37,11 @@ CreateLoadBalancerPolicyResult& CreateLoadBalancerPolicyResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateLoadBalancerPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateLoadBalancerPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("CreateLoadBalancerPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

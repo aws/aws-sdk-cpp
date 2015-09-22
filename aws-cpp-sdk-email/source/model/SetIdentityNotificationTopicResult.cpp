@@ -37,7 +37,11 @@ SetIdentityNotificationTopicResult& SetIdentityNotificationTopicResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetIdentityNotificationTopicResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetIdentityNotificationTopicResult")
+  {
+    resultNode = rootNode.FirstChild("SetIdentityNotificationTopicResult");
+  }
 
   if(!resultNode.IsNull())
   {

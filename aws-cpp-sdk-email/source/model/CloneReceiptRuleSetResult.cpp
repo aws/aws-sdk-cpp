@@ -37,7 +37,11 @@ CloneReceiptRuleSetResult& CloneReceiptRuleSetResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CloneReceiptRuleSetResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CloneReceiptRuleSetResult")
+  {
+    resultNode = rootNode.FirstChild("CloneReceiptRuleSetResult");
+  }
 
   if(!resultNode.IsNull())
   {

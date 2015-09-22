@@ -37,16 +37,15 @@ VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("VerifyDomainIdentityResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "VerifyDomainIdentityResult")
+  {
+    resultNode = rootNode.FirstChild("VerifyDomainIdentityResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
-    if(verificationTokenNode.IsNull())
-    {
-      verificationTokenNode = resultNode;
-    }
-
     if(!verificationTokenNode.IsNull())
     {
       m_verificationToken = StringUtils::Trim(verificationTokenNode.GetText().c_str());

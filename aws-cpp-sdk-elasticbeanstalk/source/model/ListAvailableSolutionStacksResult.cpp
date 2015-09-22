@@ -37,7 +37,11 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListAvailableSolutionStacksResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListAvailableSolutionStacksResult")
+  {
+    resultNode = rootNode.FirstChild("ListAvailableSolutionStacksResult");
+  }
 
   if(!resultNode.IsNull())
   {

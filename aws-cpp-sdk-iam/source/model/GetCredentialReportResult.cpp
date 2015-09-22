@@ -40,36 +40,25 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetCredentialReportResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetCredentialReportResult")
+  {
+    resultNode = rootNode.FirstChild("GetCredentialReportResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode contentNode = resultNode.FirstChild("Content");
-    if(contentNode.IsNull())
-    {
-      contentNode = resultNode;
-    }
-
     if(!contentNode.IsNull())
     {
       m_content = HashingUtils::Base64Decode(StringUtils::Trim(contentNode.GetText().c_str()));
     }
     XmlNode reportFormatNode = resultNode.FirstChild("ReportFormat");
-    if(reportFormatNode.IsNull())
-    {
-      reportFormatNode = resultNode;
-    }
-
     if(!reportFormatNode.IsNull())
     {
       m_reportFormat = ReportFormatTypeMapper::GetReportFormatTypeForName(StringUtils::Trim(reportFormatNode.GetText().c_str()).c_str());
     }
     XmlNode generatedTimeNode = resultNode.FirstChild("GeneratedTime");
-    if(generatedTimeNode.IsNull())
-    {
-      generatedTimeNode = resultNode;
-    }
-
     if(!generatedTimeNode.IsNull())
     {
       m_generatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str());

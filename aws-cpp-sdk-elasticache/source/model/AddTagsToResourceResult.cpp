@@ -37,7 +37,11 @@ AddTagsToResourceResult& AddTagsToResourceResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AddTagsToResourceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AddTagsToResourceResult")
+  {
+    resultNode = rootNode.FirstChild("AddTagsToResourceResult");
+  }
 
   if(!resultNode.IsNull())
   {

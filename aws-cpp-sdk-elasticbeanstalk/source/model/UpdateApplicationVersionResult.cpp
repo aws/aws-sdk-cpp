@@ -37,16 +37,15 @@ UpdateApplicationVersionResult& UpdateApplicationVersionResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("UpdateApplicationVersionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "UpdateApplicationVersionResult")
+  {
+    resultNode = rootNode.FirstChild("UpdateApplicationVersionResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode applicationVersionNode = resultNode.FirstChild("ApplicationVersion");
-    if(applicationVersionNode.IsNull())
-    {
-      applicationVersionNode = resultNode;
-    }
-
     if(!applicationVersionNode.IsNull())
     {
       m_applicationVersion = applicationVersionNode;

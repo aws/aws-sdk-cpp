@@ -37,16 +37,15 @@ CreateCacheParameterGroupResult& CreateCacheParameterGroupResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateCacheParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateCacheParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateCacheParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupNode = resultNode.FirstChild("CacheParameterGroup");
-    if(cacheParameterGroupNode.IsNull())
-    {
-      cacheParameterGroupNode = resultNode;
-    }
-
     if(!cacheParameterGroupNode.IsNull())
     {
       m_cacheParameterGroup = cacheParameterGroupNode;

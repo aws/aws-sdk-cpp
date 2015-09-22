@@ -37,7 +37,11 @@ ListStackResourcesResult& ListStackResourcesResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListStackResourcesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListStackResourcesResult")
+  {
+    resultNode = rootNode.FirstChild("ListStackResourcesResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ ListStackResourcesResult& ListStackResourcesResult::operator =(const AmazonWebSe
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

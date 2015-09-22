@@ -37,7 +37,11 @@ GetTopicAttributesResult& GetTopicAttributesResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetTopicAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetTopicAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetTopicAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

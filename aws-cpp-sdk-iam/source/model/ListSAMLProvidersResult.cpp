@@ -37,7 +37,11 @@ ListSAMLProvidersResult& ListSAMLProvidersResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListSAMLProvidersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListSAMLProvidersResult")
+  {
+    resultNode = rootNode.FirstChild("ListSAMLProvidersResult");
+  }
 
   if(!resultNode.IsNull())
   {

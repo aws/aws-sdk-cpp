@@ -37,7 +37,11 @@ SetIdentityDkimEnabledResult& SetIdentityDkimEnabledResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetIdentityDkimEnabledResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetIdentityDkimEnabledResult")
+  {
+    resultNode = rootNode.FirstChild("SetIdentityDkimEnabledResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ GetTemplateResult& GetTemplateResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetTemplateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetTemplateResult")
+  {
+    resultNode = rootNode.FirstChild("GetTemplateResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
-    if(templateBodyNode.IsNull())
-    {
-      templateBodyNode = resultNode;
-    }
-
     if(!templateBodyNode.IsNull())
     {
       m_templateBody = StringUtils::Trim(templateBodyNode.GetText().c_str());

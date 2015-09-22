@@ -37,16 +37,15 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetMetricStatisticsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetMetricStatisticsResult")
+  {
+    resultNode = rootNode.FirstChild("GetMetricStatisticsResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode labelNode = resultNode.FirstChild("Label");
-    if(labelNode.IsNull())
-    {
-      labelNode = resultNode;
-    }
-
     if(!labelNode.IsNull())
     {
       m_label = StringUtils::Trim(labelNode.GetText().c_str());

@@ -37,7 +37,11 @@ GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetIdentityVerificationAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetIdentityVerificationAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetIdentityVerificationAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {

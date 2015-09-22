@@ -37,7 +37,11 @@ ListVerifiedEmailAddressesResult& ListVerifiedEmailAddressesResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListVerifiedEmailAddressesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListVerifiedEmailAddressesResult")
+  {
+    resultNode = rootNode.FirstChild("ListVerifiedEmailAddressesResult");
+  }
 
   if(!resultNode.IsNull())
   {

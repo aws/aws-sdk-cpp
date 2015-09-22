@@ -37,7 +37,11 @@ DescribeLifecycleHookTypesResult& DescribeLifecycleHookTypesResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLifecycleHookTypesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLifecycleHookTypesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLifecycleHookTypesResult");
+  }
 
   if(!resultNode.IsNull())
   {

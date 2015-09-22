@@ -37,16 +37,15 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeCacheParametersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeCacheParametersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeCacheParametersResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

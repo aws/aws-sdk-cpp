@@ -65,77 +65,42 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(timestampNode.IsNull())
-    {
-      timestampNode = resultNode;
-    }
-
     if(!timestampNode.IsNull())
     {
       m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
-    if(sampleCountNode.IsNull())
-    {
-      sampleCountNode = resultNode;
-    }
-
     if(!sampleCountNode.IsNull())
     {
       m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(sampleCountNode.GetText().c_str()).c_str());
       m_sampleCountHasBeenSet = true;
     }
     XmlNode averageNode = resultNode.FirstChild("Average");
-    if(averageNode.IsNull())
-    {
-      averageNode = resultNode;
-    }
-
     if(!averageNode.IsNull())
     {
       m_average = StringUtils::ConvertToDouble(StringUtils::Trim(averageNode.GetText().c_str()).c_str());
       m_averageHasBeenSet = true;
     }
     XmlNode sumNode = resultNode.FirstChild("Sum");
-    if(sumNode.IsNull())
-    {
-      sumNode = resultNode;
-    }
-
     if(!sumNode.IsNull())
     {
       m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(sumNode.GetText().c_str()).c_str());
       m_sumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
-    if(minimumNode.IsNull())
-    {
-      minimumNode = resultNode;
-    }
-
     if(!minimumNode.IsNull())
     {
       m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(minimumNode.GetText().c_str()).c_str());
       m_minimumHasBeenSet = true;
     }
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
-    if(maximumNode.IsNull())
-    {
-      maximumNode = resultNode;
-    }
-
     if(!maximumNode.IsNull())
     {
       m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(maximumNode.GetText().c_str()).c_str());
       m_maximumHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
-    if(unitNode.IsNull())
-    {
-      unitNode = resultNode;
-    }
-
     if(!unitNode.IsNull())
     {
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());

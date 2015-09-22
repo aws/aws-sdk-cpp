@@ -37,7 +37,11 @@ VerifyEmailIdentityResult& VerifyEmailIdentityResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("VerifyEmailIdentityResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "VerifyEmailIdentityResult")
+  {
+    resultNode = rootNode.FirstChild("VerifyEmailIdentityResult");
+  }
 
   if(!resultNode.IsNull())
   {

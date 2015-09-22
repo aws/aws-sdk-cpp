@@ -37,16 +37,15 @@ CreateClusterSecurityGroupResult& CreateClusterSecurityGroupResult::operator =(c
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateClusterSecurityGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateClusterSecurityGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateClusterSecurityGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
-    if(clusterSecurityGroupNode.IsNull())
-    {
-      clusterSecurityGroupNode = resultNode;
-    }
-
     if(!clusterSecurityGroupNode.IsNull())
     {
       m_clusterSecurityGroup = clusterSecurityGroupNode;

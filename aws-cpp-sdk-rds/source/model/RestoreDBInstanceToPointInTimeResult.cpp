@@ -37,16 +37,15 @@ RestoreDBInstanceToPointInTimeResult& RestoreDBInstanceToPointInTimeResult::oper
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RestoreDBInstanceToPointInTimeResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RestoreDBInstanceToPointInTimeResult")
+  {
+    resultNode = rootNode.FirstChild("RestoreDBInstanceToPointInTimeResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;

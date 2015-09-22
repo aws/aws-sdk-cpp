@@ -37,7 +37,11 @@ DescribeLaunchConfigurationsResult& DescribeLaunchConfigurationsResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLaunchConfigurationsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLaunchConfigurationsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLaunchConfigurationsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ DescribeLaunchConfigurationsResult& DescribeLaunchConfigurationsResult::operator
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());

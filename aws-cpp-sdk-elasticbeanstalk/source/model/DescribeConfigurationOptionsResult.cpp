@@ -37,16 +37,15 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeConfigurationOptionsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeConfigurationOptionsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeConfigurationOptionsResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
-    if(solutionStackNameNode.IsNull())
-    {
-      solutionStackNameNode = resultNode;
-    }
-
     if(!solutionStackNameNode.IsNull())
     {
       m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());

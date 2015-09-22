@@ -37,16 +37,15 @@ PurchaseReservedCacheNodesOfferingResult& PurchaseReservedCacheNodesOfferingResu
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PurchaseReservedCacheNodesOfferingResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PurchaseReservedCacheNodesOfferingResult")
+  {
+    resultNode = rootNode.FirstChild("PurchaseReservedCacheNodesOfferingResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode reservedCacheNodeNode = resultNode.FirstChild("ReservedCacheNode");
-    if(reservedCacheNodeNode.IsNull())
-    {
-      reservedCacheNodeNode = resultNode;
-    }
-
     if(!reservedCacheNodeNode.IsNull())
     {
       m_reservedCacheNode = reservedCacheNodeNode;

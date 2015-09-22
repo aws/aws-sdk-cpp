@@ -51,55 +51,30 @@ Group& Group::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
-    if(pathNode.IsNull())
-    {
-      pathNode = resultNode;
-    }
-
     if(!pathNode.IsNull())
     {
       m_path = StringUtils::Trim(pathNode.GetText().c_str());
       m_pathHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
-    if(groupNameNode.IsNull())
-    {
-      groupNameNode = resultNode;
-    }
-
     if(!groupNameNode.IsNull())
     {
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
       m_groupNameHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("GroupId");
-    if(groupIdNode.IsNull())
-    {
-      groupIdNode = resultNode;
-    }
-
     if(!groupIdNode.IsNull())
     {
       m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
       m_groupIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    if(arnNode.IsNull())
-    {
-      arnNode = resultNode;
-    }
-
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    if(createDateNode.IsNull())
-    {
-      createDateNode = resultNode;
-    }
-
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());

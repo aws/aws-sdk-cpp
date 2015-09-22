@@ -37,7 +37,11 @@ GetContextKeysForPolicyResult& GetContextKeysForPolicyResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetContextKeysForPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetContextKeysForPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("GetContextKeysForPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

@@ -37,16 +37,15 @@ DeleteClusterSnapshotResult& DeleteClusterSnapshotResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteClusterSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteClusterSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteClusterSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;

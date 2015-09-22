@@ -37,7 +37,11 @@ DescribeLoadBalancerPoliciesResult& DescribeLoadBalancerPoliciesResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLoadBalancerPoliciesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLoadBalancerPoliciesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLoadBalancerPoliciesResult");
+  }
 
   if(!resultNode.IsNull())
   {

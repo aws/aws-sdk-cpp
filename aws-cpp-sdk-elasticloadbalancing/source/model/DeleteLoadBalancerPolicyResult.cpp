@@ -37,7 +37,11 @@ DeleteLoadBalancerPolicyResult& DeleteLoadBalancerPolicyResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DeleteLoadBalancerPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DeleteLoadBalancerPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("DeleteLoadBalancerPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {

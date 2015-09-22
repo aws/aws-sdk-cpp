@@ -37,16 +37,15 @@ CreateDBParameterGroupResult& CreateDBParameterGroupResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateDBParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateDBParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("CreateDBParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNode = resultNode.FirstChild("DBParameterGroup");
-    if(dBParameterGroupNode.IsNull())
-    {
-      dBParameterGroupNode = resultNode;
-    }
-
     if(!dBParameterGroupNode.IsNull())
     {
       m_dBParameterGroup = dBParameterGroupNode;

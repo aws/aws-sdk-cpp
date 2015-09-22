@@ -43,22 +43,12 @@ Initiator& Initiator::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode iDNode = resultNode.FirstChild("ID");
-    if(iDNode.IsNull())
-    {
-      iDNode = resultNode;
-    }
-
     if(!iDNode.IsNull())
     {
       m_iD = StringUtils::Trim(iDNode.GetText().c_str());
       m_iDHasBeenSet = true;
     }
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
-    if(displayNameNode.IsNull())
-    {
-      displayNameNode = resultNode;
-    }
-
     if(!displayNameNode.IsNull())
     {
       m_displayName = StringUtils::Trim(displayNameNode.GetText().c_str());

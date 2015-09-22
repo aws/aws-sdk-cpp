@@ -37,16 +37,15 @@ RestoreDBClusterFromSnapshotResult& RestoreDBClusterFromSnapshotResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RestoreDBClusterFromSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RestoreDBClusterFromSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("RestoreDBClusterFromSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterNode = resultNode.FirstChild("DBCluster");
-    if(dBClusterNode.IsNull())
-    {
-      dBClusterNode = resultNode;
-    }
-
     if(!dBClusterNode.IsNull())
     {
       m_dBCluster = dBClusterNode;

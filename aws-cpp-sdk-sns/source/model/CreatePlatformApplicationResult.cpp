@@ -37,16 +37,15 @@ CreatePlatformApplicationResult& CreatePlatformApplicationResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreatePlatformApplicationResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreatePlatformApplicationResult")
+  {
+    resultNode = rootNode.FirstChild("CreatePlatformApplicationResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode platformApplicationArnNode = resultNode.FirstChild("PlatformApplicationArn");
-    if(platformApplicationArnNode.IsNull())
-    {
-      platformApplicationArnNode = resultNode;
-    }
-
     if(!platformApplicationArnNode.IsNull())
     {
       m_platformApplicationArn = StringUtils::Trim(platformApplicationArnNode.GetText().c_str());

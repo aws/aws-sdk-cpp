@@ -37,7 +37,11 @@ DescribeStackResourcesResult& DescribeStackResourcesResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeStackResourcesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeStackResourcesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeStackResourcesResult");
+  }
 
   if(!resultNode.IsNull())
   {

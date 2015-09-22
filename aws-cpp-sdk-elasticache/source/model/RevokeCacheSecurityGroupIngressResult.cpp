@@ -37,16 +37,15 @@ RevokeCacheSecurityGroupIngressResult& RevokeCacheSecurityGroupIngressResult::op
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RevokeCacheSecurityGroupIngressResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RevokeCacheSecurityGroupIngressResult")
+  {
+    resultNode = rootNode.FirstChild("RevokeCacheSecurityGroupIngressResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
-    if(cacheSecurityGroupNode.IsNull())
-    {
-      cacheSecurityGroupNode = resultNode;
-    }
-
     if(!cacheSecurityGroupNode.IsNull())
     {
       m_cacheSecurityGroup = cacheSecurityGroupNode;

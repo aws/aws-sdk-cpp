@@ -37,16 +37,15 @@ DescribeStackResourceResult& DescribeStackResourceResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeStackResourceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeStackResourceResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeStackResourceResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode stackResourceDetailNode = resultNode.FirstChild("StackResourceDetail");
-    if(stackResourceDetailNode.IsNull())
-    {
-      stackResourceDetailNode = resultNode;
-    }
-
     if(!stackResourceDetailNode.IsNull())
     {
       m_stackResourceDetail = stackResourceDetailNode;

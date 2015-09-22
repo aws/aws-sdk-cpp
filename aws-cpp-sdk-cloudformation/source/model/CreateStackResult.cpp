@@ -37,16 +37,15 @@ CreateStackResult& CreateStackResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateStackResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateStackResult")
+  {
+    resultNode = rootNode.FirstChild("CreateStackResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
-    if(stackIdNode.IsNull())
-    {
-      stackIdNode = resultNode;
-    }
-
     if(!stackIdNode.IsNull())
     {
       m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());

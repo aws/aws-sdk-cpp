@@ -37,7 +37,11 @@ ReorderReceiptRuleSetResult& ReorderReceiptRuleSetResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ReorderReceiptRuleSetResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ReorderReceiptRuleSetResult")
+  {
+    resultNode = rootNode.FirstChild("ReorderReceiptRuleSetResult");
+  }
 
   if(!resultNode.IsNull())
   {

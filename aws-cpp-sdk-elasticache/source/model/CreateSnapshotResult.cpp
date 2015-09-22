@@ -37,16 +37,15 @@ CreateSnapshotResult& CreateSnapshotResult::operator =(const AmazonWebServiceRes
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateSnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateSnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("CreateSnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;

@@ -37,16 +37,15 @@ FailoverDBClusterResult& FailoverDBClusterResult::operator =(const AmazonWebServ
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("FailoverDBClusterResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "FailoverDBClusterResult")
+  {
+    resultNode = rootNode.FirstChild("FailoverDBClusterResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterNode = resultNode.FirstChild("DBCluster");
-    if(dBClusterNode.IsNull())
-    {
-      dBClusterNode = resultNode;
-    }
-
     if(!dBClusterNode.IsNull())
     {
       m_dBCluster = dBClusterNode;

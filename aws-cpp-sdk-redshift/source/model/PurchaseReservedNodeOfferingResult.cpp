@@ -37,16 +37,15 @@ PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PurchaseReservedNodeOfferingResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PurchaseReservedNodeOfferingResult")
+  {
+    resultNode = rootNode.FirstChild("PurchaseReservedNodeOfferingResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode reservedNodeNode = resultNode.FirstChild("ReservedNode");
-    if(reservedNodeNode.IsNull())
-    {
-      reservedNodeNode = resultNode;
-    }
-
     if(!reservedNodeNode.IsNull())
     {
       m_reservedNode = reservedNodeNode;

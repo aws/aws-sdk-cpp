@@ -49,55 +49,30 @@ PolicyAttributeTypeDescription& PolicyAttributeTypeDescription::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
-    if(attributeNameNode.IsNull())
-    {
-      attributeNameNode = resultNode;
-    }
-
     if(!attributeNameNode.IsNull())
     {
       m_attributeName = StringUtils::Trim(attributeNameNode.GetText().c_str());
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeTypeNode = resultNode.FirstChild("AttributeType");
-    if(attributeTypeNode.IsNull())
-    {
-      attributeTypeNode = resultNode;
-    }
-
     if(!attributeTypeNode.IsNull())
     {
       m_attributeType = StringUtils::Trim(attributeTypeNode.GetText().c_str());
       m_attributeTypeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
-    if(defaultValueNode.IsNull())
-    {
-      defaultValueNode = resultNode;
-    }
-
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode cardinalityNode = resultNode.FirstChild("Cardinality");
-    if(cardinalityNode.IsNull())
-    {
-      cardinalityNode = resultNode;
-    }
-
     if(!cardinalityNode.IsNull())
     {
       m_cardinality = StringUtils::Trim(cardinalityNode.GetText().c_str());

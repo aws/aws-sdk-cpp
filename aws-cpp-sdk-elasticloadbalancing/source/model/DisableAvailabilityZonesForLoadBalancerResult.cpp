@@ -37,7 +37,11 @@ DisableAvailabilityZonesForLoadBalancerResult& DisableAvailabilityZonesForLoadBa
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DisableAvailabilityZonesForLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DisableAvailabilityZonesForLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("DisableAvailabilityZonesForLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {

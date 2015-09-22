@@ -37,16 +37,15 @@ GetAccountPasswordPolicyResult& GetAccountPasswordPolicyResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetAccountPasswordPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetAccountPasswordPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("GetAccountPasswordPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode passwordPolicyNode = resultNode.FirstChild("PasswordPolicy");
-    if(passwordPolicyNode.IsNull())
-    {
-      passwordPolicyNode = resultNode;
-    }
-
     if(!passwordPolicyNode.IsNull())
     {
       m_passwordPolicy = passwordPolicyNode;

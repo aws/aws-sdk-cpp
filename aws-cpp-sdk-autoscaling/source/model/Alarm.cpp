@@ -43,22 +43,12 @@ Alarm& Alarm::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
-    if(alarmNameNode.IsNull())
-    {
-      alarmNameNode = resultNode;
-    }
-
     if(!alarmNameNode.IsNull())
     {
       m_alarmName = StringUtils::Trim(alarmNameNode.GetText().c_str());
       m_alarmNameHasBeenSet = true;
     }
     XmlNode alarmARNNode = resultNode.FirstChild("AlarmARN");
-    if(alarmARNNode.IsNull())
-    {
-      alarmARNNode = resultNode;
-    }
-
     if(!alarmARNNode.IsNull())
     {
       m_alarmARN = StringUtils::Trim(alarmARNNode.GetText().c_str());

@@ -37,16 +37,15 @@ DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeEnvironmentResourcesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeEnvironmentResourcesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeEnvironmentResourcesResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode environmentResourcesNode = resultNode.FirstChild("EnvironmentResources");
-    if(environmentResourcesNode.IsNull())
-    {
-      environmentResourcesNode = resultNode;
-    }
-
     if(!environmentResourcesNode.IsNull())
     {
       m_environmentResources = environmentResourcesNode;

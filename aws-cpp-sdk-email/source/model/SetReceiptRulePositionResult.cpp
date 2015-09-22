@@ -37,7 +37,11 @@ SetReceiptRulePositionResult& SetReceiptRulePositionResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("SetReceiptRulePositionResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "SetReceiptRulePositionResult")
+  {
+    resultNode = rootNode.FirstChild("SetReceiptRulePositionResult");
+  }
 
   if(!resultNode.IsNull())
   {

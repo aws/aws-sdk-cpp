@@ -43,22 +43,12 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
-    if(topicArnNode.IsNull())
-    {
-      topicArnNode = resultNode;
-    }
-
     if(!topicArnNode.IsNull())
     {
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
     }
     XmlNode topicStatusNode = resultNode.FirstChild("TopicStatus");
-    if(topicStatusNode.IsNull())
-    {
-      topicStatusNode = resultNode;
-    }
-
     if(!topicStatusNode.IsNull())
     {
       m_topicStatus = StringUtils::Trim(topicStatusNode.GetText().c_str());

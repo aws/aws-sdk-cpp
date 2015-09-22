@@ -47,33 +47,18 @@ DBClusterMember& DBClusterMember::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
-    if(dBInstanceIdentifierNode.IsNull())
-    {
-      dBInstanceIdentifierNode = resultNode;
-    }
-
     if(!dBInstanceIdentifierNode.IsNull())
     {
       m_dBInstanceIdentifier = StringUtils::Trim(dBInstanceIdentifierNode.GetText().c_str());
       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode isClusterWriterNode = resultNode.FirstChild("IsClusterWriter");
-    if(isClusterWriterNode.IsNull())
-    {
-      isClusterWriterNode = resultNode;
-    }
-
     if(!isClusterWriterNode.IsNull())
     {
       m_isClusterWriter = StringUtils::ConvertToBool(StringUtils::Trim(isClusterWriterNode.GetText().c_str()).c_str());
       m_isClusterWriterHasBeenSet = true;
     }
     XmlNode dBClusterParameterGroupStatusNode = resultNode.FirstChild("DBClusterParameterGroupStatus");
-    if(dBClusterParameterGroupStatusNode.IsNull())
-    {
-      dBClusterParameterGroupStatusNode = resultNode;
-    }
-
     if(!dBClusterParameterGroupStatusNode.IsNull())
     {
       m_dBClusterParameterGroupStatus = StringUtils::Trim(dBClusterParameterGroupStatusNode.GetText().c_str());

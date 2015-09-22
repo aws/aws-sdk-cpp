@@ -37,16 +37,15 @@ DescribeClusterSecurityGroupsResult& DescribeClusterSecurityGroupsResult::operat
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeClusterSecurityGroupsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeClusterSecurityGroupsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeClusterSecurityGroupsResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());

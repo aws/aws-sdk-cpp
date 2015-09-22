@@ -37,7 +37,11 @@ RemoveTagsFromResourceResult& RemoveTagsFromResourceResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("RemoveTagsFromResourceResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "RemoveTagsFromResourceResult")
+  {
+    resultNode = rootNode.FirstChild("RemoveTagsFromResourceResult");
+  }
 
   if(!resultNode.IsNull())
   {

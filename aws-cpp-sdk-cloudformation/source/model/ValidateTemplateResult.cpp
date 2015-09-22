@@ -37,7 +37,11 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ValidateTemplateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ValidateTemplateResult")
+  {
+    resultNode = rootNode.FirstChild("ValidateTemplateResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +57,6 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
@@ -74,11 +73,6 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 
     }
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
-    if(capabilitiesReasonNode.IsNull())
-    {
-      capabilitiesReasonNode = resultNode;
-    }
-
     if(!capabilitiesReasonNode.IsNull())
     {
       m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
