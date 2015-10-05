@@ -41,16 +41,31 @@ GetBucketWebsiteResult& GetBucketWebsiteResult::operator =(const AmazonWebServic
   if(!resultNode.IsNull())
   {
     XmlNode redirectAllRequestsToNode = resultNode.FirstChild("RedirectAllRequestsTo");
+    if(redirectAllRequestsToNode.IsNull())
+    {
+      redirectAllRequestsToNode = resultNode;
+    }
+
     if(!redirectAllRequestsToNode.IsNull())
     {
       m_redirectAllRequestsTo = redirectAllRequestsToNode;
     }
     XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
+    if(indexDocumentNode.IsNull())
+    {
+      indexDocumentNode = resultNode;
+    }
+
     if(!indexDocumentNode.IsNull())
     {
       m_indexDocument = indexDocumentNode;
     }
     XmlNode errorDocumentNode = resultNode.FirstChild("ErrorDocument");
+    if(errorDocumentNode.IsNull())
+    {
+      errorDocumentNode = resultNode;
+    }
+
     if(!errorDocumentNode.IsNull())
     {
       m_errorDocument = errorDocumentNode;

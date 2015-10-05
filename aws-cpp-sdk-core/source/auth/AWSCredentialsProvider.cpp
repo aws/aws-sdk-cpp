@@ -66,7 +66,7 @@ static const char* DIRECTORY_JOIN = "/";
 bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
 {
     using namespace std::chrono;
-    milliseconds now = duration_cast<milliseconds>(high_resolution_clock::now().time_since_epoch());
+    milliseconds now = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
 
     if (now.count() - m_lastLoadedMs > reloadFrequency)
     {
@@ -193,6 +193,7 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
 AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
+    assert(m_credentials != nullptr);
     return *m_credentials;
 }
 
@@ -200,7 +201,7 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 {
     std::lock_guard<std::mutex> locker(m_reloadMutex);
-    if (IsTimeToRefresh(m_loadFrequencyMs))
+    if (!m_credentials || IsTimeToRefresh(m_loadFrequencyMs))
     {
         AWS_LOG_DEBUG(profileLogTag, "Refreshing credentials.");
 
@@ -327,7 +328,7 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
     AWS_LOG_DEBUG(instanceLogTag, "Checking if latest credential pull has expired.");
 
     std::lock_guard<std::mutex> locker(m_reloadMutex);
-    if (IsTimeToRefresh(m_loadFrequencyMs))
+    if (!m_credentials || IsTimeToRefresh(m_loadFrequencyMs))
     {
         AWS_LOG_INFO(instanceLogTag, "Credentials have expired attempting to repull from EC2 Metadata Service.");
         Aws::String mdRet = m_metadataClient->GetDefaultCredentials();

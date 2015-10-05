@@ -43,7 +43,6 @@ namespace Aws
         {
             class RateLimiterInterface;
         } // namespace RateLimits
-
     } // namespace Utils
 
     namespace Http
@@ -85,6 +84,9 @@ namespace Aws
             virtual ~AWSClient();
 
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0);
+
+            void DisableRequestProcessing();
+            void EnableRequestProcessing();
 
         protected:
 

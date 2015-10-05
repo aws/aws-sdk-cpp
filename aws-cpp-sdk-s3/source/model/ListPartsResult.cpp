@@ -50,36 +50,71 @@ ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDoc
   if(!resultNode.IsNull())
   {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
+    if(bucketNode.IsNull())
+    {
+      bucketNode = resultNode;
+    }
+
     if(!bucketNode.IsNull())
     {
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
+    if(keyNode.IsNull())
+    {
+      keyNode = resultNode;
+    }
+
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
     }
     XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
+    if(uploadIdNode.IsNull())
+    {
+      uploadIdNode = resultNode;
+    }
+
     if(!uploadIdNode.IsNull())
     {
       m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
     }
     XmlNode partNumberMarkerNode = resultNode.FirstChild("PartNumberMarker");
+    if(partNumberMarkerNode.IsNull())
+    {
+      partNumberMarkerNode = resultNode;
+    }
+
     if(!partNumberMarkerNode.IsNull())
     {
       m_partNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(partNumberMarkerNode.GetText().c_str()).c_str());
     }
     XmlNode nextPartNumberMarkerNode = resultNode.FirstChild("NextPartNumberMarker");
+    if(nextPartNumberMarkerNode.IsNull())
+    {
+      nextPartNumberMarkerNode = resultNode;
+    }
+
     if(!nextPartNumberMarkerNode.IsNull())
     {
       m_nextPartNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(nextPartNumberMarkerNode.GetText().c_str()).c_str());
     }
     XmlNode maxPartsNode = resultNode.FirstChild("MaxParts");
+    if(maxPartsNode.IsNull())
+    {
+      maxPartsNode = resultNode;
+    }
+
     if(!maxPartsNode.IsNull())
     {
       m_maxParts = StringUtils::ConvertToInt32(StringUtils::Trim(maxPartsNode.GetText().c_str()).c_str());
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
+    if(isTruncatedNode.IsNull())
+    {
+      isTruncatedNode = resultNode;
+    }
+
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
@@ -96,16 +131,31 @@ ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDoc
 
     }
     XmlNode initiatorNode = resultNode.FirstChild("Initiator");
+    if(initiatorNode.IsNull())
+    {
+      initiatorNode = resultNode;
+    }
+
     if(!initiatorNode.IsNull())
     {
       m_initiator = initiatorNode;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
+    if(ownerNode.IsNull())
+    {
+      ownerNode = resultNode;
+    }
+
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
+    if(storageClassNode.IsNull())
+    {
+      storageClassNode = resultNode;
+    }
+
     if(!storageClassNode.IsNull())
     {
       m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());

@@ -65,6 +65,7 @@ namespace
     static const char* PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucket";
     static const char* PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultipartbucket";
     static const char* ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucket";
+    static const char* INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucket";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
 
     static const int TIMEOUT_MAX = 10;
@@ -118,6 +119,7 @@ namespace
             DeleteBucket(CalculateBucketName(PUT_OBJECTS_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(PUT_MULTIPART_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(ERRORS_TESTING_BUCKET));
+            DeleteBucket(CalculateBucketName(INTERRUPT_TESTING_BUCKET));
             Limiter = nullptr;
             Client = nullptr;
             oregonClient = nullptr;
@@ -276,6 +278,65 @@ namespace
     std::shared_ptr<HttpClient> BucketAndObjectOperationTest::m_HttpClient(nullptr);
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> BucketAndObjectOperationTest::Limiter(nullptr);
     Aws::String BucketAndObjectOperationTest::TimeStamp("");
+
+    TEST_F(BucketAndObjectOperationTest, TestInterrupt)
+    {
+        Aws::String fullBucketName = CalculateBucketName(INTERRUPT_TESTING_BUCKET);
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+
+        WaitForBucketToPropagate(fullBucketName);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+
+        std::shared_ptr<Aws::IOStream> bigStream = Create5MbStreamForUploadPart("La");
+
+        putObjectRequest.SetBody(bigStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        //verify md5 sums between what was sent and what s3 told us they received.
+        Aws::StringStream ss;
+        ss << "\"" << HashingUtils::HexEncode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())) << "\"";
+        ASSERT_EQ(ss.str(), putObjectOutcome.GetResult().GetETag());
+
+        WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
+
+        ListObjectsRequest listObjectsRequest;
+        listObjectsRequest.SetBucket(fullBucketName);
+
+        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJ_KEY);
+
+        // because we use std::launch::async we know this will go to another thread
+        auto&& getCallable = Client->GetObjectCallable(getObjectRequest);
+
+        Client->DisableRequestProcessing();
+
+        auto&& getOutcome = getCallable.get();
+
+        ASSERT_FALSE(getOutcome.IsSuccess());
+
+        Client->EnableRequestProcessing();
+    }
 
     TEST_F(BucketAndObjectOperationTest, TestBucketCreationAndListing)
     {
@@ -725,6 +786,7 @@ namespace
         ASSERT_FALSE(getObjectOutcome.IsSuccess());
         ASSERT_EQ(S3Errors::NO_SUCH_KEY, getObjectOutcome.GetError().GetErrorType());
     }
+
 
 }
 

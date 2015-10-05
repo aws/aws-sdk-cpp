@@ -45,26 +45,51 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
+    if(isTruncatedNode.IsNull())
+    {
+      isTruncatedNode = resultNode;
+    }
+
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
     }
     XmlNode keyMarkerNode = resultNode.FirstChild("KeyMarker");
+    if(keyMarkerNode.IsNull())
+    {
+      keyMarkerNode = resultNode;
+    }
+
     if(!keyMarkerNode.IsNull())
     {
       m_keyMarker = StringUtils::Trim(keyMarkerNode.GetText().c_str());
     }
     XmlNode versionIdMarkerNode = resultNode.FirstChild("VersionIdMarker");
+    if(versionIdMarkerNode.IsNull())
+    {
+      versionIdMarkerNode = resultNode;
+    }
+
     if(!versionIdMarkerNode.IsNull())
     {
       m_versionIdMarker = StringUtils::Trim(versionIdMarkerNode.GetText().c_str());
     }
     XmlNode nextKeyMarkerNode = resultNode.FirstChild("NextKeyMarker");
+    if(nextKeyMarkerNode.IsNull())
+    {
+      nextKeyMarkerNode = resultNode;
+    }
+
     if(!nextKeyMarkerNode.IsNull())
     {
       m_nextKeyMarker = StringUtils::Trim(nextKeyMarkerNode.GetText().c_str());
     }
     XmlNode nextVersionIdMarkerNode = resultNode.FirstChild("NextVersionIdMarker");
+    if(nextVersionIdMarkerNode.IsNull())
+    {
+      nextVersionIdMarkerNode = resultNode;
+    }
+
     if(!nextVersionIdMarkerNode.IsNull())
     {
       m_nextVersionIdMarker = StringUtils::Trim(nextVersionIdMarkerNode.GetText().c_str());
@@ -92,21 +117,41 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const AmazonWebSe
 
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
+    if(nameNode.IsNull())
+    {
+      nameNode = resultNode;
+    }
+
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
+    if(prefixNode.IsNull())
+    {
+      prefixNode = resultNode;
+    }
+
     if(!prefixNode.IsNull())
     {
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
+    if(delimiterNode.IsNull())
+    {
+      delimiterNode = resultNode;
+    }
+
     if(!delimiterNode.IsNull())
     {
       m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
     }
     XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
+    if(maxKeysNode.IsNull())
+    {
+      maxKeysNode = resultNode;
+    }
+
     if(!maxKeysNode.IsNull())
     {
       m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(maxKeysNode.GetText().c_str()).c_str());
@@ -123,6 +168,11 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const AmazonWebSe
 
     }
     XmlNode encodingTypeNode = resultNode.FirstChild("EncodingType");
+    if(encodingTypeNode.IsNull())
+    {
+      encodingTypeNode = resultNode;
+    }
+
     if(!encodingTypeNode.IsNull())
     {
       m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());

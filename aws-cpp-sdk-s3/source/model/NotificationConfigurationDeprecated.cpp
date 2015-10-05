@@ -45,18 +45,33 @@ NotificationConfigurationDeprecated& NotificationConfigurationDeprecated::operat
   if(!resultNode.IsNull())
   {
     XmlNode topicConfigurationNode = resultNode.FirstChild("TopicConfiguration");
+    if(topicConfigurationNode.IsNull())
+    {
+      topicConfigurationNode = resultNode;
+    }
+
     if(!topicConfigurationNode.IsNull())
     {
       m_topicConfiguration = topicConfigurationNode;
       m_topicConfigurationHasBeenSet = true;
     }
     XmlNode queueConfigurationNode = resultNode.FirstChild("QueueConfiguration");
+    if(queueConfigurationNode.IsNull())
+    {
+      queueConfigurationNode = resultNode;
+    }
+
     if(!queueConfigurationNode.IsNull())
     {
       m_queueConfiguration = queueConfigurationNode;
       m_queueConfigurationHasBeenSet = true;
     }
     XmlNode cloudFunctionConfigurationNode = resultNode.FirstChild("CloudFunctionConfiguration");
+    if(cloudFunctionConfigurationNode.IsNull())
+    {
+      cloudFunctionConfigurationNode = resultNode;
+    }
+
     if(!cloudFunctionConfigurationNode.IsNull())
     {
       m_cloudFunctionConfiguration = cloudFunctionConfigurationNode;

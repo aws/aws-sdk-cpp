@@ -43,12 +43,22 @@ TargetGrant& TargetGrant::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode granteeNode = resultNode.FirstChild("Grantee");
+    if(granteeNode.IsNull())
+    {
+      granteeNode = resultNode;
+    }
+
     if(!granteeNode.IsNull())
     {
       m_grantee = granteeNode;
       m_granteeHasBeenSet = true;
     }
     XmlNode permissionNode = resultNode.FirstChild("Permission");
+    if(permissionNode.IsNull())
+    {
+      permissionNode = resultNode;
+    }
+
     if(!permissionNode.IsNull())
     {
       m_permission = BucketLogsPermissionMapper::GetBucketLogsPermissionForName(StringUtils::Trim(permissionNode.GetText().c_str()).c_str());

@@ -57,6 +57,11 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
       m_objectsHasBeenSet = true;
     }
     XmlNode quietNode = resultNode.FirstChild("Quiet");
+    if(quietNode.IsNull())
+    {
+      quietNode = resultNode;
+    }
+
     if(!quietNode.IsNull())
     {
       m_quiet = StringUtils::ConvertToBool(StringUtils::Trim(quietNode.GetText().c_str()).c_str());

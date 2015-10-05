@@ -43,12 +43,22 @@ RoutingRule& RoutingRule::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode conditionNode = resultNode.FirstChild("Condition");
+    if(conditionNode.IsNull())
+    {
+      conditionNode = resultNode;
+    }
+
     if(!conditionNode.IsNull())
     {
       m_condition = conditionNode;
       m_conditionHasBeenSet = true;
     }
     XmlNode redirectNode = resultNode.FirstChild("Redirect");
+    if(redirectNode.IsNull())
+    {
+      redirectNode = resultNode;
+    }
+
     if(!redirectNode.IsNull())
     {
       m_redirect = redirectNode;

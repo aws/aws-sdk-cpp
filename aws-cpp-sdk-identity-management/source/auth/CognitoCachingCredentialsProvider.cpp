@@ -54,8 +54,9 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
                 AWS_LOG_INFO(LOG_TAG, "Successfully obtained cognito credentials");
                 const auto& cognitoCreds = getCredentialsForIdentityOutcome.GetResult().GetCredentials();
 
-                m_cachedCredentials = AWSCredentials(cognitoCreds.GetAccessKeyId(), cognitoCreds.GetSecretKey(),
-                                                     cognitoCreds.GetSessionToken());
+                m_cachedCredentials.SetAWSAccessKeyId(cognitoCreds.GetAccessKeyId());
+                m_cachedCredentials.SetAWSSecretKey(cognitoCreds.GetSecretKey());
+                m_cachedCredentials.SetSessionToken(cognitoCreds.GetSessionToken());
                 m_expiry = cognitoCreds.GetExpiration();
                 AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry);
             }

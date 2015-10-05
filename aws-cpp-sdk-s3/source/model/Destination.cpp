@@ -41,6 +41,11 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
+    if(bucketNode.IsNull())
+    {
+      bucketNode = resultNode;
+    }
+
     if(!bucketNode.IsNull())
     {
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());

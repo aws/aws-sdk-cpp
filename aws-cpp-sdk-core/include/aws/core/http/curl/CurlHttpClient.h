@@ -30,6 +30,9 @@ namespace Http
 class CurlHttpClient: public HttpClient
 {
 public:
+
+    using Base = HttpClient;
+
     //Creates client, initializes curl handle if it hasn't been created already.
     CurlHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
     //Makes request and receives response synchronously

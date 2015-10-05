@@ -49,18 +49,33 @@ Transition& Transition::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dateNode = resultNode.FirstChild("Date");
+    if(dateNode.IsNull())
+    {
+      dateNode = resultNode;
+    }
+
     if(!dateNode.IsNull())
     {
       m_date = StringUtils::ConvertToDouble(StringUtils::Trim(dateNode.GetText().c_str()).c_str());
       m_dateHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
+    if(daysNode.IsNull())
+    {
+      daysNode = resultNode;
+    }
+
     if(!daysNode.IsNull())
     {
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
       m_daysHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
+    if(storageClassNode.IsNull())
+    {
+      storageClassNode = resultNode;
+    }
+
     if(!storageClassNode.IsNull())
     {
       m_storageClass = TransitionStorageClassMapper::GetTransitionStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());

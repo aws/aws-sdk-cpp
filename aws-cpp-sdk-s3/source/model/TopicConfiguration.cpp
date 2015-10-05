@@ -47,12 +47,22 @@ TopicConfiguration& TopicConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
-    XmlNode topicArnNode = resultNode.FirstChild("Topic");
+    XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
+    if(topicArnNode.IsNull())
+    {
+      topicArnNode = resultNode;
+    }
+
     if(!topicArnNode.IsNull())
     {
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
@@ -71,6 +81,11 @@ TopicConfiguration& TopicConfiguration::operator =(const XmlNode& xmlNode)
       m_eventsHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
+    if(filterNode.IsNull())
+    {
+      filterNode = resultNode;
+    }
+
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;

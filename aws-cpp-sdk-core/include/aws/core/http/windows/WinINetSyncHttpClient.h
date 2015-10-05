@@ -36,6 +36,8 @@ class WinINetConnectionPoolMgr;
 class AWS_CORE_API WinINetSyncHttpClient : public WinSyncHttpClient
 {
 public:
+    using Base = WinSyncHttpClient;
+
     //Creates client
     WinINetSyncHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
     ~WinINetSyncHttpClient();

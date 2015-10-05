@@ -38,6 +38,8 @@ class WinConnectionPoolMgr;
 class AWS_CORE_API WinSyncHttpClient : public HttpClient
 {
 public:
+    using Base = HttpClient;
+
     //Creates client
     WinSyncHttpClient();
     virtual ~WinSyncHttpClient();

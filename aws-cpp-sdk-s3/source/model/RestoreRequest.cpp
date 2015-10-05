@@ -43,6 +43,11 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode daysNode = resultNode.FirstChild("Days");
+    if(daysNode.IsNull())
+    {
+      daysNode = resultNode;
+    }
+
     if(!daysNode.IsNull())
     {
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());

@@ -34,11 +34,13 @@ namespace Threading
 {
     class Executor;
 } // namespace Threading
+
 namespace RateLimits
 {
     class RateLimiterInterface;
 } // namespace RateLimits
 } // namespace Utils
+
 namespace Client
 {
 

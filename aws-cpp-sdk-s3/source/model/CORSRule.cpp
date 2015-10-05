@@ -99,6 +99,11 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
       m_exposeHeadersHasBeenSet = true;
     }
     XmlNode maxAgeSecondsNode = resultNode.FirstChild("MaxAgeSeconds");
+    if(maxAgeSecondsNode.IsNull())
+    {
+      maxAgeSecondsNode = resultNode;
+    }
+
     if(!maxAgeSecondsNode.IsNull())
     {
       m_maxAgeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(maxAgeSecondsNode.GetText().c_str()).c_str());

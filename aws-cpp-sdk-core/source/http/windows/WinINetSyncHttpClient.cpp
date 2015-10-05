@@ -38,7 +38,8 @@ using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
-WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
+WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) :
+    Base()
 {
     AWS_LOG_INFO(GetLogTag(), "Creating http client with user agent %s with max connections %d, request timeout %d, "
         "and connect timeout %d",

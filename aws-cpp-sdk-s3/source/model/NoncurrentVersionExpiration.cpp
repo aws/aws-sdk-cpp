@@ -43,6 +43,11 @@ NoncurrentVersionExpiration& NoncurrentVersionExpiration::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode noncurrentDaysNode = resultNode.FirstChild("NoncurrentDays");
+    if(noncurrentDaysNode.IsNull())
+    {
+      noncurrentDaysNode = resultNode;
+    }
+
     if(!noncurrentDaysNode.IsNull())
     {
       m_noncurrentDays = StringUtils::ConvertToInt32(StringUtils::Trim(noncurrentDaysNode.GetText().c_str()).c_str());

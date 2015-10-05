@@ -103,7 +103,7 @@ protected:
     {
         Aws::OFStream testFile;
         testFile.open(fileName.c_str());
-        size_t putStringLength = putString.length();
+        auto putStringLength = putString.length();
         for (size_t i = putStringLength; i <= fileSize; i += putStringLength)
         {
             testFile << putString;

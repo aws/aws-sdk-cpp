@@ -401,6 +401,8 @@ add_subdirectory(aws-cpp-sdk-rds)
 add_subdirectory(aws-cpp-sdk-access-management)
 add_subdirectory(aws-cpp-sdk-transfer)
 add_subdirectory(aws-cpp-sdk-queues)
+add_subdirectory(aws-cpp-sdk-ec2)
+add_subdirectory(aws-cpp-sdk-swf)
 
 if(NOT PLATFORM_ANDROID)
     # the EventSeverity::DEBUG entry doesn't compile on android because DEBUG is #defined

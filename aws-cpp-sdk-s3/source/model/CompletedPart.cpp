@@ -45,12 +45,22 @@ CompletedPart& CompletedPart::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode eTagNode = resultNode.FirstChild("ETag");
+    if(eTagNode.IsNull())
+    {
+      eTagNode = resultNode;
+    }
+
     if(!eTagNode.IsNull())
     {
       m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
       m_eTagHasBeenSet = true;
     }
     XmlNode partNumberNode = resultNode.FirstChild("PartNumber");
+    if(partNumberNode.IsNull())
+    {
+      partNumberNode = resultNode;
+    }
+
     if(!partNumberNode.IsNull())
     {
       m_partNumber = StringUtils::ConvertToInt32(StringUtils::Trim(partNumberNode.GetText().c_str()).c_str());

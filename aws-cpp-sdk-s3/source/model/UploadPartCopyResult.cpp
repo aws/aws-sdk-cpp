@@ -42,6 +42,11 @@ UploadPartCopyResult& UploadPartCopyResult::operator =(const AmazonWebServiceRes
   if(!resultNode.IsNull())
   {
     XmlNode copyPartResultNode = resultNode.FirstChild("CopyPartResult");
+    if(copyPartResultNode.IsNull())
+    {
+      copyPartResultNode = resultNode;
+    }
+
     if(!copyPartResultNode.IsNull())
     {
       m_copyPartResult = copyPartResultNode;

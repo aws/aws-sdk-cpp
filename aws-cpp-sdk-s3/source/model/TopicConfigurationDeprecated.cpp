@@ -45,6 +45,11 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
+    if(idNode.IsNull())
+    {
+      idNode = resultNode;
+    }
+
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
@@ -63,6 +68,11 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
       m_eventsHasBeenSet = true;
     }
     XmlNode topicNode = resultNode.FirstChild("Topic");
+    if(topicNode.IsNull())
+    {
+      topicNode = resultNode;
+    }
+
     if(!topicNode.IsNull())
     {
       m_topic = StringUtils::Trim(topicNode.GetText().c_str());

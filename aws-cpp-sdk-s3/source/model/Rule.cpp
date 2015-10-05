@@ -53,42 +53,77 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
+    if(expirationNode.IsNull())
+    {
+      expirationNode = resultNode;
+    }
+
     if(!expirationNode.IsNull())
     {
       m_expiration = expirationNode;
       m_expirationHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
+    if(iDNode.IsNull())
+    {
+      iDNode = resultNode;
+    }
+
     if(!iDNode.IsNull())
     {
       m_iD = StringUtils::Trim(iDNode.GetText().c_str());
       m_iDHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
+    if(prefixNode.IsNull())
+    {
+      prefixNode = resultNode;
+    }
+
     if(!prefixNode.IsNull())
     {
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
       m_prefixHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
+    if(statusNode.IsNull())
+    {
+      statusNode = resultNode;
+    }
+
     if(!statusNode.IsNull())
     {
       m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode transitionNode = resultNode.FirstChild("Transition");
+    if(transitionNode.IsNull())
+    {
+      transitionNode = resultNode;
+    }
+
     if(!transitionNode.IsNull())
     {
       m_transition = transitionNode;
       m_transitionHasBeenSet = true;
     }
     XmlNode noncurrentVersionTransitionNode = resultNode.FirstChild("NoncurrentVersionTransition");
+    if(noncurrentVersionTransitionNode.IsNull())
+    {
+      noncurrentVersionTransitionNode = resultNode;
+    }
+
     if(!noncurrentVersionTransitionNode.IsNull())
     {
       m_noncurrentVersionTransition = noncurrentVersionTransitionNode;
       m_noncurrentVersionTransitionHasBeenSet = true;
     }
     XmlNode noncurrentVersionExpirationNode = resultNode.FirstChild("NoncurrentVersionExpiration");
+    if(noncurrentVersionExpirationNode.IsNull())
+    {
+      noncurrentVersionExpirationNode = resultNode;
+    }
+
     if(!noncurrentVersionExpirationNode.IsNull())
     {
       m_noncurrentVersionExpiration = noncurrentVersionExpirationNode;

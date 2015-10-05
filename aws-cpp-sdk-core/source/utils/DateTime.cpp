@@ -74,6 +74,6 @@ int DateTime::CalculateCurrentHour()
 
 double DateTime::ComputeCurrentTimestampInAmazonFormat()
 {
-    std::chrono::duration<double, std::chrono::seconds::period> now = std::chrono::high_resolution_clock::now().time_since_epoch();
+    std::chrono::duration<double, std::chrono::seconds::period> now = std::chrono::system_clock::now().time_since_epoch();
     return now.count();
 }
