@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required (VERSION 3.2.3)
+cmake_minimum_required (VERSION 2.8)
 
 # Cmake invocation variables:
 #   CUSTOM_MEMORY_MANAGEMENT - if set to 1, generates the sdk project files with custom memory management enabled, otherwise disables it
