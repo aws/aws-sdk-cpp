@@ -22,6 +22,16 @@
 #include <chrono>
 #include <thread>
 
+#include <aws/external/gtest.h>
+
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/logging/AWSLogging.h>
+#include <aws/core/utils/logging/android/LogcatLogSystem.h>
+#include <aws/testing/MemoryTesting.h>
+
+#include <jni.h>
+#include <iostream>
+
 /*
 This redirect solution is based on a blog post found at:
     https://codelab.wordpress.com/2014/11/03/how-to-use-standard-output-streams-for-logging-in-android-apps/
@@ -93,3 +103,53 @@ void RedirectStdoutToLogcat()
 
   std::this_thread::sleep_for(std::chrono::seconds(1));
 }
+
+#ifdef __ANDROID__
+
+static const char* ALLOCATION_TAG = "AndroidTests";
+
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
+static jint RunAndroidTestsInternal()
+{
+  RedirectStdoutToLogcat();
+
+  std::cout << "Running all enabled Android tests" << std::endl;
+
+  int dummy = 1;
+  static char *dummy2 = "Stuff";
+
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Fatal));
+  ::testing::InitGoogleTest(&dummy, &dummy2);
+  auto result = RUN_ALL_TESTS();
+
+  std::this_thread::sleep_for(std::chrono::seconds(3));
+
+  Aws::Utils::Logging::ShutdownAWSLogging();
+
+  return (jint) result;
+}
+
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
+JNIEXPORT jint JNICALL
+Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject thisRef )
+{
+  jint result = 0;
+
+  AWS_BEGIN_MEMORY_TEST(1024, 128)
+
+  result = RunAndroidTestsInternal();
+
+  AWS_END_MEMORY_OVERRIDE
+
+  return result;
+}
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+
+#endif //  __ANDROID__

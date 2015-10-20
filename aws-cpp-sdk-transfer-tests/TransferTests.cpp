@@ -232,7 +232,6 @@ protected:
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
-        config.httpLibOverride = TransferLibType::WIN_HTTP_CLIENT;
 
         m_s3Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config);
 

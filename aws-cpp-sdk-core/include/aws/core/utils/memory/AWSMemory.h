@@ -219,4 +219,6 @@ UniqueArrayPtr<T> MakeUniqueArray(std::size_t amount, const char* allocationTag,
     return UniqueArrayPtr<T>(Aws::NewArray<T>(amount, allocationTag, std::forward<ArgTypes>(args)...));
 }
 
+
 } // namespace Aws
+

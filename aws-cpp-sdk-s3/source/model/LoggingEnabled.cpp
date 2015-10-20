@@ -45,11 +45,6 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode targetBucketNode = resultNode.FirstChild("TargetBucket");
-    if(targetBucketNode.IsNull())
-    {
-      targetBucketNode = resultNode;
-    }
-
     if(!targetBucketNode.IsNull())
     {
       m_targetBucket = StringUtils::Trim(targetBucketNode.GetText().c_str());
@@ -68,11 +63,6 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
       m_targetGrantsHasBeenSet = true;
     }
     XmlNode targetPrefixNode = resultNode.FirstChild("TargetPrefix");
-    if(targetPrefixNode.IsNull())
-    {
-      targetPrefixNode = resultNode;
-    }
-
     if(!targetPrefixNode.IsNull())
     {
       m_targetPrefix = StringUtils::Trim(targetPrefixNode.GetText().c_str());

@@ -45,22 +45,12 @@ NoncurrentVersionTransition& NoncurrentVersionTransition::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode noncurrentDaysNode = resultNode.FirstChild("NoncurrentDays");
-    if(noncurrentDaysNode.IsNull())
-    {
-      noncurrentDaysNode = resultNode;
-    }
-
     if(!noncurrentDaysNode.IsNull())
     {
       m_noncurrentDays = StringUtils::ConvertToInt32(StringUtils::Trim(noncurrentDaysNode.GetText().c_str()).c_str());
       m_noncurrentDaysHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
-    if(storageClassNode.IsNull())
-    {
-      storageClassNode = resultNode;
-    }
-
     if(!storageClassNode.IsNull())
     {
       m_storageClass = TransitionStorageClassMapper::GetTransitionStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());

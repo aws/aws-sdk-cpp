@@ -1,7 +1,6 @@
-# aws-sdk-cpp
-The goal of the Aws Native SDK is to provide a modern C++ ( Version >= C++ 11) interface for Amazon Web Services. We want it to be performant, fully functioning, with low-level and high-level sdks. Yet, we also want to minimize dependencies, and provide platform portability. This includes Windows, OSX, Linux, and Mobile platforms. 
 
-This SDK has been specifically designed with game dev in mind, but we have also worked hard to maintain an interface that will work for systems engineering tasks as well as other projects that simply need the efficiency of native code.
+# aws-sdk-cpp
+The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).  
 
 We are launching the AWS SDK for C++ in its current experimental state while we gather feedback from
 users and the open source community to harden the APIs. We also are adding support for individual services
@@ -9,89 +8,113 @@ as we become more confident that the client generator can properly support each 
 services will be coming in the near future. We invite our customers to follow along with our progress and join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-###Building:
+###Introducting the AWS SDK for C++ from AWS re:invent 2015
+The following video explains many of the core features and also high-level SDKs
+https://www.youtube.com/watch?v=fm4Aa3Whwos&list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&index=9
+
+###Building the SDK:
+Use the information below to build the entire source tree for your platform, run unit tests, and build integration tests.  
 
 ####Minimum Compiler Versions:
-#####Visual Studio
-Visual Studio 2013 (However, if you want default move constructors/operators, this version will not provide them). Later versions of Visual Studio provide a more standards compliant compiler.
-#####GCC
-GCC versions >= GCC 4.9.0
-#####Clang
-Clang versions >= 3.3
+* Visual Studio 2013 or later
+..* Visual Studio 2013 does not provide default move constructors and operators. 
+..* Later versions of Visual Studio provide a standards-compliant compiler. 
+* GNU Compiler Collection (GCC) 4.9 or later
+* Clang 3.3 or later
 
-####Recommended Procedure for Out-of-Source Build:
-
-First, you need to make sure cmake and the relevant build tools for your platform are installed
-and available in your executable path.
-
-Next create your build directory. For these instructions, let's call it BUILD_DIR.
+####Creating an Out-of-Source Build (Recommended):
+To create an **out-of-source build**: 
+1. Install CMake and the relevant build tools for your platform. Ensure these are available in your executable path.
+2. Create your build directory. Replace BUILD_DIR with your build directory name:
 
 ```
 cd BUILD_DIR
 cmake <path-to-root-of-this-source-code>
 ```
-######For Auto Make build systems
+
+You can use the following variations to create your build directory: 
+* For Auto Make build systems: 
 `make`
-######For Visual Studio
+* For Visual Studio:
 `msbuild ALL_BUILD.vcxproj`
 
-######alternatively for release builds, you can run
-######For auto make systems
+To create a **release build**, do one of the following:
+* For Auto Make build systems: 
 ```
 cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
 make
 sudo make install
 ```
-######For visual studio
+* For Visual Studio:
 ```
 cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
 msbuild INSTALL.vcxproj /p:Configuration=Release
 ```
-That's it! This will build the entire source tree for your platform, run unit tests, and build integration tests.
 
-####CMake Variables:
+####CMake Variables
 
 #####CUSTOM_MEMORY_MANAGEMENT  
+To use a custom memory manager, set the value to 1. You can install a custom allocator, and all STL types will use the custom allocation interface. If the value is set to 0, you still might want to use the STL template types to help with DLL safety on Windows. 
 
-Set this value to 1 to use a custom memory manager. When using this option, all STL types will use our custom allocation interface which you can install a custom allocator into.
-If this is set to 0, you should still use our STL template types to help with DLL safety on windows. Note: Whatever value you use here, you need to make sure you use across your entire build system since a mismatch here will cause linker errors.
-Custom memory management defaults to off if static linking is enabled; because of the increased safety it adds in avoiding cross-DLL allocation/deallocation, it defaults to on if dynamic linking is enabled.
+If static linking is enabled, custom memory management defaults to off. If dynamic linking is enabled, custom memory management defaults to on and avoids cross-DLL allocation and deallocation. 
+
+Note: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your build system.
 
 #####STATIC_LINKING 
-
-By default, the build creates shared libs for each platform. If you want to statically link, specify this value as 1.  If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
+To use static linking, set the value to 1. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
 
 #####TARGET_ARCH
-
-By default, the build detects the host operating system and builds for that. If you want a cross compile, or you are building for a mobile platform, you will need to specify the target platform.
-Options here are: WINDOWS | LINUX | APPLE | ANDROID
+To cross compile or build for a mobile platform, you must specify the target platform. By default the build detects the host operating system and builds for that operating system. 
+Options: WINDOWS | LINUX | APPLE | ANDROID
 
 #####G
+Use this variable to generate build artifacts, such as Visual Studio solutions and Xcode projects. 
 
-This generates build artifacts such as visual studio solutions and xcode projects. Especially for Windows, you want to specify this, example: -G "Visual Studio 12 Win64". Refer to the cmake documentation for your platform for more information.
+Windows example:
+-G "Visual Studio 12 Win64"
+
+For more information, see the CMake documentation for your platform.
 
 ###Running integration tests:
-
-You will notice that there are several directories appended with *integration-tests. After building your project, you can run these executables to make sure everything is working properly.
+Several directories are appended with *integration-tests. After building your project, you can run these executables to ensure everything works properly.
 
 ####Dependencies:
-For Linux, in order to compile, you will need the header files for libcurl and libopenssl. These packages are usually available in your package manager:
+To compile in Linux, you must have the header files for libcurl and libopenssl. The packages are typically available in your package manager.
 
-example:
+Libcurl example:
    `sudo apt-get install libcurl-dev`
    
 ###Using the SDK
-The individual service clients are very similar to the other SDKs such as Java and .NET after you get them constructed. Here We'll explain the details of how core works, how to use each feature, and then how to then construct an individual client.
-*aws-cpp-sdk-core* does the heavy lifting of the system. In fact, you can trivially write a client to connect to any AWS service using just core itself. The individual service clients just make things a bit easier for you.
+After they are constructed, individual service clients are very similar to other SDKs, such as Java and .NET. This section explains how core works, how to use each feature, and how to construct an individual client.
+ 
+The aws-cpp-sdk-core is the heart of the system and does the heavy lifting. You can write a client to connect to any AWS service using just the core, and the individual service clients are available to help make the process a little easier.
 
 ####Build Defines
 If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.  
 If you wish to install your own memory manager to handle allocations made by the SDK, you will need to pass the CUSTOM_MEMORY_MANAGEMENT cmake parameter (-DCUSTOM_MEMORY_MANAGEMENT) as well as define AWS_CUSTOM_MEMORY_MANAGEMENT in all build targets dependent on the SDK.
 
-####Memory Management
-The Native SDK now offers developers the option of controlling how all memory allocation/deallocation is done within the library. This is currently done by implementing a subclass of MemorySystemInterface (see "aws/core/utils/memory/MemorySystemInterface.h") and installing a memory manager by calling InitializeAWSMemorySystem with an instance of your subclass. In the absence of a very compelling reason to do otherwise, the call to InitializeAWSMemorySystem should occur at the beginning of your application and a corresponding call to ShutdownAWSMemorySystem should occur at the end, right before exit.
 
-For example (note that the type signature of AllocateMemory is not set in stone and is open to debate/change based on SDK user needs):
+####Memory Management
+The AWS SDK for C++ provides a way to control memory allocation and deallocation in a library. 
+
+Custom memory management is available only if you use a version of the library built using the compile-time constant AWS_CUSTOM_MEMORY_MANAGEMENT defined.
+ 
+If you use a version of the library built without the compile-time constant, the global memory system functions such as InitializeAWSMemorySystem will not work and the global new and delete functions will be used instead. 
+
+For more information about the compile-time constant, see the STL and AWS Strings and Vectors section in this Readme.
+
+To allocate or deallocate memory: 
+1. Implement the MemorySystemInterface subclass: 
+   aws/core/utils/memory/MemorySystemInterface.h
+
+2. Install a memory manager with an instance of your subclass by calling: 
+   InitializeAWSMemorySystem
+   Note: This should occur at the beginning of your application. 
+
+3. Just before exit, initialize a corresponding call: 
+ShutdownAWSMemorySystem
+
+In the following example, the type signature for AllocateMemory can be changed as needed: 
 
 ```
 class MyMemoryManager : public Aws::Utils::Memory::MemorySystemInterface
@@ -106,7 +129,7 @@ class MyMemoryManager : public Aws::Utils::Memory::MemorySystemInterface
 };
 ```
 
-And later in Main:
+In Main:
 
 ```
 int main(void)
@@ -122,15 +145,19 @@ int main(void)
 }
 ```
 
-Custom memory management is only available when using a version of the library that was built with the compile-time constant AWS_CUSTOM_MEMORY_MANAGEMENT defined. If using a version of the library built without this flag, global new and delete will be used and the global memory system functions (InitializeAWSMemorySystem, etc...) will not do anything. The necessity of this compile-time switch is detailed in the next section.
+####STL and AWS Strings and Vectors
+When initialized with a memory manager, the AWS SDK for C++ defers all allocation and deallocation to the memory manager. If a memory manager does not exist, the SDK uses global new and delete.
 
-####STL or What is... Aws::String, Aws::Vector, etc...
+If you use custom STL allocators, you must alter the type signatures for all STL objects to match the allocation policy. Because STL is used prominently in the SDK implementation and interface, a single approach in the SDK would inhibit direct passing of default STL objects into the SDK or control of STL allocation. Alternately, a hybrid approach – using custom allocators internally and allowing standard and custom STL objects on the interface – could potentially cause more difficulty when investigating memory issues.
+  
+The solution is to use the memory system’s compile-time constant AWS_CUSTOM_MEMORY_MANAGEMENT to control which STL types the SDK will use.
+ 
+If the compile-time constant is enabled (on), the types resolve to STL types with a custom allocator connected to the AWS memory system.
+ 
+If the compile-time constant is disabled (off), all Aws::* types resolve to the corresponding default std::* type. 
 
-If initialized with a memory manager, the native SDK will defer all allocation and deallocation to it. In the absence of a memory manager, the SDK falls back to global new and delete. Yet, the SDK makes heavy use of STL, and STL does plenty of memory allocation. How do we handle that?
-If you use custom STL allocators in your code, you are forced to alter the type signatures of all your STL objects to match the allocation policy. STL is used prominently within the SDK's implementation and interface (although the interface will become less STL-centric in the near future). This means that a one-size-fits-all approach within the SDK would either prevent developers who don't care about memory management from directly passing "standard"/default STL objects into the SDK (because everything's using custom allocators) or hardcore developers who do care about memory wouldn't be able to control STL allocation (because everything's using the default std::allocator). Using a hybrid approach -- use the custom allocators internally but the interface allows both default std:: objects (which get converted into custom allocator ones) as well as ones with custom allocators -- bloats the interface, and more dangerously, makes memory issues potentially much more difficult to track down if the SDK developer makes a mistake. We can revisit this if people feel strongly that the compile-time switch is a bad idea; We were extremely wary of debugging/mixing STL objects with two different allocation methods.
+Example code from the AWSAllocator.h file in the SDK: 
 
-Our solution to these semi-conflicting requirements is to have the memory system compile switch -- AWS_CUSTOM_MEMORY_MANAGEMENT -- control what stl types the native SDK uses. If the compile switch is on, then the types resolve to stl types with a custom allocator that hooks into the AWS memory system. If the compile switch is off, then all Aws::* types resolve to the default std::* corresponding type. This is better explained by a few code snippets from the SDK:
-In AWSAllocator.h:
 ```
 #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
 
@@ -146,37 +173,41 @@ template< typename T > using Allocator = std::allocator<T>;
 
 #endif
 ```
-So depending on the compile-time switch, AwsAllocator is either a custom allocator or the default allocator. Then, we define our Aws::* types as follows: (from AWSVector.h)
+
+In the example code, the AwsAllocator can be either a custom allocator or a default allocator, depending on the compile-time constant. 
+
+Example code from the AWSVector.h file in the SDK:
 `template< typename T > using Vector = std::vector< T, Aws::Allocator< T > >;`
-If the compile-time switch is on, this type maps to a vector using custom memory allocation and the AWS memory system. If the compile-time switch is off, it's just a regular std::vector with default type parameters. This type aliasing is done for all the std:: types used in the native SDK that perform memory allocation (containers, string stream, string buf) and the SDK now exclusively uses these Aws types.
-When the SDK is released, in addition to the standard debug/release and 32/64 bit switches, we will build combinations with custom memory management (AWS_CUSTOM_MEMORY_MANAGEMENT) on and with it off. The developer can then choose which version they want to use: the version that has no custom allocator control and uses default STL objects throughout, or the version that has custom allocator controls and uses AwsAllocator-based STL objects throughout.
 
-#####Future Steps
-While we've given developers the ability to control all memory allocation within the SDK, a problem remains in that STL types dominate the public interface (primarily string parameters to the model object initialize/set methods). As it currently stands, developers that forgo STL entirely (rolling their own strings/containers/etc...) are forced to create many temporaries (incurring the cost of allocation/copy/deallocation) every time they want to make a service call. This is not desirable.
-Our current plan to address this is to focus primarily on the Request model objects and we have done the following:
-- every Init/Set function that takes a string has an overload that takes const char*
-- every Init/Set function that takes a container (map/vector mostly) has an Add variant that takes a single entry
-- every Init/Set that takes binary data has an overload that takes a pointer to the data and a length value
-- (if needed) every Init/Set function that takes a string has an overload that takes (non-zero-terminated) const char * and a length value.
-This removes most of the temporaries/allocation that currently happen when service calls are made by developers not using STL.
+In the example code, we define the Aws::* types.
+ 
+If the compile-time constant is enabled (on), the type maps to a vector using custom memory allocation and the AWS memory system. 
 
-#####Note to Native SDK developers regarding memory controls
-Some new rules that need to be followed by code inside the SDK:
-- new and delete should never be used. Use Aws::New<> and Aws::Delete<>.
-- new[] and delete[] should never be used. Use Aws::NewArray<> and Aws::DeleteArray<>.
-- use Aws::MakeShared; never use std::make_shared
-- use Aws::UniquePtr for unique pointers to a single object; create this using the Aws::MakeUnique function
-- use Aws::UniqueArray for unique pointers to an array of objects; create this using the Aws::MakeUniqueArray function
-- Never use stl containers directly. Use one of the Aws:: typedefs, or if one does not exist, add a typedef for the desired container.
+If the compile-time constant is disabled (off), the type maps to a regular std::vector with default type parameters.
+ 
+Type aliasing is used for all std:: types in the SDK that perform memory allocation, such as containers, string stream, and string buf. The AWS SDK for C++ uses these types.
 
-`Aws::Map<Aws::String, Aws::String> m_kvPairs;`
+#####Remaining Issues
+You can control memory allocation in the SDK; however, STL types still dominate the public interface through string parameters to the model object initialize and set methods. If you choose not to use STL and use strings and containers instead, you must create a lot of temporaries whenever you want to make a service call.
+ 
+To remove most of the temporaries and allocation when service calls are made using non-STL, we have implemented the following:
+* Every Init/Set function that takes a string has an overload that takes the const char*.
+* Every Init/Set function that takes a container (map/vector) has an add variant that takes a single entry. 
+* Every Init/Set function that takes binary data has an overload that takes a pointer to the data and a length value. 
+* (Optional) Every Init/Set function that takes a string has an overload that takes a non-zero terminated constr char* and a length value.
 
-- Any external pointer passed into the SDK that the SDK is expected to manage (ie cleanup) must be a shared_ptr. It is the responsibility of the developer to initialize the shared pointer with a destruction policy that matches how the object was allocated. If the SDK is not expected to cleanup a pointer, then a raw pointer is fine.
+#####Native SDK Developers and Memory Controls
+Follow these rules in the SDK code: 
+* Do not use new and delete; use Aws::New<> and Aws::Delete<>.
+* Do not use new[] and delete []; use Aws::NewArray<> and Aws::DeleteArray<>.
+* Do not use std::make_shared; use Aws::MakeShared.
+* Use Aws::UniquePtr for unique pointers to a single object. Use the Aws::MakeUnique function to create the unique pointer. 
+* Use Aws::UniqueArray for unique pointers to an array of objects. Use the Aws::MakeUniqueArray function to create the unique pointer. 
+* Do not directly use STL containers; use one of the Aws::typedefs or add a typedef for the desired container. Example: `Aws::Map<Aws::String, Aws::String> m_kvPairs;`
+* Use shared_ptr for any external pointer passed into and managed by the SDK. You must initialize the shared pointer with a destruction policy that matches how the object was allocated. You can use a raw pointer if the SDK is not expected to clean up the pointer.
 
 ####Logging
-The SDK has configurable logging support. When initializing the logging system you can control the filter level as well as the logging target: either a file whose name has a configurable prefix or a stream. The log file generated by the prefix option rolls over once per hour to allow for log file archiving or deletion.
-
-To set the logging options, you'll need to initialize the logging system at the beginning of your program:
+The AWS SDK for C++ includes logging support that you can configure. When initializing the logging system, you can control the filter level and the logging target (file with a name that has a configurable prefix or a stream). The log file generated by the prefix option rolls over once per hour to allow for archiving or deleting log files.
 
 `Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
 
@@ -185,7 +216,7 @@ Don't forget to shut it down at the end of your program:
 
 `Aws::Utils::Logging::ShutdownAWSLogging();`
 
-For example, we do something like this in our integration tests:
+Example integration test: 
 
 ```
 #include <aws/external/gtest.h>
@@ -207,9 +238,9 @@ int main(int argc, char** argv)
 ```
 
 ####Client Configuration
-The client configuration is the way that you control most functionality in the SDK. We'll now explain each piece of the client config.
+You can use the client configuration to control most functionality in the AWS SDK for C++.
 
-Here is the declaration for ClientConfiguration:
+ClientConfiguration declaration:
 
 ```
 struct AWS_CORE_API ClientConfiguration
@@ -236,59 +267,58 @@ struct AWS_CORE_API ClientConfiguration
 ```
 
 #####User Agent
-You shouldn't alter this, this pulls various bits of information from your operating system and is built in the constructor.
+The user agent is built in the constructor and pulls information from your operating system. Do not alter the user agent.
 
 #####Scheme
-Defaults to HTTPS, if the information you are passing is not sensitive and the service you are connecting to supports an HTTP endpoint, then feel free to set this to HTTP. AWS Auth protects you from tampering.
+The default value for scheme is HTTPS. You can set this value to HTTP if the information you are passing is not sensitive and the service to which you want to connect supports an HTTP endpoint. AWS Auth protects you from tampering.
 
 #####Region
-This is the region that you want the client to communicate with eg. us-east-1, us-west-1 etc... It is your responsibility to make sure the service you are using has an endpoint in the region configure here.
+The region specifies where you want the client to communicate. Examples include us-east-1 or us-west-1. You must ensure the service you want to use has an endpoint in the region you configure.
 
 #####Max Connections
-This is the maximum number of connections to allow to a single server for your http communications.  Set this as high as you think you can support the bandwidth for. We recommend somewhere around 25.  The default for this value is 25.
+The default value for the maximum number of allowed connections to a single server for your HTTP communications is 25. You can set this value as high as you can support the bandwidth. We recommend a value around 25.
 
 #####Request Timeout and Connection Timeout
-In Milliseconds, how long to wait before timing out a request. Consider raising this value if you are doing large file transfers such as in S3 or cloud front.
+This value determines the length of time, in milliseconds, to wait before timing out a request. You can increase this value if you need to transfer large files, such as in Amazon S3 or CloudFront.
 
 #####Retry Strategy
-Defaults to exponential backoff. If you want to override this, Implement a subclass of RetryStrategy and pass an instance here.
+The retry strategy defaults to exponential backoff. You can override this default by implementing a subclass of RetryStrategy and passing an instance.
 
 #####Endpoint Override
-Don't use this unless you already know what it's for.... 
+Do not alter the endpoint. 
 
 #####Proxy Host, Port, User Name, and Password
-This allows you to configure a proxy for all communication with AWS. This is particularly useful at debug time in conjunction with the Burp suite. However, some users may use a proxy to actually connect to the internet. Configure that stuff here.
+These settings allow you to configure a proxy for all communication with AWS. Examples of when this functionality might be useful include debugging in conjunction with the Burp suite, or using a proxy to connect to the internet.
 
 #####Executor
-This defaults to creating a thread for each async call and detaching it. If you want different behavior, implement a subclass of Executor and pass an instance of it here.
+The default behavior for the executor is to create and detach a thread for each async call. You can change this behavior by implementing a subclass of Executor and passing an instance.
 
 #####Verify SSL
-If you turn this off, you might as well turn SSL off; but if you must, set this to false to disable SSL certificate verification.
+If necessary, you can disable SSL certificate verification by setting the verify SSL value to false.
 
 #####Write Rate Limiter and Read Rate Limiter
-If you aren't writing a game for a console, you probably don't care about this. These throttle the bandwidth used by the transport layer to help you with resource budgets. The default is wide open. If you just want to set a budget then use our default implementation with your desired rates. You can also subclass RateLimiterInterface and inject your own instance.
+The write and read rate limiters are used to throttle the bandwidth used by the transport layer. The default for these limiters is open. You can use the default implementation with your desired rates, or you can create your own instance by implementing a subclass of RateLimiterInterface.
 
 ####Credentials Providers
-The fundamental way of providing credentials to the AWS auth signing process is through the AWSCredentialProvider interface. You can implement this interface to provide your own method of credentials deployment. For convenience we've written some of these for you and provide them by default.
+You can use the AWSCredentialProvider interface to provide login credentials to AWS Auth. Implement this interface to provide your own method of credentials deployment. We also provide default credential providers.
 
 #####Default Credential Provider Chain
 The default credential provider chain does the following:
+* Checks your environment variables for AWS Credentials
+* Checks your $HOME/.aws/credentials file for a profile and credentials
+* Contacts the EC2MetadataInstanceProfile service to request credentials
 
-1.  Checks your environment variables for AWS Credentials
+The simplest way to communicate with AWS is to ensure we can find your credentials in one of these locations. 
 
-2.  Checks your $HOME/.aws/credentials file for a profile and credentials.
-  
-3.  Contacts the EC2MetadataInstanceProfile Service to ask for credentials.
-
-The simplest way to communicate with AWS without hardcoding your credentials in your source code or configuration files is to make sure we can find your credentials in 1 of those 3 places.
-
-#####Other methods
-You can also just provide us with credentials in your client's constructor.
-
-Furthermore, we provide a full identity-management solution via the Cognito-Identity Service. To take advantage of this, use the CognitoCaching*CredentialsProviders classes in the identity-management project, and read the cognito-identity documentation.
+#####Other Methods
+We also support two other methods for providing credentials:
+* Provide your credentials in your client’s constructor.
+* Use Amazon Cognito Identity, which is an identity management solution. You can use the CognitoCaching*CredentialsProviders classes in the identity-management project. For more information, see the *Amazon Cognito Developer Guide*. 
 
 ####Using a Service Client
-Now that we have discussed the main interfaces in the system, we can use these items to construct a service client. Note, it is not necessary to do anything extra for a client. The default constructor will serve your needs most of the time. Yet, many times you may want to configure these things, so we will illustrate with DynamoDb.
+You can use the default constructor, or you can use the system interfaces discussed above to construct a service client. 
+
+As an example, the following code creates an Amazon DynamoDB client using a specialized client configuration, default credentials provider chain, and default HTTP client factory:
 
 ```
 auto limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
@@ -301,25 +331,21 @@ config.requestTimeoutMs = 30000;
 config.readRateLimiter = m_limiter;
 config.writeRateLimiter = m_limiter;
 
- auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
+auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
 ```
 
-This code creates a DynamoDb client using a specialized ClientConfiguration, the default credentials provider chain, and the default http client factory.
-
-Alternatively, you could do this:
-
+You can also do the following to manually pass credentials: 
 `auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, AWSCredentials("access_key_id", "secret_key"), config);`
 
-to manually pass credentials, or you could do
-
+Or you can do the following to use a custom credentials provider:
 `auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, Aws::MakeShared<CognitoCachingAnonymousCredentialsProvider>(ALLOCATION_TAG, "identityPoolId", "accountId"), config);`
 
-to use a custom credentials provider.
-
-Now you are ready to use your DynamoDb client.
+Now you can use your Amazon DynamoDB client. 
 
 ####Error Handling
-Largely for the sake of game development, we did not use exceptions. That is not to say that this library is not exception safe. Feel free to use exceptions in your own code--this library will be safe. Every service client returns an outcome object containing a result and an error code. Here is a sample of handling error conditions:
+We did not use exceptions; however, you can use exceptions in your code. Every service client returns an outcome object that includes the result and an error code. 
+
+Example of handling error conditions:
 
 ```
 bool CreateTableAndWaitForItToBeActive()
@@ -369,35 +395,47 @@ bool CreateTableAndWaitForItToBeActive()
 ```
 
 ####Advanced Topics
+This section includes the following topics:
+* Overriding Your HTTP Client
+* Provided Utilities
+* Controlling IOStreams Used by the HttpClient and the AWSClient
+
 #####Overriding your Http Client
-The default http client was chosen for ease of portability and stability for each platform. For Windows, this is WinHttp, and for everything else this is curl. You shouldn't need to change this functionality, but if you do, you can simply create a custom HttpClientFactory and pass it to any Service Client's constructor.
+The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms is Curl. If needed, you can create a custom HttpClientFactory to pass to any service client’s constructor.
 
 #####Provided Utilities
-######Http Stack
+The provided utilities include HTTP stack, string utils, hashing utils, JSON parser, and XML parser.
+
+######HTTP Stack
 /aws/core/http/
 
-The Http Client is entirely reusable for whatever purposes you need. It provides connection pooling and is entirely thread safe. See the ClientConfiguration notes mentioned above.
+The HTTP client provides connection pooling, is thread safe, and can be reused for your purposes. See the Client Configuration section above.
 
 ######String Utils
 /aws/core/utils/StringUtils.h
 
-Provides core string functionalities such as trim, toLowerCase, numeric conversions etc...
+This header file provides core string functions, such as trim, lowercase, and numeric conversions.
+
 ######Hashing Utils
 /aws/core/utils/HashingUtils.h
 
-Provides hashing functions for SHA256, MD5, Base64, and SHA256_HMAC
-######Json Parser
+This header file provides hashing functions, such as SHA256, MD5, Base64, and SHA256_HMAC.
+
+######JSON Parser
 /aws/core/utils/json/JsonSerializer.h
 
-Provides fully functioning, yet light-weight Json parser. This is just a very thin wrapper around JsonCpp.
-######Xml Parser
+This header file provides a fully functioning yet lightweight JSON parser (thin wrapper around JsonCpp). 
+
+######XML Parser
 /aws/core/utils/xml/XmlSerializer.h
 
-Light-weight Xml Parser. This is just a thin wrapper around tinyxml2. We added RAII pattern to our interface.
-#####Controlling IOStreams used by the HttpClient and the AWSClient
-By default, all responses use an input stream backed by a stringbuf. Obviously this is not performant for large response bodies. It is your responsibility to override this behavior if you want something else. For instance, when you are using S3 GetObject, you likely do not want to load the entire file into memory. Use the IOStreamFactory in the AmazonWebServiceRequest to pass a lambda creating a file stream for you.
+This header file provides a lightweight XML parser (thin wrapper around tinyxml2). RAII pattern has been added to the interface.
 
-For Example:
+#####Controlling IOStreams used by the HttpClient and the AWSClient
+By default all responses use an input stream backed by a stringbuf. If needed, you can override the default behavior. For example, if you are using Amazon S3 GetObject and do not want to load the entire file into memory, you can use IOStreamFactory in AmazonWebServiceRequest to pass a lambda to create a file stream. 
+
+Example file stream request: 
+
 ```
 GetObjectRequest getObjectRequest;
 getObjectRequest.SetBucket(fullBucketName);

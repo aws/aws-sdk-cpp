@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Datapoint::Datapoint() : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_sampleCount(0.0),
     m_sampleCountHasBeenSet(false),
@@ -41,7 +40,6 @@ Datapoint::Datapoint() :
 }
 
 Datapoint::Datapoint(const XmlNode& xmlNode) : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_sampleCount(0.0),
     m_sampleCountHasBeenSet(false),
@@ -67,7 +65,7 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
@@ -115,7 +113,7 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_sampleCountHasBeenSet)
   {
@@ -147,7 +145,7 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) cons
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_sampleCountHasBeenSet)
   {

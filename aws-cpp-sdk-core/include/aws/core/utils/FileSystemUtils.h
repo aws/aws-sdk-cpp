@@ -22,9 +22,9 @@ namespace Aws
     namespace Utils
     {
 #ifdef _WIN32
-        static const char* PATH_DELIM = "\\";
+        static const char PATH_DELIM = '\\';
 #else
-        static const char* PATH_DELIM = "/";
+        static const char PATH_DELIM = '/';
 #endif
 
         class AWS_CORE_API FileSystemUtils
@@ -51,7 +51,7 @@ namespace Aws
              */
             static bool RelocateFileOrDirectory(const char* from, const char* to);
 
-	    static const char* GetPathDelimiter() { return PATH_DELIM; }
+	        static char GetPathDelimiter() { return PATH_DELIM; }
         };
     }
 }

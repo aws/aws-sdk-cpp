@@ -30,6 +30,12 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runCloudfrontIntegrationTests ${AWS_CLOUDFRONT_INTEGRATION_TESTS_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runCloudfrontIntegrationTests ${LIBTYPE} ${AWS_CLOUDFRONT_INTEGRATION_TESTS_SRC})
+else()
+    add_executable(runCloudfrontIntegrationTests ${AWS_CLOUDFRONT_INTEGRATION_TESTS_SRC})
+endif()
+
 target_link_libraries(runCloudfrontIntegrationTests aws-cpp-sdk-cloudfront testing-resources)
 copyDlls(runCloudfrontIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-cloudfront testing-resources)

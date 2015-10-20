@@ -41,11 +41,6 @@ RequestPaymentConfiguration& RequestPaymentConfiguration::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode payerNode = resultNode.FirstChild("Payer");
-    if(payerNode.IsNull())
-    {
-      payerNode = resultNode;
-    }
-
     if(!payerNode.IsNull())
     {
       m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(payerNode.GetText().c_str()).c_str());

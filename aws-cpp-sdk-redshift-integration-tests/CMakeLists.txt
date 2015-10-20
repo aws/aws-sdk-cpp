@@ -32,6 +32,12 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runRedshiftIntegrationTests ${AWS_REDSHIFT_INTEGRATION_TESTS_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runRedshiftIntegrationTests ${LIBTYPE} ${AWS_REDSHIFT_INTEGRATION_TESTS_SRC})
+else()
+    add_executable(runRedshiftIntegrationTests ${AWS_REDSHIFT_INTEGRATION_TESTS_SRC})
+endif()
+
 target_link_libraries(runRedshiftIntegrationTests aws-cpp-sdk-redshift testing-resources)
 copyDlls(runRedshiftIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-redshift testing-resources)

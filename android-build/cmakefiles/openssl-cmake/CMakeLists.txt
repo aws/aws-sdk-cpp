@@ -28,8 +28,10 @@
 project( openssl )
 cmake_minimum_required( VERSION 2.8.3 )
 
-add_definitions( -DOPENSSL_NO_ASM )
-add_definitions( -DOPENSSL_THREADS )
+add_definitions( -DZLIB )
+if(BUILD_SHARED_LIBS)
+    add_definitions( -DZLIB_SHARED )
+endif()
 
 if( WIN32 AND NOT CYGWIN )
   add_definitions( -DOPENSSL_SYSNAME_WIN32 )
@@ -46,7 +48,9 @@ endif()
 
 add_subdirectory( crypto )
 add_subdirectory( ssl )
-add_subdirectory( apps )
+if( NOT BUILD_SHARED_LIBS )
+    add_subdirectory( apps )
+endif()
 
 install( FILES e_os2.h DESTINATION include/openssl )
 

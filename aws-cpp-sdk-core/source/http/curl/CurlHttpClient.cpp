@@ -170,6 +170,11 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, &CurlHttpClient::WriteHeader);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, response.get());
 
+	// only set by android test builds because the emulator is missing a cert needed for aws services
+#ifdef TEST_CERT_PATH
+	curl_easy_setopt(connectionHandle, CURLOPT_CAPATH, TEST_CERT_PATH);
+#endif // TEST_CERT_PATH
+
         if (m_verifySSL)
         {
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, 1L);

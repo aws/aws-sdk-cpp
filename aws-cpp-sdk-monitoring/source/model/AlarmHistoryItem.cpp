@@ -25,7 +25,6 @@ using namespace Aws::Utils;
 
 AlarmHistoryItem::AlarmHistoryItem() : 
     m_alarmNameHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_historyItemTypeHasBeenSet(false),
     m_historySummaryHasBeenSet(false),
@@ -35,7 +34,6 @@ AlarmHistoryItem::AlarmHistoryItem() :
 
 AlarmHistoryItem::AlarmHistoryItem(const XmlNode& xmlNode) : 
     m_alarmNameHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_historyItemTypeHasBeenSet(false),
     m_historySummaryHasBeenSet(false),
@@ -59,7 +57,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode historyItemTypeNode = resultNode.FirstChild("HistoryItemType");
@@ -93,7 +91,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_historyItemTypeHasBeenSet)
   {
@@ -117,7 +115,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_historyItemTypeHasBeenSet)
   {

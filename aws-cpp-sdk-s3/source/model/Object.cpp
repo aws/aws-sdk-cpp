@@ -55,66 +55,36 @@ Object& Object::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    if(keyNode.IsNull())
-    {
-      keyNode = resultNode;
-    }
-
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
-    if(lastModifiedNode.IsNull())
-    {
-      lastModifiedNode = resultNode;
-    }
-
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
-    if(eTagNode.IsNull())
-    {
-      eTagNode = resultNode;
-    }
-
     if(!eTagNode.IsNull())
     {
       m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
       m_eTagHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
-    if(sizeNode.IsNull())
-    {
-      sizeNode = resultNode;
-    }
-
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt32(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
       m_sizeHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
-    if(storageClassNode.IsNull())
-    {
-      storageClassNode = resultNode;
-    }
-
     if(!storageClassNode.IsNull())
     {
       m_storageClass = ObjectStorageClassMapper::GetObjectStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
       m_storageClassHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if(ownerNode.IsNull())
-    {
-      ownerNode = resultNode;
-    }
-
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;

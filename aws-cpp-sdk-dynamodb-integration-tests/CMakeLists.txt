@@ -25,7 +25,13 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runDynamoDBIntegrationTests ${AWS_DYNAMO_INTEGRATION_TESTS_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runDynamoDBIntegrationTests ${LIBTYPE} ${AWS_DYNAMO_INTEGRATION_TESTS_SRC})
+else()
+    add_executable(runDynamoDBIntegrationTests ${AWS_DYNAMO_INTEGRATION_TESTS_SRC})
+endif()
+
 target_link_libraries(runDynamoDBIntegrationTests aws-cpp-sdk-dynamodb testing-resources)
 copyDlls(runDynamoDBIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-dynamodb testing-resources)
 

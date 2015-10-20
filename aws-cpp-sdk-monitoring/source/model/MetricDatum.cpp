@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 MetricDatum::MetricDatum() : 
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false),
@@ -38,7 +37,6 @@ MetricDatum::MetricDatum() :
 MetricDatum::MetricDatum(const XmlNode& xmlNode) : 
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false),
@@ -75,7 +73,7 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
@@ -118,7 +116,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_valueHasBeenSet)
   {
@@ -153,7 +151,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_valueHasBeenSet)
   {

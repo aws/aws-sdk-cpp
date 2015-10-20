@@ -157,17 +157,37 @@ namespace Model
     /*
      <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline double GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
+    inline const Aws::String& GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
 
     /*
      <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline void SetAlarmConfigurationUpdatedTimestamp(double value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
+    inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::String& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
 
     /*
      <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(double value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
+    inline void SetAlarmConfigurationUpdatedTimestamp(Aws::String&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
+
+    /*
+     <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline void SetAlarmConfigurationUpdatedTimestamp(const char* value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp.assign(value); }
+
+    /*
+     <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const Aws::String& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::String&& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const char* value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
     /*
      <p> Indicates whether actions should be executed during any changes to the alarm's state. </p>
@@ -402,17 +422,37 @@ namespace Model
     /*
      <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline double GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
+    inline const Aws::String& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
 
     /*
      <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline void SetStateUpdatedTimestamp(double value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
+    inline void SetStateUpdatedTimestamp(const Aws::String& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /*
      <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline MetricAlarm& WithStateUpdatedTimestamp(double value) { SetStateUpdatedTimestamp(value); return *this;}
+    inline void SetStateUpdatedTimestamp(Aws::String&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
+
+    /*
+     <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline void SetStateUpdatedTimestamp(const char* value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp.assign(value); }
+
+    /*
+     <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::String& value) { SetStateUpdatedTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricAlarm& WithStateUpdatedTimestamp(Aws::String&& value) { SetStateUpdatedTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricAlarm& WithStateUpdatedTimestamp(const char* value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /*
      <p> The name of the alarm's metric. </p>
@@ -646,7 +686,7 @@ namespace Model
     bool m_alarmArnHasBeenSet;
     Aws::String m_alarmDescription;
     bool m_alarmDescriptionHasBeenSet;
-    double m_alarmConfigurationUpdatedTimestamp;
+    Aws::String m_alarmConfigurationUpdatedTimestamp;
     bool m_alarmConfigurationUpdatedTimestampHasBeenSet;
     bool m_actionsEnabled;
     bool m_actionsEnabledHasBeenSet;
@@ -662,7 +702,7 @@ namespace Model
     bool m_stateReasonHasBeenSet;
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet;
-    double m_stateUpdatedTimestamp;
+    Aws::String m_stateUpdatedTimestamp;
     bool m_stateUpdatedTimestampHasBeenSet;
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;

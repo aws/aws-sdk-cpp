@@ -93,19 +93,19 @@ public:
 
     /**
     * Gets the path portion of the uri e.g. the portion after the first slash after the authority and prior to the
-    * query string.
+    * query string. This is not url encoded.
     */
     inline const Aws::String& GetPath() const { return m_path; }
 
     /**
-    * Sets the path portion of the uri. URL encodes it if needed
+    * Gets the path portion of the uri, url encodes it and returns it
     */
-    void SetPath(const Aws::String& value, bool shouldEncode = true);
+    inline Aws::String GetURLEncodedPath() const { return URLEncodePath(m_path); }
 
     /**
-    * Gets the non-url-encoded PATH
+    * Sets the path portion of the uri. URL encodes it if needed
     */
-    Aws::String GetUnEncodedPath() const;
+    void SetPath(const Aws::String& value);
 
     /**
     * Gets the raw query string including the ?
@@ -134,6 +134,8 @@ public:
     * Converts the URI to a String usable for its context. e.g. an http request.
     */
     Aws::String GetURIString(bool includeQueryString = true) const;
+
+    static Aws::String URLEncodePath(const Aws::String& path);
 
 private:
     void ParseURIParts(const Aws::String& uri);

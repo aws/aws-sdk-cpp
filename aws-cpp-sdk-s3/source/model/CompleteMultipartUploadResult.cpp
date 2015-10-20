@@ -42,41 +42,21 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode locationNode = resultNode.FirstChild("Location");
-    if(locationNode.IsNull())
-    {
-      locationNode = resultNode;
-    }
-
     if(!locationNode.IsNull())
     {
       m_location = StringUtils::Trim(locationNode.GetText().c_str());
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    if(bucketNode.IsNull())
-    {
-      bucketNode = resultNode;
-    }
-
     if(!bucketNode.IsNull())
     {
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
-    if(keyNode.IsNull())
-    {
-      keyNode = resultNode;
-    }
-
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
-    if(eTagNode.IsNull())
-    {
-      eTagNode = resultNode;
-    }
-
     if(!eTagNode.IsNull())
     {
       m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
