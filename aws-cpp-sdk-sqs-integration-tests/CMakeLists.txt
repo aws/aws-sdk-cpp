@@ -33,6 +33,12 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runSqsIntegrationTests ${AWS_SQS_INTEGRATION_TESTS_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runSqsIntegrationTests ${LIBTYPE} ${AWS_SQS_INTEGRATION_TESTS_SRC})
+else()
+    add_executable(runSqsIntegrationTests ${AWS_SQS_INTEGRATION_TESTS_SRC})
+endif()
+
 target_link_libraries(runSqsIntegrationTests aws-cpp-sdk-sqs aws-cpp-sdk-access-management aws-cpp-sdk-iam aws-cpp-sdk-cognito-identity testing-resources)
 copyDlls(runSqsIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-sqs aws-cpp-sdk-access-management aws-cpp-sdk-iam aws-cpp-sdk-cognito-identity testing-resources)

@@ -74,16 +74,20 @@ MemorySystemInterface* GetMemorySystem()
 void* Malloc(const char* allocationTag, size_t allocationSize)
 {
     Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
+
+    void* rawMemory = nullptr;
     if(memorySystem != nullptr)
     {
-        void *rawMemory = memorySystem->AllocateMemory(allocationSize, 1, allocationTag);
-        return rawMemory;
+        rawMemory = memorySystem->AllocateMemory(allocationSize, 1, allocationTag);
     }
     else
     {
-        return malloc(allocationSize);
+        rawMemory = malloc(allocationSize);
     }
+
+    return rawMemory;
 }
+
 
 void Free(void* memoryPtr)
 {
@@ -104,4 +108,5 @@ void Free(void* memoryPtr)
 }
 
 } // namespace Aws
+
 

@@ -22,9 +22,7 @@ using namespace Aws::Utils;
 DescribeAlarmHistoryRequest::DescribeAlarmHistoryRequest() : 
     m_alarmNameHasBeenSet(false),
     m_historyItemTypeHasBeenSet(false),
-    m_startDate(0.0),
     m_startDateHasBeenSet(false),
-    m_endDate(0.0),
     m_endDateHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -46,11 +44,11 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
   }
   if(m_startDateHasBeenSet)
   {
-    ss << "StartDate=" << m_startDate << "&";
+    ss << "StartDate=" << StringUtils::URLEncode(m_startDate.c_str()) << "&";
   }
   if(m_endDateHasBeenSet)
   {
-    ss << "EndDate=" << m_endDate << "&";
+    ss << "EndDate=" << StringUtils::URLEncode(m_endDate.c_str()) << "&";
   }
   if(m_maxRecordsHasBeenSet)
   {

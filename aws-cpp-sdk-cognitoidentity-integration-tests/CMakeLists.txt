@@ -32,6 +32,12 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runCognitoIntegrationTests ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runCognitoIntegrationTests ${LIBTYPE} ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+else()
+    add_executable(runCognitoIntegrationTests ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+endif()
+
 target_link_libraries(runCognitoIntegrationTests aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
 copyDlls(runCognitoIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)

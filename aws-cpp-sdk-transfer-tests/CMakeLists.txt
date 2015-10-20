@@ -24,6 +24,12 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runTransferIntegrationTests ${TRANSFER_TEST_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runTransferIntegrationTests ${LIBTYPE} ${TRANSFER_TEST_SRC})
+else()
+    add_executable(runTransferIntegrationTests ${TRANSFER_TEST_SRC})
+endif()
+
 target_link_libraries(runTransferIntegrationTests aws-cpp-sdk-s3 aws-cpp-sdk-transfer testing-resources)
 copyDlls(runTransferIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-transfer testing-resources)

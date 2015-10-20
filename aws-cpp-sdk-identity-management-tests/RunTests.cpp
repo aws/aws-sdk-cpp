@@ -23,7 +23,7 @@ int main(int argc, char** argv)
         std::stringstream tempDir; //( P_tmpdir );
         tempDir << P_tmpdir;
 	Aws::String dir = tempDir.str().c_str();
-	if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != *Aws::Utils::PATH_DELIM)
+	if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::Utils::FileSystemUtils::GetPathDelimiter())
 	{
 	    tempDir << Aws::Utils::PATH_DELIM;
 	}

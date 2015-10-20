@@ -14,6 +14,7 @@
   */
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/StringUtils.h>
 
 #include <unistd.h>
 #include <pwd.h>
@@ -44,7 +45,19 @@ Aws::String FileSystemUtils::GetHomeDirectory()
         AWS_LOGSTREAM_INFO(LOG_TAG, "Pulled " << homeDir << " as home directory from the OS.");
     }
 
-    return homeDir ? (const char*)homeDir : "";
+    Aws::String retVal = homeDir ? StringUtils::Trim(static_cast<const char*>(homeDir)) : "";
+    if(!retVal.empty())
+    {
+        if(retVal.at(retVal.length() - 1) != PATH_DELIM)
+        {
+            AWS_LOGSTREAM_DEBUG(LOG_TAG, "Home directory is missing the final " << PATH_DELIM << " appending one to normalize");
+            retVal += PATH_DELIM;
+        }
+    }
+
+    AWS_LOGSTREAM_DEBUG(LOG_TAG, "Final Home Directory is " << retVal);
+
+    return std::move(retVal);
 }
 
 bool FileSystemUtils::CreateDirectoryIfNotExists(const char* path)

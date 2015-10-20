@@ -49,44 +49,24 @@ DeletedObject& DeletedObject::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    if(keyNode.IsNull())
-    {
-      keyNode = resultNode;
-    }
-
     if(!keyNode.IsNull())
     {
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
-    if(versionIdNode.IsNull())
-    {
-      versionIdNode = resultNode;
-    }
-
     if(!versionIdNode.IsNull())
     {
       m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
       m_versionIdHasBeenSet = true;
     }
     XmlNode deleteMarkerNode = resultNode.FirstChild("DeleteMarker");
-    if(deleteMarkerNode.IsNull())
-    {
-      deleteMarkerNode = resultNode;
-    }
-
     if(!deleteMarkerNode.IsNull())
     {
       m_deleteMarker = StringUtils::ConvertToBool(StringUtils::Trim(deleteMarkerNode.GetText().c_str()).c_str());
       m_deleteMarkerHasBeenSet = true;
     }
     XmlNode deleteMarkerVersionIdNode = resultNode.FirstChild("DeleteMarkerVersionId");
-    if(deleteMarkerVersionIdNode.IsNull())
-    {
-      deleteMarkerVersionIdNode = resultNode;
-    }
-
     if(!deleteMarkerVersionIdNode.IsNull())
     {
       m_deleteMarkerVersionId = StringUtils::Trim(deleteMarkerVersionIdNode.GetText().c_str());

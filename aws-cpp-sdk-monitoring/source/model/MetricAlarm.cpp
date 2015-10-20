@@ -27,7 +27,6 @@ MetricAlarm::MetricAlarm() :
     m_alarmNameHasBeenSet(false),
     m_alarmArnHasBeenSet(false),
     m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestamp(0.0),
     m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
     m_actionsEnabled(false),
     m_actionsEnabledHasBeenSet(false),
@@ -37,7 +36,6 @@ MetricAlarm::MetricAlarm() :
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestamp(0.0),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
@@ -58,7 +56,6 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_alarmNameHasBeenSet(false),
     m_alarmArnHasBeenSet(false),
     m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestamp(0.0),
     m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
     m_actionsEnabled(false),
     m_actionsEnabledHasBeenSet(false),
@@ -68,7 +65,6 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestamp(0.0),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
@@ -113,7 +109,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode alarmConfigurationUpdatedTimestampNode = resultNode.FirstChild("AlarmConfigurationUpdatedTimestamp");
     if(!alarmConfigurationUpdatedTimestampNode.IsNull())
     {
-      m_alarmConfigurationUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(alarmConfigurationUpdatedTimestampNode.GetText().c_str()).c_str());
+      m_alarmConfigurationUpdatedTimestamp = StringUtils::Trim(alarmConfigurationUpdatedTimestampNode.GetText().c_str());
       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
     }
     XmlNode actionsEnabledNode = resultNode.FirstChild("ActionsEnabled");
@@ -179,7 +175,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
     if(!stateUpdatedTimestampNode.IsNull())
     {
-      m_stateUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str()).c_str());
+      m_stateUpdatedTimestamp = StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str());
       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
@@ -263,7 +259,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << m_alarmConfigurationUpdatedTimestamp << "&";
+      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.c_str()) << "&";
   }
   if(m_actionsEnabledHasBeenSet)
   {
@@ -304,7 +300,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << m_stateUpdatedTimestamp << "&";
+      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.c_str()) << "&";
   }
   if(m_metricNameHasBeenSet)
   {
@@ -365,7 +361,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << m_alarmConfigurationUpdatedTimestamp << "&";
+      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.c_str()) << "&";
   }
   if(m_actionsEnabledHasBeenSet)
   {
@@ -406,7 +402,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".StateUpdatedTimestamp=" << m_stateUpdatedTimestamp << "&";
+      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.c_str()) << "&";
   }
   if(m_metricNameHasBeenSet)
   {

@@ -41,11 +41,6 @@ CommonPrefix& CommonPrefix::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if(prefixNode.IsNull())
-    {
-      prefixNode = resultNode;
-    }
-
     if(!prefixNode.IsNull())
     {
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());

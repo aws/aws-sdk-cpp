@@ -1,0 +1,4 @@
+# exceptions due to naming conflicts between our external projects (curl/openssl) and implementations that use those libraries
+!patches/zlib
+!patches/curl
+

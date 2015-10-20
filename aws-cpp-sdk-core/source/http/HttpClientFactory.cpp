@@ -15,11 +15,11 @@
 
 #include <aws/core/http/HttpClientFactory.h>
 
-#if USE_CURL_CLIENT
+#if ENABLE_CURL_CLIENT
     #include <aws/core/http/curl/CurlHttpClient.h>
 #endif
 
-#ifdef _WIN32
+#ifdef ENABLE_WINDOWS_CLIENT
     #include <aws/core/http/windows/WinINetSyncHttpClient.h>
     #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
 #endif
@@ -42,42 +42,40 @@ std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConf
     // Other clients: Curl is your default
     switch (clientConfiguration.httpLibOverride)
     {
-    // Check for Curl first - USE_CURL_CLIENT must be set for this to work
-    case TransferLibType::CURL_CLIENT:
-    {
-#if USE_CURL_CLIENT
-        return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
+        case TransferLibType::CURL_CLIENT:
+#if ENABLE_CURL_CLIENT
+            return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
 #else
-        AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Curl client configuration selected but curl is not available.");
+            AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Curl client configuration selected but curl is not available.");
+	    return nullptr;
 #endif
+ 
+        case TransferLibType::WIN_HTTP_CLIENT:
+#if ENABLE_WINDOWS_CLIENT
+            return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+#else
+            AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Windows Http client configuration selected but windows clients are not available.");
+	    return nullptr;
+#endif
+ 
+        case TransferLibType::WIN_INET_CLIENT:
+#if ENABLE_WINDOWS_CLIENT
+            return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
+#else
+            AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Windows Inet client configuration selected but windows clients are not available.");
+	    return nullptr;
+#endif
+ 
+        default:
+	    break;
     }
 
-    // Windows additionally has http and inet as possible options, let's check those and default to http
-#ifdef _WIN32
-    // Fallthrough intended - Winhttp is the default windows setting and will also be returned if curl was selected but USE_CURL_CLIENT is false
-    case TransferLibType::DEFAULT_CLIENT:
-    case TransferLibType::WIN_HTTP_CLIENT:
-    {
-        return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
-    }
-    break;
-    case TransferLibType::WIN_INET_CLIENT:
-    {
-        return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
-    }
-    break;
-#endif
-    default:
-    {
-
-    }
-    }
- // At this point most likely we're a non windows client with the DEFAULT option - Curl will be used.
- // If not we're some sort of new option which hasn't been implemented - use http (must return something at this point)
-#if USE_CURL_CLIENT
+#if ENABLE_WINDOWS_CLIENT
+    return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+#elif ENABLE_CURL_CLIENT
     return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
 #else
-    return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+    return nullptr;
 #endif
 
 }

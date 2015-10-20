@@ -64,7 +64,7 @@ Aws::String CanonicalizeRequestSigningString(HttpRequest& request)
     Aws::StringStream signingStringStream;
     signingStringStream << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod());
 
-    signingStringStream << NEWLINE << request.GetUri().GetPath() << NEWLINE;
+    signingStringStream << NEWLINE << request.GetUri().GetURLEncodedPath() << NEWLINE;
 
     if (request.GetQueryString().size() > 1 && request.GetQueryString().find("=") != std::string::npos)
     {

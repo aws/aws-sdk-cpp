@@ -53,44 +53,24 @@ Part& Part::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode partNumberNode = resultNode.FirstChild("PartNumber");
-    if(partNumberNode.IsNull())
-    {
-      partNumberNode = resultNode;
-    }
-
     if(!partNumberNode.IsNull())
     {
       m_partNumber = StringUtils::ConvertToInt32(StringUtils::Trim(partNumberNode.GetText().c_str()).c_str());
       m_partNumberHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
-    if(lastModifiedNode.IsNull())
-    {
-      lastModifiedNode = resultNode;
-    }
-
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
-    if(eTagNode.IsNull())
-    {
-      eTagNode = resultNode;
-    }
-
     if(!eTagNode.IsNull())
     {
       m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
       m_eTagHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
-    if(sizeNode.IsNull())
-    {
-      sizeNode = resultNode;
-    }
-
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt32(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());

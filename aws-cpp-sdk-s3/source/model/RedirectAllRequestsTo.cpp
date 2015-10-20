@@ -43,22 +43,12 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
-    if(hostNameNode.IsNull())
-    {
-      hostNameNode = resultNode;
-    }
-
     if(!hostNameNode.IsNull())
     {
       m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
       m_hostNameHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
-    if(protocolNode.IsNull())
-    {
-      protocolNode = resultNode;
-    }
-
     if(!protocolNode.IsNull())
     {
       m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(protocolNode.GetText().c_str()).c_str());

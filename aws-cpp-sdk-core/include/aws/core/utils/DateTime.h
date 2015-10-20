@@ -52,6 +52,16 @@ public:
      */
     static double ComputeCurrentTimestampInAmazonFormat();
 
+    /**
+    * Computes the timestamp in ISO-8601 format
+    */
+    static Aws::String ComputeCurrentTimestampInISO8601Format();
+
+    /**
+    * Computes the current date in ISO-8601 format
+    */
+    static Aws::String ComputeCurrentDateInISO8601Format();
+
 private:
     static std::mutex timeMutex;
 };

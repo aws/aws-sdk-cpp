@@ -39,10 +39,10 @@ file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC
     ${CORE_UTILS_XML_SRC}
     ${DYNAMODB_SRC}
     ${SQS_SRC}
-    ${S3_SRC}
+#    ${S3_SRC}
 #    ${LAMBDA_SRC}
-    ${COGNITO_IDENTITY_IDENTITY_POOL_SRC}
-    ${COGNITO_IDENTITY_CREDENTIALS_SRC}
+#    ${COGNITO_IDENTITY_IDENTITY_POOL_SRC}
+#    ${COGNITO_IDENTITY_CREDENTIALS_SRC}
     ${TRANSFER_RESOURCE_SRC}
 #    ${TRANSFER_SRC}
     ${LOGGING_SRC}
@@ -91,6 +91,7 @@ target_link_libraries(android-unified-tests
 		      aws-cpp-sdk-access-management
 		      testing-resources 
 		      aws-cpp-sdk-core 
+		      ${CLIENT_LIBS}
 		      ${PLATFORM_DEP_LIBS})
 
 

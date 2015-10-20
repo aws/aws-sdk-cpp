@@ -23,9 +23,7 @@ GetMetricStatisticsRequest::GetMetricStatisticsRequest() :
     m_namespaceHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
@@ -57,11 +55,11 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.c_str()) << "&";
   }
   if(m_periodHasBeenSet)
   {

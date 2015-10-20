@@ -14,6 +14,7 @@
   */
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/StringUtils.h>
 
 #include <Userenv.h>
 
@@ -49,8 +50,16 @@ Aws::String FileSystemUtils::GetHomeDirectory()
         AWS_LOGSTREAM_INFO(LOG_TAG, "Pulled " << homeDir << " as home directory from the OS.");
     }
 
-    Aws::String retVal = homeDir ? (const char*)homeDir : "";
-    retVal += PATH_DELIM;
+    Aws::String retVal = homeDir ? StringUtils::Trim(static_cast<const char*>(homeDir)) : "";
+
+    if (!retVal.empty())
+    {
+        if (retVal.at(retVal.length() - 1) != PATH_DELIM)
+        {
+            retVal += PATH_DELIM;
+        }
+    }
+    
     return std::move(retVal);
 }
 

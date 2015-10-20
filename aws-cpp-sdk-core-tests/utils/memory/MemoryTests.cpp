@@ -138,3 +138,4 @@ TEST(MemoryTest, DefaultCredentialsProvider)
     AWS_END_MEMORY_TEST
 
 }
+

@@ -49,55 +49,30 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
-    if(displayNameNode.IsNull())
-    {
-      displayNameNode = resultNode;
-    }
-
     if(!displayNameNode.IsNull())
     {
       m_displayName = StringUtils::Trim(displayNameNode.GetText().c_str());
       m_displayNameHasBeenSet = true;
     }
     XmlNode emailAddressNode = resultNode.FirstChild("EmailAddress");
-    if(emailAddressNode.IsNull())
-    {
-      emailAddressNode = resultNode;
-    }
-
     if(!emailAddressNode.IsNull())
     {
       m_emailAddress = StringUtils::Trim(emailAddressNode.GetText().c_str());
       m_emailAddressHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
-    if(iDNode.IsNull())
-    {
-      iDNode = resultNode;
-    }
-
     if(!iDNode.IsNull())
     {
       m_iD = StringUtils::Trim(iDNode.GetText().c_str());
       m_iDHasBeenSet = true;
     }
-    XmlNode typeNode = resultNode.FirstChild("Type");
-    if(typeNode.IsNull())
-    {
-      typeNode = resultNode;
-    }
-
+    XmlNode typeNode = resultNode.FirstChild("xsi:type");
     if(!typeNode.IsNull())
     {
       m_type = TypeMapper::GetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode uRINode = resultNode.FirstChild("URI");
-    if(uRINode.IsNull())
-    {
-      uRINode = resultNode;
-    }
-
     if(!uRINode.IsNull())
     {
       m_uRI = StringUtils::Trim(uRINode.GetText().c_str());

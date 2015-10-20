@@ -117,6 +117,7 @@ namespace
             DeleteBucket(CalculateBucketName(CREATE_BUCKET_TEST_NAME));
             DeleteBucket(CalculateBucketName(LOCATION_BUCKET_TEST_NAME));
             DeleteBucket(CalculateBucketName(PUT_OBJECTS_BUCKET_NAME));
+            DeleteBucket(CalculateBucketName(PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(PUT_MULTIPART_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(ERRORS_TESTING_BUCKET));
             DeleteBucket(CalculateBucketName(INTERRUPT_TESTING_BUCKET));

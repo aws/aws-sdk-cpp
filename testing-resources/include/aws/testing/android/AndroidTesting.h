@@ -20,3 +20,15 @@
 
 void AWS_TESTING_API RedirectStdoutToLogcat();
 
+#include <jni.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
+JNIEXPORT jint JNICALL
+AWS_TESTING_API Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject thisRef );
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
