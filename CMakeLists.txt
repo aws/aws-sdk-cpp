@@ -13,11 +13,15 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required (VERSION 3.2.3)
+# minimum version of cmake that 
+#   (1) supports ExternalProject_Add URL_HASH
+#   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
+cmake_minimum_required (VERSION 3.1.2)
 
 # Cmake invocation variables:
 #   CUSTOM_MEMORY_MANAGEMENT - if set to 1, generates the sdk project files with custom memory management enabled, otherwise disables it
 #   STATIC_LINKING - if set to 1, generates the sdk project files to build static libraries, otherwise disables it
+#   NO_HTTP_CLIENT - if set to 1, will not include any platform-specific http client implementations; you will need to provide one 
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
@@ -28,7 +32,6 @@ SET(PLATFORM_WINDOWS 0)
 SET(PLATFORM_LINUX 0)
 SET(PLATFORM_ANDROID 0)
 SET(PLATFORM_APPLE 0)
-SET(GENERATE_VERSION_INFO 0)
 
 if("${TARGET_ARCH}" STREQUAL "WINDOWS")
     SET(PLATFORM_WINDOWS 1)
@@ -85,22 +88,41 @@ else()
     message(STATUS "Custom memory management disabled")
 endif()
 
-# on Windows, set CURL_DIR to a valid curl install directory in order to use the curl client rather than the windows-specific one
-set(USE_CURL_CLIENT 1)
-if(PLATFORM_WINDOWS)
-    if(NOT DEFINED CURL_DIR)
-        set(USE_CURL_CLIENT 0)
-    else()
-        set(CURL_INCLUDE_DIR "${CURL_DIR}\\include")
-        set(CURL_LIBRARY_DIR "${CURL_DIR}\\lib")
+# on Windows, set CURL_DIR to a valid curl install directory in order to enable the curl client
+set(ENABLE_CURL_CLIENT 0)
+set(ENABLE_WINDOWS_CLIENT 0)
+if(NOT "${NO_HTTP_CLIENT}" STREQUAL "1")
+    if(PLATFORM_WINDOWS)
+        set(ENABLE_WINDOWS_CLIENT 1)
+        if(DEFINED CURL_DIR)
+	    set(ENABLE_CURL_CLIENT 1)
+            set(CURL_INCLUDE_DIR "${CURL_DIR}\\include")
+            set(CURL_LIBRARY_DIR "${CURL_DIR}\\lib")
 
-        include_directories(${CURL_INCLUDE_DIR})
-        link_directories(${CURL_LIBRARY_DIR})
+            include_directories(${CURL_INCLUDE_DIR})
+            link_directories(${CURL_LIBRARY_DIR})
+        endif()
+    else()
+        set(ENABLE_CURL_CLIENT 1)
     endif()
 endif()
 
-if(USE_CURL_CLIENT)
-    add_definitions(-DUSE_CURL_CLIENT)    
+if(ENABLE_CURL_CLIENT)
+    add_definitions(-DENABLE_CURL_CLIENT)
+    message(STATUS "Curl client enabled")
+    if(TEST_CERT_PATH)
+        message(STATUS "Setting cert path to ${TEST_CERT_PATH}")
+        add_definitions(-DTEST_CERT_PATH="\"${TEST_CERT_PATH}\"")
+    endif()
+else()
+    message(STATUS "Curl client disabled")    
+endif()
+
+if(ENABLE_WINDOWS_CLIENT)
+    add_definitions(-DENABLE_WINDOWS_CLIENT)
+    message(STATUS "Windows clients enabled")
+else()
+    message(STATUS "Windows clients disabled")
 endif()
 
 project(AWSNativeSDKAll)
@@ -126,10 +148,15 @@ if(PLATFORM_WINDOWS OR PLATFORM_LINUX)
     else()
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/ia32")
     endif()
+elseif(PLATFORM_ANDROID)
+    if("${ANDROID_ABI}" STREQUAL "")
+        message(FATAL_ERROR "No ABI set for Android build")
+    endif()
+
+    set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/${ANDROID_ABI}")
 endif()
 
 message(STATUS "Install binary prefix: ${SDK_INSTALL_BINARY_PREFIX}")
-
 
 if(BUILD_SHARED_LIBS)
     SET(LIBTYPE SHARED)
@@ -229,29 +256,34 @@ if(PLATFORM_ANDROID)
     set(USE_PROJECT_CMAKE_MODULE_PATH "-DCMAKE_MODULE_PATH=${MAKE_MODULE_PATH}")
     set(TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/android-build/android.toolchain.cmake)
     
-    # the headers are the same across abis, but since the libs are different and installation is done in a single step, we partition by abi
-    set(EXTERNAL_INSTALL_DIR ${CMAKE_SOURCE_DIR}/external/${ANDROID_ABI})
+    # we patch the install process for each dependency to match what we need for 3rd party installation
+    set(EXTERNAL_INSTALL_DIR ${CMAKE_SOURCE_DIR}/external)
 
     #zlib
     #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
     #likely, some of the things here are unnecessary
     set(ZLIB_SOURCE_DIR ${CMAKE_SOURCE_DIR}/zlib CACHE INTERNAL "zlib source dir")
     set(ZLIB_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/zlib CACHE INTERNAL "zlib install dir")
-    set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include CACHE INTERNAL "zlib include dir")
-    set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib CACHE INTERNAL "zlib library dir")
+    set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include/zlib CACHE INTERNAL "zlib include dir")
+    set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "zlib library dir")
     set(ZLIB_DEFINES "-msse2 -mfpmath=sse" CACHE INTERNAL "zlib defines")
+
+    set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
+    set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
 
     ExternalProject_Add(ZLIB
 			SOURCE_DIR ${ZLIB_SOURCE_DIR}
 			URL http://zlib.net/zlib-1.2.8.tar.gz
-			URL_MD5 44d667c142d7cda120332623eab69f40
-			UPDATE_COMMAND ""
+			URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
+			PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
 			CMAKE_ARGS 
 			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
 			   -DCMAKE_INSTALL_PREFIX=${ZLIB_INSTALL_DIR}
 			   -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS} 
 			   -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS} 
 			   -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+			   -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+			   -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
 			   ${USE_PROJECT_CMAKE_MODULE_PATH}
     )
     
@@ -263,23 +295,34 @@ if(PLATFORM_ANDROID)
     endif()
  
     add_library(zlib UNKNOWN IMPORTED)
-    set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a)
+    set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.${SUFFIX})
 
     #OpenSSL
     set(OPENSSL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/openssl CACHE INTERNAL "openssl source dir")
     set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
     set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
-    set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib CACHE INTERNAL "openssl library dir")
-
-    set(OPENSSL_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIE" CACHE INTERNAL "openssl")
-    set(OPENSSL_C_FLAGS "${CMAKE_C_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+    set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "openssl library dir")
+    set(OPENSSL_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+    set(OPENSSL_C_FLAGS "${CMAKE_C_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
     set(OPENSSL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie" CACHE INTERNAL "openssl")
 
+    set( OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
+    set( OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
+
+    if(BUILD_SHARED_LIBS)
+        set(OPENSSL_SHARED_FLAG "shared" CACHE INTERNAL "")
+        set(OPENSSL_ZLIB_SHARED_FLAG "zlib zlib-shared" CACHE INTERNAL "")
+    else()
+        set(OPENSSL_SHARED_FLAG "no-shared" CACHE INTERNAL "")
+        set(OPENSSL_ZLIB_SHARED_FLAG "zlib" CACHE INTERNAL "")     
+    endif()
+
     ExternalProject_Add(OPENSSL
+                        DEPENDS ZLIB
 			SOURCE_DIR ${OPENSSL_SOURCE_DIR}
 			URL http://www.openssl.org/source/openssl-1.0.2d.tar.gz
-			URL_MD5 38dd619b2e77cbac69b99f52a053d25a
-			UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py  # openssl does not have cmake files, this script fixes that
+			URL_HASH "SHA256=671c36487785628a703374c652ad2cebea45fa920ae5681515df25d9f2c9a8c8"
+			UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py 
 			CMAKE_ARGS 
 			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
 			   -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
@@ -287,60 +330,72 @@ if(PLATFORM_ANDROID)
 			   -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS} 
 			   -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
 			   -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                           -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+			   -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
 			   ${USE_PROJECT_CMAKE_MODULE_PATH}
 			   )
 
     add_library(ssl UNKNOWN IMPORTED)
-    set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.a)
+    set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.${SUFFIX})
     add_library(crypto UNKNOWN IMPORTED)
-    set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.a)
+    set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.${SUFFIX})
 
+    if(ENABLE_CURL_CLIENT)
+        #curl
+        set(CURL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/curl CACHE INTERNAL "libcurl source dir")
+        set(CURL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/curl CACHE INTERNAL "libcurl install dir")
+        set(CURL_INCLUDE_DIR ${CURL_INSTALL_DIR}/include CACHE INTERNAL "libcurl include dir")
+        set(CURL_LIBRARY_DIR ${CURL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "libcurl library dir")
 
-    #curl
-    set(CURL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/curl CACHE INTERNAL "libcurl source dir")
-    set(CURL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/curl CACHE INTERNAL "libcurl install dir")
-    set(CURL_INCLUDE_DIR ${CURL_INSTALL_DIR}/include CACHE INTERNAL "libcurl include dir")
-    set(CURL_LIBRARY_DIR ${CURL_INSTALL_DIR}/lib CACHE INTERNAL "libcurl library dir")
+        #    required when using cmake 2.8.7, but invalid for later versions
+        #    set( CURL_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
+        #    set( CURL_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
+        set( CURL_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS}" CACHE INTERNAL "" )
+        set( CURL_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS}" CACHE INTERNAL "" )
 
-    set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
-    set( OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
-    set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
-    set( OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
+        set( CURL_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
+        set( CURL_C_FLAGS "${CMAKE_C_FLAGS}  ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
+        set( CURL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
 
-    set( CURL_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
-    set( CURL_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
-    set( CURL_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
-    set( CURL_C_FLAGS "${CMAKE_C_FLAGS}  ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
-    set( CURL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
+        if ( BUILD_SHARED_LIBS )
+            set( CURL_STATICLIB OFF CACHE INTERNAL "" )
+	    set( BUILD_CURL_EXE OFF CACHE INTERNAL "" )
+        else()
+            set( CURL_STATICLIB ON CACHE INTERNAL "" )
+	    set( BUILD_CURL_EXE ON CACHE INTERNAL "" )
+        endif()
 
-    #todo: figure out a better way of doing this
-    set( GIT_EXECUTABLE /usr/bin/git )
+        #todo: figure out a better way of doing this
+        set( GIT_EXECUTABLE /usr/bin/git )
 
-    ExternalProject_Add(CURL
-                        DEPENDS OPENSSL ZLIB 
-			SOURCE_DIR ${CURL_SOURCE_DIR}
-			GIT_REPOSITORY https://github.com/bagder/curl.git
-			GIT_TAG 38e0788  # 7.43.0
-			CMAKE_ARGS
-			   -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
-			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-			   -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
-			   -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
-			   -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
-			   -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
-			   -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
-			   -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
-			   -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-			   -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
-			   -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
-			   -DCURL_STATICLIB=ON
-			   -DBUILD_CURL_EXE=ON
-			   ${USE_PROJECT_CMAKE_MODULE_PATH}
-    )
+        ExternalProject_Add(CURL
+            DEPENDS OPENSSL ZLIB 
+	    SOURCE_DIR ${CURL_SOURCE_DIR}
+	    GIT_REPOSITORY https://github.com/bagder/curl.git
+	    GIT_TAG 38e0788  # 7.43.0
+            PATCH_COMMAND patch lib/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/lib/CMakeLists.patch && patch src/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/src/CMakeLists.patch
+	    CMAKE_ARGS
+	    -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
+	    -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+	    -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
+	    -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
+	    -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
+	    -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
+	    -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
+	    -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
+	    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+	    -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
+	    -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
+	    -DCURL_STATICLIB=${CURL_STATICLIB}
+	    -DBUILD_CURL_EXE=${BUILD_CURL_EXE}
+	    -DBUILD_CURL_TESTS=OFF
+            -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+	    ${USE_PROJECT_CMAKE_MODULE_PATH}
+	)
 
-    add_library(curl UNKNOWN IMPORTED)
-    set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.a)
-
+        add_library(curl UNKNOWN IMPORTED)
+        set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.${SUFFIX})
+    endif()
 endif()
 
 #release pdbs in windows
@@ -352,17 +407,27 @@ endif()
 
 # default libraries to link in per-platform
 if(PLATFORM_WINDOWS)
-    if(USE_CURL_CLIENT)
-        set(PLATFORM_DEP_LIBS libcurl)
-    else()
-        set(PLATFORM_DEP_LIBS Wininet winhttp)
-    endif()
-    set(PLATFORM_DEP_LIBS ${PLATFORM_DEP_LIBS} Bcrypt Crypt32 Userenv )
+    set(PLATFORM_DEP_LIBS Bcrypt Crypt32 Userenv )
 elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
-    set(PLATFORM_DEP_LIBS curl ssl crypto pthread)
+    set(PLATFORM_DEP_LIBS ssl crypto pthread)
 elseif(PLATFORM_ANDROID)
-    set(PLATFORM_DEP_LIBS curl ssl crypto ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a log atomic)
+    set(PLATFORM_DEP_LIBS ssl crypto z log atomic)
 endif()
+
+# client-related libraries
+if(ENABLE_CURL_CLIENT)
+    if(PLATFORM_WINDOWS)
+        set(CLIENT_LIBS ${CLIENT_LIBS} libcurl)
+    else()
+        set(CLIENT_LIBS ${CLIENT_LIBS} curl)
+    endif()
+endif()
+
+if(ENABLE_WINDOWS_CLIENT)
+    set(CLIENT_LIBS ${CLIENT_LIBS} Wininet winhttp)
+endif()
+
+set(GENERATE_VERSION_INFO 0)
 
 #sdks
 add_subdirectory(aws-cpp-sdk-core)
@@ -401,7 +466,8 @@ add_subdirectory(aws-cpp-sdk-rds)
 add_subdirectory(aws-cpp-sdk-access-management)
 add_subdirectory(aws-cpp-sdk-transfer)
 add_subdirectory(aws-cpp-sdk-queues)
-add_subdirectory(aws-cpp-sdk-ec2)
+# trying to compile EC2Client.cpp hangs linux/android, may need some kind of custom build settings to handle it
+#add_subdirectory(aws-cpp-sdk-ec2)
 add_subdirectory(aws-cpp-sdk-swf)
 
 if(NOT PLATFORM_ANDROID)
@@ -411,19 +477,19 @@ if(NOT PLATFORM_ANDROID)
 endif()
 
 #testing
-if(PLATFORM_ANDROID)
+if(PLATFORM_ANDROID AND NOT BUILD_SHARED_LIBS)
     add_subdirectory(android-unified-tests)
 else()
     add_subdirectory(aws-cpp-sdk-core-tests)
     add_subdirectory(aws-cpp-sdk-dynamodb-integration-tests)
     add_subdirectory(aws-cpp-sdk-cognitoidentity-integration-tests)
     add_subdirectory(aws-cpp-sdk-sqs-integration-tests)
-    add_subdirectory(aws-cpp-sdk-lambda-integration-tests)
+    add_subdirectory(aws-cpp-sdk-lambda-integration-tests) 
     add_subdirectory(aws-cpp-sdk-s3-integration-tests)
     add_subdirectory(aws-cpp-sdk-identity-management-tests)
-    add_subdirectory(aws-cpp-sdk-cloudfront-integration-tests)
+ #   add_subdirectory(aws-cpp-sdk-cloudfront-integration-tests)
     add_subdirectory(aws-cpp-sdk-transfer-tests)
-    add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
+ #   add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
 
     if(PLATFORM_WINDOWS)
         add_subdirectory(aws-cpp-sdk-wininet-winhttp-test)
