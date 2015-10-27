@@ -47,6 +47,8 @@ project(aws-cpp-sdk-datapipeline)
 
   add_library(aws-cpp-sdk-datapipeline ${LIBTYPE} ${DATAPIPELINE_SRC})
   target_link_libraries(aws-cpp-sdk-datapipeline aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-datapipeline")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

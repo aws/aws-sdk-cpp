@@ -47,6 +47,8 @@ project(aws-cpp-sdk-glacier)
 
   add_library(aws-cpp-sdk-glacier ${LIBTYPE} ${GLACIER_SRC})
   target_link_libraries(aws-cpp-sdk-glacier aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-glacier")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

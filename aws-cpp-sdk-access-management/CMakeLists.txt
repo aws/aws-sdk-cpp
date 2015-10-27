@@ -40,6 +40,8 @@ endif()
 
 add_library(aws-cpp-sdk-access-management ${LIBTYPE} ${ACCESS_MANAGEMENT_SRC})
 target_link_libraries(aws-cpp-sdk-access-management aws-cpp-sdk-cognito-identity aws-cpp-sdk-iam)
+list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-access-management")
+set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
 install (TARGETS aws-cpp-sdk-access-management 
          ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}

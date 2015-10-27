@@ -47,6 +47,8 @@ project(aws-cpp-sdk-ecs)
 
   add_library(aws-cpp-sdk-ecs ${LIBTYPE} ${ECS_SRC})
   target_link_libraries(aws-cpp-sdk-ecs aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-ecs")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

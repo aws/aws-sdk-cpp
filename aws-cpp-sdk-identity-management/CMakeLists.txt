@@ -44,6 +44,8 @@ endif()
 
 add_library(aws-cpp-sdk-identity-management ${LIBTYPE} ${IDENTITY_MGMT_SRC})
 target_link_libraries(aws-cpp-sdk-identity-management aws-cpp-sdk-cognito-identity)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-identity-management")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
 install (TARGETS aws-cpp-sdk-identity-management 
          ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}

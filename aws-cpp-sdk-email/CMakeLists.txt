@@ -47,6 +47,8 @@ project(aws-cpp-sdk-email)
 
   add_library(aws-cpp-sdk-email ${LIBTYPE} ${EMAIL_SRC})
   target_link_libraries(aws-cpp-sdk-email aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-email")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

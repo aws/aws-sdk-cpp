@@ -246,6 +246,8 @@ if(PLATFORM_ANDROID)
 endif()
 
 add_library(aws-cpp-sdk-core ${LIBTYPE} ${AWSNativeSDK_SRC})
+list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-core")
+set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
 if(PLATFORM_ANDROID)
     if(ENABLE_CURL_CLIENT)

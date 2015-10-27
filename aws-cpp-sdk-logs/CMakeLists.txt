@@ -47,6 +47,8 @@ project(aws-cpp-sdk-logs)
 
   add_library(aws-cpp-sdk-logs ${LIBTYPE} ${LOGS_SRC})
   target_link_libraries(aws-cpp-sdk-logs aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-logs")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

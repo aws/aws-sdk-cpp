@@ -47,6 +47,8 @@ project(aws-cpp-sdk-swf)
 
   add_library(aws-cpp-sdk-swf ${LIBTYPE} ${SWF_SRC})
   target_link_libraries(aws-cpp-sdk-swf aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-swf")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

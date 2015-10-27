@@ -47,6 +47,8 @@ project(aws-cpp-sdk-opsworks)
 
   add_library(aws-cpp-sdk-opsworks ${LIBTYPE} ${OPSWORKS_SRC})
   target_link_libraries(aws-cpp-sdk-opsworks aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-opsworks")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

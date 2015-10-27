@@ -47,6 +47,8 @@ project(aws-cpp-sdk-mobileanalytics)
 
   add_library(aws-cpp-sdk-mobileanalytics ${LIBTYPE} ${MOBILEANALYTICS_SRC})
   target_link_libraries(aws-cpp-sdk-mobileanalytics aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-mobileanalytics")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

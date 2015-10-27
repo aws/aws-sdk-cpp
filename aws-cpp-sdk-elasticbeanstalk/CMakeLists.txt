@@ -47,6 +47,8 @@ project(aws-cpp-sdk-elasticbeanstalk)
 
   add_library(aws-cpp-sdk-elasticbeanstalk ${LIBTYPE} ${ELASTICBEANSTALK_SRC})
   target_link_libraries(aws-cpp-sdk-elasticbeanstalk aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-elasticbeanstalk")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

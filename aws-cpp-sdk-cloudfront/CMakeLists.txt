@@ -47,6 +47,8 @@ project(aws-cpp-sdk-cloudfront)
 
   add_library(aws-cpp-sdk-cloudfront ${LIBTYPE} ${CLOUDFRONT_SRC})
   target_link_libraries(aws-cpp-sdk-cloudfront aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-cloudfront")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)

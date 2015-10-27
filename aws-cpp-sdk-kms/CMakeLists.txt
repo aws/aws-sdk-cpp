@@ -47,6 +47,8 @@ project(aws-cpp-sdk-kms)
 
   add_library(aws-cpp-sdk-kms ${LIBTYPE} ${KMS_SRC})
   target_link_libraries(aws-cpp-sdk-kms aws-cpp-sdk-core)
+  list(APPEND AWS_INSTALLED_LIBS "aws-cpp-sdk-kms")
+  set(AWS_INSTALLED_LIBS "${AWS_INSTALLED_LIBS}" PARENT_SCOPE)
 
   if(NOT MSVC)
     add_definitions(-std=c++11)
