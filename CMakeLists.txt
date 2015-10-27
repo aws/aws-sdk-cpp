@@ -499,3 +499,9 @@ endif()
 if(BUILD_EXAMPLES)
     add_subdirectory(aws-cpp-sdk-example1)
 endif()
+
+set(CONFIG_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include")
+set(CONFIG_LIB_DIRS "${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_INSTALL_PREFIX}/${SDK_INSTALL_BINARY_PREFIX}")
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/AWSSDKCPPConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/AWSSDKCPPConfig.cmake @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/AWSSDKCPPConfig.cmake DESTINATION "share")
