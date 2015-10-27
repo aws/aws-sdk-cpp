@@ -500,6 +500,9 @@ if(BUILD_EXAMPLES)
     add_subdirectory(aws-cpp-sdk-example1)
 endif()
 
+set(AWSSDKCPP_VERSION "0.0.1")
+configure_file(${PROJECT_SOURCE_DIR}/AWSSDKCPPConfigVersion.cmake.in ${PROJECT_BINARY_DIR}/AWSSDKCPPConfigVersion.cmake @ONLY)
+install(FILES ${PROJECT_BINARY_DIR}/AWSSDKCPPConfigVersion.cmake DESTINATION "share")
 
 set(CONFIG_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include")
 set(CONFIG_LIB_DIRS "${CMAKE_INSTALL_PREFIX}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}")
