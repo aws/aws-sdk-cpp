@@ -43,6 +43,8 @@ using namespace Aws::Internal;
 
 static const char* ACCESS_KEY_ENV_VARIABLE = "AWS_ACCESS_KEY_ID";
 static const char* SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY_ID";
+static const char* SECRET_ACCESS_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
+static const char* SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 static const char* DEFAULT_PROFILE = "default";
 static const char* AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
 static const char* AWS_ACCESS_KEY_ID = "aws_access_key_id";
@@ -96,11 +98,29 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
         AWS_LOG_INFO(environmentLogTag, "Found credential in environment with access key id %s.", accessKey);
         char* secretKey = std::getenv(SECRET_KEY_ENV_VAR);
 
+        if (nullptr == secretKey)
+        {
+            secretKey = std::getenv(SECRET_ACCESS_KEY_ENV_VAR);
+        }
+
+        char* sessionToken = std::getenv(SESSION_TOKEN_ENV_VAR);
+
+        if (nullptr != sessionToken)
+        {
+            AWS_LOG_INFO(environmentLogTag, "Found session tokens.");
+        }
 
         if (secretKey)
         {
             AWS_LOG_INFO(environmentLogTag, "Found secret key, returning credentials.");
-            return AWSCredentials(accessKey, secretKey);
+            if (nullptr == sessionToken)
+            {
+                return AWSCredentials(accessKey, secretKey);
+            }
+            else
+            {
+                return AWSCredentials(accessKey, secretKey, sessionToken);
+            }
         }
     }
 
