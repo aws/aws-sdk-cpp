@@ -21,7 +21,8 @@ cmake_minimum_required (VERSION 3.1.2)
 # Cmake invocation variables:
 #   CUSTOM_MEMORY_MANAGEMENT - if set to 1, generates the sdk project files with custom memory management enabled, otherwise disables it
 #   STATIC_LINKING - if set to 1, generates the sdk project files to build static libraries, otherwise disables it
-#   NO_HTTP_CLIENT - if set to 1, will not include any platform-specific http client implementations; you will need to provide one 
+#   NO_HTTP_CLIENT - if set to 1, will not include any platform-specific http client implementations; you will need to provide one via an injected HttpClientFactory implementation
+#   NO_ENCRYPTION - if set to 1, will not include any platform-specific encryption implementations; you will need to provide one
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
@@ -32,6 +33,8 @@ SET(PLATFORM_WINDOWS 0)
 SET(PLATFORM_LINUX 0)
 SET(PLATFORM_ANDROID 0)
 SET(PLATFORM_APPLE 0)
+SET(PLATFORM_ORBIS 0)
+SET(PLATFORM_DURANGO 0)
 
 if("${TARGET_ARCH}" STREQUAL "WINDOWS")
     SET(PLATFORM_WINDOWS 1)
@@ -42,6 +45,12 @@ elseif("${TARGET_ARCH}" STREQUAL "APPLE")
 elseif("${TARGET_ARCH}" STREQUAL "ANDROID")
     SET(PLATFORM_ANDROID 1)
     SET(CMAKE_TOOLCHAIN_FILE ./android-build/android.toolchain.cmake)
+elseif("${TARGET_ARCH}" STREQUAL "ORBIS")
+    SET(PLATFORM_ORBIS 1)
+    # NYI
+    # SET(CMAKE_TOOLCHAIN_FILE ./orbis-build/orbis.toolchain.cmake)
+elseif("${TARGET_ARCH}" STREQUAL "DURANGO")
+    SET(PLATFORM_DURANGO 1)
 else()
     message(STATUS "TARGET_ARCH not specified; inferring host OS to be platform compilation target")
     if(WIN32)
@@ -55,17 +64,43 @@ else()
     endif()
 endif()
 
+if(PLATFORM_ANDROID)
+    # minimum version of cmake that 
+    #   (1) supports ExternalProject_Add URL_HASH
+    #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
+    cmake_minimum_required (VERSION 3.1.2)
+else()
+    cmake_minimum_required (VERSION 2.8)
+endif()
+
 if(PLATFORM_WINDOWS)
     message(STATUS "Generating windows build config")
+    add_definitions("-DAWS_SDK_PLATFORM_WINDOWS")
+    set(SDK_INSTALL_BINARY_PREFIX "windows")
 elseif(PLATFORM_LINUX)
     message(STATUS "Generating linux build config")
+    add_definitions("-DAWS_SDK_PLATFORM_LINUX")
+    set(SDK_INSTALL_BINARY_PREFIX "linux")
 elseif(PLATFORM_APPLE)
     message(STATUS "Generating Mac OSX/IOS build config")
+    add_definitions("-DAWS_SDK_PLATFORM_APPLE")
+    set(SDK_INSTALL_BINARY_PREFIX "mac")
 elseif(PLATFORM_ANDROID)
     message(STATUS "Generating android build config")
+    add_definitions("-DAWS_SDK_PLATFORM_ANDROID")
+    set(SDK_INSTALL_BINARY_PREFIX "android")
+elseif(PLATFORM_ORBIS)
+    message(STATUS "Generating Orbis build config")
+    add_definitions("-DAWS_SDK_PLATFORM_ORBIS")
+    set(SDK_INSTALL_BINARY_PREFIX "orbis")
+elseif(PLATFORM_DURANGO)
+    message(STATUS "Generating Durango build config")
+    add_definitions("-DAWS_SDK_PLATFORM_DURANGO")
+    set(SDK_INSTALL_BINARY_PREFIX "durango")
 else()
     message(FATAL_ERROR "Unknown target platform.  How did this happen?")
 endif()
+
 
 # shared libraries as intermediate (non-leaf) targets are not supported in android due to std::string issues
 if("${STATIC_LINKING}" STREQUAL "1")
@@ -88,41 +123,92 @@ else()
     message(STATUS "Custom memory management disabled")
 endif()
 
+# Http client control
+# After this section runs, client availability is technically platform-independent (ie we use the client #defines rather than a mess of platform #defines)
 # on Windows, set CURL_DIR to a valid curl install directory in order to enable the curl client
 set(ENABLE_CURL_CLIENT 0)
 set(ENABLE_WINDOWS_CLIENT 0)
+set(ENABLE_ORBIS_CLIENT 0)
+set(ENABLE_WINXML_CLIENT 0)
 if(NOT "${NO_HTTP_CLIENT}" STREQUAL "1")
     if(PLATFORM_WINDOWS)
-        set(ENABLE_WINDOWS_CLIENT 1)
         if(DEFINED CURL_DIR)
-	    set(ENABLE_CURL_CLIENT 1)
+	        set(ENABLE_CURL_CLIENT 1)
             set(CURL_INCLUDE_DIR "${CURL_DIR}\\include")
             set(CURL_LIBRARY_DIR "${CURL_DIR}\\lib")
 
             include_directories(${CURL_INCLUDE_DIR})
             link_directories(${CURL_LIBRARY_DIR})
+        else()
+            set(ENABLE_WINDOWS_CLIENT 1)
         endif()
-    else()
+    elseif(PLATFORM_LINUX OR PLATFORM_APPLE OR PLATFORM_ANDROID)
         set(ENABLE_CURL_CLIENT 1)
+    elseif(PLATFORM_ORBIS)
+        set(ENABLE_ORBIS_CLIENT 1)
+    elseif(PLATFORM_DURANGO)
+        set(ENABLE_WINXML_CLIENT 1)
+    endif()
+
+    if(ENABLE_CURL_CLIENT)
+        add_definitions(-DENABLE_CURL_CLIENT)
+        message(STATUS "Http client: Curl")
+        if(TEST_CERT_PATH)
+            message(STATUS "Setting curl cert path to ${TEST_CERT_PATH}")
+            add_definitions(-DTEST_CERT_PATH="\"${TEST_CERT_PATH}\"")
+        endif()
+    elseif(ENABLE_WINDOWS_CLIENT)
+        add_definitions(-DENABLE_WINDOWS_CLIENT)
+        message(STATUS "Http client: WinHttp")
+    elseif(ENABLE_ORBIS_CLIENT)
+        add_definitions(-DENABLE_ORBIS_CLIENT)
+        message(STATUS "Http client: Orbis")
+    elseif(ENABLE_WINXML_CLIENT)
+        add_definitions(-DENABLE_WINXML_CLIENT)
+        message(STATUS "Http client: IXmlHttpRequest2")
+    endif()
+else()
+    message(STATUS "You will need to inject an http client implementation before making any http requests!")
+endif()
+
+
+# Encryption control
+# After this section runs, the encryption implementation is technically platform-independent (ie we use the enable #defines rather than a mess of platform #defines)
+set(ENABLE_BCRYPT_ENCRYPTION 0)
+set(ENABLE_OPENSSL_ENCRYPTION 0)
+set(ENABLE_COMMONCRYPTO_ENCRYPTION 0)
+set(ENABLE_ORBIS_ENCRYPTION 0)
+set(ENABLE_INJECTED_ENCRYPTION 0)
+if(NOT "${NO_ENCRYPTION}" STREQUAL "1")
+    if(PLATFORM_WINDOWS OR PLATFORM_DURANGO)
+        set(ENABLE_BCRYPT_ENCRYPTION 1)
+    elseif(PLATFORM_LINUX OR PLATFORM_ANDROID)
+        set(ENABLE_OPENSSL_ENCRYPTION 1)
+    elseif(PLATFORM_APPLE)
+        set(ENABLE_COMMONCRYPTO_ENCRYPTION 1)
+    elseif(PLATFORM_ORBIS)
+        set(ENABLE_ORBIS_ENCRYPTION 1)
+    else()
+        set(ENABLE_INJECTED_ENCRYPTION 1)
     endif()
 endif()
 
-if(ENABLE_CURL_CLIENT)
-    add_definitions(-DENABLE_CURL_CLIENT)
-    message(STATUS "Curl client enabled")
-    if(TEST_CERT_PATH)
-        message(STATUS "Setting cert path to ${TEST_CERT_PATH}")
-        add_definitions(-DTEST_CERT_PATH="\"${TEST_CERT_PATH}\"")
-    endif()
-else()
-    message(STATUS "Curl client disabled")    
-endif()
-
-if(ENABLE_WINDOWS_CLIENT)
-    add_definitions(-DENABLE_WINDOWS_CLIENT)
-    message(STATUS "Windows clients enabled")
-else()
-    message(STATUS "Windows clients disabled")
+if(ENABLE_BCRYPT_ENCRYPTION)
+    add_definitions(-DENABLE_BCRYPT_ENCRYPTION)
+    message(STATUS "Encryption: Bcrypt")
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+    add_definitions(-DENABLE_OPENSSL_ENCRYPTION)
+    message(STATUS "Encryption: Openssl")
+elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
+    add_definitions(-DENABLE_COMMONCRYPTO_ENCRYPTION)
+    message(STATUS "Encryption: CommonCrypto")
+elseif(ENABLE_ORBIS_ENCRYPTION)
+    add_definitions(-DENABLE_ORBIS_ENCRYPTION)
+    message(STATUS "Encryption: Orbis (SceSecure)")
+elseif(ENABLE_INJECTED_ENCRYPTION)
+    add_definitions(-DENABLE_INJECTED_ENCRYPTION)
+    message(STATUS "Encryption: None")
+    message(STATUS "You will need to inject an encryption implementation before making any http requests!")
 endif()
 
 project(AWSNativeSDKAll)
@@ -130,18 +216,6 @@ project(AWSNativeSDKAll)
 # install setup
 # This install section must come after the initial "project(..)" declaration since that's when the compiler settings are discovered; prior to that CMAKE_SIZEOF_VOID_P is empty
 # install syntax (after building): cmake -DCMAKE_INSTALL_CONFIG_NAME=<Release/Debug> -DCMAKE_INSTALL_PREFIX=<install_root> -P cmake_install.cmake
-# ToDo: consoles
-if(PLATFORM_WINDOWS)
-    set(SDK_INSTALL_BINARY_PREFIX "windows")
-elseif(PLATFORM_LINUX)
-    set(SDK_INSTALL_BINARY_PREFIX "linux")
-elseif(PLATFORM_ANDROID)
-    set(SDK_INSTALL_BINARY_PREFIX "android")
-elseif(PLATFORM_APPLE)
-    set(SDK_INSTALL_BINARY_PREFIX "mac")
-endif()
-
-# ToDo: Mac/ios/android/consoles
 if(PLATFORM_WINDOWS OR PLATFORM_LINUX)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/intel64")
@@ -157,6 +231,8 @@ elseif(PLATFORM_ANDROID)
 endif()
 
 message(STATUS "Install binary prefix: ${SDK_INSTALL_BINARY_PREFIX}")
+
+message(STATUS "Downloading client source from: ${CODEGEN_URL}")
 
 if(BUILD_SHARED_LIBS)
     SET(LIBTYPE SHARED)
@@ -216,13 +292,13 @@ set(CMAKE_CONFIGURATION_TYPES
 # pass this flag to the jsoncpp amalgamated source
 add_definitions(-DJSON_USE_EXCEPTION=0)
 
-if(NOT PLATFORM_WINDOWS)
+if(NOT PLATFORM_WINDOWS AND NOT PLATFORM_DURANGO)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 endif()
 
 # warning control
-if(PLATFORM_WINDOWS)
+if(PLATFORM_WINDOWS OR PLATFORM_DURANGO)
     if(MSVC)
         # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
@@ -239,7 +315,7 @@ if(PLATFORM_WINDOWS)
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
         endif()
     endif()
-elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
+elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE OR PLATFORM_ORBIS)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
     # We also have some nested comments in the auto-generated member comments so turn that off as well
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-unused-private-field -Wno-comment")
@@ -318,22 +394,22 @@ if(PLATFORM_ANDROID)
     endif()
 
     ExternalProject_Add(OPENSSL
-                        DEPENDS ZLIB
-			SOURCE_DIR ${OPENSSL_SOURCE_DIR}
-			URL http://www.openssl.org/source/openssl-1.0.2d.tar.gz
-			URL_HASH "SHA256=671c36487785628a703374c652ad2cebea45fa920ae5681515df25d9f2c9a8c8"
-			UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py 
-			CMAKE_ARGS 
-			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-			   -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
-			   -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS} 
-			   -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS} 
-			   -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
-			   -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-                           -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-			   -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-			   ${USE_PROJECT_CMAKE_MODULE_PATH}
-			   )
+        DEPENDS ZLIB
+        SOURCE_DIR ${OPENSSL_SOURCE_DIR}
+        URL http://www.openssl.org/source/openssl-1.0.2d.tar.gz
+        URL_HASH "SHA256=671c36487785628a703374c652ad2cebea45fa920ae5681515df25d9f2c9a8c8"
+        UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py 
+        CMAKE_ARGS 
+        -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+        -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
+        -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS} 
+        -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS} 
+        -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                    -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+        -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+        ${USE_PROJECT_CMAKE_MODULE_PATH}
+    )
 
     add_library(ssl UNKNOWN IMPORTED)
     set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.${SUFFIX})
@@ -370,28 +446,28 @@ if(PLATFORM_ANDROID)
 
         ExternalProject_Add(CURL
             DEPENDS OPENSSL ZLIB 
-	    SOURCE_DIR ${CURL_SOURCE_DIR}
-	    GIT_REPOSITORY https://github.com/bagder/curl.git
-	    GIT_TAG 38e0788  # 7.43.0
-            PATCH_COMMAND patch lib/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/lib/CMakeLists.patch && patch src/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/src/CMakeLists.patch
-	    CMAKE_ARGS
-	    -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
-	    -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-	    -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
-	    -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
-	    -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
-	    -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
-	    -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
-	    -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
-	    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-	    -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
-	    -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
-	    -DCURL_STATICLIB=${CURL_STATICLIB}
-	    -DBUILD_CURL_EXE=${BUILD_CURL_EXE}
-	    -DBUILD_CURL_TESTS=OFF
-            -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-	    ${USE_PROJECT_CMAKE_MODULE_PATH}
-	)
+            SOURCE_DIR ${CURL_SOURCE_DIR}
+            GIT_REPOSITORY https://github.com/bagder/curl.git
+            GIT_TAG 38e0788  # 7.43.0
+                PATCH_COMMAND patch lib/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/lib/CMakeLists.patch && patch src/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/src/CMakeLists.patch
+            CMAKE_ARGS
+            -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
+            -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+            -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
+            -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
+            -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
+            -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
+            -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
+            -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
+            -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
+            -DCURL_STATICLIB=${CURL_STATICLIB}
+            -DBUILD_CURL_EXE=${BUILD_CURL_EXE}
+            -DBUILD_CURL_TESTS=OFF
+                -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+            ${USE_PROJECT_CMAKE_MODULE_PATH}
+        )
 
         add_library(curl UNKNOWN IMPORTED)
         set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.${SUFFIX})
@@ -399,19 +475,29 @@ if(PLATFORM_ANDROID)
 endif()
 
 #release pdbs in windows
-if(PLATFORM_WINDOWS)
+if((PLATFORM_WINDOWS OR PLATFORM_DURANGO) AND BUILD_SHARED_LIBS)
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
     set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
-    set(CMAKE_STATIC_LINKER_FLAGS_RELEASE "${CMAKE_STATIC_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
 endif()
 
 # default libraries to link in per-platform
 if(PLATFORM_WINDOWS)
-    set(PLATFORM_DEP_LIBS Bcrypt Crypt32 Userenv )
+    set(PLATFORM_DEP_LIBS Userenv )
 elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
-    set(PLATFORM_DEP_LIBS ssl crypto pthread)
+    set(PLATFORM_DEP_LIBS pthread)
 elseif(PLATFORM_ANDROID)
-    set(PLATFORM_DEP_LIBS ssl crypto z log atomic)
+    set(PLATFORM_DEP_LIBS log atomic)
+endif()
+
+# encryption related libraries
+if(ENABLE_BCRYPT_ENCRYPTION)
+    set(CRYPTO_LIBS Bcrypt)
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+    set(CRYPTO_LIBS ssl crypto z )
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+    set(CRYPTO_LIBS commonCrypto)
+elseif(ENABLE_ORBIS_ENCRYPTION)
+    set(CRYPTO_LIBS SceSecure ) # dunno what's right here, there's libSceSecure.a, libSceSecure_stub.a, and libSceSecure_stub_weak.a
 endif()
 
 # client-related libraries
@@ -421,13 +507,19 @@ if(ENABLE_CURL_CLIENT)
     else()
         set(CLIENT_LIBS ${CLIENT_LIBS} curl)
     endif()
-endif()
-
-if(ENABLE_WINDOWS_CLIENT)
+elseif(ENABLE_WINDOWS_CLIENT)
     set(CLIENT_LIBS ${CLIENT_LIBS} Wininet winhttp)
+elseif(ENABLE_ORBIS_CLIENT)
+    set(CLIENT_LIBS ${CLIENT_LIBS} SceNet_stub_weak SceSsl_stub_weak SceHttp_stub_weak)
+elseif(ENABLE_WINXML_CLIENT)
+    set(CLIENT_LIBS ${CLIENT_LIBS} ixmlhttprequest2)
 endif()
 
-set(GENERATE_VERSION_INFO 0)
+if(NOT BRAZIL_BUILD)
+   if( BUILD_VER_NUM )
+    set(GENERATE_VERSION_INFO 1)
+   endif()
+endif()
 
 #sdks
 add_subdirectory(aws-cpp-sdk-core)
@@ -463,11 +555,14 @@ add_subdirectory(aws-cpp-sdk-sns)
 add_subdirectory(aws-cpp-sdk-autoscaling)
 add_subdirectory(aws-cpp-sdk-cloudformation)
 add_subdirectory(aws-cpp-sdk-rds)
+add_subdirectory(aws-cpp-sdk-logging)
 add_subdirectory(aws-cpp-sdk-access-management)
 add_subdirectory(aws-cpp-sdk-transfer)
 add_subdirectory(aws-cpp-sdk-queues)
 # trying to compile EC2Client.cpp hangs linux/android, may need some kind of custom build settings to handle it
-#add_subdirectory(aws-cpp-sdk-ec2)
+if(NOT PLATFORM_LINUX AND NOT PLATFORM_ANDROID)
+    add_subdirectory(aws-cpp-sdk-ec2)
+endif()
 add_subdirectory(aws-cpp-sdk-swf)
 
 if(NOT PLATFORM_ANDROID)
@@ -487,15 +582,12 @@ else()
     add_subdirectory(aws-cpp-sdk-lambda-integration-tests) 
     add_subdirectory(aws-cpp-sdk-s3-integration-tests)
     add_subdirectory(aws-cpp-sdk-identity-management-tests)
+    add_subdirectory(aws-cpp-sdk-logging-tests)
  #   add_subdirectory(aws-cpp-sdk-cloudfront-integration-tests)
     add_subdirectory(aws-cpp-sdk-transfer-tests)
  #   add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
 
-    if(PLATFORM_WINDOWS)
+    if(ENABLE_WINDOWS_CLIENT)
         add_subdirectory(aws-cpp-sdk-wininet-winhttp-test)
     endif()
-endif()
-
-if(BUILD_EXAMPLES)
-    add_subdirectory(aws-cpp-sdk-example1)
 endif()

@@ -14,7 +14,7 @@
   */
 
 
-#include <aws/core/utils/crypto/windows/WindowsHashImpl.h>
+#include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
 
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -39,11 +39,11 @@ static const char* logTag = "CryptoHash";
 
 // RAII class for one-use-per-hash-call data used in Windows cryptographic hash implementations
 // Useful so we don't have to call a Cleanup function for every failure point
-class WindowsHashContext
+class BCryptHashContext
 {
     public:
 
-        WindowsHashContext(void* algorithmHandle, PBYTE hashObject, DWORD hashObjectLength) :
+        BCryptHashContext(void* algorithmHandle, PBYTE hashObject, DWORD hashObjectLength) :
             m_hashHandle(nullptr),
             m_isValid(false)
         {
@@ -51,7 +51,7 @@ class WindowsHashContext
             m_isValid = NT_SUCCESS(status);
         }
 
-        WindowsHashContext(void* algorithmHandle, PBYTE hashObject, DWORD hashObjectLength, const ByteBuffer& secret) :
+        BCryptHashContext(void* algorithmHandle, PBYTE hashObject, DWORD hashObjectLength, const ByteBuffer& secret) :
             m_hashHandle(nullptr),
             m_isValid(false)
         {
@@ -59,7 +59,7 @@ class WindowsHashContext
             m_isValid = NT_SUCCESS(status);
         }
 
-        ~WindowsHashContext()
+        ~BCryptHashContext()
         {
             if (m_hashHandle)
             {
@@ -73,11 +73,7 @@ class WindowsHashContext
         bool m_isValid;
 };
 
-} // namespace Crypto
-} // namespace Utils
-} // namespace Amazon
-
-WindowsHashImpl::WindowsHashImpl(LPCWSTR algorithmName, bool isHMAC) :
+BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     m_algorithmHandle(nullptr),
     m_hashBufferLength(0),
     m_hashBuffer(nullptr),
@@ -123,7 +119,7 @@ WindowsHashImpl::WindowsHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     }
 }
 
-WindowsHashImpl::~WindowsHashImpl()
+BCryptHashImpl::~BCryptHashImpl()
 {
     Aws::DeleteArray(m_hashObject);
     Aws::DeleteArray(m_hashBuffer);
@@ -134,7 +130,7 @@ WindowsHashImpl::~WindowsHashImpl()
     }
 }
 
-HashResult WindowsHashImpl::HashData(const WindowsHashContext& context, PBYTE data, ULONG dataLength)
+HashResult BCryptHashImpl::HashData(const BCryptHashContext& context, PBYTE data, ULONG dataLength)
 {
     NTSTATUS status = BCryptHashData(context.m_hashHandle, data, dataLength, 0);
     if (!NT_SUCCESS(status))
@@ -153,7 +149,7 @@ HashResult WindowsHashImpl::HashData(const WindowsHashContext& context, PBYTE da
     return HashResult(ByteBuffer(m_hashBuffer, m_hashBufferLength));
 }
 
-HashResult WindowsHashImpl::Calculate(const Aws::String& str)
+HashResult BCryptHashImpl::Calculate(const Aws::String& str)
 {
     if(!IsValid())
     {
@@ -162,7 +158,7 @@ HashResult WindowsHashImpl::Calculate(const Aws::String& str)
 
     std::lock_guard<std::mutex> locker(m_algorithmMutex);
 
-    WindowsHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
+    BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
     if (!context.IsValid())
     {
         AWS_LOG_ERROR(logTag, "Error creating hash handle.");
@@ -172,7 +168,7 @@ HashResult WindowsHashImpl::Calculate(const Aws::String& str)
     return HashData(context, (PBYTE)str.c_str(), static_cast<ULONG>(str.length()));
 }
 
-HashResult WindowsHashImpl::Calculate(const ByteBuffer& toHash, const ByteBuffer& secret)
+HashResult BCryptHashImpl::Calculate(const ByteBuffer& toHash, const ByteBuffer& secret)
 {
     if(!IsValid())
     {
@@ -181,7 +177,7 @@ HashResult WindowsHashImpl::Calculate(const ByteBuffer& toHash, const ByteBuffer
 
     std::lock_guard<std::mutex> locker(m_algorithmMutex);
 
-    WindowsHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength, secret);
+    BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength, secret);
     if (!context.IsValid())
     {
         AWS_LOG_ERROR(logTag, "Error creating hash handle.");
@@ -191,14 +187,14 @@ HashResult WindowsHashImpl::Calculate(const ByteBuffer& toHash, const ByteBuffer
     return HashData(context, static_cast<PBYTE>(toHash.GetUnderlyingData()), static_cast<ULONG>(toHash.GetLength()));
 }
 
-bool WindowsHashImpl::IsValid() const
+bool BCryptHashImpl::IsValid() const
 {
     return m_hashBuffer != nullptr && m_hashBufferLength > 0 && m_hashObject != nullptr && m_hashObjectLength > 0;
 }
 
-bool WindowsHashImpl::HashStream(Aws::IStream& stream)
+bool BCryptHashImpl::HashStream(Aws::IStream& stream)
 {
-    WindowsHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
+    BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
     if (!context.IsValid())
     {
         AWS_LOG_ERROR(logTag, "Error creating hash handle.");
@@ -238,7 +234,7 @@ bool WindowsHashImpl::HashStream(Aws::IStream& stream)
     return true;
 }
 
-HashResult WindowsHashImpl::Calculate(Aws::IStream& stream)
+HashResult BCryptHashImpl::Calculate(Aws::IStream& stream)
 {
     if(!IsValid())
     {
@@ -264,3 +260,48 @@ HashResult WindowsHashImpl::Calculate(Aws::IStream& stream)
 
     return HashResult(ByteBuffer(m_hashBuffer, m_hashBufferLength));
 }
+
+MD5BcryptImpl::MD5BcryptImpl() :
+    m_impl(BCRYPT_MD5_ALGORITHM, false)
+{
+}
+
+HashResult MD5BcryptImpl::Calculate(const Aws::String& str)
+{ 
+    return m_impl.Calculate(str); 
+}
+
+HashResult MD5BcryptImpl::Calculate(Aws::IStream& stream)
+{ 
+    return m_impl.Calculate(stream); 
+}
+
+Sha256BcryptImpl::Sha256BcryptImpl() :
+    m_impl(BCRYPT_SHA256_ALGORITHM, false)
+{
+}
+
+HashResult Sha256BcryptImpl::Calculate(const Aws::String& str) 
+{ 
+    return m_impl.Calculate(str); 
+}
+
+HashResult Sha256BcryptImpl::Calculate(Aws::IStream& stream) 
+{ 
+    return m_impl.Calculate(stream); 
+}
+
+Sha256HMACBcryptImpl::Sha256HMACBcryptImpl() :
+    m_impl(BCRYPT_SHA256_ALGORITHM, true)
+{
+}
+
+HashResult Sha256HMACBcryptImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) 
+{ 
+    return m_impl.Calculate(toSign, secret); 
+}
+
+
+} // namespace Crypto
+} // namespace Utils
+} // namespace Amazon

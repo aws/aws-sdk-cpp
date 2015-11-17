@@ -15,16 +15,30 @@
 
 #pragma once
 
+#include <aws/core/Core_EXPORTS.h>
+#include <memory>
+
 namespace Aws
 {
-namespace Example1
+namespace Utils
+{
+namespace Crypto
 {
 
-extern const char *ExampleTableName;
-extern const char *IdentityColumnName;
-extern const char *DeveloperCredentialsProfileName;
+class Hash;
+class HMAC;
+class HashFactory;
+class HMACFactory;
 
-bool InitializePlayerDataSchema(void);
+AWS_CORE_API std::shared_ptr<Hash> CreateMD5Implementation();
+AWS_CORE_API std::shared_ptr<Hash> CreateSha256Implementation();
+AWS_CORE_API std::shared_ptr<HMAC> CreateSha256HMACImplementation();
 
-} // namespace Example1
+AWS_CORE_API void SetMD5Factory(const std::shared_ptr<HashFactory>& factory);
+AWS_CORE_API void SetSha256Factory(const std::shared_ptr<HashFactory>& factory);
+AWS_CORE_API void SetSha256HMACFactory(const std::shared_ptr<HMACFactory>& factory);
+
+} // namespace Crypto
+} // namespace Utils
 } // namespace Aws
+

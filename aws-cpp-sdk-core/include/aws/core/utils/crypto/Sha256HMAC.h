@@ -36,8 +36,6 @@ namespace Utils
 namespace Crypto
 {
 
-class WindowsHashImpl;
-
 class AWS_CORE_API Sha256HMAC : public HMAC
 {
     public:
@@ -48,13 +46,11 @@ class AWS_CORE_API Sha256HMAC : public HMAC
         /**
         * Calculates a SHA256 HMAC digest (not hex encoded)
         */
-        virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+        virtual HashResult Calculate(const Aws::Utils::ByteBuffer& toSign, const Aws::Utils::ByteBuffer& secret) override;
 
     private:
 
-        #ifdef _WINDOWS
-            Aws::UniquePtr< WindowsHashImpl > m_windowsImpl;
-        #endif
+        std::shared_ptr< HMAC > m_hmacImpl;
 };
 
 } // namespace Sha256

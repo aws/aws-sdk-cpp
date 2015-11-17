@@ -17,11 +17,13 @@
 
 #if ENABLE_CURL_CLIENT
     #include <aws/core/http/curl/CurlHttpClient.h>
-#endif
-
-#ifdef ENABLE_WINDOWS_CLIENT
+#elif ENABLE_WINDOWS_CLIENT
     #include <aws/core/http/windows/WinINetSyncHttpClient.h>
     #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
+#elif ENABLE_ORBIS_CLIENT
+    #include <aws/core/http/orbis/OrbisHttpClient.h>
+#elif ENABLE_WINXML_CLIENT
+    #include <aws/core/http/winxml/WinXmlHttpClient.h>
 #endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
@@ -40,40 +42,21 @@ std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConf
     // Figure out whether the selected option is available but fail gracefully and return a default of some type if not
     // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
     // Other clients: Curl is your default
+#if ENABLE_WINDOWS_CLIENT
     switch (clientConfiguration.httpLibOverride)
-    {
-        case TransferLibType::CURL_CLIENT:
-#if ENABLE_CURL_CLIENT
-            return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
-#else
-            AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Curl client configuration selected but curl is not available.");
-	    return nullptr;
-#endif
- 
-        case TransferLibType::WIN_HTTP_CLIENT:
-#if ENABLE_WINDOWS_CLIENT
-            return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
-#else
-            AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Windows Http client configuration selected but windows clients are not available.");
-	    return nullptr;
-#endif
- 
+    { 
         case TransferLibType::WIN_INET_CLIENT:
-#if ENABLE_WINDOWS_CLIENT
             return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
-#else
-            AWS_LOG_WARN("HttpClientFactoryHttpClientFactory", "Windows Inet client configuration selected but windows clients are not available.");
-	    return nullptr;
-#endif
- 
-        default:
-	    break;
-    }
 
-#if ENABLE_WINDOWS_CLIENT
-    return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+        default:
+            return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+    }
 #elif ENABLE_CURL_CLIENT
     return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
+#elif ENABLE_ORBIS_CLIENT
+    return Aws::MakeShared<OrbisHttpClient>(allocationTag, clientConfiguration);
+#elif ENABLE_WINXML_CLIENT
+    return Aws::MakeShared<WinXmlHttpClient>(allocationTag, clientConfiguration);
 #else
     return nullptr;
 #endif

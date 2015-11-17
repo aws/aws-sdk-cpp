@@ -27,16 +27,17 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Base64;
 using namespace Aws::Utils::Crypto;
 
+// internal buffers are fixed-size arrays, so this is harmless memory-management wise
+static Aws::Utils::Base64::Base64 s_base64;
+
 Aws::String HashingUtils::Base64Encode(const ByteBuffer& message)
 {
-    Base64::Base64 base64;
-    return base64.Encode(message);
+    return s_base64.Encode(message);
 }
 
 ByteBuffer HashingUtils::Base64Decode(const Aws::String& encodedMessage)
 {
-    Base64::Base64 base64;
-    return base64.Decode(encodedMessage);
+    return s_base64.Decode(encodedMessage);
 }
 
 ByteBuffer HashingUtils::CalculateSHA256HMAC(const ByteBuffer& toSign, const ByteBuffer& secret)

@@ -39,8 +39,17 @@ class AWS_CORE_API HMAC
         /**
         * Calculates an HMAC digest
         */
-        virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) = 0;
+        virtual HashResult Calculate(const Aws::Utils::ByteBuffer& toSign, const Aws::Utils::ByteBuffer& secret) = 0;
 
+};
+
+class AWS_CORE_API HMACFactory
+{
+public:
+
+    virtual ~HMACFactory() {}
+
+    virtual std::shared_ptr<HMAC> CreateImplementation() const = 0;
 };
 
 } // namespace Crypto

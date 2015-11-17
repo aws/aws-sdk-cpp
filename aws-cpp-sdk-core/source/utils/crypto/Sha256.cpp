@@ -13,19 +13,28 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/base64/Base64.h>
 
-using namespace Aws::Utils::Base64;
+#include <aws/core/utils/crypto/Sha256.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/crypto/Factories.h>
 
-int Base64::CalculateBase64Length(const Aws::String& b64input)
+using namespace Aws::Utils::Crypto;
+
+Sha256::Sha256() : 
+    m_hashImpl(CreateSha256Implementation())
 {
-    int len = static_cast<int>(b64input.length());
-    int padding = 0;
+}
 
-    if (b64input[len - 1] == '=' && b64input[len - 2] == '=') //last two chars are =
-        padding = 2;
-    else if (b64input[len - 1] == '=') //last char is =
-        padding = 1;
+Sha256::~Sha256()
+{
+}
 
-    return static_cast<int>(len * 0.75 - padding);
+HashResult Sha256::Calculate(const Aws::String& str)
+{
+    return m_hashImpl->Calculate(str);
+}
+
+HashResult Sha256::Calculate(Aws::IStream& stream)
+{
+    return m_hashImpl->Calculate(stream);
 }

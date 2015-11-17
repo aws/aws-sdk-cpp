@@ -148,24 +148,24 @@ public:
         return !(*this == other);
     }
 
-    T const& GetItem(unsigned index) const
+    T const& GetItem(size_t index) const
     {
         assert(index < m_size);
         return m_data.get()[index];
     }
 
-    T& GetItem(unsigned index)
+    T& GetItem(size_t index)
     {
         assert(index < m_size);
         return m_data.get()[index];
     }
 
-    T& operator[](const int index)
+    T& operator[](size_t index)
     {
         return GetItem(index);
     }
 
-    T const& operator[](const int index) const
+    T const& operator[](size_t index) const
     {
         return GetItem(index);
     }

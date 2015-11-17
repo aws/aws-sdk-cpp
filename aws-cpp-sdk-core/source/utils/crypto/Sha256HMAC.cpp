@@ -13,29 +13,32 @@
   * permissions and limitations under the License.
   */
 
-#pragma once
 
-#include <string>
+#include <aws/core/utils/crypto/Sha256HMAC.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/Outcome.h>
 
 namespace Aws
 {
-namespace Example1
+namespace Utils
+{
+namespace Crypto
 {
 
-enum class Command
+Sha256HMAC::Sha256HMAC() : 
+    m_hmacImpl(CreateSha256HMACImplementation())
 {
-    None,
+}
 
-    Quit,
-    Status,
-    Update,
-    Login,
-    Help,
-    Forge
-};
+Sha256HMAC::~Sha256HMAC()
+{
+}
 
-Command CommandFromString(const std::string& commandName);
+HashResult Sha256HMAC::Calculate(const Aws::Utils::ByteBuffer& toSign, const Aws::Utils::ByteBuffer& secret)
+{
+    return m_hmacImpl->Calculate(toSign, secret);
+}
 
-} // namespace Example1
+} // namespace Crypto
+} // namespace Utils
 } // namespace Aws
-

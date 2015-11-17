@@ -16,7 +16,6 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-
 #include <aws/core/utils/Array.h>
 
 namespace Aws

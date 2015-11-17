@@ -2,26 +2,25 @@ cmake_minimum_required(VERSION 2.8.5)
 project(aws-cpp-sdk-core)
 
 if(GENERATE_VERSION_INFO)
-  find_package(Git)
-  if(NOT GIT_FOUND)
-    set( GIT_EXECUTABLE /usr/bin/git )
+  find_package(Git) 
+
+  if(GIT_FOUND)    
+    execute_process(COMMAND ${GIT_EXECUTABLE} describe
+      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+      OUTPUT_VARIABLE VERSION_STRING
+      OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+    set(Version_VERSION_STRING ${VERSION_STRING})
+    message("Updating version info to ${VERSION_STRING}")
+    if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+      FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+    endif()
+
+    configure_file(
+      "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
+      "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h"
+    )
   endif()
-
-  execute_process(COMMAND ${GIT_EXECUTABLE} describe
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    OUTPUT_VARIABLE VERSION_STRING
-    OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-  set(Version_VERSION_STRING ${VERSION_STRING})
-
-  if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-    FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-  endif()
-
-  configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h"
-  )
 endif()
 
 # Pretty sure we can use a regex here...
@@ -67,15 +66,36 @@ file(GLOB UTILS_LOGGING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging
 file(GLOB UTILS_MEMORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memory/*.cpp")
 file(GLOB UTILS_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/stream/*.cpp")
 
+# http client implementations
 if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
-endif()
-
-if(ENABLE_WINDOWS_CLIENT)
+elseif(ENABLE_WINDOWS_CLIENT)
     file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/*.h")
     file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
+elseif(ENABLE_ORBIS_CLIENT)
+    file(GLOB HTTP_ORBIS_CLIENT_HEADERS "include/aws/core/http/orbis/*.h")
+    file(GLOB HTTP_ORBIS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/orbis/*.cpp")
+elseif(ENABLE_WINXML_CLIENT)
+    file(GLOB HTTP_WINXML_CLIENT_HEADERS "include/aws/core/http/winxml/*.h")
+    file(GLOB HTTP_WINXML_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/winxml/*.cpp")
 endif()
+
+# encryption implementations
+if(ENABLE_BCRYPT_ENCRYPTION)
+    file(GLOB UTILS_CRYPTO_BCRYPT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/bcrypt/*.h")
+    file(GLOB UTILS_CRYPTO_BCRYPT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/bcrypt/*.cpp")
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+    file(GLOB UTILS_CRYPTO_OPENSSL_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/openssl/*.h")
+    file(GLOB UTILS_CRYPTO_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/openssl/*.cpp")
+elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
+    file(GLOB UTILS_CRYPTO_COMMONCRYPTO_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/commoncrypto/*.h")
+    file(GLOB UTILS_CRYPTO_COMMONCRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/commoncrypto/*.cpp")
+elseif(ENABLE_ORBIS_ENCRYPTION)
+    file(GLOB UTILS_CRYPTO_ORBIS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/orbis/*.h")
+    file(GLOB UTILS_CRYPTO_ORBIS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/orbis/*.cpp")
+endif()   
+
 
 file(GLOB AWSNativeSDK_SHARED_SRC
   ${AWS_HEADERS}
@@ -102,6 +122,12 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${TINYXML2_HEADERS}
   ${HTTP_CURL_CLIENT_HEADERS}
   ${HTTP_WINDOWS_CLIENT_HEADERS}
+  ${HTTP_ORBIS_CLIENT_HEADERS}
+  ${HTTP_WINXML_CLIENT_HEADERS}
+  ${UTILS_CRYPTO_BCRYPT_HEADERS}
+  ${UTILS_CRYPTO_OPENSSL_HEADERS}
+  ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS}
+  ${UTILS_CRYPTO_ORBIS_HEADERS}
 
   ${AWS_SOURCE}
   ${AWS_TINYXML2_SOURCE}
@@ -126,114 +152,148 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${UTILS_STREAM_SOURCE}
   ${HTTP_CURL_CLIENT_SOURCE}
   ${HTTP_WINDOWS_CLIENT_SOURCE}
+  ${HTTP_ORBIS_CLIENT_SOURCE}
+  ${HTTP_WINXML_CLIENT_SOURCE}
+  ${UTILS_CRYPTO_BCRYPT_SOURCE}
+  ${UTILS_CRYPTO_OPENSSL_SOURCE}
+  ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE}
+  ${UTILS_CRYPTO_ORBIS_SOURCE}
 ) 
 
+# misc platform-specific, not related to features (encryption/http clients)
 if(PLATFORM_WINDOWS)
 
   #add your windows specific impl stuff here.
-  file(GLOB UTILS_BASE64_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/windows/*.cpp")
-  file(GLOB UTILS_CRYPTO_WINDOWS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/windows/*.h")
-  file(GLOB UTILS_CRYPTO_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/windows/*.cpp")
   file(GLOB UTILS_WINDOWS_SOURCE = "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/windows/*.cpp")
 
-  file(GLOB AWSNativeSDK_PLATFORM_SRC 
-    ${UTILS_BASE64_WINDOWS_SOURCE}
-    ${UTILS_CRYPTO_WINDOWS_SOURCE}
-    ${UTILS_CRYPTO_WINDOWS_HEADERS}
+  file(GLOB AWSNativeSDK_WINDOWS_SRC 
     ${UTILS_WINDOWS_SOURCE}
   )
+endif()
 
-  #if we are compiling for visual studio, create a sane directory tree.
-  if(MSVC)
-     SET(UTILS_SOURCE ${UTILS_SOURCE} ${UTILS_WINDOWS_SOURCE})
-     source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS})
-     source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
-     source_group("Header Files\\aws\\core\\client" FILES ${AWS_CLIENT_HEADERS})
-     source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
-     source_group("Header Files\\aws\\core\\http" FILES ${HTTP_HEADERS})
-     source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
-     if(ENABLE_CURL_CLIENT)
-         source_group("Header Files\\aws\\core\\http\\curl" FILES ${HTTP_CURL_CLIENT_HEADERS})
-     endif()
-     if(ENABLE_WINDOWS_CLIENT)
-         source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_HEADERS})
-     endif()
-     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\crypto\\windows" FILES ${UTILS_CRYPTO_WINDOWS_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\threading" FILES ${UTILS_THREADING_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\xml" FILES ${UTILS_XML_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\logging" FILES ${UTILS_LOGGING_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\memory" FILES ${UTILS_MEMORY_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
-     source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
-     source_group("Header Files\\aws\\core\\external\\json-cpp" FILES ${JSONCPP_HEADERS})
-     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
-
-     source_group("Source Files" FILES ${AWS_SOURCE})
-     source_group("Source Files\\external\\json-cpp" FILES ${AWS_JSONCPP_SOURCE})
-     source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
-     source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
-     source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
-     source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
-     source_group("Source Files\\http" FILES ${HTTP_SOURCE})
-     source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
-     if(ENABLE_CURL_CLIENT)
-         source_group("Source Files\\http\\curl" FILES ${HTTP_CURL_CLIENT_SOURCE})
-     endif()
-     if(ENABLE_WINDOWS_CLIENT)
-         source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_SOURCE})
-     endif()
-     source_group("Source Files\\utils" FILES ${UTILS_SOURCE})
-     source_group("Source Files\\utils\\base64" FILES ${UTILS_BASE64_SOURCE})
-     source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SOURCE})
-     source_group("Source Files\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_SOURCE})
-     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SOURCE})
-     source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SOURCE})
-     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SOURCE})
-     source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SOURCE})
-     source_group("Source Files\\utils\\base64\\windows" FILES ${UTILS_BASE64_WINDOWS_SOURCE})
-     source_group("Source Files\\utils\\crypto\\windows" FILES ${UTILS_CRYPTO_WINDOWS_SOURCE})
-     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SOURCE})
-     source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SOURCE})
-  endif(MSVC)
-
-elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
+if(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
 
   #add unix specific impl stuff here.
-  file(GLOB UTILS_BASE64_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/openssl/*.cpp")
-  file(GLOB UTILS_CRYPTO_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/openssl/*.cpp")
+
   file(GLOB UTILS_UNIX_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/unix/*.cpp")
 
-  if(PLATFORM_ANDROID)
-    file(GLOB UTILS_LOGGING_ANDROID_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging/android/*.cpp")
-    file(GLOB UTILS_LOGGING_ANDROID_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/logging/android/*.h")
-  endif()
-
-  file(GLOB AWSNativeSDK_PLATFORM_SRC 
-     ${UTILS_BASE64_OPENSSL_SOURCE}
-     ${UTILS_CRYPTO_OPENSSL_SOURCE}
-     ${UTILS_LOGGING_ANDROID_SOURCE}
-     ${UTILS_LOGGING_ANDROID_HEADERS}
+  file(GLOB AWSNativeSDK_UNIX_SRC 
      ${UTILS_UNIX_SOURCE}
    )
+endif()
+
+if(PLATFORM_ANDROID)
+    file(GLOB UTILS_LOGGING_ANDROID_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging/android/*.cpp")
+    file(GLOB UTILS_LOGGING_ANDROID_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/logging/android/*.h")
+
+  file(GLOB AWSNativeSDK_ANDROID_SRC 
+     ${UTILS_LOGGING_ANDROID_SOURCE}
+     ${UTILS_LOGGING_ANDROID_HEADERS}
+  )
 endif()
 
 
 file(GLOB AWSNativeSDK_SRC
   ${AWSNativeSDK_SHARED_SRC}
-  ${AWSNativeSDK_PLATFORM_SRC}
+  ${AWSNativeSDK_WINDOWS_SRC}
+  ${AWSNativeSDK_UNIX_SRC}
+  ${AWSNativeSDK_ANDROID_SRC}
+  ${AWSNativeSDK_ORBIS_SRC}
+  ${AWSNativeSDK_DURANGO_SRC}
 )
+
+# Visual studio project directory structure
+if(MSVC)
+    source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS})
+    source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
+    source_group("Header Files\\aws\\core\\client" FILES ${AWS_CLIENT_HEADERS})
+    source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
+    source_group("Header Files\\aws\\core\\http" FILES ${HTTP_HEADERS})
+    source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
+    source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\threading" FILES ${UTILS_THREADING_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\xml" FILES ${UTILS_XML_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\logging" FILES ${UTILS_LOGGING_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\memory" FILES ${UTILS_MEMORY_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
+    source_group("Header Files\\aws\\core\\external\\json-cpp" FILES ${JSONCPP_HEADERS})
+    source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
+
+    # http client conditional headers
+    if(ENABLE_CURL_CLIENT)
+        source_group("Header Files\\aws\\core\\http\\curl" FILES ${HTTP_CURL_CLIENT_HEADERS})
+    elseif(ENABLE_WINDOWS_CLIENT)
+        source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_HEADERS})
+    elseif(ENABLE_ORBIS_CLIENT)
+        source_group("Header Files\\aws\\core\\http\\orbis" FILES ${HTTP_ORBIS_CLIENT_HEADERS})
+    elseif(ENABLE_WINXML_CLIENT)
+        source_group("Header Files\\aws\\core\\http\\winxml" FILES ${HTTP_WINXML_CLIENT_HEADERS})
+    endif()
+
+    # encryption conditional headers
+    if(ENABLE_BCRYPT_ENCRYPTION)
+        source_group("Header Files\\aws\\core\\utils\\crypto\\bcrypt" FILES ${UTILS_CRYPTO_BCRYPT_HEADERS})
+    elseif(ENABLE_OPENSSL_ENCRYPTION)
+        source_group("Header Files\\aws\\core\\utils\\crypto\\openssl" FILES ${UTILS_CRYPTO_OPENSSL_HEADERS})
+    elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
+        source_group("Header Files\\aws\\core\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS})
+    elseif(ENABLE_ORBIS_ENCRYPTION)
+        source_group("Header Files\\aws\\core\\utils\\crypto\\orbis" FILES ${UTILS_CRYPTO_ORBIS_HEADERS})
+    endif()
+
+    source_group("Source Files" FILES ${AWS_SOURCE})
+    source_group("Source Files\\external\\json-cpp" FILES ${AWS_JSONCPP_SOURCE})
+    source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
+    source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
+    source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
+    source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
+    source_group("Source Files\\http" FILES ${HTTP_SOURCE})
+    source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
+    source_group("Source Files\\utils" FILES ${UTILS_SOURCE})
+    source_group("Source Files\\utils\\base64" FILES ${UTILS_BASE64_SOURCE})
+    source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SOURCE})
+    source_group("Source Files\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_SOURCE})
+    source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SOURCE})
+    source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SOURCE})
+    source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SOURCE})
+    source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SOURCE})
+    source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SOURCE})
+    source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SOURCE})
+
+    # http client conditional source
+    if(ENABLE_CURL_CLIENT)
+        source_group("Source Files\\http\\curl" FILES ${HTTP_CURL_CLIENT_SOURCE})
+    elseif(ENABLE_WINDOWS_CLIENT)
+        source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_SOURCE})
+    elseif(ENABLE_ORBIS_CLIENT)
+        source_group("Source Files\\http\\orbis" FILES ${HTTP_ORBIS_CLIENT_SOURCE})
+    elseif(ENABLE_WINXML_CLIENT)
+        source_group("Source Files\\http\\winxml" FILES ${HTTP_WINXML_CLIENT_SOURCE})
+    endif()
+
+    # encryption conditional source
+    if(ENABLE_BCRYPT_ENCRYPTION)
+        source_group("Source Files\\utils\\crypto\\bcrypt" FILES ${UTILS_CRYPTO_BCRYPT_SOURCE})
+    elseif(ENABLE_OPENSSL_ENCRYPTION)
+        source_group("Source Files\\utils\\crypto\\openssl" FILES ${UTILS_CRYPTO_OPENSSL_SOURCE})
+    elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
+            source_group("Source Files\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE})
+    elseif(ENABLE_ORBIS_ENCRYPTION)
+        source_group("Source Files\\utils\\crypto\\orbis" FILES ${UTILS_CRYPTO_ORBIS_SOURCE})
+    endif()
+endif(MSVC)
 
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 include_directories(${Core_INCLUDES})
 
-if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS)
+if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS) # may need this on Durango too?
   add_definitions("-DAWS_CORE_EXPORTS=1")
 endif()
 
@@ -251,14 +311,16 @@ if(PLATFORM_ANDROID)
     if(ENABLE_CURL_CLIENT)
         add_dependencies(aws-cpp-sdk-core CURL)
     endif()
-    add_dependencies(aws-cpp-sdk-core OPENSSL)
+    if(ENABLE_OPENSSL_ENCRYPTION)
+        add_dependencies(aws-cpp-sdk-core OPENSSL)
+    endif()
 endif()
 
-target_link_libraries(aws-cpp-sdk-core ${CLIENT_LIBS} ${PLATFORM_DEP_LIBS})
+target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CRYPTO_LIBS} ${CLIENT_LIBS})
 
 install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
                                   LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-				  RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+				                  RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
 
 install (FILES ${AWS_HEADERS} DESTINATION include/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION include/aws/core/auth)
@@ -266,12 +328,6 @@ install (FILES ${AWS_CLIENT_HEADERS} DESTINATION include/aws/core/client)
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION include/aws/core/internal)
 install (FILES ${HTTP_HEADERS} DESTINATION include/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION include/aws/core/http/standard)
-if(ENABLE_CURL_CLIENT)
-    install (FILES ${HTTP_CURL_CLIENT_HEADERS} DESTINATION include/aws/core/http/curl)
-endif()
-if(ENABLE_WINDOWS_CLIENT)
-    install (FILES ${HTTP_WINDOWS_CLIENT_HEADERS} DESTINATION include/aws/core/http/windows)
-endif()
 install (FILES ${UTILS_HEADERS} DESTINATION include/aws/core/utils)
 install (FILES ${UTILS_EVENT_HEADERS} DESTINATION include/aws/core/utils/event)
 install (FILES ${UTILS_BASE64_HEADERS} DESTINATION include/aws/core/utils/base64)
@@ -288,8 +344,25 @@ install (FILES ${UTILS_THREADING_HEADERS} DESTINATION include/aws/core/utils/thr
 install (FILES ${JSONCPP_HEADERS} DESTINATION include/aws/core/external/json-cpp)
 install (FILES ${TINYXML2_HEADERS} DESTINATION include/aws/core/external/tinyxml2)
 
-#platform specific headers
-if(PLATFORM_WINDOWS)
-  install (FILES ${UTILS_CRYPTO_WINDOWS_HEADERS} DESTINATION include/aws/core/utils/crypto/windows)
+# http client headers
+if(ENABLE_CURL_CLIENT)
+    install (FILES ${HTTP_CURL_CLIENT_HEADERS} DESTINATION include/aws/core/http/curl)
+elseif(ENABLE_WINDOWS_CLIENT)
+    install (FILES ${HTTP_WINDOWS_CLIENT_HEADERS} DESTINATION include/aws/core/http/windows)
+elseif(ENABLE_ORBIS_CLIENT)
+    install (FILES ${HTTP_ORBIS_CLIENT_HEADERS} DESTINATION include/aws/core/http/orbis)
+elseif(ENABLE_WINXML_CLIENT)
+    install (FILES ${HTTP_WINXML_CLIENT_HEADERS} DESTINATION include/aws/core/http/winxml)
+endif()
+
+# encryption headers
+if(ENABLE_BCRYPT_ENCRYPTION)
+  install (FILES ${UTILS_CRYPTO_BCRYPT_HEADERS} DESTINATION include/aws/core/utils/crypto/bcrypt)
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+  install (FILES ${UTILS_CRYPTO_OPENSSL_HEADERS} DESTINATION include/aws/core/utils/crypto/openssl)
+elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
+  install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION include/aws/core/utils/crypto/commoncrypto)
+elseif(ENABLE_ORBIS_ENCRYPTION)
+  install (FILES ${UTILS_CRYPTO_ORBIS_HEADERS} DESTINATION include/aws/core/utils/crypto/orbis)
 endif()
 

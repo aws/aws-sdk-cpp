@@ -14,29 +14,28 @@
   */
 
 
-#include <aws/core/utils/crypto/Sha256HMAC.h>
-
-#include <aws/core/utils/memory/AWSMemory.h>
-#include <aws/core/utils/crypto/windows/WindowsHashImpl.h>
+#include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/crypto/Factories.h>
 
-#include <bcrypt.h> 
-
-using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 
-static const char *s_allocationTag = "Sha256HMAC";
 
-Sha256HMAC::Sha256HMAC() : 
-    m_windowsImpl(Aws::MakeUnique<WindowsHashImpl>(s_allocationTag, BCRYPT_SHA256_ALGORITHM, true))
+MD5::MD5() : 
+    m_hashImpl(CreateMD5Implementation())
 {
 }
 
-Sha256HMAC::~Sha256HMAC()
+MD5::~MD5()
 {
 }
 
-HashResult Sha256HMAC::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
+HashResult MD5::Calculate(const Aws::String& str)
 {
-    return m_windowsImpl->Calculate(toSign, secret);
+    return m_hashImpl->Calculate(str);
+}
+
+HashResult MD5::Calculate(Aws::IStream& stream)
+{
+    return m_hashImpl->Calculate(stream);
 }

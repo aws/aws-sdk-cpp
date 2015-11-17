@@ -27,6 +27,7 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/Outcome.h>
 
 namespace Aws
 {
@@ -56,9 +57,7 @@ class AWS_CORE_API MD5 : public Hash
 
     private:
 
-        #ifdef _WINDOWS
-            Aws::UniquePtr< WindowsHashImpl > m_windowsImpl;
-        #endif
+        std::shared_ptr< Hash > m_hashImpl;
 };
 
 } // namespace Crypto

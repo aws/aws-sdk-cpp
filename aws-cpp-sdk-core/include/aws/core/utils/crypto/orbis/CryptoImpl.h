@@ -13,20 +13,12 @@
   * permissions and limitations under the License.
   */
 
-/*
-* Interface for Sha256 encryptor and hmac
-*/
 #pragma once
-
-#ifdef __APPLE__
-
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
-#endif // __APPLE__
 
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/crypto/HMAC.h>
 
 namespace Aws
 {
@@ -35,28 +27,41 @@ namespace Utils
 namespace Crypto
 {
 
-class WindowsHashImpl;
-
-class AWS_CORE_API Sha256 : public Hash
+class MD5OrbisImpl : public Hash
 {
     public:
 
-        Sha256();
-        virtual ~Sha256();
+        MD5OrbisImpl() {}
+        virtual ~MD5OrbisImpl() {}
 
-        /**
-        * Calculates a SHA256 Hash digest (not hex encoded)
-        */
         virtual HashResult Calculate(const Aws::String& str) override;
 
-        /**
-        * Calculates a Hash digest on a stream (the entire stream is read)
-        */
         virtual HashResult Calculate(Aws::IStream& stream) override;
 
-    private:
+};
 
-        std::shared_ptr< Hash > m_hashImpl;
+class Sha256OrbisImpl : public Hash
+{
+    public:
+
+        Sha256OrbisImpl() {}
+        virtual ~Sha256OrbisImpl() {}
+
+        virtual HashResult Calculate(const Aws::String& str) override;
+
+        virtual HashResult Calculate(Aws::IStream& stream) override;
+};
+
+class Sha256HMACOrbisImpl : public HMAC
+{
+    public:
+
+        Sha256HMACOrbisImpl() {}
+        virtual ~Sha256HMACOrbisImpl() {}
+
+        virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+
+
 };
 
 } // namespace Crypto

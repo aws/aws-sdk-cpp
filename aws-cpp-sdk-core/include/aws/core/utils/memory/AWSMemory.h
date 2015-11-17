@@ -153,8 +153,6 @@ void DeleteArray(T* pointerToTArray)
 }
 
 // modeled from std::default_delete
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
-
 template<typename T>
 struct Deleter
 {	
@@ -172,12 +170,6 @@ struct Deleter
     }
 };
 
-#else
-
-template< typename T > using Deleter = std::default_delete< T >;
-
-#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
-
 template< typename T > using UniquePtr = std::unique_ptr< T, Deleter< T > >;
 
 template<typename T, typename ...ArgTypes>
@@ -185,8 +177,6 @@ UniquePtr<T> MakeUnique(const char* allocationTag, ArgTypes&&... args)
 {
     return UniquePtr<T>(Aws::New<T>(allocationTag, std::forward<ArgTypes>(args)...));
 }
-
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
 
 template<typename T>
 struct ArrayDeleter
@@ -204,12 +194,6 @@ struct ArrayDeleter
 	    Aws::DeleteArray(pointerToTArray);
     }
 };
-
-#else
-
-template< typename T > using ArrayDeleter = std::default_delete< T[] >;
-
-#endif
 
 template< typename T > using UniqueArrayPtr = std::unique_ptr< T, ArrayDeleter< T > >;
 
