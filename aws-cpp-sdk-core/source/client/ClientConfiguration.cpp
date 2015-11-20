@@ -40,7 +40,7 @@ static Aws::String ComputeUserAgentString()
 ClientConfiguration::ClientConfiguration() : 
     userAgent(ComputeUserAgentString()), 
     scheme(Aws::Http::Scheme::HTTPS), 
-    region(Region::US_EAST_1),
+    region(Region::AP_NORTHEAST_1),
     maxConnections(25), 
     requestTimeoutMs(3000), 
     connectTimeoutMs(1000),

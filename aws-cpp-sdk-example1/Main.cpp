@@ -177,7 +177,7 @@ bool HandleLoginCommand(std::unique_ptr<PlayerData>& playerData, std::unique_ptr
 
     if(argumentMatchResults[1] != "unauthenticated")
     {
-        std::cout << "Only login as 'unathenticated' is currently supported\n";
+        std::cout << "Only login as 'unauthenticated' is currently supported\n";
         return false;
     }
 
@@ -185,7 +185,7 @@ bool HandleLoginCommand(std::unique_ptr<PlayerData>& playerData, std::unique_ptr
     config.scheme = Scheme::HTTPS;
     config.connectTimeoutMs = 30000;
     config.requestTimeoutMs = 30000;
-    config.region = Aws::Region::US_EAST_1;
+    config.region = Aws::Region::AP_NORTHEAST_1;
 
     auto credentialsProvider = std::make_shared<ProfileConfigFileAWSCredentialsProvider>(DeveloperCredentialsProfileName);
 
@@ -330,9 +330,9 @@ int main(void)
     
     int32_t exitCode = RunExample();
 
-    ShutdownAWSLogging();
+	ShutdownAWSLogging();
 
-    return exitCode;
+	return exitCode;
 }
 
 
