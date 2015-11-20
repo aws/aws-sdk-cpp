@@ -1,0 +1,17 @@
+#foreach($operation in $serviceModel.operations)
+#if($operation.request)
+        class ${operation.request.shape.name};
+#end
+#end
+
+#foreach($operation in $serviceModel.operations)
+#if($operation.result)
+        typedef Utils::Outcome<${operation.result.shape.name}, Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
+#else
+        typedef Utils::Outcome<NoResult, Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
+#end
+#end
+
+#foreach($operation in $serviceModel.operations)
+        typedef std::future<${operation.name}Outcome> ${operation.name}OutcomeCallable;
+#end

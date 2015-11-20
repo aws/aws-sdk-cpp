@@ -1,0 +1,36 @@
+#foreach($entry in $shape.members.entrySet())
+#set($spaces = '')
+#set($memberName = $entry.key)
+#set($member = $entry.value)
+#if($member.usedForPayload)
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#set($nestedJsonize = '')
+#if(!$member.required && $useRequiredField)
+#set($spaces = ' ')
+  if($varNameHasBeenSet)
+  {
+#end
+#if($member.shape.enum)
+  ${spaces}payload.WithString("${memberName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName));
+#elseif($member.shape.list || $member.shape.map)
+#set($currentSpaces = $spaces)
+#set($currentShape = $member.shape)
+#set($memberKey = ${memberName})
+#set($containerVar = ${memberVarName})
+#set($jsonValue = "payload")
+#set($recursionDepth = 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelInternalMapOrListJsonize.vm")
+#elseif($member.shape.blob)
+  ${spaces}payload.WithString("${memberName}", HashingUtils::Base64Encode(m_${lowerCaseVarName}));
+#else
+  ${spaces}payload.With${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}", ${memberVarName}${CppViewHelper.computeJsonizeString($member.shape)});
+
+#end
+#if(!$member.required && $useRequiredField)
+  }
+
+#end
+#end
+#end
