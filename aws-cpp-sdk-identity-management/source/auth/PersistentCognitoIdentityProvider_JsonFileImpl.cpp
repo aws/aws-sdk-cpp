@@ -55,46 +55,60 @@ PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvide
 
 void PersistentCognitoIdentityProvider_JsonFileImpl::PersistIdentityId(const Aws::String& identityId)
 {
-    std::lock_guard<std::mutex> locker(m_docMutex);
-    m_identityId = identityId;
-    auto jsonDoc = LoadJsonDocFromFile();
-    JsonValue identityNode;
-    if (jsonDoc.ValueExists(m_identityPoolId))
     {
-        identityNode = jsonDoc.GetObject(m_identityPoolId);
+        std::lock_guard<std::mutex> locker(m_docMutex);
+        m_identityId = identityId;
+        auto jsonDoc = LoadJsonDocFromFile();
+        JsonValue identityNode;
+        if (jsonDoc.ValueExists(m_identityPoolId))
+        {
+            identityNode = jsonDoc.GetObject(m_identityPoolId);
+        }
+
+        identityNode.WithString(IDENTITY_ID, m_identityId);
+        jsonDoc.WithObject(m_identityPoolId, identityNode);
+        PersistChangesToFile(jsonDoc);
     }
 
-    identityNode.WithString(IDENTITY_ID, m_identityId);
-    jsonDoc.WithObject(m_identityPoolId, identityNode);
-    PersistChangesToFile(jsonDoc);
+    if (m_identityIdUpdatedCallback)
+    {
+        m_identityIdUpdatedCallback(*this);
+    }
 }
 
 void PersistentCognitoIdentityProvider_JsonFileImpl::PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>& logins)
 {
-    std::lock_guard<std::mutex> locker(m_docMutex);
-    m_logins = logins;
-
-    auto jsonDoc = LoadJsonDocFromFile();
-    JsonValue identityNode;
-    if (jsonDoc.ValueExists(m_identityPoolId))
     {
-        identityNode = jsonDoc.GetObject(m_identityPoolId);
+        std::lock_guard<std::mutex> locker(m_docMutex);
+        m_logins = logins;
+
+        auto jsonDoc = LoadJsonDocFromFile();
+        JsonValue identityNode;
+        if (jsonDoc.ValueExists(m_identityPoolId))
+        {
+            identityNode = jsonDoc.GetObject(m_identityPoolId);
+        }
+
+        JsonValue loginsNode;
+
+        for (auto& login : m_logins)
+        {
+            JsonValue loginNode;
+            loginNode.WithString(ACCESS_TOKEN, login.second.accessToken);
+            loginNode.WithString(LONG_TERM_TOKEN, login.second.longTermToken);
+            loginNode.WithInt64(EXPIRY, login.second.longTermTokenExpiry);
+            loginsNode.WithObject(login.first, std::move(loginNode));
+        }
+
+        identityNode.WithObject(LOGINS, loginsNode);
+        jsonDoc.WithObject(m_identityPoolId, identityNode);
+        PersistChangesToFile(jsonDoc);
     }
 
-    JsonValue loginsNode;
-
-    for (auto& login : m_logins)
+    if (m_loginsUpdatedCallback)
     {
-        JsonValue loginNode;
-        loginNode.WithString(ACCESS_TOKEN, login.second.accessToken);
-        loginNode.WithString(LONG_TERM_TOKEN, login.second.longTermToken);
-        loginNode.WithInt64(EXPIRY, login.second.longTermTokenExpiry);
-        loginsNode.WithObject(login.first, std::move(loginNode));
+        m_loginsUpdatedCallback(*this);
     }
-
-    identityNode.WithObject(LOGINS, loginsNode);
-    jsonDoc.WithObject(m_identityPoolId, identityNode);
-    PersistChangesToFile(jsonDoc);
 }
 
 JsonValue PersistentCognitoIdentityProvider_JsonFileImpl::LoadJsonDocFromFile() const
@@ -175,5 +189,5 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::LoadAndParseDoc()
                 m_logins[login.first] = loginAccessTokens;
             }
         }
-    }
+    }    
 }

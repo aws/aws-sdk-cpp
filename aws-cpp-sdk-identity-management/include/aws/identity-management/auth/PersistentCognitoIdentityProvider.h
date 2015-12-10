@@ -14,6 +14,7 @@
   */
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <mutex>
 
@@ -46,10 +47,24 @@ namespace Aws
             virtual Aws::String GetAccountId() const = 0;
             virtual Aws::String GetIdentityPoolId() const = 0;
             virtual void PersistIdentityId(const Aws::String&) = 0;
-            virtual void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>&) = 0;
+            virtual void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>&) = 0;            
             inline void ClearLogins() { PersistLogins(Aws::Map<Aws::String, LoginAccessTokens>()); }
             inline void ClearIdentity() { PersistIdentityId(""); }
             inline void Logout() { ClearIdentity(); ClearLogins(); }
+
+            inline void SetLoginsUpdatedCallback(const std::function<void(const PersistentCognitoIdentityProvider&)>& callback)
+            {
+                m_loginsUpdatedCallback = Aws::BuildFunction<void(const PersistentCognitoIdentityProvider&)>(callback);
+            }
+
+            inline void SetIdentityIdUpdatedCallback(const std::function<void(const PersistentCognitoIdentityProvider&)>& callback)
+            {
+                m_identityIdUpdatedCallback = Aws::BuildFunction<void(const PersistentCognitoIdentityProvider&)>(callback);
+            }
+
+        protected:
+            std::function<void(const PersistentCognitoIdentityProvider&)> m_loginsUpdatedCallback;
+            std::function<void(const PersistentCognitoIdentityProvider&)> m_identityIdUpdatedCallback;
         };
 
         class AWS_IDENTITY_MANAGEMENT_API PersistentCognitoIdentityProvider_JsonFileImpl : public PersistentCognitoIdentityProvider

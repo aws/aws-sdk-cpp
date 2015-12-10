@@ -149,8 +149,16 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
         EXPECT_FALSE(identityProvider.HasIdentityId());
         EXPECT_FALSE(identityProvider.HasLogins());
 
+        bool identityCallbackFired = false;
+        bool loginsCallbackFired = false;
+
+        identityProvider.SetIdentityIdUpdatedCallback( [&](const PersistentCognitoIdentityProvider&){ identityCallbackFired = true; });
+        identityProvider.SetLoginsUpdatedCallback([&](const PersistentCognitoIdentityProvider&){ loginsCallbackFired = true; });
+
         identityProvider.PersistIdentityId("IdentityWeWant");
         identityProvider.PersistLogins(loginsMap);
+        ASSERT_TRUE(identityCallbackFired);
+        ASSERT_TRUE(loginsCallbackFired);
     }
 
     PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());

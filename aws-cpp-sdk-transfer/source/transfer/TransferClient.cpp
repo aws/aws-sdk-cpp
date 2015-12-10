@@ -39,6 +39,16 @@ static UploadBufferResourceType ResourceFactoryFunction(void)
     return Aws::MakeShared< UploadBuffer >(ALLOCATION_TAG, UPLOAD_BUFFER_SIZE);
 }
 
+TransferClientConfiguration::TransferClientConfiguration() :
+    m_uploadBufferCount(1),
+    m_uploadBufferManager(nullptr)
+{
+}
+
+TransferClientConfiguration::~TransferClientConfiguration()
+{
+}
+
 TransferClient::TransferClient(const std::shared_ptr<Aws::S3::S3Client>& s3Client, const TransferClientConfiguration& config) :
     m_s3Client(s3Client),
     m_config(config),

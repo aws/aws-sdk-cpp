@@ -52,6 +52,8 @@ namespace Aws
             std::shared_ptr<PersistentCognitoIdentityProvider> m_identityRepository;
 
         private:
+            void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
+
             AWSCredentials m_cachedCredentials;
             std::atomic<double> m_expiry;
             std::mutex m_credsMutex;

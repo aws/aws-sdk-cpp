@@ -48,6 +48,9 @@ struct AWS_TRANSFER_API TransferClientConfiguration
 {
     public:
 
+        TransferClientConfiguration();
+        ~TransferClientConfiguration();
+
         uint32_t m_uploadBufferCount;
         std::shared_ptr< UploadBufferResourceManagerType > m_uploadBufferManager;
 };

@@ -240,6 +240,9 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
         }
     }
 
+    //go ahead and flush the response body.
+    response->GetResponseBody().flush();
+
     return response;
 }
 
