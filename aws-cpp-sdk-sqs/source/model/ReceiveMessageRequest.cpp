@@ -46,7 +46,7 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
     for(auto& item : m_attributeNames)
     {
       ss << "AttributeName." << attributeNamesCount << "="
-          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item).c_str()) << "&";
+          << StringUtils::URLEncode(item.c_str()) << "&";
       attributeNamesCount++;
     }
   }
