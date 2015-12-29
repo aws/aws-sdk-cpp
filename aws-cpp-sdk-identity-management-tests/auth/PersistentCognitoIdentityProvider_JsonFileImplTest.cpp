@@ -25,10 +25,19 @@
 //to be different than the posix defined function.
 //turn it off because we need it for this test and this isn't production code
 //anyways.
+#ifdef __APPLE__
+
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
+#endif // __clang__
+
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // __GNUC__
+
+#endif // __APPLE__
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4996) // _CRT_SECURE_NO_WARNINGS
@@ -184,7 +193,14 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     ASSERT_EQ(loginAccessTokens.longTermTokenExpiry, ourIdentityPool.GetObject("Logins").GetAllObjects().begin()->second.GetInt64("Expiry"));
 }
 
+#ifdef __APPLE__
+
 #ifdef __clang__
 #pragma clang diagnostic pop
-#endif
+#endif // __clang__
 
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif // __GNUC__
+
+#endif // __APPLE__

@@ -17,7 +17,13 @@
 
 #ifdef __APPLE__
 
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif // __clang__
+
+#ifdef __GNUC__
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // __GNUC__
 
 #endif // __APPLE__
 
