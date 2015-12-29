@@ -95,22 +95,22 @@ namespace Model
         class SetVisibleToAllUsersRequest;
         class TerminateJobFlowsRequest;
 
-        typedef Utils::Outcome<AddInstanceGroupsResult, Client::AWSError<EMRErrors>> AddInstanceGroupsOutcome;
-        typedef Utils::Outcome<AddJobFlowStepsResult, Client::AWSError<EMRErrors>> AddJobFlowStepsOutcome;
-        typedef Utils::Outcome<AddTagsResult, Client::AWSError<EMRErrors>> AddTagsOutcome;
-        typedef Utils::Outcome<DescribeClusterResult, Client::AWSError<EMRErrors>> DescribeClusterOutcome;
-        typedef Utils::Outcome<DescribeStepResult, Client::AWSError<EMRErrors>> DescribeStepOutcome;
-        typedef Utils::Outcome<ListBootstrapActionsResult, Client::AWSError<EMRErrors>> ListBootstrapActionsOutcome;
-        typedef Utils::Outcome<ListClustersResult, Client::AWSError<EMRErrors>> ListClustersOutcome;
-        typedef Utils::Outcome<ListInstanceGroupsResult, Client::AWSError<EMRErrors>> ListInstanceGroupsOutcome;
-        typedef Utils::Outcome<ListInstancesResult, Client::AWSError<EMRErrors>> ListInstancesOutcome;
-        typedef Utils::Outcome<ListStepsResult, Client::AWSError<EMRErrors>> ListStepsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
-        typedef Utils::Outcome<RemoveTagsResult, Client::AWSError<EMRErrors>> RemoveTagsOutcome;
-        typedef Utils::Outcome<RunJobFlowResult, Client::AWSError<EMRErrors>> RunJobFlowOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<EMRErrors>> SetTerminationProtectionOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<EMRErrors>> SetVisibleToAllUsersOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<EMRErrors>> TerminateJobFlowsOutcome;
+        typedef Aws::Utils::Outcome<AddInstanceGroupsResult, Aws::Client::AWSError<EMRErrors>> AddInstanceGroupsOutcome;
+        typedef Aws::Utils::Outcome<AddJobFlowStepsResult, Aws::Client::AWSError<EMRErrors>> AddJobFlowStepsOutcome;
+        typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<EMRErrors>> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterResult, Aws::Client::AWSError<EMRErrors>> DescribeClusterOutcome;
+        typedef Aws::Utils::Outcome<DescribeStepResult, Aws::Client::AWSError<EMRErrors>> DescribeStepOutcome;
+        typedef Aws::Utils::Outcome<ListBootstrapActionsResult, Aws::Client::AWSError<EMRErrors>> ListBootstrapActionsOutcome;
+        typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EMRErrors>> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListInstanceGroupsResult, Aws::Client::AWSError<EMRErrors>> ListInstanceGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListInstancesResult, Aws::Client::AWSError<EMRErrors>> ListInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListStepsResult, Aws::Client::AWSError<EMRErrors>> ListStepsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
+        typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<EMRErrors>> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<RunJobFlowResult, Aws::Client::AWSError<EMRErrors>> RunJobFlowOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> SetTerminationProtectionOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> SetVisibleToAllUsersOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> TerminateJobFlowsOutcome;
 
         typedef std::future<AddInstanceGroupsOutcome> AddInstanceGroupsOutcomeCallable;
         typedef std::future<AddJobFlowStepsOutcome> AddJobFlowStepsOutcomeCallable;

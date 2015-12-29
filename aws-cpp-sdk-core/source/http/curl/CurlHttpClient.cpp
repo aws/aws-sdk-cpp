@@ -242,7 +242,10 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 
         m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
         //go ahead and flush the response body stream
-        response->GetResponseBody().flush();
+        if(response)
+        {
+            response->GetResponseBody().flush();
+        }
     }
 
     if (headers)

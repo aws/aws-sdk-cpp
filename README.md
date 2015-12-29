@@ -10,7 +10,9 @@ the development efforts by submitting pull requests and sending us feedback and 
 
 ###Introducting the AWS SDK for C++ from AWS re:invent 2015
 The following video explains many of the core features and also high-level SDKs
-https://www.youtube.com/watch?v=fm4Aa3Whwos&list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&index=9
+
+[![Introducing the AWS SDK for C++](https://img.youtube.com/vi/fm4Aa3Whwos/0.jpg)]
+(https://www.youtube.com/watch?v=fm4Aa3Whwos&list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&index=9 "Introducing the AWS SDK for C++")
 
 ###Building the SDK:
 Use the information below to build the entire source tree for your platform, run unit tests, and build integration tests.  
@@ -52,6 +54,15 @@ msbuild INSTALL.vcxproj /p:Configuration=Release
 ```
 
 ####CMake Variables
+
+#####BUILD_ONLY
+Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-sdk-cpp-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-sdk-cpp-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="aws-sdk-cpp-s3;aws-sdk-cpp-dynamodb;aws-sdk-cpp-cognito-identity"
+
+#####CUSTOM_CLIENTS
+Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python, java, jdk1.8, and maven installed and in your executable path. Example: -DCUSTOM_CLIENTS="serviceName=myCustomService; version=2015-12-21;serviceName=someOtherService; version=2015-08-15"
+
+#####REGENERATE_CLIENTS
+This argument will wipe out all generated code and generate the client directories from the code-generation/api-definitions folder. To use this argument, you need to have python, java, jdk1.8, and maven installed in your executable path. Example: -DREGENERATE_CLIENTS=1
 
 #####CUSTOM_MEMORY_MANAGEMENT  
 To use a custom memory manager, set the value to 1. You can install a custom allocator, and all STL types will use the custom allocation interface. If the value is set to 0, you still might want to use the STL template types to help with DLL safety on Windows. 
@@ -250,6 +261,7 @@ struct AWS_CORE_API ClientConfiguration
     Aws::String userAgent;
     Aws::Http::Scheme scheme;
     Aws::Region region;
+    Aws::String authenticationRegion;
     unsigned maxConnections;
     long requestTimeoutMs;
     long connectTimeoutMs;
@@ -274,6 +286,9 @@ The default value for scheme is HTTPS. You can set this value to HTTP if the inf
 
 #####Region
 The region specifies where you want the client to communicate. Examples include us-east-1 or us-west-1. You must ensure the service you want to use has an endpoint in the region you configure.
+
+#####Authentication Region
+The authentication region allows you to specify an arbitrary region to use for signing. If you don't set this we fall back to Region. If you do set this, you are also responsible for setting endpoint override to connect to the endpoint that cooresponds with your custom region.
 
 #####Max Connections
 The default value for the maximum number of allowed connections to a single server for your HTTP communications is 25. You can set this value as high as you can support the bandwidth. We recommend a value around 25.

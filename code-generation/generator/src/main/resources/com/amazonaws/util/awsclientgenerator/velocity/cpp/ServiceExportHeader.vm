@@ -9,17 +9,18 @@
 #endif
 
 #set($api = $CppViewHelper.computeExportValue($metadata.classNamePrefix))
+#set( $define = '#define' )
 \#if defined (_MSC_VER)
 #pragma warning(disable : 4251)
   #ifdef USE_IMPORT_EXPORT
     #ifdef AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS
-      \#define ${api} __declspec(dllexport)
+       $define ${api} __declspec(dllexport)
     \#else
-      \#define ${api} __declspec(dllimport)
+       $define ${api} __declspec(dllimport)
     #endif /* AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS */
   \#else
-     \#define ${api}
+       $define ${api}
    #endif //
 \#else /* defined (_MSC_VER) */
-\#define ${api}
+$define ${api}
 #endif

@@ -43,7 +43,7 @@ Aws::String PromoteReadReplicaRequest::SerializePayload() const
   {
     ss << "PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

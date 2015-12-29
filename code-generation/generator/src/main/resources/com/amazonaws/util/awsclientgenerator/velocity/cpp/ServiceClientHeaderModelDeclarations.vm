@@ -6,9 +6,9 @@
 
 #foreach($operation in $serviceModel.operations)
 #if($operation.result)
-        typedef Utils::Outcome<${operation.result.shape.name}, Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
+        typedef Aws::Utils::Outcome<${operation.result.shape.name}, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
 #else
-        typedef Utils::Outcome<NoResult, Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
 #end
 #end
 

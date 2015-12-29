@@ -43,17 +43,7 @@ DBSnapshot::DBSnapshot() :
     m_licenseModelHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceDBSnapshotIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_iopsHasBeenSet(false)
 {
 }
 
@@ -77,17 +67,7 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_licenseModelHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceDBSnapshotIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_iopsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -188,54 +168,6 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
-    XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
-    if(!optionGroupNameNode.IsNull())
-    {
-      m_optionGroupName = StringUtils::Trim(optionGroupNameNode.GetText().c_str());
-      m_optionGroupNameHasBeenSet = true;
-    }
-    XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
-    if(!percentProgressNode.IsNull())
-    {
-      m_percentProgress = StringUtils::ConvertToInt32(StringUtils::Trim(percentProgressNode.GetText().c_str()).c_str());
-      m_percentProgressHasBeenSet = true;
-    }
-    XmlNode sourceRegionNode = resultNode.FirstChild("SourceRegion");
-    if(!sourceRegionNode.IsNull())
-    {
-      m_sourceRegion = StringUtils::Trim(sourceRegionNode.GetText().c_str());
-      m_sourceRegionHasBeenSet = true;
-    }
-    XmlNode sourceDBSnapshotIdentifierNode = resultNode.FirstChild("SourceDBSnapshotIdentifier");
-    if(!sourceDBSnapshotIdentifierNode.IsNull())
-    {
-      m_sourceDBSnapshotIdentifier = StringUtils::Trim(sourceDBSnapshotIdentifierNode.GetText().c_str());
-      m_sourceDBSnapshotIdentifierHasBeenSet = true;
-    }
-    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(!storageTypeNode.IsNull())
-    {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
-      m_storageTypeHasBeenSet = true;
-    }
-    XmlNode tdeCredentialArnNode = resultNode.FirstChild("TdeCredentialArn");
-    if(!tdeCredentialArnNode.IsNull())
-    {
-      m_tdeCredentialArn = StringUtils::Trim(tdeCredentialArnNode.GetText().c_str());
-      m_tdeCredentialArnHasBeenSet = true;
-    }
-    XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
-    if(!encryptedNode.IsNull())
-    {
-      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
-      m_encryptedHasBeenSet = true;
-    }
-    XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
-    if(!kmsKeyIdNode.IsNull())
-    {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
-      m_kmsKeyIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -303,38 +235,6 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
-  if(m_optionGroupNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
-  }
-  if(m_percentProgressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PercentProgress=" << m_percentProgress << "&";
-  }
-  if(m_sourceRegionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
-  }
-  if(m_sourceDBSnapshotIdentifierHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -398,37 +298,5 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_iopsHasBeenSet)
   {
       oStream << location << ".Iops=" << m_iops << "&";
-  }
-  if(m_optionGroupNameHasBeenSet)
-  {
-      oStream << location << ".OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
-  }
-  if(m_percentProgressHasBeenSet)
-  {
-      oStream << location << ".PercentProgress=" << m_percentProgress << "&";
-  }
-  if(m_sourceRegionHasBeenSet)
-  {
-      oStream << location << ".SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
-  }
-  if(m_sourceDBSnapshotIdentifierHasBeenSet)
-  {
-      oStream << location << ".SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-      oStream << location << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << ".Encrypted=" << m_encrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 }

@@ -26,16 +26,14 @@ using namespace Aws::Utils;
 Endpoint::Endpoint() : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+    m_portHasBeenSet(false)
 {
 }
 
 Endpoint::Endpoint(const XmlNode& xmlNode) : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+    m_portHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -58,12 +56,6 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
-    XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
-    if(!hostedZoneIdNode.IsNull())
-    {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
-      m_hostedZoneIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -79,10 +71,6 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
-  if(m_hostedZoneIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".HostedZoneId=" << StringUtils::URLEncode(m_hostedZoneId.c_str()) << "&";
-  }
 }
 
 void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -94,9 +82,5 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
-  }
-  if(m_hostedZoneIdHasBeenSet)
-  {
-      oStream << location << ".HostedZoneId=" << StringUtils::URLEncode(m_hostedZoneId.c_str()) << "&";
   }
 }

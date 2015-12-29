@@ -30,8 +30,7 @@ DBEngineVersion::DBEngineVersion() :
     m_dBEngineDescriptionHasBeenSet(false),
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false)
+    m_supportedCharacterSetsHasBeenSet(false)
 {
 }
 
@@ -42,8 +41,7 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_dBEngineDescriptionHasBeenSet(false),
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false)
+    m_supportedCharacterSetsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -102,18 +100,6 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_supportedCharacterSetsHasBeenSet = true;
     }
-    XmlNode validUpgradeTargetNode = resultNode.FirstChild("ValidUpgradeTarget");
-    if(!validUpgradeTargetNode.IsNull())
-    {
-      XmlNode validUpgradeTargetMember = validUpgradeTargetNode.FirstChild("UpgradeTarget");
-      while(!validUpgradeTargetMember.IsNull())
-      {
-        m_validUpgradeTarget.push_back(validUpgradeTargetMember);
-        validUpgradeTargetMember = validUpgradeTargetMember.NextNode("UpgradeTarget");
-      }
-
-      m_validUpgradeTargetHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -156,15 +142,6 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
       }
   }
-  if(m_validUpgradeTargetHasBeenSet)
-  {
-      for(auto& item : m_validUpgradeTarget)
-      {
-        Aws::StringStream validUpgradeTargetSs;
-        validUpgradeTargetSs << location << index << locationValue << ".UpgradeTarget";
-        item.OutputToStream(oStream, validUpgradeTargetSs.str().c_str());
-      }
-  }
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -201,15 +178,6 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       {
         Aws::String locationAndListMember(location);
         locationAndListMember += ".CharacterSet";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
-      }
-  }
-  if(m_validUpgradeTargetHasBeenSet)
-  {
-      for(auto& item : m_validUpgradeTarget)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".UpgradeTarget";
         item.OutputToStream(oStream, locationAndListMember.c_str());
       }
   }

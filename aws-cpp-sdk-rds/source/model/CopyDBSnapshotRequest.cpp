@@ -21,10 +21,7 @@ using namespace Aws::Utils;
 
 CopyDBSnapshotRequest::CopyDBSnapshotRequest() : 
     m_sourceDBSnapshotIdentifierHasBeenSet(false),
-    m_targetDBSnapshotIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false)
+    m_targetDBSnapshotIdentifierHasBeenSet(false)
 {
 }
 
@@ -40,20 +37,7 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   {
     ss << "TargetDBSnapshotIdentifier=" << StringUtils::URLEncode(m_targetDBSnapshotIdentifier.c_str()) << "&";
   }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  if(m_copyTagsHasBeenSet)
-  {
-    ss << "CopyTags=" << m_copyTags << "&";
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

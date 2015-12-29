@@ -17,7 +17,6 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds/model/Tag.h>
 
 namespace Aws
 {
@@ -182,42 +181,42 @@ namespace Model
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline const Aws::Vector<Aws::String>& GetSourceIds() const{ return m_sourceIds; }
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline void SetSourceIds(const Aws::Vector<Aws::String>& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline CreateEventSubscriptionRequest& WithSourceIds(const Aws::Vector<Aws::String>& value) { SetSourceIds(value); return *this;}
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline CreateEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(value); return *this;}
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline CreateEventSubscriptionRequest& AddSourceIds(const Aws::String& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline CreateEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
     /*
-     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
+     <p> The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
     */
     inline CreateEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
@@ -236,27 +235,6 @@ namespace Model
     */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
-    
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    
-    inline CreateEventSubscriptionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    
-    inline CreateEventSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
-
-    
-    inline CreateEventSubscriptionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    
-    inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
   private:
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
@@ -270,8 +248,6 @@ namespace Model
     bool m_sourceIdsHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

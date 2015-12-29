@@ -78,12 +78,12 @@ namespace Model
         class GetFederationTokenRequest;
         class GetSessionTokenRequest;
 
-        typedef Utils::Outcome<AssumeRoleResult, Client::AWSError<STSErrors>> AssumeRoleOutcome;
-        typedef Utils::Outcome<AssumeRoleWithSAMLResult, Client::AWSError<STSErrors>> AssumeRoleWithSAMLOutcome;
-        typedef Utils::Outcome<AssumeRoleWithWebIdentityResult, Client::AWSError<STSErrors>> AssumeRoleWithWebIdentityOutcome;
-        typedef Utils::Outcome<DecodeAuthorizationMessageResult, Client::AWSError<STSErrors>> DecodeAuthorizationMessageOutcome;
-        typedef Utils::Outcome<GetFederationTokenResult, Client::AWSError<STSErrors>> GetFederationTokenOutcome;
-        typedef Utils::Outcome<GetSessionTokenResult, Client::AWSError<STSErrors>> GetSessionTokenOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleResult, Aws::Client::AWSError<STSErrors>> AssumeRoleOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithSAMLOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithWebIdentityOutcome;
+        typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, Aws::Client::AWSError<STSErrors>> DecodeAuthorizationMessageOutcome;
+        typedef Aws::Utils::Outcome<GetFederationTokenResult, Aws::Client::AWSError<STSErrors>> GetFederationTokenOutcome;
+        typedef Aws::Utils::Outcome<GetSessionTokenResult, Aws::Client::AWSError<STSErrors>> GetSessionTokenOutcome;
 
         typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
         typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;

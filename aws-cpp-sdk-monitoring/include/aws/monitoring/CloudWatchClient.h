@@ -86,19 +86,19 @@ namespace Model
         class PutMetricDataBatchRequest;
         class SetAlarmStateRequest;
 
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
-        typedef Utils::Outcome<DescribeAlarmHistoryResult, Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
-        typedef Utils::Outcome<DescribeAlarmsResult, Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
-        typedef Utils::Outcome<DescribeAlarmsForMetricResult, Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
-        typedef Utils::Outcome<GetMetricStatisticsResult, Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
-        typedef Utils::Outcome<ListHostInfoResult, Client::AWSError<CloudWatchErrors>> ListHostInfoOutcome;
-        typedef Utils::Outcome<ListMetricsResult, Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> PutMetricDataBatchOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<GetMetricStatisticsResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
+        typedef Aws::Utils::Outcome<ListHostInfoResult, Aws::Client::AWSError<CloudWatchErrors>> ListHostInfoOutcome;
+        typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataBatchOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
 
         typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
         typedef std::future<DescribeAlarmHistoryOutcome> DescribeAlarmHistoryOutcomeCallable;

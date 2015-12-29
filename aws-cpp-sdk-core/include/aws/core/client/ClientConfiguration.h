@@ -59,6 +59,8 @@ struct AWS_CORE_API ClientConfiguration
     Aws::String userAgent;
     Aws::Http::Scheme scheme;
     Aws::Region region;
+    //if customRegion is set you have to also specify an endpoint override, if it is not set, we fallback to region
+    Aws::String authenticationRegion;
     unsigned maxConnections;
     long requestTimeoutMs;
     long connectTimeoutMs;

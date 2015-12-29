@@ -28,8 +28,7 @@ OptionConfiguration::OptionConfiguration() :
     m_port(0),
     m_portHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
-    m_vpcSecurityGroupMembershipsHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+    m_vpcSecurityGroupMembershipsHasBeenSet(false)
 {
 }
 
@@ -38,8 +37,7 @@ OptionConfiguration::OptionConfiguration(const XmlNode& xmlNode) :
     m_port(0),
     m_portHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
-    m_vpcSecurityGroupMembershipsHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+    m_vpcSecurityGroupMembershipsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -86,18 +84,6 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
 
       m_vpcSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
-    if(!optionSettingsNode.IsNull())
-    {
-      XmlNode optionSettingsMember = optionSettingsNode.FirstChild("OptionSetting");
-      while(!optionSettingsMember.IsNull())
-      {
-        m_optionSettings.push_back(optionSettingsMember);
-        optionSettingsMember = optionSettingsMember.NextNode("OptionSetting");
-      }
-
-      m_optionSettingsHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -127,15 +113,6 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".VpcSecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  if(m_optionSettingsHasBeenSet)
-  {
-      for(auto& item : m_optionSettings)
-      {
-        Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location << index << locationValue << ".OptionSetting";
-        item.OutputToStream(oStream, optionSettingsSs.str().c_str());
-      }
-  }
 }
 
 void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -160,15 +137,6 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_vpcSecurityGroupMemberships)
       {
         oStream << location << ".VpcSecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_optionSettingsHasBeenSet)
-  {
-      for(auto& item : m_optionSettings)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".OptionSetting";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
       }
   }
 }

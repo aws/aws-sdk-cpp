@@ -37,72 +37,72 @@ namespace Model
 
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline AddTagsToResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline AddTagsToResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
     /*
-     <p>The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+     <p>The DB Instance the tags will be added to.</p>
     */
     inline AddTagsToResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /*
-     <p>The tags to be assigned to the Amazon RDS resource.</p>
+     <p>The tags to be assigned to the DB Instance.</p>
     */
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

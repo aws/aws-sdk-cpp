@@ -50,20 +50,7 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_optionGroupNameHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_tdeCredentialPasswordHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false)
 {
 }
 
@@ -179,52 +166,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   {
     ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
-    ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-    ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_tdeCredentialPasswordHasBeenSet)
-  {
-    ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
-  }
-  if(m_storageEncryptedHasBeenSet)
-  {
-    ss << "StorageEncrypted=" << m_storageEncrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-  if(m_domainHasBeenSet)
-  {
-    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
-  }
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
-  }
-  if(m_monitoringIntervalHasBeenSet)
-  {
-    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

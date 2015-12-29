@@ -31,7 +31,7 @@ namespace RDS
 namespace Model
 {
   /*
-    <p> Contains Availability Zone information. </p> <p> This data type is used as an element in the following data type: <ul><li><a>OrderableDBInstanceOption</a></li></ul></p>
+    <p> Contains Availability Zone information. </p> <p> This data type is used as an element in the following data type: <ul> <li><a>OrderableDBInstanceOption</a></li> </ul> </p>
   */
   class AWS_RDS_API AvailabilityZone
   {
@@ -78,9 +78,26 @@ namespace Model
     */
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 
+    /*
+     <p> True indicates the availability zone is capable of provisioned IOPs. </p>
+    */
+    inline bool GetProvisionedIopsCapable() const{ return m_provisionedIopsCapable; }
+
+    /*
+     <p> True indicates the availability zone is capable of provisioned IOPs. </p>
+    */
+    inline void SetProvisionedIopsCapable(bool value) { m_provisionedIopsCapableHasBeenSet = true; m_provisionedIopsCapable = value; }
+
+    /*
+     <p> True indicates the availability zone is capable of provisioned IOPs. </p>
+    */
+    inline AvailabilityZone& WithProvisionedIopsCapable(bool value) { SetProvisionedIopsCapable(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    bool m_provisionedIopsCapable;
+    bool m_provisionedIopsCapableHasBeenSet;
   };
 
 } // namespace Model

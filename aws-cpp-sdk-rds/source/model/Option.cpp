@@ -26,13 +26,8 @@ using namespace Aws::Utils;
 Option::Option() : 
     m_optionNameHasBeenSet(false),
     m_optionDescriptionHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
     m_vpcSecurityGroupMembershipsHasBeenSet(false)
 {
@@ -41,13 +36,8 @@ Option::Option() :
 Option::Option(const XmlNode& xmlNode) : 
     m_optionNameHasBeenSet(false),
     m_optionDescriptionHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
     m_vpcSecurityGroupMembershipsHasBeenSet(false)
 {
@@ -72,35 +62,11 @@ Option& Option::operator =(const XmlNode& xmlNode)
       m_optionDescription = StringUtils::Trim(optionDescriptionNode.GetText().c_str());
       m_optionDescriptionHasBeenSet = true;
     }
-    XmlNode persistentNode = resultNode.FirstChild("Persistent");
-    if(!persistentNode.IsNull())
-    {
-      m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(persistentNode.GetText().c_str()).c_str());
-      m_persistentHasBeenSet = true;
-    }
-    XmlNode permanentNode = resultNode.FirstChild("Permanent");
-    if(!permanentNode.IsNull())
-    {
-      m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());
-      m_permanentHasBeenSet = true;
-    }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
-    }
-    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
-    if(!optionSettingsNode.IsNull())
-    {
-      XmlNode optionSettingsMember = optionSettingsNode.FirstChild("OptionSetting");
-      while(!optionSettingsMember.IsNull())
-      {
-        m_optionSettings.push_back(optionSettingsMember);
-        optionSettingsMember = optionSettingsMember.NextNode("OptionSetting");
-      }
-
-      m_optionSettingsHasBeenSet = true;
     }
     XmlNode dBSecurityGroupMembershipsNode = resultNode.FirstChild("DBSecurityGroupMemberships");
     if(!dBSecurityGroupMembershipsNode.IsNull())
@@ -141,26 +107,9 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".OptionDescription=" << StringUtils::URLEncode(m_optionDescription.c_str()) << "&";
   }
-  if(m_persistentHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
-  }
-  if(m_permanentHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Permanent=" << m_permanent << "&";
-  }
   if(m_portHasBeenSet)
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
-  }
-  if(m_optionSettingsHasBeenSet)
-  {
-      for(auto& item : m_optionSettings)
-      {
-        Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location << index << locationValue << ".OptionSetting";
-        item.OutputToStream(oStream, optionSettingsSs.str().c_str());
-      }
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
@@ -192,26 +141,9 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".OptionDescription=" << StringUtils::URLEncode(m_optionDescription.c_str()) << "&";
   }
-  if(m_persistentHasBeenSet)
-  {
-      oStream << location << ".Persistent=" << m_persistent << "&";
-  }
-  if(m_permanentHasBeenSet)
-  {
-      oStream << location << ".Permanent=" << m_permanent << "&";
-  }
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
-  }
-  if(m_optionSettingsHasBeenSet)
-  {
-      for(auto& item : m_optionSettings)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".OptionSetting";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
-      }
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {

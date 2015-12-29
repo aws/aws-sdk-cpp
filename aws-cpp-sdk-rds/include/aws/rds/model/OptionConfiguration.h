@@ -17,7 +17,6 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds/model/OptionSetting.h>
 
 namespace Aws
 {
@@ -175,41 +174,6 @@ namespace Model
     */
     inline OptionConfiguration& AddVpcSecurityGroupMemberships(const char* value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships.push_back(value); return *this; }
 
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline const Aws::Vector<OptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
-
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline void SetOptionSettings(const Aws::Vector<OptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
-
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline void SetOptionSettings(Aws::Vector<OptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
-
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline OptionConfiguration& WithOptionSettings(const Aws::Vector<OptionSetting>& value) { SetOptionSettings(value); return *this;}
-
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline OptionConfiguration& WithOptionSettings(Aws::Vector<OptionSetting>&& value) { SetOptionSettings(value); return *this;}
-
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline OptionConfiguration& AddOptionSettings(const OptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
-
-    /*
-     <p> The option settings to include in an option group. </p>
-    */
-    inline OptionConfiguration& AddOptionSettings(OptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
-
   private:
     Aws::String m_optionName;
     bool m_optionNameHasBeenSet;
@@ -219,8 +183,6 @@ namespace Model
     bool m_dBSecurityGroupMembershipsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupMemberships;
     bool m_vpcSecurityGroupMembershipsHasBeenSet;
-    Aws::Vector<OptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
   };
 
 } // namespace Model

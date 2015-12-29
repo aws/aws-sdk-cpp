@@ -97,22 +97,22 @@ namespace Model
         class UpdateFunctionCodeRequest;
         class UpdateFunctionConfigurationRequest;
 
-        typedef Utils::Outcome<AddPermissionResult, Client::AWSError<LambdaErrors>> AddPermissionOutcome;
-        typedef Utils::Outcome<CreateEventSourceMappingResult, Client::AWSError<LambdaErrors>> CreateEventSourceMappingOutcome;
-        typedef Utils::Outcome<CreateFunctionResult, Client::AWSError<LambdaErrors>> CreateFunctionOutcome;
-        typedef Utils::Outcome<DeleteEventSourceMappingResult, Client::AWSError<LambdaErrors>> DeleteEventSourceMappingOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<LambdaErrors>> DeleteFunctionOutcome;
-        typedef Utils::Outcome<GetEventSourceMappingResult, Client::AWSError<LambdaErrors>> GetEventSourceMappingOutcome;
-        typedef Utils::Outcome<GetFunctionResult, Client::AWSError<LambdaErrors>> GetFunctionOutcome;
-        typedef Utils::Outcome<GetFunctionConfigurationResult, Client::AWSError<LambdaErrors>> GetFunctionConfigurationOutcome;
-        typedef Utils::Outcome<GetPolicyResult, Client::AWSError<LambdaErrors>> GetPolicyOutcome;
-        typedef Utils::Outcome<InvokeResult, Client::AWSError<LambdaErrors>> InvokeOutcome;
-        typedef Utils::Outcome<ListEventSourceMappingsResult, Client::AWSError<LambdaErrors>> ListEventSourceMappingsOutcome;
-        typedef Utils::Outcome<ListFunctionsResult, Client::AWSError<LambdaErrors>> ListFunctionsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<LambdaErrors>> RemovePermissionOutcome;
-        typedef Utils::Outcome<UpdateEventSourceMappingResult, Client::AWSError<LambdaErrors>> UpdateEventSourceMappingOutcome;
-        typedef Utils::Outcome<UpdateFunctionCodeResult, Client::AWSError<LambdaErrors>> UpdateFunctionCodeOutcome;
-        typedef Utils::Outcome<UpdateFunctionConfigurationResult, Client::AWSError<LambdaErrors>> UpdateFunctionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<AddPermissionResult, Aws::Client::AWSError<LambdaErrors>> AddPermissionOutcome;
+        typedef Aws::Utils::Outcome<CreateEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> CreateEventSourceMappingOutcome;
+        typedef Aws::Utils::Outcome<CreateFunctionResult, Aws::Client::AWSError<LambdaErrors>> CreateFunctionOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> DeleteEventSourceMappingOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionOutcome;
+        typedef Aws::Utils::Outcome<GetEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> GetEventSourceMappingOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<LambdaErrors>> GetPolicyOutcome;
+        typedef Aws::Utils::Outcome<InvokeResult, Aws::Client::AWSError<LambdaErrors>> InvokeOutcome;
+        typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, Aws::Client::AWSError<LambdaErrors>> ListEventSourceMappingsOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionsResult, Aws::Client::AWSError<LambdaErrors>> ListFunctionsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LambdaErrors>> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<UpdateEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> UpdateEventSourceMappingOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionCodeResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionCodeOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionConfigurationOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<CreateEventSourceMappingOutcome> CreateEventSourceMappingOutcomeCallable;

@@ -23,8 +23,7 @@ CreateOptionGroupRequest::CreateOptionGroupRequest() :
     m_optionGroupNameHasBeenSet(false),
     m_engineNameHasBeenSet(false),
     m_majorEngineVersionHasBeenSet(false),
-    m_optionGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_optionGroupDescriptionHasBeenSet(false)
 {
 }
 
@@ -48,16 +47,7 @@ Aws::String CreateOptionGroupRequest::SerializePayload() const
   {
     ss << "OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
   }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

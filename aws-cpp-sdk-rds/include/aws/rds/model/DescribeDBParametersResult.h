@@ -46,37 +46,37 @@ namespace Model
     DescribeDBParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline DescribeDBParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline DescribeDBParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline DescribeDBParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /*
-     <p> A list of <a>Parameter</a> values. </p>
+     <p> A list of <a>Parameter</a> instances. </p>
     */
     inline DescribeDBParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
 

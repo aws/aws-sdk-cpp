@@ -23,12 +23,12 @@
 #pragma warning(disable : 4251)
   #ifdef USE_IMPORT_EXPORT
     #ifdef AWS_CLOUDWATCH_EXPORTS
-      #define AWS_CLOUDWATCH_API __declspec(dllexport)
+       #define AWS_CLOUDWATCH_API __declspec(dllexport)
     #else
-      #define AWS_CLOUDWATCH_API __declspec(dllimport)
+       #define AWS_CLOUDWATCH_API __declspec(dllimport)
     #endif /* AWS_CLOUDWATCH_EXPORTS */
   #else
-     #define AWS_CLOUDWATCH_API
+       #define AWS_CLOUDWATCH_API
    #endif //
 #else /* defined (_MSC_VER) */
 #define AWS_CLOUDWATCH_API

@@ -20,15 +20,15 @@ using namespace Aws::Client;
 using namespace Aws::SES;
 using namespace Aws::Utils;
 
-static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
-static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
-static const int INVALID_S3_BUCKET_HASH = HashingUtils::HashString("InvalidS3Bucket");
-static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists");
 static const int RULE_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleSetDoesNotExist");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
-static const int INVALID_SNS_TOPIC_HASH = HashingUtils::HashString("InvalidSnsTopic");
 static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDelete");
+static const int INVALID_SNS_TOPIC_HASH = HashingUtils::HashString("InvalidSnsTopic");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
+static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
+static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
+static const int INVALID_S3_BUCKET_HASH = HashingUtils::HashString("InvalidS3Bucket");
+static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
 
 namespace Aws
 {
@@ -41,23 +41,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == MESSAGE_REJECTED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), false);
-  }
-  else if (hashCode == INVALID_POLICY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_POLICY), false);
-  }
-  else if (hashCode == INVALID_S3_BUCKET_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S3_BUCKET), false);
-  }
-  else if (hashCode == RULE_DOES_NOT_EXIST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_DOES_NOT_EXIST), false);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
+  if (hashCode == ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ALREADY_EXISTS), false);
   }
@@ -65,17 +49,33 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_SET_DOES_NOT_EXIST), false);
   }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  else if (hashCode == CANNOT_DELETE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CANNOT_DELETE), false);
   }
   else if (hashCode == INVALID_SNS_TOPIC_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_SNS_TOPIC), false);
   }
-  else if (hashCode == CANNOT_DELETE_HASH)
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CANNOT_DELETE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == MESSAGE_REJECTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), false);
+  }
+  else if (hashCode == RULE_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == INVALID_S3_BUCKET_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S3_BUCKET), false);
+  }
+  else if (hashCode == INVALID_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_POLICY), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

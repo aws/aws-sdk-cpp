@@ -81,16 +81,16 @@ namespace Model
         class PutAttributesRequest;
         class SelectRequest;
 
-        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
-        typedef Utils::Outcome<DomainMetadataResult, Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
-        typedef Utils::Outcome<GetAttributesResult, Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
-        typedef Utils::Outcome<ListDomainsResult, Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
-        typedef Utils::Outcome<SelectResult, Client::AWSError<SimpleDBErrors>> SelectOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<DomainMetadataResult, Aws::Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
+        typedef Aws::Utils::Outcome<GetAttributesResult, Aws::Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
+        typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
+        typedef Aws::Utils::Outcome<SelectResult, Aws::Client::AWSError<SimpleDBErrors>> SelectOutcome;
 
         typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
         typedef std::future<BatchPutAttributesOutcome> BatchPutAttributesOutcomeCallable;

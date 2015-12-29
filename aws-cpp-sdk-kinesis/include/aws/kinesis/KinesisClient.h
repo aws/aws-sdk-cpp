@@ -89,21 +89,21 @@ namespace Model
         class RemoveTagsFromStreamRequest;
         class SplitShardRequest;
 
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> AddTagsToStreamOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> CreateStreamOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> DecreaseStreamRetentionPeriodOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> DeleteStreamOutcome;
-        typedef Utils::Outcome<DescribeStreamResult, Client::AWSError<KinesisErrors>> DescribeStreamOutcome;
-        typedef Utils::Outcome<GetRecordsResult, Client::AWSError<KinesisErrors>> GetRecordsOutcome;
-        typedef Utils::Outcome<GetShardIteratorResult, Client::AWSError<KinesisErrors>> GetShardIteratorOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> IncreaseStreamRetentionPeriodOutcome;
-        typedef Utils::Outcome<ListStreamsResult, Client::AWSError<KinesisErrors>> ListStreamsOutcome;
-        typedef Utils::Outcome<ListTagsForStreamResult, Client::AWSError<KinesisErrors>> ListTagsForStreamOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> MergeShardsOutcome;
-        typedef Utils::Outcome<PutRecordResult, Client::AWSError<KinesisErrors>> PutRecordOutcome;
-        typedef Utils::Outcome<PutRecordsResult, Client::AWSError<KinesisErrors>> PutRecordsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> RemoveTagsFromStreamOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> SplitShardOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> AddTagsToStreamOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> CreateStreamOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> DecreaseStreamRetentionPeriodOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> DeleteStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamResult, Aws::Client::AWSError<KinesisErrors>> DescribeStreamOutcome;
+        typedef Aws::Utils::Outcome<GetRecordsResult, Aws::Client::AWSError<KinesisErrors>> GetRecordsOutcome;
+        typedef Aws::Utils::Outcome<GetShardIteratorResult, Aws::Client::AWSError<KinesisErrors>> GetShardIteratorOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> IncreaseStreamRetentionPeriodOutcome;
+        typedef Aws::Utils::Outcome<ListStreamsResult, Aws::Client::AWSError<KinesisErrors>> ListStreamsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForStreamResult, Aws::Client::AWSError<KinesisErrors>> ListTagsForStreamOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> MergeShardsOutcome;
+        typedef Aws::Utils::Outcome<PutRecordResult, Aws::Client::AWSError<KinesisErrors>> PutRecordOutcome;
+        typedef Aws::Utils::Outcome<PutRecordsResult, Aws::Client::AWSError<KinesisErrors>> PutRecordsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> RemoveTagsFromStreamOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> SplitShardOutcome;
 
         typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
         typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;

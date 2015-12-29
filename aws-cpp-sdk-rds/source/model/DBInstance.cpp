@@ -57,27 +57,11 @@ DBInstance::DBInstance() :
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_optionGroupMembershipsHasBeenSet(false),
+    m_optionGroupMembershipHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_statusInfosHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_dbInstancePort(0),
-    m_dbInstancePortHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false)
 {
 }
 
@@ -115,27 +99,11 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_optionGroupMembershipsHasBeenSet(false),
+    m_optionGroupMembershipHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_statusInfosHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_dbInstancePort(0),
-    m_dbInstancePortHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -326,17 +294,11 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
-    XmlNode optionGroupMembershipsNode = resultNode.FirstChild("OptionGroupMemberships");
-    if(!optionGroupMembershipsNode.IsNull())
+    XmlNode optionGroupMembershipNode = resultNode.FirstChild("OptionGroupMembership");
+    if(!optionGroupMembershipNode.IsNull())
     {
-      XmlNode optionGroupMembershipsMember = optionGroupMembershipsNode.FirstChild("OptionGroupMembership");
-      while(!optionGroupMembershipsMember.IsNull())
-      {
-        m_optionGroupMemberships.push_back(optionGroupMembershipsMember);
-        optionGroupMembershipsMember = optionGroupMembershipsMember.NextNode("OptionGroupMembership");
-      }
-
-      m_optionGroupMembershipsHasBeenSet = true;
+      m_optionGroupMembership = optionGroupMembershipNode;
+      m_optionGroupMembershipHasBeenSet = true;
     }
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
     if(!characterSetNameNode.IsNull())
@@ -355,90 +317,6 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
       m_publiclyAccessibleHasBeenSet = true;
-    }
-    XmlNode statusInfosNode = resultNode.FirstChild("StatusInfos");
-    if(!statusInfosNode.IsNull())
-    {
-      XmlNode statusInfosMember = statusInfosNode.FirstChild("DBInstanceStatusInfo");
-      while(!statusInfosMember.IsNull())
-      {
-        m_statusInfos.push_back(statusInfosMember);
-        statusInfosMember = statusInfosMember.NextNode("DBInstanceStatusInfo");
-      }
-
-      m_statusInfosHasBeenSet = true;
-    }
-    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(!storageTypeNode.IsNull())
-    {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
-      m_storageTypeHasBeenSet = true;
-    }
-    XmlNode tdeCredentialArnNode = resultNode.FirstChild("TdeCredentialArn");
-    if(!tdeCredentialArnNode.IsNull())
-    {
-      m_tdeCredentialArn = StringUtils::Trim(tdeCredentialArnNode.GetText().c_str());
-      m_tdeCredentialArnHasBeenSet = true;
-    }
-    XmlNode dbInstancePortNode = resultNode.FirstChild("DbInstancePort");
-    if(!dbInstancePortNode.IsNull())
-    {
-      m_dbInstancePort = StringUtils::ConvertToInt32(StringUtils::Trim(dbInstancePortNode.GetText().c_str()).c_str());
-      m_dbInstancePortHasBeenSet = true;
-    }
-    XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
-    if(!dBClusterIdentifierNode.IsNull())
-    {
-      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
-      m_dBClusterIdentifierHasBeenSet = true;
-    }
-    XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");
-    if(!storageEncryptedNode.IsNull())
-    {
-      m_storageEncrypted = StringUtils::ConvertToBool(StringUtils::Trim(storageEncryptedNode.GetText().c_str()).c_str());
-      m_storageEncryptedHasBeenSet = true;
-    }
-    XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
-    if(!kmsKeyIdNode.IsNull())
-    {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
-      m_kmsKeyIdHasBeenSet = true;
-    }
-    XmlNode dbiResourceIdNode = resultNode.FirstChild("DbiResourceId");
-    if(!dbiResourceIdNode.IsNull())
-    {
-      m_dbiResourceId = StringUtils::Trim(dbiResourceIdNode.GetText().c_str());
-      m_dbiResourceIdHasBeenSet = true;
-    }
-    XmlNode cACertificateIdentifierNode = resultNode.FirstChild("CACertificateIdentifier");
-    if(!cACertificateIdentifierNode.IsNull())
-    {
-      m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
-      m_cACertificateIdentifierHasBeenSet = true;
-    }
-    XmlNode domainMembershipsNode = resultNode.FirstChild("DomainMemberships");
-    if(!domainMembershipsNode.IsNull())
-    {
-      XmlNode domainMembershipsMember = domainMembershipsNode.FirstChild("DomainMembership");
-      while(!domainMembershipsMember.IsNull())
-      {
-        m_domainMemberships.push_back(domainMembershipsMember);
-        domainMembershipsMember = domainMembershipsMember.NextNode("DomainMembership");
-      }
-
-      m_domainMembershipsHasBeenSet = true;
-    }
-    XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
-    if(!copyTagsToSnapshotNode.IsNull())
-    {
-      m_copyTagsToSnapshot = StringUtils::ConvertToBool(StringUtils::Trim(copyTagsToSnapshotNode.GetText().c_str()).c_str());
-      m_copyTagsToSnapshotHasBeenSet = true;
-    }
-    XmlNode monitoringIntervalNode = resultNode.FirstChild("MonitoringInterval");
-    if(!monitoringIntervalNode.IsNull())
-    {
-      m_monitoringInterval = StringUtils::ConvertToInt32(StringUtils::Trim(monitoringIntervalNode.GetText().c_str()).c_str());
-      m_monitoringIntervalHasBeenSet = true;
     }
   }
 
@@ -575,14 +453,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
-  if(m_optionGroupMembershipsHasBeenSet)
+  if(m_optionGroupMembershipHasBeenSet)
   {
-      for(auto& item : m_optionGroupMemberships)
-      {
-        Aws::StringStream optionGroupMembershipsSs;
-        optionGroupMembershipsSs << location << index << locationValue << ".OptionGroupMembership";
-        item.OutputToStream(oStream, optionGroupMembershipsSs.str().c_str());
-      }
+      Aws::StringStream optionGroupMembershipLocationAndMemberSs;
+      optionGroupMembershipLocationAndMemberSs << location << index << locationValue << ".OptionGroupMembership";
+      m_optionGroupMembership.OutputToStream(oStream, optionGroupMembershipLocationAndMemberSs.str().c_str());
   }
   if(m_characterSetNameHasBeenSet)
   {
@@ -595,64 +470,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if(m_publiclyAccessibleHasBeenSet)
   {
       oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
-  }
-  if(m_statusInfosHasBeenSet)
-  {
-      for(auto& item : m_statusInfos)
-      {
-        Aws::StringStream statusInfosSs;
-        statusInfosSs << location << index << locationValue << ".DBInstanceStatusInfo";
-        item.OutputToStream(oStream, statusInfosSs.str().c_str());
-      }
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_dbInstancePortHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DbInstancePort=" << m_dbInstancePort << "&";
-  }
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
-  }
-  if(m_storageEncryptedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-  if(m_dbiResourceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
-  }
-  if(m_cACertificateIdentifierHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
-  }
-  if(m_domainMembershipsHasBeenSet)
-  {
-      for(auto& item : m_domainMemberships)
-      {
-        Aws::StringStream domainMembershipsSs;
-        domainMembershipsSs << location << index << locationValue << ".DomainMembership";
-        item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
-      }
-  }
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
-  }
-  if(m_monitoringIntervalHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MonitoringInterval=" << m_monitoringInterval << "&";
   }
 }
 
@@ -786,14 +603,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".Iops=" << m_iops << "&";
   }
-  if(m_optionGroupMembershipsHasBeenSet)
+  if(m_optionGroupMembershipHasBeenSet)
   {
-      for(auto& item : m_optionGroupMemberships)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".OptionGroupMembership";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
-      }
+      Aws::String optionGroupMembershipLocationAndMember(location);
+      optionGroupMembershipLocationAndMember += ".OptionGroupMembership";
+      m_optionGroupMembership.OutputToStream(oStream, optionGroupMembershipLocationAndMember.c_str());
   }
   if(m_characterSetNameHasBeenSet)
   {
@@ -806,63 +620,5 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_publiclyAccessibleHasBeenSet)
   {
       oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
-  }
-  if(m_statusInfosHasBeenSet)
-  {
-      for(auto& item : m_statusInfos)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".DBInstanceStatusInfo";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
-      }
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-      oStream << location << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_dbInstancePortHasBeenSet)
-  {
-      oStream << location << ".DbInstancePort=" << m_dbInstancePort << "&";
-  }
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
-      oStream << location << ".DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
-  }
-  if(m_storageEncryptedHasBeenSet)
-  {
-      oStream << location << ".StorageEncrypted=" << m_storageEncrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-  if(m_dbiResourceIdHasBeenSet)
-  {
-      oStream << location << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
-  }
-  if(m_cACertificateIdentifierHasBeenSet)
-  {
-      oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
-  }
-  if(m_domainMembershipsHasBeenSet)
-  {
-      for(auto& item : m_domainMemberships)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".DomainMembership";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
-      }
-  }
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-      oStream << location << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
-  }
-  if(m_monitoringIntervalHasBeenSet)
-  {
-      oStream << location << ".MonitoringInterval=" << m_monitoringInterval << "&";
   }
 }

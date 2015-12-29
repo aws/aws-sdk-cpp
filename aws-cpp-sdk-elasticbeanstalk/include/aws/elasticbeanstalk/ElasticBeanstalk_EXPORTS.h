@@ -23,12 +23,12 @@
 #pragma warning(disable : 4251)
   #ifdef USE_IMPORT_EXPORT
     #ifdef AWS_ELASTICBEANSTALK_EXPORTS
-      #define AWS_ELASTICBEANSTALK_API __declspec(dllexport)
+       #define AWS_ELASTICBEANSTALK_API __declspec(dllexport)
     #else
-      #define AWS_ELASTICBEANSTALK_API __declspec(dllimport)
+       #define AWS_ELASTICBEANSTALK_API __declspec(dllimport)
     #endif /* AWS_ELASTICBEANSTALK_EXPORTS */
   #else
-     #define AWS_ELASTICBEANSTALK_API
+       #define AWS_ELASTICBEANSTALK_API
    #endif //
 #else /* defined (_MSC_VER) */
 #define AWS_ELASTICBEANSTALK_API

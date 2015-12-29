@@ -92,19 +92,19 @@ namespace Model
         class UpdateItemRequest;
         class UpdateTableRequest;
 
-        typedef Utils::Outcome<BatchGetItemResult, Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
-        typedef Utils::Outcome<BatchWriteItemResult, Client::AWSError<DynamoDBErrors>> BatchWriteItemOutcome;
-        typedef Utils::Outcome<CreateTableResult, Client::AWSError<DynamoDBErrors>> CreateTableOutcome;
-        typedef Utils::Outcome<DeleteItemResult, Client::AWSError<DynamoDBErrors>> DeleteItemOutcome;
-        typedef Utils::Outcome<DeleteTableResult, Client::AWSError<DynamoDBErrors>> DeleteTableOutcome;
-        typedef Utils::Outcome<DescribeTableResult, Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
-        typedef Utils::Outcome<GetItemResult, Client::AWSError<DynamoDBErrors>> GetItemOutcome;
-        typedef Utils::Outcome<ListTablesResult, Client::AWSError<DynamoDBErrors>> ListTablesOutcome;
-        typedef Utils::Outcome<PutItemResult, Client::AWSError<DynamoDBErrors>> PutItemOutcome;
-        typedef Utils::Outcome<QueryResult, Client::AWSError<DynamoDBErrors>> QueryOutcome;
-        typedef Utils::Outcome<ScanResult, Client::AWSError<DynamoDBErrors>> ScanOutcome;
-        typedef Utils::Outcome<UpdateItemResult, Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
-        typedef Utils::Outcome<UpdateTableResult, Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
+        typedef Aws::Utils::Outcome<BatchGetItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
+        typedef Aws::Utils::Outcome<BatchWriteItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchWriteItemOutcome;
+        typedef Aws::Utils::Outcome<CreateTableResult, Aws::Client::AWSError<DynamoDBErrors>> CreateTableOutcome;
+        typedef Aws::Utils::Outcome<DeleteItemResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteItemOutcome;
+        typedef Aws::Utils::Outcome<DeleteTableResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
+        typedef Aws::Utils::Outcome<GetItemResult, Aws::Client::AWSError<DynamoDBErrors>> GetItemOutcome;
+        typedef Aws::Utils::Outcome<ListTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListTablesOutcome;
+        typedef Aws::Utils::Outcome<PutItemResult, Aws::Client::AWSError<DynamoDBErrors>> PutItemOutcome;
+        typedef Aws::Utils::Outcome<QueryResult, Aws::Client::AWSError<DynamoDBErrors>> QueryOutcome;
+        typedef Aws::Utils::Outcome<ScanResult, Aws::Client::AWSError<DynamoDBErrors>> ScanOutcome;
+        typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
+        typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
 
         typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
         typedef std::future<BatchWriteItemOutcome> BatchWriteItemOutcomeCallable;

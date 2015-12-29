@@ -23,12 +23,12 @@
 #pragma warning(disable : 4251)
   #ifdef USE_IMPORT_EXPORT
     #ifdef AWS_SES_EXPORTS
-      #define AWS_SES_API __declspec(dllexport)
+       #define AWS_SES_API __declspec(dllexport)
     #else
-      #define AWS_SES_API __declspec(dllimport)
+       #define AWS_SES_API __declspec(dllimport)
     #endif /* AWS_SES_EXPORTS */
   #else
-     #define AWS_SES_API
+       #define AWS_SES_API
    #endif //
 #else /* defined (_MSC_VER) */
 #define AWS_SES_API

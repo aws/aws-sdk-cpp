@@ -46,37 +46,37 @@ namespace Model
     DescribeOrderableDBInstanceOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline const Aws::Vector<OrderableDBInstanceOption>& GetOrderableDBInstanceOptions() const{ return m_orderableDBInstanceOptions; }
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline void SetOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { m_orderableDBInstanceOptions = value; }
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline void SetOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { m_orderableDBInstanceOptions = value; }
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { SetOrderableDBInstanceOptions(value); return *this;}
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { SetOrderableDBInstanceOptions(value); return *this;}
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(const OrderableDBInstanceOption& value) { m_orderableDBInstanceOptions.push_back(value); return *this; }
 
     /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.</p>
+     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
     */
     inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(OrderableDBInstanceOption&& value) { m_orderableDBInstanceOptions.push_back(value); return *this; }
 

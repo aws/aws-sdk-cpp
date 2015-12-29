@@ -34,14 +34,7 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_readReplicaCapable(false),
     m_readReplicaCapableHasBeenSet(false),
     m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_supportsStorageEncryption(false),
-    m_supportsStorageEncryptionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_supportsIops(false),
-    m_supportsIopsHasBeenSet(false),
-    m_supportsEnhancedMonitoring(false),
-    m_supportsEnhancedMonitoringHasBeenSet(false)
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -56,14 +49,7 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_readReplicaCapable(false),
     m_readReplicaCapableHasBeenSet(false),
     m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_supportsStorageEncryption(false),
-    m_supportsStorageEncryptionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_supportsIops(false),
-    m_supportsIopsHasBeenSet(false),
-    m_supportsEnhancedMonitoring(false),
-    m_supportsEnhancedMonitoringHasBeenSet(false)
+    m_vpcHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -128,30 +114,6 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_vpc = StringUtils::ConvertToBool(StringUtils::Trim(vpcNode.GetText().c_str()).c_str());
       m_vpcHasBeenSet = true;
     }
-    XmlNode supportsStorageEncryptionNode = resultNode.FirstChild("SupportsStorageEncryption");
-    if(!supportsStorageEncryptionNode.IsNull())
-    {
-      m_supportsStorageEncryption = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageEncryptionNode.GetText().c_str()).c_str());
-      m_supportsStorageEncryptionHasBeenSet = true;
-    }
-    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(!storageTypeNode.IsNull())
-    {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
-      m_storageTypeHasBeenSet = true;
-    }
-    XmlNode supportsIopsNode = resultNode.FirstChild("SupportsIops");
-    if(!supportsIopsNode.IsNull())
-    {
-      m_supportsIops = StringUtils::ConvertToBool(StringUtils::Trim(supportsIopsNode.GetText().c_str()).c_str());
-      m_supportsIopsHasBeenSet = true;
-    }
-    XmlNode supportsEnhancedMonitoringNode = resultNode.FirstChild("SupportsEnhancedMonitoring");
-    if(!supportsEnhancedMonitoringNode.IsNull())
-    {
-      m_supportsEnhancedMonitoring = StringUtils::ConvertToBool(StringUtils::Trim(supportsEnhancedMonitoringNode.GetText().c_str()).c_str());
-      m_supportsEnhancedMonitoringHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -196,22 +158,6 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".Vpc=" << m_vpc << "&";
   }
-  if(m_supportsStorageEncryptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_supportsIopsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SupportsIops=" << m_supportsIops << "&";
-  }
-  if(m_supportsEnhancedMonitoringHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
-  }
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -252,21 +198,5 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_vpcHasBeenSet)
   {
       oStream << location << ".Vpc=" << m_vpc << "&";
-  }
-  if(m_supportsStorageEncryptionHasBeenSet)
-  {
-      oStream << location << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_supportsIopsHasBeenSet)
-  {
-      oStream << location << ".SupportsIops=" << m_supportsIops << "&";
-  }
-  if(m_supportsEnhancedMonitoringHasBeenSet)
-  {
-      oStream << location << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
   }
 }

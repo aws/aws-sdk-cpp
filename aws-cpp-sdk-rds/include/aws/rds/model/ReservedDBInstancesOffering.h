@@ -81,37 +81,37 @@ namespace Model
     inline ReservedDBInstancesOffering& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /*
-     <p> The DB instance class for the reserved DB instance. </p>
+     <p> The DB instance class for the reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -161,37 +161,37 @@ namespace Model
     inline ReservedDBInstancesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline ReservedDBInstancesOffering& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline ReservedDBInstancesOffering& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(value); return *this;}
 
     /*
-     <p> The currency code for the reserved DB instance offering. </p>
+     <p> The currency code for the reserved DB Instance offering. </p>
     */
     inline ReservedDBInstancesOffering& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
@@ -281,37 +281,37 @@ namespace Model
     inline ReservedDBInstancesOffering& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
     /*
-     <p> The recurring price charged to run this reserved DB instance. </p>
+     <p> The recurring price charged to run this reserved DB Instance. </p>
     */
     inline ReservedDBInstancesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
