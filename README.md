@@ -58,11 +58,11 @@ msbuild INSTALL.vcxproj /p:Configuration=Release
 #####BUILD_ONLY
 Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-sdk-cpp-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-sdk-cpp-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="aws-sdk-cpp-s3;aws-sdk-cpp-dynamodb;aws-sdk-cpp-cognito-identity"
 
-#####CUSTOM_CLIENTS
-Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python, java, jdk1.8, and maven installed and in your executable path. Example: -DCUSTOM_CLIENTS="serviceName=myCustomService; version=2015-12-21;serviceName=someOtherService; version=2015-08-15"
+#####ADD_CUSTOM_CLIENTS
+Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python 2.7, java, jdk1.8, and maven installed and in your executable path. Example: -DADD_CUSTOM_CLIENTS="serviceName=myCustomService; version=2015-12-21;serviceName=someOtherService; version=2015-08-15"
 
 #####REGENERATE_CLIENTS
-This argument will wipe out all generated code and generate the client directories from the code-generation/api-definitions folder. To use this argument, you need to have python, java, jdk1.8, and maven installed in your executable path. Example: -DREGENERATE_CLIENTS=1
+This argument will wipe out all generated code and generate the client directories from the code-generation/api-definitions folder. To use this argument, you need to have python 2.7, java, jdk1.8, and maven installed in your executable path. Example: -DREGENERATE_CLIENTS=1
 
 #####CUSTOM_MEMORY_MANAGEMENT  
 To use a custom memory manager, set the value to 1. You can install a custom allocator, and all STL types will use the custom allocation interface. If the value is set to 0, you still might want to use the STL template types to help with DLL safety on Windows. 

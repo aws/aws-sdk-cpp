@@ -49,18 +49,18 @@ def ParseArguments():
     return argMap
 
 def DiscoverAllAvailableSDKs(discoveryPath):
-    sdks = {}    
+    sdks = {}
 
     filesInDir = [f for f in listdir(discoveryPath) if isfile(join(discoveryPath, f))]
 
-    for file in filesInDir:    
+    for file in filesInDir:
         match = re.search('([\w\d-]+)-(\d{4}-\d{2}-\d{2}).normal.json', file)
         if match:
-	    sdk = {}
+            sdk = {}
             sdk['serviceName'] = match.group(1)
-	    sdk['apiVersion'] = match.group(2)
+            sdk['apiVersion'] = match.group(2)
             sdk['filePath'] = join(discoveryPath, file)
-	    sdks['{}-{}'.format(sdk['serviceName'], sdk['apiVersion'])] = sdk
+            sdks['{}-{}'.format(sdk['serviceName'], sdk['apiVersion'])] = sdk
 
     return sdks
 
@@ -71,14 +71,14 @@ def PrepareGenerator(generatorPath):
     os.chdir(currentDir)
 
 def GenerateSdk(generatorPath, sdk, outputDir):
-    try: 
+    try:
        with open(sdk['filePath'], 'r') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
             process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--language-binding', 'cpp', '--arbitrary'],stdout=PIPE,  stdin=PIPE, stderr=STDOUT )
             process.stdin.write(api_content)
             process.stdin.close()
-            output = process.stdout.read()	 
+            output = process.stdout.read()
             if output:
                  with zipfile.ZipFile(output.strip(), 'r') as zip:
                      zip.extractall(outputDir)
@@ -89,12 +89,12 @@ def Main():
     arguments = ParseArguments()
 
     if arguments['prepareTools']:
-	PrepareGenerator(arguments['pathToGenerator'])    
+        PrepareGenerator(arguments['pathToGenerator'])
 
     sdks = DiscoverAllAvailableSDKs(arguments['pathToApiDefinitions'])
     
     if arguments['listAll']:
-	for key, value in sdks.iteritems():
+        for key, value in sdks.iteritems():
             print value
 
     if arguments['serviceName']:
