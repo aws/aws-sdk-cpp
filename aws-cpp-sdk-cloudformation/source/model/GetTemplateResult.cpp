@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ GetTemplateResult& GetTemplateResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetTemplateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetTemplateResult")
+  {
+    resultNode = rootNode.FirstChild("GetTemplateResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
-    if(templateBodyNode.IsNull())
-    {
-      templateBodyNode = resultNode;
-    }
-
     if(!templateBodyNode.IsNull())
     {
       m_templateBody = StringUtils::Trim(templateBodyNode.GetText().c_str());
@@ -55,6 +56,7 @@ GetTemplateResult& GetTemplateResult::operator =(const AmazonWebServiceResult<Xm
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::GetTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

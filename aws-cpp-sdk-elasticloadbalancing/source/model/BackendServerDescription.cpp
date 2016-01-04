@@ -45,11 +45,6 @@ BackendServerDescription& BackendServerDescription::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode instancePortNode = resultNode.FirstChild("InstancePort");
-    if(instancePortNode.IsNull())
-    {
-      instancePortNode = resultNode;
-    }
-
     if(!instancePortNode.IsNull())
     {
       m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(instancePortNode.GetText().c_str()).c_str());

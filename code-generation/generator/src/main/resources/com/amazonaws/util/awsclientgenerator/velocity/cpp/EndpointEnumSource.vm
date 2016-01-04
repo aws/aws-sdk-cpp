@@ -1,0 +1,32 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
+\#include <aws/core/utils/memory/stl/AWSMap.h>
+
+using namespace Aws;
+using namespace Aws::${metadata.namespace};
+
+namespace Aws
+{
+namespace ${metadata.namespace}
+{
+namespace ${metadata.classNamePrefix}Endpoint
+{
+  Aws::String ForRegion(Region region)
+  {
+    switch(region)
+    {
+#foreach($regionEndpointPair in $endpointMapping.entrySet())
+     case Region::${regionEndpointPair.key}:
+        return "${regionEndpointPair.value}";
+#end
+     default:
+        return "$endpointMapping.entrySet().iterator().next().value";
+    }
+  }
+
+} // namespace ${metadata.classNamePrefix}Endpoint
+} // namespace ${metadata.namespace}
+} // namespace Aws
+

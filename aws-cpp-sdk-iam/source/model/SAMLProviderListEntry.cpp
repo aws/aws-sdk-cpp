@@ -49,33 +49,18 @@ SAMLProviderListEntry& SAMLProviderListEntry::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    if(arnNode.IsNull())
-    {
-      arnNode = resultNode;
-    }
-
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());
       m_arnHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
-    if(validUntilNode.IsNull())
-    {
-      validUntilNode = resultNode;
-    }
-
     if(!validUntilNode.IsNull())
     {
       m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
       m_validUntilHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    if(createDateNode.IsNull())
-    {
-      createDateNode = resultNode;
-    }
-
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());

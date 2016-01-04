@@ -20,7 +20,13 @@
 
 #ifdef __APPLE__
 
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif // __clang__
+
+#ifdef __GNUC__
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // __GNUC__
 
 #endif // __APPLE__
 
@@ -56,9 +62,7 @@ class AWS_CORE_API Sha256 : public Hash
 
     private:
 
-        #ifdef _WINDOWS
-            Aws::UniquePtr< WindowsHashImpl > m_windowsImpl;
-        #endif
+        std::shared_ptr< Hash > m_hashImpl;
 };
 
 } // namespace Crypto

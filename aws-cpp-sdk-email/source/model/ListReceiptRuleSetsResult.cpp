@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListReceiptRuleSetsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListReceiptRuleSetsResult")
+  {
+    resultNode = rootNode.FirstChild("ListReceiptRuleSetsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,21 +59,11 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
 
     }
     XmlNode nextPageTokenNode = resultNode.FirstChild("NextPageToken");
-    if(nextPageTokenNode.IsNull())
-    {
-      nextPageTokenNode = resultNode;
-    }
-
     if(!nextPageTokenNode.IsNull())
     {
       m_nextPageToken = StringUtils::Trim(nextPageTokenNode.GetText().c_str());
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
@@ -76,6 +72,7 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::SES::Model::ListReceiptRuleSetsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

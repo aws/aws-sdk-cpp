@@ -41,16 +41,7 @@ GetDistributionConfig2015_04_17Result& GetDistributionConfig2015_04_17Result::op
 
   if(!resultNode.IsNull())
   {
-    XmlNode distributionConfigNode = resultNode.FirstChild("DistributionConfig");
-    if(distributionConfigNode.IsNull())
-    {
-      distributionConfigNode = resultNode;
-    }
-
-    if(!distributionConfigNode.IsNull())
-    {
-      m_distributionConfig = distributionConfigNode;
-    }
+    m_distributionConfig = resultNode;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -24,12 +24,16 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_provisionedIopsCapable(false),
+    m_provisionedIopsCapableHasBeenSet(false)
 {
 }
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_provisionedIopsCapable(false),
+    m_provisionedIopsCapableHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,15 +45,16 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
+    }
+    XmlNode provisionedIopsCapableNode = resultNode.FirstChild("ProvisionedIopsCapable");
+    if(!provisionedIopsCapableNode.IsNull())
+    {
+      m_provisionedIopsCapable = StringUtils::ConvertToBool(StringUtils::Trim(provisionedIopsCapableNode.GetText().c_str()).c_str());
+      m_provisionedIopsCapableHasBeenSet = true;
     }
   }
 
@@ -62,6 +67,10 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+  if(m_provisionedIopsCapableHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ProvisionedIopsCapable=" << m_provisionedIopsCapable << "&";
+  }
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -69,5 +78,9 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_nameHasBeenSet)
   {
       oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_provisionedIopsCapableHasBeenSet)
+  {
+      oStream << location << ".ProvisionedIopsCapable=" << m_provisionedIopsCapable << "&";
   }
 }

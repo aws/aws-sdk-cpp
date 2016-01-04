@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,36 +39,25 @@ GetUserPolicyResult& GetUserPolicyResult::operator =(const AmazonWebServiceResul
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetUserPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetUserPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("GetUserPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    if(userNameNode.IsNull())
-    {
-      userNameNode = resultNode;
-    }
-
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
-    if(policyNameNode.IsNull())
-    {
-      policyNameNode = resultNode;
-    }
-
     if(!policyNameNode.IsNull())
     {
       m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
-    if(policyDocumentNode.IsNull())
-    {
-      policyDocumentNode = resultNode;
-    }
-
     if(!policyDocumentNode.IsNull())
     {
       m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
@@ -75,6 +66,7 @@ GetUserPolicyResult& GetUserPolicyResult::operator =(const AmazonWebServiceResul
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetUserPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

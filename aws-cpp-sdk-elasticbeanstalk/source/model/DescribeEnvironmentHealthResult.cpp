@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -39,46 +41,30 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeEnvironmentHealthResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeEnvironmentHealthResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeEnvironmentHealthResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
-    if(environmentNameNode.IsNull())
-    {
-      environmentNameNode = resultNode;
-    }
-
     if(!environmentNameNode.IsNull())
     {
       m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
-    if(healthStatusNode.IsNull())
-    {
-      healthStatusNode = resultNode;
-    }
-
     if(!healthStatusNode.IsNull())
     {
       m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
-    if(colorNode.IsNull())
-    {
-      colorNode = resultNode;
-    }
-
     if(!colorNode.IsNull())
     {
       m_color = StringUtils::Trim(colorNode.GetText().c_str());
@@ -95,31 +81,16 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
 
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
-    if(applicationMetricsNode.IsNull())
-    {
-      applicationMetricsNode = resultNode;
-    }
-
     if(!applicationMetricsNode.IsNull())
     {
       m_applicationMetrics = applicationMetricsNode;
     }
     XmlNode instancesHealthNode = resultNode.FirstChild("InstancesHealth");
-    if(instancesHealthNode.IsNull())
-    {
-      instancesHealthNode = resultNode;
-    }
-
     if(!instancesHealthNode.IsNull())
     {
       m_instancesHealth = instancesHealthNode;
     }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
-    if(refreshedAtNode.IsNull())
-    {
-      refreshedAtNode = resultNode;
-    }
-
     if(!refreshedAtNode.IsNull())
     {
       m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
@@ -128,6 +99,7 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeEnvironmentHealthResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

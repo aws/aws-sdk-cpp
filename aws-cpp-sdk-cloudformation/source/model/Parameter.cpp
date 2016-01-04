@@ -47,33 +47,18 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode parameterKeyNode = resultNode.FirstChild("ParameterKey");
-    if(parameterKeyNode.IsNull())
-    {
-      parameterKeyNode = resultNode;
-    }
-
     if(!parameterKeyNode.IsNull())
     {
       m_parameterKey = StringUtils::Trim(parameterKeyNode.GetText().c_str());
       m_parameterKeyHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
-    if(parameterValueNode.IsNull())
-    {
-      parameterValueNode = resultNode;
-    }
-
     if(!parameterValueNode.IsNull())
     {
       m_parameterValue = StringUtils::Trim(parameterValueNode.GetText().c_str());
       m_parameterValueHasBeenSet = true;
     }
     XmlNode usePreviousValueNode = resultNode.FirstChild("UsePreviousValue");
-    if(usePreviousValueNode.IsNull())
-    {
-      usePreviousValueNode = resultNode;
-    }
-
     if(!usePreviousValueNode.IsNull())
     {
       m_usePreviousValue = StringUtils::ConvertToBool(StringUtils::Trim(usePreviousValueNode.GetText().c_str()).c_str());

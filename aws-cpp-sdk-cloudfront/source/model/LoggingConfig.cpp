@@ -51,44 +51,24 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(enabledNode.IsNull())
-    {
-      enabledNode = resultNode;
-    }
-
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode includeCookiesNode = resultNode.FirstChild("IncludeCookies");
-    if(includeCookiesNode.IsNull())
-    {
-      includeCookiesNode = resultNode;
-    }
-
     if(!includeCookiesNode.IsNull())
     {
       m_includeCookies = StringUtils::ConvertToBool(StringUtils::Trim(includeCookiesNode.GetText().c_str()).c_str());
       m_includeCookiesHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    if(bucketNode.IsNull())
-    {
-      bucketNode = resultNode;
-    }
-
     if(!bucketNode.IsNull())
     {
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
       m_bucketHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if(prefixNode.IsNull())
-    {
-      prefixNode = resultNode;
-    }
-
     if(!prefixNode.IsNull())
     {
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());

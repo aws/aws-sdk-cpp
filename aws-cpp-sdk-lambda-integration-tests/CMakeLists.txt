@@ -37,6 +37,12 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 enable_testing()
-add_executable(runLambdaIntegrationTests ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runLambdaIntegrationTests ${LIBTYPE} ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
+else()
+    add_executable(runLambdaIntegrationTests ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
+endif()
+
 target_link_libraries(runLambdaIntegrationTests aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
 copyDlls(runLambdaIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)

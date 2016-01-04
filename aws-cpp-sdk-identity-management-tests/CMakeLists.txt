@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(aws-cpp-sdk-core-tests)
+project(aws-cpp-sdk-identity-management-tests)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -31,12 +31,18 @@ if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
 endif()
 
-add_executable(runIdentityMangementUnitTests ${AWS_CPP_SDK_IDENTITY_MANAGEMENT_TESTS_SRC})
-target_link_libraries(runIdentityMangementUnitTests aws-cpp-sdk-identity-management testing-resources)
-copyDlls(runIdentityMangementUnitTests aws-cpp-sdk-identity-management aws-cpp-sdk-core aws-cpp-sdk-cognito-identity testing-resources)
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runIdentityManagementTests ${LIBTYPE} ${AWS_CPP_SDK_IDENTITY_MANAGEMENT_TESTS_SRC})
+else()
+    add_executable(runIdentityManagementTests ${AWS_CPP_SDK_IDENTITY_MANAGEMENT_TESTS_SRC})
+endif()
 
-ADD_CUSTOM_COMMAND( TARGET runIdentityMangementUnitTests POST_BUILD COMMAND $<TARGET_FILE:runIdentityMangementUnitTests>)
-SET_TARGET_PROPERTIES(runIdentityMangementUnitTests PROPERTIES OUTPUT_NAME runIdentityMangementUnitTests)
+target_link_libraries(runIdentityManagementTests aws-cpp-sdk-identity-management testing-resources)
+copyDlls(runIdentityManagementTests aws-cpp-sdk-identity-management aws-cpp-sdk-core aws-cpp-sdk-cognito-identity testing-resources)
 
+if(NOT PLATFORM_ANDROID)
+    ADD_CUSTOM_COMMAND( TARGET runIdentityManagementTests POST_BUILD COMMAND $<TARGET_FILE:runIdentityManagementTests>)
+    SET_TARGET_PROPERTIES(runIdentityManagementTests PROPERTIES OUTPUT_NAME runIdentityManagementTests)
+endif()
 
 

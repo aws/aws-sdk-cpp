@@ -59,99 +59,54 @@ StackResource& StackResource::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
-    if(stackNameNode.IsNull())
-    {
-      stackNameNode = resultNode;
-    }
-
     if(!stackNameNode.IsNull())
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
       m_stackNameHasBeenSet = true;
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
-    if(stackIdNode.IsNull())
-    {
-      stackIdNode = resultNode;
-    }
-
     if(!stackIdNode.IsNull())
     {
       m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
       m_stackIdHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
-    if(logicalResourceIdNode.IsNull())
-    {
-      logicalResourceIdNode = resultNode;
-    }
-
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = StringUtils::Trim(logicalResourceIdNode.GetText().c_str());
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
-    if(physicalResourceIdNode.IsNull())
-    {
-      physicalResourceIdNode = resultNode;
-    }
-
     if(!physicalResourceIdNode.IsNull())
     {
       m_physicalResourceId = StringUtils::Trim(physicalResourceIdNode.GetText().c_str());
       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
-    if(resourceTypeNode.IsNull())
-    {
-      resourceTypeNode = resultNode;
-    }
-
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(timestampNode.IsNull())
-    {
-      timestampNode = resultNode;
-    }
-
     if(!timestampNode.IsNull())
     {
       m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
-    if(resourceStatusNode.IsNull())
-    {
-      resourceStatusNode = resultNode;
-    }
-
     if(!resourceStatusNode.IsNull())
     {
       m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(StringUtils::Trim(resourceStatusNode.GetText().c_str()).c_str());
       m_resourceStatusHasBeenSet = true;
     }
     XmlNode resourceStatusReasonNode = resultNode.FirstChild("ResourceStatusReason");
-    if(resourceStatusReasonNode.IsNull())
-    {
-      resourceStatusReasonNode = resultNode;
-    }
-
     if(!resourceStatusReasonNode.IsNull())
     {
       m_resourceStatusReason = StringUtils::Trim(resourceStatusReasonNode.GetText().c_str());
       m_resourceStatusReasonHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

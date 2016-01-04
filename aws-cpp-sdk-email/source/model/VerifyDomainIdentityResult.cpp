@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("VerifyDomainIdentityResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "VerifyDomainIdentityResult")
+  {
+    resultNode = rootNode.FirstChild("VerifyDomainIdentityResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
-    if(verificationTokenNode.IsNull())
-    {
-      verificationTokenNode = resultNode;
-    }
-
     if(!verificationTokenNode.IsNull())
     {
       m_verificationToken = StringUtils::Trim(verificationTokenNode.GetText().c_str());
@@ -55,6 +56,7 @@ VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const AmazonW
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::SES::Model::VerifyDomainIdentityResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

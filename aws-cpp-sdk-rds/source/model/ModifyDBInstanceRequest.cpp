@@ -24,7 +24,6 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
     m_dBSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_applyImmediately(false),
@@ -45,16 +44,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
-    m_newDBInstanceIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_tdeCredentialPasswordHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false)
+    m_newDBInstanceIdentifierHasBeenSet(false)
 {
 }
 
@@ -73,10 +63,6 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
-  }
-  if(m_dBSubnetGroupNameHasBeenSet)
-  {
-    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
   if(m_dBSecurityGroupsHasBeenSet)
   {
@@ -150,35 +136,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   {
     ss << "NewDBInstanceIdentifier=" << StringUtils::URLEncode(m_newDBInstanceIdentifier.c_str()) << "&";
   }
-  if(m_storageTypeHasBeenSet)
-  {
-    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-    ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_tdeCredentialPasswordHasBeenSet)
-  {
-    ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
-  }
-  if(m_cACertificateIdentifierHasBeenSet)
-  {
-    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
-  }
-  if(m_domainHasBeenSet)
-  {
-    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
-  }
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
-  }
-  if(m_monitoringIntervalHasBeenSet)
-  {
-    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

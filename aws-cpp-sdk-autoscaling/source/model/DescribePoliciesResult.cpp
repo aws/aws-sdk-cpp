@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ DescribePoliciesResult& DescribePoliciesResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribePoliciesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribePoliciesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribePoliciesResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ DescribePoliciesResult& DescribePoliciesResult::operator =(const AmazonWebServic
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
@@ -66,6 +67,7 @@ DescribePoliciesResult& DescribePoliciesResult::operator =(const AmazonWebServic
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribePoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

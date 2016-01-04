@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResu
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeOrderableDBInstanceOptionsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeOrderableDBInstanceOptionsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeOrderableDBInstanceOptionsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResu
 
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());
@@ -66,6 +67,7 @@ DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResu
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeOrderableDBInstanceOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

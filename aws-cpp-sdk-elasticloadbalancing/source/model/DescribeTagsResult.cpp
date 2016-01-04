@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeTagsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeTagsResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeTagsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -56,6 +62,7 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeTagsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

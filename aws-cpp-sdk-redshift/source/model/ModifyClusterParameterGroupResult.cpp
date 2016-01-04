@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,26 +39,20 @@ ModifyClusterParameterGroupResult& ModifyClusterParameterGroupResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ModifyClusterParameterGroupResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ModifyClusterParameterGroupResult")
+  {
+    resultNode = rootNode.FirstChild("ModifyClusterParameterGroupResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
-    if(parameterGroupNameNode.IsNull())
-    {
-      parameterGroupNameNode = resultNode;
-    }
-
     if(!parameterGroupNameNode.IsNull())
     {
       m_parameterGroupName = StringUtils::Trim(parameterGroupNameNode.GetText().c_str());
     }
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
-    if(parameterGroupStatusNode.IsNull())
-    {
-      parameterGroupStatusNode = resultNode;
-    }
-
     if(!parameterGroupStatusNode.IsNull())
     {
       m_parameterGroupStatus = StringUtils::Trim(parameterGroupStatusNode.GetText().c_str());
@@ -65,6 +61,7 @@ ModifyClusterParameterGroupResult& ModifyClusterParameterGroupResult::operator =
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifyClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

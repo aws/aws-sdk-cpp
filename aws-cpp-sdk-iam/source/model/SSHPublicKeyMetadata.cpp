@@ -49,44 +49,24 @@ SSHPublicKeyMetadata& SSHPublicKeyMetadata::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    if(userNameNode.IsNull())
-    {
-      userNameNode = resultNode;
-    }
-
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode sSHPublicKeyIdNode = resultNode.FirstChild("SSHPublicKeyId");
-    if(sSHPublicKeyIdNode.IsNull())
-    {
-      sSHPublicKeyIdNode = resultNode;
-    }
-
     if(!sSHPublicKeyIdNode.IsNull())
     {
       m_sSHPublicKeyId = StringUtils::Trim(sSHPublicKeyIdNode.GetText().c_str());
       m_sSHPublicKeyIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
-    if(uploadDateNode.IsNull())
-    {
-      uploadDateNode = resultNode;
-    }
-
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());

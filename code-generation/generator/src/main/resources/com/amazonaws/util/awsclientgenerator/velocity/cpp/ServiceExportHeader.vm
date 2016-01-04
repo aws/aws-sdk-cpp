@@ -1,0 +1,26 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#pragma once
+
+#ifdef _WIN32
+//disable windows complaining about max template size.
+#pragma warning (disable : 4503)
+#endif
+
+#set($api = $CppViewHelper.computeExportValue($metadata.classNamePrefix))
+#set( $define = '#define' )
+\#if defined (_MSC_VER)
+#pragma warning(disable : 4251)
+  #ifdef USE_IMPORT_EXPORT
+    #ifdef AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS
+       $define ${api} __declspec(dllexport)
+    \#else
+       $define ${api} __declspec(dllimport)
+    #endif /* AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS */
+  \#else
+       $define ${api}
+   #endif //
+\#else /* defined (_MSC_VER) */
+$define ${api}
+#endif

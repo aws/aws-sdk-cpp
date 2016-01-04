@@ -67,143 +67,78 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    if(callerReferenceNode.IsNull())
-    {
-      callerReferenceNode = resultNode;
-    }
-
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
-    if(aliasesNode.IsNull())
-    {
-      aliasesNode = resultNode;
-    }
-
     if(!aliasesNode.IsNull())
     {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
     }
     XmlNode defaultRootObjectNode = resultNode.FirstChild("DefaultRootObject");
-    if(defaultRootObjectNode.IsNull())
-    {
-      defaultRootObjectNode = resultNode;
-    }
-
     if(!defaultRootObjectNode.IsNull())
     {
       m_defaultRootObject = StringUtils::Trim(defaultRootObjectNode.GetText().c_str());
       m_defaultRootObjectHasBeenSet = true;
     }
     XmlNode originsNode = resultNode.FirstChild("Origins");
-    if(originsNode.IsNull())
-    {
-      originsNode = resultNode;
-    }
-
     if(!originsNode.IsNull())
     {
       m_origins = originsNode;
       m_originsHasBeenSet = true;
     }
     XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
-    if(defaultCacheBehaviorNode.IsNull())
-    {
-      defaultCacheBehaviorNode = resultNode;
-    }
-
     if(!defaultCacheBehaviorNode.IsNull())
     {
       m_defaultCacheBehavior = defaultCacheBehaviorNode;
       m_defaultCacheBehaviorHasBeenSet = true;
     }
     XmlNode cacheBehaviorsNode = resultNode.FirstChild("CacheBehaviors");
-    if(cacheBehaviorsNode.IsNull())
-    {
-      cacheBehaviorsNode = resultNode;
-    }
-
     if(!cacheBehaviorsNode.IsNull())
     {
       m_cacheBehaviors = cacheBehaviorsNode;
       m_cacheBehaviorsHasBeenSet = true;
     }
     XmlNode customErrorResponsesNode = resultNode.FirstChild("CustomErrorResponses");
-    if(customErrorResponsesNode.IsNull())
-    {
-      customErrorResponsesNode = resultNode;
-    }
-
     if(!customErrorResponsesNode.IsNull())
     {
       m_customErrorResponses = customErrorResponsesNode;
       m_customErrorResponsesHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    if(commentNode.IsNull())
-    {
-      commentNode = resultNode;
-    }
-
     if(!commentNode.IsNull())
     {
       m_comment = StringUtils::Trim(commentNode.GetText().c_str());
       m_commentHasBeenSet = true;
     }
     XmlNode loggingNode = resultNode.FirstChild("Logging");
-    if(loggingNode.IsNull())
-    {
-      loggingNode = resultNode;
-    }
-
     if(!loggingNode.IsNull())
     {
       m_logging = loggingNode;
       m_loggingHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
-    if(priceClassNode.IsNull())
-    {
-      priceClassNode = resultNode;
-    }
-
     if(!priceClassNode.IsNull())
     {
       m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(enabledNode.IsNull())
-    {
-      enabledNode = resultNode;
-    }
-
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode viewerCertificateNode = resultNode.FirstChild("ViewerCertificate");
-    if(viewerCertificateNode.IsNull())
-    {
-      viewerCertificateNode = resultNode;
-    }
-
     if(!viewerCertificateNode.IsNull())
     {
       m_viewerCertificate = viewerCertificateNode;
       m_viewerCertificateHasBeenSet = true;
     }
     XmlNode restrictionsNode = resultNode.FirstChild("Restrictions");
-    if(restrictionsNode.IsNull())
-    {
-      restrictionsNode = resultNode;
-    }
-
     if(!restrictionsNode.IsNull())
     {
       m_restrictions = restrictionsNode;

@@ -43,22 +43,12 @@ DBSecurityGroupMembership& DBSecurityGroupMembership::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode dBSecurityGroupNameNode = resultNode.FirstChild("DBSecurityGroupName");
-    if(dBSecurityGroupNameNode.IsNull())
-    {
-      dBSecurityGroupNameNode = resultNode;
-    }
-
     if(!dBSecurityGroupNameNode.IsNull())
     {
       m_dBSecurityGroupName = StringUtils::Trim(dBSecurityGroupNameNode.GetText().c_str());
       m_dBSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -39,86 +41,50 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AssumeRoleWithSAMLResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AssumeRoleWithSAMLResult")
+  {
+    resultNode = rootNode.FirstChild("AssumeRoleWithSAMLResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
-    if(credentialsNode.IsNull())
-    {
-      credentialsNode = resultNode;
-    }
-
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
     }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
-    if(assumedRoleUserNode.IsNull())
-    {
-      assumedRoleUserNode = resultNode;
-    }
-
     if(!assumedRoleUserNode.IsNull())
     {
       m_assumedRoleUser = assumedRoleUserNode;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
-    if(packedPolicySizeNode.IsNull())
-    {
-      packedPolicySizeNode = resultNode;
-    }
-
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
     }
     XmlNode subjectNode = resultNode.FirstChild("Subject");
-    if(subjectNode.IsNull())
-    {
-      subjectNode = resultNode;
-    }
-
     if(!subjectNode.IsNull())
     {
       m_subject = StringUtils::Trim(subjectNode.GetText().c_str());
     }
     XmlNode subjectTypeNode = resultNode.FirstChild("SubjectType");
-    if(subjectTypeNode.IsNull())
-    {
-      subjectTypeNode = resultNode;
-    }
-
     if(!subjectTypeNode.IsNull())
     {
       m_subjectType = StringUtils::Trim(subjectTypeNode.GetText().c_str());
     }
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
-    if(issuerNode.IsNull())
-    {
-      issuerNode = resultNode;
-    }
-
     if(!issuerNode.IsNull())
     {
       m_issuer = StringUtils::Trim(issuerNode.GetText().c_str());
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
-    if(audienceNode.IsNull())
-    {
-      audienceNode = resultNode;
-    }
-
     if(!audienceNode.IsNull())
     {
       m_audience = StringUtils::Trim(audienceNode.GetText().c_str());
     }
     XmlNode nameQualifierNode = resultNode.FirstChild("NameQualifier");
-    if(nameQualifierNode.IsNull())
-    {
-      nameQualifierNode = resultNode;
-    }
-
     if(!nameQualifierNode.IsNull())
     {
       m_nameQualifier = StringUtils::Trim(nameQualifierNode.GetText().c_str());
@@ -127,6 +93,7 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const AmazonWebSe
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::STS::Model::AssumeRoleWithSAMLResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

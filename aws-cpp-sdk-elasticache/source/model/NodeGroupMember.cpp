@@ -49,55 +49,30 @@ NodeGroupMember& NodeGroupMember::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
-    if(cacheClusterIdNode.IsNull())
-    {
-      cacheClusterIdNode = resultNode;
-    }
-
     if(!cacheClusterIdNode.IsNull())
     {
       m_cacheClusterId = StringUtils::Trim(cacheClusterIdNode.GetText().c_str());
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
-    if(cacheNodeIdNode.IsNull())
-    {
-      cacheNodeIdNode = resultNode;
-    }
-
     if(!cacheNodeIdNode.IsNull())
     {
       m_cacheNodeId = StringUtils::Trim(cacheNodeIdNode.GetText().c_str());
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode readEndpointNode = resultNode.FirstChild("ReadEndpoint");
-    if(readEndpointNode.IsNull())
-    {
-      readEndpointNode = resultNode;
-    }
-
     if(!readEndpointNode.IsNull())
     {
       m_readEndpoint = readEndpointNode;
       m_readEndpointHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZoneNode = resultNode.FirstChild("PreferredAvailabilityZone");
-    if(preferredAvailabilityZoneNode.IsNull())
-    {
-      preferredAvailabilityZoneNode = resultNode;
-    }
-
     if(!preferredAvailabilityZoneNode.IsNull())
     {
       m_preferredAvailabilityZone = StringUtils::Trim(preferredAvailabilityZoneNode.GetText().c_str());
       m_preferredAvailabilityZoneHasBeenSet = true;
     }
     XmlNode currentRoleNode = resultNode.FirstChild("CurrentRole");
-    if(currentRoleNode.IsNull())
-    {
-      currentRoleNode = resultNode;
-    }
-
     if(!currentRoleNode.IsNull())
     {
       m_currentRole = StringUtils::Trim(currentRoleNode.GetText().c_str());

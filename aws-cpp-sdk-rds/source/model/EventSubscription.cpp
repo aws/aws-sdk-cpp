@@ -24,6 +24,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 EventSubscription::EventSubscription() : 
+    m_idHasBeenSet(false),
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -38,6 +39,7 @@ EventSubscription::EventSubscription() :
 }
 
 EventSubscription::EventSubscription(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -58,67 +60,43 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode customerAwsIdNode = resultNode.FirstChild("CustomerAwsId");
-    if(customerAwsIdNode.IsNull())
+    XmlNode idNode = resultNode.FirstChild("Id");
+    if(!idNode.IsNull())
     {
-      customerAwsIdNode = resultNode;
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
     }
-
+    XmlNode customerAwsIdNode = resultNode.FirstChild("CustomerAwsId");
     if(!customerAwsIdNode.IsNull())
     {
       m_customerAwsId = StringUtils::Trim(customerAwsIdNode.GetText().c_str());
       m_customerAwsIdHasBeenSet = true;
     }
     XmlNode custSubscriptionIdNode = resultNode.FirstChild("CustSubscriptionId");
-    if(custSubscriptionIdNode.IsNull())
-    {
-      custSubscriptionIdNode = resultNode;
-    }
-
     if(!custSubscriptionIdNode.IsNull())
     {
       m_custSubscriptionId = StringUtils::Trim(custSubscriptionIdNode.GetText().c_str());
       m_custSubscriptionIdHasBeenSet = true;
     }
     XmlNode snsTopicArnNode = resultNode.FirstChild("SnsTopicArn");
-    if(snsTopicArnNode.IsNull())
-    {
-      snsTopicArnNode = resultNode;
-    }
-
     if(!snsTopicArnNode.IsNull())
     {
       m_snsTopicArn = StringUtils::Trim(snsTopicArnNode.GetText().c_str());
       m_snsTopicArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode subscriptionCreationTimeNode = resultNode.FirstChild("SubscriptionCreationTime");
-    if(subscriptionCreationTimeNode.IsNull())
-    {
-      subscriptionCreationTimeNode = resultNode;
-    }
-
     if(!subscriptionCreationTimeNode.IsNull())
     {
       m_subscriptionCreationTime = StringUtils::Trim(subscriptionCreationTimeNode.GetText().c_str());
       m_subscriptionCreationTimeHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
-    if(sourceTypeNode.IsNull())
-    {
-      sourceTypeNode = resultNode;
-    }
-
     if(!sourceTypeNode.IsNull())
     {
       m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
@@ -149,11 +127,6 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
       m_eventCategoriesListHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(enabledNode.IsNull())
-    {
-      enabledNode = resultNode;
-    }
-
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
@@ -166,6 +139,10 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
   if(m_customerAwsIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";
@@ -212,6 +189,10 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
   if(m_customerAwsIdHasBeenSet)
   {
       oStream << location << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";

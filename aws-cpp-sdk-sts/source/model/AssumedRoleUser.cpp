@@ -43,22 +43,12 @@ AssumedRoleUser& AssumedRoleUser::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode assumedRoleIdNode = resultNode.FirstChild("AssumedRoleId");
-    if(assumedRoleIdNode.IsNull())
-    {
-      assumedRoleIdNode = resultNode;
-    }
-
     if(!assumedRoleIdNode.IsNull())
     {
       m_assumedRoleId = StringUtils::Trim(assumedRoleIdNode.GetText().c_str());
       m_assumedRoleIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    if(arnNode.IsNull())
-    {
-      arnNode = resultNode;
-    }
-
     if(!arnNode.IsNull())
     {
       m_arn = StringUtils::Trim(arnNode.GetText().c_str());

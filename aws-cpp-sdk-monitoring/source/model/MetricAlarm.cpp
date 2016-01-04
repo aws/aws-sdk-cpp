@@ -27,7 +27,6 @@ MetricAlarm::MetricAlarm() :
     m_alarmNameHasBeenSet(false),
     m_alarmArnHasBeenSet(false),
     m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestamp(0.0),
     m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
     m_actionsEnabled(false),
     m_actionsEnabledHasBeenSet(false),
@@ -37,7 +36,6 @@ MetricAlarm::MetricAlarm() :
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestamp(0.0),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
@@ -58,7 +56,6 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_alarmNameHasBeenSet(false),
     m_alarmArnHasBeenSet(false),
     m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestamp(0.0),
     m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
     m_actionsEnabled(false),
     m_actionsEnabledHasBeenSet(false),
@@ -68,7 +65,6 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestamp(0.0),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
@@ -93,55 +89,30 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
-    if(alarmNameNode.IsNull())
-    {
-      alarmNameNode = resultNode;
-    }
-
     if(!alarmNameNode.IsNull())
     {
       m_alarmName = StringUtils::Trim(alarmNameNode.GetText().c_str());
       m_alarmNameHasBeenSet = true;
     }
     XmlNode alarmArnNode = resultNode.FirstChild("AlarmArn");
-    if(alarmArnNode.IsNull())
-    {
-      alarmArnNode = resultNode;
-    }
-
     if(!alarmArnNode.IsNull())
     {
       m_alarmArn = StringUtils::Trim(alarmArnNode.GetText().c_str());
       m_alarmArnHasBeenSet = true;
     }
     XmlNode alarmDescriptionNode = resultNode.FirstChild("AlarmDescription");
-    if(alarmDescriptionNode.IsNull())
-    {
-      alarmDescriptionNode = resultNode;
-    }
-
     if(!alarmDescriptionNode.IsNull())
     {
       m_alarmDescription = StringUtils::Trim(alarmDescriptionNode.GetText().c_str());
       m_alarmDescriptionHasBeenSet = true;
     }
     XmlNode alarmConfigurationUpdatedTimestampNode = resultNode.FirstChild("AlarmConfigurationUpdatedTimestamp");
-    if(alarmConfigurationUpdatedTimestampNode.IsNull())
-    {
-      alarmConfigurationUpdatedTimestampNode = resultNode;
-    }
-
     if(!alarmConfigurationUpdatedTimestampNode.IsNull())
     {
-      m_alarmConfigurationUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(alarmConfigurationUpdatedTimestampNode.GetText().c_str()).c_str());
+      m_alarmConfigurationUpdatedTimestamp = StringUtils::Trim(alarmConfigurationUpdatedTimestampNode.GetText().c_str());
       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
     }
     XmlNode actionsEnabledNode = resultNode.FirstChild("ActionsEnabled");
-    if(actionsEnabledNode.IsNull())
-    {
-      actionsEnabledNode = resultNode;
-    }
-
     if(!actionsEnabledNode.IsNull())
     {
       m_actionsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(actionsEnabledNode.GetText().c_str()).c_str());
@@ -184,77 +155,42 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_insufficientDataActionsHasBeenSet = true;
     }
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
-    if(stateValueNode.IsNull())
-    {
-      stateValueNode = resultNode;
-    }
-
     if(!stateValueNode.IsNull())
     {
       m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(stateValueNode.GetText().c_str()).c_str());
       m_stateValueHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("StateReason");
-    if(stateReasonNode.IsNull())
-    {
-      stateReasonNode = resultNode;
-    }
-
     if(!stateReasonNode.IsNull())
     {
       m_stateReason = StringUtils::Trim(stateReasonNode.GetText().c_str());
       m_stateReasonHasBeenSet = true;
     }
     XmlNode stateReasonDataNode = resultNode.FirstChild("StateReasonData");
-    if(stateReasonDataNode.IsNull())
-    {
-      stateReasonDataNode = resultNode;
-    }
-
     if(!stateReasonDataNode.IsNull())
     {
       m_stateReasonData = StringUtils::Trim(stateReasonDataNode.GetText().c_str());
       m_stateReasonDataHasBeenSet = true;
     }
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
-    if(stateUpdatedTimestampNode.IsNull())
-    {
-      stateUpdatedTimestampNode = resultNode;
-    }
-
     if(!stateUpdatedTimestampNode.IsNull())
     {
-      m_stateUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str()).c_str());
+      m_stateUpdatedTimestamp = StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str());
       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if(metricNameNode.IsNull())
-    {
-      metricNameNode = resultNode;
-    }
-
     if(!metricNameNode.IsNull())
     {
       m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
-    if(namespaceNode.IsNull())
-    {
-      namespaceNode = resultNode;
-    }
-
     if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
-    if(statisticNode.IsNull())
-    {
-      statisticNode = resultNode;
-    }
-
     if(!statisticNode.IsNull())
     {
       m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(statisticNode.GetText().c_str()).c_str());
@@ -273,55 +209,30 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_dimensionsHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
-    if(periodNode.IsNull())
-    {
-      periodNode = resultNode;
-    }
-
     if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(periodNode.GetText().c_str()).c_str());
       m_periodHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
-    if(unitNode.IsNull())
-    {
-      unitNode = resultNode;
-    }
-
     if(!unitNode.IsNull())
     {
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());
       m_unitHasBeenSet = true;
     }
     XmlNode evaluationPeriodsNode = resultNode.FirstChild("EvaluationPeriods");
-    if(evaluationPeriodsNode.IsNull())
-    {
-      evaluationPeriodsNode = resultNode;
-    }
-
     if(!evaluationPeriodsNode.IsNull())
     {
       m_evaluationPeriods = StringUtils::ConvertToInt32(StringUtils::Trim(evaluationPeriodsNode.GetText().c_str()).c_str());
       m_evaluationPeriodsHasBeenSet = true;
     }
     XmlNode thresholdNode = resultNode.FirstChild("Threshold");
-    if(thresholdNode.IsNull())
-    {
-      thresholdNode = resultNode;
-    }
-
     if(!thresholdNode.IsNull())
     {
       m_threshold = StringUtils::ConvertToDouble(StringUtils::Trim(thresholdNode.GetText().c_str()).c_str());
       m_thresholdHasBeenSet = true;
     }
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
-    if(comparisonOperatorNode.IsNull())
-    {
-      comparisonOperatorNode = resultNode;
-    }
-
     if(!comparisonOperatorNode.IsNull())
     {
       m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(comparisonOperatorNode.GetText().c_str()).c_str());
@@ -348,7 +259,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << m_alarmConfigurationUpdatedTimestamp << "&";
+      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.c_str()) << "&";
   }
   if(m_actionsEnabledHasBeenSet)
   {
@@ -389,7 +300,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << m_stateUpdatedTimestamp << "&";
+      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.c_str()) << "&";
   }
   if(m_metricNameHasBeenSet)
   {
@@ -450,7 +361,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << m_alarmConfigurationUpdatedTimestamp << "&";
+      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.c_str()) << "&";
   }
   if(m_actionsEnabledHasBeenSet)
   {
@@ -491,7 +402,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".StateUpdatedTimestamp=" << m_stateUpdatedTimestamp << "&";
+      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.c_str()) << "&";
   }
   if(m_metricNameHasBeenSet)
   {

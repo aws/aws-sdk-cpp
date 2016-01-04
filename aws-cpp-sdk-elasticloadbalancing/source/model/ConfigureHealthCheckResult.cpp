@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ ConfigureHealthCheckResult& ConfigureHealthCheckResult::operator =(const AmazonW
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ConfigureHealthCheckResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ConfigureHealthCheckResult")
+  {
+    resultNode = rootNode.FirstChild("ConfigureHealthCheckResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
-    if(healthCheckNode.IsNull())
-    {
-      healthCheckNode = resultNode;
-    }
-
     if(!healthCheckNode.IsNull())
     {
       m_healthCheck = healthCheckNode;
@@ -55,6 +56,7 @@ ConfigureHealthCheckResult& ConfigureHealthCheckResult::operator =(const AmazonW
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::ConfigureHealthCheckResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

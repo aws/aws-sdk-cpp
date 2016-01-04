@@ -23,12 +23,12 @@
 #pragma warning(disable : 4251)
   #ifdef USE_IMPORT_EXPORT
     #ifdef AWS_COGNITOIDENTITY_EXPORTS
-      #define AWS_COGNITOIDENTITY_API __declspec(dllexport)
+       #define AWS_COGNITOIDENTITY_API __declspec(dllexport)
     #else
-      #define AWS_COGNITOIDENTITY_API __declspec(dllimport)
+       #define AWS_COGNITOIDENTITY_API __declspec(dllimport)
     #endif /* AWS_COGNITOIDENTITY_EXPORTS */
   #else
-     #define AWS_COGNITOIDENTITY_API
+       #define AWS_COGNITOIDENTITY_API
    #endif //
 #else /* defined (_MSC_VER) */
 #define AWS_COGNITOIDENTITY_API

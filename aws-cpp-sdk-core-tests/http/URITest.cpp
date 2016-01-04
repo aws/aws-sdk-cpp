@@ -69,9 +69,9 @@ TEST(URITest, TestSetPath)
     //make sure url encoding works here
     path = "/path/with space/to/resource";
     uri.SetPath(path);
-    EXPECT_EQ("/path/with%20space/to/resource", uri.GetPath());
+    EXPECT_EQ("/path/with%20space/to/resource", uri.GetURLEncodedPath());
     //make sure we return an UnEncoded path properly
-    EXPECT_EQ(path, uri.GetUnEncodedPath());
+    EXPECT_EQ(path, uri.GetPath());
 
     AWS_END_MEMORY_TEST
 }

@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ DetachInstancesResult& DetachInstancesResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DetachInstancesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DetachInstancesResult")
+  {
+    resultNode = rootNode.FirstChild("DetachInstancesResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -56,6 +62,7 @@ DetachInstancesResult& DetachInstancesResult::operator =(const AmazonWebServiceR
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DetachInstancesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

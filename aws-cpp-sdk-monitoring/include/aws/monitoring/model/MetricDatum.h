@@ -120,17 +120,37 @@ namespace Model
     /*
      <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
 
     /*
      <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /*
      <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline MetricDatum& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /*
+     <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
+
+    /*
+     <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricDatum& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricDatum& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline MetricDatum& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
 
     /*
      <p> The value for the metric. </p> <important>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>
@@ -202,7 +222,7 @@ namespace Model
     bool m_metricNameHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
-    double m_timestamp;
+    Aws::String m_timestamp;
     bool m_timestampHasBeenSet;
     double m_value;
     bool m_valueHasBeenSet;

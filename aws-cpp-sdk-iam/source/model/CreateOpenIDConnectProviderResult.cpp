@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ CreateOpenIDConnectProviderResult& CreateOpenIDConnectProviderResult::operator =
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateOpenIDConnectProviderResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateOpenIDConnectProviderResult")
+  {
+    resultNode = rootNode.FirstChild("CreateOpenIDConnectProviderResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode openIDConnectProviderArnNode = resultNode.FirstChild("OpenIDConnectProviderArn");
-    if(openIDConnectProviderArnNode.IsNull())
-    {
-      openIDConnectProviderArnNode = resultNode;
-    }
-
     if(!openIDConnectProviderArnNode.IsNull())
     {
       m_openIDConnectProviderArn = StringUtils::Trim(openIDConnectProviderArnNode.GetText().c_str());
@@ -55,6 +56,7 @@ CreateOpenIDConnectProviderResult& CreateOpenIDConnectProviderResult::operator =
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::CreateOpenIDConnectProviderResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

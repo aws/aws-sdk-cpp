@@ -145,32 +145,72 @@ namespace Model
     /*
      <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
     */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     /*
      <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
     */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
      <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
     */
-    inline GetMetricStatisticsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /*
+     <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
+    */
+    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
+
+    /*
+     <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
+    */
+    inline GetMetricStatisticsRequest& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
+
+    /*
+     <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
+    */
+    inline GetMetricStatisticsRequest& WithStartTime(Aws::String&& value) { SetStartTime(value); return *this;}
+
+    /*
+     <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
+    */
+    inline GetMetricStatisticsRequest& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 
     /*
      <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
     */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::String& GetEndTime() const{ return m_endTime; }
 
     /*
      <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
     */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /*
      <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
     */
-    inline GetMetricStatisticsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /*
+     <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
+    */
+    inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
+
+    /*
+     <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
+    */
+    inline GetMetricStatisticsRequest& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
+
+    /*
+     <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
+    */
+    inline GetMetricStatisticsRequest& WithEndTime(Aws::String&& value) { SetEndTime(value); return *this;}
+
+    /*
+     <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
+    */
+    inline GetMetricStatisticsRequest& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
     /*
      <p> The granularity, in seconds, of the returned datapoints. <code>Period</code> must be at least 60 seconds and must be a multiple of 60. The default value is 60. </p>
@@ -254,9 +294,9 @@ namespace Model
     bool m_metricNameHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
-    double m_startTime;
+    Aws::String m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::String m_endTime;
     bool m_endTimeHasBeenSet;
     long m_period;
     bool m_periodHasBeenSet;

@@ -75,33 +75,18 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
-    if(stackIdNode.IsNull())
-    {
-      stackIdNode = resultNode;
-    }
-
     if(!stackIdNode.IsNull())
     {
       m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
-    if(stackNameNode.IsNull())
-    {
-      stackNameNode = resultNode;
-    }
-
     if(!stackNameNode.IsNull())
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
       m_stackNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
@@ -120,55 +105,30 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       m_parametersHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
-    if(creationTimeNode.IsNull())
-    {
-      creationTimeNode = resultNode;
-    }
-
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
-    if(lastUpdatedTimeNode.IsNull())
-    {
-      lastUpdatedTimeNode = resultNode;
-    }
-
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str());
       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
-    if(stackStatusNode.IsNull())
-    {
-      stackStatusNode = resultNode;
-    }
-
     if(!stackStatusNode.IsNull())
     {
       m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(stackStatusNode.GetText().c_str()).c_str());
       m_stackStatusHasBeenSet = true;
     }
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
-    if(stackStatusReasonNode.IsNull())
-    {
-      stackStatusReasonNode = resultNode;
-    }
-
     if(!stackStatusReasonNode.IsNull())
     {
       m_stackStatusReason = StringUtils::Trim(stackStatusReasonNode.GetText().c_str());
       m_stackStatusReasonHasBeenSet = true;
     }
     XmlNode disableRollbackNode = resultNode.FirstChild("DisableRollback");
-    if(disableRollbackNode.IsNull())
-    {
-      disableRollbackNode = resultNode;
-    }
-
     if(!disableRollbackNode.IsNull())
     {
       m_disableRollback = StringUtils::ConvertToBool(StringUtils::Trim(disableRollbackNode.GetText().c_str()).c_str());
@@ -187,11 +147,6 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       m_notificationARNsHasBeenSet = true;
     }
     XmlNode timeoutInMinutesNode = resultNode.FirstChild("TimeoutInMinutes");
-    if(timeoutInMinutesNode.IsNull())
-    {
-      timeoutInMinutesNode = resultNode;
-    }
-
     if(!timeoutInMinutesNode.IsNull())
     {
       m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(timeoutInMinutesNode.GetText().c_str()).c_str());

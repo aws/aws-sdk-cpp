@@ -140,7 +140,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
    {
      ss << "x-amz-meta-" << item.first;
      headers.insert(Aws::Http::HeaderValuePair(ss.str(), item.second));
-     ss.str();
+     ss.str("");
    }
   }
 

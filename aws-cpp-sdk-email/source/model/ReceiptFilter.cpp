@@ -43,22 +43,12 @@ ReceiptFilter& ReceiptFilter::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode ipFilterNode = resultNode.FirstChild("IpFilter");
-    if(ipFilterNode.IsNull())
-    {
-      ipFilterNode = resultNode;
-    }
-
     if(!ipFilterNode.IsNull())
     {
       m_ipFilter = ipFilterNode;

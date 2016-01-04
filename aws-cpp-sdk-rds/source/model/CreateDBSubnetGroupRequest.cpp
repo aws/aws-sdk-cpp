@@ -22,8 +22,7 @@ using namespace Aws::Utils;
 CreateDBSubnetGroupRequest::CreateDBSubnetGroupRequest() : 
     m_dBSubnetGroupNameHasBeenSet(false),
     m_dBSubnetGroupDescriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false)
 {
 }
 
@@ -49,16 +48,7 @@ Aws::String CreateDBSubnetGroupRequest::SerializePayload() const
       subnetIdsCount++;
     }
   }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ PromoteReadReplicaResult& PromoteReadReplicaResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PromoteReadReplicaResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PromoteReadReplicaResult")
+  {
+    resultNode = rootNode.FirstChild("PromoteReadReplicaResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    if(dBInstanceNode.IsNull())
-    {
-      dBInstanceNode = resultNode;
-    }
-
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;
@@ -55,6 +56,7 @@ PromoteReadReplicaResult& PromoteReadReplicaResult::operator =(const AmazonWebSe
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::PromoteReadReplicaResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

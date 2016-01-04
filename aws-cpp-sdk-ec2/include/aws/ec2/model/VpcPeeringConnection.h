@@ -1,0 +1,227 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/VpcPeeringConnectionVpcInfo.h>
+#include <aws/ec2/model/VpcPeeringConnectionStateReason.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Tag.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace EC2
+{
+namespace Model
+{
+  /*
+    <p>Describes a VPC peering connection.</p>
+  */
+  class AWS_EC2_API VpcPeeringConnection
+  {
+  public:
+    VpcPeeringConnection();
+    VpcPeeringConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
+    VpcPeeringConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p>The information of the peer VPC.</p>
+    */
+    inline const VpcPeeringConnectionVpcInfo& GetAccepterVpcInfo() const{ return m_accepterVpcInfo; }
+
+    /*
+     <p>The information of the peer VPC.</p>
+    */
+    inline void SetAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
+
+    /*
+     <p>The information of the peer VPC.</p>
+    */
+    inline void SetAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
+
+    /*
+     <p>The information of the peer VPC.</p>
+    */
+    inline VpcPeeringConnection& WithAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetAccepterVpcInfo(value); return *this;}
+
+    /*
+     <p>The information of the peer VPC.</p>
+    */
+    inline VpcPeeringConnection& WithAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetAccepterVpcInfo(value); return *this;}
+
+    /*
+     <p>The time that an unaccepted VPC peering connection will expire.</p>
+    */
+    inline double GetExpirationTime() const{ return m_expirationTime; }
+
+    /*
+     <p>The time that an unaccepted VPC peering connection will expire.</p>
+    */
+    inline void SetExpirationTime(double value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
+
+    /*
+     <p>The time that an unaccepted VPC peering connection will expire.</p>
+    */
+    inline VpcPeeringConnection& WithExpirationTime(double value) { SetExpirationTime(value); return *this;}
+
+    /*
+     <p>The information of the requester VPC.</p>
+    */
+    inline const VpcPeeringConnectionVpcInfo& GetRequesterVpcInfo() const{ return m_requesterVpcInfo; }
+
+    /*
+     <p>The information of the requester VPC.</p>
+    */
+    inline void SetRequesterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = value; }
+
+    /*
+     <p>The information of the requester VPC.</p>
+    */
+    inline void SetRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = value; }
+
+    /*
+     <p>The information of the requester VPC.</p>
+    */
+    inline VpcPeeringConnection& WithRequesterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetRequesterVpcInfo(value); return *this;}
+
+    /*
+     <p>The information of the requester VPC.</p>
+    */
+    inline VpcPeeringConnection& WithRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetRequesterVpcInfo(value); return *this;}
+
+    /*
+     <p>The status of the VPC peering connection.</p>
+    */
+    inline const VpcPeeringConnectionStateReason& GetStatus() const{ return m_status; }
+
+    /*
+     <p>The status of the VPC peering connection.</p>
+    */
+    inline void SetStatus(const VpcPeeringConnectionStateReason& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the VPC peering connection.</p>
+    */
+    inline void SetStatus(VpcPeeringConnectionStateReason&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the VPC peering connection.</p>
+    */
+    inline VpcPeeringConnection& WithStatus(const VpcPeeringConnectionStateReason& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status of the VPC peering connection.</p>
+    */
+    inline VpcPeeringConnection& WithStatus(VpcPeeringConnectionStateReason&& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline VpcPeeringConnection& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline VpcPeeringConnection& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline VpcPeeringConnection& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>Any tags assigned to the resource.</p>
+    */
+    inline VpcPeeringConnection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline VpcPeeringConnection& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline VpcPeeringConnection& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(value); return *this;}
+
+    /*
+     <p>The ID of the VPC peering connection.</p>
+    */
+    inline VpcPeeringConnection& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
+
+  private:
+    VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
+    bool m_accepterVpcInfoHasBeenSet;
+    double m_expirationTime;
+    bool m_expirationTimeHasBeenSet;
+    VpcPeeringConnectionVpcInfo m_requesterVpcInfo;
+    bool m_requesterVpcInfoHasBeenSet;
+    VpcPeeringConnectionStateReason m_status;
+    bool m_statusHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+    Aws::String m_vpcPeeringConnectionId;
+    bool m_vpcPeeringConnectionIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

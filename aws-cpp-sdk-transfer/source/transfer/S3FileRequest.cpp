@@ -122,6 +122,25 @@ void S3FileRequest::CompletionSuccess()
 {
     SetCompleted();
     SetDone();
+    FireCompletionCallbacks();
+}
+
+void S3FileRequest::AddCompletionCallback(S3FileCompletionCallback addCallback)
+{
+    std::lock_guard<std::mutex> completeLock(m_callbackMutex);
+
+    m_completionCallbacks.push_back(addCallback);
+}
+
+void S3FileRequest::FireCompletionCallbacks()
+{
+    std::lock_guard<std::mutex> completeLock(m_callbackMutex);
+
+    for (auto& thisCallback : m_completionCallbacks)
+    {
+        thisCallback();
+    }
+    m_completionCallbacks.clear();
 }
 
 float S3FileRequest::GetProgress() const

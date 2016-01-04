@@ -1,0 +1,84 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace EC2
+{
+namespace Model
+{
+  /*
+    <p>Describes a Reserved Instance offering.</p>
+  */
+  class AWS_EC2_API PricingDetail
+  {
+  public:
+    PricingDetail();
+    PricingDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    PricingDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p>The price per instance.</p>
+    */
+    inline double GetPrice() const{ return m_price; }
+
+    /*
+     <p>The price per instance.</p>
+    */
+    inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
+
+    /*
+     <p>The price per instance.</p>
+    */
+    inline PricingDetail& WithPrice(double value) { SetPrice(value); return *this;}
+
+    /*
+     <p>The number of instances available for the price.</p>
+    */
+    inline long GetCount() const{ return m_count; }
+
+    /*
+     <p>The number of instances available for the price.</p>
+    */
+    inline void SetCount(long value) { m_countHasBeenSet = true; m_count = value; }
+
+    /*
+     <p>The number of instances available for the price.</p>
+    */
+    inline PricingDetail& WithCount(long value) { SetCount(value); return *this;}
+
+  private:
+    double m_price;
+    bool m_priceHasBeenSet;
+    long m_count;
+    bool m_countHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

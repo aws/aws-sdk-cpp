@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ AuthorizeClusterSecurityGroupIngressResult& AuthorizeClusterSecurityGroupIngress
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AuthorizeClusterSecurityGroupIngressResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AuthorizeClusterSecurityGroupIngressResult")
+  {
+    resultNode = rootNode.FirstChild("AuthorizeClusterSecurityGroupIngressResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
-    if(clusterSecurityGroupNode.IsNull())
-    {
-      clusterSecurityGroupNode = resultNode;
-    }
-
     if(!clusterSecurityGroupNode.IsNull())
     {
       m_clusterSecurityGroup = clusterSecurityGroupNode;
@@ -55,6 +56,7 @@ AuthorizeClusterSecurityGroupIngressResult& AuthorizeClusterSecurityGroupIngress
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::AuthorizeClusterSecurityGroupIngressResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

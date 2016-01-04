@@ -61,88 +61,48 @@ StackSummary& StackSummary::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
-    if(stackIdNode.IsNull())
-    {
-      stackIdNode = resultNode;
-    }
-
     if(!stackIdNode.IsNull())
     {
       m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
-    if(stackNameNode.IsNull())
-    {
-      stackNameNode = resultNode;
-    }
-
     if(!stackNameNode.IsNull())
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
       m_stackNameHasBeenSet = true;
     }
     XmlNode templateDescriptionNode = resultNode.FirstChild("TemplateDescription");
-    if(templateDescriptionNode.IsNull())
-    {
-      templateDescriptionNode = resultNode;
-    }
-
     if(!templateDescriptionNode.IsNull())
     {
       m_templateDescription = StringUtils::Trim(templateDescriptionNode.GetText().c_str());
       m_templateDescriptionHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
-    if(creationTimeNode.IsNull())
-    {
-      creationTimeNode = resultNode;
-    }
-
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
-    if(lastUpdatedTimeNode.IsNull())
-    {
-      lastUpdatedTimeNode = resultNode;
-    }
-
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str());
       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
-    if(deletionTimeNode.IsNull())
-    {
-      deletionTimeNode = resultNode;
-    }
-
     if(!deletionTimeNode.IsNull())
     {
       m_deletionTime = StringUtils::ConvertToDouble(StringUtils::Trim(deletionTimeNode.GetText().c_str()).c_str());
       m_deletionTimeHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
-    if(stackStatusNode.IsNull())
-    {
-      stackStatusNode = resultNode;
-    }
-
     if(!stackStatusNode.IsNull())
     {
       m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(stackStatusNode.GetText().c_str()).c_str());
       m_stackStatusHasBeenSet = true;
     }
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
-    if(stackStatusReasonNode.IsNull())
-    {
-      stackStatusReasonNode = resultNode;
-    }
-
     if(!stackStatusReasonNode.IsNull())
     {
       m_stackStatusReason = StringUtils::Trim(stackStatusReasonNode.GetText().c_str());

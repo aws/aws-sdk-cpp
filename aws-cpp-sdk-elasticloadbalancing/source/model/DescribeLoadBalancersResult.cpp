@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeLoadBalancersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeLoadBalancersResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeLoadBalancersResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
-    if(nextMarkerNode.IsNull())
-    {
-      nextMarkerNode = resultNode;
-    }
-
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
@@ -66,6 +67,7 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeLoadBalancersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

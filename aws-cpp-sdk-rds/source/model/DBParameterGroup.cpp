@@ -45,33 +45,18 @@ DBParameterGroup& DBParameterGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
-    if(dBParameterGroupNameNode.IsNull())
-    {
-      dBParameterGroupNameNode = resultNode;
-    }
-
     if(!dBParameterGroupNameNode.IsNull())
     {
       m_dBParameterGroupName = StringUtils::Trim(dBParameterGroupNameNode.GetText().c_str());
       m_dBParameterGroupNameHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
-    if(dBParameterGroupFamilyNode.IsNull())
-    {
-      dBParameterGroupFamilyNode = resultNode;
-    }
-
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = StringUtils::Trim(dBParameterGroupFamilyNode.GetText().c_str());
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());

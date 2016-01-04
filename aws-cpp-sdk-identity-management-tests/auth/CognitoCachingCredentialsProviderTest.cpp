@@ -53,8 +53,28 @@ public:
     void SetAccountId(const Aws::String& accountId) { m_accountId = accountId; }
     Aws::String GetIdentityPoolId() const override { return m_identityPoolId; }
     void SetIdentityPoolId(const Aws::String& identityPoolId) { m_identityPoolId = identityPoolId; }
-    void PersistIdentityId(const Aws::String& identityId) override { SetIdentityId(identityId); identityId.empty() ? m_identityIdPersisted = false : m_identityIdPersisted = true; }
-    void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>& logins) override { SetLogins(logins); logins.empty() ? m_loginsPersisted = false : m_loginsPersisted = true; }
+    void PersistIdentityId(const Aws::String& identityId) override 
+    { 
+        SetIdentityId(identityId); 
+        m_identityIdPersisted = !identityId.empty();
+
+        if (m_identityIdUpdatedCallback)
+        {
+            m_identityIdUpdatedCallback(*this);
+        }
+    }
+
+    void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>& logins) override
+    { 
+        SetLogins(logins); 
+        m_loginsPersisted = !logins.empty();
+
+        if (m_loginsUpdatedCallback)
+        {
+            m_loginsUpdatedCallback(*this);
+        }
+    }
+
     bool IsIdentityIdPersisted() { return m_identityIdPersisted; }
     bool IsLoginsPersisted() { return m_loginsPersisted; }
 
@@ -105,15 +125,16 @@ namespace
             mockIdentityRepository = nullptr;
         }
 
-        void AddMockGetIdResultToStream(Aws::IOStream& stream)
+        void AddMockGetIdResultToStream(Aws::IOStream& stream, const char* identity = IDENTITY_1)
         {
-            stream << "{ \"IdentityId\" : \"" << IDENTITY_1 << "\" }";
+            stream << "{ \"IdentityId\" : \"" << identity << "\" }";
         }
 
-        void AddMockGetCredentialsForIdentityToStream(Aws::IOStream& stream)
+        void AddMockGetCredentialsForIdentityToStream(Aws::IOStream& stream, const char* identityId = IDENTITY_1, 
+            const char* accessKey = ACCESS_KEY_ID_1, const char* secretKey = SECRET_KEY_ID_1, const char* expiry = A_HUNDRED_YEARS_FROM_THE_MOMENT_I_WROTE_THIS)
         {
-            stream << "{ \"IdentityId\" : \"" << IDENTITY_1 << "\", \"Credentials\" : { \"AccessKeyId\" : \"" << ACCESS_KEY_ID_1
-                 << "\", \"SecretKey\" : \"" << SECRET_KEY_ID_1 << "\", \"Expiration\" : " << A_HUNDRED_YEARS_FROM_THE_MOMENT_I_WROTE_THIS << " } }";
+            stream << "{ \"IdentityId\" : \"" << identityId << "\", \"Credentials\" : { \"AccessKeyId\" : \"" << accessKey
+                << "\", \"SecretKey\" : \"" << secretKey << "\", \"Expiration\" : " << expiry << " } }";
         }
     };
 
@@ -243,7 +264,7 @@ namespace
         LoginAccessTokens loginAccessTokens;
         loginAccessTokens.accessToken = LOGIN_ID;
         logins[LOGIN_KEY] = loginAccessTokens;
-        mockIdentityRepository->SetLogins(logins);
+        mockIdentityRepository->PersistLogins(logins);
 
         CognitoCachingAuthenticatedCredentialsProvider cognitoCachingAuthenticatedCredentialsProvider(mockIdentityRepository, cognitoIdentityClient);
         AWSCredentials credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
@@ -270,6 +291,101 @@ namespace
         ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
         ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
+    }
+
+    TEST_F(CognitoCachingCredentialsProviderTest, TestAuthenticatedGetCredentialsLoginCredentialsRefreshedAfterAnonymousIdentityAquired)
+    {
+        //do an anoymous auth run
+        std::shared_ptr<HttpRequest> getIdrequest =
+            mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
+
+        getIdResponse->SetResponseCode(HttpResponseCode::OK);
+        AddMockGetIdResultToStream(getIdResponse->GetResponseBody());
+
+        mockHttpClient->AddResponseToReturn(getIdResponse);
+
+        std::shared_ptr<HttpRequest> getCredsrequest =
+            mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+
+        getCredsResponse->SetResponseCode(HttpResponseCode::OK);
+        AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody());
+
+        mockHttpClient->AddResponseToReturn(getCredsResponse);        
+
+        CognitoCachingAuthenticatedCredentialsProvider cognitoCachingAuthenticatedCredentialsProvider(mockIdentityRepository, cognitoIdentityClient);
+        AWSCredentials credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
+        ASSERT_EQ(ACCESS_KEY_ID_1, credentials.GetAWSAccessKeyId());
+        ASSERT_EQ(SECRET_KEY_ID_1, credentials.GetAWSSecretKey());
+        ASSERT_EQ(IDENTITY_1, mockIdentityRepository->GetIdentityId());
+        ASSERT_EQ(0u, mockIdentityRepository->GetLogins().size());        
+        ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
+        ASSERT_FALSE(mockIdentityRepository->IsLoginsPersisted());
+        ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
+
+        mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
+        JsonValue jsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
+        ASSERT_EQ(0u, jsonValue.GetObject("Logins").GetAllObjects().size());
+
+        //make sure the caching worked;
+        credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
+        ASSERT_EQ(ACCESS_KEY_ID_1, credentials.GetAWSAccessKeyId());
+        ASSERT_EQ(SECRET_KEY_ID_1, credentials.GetAWSSecretKey());
+        ASSERT_EQ(IDENTITY_1, mockIdentityRepository->GetIdentityId());
+        ASSERT_EQ(0u, mockIdentityRepository->GetLogins().size());       
+        ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
+        ASSERT_FALSE(mockIdentityRepository->IsLoginsPersisted());
+        ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
+        
+        //now do an auth run and make sure two things happen.
+        //1st make sure that when we pass a new identity, it gets updated in the cache.
+        //2nd make sure that adding logins invalidates the credentials cache.
+        mockHttpClient->Reset();       
+        Aws::String PARENT_ID = "ANewParentIdentityId";
+        Aws::String ACCESS_KEY_ID = "AccessKey2";
+        Aws::String SECRET_KEY_ID = "SecretKey2";
+
+        getCredsrequest =
+            mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+
+        getCredsResponse->SetResponseCode(HttpResponseCode::OK);
+        AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody(), PARENT_ID.c_str(), ACCESS_KEY_ID.c_str(), SECRET_KEY_ID.c_str());
+
+        mockHttpClient->AddResponseToReturn(getCredsResponse);
+
+        Aws::Map<Aws::String, LoginAccessTokens> logins;
+        LoginAccessTokens loginAccessTokens;
+        loginAccessTokens.accessToken = LOGIN_ID;
+        logins[LOGIN_KEY] = loginAccessTokens;
+        mockIdentityRepository->PersistLogins(logins);        
+        credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
+
+        ASSERT_EQ(ACCESS_KEY_ID, credentials.GetAWSAccessKeyId());
+        ASSERT_EQ(SECRET_KEY_ID, credentials.GetAWSSecretKey());
+        ASSERT_EQ(PARENT_ID, mockIdentityRepository->GetIdentityId());
+        ASSERT_EQ(1u, mockIdentityRepository->GetLogins().size());
+        ASSERT_EQ(LOGIN_ID, mockIdentityRepository->GetLogins()[LOGIN_KEY].accessToken);
+        ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
+        ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
+        ASSERT_EQ(1u, mockHttpClient->GetAllRequestsMade().size());
+
+        mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
+        jsonValue = JsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
+        ASSERT_EQ(LOGIN_ID, jsonValue.GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
+
+        //now make sure the caching worked;
+        credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
+        ASSERT_EQ(ACCESS_KEY_ID, credentials.GetAWSAccessKeyId());
+        ASSERT_EQ(SECRET_KEY_ID, credentials.GetAWSSecretKey());
+        ASSERT_EQ(PARENT_ID, mockIdentityRepository->GetIdentityId());
+        ASSERT_EQ(1u, mockIdentityRepository->GetLogins().size());
+        ASSERT_EQ(LOGIN_ID, mockIdentityRepository->GetLogins()[LOGIN_KEY].accessToken);
+        ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
+        ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
+        ASSERT_EQ(1u, mockHttpClient->GetAllRequestsMade().size());
+
     }
 }
 

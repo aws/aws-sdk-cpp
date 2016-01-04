@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ ListDomainsResult& ListDomainsResult::operator =(const AmazonWebServiceResult<Xm
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListDomainsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListDomainsResult")
+  {
+    resultNode = rootNode.FirstChild("ListDomainsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ ListDomainsResult& ListDomainsResult::operator =(const AmazonWebServiceResult<Xm
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
@@ -66,6 +67,7 @@ ListDomainsResult& ListDomainsResult::operator =(const AmazonWebServiceResult<Xm
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::SimpleDB::Model::ListDomainsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

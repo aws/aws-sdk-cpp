@@ -51,55 +51,30 @@ AccessKey& AccessKey::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    if(userNameNode.IsNull())
-    {
-      userNameNode = resultNode;
-    }
-
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode accessKeyIdNode = resultNode.FirstChild("AccessKeyId");
-    if(accessKeyIdNode.IsNull())
-    {
-      accessKeyIdNode = resultNode;
-    }
-
     if(!accessKeyIdNode.IsNull())
     {
       m_accessKeyId = StringUtils::Trim(accessKeyIdNode.GetText().c_str());
       m_accessKeyIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode secretAccessKeyNode = resultNode.FirstChild("SecretAccessKey");
-    if(secretAccessKeyNode.IsNull())
-    {
-      secretAccessKeyNode = resultNode;
-    }
-
     if(!secretAccessKeyNode.IsNull())
     {
       m_secretAccessKey = StringUtils::Trim(secretAccessKeyNode.GetText().c_str());
       m_secretAccessKeyHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    if(createDateNode.IsNull())
-    {
-      createDateNode = resultNode;
-    }
-
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());

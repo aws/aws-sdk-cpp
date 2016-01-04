@@ -49,44 +49,24 @@ LoadBalancerAttributes& LoadBalancerAttributes::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode crossZoneLoadBalancingNode = resultNode.FirstChild("CrossZoneLoadBalancing");
-    if(crossZoneLoadBalancingNode.IsNull())
-    {
-      crossZoneLoadBalancingNode = resultNode;
-    }
-
     if(!crossZoneLoadBalancingNode.IsNull())
     {
       m_crossZoneLoadBalancing = crossZoneLoadBalancingNode;
       m_crossZoneLoadBalancingHasBeenSet = true;
     }
     XmlNode accessLogNode = resultNode.FirstChild("AccessLog");
-    if(accessLogNode.IsNull())
-    {
-      accessLogNode = resultNode;
-    }
-
     if(!accessLogNode.IsNull())
     {
       m_accessLog = accessLogNode;
       m_accessLogHasBeenSet = true;
     }
     XmlNode connectionDrainingNode = resultNode.FirstChild("ConnectionDraining");
-    if(connectionDrainingNode.IsNull())
-    {
-      connectionDrainingNode = resultNode;
-    }
-
     if(!connectionDrainingNode.IsNull())
     {
       m_connectionDraining = connectionDrainingNode;
       m_connectionDrainingHasBeenSet = true;
     }
     XmlNode connectionSettingsNode = resultNode.FirstChild("ConnectionSettings");
-    if(connectionSettingsNode.IsNull())
-    {
-      connectionSettingsNode = resultNode;
-    }
-
     if(!connectionSettingsNode.IsNull())
     {
       m_connectionSettings = connectionSettingsNode;

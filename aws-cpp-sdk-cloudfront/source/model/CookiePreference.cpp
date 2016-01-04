@@ -43,22 +43,12 @@ CookiePreference& CookiePreference::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode forwardNode = resultNode.FirstChild("Forward");
-    if(forwardNode.IsNull())
-    {
-      forwardNode = resultNode;
-    }
-
     if(!forwardNode.IsNull())
     {
       m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(forwardNode.GetText().c_str()).c_str());
       m_forwardHasBeenSet = true;
     }
     XmlNode whitelistedNamesNode = resultNode.FirstChild("WhitelistedNames");
-    if(whitelistedNamesNode.IsNull())
-    {
-      whitelistedNamesNode = resultNode;
-    }
-
     if(!whitelistedNamesNode.IsNull())
     {
       m_whitelistedNames = whitelistedNamesNode;

@@ -42,16 +42,7 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_engineHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_tdeCredentialPasswordHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_dBSecurityGroupsHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_optionGroupNameHasBeenSet(false)
 {
 }
 
@@ -123,56 +114,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_tdeCredentialArnHasBeenSet)
-  {
-    ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
-  }
-  if(m_tdeCredentialPasswordHasBeenSet)
-  {
-    ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
-  }
-  if(m_vpcSecurityGroupIdsHasBeenSet)
-  {
-    unsigned vpcSecurityGroupIdsCount = 1;
-    for(auto& item : m_vpcSecurityGroupIds)
-    {
-      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcSecurityGroupIdsCount++;
-    }
-  }
-  if(m_dBSecurityGroupsHasBeenSet)
-  {
-    unsigned dBSecurityGroupsCount = 1;
-    for(auto& item : m_dBSecurityGroups)
-    {
-      ss << "DBSecurityGroups.member." << dBSecurityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      dBSecurityGroupsCount++;
-    }
-  }
-  if(m_domainHasBeenSet)
-  {
-    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

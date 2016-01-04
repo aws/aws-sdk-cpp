@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("PutScalingPolicyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "PutScalingPolicyResult")
+  {
+    resultNode = rootNode.FirstChild("PutScalingPolicyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
-    if(policyARNNode.IsNull())
-    {
-      policyARNNode = resultNode;
-    }
-
     if(!policyARNNode.IsNull())
     {
       m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());
@@ -55,6 +56,7 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServic
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::PutScalingPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

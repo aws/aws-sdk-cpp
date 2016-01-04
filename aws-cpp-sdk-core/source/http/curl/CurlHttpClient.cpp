@@ -34,15 +34,31 @@ using namespace Aws::Utils::Logging;
 
 struct CurlWriteCallbackContext
 {
-    CurlWriteCallbackContext(HttpRequest* request, HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
-            m_request(request),
-            m_response(response),
-            m_rateLimiter(rateLimiter)
-    { }
+    CurlWriteCallbackContext(const CurlHttpClient* client,
+                             HttpRequest* request, 
+                             HttpResponse* response, 
+                             Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
+        m_client(client),
+        m_request(request),
+        m_response(response),
+        m_rateLimiter(rateLimiter)
+    {}
 
+    const CurlHttpClient* m_client;
     HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
+};
+
+struct CurlReadCallbackContext
+{
+    CurlReadCallbackContext(const CurlHttpClient* client, HttpRequest* request) :
+        m_client(client),
+        m_request(request)
+    {}
+
+    const CurlHttpClient* m_client;
+    HttpRequest* m_request;
 };
 
 static const char* CurlTag = "CurlHttpClient";
@@ -86,10 +102,11 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
 }
 
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
-        m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
-        m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
-        m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
-        m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_allowRedirects(clientConfig.followRedirects)
+    Base(),   
+    m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
+    m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
+    m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
+    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
@@ -135,7 +152,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 
     if (connectionHandle)
     {
-        AWS_LOG_DEBUG(CurlTag, "Obtained connection handle %p.", connectionHandle);
+        AWS_LOGSTREAM_DEBUG(CurlTag, "Obtained connection handle " << connectionHandle);
 
         if (headers)
         {
@@ -143,7 +160,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
 
         response = Aws::MakeShared<StandardHttpResponse>(CurlTag, request);
-        CurlWriteCallbackContext writeContext(&request, response.get(), readLimiter);
+        CurlWriteCallbackContext writeContext(this, &request, response.get(), readLimiter);
+        CurlReadCallbackContext readContext(this, &request);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
         curl_easy_setopt(connectionHandle, CURLOPT_URL, url.c_str());
@@ -152,10 +170,15 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, &CurlHttpClient::WriteHeader);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, response.get());
 
+	// only set by android test builds because the emulator is missing a cert needed for aws services
+#ifdef TEST_CERT_PATH
+	curl_easy_setopt(connectionHandle, CURLOPT_CAPATH, TEST_CERT_PATH);
+#endif // TEST_CERT_PATH
+
         if (m_verifySSL)
         {
-            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, true);
-            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, 1L);
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 2L);
 
 #if LIBCURL_VERSION_MAJOR >= 7
 #if LIBCURL_VERSION_MINOR >= 34
@@ -165,8 +188,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
         else
         {
-            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, false);
-            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, 0L);
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 0L);
         }
 
         if (m_allowRedirects)
@@ -190,35 +213,39 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         if (request.GetContentBody())
         {
             curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, &CurlHttpClient::ReadBody);
-            curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &request);
+            curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &readContext);
         }
 
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
         if (curlResponseCode != CURLE_OK)
         {
             response = nullptr;
-            AWS_LOG_ERROR(CurlTag, "Curl returned error code %d.", curlResponseCode);
+            AWS_LOGSTREAM_ERROR(CurlTag, "Curl returned error code " << curlResponseCode);
         }
         else
         {
-            int responseCode;
+            long responseCode;
             curl_easy_getinfo(connectionHandle, CURLINFO_RESPONSE_CODE, &responseCode);
-            response->SetResponseCode((HttpResponseCode) responseCode);
-            AWS_LOG_DEBUG(CurlTag, "Returned http response code %d.", responseCode);
-
+            response->SetResponseCode(static_cast<HttpResponseCode>(responseCode));
+            AWS_LOGSTREAM_DEBUG(CurlTag, "Returned http response code " << responseCode);
 
             char* contentType = nullptr;
             curl_easy_getinfo(connectionHandle, CURLINFO_CONTENT_TYPE, &contentType);
             if (contentType)
             {
                 response->SetContentType(contentType);
+                AWS_LOGSTREAM_DEBUG(CurlTag, "Returned content type " << contentType);
             }
-            AWS_LOG_DEBUG(CurlTag, "Returned content type %s.", contentType);
             curl_easy_reset(connectionHandle);
-            AWS_LOG_DEBUG(CurlTag, "Releasing curl handle %p.", connectionHandle);
+            AWS_LOGSTREAM_DEBUG(CurlTag, "Releasing curl handle " << connectionHandle);
         }
 
         m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
+        //go ahead and flush the response body stream
+        if(response)
+        {
+            response->GetResponseBody().flush();
+        }
     }
 
     if (headers)
@@ -235,8 +262,14 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
     if (ptr)
     {
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
-        HttpResponse* response = context->m_response;
 
+        const CurlHttpClient* client = context->m_client;
+        if(!client->IsRequestProcessingEnabled())
+        {
+            return 0;
+        }
+
+        HttpResponse* response = context->m_response;
         size_t sizeToWrite = size * nmemb;
         if (context->m_rateLimiter)
         {
@@ -250,7 +283,7 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
             receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
         }
 
-        AWS_LOG_TRACE(CurlTag, "%d bytes written to response.", sizeToWrite);
+        AWS_LOGSTREAM_TRACE(CurlTag, sizeToWrite << " bytes written to response.");
         return sizeToWrite;
     }
     return 0;
@@ -286,7 +319,19 @@ size_t CurlHttpClient::WriteHeader(char* ptr, size_t size, size_t nmemb, void* u
 
 size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
-    HttpRequest* request = reinterpret_cast<HttpRequest*>(userdata);
+    CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
+    if(context == nullptr)
+    {
+	    return 0;
+    }
+
+    const CurlHttpClient* client = context->m_client;
+    if(!client->IsRequestProcessingEnabled())
+    {
+        return 0;
+    }
+
+    HttpRequest* request = context->m_request;
     std::shared_ptr<Aws::IOStream> ioStream = request->GetContentBody();
 
     if (ioStream != nullptr && size * nmemb)

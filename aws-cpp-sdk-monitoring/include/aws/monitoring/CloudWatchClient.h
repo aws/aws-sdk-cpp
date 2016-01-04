@@ -86,19 +86,19 @@ namespace Model
         class PutMetricDataBatchRequest;
         class SetAlarmStateRequest;
 
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
-        typedef Utils::Outcome<DescribeAlarmHistoryResult, Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
-        typedef Utils::Outcome<DescribeAlarmsResult, Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
-        typedef Utils::Outcome<DescribeAlarmsForMetricResult, Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
-        typedef Utils::Outcome<GetMetricStatisticsResult, Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
-        typedef Utils::Outcome<ListHostInfoResult, Client::AWSError<CloudWatchErrors>> ListHostInfoOutcome;
-        typedef Utils::Outcome<ListMetricsResult, Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> PutMetricDataBatchOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<GetMetricStatisticsResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
+        typedef Aws::Utils::Outcome<ListHostInfoResult, Aws::Client::AWSError<CloudWatchErrors>> ListHostInfoOutcome;
+        typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataBatchOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
 
         typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
         typedef std::future<DescribeAlarmHistoryOutcome> DescribeAlarmHistoryOutcomeCallable;
@@ -159,253 +159,254 @@ namespace Model
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
-        ~CloudWatchClient();
-        /*
-            <p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>
-        */
-        Model::DeleteAlarmsOutcome DeleteAlarms(const Model::DeleteAlarmsRequest& request) const;
+        virtual ~CloudWatchClient();
 
         /*
             <p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DeleteAlarmsOutcomeCallable DeleteAlarmsCallable(const Model::DeleteAlarmsRequest& request) const;
+        virtual Model::DeleteAlarmsOutcome DeleteAlarms(const Model::DeleteAlarmsRequest& request) const;
 
         /*
             <p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>
 
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        virtual Model::DeleteAlarmsOutcomeCallable DeleteAlarmsCallable(const Model::DeleteAlarmsRequest& request) const;
+
+        /*
+            <p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>
+
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DeleteAlarmsAsync(const Model::DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteAlarmsAsync(const Model::DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>
         */
-        Model::DescribeAlarmHistoryOutcome DescribeAlarmHistory(const Model::DescribeAlarmHistoryRequest& request) const;
+        virtual Model::DescribeAlarmHistoryOutcome DescribeAlarmHistory(const Model::DescribeAlarmHistoryRequest& request) const;
 
         /*
             <p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeAlarmHistoryOutcomeCallable DescribeAlarmHistoryCallable(const Model::DescribeAlarmHistoryRequest& request) const;
+        virtual Model::DescribeAlarmHistoryOutcomeCallable DescribeAlarmHistoryCallable(const Model::DescribeAlarmHistoryRequest& request) const;
 
         /*
             <p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p> <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeAlarmHistoryAsync(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeAlarmHistoryAsync(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>
         */
-        Model::DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest& request) const;
+        virtual Model::DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest& request) const;
 
         /*
             <p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
+        virtual Model::DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
 
         /*
             <p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>
         */
-        Model::DescribeAlarmsForMetricOutcome DescribeAlarmsForMetric(const Model::DescribeAlarmsForMetricRequest& request) const;
+        virtual Model::DescribeAlarmsForMetricOutcome DescribeAlarmsForMetric(const Model::DescribeAlarmsForMetricRequest& request) const;
 
         /*
             <p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeAlarmsForMetricOutcomeCallable DescribeAlarmsForMetricCallable(const Model::DescribeAlarmsForMetricRequest& request) const;
+        virtual Model::DescribeAlarmsForMetricOutcomeCallable DescribeAlarmsForMetricCallable(const Model::DescribeAlarmsForMetricRequest& request) const;
 
         /*
             <p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeAlarmsForMetricAsync(const Model::DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeAlarmsForMetricAsync(const Model::DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>
         */
-        Model::DisableAlarmActionsOutcome DisableAlarmActions(const Model::DisableAlarmActionsRequest& request) const;
+        virtual Model::DisableAlarmActionsOutcome DisableAlarmActions(const Model::DisableAlarmActionsRequest& request) const;
 
         /*
             <p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DisableAlarmActionsOutcomeCallable DisableAlarmActionsCallable(const Model::DisableAlarmActionsRequest& request) const;
+        virtual Model::DisableAlarmActionsOutcomeCallable DisableAlarmActionsCallable(const Model::DisableAlarmActionsRequest& request) const;
 
         /*
             <p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DisableAlarmActionsAsync(const Model::DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DisableAlarmActionsAsync(const Model::DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Enables actions for the specified alarms. </p>
         */
-        Model::EnableAlarmActionsOutcome EnableAlarmActions(const Model::EnableAlarmActionsRequest& request) const;
+        virtual Model::EnableAlarmActionsOutcome EnableAlarmActions(const Model::EnableAlarmActionsRequest& request) const;
 
         /*
             <p> Enables actions for the specified alarms. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::EnableAlarmActionsOutcomeCallable EnableAlarmActionsCallable(const Model::EnableAlarmActionsRequest& request) const;
+        virtual Model::EnableAlarmActionsOutcomeCallable EnableAlarmActionsCallable(const Model::EnableAlarmActionsRequest& request) const;
 
         /*
             <p> Enables actions for the specified alarms. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void EnableAlarmActionsAsync(const Model::EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void EnableAlarmActionsAsync(const Model::EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Gets statistics for the specified metric. </p> <p> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. </p> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul> <p> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to Cloudwatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
         */
-        Model::GetMetricStatisticsOutcome GetMetricStatistics(const Model::GetMetricStatisticsRequest& request) const;
+        virtual Model::GetMetricStatisticsOutcome GetMetricStatistics(const Model::GetMetricStatisticsRequest& request) const;
 
         /*
             <p> Gets statistics for the specified metric. </p> <p> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. </p> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul> <p> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to Cloudwatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::GetMetricStatisticsOutcomeCallable GetMetricStatisticsCallable(const Model::GetMetricStatisticsRequest& request) const;
+        virtual Model::GetMetricStatisticsOutcomeCallable GetMetricStatisticsCallable(const Model::GetMetricStatisticsRequest& request) const;
 
         /*
             <p> Gets statistics for the specified metric. </p> <p> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. </p> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul> <p> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to Cloudwatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void GetMetricStatisticsAsync(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetMetricStatisticsAsync(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             
         */
-        Model::ListHostInfoOutcome ListHostInfo(const Model::ListHostInfoRequest& request) const;
+        virtual Model::ListHostInfoOutcome ListHostInfo(const Model::ListHostInfoRequest& request) const;
 
         /*
             
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::ListHostInfoOutcomeCallable ListHostInfoCallable(const Model::ListHostInfoRequest& request) const;
+        virtual Model::ListHostInfoOutcomeCallable ListHostInfoCallable(const Model::ListHostInfoRequest& request) const;
 
         /*
             
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void ListHostInfoAsync(const Model::ListHostInfoRequest& request, const ListHostInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListHostInfoAsync(const Model::ListHostInfoRequest& request, const ListHostInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>. </note>
         */
-        Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request) const;
+        virtual Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request) const;
 
         /*
             <p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::ListMetricsOutcomeCallable ListMetricsCallable(const Model::ListMetricsRequest& request) const;
+        virtual Model::ListMetricsOutcomeCallable ListMetricsCallable(const Model::ListMetricsRequest& request) const;
 
         /*
             <p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given metric. </p> <note> Up to 500 results are returned for any one call. To retrieve further results, use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action, allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code> action. Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void ListMetricsAsync(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListMetricsAsync(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>
         */
-        Model::PutMetricAlarmOutcome PutMetricAlarm(const Model::PutMetricAlarmRequest& request) const;
+        virtual Model::PutMetricAlarmOutcome PutMetricAlarm(const Model::PutMetricAlarmRequest& request) const;
 
         /*
             <p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::PutMetricAlarmOutcomeCallable PutMetricAlarmCallable(const Model::PutMetricAlarmRequest& request) const;
+        virtual Model::PutMetricAlarmOutcomeCallable PutMetricAlarmCallable(const Model::PutMetricAlarmRequest& request) const;
 
         /*
             <p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p> <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void PutMetricAlarmAsync(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void PutMetricAlarmAsync(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls to the <a>ListMetrics</a> action.</p> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important> <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p>
         */
-        Model::PutMetricDataOutcome PutMetricData(const Model::PutMetricDataRequest& request) const;
+        virtual Model::PutMetricDataOutcome PutMetricData(const Model::PutMetricDataRequest& request) const;
 
         /*
             <p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls to the <a>ListMetrics</a> action.</p> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important> <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::PutMetricDataOutcomeCallable PutMetricDataCallable(const Model::PutMetricDataRequest& request) const;
+        virtual Model::PutMetricDataOutcomeCallable PutMetricDataCallable(const Model::PutMetricDataRequest& request) const;
 
         /*
             <p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls to the <a>ListMetrics</a> action.</p> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important> <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void PutMetricDataAsync(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void PutMetricDataAsync(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             
         */
-        Model::PutMetricDataBatchOutcome PutMetricDataBatch(const Model::PutMetricDataBatchRequest& request) const;
+        virtual Model::PutMetricDataBatchOutcome PutMetricDataBatch(const Model::PutMetricDataBatchRequest& request) const;
 
         /*
             
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::PutMetricDataBatchOutcomeCallable PutMetricDataBatchCallable(const Model::PutMetricDataBatchRequest& request) const;
+        virtual Model::PutMetricDataBatchOutcomeCallable PutMetricDataBatchCallable(const Model::PutMetricDataBatchRequest& request) const;
 
         /*
             
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void PutMetricDataBatchAsync(const Model::PutMetricDataBatchRequest& request, const PutMetricDataBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void PutMetricDataBatchAsync(const Model::PutMetricDataBatchRequest& request, const PutMetricDataBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>
         */
-        Model::SetAlarmStateOutcome SetAlarmState(const Model::SetAlarmStateRequest& request) const;
+        virtual Model::SetAlarmStateOutcome SetAlarmState(const Model::SetAlarmStateRequest& request) const;
 
         /*
             <p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::SetAlarmStateOutcomeCallable SetAlarmStateCallable(const Model::SetAlarmStateRequest& request) const;
+        virtual Model::SetAlarmStateOutcomeCallable SetAlarmStateCallable(const Model::SetAlarmStateRequest& request) const;
 
         /*
             <p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void SetAlarmStateAsync(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void SetAlarmStateAsync(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:

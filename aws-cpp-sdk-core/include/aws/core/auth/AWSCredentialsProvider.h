@@ -58,6 +58,36 @@ namespace Aws
                 return m_sessionToken;
             }
 
+            inline void SetAWSAccessKeyId(const Aws::String& accessKeyId)
+            {
+                m_accessKeyId = accessKeyId;
+            }
+
+            inline void SetAWSSecretKey(const Aws::String& secretKey)
+            {
+                m_secretKey = secretKey;
+            }
+
+            inline void SetSessionToken(const Aws::String& sessionToken)
+            {
+                m_sessionToken = sessionToken;
+            }
+
+            inline void SetAWSAccessKeyId(const char* accessKeyId)
+            {
+                m_accessKeyId = accessKeyId;
+            }
+
+            inline void SetAWSSecretKey(const char* secretKey)
+            {
+                m_secretKey = secretKey;
+            }
+
+            inline void SetSessionToken(const char* sessionToken)
+            {
+                m_sessionToken = sessionToken;
+            }
+
         private:
             Aws::String m_accessKeyId;
             Aws::String m_secretKey;

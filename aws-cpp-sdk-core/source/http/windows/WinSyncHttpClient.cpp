@@ -37,9 +37,9 @@ using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
-WinSyncHttpClient::WinSyncHttpClient()
+WinSyncHttpClient::WinSyncHttpClient() :
+    Base()
 {
-
 }
 
 WinSyncHttpClient::~WinSyncHttpClient()
@@ -137,6 +137,8 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
             {
                 done = true;
             }
+
+            success = success && IsRequestProcessingEnabled();
         }
 
         payloadStream->clear();
@@ -211,8 +213,9 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
         char body[1024];
         uint64_t bodySize = sizeof(body);
         read = 0;
+        bool success = true;
 
-        while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0)
+        while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0 && success)
         {
             response->GetResponseBody().write(body, read);
             if (read > 0)
@@ -227,8 +230,18 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
                     receivedHandler(&request, response.get(), (long long)read);
                 }
             }
+
+            success = success && IsRequestProcessingEnabled();
+        }
+
+        if(!success)
+        {
+            return nullptr;
         }
     }
+
+    //go ahead and flush the response body.
+    response->GetResponseBody().flush();
 
     return response;
 }
@@ -240,19 +253,27 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
     AWS_LOG_TRACE(GetLogTag(), "Making %s request to uri %s.",
         HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()), request.GetURIString(true).c_str());
 
-    if(writeLimiter != nullptr)
+    bool success = IsRequestProcessingEnabled();
+
+    void* connection = nullptr;
+    void* hHttpRequest = nullptr;
+
+    if(success)
     {
-        writeLimiter->ApplyAndPayForCost(request.GetSize());
+        if (writeLimiter != nullptr)
+        {
+            writeLimiter->ApplyAndPayForCost(request.GetSize());
+        }
+
+        connection = m_connectionPoolMgr->AquireConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort());
+        AWS_LOG_DEBUG(GetLogTag(), "Acquired connection %p.", connection);
+
+        hHttpRequest = AllocateWindowsHttpRequest(request, connection);
+
+        AddHeadersToRequest(request, hHttpRequest);
+        success = DoSendRequest(hHttpRequest);
     }
 
-    void* connection = m_connectionPoolMgr->AquireConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort());
-    AWS_LOG_DEBUG(GetLogTag(), "Acquired connection %p.", connection);
-
-    void* hHttpRequest = AllocateWindowsHttpRequest(request, connection);
-
-    AddHeadersToRequest(request, hHttpRequest);
-
-    bool success = DoSendRequest(hHttpRequest);
     if(success)
     {
         success = StreamPayloadToRequest(request, hHttpRequest);
@@ -262,6 +283,10 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
     if(success)
     {
         response = BuildSuccessResponse(request, hHttpRequest, readLimiter);
+    }
+    else if (!IsRequestProcessingEnabled())
+    {
+        AWS_LOG_INFO(GetLogTag(), "Request cancelled by client controller");
     }
     else
     {

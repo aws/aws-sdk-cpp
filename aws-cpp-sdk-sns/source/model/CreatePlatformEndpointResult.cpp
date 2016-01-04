@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ CreatePlatformEndpointResult& CreatePlatformEndpointResult::operator =(const Ama
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreatePlatformEndpointResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreatePlatformEndpointResult")
+  {
+    resultNode = rootNode.FirstChild("CreatePlatformEndpointResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode endpointArnNode = resultNode.FirstChild("EndpointArn");
-    if(endpointArnNode.IsNull())
-    {
-      endpointArnNode = resultNode;
-    }
-
     if(!endpointArnNode.IsNull())
     {
       m_endpointArn = StringUtils::Trim(endpointArnNode.GetText().c_str());
@@ -55,6 +56,7 @@ CreatePlatformEndpointResult& CreatePlatformEndpointResult::operator =(const Ama
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::CreatePlatformEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

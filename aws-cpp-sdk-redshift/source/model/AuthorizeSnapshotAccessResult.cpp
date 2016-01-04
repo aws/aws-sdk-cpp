@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ AuthorizeSnapshotAccessResult& AuthorizeSnapshotAccessResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AuthorizeSnapshotAccessResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AuthorizeSnapshotAccessResult")
+  {
+    resultNode = rootNode.FirstChild("AuthorizeSnapshotAccessResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;
@@ -55,6 +56,7 @@ AuthorizeSnapshotAccessResult& AuthorizeSnapshotAccessResult::operator =(const A
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::AuthorizeSnapshotAccessResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

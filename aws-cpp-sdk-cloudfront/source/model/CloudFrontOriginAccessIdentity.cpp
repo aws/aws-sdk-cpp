@@ -45,33 +45,18 @@ CloudFrontOriginAccessIdentity& CloudFrontOriginAccessIdentity::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(idNode.IsNull())
-    {
-      idNode = resultNode;
-    }
-
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode s3CanonicalUserIdNode = resultNode.FirstChild("S3CanonicalUserId");
-    if(s3CanonicalUserIdNode.IsNull())
-    {
-      s3CanonicalUserIdNode = resultNode;
-    }
-
     if(!s3CanonicalUserIdNode.IsNull())
     {
       m_s3CanonicalUserId = StringUtils::Trim(s3CanonicalUserIdNode.GetText().c_str());
       m_s3CanonicalUserIdHasBeenSet = true;
     }
     XmlNode cloudFrontOriginAccessIdentityConfigNode = resultNode.FirstChild("CloudFrontOriginAccessIdentityConfig");
-    if(cloudFrontOriginAccessIdentityConfigNode.IsNull())
-    {
-      cloudFrontOriginAccessIdentityConfigNode = resultNode;
-    }
-
     if(!cloudFrontOriginAccessIdentityConfigNode.IsNull())
     {
       m_cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfigNode;

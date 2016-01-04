@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListPlatformApplicationsResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListPlatformApplicationsResult")
+  {
+    resultNode = rootNode.FirstChild("ListPlatformApplicationsResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
 
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
@@ -66,6 +67,7 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::ListPlatformApplicationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

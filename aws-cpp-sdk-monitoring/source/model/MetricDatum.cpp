@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 MetricDatum::MetricDatum() : 
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false),
@@ -38,7 +37,6 @@ MetricDatum::MetricDatum() :
 MetricDatum::MetricDatum(const XmlNode& xmlNode) : 
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false),
@@ -55,11 +53,6 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if(metricNameNode.IsNull())
-    {
-      metricNameNode = resultNode;
-    }
-
     if(!metricNameNode.IsNull())
     {
       m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
@@ -78,44 +71,24 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       m_dimensionsHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(timestampNode.IsNull())
-    {
-      timestampNode = resultNode;
-    }
-
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
       m_timestampHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    if(valueNode.IsNull())
-    {
-      valueNode = resultNode;
-    }
-
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
       m_valueHasBeenSet = true;
     }
     XmlNode statisticValuesNode = resultNode.FirstChild("StatisticValues");
-    if(statisticValuesNode.IsNull())
-    {
-      statisticValuesNode = resultNode;
-    }
-
     if(!statisticValuesNode.IsNull())
     {
       m_statisticValues = statisticValuesNode;
       m_statisticValuesHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
-    if(unitNode.IsNull())
-    {
-      unitNode = resultNode;
-    }
-
     if(!unitNode.IsNull())
     {
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());
@@ -143,7 +116,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_valueHasBeenSet)
   {
@@ -178,7 +151,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
   }
   if(m_valueHasBeenSet)
   {

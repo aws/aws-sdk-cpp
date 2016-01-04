@@ -32,14 +32,7 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false)
 {
 }
 
@@ -83,32 +76,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   {
     ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  if(m_dBSubnetGroupNameHasBeenSet)
-  {
-    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
-  }
-  if(m_monitoringIntervalHasBeenSet)
-  {
-    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -39,7 +41,11 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeInstancesHealthResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeInstancesHealthResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeInstancesHealthResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -55,21 +61,11 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
 
     }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
-    if(refreshedAtNode.IsNull())
-    {
-      refreshedAtNode = resultNode;
-    }
-
     if(!refreshedAtNode.IsNull())
     {
       m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(nextTokenNode.IsNull())
-    {
-      nextTokenNode = resultNode;
-    }
-
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
@@ -78,6 +74,7 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeInstancesHealthResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

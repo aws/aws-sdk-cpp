@@ -17,7 +17,13 @@
 
 #ifdef __APPLE__
 
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif // __clang__
+
+#ifdef __GNUC__
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // __GNUC__
 
 #endif // __APPLE__
 
@@ -39,9 +45,7 @@ namespace Base64
 class AWS_CORE_API Base64
 {
 public:
-    #ifdef _WIN32
-        Base64();
-    #endif
+    Base64(const char *encodingTable = nullptr);
 
     /**
     * Encode a byte buffer into a base64 stream.
@@ -59,11 +63,16 @@ public:
     * Calculates the required length of a base64 buffer after decoding the
     * input string.
     */
-    static int CalculateBase64Length(const Aws::String& b64input);
+    static size_t CalculateBase64DecodedLength(const Aws::String& b64input);
+
+    static size_t CalculateBase64EncodedLength(const ByteBuffer& buffer);
 
 private:
 
     Base64& operator=(const Base64& rhs);
+
+    char m_mimeBase64EncodingTable[64];
+    uint8_t m_mimeBase64DecodingTable[256];
 
 };
 

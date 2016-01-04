@@ -16,12 +16,14 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -40,36 +42,25 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const AmazonWeb
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetCredentialReportResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetCredentialReportResult")
+  {
+    resultNode = rootNode.FirstChild("GetCredentialReportResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode contentNode = resultNode.FirstChild("Content");
-    if(contentNode.IsNull())
-    {
-      contentNode = resultNode;
-    }
-
     if(!contentNode.IsNull())
     {
       m_content = HashingUtils::Base64Decode(StringUtils::Trim(contentNode.GetText().c_str()));
     }
     XmlNode reportFormatNode = resultNode.FirstChild("ReportFormat");
-    if(reportFormatNode.IsNull())
-    {
-      reportFormatNode = resultNode;
-    }
-
     if(!reportFormatNode.IsNull())
     {
       m_reportFormat = ReportFormatTypeMapper::GetReportFormatTypeForName(StringUtils::Trim(reportFormatNode.GetText().c_str()).c_str());
     }
     XmlNode generatedTimeNode = resultNode.FirstChild("GeneratedTime");
-    if(generatedTimeNode.IsNull())
-    {
-      generatedTimeNode = resultNode;
-    }
-
     if(!generatedTimeNode.IsNull())
     {
       m_generatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str());
@@ -78,6 +69,7 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const AmazonWeb
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetCredentialReportResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

@@ -20,9 +20,9 @@ using namespace Aws::Client;
 using namespace Aws::CloudFormation;
 using namespace Aws::Utils;
 
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
 namespace Aws
 {
@@ -35,17 +35,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
+  if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INSUFFICIENT_CAPABILITIES), false);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::ALREADY_EXISTS), false);
   }
-  else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INSUFFICIENT_CAPABILITIES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

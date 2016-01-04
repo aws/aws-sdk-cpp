@@ -1532,14 +1532,19 @@ bool AccessManagementClient::GetOrCreateUser(const Aws::String& userName, Aws::I
 
 Aws::String AccessManagementClient::GetAccountId()
 {
-    Aws::IAM::Model::User user;
-    auto queryResult = GetUser("", user);
+    GetUserRequest getUserRequest;  
 
-    if (queryResult == QueryResult::YES)
+    auto outcome = m_iamClient->GetUser(getUserRequest);
+    
+    if (outcome.IsSuccess())
     {
-        return ExtractAccountIdFromArn(user.GetArn());
+        return ExtractAccountIdFromArn(outcome.GetResult().GetUser().GetArn());
     }
-
+    else if (outcome.GetError().GetErrorType() == IAM::IAMErrors::ACCESS_DENIED)
+    {
+        return ExtractAccountIdFromArn(outcome.GetError().GetMessage());
+    }
+    
     return "";
 }
 

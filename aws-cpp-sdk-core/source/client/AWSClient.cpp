@@ -59,12 +59,21 @@ AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& 
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
     m_hostHeaderOverride(hostHeaderOverride)
-
 {
 }
 
 AWSClient::~AWSClient()
 {
+}
+
+void AWSClient::DisableRequestProcessing() 
+{ 
+    m_httpClient->DisableRequestProcessing(); 
+}
+
+void AWSClient::EnableRequestProcessing() 
+{ 
+    m_httpClient->EnableRequestProcessing();
 }
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
@@ -79,11 +88,16 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
             AWS_LOG_TRACE(LOG_TAG, "Request was either successful, or we are now out of retries.");
             return outcome;
         }
+        else if(!m_httpClient->IsRequestProcessingEnabled())
+        {
+            AWS_LOG_TRACE(LOG_TAG, "Request was cancelled externally.");
+            return outcome;
+        }
         else
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
             AWS_LOG_WARN(LOG_TAG, "Request failed, now waiting %d ms before attempting again.", sleepMillis);
-            std::this_thread::sleep_for(std::chrono::milliseconds(sleepMillis));
+            m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }
 }
@@ -100,7 +114,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri, HttpM
         else
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
-            std::this_thread::sleep_for(std::chrono::milliseconds(sleepMillis));
+            m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }
 }

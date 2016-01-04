@@ -30,7 +30,7 @@ CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, 
                 m_maxPoolSize(maxSize), m_requestTimeout(requestTimeout), m_connectTimeout(connectTimeout),
                 m_poolSize(0)
 {
-    AWS_LOG_INFO(CurlTag, "Intializing CurlHandleContainer with size %d.", maxSize);
+    AWS_LOGSTREAM_INFO(CurlTag, "Intializing CurlHandleContainer with size " << maxSize);
     if (!isInit)
     {
         AWS_LOG_INFO(CurlTag, "Initializing Curl library");
@@ -67,7 +67,7 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
     }
 
     CURL* handle = m_handleContainer.top();
-    AWS_LOG_DEBUG(CurlTag, "Returning connection handle %p.", handle);
+    AWS_LOGSTREAM_DEBUG(CurlTag, "Returning connection handle " << handle);
     m_handleContainer.pop();
     return handle;
 }
@@ -76,7 +76,7 @@ void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
 {
     if (handle != NULL)
     {
-        AWS_LOG_DEBUG(CurlTag, "Releasing curl handle %p.", handle);
+        AWS_LOGSTREAM_DEBUG(CurlTag, "Releasing curl handle " << handle);
         std::unique_lock<std::mutex> locker(m_handleContainerMutex);
         m_handleContainer.push(handle);
         locker.unlock();
@@ -91,7 +91,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
     {
         unsigned multiplier = m_poolSize > 0 ? m_poolSize : 1;
         unsigned amountToAdd = std::min(multiplier * 2, m_maxPoolSize - m_poolSize);
-        AWS_LOG_DEBUG(CurlTag, "attempting to grow pool size by %d.", amountToAdd);
+        AWS_LOGSTREAM_DEBUG(CurlTag, "attempting to grow pool size by " << amountToAdd);
 
         unsigned actuallyAdded = 0;
         for (unsigned i = 0; i < amountToAdd; ++i)
@@ -115,7 +115,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
             }
         }
 
-        AWS_LOG_INFO(CurlTag, "Pool successfully grown by %d", actuallyAdded);
+        AWS_LOGSTREAM_INFO(CurlTag, "Pool successfully grown by " << actuallyAdded);
         m_poolSize += actuallyAdded;
 
         return actuallyAdded > 0;

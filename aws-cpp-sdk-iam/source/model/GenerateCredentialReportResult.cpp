@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,26 +39,20 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GenerateCredentialReportResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GenerateCredentialReportResult")
+  {
+    resultNode = rootNode.FirstChild("GenerateCredentialReportResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode stateNode = resultNode.FirstChild("State");
-    if(stateNode.IsNull())
-    {
-      stateNode = resultNode;
-    }
-
     if(!stateNode.IsNull())
     {
       m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
@@ -65,6 +61,7 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GenerateCredentialReportResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

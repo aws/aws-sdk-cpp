@@ -71,154 +71,84 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(idNode.IsNull())
-    {
-      idNode = resultNode;
-    }
-
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    if(lastModifiedTimeNode.IsNull())
-    {
-      lastModifiedTimeNode = resultNode;
-    }
-
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    if(domainNameNode.IsNull())
-    {
-      domainNameNode = resultNode;
-    }
-
     if(!domainNameNode.IsNull())
     {
       m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
       m_domainNameHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
-    if(aliasesNode.IsNull())
-    {
-      aliasesNode = resultNode;
-    }
-
     if(!aliasesNode.IsNull())
     {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
     }
     XmlNode originsNode = resultNode.FirstChild("Origins");
-    if(originsNode.IsNull())
-    {
-      originsNode = resultNode;
-    }
-
     if(!originsNode.IsNull())
     {
       m_origins = originsNode;
       m_originsHasBeenSet = true;
     }
     XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
-    if(defaultCacheBehaviorNode.IsNull())
-    {
-      defaultCacheBehaviorNode = resultNode;
-    }
-
     if(!defaultCacheBehaviorNode.IsNull())
     {
       m_defaultCacheBehavior = defaultCacheBehaviorNode;
       m_defaultCacheBehaviorHasBeenSet = true;
     }
     XmlNode cacheBehaviorsNode = resultNode.FirstChild("CacheBehaviors");
-    if(cacheBehaviorsNode.IsNull())
-    {
-      cacheBehaviorsNode = resultNode;
-    }
-
     if(!cacheBehaviorsNode.IsNull())
     {
       m_cacheBehaviors = cacheBehaviorsNode;
       m_cacheBehaviorsHasBeenSet = true;
     }
     XmlNode customErrorResponsesNode = resultNode.FirstChild("CustomErrorResponses");
-    if(customErrorResponsesNode.IsNull())
-    {
-      customErrorResponsesNode = resultNode;
-    }
-
     if(!customErrorResponsesNode.IsNull())
     {
       m_customErrorResponses = customErrorResponsesNode;
       m_customErrorResponsesHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    if(commentNode.IsNull())
-    {
-      commentNode = resultNode;
-    }
-
     if(!commentNode.IsNull())
     {
       m_comment = StringUtils::Trim(commentNode.GetText().c_str());
       m_commentHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
-    if(priceClassNode.IsNull())
-    {
-      priceClassNode = resultNode;
-    }
-
     if(!priceClassNode.IsNull())
     {
       m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(enabledNode.IsNull())
-    {
-      enabledNode = resultNode;
-    }
-
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode viewerCertificateNode = resultNode.FirstChild("ViewerCertificate");
-    if(viewerCertificateNode.IsNull())
-    {
-      viewerCertificateNode = resultNode;
-    }
-
     if(!viewerCertificateNode.IsNull())
     {
       m_viewerCertificate = viewerCertificateNode;
       m_viewerCertificateHasBeenSet = true;
     }
     XmlNode restrictionsNode = resultNode.FirstChild("Restrictions");
-    if(restrictionsNode.IsNull())
-    {
-      restrictionsNode = resultNode;
-    }
-
     if(!restrictionsNode.IsNull())
     {
       m_restrictions = restrictionsNode;

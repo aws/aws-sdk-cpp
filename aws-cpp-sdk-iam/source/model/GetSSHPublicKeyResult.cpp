@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ GetSSHPublicKeyResult& GetSSHPublicKeyResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetSSHPublicKeyResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetSSHPublicKeyResult")
+  {
+    resultNode = rootNode.FirstChild("GetSSHPublicKeyResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode sSHPublicKeyNode = resultNode.FirstChild("SSHPublicKey");
-    if(sSHPublicKeyNode.IsNull())
-    {
-      sSHPublicKeyNode = resultNode;
-    }
-
     if(!sSHPublicKeyNode.IsNull())
     {
       m_sSHPublicKey = sSHPublicKeyNode;
@@ -55,6 +56,7 @@ GetSSHPublicKeyResult& GetSSHPublicKeyResult::operator =(const AmazonWebServiceR
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetSSHPublicKeyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

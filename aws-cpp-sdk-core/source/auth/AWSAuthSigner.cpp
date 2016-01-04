@@ -64,7 +64,7 @@ Aws::String CanonicalizeRequestSigningString(HttpRequest& request)
     Aws::StringStream signingStringStream;
     signingStringStream << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod());
 
-    signingStringStream << NEWLINE << request.GetUri().GetPath() << NEWLINE;
+    signingStringStream << NEWLINE << request.GetUri().GetURLEncodedPath() << NEWLINE;
 
     if (request.GetQueryString().size() > 1 && request.GetQueryString().find("=") != std::string::npos)
     {
@@ -84,7 +84,7 @@ Aws::String CanonicalizeRequestSigningString(HttpRequest& request)
 
 AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
     const char* serviceName,
-    Region region) :
+    const Aws::String& region) :
     m_credentialsProvider(credentialsProvider),
     m_serviceName(serviceName),
     m_region(region),
@@ -165,14 +165,13 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
     auto sha256Digest = hashResult.GetResult();
     Aws::String cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR);
-    Aws::String regionName = RegionMapper::GetRegionName(m_region);    
 
-    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, regionName, cannonicalRequestHash);
-    auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate, regionName);
+    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash);
+    auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate);
 
     Aws::StringStream ss;
     ss << AWS_HMAC_SHA256 << " " << CREDENTIAL << EQ << credentials.GetAWSAccessKeyId() << "/" << simpleDate
-        << "/" << regionName << "/" << m_serviceName << "/" << AWS4_REQUEST << ", " << SIGNED_HEADERS << EQ
+        << "/" << m_region << "/" << m_serviceName << "/" << AWS4_REQUEST << ", " << SIGNED_HEADERS << EQ
         << signedHeadersValue << ", " << SIGNATURE << EQ << finalSignature;
 
     auto awsAuthString = ss.str();
@@ -220,10 +219,9 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value: " << signedHeadersValue);
 
-    Aws::String regionName = RegionMapper::GetRegionName(m_region);
     Aws::String simpleDate = DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR);
     ss << credentials.GetAWSAccessKeyId() << "/" << simpleDate
-        << "/" << regionName << "/" << m_serviceName << "/" << AWS4_REQUEST;
+        << "/" << m_region << "/" << m_serviceName << "/" << AWS4_REQUEST;
 
     request.AddQueryStringParameter(X_AMZ_ALGORITHM, AWS_HMAC_SHA256);
     request.AddQueryStringParameter(X_AMZ_CREDENTIAL, ss.str());
@@ -251,9 +249,9 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     auto sha256Digest = hashResult.GetResult();
     auto cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);   
 
-    auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, regionName, cannonicalRequestHash);
+    auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, cannonicalRequestHash);
 
-    auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate, regionName);
+    auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate);
     if (finalSigningHash.empty())
     {
         return false;
@@ -265,7 +263,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     return true;
 }
 
-Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& regionName) const
+Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const
 {
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Final String to sign: " << stringToSign);
 
@@ -285,10 +283,10 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
     }
 
     auto kDate = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)regionName.c_str(), regionName.length()), kDate);
+    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)m_region.c_str(), m_region.length()), kDate);
     if (!hashResult.IsSuccess())
     {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) region string \"" << regionName << "\"");
+        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) region string \"" << m_region << "\"");
         return "";
     }
 
@@ -343,12 +341,12 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
     return std::move(payloadHash);
 }
 
-Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& regionName, const Aws::String& canonicalRequestHash) const
+Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const
 {
     //generate the actual string we will use in signing the final request.
     Aws::StringStream ss;
 
-    ss << AWS_HMAC_SHA256 << NEWLINE << dateValue << NEWLINE << simpleDate << "/" << regionName << "/"
+    ss << AWS_HMAC_SHA256 << NEWLINE << dateValue << NEWLINE << simpleDate << "/" << m_region << "/"
         << m_serviceName << "/" << AWS4_REQUEST << NEWLINE << canonicalRequestHash;
 
     return ss.str();

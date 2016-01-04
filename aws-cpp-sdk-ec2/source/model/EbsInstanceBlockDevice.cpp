@@ -1,0 +1,120 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/ec2/model/EbsInstanceBlockDevice.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
+    m_volumeIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_attachTime(0.0),
+    m_attachTimeHasBeenSet(false),
+    m_deleteOnTermination(false),
+    m_deleteOnTerminationHasBeenSet(false)
+{
+}
+
+EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode) : 
+    m_volumeIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_attachTime(0.0),
+    m_attachTimeHasBeenSet(false),
+    m_deleteOnTermination(false),
+    m_deleteOnTerminationHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
+    {
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeIdHasBeenSet = true;
+    }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
+    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
+    if(!attachTimeNode.IsNull())
+    {
+      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTimeHasBeenSet = true;
+    }
+    XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
+    if(!deleteOnTerminationNode.IsNull())
+    {
+      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
+      m_deleteOnTerminationHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+  }
+  if(m_attachTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AttachTime=" << m_attachTime << "&";
+  }
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+  }
+}
+
+void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+  }
+  if(m_attachTimeHasBeenSet)
+  {
+      oStream << location << ".AttachTime=" << m_attachTime << "&";
+  }
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+  }
+}

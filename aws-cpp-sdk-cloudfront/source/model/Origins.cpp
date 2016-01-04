@@ -45,11 +45,6 @@ Origins& Origins::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    if(quantityNode.IsNull())
-    {
-      quantityNode = resultNode;
-    }
-
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());

@@ -23,6 +23,9 @@
     #pragma warning( disable : 4996)
 #endif
 
+static const char* ISO_8601_LONG_DATE_FORMAT_STR = "%Y-%m-%dT%H:%M:%SZ";
+static const char* ISO_8601_SIMPLE_DATE_FORMAT_STR = "%Y-%m-%d";
+
 using namespace Aws::Utils;
 
 std::mutex DateTime::timeMutex;
@@ -74,6 +77,16 @@ int DateTime::CalculateCurrentHour()
 
 double DateTime::ComputeCurrentTimestampInAmazonFormat()
 {
-    std::chrono::duration<double, std::chrono::seconds::period> now = std::chrono::high_resolution_clock::now().time_since_epoch();
+    std::chrono::duration<double, std::chrono::seconds::period> now = std::chrono::system_clock::now().time_since_epoch();
     return now.count();
+}
+
+Aws::String DateTime::ComputeCurrentTimestampInISO8601Format()
+{
+    return CalculateGmtTimestampAsString(ISO_8601_LONG_DATE_FORMAT_STR);
+}
+
+Aws::String DateTime::ComputeCurrentDateInISO8601Format()
+{
+    return CalculateGmtTimestampAsString(ISO_8601_SIMPLE_DATE_FORMAT_STR);
 }

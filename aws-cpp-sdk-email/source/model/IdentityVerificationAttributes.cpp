@@ -43,22 +43,12 @@ IdentityVerificationAttributes& IdentityVerificationAttributes::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode verificationStatusNode = resultNode.FirstChild("VerificationStatus");
-    if(verificationStatusNode.IsNull())
-    {
-      verificationStatusNode = resultNode;
-    }
-
     if(!verificationStatusNode.IsNull())
     {
       m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(verificationStatusNode.GetText().c_str()).c_str());
       m_verificationStatusHasBeenSet = true;
     }
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
-    if(verificationTokenNode.IsNull())
-    {
-      verificationTokenNode = resultNode;
-    }
-
     if(!verificationTokenNode.IsNull())
     {
       m_verificationToken = StringUtils::Trim(verificationTokenNode.GetText().c_str());

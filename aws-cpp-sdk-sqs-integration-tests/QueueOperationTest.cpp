@@ -393,7 +393,23 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
     listDeadLetterQueuesRequest.WithQueueUrl(deadLetterQueueUrl);
     ListDeadLetterSourceQueuesOutcome listDeadLetterQueuesOutcome = sqsClient->ListDeadLetterSourceQueues(listDeadLetterQueuesRequest);
     ASSERT_TRUE(listDeadLetterQueuesOutcome.IsSuccess());
-    ASSERT_EQ(1uL, listDeadLetterQueuesOutcome.GetResult().GetQueueUrls().size());
+
+    //deadletter queue stuff is eventually consistent, let's try for 100 seconds or so.
+    unsigned count = 0;
+    bool found = listDeadLetterQueuesOutcome.GetResult().GetQueueUrls().size() == 1uL;
+
+    while (listDeadLetterQueuesOutcome.IsSuccess() && !found && count++ < 100)
+    {
+        if (listDeadLetterQueuesOutcome.GetResult().GetQueueUrls().size() == 1uL)
+        {
+            found = true;
+        }
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        listDeadLetterQueuesOutcome = sqsClient->ListDeadLetterSourceQueues(listDeadLetterQueuesRequest);        
+    }
+
+    ASSERT_TRUE(found);
     EXPECT_EQ(queueUrl, listDeadLetterQueuesOutcome.GetResult().GetQueueUrls()[0]);
 
     DeleteQueueRequest deleteQueueRequest;

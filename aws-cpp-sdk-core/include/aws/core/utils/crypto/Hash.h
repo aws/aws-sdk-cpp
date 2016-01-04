@@ -50,6 +50,15 @@ class AWS_CORE_API Hash
         static const uint32_t INTERNAL_HASH_STREAM_BUFFER_SIZE = 8192;
 };
 
+class AWS_CORE_API HashFactory
+{
+    public:
+
+        virtual ~HashFactory() {}
+
+        virtual std::shared_ptr<Hash> CreateImplementation() const = 0;
+};
+
 } // namespace Crypto
 } // namespace Utils
 } // namespace Aws

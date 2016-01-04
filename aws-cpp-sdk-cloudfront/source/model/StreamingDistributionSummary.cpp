@@ -63,110 +63,60 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(idNode.IsNull())
-    {
-      idNode = resultNode;
-    }
-
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    if(lastModifiedTimeNode.IsNull())
-    {
-      lastModifiedTimeNode = resultNode;
-    }
-
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    if(domainNameNode.IsNull())
-    {
-      domainNameNode = resultNode;
-    }
-
     if(!domainNameNode.IsNull())
     {
       m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
       m_domainNameHasBeenSet = true;
     }
     XmlNode s3OriginNode = resultNode.FirstChild("S3Origin");
-    if(s3OriginNode.IsNull())
-    {
-      s3OriginNode = resultNode;
-    }
-
     if(!s3OriginNode.IsNull())
     {
       m_s3Origin = s3OriginNode;
       m_s3OriginHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
-    if(aliasesNode.IsNull())
-    {
-      aliasesNode = resultNode;
-    }
-
     if(!aliasesNode.IsNull())
     {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
     }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
-    if(trustedSignersNode.IsNull())
-    {
-      trustedSignersNode = resultNode;
-    }
-
     if(!trustedSignersNode.IsNull())
     {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    if(commentNode.IsNull())
-    {
-      commentNode = resultNode;
-    }
-
     if(!commentNode.IsNull())
     {
       m_comment = StringUtils::Trim(commentNode.GetText().c_str());
       m_commentHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
-    if(priceClassNode.IsNull())
-    {
-      priceClassNode = resultNode;
-    }
-
     if(!priceClassNode.IsNull())
     {
       m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(enabledNode.IsNull())
-    {
-      enabledNode = resultNode;
-    }
-
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());

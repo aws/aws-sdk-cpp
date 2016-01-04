@@ -108,36 +108,28 @@ void URI::SetScheme(Scheme value)
     }
 }
 
-void URI::SetPath(const Aws::String& value, bool shouldEncode)
+Aws::String URI::URLEncodePath(const Aws::String& path)
 {
-    //we need to url encode the path parts (mainly to take care of spaces that a user might put here)
-    if (shouldEncode)
+    Aws::Vector<Aws::String> pathParts = StringUtils::Split(path, '/');
+    Aws::StringStream ss;
+
+    for (Aws::Vector<Aws::String>::iterator iter = pathParts.begin(); iter != pathParts.end(); ++iter)
     {
-        Aws::Vector<Aws::String> pathParts = StringUtils::Split(value, '/');
-        Aws::StringStream ss;
-
-        for (Aws::Vector<Aws::String>::iterator iter = pathParts.begin(); iter != pathParts.end(); ++iter)
-        {
-            ss << '/' << StringUtils::URLEncode(iter->c_str());
-        }
-
-        //if the last character was also a slash, then add that back here.
-        if (value[value.length() - 1] == '/')
-        {
-            ss << '/';
-        }
-
-        m_path = ss.str();
+        ss << '/' << StringUtils::URLEncode(iter->c_str());
     }
-    else
+
+    //if the last character was also a slash, then add that back here.
+    if (path[path.length() - 1] == '/')
     {
-        m_path = value;
+        ss << '/';
     }
+
+    return ss.str();
 }
 
-Aws::String URI::GetUnEncodedPath() const
-{
-    return StringUtils::URLDecode(m_path.c_str());
+void URI::SetPath(const Aws::String& value)
+{    
+   m_path = value;    
 }
 
 QueryStringParameterCollection URI::GetQueryStringParameters(bool decode) const
@@ -375,7 +367,7 @@ void URI::ExtractAndSetPath(const Aws::String& uri)
 
     if (pathStart != Aws::String::npos)
     {
-        SetPath(authorityAndPath.substr(pathStart, pathEnd - pathStart), false);
+        SetPath(authorityAndPath.substr(pathStart, pathEnd - pathStart));
     }
     else
     {

@@ -42,8 +42,15 @@ set( CONF "
 #define OPENSSL_NO_DYNAMIC_ENGINE
 #define OPENSSL_NO_SCTP
 #define OPENSSL_NO_EC_NISTP_64_GCC_128
+#define OPENSSL_NO_GOST
+#define OPENSSL_NO_EC
+#define OPENSSL_NO_ECDH
+#define OPENSSL_NO_ECDSA
+#define OPENSSL_NO_SSL_TRACE
+#define OPENSSL_NO_UNIT_TEST
+#define OPENSSL_THREADS
 ${CONF}" )
-file( WRITE ${CMAKE_CURRENT_BINARY_DIR}/opensslconf.h.cmake "${CONF}" )
+file( WRITE ${CMAKE_SOURCE_DIR}/tmp/opensslconf.h.cmake "${CONF}" )
 
 #~2DO: set BUILDINF_DATE to `date LC_ALL=C LC_TIME=C`
 configure_file ( buildinf.h.cmake buildinf.h )
@@ -51,7 +58,8 @@ configure_file ( buildinf.h.cmake buildinf.h )
 if( WIN32 AND MINGW AND NOT CYGWIN )
   set( OPENSSL_EXPORT_VAR_AS_FUNCTION true )
 endif()
-configure_file( ${CMAKE_CURRENT_BINARY_DIR}/opensslconf.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/openssl/opensslconf.h )
+configure_file( ${CMAKE_SOURCE_DIR}/tmp/opensslconf.h.cmake ${CMAKE_SOURCE_DIR}/include/openssl/opensslconf.h )
+configure_file( ${CMAKE_SOURCE_DIR}/tmp/opensslconf.h.cmake ${CMAKE_SOURCE_DIR}/crypto/opensslconf.h )
 
 set( LIBSRC cryptlib.c mem.c mem_clr.c mem_dbg.c cversion.c ex_data.c cpt_err.c
   ebcdic.c uid.c o_time.c o_str.c o_dir.c o_init.c)
@@ -83,10 +91,6 @@ endmacro( add_submodule )
 
 add_submodule ( ../engines e_4758cca.c e_aep.c e_atalla.c e_cswift.c e_gmp.c e_chil.c
   e_nuron.c e_sureware.c e_ubsec.c e_padlock.c e_capi.c )
-#~2DO: ok?
-add_submodule ( ../engines/ccgost e_gost_err.c gost2001.c gost2001_keyx.c gost89.c
-  gost94_keyx.c gost_ameth.c gost_asn1.c gost_crypt.c gost_ctl.c gost_eng.c gosthash.c
-  gost_keywrap.c gost_md.c gost_params.c gost_pmeth.c gost_sign.c )
 
 # avoid conflict: ocsp.h and wincrypt.h
 if( WIN32 AND NOT CYGWIN )
@@ -136,12 +140,6 @@ add_submodule ( dsa dsa_gen.c dsa_key.c dsa_lib.c dsa_asn1.c dsa_vrf.c dsa_sign.
   dsa_err.c dsa_ossl.c dsa_depr.c dsa_ameth.c dsa_pmeth.c dsa_prn.c EXHEADERS dsa.h )
 add_submodule ( dso dso_dl.c dso_dlfcn.c dso_err.c dso_lib.c dso_null.c dso_openssl.c
   dso_win32.c dso_vms.c dso_beos.c EXHEADERS dso.h )
-add_submodule ( ec ec_lib.c ecp_smpl.c ecp_mont.c ecp_nist.c ec_cvt.c ec_mult.c ec_err.c
-  ec_curve.c ec_check.c ec_print.c ec_asn1.c ec_key.c ec2_smpl.c ec2_mult.c ec_ameth.c
-  ec_oct.c ec_pmeth.c eck_prn.c ecp_oct.c ec2_oct.c ecp_nistz256.c EXHEADERS ec.h )
-add_submodule ( ecdh ech_lib.c ech_ossl.c ech_key.c ech_err.c ech_kdf.c EXHEADERS ecdh.h )
-add_submodule ( ecdsa ecs_lib.c ecs_asn1.c ecs_ossl.c ecs_sign.c ecs_vrf.c ecs_err.c
-  EXHEADERS ecdsa.h )
 add_submodule ( engine eng_err.c eng_lib.c eng_list.c eng_init.c eng_ctrl.c eng_table.c
   eng_pkey.c eng_fat.c eng_all.c tb_rsa.c tb_dsa.c tb_ecdsa.c tb_dh.c tb_ecdh.c tb_rand.c
   tb_store.c tb_cipher.c tb_digest.c tb_pkmeth.c tb_asnmth.c eng_openssl.c eng_cnf.c
@@ -157,10 +155,8 @@ add_submodule ( evp encode.c digest.c evp_enc.c evp_key.c evp_acnf.c e_des.c e_b
   e_aes_cbc_hmac_sha256.c EXHEADERS evp.h )
 add_submodule ( hmac hmac.c hm_ameth.c hm_pmeth.c EXHEADERS hmac.h )
 add_submodule ( idea i_cbc.c i_cfb64.c i_ofb64.c i_ecb.c i_skey.c EXHEADERS idea.h )
-# add_submodule(jpake jpake.c jpake_err.c EXHEADERS jpake.h)
 add_submodule ( krb5 krb5_asn.c EXHEADERS krb5_asn.h )
 add_submodule ( lhash lhash.c lh_stats.c EXHEADERS lhash.h )
-# add_submodule(md2 md2_dgst.c md2_one.c EXHEADERS md2.h )
 add_submodule ( md4 md4_dgst.c md4_one.c EXHEADERS md4.h )
 add_submodule ( md5 md5_dgst.c md5_one.c EXHEADERS md5.h )
 add_submodule ( mdc2 mdc2dgst.c mdc2_one.c EXHEADERS mdc2.h )
@@ -183,8 +179,6 @@ add_submodule ( rand md_rand.c randfile.c rand_lib.c rand_err.c rand_egd.c rand_
 add_submodule ( rc2 rc2_ecb.c rc2_skey.c rc2_cbc.c rc2cfb64.c rc2ofb64.c EXHEADERS
   rc2.h )
 add_submodule ( rc4 rc4_skey.c rc4_enc.c rc4_utl.c EXHEADERS rc4.h )
-#add_submodule(rc5 rc5_skey.c rc5_ecb.c rc5_enc.c rc5cfb64.c rc5ofb64.c
-#   EXHEADERS rc5.h )
 add_submodule ( ripemd rmd_dgst.c rmd_one.c EXHEADERS ripemd.h )
 add_submodule ( rsa rsa_eay.c rsa_gen.c rsa_lib.c rsa_sign.c rsa_saos.c rsa_err.c
   rsa_pk1.c rsa_ssl.c rsa_none.c rsa_oaep.c rsa_chk.c rsa_null.c rsa_pss.c rsa_x931.c
@@ -195,8 +189,6 @@ add_submodule ( sha sha_dgst.c sha1dgst.c sha_one.c sha1_one.c sha256.c sha512.c
   EXHEADERS sha.h )
 add_submodule ( srp srp_lib.c srp_vfy.c EXHEADERS srp.h srp_grps.h srp_lcl.h )
 add_submodule ( stack stack.c EXHEADERS stack.h safestack.h )
-#add_submodule(store str_err.c str_lib.c str_meth.c str_mem.c
-#   EXHEADERS store.h )
 add_submodule ( ts ts_err.c ts_req_utils.c ts_req_print.c ts_rsp_utils.c ts_rsp_print.c
   ts_rsp_sign.c ts_rsp_verify.c ts_verify_ctx.c ts_lib.c ts_conf.c ts_asn1.c EXHEADERS
   ts.h )
@@ -226,7 +218,6 @@ endif()
 
 install( FILES ${EXHEADERS} DESTINATION include/openssl )
 
-install( TARGETS crypto
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib )
+install( TARGETS crypto RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}
+                        LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}
+                        ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} )

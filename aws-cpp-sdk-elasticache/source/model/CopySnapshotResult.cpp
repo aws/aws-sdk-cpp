@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ CopySnapshotResult& CopySnapshotResult::operator =(const AmazonWebServiceResult<
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CopySnapshotResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CopySnapshotResult")
+  {
+    resultNode = rootNode.FirstChild("CopySnapshotResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(snapshotNode.IsNull())
-    {
-      snapshotNode = resultNode;
-    }
-
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;
@@ -55,6 +56,7 @@ CopySnapshotResult& CopySnapshotResult::operator =(const AmazonWebServiceResult<
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::CopySnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

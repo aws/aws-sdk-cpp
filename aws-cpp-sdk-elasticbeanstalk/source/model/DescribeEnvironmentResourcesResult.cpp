@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("DescribeEnvironmentResourcesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "DescribeEnvironmentResourcesResult")
+  {
+    resultNode = rootNode.FirstChild("DescribeEnvironmentResourcesResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode environmentResourcesNode = resultNode.FirstChild("EnvironmentResources");
-    if(environmentResourcesNode.IsNull())
-    {
-      environmentResourcesNode = resultNode;
-    }
-
     if(!environmentResourcesNode.IsNull())
     {
       m_environmentResources = environmentResourcesNode;
@@ -55,6 +56,7 @@ DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeEnvironmentResourcesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

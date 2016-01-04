@@ -26,8 +26,7 @@ CreateEventSubscriptionRequest::CreateEventSubscriptionRequest() :
     m_eventCategoriesHasBeenSet(false),
     m_sourceIdsHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -71,16 +70,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
   {
     ss << "Enabled=" << m_enabled << "&";
   }
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

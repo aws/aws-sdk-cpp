@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ GetAttributesResult& GetAttributesResult::operator =(const AmazonWebServiceResul
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetAttributesResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetAttributesResult")
+  {
+    resultNode = rootNode.FirstChild("GetAttributesResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -56,6 +62,7 @@ GetAttributesResult& GetAttributesResult::operator =(const AmazonWebServiceResul
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::SimpleDB::Model::GetAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

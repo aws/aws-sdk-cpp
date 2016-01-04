@@ -45,22 +45,12 @@ Metric& Metric::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
-    if(namespaceNode.IsNull())
-    {
-      namespaceNode = resultNode;
-    }
-
     if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if(metricNameNode.IsNull())
-    {
-      metricNameNode = resultNode;
-    }
-
     if(!metricNameNode.IsNull())
     {
       m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());

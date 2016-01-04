@@ -25,10 +25,19 @@
 //to be different than the posix defined function.
 //turn it off because we need it for this test and this isn't production code
 //anyways.
+#ifdef __APPLE__
+
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
+#endif // __clang__
+
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // __GNUC__
+
+#endif // __APPLE__
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4996) // _CRT_SECURE_NO_WARNINGS
@@ -42,7 +51,7 @@ using namespace Aws::Utils::Json;
 Aws::String ComputeIdentityFilePath()
 {
     static bool s_initialized = false;
-    static char s_tempName[L_tmpnam+1];
+    static char s_tempName[L_tmpnam_s+1];
 
 	/*
 	Prior to VS 2014, tmpnam/tmpnam_s generated root level files ("\filename") which were not appropriate for our usage, so for the windows version, we prepended a '.' to make it a
@@ -55,10 +64,10 @@ Aws::String ComputeIdentityFilePath()
     if(!s_initialized)
     {
 #if _MSC_VER >= 1900
-		tmpnam_s(s_tempName, L_tmpnam);
+		tmpnam_s(s_tempName, L_tmpnam_s);
 #else
         s_tempName[0] = '.';
-        tmpnam_s(s_tempName + 1, L_tmpnam);
+        tmpnam_s(s_tempName + 1, L_tmpnam_s);
 #endif // _MSC_VER
         s_initialized = true;
     }
@@ -149,8 +158,16 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
         EXPECT_FALSE(identityProvider.HasIdentityId());
         EXPECT_FALSE(identityProvider.HasLogins());
 
+        bool identityCallbackFired = false;
+        bool loginsCallbackFired = false;
+
+        identityProvider.SetIdentityIdUpdatedCallback( [&](const PersistentCognitoIdentityProvider&){ identityCallbackFired = true; });
+        identityProvider.SetLoginsUpdatedCallback([&](const PersistentCognitoIdentityProvider&){ loginsCallbackFired = true; });
+
         identityProvider.PersistIdentityId("IdentityWeWant");
         identityProvider.PersistLogins(loginsMap);
+        ASSERT_TRUE(identityCallbackFired);
+        ASSERT_TRUE(loginsCallbackFired);
     }
 
     PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());
@@ -176,7 +193,14 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     ASSERT_EQ(loginAccessTokens.longTermTokenExpiry, ourIdentityPool.GetObject("Logins").GetAllObjects().begin()->second.GetInt64("Expiry"));
 }
 
+#ifdef __APPLE__
+
 #ifdef __clang__
 #pragma clang diagnostic pop
-#endif
+#endif // __clang__
 
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif // __GNUC__
+
+#endif // __APPLE__

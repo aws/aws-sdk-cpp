@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -39,7 +41,11 @@ ListUsersResult& ListUsersResult::operator =(const AmazonWebServiceResult<XmlDoc
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ListUsersResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ListUsersResult")
+  {
+    resultNode = rootNode.FirstChild("ListUsersResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -55,21 +61,11 @@ ListUsersResult& ListUsersResult::operator =(const AmazonWebServiceResult<XmlDoc
 
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(isTruncatedNode.IsNull())
-    {
-      isTruncatedNode = resultNode;
-    }
-
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(markerNode.IsNull())
-    {
-      markerNode = resultNode;
-    }
-
     if(!markerNode.IsNull())
     {
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());
@@ -78,6 +74,7 @@ ListUsersResult& ListUsersResult::operator =(const AmazonWebServiceResult<XmlDoc
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListUsersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

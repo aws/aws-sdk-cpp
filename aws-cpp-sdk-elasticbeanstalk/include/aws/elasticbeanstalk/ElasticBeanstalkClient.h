@@ -122,38 +122,38 @@ namespace Model
         class UpdateEnvironmentRequest;
         class ValidateConfigurationSettingsRequest;
 
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
-        typedef Utils::Outcome<CheckDNSAvailabilityResult, Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
-        typedef Utils::Outcome<CreateApplicationResult, Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationOutcome;
-        typedef Utils::Outcome<CreateApplicationVersionResult, Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationVersionOutcome;
-        typedef Utils::Outcome<CreateConfigurationTemplateResult, Client::AWSError<ElasticBeanstalkErrors>> CreateConfigurationTemplateOutcome;
-        typedef Utils::Outcome<CreateEnvironmentResult, Client::AWSError<ElasticBeanstalkErrors>> CreateEnvironmentOutcome;
-        typedef Utils::Outcome<CreateStorageLocationResult, Client::AWSError<ElasticBeanstalkErrors>> CreateStorageLocationOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationVersionOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> DeleteConfigurationTemplateOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> DeleteEnvironmentConfigurationOutcome;
-        typedef Utils::Outcome<DescribeApplicationVersionsResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationVersionsOutcome;
-        typedef Utils::Outcome<DescribeApplicationsResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationsOutcome;
-        typedef Utils::Outcome<DescribeConfigurationOptionsResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationOptionsOutcome;
-        typedef Utils::Outcome<DescribeConfigurationSettingsResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationSettingsOutcome;
-        typedef Utils::Outcome<DescribeEnvironmentHealthResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentHealthOutcome;
-        typedef Utils::Outcome<DescribeEnvironmentResourcesResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentResourcesOutcome;
-        typedef Utils::Outcome<DescribeEnvironmentsResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentsOutcome;
-        typedef Utils::Outcome<DescribeEventsResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeEventsOutcome;
-        typedef Utils::Outcome<DescribeInstancesHealthResult, Client::AWSError<ElasticBeanstalkErrors>> DescribeInstancesHealthOutcome;
-        typedef Utils::Outcome<ListAvailableSolutionStacksResult, Client::AWSError<ElasticBeanstalkErrors>> ListAvailableSolutionStacksOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> RebuildEnvironmentOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> RequestEnvironmentInfoOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> RestartAppServerOutcome;
-        typedef Utils::Outcome<RetrieveEnvironmentInfoResult, Client::AWSError<ElasticBeanstalkErrors>> RetrieveEnvironmentInfoOutcome;
-        typedef Utils::Outcome<NoResult, Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
-        typedef Utils::Outcome<TerminateEnvironmentResult, Client::AWSError<ElasticBeanstalkErrors>> TerminateEnvironmentOutcome;
-        typedef Utils::Outcome<UpdateApplicationResult, Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationOutcome;
-        typedef Utils::Outcome<UpdateApplicationVersionResult, Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationVersionOutcome;
-        typedef Utils::Outcome<UpdateConfigurationTemplateResult, Client::AWSError<ElasticBeanstalkErrors>> UpdateConfigurationTemplateOutcome;
-        typedef Utils::Outcome<UpdateEnvironmentResult, Client::AWSError<ElasticBeanstalkErrors>> UpdateEnvironmentOutcome;
-        typedef Utils::Outcome<ValidateConfigurationSettingsResult, Client::AWSError<ElasticBeanstalkErrors>> ValidateConfigurationSettingsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
+        typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<CreateStorageLocationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateStorageLocationOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteEnvironmentConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationOptionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationSettingsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationSettingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentHealthOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentResourcesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentResourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstancesHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeInstancesHealthOutcome;
+        typedef Aws::Utils::Outcome<ListAvailableSolutionStacksResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListAvailableSolutionStacksOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RebuildEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RequestEnvironmentInfoOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RestartAppServerOutcome;
+        typedef Aws::Utils::Outcome<RetrieveEnvironmentInfoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RetrieveEnvironmentInfoOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
+        typedef Aws::Utils::Outcome<TerminateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> TerminateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<ValidateConfigurationSettingsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ValidateConfigurationSettingsOutcome;
 
         typedef std::future<AbortEnvironmentUpdateOutcome> AbortEnvironmentUpdateOutcomeCallable;
         typedef std::future<CheckDNSAvailabilityOutcome> CheckDNSAvailabilityOutcomeCallable;
@@ -252,614 +252,615 @@ namespace Model
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
-        ~ElasticBeanstalkClient();
-        /*
-            <p>Cancels in-progress environment configuration update or application version deployment.</p>
-        */
-        Model::AbortEnvironmentUpdateOutcome AbortEnvironmentUpdate(const Model::AbortEnvironmentUpdateRequest& request) const;
+        virtual ~ElasticBeanstalkClient();
 
         /*
             <p>Cancels in-progress environment configuration update or application version deployment.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::AbortEnvironmentUpdateOutcomeCallable AbortEnvironmentUpdateCallable(const Model::AbortEnvironmentUpdateRequest& request) const;
+        virtual Model::AbortEnvironmentUpdateOutcome AbortEnvironmentUpdate(const Model::AbortEnvironmentUpdateRequest& request) const;
 
         /*
             <p>Cancels in-progress environment configuration update or application version deployment.</p>
 
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        virtual Model::AbortEnvironmentUpdateOutcomeCallable AbortEnvironmentUpdateCallable(const Model::AbortEnvironmentUpdateRequest& request) const;
+
+        /*
+            <p>Cancels in-progress environment configuration update or application version deployment.</p>
+
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void AbortEnvironmentUpdateAsync(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void AbortEnvironmentUpdateAsync(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Checks if the specified CNAME is available. </p>
         */
-        Model::CheckDNSAvailabilityOutcome CheckDNSAvailability(const Model::CheckDNSAvailabilityRequest& request) const;
+        virtual Model::CheckDNSAvailabilityOutcome CheckDNSAvailability(const Model::CheckDNSAvailabilityRequest& request) const;
 
         /*
             <p> Checks if the specified CNAME is available. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::CheckDNSAvailabilityOutcomeCallable CheckDNSAvailabilityCallable(const Model::CheckDNSAvailabilityRequest& request) const;
+        virtual Model::CheckDNSAvailabilityOutcomeCallable CheckDNSAvailabilityCallable(const Model::CheckDNSAvailabilityRequest& request) const;
 
         /*
             <p> Checks if the specified CNAME is available. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void CheckDNSAvailabilityAsync(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CheckDNSAvailabilityAsync(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>
         */
-        Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
+        virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /*
             <p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
+        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /*
             <p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>
         */
-        Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
+        virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
         /*
             <p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
+        virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
 
         /*
             <p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
         */
-        Model::CreateConfigurationTemplateOutcome CreateConfigurationTemplate(const Model::CreateConfigurationTemplateRequest& request) const;
+        virtual Model::CreateConfigurationTemplateOutcome CreateConfigurationTemplate(const Model::CreateConfigurationTemplateRequest& request) const;
 
         /*
             <p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::CreateConfigurationTemplateOutcomeCallable CreateConfigurationTemplateCallable(const Model::CreateConfigurationTemplateRequest& request) const;
+        virtual Model::CreateConfigurationTemplateOutcomeCallable CreateConfigurationTemplateCallable(const Model::CreateConfigurationTemplateRequest& request) const;
 
         /*
             <p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Launches an environment for the specified application using the specified configuration. </p>
         */
-        Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
+        virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
         /*
             <p> Launches an environment for the specified application using the specified configuration. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
+        virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
 
         /*
             <p> Launches an environment for the specified application using the specified configuration. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>
         */
-        Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request) const;
+        virtual Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request) const;
 
         /*
             <p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::CreateStorageLocationOutcomeCallable CreateStorageLocationCallable(const Model::CreateStorageLocationRequest& request) const;
+        virtual Model::CreateStorageLocationOutcomeCallable CreateStorageLocationCallable(const Model::CreateStorageLocationRequest& request) const;
 
         /*
             <p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void CreateStorageLocationAsync(const Model::CreateStorageLocationRequest& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateStorageLocationAsync(const Model::CreateStorageLocationRequest& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>
         */
-        Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
+        virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /*
             <p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
+        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /*
             <p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>
         */
-        Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
+        virtual Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
 
         /*
             <p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DeleteApplicationVersionOutcomeCallable DeleteApplicationVersionCallable(const Model::DeleteApplicationVersionRequest& request) const;
+        virtual Model::DeleteApplicationVersionOutcomeCallable DeleteApplicationVersionCallable(const Model::DeleteApplicationVersionRequest& request) const;
 
         /*
             <p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>
         */
-        Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
+        virtual Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /*
             <p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DeleteConfigurationTemplateOutcomeCallable DeleteConfigurationTemplateCallable(const Model::DeleteConfigurationTemplateRequest& request) const;
+        virtual Model::DeleteConfigurationTemplateOutcomeCallable DeleteConfigurationTemplateCallable(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /*
             <p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DeleteConfigurationTemplateAsync(const Model::DeleteConfigurationTemplateRequest& request, const DeleteConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteConfigurationTemplateAsync(const Model::DeleteConfigurationTemplateRequest& request, const DeleteConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>
         */
-        Model::DeleteEnvironmentConfigurationOutcome DeleteEnvironmentConfiguration(const Model::DeleteEnvironmentConfigurationRequest& request) const;
+        virtual Model::DeleteEnvironmentConfigurationOutcome DeleteEnvironmentConfiguration(const Model::DeleteEnvironmentConfigurationRequest& request) const;
 
         /*
             <p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DeleteEnvironmentConfigurationOutcomeCallable DeleteEnvironmentConfigurationCallable(const Model::DeleteEnvironmentConfigurationRequest& request) const;
+        virtual Model::DeleteEnvironmentConfigurationOutcomeCallable DeleteEnvironmentConfigurationCallable(const Model::DeleteEnvironmentConfigurationRequest& request) const;
 
         /*
             <p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns descriptions for existing application versions.</p>
         */
-        Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
+        virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /*
             <p>Returns descriptions for existing application versions.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
+        virtual Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /*
             <p>Returns descriptions for existing application versions.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeApplicationVersionsAsync(const Model::DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeApplicationVersionsAsync(const Model::DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns the descriptions of existing applications.</p>
         */
-        Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
+        virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
 
         /*
             <p>Returns the descriptions of existing applications.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request) const;
+        virtual Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request) const;
 
         /*
             <p>Returns the descriptions of existing applications.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>
         */
-        Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request) const;
+        virtual Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request) const;
 
         /*
             <p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeConfigurationOptionsOutcomeCallable DescribeConfigurationOptionsCallable(const Model::DescribeConfigurationOptionsRequest& request) const;
+        virtual Model::DescribeConfigurationOptionsOutcomeCallable DescribeConfigurationOptionsCallable(const Model::DescribeConfigurationOptionsRequest& request) const;
 
         /*
             <p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeConfigurationOptionsAsync(const Model::DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeConfigurationOptionsAsync(const Model::DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
         */
-        Model::DescribeConfigurationSettingsOutcome DescribeConfigurationSettings(const Model::DescribeConfigurationSettingsRequest& request) const;
+        virtual Model::DescribeConfigurationSettingsOutcome DescribeConfigurationSettings(const Model::DescribeConfigurationSettingsRequest& request) const;
 
         /*
             <p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeConfigurationSettingsOutcomeCallable DescribeConfigurationSettingsCallable(const Model::DescribeConfigurationSettingsRequest& request) const;
+        virtual Model::DescribeConfigurationSettingsOutcomeCallable DescribeConfigurationSettingsCallable(const Model::DescribeConfigurationSettingsRequest& request) const;
 
         /*
             <p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeConfigurationSettingsAsync(const Model::DescribeConfigurationSettingsRequest& request, const DescribeConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeConfigurationSettingsAsync(const Model::DescribeConfigurationSettingsRequest& request, const DescribeConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>
         */
-        Model::DescribeEnvironmentHealthOutcome DescribeEnvironmentHealth(const Model::DescribeEnvironmentHealthRequest& request) const;
+        virtual Model::DescribeEnvironmentHealthOutcome DescribeEnvironmentHealth(const Model::DescribeEnvironmentHealthRequest& request) const;
 
         /*
             <p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeEnvironmentHealthOutcomeCallable DescribeEnvironmentHealthCallable(const Model::DescribeEnvironmentHealthRequest& request) const;
+        virtual Model::DescribeEnvironmentHealthOutcomeCallable DescribeEnvironmentHealthCallable(const Model::DescribeEnvironmentHealthRequest& request) const;
 
         /*
             <p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeEnvironmentHealthAsync(const Model::DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeEnvironmentHealthAsync(const Model::DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns AWS resources for this environment.</p>
         */
-        Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request) const;
+        virtual Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request) const;
 
         /*
             <p>Returns AWS resources for this environment.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeEnvironmentResourcesOutcomeCallable DescribeEnvironmentResourcesCallable(const Model::DescribeEnvironmentResourcesRequest& request) const;
+        virtual Model::DescribeEnvironmentResourcesOutcomeCallable DescribeEnvironmentResourcesCallable(const Model::DescribeEnvironmentResourcesRequest& request) const;
 
         /*
             <p>Returns AWS resources for this environment.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeEnvironmentResourcesAsync(const Model::DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeEnvironmentResourcesAsync(const Model::DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns descriptions for existing environments.</p>
         */
-        Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
+        virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
 
         /*
             <p>Returns descriptions for existing environments.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request) const;
+        virtual Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request) const;
 
         /*
             <p>Returns descriptions for existing environments.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>
         */
-        Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
         /*
             <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
 
         /*
             <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>
         */
-        Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
+        virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
 
         /*
             <p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
+        virtual Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
 
         /*
             <p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void DescribeInstancesHealthAsync(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeInstancesHealthAsync(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Returns a list of the available solution stack names. </p>
         */
-        Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request) const;
+        virtual Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request) const;
 
         /*
             <p> Returns a list of the available solution stack names. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const Model::ListAvailableSolutionStacksRequest& request) const;
+        virtual Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const Model::ListAvailableSolutionStacksRequest& request) const;
 
         /*
             <p> Returns a list of the available solution stack names. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>
         */
-        Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request) const;
+        virtual Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request) const;
 
         /*
             <p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::RebuildEnvironmentOutcomeCallable RebuildEnvironmentCallable(const Model::RebuildEnvironmentRequest& request) const;
+        virtual Model::RebuildEnvironmentOutcomeCallable RebuildEnvironmentCallable(const Model::RebuildEnvironmentRequest& request) const;
 
         /*
             <p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void RebuildEnvironmentAsync(const Model::RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void RebuildEnvironmentAsync(const Model::RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
         */
-        Model::RequestEnvironmentInfoOutcome RequestEnvironmentInfo(const Model::RequestEnvironmentInfoRequest& request) const;
+        virtual Model::RequestEnvironmentInfoOutcome RequestEnvironmentInfo(const Model::RequestEnvironmentInfoRequest& request) const;
 
         /*
             <p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::RequestEnvironmentInfoOutcomeCallable RequestEnvironmentInfoCallable(const Model::RequestEnvironmentInfoRequest& request) const;
+        virtual Model::RequestEnvironmentInfoOutcomeCallable RequestEnvironmentInfoCallable(const Model::RequestEnvironmentInfoRequest& request) const;
 
         /*
             <p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void RequestEnvironmentInfoAsync(const Model::RequestEnvironmentInfoRequest& request, const RequestEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void RequestEnvironmentInfoAsync(const Model::RequestEnvironmentInfoRequest& request, const RequestEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>
         */
-        Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request) const;
+        virtual Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request) const;
 
         /*
             <p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::RestartAppServerOutcomeCallable RestartAppServerCallable(const Model::RestartAppServerRequest& request) const;
+        virtual Model::RestartAppServerOutcomeCallable RestartAppServerCallable(const Model::RestartAppServerRequest& request) const;
 
         /*
             <p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void RestartAppServerAsync(const Model::RestartAppServerRequest& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void RestartAppServerAsync(const Model::RestartAppServerRequest& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
         */
-        Model::RetrieveEnvironmentInfoOutcome RetrieveEnvironmentInfo(const Model::RetrieveEnvironmentInfoRequest& request) const;
+        virtual Model::RetrieveEnvironmentInfoOutcome RetrieveEnvironmentInfo(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
         /*
             <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::RetrieveEnvironmentInfoOutcomeCallable RetrieveEnvironmentInfoCallable(const Model::RetrieveEnvironmentInfoRequest& request) const;
+        virtual Model::RetrieveEnvironmentInfoOutcomeCallable RetrieveEnvironmentInfoCallable(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
         /*
             <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Swaps the CNAMEs of two environments. </p>
         */
-        Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request) const;
+        virtual Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
         /*
             <p> Swaps the CNAMEs of two environments. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const Model::SwapEnvironmentCNAMEsRequest& request) const;
+        virtual Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
         /*
             <p> Swaps the CNAMEs of two environments. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Terminates the specified environment. </p>
         */
-        Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request) const;
+        virtual Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request) const;
 
         /*
             <p> Terminates the specified environment. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const Model::TerminateEnvironmentRequest& request) const;
+        virtual Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const Model::TerminateEnvironmentRequest& request) const;
 
         /*
             <p> Terminates the specified environment. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void TerminateEnvironmentAsync(const Model::TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void TerminateEnvironmentAsync(const Model::TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>
         */
-        Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
+        virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /*
             <p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
+        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /*
             <p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>
         */
-        Model::UpdateApplicationVersionOutcome UpdateApplicationVersion(const Model::UpdateApplicationVersionRequest& request) const;
+        virtual Model::UpdateApplicationVersionOutcome UpdateApplicationVersion(const Model::UpdateApplicationVersionRequest& request) const;
 
         /*
             <p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::UpdateApplicationVersionOutcomeCallable UpdateApplicationVersionCallable(const Model::UpdateApplicationVersionRequest& request) const;
+        virtual Model::UpdateApplicationVersionOutcomeCallable UpdateApplicationVersionCallable(const Model::UpdateApplicationVersionRequest& request) const;
 
         /*
             <p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void UpdateApplicationVersionAsync(const Model::UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateApplicationVersionAsync(const Model::UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
         */
-        Model::UpdateConfigurationTemplateOutcome UpdateConfigurationTemplate(const Model::UpdateConfigurationTemplateRequest& request) const;
+        virtual Model::UpdateConfigurationTemplateOutcome UpdateConfigurationTemplate(const Model::UpdateConfigurationTemplateRequest& request) const;
 
         /*
             <p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::UpdateConfigurationTemplateOutcomeCallable UpdateConfigurationTemplateCallable(const Model::UpdateConfigurationTemplateRequest& request) const;
+        virtual Model::UpdateConfigurationTemplateOutcomeCallable UpdateConfigurationTemplateCallable(const Model::UpdateConfigurationTemplateRequest& request) const;
 
         /*
             <p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void UpdateConfigurationTemplateAsync(const Model::UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateConfigurationTemplateAsync(const Model::UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>
         */
-        Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
+        virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
         /*
             <p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
+        virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
 
         /*
             <p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>
         */
-        Model::ValidateConfigurationSettingsOutcome ValidateConfigurationSettings(const Model::ValidateConfigurationSettingsRequest& request) const;
+        virtual Model::ValidateConfigurationSettingsOutcome ValidateConfigurationSettings(const Model::ValidateConfigurationSettingsRequest& request) const;
 
         /*
             <p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>
 
         returns a future to the operation so that it can be executed in parallel to other requests.
         */
-        Model::ValidateConfigurationSettingsOutcomeCallable ValidateConfigurationSettingsCallable(const Model::ValidateConfigurationSettingsRequest& request) const;
+        virtual Model::ValidateConfigurationSettingsOutcomeCallable ValidateConfigurationSettingsCallable(const Model::ValidateConfigurationSettingsRequest& request) const;
 
         /*
             <p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>
 
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
-        void ValidateConfigurationSettingsAsync(const Model::ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ValidateConfigurationSettingsAsync(const Model::ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:

@@ -41,11 +41,6 @@ Trigger& Trigger::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());

@@ -41,11 +41,6 @@ GetBucketLoggingResult& GetBucketLoggingResult::operator =(const AmazonWebServic
   if(!resultNode.IsNull())
   {
     XmlNode loggingEnabledNode = resultNode.FirstChild("LoggingEnabled");
-    if(loggingEnabledNode.IsNull())
-    {
-      loggingEnabledNode = resultNode;
-    }
-
     if(!loggingEnabledNode.IsNull())
     {
       m_loggingEnabled = loggingEnabledNode;

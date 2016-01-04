@@ -36,9 +36,11 @@ def ParseArguments():
     parser.add_argument("--avd", action="store")
     parser.add_argument("--nobuild", action="store_true")
     parser.add_argument("--noinstall", action="store_true")
-    parser.add_argument("--notest", action="store_true")
+    parser.add_argument("--runtest", action="store")
     parser.add_argument("--credentials", action="store")
     parser.add_argument("--build", action="store")
+    parser.add_argument("--so", action="store_true")
+
     args = vars( parser.parse_args() )
 
     argMap = {}
@@ -50,7 +52,8 @@ def ParseArguments():
     argMap[ "noInstall" ] = args[ "noinstall" ]
     argMap[ "credentialsFile" ] = args[ "credentials" ] or "android-build/credentials"
     argMap[ "buildType" ] = args[ "build" ] or "Debug"
-    argMap[ "noTests" ] = args[ "notest" ]
+    argMap[ "runTest" ] = args[ "runtest" ]
+    argMap[ "so" ] = args[ "so" ]
 
     return argMap
 
@@ -112,8 +115,22 @@ def IsValidAVD(avd, abi, avdABIs):
     return DoesAVDSupportABI(avdABIs[avd], abi)
 
 
-def ValidateArguments(buildDir, avd, abi, clean):
+def GetTestList(buildSharedObjects):
+    if buildSharedObjects:
+        return [ 'core', 's3', 'dynamodb', 'cloudfront', 'cognitoidentity', 'identity', 'lambda', 'logging', 'redshifts', 'sqs', 'transfer' ]
+    else:
+        return [ 'unified' ]
+
+
+def ValidateArguments(buildDir, avd, abi, clean, runTest, buildSharedObjects):
  
+    validTests = GetTestList( buildSharedObjects )
+    if runTest not in validTests:
+        print( 'Invalid value for runtest option: ' + runTest )
+        print( 'Valid values are: ' )
+        print( '  ' + ", ".join( validTests ) )
+        raise ArgumentException('runtest', runTest)
+        
     if not IsValidABI(abi):
         print('Invalid argument value for abi: ', abi)
         print('  Valid values are "armeabi-v7a"')
@@ -137,7 +154,7 @@ def ValidateArguments(buildDir, avd, abi, clean):
     return (avd, abi, clean)
 
 
-def VerifyJniDirectory(abi, clean):
+def SetupJniDirectory(abi, clean):
     path = os.path.join( "android-tests", "app", "src", "main", "jniLibs", abi )
  
     if clean and os.path.exists(path):
@@ -149,17 +166,38 @@ def VerifyJniDirectory(abi, clean):
     return path
 
 
-def CopyNativeLibraries(jniDir, buildDir):
-    unifiedTestsLibrary = os.path.join(buildDir, "android-unified-tests", "libandroid-unified-tests.so")
-    shutil.copy(unifiedTestsLibrary, jniDir)
+def CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi):
+    if buildSharedObjects:
+        platformLibDir = os.path.join(os.environ['ANDROID_NDK'], "platforms", "android-21", "arch-arm", "usr", "lib")
 
+        shutil.copy(os.path.join(platformLibDir, "liblog.so"), jniDir)
+
+        shutil.copy(os.path.join(buildDir, "ZLIB-prefix", "src", "ZLIB-build", "libz.so"), jniDir)
+        shutil.copy(os.path.join(buildDir, "OPENSSL-prefix", "src", "OPENSSL-build", "crypto", "libcrypto.so"), jniDir)
+        shutil.copy(os.path.join(buildDir, "OPENSSL-prefix", "src", "OPENSSL-build", "ssl", "libssl.so"), jniDir)
+        shutil.copy(os.path.join(buildDir, "CURL-prefix", "src", "CURL-build", "lib", "libcurl.so"), jniDir)
+
+        stdLibDir = os.path.join(os.environ['ANDROID_NDK'], "sources", "cxx-stl", "gnu-libstdc++", "4.9", "libs", abi)
+        shutil.copy(os.path.join(stdLibDir, "libgnustl_shared.so"), jniDir)
+
+        soPattern = re.compile(".*\.so$")
+
+        for rootDir, dirNames, fileNames in os.walk( buildDir ):
+            for fileName in fileNames:
+                if soPattern.search(fileName):
+                    libFileName = os.path.join(rootDir, fileName)
+                    shutil.copy(libFileName, jniDir)
+
+    else:
+        unifiedTestsLibrary = os.path.join(buildDir, "android-unified-tests", "libandroid-unified-tests.so")
+        shutil.copy(unifiedTestsLibrary, jniDir)
 
 def RemoveTree(dir):
     if os.path.exists( dir ):
         shutil.rmtree( dir )
 
 
-def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType):
+def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildSharedObjects):
     if clean:
         RemoveTree(installDir)
         RemoveTree(buildDir)
@@ -170,15 +208,24 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType):
         os.mkdir( jniDir )
         os.mkdir( buildDir )
         os.chdir( buildDir )
+
+        if buildSharedObjects:
+            link_type_line = "-DSTATIC_LINKING=0"
+            stl_line = "-DANDROID_STL=gnustl_shared"
+        else:
+            link_type_line = "-DSTATIC_LINKING=1"
+            stl_line = "-DANDROID_STL=gnustl_static"
+            
         subprocess.check_call( [ "cmake", 
-                                 "-DSTATIC_LINKING=1",
+                                 link_type_line,
                                  "-DCUSTOM_MEMORY_MANAGEMENT=1",
-                                 "-DANDROID_STL=gnustl_static", 
+                                 stl_line, 
                                  "-DANDROID_STL_FORCE_FEATURES=OFF", 
                                  "-DTARGET_ARCH=ANDROID", 
                                  "-DANDROID_ABI=" + abi, 
                                  "-DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.9",
                                  "-DCMAKE_BUILD_TYPE=" + buildType,
+                                 '-DTEST_CERT_PATH="/data/data/aws.coretests/certs"',
                                  ".."] )
     else:
         os.chdir( buildDir )
@@ -186,7 +233,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType):
     subprocess.check_call( [ "make", "-j12" ] )
 
     os.chdir( ".." )
-    CopyNativeLibraries(jniDir, buildDir)
+    CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi)
 
 
 def BuildJava(clean):
@@ -295,7 +342,7 @@ def TestsAreRunning(timeStart):
     return not shutdownCalledOutput
 
 
-def RunTests():
+def RunTest(testName):
     time.sleep(5)
     print( "Attempting to unlock..." )
     subprocess.check_call( [ "adb", "-e", "shell", "input keyevent 82" ] )
@@ -305,7 +352,7 @@ def RunTests():
 
     time.sleep(5)
     print( "Attempting to run tests..." )
-    subprocess.check_call( [ "adb", "shell", "am start -n aws.coretests/aws.coretests.TestActivity" ] )
+    subprocess.check_call( [ "adb", "shell", "am start -e test " + testName + " -n aws.coretests/aws.coretests.TestActivity" ] )
 
     time.sleep(10)
 
@@ -336,18 +383,22 @@ def Main():
     credentialsFile = args[ "credentialsFile" ]
     buildType = args[ "buildType" ]
     noInstall = args[ "noInstall" ]
-    noTests = args[ "noTests" ]
+    buildSharedObjects = args[ "so" ]
+    runTest = args[ "runTest" ]
 
     buildDir = "_build" + buildType
     installDir = os.path.join( "external", abi );
-    avd, abi, clean = ValidateArguments(buildDir, avd, abi, clean)
-    jniDir = VerifyJniDirectory(abi, clean)
+
+    if runTest:
+        avd, abi, clean = ValidateArguments(buildDir, avd, abi, clean, runTest, buildSharedObjects)
+
+    jniDir = SetupJniDirectory(abi, clean)
 
     if not skipBuild:
-        BuildNative(abi, clean, buildDir, jniDir, installDir, buildType)
+        BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildSharedObjects)
         BuildJava(clean)
 
-    if noTests:
+    if not runTest:
         return 0
 
     print("Starting emulator...")
@@ -360,10 +411,8 @@ def Main():
         print("Installing certs...")
         BuildAndInstallCertSet("android-build", buildDir)
 
-    # don't forget: SSL verification is on for all tests and so if you want the integration tests to work you need
-    # to set the capath in the curl client temporarily since the emulator's cert set is crap and will not validate aws sites
     print("Running tests...")
-    RunTests()
+    RunTest( runTest )
 
     if not useExistingEmu:
         KillRunningEmulators()

@@ -16,8 +16,6 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds/model/Filter.h>
 
 namespace Aws
 {
@@ -27,7 +25,7 @@ namespace Model
 {
 
   /*
-    <p></p>
+    <p> </p>
   */
   class AWS_RDS_API DescribeOptionGroupsRequest : public RDSRequest
   {
@@ -72,41 +70,6 @@ namespace Model
     inline DescribeOptionGroupsRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
     /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline DescribeOptionGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline DescribeOptionGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
-
-    /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline DescribeOptionGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /*
-     <p>This parameter is not currently supported.</p>
-    */
-    inline DescribeOptionGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /*
      <p> An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -142,17 +105,17 @@ namespace Model
     inline DescribeOptionGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /*
-     <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
     /*
-     <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
     */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /*
-     <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
     */
     inline DescribeOptionGroupsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
@@ -229,8 +192,6 @@ namespace Model
   private:
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
     long m_maxRecords;

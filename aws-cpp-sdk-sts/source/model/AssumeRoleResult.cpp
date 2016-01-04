@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -39,36 +41,25 @@ AssumeRoleResult& AssumeRoleResult::operator =(const AmazonWebServiceResult<XmlD
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("AssumeRoleResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "AssumeRoleResult")
+  {
+    resultNode = rootNode.FirstChild("AssumeRoleResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
-    if(credentialsNode.IsNull())
-    {
-      credentialsNode = resultNode;
-    }
-
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
     }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
-    if(assumedRoleUserNode.IsNull())
-    {
-      assumedRoleUserNode = resultNode;
-    }
-
     if(!assumedRoleUserNode.IsNull())
     {
       m_assumedRoleUser = assumedRoleUserNode;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
-    if(packedPolicySizeNode.IsNull())
-    {
-      packedPolicySizeNode = resultNode;
-    }
-
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
@@ -77,6 +68,7 @@ AssumeRoleResult& AssumeRoleResult::operator =(const AmazonWebServiceResult<XmlD
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::STS::Model::AssumeRoleResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

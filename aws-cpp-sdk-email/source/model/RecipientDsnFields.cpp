@@ -55,66 +55,36 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode finalRecipientNode = resultNode.FirstChild("FinalRecipient");
-    if(finalRecipientNode.IsNull())
-    {
-      finalRecipientNode = resultNode;
-    }
-
     if(!finalRecipientNode.IsNull())
     {
       m_finalRecipient = StringUtils::Trim(finalRecipientNode.GetText().c_str());
       m_finalRecipientHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");
-    if(actionNode.IsNull())
-    {
-      actionNode = resultNode;
-    }
-
     if(!actionNode.IsNull())
     {
       m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(actionNode.GetText().c_str()).c_str());
       m_actionHasBeenSet = true;
     }
     XmlNode remoteMtaNode = resultNode.FirstChild("RemoteMta");
-    if(remoteMtaNode.IsNull())
-    {
-      remoteMtaNode = resultNode;
-    }
-
     if(!remoteMtaNode.IsNull())
     {
       m_remoteMta = StringUtils::Trim(remoteMtaNode.GetText().c_str());
       m_remoteMtaHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode diagnosticCodeNode = resultNode.FirstChild("DiagnosticCode");
-    if(diagnosticCodeNode.IsNull())
-    {
-      diagnosticCodeNode = resultNode;
-    }
-
     if(!diagnosticCodeNode.IsNull())
     {
       m_diagnosticCode = StringUtils::Trim(diagnosticCodeNode.GetText().c_str());
       m_diagnosticCodeHasBeenSet = true;
     }
     XmlNode lastAttemptDateNode = resultNode.FirstChild("LastAttemptDate");
-    if(lastAttemptDateNode.IsNull())
-    {
-      lastAttemptDateNode = resultNode;
-    }
-
     if(!lastAttemptDateNode.IsNull())
     {
       m_lastAttemptDate = StringUtils::ConvertToDouble(StringUtils::Trim(lastAttemptDateNode.GetText().c_str()).c_str());

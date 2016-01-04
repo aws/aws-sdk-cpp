@@ -1,0 +1,53 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+\#include <aws/${metadata.projectName}/model/${enumModel.name}.h>
+\#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+#foreach($enumMember in $enumModel.members)
+static const int ${enumMember.memberName}_HASH = HashingUtils::HashString("${enumMember.memberStringValue}");
+#end
+
+namespace Aws
+{
+namespace ${metadata.namespace}
+{
+namespace Model
+{
+namespace ${enumModel.name}Mapper
+{
+${enumModel.name} Get${enumModel.name}ForName(const Aws::String& name)
+{
+  int hashCode = HashingUtils::HashString(name.c_str());
+
+#set($elseText = "")
+#foreach($enumMember in $enumModel.members)
+  ${elseText}if (hashCode == ${enumMember.memberName}_HASH)
+  {
+    return ${enumModel.name}::${enumMember.memberName};
+  }
+#set($elseText = "else ")
+#end
+
+  return ${enumModel.name}::NOT_SET;
+}
+
+Aws::String GetNameFor${enumModel.name}(${enumModel.name} value)
+{
+  switch(value)
+  {
+#foreach($enumMember in $enumModel.members)
+  case ${enumModel.name}::${enumMember.memberName}:
+    return "${enumMember.memberStringValue}";
+#end
+  default:
+    return "";
+  }
+}
+
+} // namespace ${enumModel.name}Mapper
+} // namespace Model
+} // namespace ${metadata.namespace}
+} // namespace Aws

@@ -47,22 +47,12 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(idNode.IsNull())
-    {
-      idNode = resultNode;
-    }
-
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
-    XmlNode lambdaFunctionArnNode = resultNode.FirstChild("LambdaFunctionArn");
-    if(lambdaFunctionArnNode.IsNull())
-    {
-      lambdaFunctionArnNode = resultNode;
-    }
-
+    XmlNode lambdaFunctionArnNode = resultNode.FirstChild("CloudFunction");
     if(!lambdaFunctionArnNode.IsNull())
     {
       m_lambdaFunctionArn = StringUtils::Trim(lambdaFunctionArnNode.GetText().c_str());
@@ -81,11 +71,6 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
       m_eventsHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
-    if(filterNode.IsNull())
-    {
-      filterNode = resultNode;
-    }
-
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;

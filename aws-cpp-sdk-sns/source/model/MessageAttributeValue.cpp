@@ -46,33 +46,18 @@ MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
-    if(dataTypeNode.IsNull())
-    {
-      dataTypeNode = resultNode;
-    }
-
     if(!dataTypeNode.IsNull())
     {
       m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
       m_dataTypeHasBeenSet = true;
     }
     XmlNode stringValueNode = resultNode.FirstChild("StringValue");
-    if(stringValueNode.IsNull())
-    {
-      stringValueNode = resultNode;
-    }
-
     if(!stringValueNode.IsNull())
     {
       m_stringValue = StringUtils::Trim(stringValueNode.GetText().c_str());
       m_stringValueHasBeenSet = true;
     }
     XmlNode binaryValueNode = resultNode.FirstChild("BinaryValue");
-    if(binaryValueNode.IsNull())
-    {
-      binaryValueNode = resultNode;
-    }
-
     if(!binaryValueNode.IsNull())
     {
       m_binaryValue = HashingUtils::Base64Decode(StringUtils::Trim(binaryValueNode.GetText().c_str()));

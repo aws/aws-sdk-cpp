@@ -51,55 +51,30 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    if(userNameNode.IsNull())
-    {
-      userNameNode = resultNode;
-    }
-
     if(!userNameNode.IsNull())
     {
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
     XmlNode certificateIdNode = resultNode.FirstChild("CertificateId");
-    if(certificateIdNode.IsNull())
-    {
-      certificateIdNode = resultNode;
-    }
-
     if(!certificateIdNode.IsNull())
     {
       m_certificateId = StringUtils::Trim(certificateIdNode.GetText().c_str());
       m_certificateIdHasBeenSet = true;
     }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
-    if(certificateBodyNode.IsNull())
-    {
-      certificateBodyNode = resultNode;
-    }
-
     if(!certificateBodyNode.IsNull())
     {
       m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
       m_certificateBodyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
-    if(uploadDateNode.IsNull())
-    {
-      uploadDateNode = resultNode;
-    }
-
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());

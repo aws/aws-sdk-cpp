@@ -45,91 +45,46 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    if(bucketNode.IsNull())
-    {
-      bucketNode = resultNode;
-    }
-
     if(!bucketNode.IsNull())
     {
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
     }
     XmlNode keyMarkerNode = resultNode.FirstChild("KeyMarker");
-    if(keyMarkerNode.IsNull())
-    {
-      keyMarkerNode = resultNode;
-    }
-
     if(!keyMarkerNode.IsNull())
     {
       m_keyMarker = StringUtils::Trim(keyMarkerNode.GetText().c_str());
     }
     XmlNode uploadIdMarkerNode = resultNode.FirstChild("UploadIdMarker");
-    if(uploadIdMarkerNode.IsNull())
-    {
-      uploadIdMarkerNode = resultNode;
-    }
-
     if(!uploadIdMarkerNode.IsNull())
     {
       m_uploadIdMarker = StringUtils::Trim(uploadIdMarkerNode.GetText().c_str());
     }
     XmlNode nextKeyMarkerNode = resultNode.FirstChild("NextKeyMarker");
-    if(nextKeyMarkerNode.IsNull())
-    {
-      nextKeyMarkerNode = resultNode;
-    }
-
     if(!nextKeyMarkerNode.IsNull())
     {
       m_nextKeyMarker = StringUtils::Trim(nextKeyMarkerNode.GetText().c_str());
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if(prefixNode.IsNull())
-    {
-      prefixNode = resultNode;
-    }
-
     if(!prefixNode.IsNull())
     {
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
-    if(delimiterNode.IsNull())
-    {
-      delimiterNode = resultNode;
-    }
-
     if(!delimiterNode.IsNull())
     {
       m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
     }
     XmlNode nextUploadIdMarkerNode = resultNode.FirstChild("NextUploadIdMarker");
-    if(nextUploadIdMarkerNode.IsNull())
-    {
-      nextUploadIdMarkerNode = resultNode;
-    }
-
     if(!nextUploadIdMarkerNode.IsNull())
     {
       m_nextUploadIdMarker = StringUtils::Trim(nextUploadIdMarkerNode.GetText().c_str());
     }
     XmlNode maxUploadsNode = resultNode.FirstChild("MaxUploads");
-    if(maxUploadsNode.IsNull())
-    {
-      maxUploadsNode = resultNode;
-    }
-
     if(!maxUploadsNode.IsNull())
     {
       m_maxUploads = StringUtils::ConvertToInt32(StringUtils::Trim(maxUploadsNode.GetText().c_str()).c_str());
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(isTruncatedNode.IsNull())
-    {
-      isTruncatedNode = resultNode;
-    }
-
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
@@ -157,11 +112,6 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const AmazonW
 
     }
     XmlNode encodingTypeNode = resultNode.FirstChild("EncodingType");
-    if(encodingTypeNode.IsNull())
-    {
-      encodingTypeNode = resultNode;
-    }
-
     if(!encodingTypeNode.IsNull())
     {
       m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());

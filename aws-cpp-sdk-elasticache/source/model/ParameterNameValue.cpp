@@ -43,22 +43,12 @@ ParameterNameValue& ParameterNameValue::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode parameterNameNode = resultNode.FirstChild("ParameterName");
-    if(parameterNameNode.IsNull())
-    {
-      parameterNameNode = resultNode;
-    }
-
     if(!parameterNameNode.IsNull())
     {
       m_parameterName = StringUtils::Trim(parameterNameNode.GetText().c_str());
       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
-    if(parameterValueNode.IsNull())
-    {
-      parameterValueNode = resultNode;
-    }
-
     if(!parameterValueNode.IsNull())
     {
       m_parameterValue = StringUtils::Trim(parameterValueNode.GetText().c_str());

@@ -56,12 +56,18 @@ if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
 endif()
 
-add_executable(runCoreUnitTests ${AWS_CPP_SDK_CORE_TESTS_SRC})
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(runCoreUnitTests ${LIBTYPE} ${AWS_CPP_SDK_CORE_TESTS_SRC})
+else()
+    add_executable(runCoreUnitTests ${AWS_CPP_SDK_CORE_TESTS_SRC})
+endif()
+
 target_link_libraries(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
 copyDlls(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
-ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
-SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
-
+if(NOT PLATFORM_ANDROID)
+    ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
+    SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
+endif()
 

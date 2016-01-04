@@ -242,7 +242,7 @@ protected:
         createFunctionRequest.SetRole(roleARN);
         FunctionCode functionCode;
 
-        std::ifstream fc(zipLocation.c_str());
+        std::ifstream fc(zipLocation.c_str(), std::ios_base::in | std::ios_base::binary);
         Aws::StringStream buffer;
         buffer << fc.rdbuf();
 
@@ -552,14 +552,21 @@ TEST_F(FunctionTest, TestPermissions)
     auto removePermissionOutcome = m_client->RemovePermission(removePermissionRequest);
     EXPECT_TRUE(removePermissionOutcome.IsSuccess());
 
-    //Now we should get an empty policy a GetPolicy because we just removed it
+    
     auto getRemovedPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
-    EXPECT_TRUE(getRemovedPolicyOutcome.IsSuccess());
-
-    GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
-    auto getNewPolicy = Aws::Utils::Json::JsonValue(getRemovedPolicyResult.GetPolicy());
-    EXPECT_EQ(0uL,getNewPolicy.GetArray("Statement").GetLength());
-
+    //lambda used to return an empty string here, now it doesn't but we aren't entirely sure if this is the expected behavior
+    //or a regression. For now just handle both gracefully.
+    if (!getRemovedPolicyOutcome.IsSuccess())
+    {
+       EXPECT_EQ(LambdaErrors::RESOURCE_NOT_FOUND, getRemovedPolicyOutcome.GetError().GetErrorType());
+    }
+    //Now we should get an empty policy a GetPolicy because we just removed it
+    else
+    {
+        GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
+        auto getNewPolicy = Aws::Utils::Json::JsonValue(getRemovedPolicyResult.GetPolicy());
+        EXPECT_EQ(0uL, getNewPolicy.GetArray("Statement").GetLength());
+    }
 }
 
 TEST_F(FunctionTest, TestEventSources) 

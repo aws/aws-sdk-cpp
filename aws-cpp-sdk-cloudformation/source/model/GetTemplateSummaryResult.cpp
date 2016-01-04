@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetTemplateSummaryResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetTemplateSummaryResult")
+  {
+    resultNode = rootNode.FirstChild("GetTemplateSummaryResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const AmazonWebSe
 
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
@@ -74,31 +75,16 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const AmazonWebSe
 
     }
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
-    if(capabilitiesReasonNode.IsNull())
-    {
-      capabilitiesReasonNode = resultNode;
-    }
-
     if(!capabilitiesReasonNode.IsNull())
     {
       m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
-    if(versionNode.IsNull())
-    {
-      versionNode = resultNode;
-    }
-
     if(!versionNode.IsNull())
     {
       m_version = StringUtils::Trim(versionNode.GetText().c_str());
     }
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
-    if(metadataNode.IsNull())
-    {
-      metadataNode = resultNode;
-    }
-
     if(!metadataNode.IsNull())
     {
       m_metadata = StringUtils::Trim(metadataNode.GetText().c_str());
@@ -107,6 +93,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const AmazonWebSe
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::GetTemplateSummaryResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

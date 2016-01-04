@@ -40,12 +40,7 @@ NotificationConfigurationFilter& NotificationConfigurationFilter::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode keyNode = resultNode.FirstChild("Key");
-    if(keyNode.IsNull())
-    {
-      keyNode = resultNode;
-    }
-
+    XmlNode keyNode = resultNode.FirstChild("S3Key");
     if(!keyNode.IsNull())
     {
       m_key = keyNode;

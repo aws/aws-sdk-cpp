@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -41,36 +43,25 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator =(const AmazonWebServiceR
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("GetSAMLProviderResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "GetSAMLProviderResult")
+  {
+    resultNode = rootNode.FirstChild("GetSAMLProviderResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode sAMLMetadataDocumentNode = resultNode.FirstChild("SAMLMetadataDocument");
-    if(sAMLMetadataDocumentNode.IsNull())
-    {
-      sAMLMetadataDocumentNode = resultNode;
-    }
-
     if(!sAMLMetadataDocumentNode.IsNull())
     {
       m_sAMLMetadataDocument = StringUtils::Trim(sAMLMetadataDocumentNode.GetText().c_str());
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    if(createDateNode.IsNull())
-    {
-      createDateNode = resultNode;
-    }
-
     if(!createDateNode.IsNull())
     {
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
     }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
-    if(validUntilNode.IsNull())
-    {
-      validUntilNode = resultNode;
-    }
-
     if(!validUntilNode.IsNull())
     {
       m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
@@ -79,6 +70,7 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator =(const AmazonWebServiceR
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetSAMLProviderResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

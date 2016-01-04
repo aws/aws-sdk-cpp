@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ CreateStorageLocationResult& CreateStorageLocationResult::operator =(const Amazo
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateStorageLocationResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateStorageLocationResult")
+  {
+    resultNode = rootNode.FirstChild("CreateStorageLocationResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
-    if(s3BucketNode.IsNull())
-    {
-      s3BucketNode = resultNode;
-    }
-
     if(!s3BucketNode.IsNull())
     {
       m_s3Bucket = StringUtils::Trim(s3BucketNode.GetText().c_str());
@@ -55,6 +56,7 @@ CreateStorageLocationResult& CreateStorageLocationResult::operator =(const Amazo
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::CreateStorageLocationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

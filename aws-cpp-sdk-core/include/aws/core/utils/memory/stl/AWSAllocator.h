@@ -74,6 +74,15 @@ namespace Aws
 
     };
 
+#ifdef __ANDROID__
+
+    template< typename T >
+    bool operator ==( const Allocator< T >& lhs, const Allocator< T >& rhs )
+    {
+        return false;
+    }
+#endif // __ANDROID__
+
 #else
 
     template< typename T > using Allocator = std::allocator<T>;
@@ -87,5 +96,6 @@ std::shared_ptr<T> MakeShared(const char* allocationTag, ArgTypes&&... args)
 
     return std::allocate_shared<T, Aws::Allocator<T>>(Aws::Allocator<T>(), std::forward<ArgTypes>(args)...);
 }
+
 
 } // namespace Aws

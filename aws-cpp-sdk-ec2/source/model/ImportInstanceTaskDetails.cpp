@@ -1,0 +1,132 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/ec2/model/ImportInstanceTaskDetails.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+ImportInstanceTaskDetails::ImportInstanceTaskDetails() : 
+    m_volumesHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
+{
+}
+
+ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode) : 
+    m_volumesHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+ImportInstanceTaskDetails& ImportInstanceTaskDetails::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode volumesNode = resultNode.FirstChild("Volumes");
+    if(!volumesNode.IsNull())
+    {
+      XmlNode volumesMember = volumesNode.FirstChild("item");
+      while(!volumesMember.IsNull())
+      {
+        m_volumes.push_back(volumesMember);
+        volumesMember = volumesMember.NextNode("item");
+      }
+
+      m_volumesHasBeenSet = true;
+    }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
+    }
+    XmlNode platformNode = resultNode.FirstChild("platform");
+    if(!platformNode.IsNull())
+    {
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(platformNode.GetText().c_str()).c_str());
+      m_platformHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_volumesHasBeenSet)
+  {
+      for(auto& item : m_volumes)
+      {
+        Aws::StringStream volumesSs;
+        volumesSs << location << index << locationValue << ".item";
+        item.OutputToStream(oStream, volumesSs.str().c_str());
+      }
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+}
+
+void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_volumesHasBeenSet)
+  {
+      for(auto& item : m_volumes)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".item";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+}

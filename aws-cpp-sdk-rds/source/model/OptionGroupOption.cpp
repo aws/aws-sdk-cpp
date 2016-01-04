@@ -33,12 +33,7 @@ OptionGroupOption::OptionGroupOption() :
     m_portRequiredHasBeenSet(false),
     m_defaultPort(0),
     m_defaultPortHasBeenSet(false),
-    m_optionsDependedOnHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
-    m_optionGroupOptionSettingsHasBeenSet(false)
+    m_optionsDependedOnHasBeenSet(false)
 {
 }
 
@@ -52,12 +47,7 @@ OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode) :
     m_portRequiredHasBeenSet(false),
     m_defaultPort(0),
     m_defaultPortHasBeenSet(false),
-    m_optionsDependedOnHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
-    m_optionGroupOptionSettingsHasBeenSet(false)
+    m_optionsDependedOnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -69,77 +59,42 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(nameNode.IsNull())
-    {
-      nameNode = resultNode;
-    }
-
     if(!nameNode.IsNull())
     {
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
-    if(engineNameNode.IsNull())
-    {
-      engineNameNode = resultNode;
-    }
-
     if(!engineNameNode.IsNull())
     {
       m_engineName = StringUtils::Trim(engineNameNode.GetText().c_str());
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
-    if(majorEngineVersionNode.IsNull())
-    {
-      majorEngineVersionNode = resultNode;
-    }
-
     if(!majorEngineVersionNode.IsNull())
     {
       m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode minimumRequiredMinorEngineVersionNode = resultNode.FirstChild("MinimumRequiredMinorEngineVersion");
-    if(minimumRequiredMinorEngineVersionNode.IsNull())
-    {
-      minimumRequiredMinorEngineVersionNode = resultNode;
-    }
-
     if(!minimumRequiredMinorEngineVersionNode.IsNull())
     {
       m_minimumRequiredMinorEngineVersion = StringUtils::Trim(minimumRequiredMinorEngineVersionNode.GetText().c_str());
       m_minimumRequiredMinorEngineVersionHasBeenSet = true;
     }
     XmlNode portRequiredNode = resultNode.FirstChild("PortRequired");
-    if(portRequiredNode.IsNull())
-    {
-      portRequiredNode = resultNode;
-    }
-
     if(!portRequiredNode.IsNull())
     {
       m_portRequired = StringUtils::ConvertToBool(StringUtils::Trim(portRequiredNode.GetText().c_str()).c_str());
       m_portRequiredHasBeenSet = true;
     }
     XmlNode defaultPortNode = resultNode.FirstChild("DefaultPort");
-    if(defaultPortNode.IsNull())
-    {
-      defaultPortNode = resultNode;
-    }
-
     if(!defaultPortNode.IsNull())
     {
       m_defaultPort = StringUtils::ConvertToInt32(StringUtils::Trim(defaultPortNode.GetText().c_str()).c_str());
@@ -156,40 +111,6 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       }
 
       m_optionsDependedOnHasBeenSet = true;
-    }
-    XmlNode persistentNode = resultNode.FirstChild("Persistent");
-    if(persistentNode.IsNull())
-    {
-      persistentNode = resultNode;
-    }
-
-    if(!persistentNode.IsNull())
-    {
-      m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(persistentNode.GetText().c_str()).c_str());
-      m_persistentHasBeenSet = true;
-    }
-    XmlNode permanentNode = resultNode.FirstChild("Permanent");
-    if(permanentNode.IsNull())
-    {
-      permanentNode = resultNode;
-    }
-
-    if(!permanentNode.IsNull())
-    {
-      m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());
-      m_permanentHasBeenSet = true;
-    }
-    XmlNode optionGroupOptionSettingsNode = resultNode.FirstChild("OptionGroupOptionSettings");
-    if(!optionGroupOptionSettingsNode.IsNull())
-    {
-      XmlNode optionGroupOptionSettingsMember = optionGroupOptionSettingsNode.FirstChild("OptionGroupOptionSetting");
-      while(!optionGroupOptionSettingsMember.IsNull())
-      {
-        m_optionGroupOptionSettings.push_back(optionGroupOptionSettingsMember);
-        optionGroupOptionSettingsMember = optionGroupOptionSettingsMember.NextNode("OptionGroupOptionSetting");
-      }
-
-      m_optionGroupOptionSettingsHasBeenSet = true;
     }
   }
 
@@ -233,23 +154,6 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
         oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  if(m_persistentHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
-  }
-  if(m_permanentHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Permanent=" << m_permanent << "&";
-  }
-  if(m_optionGroupOptionSettingsHasBeenSet)
-  {
-      for(auto& item : m_optionGroupOptionSettings)
-      {
-        Aws::StringStream optionGroupOptionSettingsSs;
-        optionGroupOptionSettingsSs << location << index << locationValue << ".OptionGroupOptionSetting";
-        item.OutputToStream(oStream, optionGroupOptionSettingsSs.str().c_str());
-      }
-  }
 }
 
 void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -287,23 +191,6 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_optionsDependedOn)
       {
         oStream << location << ".OptionName=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_persistentHasBeenSet)
-  {
-      oStream << location << ".Persistent=" << m_persistent << "&";
-  }
-  if(m_permanentHasBeenSet)
-  {
-      oStream << location << ".Permanent=" << m_permanent << "&";
-  }
-  if(m_optionGroupOptionSettingsHasBeenSet)
-  {
-      for(auto& item : m_optionGroupOptionSettings)
-      {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".OptionGroupOptionSetting";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
       }
   }
 }

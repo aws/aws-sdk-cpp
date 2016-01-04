@@ -43,22 +43,12 @@ OptionGroupMembership& OptionGroupMembership::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
-    if(optionGroupNameNode.IsNull())
-    {
-      optionGroupNameNode = resultNode;
-    }
-
     if(!optionGroupNameNode.IsNull())
     {
       m_optionGroupName = StringUtils::Trim(optionGroupNameNode.GetText().c_str());
       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(statusNode.IsNull())
-    {
-      statusNode = resultNode;
-    }
-
     if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());

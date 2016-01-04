@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,7 +39,11 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("ValidateTemplateResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "ValidateTemplateResult")
+  {
+    resultNode = rootNode.FirstChild("ValidateTemplateResult");
+  }
 
   if(!resultNode.IsNull())
   {
@@ -53,11 +59,6 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(descriptionNode.IsNull())
-    {
-      descriptionNode = resultNode;
-    }
-
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
@@ -74,11 +75,6 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 
     }
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
-    if(capabilitiesReasonNode.IsNull())
-    {
-      capabilitiesReasonNode = resultNode;
-    }
-
     if(!capabilitiesReasonNode.IsNull())
     {
       m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
@@ -87,6 +83,7 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ValidateTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

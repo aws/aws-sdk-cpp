@@ -1,0 +1,122 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/ec2/model/PriceSchedule.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+PriceSchedule::PriceSchedule() : 
+    m_term(0),
+    m_termHasBeenSet(false),
+    m_price(0.0),
+    m_priceHasBeenSet(false),
+    m_currencyCodeHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
+{
+}
+
+PriceSchedule::PriceSchedule(const XmlNode& xmlNode) : 
+    m_term(0),
+    m_termHasBeenSet(false),
+    m_price(0.0),
+    m_priceHasBeenSet(false),
+    m_currencyCodeHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+PriceSchedule& PriceSchedule::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode termNode = resultNode.FirstChild("term");
+    if(!termNode.IsNull())
+    {
+      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(termNode.GetText().c_str()).c_str());
+      m_termHasBeenSet = true;
+    }
+    XmlNode priceNode = resultNode.FirstChild("price");
+    if(!priceNode.IsNull())
+    {
+      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
+      m_priceHasBeenSet = true;
+    }
+    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
+    if(!currencyCodeNode.IsNull())
+    {
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_currencyCodeHasBeenSet = true;
+    }
+    XmlNode activeNode = resultNode.FirstChild("active");
+    if(!activeNode.IsNull())
+    {
+      m_active = StringUtils::ConvertToBool(StringUtils::Trim(activeNode.GetText().c_str()).c_str());
+      m_activeHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_termHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Term=" << m_term << "&";
+  }
+  if(m_priceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Price=" << m_price << "&";
+  }
+  if(m_currencyCodeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+  }
+  if(m_activeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Active=" << m_active << "&";
+  }
+}
+
+void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_termHasBeenSet)
+  {
+      oStream << location << ".Term=" << m_term << "&";
+  }
+  if(m_priceHasBeenSet)
+  {
+      oStream << location << ".Price=" << m_price << "&";
+  }
+  if(m_currencyCodeHasBeenSet)
+  {
+      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+  }
+  if(m_activeHasBeenSet)
+  {
+      oStream << location << ".Active=" << m_active << "&";
+  }
+}

@@ -41,11 +41,6 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
-    if(instanceIdNode.IsNull())
-    {
-      instanceIdNode = resultNode;
-    }
-
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());

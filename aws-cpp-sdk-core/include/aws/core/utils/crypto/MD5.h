@@ -20,13 +20,20 @@
 
 #ifdef __APPLE__
 
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif // __clang__
+
+#ifdef __GNUC__
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // __GNUC__
 
 #endif // __APPLE__
 
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/Outcome.h>
 
 namespace Aws
 {
@@ -56,9 +63,7 @@ class AWS_CORE_API MD5 : public Hash
 
     private:
 
-        #ifdef _WINDOWS
-            Aws::UniquePtr< WindowsHashImpl > m_windowsImpl;
-        #endif
+        std::shared_ptr< Hash > m_hashImpl;
 };
 
 } // namespace Crypto

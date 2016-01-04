@@ -42,7 +42,7 @@ Aws::String ModifyDBParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

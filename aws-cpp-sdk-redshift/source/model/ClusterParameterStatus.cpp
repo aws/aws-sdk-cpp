@@ -45,33 +45,18 @@ ClusterParameterStatus& ClusterParameterStatus::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode parameterNameNode = resultNode.FirstChild("ParameterName");
-    if(parameterNameNode.IsNull())
-    {
-      parameterNameNode = resultNode;
-    }
-
     if(!parameterNameNode.IsNull())
     {
       m_parameterName = StringUtils::Trim(parameterNameNode.GetText().c_str());
       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
-    if(parameterApplyStatusNode.IsNull())
-    {
-      parameterApplyStatusNode = resultNode;
-    }
-
     if(!parameterApplyStatusNode.IsNull())
     {
       m_parameterApplyStatus = StringUtils::Trim(parameterApplyStatusNode.GetText().c_str());
       m_parameterApplyStatusHasBeenSet = true;
     }
     XmlNode parameterApplyErrorDescriptionNode = resultNode.FirstChild("ParameterApplyErrorDescription");
-    if(parameterApplyErrorDescriptionNode.IsNull())
-    {
-      parameterApplyErrorDescriptionNode = resultNode;
-    }
-
     if(!parameterApplyErrorDescriptionNode.IsNull())
     {
       m_parameterApplyErrorDescription = StringUtils::Trim(parameterApplyErrorDescriptionNode.GetText().c_str());

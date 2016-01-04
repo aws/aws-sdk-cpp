@@ -59,8 +59,6 @@ namespace Aws
             virtual bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds) const = 0;
         };
 
-    
-
         class AWS_CORE_API AWSAuthV4Signer : public AWSAuthSigner
         {
 
@@ -69,7 +67,7 @@ namespace Aws
             * Take credentials provider and uses it for authentication. This constructor
             * is ideal for special credentials providers such as odin or other encryption helpers.
             */
-            AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const char* serviceName, Region region);
+            AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const char* serviceName, const Aws::String& region);
 
             virtual ~AWSAuthV4Signer();
 
@@ -79,12 +77,12 @@ namespace Aws
         private:
 
             AWSAuthV4Signer &operator =(const AWSAuthV4Signer &rhs);
-            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& regionName) const;
+            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
-            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& regionName, const Aws::String& canonicalRequestHash) const;
+            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             Aws::String m_serviceName;
-            Region m_region;
+            Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
         };       

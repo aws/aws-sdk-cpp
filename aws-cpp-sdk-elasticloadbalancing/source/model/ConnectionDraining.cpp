@@ -47,22 +47,12 @@ ConnectionDraining& ConnectionDraining::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(enabledNode.IsNull())
-    {
-      enabledNode = resultNode;
-    }
-
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode timeoutNode = resultNode.FirstChild("Timeout");
-    if(timeoutNode.IsNull())
-    {
-      timeoutNode = resultNode;
-    }
-
     if(!timeoutNode.IsNull())
     {
       m_timeout = StringUtils::ConvertToInt32(StringUtils::Trim(timeoutNode.GetText().c_str()).c_str());

@@ -47,11 +47,6 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode numCacheNodesNode = resultNode.FirstChild("NumCacheNodes");
-    if(numCacheNodesNode.IsNull())
-    {
-      numCacheNodesNode = resultNode;
-    }
-
     if(!numCacheNodesNode.IsNull())
     {
       m_numCacheNodes = StringUtils::ConvertToInt32(StringUtils::Trim(numCacheNodesNode.GetText().c_str()).c_str());
@@ -70,11 +65,6 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_cacheNodeIdsToRemoveHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(engineVersionNode.IsNull())
-    {
-      engineVersionNode = resultNode;
-    }
-
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());

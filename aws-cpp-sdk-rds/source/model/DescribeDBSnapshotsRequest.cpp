@@ -23,7 +23,6 @@ DescribeDBSnapshotsRequest::DescribeDBSnapshotsRequest() :
     m_dBInstanceIdentifierHasBeenSet(false),
     m_dBSnapshotIdentifierHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -46,15 +45,6 @@ Aws::String DescribeDBSnapshotsRequest::SerializePayload() const
   {
     ss << "SnapshotType=" << StringUtils::URLEncode(m_snapshotType.c_str()) << "&";
   }
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
-      filtersCount++;
-    }
-  }
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
@@ -63,7 +53,7 @@ Aws::String DescribeDBSnapshotsRequest::SerializePayload() const
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
-  ss << "Version=2014-10-31";
+  ss << "Version=2013-01-10";
   return ss.str();
 }
 

@@ -82,17 +82,37 @@ namespace Model
     /*
      <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
 
     /*
      <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /*
      <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
     */
-    inline AlarmHistoryItem& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /*
+     <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
+
+    /*
+     <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline AlarmHistoryItem& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline AlarmHistoryItem& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
+
+    /*
+     <p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+    */
+    inline AlarmHistoryItem& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
 
     /*
      <p> The type of alarm history item. </p>
@@ -192,7 +212,7 @@ namespace Model
   private:
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
-    double m_timestamp;
+    Aws::String m_timestamp;
     bool m_timestampHasBeenSet;
     HistoryItemType m_historyItemType;
     bool m_historyItemTypeHasBeenSet;

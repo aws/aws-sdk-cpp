@@ -41,11 +41,6 @@ ResponseMetadata& ResponseMetadata::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
-    if(requestIdNode.IsNull())
-    {
-      requestIdNode = resultNode;
-    }
-
     if(!requestIdNode.IsNull())
     {
       m_requestId = StringUtils::Trim(requestIdNode.GetText().c_str());

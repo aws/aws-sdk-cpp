@@ -18,7 +18,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/CharacterSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds/model/UpgradeTarget.h>
 
 namespace Aws
 {
@@ -117,37 +116,37 @@ namespace Model
     inline DBEngineVersion& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline DBEngineVersion& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline DBEngineVersion& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /*
-     <p> The name of the DB parameter group family for the database engine. </p>
+     <p> The name of the DBParameterGroupFamily for the database engine. </p>
     */
     inline DBEngineVersion& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -281,41 +280,6 @@ namespace Model
     */
     inline DBEngineVersion& AddSupportedCharacterSets(CharacterSet&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(value); return *this; }
 
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline const Aws::Vector<UpgradeTarget>& GetValidUpgradeTarget() const{ return m_validUpgradeTarget; }
-
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline void SetValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget = value; }
-
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline void SetValidUpgradeTarget(Aws::Vector<UpgradeTarget>&& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget = value; }
-
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline DBEngineVersion& WithValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { SetValidUpgradeTarget(value); return *this;}
-
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline DBEngineVersion& WithValidUpgradeTarget(Aws::Vector<UpgradeTarget>&& value) { SetValidUpgradeTarget(value); return *this;}
-
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline DBEngineVersion& AddValidUpgradeTarget(const UpgradeTarget& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget.push_back(value); return *this; }
-
-    /*
-     <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    */
-    inline DBEngineVersion& AddValidUpgradeTarget(UpgradeTarget&& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget.push_back(value); return *this; }
-
   private:
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -331,8 +295,6 @@ namespace Model
     bool m_defaultCharacterSetHasBeenSet;
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
     bool m_supportedCharacterSetsHasBeenSet;
-    Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-    bool m_validUpgradeTargetHasBeenSet;
   };
 
 } // namespace Model

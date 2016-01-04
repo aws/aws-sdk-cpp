@@ -1,0 +1,299 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+package com.amazonaws.util.awsclientgenerator.transform;
+
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.*;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Metadata;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
+
+public class C2jModelToGeneratorModelTransformerTest {
+
+    @Test
+    public void testMetadataConversion() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        C2jMetadata c2jMetadata = new C2jMetadata();
+
+        c2jMetadata.setServiceAbbreviation("Amazon AWS Servi_ce Ab-br");
+        c2jMetadata.setApiVersion("API Version");
+        c2jMetadata.setEndpointPrefix("service-abbr");
+        c2jMetadata.setJsonVersion("1.1");
+        c2jMetadata.setProtocol("json");
+        c2jMetadata.setServiceFullName("Amazon AWS Service Abbr Full Name");
+        c2jMetadata.setSignatureVersion("v4");
+        c2jMetadata.setTargetPrefix("ServiceAbbr.");
+
+        c2jServiceModel.setMetadata(c2jMetadata);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        Metadata metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
+        assertEquals(c2jMetadata.getApiVersion(), metadata.getApiVersion());
+        assertEquals(c2jMetadata.getEndpointPrefix(), metadata.getEndpointPrefix());
+        assertEquals(c2jMetadata.getJsonVersion(), metadata.getJsonVersion());
+        assertEquals(c2jMetadata.getProtocol(), metadata.getProtocol());
+        assertEquals("ServiceAbbr", metadata.getNamespace());
+        assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
+        assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
+        assertEquals(c2jMetadata.getTargetPrefix(), metadata.getTargetPrefix());
+
+        c2jMetadata.setServiceAbbreviation(null);
+
+        metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
+        assertEquals(c2jMetadata.getApiVersion(), metadata.getApiVersion());
+        assertEquals(c2jMetadata.getEndpointPrefix(), metadata.getEndpointPrefix());
+        assertEquals(c2jMetadata.getJsonVersion(), metadata.getJsonVersion());
+        assertEquals(c2jMetadata.getProtocol(), metadata.getProtocol());
+        assertEquals("ServiceAbbrFullName", metadata.getNamespace());
+        assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
+        assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
+        assertEquals(c2jMetadata.getTargetPrefix(), metadata.getTargetPrefix());
+    }
+
+    @Test
+    public void testStructureShapeConversion() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+
+        C2jShape stringShape = new C2jShape();
+        stringShape.setDocumentation("String Shape Documentation");
+        stringShape.setType("string");
+
+        c2jShapeMap.put("StringShape", stringShape);
+
+        C2jShape numberShape = new C2jShape();
+        numberShape.setType("integer");
+
+        c2jShapeMap.put("NumberShape", numberShape);
+
+        C2jShape inputShape = new C2jShape();
+        inputShape.setType("structure");
+        C2jShapeMember inputStringShapeMember = new C2jShapeMember();
+        inputStringShapeMember.setShape("StringShape");
+        inputShape.setMembers(new HashMap<>());
+        inputShape.getMembers().put("StringShape", inputStringShapeMember);
+        inputShape.setMember(inputStringShapeMember);
+
+        c2jShapeMap.put("InputShape", inputShape);
+
+        C2jShape outputShape = new C2jShape();
+        outputShape.setType("structure");
+        C2jShapeMember outputNumberShapeMember = new C2jShapeMember();
+        outputNumberShapeMember.setShape("NumberShape");
+        outputShape.setMembers(new HashMap<>());
+        outputShape.getMembers().put("NumberShape", outputNumberShapeMember);
+
+        c2jShapeMap.put("OutputShape", outputShape);
+
+        c2jServiceModel.setShapes(c2jShapeMap);
+
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        c2jModelToGeneratorModelTransformer.convertShapes();
+
+        Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
+        assertEquals(4, shapes.size());
+        assertEquals("StringShape", shapes.get("StringShape").getName());
+        assertEquals("NumberShape", shapes.get("NumberShape").getName());
+        assertEquals("InputShape", shapes.get("InputShape").getName());
+        assertEquals("OutputShape", shapes.get("OutputShape").getName());
+        assertEquals(1, shapes.get("InputShape").getMembers().size());
+        assertEquals("StringShape", shapes.get("InputShape").getMembers().get("StringShape").getShape().getName());
+        assertEquals(1, shapes.get("OutputShape").getMembers().size());
+        assertEquals("NumberShape", shapes.get("OutputShape").getMembers().get("NumberShape").getShape().getName());
+    }
+
+    @Test
+    public void testMapShapeConversion() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+
+        C2jShape stringShape = new C2jShape();
+        stringShape.setDocumentation("String Shape Documentation");
+        stringShape.setType("string");
+
+        c2jShapeMap.put("StringShape", stringShape);
+
+        C2jShape numberShape = new C2jShape();
+        numberShape.setType("integer");
+
+        c2jShapeMap.put("NumberShape", numberShape);
+
+        C2jShape valueShape = new C2jShape();
+        valueShape.setType("structure");
+        C2jShapeMember numberShapeMember = new C2jShapeMember();
+        numberShapeMember.setShape("NumberShape");
+        valueShape.setMembers(new HashMap<>());
+        valueShape.getMembers().put("NumberShape", numberShapeMember);
+
+        c2jShapeMap.put("ValueShape", valueShape);
+
+        C2jShape mapShape = new C2jShape();
+        mapShape.setType("map");
+        C2jShapeMember mapKeyMember = new C2jShapeMember();
+        mapKeyMember.setShape("StringShape");
+        mapShape.setKey(mapKeyMember);
+        C2jShapeMember valueShapeMember = new C2jShapeMember();
+        valueShapeMember.setShape("ValueShape");
+        mapShape.setValue(valueShapeMember);
+
+        c2jShapeMap.put("MapShape", mapShape);
+
+        c2jServiceModel.setShapes(c2jShapeMap);
+
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        c2jModelToGeneratorModelTransformer.convertShapes();
+
+        Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
+        assertEquals(4, shapes.size());
+        assertEquals("StringShape", shapes.get("StringShape").getName());
+        assertEquals("NumberShape", shapes.get("NumberShape").getName());
+        assertEquals("ValueShape", shapes.get("ValueShape").getName());
+        assertEquals("MapShape", shapes.get("MapShape").getName());
+        assertTrue(shapes.get("MapShape").isMap());
+        assertEquals("StringShape", shapes.get("MapShape").getMapKey().getShape().getName());
+        assertEquals("ValueShape", shapes.get("MapShape").getMapValue().getShape().getName());
+        assertEquals(1, shapes.get("MapShape").getMapValue().getShape().getMembers().size());
+        assertEquals("NumberShape", shapes.get("MapShape").getMapValue().getShape().getMembers().get("NumberShape").getShape().getName());
+    }
+
+    @Test
+    public void testListShapeConversion() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+
+        C2jShape numberShape = new C2jShape();
+        numberShape.setType("integer");
+
+        c2jShapeMap.put("NumberShape", numberShape);
+
+        C2jShape valueShape = new C2jShape();
+        valueShape.setType("structure");
+        C2jShapeMember numberShapeMember = new C2jShapeMember();
+        numberShapeMember.setShape("NumberShape");
+        valueShape.setMembers(new HashMap<>());
+        valueShape.getMembers().put("NumberShape", numberShapeMember);
+
+        c2jShapeMap.put("ValueShape", valueShape);
+
+        C2jShape listShape = new C2jShape();
+        listShape.setType("list");
+        C2jShapeMember valueShapeMember = new C2jShapeMember();
+        valueShapeMember.setShape("ValueShape");
+        listShape.setMember(valueShapeMember);
+
+        c2jShapeMap.put("ListShape", listShape);
+
+        c2jServiceModel.setShapes(c2jShapeMap);
+
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        c2jModelToGeneratorModelTransformer.convertShapes();
+
+        Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
+        assertEquals(3, shapes.size());
+        assertEquals("NumberShape", shapes.get("NumberShape").getName());
+        assertEquals("ValueShape", shapes.get("ValueShape").getName());
+        assertEquals("ListShape", shapes.get("ListShape").getName());
+        assertTrue(shapes.get("ListShape").isList());
+        assertEquals("ValueShape", shapes.get("ListShape").getListMember().getShape().getName());
+        assertEquals(1, shapes.get("ListShape").getListMember().getShape().getMembers().size());
+        assertEquals("NumberShape", shapes.get("ListShape").getListMember().getShape().getMembers().get("NumberShape").getShape().getName());
+    }
+
+    @Test
+    public void testOperationConversion() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+
+        C2jShape stringShape = new C2jShape();
+        stringShape.setDocumentation("String Shape Documentation");
+        stringShape.setType("string");
+
+        c2jShapeMap.put("StringShape", stringShape);
+
+        C2jShape numberShape = new C2jShape();
+        numberShape.setType("integer");
+
+        c2jShapeMap.put("NumberShape", numberShape);
+
+        C2jShape inputShape = new C2jShape();
+        inputShape.setType("structure");
+        C2jShapeMember inputStringShapeMember = new C2jShapeMember();
+        inputStringShapeMember.setShape("StringShape");
+        inputShape.setMembers(new HashMap<>());
+        inputShape.getMembers().put("StringShape", inputStringShapeMember);
+        inputShape.setMember(inputStringShapeMember);
+
+        c2jShapeMap.put("InputShape", inputShape);
+
+        C2jShape outputShape = new C2jShape();
+        outputShape.setType("structure");
+        C2jShapeMember outputNumberShapeMember = new C2jShapeMember();
+        outputNumberShapeMember.setShape("NumberShape");
+        outputShape.setMembers(new HashMap<>());
+        outputShape.getMembers().put("NumberShape", outputNumberShapeMember);
+
+        c2jShapeMap.put("OutputShape", outputShape);
+
+        c2jServiceModel.setShapes(c2jShapeMap);
+
+        C2jOperation operation = new C2jOperation();
+        C2jShapeMember inputShapeMember = new C2jShapeMember();
+        inputShapeMember.setShape("InputShape");
+        operation.setInput(inputShapeMember);
+        C2jShapeMember outputShapeMember = new C2jShapeMember();
+        outputShapeMember.setShape("OutputShape");
+        operation.setOutput(outputShapeMember);
+
+        C2jShape errorShape = new C2jShape();
+        errorShape.setType("structure");
+        errorShape.setMembers(new HashMap<>());
+        errorShape.getMembers().put("StringShape", inputStringShapeMember);
+        c2jShapeMap.put("ErrorShape", errorShape);
+
+        C2jError error = new C2jError();
+        error.setShape("ErrorShape");
+        operation.setErrors(new LinkedList<>());
+        operation.getErrors().add(error);
+        operation.setName("Operation");
+        C2jHttp http = new C2jHttp();
+        http.setMethod("POST");
+        http.setRequestUri("/");
+        http.setResponseCode("200");
+        operation.setHttp(http);
+
+        c2jServiceModel.setOperations(new HashMap<>());
+        c2jServiceModel.getOperations().put("Operation", operation);
+
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        c2jModelToGeneratorModelTransformer.convertShapes();
+        c2jModelToGeneratorModelTransformer.convertOperations();
+
+        assertEquals(1, c2jModelToGeneratorModelTransformer.operations.size());
+        assertEquals("Operation", c2jModelToGeneratorModelTransformer.operations.get("Operation").getName());
+        assertEquals("OperationRequest", c2jModelToGeneratorModelTransformer.operations.get("Operation").getRequest().getShape().getName());
+        assertEquals("OperationResult", c2jModelToGeneratorModelTransformer.operations.get("Operation").getResult().getShape().getName());
+        assertEquals(1, c2jModelToGeneratorModelTransformer.operations.get("Operation").getErrors().size());
+        assertEquals("ErrorShape", c2jModelToGeneratorModelTransformer.operations.get("Operation").getErrors().get(0).getName());
+        assertEquals("POST", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getMethod());
+        assertEquals("/", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getRequestUri());
+        assertEquals("200", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getResponseCode());
+    }
+}

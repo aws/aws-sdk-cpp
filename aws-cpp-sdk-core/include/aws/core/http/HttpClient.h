@@ -18,6 +18,9 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <memory>
+#include <atomic>
+#include <mutex>
+#include <condition_variable>
 
 namespace Aws
 {
@@ -41,6 +44,8 @@ class HttpResponse;
 class AWS_CORE_API HttpClient
 {
 public:
+
+    HttpClient();
     virtual ~HttpClient() {}
 
     /*
@@ -50,6 +55,19 @@ public:
                                                       Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr, 
                                                       Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
 
+    void DisableRequestProcessing();
+    void EnableRequestProcessing();
+
+    bool IsRequestProcessingEnabled() const;
+
+    void RetryRequestSleep(std::chrono::milliseconds sleepTime);
+
+private:
+
+    std::atomic< bool > m_disableRequestProcessing;
+
+    std::mutex m_requestProcessingSignalLock;
+    std::condition_variable m_requestProcessingSignal;
 };
 
 } // namespace Http

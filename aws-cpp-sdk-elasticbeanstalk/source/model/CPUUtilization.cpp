@@ -67,77 +67,42 @@ CPUUtilization& CPUUtilization::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNode = resultNode.FirstChild("User");
-    if(userNode.IsNull())
-    {
-      userNode = resultNode;
-    }
-
     if(!userNode.IsNull())
     {
       m_user = StringUtils::ConvertToDouble(StringUtils::Trim(userNode.GetText().c_str()).c_str());
       m_userHasBeenSet = true;
     }
     XmlNode niceNode = resultNode.FirstChild("Nice");
-    if(niceNode.IsNull())
-    {
-      niceNode = resultNode;
-    }
-
     if(!niceNode.IsNull())
     {
       m_nice = StringUtils::ConvertToDouble(StringUtils::Trim(niceNode.GetText().c_str()).c_str());
       m_niceHasBeenSet = true;
     }
     XmlNode systemNode = resultNode.FirstChild("System");
-    if(systemNode.IsNull())
-    {
-      systemNode = resultNode;
-    }
-
     if(!systemNode.IsNull())
     {
       m_system = StringUtils::ConvertToDouble(StringUtils::Trim(systemNode.GetText().c_str()).c_str());
       m_systemHasBeenSet = true;
     }
     XmlNode idleNode = resultNode.FirstChild("Idle");
-    if(idleNode.IsNull())
-    {
-      idleNode = resultNode;
-    }
-
     if(!idleNode.IsNull())
     {
       m_idle = StringUtils::ConvertToDouble(StringUtils::Trim(idleNode.GetText().c_str()).c_str());
       m_idleHasBeenSet = true;
     }
     XmlNode iOWaitNode = resultNode.FirstChild("IOWait");
-    if(iOWaitNode.IsNull())
-    {
-      iOWaitNode = resultNode;
-    }
-
     if(!iOWaitNode.IsNull())
     {
       m_iOWait = StringUtils::ConvertToDouble(StringUtils::Trim(iOWaitNode.GetText().c_str()).c_str());
       m_iOWaitHasBeenSet = true;
     }
     XmlNode iRQNode = resultNode.FirstChild("IRQ");
-    if(iRQNode.IsNull())
-    {
-      iRQNode = resultNode;
-    }
-
     if(!iRQNode.IsNull())
     {
       m_iRQ = StringUtils::ConvertToDouble(StringUtils::Trim(iRQNode.GetText().c_str()).c_str());
       m_iRQHasBeenSet = true;
     }
     XmlNode softIRQNode = resultNode.FirstChild("SoftIRQ");
-    if(softIRQNode.IsNull())
-    {
-      softIRQNode = resultNode;
-    }
-
     if(!softIRQNode.IsNull())
     {
       m_softIRQ = StringUtils::ConvertToDouble(StringUtils::Trim(softIRQNode.GetText().c_str()).c_str());

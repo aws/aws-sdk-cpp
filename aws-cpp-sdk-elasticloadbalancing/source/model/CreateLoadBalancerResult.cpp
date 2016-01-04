@@ -16,11 +16,13 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -37,16 +39,15 @@ CreateLoadBalancerResult& CreateLoadBalancerResult::operator =(const AmazonWebSe
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode.FirstChild("CreateLoadBalancerResult");
+  XmlNode resultNode = rootNode;
+  if (rootNode.GetName() != "CreateLoadBalancerResult")
+  {
+    resultNode = rootNode.FirstChild("CreateLoadBalancerResult");
+  }
 
   if(!resultNode.IsNull())
   {
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
-    if(dNSNameNode.IsNull())
-    {
-      dNSNameNode = resultNode;
-    }
-
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());
@@ -55,6 +56,7 @@ CreateLoadBalancerResult& CreateLoadBalancerResult::operator =(const AmazonWebSe
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
   m_responseMetadata = responseMetadataNode;
+  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::CreateLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
 
   return *this;
 }

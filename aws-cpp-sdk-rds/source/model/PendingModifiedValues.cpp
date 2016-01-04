@@ -37,9 +37,7 @@ PendingModifiedValues::PendingModifiedValues() :
     m_engineVersionHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_dBInstanceIdentifierHasBeenSet(false)
 {
 }
 
@@ -57,9 +55,7 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_engineVersionHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_dBInstanceIdentifierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,125 +67,58 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
-    if(dBInstanceClassNode.IsNull())
-    {
-      dBInstanceClassNode = resultNode;
-    }
-
     if(!dBInstanceClassNode.IsNull())
     {
       m_dBInstanceClass = StringUtils::Trim(dBInstanceClassNode.GetText().c_str());
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
-    if(allocatedStorageNode.IsNull())
-    {
-      allocatedStorageNode = resultNode;
-    }
-
     if(!allocatedStorageNode.IsNull())
     {
       m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(allocatedStorageNode.GetText().c_str()).c_str());
       m_allocatedStorageHasBeenSet = true;
     }
     XmlNode masterUserPasswordNode = resultNode.FirstChild("MasterUserPassword");
-    if(masterUserPasswordNode.IsNull())
-    {
-      masterUserPasswordNode = resultNode;
-    }
-
     if(!masterUserPasswordNode.IsNull())
     {
       m_masterUserPassword = StringUtils::Trim(masterUserPasswordNode.GetText().c_str());
       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
-    if(portNode.IsNull())
-    {
-      portNode = resultNode;
-    }
-
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
-    if(backupRetentionPeriodNode.IsNull())
-    {
-      backupRetentionPeriodNode = resultNode;
-    }
-
     if(!backupRetentionPeriodNode.IsNull())
     {
       m_backupRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(backupRetentionPeriodNode.GetText().c_str()).c_str());
       m_backupRetentionPeriodHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
-    if(multiAZNode.IsNull())
-    {
-      multiAZNode = resultNode;
-    }
-
     if(!multiAZNode.IsNull())
     {
       m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(multiAZNode.GetText().c_str()).c_str());
       m_multiAZHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(engineVersionNode.IsNull())
-    {
-      engineVersionNode = resultNode;
-    }
-
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
-    if(iopsNode.IsNull())
-    {
-      iopsNode = resultNode;
-    }
-
     if(!iopsNode.IsNull())
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
-    if(dBInstanceIdentifierNode.IsNull())
-    {
-      dBInstanceIdentifierNode = resultNode;
-    }
-
     if(!dBInstanceIdentifierNode.IsNull())
     {
       m_dBInstanceIdentifier = StringUtils::Trim(dBInstanceIdentifierNode.GetText().c_str());
       m_dBInstanceIdentifierHasBeenSet = true;
-    }
-    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(storageTypeNode.IsNull())
-    {
-      storageTypeNode = resultNode;
-    }
-
-    if(!storageTypeNode.IsNull())
-    {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
-      m_storageTypeHasBeenSet = true;
-    }
-    XmlNode cACertificateIdentifierNode = resultNode.FirstChild("CACertificateIdentifier");
-    if(cACertificateIdentifierNode.IsNull())
-    {
-      cACertificateIdentifierNode = resultNode;
-    }
-
-    if(!cACertificateIdentifierNode.IsNull())
-    {
-      m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
-      m_cACertificateIdentifierHasBeenSet = true;
     }
   }
 
@@ -234,14 +163,6 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_cACertificateIdentifierHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
-  }
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -281,13 +202,5 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_dBInstanceIdentifierHasBeenSet)
   {
       oStream << location << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
-  }
-  if(m_storageTypeHasBeenSet)
-  {
-      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-  if(m_cACertificateIdentifierHasBeenSet)
-  {
-      oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 }
