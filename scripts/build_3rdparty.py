@@ -87,7 +87,7 @@ def GetPlatformBuildTargets():
                                        'ReleaseDynamic' : { 'directory' : '_build_linux_dynamic_release', 
                                                             'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
                                                             'build_params' : [],
-                                                            'config' : 'Release' }, 
+                                                            'config' : 'Release' },
                                        'ReleaseStatic' : { 'directory' : '_build_linux_static_release', 
                                                            'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                            'build_params' : [],
@@ -207,6 +207,7 @@ def Main():
 
     if generateClients != "0":
         sdk_directories.wipeGeneratedCode()
+        customCmakeParams += "-DREGENERATE_CLIENTS=1 "
 
     for targetConfig in targetConfigs:
         if targetConfig in archConfigs:
