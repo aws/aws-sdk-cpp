@@ -42,6 +42,8 @@ const char* GetRegionName(Region region)
             return "ap-southeast-2";
         case Region::AP_NORTHEAST_1:
             return "ap-northeast-1";
+        case Region::AP_NORTHEAST_2:
+            return "ap-northeast-2";
         case Region::SA_EAST_1:
             return "sa-east-1";
         default:

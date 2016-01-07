@@ -32,6 +32,7 @@ enum class AWS_CORE_API Region
     AP_SOUTHEAST_1,
     AP_SOUTHEAST_2,
     AP_NORTHEAST_1,
+    AP_NORTHEAST_2,
     SA_EAST_1
 };
 
