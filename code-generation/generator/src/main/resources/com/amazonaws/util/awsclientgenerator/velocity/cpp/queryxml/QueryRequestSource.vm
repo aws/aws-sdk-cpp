@@ -54,7 +54,14 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($location = $member.key)
 #end
 #else
+#if($member.value.locationName)
+#set($location = $member.value.locationName)
+#else
 #set($location = $member.key + ".member")
+#end
+#if($metadata.protocol == "ec2")
+#set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
 #end
 #if($member.value.shape.listMember.shape.structure)
   ${spaces}  item.OutputToStream(ss, "${location}.", ${varName}Count, "");

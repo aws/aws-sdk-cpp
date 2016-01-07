@@ -29,7 +29,11 @@
 #set($listVarName = $CppViewHelper.computeVariableName($memberName) + "Member")
 #set($listMemberName = "member")
 #end##location specified in model
+#if($member.locationName)##location specified
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
+#else##no location specified
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
+#end##
 #end##list member uses flattened serialization
 #elseif($member.shape.map)##member is a map
 #if($member.locationName)##member uses location for serialization
