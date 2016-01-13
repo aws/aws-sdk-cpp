@@ -145,14 +145,17 @@ bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
 
     char dwStatusCode[256];
     DWORD dwSize = sizeof(dwStatusCode);
+	memset(dwStatusCode, 0, dwSize);
 
-    HttpQueryInfoA(hHttpRequest, HTTP_QUERY_STATUS_CODE, &dwStatusCode, &dwSize, 0);
+    HttpQueryInfoA(hHttpRequest, HTTP_QUERY_STATUS_CODE, dwStatusCode, &dwSize, 0);
     response->SetResponseCode((HttpResponseCode)atoi(dwStatusCode));
     AWS_LOG_DEBUG(GetLogTag(), "Received response code %s.", dwStatusCode);
 
     char contentTypeStr[1024];
     dwSize = sizeof(contentTypeStr);
-    HttpQueryInfoA(hHttpRequest, HTTP_QUERY_CONTENT_TYPE, &contentTypeStr, &dwSize, 0);
+	memset(contentTypeStr, 0, dwSize);
+
+    HttpQueryInfoA(hHttpRequest, HTTP_QUERY_CONTENT_TYPE, contentTypeStr, &dwSize, 0);
     if (contentTypeStr[0] != NULL)
     {
         response->SetContentType(contentTypeStr);
@@ -162,6 +165,8 @@ bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
     char headerStr[1024];
     dwSize = sizeof(headerStr);
     AWS_LOG_DEBUG(GetLogTag(), "Received headers:");
+	memset(headerStr, 0, dwSize);
+
     while (HttpQueryInfoA(hHttpRequest, HTTP_QUERY_RAW_HEADERS_CRLF, headerStr, &dwSize, (LPDWORD)&read) && dwSize > 0)
     {
         AWS_LOGSTREAM_DEBUG(GetLogTag(), headerStr);

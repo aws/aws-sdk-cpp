@@ -17,7 +17,7 @@
 
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/YetAnotherDefaultExecutor.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/OSVersionInfo.h>
 #include <aws/core/Version.h>
@@ -40,13 +40,13 @@ static Aws::String ComputeUserAgentString()
 ClientConfiguration::ClientConfiguration() : 
     userAgent(ComputeUserAgentString()), 
     scheme(Aws::Http::Scheme::HTTPS), 
-    region(Region::US_EAST_1),
+    region(Region::AP_NORTHEAST_1),
     maxConnections(25), 
     requestTimeoutMs(3000), 
     connectTimeoutMs(1000),
     retryStrategy(Aws::MakeShared<DefaultRetryStrategy>(allocationTag)),
     proxyPort(0),
-    executor(Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(allocationTag)),
+    executor(Aws::MakeShared<Aws::Utils::Threading::YetAnotherDefaultExecutor>(allocationTag)),
     verifySSL(true),
     writeRateLimiter(nullptr),
     readRateLimiter(nullptr),

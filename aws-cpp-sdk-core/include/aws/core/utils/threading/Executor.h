@@ -14,11 +14,14 @@
   */
 
 #pragma once
-
+
+
 #include <aws/core/Core_EXPORTS.h>
-
+
+
 #include <functional>
-#include <aws/core/utils/memory/stl/AWSFunction.h>
+#include <aws/core/utils/memory/stl/AWSFunction.h>
+
 namespace Aws
 {
 namespace Utils
@@ -34,20 +37,23 @@ namespace Threading
     public:
         Executor() {}
         virtual ~Executor(){}
-
+
+
         template<class Fn, class ... Args>
         bool Submit(Fn&& fn, Args&& ... args)
         {
             return SubmitToThread(AWS_BUILD_TYPED_FUNCTION(std::bind(std::forward<Fn>(fn), std::forward<Args>(args)...), void()));
         }
-
+
+
     protected:
         /**
         * To implement your own executor implementation, then simply subclass Executor and implement this method. 
         */
         virtual bool SubmitToThread(std::function<void()>&&) = 0;
     };
-
+
+
     /**
     * Default Executor implementation. Simply spawns a thread and detaches it.
     */
@@ -58,7 +64,8 @@ namespace Threading
     protected:
         bool SubmitToThread(std::function<void()>&&);
     };
-
+
+
 } // namespace Threading
 } // namespace Utils
 } // namespace Aws

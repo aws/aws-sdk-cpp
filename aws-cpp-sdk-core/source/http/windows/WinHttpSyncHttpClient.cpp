@@ -22,7 +22,6 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/windows/WinHttpConnectionPoolMgr.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 
@@ -39,8 +38,7 @@ using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
-WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) :
-    Base()
+WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 {
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections 
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
@@ -167,45 +165,32 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
 {
     wchar_t dwStatusCode[256];
     DWORD dwSize = sizeof(dwStatusCode);
-    wmemset(dwStatusCode, 0, static_cast<size_t>(dwSize/sizeof(wchar_t)));
+	memset(dwStatusCode, 0, dwSize);
 
-    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_STATUS_CODE, nullptr, &dwStatusCode, &dwSize, 0);
-    int responseCode = _wtoi(dwStatusCode);
-    response->SetResponseCode((HttpResponseCode)responseCode);
-    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received response code " << responseCode);
+    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_STATUS_CODE, WINHTTP_HEADER_NAME_BY_INDEX, dwStatusCode, &dwSize, 0);
+    response->SetResponseCode((HttpResponseCode)_wtoi(dwStatusCode));
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received response code " << dwStatusCode);
 
     wchar_t contentTypeStr[1024];
     dwSize = sizeof(contentTypeStr);
-    wmemset(contentTypeStr, 0, static_cast<size_t>(dwSize / sizeof(wchar_t)));
-    
-    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_CONTENT_TYPE, nullptr, &contentTypeStr, &dwSize, 0);
+    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_CONTENT_TYPE, WINHTTP_HEADER_NAME_BY_INDEX, &contentTypeStr, &dwSize, 0);
     if (contentTypeStr[0] != NULL)
     {
         Aws::String contentStr = StringUtils::FromWString(contentTypeStr);
         response->SetContentType(contentStr);
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received content type " << contentStr);
     }
-       
-    BOOL queryResult = false;
+
+    wchar_t headerStr[1024];
+    dwSize = sizeof(headerStr);
     AWS_LOG_DEBUG(GetLogTag(), "Received headers:");
-    WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_RAW_HEADERS_CRLF, WINHTTP_HEADER_NAME_BY_INDEX, nullptr, &dwSize, WINHTTP_NO_HEADER_INDEX);
-    
-    //I know it's ugly, but this is how MSFT says to do it so....
-    if (GetLastError() == ERROR_INSUFFICIENT_BUFFER)
+    while (WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_RAW_HEADERS_CRLF, WINHTTP_HEADER_NAME_BY_INDEX, headerStr, &dwSize, (LPDWORD)&read) && dwSize > 0)
     {
-        Utils::Array<wchar_t> headerRawString(dwSize / sizeof(wchar_t));
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), headerStr);
+        ss << StringUtils::FromWString(headerStr);
+    }
 
-        queryResult = WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_RAW_HEADERS_CRLF, WINHTTP_HEADER_NAME_BY_INDEX, headerRawString.GetUnderlyingData(), &dwSize, WINHTTP_NO_HEADER_INDEX);
-        if (queryResult)
-        {
-            Aws::String headers(StringUtils::FromWString(headerRawString.GetUnderlyingData()));
-            AWS_LOGSTREAM_DEBUG(GetLogTag(), headers);
-            ss << std::move(headers);
-            read = dwSize;
-        }
-    } 
-
-    return queryResult == TRUE;
+    return (read != 0);
 }
 
 bool WinHttpSyncHttpClient::DoSendRequest(void* hHttpRequest) const

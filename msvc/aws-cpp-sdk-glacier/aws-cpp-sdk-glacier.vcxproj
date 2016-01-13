@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugOpt|x64">
+      <Configuration>DebugOpt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{BEB1F6D8-D828-4BCC-86A3-C02C288AEC47}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>aws-cpp-sdk-glacier</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">aws-cpp-sdk-glacier.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">aws-cpp-sdk-glacier</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\DebugOpt\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">aws-cpp-sdk-glacier.dir\DebugOpt\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">aws-cpp-sdk-glacier</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">aws-cpp-sdk-glacier.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">aws-cpp-sdk-glacier</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">aws-cpp-sdk-glacier.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">aws-cpp-sdk-glacier</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">aws-cpp-sdk-glacier.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">aws-cpp-sdk-glacier</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR="Debug";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR=\"Debug\";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\aws-cpp-sdk-core\Debug\aws-cpp-sdk-core.lib;Wininet.lib;winhttp.lib;Bcrypt.lib;Crypt32.lib;Userenv.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/Debug/aws-cpp-sdk-glacier.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/Debug/aws-cpp-sdk-glacier.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>DebugOpt/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR="DebugOpt";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR=\"DebugOpt\";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\aws-cpp-sdk-core\DebugOpt\aws-cpp-sdk-core.lib;Wininet.lib;winhttp.lib;Bcrypt.lib;Crypt32.lib;Userenv.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/DebugOpt/aws-cpp-sdk-glacier.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/DebugOpt/aws-cpp-sdk-glacier.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR="Release";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR=\"Release\";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\aws-cpp-sdk-core\Release\aws-cpp-sdk-core.lib;Wininet.lib;winhttp.lib;Bcrypt.lib;Crypt32.lib;Userenv.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/Release/aws-cpp-sdk-glacier.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/Release/aws-cpp-sdk-glacier.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR="RelWithDebInfo";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR=\"RelWithDebInfo\";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\aws-cpp-sdk-core\RelWithDebInfo\aws-cpp-sdk-core.lib;Wininet.lib;winhttp.lib;Bcrypt.lib;Crypt32.lib;Userenv.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/RelWithDebInfo/aws-cpp-sdk-glacier.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/RelWithDebInfo/aws-cpp-sdk-glacier.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR="MinSizeRel";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;AWS_CUSTOM_MEMORY_MANAGEMENT;USE_IMPORT_EXPORT;JSON_USE_EXCEPTION=0;AWS_GLACIER_EXPORTS;CMAKE_INTDIR=\"MinSizeRel\";aws_cpp_sdk_glacier_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include;D:\Work_repo\aws-sdk\aws-cpp-sdk-core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\aws-cpp-sdk-core\MinSizeRel\aws-cpp-sdk-core.lib;Wininet.lib;winhttp.lib;Bcrypt.lib;Crypt32.lib;Userenv.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/MinSizeRel/aws-cpp-sdk-glacier.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-glacier/MinSizeRel/aws-cpp-sdk-glacier.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/Work_repo/aws-sdk -BD:/Work_repo/aws-sdk/msvc --check-stamp-file D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">Building Custom Rule D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/Work_repo/aws-sdk -BD:/Work_repo/aws-sdk/msvc --check-stamp-file D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/Work_repo/aws-sdk -BD:/Work_repo/aws-sdk/msvc --check-stamp-file D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/Work_repo/aws-sdk -BD:/Work_repo/aws-sdk/msvc --check-stamp-file D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/Work_repo/aws-sdk -BD:/Work_repo/aws-sdk/msvc --check-stamp-file D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/Work_repo/aws-sdk/aws-cpp-sdk-glacier/CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Work_repo\aws-sdk\msvc\aws-cpp-sdk-glacier\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierClient.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierEndpoint.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierErrorMarshaller.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierErrors.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\GlacierRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\Glacier_EXPORTS.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\AbortMultipartUploadRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\AbortVaultLockRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ActionCode.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\AddTagsToVaultRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CompleteMultipartUploadRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CompleteMultipartUploadResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CompleteVaultLockRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CreateVaultRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\CreateVaultResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DataRetrievalPolicy.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DataRetrievalRule.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteArchiveRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteVaultAccessPolicyRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteVaultNotificationsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DeleteVaultRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeJobRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeJobResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeVaultOutput.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeVaultRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\DescribeVaultResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetDataRetrievalPolicyRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetDataRetrievalPolicyResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetJobOutputRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetJobOutputResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultAccessPolicyRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultAccessPolicyResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultLockRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultLockResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultNotificationsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GetVaultNotificationsResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\GlacierJobDescription.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateJobRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateJobResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateMultipartUploadRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateMultipartUploadResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateVaultLockRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InitiateVaultLockResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InventoryRetrievalJobDescription.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\InventoryRetrievalJobInput.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\JobParameters.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListJobsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListJobsResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListMultipartUploadsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListMultipartUploadsResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListPartsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListPartsResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListTagsForVaultRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListTagsForVaultResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListVaultsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\ListVaultsResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\PartListElement.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\RemoveTagsFromVaultRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\SetDataRetrievalPolicyRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\SetVaultAccessPolicyRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\SetVaultNotificationsRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\StatusCode.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadArchiveRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadArchiveResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadListElement.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadMultipartPartRequest.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\UploadMultipartPartResult.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\VaultAccessPolicy.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\VaultLockPolicy.h" />
+    <ClInclude Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\include\aws\glacier\model\VaultNotificationConfig.h" />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierClient.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierEndpoint.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierErrorMarshaller.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\GlacierErrors.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\AbortMultipartUploadRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\AbortVaultLockRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ActionCode.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\AddTagsToVaultRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CompleteMultipartUploadRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CompleteMultipartUploadResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CompleteVaultLockRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CreateVaultRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\CreateVaultResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DataRetrievalPolicy.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DataRetrievalRule.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteArchiveRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteVaultAccessPolicyRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteVaultNotificationsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DeleteVaultRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeJobRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeJobResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeVaultOutput.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeVaultRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\DescribeVaultResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetDataRetrievalPolicyRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetDataRetrievalPolicyResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetJobOutputRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetJobOutputResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultAccessPolicyRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultAccessPolicyResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultLockRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultLockResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultNotificationsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GetVaultNotificationsResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\GlacierJobDescription.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateJobRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateJobResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateMultipartUploadRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateMultipartUploadResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateVaultLockRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InitiateVaultLockResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InventoryRetrievalJobDescription.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\InventoryRetrievalJobInput.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\JobParameters.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListJobsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListJobsResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListMultipartUploadsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListMultipartUploadsResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListPartsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListPartsResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListTagsForVaultRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListTagsForVaultResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListVaultsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\ListVaultsResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\PartListElement.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\RemoveTagsFromVaultRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\SetDataRetrievalPolicyRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\SetVaultAccessPolicyRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\SetVaultNotificationsRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\StatusCode.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadArchiveRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadArchiveResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadListElement.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadMultipartPartRequest.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\UploadMultipartPartResult.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\VaultAccessPolicy.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\VaultLockPolicy.cpp"  />
+    <ClCompile Include="D:\Work_repo\aws-sdk\aws-cpp-sdk-glacier\source\model\VaultNotificationConfig.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:/Work_repo/aws-sdk/msvc/ZERO_CHECK.vcxproj">
+      <Project>B1885EFD-F588-4E9A-AD61-E99F3A659717</Project>
+    </ProjectReference>
+    <ProjectReference Include="D:/Work_repo/aws-sdk/msvc/aws-cpp-sdk-core/aws-cpp-sdk-core.vcxproj">
+      <Project>FE1C21B9-0EF4-4B9E-8C1A-C88091041DBA</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
