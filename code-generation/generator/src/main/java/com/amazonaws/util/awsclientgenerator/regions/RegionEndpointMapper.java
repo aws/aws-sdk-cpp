@@ -34,6 +34,7 @@ public class RegionEndpointMapper {
         REGION_MAPPING_ENDPOINT_MAPPING.put("AP_SOUTHEAST_1", "ap-southeast-1.amazonaws.com");
         REGION_MAPPING_ENDPOINT_MAPPING.put("AP_SOUTHEAST_2", "ap-southeast-2.amazonaws.com");
         REGION_MAPPING_ENDPOINT_MAPPING.put("AP_NORTHEAST_1", "ap-northeast-1.amazonaws.com");
+        REGION_MAPPING_ENDPOINT_MAPPING.put("AP_NORTHEAST_2", "ap-northeast-2.amazonaws.com");
         REGION_MAPPING_ENDPOINT_MAPPING.put("SA_EAST_1", "sa-east-1.amazonaws.com");
     }
 
