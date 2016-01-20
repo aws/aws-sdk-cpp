@@ -106,7 +106,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
-    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_allowRedirects(clientConfig.followRedirects)
+    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath), m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
@@ -169,6 +169,12 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEDATA, &writeContext);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, &CurlHttpClient::WriteHeader);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, response.get());
+
+        //we only want to override the default path if someone has explicitly told us to.
+        if(!m_caPath.empty())
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_CAPATH, m_caPath.c_str());
+        }
 
 	// only set by android test builds because the emulator is missing a cert needed for aws services
 #ifdef TEST_CERT_PATH

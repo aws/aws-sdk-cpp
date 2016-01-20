@@ -72,6 +72,8 @@ struct AWS_CORE_API ClientConfiguration
     Aws::String proxyPassword;
     std::shared_ptr<Aws::Utils::Threading::Executor> executor;
     bool verifySSL;
+    //this is currently only used for libcurl. This should be unnecessary for windows.
+    Aws::String caPath;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
     Aws::Http::TransferLibType httpLibOverride;

@@ -273,6 +273,7 @@ struct AWS_CORE_API ClientConfiguration
     Aws::String proxyPassword;
     std::shared_ptr<Aws::Utils::Threading::Executor> executor;
     bool verifySSL;
+    Aws::String caPath;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
 };
@@ -310,6 +311,9 @@ The default behavior for the executor is to create and detach a thread for each 
 
 #####Verify SSL
 If necessary, you can disable SSL certificate verification by setting the verify SSL value to false.
+
+#####CA Path
+You can tell the http client where to find your certificate trust store ( e.g. a directory prepared with OpenSSL c_rehash utility). This should not be necessary unless you are doing some weird symlink farm stuff for your environment. This has no effect on Windows or OSX.
 
 #####Write Rate Limiter and Read Rate Limiter
 The write and read rate limiters are used to throttle the bandwidth used by the transport layer. The default for these limiters is open. You can use the default implementation with your desired rates, or you can create your own instance by implementing a subclass of RateLimiterInterface.
