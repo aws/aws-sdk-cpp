@@ -704,6 +704,9 @@ add_definitions(-DJSON_USE_EXCEPTION=0)
 if(NOT PLATFORM_WINDOWS AND NOT PLATFORM_DURANGO)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+    if(NOT BUILD_SHARED_LIBS)
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+    endif()
 endif()
 
 # warning control
@@ -1106,7 +1109,7 @@ if(OUTPUT_VAR GREATER -1)
 endif()
 
 # trying to compile EC2Client.cpp hangs linux/android, may need some kind of custom build settings to handle it
-if(NOT PLATFORM_LINUX AND NOT PLATFORM_ANDROID)
+if(NOT PLATFORM_ANDROID)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-ec2" OUTPUT_VAR)
 if(OUTPUT_VAR GREATER -1)
         add_subdirectory(aws-cpp-sdk-ec2)
