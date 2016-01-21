@@ -47,7 +47,7 @@ DescribeExportTasksResponse& DescribeExportTasksResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode exportTasksNode = resultNode.FirstChild("ExportTasks");
+    XmlNode exportTasksNode = resultNode.FirstChild("exportTaskSet");
     if(!exportTasksNode.IsNull())
     {
       XmlNode exportTasksMember = exportTasksNode.FirstChild("item");

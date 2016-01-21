@@ -47,7 +47,7 @@ DescribeRouteTablesResponse& DescribeRouteTablesResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode routeTablesNode = resultNode.FirstChild("RouteTables");
+    XmlNode routeTablesNode = resultNode.FirstChild("routeTableSet");
     if(!routeTablesNode.IsNull())
     {
       XmlNode routeTablesMember = routeTablesNode.FirstChild("item");

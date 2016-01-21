@@ -50,7 +50,7 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
       m_internetGatewayId = StringUtils::Trim(internetGatewayIdNode.GetText().c_str());
       m_internetGatewayIdHasBeenSet = true;
     }
-    XmlNode attachmentsNode = resultNode.FirstChild("Attachments");
+    XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
@@ -62,7 +62,7 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
 
       m_attachmentsHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -87,19 +87,23 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_attachmentsHasBeenSet)
   {
+      unsigned attachmentsIdx = 0;
       for(auto& item : m_attachments)
       {
+        attachmentsIdx++;
         Aws::StringStream attachmentsSs;
-        attachmentsSs << location << index << locationValue << ".item";
+        attachmentsSs << location << index << locationValue << ".AttachmentSet." << attachmentsIdx;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

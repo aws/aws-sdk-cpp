@@ -62,7 +62,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
-    XmlNode routesNode = resultNode.FirstChild("Routes");
+    XmlNode routesNode = resultNode.FirstChild("routeSet");
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
@@ -74,7 +74,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
 
       m_routesHasBeenSet = true;
     }
-    XmlNode associationsNode = resultNode.FirstChild("Associations");
+    XmlNode associationsNode = resultNode.FirstChild("associationSet");
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
@@ -86,7 +86,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
 
       m_associationsHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -98,7 +98,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode propagatingVgwsNode = resultNode.FirstChild("PropagatingVgws");
+    XmlNode propagatingVgwsNode = resultNode.FirstChild("propagatingVgwSet");
     if(!propagatingVgwsNode.IsNull())
     {
       XmlNode propagatingVgwsMember = propagatingVgwsNode.FirstChild("item");
@@ -127,37 +127,45 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_routesHasBeenSet)
   {
+      unsigned routesIdx = 0;
       for(auto& item : m_routes)
       {
+        routesIdx++;
         Aws::StringStream routesSs;
-        routesSs << location << index << locationValue << ".item";
+        routesSs << location << index << locationValue << ".RouteSet." << routesIdx;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
   if(m_associationsHasBeenSet)
   {
+      unsigned associationsIdx = 0;
       for(auto& item : m_associations)
       {
+        associationsIdx++;
         Aws::StringStream associationsSs;
-        associationsSs << location << index << locationValue << ".item";
+        associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx;
         item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_propagatingVgwsHasBeenSet)
   {
+      unsigned propagatingVgwsIdx = 0;
       for(auto& item : m_propagatingVgws)
       {
+        propagatingVgwsIdx++;
         Aws::StringStream propagatingVgwsSs;
-        propagatingVgwsSs << location << index << locationValue << ".item";
+        propagatingVgwsSs << location << index << locationValue << ".PropagatingVgwSet." << propagatingVgwsIdx;
         item.OutputToStream(oStream, propagatingVgwsSs.str().c_str());
       }
   }

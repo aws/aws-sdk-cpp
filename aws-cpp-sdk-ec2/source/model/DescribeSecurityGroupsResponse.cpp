@@ -47,7 +47,7 @@ DescribeSecurityGroupsResponse& DescribeSecurityGroupsResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNode = resultNode.FirstChild("securityGroupInfo");
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");

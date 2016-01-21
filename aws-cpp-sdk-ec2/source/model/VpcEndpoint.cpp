@@ -84,7 +84,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
       m_policyDocumentHasBeenSet = true;
     }
-    XmlNode routeTableIdsNode = resultNode.FirstChild("RouteTableIds");
+    XmlNode routeTableIdsNode = resultNode.FirstChild("routeTableIdSet");
     if(!routeTableIdsNode.IsNull())
     {
       XmlNode routeTableIdsMember = routeTableIdsNode.FirstChild("item");
@@ -131,9 +131,11 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_routeTableIdsHasBeenSet)
   {
+      unsigned routeTableIdsIdx = 0;
       for(auto& item : m_routeTableIds)
       {
-        oStream << location << index << locationValue << ".item=" << StringUtils::URLEncode(item.c_str()) << "&";
+        routeTableIdsIdx++;
+        oStream << location << index << locationValue << ".RouteTableIdSet." << routeTableIdsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_creationTimestampHasBeenSet)

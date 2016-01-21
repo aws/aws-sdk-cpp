@@ -40,7 +40,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
     unsigned resourcesCount = 1;
     for(auto& item : m_resources)
     {
-      ss << "Resources.member." << resourcesCount << "="
+      ss << "ResourceId." << resourcesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       resourcesCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      item.OutputToStream(ss, "Tag.", tagsCount, "");
       tagsCount++;
     }
   }

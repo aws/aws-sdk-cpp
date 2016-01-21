@@ -47,7 +47,7 @@ CancelSpotInstanceRequestsResponse& CancelSpotInstanceRequestsResponse::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode cancelledSpotInstanceRequestsNode = resultNode.FirstChild("CancelledSpotInstanceRequests");
+    XmlNode cancelledSpotInstanceRequestsNode = resultNode.FirstChild("spotInstanceRequestSet");
     if(!cancelledSpotInstanceRequestsNode.IsNull())
     {
       XmlNode cancelledSpotInstanceRequestsMember = cancelledSpotInstanceRequestsNode.FirstChild("item");

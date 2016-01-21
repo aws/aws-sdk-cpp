@@ -88,7 +88,7 @@ ConversionTask& ConversionTask::operator =(const XmlNode& xmlNode)
       m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
       m_statusMessageHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -137,10 +137,12 @@ void ConversionTask::OutputToStream(Aws::OStream& oStream, const char* location,
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

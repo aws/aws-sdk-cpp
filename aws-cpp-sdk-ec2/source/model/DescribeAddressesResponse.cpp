@@ -47,7 +47,7 @@ DescribeAddressesResponse& DescribeAddressesResponse::operator =(const AmazonWeb
 
   if(!resultNode.IsNull())
   {
-    XmlNode addressesNode = resultNode.FirstChild("Addresses");
+    XmlNode addressesNode = resultNode.FirstChild("addressesSet");
     if(!addressesNode.IsNull())
     {
       XmlNode addressesMember = addressesNode.FirstChild("item");

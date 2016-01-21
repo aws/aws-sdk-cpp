@@ -66,7 +66,7 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
     {
       m_lastEvaluatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastEvaluatedTimeNode.GetText().c_str()).c_str());
     }
-    XmlNode historyRecordsNode = resultNode.FirstChild("HistoryRecords");
+    XmlNode historyRecordsNode = resultNode.FirstChild("historyRecordSet");
     if(!historyRecordsNode.IsNull())
     {
       XmlNode historyRecordsMember = historyRecordsNode.FirstChild("item");

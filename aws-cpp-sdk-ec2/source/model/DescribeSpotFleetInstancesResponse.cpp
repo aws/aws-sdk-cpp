@@ -52,7 +52,7 @@ DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator
     {
       m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
     }
-    XmlNode activeInstancesNode = resultNode.FirstChild("ActiveInstances");
+    XmlNode activeInstancesNode = resultNode.FirstChild("activeInstanceSet");
     if(!activeInstancesNode.IsNull())
     {
       XmlNode activeInstancesMember = activeInstancesNode.FirstChild("item");

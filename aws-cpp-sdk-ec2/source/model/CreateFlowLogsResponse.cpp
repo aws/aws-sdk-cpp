@@ -47,7 +47,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode flowLogIdsNode = resultNode.FirstChild("FlowLogIds");
+    XmlNode flowLogIdsNode = resultNode.FirstChild("flowLogIdSet");
     if(!flowLogIdsNode.IsNull())
     {
       XmlNode flowLogIdsMember = flowLogIdsNode.FirstChild("item");
@@ -63,7 +63,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const AmazonWebServic
     {
       m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
     }
-    XmlNode unsuccessfulNode = resultNode.FirstChild("Unsuccessful");
+    XmlNode unsuccessfulNode = resultNode.FirstChild("unsuccessful");
     if(!unsuccessfulNode.IsNull())
     {
       XmlNode unsuccessfulMember = unsuccessfulNode.FirstChild("item");

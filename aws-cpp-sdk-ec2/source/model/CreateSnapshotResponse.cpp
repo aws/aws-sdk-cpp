@@ -98,7 +98,7 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const AmazonWebServic
     {
       m_ownerAlias = StringUtils::Trim(ownerAliasNode.GetText().c_str());
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");

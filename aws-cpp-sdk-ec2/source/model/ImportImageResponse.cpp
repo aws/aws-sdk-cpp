@@ -77,7 +77,7 @@ ImportImageResponse& ImportImageResponse::operator =(const AmazonWebServiceResul
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
     }
-    XmlNode snapshotDetailsNode = resultNode.FirstChild("SnapshotDetails");
+    XmlNode snapshotDetailsNode = resultNode.FirstChild("snapshotDetailSet");
     if(!snapshotDetailsNode.IsNull())
     {
       XmlNode snapshotDetailsMember = snapshotDetailsNode.FirstChild("item");

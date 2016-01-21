@@ -47,7 +47,7 @@ DescribeAvailabilityZonesResponse& DescribeAvailabilityZonesResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
+    XmlNode availabilityZonesNode = resultNode.FirstChild("availabilityZoneInfo");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");

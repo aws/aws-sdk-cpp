@@ -48,7 +48,7 @@ DhcpConfiguration& DhcpConfiguration::operator =(const XmlNode& xmlNode)
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
-    XmlNode valuesNode = resultNode.FirstChild("Values");
+    XmlNode valuesNode = resultNode.FirstChild("valueSet");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("item");
@@ -73,10 +73,12 @@ void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_valuesHasBeenSet)
   {
+      unsigned valuesIdx = 0;
       for(auto& item : m_values)
       {
+        valuesIdx++;
         Aws::StringStream valuesSs;
-        valuesSs << location << index << locationValue << ".item";
+        valuesSs << location << index << locationValue << ".ValueSet." << valuesIdx;
         item.OutputToStream(oStream, valuesSs.str().c_str());
       }
   }

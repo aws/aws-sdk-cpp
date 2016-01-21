@@ -40,7 +40,7 @@ Aws::String DescribeSubnetsRequest::SerializePayload() const
     unsigned subnetIdsCount = 1;
     for(auto& item : m_subnetIds)
     {
-      ss << "SubnetIds.member." << subnetIdsCount << "="
+      ss << "SubnetId." << subnetIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeSubnetsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

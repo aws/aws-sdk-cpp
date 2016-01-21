@@ -51,7 +51,7 @@ Aws::String ImportImageRequest::SerializePayload() const
     unsigned diskContainersCount = 1;
     for(auto& item : m_diskContainers)
     {
-      item.OutputToStream(ss, "DiskContainers.member.", diskContainersCount, "");
+      item.OutputToStream(ss, "DiskContainer.", diskContainersCount, "");
       diskContainersCount++;
     }
   }

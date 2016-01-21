@@ -41,7 +41,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
     unsigned reservedInstancesIdsCount = 1;
     for(auto& item : m_reservedInstancesIds)
     {
-      ss << "ReservedInstancesIds.member." << reservedInstancesIdsCount << "="
+      ss << "ReservedInstancesId." << reservedInstancesIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       reservedInstancesIdsCount++;
     }
@@ -51,7 +51,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

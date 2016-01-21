@@ -56,7 +56,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
     unsigned userIdsCount = 1;
     for(auto& item : m_userIds)
     {
-      ss << "UserIds.member." << userIdsCount << "="
+      ss << "UserId." << userIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       userIdsCount++;
     }
@@ -66,7 +66,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
     unsigned groupNamesCount = 1;
     for(auto& item : m_groupNames)
     {
-      ss << "GroupNames.member." << groupNamesCount << "="
+      ss << "UserGroup." << groupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupNamesCount++;
     }

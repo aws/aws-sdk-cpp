@@ -41,7 +41,7 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
     unsigned groupNamesCount = 1;
     for(auto& item : m_groupNames)
     {
-      ss << "GroupNames.member." << groupNamesCount << "="
+      ss << "GroupName." << groupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupNamesCount++;
     }
@@ -51,7 +51,7 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
     unsigned groupIdsCount = 1;
     for(auto& item : m_groupIds)
     {
-      ss << "GroupIds.member." << groupIdsCount << "="
+      ss << "GroupId." << groupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupIdsCount++;
     }
@@ -61,7 +61,7 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

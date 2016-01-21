@@ -78,28 +78,43 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}  ${varName}Count++;
   ${spaces}}
 #elseif($member.value.shape.map)
+#if($member.value.locationName)
+#set($mapLocationName = $member.value.locationName)
+#else
+#set($mapLocationName = $member.key + ".entry")
+#end
+#if($member.value.shape.mapKey.locationName)
+#set($keyLocationName = $member.value.shape.mapKey.locationName)
+#else
+#set($keyLocationName = "key")
+#end
+#if($member.value.shape.mapValue.locationName)
+#set($valueLocationName = $member.value.shape.mapValue.locationName)
+#else
+#set($valueLocationName = "value")
+#end
   ${spaces}unsigned ${varName}Count = 1;
   ${spaces}for(auto& item : $memberVarName)
   ${spaces}{
-  ${spaces}  ss << "${member.value.locationName}." << ${varName}Count << ".${member.value.shape.mapKey.locationName}="
+  ${spaces}  ss << "${mapLocationName}." << ${varName}Count << ".${keyLocationName}="
 #if($member.value.shape.mapKey.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.first.c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapKey.shape.name}Mapper::GetNameFor${member.value.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.structure)
-  ${spaces}  item.first.OutputToStream(ss, "${member.value.locationName}.", ${varName}Count, ".${member.value.shape.mapKey.locationName}");
+  ${spaces}  item.first.OutputToStream(ss, "${mapLocationName}.", ${varName}Count, ".${keyLocationName}");
 #else
   ${spaces}      << item.first << "&";
 #end
 #if(!$member.value.shape.mapValue.shape.structure)
-  ${spaces}  ss << "${member.value.locationName}." << ${varName}Count << ".${member.value.shape.mapValue.locationName}="
+  ${spaces}  ss << "${mapLocationName}." << ${varName}Count << ".${valueLocationName}="
 #end
 #if($member.value.shape.mapValue.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.second.c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapValue.shape.name}Mapper::GetNameFor${member.value.shape.mapValue.shape.name}(item.second).c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.structure)
-  ${spaces}  item.second.OutputToStream(ss, "${member.value.locationName}.", ${varName}Count, ".${member.value.shape.mapValue.locationName}");
+  ${spaces}  item.second.OutputToStream(ss, "${mapLocationName}.", ${varName}Count, ".${valueLocationName}");
 #else
   ${spaces}      << item.second << "&";
 #end

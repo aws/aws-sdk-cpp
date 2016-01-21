@@ -64,7 +64,7 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
     unsigned blockDeviceMappingsCount = 1;
     for(auto& item : m_blockDeviceMappings)
     {
-      item.OutputToStream(ss, "BlockDeviceMappings.member.", blockDeviceMappingsCount, "");
+      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
       blockDeviceMappingsCount++;
     }
   }
@@ -101,7 +101,7 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
     unsigned groupsCount = 1;
     for(auto& item : m_groups)
     {
-      ss << "Groups.member." << groupsCount << "="
+      ss << "GroupId." << groupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupsCount++;
     }

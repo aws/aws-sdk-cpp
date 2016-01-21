@@ -60,7 +60,7 @@ Aws::String CreateImageRequest::SerializePayload() const
     unsigned blockDeviceMappingsCount = 1;
     for(auto& item : m_blockDeviceMappings)
     {
-      item.OutputToStream(ss, "BlockDeviceMappings.member.", blockDeviceMappingsCount, "");
+      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
       blockDeviceMappingsCount++;
     }
   }

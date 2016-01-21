@@ -40,7 +40,7 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
     unsigned groupNamesCount = 1;
     for(auto& item : m_groupNames)
     {
-      ss << "GroupNames.member." << groupNamesCount << "="
+      ss << "GroupName." << groupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupNamesCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

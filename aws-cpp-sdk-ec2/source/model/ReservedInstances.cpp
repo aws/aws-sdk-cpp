@@ -148,7 +148,7 @@ ReservedInstances& ReservedInstances::operator =(const XmlNode& xmlNode)
       m_state = ReservedInstanceStateMapper::GetReservedInstanceStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -178,7 +178,7 @@ ReservedInstances& ReservedInstances::operator =(const XmlNode& xmlNode)
       m_offeringType = OfferingTypeValuesMapper::GetOfferingTypeValuesForName(StringUtils::Trim(offeringTypeNode.GetText().c_str()).c_str());
       m_offeringTypeHasBeenSet = true;
     }
-    XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
+    XmlNode recurringChargesNode = resultNode.FirstChild("recurringCharges");
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("item");
@@ -243,10 +243,12 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -264,10 +266,12 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 0;
       for(auto& item : m_recurringCharges)
       {
+        recurringChargesIdx++;
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".item";
+        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }

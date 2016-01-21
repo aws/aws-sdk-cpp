@@ -47,7 +47,7 @@ DescribeVpnGatewaysResponse& DescribeVpnGatewaysResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpnGatewaysNode = resultNode.FirstChild("VpnGateways");
+    XmlNode vpnGatewaysNode = resultNode.FirstChild("vpnGatewaySet");
     if(!vpnGatewaysNode.IsNull())
     {
       XmlNode vpnGatewaysMember = vpnGatewaysNode.FirstChild("item");

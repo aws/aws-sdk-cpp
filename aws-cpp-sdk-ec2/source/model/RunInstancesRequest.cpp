@@ -80,7 +80,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
     unsigned securityGroupsCount = 1;
     for(auto& item : m_securityGroups)
     {
-      ss << "SecurityGroups.member." << securityGroupsCount << "="
+      ss << "SecurityGroup." << securityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupsCount++;
     }
@@ -90,7 +90,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
     unsigned securityGroupIdsCount = 1;
     for(auto& item : m_securityGroupIds)
     {
-      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+      ss << "SecurityGroupId." << securityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupIdsCount++;
     }
@@ -120,7 +120,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
     unsigned blockDeviceMappingsCount = 1;
     for(auto& item : m_blockDeviceMappings)
     {
-      item.OutputToStream(ss, "BlockDeviceMappings.member.", blockDeviceMappingsCount, "");
+      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
       blockDeviceMappingsCount++;
     }
   }
@@ -157,7 +157,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
     unsigned networkInterfacesCount = 1;
     for(auto& item : m_networkInterfaces)
     {
-      item.OutputToStream(ss, "NetworkInterfaces.member.", networkInterfacesCount, "");
+      item.OutputToStream(ss, "NetworkInterface.", networkInterfacesCount, "");
       networkInterfacesCount++;
     }
   }

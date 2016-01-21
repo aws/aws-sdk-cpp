@@ -44,6 +44,8 @@ namespace SESEndpoint
         return "email.ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
         return "email.ap-northeast-1.amazonaws.com";
+     case Region::AP_NORTHEAST_2:
+        return "email.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "email.sa-east-1.amazonaws.com";
      default:

@@ -43,7 +43,7 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
     unsigned volumeIdsCount = 1;
     for(auto& item : m_volumeIds)
     {
-      ss << "VolumeIds.member." << volumeIdsCount << "="
+      ss << "VolumeId." << volumeIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       volumeIdsCount++;
     }
@@ -53,7 +53,7 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

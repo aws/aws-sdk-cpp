@@ -47,7 +47,7 @@ DescribeReservedInstancesListingsResponse& DescribeReservedInstancesListingsResp
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservedInstancesListingsNode = resultNode.FirstChild("ReservedInstancesListings");
+    XmlNode reservedInstancesListingsNode = resultNode.FirstChild("reservedInstancesListingsSet");
     if(!reservedInstancesListingsNode.IsNull())
     {
       XmlNode reservedInstancesListingsMember = reservedInstancesListingsNode.FirstChild("item");

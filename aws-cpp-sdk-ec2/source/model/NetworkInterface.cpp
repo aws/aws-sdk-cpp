@@ -156,7 +156,7 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_sourceDestCheck = StringUtils::ConvertToBool(StringUtils::Trim(sourceDestCheckNode.GetText().c_str()).c_str());
       m_sourceDestCheckHasBeenSet = true;
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
@@ -180,7 +180,7 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_association = associationNode;
       m_associationHasBeenSet = true;
     }
-    XmlNode tagSetNode = resultNode.FirstChild("TagSet");
+    XmlNode tagSetNode = resultNode.FirstChild("tagSet");
     if(!tagSetNode.IsNull())
     {
       XmlNode tagSetMember = tagSetNode.FirstChild("item");
@@ -192,7 +192,7 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
 
       m_tagSetHasBeenSet = true;
     }
-    XmlNode privateIpAddressesNode = resultNode.FirstChild("PrivateIpAddresses");
+    XmlNode privateIpAddressesNode = resultNode.FirstChild("privateIpAddressesSet");
     if(!privateIpAddressesNode.IsNull())
     {
       XmlNode privateIpAddressesMember = privateIpAddressesNode.FirstChild("item");
@@ -265,10 +265,12 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 0;
       for(auto& item : m_groups)
       {
+        groupsIdx++;
         Aws::StringStream groupsSs;
-        groupsSs << location << index << locationValue << ".item";
+        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -286,19 +288,23 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_tagSetHasBeenSet)
   {
+      unsigned tagSetIdx = 0;
       for(auto& item : m_tagSet)
       {
+        tagSetIdx++;
         Aws::StringStream tagSetSs;
-        tagSetSs << location << index << locationValue << ".item";
+        tagSetSs << location << index << locationValue << ".TagSet." << tagSetIdx;
         item.OutputToStream(oStream, tagSetSs.str().c_str());
       }
   }
   if(m_privateIpAddressesHasBeenSet)
   {
+      unsigned privateIpAddressesIdx = 0;
       for(auto& item : m_privateIpAddresses)
       {
+        privateIpAddressesIdx++;
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location << index << locationValue << ".item";
+        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }

@@ -47,7 +47,7 @@ DescribeRegionsResponse& DescribeRegionsResponse::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode regionsNode = resultNode.FirstChild("Regions");
+    XmlNode regionsNode = resultNode.FirstChild("regionInfo");
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("item");

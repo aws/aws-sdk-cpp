@@ -52,7 +52,7 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
     }
-    XmlNode launchPermissionsNode = resultNode.FirstChild("LaunchPermissions");
+    XmlNode launchPermissionsNode = resultNode.FirstChild("launchPermission");
     if(!launchPermissionsNode.IsNull())
     {
       XmlNode launchPermissionsMember = launchPermissionsNode.FirstChild("item");
@@ -63,7 +63,7 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
       }
 
     }
-    XmlNode productCodesNode = resultNode.FirstChild("ProductCodes");
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
@@ -94,7 +94,7 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_sriovNetSupport = sriovNetSupportNode;
     }
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");

@@ -43,7 +43,7 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
     unsigned prefixListIdsCount = 1;
     for(auto& item : m_prefixListIds)
     {
-      ss << "PrefixListIds.member." << prefixListIdsCount << "="
+      ss << "PrefixListId." << prefixListIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       prefixListIdsCount++;
     }
@@ -53,7 +53,7 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

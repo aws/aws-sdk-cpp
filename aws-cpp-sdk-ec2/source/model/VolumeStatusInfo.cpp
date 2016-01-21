@@ -48,7 +48,7 @@ VolumeStatusInfo& VolumeStatusInfo::operator =(const XmlNode& xmlNode)
       m_status = VolumeStatusInfoStatusMapper::GetVolumeStatusInfoStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode detailsNode = resultNode.FirstChild("Details");
+    XmlNode detailsNode = resultNode.FirstChild("details");
     if(!detailsNode.IsNull())
     {
       XmlNode detailsMember = detailsNode.FirstChild("item");
@@ -73,10 +73,12 @@ void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_detailsHasBeenSet)
   {
+      unsigned detailsIdx = 0;
       for(auto& item : m_details)
       {
+        detailsIdx++;
         Aws::StringStream detailsSs;
-        detailsSs << location << index << locationValue << ".item";
+        detailsSs << location << index << locationValue << ".Details." << detailsIdx;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }

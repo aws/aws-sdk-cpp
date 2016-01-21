@@ -47,7 +47,7 @@ DescribeBundleTasksResponse& DescribeBundleTasksResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode bundleTasksNode = resultNode.FirstChild("BundleTasks");
+    XmlNode bundleTasksNode = resultNode.FirstChild("bundleInstanceTasksSet");
     if(!bundleTasksNode.IsNull())
     {
       XmlNode bundleTasksMember = bundleTasksNode.FirstChild("item");

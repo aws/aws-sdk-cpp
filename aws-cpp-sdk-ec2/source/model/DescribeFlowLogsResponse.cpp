@@ -47,7 +47,7 @@ DescribeFlowLogsResponse& DescribeFlowLogsResponse::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode flowLogsNode = resultNode.FirstChild("FlowLogs");
+    XmlNode flowLogsNode = resultNode.FirstChild("flowLogSet");
     if(!flowLogsNode.IsNull())
     {
       XmlNode flowLogsMember = flowLogsNode.FirstChild("item");

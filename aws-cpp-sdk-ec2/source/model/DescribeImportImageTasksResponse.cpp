@@ -47,7 +47,7 @@ DescribeImportImageTasksResponse& DescribeImportImageTasksResponse::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode importImageTasksNode = resultNode.FirstChild("ImportImageTasks");
+    XmlNode importImageTasksNode = resultNode.FirstChild("importImageTaskSet");
     if(!importImageTasksNode.IsNull())
     {
       XmlNode importImageTasksMember = importImageTasksNode.FirstChild("item");

@@ -43,7 +43,7 @@ Aws::String DescribeVpcEndpointsRequest::SerializePayload() const
     unsigned vpcEndpointIdsCount = 1;
     for(auto& item : m_vpcEndpointIds)
     {
-      ss << "VpcEndpointIds.member." << vpcEndpointIdsCount << "="
+      ss << "VpcEndpointId." << vpcEndpointIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcEndpointIdsCount++;
     }
@@ -53,7 +53,7 @@ Aws::String DescribeVpcEndpointsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

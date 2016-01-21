@@ -39,7 +39,7 @@ Aws::String CreateDhcpOptionsRequest::SerializePayload() const
     unsigned dhcpConfigurationsCount = 1;
     for(auto& item : m_dhcpConfigurations)
     {
-      item.OutputToStream(ss, "DhcpConfigurations.member.", dhcpConfigurationsCount, "");
+      item.OutputToStream(ss, "DhcpConfiguration.", dhcpConfigurationsCount, "");
       dhcpConfigurationsCount++;
     }
   }

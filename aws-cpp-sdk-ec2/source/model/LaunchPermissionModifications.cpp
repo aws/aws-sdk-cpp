@@ -75,19 +75,23 @@ void LaunchPermissionModifications::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_addHasBeenSet)
   {
+      unsigned addIdx = 0;
       for(auto& item : m_add)
       {
+        addIdx++;
         Aws::StringStream addSs;
-        addSs << location << index << locationValue << ".item";
+        addSs << location << index << locationValue << ".Add." << addIdx;
         item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
   if(m_removeHasBeenSet)
   {
+      unsigned removeIdx = 0;
       for(auto& item : m_remove)
       {
+        removeIdx++;
         Aws::StringStream removeSs;
-        removeSs << location << index << locationValue << ".item";
+        removeSs << location << index << locationValue << ".Remove." << removeIdx;
         item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }

@@ -47,7 +47,7 @@ DescribeVpcPeeringConnectionsResponse& DescribeVpcPeeringConnectionsResponse::op
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcPeeringConnectionsNode = resultNode.FirstChild("VpcPeeringConnections");
+    XmlNode vpcPeeringConnectionsNode = resultNode.FirstChild("vpcPeeringConnectionSet");
     if(!vpcPeeringConnectionsNode.IsNull())
     {
       XmlNode vpcPeeringConnectionsMember = vpcPeeringConnectionsNode.FirstChild("item");

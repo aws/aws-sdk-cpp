@@ -47,7 +47,7 @@ DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode unsuccessfulNode = resultNode.FirstChild("Unsuccessful");
+    XmlNode unsuccessfulNode = resultNode.FirstChild("unsuccessful");
     if(!unsuccessfulNode.IsNull())
     {
       XmlNode unsuccessfulMember = unsuccessfulNode.FirstChild("item");

@@ -42,7 +42,7 @@ Aws::String DescribeSpotFleetRequestsRequest::SerializePayload() const
     unsigned spotFleetRequestIdsCount = 1;
     for(auto& item : m_spotFleetRequestIds)
     {
-      ss << "SpotFleetRequestIds.member." << spotFleetRequestIdsCount << "="
+      ss << "SpotFleetRequestId." << spotFleetRequestIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       spotFleetRequestIdsCount++;
     }

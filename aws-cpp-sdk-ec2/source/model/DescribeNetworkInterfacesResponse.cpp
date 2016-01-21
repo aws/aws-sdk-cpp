@@ -47,7 +47,7 @@ DescribeNetworkInterfacesResponse& DescribeNetworkInterfacesResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode networkInterfacesNode = resultNode.FirstChild("NetworkInterfaces");
+    XmlNode networkInterfacesNode = resultNode.FirstChild("networkInterfaceSet");
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("item");

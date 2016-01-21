@@ -47,7 +47,7 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode serviceNamesNode = resultNode.FirstChild("ServiceNames");
+    XmlNode serviceNamesNode = resultNode.FirstChild("serviceNameSet");
     if(!serviceNamesNode.IsNull())
     {
       XmlNode serviceNamesMember = serviceNamesNode.FirstChild("item");

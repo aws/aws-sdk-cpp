@@ -47,7 +47,7 @@ DescribeImagesResponse& DescribeImagesResponse::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode imagesNode = resultNode.FirstChild("Images");
+    XmlNode imagesNode = resultNode.FirstChild("imagesSet");
     if(!imagesNode.IsNull())
     {
       XmlNode imagesMember = imagesNode.FirstChild("item");

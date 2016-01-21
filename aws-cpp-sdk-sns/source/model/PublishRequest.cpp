@@ -59,9 +59,9 @@ Aws::String PublishRequest::SerializePayload() const
     unsigned attributesCount = 1;
     for(auto& item : m_attributes)
     {
-      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapKey.locationName}="
+      ss << "Attributes.entry." << attributesCount << ".key="
           << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapValue.locationName}="
+      ss << "Attributes.entry." << attributesCount << ".value="
           << StringUtils::URLEncode(item.second.c_str()) << "&";
       attributesCount++;
     }
@@ -71,9 +71,9 @@ Aws::String PublishRequest::SerializePayload() const
     unsigned messageAttributesCount = 1;
     for(auto& item : m_messageAttributes)
     {
-      ss << "${member.value.locationName}." << messageAttributesCount << ".Name="
+      ss << "MessageAttributes.entry." << messageAttributesCount << ".Name="
           << StringUtils::URLEncode(item.first.c_str()) << "&";
-      item.second.OutputToStream(ss, "${member.value.locationName}.", messageAttributesCount, ".Value");
+      item.second.OutputToStream(ss, "MessageAttributes.entry.", messageAttributesCount, ".Value");
       messageAttributesCount++;
     }
   }

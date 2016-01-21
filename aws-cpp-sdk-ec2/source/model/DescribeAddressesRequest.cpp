@@ -41,7 +41,7 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
     unsigned publicIpsCount = 1;
     for(auto& item : m_publicIps)
     {
-      ss << "PublicIps.member." << publicIpsCount << "="
+      ss << "PublicIp." << publicIpsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       publicIpsCount++;
     }
@@ -51,7 +51,7 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
@@ -60,7 +60,7 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
     unsigned allocationIdsCount = 1;
     for(auto& item : m_allocationIds)
     {
-      ss << "AllocationIds.member." << allocationIdsCount << "="
+      ss << "AllocationId." << allocationIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       allocationIdsCount++;
     }

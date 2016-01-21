@@ -47,7 +47,7 @@ DescribeImportSnapshotTasksResponse& DescribeImportSnapshotTasksResponse::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode importSnapshotTasksNode = resultNode.FirstChild("ImportSnapshotTasks");
+    XmlNode importSnapshotTasksNode = resultNode.FirstChild("importSnapshotTaskSet");
     if(!importSnapshotTasksNode.IsNull())
     {
       XmlNode importSnapshotTasksMember = importSnapshotTasksNode.FirstChild("item");

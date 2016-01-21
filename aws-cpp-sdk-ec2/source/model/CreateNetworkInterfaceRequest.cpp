@@ -53,7 +53,7 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
     unsigned groupsCount = 1;
     for(auto& item : m_groups)
     {
-      ss << "Groups.member." << groupsCount << "="
+      ss << "SecurityGroupId." << groupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupsCount++;
     }
@@ -63,7 +63,7 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
     unsigned privateIpAddressesCount = 1;
     for(auto& item : m_privateIpAddresses)
     {
-      item.OutputToStream(ss, "PrivateIpAddresses.member.", privateIpAddressesCount, "");
+      item.OutputToStream(ss, "PrivateIpAddresses.", privateIpAddressesCount, "");
       privateIpAddressesCount++;
     }
   }

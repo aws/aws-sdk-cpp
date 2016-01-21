@@ -87,7 +87,7 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
     {
       m_rootDeviceName = rootDeviceNameNode;
     }
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
@@ -98,7 +98,7 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
       }
 
     }
-    XmlNode productCodesNode = resultNode.FirstChild("ProductCodes");
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
@@ -124,7 +124,7 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
     {
       m_sourceDestCheck = sourceDestCheckNode;
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");

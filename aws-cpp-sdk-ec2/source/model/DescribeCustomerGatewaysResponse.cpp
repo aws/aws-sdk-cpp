@@ -47,7 +47,7 @@ DescribeCustomerGatewaysResponse& DescribeCustomerGatewaysResponse::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode customerGatewaysNode = resultNode.FirstChild("CustomerGateways");
+    XmlNode customerGatewaysNode = resultNode.FirstChild("customerGatewaySet");
     if(!customerGatewaysNode.IsNull())
     {
       XmlNode customerGatewaysMember = customerGatewaysNode.FirstChild("item");

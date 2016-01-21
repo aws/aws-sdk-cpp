@@ -47,7 +47,7 @@ DescribeClassicLinkInstancesResponse& DescribeClassicLinkInstancesResponse::oper
 
   if(!resultNode.IsNull())
   {
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = resultNode.FirstChild("instancesSet");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");

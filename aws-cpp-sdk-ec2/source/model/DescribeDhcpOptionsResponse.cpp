@@ -47,7 +47,7 @@ DescribeDhcpOptionsResponse& DescribeDhcpOptionsResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode dhcpOptionsNode = resultNode.FirstChild("DhcpOptions");
+    XmlNode dhcpOptionsNode = resultNode.FirstChild("dhcpOptionsSet");
     if(!dhcpOptionsNode.IsNull())
     {
       XmlNode dhcpOptionsMember = dhcpOptionsNode.FirstChild("item");

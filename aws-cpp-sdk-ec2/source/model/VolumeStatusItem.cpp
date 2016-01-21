@@ -66,7 +66,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
       m_volumeStatus = volumeStatusNode;
       m_volumeStatusHasBeenSet = true;
     }
-    XmlNode eventsNode = resultNode.FirstChild("Events");
+    XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("item");
@@ -78,7 +78,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
 
       m_eventsHasBeenSet = true;
     }
-    XmlNode actionsNode = resultNode.FirstChild("Actions");
+    XmlNode actionsNode = resultNode.FirstChild("actionsSet");
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("item");
@@ -113,19 +113,23 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 0;
       for(auto& item : m_events)
       {
+        eventsIdx++;
         Aws::StringStream eventsSs;
-        eventsSs << location << index << locationValue << ".item";
+        eventsSs << location << index << locationValue << ".EventsSet." << eventsIdx;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
   if(m_actionsHasBeenSet)
   {
+      unsigned actionsIdx = 0;
       for(auto& item : m_actions)
       {
+        actionsIdx++;
         Aws::StringStream actionsSs;
-        actionsSs << location << index << locationValue << ".item";
+        actionsSs << location << index << locationValue << ".ActionsSet." << actionsIdx;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }

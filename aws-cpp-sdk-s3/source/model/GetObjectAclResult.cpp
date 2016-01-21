@@ -46,7 +46,7 @@ GetObjectAclResult& GetObjectAclResult::operator =(const AmazonWebServiceResult<
     {
       m_owner = ownerNode;
     }
-    XmlNode grantsNode = resultNode.FirstChild("Grants");
+    XmlNode grantsNode = resultNode.FirstChild("AccessControlList");
     if(!grantsNode.IsNull())
     {
       XmlNode grantsMember = grantsNode.FirstChild("Grant");

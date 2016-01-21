@@ -47,7 +47,7 @@ DescribeAccountAttributesResponse& DescribeAccountAttributesResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode accountAttributesNode = resultNode.FirstChild("AccountAttributes");
+    XmlNode accountAttributesNode = resultNode.FirstChild("accountAttributeSet");
     if(!accountAttributesNode.IsNull())
     {
       XmlNode accountAttributesMember = accountAttributesNode.FirstChild("item");

@@ -46,7 +46,7 @@ ImportInstanceTaskDetails& ImportInstanceTaskDetails::operator =(const XmlNode& 
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumesNode = resultNode.FirstChild("Volumes");
+    XmlNode volumesNode = resultNode.FirstChild("volumes");
     if(!volumesNode.IsNull())
     {
       XmlNode volumesMember = volumesNode.FirstChild("item");
@@ -85,10 +85,12 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_volumesHasBeenSet)
   {
+      unsigned volumesIdx = 0;
       for(auto& item : m_volumes)
       {
+        volumesIdx++;
         Aws::StringStream volumesSs;
-        volumesSs << location << index << locationValue << ".item";
+        volumesSs << location << index << locationValue << ".Volumes." << volumesIdx;
         item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }

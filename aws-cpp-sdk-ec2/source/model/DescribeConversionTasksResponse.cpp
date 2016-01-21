@@ -47,7 +47,7 @@ DescribeConversionTasksResponse& DescribeConversionTasksResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode conversionTasksNode = resultNode.FirstChild("ConversionTasks");
+    XmlNode conversionTasksNode = resultNode.FirstChild("conversionTasks");
     if(!conversionTasksNode.IsNull())
     {
       XmlNode conversionTasksMember = conversionTasksNode.FirstChild("item");

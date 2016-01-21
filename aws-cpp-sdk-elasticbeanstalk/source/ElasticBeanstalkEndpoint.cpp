@@ -44,6 +44,8 @@ namespace ElasticBeanstalkEndpoint
         return "elasticbeanstalk.ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
         return "elasticbeanstalk.ap-northeast-1.amazonaws.com";
+     case Region::AP_NORTHEAST_2:
+        return "elasticbeanstalk.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "elasticbeanstalk.sa-east-1.amazonaws.com";
      default:

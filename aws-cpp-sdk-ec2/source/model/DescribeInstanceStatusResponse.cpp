@@ -47,7 +47,7 @@ DescribeInstanceStatusResponse& DescribeInstanceStatusResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceStatusesNode = resultNode.FirstChild("InstanceStatuses");
+    XmlNode instanceStatusesNode = resultNode.FirstChild("instanceStatusSet");
     if(!instanceStatusesNode.IsNull())
     {
       XmlNode instanceStatusesMember = instanceStatusesNode.FirstChild("item");

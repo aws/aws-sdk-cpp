@@ -47,7 +47,7 @@ MonitorInstancesResponse& MonitorInstancesResponse::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceMonitoringsNode = resultNode.FirstChild("InstanceMonitorings");
+    XmlNode instanceMonitoringsNode = resultNode.FirstChild("instancesSet");
     if(!instanceMonitoringsNode.IsNull())
     {
       XmlNode instanceMonitoringsMember = instanceMonitoringsNode.FirstChild("item");

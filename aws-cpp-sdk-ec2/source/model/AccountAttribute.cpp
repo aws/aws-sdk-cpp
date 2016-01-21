@@ -48,7 +48,7 @@ AccountAttribute& AccountAttribute::operator =(const XmlNode& xmlNode)
       m_attributeName = StringUtils::Trim(attributeNameNode.GetText().c_str());
       m_attributeNameHasBeenSet = true;
     }
-    XmlNode attributeValuesNode = resultNode.FirstChild("AttributeValues");
+    XmlNode attributeValuesNode = resultNode.FirstChild("attributeValueSet");
     if(!attributeValuesNode.IsNull())
     {
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("item");
@@ -73,10 +73,12 @@ void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attributeValuesHasBeenSet)
   {
+      unsigned attributeValuesIdx = 0;
       for(auto& item : m_attributeValues)
       {
+        attributeValuesIdx++;
         Aws::StringStream attributeValuesSs;
-        attributeValuesSs << location << index << locationValue << ".item";
+        attributeValuesSs << location << index << locationValue << ".AttributeValueSet." << attributeValuesIdx;
         item.OutputToStream(oStream, attributeValuesSs.str().c_str());
       }
   }

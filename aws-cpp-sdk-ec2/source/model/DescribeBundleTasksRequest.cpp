@@ -40,7 +40,7 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
     unsigned bundleIdsCount = 1;
     for(auto& item : m_bundleIds)
     {
-      ss << "BundleIds.member." << bundleIdsCount << "="
+      ss << "BundleId." << bundleIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       bundleIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

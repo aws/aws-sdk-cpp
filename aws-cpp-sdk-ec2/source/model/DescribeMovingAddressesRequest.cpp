@@ -43,7 +43,7 @@ Aws::String DescribeMovingAddressesRequest::SerializePayload() const
     unsigned publicIpsCount = 1;
     for(auto& item : m_publicIps)
     {
-      ss << "PublicIps.member." << publicIpsCount << "="
+      ss << "PublicIp." << publicIpsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       publicIpsCount++;
     }
@@ -57,7 +57,7 @@ Aws::String DescribeMovingAddressesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

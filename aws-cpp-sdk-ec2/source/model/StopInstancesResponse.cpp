@@ -47,7 +47,7 @@ StopInstancesResponse& StopInstancesResponse::operator =(const AmazonWebServiceR
 
   if(!resultNode.IsNull())
   {
-    XmlNode stoppingInstancesNode = resultNode.FirstChild("StoppingInstances");
+    XmlNode stoppingInstancesNode = resultNode.FirstChild("instancesSet");
     if(!stoppingInstancesNode.IsNull())
     {
       XmlNode stoppingInstancesMember = stoppingInstancesNode.FirstChild("item");

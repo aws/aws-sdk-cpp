@@ -47,7 +47,7 @@ DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode prefixListsNode = resultNode.FirstChild("PrefixLists");
+    XmlNode prefixListsNode = resultNode.FirstChild("prefixListSet");
     if(!prefixListsNode.IsNull())
     {
       XmlNode prefixListsMember = prefixListsNode.FirstChild("item");

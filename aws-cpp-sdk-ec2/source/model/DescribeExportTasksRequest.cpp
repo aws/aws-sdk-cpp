@@ -33,7 +33,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
     unsigned exportTaskIdsCount = 1;
     for(auto& item : m_exportTaskIds)
     {
-      ss << "ExportTaskIds.member." << exportTaskIdsCount << "="
+      ss << "ExportTaskId." << exportTaskIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       exportTaskIdsCount++;
     }

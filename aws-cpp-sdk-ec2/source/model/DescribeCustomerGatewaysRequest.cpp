@@ -40,7 +40,7 @@ Aws::String DescribeCustomerGatewaysRequest::SerializePayload() const
     unsigned customerGatewayIdsCount = 1;
     for(auto& item : m_customerGatewayIds)
     {
-      ss << "CustomerGatewayIds.member." << customerGatewayIdsCount << "="
+      ss << "CustomerGatewayId." << customerGatewayIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       customerGatewayIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeCustomerGatewaysRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

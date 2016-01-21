@@ -44,6 +44,8 @@ namespace S3Endpoint
         return "s3-ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
         return "s3-ap-northeast-1.amazonaws.com";
+     case Region::AP_NORTHEAST_2:
+        return "s3-ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "s3-sa-east-1.amazonaws.com";
      default:

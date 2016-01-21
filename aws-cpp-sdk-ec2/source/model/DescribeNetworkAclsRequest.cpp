@@ -40,7 +40,7 @@ Aws::String DescribeNetworkAclsRequest::SerializePayload() const
     unsigned networkAclIdsCount = 1;
     for(auto& item : m_networkAclIds)
     {
-      ss << "NetworkAclIds.member." << networkAclIdsCount << "="
+      ss << "NetworkAclId." << networkAclIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       networkAclIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeNetworkAclsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

@@ -40,7 +40,7 @@ Aws::String DescribeDhcpOptionsRequest::SerializePayload() const
     unsigned dhcpOptionsIdsCount = 1;
     for(auto& item : m_dhcpOptionsIds)
     {
-      ss << "DhcpOptionsIds.member." << dhcpOptionsIdsCount << "="
+      ss << "DhcpOptionsId." << dhcpOptionsIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       dhcpOptionsIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeDhcpOptionsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

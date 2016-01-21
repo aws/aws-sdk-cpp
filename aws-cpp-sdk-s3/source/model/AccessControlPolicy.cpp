@@ -42,7 +42,7 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode grantsNode = resultNode.FirstChild("Grants");
+    XmlNode grantsNode = resultNode.FirstChild("AccessControlList");
     if(!grantsNode.IsNull())
     {
       XmlNode grantsMember = grantsNode.FirstChild("Grant");

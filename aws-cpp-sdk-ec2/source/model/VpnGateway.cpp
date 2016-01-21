@@ -74,7 +74,7 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
-    XmlNode vpcAttachmentsNode = resultNode.FirstChild("VpcAttachments");
+    XmlNode vpcAttachmentsNode = resultNode.FirstChild("attachments");
     if(!vpcAttachmentsNode.IsNull())
     {
       XmlNode vpcAttachmentsMember = vpcAttachmentsNode.FirstChild("item");
@@ -86,7 +86,7 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
 
       m_vpcAttachmentsHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -123,19 +123,23 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_vpcAttachmentsHasBeenSet)
   {
+      unsigned vpcAttachmentsIdx = 0;
       for(auto& item : m_vpcAttachments)
       {
+        vpcAttachmentsIdx++;
         Aws::StringStream vpcAttachmentsSs;
-        vpcAttachmentsSs << location << index << locationValue << ".item";
+        vpcAttachmentsSs << location << index << locationValue << ".Attachments." << vpcAttachmentsIdx;
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

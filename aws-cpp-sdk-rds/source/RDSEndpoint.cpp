@@ -44,6 +44,8 @@ namespace RDSEndpoint
         return "rds.ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
         return "rds.ap-northeast-1.amazonaws.com";
+     case Region::AP_NORTHEAST_2:
+        return "rds.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "rds.sa-east-1.amazonaws.com";
      default:

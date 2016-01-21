@@ -40,7 +40,7 @@ Aws::String DescribeVpcClassicLinkRequest::SerializePayload() const
     unsigned vpcIdsCount = 1;
     for(auto& item : m_vpcIds)
     {
-      ss << "VpcIds.member." << vpcIdsCount << "="
+      ss << "VpcId." << vpcIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeVpcClassicLinkRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

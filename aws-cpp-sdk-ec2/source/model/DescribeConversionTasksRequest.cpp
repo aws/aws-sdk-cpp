@@ -40,7 +40,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
@@ -49,7 +49,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
     unsigned conversionTaskIdsCount = 1;
     for(auto& item : m_conversionTaskIds)
     {
-      ss << "ConversionTaskIds.member." << conversionTaskIdsCount << "="
+      ss << "ConversionTaskId." << conversionTaskIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       conversionTaskIdsCount++;
     }

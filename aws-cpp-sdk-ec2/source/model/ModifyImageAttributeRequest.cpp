@@ -59,7 +59,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
     unsigned userIdsCount = 1;
     for(auto& item : m_userIds)
     {
-      ss << "UserIds.member." << userIdsCount << "="
+      ss << "UserId." << userIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       userIdsCount++;
     }
@@ -69,7 +69,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
     unsigned userGroupsCount = 1;
     for(auto& item : m_userGroups)
     {
-      ss << "UserGroups.member." << userGroupsCount << "="
+      ss << "UserGroup." << userGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       userGroupsCount++;
     }
@@ -79,7 +79,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
     unsigned productCodesCount = 1;
     for(auto& item : m_productCodes)
     {
-      ss << "ProductCodes.member." << productCodesCount << "="
+      ss << "ProductCode." << productCodesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       productCodesCount++;
     }

@@ -47,7 +47,7 @@ DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModific
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservedInstancesModificationsNode = resultNode.FirstChild("ReservedInstancesModifications");
+    XmlNode reservedInstancesModificationsNode = resultNode.FirstChild("reservedInstancesModificationsSet");
     if(!reservedInstancesModificationsNode.IsNull())
     {
       XmlNode reservedInstancesModificationsMember = reservedInstancesModificationsNode.FirstChild("item");

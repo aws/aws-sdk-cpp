@@ -40,7 +40,7 @@ Aws::String DescribeRouteTablesRequest::SerializePayload() const
     unsigned routeTableIdsCount = 1;
     for(auto& item : m_routeTableIds)
     {
-      ss << "RouteTableIds.member." << routeTableIdsCount << "="
+      ss << "RouteTableId." << routeTableIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       routeTableIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeRouteTablesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

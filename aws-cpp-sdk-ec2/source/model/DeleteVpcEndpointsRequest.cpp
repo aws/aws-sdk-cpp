@@ -39,7 +39,7 @@ Aws::String DeleteVpcEndpointsRequest::SerializePayload() const
     unsigned vpcEndpointIdsCount = 1;
     for(auto& item : m_vpcEndpointIds)
     {
-      ss << "VpcEndpointIds.member." << vpcEndpointIdsCount << "="
+      ss << "VpcEndpointId." << vpcEndpointIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcEndpointIdsCount++;
     }

@@ -98,7 +98,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
       m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
       m_statusMessageHasBeenSet = true;
     }
-    XmlNode instanceCountsNode = resultNode.FirstChild("InstanceCounts");
+    XmlNode instanceCountsNode = resultNode.FirstChild("instanceCounts");
     if(!instanceCountsNode.IsNull())
     {
       XmlNode instanceCountsMember = instanceCountsNode.FirstChild("item");
@@ -110,7 +110,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
 
       m_instanceCountsHasBeenSet = true;
     }
-    XmlNode priceSchedulesNode = resultNode.FirstChild("PriceSchedules");
+    XmlNode priceSchedulesNode = resultNode.FirstChild("priceSchedules");
     if(!priceSchedulesNode.IsNull())
     {
       XmlNode priceSchedulesMember = priceSchedulesNode.FirstChild("item");
@@ -122,7 +122,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
 
       m_priceSchedulesHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -173,28 +173,34 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_instanceCountsHasBeenSet)
   {
+      unsigned instanceCountsIdx = 0;
       for(auto& item : m_instanceCounts)
       {
+        instanceCountsIdx++;
         Aws::StringStream instanceCountsSs;
-        instanceCountsSs << location << index << locationValue << ".item";
+        instanceCountsSs << location << index << locationValue << ".InstanceCounts." << instanceCountsIdx;
         item.OutputToStream(oStream, instanceCountsSs.str().c_str());
       }
   }
   if(m_priceSchedulesHasBeenSet)
   {
+      unsigned priceSchedulesIdx = 0;
       for(auto& item : m_priceSchedules)
       {
+        priceSchedulesIdx++;
         Aws::StringStream priceSchedulesSs;
-        priceSchedulesSs << location << index << locationValue << ".item";
+        priceSchedulesSs << location << index << locationValue << ".PriceSchedules." << priceSchedulesIdx;
         item.OutputToStream(oStream, priceSchedulesSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

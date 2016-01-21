@@ -104,7 +104,7 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_iamFleetRole = StringUtils::Trim(iamFleetRoleNode.GetText().c_str());
       m_iamFleetRoleHasBeenSet = true;
     }
-    XmlNode launchSpecificationsNode = resultNode.FirstChild("LaunchSpecifications");
+    XmlNode launchSpecificationsNode = resultNode.FirstChild("launchSpecifications");
     if(!launchSpecificationsNode.IsNull())
     {
       XmlNode launchSpecificationsMember = launchSpecificationsNode.FirstChild("item");
@@ -153,10 +153,12 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_launchSpecificationsHasBeenSet)
   {
+      unsigned launchSpecificationsIdx = 0;
       for(auto& item : m_launchSpecifications)
       {
+        launchSpecificationsIdx++;
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location << index << locationValue << ".item";
+        launchSpecificationsSs << location << index << locationValue << ".LaunchSpecifications." << launchSpecificationsIdx;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }

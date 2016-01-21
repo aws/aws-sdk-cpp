@@ -47,7 +47,7 @@ DescribeInternetGatewaysResponse& DescribeInternetGatewaysResponse::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode internetGatewaysNode = resultNode.FirstChild("InternetGateways");
+    XmlNode internetGatewaysNode = resultNode.FirstChild("internetGatewaySet");
     if(!internetGatewaysNode.IsNull())
     {
       XmlNode internetGatewaysMember = internetGatewaysNode.FirstChild("item");

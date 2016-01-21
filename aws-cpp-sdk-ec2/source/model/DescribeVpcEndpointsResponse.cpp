@@ -47,7 +47,7 @@ DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcEndpointsNode = resultNode.FirstChild("VpcEndpoints");
+    XmlNode vpcEndpointsNode = resultNode.FirstChild("vpcEndpointSet");
     if(!vpcEndpointsNode.IsNull())
     {
       XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("item");

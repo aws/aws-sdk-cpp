@@ -47,7 +47,7 @@ DescribeInstancesResponse& DescribeInstancesResponse::operator =(const AmazonWeb
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservationsNode = resultNode.FirstChild("Reservations");
+    XmlNode reservationsNode = resultNode.FirstChild("reservationSet");
     if(!reservationsNode.IsNull())
     {
       XmlNode reservationsMember = reservationsNode.FirstChild("item");

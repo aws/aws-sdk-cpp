@@ -45,7 +45,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
     unsigned snapshotIdsCount = 1;
     for(auto& item : m_snapshotIds)
     {
-      ss << "SnapshotIds.member." << snapshotIdsCount << "="
+      ss << "SnapshotId." << snapshotIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       snapshotIdsCount++;
     }
@@ -55,7 +55,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
     unsigned ownerIdsCount = 1;
     for(auto& item : m_ownerIds)
     {
-      ss << "OwnerIds.member." << ownerIdsCount << "="
+      ss << "Owner." << ownerIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       ownerIdsCount++;
     }
@@ -65,7 +65,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
     unsigned restorableByUserIdsCount = 1;
     for(auto& item : m_restorableByUserIds)
     {
-      ss << "RestorableByUserIds.member." << restorableByUserIdsCount << "="
+      ss << "RestorableBy." << restorableByUserIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       restorableByUserIdsCount++;
     }
@@ -75,7 +75,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

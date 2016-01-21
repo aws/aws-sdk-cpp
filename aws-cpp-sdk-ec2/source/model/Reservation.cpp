@@ -68,7 +68,7 @@ Reservation& Reservation::operator =(const XmlNode& xmlNode)
       m_requesterId = StringUtils::Trim(requesterIdNode.GetText().c_str());
       m_requesterIdHasBeenSet = true;
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
@@ -80,7 +80,7 @@ Reservation& Reservation::operator =(const XmlNode& xmlNode)
 
       m_groupsHasBeenSet = true;
     }
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = resultNode.FirstChild("instancesSet");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");
@@ -113,19 +113,23 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 0;
       for(auto& item : m_groups)
       {
+        groupsIdx++;
         Aws::StringStream groupsSs;
-        groupsSs << location << index << locationValue << ".item";
+        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 0;
       for(auto& item : m_instances)
       {
+        instancesIdx++;
         Aws::StringStream instancesSs;
-        instancesSs << location << index << locationValue << ".item";
+        instancesSs << location << index << locationValue << ".InstancesSet." << instancesIdx;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }

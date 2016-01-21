@@ -47,7 +47,7 @@ RequestSpotInstancesResponse& RequestSpotInstancesResponse::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotInstanceRequestsNode = resultNode.FirstChild("SpotInstanceRequests");
+    XmlNode spotInstanceRequestsNode = resultNode.FirstChild("spotInstanceRequestSet");
     if(!spotInstanceRequestsNode.IsNull())
     {
       XmlNode spotInstanceRequestsMember = spotInstanceRequestsNode.FirstChild("item");

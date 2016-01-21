@@ -40,7 +40,7 @@ Aws::String DescribeVpnGatewaysRequest::SerializePayload() const
     unsigned vpnGatewayIdsCount = 1;
     for(auto& item : m_vpnGatewayIds)
     {
-      ss << "VpnGatewayIds.member." << vpnGatewayIdsCount << "="
+      ss << "VpnGatewayId." << vpnGatewayIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpnGatewayIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeVpnGatewaysRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

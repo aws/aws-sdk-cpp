@@ -85,7 +85,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const AmazonWebServiceRes
     {
       m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
     }
-    XmlNode attachmentsNode = resultNode.FirstChild("Attachments");
+    XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
@@ -96,7 +96,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const AmazonWebServiceRes
       }
 
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");

@@ -42,7 +42,7 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
     unsigned privateIpAddressesCount = 1;
     for(auto& item : m_privateIpAddresses)
     {
-      ss << "PrivateIpAddresses.member." << privateIpAddressesCount << "="
+      ss << "PrivateIpAddress." << privateIpAddressesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       privateIpAddressesCount++;
     }

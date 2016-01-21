@@ -47,7 +47,7 @@ DescribeTagsResponse& DescribeTagsResponse::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");

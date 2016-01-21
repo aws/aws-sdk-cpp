@@ -47,7 +47,7 @@ DescribeVpcsResponse& DescribeVpcsResponse::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcsNode = resultNode.FirstChild("Vpcs");
+    XmlNode vpcsNode = resultNode.FirstChild("vpcSet");
     if(!vpcsNode.IsNull())
     {
       XmlNode vpcsMember = vpcsNode.FirstChild("item");

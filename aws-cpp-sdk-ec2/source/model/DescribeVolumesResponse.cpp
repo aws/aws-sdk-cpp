@@ -47,7 +47,7 @@ DescribeVolumesResponse& DescribeVolumesResponse::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumesNode = resultNode.FirstChild("Volumes");
+    XmlNode volumesNode = resultNode.FirstChild("volumeSet");
     if(!volumesNode.IsNull())
     {
       XmlNode volumesMember = volumesNode.FirstChild("item");

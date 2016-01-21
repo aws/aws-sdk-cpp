@@ -168,7 +168,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_amiLaunchIndex = StringUtils::ConvertToInt32(StringUtils::Trim(amiLaunchIndexNode.GetText().c_str()).c_str());
       m_amiLaunchIndexHasBeenSet = true;
     }
-    XmlNode productCodesNode = resultNode.FirstChild("ProductCodes");
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
@@ -270,7 +270,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_rootDeviceName = StringUtils::Trim(rootDeviceNameNode.GetText().c_str());
       m_rootDeviceNameHasBeenSet = true;
     }
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
@@ -306,7 +306,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
       m_clientTokenHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -318,7 +318,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
@@ -342,7 +342,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(hypervisorNode.GetText().c_str()).c_str());
       m_hypervisorHasBeenSet = true;
     }
-    XmlNode networkInterfacesNode = resultNode.FirstChild("NetworkInterfaces");
+    XmlNode networkInterfacesNode = resultNode.FirstChild("networkInterfaceSet");
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("item");
@@ -415,10 +415,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_productCodesHasBeenSet)
   {
+      unsigned productCodesIdx = 0;
       for(auto& item : m_productCodes)
       {
+        productCodesIdx++;
         Aws::StringStream productCodesSs;
-        productCodesSs << location << index << locationValue << ".item";
+        productCodesSs << location << index << locationValue << ".ProductCodes." << productCodesIdx;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -490,10 +492,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
+      unsigned blockDeviceMappingsIdx = 0;
       for(auto& item : m_blockDeviceMappings)
       {
+        blockDeviceMappingsIdx++;
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location << index << locationValue << ".item";
+        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -515,19 +519,23 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 0;
       for(auto& item : m_securityGroups)
       {
+        securityGroupsIdx++;
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location << index << locationValue << ".item";
+        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -541,10 +549,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_networkInterfacesHasBeenSet)
   {
+      unsigned networkInterfacesIdx = 0;
       for(auto& item : m_networkInterfaces)
       {
+        networkInterfacesIdx++;
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location << index << locationValue << ".item";
+        networkInterfacesSs << location << index << locationValue << ".NetworkInterfaceSet." << networkInterfacesIdx;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }

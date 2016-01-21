@@ -47,7 +47,7 @@ DescribeSpotPriceHistoryResponse& DescribeSpotPriceHistoryResponse::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotPriceHistoryNode = resultNode.FirstChild("SpotPriceHistory");
+    XmlNode spotPriceHistoryNode = resultNode.FirstChild("spotPriceHistorySet");
     if(!spotPriceHistoryNode.IsNull())
     {
       XmlNode spotPriceHistoryMember = spotPriceHistoryNode.FirstChild("item");

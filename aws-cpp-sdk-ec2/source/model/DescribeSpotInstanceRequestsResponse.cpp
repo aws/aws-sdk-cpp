@@ -47,7 +47,7 @@ DescribeSpotInstanceRequestsResponse& DescribeSpotInstanceRequestsResponse::oper
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotInstanceRequestsNode = resultNode.FirstChild("SpotInstanceRequests");
+    XmlNode spotInstanceRequestsNode = resultNode.FirstChild("spotInstanceRequestSet");
     if(!spotInstanceRequestsNode.IsNull())
     {
       XmlNode spotInstanceRequestsMember = spotInstanceRequestsNode.FirstChild("item");

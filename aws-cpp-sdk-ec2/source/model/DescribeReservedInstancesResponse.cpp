@@ -47,7 +47,7 @@ DescribeReservedInstancesResponse& DescribeReservedInstancesResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservedInstancesNode = resultNode.FirstChild("ReservedInstances");
+    XmlNode reservedInstancesNode = resultNode.FirstChild("reservedInstancesSet");
     if(!reservedInstancesNode.IsNull())
     {
       XmlNode reservedInstancesMember = reservedInstancesNode.FirstChild("item");

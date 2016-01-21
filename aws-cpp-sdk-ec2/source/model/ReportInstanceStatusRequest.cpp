@@ -46,7 +46,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
     unsigned instancesCount = 1;
     for(auto& item : m_instances)
     {
-      ss << "Instances.member." << instancesCount << "="
+      ss << "InstanceId." << instancesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       instancesCount++;
     }
@@ -68,7 +68,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
     unsigned reasonCodesCount = 1;
     for(auto& item : m_reasonCodes)
     {
-      ss << "ReasonCodes.member." << reasonCodesCount << "="
+      ss << "ReasonCode." << reasonCodesCount << "="
           << StringUtils::URLEncode(ReportInstanceReasonCodesMapper::GetNameForReportInstanceReasonCodes(item).c_str()) << "&";
       reasonCodesCount++;
     }

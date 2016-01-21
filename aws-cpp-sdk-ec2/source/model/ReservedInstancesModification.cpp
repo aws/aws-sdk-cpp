@@ -68,7 +68,7 @@ ReservedInstancesModification& ReservedInstancesModification::operator =(const X
       m_reservedInstancesModificationId = StringUtils::Trim(reservedInstancesModificationIdNode.GetText().c_str());
       m_reservedInstancesModificationIdHasBeenSet = true;
     }
-    XmlNode reservedInstancesIdsNode = resultNode.FirstChild("ReservedInstancesIds");
+    XmlNode reservedInstancesIdsNode = resultNode.FirstChild("reservedInstancesSet");
     if(!reservedInstancesIdsNode.IsNull())
     {
       XmlNode reservedInstancesIdsMember = reservedInstancesIdsNode.FirstChild("item");
@@ -80,7 +80,7 @@ ReservedInstancesModification& ReservedInstancesModification::operator =(const X
 
       m_reservedInstancesIdsHasBeenSet = true;
     }
-    XmlNode modificationResultsNode = resultNode.FirstChild("ModificationResults");
+    XmlNode modificationResultsNode = resultNode.FirstChild("modificationResultSet");
     if(!modificationResultsNode.IsNull())
     {
       XmlNode modificationResultsMember = modificationResultsNode.FirstChild("item");
@@ -141,19 +141,23 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_reservedInstancesIdsHasBeenSet)
   {
+      unsigned reservedInstancesIdsIdx = 0;
       for(auto& item : m_reservedInstancesIds)
       {
+        reservedInstancesIdsIdx++;
         Aws::StringStream reservedInstancesIdsSs;
-        reservedInstancesIdsSs << location << index << locationValue << ".item";
+        reservedInstancesIdsSs << location << index << locationValue << ".ReservedInstancesSet." << reservedInstancesIdsIdx;
         item.OutputToStream(oStream, reservedInstancesIdsSs.str().c_str());
       }
   }
   if(m_modificationResultsHasBeenSet)
   {
+      unsigned modificationResultsIdx = 0;
       for(auto& item : m_modificationResults)
       {
+        modificationResultsIdx++;
         Aws::StringStream modificationResultsSs;
-        modificationResultsSs << location << index << locationValue << ".item";
+        modificationResultsSs << location << index << locationValue << ".ModificationResultSet." << modificationResultsIdx;
         item.OutputToStream(oStream, modificationResultsSs.str().c_str());
       }
   }

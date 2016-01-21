@@ -64,7 +64,7 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_regionName = StringUtils::Trim(regionNameNode.GetText().c_str());
       m_regionNameHasBeenSet = true;
     }
-    XmlNode messagesNode = resultNode.FirstChild("Messages");
+    XmlNode messagesNode = resultNode.FirstChild("messageSet");
     if(!messagesNode.IsNull())
     {
       XmlNode messagesMember = messagesNode.FirstChild("item");
@@ -97,10 +97,12 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_messagesHasBeenSet)
   {
+      unsigned messagesIdx = 0;
       for(auto& item : m_messages)
       {
+        messagesIdx++;
         Aws::StringStream messagesSs;
-        messagesSs << location << index << locationValue << ".item";
+        messagesSs << location << index << locationValue << ".MessageSet." << messagesIdx;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }

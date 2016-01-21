@@ -48,7 +48,7 @@ NewDhcpConfiguration& NewDhcpConfiguration::operator =(const XmlNode& xmlNode)
       m_key = StringUtils::Trim(keyNode.GetText().c_str());
       m_keyHasBeenSet = true;
     }
-    XmlNode valuesNode = resultNode.FirstChild("Values");
+    XmlNode valuesNode = resultNode.FirstChild("Value");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("item");
@@ -73,9 +73,11 @@ void NewDhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_valuesHasBeenSet)
   {
+      unsigned valuesIdx = 0;
       for(auto& item : m_values)
       {
-        oStream << location << index << locationValue << ".item=" << StringUtils::URLEncode(item.c_str()) << "&";
+        valuesIdx++;
+        oStream << location << index << locationValue << ".Value." << valuesIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

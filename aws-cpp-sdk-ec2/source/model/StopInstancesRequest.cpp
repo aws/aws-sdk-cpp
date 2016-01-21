@@ -41,7 +41,7 @@ Aws::String StopInstancesRequest::SerializePayload() const
     unsigned instanceIdsCount = 1;
     for(auto& item : m_instanceIds)
     {
-      ss << "InstanceIds.member." << instanceIdsCount << "="
+      ss << "InstanceId." << instanceIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }

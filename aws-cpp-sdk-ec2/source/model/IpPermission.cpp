@@ -72,7 +72,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
       m_toPort = StringUtils::ConvertToInt32(StringUtils::Trim(toPortNode.GetText().c_str()).c_str());
       m_toPortHasBeenSet = true;
     }
-    XmlNode userIdGroupPairsNode = resultNode.FirstChild("UserIdGroupPairs");
+    XmlNode userIdGroupPairsNode = resultNode.FirstChild("groups");
     if(!userIdGroupPairsNode.IsNull())
     {
       XmlNode userIdGroupPairsMember = userIdGroupPairsNode.FirstChild("item");
@@ -84,7 +84,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
 
       m_userIdGroupPairsHasBeenSet = true;
     }
-    XmlNode ipRangesNode = resultNode.FirstChild("IpRanges");
+    XmlNode ipRangesNode = resultNode.FirstChild("ipRanges");
     if(!ipRangesNode.IsNull())
     {
       XmlNode ipRangesMember = ipRangesNode.FirstChild("item");
@@ -96,7 +96,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
 
       m_ipRangesHasBeenSet = true;
     }
-    XmlNode prefixListIdsNode = resultNode.FirstChild("PrefixListIds");
+    XmlNode prefixListIdsNode = resultNode.FirstChild("prefixListIds");
     if(!prefixListIdsNode.IsNull())
     {
       XmlNode prefixListIdsMember = prefixListIdsNode.FirstChild("item");
@@ -129,28 +129,34 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_userIdGroupPairsHasBeenSet)
   {
+      unsigned userIdGroupPairsIdx = 0;
       for(auto& item : m_userIdGroupPairs)
       {
+        userIdGroupPairsIdx++;
         Aws::StringStream userIdGroupPairsSs;
-        userIdGroupPairsSs << location << index << locationValue << ".item";
+        userIdGroupPairsSs << location << index << locationValue << ".Groups." << userIdGroupPairsIdx;
         item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }
   if(m_ipRangesHasBeenSet)
   {
+      unsigned ipRangesIdx = 0;
       for(auto& item : m_ipRanges)
       {
+        ipRangesIdx++;
         Aws::StringStream ipRangesSs;
-        ipRangesSs << location << index << locationValue << ".item";
+        ipRangesSs << location << index << locationValue << ".IpRanges." << ipRangesIdx;
         item.OutputToStream(oStream, ipRangesSs.str().c_str());
       }
   }
   if(m_prefixListIdsHasBeenSet)
   {
+      unsigned prefixListIdsIdx = 0;
       for(auto& item : m_prefixListIds)
       {
+        prefixListIdsIdx++;
         Aws::StringStream prefixListIdsSs;
-        prefixListIdsSs << location << index << locationValue << ".item";
+        prefixListIdsSs << location << index << locationValue << ".PrefixListIds." << prefixListIdsIdx;
         item.OutputToStream(oStream, prefixListIdsSs.str().c_str());
       }
   }

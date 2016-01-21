@@ -56,7 +56,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
     unsigned addRouteTableIdsCount = 1;
     for(auto& item : m_addRouteTableIds)
     {
-      ss << "AddRouteTableIds.member." << addRouteTableIdsCount << "="
+      ss << "AddRouteTableId." << addRouteTableIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       addRouteTableIdsCount++;
     }
@@ -66,7 +66,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
     unsigned removeRouteTableIdsCount = 1;
     for(auto& item : m_removeRouteTableIds)
     {
-      ss << "RemoveRouteTableIds.member." << removeRouteTableIdsCount << "="
+      ss << "RemoveRouteTableId." << removeRouteTableIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeRouteTableIdsCount++;
     }

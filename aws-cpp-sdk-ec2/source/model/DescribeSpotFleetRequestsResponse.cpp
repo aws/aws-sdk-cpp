@@ -47,7 +47,7 @@ DescribeSpotFleetRequestsResponse& DescribeSpotFleetRequestsResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotFleetRequestConfigsNode = resultNode.FirstChild("SpotFleetRequestConfigs");
+    XmlNode spotFleetRequestConfigsNode = resultNode.FirstChild("spotFleetRequestConfigSet");
     if(!spotFleetRequestConfigsNode.IsNull())
     {
       XmlNode spotFleetRequestConfigsMember = spotFleetRequestConfigsNode.FirstChild("item");

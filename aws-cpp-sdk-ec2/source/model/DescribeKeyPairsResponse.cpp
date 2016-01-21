@@ -47,7 +47,7 @@ DescribeKeyPairsResponse& DescribeKeyPairsResponse::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode keyPairsNode = resultNode.FirstChild("KeyPairs");
+    XmlNode keyPairsNode = resultNode.FirstChild("keySet");
     if(!keyPairsNode.IsNull())
     {
       XmlNode keyPairsMember = keyPairsNode.FirstChild("item");

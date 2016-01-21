@@ -40,7 +40,7 @@ Aws::String DescribeNetworkInterfacesRequest::SerializePayload() const
     unsigned networkInterfaceIdsCount = 1;
     for(auto& item : m_networkInterfaceIds)
     {
-      ss << "NetworkInterfaceIds.member." << networkInterfaceIdsCount << "="
+      ss << "NetworkInterfaceId." << networkInterfaceIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       networkInterfaceIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeNetworkInterfacesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

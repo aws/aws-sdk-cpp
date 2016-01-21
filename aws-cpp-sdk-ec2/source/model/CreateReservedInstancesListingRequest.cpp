@@ -45,7 +45,7 @@ Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
     unsigned priceSchedulesCount = 1;
     for(auto& item : m_priceSchedules)
     {
-      item.OutputToStream(ss, "PriceSchedules.member.", priceSchedulesCount, "");
+      item.OutputToStream(ss, "PriceSchedules.", priceSchedulesCount, "");
       priceSchedulesCount++;
     }
   }

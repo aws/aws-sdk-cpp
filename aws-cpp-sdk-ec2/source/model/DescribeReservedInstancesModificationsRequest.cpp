@@ -35,7 +35,7 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
     unsigned reservedInstancesModificationIdsCount = 1;
     for(auto& item : m_reservedInstancesModificationIds)
     {
-      ss << "ReservedInstancesModificationIds.member." << reservedInstancesModificationIdsCount << "="
+      ss << "ReservedInstancesModificationId." << reservedInstancesModificationIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       reservedInstancesModificationIdsCount++;
     }
@@ -49,7 +49,7 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

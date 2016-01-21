@@ -47,7 +47,7 @@ DescribeSnapshotsResponse& DescribeSnapshotsResponse::operator =(const AmazonWeb
 
   if(!resultNode.IsNull())
   {
-    XmlNode snapshotsNode = resultNode.FirstChild("Snapshots");
+    XmlNode snapshotsNode = resultNode.FirstChild("snapshotSet");
     if(!snapshotsNode.IsNull())
     {
       XmlNode snapshotsMember = snapshotsNode.FirstChild("item");

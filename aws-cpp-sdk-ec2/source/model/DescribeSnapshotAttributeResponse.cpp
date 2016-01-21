@@ -52,7 +52,7 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
     {
       m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
     }
-    XmlNode createVolumePermissionsNode = resultNode.FirstChild("CreateVolumePermissions");
+    XmlNode createVolumePermissionsNode = resultNode.FirstChild("createVolumePermission");
     if(!createVolumePermissionsNode.IsNull())
     {
       XmlNode createVolumePermissionsMember = createVolumePermissionsNode.FirstChild("item");
@@ -63,7 +63,7 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
       }
 
     }
-    XmlNode productCodesNode = resultNode.FirstChild("ProductCodes");
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");

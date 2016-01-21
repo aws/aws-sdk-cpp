@@ -40,7 +40,7 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
     unsigned spotInstanceRequestIdsCount = 1;
     for(auto& item : m_spotInstanceRequestIds)
     {
-      ss << "SpotInstanceRequestIds.member." << spotInstanceRequestIdsCount << "="
+      ss << "SpotInstanceRequestId." << spotInstanceRequestIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       spotInstanceRequestIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

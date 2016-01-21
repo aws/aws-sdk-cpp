@@ -96,7 +96,7 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
       m_privateIpAddressHasBeenSet = true;
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("SecurityGroupId");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("SecurityGroupId");
@@ -114,7 +114,7 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
     }
-    XmlNode privateIpAddressesNode = resultNode.FirstChild("PrivateIpAddresses");
+    XmlNode privateIpAddressesNode = resultNode.FirstChild("privateIpAddressesSet");
     if(!privateIpAddressesNode.IsNull())
     {
       XmlNode privateIpAddressesMember = privateIpAddressesNode.FirstChild("item");
@@ -167,9 +167,11 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 0;
       for(auto& item : m_groups)
       {
-        oStream << location << index << locationValue << ".SecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        groupsIdx++;
+        oStream << location << index << locationValue << ".SecurityGroupId." << groupsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_deleteOnTerminationHasBeenSet)
@@ -178,10 +180,12 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_privateIpAddressesHasBeenSet)
   {
+      unsigned privateIpAddressesIdx = 0;
       for(auto& item : m_privateIpAddresses)
       {
+        privateIpAddressesIdx++;
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location << index << locationValue << ".item";
+        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }

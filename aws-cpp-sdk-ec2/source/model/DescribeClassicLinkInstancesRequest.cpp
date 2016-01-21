@@ -43,7 +43,7 @@ Aws::String DescribeClassicLinkInstancesRequest::SerializePayload() const
     unsigned instanceIdsCount = 1;
     for(auto& item : m_instanceIds)
     {
-      ss << "InstanceIds.member." << instanceIdsCount << "="
+      ss << "InstanceId." << instanceIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }
@@ -53,7 +53,7 @@ Aws::String DescribeClassicLinkInstancesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

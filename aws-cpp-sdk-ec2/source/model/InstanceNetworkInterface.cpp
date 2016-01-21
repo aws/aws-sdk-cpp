@@ -128,7 +128,7 @@ InstanceNetworkInterface& InstanceNetworkInterface::operator =(const XmlNode& xm
       m_sourceDestCheck = StringUtils::ConvertToBool(StringUtils::Trim(sourceDestCheckNode.GetText().c_str()).c_str());
       m_sourceDestCheckHasBeenSet = true;
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
@@ -152,7 +152,7 @@ InstanceNetworkInterface& InstanceNetworkInterface::operator =(const XmlNode& xm
       m_association = associationNode;
       m_associationHasBeenSet = true;
     }
-    XmlNode privateIpAddressesNode = resultNode.FirstChild("PrivateIpAddresses");
+    XmlNode privateIpAddressesNode = resultNode.FirstChild("privateIpAddressesSet");
     if(!privateIpAddressesNode.IsNull())
     {
       XmlNode privateIpAddressesMember = privateIpAddressesNode.FirstChild("item");
@@ -213,10 +213,12 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 0;
       for(auto& item : m_groups)
       {
+        groupsIdx++;
         Aws::StringStream groupsSs;
-        groupsSs << location << index << locationValue << ".item";
+        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -234,10 +236,12 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_privateIpAddressesHasBeenSet)
   {
+      unsigned privateIpAddressesIdx = 0;
       for(auto& item : m_privateIpAddresses)
       {
+        privateIpAddressesIdx++;
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location << index << locationValue << ".item";
+        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }

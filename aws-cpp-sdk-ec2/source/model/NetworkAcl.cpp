@@ -70,7 +70,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(isDefaultNode.GetText().c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
-    XmlNode entriesNode = resultNode.FirstChild("Entries");
+    XmlNode entriesNode = resultNode.FirstChild("entrySet");
     if(!entriesNode.IsNull())
     {
       XmlNode entriesMember = entriesNode.FirstChild("item");
@@ -82,7 +82,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
 
       m_entriesHasBeenSet = true;
     }
-    XmlNode associationsNode = resultNode.FirstChild("Associations");
+    XmlNode associationsNode = resultNode.FirstChild("associationSet");
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
@@ -94,7 +94,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
 
       m_associationsHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -127,28 +127,34 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_entriesHasBeenSet)
   {
+      unsigned entriesIdx = 0;
       for(auto& item : m_entries)
       {
+        entriesIdx++;
         Aws::StringStream entriesSs;
-        entriesSs << location << index << locationValue << ".item";
+        entriesSs << location << index << locationValue << ".EntrySet." << entriesIdx;
         item.OutputToStream(oStream, entriesSs.str().c_str());
       }
   }
   if(m_associationsHasBeenSet)
   {
+      unsigned associationsIdx = 0;
       for(auto& item : m_associations)
       {
+        associationsIdx++;
         Aws::StringStream associationsSs;
-        associationsSs << location << index << locationValue << ".item";
+        associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx;
         item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

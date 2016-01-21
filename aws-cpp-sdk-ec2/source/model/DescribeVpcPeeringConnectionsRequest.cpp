@@ -40,7 +40,7 @@ Aws::String DescribeVpcPeeringConnectionsRequest::SerializePayload() const
     unsigned vpcPeeringConnectionIdsCount = 1;
     for(auto& item : m_vpcPeeringConnectionIds)
     {
-      ss << "VpcPeeringConnectionIds.member." << vpcPeeringConnectionIdsCount << "="
+      ss << "VpcPeeringConnectionId." << vpcPeeringConnectionIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcPeeringConnectionIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeVpcPeeringConnectionsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

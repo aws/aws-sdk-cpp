@@ -49,7 +49,7 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
     unsigned groupsCount = 1;
     for(auto& item : m_groups)
     {
-      ss << "Groups.member." << groupsCount << "="
+      ss << "SecurityGroupId." << groupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupsCount++;
     }

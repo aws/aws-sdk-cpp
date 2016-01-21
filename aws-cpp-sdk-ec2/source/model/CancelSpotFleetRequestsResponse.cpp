@@ -47,7 +47,7 @@ CancelSpotFleetRequestsResponse& CancelSpotFleetRequestsResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode unsuccessfulFleetRequestsNode = resultNode.FirstChild("UnsuccessfulFleetRequests");
+    XmlNode unsuccessfulFleetRequestsNode = resultNode.FirstChild("unsuccessfulFleetRequestSet");
     if(!unsuccessfulFleetRequestsNode.IsNull())
     {
       XmlNode unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsNode.FirstChild("item");
@@ -58,7 +58,7 @@ CancelSpotFleetRequestsResponse& CancelSpotFleetRequestsResponse::operator =(con
       }
 
     }
-    XmlNode successfulFleetRequestsNode = resultNode.FirstChild("SuccessfulFleetRequests");
+    XmlNode successfulFleetRequestsNode = resultNode.FirstChild("successfulFleetRequestSet");
     if(!successfulFleetRequestsNode.IsNull())
     {
       XmlNode successfulFleetRequestsMember = successfulFleetRequestsNode.FirstChild("item");

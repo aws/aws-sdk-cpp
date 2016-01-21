@@ -44,6 +44,8 @@ namespace KMSEndpoint
         return "kms.ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
         return "kms.ap-northeast-1.amazonaws.com";
+     case Region::AP_NORTHEAST_2:
+        return "kms.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "kms.sa-east-1.amazonaws.com";
      default:

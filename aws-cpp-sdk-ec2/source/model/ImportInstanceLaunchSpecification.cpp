@@ -68,7 +68,7 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
       m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(architectureNode.GetText().c_str()).c_str());
       m_architectureHasBeenSet = true;
     }
-    XmlNode groupNamesNode = resultNode.FirstChild("GroupNames");
+    XmlNode groupNamesNode = resultNode.FirstChild("GroupName");
     if(!groupNamesNode.IsNull())
     {
       XmlNode groupNamesMember = groupNamesNode.FirstChild("SecurityGroup");
@@ -80,7 +80,7 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
 
       m_groupNamesHasBeenSet = true;
     }
-    XmlNode groupIdsNode = resultNode.FirstChild("GroupIds");
+    XmlNode groupIdsNode = resultNode.FirstChild("GroupId");
     if(!groupIdsNode.IsNull())
     {
       XmlNode groupIdsMember = groupIdsNode.FirstChild("SecurityGroupId");
@@ -153,16 +153,20 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_groupNamesHasBeenSet)
   {
+      unsigned groupNamesIdx = 0;
       for(auto& item : m_groupNames)
       {
-        oStream << location << index << locationValue << ".SecurityGroup=" << StringUtils::URLEncode(item.c_str()) << "&";
+        groupNamesIdx++;
+        oStream << location << index << locationValue << ".GroupName." << groupNamesIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_groupIdsHasBeenSet)
   {
+      unsigned groupIdsIdx = 0;
       for(auto& item : m_groupIds)
       {
-        oStream << location << index << locationValue << ".SecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        groupIdsIdx++;
+        oStream << location << index << locationValue << ".GroupId." << groupIdsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_additionalInfoHasBeenSet)

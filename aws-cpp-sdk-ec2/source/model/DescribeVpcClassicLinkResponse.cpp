@@ -47,7 +47,7 @@ DescribeVpcClassicLinkResponse& DescribeVpcClassicLinkResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcsNode = resultNode.FirstChild("Vpcs");
+    XmlNode vpcsNode = resultNode.FirstChild("vpcSet");
     if(!vpcsNode.IsNull())
     {
       XmlNode vpcsMember = vpcsNode.FirstChild("item");

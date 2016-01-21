@@ -47,7 +47,7 @@ DescribePlacementGroupsResponse& DescribePlacementGroupsResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode placementGroupsNode = resultNode.FirstChild("PlacementGroups");
+    XmlNode placementGroupsNode = resultNode.FirstChild("placementGroupSet");
     if(!placementGroupsNode.IsNull())
     {
       XmlNode placementGroupsMember = placementGroupsNode.FirstChild("item");

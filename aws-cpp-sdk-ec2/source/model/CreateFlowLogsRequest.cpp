@@ -38,7 +38,7 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
     unsigned resourceIdsCount = 1;
     for(auto& item : m_resourceIds)
     {
-      ss << "ResourceIds.member." << resourceIdsCount << "="
+      ss << "ResourceId." << resourceIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       resourceIdsCount++;
     }

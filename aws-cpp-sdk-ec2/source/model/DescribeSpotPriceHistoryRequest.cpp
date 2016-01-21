@@ -57,7 +57,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
     unsigned instanceTypesCount = 1;
     for(auto& item : m_instanceTypes)
     {
-      ss << "InstanceTypes.member." << instanceTypesCount << "="
+      ss << "InstanceType." << instanceTypesCount << "="
           << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(item).c_str()) << "&";
       instanceTypesCount++;
     }
@@ -67,7 +67,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
     unsigned productDescriptionsCount = 1;
     for(auto& item : m_productDescriptions)
     {
-      ss << "ProductDescriptions.member." << productDescriptionsCount << "="
+      ss << "ProductDescription." << productDescriptionsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       productDescriptionsCount++;
     }
@@ -77,7 +77,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

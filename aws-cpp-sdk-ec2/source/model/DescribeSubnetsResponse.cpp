@@ -47,7 +47,7 @@ DescribeSubnetsResponse& DescribeSubnetsResponse::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode subnetsNode = resultNode.FirstChild("Subnets");
+    XmlNode subnetsNode = resultNode.FirstChild("subnetSet");
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("item");

@@ -62,7 +62,7 @@ RunInstancesResponse& RunInstancesResponse::operator =(const AmazonWebServiceRes
     {
       m_requesterId = StringUtils::Trim(requesterIdNode.GetText().c_str());
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
@@ -73,7 +73,7 @@ RunInstancesResponse& RunInstancesResponse::operator =(const AmazonWebServiceRes
       }
 
     }
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = resultNode.FirstChild("instancesSet");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");

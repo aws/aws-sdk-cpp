@@ -47,7 +47,7 @@ DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode networkAclsNode = resultNode.FirstChild("NetworkAcls");
+    XmlNode networkAclsNode = resultNode.FirstChild("networkAclSet");
     if(!networkAclsNode.IsNull())
     {
       XmlNode networkAclsMember = networkAclsNode.FirstChild("item");

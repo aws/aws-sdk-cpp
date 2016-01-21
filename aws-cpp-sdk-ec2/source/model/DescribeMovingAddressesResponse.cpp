@@ -47,7 +47,7 @@ DescribeMovingAddressesResponse& DescribeMovingAddressesResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode movingAddressStatusesNode = resultNode.FirstChild("MovingAddressStatuses");
+    XmlNode movingAddressStatusesNode = resultNode.FirstChild("movingAddressStatusSet");
     if(!movingAddressStatusesNode.IsNull())
     {
       XmlNode movingAddressStatusesMember = movingAddressStatusesNode.FirstChild("item");

@@ -33,7 +33,7 @@ Aws::String DeleteFlowLogsRequest::SerializePayload() const
     unsigned flowLogIdsCount = 1;
     for(auto& item : m_flowLogIds)
     {
-      ss << "FlowLogIds.member." << flowLogIdsCount << "="
+      ss << "FlowLogId." << flowLogIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       flowLogIdsCount++;
     }

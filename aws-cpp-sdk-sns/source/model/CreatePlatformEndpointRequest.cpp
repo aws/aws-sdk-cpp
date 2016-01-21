@@ -48,9 +48,9 @@ Aws::String CreatePlatformEndpointRequest::SerializePayload() const
     unsigned attributesCount = 1;
     for(auto& item : m_attributes)
     {
-      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapKey.locationName}="
+      ss << "Attributes.entry." << attributesCount << ".key="
           << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapValue.locationName}="
+      ss << "Attributes.entry." << attributesCount << ".value="
           << StringUtils::URLEncode(item.second.c_str()) << "&";
       attributesCount++;
     }

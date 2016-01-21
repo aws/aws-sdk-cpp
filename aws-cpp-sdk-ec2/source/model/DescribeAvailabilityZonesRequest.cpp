@@ -40,7 +40,7 @@ Aws::String DescribeAvailabilityZonesRequest::SerializePayload() const
     unsigned zoneNamesCount = 1;
     for(auto& item : m_zoneNames)
     {
-      ss << "ZoneNames.member." << zoneNamesCount << "="
+      ss << "ZoneName." << zoneNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       zoneNamesCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeAvailabilityZonesRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

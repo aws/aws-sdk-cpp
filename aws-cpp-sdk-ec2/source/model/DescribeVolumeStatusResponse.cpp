@@ -47,7 +47,7 @@ DescribeVolumeStatusResponse& DescribeVolumeStatusResponse::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumeStatusesNode = resultNode.FirstChild("VolumeStatuses");
+    XmlNode volumeStatusesNode = resultNode.FirstChild("volumeStatusSet");
     if(!volumeStatusesNode.IsNull())
     {
       XmlNode volumeStatusesMember = volumeStatusesNode.FirstChild("item");

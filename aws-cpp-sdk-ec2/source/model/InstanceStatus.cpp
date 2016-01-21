@@ -62,7 +62,7 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
-    XmlNode eventsNode = resultNode.FirstChild("Events");
+    XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("item");
@@ -109,10 +109,12 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
   }
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 0;
       for(auto& item : m_events)
       {
+        eventsIdx++;
         Aws::StringStream eventsSs;
-        eventsSs << location << index << locationValue << ".item";
+        eventsSs << location << index << locationValue << ".EventsSet." << eventsIdx;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }

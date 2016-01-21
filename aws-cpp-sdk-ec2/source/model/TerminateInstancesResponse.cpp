@@ -47,7 +47,7 @@ TerminateInstancesResponse& TerminateInstancesResponse::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode terminatingInstancesNode = resultNode.FirstChild("TerminatingInstances");
+    XmlNode terminatingInstancesNode = resultNode.FirstChild("instancesSet");
     if(!terminatingInstancesNode.IsNull())
     {
       XmlNode terminatingInstancesMember = terminatingInstancesNode.FirstChild("item");

@@ -50,7 +50,7 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
       m_dhcpOptionsId = StringUtils::Trim(dhcpOptionsIdNode.GetText().c_str());
       m_dhcpOptionsIdHasBeenSet = true;
     }
-    XmlNode dhcpConfigurationsNode = resultNode.FirstChild("DhcpConfigurations");
+    XmlNode dhcpConfigurationsNode = resultNode.FirstChild("dhcpConfigurationSet");
     if(!dhcpConfigurationsNode.IsNull())
     {
       XmlNode dhcpConfigurationsMember = dhcpConfigurationsNode.FirstChild("item");
@@ -62,7 +62,7 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
 
       m_dhcpConfigurationsHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -87,19 +87,23 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_dhcpConfigurationsHasBeenSet)
   {
+      unsigned dhcpConfigurationsIdx = 0;
       for(auto& item : m_dhcpConfigurations)
       {
+        dhcpConfigurationsIdx++;
         Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location << index << locationValue << ".item";
+        dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx;
         item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

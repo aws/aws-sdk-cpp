@@ -43,7 +43,7 @@ Aws::String DescribeImportSnapshotTasksRequest::SerializePayload() const
     unsigned importTaskIdsCount = 1;
     for(auto& item : m_importTaskIds)
     {
-      ss << "ImportTaskIds.member." << importTaskIdsCount << "="
+      ss << "ImportTaskId." << importTaskIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       importTaskIdsCount++;
     }

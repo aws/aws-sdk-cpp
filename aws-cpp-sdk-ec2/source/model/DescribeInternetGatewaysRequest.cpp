@@ -40,7 +40,7 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
     unsigned internetGatewayIdsCount = 1;
     for(auto& item : m_internetGatewayIds)
     {
-      ss << "InternetGatewayIds.member." << internetGatewayIdsCount << "="
+      ss << "InternetGatewayId." << internetGatewayIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       internetGatewayIdsCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

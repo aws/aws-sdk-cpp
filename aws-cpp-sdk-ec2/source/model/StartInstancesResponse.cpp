@@ -47,7 +47,7 @@ StartInstancesResponse& StartInstancesResponse::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode startingInstancesNode = resultNode.FirstChild("StartingInstances");
+    XmlNode startingInstancesNode = resultNode.FirstChild("instancesSet");
     if(!startingInstancesNode.IsNull())
     {
       XmlNode startingInstancesMember = startingInstancesNode.FirstChild("item");

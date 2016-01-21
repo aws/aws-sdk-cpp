@@ -62,7 +62,7 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
     {
       m_sourceDestCheck = sourceDestCheckNode;
     }
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");

@@ -39,7 +39,7 @@ Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
     unsigned spotInstanceRequestIdsCount = 1;
     for(auto& item : m_spotInstanceRequestIds)
     {
-      ss << "SpotInstanceRequestIds.member." << spotInstanceRequestIdsCount << "="
+      ss << "SpotInstanceRequestId." << spotInstanceRequestIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       spotInstanceRequestIdsCount++;
     }

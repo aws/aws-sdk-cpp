@@ -40,7 +40,7 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
     unsigned keyNamesCount = 1;
     for(auto& item : m_keyNames)
     {
-      ss << "KeyNames.member." << keyNamesCount << "="
+      ss << "KeyName." << keyNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       keyNamesCount++;
     }
@@ -50,7 +50,7 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }

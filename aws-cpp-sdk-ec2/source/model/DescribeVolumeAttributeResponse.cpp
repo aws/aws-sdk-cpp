@@ -57,7 +57,7 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
     {
       m_autoEnableIO = autoEnableIONode;
     }
-    XmlNode productCodesNode = resultNode.FirstChild("ProductCodes");
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");

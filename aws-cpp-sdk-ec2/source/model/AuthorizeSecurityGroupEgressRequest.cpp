@@ -76,7 +76,7 @@ Aws::String AuthorizeSecurityGroupEgressRequest::SerializePayload() const
     unsigned ipPermissionsCount = 1;
     for(auto& item : m_ipPermissions)
     {
-      item.OutputToStream(ss, "IpPermissions.member.", ipPermissionsCount, "");
+      item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
     }
   }

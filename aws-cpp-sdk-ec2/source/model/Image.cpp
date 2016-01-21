@@ -122,7 +122,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_public = StringUtils::ConvertToBool(StringUtils::Trim(publicNode.GetText().c_str()).c_str());
       m_publicHasBeenSet = true;
     }
-    XmlNode productCodesNode = resultNode.FirstChild("ProductCodes");
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
@@ -206,7 +206,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_rootDeviceName = StringUtils::Trim(rootDeviceNameNode.GetText().c_str());
       m_rootDeviceNameHasBeenSet = true;
     }
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
@@ -224,7 +224,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(virtualizationTypeNode.GetText().c_str()).c_str());
       m_virtualizationTypeHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -275,10 +275,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_productCodesHasBeenSet)
   {
+      unsigned productCodesIdx = 0;
       for(auto& item : m_productCodes)
       {
+        productCodesIdx++;
         Aws::StringStream productCodesSs;
-        productCodesSs << location << index << locationValue << ".item";
+        productCodesSs << location << index << locationValue << ".ProductCodes." << productCodesIdx;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -334,10 +336,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
+      unsigned blockDeviceMappingsIdx = 0;
       for(auto& item : m_blockDeviceMappings)
       {
+        blockDeviceMappingsIdx++;
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location << index << locationValue << ".item";
+        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -347,10 +351,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 0;
       for(auto& item : m_tags)
       {
+        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".item";
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

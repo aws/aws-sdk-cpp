@@ -47,7 +47,7 @@ DescribeReservedInstancesOfferingsResponse& DescribeReservedInstancesOfferingsRe
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservedInstancesOfferingsNode = resultNode.FirstChild("ReservedInstancesOfferings");
+    XmlNode reservedInstancesOfferingsNode = resultNode.FirstChild("reservedInstancesOfferingsSet");
     if(!reservedInstancesOfferingsNode.IsNull())
     {
       XmlNode reservedInstancesOfferingsMember = reservedInstancesOfferingsNode.FirstChild("item");

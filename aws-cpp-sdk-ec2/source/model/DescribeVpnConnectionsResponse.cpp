@@ -47,7 +47,7 @@ DescribeVpnConnectionsResponse& DescribeVpnConnectionsResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpnConnectionsNode = resultNode.FirstChild("VpnConnections");
+    XmlNode vpnConnectionsNode = resultNode.FirstChild("vpnConnectionSet");
     if(!vpnConnectionsNode.IsNull())
     {
       XmlNode vpnConnectionsMember = vpnConnectionsNode.FirstChild("item");

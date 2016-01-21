@@ -96,7 +96,7 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
-    XmlNode snapshotDetailsNode = resultNode.FirstChild("SnapshotDetails");
+    XmlNode snapshotDetailsNode = resultNode.FirstChild("snapshotDetailSet");
     if(!snapshotDetailsNode.IsNull())
     {
       XmlNode snapshotDetailsMember = snapshotDetailsNode.FirstChild("item");
@@ -165,10 +165,12 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_snapshotDetailsHasBeenSet)
   {
+      unsigned snapshotDetailsIdx = 0;
       for(auto& item : m_snapshotDetails)
       {
+        snapshotDetailsIdx++;
         Aws::StringStream snapshotDetailsSs;
-        snapshotDetailsSs << location << index << locationValue << ".item";
+        snapshotDetailsSs << location << index << locationValue << ".SnapshotDetailSet." << snapshotDetailsIdx;
         item.OutputToStream(oStream, snapshotDetailsSs.str().c_str());
       }
   }
