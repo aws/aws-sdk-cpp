@@ -51,7 +51,7 @@ def GetPlatformBuildTargets():
                                                              'cmake_params' : "-DSTATIC_LINKING=1",
                                                              'build_params' : [ "-p:Configuration=Release" ],
                                                              'config' : 'Release' } }, 
-                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DBUILD_VER_NUM=0 -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Android' : { 'buildPlatforms' : [ 'Linux' ],
                            'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
                                                             'cmake_params' : "-DSTATIC_LINKING=0 -DANDROID_STL=gnustl_shared -DCMAKE_BUILD_TYPE=Debug",
@@ -70,7 +70,7 @@ def GetPlatformBuildTargets():
                                                              'build_params' : [],
                                                              'config' : 'Release' } },
                            'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 " \
-                                                   "-DBUILD_VER_NUM=0" \
+                                                   "-DGENERATE_VERSION_INFO=0" \
                                                    "-DANDROID_STL_FORCE_FEATURES=OFF " \
                                                    "-DTARGET_ARCH=ANDROID " \
                                                    "-DANDROID_ABI=armeabi-v7a " \
@@ -92,7 +92,7 @@ def GetPlatformBuildTargets():
                                                            'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                            'build_params' : [],
                                                            'config' : 'Release' } },
-                         'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 -DBUILD_VER_NUM=0" },
+                         'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0" },
              'Darwin' : { 'buildPlatforms' : [ 'Darwin' ],
                                       'configs' : { 'DebugDynamic' : { 'directory' : '_build_darwin_dynamic_debug', 
                                                           'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -110,7 +110,7 @@ def GetPlatformBuildTargets():
                                                            'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                            'build_params' : [],
                                                            'config' : 'Release' } },
-                         'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 -DBUILD_VER_NUM=0" } }
+                         'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0" } }
 
 
 def ParseArguments(platformEnvironments):
