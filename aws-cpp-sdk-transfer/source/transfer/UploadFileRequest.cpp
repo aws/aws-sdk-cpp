@@ -680,6 +680,7 @@ void UploadFileRequest::HandlePartFailure(const Aws::S3::Model::UploadPartOutcom
 void UploadFileRequest::DoRetry(PartRequestRecord& partRequest)
 {
     ++m_totalPartRetries;
+    partRequest.m_partRequest.GetBody()->seekg(0);
     RequestPart(partRequest.m_partRequest.GetPartNumber());
 }
 
