@@ -55,6 +55,7 @@ UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
                                      const Aws::String& bucketName, 
                                      const Aws::String& keyName, 
                                      const Aws::String& contentType, 
+                                     Aws::Map<Aws::String, Aws::String>&& metadata,
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
                                      bool createBucket,
                                      bool doConsistencyChecks) :
@@ -73,6 +74,7 @@ m_bucketPropagated(false),
 m_totalParts(0),
 m_fileStream(fileName.c_str(), std::ios::binary | std::ios::ate),
 m_contentType(contentType),
+m_metadata(std::move(metadata)),
 m_createMultipartRetries(0),
 m_createBucketRetries(0),
 m_completeRetries(0),
@@ -103,6 +105,29 @@ m_headBucketRetries(0)
     {
         m_totalParts = 1 + static_cast<uint32_t>((GetFileSize() - 1) / MB5_BUFFER_SIZE); // How many total buffer operations are we performing
     }
+}
+
+UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
+                                     const Aws::String& bucketName,
+                                     const Aws::String& keyName,
+                                     const Aws::String& contentType,
+                                     const std::shared_ptr<Aws::S3::S3Client>& s3Client,
+                                     bool createBucket,
+                                     bool doConsistencyChecks) :
+UploadFileRequest(fileName, bucketName, keyName, contentType, {}, s3Client, createBucket, doConsistencyChecks)
+{
+}
+
+UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
+                                     const Aws::String& bucketName,
+                                     const Aws::String& keyName,
+                                     const Aws::String& contentType,
+                                     const Aws::Map<Aws::String, Aws::String>& metadata,
+                                     const std::shared_ptr<Aws::S3::S3Client>& s3Client,
+                                     bool createBucket,
+                                     bool doConsistencyChecks) :
+UploadFileRequest(fileName, bucketName, keyName, contentType, Aws::Map<Aws::String, Aws::String>(metadata), s3Client, createBucket, doConsistencyChecks)
+{
 }
 
 UploadFileRequest::~UploadFileRequest()
@@ -201,6 +226,10 @@ bool UploadFileRequest::CreateMultipartUpload()
     if (m_contentType.length())
     {
         createMultipartUploadRequest.SetContentType(m_contentType);
+    }
+    if (m_metadata.size() > 0)
+    {
+        createMultipartUploadRequest.SetMetadata(m_metadata);
     }
 
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
@@ -507,7 +536,7 @@ bool UploadFileRequest::ProcessBuffer(const std::shared_ptr<UploadBuffer>& buffe
         return false;
     }
 
-    if (GetTotalParts() == 1)
+    if (IsSinglePartUpload())
     {
         // Don't need more than one part, do everything now
         return DoSingleObjectUpload(streamBuf, bytesRead);
@@ -773,6 +802,10 @@ bool UploadFileRequest::DoSingleObjectUpload(std::shared_ptr<Aws::IOStream>& str
     if (m_contentType.length())
     {
         putObjectRequest.SetContentType(m_contentType);
+    }
+    if (m_metadata.size() > 0)
+    {
+        putObjectRequest.SetMetadata(m_metadata);
     }
     putObjectRequest.SetKey(GetKeyName());
 

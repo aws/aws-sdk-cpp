@@ -76,6 +76,14 @@ public:
 class AWS_TRANSFER_API UploadFileRequest : public S3FileRequest, public std::enable_shared_from_this<UploadFileRequest>
 {
 public:
+    UploadFileRequest(const Aws::String& fileName,
+                      const Aws::String& bucketName,
+                      const Aws::String& keyName,
+                      const Aws::String& contentType,
+                      Aws::Map<Aws::String, Aws::String>&& metadata,
+                      const std::shared_ptr<Aws::S3::S3Client>& s3Client,
+                      bool createBucket,
+                      bool doConsistencyChecks);
     UploadFileRequest(const Aws::String& fileName, 
                       const Aws::String& bucketName, 
                       const Aws::String& keyName, 
@@ -83,7 +91,15 @@ public:
                       const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
                       bool createBucket,
                       bool doConsistencyChecks);
-    ~UploadFileRequest();
+    UploadFileRequest(const Aws::String& fileName,
+                      const Aws::String& bucketName,
+                      const Aws::String& keyName,
+                      const Aws::String& contentType,
+                      const Aws::Map<Aws::String, Aws::String>& metadata,
+                      const std::shared_ptr<Aws::S3::S3Client>& s3Client,
+                      bool createBucket,
+                      bool doConsistencyChecks);
+    virtual ~UploadFileRequest();
 
     // How many parts have we at least begun to upload
     uint32_t GetPartCount() const;
@@ -255,6 +271,7 @@ private:
     Aws::List<std::shared_ptr<UploadBuffer> > m_buffersReady;
 
     Aws::String m_contentType;
+    Aws::Map<Aws::String, Aws::String> m_metadata;
     Aws::String m_uploadId;
     uint32_t m_createMultipartRetries;
     uint32_t m_createBucketRetries;

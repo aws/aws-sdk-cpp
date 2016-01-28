@@ -1188,5 +1188,101 @@ TEST_F(TransferTests, ScopeTests)
     }
 }
 
+// Single part upload with metadata specified
+TEST_F(TransferTests, SinglePartUploadWithMetadataTest)
+{
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(TEST_FILE_NAME);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    Aws::Map<Aws::String, Aws::String> metadata;
+    metadata["key1"] = "val1";
+    metadata["key2"] = "val2";
+    const bool cCreateBucket = true;
+    const bool cConsistencyChecks = false;
+    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(TEST_FILE_NAME, GetTestBucketName(), "", "", metadata, cCreateBucket, cConsistencyChecks);
+
+    ASSERT_FALSE(requestPtr->IsDone());
+
+    WaitForUploadAndUpdate(requestPtr, 100.0f);
+
+    ASSERT_TRUE(requestPtr->IsDone());
+
+    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
+
+    WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_NAME);
+
+    // Check the metadata matches
+    HeadObjectRequest headObjectRequest;
+    headObjectRequest.SetBucket(GetTestBucketName());
+    headObjectRequest.SetKey(TEST_FILE_NAME);
+
+    HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+    Aws::Map<Aws::String, Aws::String> headObjectMetadata = headObjectOutcome.GetResult().GetMetadata();
+    ASSERT_EQ(metadata.size(), headObjectMetadata.size());
+    ASSERT_EQ(metadata["key1"], headObjectMetadata["key1"]);
+    ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
+
+}
+
+// Multipart upload with metadata specified
+TEST_F(TransferTests, MultipartUploadWithMetadataTest)
+{
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    ListMultipartUploadsRequest listMultipartRequest;
+
+    listMultipartRequest.SetBucket(GetTestBucketName());
+
+    Aws::Map<Aws::String, Aws::String> metadata;
+    metadata["key1"] = "val1";
+    metadata["key2"] = "val2";
+    const bool cCreateBucket = true;
+    const bool cConsistencyChecks = false;
+    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY, "", metadata, cCreateBucket, cConsistencyChecks);
+
+    ASSERT_FALSE(requestPtr->IsDone());
+
+    WaitForUploadAndUpdate(requestPtr, 100.0f);
+
+    ASSERT_TRUE(requestPtr->IsDone());
+    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
+
+    WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY);
+
+    // Check the metadata matches
+    HeadObjectRequest headObjectRequest;
+    headObjectRequest.SetBucket(GetTestBucketName());
+    headObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+    HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+    Aws::Map<Aws::String, Aws::String> headObjectMetadata = headObjectOutcome.GetResult().GetMetadata();
+    ASSERT_EQ(metadata.size(), headObjectMetadata.size());
+    ASSERT_EQ(metadata["key1"], headObjectMetadata["key1"]);
+    ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
+
+}
+
 
 }
