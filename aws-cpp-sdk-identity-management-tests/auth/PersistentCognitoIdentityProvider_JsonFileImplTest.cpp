@@ -48,10 +48,9 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
 #ifdef _WIN32
-Aws::String ComputeIdentityFilePath()
+Aws::String MakeTempFilePath()
 {
-    static bool s_initialized = false;
-    static char s_tempName[L_tmpnam_s+1];
+    char s_tempName[L_tmpnam_s+1];
 
 	/*
 	Prior to VS 2014, tmpnam/tmpnam_s generated root level files ("\filename") which were not appropriate for our usage, so for the windows version, we prepended a '.' to make it a
@@ -61,89 +60,134 @@ Aws::String ComputeIdentityFilePath()
 	See the tmpnam section in http://blogs.msdn.com/b/vcblog/archive/2014/06/18/crt-features-fixes-and-breaking-changes-in-visual-studio-14-ctp1.aspx
 	for more details.
 	*/
-    if(!s_initialized)
-    {
+
 #if _MSC_VER >= 1900
-		tmpnam_s(s_tempName, L_tmpnam_s);
+	tmpnam_s(s_tempName, L_tmpnam_s);
 #else
-        s_tempName[0] = '.';
-        tmpnam_s(s_tempName + 1, L_tmpnam_s);
+    s_tempName[0] = '.';
+    tmpnam_s(s_tempName + 1, L_tmpnam_s);
 #endif // _MSC_VER
-        s_initialized = true;
-    }
 
     return Aws::String(s_tempName);
 }
 #else
-Aws::String ComputeIdentityFilePath()
+Aws::String MakeTempFilePath()
 {
-    static Aws::String tempFile(std::tmpnam(nullptr));
+    Aws::String tempFile(std::tmpnam(nullptr));
     return tempFile;
 }
 #endif
 
-TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenNoFileIsAvailable)
+class PersistentCognitoIdentityProvider_JsonImpl_Test : public ::testing::Test
 {
-    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("identityPoolId", "accountId", ComputeIdentityFilePath().c_str());
+
+    protected:
+
+        static void WriteBasicTestsIdentityFile()
+        {
+            m_BasicIdentityFilename = MakeTempFilePath();
+            FileSystemUtils::RemoveFileIfExists(m_BasicIdentityFilename.c_str());
+
+            JsonValue theIdentityPoolWeWant;
+            theIdentityPoolWeWant.WithString("IdentityId", "TheIdentityWeWant");
+
+            //this should test the legacy case.
+            //the next test case will cover the current spec in detail.
+            JsonValue logins;
+            logins.WithString("TestLoginName", "TestLoginValue");
+            theIdentityPoolWeWant.WithObject("Logins", logins);
+
+            JsonValue someOtherIdentityPool;
+            someOtherIdentityPool.WithString("IdentityId", "SomeOtherIdentity");
+
+            JsonValue identityDoc;
+            identityDoc.WithObject("IdentityPoolWeWant", theIdentityPoolWeWant);
+            identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
+
+            std::ofstream identityFile(m_BasicIdentityFilename.c_str());
+            identityFile << identityDoc.WriteReadable();
+            identityFile.flush();
+            identityFile.close();
+        }
+       
+        static void WritePersistenceTestIdentityFile()
+        {
+            m_PersistentIdentityFilename = MakeTempFilePath();
+            FileSystemUtils::RemoveFileIfExists(m_PersistentIdentityFilename.c_str());
+
+            JsonValue someOtherIdentityPool;
+            someOtherIdentityPool.WithString("IdentityId", "SomeOtherIdentity");
+
+            JsonValue identityDoc;
+            identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
+
+            std::ofstream identityFile(m_PersistentIdentityFilename.c_str());
+            identityFile << identityDoc.WriteReadable();
+            identityFile.close();
+        }
+
+        static void SetUpTestCase()
+        {
+            WriteBasicTestsIdentityFile();
+            WritePersistenceTestIdentityFile();
+        }
+
+        static void TearDownTestCase()
+        {
+            FileSystemUtils::RemoveFileIfExists(m_BasicIdentityFilename.c_str());
+            FileSystemUtils::RemoveFileIfExists(m_PersistentIdentityFilename.c_str());
+        }
+
+        static Aws::String m_BasicIdentityFilename;
+        static Aws::String m_PersistentIdentityFilename;
+};
+
+Aws::String PersistentCognitoIdentityProvider_JsonImpl_Test::m_BasicIdentityFilename;
+Aws::String PersistentCognitoIdentityProvider_JsonImpl_Test::m_PersistentIdentityFilename;
+
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenNoFileIsAvailable)
+{
+    Aws::String tempFilePath = MakeTempFilePath();
+
+    std::ifstream shouldNotExistStart(tempFilePath.c_str());
+    ASSERT_FALSE(shouldNotExistStart.good());
+
+    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("identityPoolId", "accountId", tempFilePath.c_str());
     ASSERT_FALSE(identityProvider.HasIdentityId());
     ASSERT_FALSE(identityProvider.HasLogins());
     ASSERT_EQ("identityPoolId", identityProvider.GetIdentityPoolId());
     ASSERT_EQ("accountId", identityProvider.GetAccountId());
 
-    Aws::String filePath = ComputeIdentityFilePath();
-    std::ifstream shouldNotExist(filePath.c_str());
-    ASSERT_FALSE(shouldNotExist.good());
+    std::ifstream shouldNotExistEnd(tempFilePath.c_str());
+    ASSERT_FALSE(shouldNotExistEnd.good());
 }
 
-TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsAvaiable)
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsAvaiable)
 {
-    JsonValue theIdentityPoolWeWant;
-    theIdentityPoolWeWant.WithString("IdentityId", "TheIdentityWeWant");
-
-    //this should test the legacy case.
-    //the next test case will cover the current spec in detail.
-    JsonValue logins;
-    logins.WithString("TestLoginName", "TestLoginValue");
-    theIdentityPoolWeWant.WithObject("Logins", logins);
-
-    JsonValue someOtherIdentityPool;
-    someOtherIdentityPool.WithString("IdentityId", "SomeOtherIdentity");
-
-    JsonValue identityDoc;
-    identityDoc.WithObject("IdentityPoolWeWant", theIdentityPoolWeWant);
-    identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
-
-    Aws::String filePath = ComputeIdentityFilePath();
-    std::ofstream identityFile(filePath.c_str());
-    identityFile << identityDoc.WriteReadable();
-    identityFile.flush();
-    identityFile.close();
-
-    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());
-    FileSystemUtils::RemoveFileIfExists(filePath.c_str());
+    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", m_BasicIdentityFilename.c_str());
 
     ASSERT_TRUE(identityProvider.HasIdentityId());
-    ASSERT_EQ(theIdentityPoolWeWant.GetString("IdentityId"), identityProvider.GetIdentityId());
+    ASSERT_EQ("TheIdentityWeWant", identityProvider.GetIdentityId());
     ASSERT_TRUE(identityProvider.HasLogins());
     ASSERT_EQ(1u, identityProvider.GetLogins().size());
     ASSERT_EQ("TestLoginName", identityProvider.GetLogins().begin()->first);
     ASSERT_EQ("TestLoginValue", identityProvider.GetLogins().begin()->second.accessToken);
 }
 
-TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, DisabledCaching)
 {
-    JsonValue someOtherIdentityPool;
-    someOtherIdentityPool.WithString("IdentityId", "SomeOtherIdentity");
+    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", m_BasicIdentityFilename.c_str(), true);
 
-    JsonValue identityDoc;
-    identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
+    ASSERT_TRUE(identityProvider.HasIdentityId());
+    ASSERT_EQ("TheIdentityWeWant", identityProvider.GetIdentityId());
+    ASSERT_TRUE(identityProvider.HasLogins());
+    ASSERT_EQ(1u, identityProvider.GetLogins().size());
+    ASSERT_EQ("TestLoginName", identityProvider.GetLogins().begin()->first);
+    ASSERT_EQ("TestLoginValue", identityProvider.GetLogins().begin()->second.accessToken);
+}
 
-    Aws::String filePath = ComputeIdentityFilePath();
-    FileSystemUtils::RemoveFileIfExists(filePath.c_str());
-    std::ofstream identityFile(filePath.c_str());
-    identityFile << identityDoc.WriteReadable();
-    identityFile.close();
-
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
+{
     Aws::Map<Aws::String, LoginAccessTokens> loginsMap;
     LoginAccessTokens loginAccessTokens;
     loginAccessTokens.accessToken = "LoginValue";
@@ -153,7 +197,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
 
     //scope it to kill the cache and force it to reload from file.
     {
-        PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());
+        PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", m_PersistentIdentityFilename.c_str());
 
         EXPECT_FALSE(identityProvider.HasIdentityId());
         EXPECT_FALSE(identityProvider.HasLogins());
@@ -170,7 +214,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
         ASSERT_TRUE(loginsCallbackFired);
     }
 
-    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());
+    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", m_PersistentIdentityFilename.c_str());
 
     EXPECT_EQ("IdentityWeWant", identityProvider.GetIdentityId());
     EXPECT_EQ("LoginName", identityProvider.GetLogins().begin()->first);
@@ -178,10 +222,9 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     EXPECT_EQ(loginAccessTokens.longTermToken, identityProvider.GetLogins().begin()->second.longTermToken);
     EXPECT_EQ(loginAccessTokens.longTermTokenExpiry, identityProvider.GetLogins().begin()->second.longTermTokenExpiry);
 
-    std::ifstream identityFileInput(filePath.c_str());
+    std::ifstream identityFileInput(m_PersistentIdentityFilename.c_str());
     JsonValue finalIdentityDoc(identityFileInput);
     identityFileInput.close();
-    FileSystemUtils::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(finalIdentityDoc.ValueExists("SomeOtherIdentityPool"));
     ASSERT_TRUE(finalIdentityDoc.ValueExists("IdentityPoolWeWant"));
