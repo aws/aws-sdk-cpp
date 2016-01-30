@@ -241,6 +241,39 @@ double StringUtils::ConvertToDouble(const char* source)
     return std::strtod(source, NULL);
 }
 
+double StringUtils::ConvertToDoubleDate(const char* source)
+{
+    if(!source)
+    {
+        return 0.0;
+    }
+    int year, month, day, hour, minute, second;
+#ifdef _WIN32
+    if(sscanf_s(source, "%u-%u-%uT%u:%u:%u.", &year, &month, &day, &hour, &minute, &second) < 6)
+#else
+    if(sscanf(source, "%u-%u-%uT%u:%u:%u.", &year, &month, &day, &hour, &minute, &second) < 6)
+#endif
+    {
+        return 0.0;
+    }
+    else
+    {
+        struct tm td;
+        memset(&td, 0, sizeof(td));
+        td.tm_year = year - 1900;
+        td.tm_mon = month - 1;
+        td.tm_mday = day;
+        td.tm_hour = hour;
+        td.tm_min = minute;
+        td.tm_sec = second;
+#ifdef _WIN32
+        return (double)_mkgmtime(&td);
+#else
+        return (double)timegm(&td);
+#endif
+    }
+}
+
 #ifdef _WIN32
 
 Aws::WString StringUtils::ToWString(const char* source)

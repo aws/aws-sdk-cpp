@@ -99,7 +99,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
+      m_lastModified = StringUtils::ConvertToDoubleDate(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
