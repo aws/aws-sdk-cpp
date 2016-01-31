@@ -1,4 +1,4 @@
-#
+﻿#
 # Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License").
@@ -131,7 +131,7 @@ def ParseArguments(platformEnvironments):
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
     argMap[ "cmakeParams" ] = re.sub(r'^"|"$', '', args[ "cmake_params" ] or "")
     argMap[ "architecture" ] = re.sub(r'^"|"$', '', args[ "architecture" ] or platformName)
-    argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugDynamic ReleaseDynamic ReleaseStatic").split()
+    argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugStatic DebugDynamic ReleaseDynamic ReleaseStatic").split()
     argMap[ "parallel" ] = args[ "parallel" ] or "2"
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
     
