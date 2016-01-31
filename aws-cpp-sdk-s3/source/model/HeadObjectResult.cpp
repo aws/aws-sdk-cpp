@@ -81,7 +81,7 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-     m_lastModified = StringUtils::ConvertToDouble(lastModifiedIter->second.c_str());
+     m_lastModified = StringUtils::ConvertHeaderToDoubleDate(lastModifiedIter->second.c_str());
   }
 
   const auto& contentLengthIter = headers.find("content-length");

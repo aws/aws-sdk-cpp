@@ -91,7 +91,8 @@ public:
     //convert to double
     static double ConvertToDouble(const char* source);
 
-    static double ConvertToDoubleDate(const char* source);
+    static double ConvertHeaderToDoubleDate(const char* source);
+    static double ConvertXmlToDoubleDate(const char* source);
 
 #ifdef _WIN32
     /**
