@@ -44,19 +44,6 @@ m_progress(0)
 
 }
 
-S3FileRequest::S3FileRequest(const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client) :
-m_bucketName(bucketName),
-m_keyName(keyName),
-m_S3Client(s3Client),
-m_isDone(false),
-m_completedSuccessfully(false),
-m_cancelled(false),
-m_fileSize(0),
-m_progress(0)
-{
-
-}
-
 S3FileRequest::~S3FileRequest()
 {
 
