@@ -43,6 +43,7 @@ public:
     using S3FileCompletionCallback = std::function < void() > ;
 
     S3FileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client);
+    S3FileRequest(const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client);
     virtual ~S3FileRequest();
 
     // S3FileRequest defines this as progress out of file size - inherited classes that can't conform to this for some reason should derive their own

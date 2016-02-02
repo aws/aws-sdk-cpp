@@ -83,6 +83,15 @@ public:
                       const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
                       bool createBucket,
                       bool doConsistencyChecks);
+
+    UploadFileRequest(Aws::UniquePtr<Aws::IStream> &&stream, 
+                      const Aws::String& bucketName, 
+                      const Aws::String& keyName, 
+                      const Aws::String& contentType, 
+                      const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
+                      bool createBucket,
+                      bool doConsistencyChecks);
+
     ~UploadFileRequest();
 
     // How many parts have we at least begun to upload
@@ -247,7 +256,7 @@ private:
 
     uint32_t m_totalParts;
 
-    Aws::IFStream m_fileStream;
+    Aws::UniquePtr<Aws::IStream> m_fileStream;
 
     Aws::Map<uint32_t, Aws::S3::Model::CompletedPart> m_completedParts;
     Aws::Map<uint32_t, PartRequestRecord> m_pendingParts;
