@@ -35,7 +35,7 @@ using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
-static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
+static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 4096;
 
 WinSyncHttpClient::WinSyncHttpClient() :
     Base()
@@ -113,7 +113,8 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
         bool done = false;
         while(success && !done)
         {
-            payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
+            if(payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH).fail())
+                success = false;
             std::streamsize bytesRead = payloadStream->gcount();
             success = !payloadStream->bad();
 
@@ -133,7 +134,7 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 sentHandler(&request, (long long)bytesWritten);
             }
 
-            if(!payloadStream->good())
+            if(payloadStream->eof())
             {
                 done = true;
             }
@@ -141,8 +142,12 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
             success = success && IsRequestProcessingEnabled();
         }
 
-        payloadStream->clear();
-        payloadStream->seekg(startingPos, payloadStream->beg);
+        //is stream seekable?
+        if(startingPos >= 0)
+        {
+            payloadStream->clear();
+            payloadStream->seekg(startingPos, payloadStream->beg);
+        }
     }
 
     if(success)
@@ -210,17 +215,22 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
     if (request.GetMethod() != HttpMethod::HTTP_HEAD)
     {
-        char body[1024];
-        uint64_t bodySize = sizeof(body);
+        char body[HTTP_REQUEST_WRITE_BUFFER_LENGTH];
+        uint64_t bodySize = HTTP_REQUEST_WRITE_BUFFER_LENGTH;
         read = 0;
         bool success = true;
 
-        while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0 && success)
+        while (success && DoReadData(hHttpRequest, body, bodySize, read) && read > 0)
         {
-            response->GetResponseBody().write(body, read);
             if (read > 0)
             {
-                if (readLimiter != nullptr)
+                if(response->GetResponseBody().write(body, read).fail())
+                {
+                    // don't do either of the following if the output stream is broken.
+                    success = false;
+                    continue;
+                }
+                else if (readLimiter != nullptr)
                 {
                     readLimiter->ApplyAndPayForCost(read);
                 }
@@ -230,7 +240,6 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
                     receivedHandler(&request, response.get(), (long long)read);
                 }
             }
-
             success = success && IsRequestProcessingEnabled();
         }
 
@@ -241,9 +250,10 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
     }
 
     //go ahead and flush the response body.
-    response->GetResponseBody().flush();
-
-    return response;
+    if(response->GetResponseBody().flush().fail())   //make sure flush succeeds.
+        return nullptr;  //don't want an apparent success on disk write failure. 
+    else
+        return response;
 }
 
 std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request, 
