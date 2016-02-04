@@ -17,12 +17,14 @@ The following video explains many of the core features and also high-level SDKs
 ###Building the SDK:
 Use the information below to build the entire source tree for your platform, run unit tests, and build integration tests.  
 
-####Minimum Compiler Versions:
+####Minimum Requirements:
 * Visual Studio 2013 or later
-..* Visual Studio 2013 does not provide default move constructors and operators. 
-..* Later versions of Visual Studio provide a standards-compliant compiler. 
-* GNU Compiler Collection (GCC) 4.9 or later
-* Clang 3.3 or later
+  * Visual Studio 2013 does not provide default move constructors and operators. 
+  * Later versions of Visual Studio provide a standards-compliant compiler. 
+* OR GNU Compiler Collection (GCC) 4.9 or later
+* OR Clang 3.3 or later
+* 4GB of RAM
+  * 4GB of RAM is required to build some of the larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory. 
 
 ####Creating an Out-of-Source Build (Recommended):
 To create an **out-of-source build**: 
