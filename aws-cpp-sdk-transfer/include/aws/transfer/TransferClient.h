@@ -61,10 +61,13 @@ class AWS_TRANSFER_API TransferClient
         TransferClient(const std::shared_ptr<Aws::S3::S3Client>& s3Client, const TransferClientConfiguration& config);
         ~TransferClient();
 
-        // Single entry point for attempting an upload - attempting to create an existing bucket won't hurt anything but will affect performance
+        // Entry point for attempting an upload - attempting to create an existing bucket won't hurt anything but will affect performance
         // unnecessarily as the request waits for S3 to propagate the bucket
         // All queries about the upload after this point can be found in UploadFileRequest's interface
         std::shared_ptr<UploadFileRequest> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, bool createBucket = false, bool doConsistencyChecks = false);
+        // Entry point similar to above but with metadata specified
+        std::shared_ptr<UploadFileRequest> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata, bool createBucket = false, bool doConsistencyChecks = false);
+        std::shared_ptr<UploadFileRequest> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, Aws::Map<Aws::String, Aws::String>&& metadata, bool createBucket = false, bool doConsistencyChecks = false);
 
         // User requested upload cancels should go through here
         void CancelUpload(std::shared_ptr<UploadFileRequest>& fileRequest) const;
@@ -84,7 +87,7 @@ class AWS_TRANSFER_API TransferClient
     private:
 
         void UploadFileInternal(std::shared_ptr<UploadFileRequest>& fileRequest);
-  
+
         void ProcessSingleBuffer(std::shared_ptr<UploadFileRequest>& request, const std::shared_ptr<UploadBuffer>& buffer);
 
         void CancelUploadInternal(std::shared_ptr<UploadFileRequest>& fileRequest) const;

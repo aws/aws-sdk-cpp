@@ -74,6 +74,24 @@ std::shared_ptr<UploadFileRequest> TransferClient::UploadFile(const Aws::String&
     return request;
 }
 
+std::shared_ptr<UploadFileRequest> TransferClient::UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata, bool createBucket, bool doConsistencyChecks)
+{
+    auto request = Aws::MakeShared<UploadFileRequest>(ALLOCATION_TAG, fileName, bucketName, keyName, contentType, metadata, m_s3Client, createBucket, doConsistencyChecks);
+
+    UploadFileInternal(request);
+
+    return request;
+}
+
+std::shared_ptr<UploadFileRequest> TransferClient::UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, Aws::Map<Aws::String, Aws::String>&& metadata, bool createBucket, bool doConsistencyChecks)
+{
+    auto request = Aws::MakeShared<UploadFileRequest>(ALLOCATION_TAG, fileName, bucketName, keyName, contentType, std::move(metadata), m_s3Client, createBucket, doConsistencyChecks);
+
+    UploadFileInternal(request);
+
+    return request;
+}
+
 void TransferClient::UploadFileInternal(std::shared_ptr<UploadFileRequest>& request) 
 {
 
