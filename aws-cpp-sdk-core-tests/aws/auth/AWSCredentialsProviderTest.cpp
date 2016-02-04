@@ -147,9 +147,9 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVars)
   
     Aws::String oldValue = GetEnv("AWS_CREDENTIAL_PROFILES_FILE");
     setenv("AWS_CREDENTIAL_PROFILES_FILE", configFileName.c_str(), 1);
-    Aws::String oldProfileValue = GetEnv("AWS_PROFILE");
+    Aws::String oldProfileValue = GetEnv("AWS_DEFAULT_PROFILE");
     const char* profile = "someProfile";
-    setenv("AWS_PROFILE", profile, 1);
+    setenv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << "[ someProfile]" << std::endl;
@@ -168,9 +168,9 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVars)
         unsetenv("AWS_CREDENTIAL_PROFILES_FILE");
 
     if (!oldProfileValue.empty())
-        setenv("AWS_PROFILE", oldProfileValue.c_str(), 1);
+        setenv("AWS_DEFAULT_PROFILE", oldProfileValue.c_str(), 1);
     else
-        unsetenv("AWS_PROFILE");
+        unsetenv("AWS_DEFAULT_PROFILE");
 
     ASSERT_STREQ("SomeProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("SomeProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
@@ -190,7 +190,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVarsButSpecifiedPro
     setenv("AWS_CREDENTIAL_PROFILES_FILE", configFileName.c_str(), 1);
     Aws::String oldProfileValue = GetEnv("AWS_PROFILE");
     const char* profile = "someProfile";
-    setenv("AWS_PROFILE", profile, 1);
+    setenv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << " [ someProfile]" << std::endl;
@@ -213,7 +213,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVarsButSpecifiedPro
         setenv("AWS_CREDENTIAL_PROFILES_FILE", oldValue.c_str(), 1);
 
     if (!oldProfileValue.empty())
-        setenv("AWS_PROFILE", oldProfileValue.c_str(), 1);
+        setenv("AWS_DEFAULT_PROFILE", oldProfileValue.c_str(), 1);
 
     ASSERT_STREQ("customProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("customProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
@@ -227,7 +227,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestNotSetup)
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
     Aws::String oldProfileFile = GetEnv("AWS_CREDENTIAL_PROFILES_FILE");  
-    Aws::String oldProfileValue = GetEnv("AWS_PROFILE");
+    Aws::String oldProfileValue = GetEnv("AWS_DEFAULT_PROFILE");
     Aws::String oldAWSAccessKeyValue = GetEnv("AWS_ACCESS_KEY_ID");
     Aws::String oldSecretKeyValue = GetEnv("AWS_SECRET_KEY_ID");
 
@@ -239,7 +239,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestNotSetup)
     if (!oldProfileFile.empty())
         setenv("AWS_CREDENTIAL_PROFILES_FILE", oldProfileFile.c_str(), 1);
     if (!oldProfileValue.empty())
-        setenv("AWS_PROFILE", oldProfileValue.c_str(), 1);
+        setenv("AWS_DEFAULT_PROFILE", oldProfileValue.c_str(), 1);
     if (!oldAWSAccessKeyValue.empty())
         setenv("AWS_ACCESS_KEY_ID", oldAWSAccessKeyValue.c_str(), 1);
     if (!oldSecretKeyValue.empty())
@@ -259,11 +259,13 @@ TEST(EnvironmentAWSCredentialsProviderTest, TestEnvironmentVariablesExist)
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
     setenv("AWS_ACCESS_KEY_ID", "Access Key", 1);
-    setenv("AWS_SECRET_KEY_ID", "Secret Key", 1);
+    setenv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
+    setenv("AWS_SESSION_TOKEN", "Session Token", 1);
 
     EnvironmentAWSCredentialsProvider provider;
-    ASSERT_STREQ("Access Key", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("Secret Key", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("Access Key", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("Secret Key", provider.GetAWSCredentials().GetAWSSecretKey());
+    ASSERT_EQ("Session Token", provider.GetAWSCredentials().GetSessionToken());
 
     AWS_END_MEMORY_TEST
 }
