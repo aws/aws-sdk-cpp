@@ -279,8 +279,8 @@ TEST(EnvironmentAWSCredentialsProviderTest, TestEnvironmentVariablesDoNotExist)
     unsetenv("AWS_SECRET_KEY_ID");
 
     EnvironmentAWSCredentialsProvider provider;
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 
     AWS_END_MEMORY_TEST
 }
@@ -296,8 +296,8 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_STREQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
     AWS_END_MEMORY_TEST
 }
@@ -313,17 +313,17 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(mockClient, 10);
-    ASSERT_STREQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
     const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
-    ASSERT_STREQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    ASSERT_STREQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
     AWS_END_MEMORY_TEST
 }
@@ -337,13 +337,13 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCre
     mockClient->SetMockedCredentialsValue(emptyCredentials);
 
     InstanceProfileCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 
     const char* missingInfo = "{ }";
     mockClient->SetMockedCredentialsValue(missingInfo);
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 
     AWS_END_MEMORY_TEST
 }
@@ -357,8 +357,8 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData
     mockClient->SetMockedCredentialsValue(badData);
 
     InstanceProfileCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 
     AWS_END_MEMORY_TEST
 }
