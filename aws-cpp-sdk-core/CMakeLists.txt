@@ -1,27 +1,29 @@
 cmake_minimum_required(VERSION 2.8.5)
 project(aws-cpp-sdk-core)
 
-if(GENERATE_VERSION_INFO)
-  find_package(Git) 
+find_package(Git)
 
-  if(GIT_FOUND)    
-    execute_process(COMMAND ${GIT_EXECUTABLE} describe
-      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-      OUTPUT_VARIABLE VERSION_STRING
-      OUTPUT_STRIP_TRAILING_WHITESPACE)
+if(GIT_FOUND)
+    execute_process(COMMAND ${GIT_EXECUTABLE} describe --tags --long
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    OUTPUT_VARIABLE VERSION_STRING
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-    set(Version_VERSION_STRING ${VERSION_STRING})
-    message("Updating version info to ${VERSION_STRING}")
-    if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-      FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+    if(VERSION_STRING)
+        set(Version_VERSION_STRING ${VERSION_STRING})
+        message("Updating version info to ${VERSION_STRING}")
+        if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+          FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+        endif()
+
+        configure_file(
+          "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
+          "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
+    else()
+        message("Not able to compute versioning string, not updating.")
     endif()
-
-    configure_file(
-      "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-      "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h"
-    )
-  endif()
 endif()
+
 
 # Pretty sure we can use a regex here...
 # Go ahead and glob every directory so we can work around Visual Studio's crap.
