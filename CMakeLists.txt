@@ -771,7 +771,7 @@ if(PLATFORM_ANDROID)
     ExternalProject_Add(OPENSSL
         DEPENDS ZLIB
         SOURCE_DIR ${OPENSSL_SOURCE_DIR}
-        URL http://www.openssl.org/source/openssl-1.0.2d.tar.gz
+        URL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2d.tar.gz
         URL_HASH "SHA256=671c36487785628a703374c652ad2cebea45fa920ae5681515df25d9f2c9a8c8"
         UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py 
         CMAKE_ARGS 
