@@ -22,8 +22,6 @@
     #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     #include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
-#elif ENABLE_ORBIS_ENCRYPTION
-    #include <aws/core/utils/crypto/orbis/CryptoImpl.h>
 #endif
 
 using namespace Aws::Utils;
@@ -63,8 +61,6 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateMD5Implementation()
     return Aws::MakeShared<MD5OpenSSLImpl>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     return Aws::MakeShared<MD5CommonCryptoImpl>(s_allocationTag);
-#elif ENABLE_ORBIS_ENCRYPTION
-    return nullptr; // Aws::MakeShared<??>(s_allocationTag);
 #else
     return nullptr;
 #endif
@@ -83,8 +79,6 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation()
     return Aws::MakeShared<Sha256OpenSSLImpl>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
    return Aws::MakeShared<Sha256CommonCryptoImpl>(s_allocationTag);
-#elif ENABLE_ORBIS_ENCRYPTION
-   return nullptr; // Aws::MakeShared<??>(s_allocationTag);
 #else
     return nullptr;
 #endif
@@ -103,8 +97,6 @@ std::shared_ptr<HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
     return Aws::MakeShared<Sha256HMACOpenSSLImpl>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     return Aws::MakeShared<Sha256HMACCommonCryptoImpl>(s_allocationTag);
-#elif ENABLE_ORBIS_ENCRYPTION
-    return nullptr; // Aws::MakeShared<??>(s_allocationTag);
 #else
     return nullptr;
 #endif

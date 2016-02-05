@@ -75,12 +75,6 @@ if(ENABLE_CURL_CLIENT)
 elseif(ENABLE_WINDOWS_CLIENT)
     file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/*.h")
     file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
-elseif(ENABLE_ORBIS_CLIENT)
-    file(GLOB HTTP_ORBIS_CLIENT_HEADERS "include/aws/core/http/orbis/*.h")
-    file(GLOB HTTP_ORBIS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/orbis/*.cpp")
-elseif(ENABLE_WINXML_CLIENT)
-    file(GLOB HTTP_WINXML_CLIENT_HEADERS "include/aws/core/http/winxml/*.h")
-    file(GLOB HTTP_WINXML_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/winxml/*.cpp")
 endif()
 
 # encryption implementations
@@ -93,9 +87,6 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
 elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
     file(GLOB UTILS_CRYPTO_COMMONCRYPTO_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/commoncrypto/*.h")
     file(GLOB UTILS_CRYPTO_COMMONCRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/commoncrypto/*.cpp")
-elseif(ENABLE_ORBIS_ENCRYPTION)
-    file(GLOB UTILS_CRYPTO_ORBIS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/orbis/*.h")
-    file(GLOB UTILS_CRYPTO_ORBIS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/orbis/*.cpp")
 endif()   
 
 
@@ -124,12 +115,9 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${TINYXML2_HEADERS}
   ${HTTP_CURL_CLIENT_HEADERS}
   ${HTTP_WINDOWS_CLIENT_HEADERS}
-  ${HTTP_ORBIS_CLIENT_HEADERS}
-  ${HTTP_WINXML_CLIENT_HEADERS}
   ${UTILS_CRYPTO_BCRYPT_HEADERS}
   ${UTILS_CRYPTO_OPENSSL_HEADERS}
   ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS}
-  ${UTILS_CRYPTO_ORBIS_HEADERS}
 
   ${AWS_SOURCE}
   ${AWS_TINYXML2_SOURCE}
@@ -154,12 +142,9 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${UTILS_STREAM_SOURCE}
   ${HTTP_CURL_CLIENT_SOURCE}
   ${HTTP_WINDOWS_CLIENT_SOURCE}
-  ${HTTP_ORBIS_CLIENT_SOURCE}
-  ${HTTP_WINXML_CLIENT_SOURCE}
   ${UTILS_CRYPTO_BCRYPT_SOURCE}
   ${UTILS_CRYPTO_OPENSSL_SOURCE}
   ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE}
-  ${UTILS_CRYPTO_ORBIS_SOURCE}
 ) 
 
 # misc platform-specific, not related to features (encryption/http clients)
@@ -200,8 +185,6 @@ file(GLOB AWSNativeSDK_SRC
   ${AWSNativeSDK_WINDOWS_SRC}
   ${AWSNativeSDK_UNIX_SRC}
   ${AWSNativeSDK_ANDROID_SRC}
-  ${AWSNativeSDK_ORBIS_SRC}
-  ${AWSNativeSDK_DURANGO_SRC}
 )
 
 # Visual studio project directory structure
@@ -232,10 +215,6 @@ if(MSVC)
         source_group("Header Files\\aws\\core\\http\\curl" FILES ${HTTP_CURL_CLIENT_HEADERS})
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_HEADERS})
-    elseif(ENABLE_ORBIS_CLIENT)
-        source_group("Header Files\\aws\\core\\http\\orbis" FILES ${HTTP_ORBIS_CLIENT_HEADERS})
-    elseif(ENABLE_WINXML_CLIENT)
-        source_group("Header Files\\aws\\core\\http\\winxml" FILES ${HTTP_WINXML_CLIENT_HEADERS})
     endif()
 
     # encryption conditional headers
@@ -245,8 +224,6 @@ if(MSVC)
         source_group("Header Files\\aws\\core\\utils\\crypto\\openssl" FILES ${UTILS_CRYPTO_OPENSSL_HEADERS})
     elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
         source_group("Header Files\\aws\\core\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS})
-    elseif(ENABLE_ORBIS_ENCRYPTION)
-        source_group("Header Files\\aws\\core\\utils\\crypto\\orbis" FILES ${UTILS_CRYPTO_ORBIS_HEADERS})
     endif()
 
     source_group("Source Files" FILES ${AWS_SOURCE})
@@ -273,10 +250,6 @@ if(MSVC)
         source_group("Source Files\\http\\curl" FILES ${HTTP_CURL_CLIENT_SOURCE})
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_SOURCE})
-    elseif(ENABLE_ORBIS_CLIENT)
-        source_group("Source Files\\http\\orbis" FILES ${HTTP_ORBIS_CLIENT_SOURCE})
-    elseif(ENABLE_WINXML_CLIENT)
-        source_group("Source Files\\http\\winxml" FILES ${HTTP_WINXML_CLIENT_SOURCE})
     endif()
 
     # encryption conditional source
@@ -286,8 +259,6 @@ if(MSVC)
         source_group("Source Files\\utils\\crypto\\openssl" FILES ${UTILS_CRYPTO_OPENSSL_SOURCE})
     elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
             source_group("Source Files\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE})
-    elseif(ENABLE_ORBIS_ENCRYPTION)
-        source_group("Source Files\\utils\\crypto\\orbis" FILES ${UTILS_CRYPTO_ORBIS_SOURCE})
     endif()
 endif(MSVC)
 
@@ -295,7 +266,7 @@ set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 include_directories(${Core_INCLUDES})
 
-if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS) # may need this on Durango too?
+if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS)
   add_definitions("-DAWS_CORE_EXPORTS=1")
 endif()
 
@@ -351,10 +322,6 @@ if(ENABLE_CURL_CLIENT)
     install (FILES ${HTTP_CURL_CLIENT_HEADERS} DESTINATION include/aws/core/http/curl)
 elseif(ENABLE_WINDOWS_CLIENT)
     install (FILES ${HTTP_WINDOWS_CLIENT_HEADERS} DESTINATION include/aws/core/http/windows)
-elseif(ENABLE_ORBIS_CLIENT)
-    install (FILES ${HTTP_ORBIS_CLIENT_HEADERS} DESTINATION include/aws/core/http/orbis)
-elseif(ENABLE_WINXML_CLIENT)
-    install (FILES ${HTTP_WINXML_CLIENT_HEADERS} DESTINATION include/aws/core/http/winxml)
 endif()
 
 # encryption headers
@@ -364,7 +331,5 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
   install (FILES ${UTILS_CRYPTO_OPENSSL_HEADERS} DESTINATION include/aws/core/utils/crypto/openssl)
 elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
   install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION include/aws/core/utils/crypto/commoncrypto)
-elseif(ENABLE_ORBIS_ENCRYPTION)
-  install (FILES ${UTILS_CRYPTO_ORBIS_HEADERS} DESTINATION include/aws/core/utils/crypto/orbis)
 endif()
 

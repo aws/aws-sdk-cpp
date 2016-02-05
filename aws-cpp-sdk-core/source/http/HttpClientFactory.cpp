@@ -20,10 +20,6 @@
 #elif ENABLE_WINDOWS_CLIENT
     #include <aws/core/http/windows/WinINetSyncHttpClient.h>
     #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
-#elif ENABLE_ORBIS_CLIENT
-    #include <aws/core/http/orbis/OrbisHttpClient.h>
-#elif ENABLE_WINXML_CLIENT
-    #include <aws/core/http/winxml/WinXmlHttpClient.h>
 #endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
@@ -53,10 +49,6 @@ std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConf
     }
 #elif ENABLE_CURL_CLIENT
     return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
-#elif ENABLE_ORBIS_CLIENT
-    return Aws::MakeShared<OrbisHttpClient>(allocationTag, clientConfiguration);
-#elif ENABLE_WINXML_CLIENT
-    return Aws::MakeShared<WinXmlHttpClient>(allocationTag, clientConfiguration);
 #else
     return nullptr;
 #endif
