@@ -869,8 +869,6 @@ if(ENABLE_BCRYPT_ENCRYPTION)
     set(CRYPTO_LIBS Bcrypt)
 elseif(ENABLE_OPENSSL_ENCRYPTION)
     set(CRYPTO_LIBS ssl crypto z )
-elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
-    set(CRYPTO_LIBS commonCrypto)
 endif()
 
 # client-related libraries
