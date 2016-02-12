@@ -140,8 +140,12 @@ Aws::String StringUtils::URLEncode(const char* unsafe)
 Aws::String StringUtils::URLEncode(double unsafe)
 {
     char buffer[32];
+#if defined(_MSC_VER) && _MSC_VER < 1900
+    _vsnprintf_s(buffer, sizeof(buffer), _TRUNCATE, "%g", unsafe);
+#else
     snprintf(buffer, sizeof(buffer), "%g", unsafe);
     return URLEncode(buffer);
+#endif
 
 }
 
