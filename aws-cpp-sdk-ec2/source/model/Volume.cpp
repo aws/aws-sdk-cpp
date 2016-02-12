@@ -185,7 +185,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateTime=" << m_createTime << "&";
+        oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
   }
   if(m_attachmentsHasBeenSet)
   {
@@ -255,7 +255,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << ".CreateTime=" << m_createTime << "&";
+        oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
   }
   if(m_attachmentsHasBeenSet)
   {

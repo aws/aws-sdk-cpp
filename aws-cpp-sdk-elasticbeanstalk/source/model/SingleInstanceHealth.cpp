@@ -131,7 +131,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_launchedAtHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LaunchedAt=" << m_launchedAt << "&";
+        oStream << location << index << locationValue << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt) << "&";
   }
   if(m_applicationMetricsHasBeenSet)
   {
@@ -171,7 +171,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_launchedAtHasBeenSet)
   {
-      oStream << location << ".LaunchedAt=" << m_launchedAt << "&";
+        oStream << location << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt) << "&";
   }
   if(m_applicationMetricsHasBeenSet)
   {

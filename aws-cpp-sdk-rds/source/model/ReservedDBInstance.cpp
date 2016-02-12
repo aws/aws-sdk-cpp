@@ -189,7 +189,7 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -197,11 +197,11 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_fixedPriceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FixedPrice=" << m_fixedPrice << "&";
+        oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
   if(m_usagePriceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UsagePrice=" << m_usagePrice << "&";
+        oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -255,7 +255,7 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << m_startTime << "&";
+        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -263,11 +263,11 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_fixedPriceHasBeenSet)
   {
-      oStream << location << ".FixedPrice=" << m_fixedPrice << "&";
+        oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
   if(m_usagePriceHasBeenSet)
   {
-      oStream << location << ".UsagePrice=" << m_usagePrice << "&";
+        oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {

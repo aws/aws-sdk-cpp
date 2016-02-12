@@ -149,11 +149,11 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndTime=" << m_endTime << "&";
+        oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
   }
   if(m_statusCodeHasBeenSet)
   {
@@ -193,11 +193,11 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << m_startTime << "&";
+        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-      oStream << location << ".EndTime=" << m_endTime << "&";
+        oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
   }
   if(m_statusCodeHasBeenSet)
   {

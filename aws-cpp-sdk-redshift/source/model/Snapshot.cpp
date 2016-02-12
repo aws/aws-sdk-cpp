@@ -321,7 +321,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SnapshotCreateTime=" << m_snapshotCreateTime << "&";
+        oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -337,7 +337,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClusterCreateTime=" << m_clusterCreateTime << "&";
+        oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -395,19 +395,19 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_totalBackupSizeInMegaBytesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TotalBackupSizeInMegaBytes=" << m_totalBackupSizeInMegaBytes << "&";
+        oStream << location << index << locationValue << ".TotalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_totalBackupSizeInMegaBytes) << "&";
   }
   if(m_actualIncrementalBackupSizeInMegaBytesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActualIncrementalBackupSizeInMegaBytes=" << m_actualIncrementalBackupSizeInMegaBytes << "&";
+        oStream << location << index << locationValue << ".ActualIncrementalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_actualIncrementalBackupSizeInMegaBytes) << "&";
   }
   if(m_backupProgressInMegaBytesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BackupProgressInMegaBytes=" << m_backupProgressInMegaBytes << "&";
+        oStream << location << index << locationValue << ".BackupProgressInMegaBytes=" << StringUtils::URLEncode(m_backupProgressInMegaBytes) << "&";
   }
   if(m_currentBackupRateInMegaBytesPerSecondHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrentBackupRateInMegaBytesPerSecond=" << m_currentBackupRateInMegaBytesPerSecond << "&";
+        oStream << location << index << locationValue << ".CurrentBackupRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentBackupRateInMegaBytesPerSecond) << "&";
   }
   if(m_estimatedSecondsToCompletionHasBeenSet)
   {
@@ -453,7 +453,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-      oStream << location << ".SnapshotCreateTime=" << m_snapshotCreateTime << "&";
+        oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -469,7 +469,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-      oStream << location << ".ClusterCreateTime=" << m_clusterCreateTime << "&";
+        oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -527,19 +527,19 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_totalBackupSizeInMegaBytesHasBeenSet)
   {
-      oStream << location << ".TotalBackupSizeInMegaBytes=" << m_totalBackupSizeInMegaBytes << "&";
+        oStream << location << ".TotalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_totalBackupSizeInMegaBytes) << "&";
   }
   if(m_actualIncrementalBackupSizeInMegaBytesHasBeenSet)
   {
-      oStream << location << ".ActualIncrementalBackupSizeInMegaBytes=" << m_actualIncrementalBackupSizeInMegaBytes << "&";
+        oStream << location << ".ActualIncrementalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_actualIncrementalBackupSizeInMegaBytes) << "&";
   }
   if(m_backupProgressInMegaBytesHasBeenSet)
   {
-      oStream << location << ".BackupProgressInMegaBytes=" << m_backupProgressInMegaBytes << "&";
+        oStream << location << ".BackupProgressInMegaBytes=" << StringUtils::URLEncode(m_backupProgressInMegaBytes) << "&";
   }
   if(m_currentBackupRateInMegaBytesPerSecondHasBeenSet)
   {
-      oStream << location << ".CurrentBackupRateInMegaBytesPerSecond=" << m_currentBackupRateInMegaBytesPerSecond << "&";
+        oStream << location << ".CurrentBackupRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentBackupRateInMegaBytesPerSecond) << "&";
   }
   if(m_estimatedSecondsToCompletionHasBeenSet)
   {

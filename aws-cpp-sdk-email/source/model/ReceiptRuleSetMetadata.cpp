@@ -69,7 +69,7 @@ void ReceiptRuleSetMetadata::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_createdTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedTimestamp=" << m_createdTimestamp << "&";
+        oStream << location << index << locationValue << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp) << "&";
   }
 }
 
@@ -81,6 +81,6 @@ void ReceiptRuleSetMetadata::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_createdTimestampHasBeenSet)
   {
-      oStream << location << ".CreatedTimestamp=" << m_createdTimestamp << "&";
+        oStream << location << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp) << "&";
   }
 }

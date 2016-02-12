@@ -105,7 +105,7 @@ void AccessKey::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
 }
 
@@ -129,6 +129,6 @@ void AccessKey::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
 }

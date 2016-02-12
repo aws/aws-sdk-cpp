@@ -79,11 +79,11 @@ void SAMLProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidUntil=" << m_validUntil << "&";
+        oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
 }
 
@@ -95,10 +95,10 @@ void SAMLProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << ".ValidUntil=" << m_validUntil << "&";
+        oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
 }

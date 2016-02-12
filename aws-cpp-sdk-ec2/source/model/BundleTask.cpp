@@ -127,11 +127,11 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateTime=" << m_updateTime << "&";
+        oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime) << "&";
   }
   if(m_storageHasBeenSet)
   {
@@ -167,11 +167,11 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << m_startTime << "&";
+        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << ".UpdateTime=" << m_updateTime << "&";
+        oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime) << "&";
   }
   if(m_storageHasBeenSet)
   {

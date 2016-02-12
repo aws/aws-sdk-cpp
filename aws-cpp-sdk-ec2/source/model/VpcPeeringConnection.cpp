@@ -109,7 +109,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_expirationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExpirationTime=" << m_expirationTime << "&";
+        oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime) << "&";
   }
   if(m_requesterVpcInfoHasBeenSet)
   {
@@ -149,7 +149,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_expirationTimeHasBeenSet)
   {
-      oStream << location << ".ExpirationTime=" << m_expirationTime << "&";
+        oStream << location << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime) << "&";
   }
   if(m_requesterVpcInfoHasBeenSet)
   {

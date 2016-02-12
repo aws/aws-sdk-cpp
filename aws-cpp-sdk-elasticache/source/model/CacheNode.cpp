@@ -113,7 +113,7 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_cacheNodeCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CacheNodeCreateTime=" << m_cacheNodeCreateTime << "&";
+        oStream << location << index << locationValue << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime) << "&";
   }
   if(m_endpointHasBeenSet)
   {
@@ -147,7 +147,7 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_cacheNodeCreateTimeHasBeenSet)
   {
-      oStream << location << ".CacheNodeCreateTime=" << m_cacheNodeCreateTime << "&";
+        oStream << location << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime) << "&";
   }
   if(m_endpointHasBeenSet)
   {

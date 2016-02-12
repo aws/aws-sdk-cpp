@@ -219,11 +219,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << m_creationTime << "&";
+        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUpdatedTime=" << m_lastUpdatedTime << "&";
+        oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {
@@ -305,11 +305,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << m_creationTime << "&";
+        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-      oStream << location << ".LastUpdatedTime=" << m_lastUpdatedTime << "&";
+        oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {

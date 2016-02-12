@@ -105,7 +105,7 @@ void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadDate=" << m_uploadDate << "&";
+        oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
   }
 }
 
@@ -129,6 +129,6 @@ void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << ".UploadDate=" << m_uploadDate << "&";
+        oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
   }
 }

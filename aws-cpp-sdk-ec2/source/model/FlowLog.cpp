@@ -121,7 +121,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << m_creationTime << "&";
+        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
   }
   if(m_flowLogIdHasBeenSet)
   {
@@ -161,7 +161,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << m_creationTime << "&";
+        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
   }
   if(m_flowLogIdHasBeenSet)
   {

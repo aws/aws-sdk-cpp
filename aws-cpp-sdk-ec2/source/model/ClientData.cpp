@@ -85,15 +85,15 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location, uns
 {
   if(m_uploadStartHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadStart=" << m_uploadStart << "&";
+        oStream << location << index << locationValue << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart) << "&";
   }
   if(m_uploadEndHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadEnd=" << m_uploadEnd << "&";
+        oStream << location << index << locationValue << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd) << "&";
   }
   if(m_uploadSizeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadSize=" << m_uploadSize << "&";
+        oStream << location << index << locationValue << ".UploadSize=" << StringUtils::URLEncode(m_uploadSize) << "&";
   }
   if(m_commentHasBeenSet)
   {
@@ -105,15 +105,15 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location) con
 {
   if(m_uploadStartHasBeenSet)
   {
-      oStream << location << ".UploadStart=" << m_uploadStart << "&";
+        oStream << location << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart) << "&";
   }
   if(m_uploadEndHasBeenSet)
   {
-      oStream << location << ".UploadEnd=" << m_uploadEnd << "&";
+        oStream << location << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd) << "&";
   }
   if(m_uploadSizeHasBeenSet)
   {
-      oStream << location << ".UploadSize=" << m_uploadSize << "&";
+        oStream << location << ".UploadSize=" << StringUtils::URLEncode(m_uploadSize) << "&";
   }
   if(m_commentHasBeenSet)
   {

@@ -161,15 +161,15 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << m_updateDate << "&";
+        oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
   }
   if(m_effectiveDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EffectiveDate=" << m_effectiveDate << "&";
+        oStream << location << index << locationValue << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -213,15 +213,15 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << m_updateDate << "&";
+        oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
   }
   if(m_effectiveDateHasBeenSet)
   {
-      oStream << location << ".EffectiveDate=" << m_effectiveDate << "&";
+        oStream << location << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate) << "&";
   }
   if(m_statusHasBeenSet)
   {

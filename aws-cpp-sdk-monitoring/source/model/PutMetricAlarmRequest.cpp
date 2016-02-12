@@ -123,7 +123,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
   }
   if(m_thresholdHasBeenSet)
   {
-    ss << "Threshold=" << m_threshold << "&";
+    ss << "Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
   if(m_comparisonOperatorHasBeenSet)
   {

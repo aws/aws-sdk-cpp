@@ -215,11 +215,11 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_validFromHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidFrom=" << m_validFrom << "&";
+        oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidUntil=" << m_validUntil << "&";
+        oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
   }
   if(m_launchGroupHasBeenSet)
   {
@@ -241,7 +241,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateTime=" << m_createTime << "&";
+        oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
   }
   if(m_productDescriptionHasBeenSet)
   {
@@ -295,11 +295,11 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_validFromHasBeenSet)
   {
-      oStream << location << ".ValidFrom=" << m_validFrom << "&";
+        oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << ".ValidUntil=" << m_validUntil << "&";
+        oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
   }
   if(m_launchGroupHasBeenSet)
   {
@@ -321,7 +321,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << ".CreateTime=" << m_createTime << "&";
+        oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
   }
   if(m_productDescriptionHasBeenSet)
   {

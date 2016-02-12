@@ -117,31 +117,31 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location,
 {
   if(m_userHasBeenSet)
   {
-      oStream << location << index << locationValue << ".User=" << m_user << "&";
+        oStream << location << index << locationValue << ".User=" << StringUtils::URLEncode(m_user) << "&";
   }
   if(m_niceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Nice=" << m_nice << "&";
+        oStream << location << index << locationValue << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
   }
   if(m_systemHasBeenSet)
   {
-      oStream << location << index << locationValue << ".System=" << m_system << "&";
+        oStream << location << index << locationValue << ".System=" << StringUtils::URLEncode(m_system) << "&";
   }
   if(m_idleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Idle=" << m_idle << "&";
+        oStream << location << index << locationValue << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
   }
   if(m_iOWaitHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IOWait=" << m_iOWait << "&";
+        oStream << location << index << locationValue << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
   }
   if(m_iRQHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IRQ=" << m_iRQ << "&";
+        oStream << location << index << locationValue << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
   }
   if(m_softIRQHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SoftIRQ=" << m_softIRQ << "&";
+        oStream << location << index << locationValue << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
 }
 
@@ -149,30 +149,30 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_userHasBeenSet)
   {
-      oStream << location << ".User=" << m_user << "&";
+        oStream << location << ".User=" << StringUtils::URLEncode(m_user) << "&";
   }
   if(m_niceHasBeenSet)
   {
-      oStream << location << ".Nice=" << m_nice << "&";
+        oStream << location << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
   }
   if(m_systemHasBeenSet)
   {
-      oStream << location << ".System=" << m_system << "&";
+        oStream << location << ".System=" << StringUtils::URLEncode(m_system) << "&";
   }
   if(m_idleHasBeenSet)
   {
-      oStream << location << ".Idle=" << m_idle << "&";
+        oStream << location << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
   }
   if(m_iOWaitHasBeenSet)
   {
-      oStream << location << ".IOWait=" << m_iOWait << "&";
+        oStream << location << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
   }
   if(m_iRQHasBeenSet)
   {
-      oStream << location << ".IRQ=" << m_iRQ << "&";
+        oStream << location << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
   }
   if(m_softIRQHasBeenSet)
   {
-      oStream << location << ".SoftIRQ=" << m_softIRQ << "&";
+        oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
 }

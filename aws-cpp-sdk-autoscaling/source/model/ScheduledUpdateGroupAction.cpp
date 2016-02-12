@@ -151,15 +151,15 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_timeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Time=" << m_time << "&";
+        oStream << location << index << locationValue << ".Time=" << StringUtils::URLEncode(m_time) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndTime=" << m_endTime << "&";
+        oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {
@@ -195,15 +195,15 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_timeHasBeenSet)
   {
-      oStream << location << ".Time=" << m_time << "&";
+        oStream << location << ".Time=" << StringUtils::URLEncode(m_time) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << m_startTime << "&";
+        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-      oStream << location << ".EndTime=" << m_endTime << "&";
+        oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {

@@ -65,7 +65,7 @@ void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_amountHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Amount=" << m_amount << "&";
+        oStream << location << index << locationValue << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -77,7 +77,7 @@ void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_amountHasBeenSet)
   {
-      oStream << location << ".Amount=" << m_amount << "&";
+        oStream << location << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {

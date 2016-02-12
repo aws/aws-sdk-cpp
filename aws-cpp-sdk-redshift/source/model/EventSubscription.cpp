@@ -173,7 +173,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_subscriptionCreationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SubscriptionCreationTime=" << m_subscriptionCreationTime << "&";
+        oStream << location << index << locationValue << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime) << "&";
   }
   if(m_sourceTypeHasBeenSet)
   {
@@ -235,7 +235,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_subscriptionCreationTimeHasBeenSet)
   {
-      oStream << location << ".SubscriptionCreationTime=" << m_subscriptionCreationTime << "&";
+        oStream << location << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime) << "&";
   }
   if(m_sourceTypeHasBeenSet)
   {

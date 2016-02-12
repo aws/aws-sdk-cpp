@@ -149,7 +149,7 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lastUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUpdatedTimestamp=" << m_lastUpdatedTimestamp << "&";
+        oStream << location << index << locationValue << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp) << "&";
   }
   if(m_resourceStatusHasBeenSet)
   {
@@ -193,7 +193,7 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lastUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".LastUpdatedTimestamp=" << m_lastUpdatedTimestamp << "&";
+        oStream << location << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp) << "&";
   }
   if(m_resourceStatusHasBeenSet)
   {

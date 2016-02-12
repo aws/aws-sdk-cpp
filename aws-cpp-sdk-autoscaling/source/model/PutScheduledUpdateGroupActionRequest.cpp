@@ -52,15 +52,15 @@ Aws::String PutScheduledUpdateGroupActionRequest::SerializePayload() const
   }
   if(m_timeHasBeenSet)
   {
-    ss << "Time=" << m_time << "&";
+    ss << "Time=" << StringUtils::URLEncode(m_time) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {

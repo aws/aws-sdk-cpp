@@ -83,7 +83,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_arrivalDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ArrivalDate=" << m_arrivalDate << "&";
+        oStream << location << index << locationValue << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {
@@ -105,7 +105,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_arrivalDateHasBeenSet)
   {
-      oStream << location << ".ArrivalDate=" << m_arrivalDate << "&";
+        oStream << location << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {

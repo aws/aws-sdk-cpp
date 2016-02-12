@@ -73,7 +73,7 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUsedDate=" << m_lastUsedDate << "&";
+        oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate) << "&";
   }
   if(m_serviceNameHasBeenSet)
   {
@@ -89,7 +89,7 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << ".LastUsedDate=" << m_lastUsedDate << "&";
+        oStream << location << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate) << "&";
   }
   if(m_serviceNameHasBeenSet)
   {

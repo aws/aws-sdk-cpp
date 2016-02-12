@@ -91,7 +91,7 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachTime=" << m_attachTime << "&";
+        oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
@@ -111,7 +111,7 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << ".AttachTime=" << m_attachTime << "&";
+        oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {

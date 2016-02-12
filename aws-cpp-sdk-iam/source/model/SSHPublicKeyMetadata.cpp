@@ -93,7 +93,7 @@ void SSHPublicKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadDate=" << m_uploadDate << "&";
+        oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
   }
 }
 
@@ -113,6 +113,6 @@ void SSHPublicKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << ".UploadDate=" << m_uploadDate << "&";
+        oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
   }
 }

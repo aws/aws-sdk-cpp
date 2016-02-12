@@ -97,7 +97,7 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+        oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp) << "&";
   }
   if(m_deliveryAttemptsHasBeenSet)
   {
@@ -121,7 +121,7 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+        oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp) << "&";
   }
   if(m_deliveryAttemptsHasBeenSet)
   {

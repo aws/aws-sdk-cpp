@@ -67,7 +67,7 @@ void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_priceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Price=" << m_price << "&";
+        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_countHasBeenSet)
   {
@@ -79,7 +79,7 @@ void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_priceHasBeenSet)
   {
-      oStream << location << ".Price=" << m_price << "&";
+        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_countHasBeenSet)
   {

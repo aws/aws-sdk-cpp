@@ -77,7 +77,7 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateTime=" << m_updateTime << "&";
+        oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -93,7 +93,7 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << ".UpdateTime=" << m_updateTime << "&";
+        oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime) << "&";
   }
   if(m_messageHasBeenSet)
   {

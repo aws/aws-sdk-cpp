@@ -113,7 +113,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_eventDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EventDate=" << m_eventDate << "&";
+        oStream << location << index << locationValue << ".EventDate=" << StringUtils::URLEncode(m_eventDate) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -149,7 +149,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_eventDateHasBeenSet)
   {
-      oStream << location << ".EventDate=" << m_eventDate << "&";
+        oStream << location << ".EventDate=" << StringUtils::URLEncode(m_eventDate) << "&";
   }
   if(m_messageHasBeenSet)
   {

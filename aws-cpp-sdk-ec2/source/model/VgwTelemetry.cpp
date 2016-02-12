@@ -99,7 +99,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_lastStatusChangeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastStatusChange=" << m_lastStatusChange << "&";
+        oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -123,7 +123,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_lastStatusChangeHasBeenSet)
   {
-      oStream << location << ".LastStatusChange=" << m_lastStatusChange << "&";
+        oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

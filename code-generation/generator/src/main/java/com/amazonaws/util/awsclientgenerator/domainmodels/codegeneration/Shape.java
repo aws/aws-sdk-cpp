@@ -52,6 +52,8 @@ public class Shape {
         return "structure".equals(type.toLowerCase());
     }
 
+    public boolean isDouble() { return "double".equals(type.toLowerCase()) || "timestamp".equals(type.toLowerCase()); }
+
     public boolean isString() {
         return "string".equals(type.toLowerCase()) && !isEnum();
     }

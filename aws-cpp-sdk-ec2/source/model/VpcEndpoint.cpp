@@ -139,7 +139,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << m_creationTimestamp << "&";
+        oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp) << "&";
   }
 }
 
@@ -175,6 +175,6 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << ".CreationTimestamp=" << m_creationTimestamp << "&";
+        oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp) << "&";
   }
 }

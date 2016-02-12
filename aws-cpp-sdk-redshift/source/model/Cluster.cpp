@@ -367,7 +367,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClusterCreateTime=" << m_clusterCreateTime << "&";
+        oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
@@ -537,7 +537,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-      oStream << location << ".ClusterCreateTime=" << m_clusterCreateTime << "&";
+        oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {

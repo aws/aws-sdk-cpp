@@ -299,7 +299,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+        oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
   }
   if(m_ebsOptimizedHasBeenSet)
   {
@@ -395,7 +395,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << ".CreatedTime=" << m_createdTime << "&";
+        oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
   }
   if(m_ebsOptimizedHasBeenSet)
   {

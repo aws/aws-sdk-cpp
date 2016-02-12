@@ -115,11 +115,11 @@ void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadDate=" << m_uploadDate << "&";
+        oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
   }
   if(m_expirationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Expiration=" << m_expiration << "&";
+        oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
   }
 }
 
@@ -143,10 +143,10 @@ void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << ".UploadDate=" << m_uploadDate << "&";
+        oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
   }
   if(m_expirationHasBeenSet)
   {
-      oStream << location << ".Expiration=" << m_expiration << "&";
+        oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
   }
 }

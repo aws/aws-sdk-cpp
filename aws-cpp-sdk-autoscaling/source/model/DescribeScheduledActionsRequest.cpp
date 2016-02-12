@@ -52,11 +52,11 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
   }
   if(m_nextTokenHasBeenSet)
   {

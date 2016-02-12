@@ -185,7 +185,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SnapshotCreateTime=" << m_snapshotCreateTime << "&";
+        oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -213,7 +213,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceCreateTime=" << m_instanceCreateTime << "&";
+        oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -249,7 +249,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-      oStream << location << ".SnapshotCreateTime=" << m_snapshotCreateTime << "&";
+        oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -277,7 +277,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << ".InstanceCreateTime=" << m_instanceCreateTime << "&";
+        oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {

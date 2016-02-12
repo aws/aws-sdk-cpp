@@ -60,7 +60,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   }
   if(m_restoreTimeHasBeenSet)
   {
-    ss << "RestoreTime=" << m_restoreTime << "&";
+    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime) << "&";
   }
   if(m_useLatestRestorableTimeHasBeenSet)
   {

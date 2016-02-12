@@ -99,11 +99,11 @@ void VolumeStatusEvent::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_notBeforeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NotBefore=" << m_notBefore << "&";
+        oStream << location << index << locationValue << ".NotBefore=" << StringUtils::URLEncode(m_notBefore) << "&";
   }
   if(m_notAfterHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NotAfter=" << m_notAfter << "&";
+        oStream << location << index << locationValue << ".NotAfter=" << StringUtils::URLEncode(m_notAfter) << "&";
   }
   if(m_eventIdHasBeenSet)
   {
@@ -123,11 +123,11 @@ void VolumeStatusEvent::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_notBeforeHasBeenSet)
   {
-      oStream << location << ".NotBefore=" << m_notBefore << "&";
+        oStream << location << ".NotBefore=" << StringUtils::URLEncode(m_notBefore) << "&";
   }
   if(m_notAfterHasBeenSet)
   {
-      oStream << location << ".NotAfter=" << m_notAfter << "&";
+        oStream << location << ".NotAfter=" << StringUtils::URLEncode(m_notAfter) << "&";
   }
   if(m_eventIdHasBeenSet)
   {

@@ -429,7 +429,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_launchTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LaunchTime=" << m_launchTime << "&";
+        oStream << location << index << locationValue << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime) << "&";
   }
   if(m_placementHasBeenSet)
   {
@@ -621,7 +621,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_launchTimeHasBeenSet)
   {
-      oStream << location << ".LaunchTime=" << m_launchTime << "&";
+        oStream << location << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime) << "&";
   }
   if(m_placementHasBeenSet)
   {

@@ -89,7 +89,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_sampleTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampleTimestamp=" << m_sampleTimestamp << "&";
+        oStream << location << index << locationValue << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -109,7 +109,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_sampleTimestampHasBeenSet)
   {
-      oStream << location << ".SampleTimestamp=" << m_sampleTimestamp << "&";
+        oStream << location << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp) << "&";
   }
   if(m_messageHasBeenSet)
   {

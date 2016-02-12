@@ -129,15 +129,15 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << m_creationTime << "&";
+        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUpdatedTime=" << m_lastUpdatedTime << "&";
+        oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
   }
   if(m_deletionTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeletionTime=" << m_deletionTime << "&";
+        oStream << location << index << locationValue << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {
@@ -165,15 +165,15 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << m_creationTime << "&";
+        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-      oStream << location << ".LastUpdatedTime=" << m_lastUpdatedTime << "&";
+        oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
   }
   if(m_deletionTimeHasBeenSet)
   {
-      oStream << location << ".DeletionTime=" << m_deletionTime << "&";
+        oStream << location << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {

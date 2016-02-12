@@ -287,7 +287,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CacheClusterCreateTime=" << m_cacheClusterCreateTime << "&";
+        oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
@@ -405,7 +405,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-      oStream << location << ".CacheClusterCreateTime=" << m_cacheClusterCreateTime << "&";
+        oStream << location << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {

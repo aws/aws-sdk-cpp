@@ -113,7 +113,7 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
@@ -141,7 +141,7 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {

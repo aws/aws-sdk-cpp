@@ -108,7 +108,7 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enableDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnableDate=" << m_enableDate << "&";
+        oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate) << "&";
   }
 }
 
@@ -134,6 +134,6 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enableDateHasBeenSet)
   {
-      oStream << location << ".EnableDate=" << m_enableDate << "&";
+        oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate) << "&";
   }
 }

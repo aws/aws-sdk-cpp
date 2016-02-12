@@ -121,7 +121,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_valueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Value=" << m_value << "&";
+        oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
   if(m_statisticValuesHasBeenSet)
   {
@@ -157,7 +157,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_valueHasBeenSet)
   {
-      oStream << location << ".Value=" << m_value << "&";
+        oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
   if(m_statisticValuesHasBeenSet)
   {

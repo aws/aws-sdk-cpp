@@ -79,7 +79,7 @@ void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_priceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Price=" << m_price << "&";
+        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -95,7 +95,7 @@ void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_priceHasBeenSet)
   {
-      oStream << location << ".Price=" << m_price << "&";
+        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {

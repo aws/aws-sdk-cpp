@@ -341,7 +341,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_thresholdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Threshold=" << m_threshold << "&";
+        oStream << location << index << locationValue << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
   if(m_comparisonOperatorHasBeenSet)
   {
@@ -447,7 +447,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_thresholdHasBeenSet)
   {
-      oStream << location << ".Threshold=" << m_threshold << "&";
+        oStream << location << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
   if(m_comparisonOperatorHasBeenSet)
   {

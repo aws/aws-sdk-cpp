@@ -169,7 +169,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_progressHasBeenSet)
   {
@@ -233,7 +233,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << m_startTime << "&";
+        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_progressHasBeenSet)
   {

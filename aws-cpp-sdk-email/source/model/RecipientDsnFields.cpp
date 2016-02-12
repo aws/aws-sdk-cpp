@@ -131,7 +131,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lastAttemptDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastAttemptDate=" << m_lastAttemptDate << "&";
+        oStream << location << index << locationValue << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {
@@ -169,7 +169,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lastAttemptDateHasBeenSet)
   {
-      oStream << location << ".LastAttemptDate=" << m_lastAttemptDate << "&";
+        oStream << location << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {

@@ -224,6 +224,21 @@ TEST(StringUtilsTest, TestDoubleConversion)
     ASSERT_DOUBLE_EQ(doubleValue, StringUtils::ConvertToDouble(ss.str().c_str()));
 }
 
+TEST(StringUtilsTest, TestDoubleURLEncoding)
+{
+    double doubleValue = 56789432.08;
+    ASSERT_EQ("5.67894e%2B07", StringUtils::URLEncode(doubleValue));
+
+    doubleValue = 567894;
+    ASSERT_EQ("567894", StringUtils::URLEncode(doubleValue));
+
+    doubleValue = 0.00005678;
+    ASSERT_EQ("5.678e-05", StringUtils::URLEncode(doubleValue));
+
+    doubleValue = 0.0005678;
+    ASSERT_EQ("0.0005678", StringUtils::URLEncode(doubleValue));
+}
+
 #ifdef _WIN32
 
 TEST(StringUtilsTest, TestWCharToString)

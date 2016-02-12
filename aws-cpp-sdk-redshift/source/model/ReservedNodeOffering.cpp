@@ -135,11 +135,11 @@ void ReservedNodeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_fixedPriceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FixedPrice=" << m_fixedPrice << "&";
+        oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
   if(m_usagePriceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UsagePrice=" << m_usagePrice << "&";
+        oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -177,11 +177,11 @@ void ReservedNodeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_fixedPriceHasBeenSet)
   {
-      oStream << location << ".FixedPrice=" << m_fixedPrice << "&";
+        oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
   if(m_usagePriceHasBeenSet)
   {
-      oStream << location << ".UsagePrice=" << m_usagePrice << "&";
+        oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {

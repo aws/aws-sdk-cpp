@@ -133,7 +133,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_groupPolicyListHasBeenSet)
   {
@@ -177,7 +177,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_groupPolicyListHasBeenSet)
   {

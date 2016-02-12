@@ -77,11 +77,11 @@ void StepAdjustment::OutputToStream(Aws::OStream& oStream, const char* location,
 {
   if(m_metricIntervalLowerBoundHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MetricIntervalLowerBound=" << m_metricIntervalLowerBound << "&";
+        oStream << location << index << locationValue << ".MetricIntervalLowerBound=" << StringUtils::URLEncode(m_metricIntervalLowerBound) << "&";
   }
   if(m_metricIntervalUpperBoundHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MetricIntervalUpperBound=" << m_metricIntervalUpperBound << "&";
+        oStream << location << index << locationValue << ".MetricIntervalUpperBound=" << StringUtils::URLEncode(m_metricIntervalUpperBound) << "&";
   }
   if(m_scalingAdjustmentHasBeenSet)
   {
@@ -93,11 +93,11 @@ void StepAdjustment::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_metricIntervalLowerBoundHasBeenSet)
   {
-      oStream << location << ".MetricIntervalLowerBound=" << m_metricIntervalLowerBound << "&";
+        oStream << location << ".MetricIntervalLowerBound=" << StringUtils::URLEncode(m_metricIntervalLowerBound) << "&";
   }
   if(m_metricIntervalUpperBoundHasBeenSet)
   {
-      oStream << location << ".MetricIntervalUpperBound=" << m_metricIntervalUpperBound << "&";
+        oStream << location << ".MetricIntervalUpperBound=" << StringUtils::URLEncode(m_metricIntervalUpperBound) << "&";
   }
   if(m_scalingAdjustmentHasBeenSet)
   {

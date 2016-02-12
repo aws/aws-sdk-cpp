@@ -137,6 +137,14 @@ Aws::String StringUtils::URLEncode(const char* unsafe)
     return escaped.str();
 }
 
+Aws::String StringUtils::URLEncode(double unsafe)
+{
+    char buffer[32];
+    snprintf(buffer, sizeof(buffer), "%g", unsafe);
+    return URLEncode(buffer);
+
+}
+
 
 Aws::String StringUtils::URLDecode(const char* safe)
 {

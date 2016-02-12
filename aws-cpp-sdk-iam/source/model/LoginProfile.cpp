@@ -79,7 +79,7 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_passwordResetRequiredHasBeenSet)
   {
@@ -95,7 +95,7 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_passwordResetRequiredHasBeenSet)
   {

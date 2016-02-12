@@ -181,11 +181,11 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << m_updateDate << "&";
+        oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
   }
   if(m_policyVersionListHasBeenSet)
   {
@@ -235,11 +235,11 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << m_updateDate << "&";
+        oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
   }
   if(m_policyVersionListHasBeenSet)
   {

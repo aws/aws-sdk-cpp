@@ -361,7 +361,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceCreateTime=" << m_instanceCreateTime << "&";
+        oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
   }
   if(m_preferredBackupWindowHasBeenSet)
   {
@@ -423,7 +423,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LatestRestorableTime=" << m_latestRestorableTime << "&";
+        oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime) << "&";
   }
   if(m_multiAZHasBeenSet)
   {
@@ -515,7 +515,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << ".InstanceCreateTime=" << m_instanceCreateTime << "&";
+        oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
   }
   if(m_preferredBackupWindowHasBeenSet)
   {
@@ -577,7 +577,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-      oStream << location << ".LatestRestorableTime=" << m_latestRestorableTime << "&";
+        oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime) << "&";
   }
   if(m_multiAZHasBeenSet)
   {

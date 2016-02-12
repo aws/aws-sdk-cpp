@@ -323,7 +323,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+        oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
   }
   if(m_suspendedProcessesHasBeenSet)
   {
@@ -443,7 +443,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << ".CreatedTime=" << m_createdTime << "&";
+        oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
   }
   if(m_suspendedProcessesHasBeenSet)
   {

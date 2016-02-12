@@ -63,11 +63,11 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   }
   if(m_validFromHasBeenSet)
   {
-    ss << "ValidFrom=" << m_validFrom << "&";
+    ss << "ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-    ss << "ValidUntil=" << m_validUntil << "&";
+    ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
   }
   if(m_launchGroupHasBeenSet)
   {

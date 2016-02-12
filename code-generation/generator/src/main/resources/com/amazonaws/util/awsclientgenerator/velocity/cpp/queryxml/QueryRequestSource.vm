@@ -71,6 +71,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}      << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.listMember.shape.name}Mapper::GetNameFor${member.value.shape.listMember.shape.name}(item).c_str()) << "&";
+#elseif($member.value.shape.listMember.shape.double)
+  ${spaces}      << StringUtils::URLEncode(item) << "&";
 #else
  ${spaces}       << item << "&";
 #end
@@ -103,6 +105,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapKey.shape.name}Mapper::GetNameFor${member.value.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.structure)
   ${spaces}  item.first.OutputToStream(ss, "${mapLocationName}.", ${varName}Count, ".${keyLocationName}");
+#elseif($member.value.shape.mapKey.shape.double)
+    ${spaces}ss << StringUtils::URLEncode(item.first) << "&";
 #else
   ${spaces}      << item.first << "&";
 #end
@@ -115,6 +119,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapValue.shape.name}Mapper::GetNameFor${member.value.shape.mapValue.shape.name}(item.second).c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.structure)
   ${spaces}  item.second.OutputToStream(ss, "${mapLocationName}.", ${varName}Count, ".${valueLocationName}");
+#elseif($member.value.shape.mapValue.shape.double)
+  ${spaces}      << StringUtils::URLEncode(item.second) << "&";
 #else
   ${spaces}      << item.second << "&";
 #end
@@ -122,6 +128,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}}
 #elseif($member.value.shape.structure)
   ${spaces}${memberVarName}.OutputToStream(ss, "${member.key}.");
+#elseif($member.value.shape.double)
+  ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}) << "&";
 #else
   ${spaces}ss << "${member.key}=" << ${memberVarName} << "&";
 #end

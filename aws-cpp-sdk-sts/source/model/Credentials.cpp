@@ -93,7 +93,7 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_expirationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Expiration=" << m_expiration << "&";
+        oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
   }
 }
 
@@ -113,6 +113,6 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_expirationHasBeenSet)
   {
-      oStream << location << ".Expiration=" << m_expiration << "&";
+        oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
   }
 }

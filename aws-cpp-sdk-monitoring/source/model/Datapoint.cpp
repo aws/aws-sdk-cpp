@@ -117,23 +117,23 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_sampleCountHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampleCount=" << m_sampleCount << "&";
+        oStream << location << index << locationValue << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
   if(m_averageHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Average=" << m_average << "&";
+        oStream << location << index << locationValue << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
   if(m_sumHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Sum=" << m_sum << "&";
+        oStream << location << index << locationValue << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
   if(m_minimumHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
+        oStream << location << index << locationValue << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
   if(m_maximumHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
+        oStream << location << index << locationValue << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
   if(m_unitHasBeenSet)
   {
@@ -149,23 +149,23 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_sampleCountHasBeenSet)
   {
-      oStream << location << ".SampleCount=" << m_sampleCount << "&";
+        oStream << location << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
   if(m_averageHasBeenSet)
   {
-      oStream << location << ".Average=" << m_average << "&";
+        oStream << location << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
   if(m_sumHasBeenSet)
   {
-      oStream << location << ".Sum=" << m_sum << "&";
+        oStream << location << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
   if(m_minimumHasBeenSet)
   {
-      oStream << location << ".Minimum=" << m_minimum << "&";
+        oStream << location << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
   if(m_maximumHasBeenSet)
   {
-      oStream << location << ".Maximum=" << m_maximum << "&";
+        oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
   if(m_unitHasBeenSet)
   {

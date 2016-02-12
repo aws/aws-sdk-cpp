@@ -61,6 +61,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.shape.blob)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
+#elseif($member.shape.double)
+    ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}) << "&";
 #elseif($member.shape.primitive)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << ${memberVarName} << "&";
 #elseif($member.shape.enum)
@@ -90,6 +92,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+#elseif($member.shape.listMember.shape.double)
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item) << "&";
 #elseif($member.shape.listMember.shape.primitive)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
 #elseif($member.shape.listMember.shape.enum)
@@ -125,6 +129,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.shape.blob)
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
+#elseif($member.shape.double)
+    ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}) << "&";
 #elseif($member.shape.primitive)
   ${spaces}oStream << location << ".${memberName}=" << ${memberVarName} << "&";
 #elseif($member.shape.enum)
@@ -146,6 +152,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+#elseif($member.shape.listMember.shape.double)
+    ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item) << "&";
 #elseif($member.shape.listMember.shape.primitive)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
 #elseif($member.shape.listMember.shape.enum)

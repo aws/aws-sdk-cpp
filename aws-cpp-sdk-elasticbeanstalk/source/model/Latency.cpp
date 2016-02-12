@@ -127,35 +127,35 @@ void Latency::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_p999HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P999=" << m_p999 << "&";
+        oStream << location << index << locationValue << ".P999=" << StringUtils::URLEncode(m_p999) << "&";
   }
   if(m_p99HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P99=" << m_p99 << "&";
+        oStream << location << index << locationValue << ".P99=" << StringUtils::URLEncode(m_p99) << "&";
   }
   if(m_p95HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P95=" << m_p95 << "&";
+        oStream << location << index << locationValue << ".P95=" << StringUtils::URLEncode(m_p95) << "&";
   }
   if(m_p90HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P90=" << m_p90 << "&";
+        oStream << location << index << locationValue << ".P90=" << StringUtils::URLEncode(m_p90) << "&";
   }
   if(m_p85HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P85=" << m_p85 << "&";
+        oStream << location << index << locationValue << ".P85=" << StringUtils::URLEncode(m_p85) << "&";
   }
   if(m_p75HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P75=" << m_p75 << "&";
+        oStream << location << index << locationValue << ".P75=" << StringUtils::URLEncode(m_p75) << "&";
   }
   if(m_p50HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P50=" << m_p50 << "&";
+        oStream << location << index << locationValue << ".P50=" << StringUtils::URLEncode(m_p50) << "&";
   }
   if(m_p10HasBeenSet)
   {
-      oStream << location << index << locationValue << ".P10=" << m_p10 << "&";
+        oStream << location << index << locationValue << ".P10=" << StringUtils::URLEncode(m_p10) << "&";
   }
 }
 
@@ -163,34 +163,34 @@ void Latency::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_p999HasBeenSet)
   {
-      oStream << location << ".P999=" << m_p999 << "&";
+        oStream << location << ".P999=" << StringUtils::URLEncode(m_p999) << "&";
   }
   if(m_p99HasBeenSet)
   {
-      oStream << location << ".P99=" << m_p99 << "&";
+        oStream << location << ".P99=" << StringUtils::URLEncode(m_p99) << "&";
   }
   if(m_p95HasBeenSet)
   {
-      oStream << location << ".P95=" << m_p95 << "&";
+        oStream << location << ".P95=" << StringUtils::URLEncode(m_p95) << "&";
   }
   if(m_p90HasBeenSet)
   {
-      oStream << location << ".P90=" << m_p90 << "&";
+        oStream << location << ".P90=" << StringUtils::URLEncode(m_p90) << "&";
   }
   if(m_p85HasBeenSet)
   {
-      oStream << location << ".P85=" << m_p85 << "&";
+        oStream << location << ".P85=" << StringUtils::URLEncode(m_p85) << "&";
   }
   if(m_p75HasBeenSet)
   {
-      oStream << location << ".P75=" << m_p75 << "&";
+        oStream << location << ".P75=" << StringUtils::URLEncode(m_p75) << "&";
   }
   if(m_p50HasBeenSet)
   {
-      oStream << location << ".P50=" << m_p50 << "&";
+        oStream << location << ".P50=" << StringUtils::URLEncode(m_p50) << "&";
   }
   if(m_p10HasBeenSet)
   {
-      oStream << location << ".P10=" << m_p10 << "&";
+        oStream << location << ".P10=" << StringUtils::URLEncode(m_p10) << "&";
   }
 }

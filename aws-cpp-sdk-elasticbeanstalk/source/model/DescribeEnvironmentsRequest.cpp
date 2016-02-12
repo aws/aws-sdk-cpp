@@ -69,7 +69,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
   }
   if(m_includedDeletedBackToHasBeenSet)
   {
-    ss << "IncludedDeletedBackTo=" << m_includedDeletedBackTo << "&";
+    ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo) << "&";
   }
   ss << "Version=2010-12-01";
   return ss.str();

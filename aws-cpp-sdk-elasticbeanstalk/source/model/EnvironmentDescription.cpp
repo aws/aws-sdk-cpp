@@ -227,11 +227,11 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_dateCreatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DateCreated=" << m_dateCreated << "&";
+        oStream << location << index << locationValue << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated) << "&";
   }
   if(m_dateUpdatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DateUpdated=" << m_dateUpdated << "&";
+        oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -309,11 +309,11 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_dateCreatedHasBeenSet)
   {
-      oStream << location << ".DateCreated=" << m_dateCreated << "&";
+        oStream << location << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated) << "&";
   }
   if(m_dateUpdatedHasBeenSet)
   {
-      oStream << location << ".DateUpdated=" << m_dateUpdated << "&";
+        oStream << location << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated) << "&";
   }
   if(m_statusHasBeenSet)
   {

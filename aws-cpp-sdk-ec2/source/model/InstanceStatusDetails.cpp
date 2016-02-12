@@ -81,7 +81,7 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_impairedSinceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ImpairedSince=" << m_impairedSince << "&";
+        oStream << location << index << locationValue << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince) << "&";
   }
 }
 
@@ -97,6 +97,6 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_impairedSinceHasBeenSet)
   {
-      oStream << location << ".ImpairedSince=" << m_impairedSince << "&";
+        oStream << location << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince) << "&";
   }
 }

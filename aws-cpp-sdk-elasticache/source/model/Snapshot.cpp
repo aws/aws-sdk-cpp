@@ -259,7 +259,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CacheClusterCreateTime=" << m_cacheClusterCreateTime << "&";
+        oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
@@ -349,7 +349,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-      oStream << location << ".CacheClusterCreateTime=" << m_cacheClusterCreateTime << "&";
+        oStream << location << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {

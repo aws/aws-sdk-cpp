@@ -211,11 +211,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Start=" << m_start << "&";
+        oStream << location << index << locationValue << ".Start=" << StringUtils::URLEncode(m_start) << "&";
   }
   if(m_endHasBeenSet)
   {
-      oStream << location << index << locationValue << ".End=" << m_end << "&";
+        oStream << location << index << locationValue << ".End=" << StringUtils::URLEncode(m_end) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -291,11 +291,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startHasBeenSet)
   {
-      oStream << location << ".Start=" << m_start << "&";
+        oStream << location << ".Start=" << StringUtils::URLEncode(m_start) << "&";
   }
   if(m_endHasBeenSet)
   {
-      oStream << location << ".End=" << m_end << "&";
+        oStream << location << ".End=" << StringUtils::URLEncode(m_end) << "&";
   }
   if(m_durationHasBeenSet)
   {

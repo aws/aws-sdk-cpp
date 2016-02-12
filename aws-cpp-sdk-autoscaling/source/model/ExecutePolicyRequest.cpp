@@ -49,11 +49,11 @@ Aws::String ExecutePolicyRequest::SerializePayload() const
   }
   if(m_metricValueHasBeenSet)
   {
-    ss << "MetricValue=" << m_metricValue << "&";
+    ss << "MetricValue=" << StringUtils::URLEncode(m_metricValue) << "&";
   }
   if(m_breachThresholdHasBeenSet)
   {
-    ss << "BreachThreshold=" << m_breachThreshold << "&";
+    ss << "BreachThreshold=" << StringUtils::URLEncode(m_breachThreshold) << "&";
   }
   ss << "Version=2011-01-01";
   return ss.str();

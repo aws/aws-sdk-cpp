@@ -50,7 +50,7 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
   }
   if(m_nextTokenHasBeenSet)
   {
