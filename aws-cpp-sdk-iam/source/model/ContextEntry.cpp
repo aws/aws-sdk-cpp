@@ -81,9 +81,10 @@ void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_contextKeyValuesHasBeenSet)
   {
+      unsigned contextKeyValuesIdx = 1;
       for(auto& item : m_contextKeyValues)
       {
-        oStream << location << index << locationValue << ".ContextKeyValues=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ContextKeyValues.member." << contextKeyValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_contextKeyTypeHasBeenSet)
@@ -100,9 +101,10 @@ void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_contextKeyValuesHasBeenSet)
   {
+      unsigned contextKeyValuesIdx = 1;
       for(auto& item : m_contextKeyValues)
       {
-        oStream << location << ".ContextKeyValues=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ContextKeyValues.member." << contextKeyValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_contextKeyTypeHasBeenSet)

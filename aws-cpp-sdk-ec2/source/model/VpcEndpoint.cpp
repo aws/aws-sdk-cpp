@@ -131,11 +131,10 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_routeTableIdsHasBeenSet)
   {
-      unsigned routeTableIdsIdx = 0;
+      unsigned routeTableIdsIdx = 1;
       for(auto& item : m_routeTableIds)
       {
-        routeTableIdsIdx++;
-        oStream << location << index << locationValue << ".RouteTableIdSet." << routeTableIdsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".RouteTableIdSet." << routeTableIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_creationTimestampHasBeenSet)
@@ -168,9 +167,10 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_routeTableIdsHasBeenSet)
   {
+      unsigned routeTableIdsIdx = 1;
       for(auto& item : m_routeTableIds)
       {
-        oStream << location << ".item=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".item." << routeTableIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_creationTimestampHasBeenSet)

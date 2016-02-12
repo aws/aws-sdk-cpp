@@ -147,10 +147,11 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_cacheNodeTypeSpecificValuesHasBeenSet)
   {
+      unsigned cacheNodeTypeSpecificValuesIdx = 1;
       for(auto& item : m_cacheNodeTypeSpecificValues)
       {
         Aws::StringStream cacheNodeTypeSpecificValuesSs;
-        cacheNodeTypeSpecificValuesSs << location << index << locationValue << ".CacheNodeTypeSpecificValue";
+        cacheNodeTypeSpecificValuesSs << location << index << locationValue << ".CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
   }
@@ -188,11 +189,12 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_cacheNodeTypeSpecificValuesHasBeenSet)
   {
+      unsigned cacheNodeTypeSpecificValuesIdx = 1;
       for(auto& item : m_cacheNodeTypeSpecificValues)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".CacheNodeTypeSpecificValue";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream cacheNodeTypeSpecificValuesSs;
+        cacheNodeTypeSpecificValuesSs << location <<  ".CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
+        item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
   }
 }

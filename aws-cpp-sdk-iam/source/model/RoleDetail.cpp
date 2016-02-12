@@ -163,28 +163,31 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_instanceProfileListHasBeenSet)
   {
+      unsigned instanceProfileListIdx = 1;
       for(auto& item : m_instanceProfileList)
       {
         Aws::StringStream instanceProfileListSs;
-        instanceProfileListSs << location << index << locationValue << ".InstanceProfileList";
+        instanceProfileListSs << location << index << locationValue << ".InstanceProfileList.member." << instanceProfileListIdx++;
         item.OutputToStream(oStream, instanceProfileListSs.str().c_str());
       }
   }
   if(m_rolePolicyListHasBeenSet)
   {
+      unsigned rolePolicyListIdx = 1;
       for(auto& item : m_rolePolicyList)
       {
         Aws::StringStream rolePolicyListSs;
-        rolePolicyListSs << location << index << locationValue << ".RolePolicyList";
+        rolePolicyListSs << location << index << locationValue << ".RolePolicyList.member." << rolePolicyListIdx++;
         item.OutputToStream(oStream, rolePolicyListSs.str().c_str());
       }
   }
   if(m_attachedManagedPoliciesHasBeenSet)
   {
+      unsigned attachedManagedPoliciesIdx = 1;
       for(auto& item : m_attachedManagedPolicies)
       {
         Aws::StringStream attachedManagedPoliciesSs;
-        attachedManagedPoliciesSs << location << index << locationValue << ".AttachedManagedPolicies";
+        attachedManagedPoliciesSs << location << index << locationValue << ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
@@ -218,29 +221,32 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceProfileListHasBeenSet)
   {
+      unsigned instanceProfileListIdx = 1;
       for(auto& item : m_instanceProfileList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".InstanceProfileList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream instanceProfileListSs;
+        instanceProfileListSs << location <<  ".InstanceProfileList.member." << instanceProfileListIdx++;
+        item.OutputToStream(oStream, instanceProfileListSs.str().c_str());
       }
   }
   if(m_rolePolicyListHasBeenSet)
   {
+      unsigned rolePolicyListIdx = 1;
       for(auto& item : m_rolePolicyList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".RolePolicyList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream rolePolicyListSs;
+        rolePolicyListSs << location <<  ".RolePolicyList.member." << rolePolicyListIdx++;
+        item.OutputToStream(oStream, rolePolicyListSs.str().c_str());
       }
   }
   if(m_attachedManagedPoliciesHasBeenSet)
   {
+      unsigned attachedManagedPoliciesIdx = 1;
       for(auto& item : m_attachedManagedPolicies)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AttachedManagedPolicies";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attachedManagedPoliciesSs;
+        attachedManagedPoliciesSs << location <<  ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
+        item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
 }

@@ -151,26 +151,29 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_userPolicyListHasBeenSet)
   {
+      unsigned userPolicyListIdx = 1;
       for(auto& item : m_userPolicyList)
       {
         Aws::StringStream userPolicyListSs;
-        userPolicyListSs << location << index << locationValue << ".UserPolicyList";
+        userPolicyListSs << location << index << locationValue << ".UserPolicyList.member." << userPolicyListIdx++;
         item.OutputToStream(oStream, userPolicyListSs.str().c_str());
       }
   }
   if(m_groupListHasBeenSet)
   {
+      unsigned groupListIdx = 1;
       for(auto& item : m_groupList)
       {
-        oStream << location << index << locationValue << ".GroupList=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".GroupList.member." << groupListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_attachedManagedPoliciesHasBeenSet)
   {
+      unsigned attachedManagedPoliciesIdx = 1;
       for(auto& item : m_attachedManagedPolicies)
       {
         Aws::StringStream attachedManagedPoliciesSs;
-        attachedManagedPoliciesSs << location << index << locationValue << ".AttachedManagedPolicies";
+        attachedManagedPoliciesSs << location << index << locationValue << ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
@@ -200,27 +203,30 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_userPolicyListHasBeenSet)
   {
+      unsigned userPolicyListIdx = 1;
       for(auto& item : m_userPolicyList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".UserPolicyList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream userPolicyListSs;
+        userPolicyListSs << location <<  ".UserPolicyList.member." << userPolicyListIdx++;
+        item.OutputToStream(oStream, userPolicyListSs.str().c_str());
       }
   }
   if(m_groupListHasBeenSet)
   {
+      unsigned groupListIdx = 1;
       for(auto& item : m_groupList)
       {
-        oStream << location << ".GroupList=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".GroupList.member." << groupListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_attachedManagedPoliciesHasBeenSet)
   {
+      unsigned attachedManagedPoliciesIdx = 1;
       for(auto& item : m_attachedManagedPolicies)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AttachedManagedPolicies";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attachedManagedPoliciesSs;
+        attachedManagedPoliciesSs << location <<  ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
+        item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
 }

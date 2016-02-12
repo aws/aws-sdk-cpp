@@ -211,12 +211,11 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_recurringChargesHasBeenSet)
   {
-      unsigned recurringChargesIdx = 0;
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        recurringChargesIdx++;
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx;
+        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
@@ -226,12 +225,11 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_pricingDetailsHasBeenSet)
   {
-      unsigned pricingDetailsIdx = 0;
+      unsigned pricingDetailsIdx = 1;
       for(auto& item : m_pricingDetails)
       {
-        pricingDetailsIdx++;
         Aws::StringStream pricingDetailsSs;
-        pricingDetailsSs << location << index << locationValue << ".PricingDetailsSet." << pricingDetailsIdx;
+        pricingDetailsSs << location << index << locationValue << ".PricingDetailsSet." << pricingDetailsIdx++;
         item.OutputToStream(oStream, pricingDetailsSs.str().c_str());
       }
   }
@@ -281,11 +279,12 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream recurringChargesSs;
+        recurringChargesSs << location <<  ".item." << recurringChargesIdx++;
+        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
   if(m_marketplaceHasBeenSet)
@@ -294,11 +293,12 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_pricingDetailsHasBeenSet)
   {
+      unsigned pricingDetailsIdx = 1;
       for(auto& item : m_pricingDetails)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream pricingDetailsSs;
+        pricingDetailsSs << location <<  ".item." << pricingDetailsIdx++;
+        item.OutputToStream(oStream, pricingDetailsSs.str().c_str());
       }
   }
 }

@@ -289,16 +289,18 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        oStream << location << index << locationValue << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_loadBalancerNamesHasBeenSet)
   {
+      unsigned loadBalancerNamesIdx = 1;
       for(auto& item : m_loadBalancerNames)
       {
-        oStream << location << index << locationValue << ".LoadBalancerNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_healthCheckTypeHasBeenSet)
@@ -311,10 +313,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location << index << locationValue << ".Instances";
+        instancesSs << location << index << locationValue << ".Instances.member." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
@@ -324,10 +327,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_suspendedProcessesHasBeenSet)
   {
+      unsigned suspendedProcessesIdx = 1;
       for(auto& item : m_suspendedProcesses)
       {
         Aws::StringStream suspendedProcessesSs;
-        suspendedProcessesSs << location << index << locationValue << ".SuspendedProcesses";
+        suspendedProcessesSs << location << index << locationValue << ".SuspendedProcesses.member." << suspendedProcessesIdx++;
         item.OutputToStream(oStream, suspendedProcessesSs.str().c_str());
       }
   }
@@ -341,10 +345,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enabledMetricsHasBeenSet)
   {
+      unsigned enabledMetricsIdx = 1;
       for(auto& item : m_enabledMetrics)
       {
         Aws::StringStream enabledMetricsSs;
-        enabledMetricsSs << location << index << locationValue << ".EnabledMetrics";
+        enabledMetricsSs << location << index << locationValue << ".EnabledMetrics.member." << enabledMetricsIdx++;
         item.OutputToStream(oStream, enabledMetricsSs.str().c_str());
       }
   }
@@ -354,18 +359,20 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tags";
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_terminationPoliciesHasBeenSet)
   {
+      unsigned terminationPoliciesIdx = 1;
       for(auto& item : m_terminationPolicies)
       {
-        oStream << location << index << locationValue << ".TerminationPolicies=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -402,16 +409,18 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        oStream << location << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_loadBalancerNamesHasBeenSet)
   {
+      unsigned loadBalancerNamesIdx = 1;
       for(auto& item : m_loadBalancerNames)
       {
-        oStream << location << ".LoadBalancerNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_healthCheckTypeHasBeenSet)
@@ -424,11 +433,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Instances";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream instancesSs;
+        instancesSs << location <<  ".Instances.member." << instancesIdx++;
+        item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
   if(m_createdTimeHasBeenSet)
@@ -437,11 +447,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_suspendedProcessesHasBeenSet)
   {
+      unsigned suspendedProcessesIdx = 1;
       for(auto& item : m_suspendedProcesses)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".SuspendedProcesses";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream suspendedProcessesSs;
+        suspendedProcessesSs << location <<  ".SuspendedProcesses.member." << suspendedProcessesIdx++;
+        item.OutputToStream(oStream, suspendedProcessesSs.str().c_str());
       }
   }
   if(m_placementGroupHasBeenSet)
@@ -454,11 +465,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enabledMetricsHasBeenSet)
   {
+      unsigned enabledMetricsIdx = 1;
       for(auto& item : m_enabledMetrics)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".EnabledMetrics";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream enabledMetricsSs;
+        enabledMetricsSs << location <<  ".EnabledMetrics.member." << enabledMetricsIdx++;
+        item.OutputToStream(oStream, enabledMetricsSs.str().c_str());
       }
   }
   if(m_statusHasBeenSet)
@@ -467,18 +479,20 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tags";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_terminationPoliciesHasBeenSet)
   {
+      unsigned terminationPoliciesIdx = 1;
       for(auto& item : m_terminationPolicies)
       {
-        oStream << location << ".TerminationPolicies=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

@@ -375,28 +375,31 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   }
   if(m_clusterSecurityGroupsHasBeenSet)
   {
+      unsigned clusterSecurityGroupsIdx = 1;
       for(auto& item : m_clusterSecurityGroups)
       {
         Aws::StringStream clusterSecurityGroupsSs;
-        clusterSecurityGroupsSs << location << index << locationValue << ".ClusterSecurityGroup";
+        clusterSecurityGroupsSs << location << index << locationValue << ".ClusterSecurityGroup." << clusterSecurityGroupsIdx++;
         item.OutputToStream(oStream, clusterSecurityGroupsSs.str().c_str());
       }
   }
   if(m_vpcSecurityGroupsHasBeenSet)
   {
+      unsigned vpcSecurityGroupsIdx = 1;
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroup";
+        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroup." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
   if(m_clusterParameterGroupsHasBeenSet)
   {
+      unsigned clusterParameterGroupsIdx = 1;
       for(auto& item : m_clusterParameterGroups)
       {
         Aws::StringStream clusterParameterGroupsSs;
-        clusterParameterGroupsSs << location << index << locationValue << ".ClusterParameterGroup";
+        clusterParameterGroupsSs << location << index << locationValue << ".ClusterParameterGroup." << clusterParameterGroupsIdx++;
         item.OutputToStream(oStream, clusterParameterGroupsSs.str().c_str());
       }
   }
@@ -466,10 +469,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   }
   if(m_clusterNodesHasBeenSet)
   {
+      unsigned clusterNodesIdx = 1;
       for(auto& item : m_clusterNodes)
       {
         Aws::StringStream clusterNodesSs;
-        clusterNodesSs << location << index << locationValue << ".ClusterNodes";
+        clusterNodesSs << location << index << locationValue << ".ClusterNodes.member." << clusterNodesIdx++;
         item.OutputToStream(oStream, clusterNodesSs.str().c_str());
       }
   }
@@ -485,10 +489,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag";
+        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -540,29 +545,32 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterSecurityGroupsHasBeenSet)
   {
+      unsigned clusterSecurityGroupsIdx = 1;
       for(auto& item : m_clusterSecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".ClusterSecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream clusterSecurityGroupsSs;
+        clusterSecurityGroupsSs << location <<  ".ClusterSecurityGroup." << clusterSecurityGroupsIdx++;
+        item.OutputToStream(oStream, clusterSecurityGroupsSs.str().c_str());
       }
   }
   if(m_vpcSecurityGroupsHasBeenSet)
   {
+      unsigned vpcSecurityGroupsIdx = 1;
       for(auto& item : m_vpcSecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".VpcSecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream vpcSecurityGroupsSs;
+        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroup." << vpcSecurityGroupsIdx++;
+        item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
   if(m_clusterParameterGroupsHasBeenSet)
   {
+      unsigned clusterParameterGroupsIdx = 1;
       for(auto& item : m_clusterParameterGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".ClusterParameterGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream clusterParameterGroupsSs;
+        clusterParameterGroupsSs << location <<  ".ClusterParameterGroup." << clusterParameterGroupsIdx++;
+        item.OutputToStream(oStream, clusterParameterGroupsSs.str().c_str());
       }
   }
   if(m_clusterSubnetGroupNameHasBeenSet)
@@ -631,11 +639,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterNodesHasBeenSet)
   {
+      unsigned clusterNodesIdx = 1;
       for(auto& item : m_clusterNodes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".ClusterNodes";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream clusterNodesSs;
+        clusterNodesSs << location <<  ".ClusterNodes.member." << clusterNodesIdx++;
+        item.OutputToStream(oStream, clusterNodesSs.str().c_str());
       }
   }
   if(m_elasticIpStatusHasBeenSet)
@@ -650,11 +659,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tag";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_kmsKeyIdHasBeenSet)

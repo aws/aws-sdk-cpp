@@ -381,10 +381,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_accountsWithRestoreAccessHasBeenSet)
   {
+      unsigned accountsWithRestoreAccessIdx = 1;
       for(auto& item : m_accountsWithRestoreAccess)
       {
         Aws::StringStream accountsWithRestoreAccessSs;
-        accountsWithRestoreAccessSs << location << index << locationValue << ".AccountWithRestoreAccess";
+        accountsWithRestoreAccessSs << location << index << locationValue << ".AccountWithRestoreAccess." << accountsWithRestoreAccessIdx++;
         item.OutputToStream(oStream, accountsWithRestoreAccessSs.str().c_str());
       }
   }
@@ -422,18 +423,20 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag";
+        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_restorableNodeTypesHasBeenSet)
   {
+      unsigned restorableNodeTypesIdx = 1;
       for(auto& item : m_restorableNodeTypes)
       {
-        oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -510,11 +513,12 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_accountsWithRestoreAccessHasBeenSet)
   {
+      unsigned accountsWithRestoreAccessIdx = 1;
       for(auto& item : m_accountsWithRestoreAccess)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AccountWithRestoreAccess";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream accountsWithRestoreAccessSs;
+        accountsWithRestoreAccessSs << location <<  ".AccountWithRestoreAccess." << accountsWithRestoreAccessIdx++;
+        item.OutputToStream(oStream, accountsWithRestoreAccessSs.str().c_str());
       }
   }
   if(m_ownerAccountHasBeenSet)
@@ -551,18 +555,20 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tag";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_restorableNodeTypesHasBeenSet)
   {
+      unsigned restorableNodeTypesIdx = 1;
       for(auto& item : m_restorableNodeTypes)
       {
-        oStream << location << ".NodeType=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

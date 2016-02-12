@@ -113,23 +113,21 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_groupsHasBeenSet)
   {
-      unsigned groupsIdx = 0;
+      unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        groupsIdx++;
         Aws::StringStream groupsSs;
-        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx;
+        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
   if(m_instancesHasBeenSet)
   {
-      unsigned instancesIdx = 0;
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
-        instancesIdx++;
         Aws::StringStream instancesSs;
-        instancesSs << location << index << locationValue << ".InstancesSet." << instancesIdx;
+        instancesSs << location << index << locationValue << ".InstancesSet." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
@@ -157,20 +155,22 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream groupsSs;
+        groupsSs << location <<  ".item." << groupsIdx++;
+        item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream instancesSs;
+        instancesSs << location <<  ".item." << instancesIdx++;
+        item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
   if(m_responseMetadataHasBeenSet)

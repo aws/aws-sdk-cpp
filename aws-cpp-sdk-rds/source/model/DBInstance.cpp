@@ -373,28 +373,31 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_dBSecurityGroupsHasBeenSet)
   {
+      unsigned dBSecurityGroupsIdx = 1;
       for(auto& item : m_dBSecurityGroups)
       {
         Aws::StringStream dBSecurityGroupsSs;
-        dBSecurityGroupsSs << location << index << locationValue << ".DBSecurityGroup";
+        dBSecurityGroupsSs << location << index << locationValue << ".DBSecurityGroup." << dBSecurityGroupsIdx++;
         item.OutputToStream(oStream, dBSecurityGroupsSs.str().c_str());
       }
   }
   if(m_vpcSecurityGroupsHasBeenSet)
   {
+      unsigned vpcSecurityGroupsIdx = 1;
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroupMembership";
+        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
   if(m_dBParameterGroupsHasBeenSet)
   {
+      unsigned dBParameterGroupsIdx = 1;
       for(auto& item : m_dBParameterGroups)
       {
         Aws::StringStream dBParameterGroupsSs;
-        dBParameterGroupsSs << location << index << locationValue << ".DBParameterGroup";
+        dBParameterGroupsSs << location << index << locationValue << ".DBParameterGroup." << dBParameterGroupsIdx++;
         item.OutputToStream(oStream, dBParameterGroupsSs.str().c_str());
       }
   }
@@ -440,9 +443,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_readReplicaDBInstanceIdentifiersHasBeenSet)
   {
+      unsigned readReplicaDBInstanceIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBInstanceIdentifiers)
       {
-        oStream << location << index << locationValue << ".ReadReplicaDBInstanceIdentifier=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_licenseModelHasBeenSet)
@@ -523,29 +527,32 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_dBSecurityGroupsHasBeenSet)
   {
+      unsigned dBSecurityGroupsIdx = 1;
       for(auto& item : m_dBSecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".DBSecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dBSecurityGroupsSs;
+        dBSecurityGroupsSs << location <<  ".DBSecurityGroup." << dBSecurityGroupsIdx++;
+        item.OutputToStream(oStream, dBSecurityGroupsSs.str().c_str());
       }
   }
   if(m_vpcSecurityGroupsHasBeenSet)
   {
+      unsigned vpcSecurityGroupsIdx = 1;
       for(auto& item : m_vpcSecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".VpcSecurityGroupMembership";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream vpcSecurityGroupsSs;
+        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
   if(m_dBParameterGroupsHasBeenSet)
   {
+      unsigned dBParameterGroupsIdx = 1;
       for(auto& item : m_dBParameterGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".DBParameterGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dBParameterGroupsSs;
+        dBParameterGroupsSs << location <<  ".DBParameterGroup." << dBParameterGroupsIdx++;
+        item.OutputToStream(oStream, dBParameterGroupsSs.str().c_str());
       }
   }
   if(m_availabilityZoneHasBeenSet)
@@ -590,9 +597,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_readReplicaDBInstanceIdentifiersHasBeenSet)
   {
+      unsigned readReplicaDBInstanceIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBInstanceIdentifiers)
       {
-        oStream << location << ".ReadReplicaDBInstanceIdentifier=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_licenseModelHasBeenSet)

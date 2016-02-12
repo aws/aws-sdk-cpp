@@ -177,10 +177,11 @@ void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharge";
+        recurringChargesSs << location << index << locationValue << ".RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
@@ -226,11 +227,12 @@ void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".RecurringCharge";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream recurringChargesSs;
+        recurringChargesSs << location <<  ".RecurringCharge." << recurringChargesIdx++;
+        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
 }

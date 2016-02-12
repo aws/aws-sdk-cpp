@@ -123,9 +123,10 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_causesHasBeenSet)
   {
+      unsigned causesIdx = 1;
       for(auto& item : m_causes)
       {
-        oStream << location << index << locationValue << ".Causes=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Causes.member." << causesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_launchedAtHasBeenSet)
@@ -162,9 +163,10 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_causesHasBeenSet)
   {
+      unsigned causesIdx = 1;
       for(auto& item : m_causes)
       {
-        oStream << location << ".Causes=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Causes.member." << causesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_launchedAtHasBeenSet)

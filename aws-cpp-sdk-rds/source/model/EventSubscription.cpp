@@ -169,16 +169,18 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_sourceIdsListHasBeenSet)
   {
+      unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << index << locationValue << ".SourceId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_eventCategoriesListHasBeenSet)
   {
+      unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << index << locationValue << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_enabledHasBeenSet)
@@ -219,16 +221,18 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_sourceIdsListHasBeenSet)
   {
+      unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << ".SourceId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_eventCategoriesListHasBeenSet)
   {
+      unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_enabledHasBeenSet)

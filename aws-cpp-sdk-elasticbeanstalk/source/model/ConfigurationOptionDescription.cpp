@@ -173,9 +173,10 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_valueOptionsHasBeenSet)
   {
+      unsigned valueOptionsIdx = 1;
       for(auto& item : m_valueOptions)
       {
-        oStream << location << index << locationValue << ".ValueOptions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ValueOptions.member." << valueOptionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_minValueHasBeenSet)
@@ -226,9 +227,10 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_valueOptionsHasBeenSet)
   {
+      unsigned valueOptionsIdx = 1;
       for(auto& item : m_valueOptions)
       {
-        oStream << location << ".ValueOptions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ValueOptions.member." << valueOptionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_minValueHasBeenSet)

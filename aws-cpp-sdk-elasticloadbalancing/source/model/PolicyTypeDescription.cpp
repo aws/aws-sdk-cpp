@@ -85,10 +85,11 @@ void PolicyTypeDescription::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_policyAttributeTypeDescriptionsHasBeenSet)
   {
+      unsigned policyAttributeTypeDescriptionsIdx = 1;
       for(auto& item : m_policyAttributeTypeDescriptions)
       {
         Aws::StringStream policyAttributeTypeDescriptionsSs;
-        policyAttributeTypeDescriptionsSs << location << index << locationValue << ".PolicyAttributeTypeDescriptions";
+        policyAttributeTypeDescriptionsSs << location << index << locationValue << ".PolicyAttributeTypeDescriptions.member." << policyAttributeTypeDescriptionsIdx++;
         item.OutputToStream(oStream, policyAttributeTypeDescriptionsSs.str().c_str());
       }
   }
@@ -106,11 +107,12 @@ void PolicyTypeDescription::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_policyAttributeTypeDescriptionsHasBeenSet)
   {
+      unsigned policyAttributeTypeDescriptionsIdx = 1;
       for(auto& item : m_policyAttributeTypeDescriptions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".PolicyAttributeTypeDescriptions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream policyAttributeTypeDescriptionsSs;
+        policyAttributeTypeDescriptionsSs << location <<  ".PolicyAttributeTypeDescriptions.member." << policyAttributeTypeDescriptionsIdx++;
+        item.OutputToStream(oStream, policyAttributeTypeDescriptionsSs.str().c_str());
       }
   }
 }

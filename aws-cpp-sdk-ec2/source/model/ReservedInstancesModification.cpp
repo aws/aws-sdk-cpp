@@ -141,23 +141,21 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_reservedInstancesIdsHasBeenSet)
   {
-      unsigned reservedInstancesIdsIdx = 0;
+      unsigned reservedInstancesIdsIdx = 1;
       for(auto& item : m_reservedInstancesIds)
       {
-        reservedInstancesIdsIdx++;
         Aws::StringStream reservedInstancesIdsSs;
-        reservedInstancesIdsSs << location << index << locationValue << ".ReservedInstancesSet." << reservedInstancesIdsIdx;
+        reservedInstancesIdsSs << location << index << locationValue << ".ReservedInstancesSet." << reservedInstancesIdsIdx++;
         item.OutputToStream(oStream, reservedInstancesIdsSs.str().c_str());
       }
   }
   if(m_modificationResultsHasBeenSet)
   {
-      unsigned modificationResultsIdx = 0;
+      unsigned modificationResultsIdx = 1;
       for(auto& item : m_modificationResults)
       {
-        modificationResultsIdx++;
         Aws::StringStream modificationResultsSs;
-        modificationResultsSs << location << index << locationValue << ".ModificationResultSet." << modificationResultsIdx;
+        modificationResultsSs << location << index << locationValue << ".ModificationResultSet." << modificationResultsIdx++;
         item.OutputToStream(oStream, modificationResultsSs.str().c_str());
       }
   }
@@ -195,20 +193,22 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_reservedInstancesIdsHasBeenSet)
   {
+      unsigned reservedInstancesIdsIdx = 1;
       for(auto& item : m_reservedInstancesIds)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream reservedInstancesIdsSs;
+        reservedInstancesIdsSs << location <<  ".item." << reservedInstancesIdsIdx++;
+        item.OutputToStream(oStream, reservedInstancesIdsSs.str().c_str());
       }
   }
   if(m_modificationResultsHasBeenSet)
   {
+      unsigned modificationResultsIdx = 1;
       for(auto& item : m_modificationResults)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream modificationResultsSs;
+        modificationResultsSs << location <<  ".item." << modificationResultsIdx++;
+        item.OutputToStream(oStream, modificationResultsSs.str().c_str());
       }
   }
   if(m_createDateHasBeenSet)

@@ -123,9 +123,10 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_eventCategoriesHasBeenSet)
   {
+      unsigned eventCategoriesIdx = 1;
       for(auto& item : m_eventCategories)
       {
-        oStream << location << index << locationValue << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_severityHasBeenSet)
@@ -158,9 +159,10 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_eventCategoriesHasBeenSet)
   {
+      unsigned eventCategoriesIdx = 1;
       for(auto& item : m_eventCategories)
       {
-        oStream << location << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_severityHasBeenSet)

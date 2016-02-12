@@ -163,10 +163,11 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_optionSettingsHasBeenSet)
   {
+      unsigned optionSettingsIdx = 1;
       for(auto& item : m_optionSettings)
       {
         Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location << index << locationValue << ".OptionSettings";
+        optionSettingsSs << location << index << locationValue << ".OptionSettings.member." << optionSettingsIdx++;
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
@@ -214,11 +215,12 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_optionSettingsHasBeenSet)
   {
+      unsigned optionSettingsIdx = 1;
       for(auto& item : m_optionSettings)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".OptionSettings";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream optionSettingsSs;
+        optionSettingsSs << location <<  ".OptionSettings.member." << optionSettingsIdx++;
+        item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
   if(m_responseMetadataHasBeenSet)

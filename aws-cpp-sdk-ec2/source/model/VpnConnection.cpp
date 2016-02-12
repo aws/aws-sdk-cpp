@@ -169,23 +169,21 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_vgwTelemetryHasBeenSet)
   {
-      unsigned vgwTelemetryIdx = 0;
+      unsigned vgwTelemetryIdx = 1;
       for(auto& item : m_vgwTelemetry)
       {
-        vgwTelemetryIdx++;
         Aws::StringStream vgwTelemetrySs;
-        vgwTelemetrySs << location << index << locationValue << ".VgwTelemetry." << vgwTelemetryIdx;
+        vgwTelemetrySs << location << index << locationValue << ".VgwTelemetry." << vgwTelemetryIdx++;
         item.OutputToStream(oStream, vgwTelemetrySs.str().c_str());
       }
   }
@@ -197,12 +195,11 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
   }
   if(m_routesHasBeenSet)
   {
-      unsigned routesIdx = 0;
+      unsigned routesIdx = 1;
       for(auto& item : m_routes)
       {
-        routesIdx++;
         Aws::StringStream routesSs;
-        routesSs << location << index << locationValue << ".Routes." << routesIdx;
+        routesSs << location << index << locationValue << ".Routes." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
@@ -236,20 +233,22 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_vgwTelemetryHasBeenSet)
   {
+      unsigned vgwTelemetryIdx = 1;
       for(auto& item : m_vgwTelemetry)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream vgwTelemetrySs;
+        vgwTelemetrySs << location <<  ".item." << vgwTelemetryIdx++;
+        item.OutputToStream(oStream, vgwTelemetrySs.str().c_str());
       }
   }
   if(m_optionsHasBeenSet)
@@ -260,11 +259,12 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_routesHasBeenSet)
   {
+      unsigned routesIdx = 1;
       for(auto& item : m_routes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream routesSs;
+        routesSs << location <<  ".item." << routesIdx++;
+        item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
 }

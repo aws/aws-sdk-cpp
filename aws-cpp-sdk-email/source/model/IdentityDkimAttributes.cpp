@@ -87,9 +87,10 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_dkimTokensHasBeenSet)
   {
+      unsigned dkimTokensIdx = 1;
       for(auto& item : m_dkimTokens)
       {
-        oStream << location << index << locationValue << ".DkimTokens=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".DkimTokens.member." << dkimTokensIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -106,9 +107,10 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_dkimTokensHasBeenSet)
   {
+      unsigned dkimTokensIdx = 1;
       for(auto& item : m_dkimTokens)
       {
-        oStream << location << ".DkimTokens=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".DkimTokens.member." << dkimTokensIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

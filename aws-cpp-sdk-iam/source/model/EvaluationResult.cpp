@@ -111,19 +111,21 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_matchedStatementsHasBeenSet)
   {
+      unsigned matchedStatementsIdx = 1;
       for(auto& item : m_matchedStatements)
       {
         Aws::StringStream matchedStatementsSs;
-        matchedStatementsSs << location << index << locationValue << ".MatchedStatements";
+        matchedStatementsSs << location << index << locationValue << ".MatchedStatements.member." << matchedStatementsIdx++;
         item.OutputToStream(oStream, matchedStatementsSs.str().c_str());
       }
   }
   if(m_missingContextValuesHasBeenSet)
   {
+      unsigned missingContextValuesIdx = 1;
       for(auto& item : m_missingContextValues)
       {
         Aws::StringStream missingContextValuesSs;
-        missingContextValuesSs << location << index << locationValue << ".MissingContextValues";
+        missingContextValuesSs << location << index << locationValue << ".MissingContextValues.member." << missingContextValuesIdx++;
         item.OutputToStream(oStream, missingContextValuesSs.str().c_str());
       }
   }
@@ -145,20 +147,22 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_matchedStatementsHasBeenSet)
   {
+      unsigned matchedStatementsIdx = 1;
       for(auto& item : m_matchedStatements)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".MatchedStatements";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream matchedStatementsSs;
+        matchedStatementsSs << location <<  ".MatchedStatements.member." << matchedStatementsIdx++;
+        item.OutputToStream(oStream, matchedStatementsSs.str().c_str());
       }
   }
   if(m_missingContextValuesHasBeenSet)
   {
+      unsigned missingContextValuesIdx = 1;
       for(auto& item : m_missingContextValues)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".MissingContextValues";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream missingContextValuesSs;
+        missingContextValuesSs << location <<  ".MissingContextValues.member." << missingContextValuesIdx++;
+        item.OutputToStream(oStream, missingContextValuesSs.str().c_str());
       }
   }
 }

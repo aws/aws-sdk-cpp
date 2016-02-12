@@ -73,12 +73,11 @@ void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attributeValuesHasBeenSet)
   {
-      unsigned attributeValuesIdx = 0;
+      unsigned attributeValuesIdx = 1;
       for(auto& item : m_attributeValues)
       {
-        attributeValuesIdx++;
         Aws::StringStream attributeValuesSs;
-        attributeValuesSs << location << index << locationValue << ".AttributeValueSet." << attributeValuesIdx;
+        attributeValuesSs << location << index << locationValue << ".AttributeValueSet." << attributeValuesIdx++;
         item.OutputToStream(oStream, attributeValuesSs.str().c_str());
       }
   }
@@ -92,11 +91,12 @@ void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attributeValuesHasBeenSet)
   {
+      unsigned attributeValuesIdx = 1;
       for(auto& item : m_attributeValues)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attributeValuesSs;
+        attributeValuesSs << location <<  ".item." << attributeValuesIdx++;
+        item.OutputToStream(oStream, attributeValuesSs.str().c_str());
       }
   }
 }

@@ -195,12 +195,11 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_securityGroupsHasBeenSet)
   {
-      unsigned securityGroupsIdx = 0;
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        securityGroupsIdx++;
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx;
+        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -232,12 +231,11 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
-      unsigned blockDeviceMappingsIdx = 0;
+      unsigned blockDeviceMappingsIdx = 1;
       for(auto& item : m_blockDeviceMappings)
       {
-        blockDeviceMappingsIdx++;
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx;
+        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -253,12 +251,11 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_networkInterfacesHasBeenSet)
   {
-      unsigned networkInterfacesIdx = 0;
+      unsigned networkInterfacesIdx = 1;
       for(auto& item : m_networkInterfaces)
       {
-        networkInterfacesIdx++;
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location << index << locationValue << ".NetworkInterfaceSet." << networkInterfacesIdx;
+        networkInterfacesSs << location << index << locationValue << ".NetworkInterfaceSet." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -286,11 +283,12 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream securityGroupsSs;
+        securityGroupsSs << location <<  ".item." << securityGroupsIdx++;
+        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
   if(m_userDataHasBeenSet)
@@ -321,11 +319,12 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
+      unsigned blockDeviceMappingsIdx = 1;
       for(auto& item : m_blockDeviceMappings)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream blockDeviceMappingsSs;
+        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
   if(m_monitoringHasBeenSet)
@@ -340,11 +339,12 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_networkInterfacesHasBeenSet)
   {
+      unsigned networkInterfacesIdx = 1;
       for(auto& item : m_networkInterfaces)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream networkInterfacesSs;
+        networkInterfacesSs << location <<  ".item." << networkInterfacesIdx++;
+        item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
   if(m_iamInstanceProfileHasBeenSet)

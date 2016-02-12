@@ -89,23 +89,26 @@ void Destination::OutputToStream(Aws::OStream& oStream, const char* location, un
 {
   if(m_toAddressesHasBeenSet)
   {
+      unsigned toAddressesIdx = 1;
       for(auto& item : m_toAddresses)
       {
-        oStream << location << index << locationValue << ".ToAddresses=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ToAddresses.member." << toAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_ccAddressesHasBeenSet)
   {
+      unsigned ccAddressesIdx = 1;
       for(auto& item : m_ccAddresses)
       {
-        oStream << location << index << locationValue << ".CcAddresses=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".CcAddresses.member." << ccAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_bccAddressesHasBeenSet)
   {
+      unsigned bccAddressesIdx = 1;
       for(auto& item : m_bccAddresses)
       {
-        oStream << location << index << locationValue << ".BccAddresses=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".BccAddresses.member." << bccAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -114,23 +117,26 @@ void Destination::OutputToStream(Aws::OStream& oStream, const char* location) co
 {
   if(m_toAddressesHasBeenSet)
   {
+      unsigned toAddressesIdx = 1;
       for(auto& item : m_toAddresses)
       {
-        oStream << location << ".ToAddresses=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ToAddresses.member." << toAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_ccAddressesHasBeenSet)
   {
+      unsigned ccAddressesIdx = 1;
       for(auto& item : m_ccAddresses)
       {
-        oStream << location << ".CcAddresses=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".CcAddresses.member." << ccAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_bccAddressesHasBeenSet)
   {
+      unsigned bccAddressesIdx = 1;
       for(auto& item : m_bccAddresses)
       {
-        oStream << location << ".BccAddresses=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".BccAddresses.member." << bccAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

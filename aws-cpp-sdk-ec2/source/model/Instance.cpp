@@ -415,12 +415,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_productCodesHasBeenSet)
   {
-      unsigned productCodesIdx = 0;
+      unsigned productCodesIdx = 1;
       for(auto& item : m_productCodes)
       {
-        productCodesIdx++;
         Aws::StringStream productCodesSs;
-        productCodesSs << location << index << locationValue << ".ProductCodes." << productCodesIdx;
+        productCodesSs << location << index << locationValue << ".ProductCodes." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -492,12 +491,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
-      unsigned blockDeviceMappingsIdx = 0;
+      unsigned blockDeviceMappingsIdx = 1;
       for(auto& item : m_blockDeviceMappings)
       {
-        blockDeviceMappingsIdx++;
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx;
+        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -519,23 +517,21 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_securityGroupsHasBeenSet)
   {
-      unsigned securityGroupsIdx = 0;
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        securityGroupsIdx++;
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx;
+        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -549,12 +545,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_networkInterfacesHasBeenSet)
   {
-      unsigned networkInterfacesIdx = 0;
+      unsigned networkInterfacesIdx = 1;
       for(auto& item : m_networkInterfaces)
       {
-        networkInterfacesIdx++;
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location << index << locationValue << ".NetworkInterfaceSet." << networkInterfacesIdx;
+        networkInterfacesSs << location << index << locationValue << ".NetworkInterfaceSet." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -612,11 +607,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_productCodesHasBeenSet)
   {
+      unsigned productCodesIdx = 1;
       for(auto& item : m_productCodes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream productCodesSs;
+        productCodesSs << location <<  ".item." << productCodesIdx++;
+        item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
   if(m_instanceTypeHasBeenSet)
@@ -687,11 +683,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
+      unsigned blockDeviceMappingsIdx = 1;
       for(auto& item : m_blockDeviceMappings)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream blockDeviceMappingsSs;
+        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
   if(m_virtualizationTypeHasBeenSet)
@@ -712,20 +709,22 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream securityGroupsSs;
+        securityGroupsSs << location <<  ".item." << securityGroupsIdx++;
+        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
   if(m_sourceDestCheckHasBeenSet)
@@ -738,11 +737,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_networkInterfacesHasBeenSet)
   {
+      unsigned networkInterfacesIdx = 1;
       for(auto& item : m_networkInterfaces)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream networkInterfacesSs;
+        networkInterfacesSs << location <<  ".item." << networkInterfacesIdx++;
+        item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
   if(m_iamInstanceProfileHasBeenSet)

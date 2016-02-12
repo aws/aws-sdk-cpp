@@ -87,10 +87,11 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_extensionFieldsHasBeenSet)
   {
+      unsigned extensionFieldsIdx = 1;
       for(auto& item : m_extensionFields)
       {
         Aws::StringStream extensionFieldsSs;
-        extensionFieldsSs << location << index << locationValue << ".ExtensionFields";
+        extensionFieldsSs << location << index << locationValue << ".ExtensionFields.member." << extensionFieldsIdx++;
         item.OutputToStream(oStream, extensionFieldsSs.str().c_str());
       }
   }
@@ -108,11 +109,12 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_extensionFieldsHasBeenSet)
   {
+      unsigned extensionFieldsIdx = 1;
       for(auto& item : m_extensionFields)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".ExtensionFields";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream extensionFieldsSs;
+        extensionFieldsSs << location <<  ".ExtensionFields.member." << extensionFieldsIdx++;
+        item.OutputToStream(oStream, extensionFieldsSs.str().c_str());
       }
   }
 }

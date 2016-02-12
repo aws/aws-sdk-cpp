@@ -75,23 +75,21 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_addHasBeenSet)
   {
-      unsigned addIdx = 0;
+      unsigned addIdx = 1;
       for(auto& item : m_add)
       {
-        addIdx++;
         Aws::StringStream addSs;
-        addSs << location << index << locationValue << ".Add." << addIdx;
+        addSs << location << index << locationValue << ".Add." << addIdx++;
         item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
   if(m_removeHasBeenSet)
   {
-      unsigned removeIdx = 0;
+      unsigned removeIdx = 1;
       for(auto& item : m_remove)
       {
-        removeIdx++;
         Aws::StringStream removeSs;
-        removeSs << location << index << locationValue << ".Remove." << removeIdx;
+        removeSs << location << index << locationValue << ".Remove." << removeIdx++;
         item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }
@@ -101,20 +99,22 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_addHasBeenSet)
   {
+      unsigned addIdx = 1;
       for(auto& item : m_add)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream addSs;
+        addSs << location <<  ".item." << addIdx++;
+        item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
   if(m_removeHasBeenSet)
   {
+      unsigned removeIdx = 1;
       for(auto& item : m_remove)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream removeSs;
+        removeSs << location <<  ".item." << removeIdx++;
+        item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }
 }

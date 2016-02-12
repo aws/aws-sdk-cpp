@@ -73,9 +73,10 @@ void SolutionStackDescription::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_permittedFileTypesHasBeenSet)
   {
+      unsigned permittedFileTypesIdx = 1;
       for(auto& item : m_permittedFileTypes)
       {
-        oStream << location << index << locationValue << ".PermittedFileTypes=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".PermittedFileTypes.member." << permittedFileTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -88,9 +89,10 @@ void SolutionStackDescription::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_permittedFileTypesHasBeenSet)
   {
+      unsigned permittedFileTypesIdx = 1;
       for(auto& item : m_permittedFileTypes)
       {
-        oStream << location << ".PermittedFileTypes=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PermittedFileTypes.member." << permittedFileTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

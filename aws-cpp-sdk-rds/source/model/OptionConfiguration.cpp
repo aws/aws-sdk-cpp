@@ -101,16 +101,18 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned dBSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_dBSecurityGroupMemberships)
       {
-        oStream << location << index << locationValue << ".DBSecurityGroupName=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".DBSecurityGroupName." << dBSecurityGroupMembershipsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_vpcSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned vpcSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_vpcSecurityGroupMemberships)
       {
-        oStream << location << index << locationValue << ".VpcSecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".VpcSecurityGroupId." << vpcSecurityGroupMembershipsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -127,16 +129,18 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned dBSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_dBSecurityGroupMemberships)
       {
-        oStream << location << ".DBSecurityGroupName=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".DBSecurityGroupName." << dBSecurityGroupMembershipsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_vpcSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned vpcSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_vpcSecurityGroupMemberships)
       {
-        oStream << location << ".VpcSecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".VpcSecurityGroupId." << vpcSecurityGroupMembershipsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

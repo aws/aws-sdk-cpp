@@ -243,12 +243,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -266,12 +265,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_recurringChargesHasBeenSet)
   {
-      unsigned recurringChargesIdx = 0;
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        recurringChargesIdx++;
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx;
+        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
@@ -325,11 +323,12 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_instanceTenancyHasBeenSet)
@@ -346,11 +345,12 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream recurringChargesSs;
+        recurringChargesSs << location <<  ".item." << recurringChargesIdx++;
+        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
 }

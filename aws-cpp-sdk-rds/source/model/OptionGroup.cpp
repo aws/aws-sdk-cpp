@@ -127,10 +127,11 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_optionsHasBeenSet)
   {
+      unsigned optionsIdx = 1;
       for(auto& item : m_options)
       {
         Aws::StringStream optionsSs;
-        optionsSs << location << index << locationValue << ".Option";
+        optionsSs << location << index << locationValue << ".Option." << optionsIdx++;
         item.OutputToStream(oStream, optionsSs.str().c_str());
       }
   }
@@ -164,11 +165,12 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_optionsHasBeenSet)
   {
+      unsigned optionsIdx = 1;
       for(auto& item : m_options)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Option";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream optionsSs;
+        optionsSs << location <<  ".Option." << optionsIdx++;
+        item.OutputToStream(oStream, optionsSs.str().c_str());
       }
   }
   if(m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet)

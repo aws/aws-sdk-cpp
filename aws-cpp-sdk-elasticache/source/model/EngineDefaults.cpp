@@ -99,19 +99,21 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location,
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location << index << locationValue << ".Parameter";
+        parametersSs << location << index << locationValue << ".Parameter." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
   if(m_cacheNodeTypeSpecificParametersHasBeenSet)
   {
+      unsigned cacheNodeTypeSpecificParametersIdx = 1;
       for(auto& item : m_cacheNodeTypeSpecificParameters)
       {
         Aws::StringStream cacheNodeTypeSpecificParametersSs;
-        cacheNodeTypeSpecificParametersSs << location << index << locationValue << ".CacheNodeTypeSpecificParameter";
+        cacheNodeTypeSpecificParametersSs << location << index << locationValue << ".CacheNodeTypeSpecificParameter." << cacheNodeTypeSpecificParametersIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificParametersSs.str().c_str());
       }
   }
@@ -129,20 +131,22 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Parameter";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream parametersSs;
+        parametersSs << location <<  ".Parameter." << parametersIdx++;
+        item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
   if(m_cacheNodeTypeSpecificParametersHasBeenSet)
   {
+      unsigned cacheNodeTypeSpecificParametersIdx = 1;
       for(auto& item : m_cacheNodeTypeSpecificParameters)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".CacheNodeTypeSpecificParameter";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream cacheNodeTypeSpecificParametersSs;
+        cacheNodeTypeSpecificParametersSs << location <<  ".CacheNodeTypeSpecificParameter." << cacheNodeTypeSpecificParametersIdx++;
+        item.OutputToStream(oStream, cacheNodeTypeSpecificParametersSs.str().c_str());
       }
   }
 }

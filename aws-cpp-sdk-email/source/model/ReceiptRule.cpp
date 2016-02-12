@@ -151,24 +151,27 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_domainsHasBeenSet)
   {
+      unsigned domainsIdx = 1;
       for(auto& item : m_domains)
       {
-        oStream << location << index << locationValue << ".Domains=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Domains.member." << domainsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_recipientsHasBeenSet)
   {
+      unsigned recipientsIdx = 1;
       for(auto& item : m_recipients)
       {
-        oStream << location << index << locationValue << ".Recipients=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Recipients.member." << recipientsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_actionsHasBeenSet)
   {
+      unsigned actionsIdx = 1;
       for(auto& item : m_actions)
       {
         Aws::StringStream actionsSs;
-        actionsSs << location << index << locationValue << ".Actions";
+        actionsSs << location << index << locationValue << ".Actions.member." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
@@ -198,25 +201,28 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_domainsHasBeenSet)
   {
+      unsigned domainsIdx = 1;
       for(auto& item : m_domains)
       {
-        oStream << location << ".Domains=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Domains.member." << domainsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_recipientsHasBeenSet)
   {
+      unsigned recipientsIdx = 1;
       for(auto& item : m_recipients)
       {
-        oStream << location << ".Recipients=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Recipients.member." << recipientsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_actionsHasBeenSet)
   {
+      unsigned actionsIdx = 1;
       for(auto& item : m_actions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Actions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream actionsSs;
+        actionsSs << location <<  ".Actions.member." << actionsIdx++;
+        item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
   if(m_scanEnabledHasBeenSet)

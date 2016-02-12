@@ -85,10 +85,11 @@ void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_clusterParameterStatusListHasBeenSet)
   {
+      unsigned clusterParameterStatusListIdx = 1;
       for(auto& item : m_clusterParameterStatusList)
       {
         Aws::StringStream clusterParameterStatusListSs;
-        clusterParameterStatusListSs << location << index << locationValue << ".ClusterParameterStatusList";
+        clusterParameterStatusListSs << location << index << locationValue << ".ClusterParameterStatusList.member." << clusterParameterStatusListIdx++;
         item.OutputToStream(oStream, clusterParameterStatusListSs.str().c_str());
       }
   }
@@ -106,11 +107,12 @@ void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_clusterParameterStatusListHasBeenSet)
   {
+      unsigned clusterParameterStatusListIdx = 1;
       for(auto& item : m_clusterParameterStatusList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".ClusterParameterStatusList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream clusterParameterStatusListSs;
+        clusterParameterStatusListSs << location <<  ".ClusterParameterStatusList.member." << clusterParameterStatusListIdx++;
+        item.OutputToStream(oStream, clusterParameterStatusListSs.str().c_str());
       }
   }
 }

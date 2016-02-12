@@ -85,10 +85,11 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_listenersHasBeenSet)
   {
+      unsigned listenersIdx = 1;
       for(auto& item : m_listeners)
       {
         Aws::StringStream listenersSs;
-        listenersSs << location << index << locationValue << ".Listeners";
+        listenersSs << location << index << locationValue << ".Listeners.member." << listenersIdx++;
         item.OutputToStream(oStream, listenersSs.str().c_str());
       }
   }
@@ -106,11 +107,12 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_listenersHasBeenSet)
   {
+      unsigned listenersIdx = 1;
       for(auto& item : m_listeners)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Listeners";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream listenersSs;
+        listenersSs << location <<  ".Listeners.member." << listenersIdx++;
+        item.OutputToStream(oStream, listenersSs.str().c_str());
       }
   }
 }

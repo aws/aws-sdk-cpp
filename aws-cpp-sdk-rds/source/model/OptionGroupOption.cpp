@@ -149,9 +149,10 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_optionsDependedOnHasBeenSet)
   {
+      unsigned optionsDependedOnIdx = 1;
       for(auto& item : m_optionsDependedOn)
       {
-        oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".OptionName." << optionsDependedOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -188,9 +189,10 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_optionsDependedOnHasBeenSet)
   {
+      unsigned optionsDependedOnIdx = 1;
       for(auto& item : m_optionsDependedOn)
       {
-        oStream << location << ".OptionName=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".OptionName." << optionsDependedOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

@@ -129,34 +129,31 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_userIdGroupPairsHasBeenSet)
   {
-      unsigned userIdGroupPairsIdx = 0;
+      unsigned userIdGroupPairsIdx = 1;
       for(auto& item : m_userIdGroupPairs)
       {
-        userIdGroupPairsIdx++;
         Aws::StringStream userIdGroupPairsSs;
-        userIdGroupPairsSs << location << index << locationValue << ".Groups." << userIdGroupPairsIdx;
+        userIdGroupPairsSs << location << index << locationValue << ".Groups." << userIdGroupPairsIdx++;
         item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }
   if(m_ipRangesHasBeenSet)
   {
-      unsigned ipRangesIdx = 0;
+      unsigned ipRangesIdx = 1;
       for(auto& item : m_ipRanges)
       {
-        ipRangesIdx++;
         Aws::StringStream ipRangesSs;
-        ipRangesSs << location << index << locationValue << ".IpRanges." << ipRangesIdx;
+        ipRangesSs << location << index << locationValue << ".IpRanges." << ipRangesIdx++;
         item.OutputToStream(oStream, ipRangesSs.str().c_str());
       }
   }
   if(m_prefixListIdsHasBeenSet)
   {
-      unsigned prefixListIdsIdx = 0;
+      unsigned prefixListIdsIdx = 1;
       for(auto& item : m_prefixListIds)
       {
-        prefixListIdsIdx++;
         Aws::StringStream prefixListIdsSs;
-        prefixListIdsSs << location << index << locationValue << ".PrefixListIds." << prefixListIdsIdx;
+        prefixListIdsSs << location << index << locationValue << ".PrefixListIds." << prefixListIdsIdx++;
         item.OutputToStream(oStream, prefixListIdsSs.str().c_str());
       }
   }
@@ -178,29 +175,32 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_userIdGroupPairsHasBeenSet)
   {
+      unsigned userIdGroupPairsIdx = 1;
       for(auto& item : m_userIdGroupPairs)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream userIdGroupPairsSs;
+        userIdGroupPairsSs << location <<  ".item." << userIdGroupPairsIdx++;
+        item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }
   if(m_ipRangesHasBeenSet)
   {
+      unsigned ipRangesIdx = 1;
       for(auto& item : m_ipRanges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream ipRangesSs;
+        ipRangesSs << location <<  ".item." << ipRangesIdx++;
+        item.OutputToStream(oStream, ipRangesSs.str().c_str());
       }
   }
   if(m_prefixListIdsHasBeenSet)
   {
+      unsigned prefixListIdsIdx = 1;
       for(auto& item : m_prefixListIds)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream prefixListIdsSs;
+        prefixListIdsSs << location <<  ".item." << prefixListIdsIdx++;
+        item.OutputToStream(oStream, prefixListIdsSs.str().c_str());
       }
   }
 }

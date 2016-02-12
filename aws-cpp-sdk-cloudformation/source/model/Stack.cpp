@@ -209,10 +209,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location << index << locationValue << ".Parameters";
+        parametersSs << location << index << locationValue << ".Parameters.member." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
@@ -238,9 +239,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_notificationARNsHasBeenSet)
   {
+      unsigned notificationARNsIdx = 1;
       for(auto& item : m_notificationARNs)
       {
-        oStream << location << index << locationValue << ".NotificationARNs=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".NotificationARNs.member." << notificationARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_timeoutInMinutesHasBeenSet)
@@ -249,26 +251,29 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_capabilitiesHasBeenSet)
   {
+      unsigned capabilitiesIdx = 1;
       for(auto& item : m_capabilities)
       {
-        oStream << location << index << locationValue << ".Capabilities=" << CapabilityMapper::GetNameForCapability(item) << "&";
+        oStream << location << index << locationValue << ".Capabilities.member." << capabilitiesIdx++ << "=" << CapabilityMapper::GetNameForCapability(item) << "&";
       }
   }
   if(m_outputsHasBeenSet)
   {
+      unsigned outputsIdx = 1;
       for(auto& item : m_outputs)
       {
         Aws::StringStream outputsSs;
-        outputsSs << location << index << locationValue << ".Outputs";
+        outputsSs << location << index << locationValue << ".Outputs.member." << outputsIdx++;
         item.OutputToStream(oStream, outputsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tags";
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -290,11 +295,12 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Parameters";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream parametersSs;
+        parametersSs << location <<  ".Parameters.member." << parametersIdx++;
+        item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
   if(m_creationTimeHasBeenSet)
@@ -319,9 +325,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_notificationARNsHasBeenSet)
   {
+      unsigned notificationARNsIdx = 1;
       for(auto& item : m_notificationARNs)
       {
-        oStream << location << ".NotificationARNs=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".NotificationARNs.member." << notificationARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_timeoutInMinutesHasBeenSet)
@@ -330,27 +337,30 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_capabilitiesHasBeenSet)
   {
+      unsigned capabilitiesIdx = 1;
       for(auto& item : m_capabilities)
       {
-        oStream << location << ".Capabilities=" << CapabilityMapper::GetNameForCapability(item) << "&";
+        oStream << location << ".Capabilities.member." << capabilitiesIdx++ << "=" << CapabilityMapper::GetNameForCapability(item) << "&";
       }
   }
   if(m_outputsHasBeenSet)
   {
+      unsigned outputsIdx = 1;
       for(auto& item : m_outputs)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Outputs";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream outputsSs;
+        outputsSs << location <<  ".Outputs.member." << outputsIdx++;
+        item.OutputToStream(oStream, outputsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tags";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }

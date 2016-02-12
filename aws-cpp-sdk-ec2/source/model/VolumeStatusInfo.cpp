@@ -73,12 +73,11 @@ void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_detailsHasBeenSet)
   {
-      unsigned detailsIdx = 0;
+      unsigned detailsIdx = 1;
       for(auto& item : m_details)
       {
-        detailsIdx++;
         Aws::StringStream detailsSs;
-        detailsSs << location << index << locationValue << ".Details." << detailsIdx;
+        detailsSs << location << index << locationValue << ".Details." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }
@@ -92,11 +91,12 @@ void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_detailsHasBeenSet)
   {
+      unsigned detailsIdx = 1;
       for(auto& item : m_details)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream detailsSs;
+        detailsSs << location <<  ".item." << detailsIdx++;
+        item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }
 }

@@ -165,12 +165,11 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_snapshotDetailsHasBeenSet)
   {
-      unsigned snapshotDetailsIdx = 0;
+      unsigned snapshotDetailsIdx = 1;
       for(auto& item : m_snapshotDetails)
       {
-        snapshotDetailsIdx++;
         Aws::StringStream snapshotDetailsSs;
-        snapshotDetailsSs << location << index << locationValue << ".SnapshotDetailSet." << snapshotDetailsIdx;
+        snapshotDetailsSs << location << index << locationValue << ".SnapshotDetailSet." << snapshotDetailsIdx++;
         item.OutputToStream(oStream, snapshotDetailsSs.str().c_str());
       }
   }
@@ -220,11 +219,12 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_snapshotDetailsHasBeenSet)
   {
+      unsigned snapshotDetailsIdx = 1;
       for(auto& item : m_snapshotDetails)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream snapshotDetailsSs;
+        snapshotDetailsSs << location <<  ".item." << snapshotDetailsIdx++;
+        item.OutputToStream(oStream, snapshotDetailsSs.str().c_str());
       }
   }
   if(m_imageIdHasBeenSet)

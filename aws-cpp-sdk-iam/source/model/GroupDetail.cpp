@@ -137,19 +137,21 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_groupPolicyListHasBeenSet)
   {
+      unsigned groupPolicyListIdx = 1;
       for(auto& item : m_groupPolicyList)
       {
         Aws::StringStream groupPolicyListSs;
-        groupPolicyListSs << location << index << locationValue << ".GroupPolicyList";
+        groupPolicyListSs << location << index << locationValue << ".GroupPolicyList.member." << groupPolicyListIdx++;
         item.OutputToStream(oStream, groupPolicyListSs.str().c_str());
       }
   }
   if(m_attachedManagedPoliciesHasBeenSet)
   {
+      unsigned attachedManagedPoliciesIdx = 1;
       for(auto& item : m_attachedManagedPolicies)
       {
         Aws::StringStream attachedManagedPoliciesSs;
-        attachedManagedPoliciesSs << location << index << locationValue << ".AttachedManagedPolicies";
+        attachedManagedPoliciesSs << location << index << locationValue << ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
@@ -179,20 +181,22 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_groupPolicyListHasBeenSet)
   {
+      unsigned groupPolicyListIdx = 1;
       for(auto& item : m_groupPolicyList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".GroupPolicyList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream groupPolicyListSs;
+        groupPolicyListSs << location <<  ".GroupPolicyList.member." << groupPolicyListIdx++;
+        item.OutputToStream(oStream, groupPolicyListSs.str().c_str());
       }
   }
   if(m_attachedManagedPoliciesHasBeenSet)
   {
+      unsigned attachedManagedPoliciesIdx = 1;
       for(auto& item : m_attachedManagedPolicies)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AttachedManagedPolicies";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attachedManagedPoliciesSs;
+        attachedManagedPoliciesSs << location <<  ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
+        item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
 }

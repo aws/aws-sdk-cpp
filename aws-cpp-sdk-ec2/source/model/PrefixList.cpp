@@ -85,11 +85,10 @@ void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_cidrsHasBeenSet)
   {
-      unsigned cidrsIdx = 0;
+      unsigned cidrsIdx = 1;
       for(auto& item : m_cidrs)
       {
-        cidrsIdx++;
-        oStream << location << index << locationValue << ".CidrSet." << cidrsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".CidrSet." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -106,9 +105,10 @@ void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_cidrsHasBeenSet)
   {
+      unsigned cidrsIdx = 1;
       for(auto& item : m_cidrs)
       {
-        oStream << location << ".item=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".item." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

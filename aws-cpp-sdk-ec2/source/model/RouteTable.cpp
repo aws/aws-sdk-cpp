@@ -127,45 +127,41 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_routesHasBeenSet)
   {
-      unsigned routesIdx = 0;
+      unsigned routesIdx = 1;
       for(auto& item : m_routes)
       {
-        routesIdx++;
         Aws::StringStream routesSs;
-        routesSs << location << index << locationValue << ".RouteSet." << routesIdx;
+        routesSs << location << index << locationValue << ".RouteSet." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
   if(m_associationsHasBeenSet)
   {
-      unsigned associationsIdx = 0;
+      unsigned associationsIdx = 1;
       for(auto& item : m_associations)
       {
-        associationsIdx++;
         Aws::StringStream associationsSs;
-        associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx;
+        associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx++;
         item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_propagatingVgwsHasBeenSet)
   {
-      unsigned propagatingVgwsIdx = 0;
+      unsigned propagatingVgwsIdx = 1;
       for(auto& item : m_propagatingVgws)
       {
-        propagatingVgwsIdx++;
         Aws::StringStream propagatingVgwsSs;
-        propagatingVgwsSs << location << index << locationValue << ".PropagatingVgwSet." << propagatingVgwsIdx;
+        propagatingVgwsSs << location << index << locationValue << ".PropagatingVgwSet." << propagatingVgwsIdx++;
         item.OutputToStream(oStream, propagatingVgwsSs.str().c_str());
       }
   }
@@ -183,38 +179,42 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_routesHasBeenSet)
   {
+      unsigned routesIdx = 1;
       for(auto& item : m_routes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream routesSs;
+        routesSs << location <<  ".item." << routesIdx++;
+        item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
   if(m_associationsHasBeenSet)
   {
+      unsigned associationsIdx = 1;
       for(auto& item : m_associations)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream associationsSs;
+        associationsSs << location <<  ".item." << associationsIdx++;
+        item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_propagatingVgwsHasBeenSet)
   {
+      unsigned propagatingVgwsIdx = 1;
       for(auto& item : m_propagatingVgws)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream propagatingVgwsSs;
+        propagatingVgwsSs << location <<  ".item." << propagatingVgwsIdx++;
+        item.OutputToStream(oStream, propagatingVgwsSs.str().c_str());
       }
   }
 }

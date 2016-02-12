@@ -75,9 +75,10 @@ void ListenerDescription::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_policyNamesHasBeenSet)
   {
+      unsigned policyNamesIdx = 1;
       for(auto& item : m_policyNames)
       {
-        oStream << location << index << locationValue << ".PolicyNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -92,9 +93,10 @@ void ListenerDescription::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_policyNamesHasBeenSet)
   {
+      unsigned policyNamesIdx = 1;
       for(auto& item : m_policyNames)
       {
-        oStream << location << ".PolicyNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

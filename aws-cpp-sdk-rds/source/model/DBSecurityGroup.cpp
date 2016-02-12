@@ -123,19 +123,21 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_eC2SecurityGroupsHasBeenSet)
   {
+      unsigned eC2SecurityGroupsIdx = 1;
       for(auto& item : m_eC2SecurityGroups)
       {
         Aws::StringStream eC2SecurityGroupsSs;
-        eC2SecurityGroupsSs << location << index << locationValue << ".EC2SecurityGroup";
+        eC2SecurityGroupsSs << location << index << locationValue << ".EC2SecurityGroup." << eC2SecurityGroupsIdx++;
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
   if(m_iPRangesHasBeenSet)
   {
+      unsigned iPRangesIdx = 1;
       for(auto& item : m_iPRanges)
       {
         Aws::StringStream iPRangesSs;
-        iPRangesSs << location << index << locationValue << ".IPRange";
+        iPRangesSs << location << index << locationValue << ".IPRange." << iPRangesIdx++;
         item.OutputToStream(oStream, iPRangesSs.str().c_str());
       }
   }
@@ -161,20 +163,22 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_eC2SecurityGroupsHasBeenSet)
   {
+      unsigned eC2SecurityGroupsIdx = 1;
       for(auto& item : m_eC2SecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".EC2SecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream eC2SecurityGroupsSs;
+        eC2SecurityGroupsSs << location <<  ".EC2SecurityGroup." << eC2SecurityGroupsIdx++;
+        item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
   if(m_iPRangesHasBeenSet)
   {
+      unsigned iPRangesIdx = 1;
       for(auto& item : m_iPRanges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".IPRange";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream iPRangesSs;
+        iPRangesSs << location <<  ".IPRange." << iPRangesIdx++;
+        item.OutputToStream(oStream, iPRangesSs.str().c_str());
       }
   }
 }

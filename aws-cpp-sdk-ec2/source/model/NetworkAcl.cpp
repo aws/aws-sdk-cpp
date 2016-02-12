@@ -127,34 +127,31 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_entriesHasBeenSet)
   {
-      unsigned entriesIdx = 0;
+      unsigned entriesIdx = 1;
       for(auto& item : m_entries)
       {
-        entriesIdx++;
         Aws::StringStream entriesSs;
-        entriesSs << location << index << locationValue << ".EntrySet." << entriesIdx;
+        entriesSs << location << index << locationValue << ".EntrySet." << entriesIdx++;
         item.OutputToStream(oStream, entriesSs.str().c_str());
       }
   }
   if(m_associationsHasBeenSet)
   {
-      unsigned associationsIdx = 0;
+      unsigned associationsIdx = 1;
       for(auto& item : m_associations)
       {
-        associationsIdx++;
         Aws::StringStream associationsSs;
-        associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx;
+        associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx++;
         item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -176,29 +173,32 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_entriesHasBeenSet)
   {
+      unsigned entriesIdx = 1;
       for(auto& item : m_entries)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream entriesSs;
+        entriesSs << location <<  ".item." << entriesIdx++;
+        item.OutputToStream(oStream, entriesSs.str().c_str());
       }
   }
   if(m_associationsHasBeenSet)
   {
+      unsigned associationsIdx = 1;
       for(auto& item : m_associations)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream associationsSs;
+        associationsSs << location <<  ".item." << associationsIdx++;
+        item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }

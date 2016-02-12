@@ -66,9 +66,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.enum)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << ${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}) << "&";
 #elseif($member.shape.list)
-#if($metadata.protocol == "ec2")
-  ${spaces}unsigned ${lowerCaseVarName}Idx = 0;
-#end
+  ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
   ${spaces}for(auto& item : ${memberVarName})
   ${spaces}{
 #if($metadata.protocol == "ec2")
@@ -81,38 +79,21 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.listMember.locationName)
 #set($location = $member.shape.listMember.locationName)
 #else
-#set($location = $memberName)
+#set($location = $memberName + ".member")
 #end
 #end
-#if($metadata.protocol == "ec2")
-  ${spaces}  ${lowerCaseVarName}Idx++;
 #if($member.shape.listMember.shape.structure)
   ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
-  ${spaces}  ${lowerCaseVarName}Ss << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx;
+  ${spaces}  ${lowerCaseVarName}Ss << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++;
   ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.listMember.shape.string)
-  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
-  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.primitive)
-  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx << "=" << item << "&";
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
 #elseif($member.shape.listMember.shape.enum)
-  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx << "=" << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item) << "&";
-#end
-#else
-#if($member.shape.listMember.shape.structure)
-  ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
-  ${spaces}  ${lowerCaseVarName}Ss << location << index << locationValue << ".${location}";
-  ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
-#elseif($member.shape.listMember.shape.string)
-  ${spaces}  oStream << location << index << locationValue << ".${location}=" << StringUtils::URLEncode(item.c_str()) << "&";
-#elseif($member.shape.listMember.shape.blob)
-  ${spaces}  oStream << location << index << locationValue << ".${location}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
-#elseif($member.shape.listMember.shape.primitive)
-  ${spaces}  oStream << location << index << locationValue << ".${location}=" << item << "&";
-#elseif($member.shape.listMember.shape.enum)
-  ${spaces}  oStream << location << index << locationValue << ".${location}=" << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item) << "&";
-#end
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item) << "&";
 #end
   ${spaces}}
 #end
@@ -149,25 +130,26 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.enum)
   ${spaces}oStream << location << ".${memberName}=" << ${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}) << "&";
 #elseif($member.shape.list)
+  ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
   ${spaces}for(auto& item : ${memberVarName})
   ${spaces}{
 #if($member.shape.listMember.locationName)
 #set($location = $member.shape.listMember.locationName)
 #else
-#set($location = $memberName)
+#set($location = $memberName + ".member")
 #end
 #if($member.shape.listMember.shape.structure)
-  ${spaces}  Aws::String locationAndListMember(location);
-  ${spaces}  locationAndListMember += ".${location}";
-  ${spaces}  item.OutputToStream(oStream, locationAndListMember.c_str());
+  ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
+  ${spaces}  ${lowerCaseVarName}Ss << location <<  ".${location}." << ${lowerCaseVarName}Idx++;
+  ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.listMember.shape.string)
-  ${spaces}  oStream << location << ".${location}=" << StringUtils::URLEncode(item.c_str()) << "&";
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
-  ${spaces}  oStream << location << ".${location}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.primitive)
-  ${spaces}  oStream << location << ".${location}=" << item << "&";
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
 #elseif($member.shape.listMember.shape.enum)
-  ${spaces}  oStream << location << ".${location}=" << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item) << "&";
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item) << "&";
 #end
   ${spaces}}
 #end

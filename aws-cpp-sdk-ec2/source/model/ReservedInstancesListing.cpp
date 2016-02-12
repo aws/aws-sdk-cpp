@@ -173,34 +173,31 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_instanceCountsHasBeenSet)
   {
-      unsigned instanceCountsIdx = 0;
+      unsigned instanceCountsIdx = 1;
       for(auto& item : m_instanceCounts)
       {
-        instanceCountsIdx++;
         Aws::StringStream instanceCountsSs;
-        instanceCountsSs << location << index << locationValue << ".InstanceCounts." << instanceCountsIdx;
+        instanceCountsSs << location << index << locationValue << ".InstanceCounts." << instanceCountsIdx++;
         item.OutputToStream(oStream, instanceCountsSs.str().c_str());
       }
   }
   if(m_priceSchedulesHasBeenSet)
   {
-      unsigned priceSchedulesIdx = 0;
+      unsigned priceSchedulesIdx = 1;
       for(auto& item : m_priceSchedules)
       {
-        priceSchedulesIdx++;
         Aws::StringStream priceSchedulesSs;
-        priceSchedulesSs << location << index << locationValue << ".PriceSchedules." << priceSchedulesIdx;
+        priceSchedulesSs << location << index << locationValue << ".PriceSchedules." << priceSchedulesIdx++;
         item.OutputToStream(oStream, priceSchedulesSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -238,29 +235,32 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_instanceCountsHasBeenSet)
   {
+      unsigned instanceCountsIdx = 1;
       for(auto& item : m_instanceCounts)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream instanceCountsSs;
+        instanceCountsSs << location <<  ".item." << instanceCountsIdx++;
+        item.OutputToStream(oStream, instanceCountsSs.str().c_str());
       }
   }
   if(m_priceSchedulesHasBeenSet)
   {
+      unsigned priceSchedulesIdx = 1;
       for(auto& item : m_priceSchedules)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream priceSchedulesSs;
+        priceSchedulesSs << location <<  ".item." << priceSchedulesIdx++;
+        item.OutputToStream(oStream, priceSchedulesSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_clientTokenHasBeenSet)

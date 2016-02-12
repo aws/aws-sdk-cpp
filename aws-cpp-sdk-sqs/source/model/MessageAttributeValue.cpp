@@ -107,16 +107,18 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_stringListValuesHasBeenSet)
   {
+      unsigned stringListValuesIdx = 1;
       for(auto& item : m_stringListValues)
       {
-        oStream << location << index << locationValue << ".StringListValue=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".StringListValue." << stringListValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_binaryListValuesHasBeenSet)
   {
+      unsigned binaryListValuesIdx = 1;
       for(auto& item : m_binaryListValues)
       {
-        oStream << location << index << locationValue << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+        oStream << location << index << locationValue << ".BinaryListValue." << binaryListValuesIdx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
       }
   }
   if(m_dataTypeHasBeenSet)
@@ -137,16 +139,18 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_stringListValuesHasBeenSet)
   {
+      unsigned stringListValuesIdx = 1;
       for(auto& item : m_stringListValues)
       {
-        oStream << location << ".StringListValue=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".StringListValue." << stringListValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_binaryListValuesHasBeenSet)
   {
+      unsigned binaryListValuesIdx = 1;
       for(auto& item : m_binaryListValues)
       {
-        oStream << location << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+        oStream << location << ".BinaryListValue." << binaryListValuesIdx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
       }
   }
   if(m_dataTypeHasBeenSet)

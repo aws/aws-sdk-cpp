@@ -123,23 +123,21 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_vpcAttachmentsHasBeenSet)
   {
-      unsigned vpcAttachmentsIdx = 0;
+      unsigned vpcAttachmentsIdx = 1;
       for(auto& item : m_vpcAttachments)
       {
-        vpcAttachmentsIdx++;
         Aws::StringStream vpcAttachmentsSs;
-        vpcAttachmentsSs << location << index << locationValue << ".Attachments." << vpcAttachmentsIdx;
+        vpcAttachmentsSs << location << index << locationValue << ".Attachments." << vpcAttachmentsIdx++;
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -165,20 +163,22 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_vpcAttachmentsHasBeenSet)
   {
+      unsigned vpcAttachmentsIdx = 1;
       for(auto& item : m_vpcAttachments)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream vpcAttachmentsSs;
+        vpcAttachmentsSs << location <<  ".item." << vpcAttachmentsIdx++;
+        item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }

@@ -73,10 +73,11 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 1;
       for(auto& item : m_events)
       {
         Aws::StringStream eventsSs;
-        eventsSs << location << index << locationValue << ".EventInfoMap";
+        eventsSs << location << index << locationValue << ".EventInfoMap." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
@@ -90,11 +91,12 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 1;
       for(auto& item : m_events)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".EventInfoMap";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream eventsSs;
+        eventsSs << location <<  ".EventInfoMap." << eventsIdx++;
+        item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
 }

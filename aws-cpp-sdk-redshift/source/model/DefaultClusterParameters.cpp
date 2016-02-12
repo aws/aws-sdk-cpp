@@ -85,10 +85,11 @@ void DefaultClusterParameters::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location << index << locationValue << ".Parameter";
+        parametersSs << location << index << locationValue << ".Parameter." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
@@ -106,11 +107,12 @@ void DefaultClusterParameters::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Parameter";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream parametersSs;
+        parametersSs << location <<  ".Parameter." << parametersIdx++;
+        item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
 }

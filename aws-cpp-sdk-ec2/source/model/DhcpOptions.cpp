@@ -87,23 +87,21 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_dhcpConfigurationsHasBeenSet)
   {
-      unsigned dhcpConfigurationsIdx = 0;
+      unsigned dhcpConfigurationsIdx = 1;
       for(auto& item : m_dhcpConfigurations)
       {
-        dhcpConfigurationsIdx++;
         Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx;
+        dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
         item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -117,20 +115,22 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_dhcpConfigurationsHasBeenSet)
   {
+      unsigned dhcpConfigurationsIdx = 1;
       for(auto& item : m_dhcpConfigurations)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dhcpConfigurationsSs;
+        dhcpConfigurationsSs << location <<  ".item." << dhcpConfigurationsIdx++;
+        item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }

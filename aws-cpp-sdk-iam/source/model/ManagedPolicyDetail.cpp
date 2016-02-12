@@ -189,10 +189,11 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_policyVersionListHasBeenSet)
   {
+      unsigned policyVersionListIdx = 1;
       for(auto& item : m_policyVersionList)
       {
         Aws::StringStream policyVersionListSs;
-        policyVersionListSs << location << index << locationValue << ".PolicyVersionList";
+        policyVersionListSs << location << index << locationValue << ".PolicyVersionList.member." << policyVersionListIdx++;
         item.OutputToStream(oStream, policyVersionListSs.str().c_str());
       }
   }
@@ -242,11 +243,12 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_policyVersionListHasBeenSet)
   {
+      unsigned policyVersionListIdx = 1;
       for(auto& item : m_policyVersionList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".PolicyVersionList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream policyVersionListSs;
+        policyVersionListSs << location <<  ".PolicyVersionList.member." << policyVersionListIdx++;
+        item.OutputToStream(oStream, policyVersionListSs.str().c_str());
       }
   }
 }

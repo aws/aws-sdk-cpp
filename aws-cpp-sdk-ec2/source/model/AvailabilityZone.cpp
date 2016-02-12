@@ -97,12 +97,11 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_messagesHasBeenSet)
   {
-      unsigned messagesIdx = 0;
+      unsigned messagesIdx = 1;
       for(auto& item : m_messages)
       {
-        messagesIdx++;
         Aws::StringStream messagesSs;
-        messagesSs << location << index << locationValue << ".MessageSet." << messagesIdx;
+        messagesSs << location << index << locationValue << ".MessageSet." << messagesIdx++;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }
@@ -124,11 +123,12 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_messagesHasBeenSet)
   {
+      unsigned messagesIdx = 1;
       for(auto& item : m_messages)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream messagesSs;
+        messagesSs << location <<  ".item." << messagesIdx++;
+        item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }
 }

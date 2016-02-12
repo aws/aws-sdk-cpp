@@ -123,19 +123,21 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
         Aws::StringStream subnetsSs;
-        subnetsSs << location << index << locationValue << ".Subnet";
+        subnetsSs << location << index << locationValue << ".Subnet." << subnetsIdx++;
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag";
+        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -161,20 +163,22 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Subnet";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream subnetsSs;
+        subnetsSs << location <<  ".Subnet." << subnetsIdx++;
+        item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tag";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }

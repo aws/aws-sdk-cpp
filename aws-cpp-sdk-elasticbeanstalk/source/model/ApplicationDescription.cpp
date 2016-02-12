@@ -127,16 +127,18 @@ void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_versionsHasBeenSet)
   {
+      unsigned versionsIdx = 1;
       for(auto& item : m_versions)
       {
-        oStream << location << index << locationValue << ".Versions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Versions.member." << versionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_configurationTemplatesHasBeenSet)
   {
+      unsigned configurationTemplatesIdx = 1;
       for(auto& item : m_configurationTemplates)
       {
-        oStream << location << index << locationValue << ".ConfigurationTemplates=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ConfigurationTemplates.member." << configurationTemplatesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -161,16 +163,18 @@ void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_versionsHasBeenSet)
   {
+      unsigned versionsIdx = 1;
       for(auto& item : m_versions)
       {
-        oStream << location << ".Versions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Versions.member." << versionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_configurationTemplatesHasBeenSet)
   {
+      unsigned configurationTemplatesIdx = 1;
       for(auto& item : m_configurationTemplates)
       {
-        oStream << location << ".ConfigurationTemplates=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ConfigurationTemplates.member." << configurationTemplatesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

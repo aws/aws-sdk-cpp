@@ -95,10 +95,11 @@ void MetricDataBatch::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_metricDataHasBeenSet)
   {
+      unsigned metricDataIdx = 1;
       for(auto& item : m_metricData)
       {
         Aws::StringStream metricDataSs;
-        metricDataSs << location << index << locationValue << ".MetricData";
+        metricDataSs << location << index << locationValue << ".MetricData.member." << metricDataIdx++;
         item.OutputToStream(oStream, metricDataSs.str().c_str());
       }
   }
@@ -120,11 +121,12 @@ void MetricDataBatch::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_metricDataHasBeenSet)
   {
+      unsigned metricDataIdx = 1;
       for(auto& item : m_metricData)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".MetricData";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream metricDataSs;
+        metricDataSs << location <<  ".MetricData.member." << metricDataIdx++;
+        item.OutputToStream(oStream, metricDataSs.str().c_str());
       }
   }
   if(m_autoDecomposeHasBeenSet)

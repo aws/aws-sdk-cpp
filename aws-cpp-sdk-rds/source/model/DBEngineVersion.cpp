@@ -135,10 +135,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_supportedCharacterSetsHasBeenSet)
   {
+      unsigned supportedCharacterSetsIdx = 1;
       for(auto& item : m_supportedCharacterSets)
       {
         Aws::StringStream supportedCharacterSetsSs;
-        supportedCharacterSetsSs << location << index << locationValue << ".CharacterSet";
+        supportedCharacterSetsSs << location << index << locationValue << ".CharacterSet." << supportedCharacterSetsIdx++;
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
       }
   }
@@ -174,11 +175,12 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_supportedCharacterSetsHasBeenSet)
   {
+      unsigned supportedCharacterSetsIdx = 1;
       for(auto& item : m_supportedCharacterSets)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".CharacterSet";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream supportedCharacterSetsSs;
+        supportedCharacterSetsSs << location <<  ".CharacterSet." << supportedCharacterSetsIdx++;
+        item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
       }
   }
 }

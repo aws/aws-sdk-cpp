@@ -97,10 +97,11 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_eC2SecurityGroupsHasBeenSet)
   {
+      unsigned eC2SecurityGroupsIdx = 1;
       for(auto& item : m_eC2SecurityGroups)
       {
         Aws::StringStream eC2SecurityGroupsSs;
-        eC2SecurityGroupsSs << location << index << locationValue << ".EC2SecurityGroup";
+        eC2SecurityGroupsSs << location << index << locationValue << ".EC2SecurityGroup." << eC2SecurityGroupsIdx++;
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
@@ -122,11 +123,12 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_eC2SecurityGroupsHasBeenSet)
   {
+      unsigned eC2SecurityGroupsIdx = 1;
       for(auto& item : m_eC2SecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".EC2SecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream eC2SecurityGroupsSs;
+        eC2SecurityGroupsSs << location <<  ".EC2SecurityGroup." << eC2SecurityGroupsIdx++;
+        item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
 }

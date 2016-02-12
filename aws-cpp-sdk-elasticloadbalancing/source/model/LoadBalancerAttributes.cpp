@@ -117,10 +117,11 @@ void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_additionalAttributesHasBeenSet)
   {
+      unsigned additionalAttributesIdx = 1;
       for(auto& item : m_additionalAttributes)
       {
         Aws::StringStream additionalAttributesSs;
-        additionalAttributesSs << location << index << locationValue << ".AdditionalAttributes";
+        additionalAttributesSs << location << index << locationValue << ".AdditionalAttributes.member." << additionalAttributesIdx++;
         item.OutputToStream(oStream, additionalAttributesSs.str().c_str());
       }
   }
@@ -154,11 +155,12 @@ void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_additionalAttributesHasBeenSet)
   {
+      unsigned additionalAttributesIdx = 1;
       for(auto& item : m_additionalAttributes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AdditionalAttributes";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream additionalAttributesSs;
+        additionalAttributesSs << location <<  ".AdditionalAttributes.member." << additionalAttributesIdx++;
+        item.OutputToStream(oStream, additionalAttributesSs.str().c_str());
       }
   }
 }

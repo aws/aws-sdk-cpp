@@ -97,10 +97,11 @@ void OrderableClusterOption::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location << index << locationValue << ".AvailabilityZone";
+        availabilityZonesSs << location << index << locationValue << ".AvailabilityZone." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
@@ -122,11 +123,12 @@ void OrderableClusterOption::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AvailabilityZone";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream availabilityZonesSs;
+        availabilityZonesSs << location <<  ".AvailabilityZone." << availabilityZonesIdx++;
+        item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
 }

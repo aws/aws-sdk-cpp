@@ -307,10 +307,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_cacheSecurityGroupsHasBeenSet)
   {
+      unsigned cacheSecurityGroupsIdx = 1;
       for(auto& item : m_cacheSecurityGroups)
       {
         Aws::StringStream cacheSecurityGroupsSs;
-        cacheSecurityGroupsSs << location << index << locationValue << ".CacheSecurityGroup";
+        cacheSecurityGroupsSs << location << index << locationValue << ".CacheSecurityGroup." << cacheSecurityGroupsIdx++;
         item.OutputToStream(oStream, cacheSecurityGroupsSs.str().c_str());
       }
   }
@@ -326,10 +327,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_cacheNodesHasBeenSet)
   {
+      unsigned cacheNodesIdx = 1;
       for(auto& item : m_cacheNodes)
       {
         Aws::StringStream cacheNodesSs;
-        cacheNodesSs << location << index << locationValue << ".CacheNode";
+        cacheNodesSs << location << index << locationValue << ".CacheNode." << cacheNodesIdx++;
         item.OutputToStream(oStream, cacheNodesSs.str().c_str());
       }
   }
@@ -339,10 +341,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location << index << locationValue << ".SecurityGroups";
+        securityGroupsSs << location << index << locationValue << ".SecurityGroups.member." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -422,11 +425,12 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_cacheSecurityGroupsHasBeenSet)
   {
+      unsigned cacheSecurityGroupsIdx = 1;
       for(auto& item : m_cacheSecurityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".CacheSecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream cacheSecurityGroupsSs;
+        cacheSecurityGroupsSs << location <<  ".CacheSecurityGroup." << cacheSecurityGroupsIdx++;
+        item.OutputToStream(oStream, cacheSecurityGroupsSs.str().c_str());
       }
   }
   if(m_cacheParameterGroupHasBeenSet)
@@ -441,11 +445,12 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_cacheNodesHasBeenSet)
   {
+      unsigned cacheNodesIdx = 1;
       for(auto& item : m_cacheNodes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".CacheNode";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream cacheNodesSs;
+        cacheNodesSs << location <<  ".CacheNode." << cacheNodesIdx++;
+        item.OutputToStream(oStream, cacheNodesSs.str().c_str());
       }
   }
   if(m_autoMinorVersionUpgradeHasBeenSet)
@@ -454,11 +459,12 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".SecurityGroups";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream securityGroupsSs;
+        securityGroupsSs << location <<  ".SecurityGroups.member." << securityGroupsIdx++;
+        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
   if(m_replicationGroupIdHasBeenSet)

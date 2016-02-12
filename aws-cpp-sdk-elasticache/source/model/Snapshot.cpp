@@ -299,10 +299,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_nodeSnapshotsHasBeenSet)
   {
+      unsigned nodeSnapshotsIdx = 1;
       for(auto& item : m_nodeSnapshots)
       {
         Aws::StringStream nodeSnapshotsSs;
-        nodeSnapshotsSs << location << index << locationValue << ".NodeSnapshot";
+        nodeSnapshotsSs << location << index << locationValue << ".NodeSnapshot." << nodeSnapshotsIdx++;
         item.OutputToStream(oStream, nodeSnapshotsSs.str().c_str());
       }
   }
@@ -388,11 +389,12 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_nodeSnapshotsHasBeenSet)
   {
+      unsigned nodeSnapshotsIdx = 1;
       for(auto& item : m_nodeSnapshots)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".NodeSnapshot";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream nodeSnapshotsSs;
+        nodeSnapshotsSs << location <<  ".NodeSnapshot." << nodeSnapshotsIdx++;
+        item.OutputToStream(oStream, nodeSnapshotsSs.str().c_str());
       }
   }
 }

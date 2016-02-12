@@ -267,23 +267,26 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_oKActionsHasBeenSet)
   {
+      unsigned oKActionsIdx = 1;
       for(auto& item : m_oKActions)
       {
-        oStream << location << index << locationValue << ".OKActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_alarmActionsHasBeenSet)
   {
+      unsigned alarmActionsIdx = 1;
       for(auto& item : m_alarmActions)
       {
-        oStream << location << index << locationValue << ".AlarmActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_insufficientDataActionsHasBeenSet)
   {
+      unsigned insufficientDataActionsIdx = 1;
       for(auto& item : m_insufficientDataActions)
       {
-        oStream << location << index << locationValue << ".InsufficientDataActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_stateValueHasBeenSet)
@@ -316,10 +319,11 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location << index << locationValue << ".Dimensions";
+        dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
@@ -369,23 +373,26 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_oKActionsHasBeenSet)
   {
+      unsigned oKActionsIdx = 1;
       for(auto& item : m_oKActions)
       {
-        oStream << location << ".OKActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_alarmActionsHasBeenSet)
   {
+      unsigned alarmActionsIdx = 1;
       for(auto& item : m_alarmActions)
       {
-        oStream << location << ".AlarmActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_insufficientDataActionsHasBeenSet)
   {
+      unsigned insufficientDataActionsIdx = 1;
       for(auto& item : m_insufficientDataActions)
       {
-        oStream << location << ".InsufficientDataActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_stateValueHasBeenSet)
@@ -418,11 +425,12 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Dimensions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dimensionsSs;
+        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
   if(m_periodHasBeenSet)

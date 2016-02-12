@@ -167,11 +167,10 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_groupsHasBeenSet)
   {
-      unsigned groupsIdx = 0;
+      unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        groupsIdx++;
-        oStream << location << index << locationValue << ".SecurityGroupId." << groupsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".SecurityGroupId." << groupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_deleteOnTerminationHasBeenSet)
@@ -180,12 +179,11 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_privateIpAddressesHasBeenSet)
   {
-      unsigned privateIpAddressesIdx = 0;
+      unsigned privateIpAddressesIdx = 1;
       for(auto& item : m_privateIpAddresses)
       {
-        privateIpAddressesIdx++;
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx;
+        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -223,9 +221,10 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        oStream << location << ".SecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroupId." << groupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_deleteOnTerminationHasBeenSet)
@@ -234,11 +233,12 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_privateIpAddressesHasBeenSet)
   {
+      unsigned privateIpAddressesIdx = 1;
       for(auto& item : m_privateIpAddresses)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream privateIpAddressesSs;
+        privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
+        item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
   if(m_secondaryPrivateIpAddressCountHasBeenSet)

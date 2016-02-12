@@ -61,9 +61,10 @@ void ParameterConstraints::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_allowedValuesHasBeenSet)
   {
+      unsigned allowedValuesIdx = 1;
       for(auto& item : m_allowedValues)
       {
-        oStream << location << index << locationValue << ".AllowedValues=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".AllowedValues.member." << allowedValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -72,9 +73,10 @@ void ParameterConstraints::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_allowedValuesHasBeenSet)
   {
+      unsigned allowedValuesIdx = 1;
       for(auto& item : m_allowedValues)
       {
-        oStream << location << ".AllowedValues=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AllowedValues.member." << allowedValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

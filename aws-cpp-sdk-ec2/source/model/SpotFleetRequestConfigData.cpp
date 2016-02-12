@@ -153,12 +153,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_launchSpecificationsHasBeenSet)
   {
-      unsigned launchSpecificationsIdx = 0;
+      unsigned launchSpecificationsIdx = 1;
       for(auto& item : m_launchSpecifications)
       {
-        launchSpecificationsIdx++;
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location << index << locationValue << ".LaunchSpecifications." << launchSpecificationsIdx;
+        launchSpecificationsSs << location << index << locationValue << ".LaunchSpecifications." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
@@ -196,11 +195,12 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_launchSpecificationsHasBeenSet)
   {
+      unsigned launchSpecificationsIdx = 1;
       for(auto& item : m_launchSpecifications)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream launchSpecificationsSs;
+        launchSpecificationsSs << location <<  ".item." << launchSpecificationsIdx++;
+        item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
 }

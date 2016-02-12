@@ -123,10 +123,11 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_rolesHasBeenSet)
   {
+      unsigned rolesIdx = 1;
       for(auto& item : m_roles)
       {
         Aws::StringStream rolesSs;
-        rolesSs << location << index << locationValue << ".Roles";
+        rolesSs << location << index << locationValue << ".Roles.member." << rolesIdx++;
         item.OutputToStream(oStream, rolesSs.str().c_str());
       }
   }
@@ -156,11 +157,12 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_rolesHasBeenSet)
   {
+      unsigned rolesIdx = 1;
       for(auto& item : m_roles)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Roles";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream rolesSs;
+        rolesSs << location <<  ".Roles.member." << rolesIdx++;
+        item.OutputToStream(oStream, rolesSs.str().c_str());
       }
   }
 }

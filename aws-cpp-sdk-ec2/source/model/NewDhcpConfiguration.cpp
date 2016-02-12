@@ -73,11 +73,10 @@ void NewDhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_valuesHasBeenSet)
   {
-      unsigned valuesIdx = 0;
+      unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        valuesIdx++;
-        oStream << location << index << locationValue << ".Value." << valuesIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
@@ -90,9 +89,10 @@ void NewDhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_valuesHasBeenSet)
   {
+      unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        oStream << location << ".item=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".item." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

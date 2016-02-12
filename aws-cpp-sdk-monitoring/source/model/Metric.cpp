@@ -85,10 +85,11 @@ void Metric::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   }
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location << index << locationValue << ".Dimensions";
+        dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
@@ -106,11 +107,12 @@ void Metric::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Dimensions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dimensionsSs;
+        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
 }

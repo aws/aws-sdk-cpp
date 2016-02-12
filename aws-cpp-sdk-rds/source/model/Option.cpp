@@ -113,19 +113,21 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned dBSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_dBSecurityGroupMemberships)
       {
         Aws::StringStream dBSecurityGroupMembershipsSs;
-        dBSecurityGroupMembershipsSs << location << index << locationValue << ".DBSecurityGroup";
+        dBSecurityGroupMembershipsSs << location << index << locationValue << ".DBSecurityGroup." << dBSecurityGroupMembershipsIdx++;
         item.OutputToStream(oStream, dBSecurityGroupMembershipsSs.str().c_str());
       }
   }
   if(m_vpcSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned vpcSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_vpcSecurityGroupMemberships)
       {
         Aws::StringStream vpcSecurityGroupMembershipsSs;
-        vpcSecurityGroupMembershipsSs << location << index << locationValue << ".VpcSecurityGroupMembership";
+        vpcSecurityGroupMembershipsSs << location << index << locationValue << ".VpcSecurityGroupMembership." << vpcSecurityGroupMembershipsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupMembershipsSs.str().c_str());
       }
   }
@@ -147,20 +149,22 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned dBSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_dBSecurityGroupMemberships)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".DBSecurityGroup";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dBSecurityGroupMembershipsSs;
+        dBSecurityGroupMembershipsSs << location <<  ".DBSecurityGroup." << dBSecurityGroupMembershipsIdx++;
+        item.OutputToStream(oStream, dBSecurityGroupMembershipsSs.str().c_str());
       }
   }
   if(m_vpcSecurityGroupMembershipsHasBeenSet)
   {
+      unsigned vpcSecurityGroupMembershipsIdx = 1;
       for(auto& item : m_vpcSecurityGroupMemberships)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".VpcSecurityGroupMembership";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream vpcSecurityGroupMembershipsSs;
+        vpcSecurityGroupMembershipsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupMembershipsIdx++;
+        item.OutputToStream(oStream, vpcSecurityGroupMembershipsSs.str().c_str());
       }
   }
 }

@@ -85,12 +85,11 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_volumesHasBeenSet)
   {
-      unsigned volumesIdx = 0;
+      unsigned volumesIdx = 1;
       for(auto& item : m_volumes)
       {
-        volumesIdx++;
         Aws::StringStream volumesSs;
-        volumesSs << location << index << locationValue << ".Volumes." << volumesIdx;
+        volumesSs << location << index << locationValue << ".Volumes." << volumesIdx++;
         item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }
@@ -112,11 +111,12 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_volumesHasBeenSet)
   {
+      unsigned volumesIdx = 1;
       for(auto& item : m_volumes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream volumesSs;
+        volumesSs << location <<  ".item." << volumesIdx++;
+        item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }
   if(m_instanceIdHasBeenSet)

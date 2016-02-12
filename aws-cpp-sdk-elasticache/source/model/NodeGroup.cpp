@@ -99,10 +99,11 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_nodeGroupMembersHasBeenSet)
   {
+      unsigned nodeGroupMembersIdx = 1;
       for(auto& item : m_nodeGroupMembers)
       {
         Aws::StringStream nodeGroupMembersSs;
-        nodeGroupMembersSs << location << index << locationValue << ".NodeGroupMember";
+        nodeGroupMembersSs << location << index << locationValue << ".NodeGroupMember." << nodeGroupMembersIdx++;
         item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
       }
   }
@@ -126,11 +127,12 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_nodeGroupMembersHasBeenSet)
   {
+      unsigned nodeGroupMembersIdx = 1;
       for(auto& item : m_nodeGroupMembers)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".NodeGroupMember";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream nodeGroupMembersSs;
+        nodeGroupMembersSs << location <<  ".NodeGroupMember." << nodeGroupMembersIdx++;
+        item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
       }
   }
 }

@@ -209,10 +209,11 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
   }
   if(m_stepAdjustmentsHasBeenSet)
   {
+      unsigned stepAdjustmentsIdx = 1;
       for(auto& item : m_stepAdjustments)
       {
         Aws::StringStream stepAdjustmentsSs;
-        stepAdjustmentsSs << location << index << locationValue << ".StepAdjustments";
+        stepAdjustmentsSs << location << index << locationValue << ".StepAdjustments.member." << stepAdjustmentsIdx++;
         item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
       }
   }
@@ -226,10 +227,11 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
   }
   if(m_alarmsHasBeenSet)
   {
+      unsigned alarmsIdx = 1;
       for(auto& item : m_alarms)
       {
         Aws::StringStream alarmsSs;
-        alarmsSs << location << index << locationValue << ".Alarms";
+        alarmsSs << location << index << locationValue << ".Alarms.member." << alarmsIdx++;
         item.OutputToStream(oStream, alarmsSs.str().c_str());
       }
   }
@@ -275,11 +277,12 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_stepAdjustmentsHasBeenSet)
   {
+      unsigned stepAdjustmentsIdx = 1;
       for(auto& item : m_stepAdjustments)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".StepAdjustments";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream stepAdjustmentsSs;
+        stepAdjustmentsSs << location <<  ".StepAdjustments.member." << stepAdjustmentsIdx++;
+        item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
       }
   }
   if(m_metricAggregationTypeHasBeenSet)
@@ -292,11 +295,12 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_alarmsHasBeenSet)
   {
+      unsigned alarmsIdx = 1;
       for(auto& item : m_alarms)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Alarms";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream alarmsSs;
+        alarmsSs << location <<  ".Alarms.member." << alarmsIdx++;
+        item.OutputToStream(oStream, alarmsSs.str().c_str());
       }
   }
 }

@@ -85,10 +85,11 @@ void Item::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
   }
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
       for(auto& item : m_attributes)
       {
         Aws::StringStream attributesSs;
-        attributesSs << location << index << locationValue << ".Attribute";
+        attributesSs << location << index << locationValue << ".Attribute." << attributesIdx++;
         item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
@@ -106,11 +107,12 @@ void Item::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
       for(auto& item : m_attributes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Attribute";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attributesSs;
+        attributesSs << location <<  ".Attribute." << attributesIdx++;
+        item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
 }

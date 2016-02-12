@@ -109,10 +109,11 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
   }
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
         Aws::StringStream subnetsSs;
-        subnetsSs << location << index << locationValue << ".Subnet";
+        subnetsSs << location << index << locationValue << ".Subnet." << subnetsIdx++;
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
@@ -138,11 +139,12 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Subnet";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream subnetsSs;
+        subnetsSs << location <<  ".Subnet." << subnetsIdx++;
+        item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
 }
