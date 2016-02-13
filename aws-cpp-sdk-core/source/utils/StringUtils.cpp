@@ -146,7 +146,7 @@ Aws::String StringUtils::URLEncode(double unsafe)
     snprintf(buffer, sizeof(buffer), "%g", unsafe);
 #endif
 
-    return buffer;
+    return StringUtils::URLEncode(buffer);
 }
 
 
