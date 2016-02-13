@@ -123,7 +123,7 @@ set(ENABLE_WINDOWS_CLIENT 0)
 if(NOT "${NO_HTTP_CLIENT}" STREQUAL "1")
     if(PLATFORM_WINDOWS)
         if(DEFINED CURL_DIR)
-	        set(ENABLE_CURL_CLIENT 1)
+            set(ENABLE_CURL_CLIENT 1)
             set(CURL_INCLUDE_DIR "${CURL_DIR}\\include")
             set(CURL_LIBRARY_DIR "${CURL_DIR}\\lib")
 
@@ -168,7 +168,7 @@ if(NOT "${NO_ENCRYPTION}" STREQUAL "1")
     elseif(PLATFORM_APPLE)
         set(ENABLE_COMMONCRYPTO_ENCRYPTION 1)
     else()
-        message(FATAL_ERROR "No encryption available for target platform and injection not enabled (-DNO_ENCRYPTION=1)")        
+        message(FATAL_ERROR "No encryption available for target platform and injection not enabled (-DNO_ENCRYPTION=1)")
     endif()
 else()
     set(ENABLE_INJECTED_ENCRYPTION 1)
@@ -246,7 +246,7 @@ if(BUILD_ONLY)
         LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cognito-identity")
         LIST(APPEND BUILD_ONLY "aws-cpp-sdk-iam")
     endif()
-#if none have been supplied, add them all
+    #if none have been supplied, add them all
 else()
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-access-management")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-autoscaling")
@@ -285,6 +285,7 @@ else()
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-sqs")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-sts")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-swf")
+    LIST(APPEND BUILD_ONLY "aws-cpp-sdk-firehose")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-transfer")
 endif()
 
@@ -308,7 +309,7 @@ if(REGENERATE_CLIENTS)
     SET(OUTPUT_VAR -1)
     #cognito identity
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-cognito-identity" OUTPUT_VAR)
-	if(OUTPUT_VAR GREATER -1)
+    if(OUTPUT_VAR GREATER -1)
         execute_process(
                 COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cognito-identity --apiVersion 2014-06-30 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -328,8 +329,8 @@ if(REGENERATE_CLIENTS)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-dynamodb" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName dynamodb --apiVersion 2012-08-10 --outputLocation ./
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName dynamodb --apiVersion 2012-08-10 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()
 
@@ -603,6 +604,15 @@ if(REGENERATE_CLIENTS)
         )
     endif()
 
+    #firehose
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-firehose" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName firehose --apiVersion 2015-08-04 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
     #ec2
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-ec2" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
@@ -636,10 +646,10 @@ macro(copyDlls exeName)
     if(PLATFORM_WINDOWS AND BUILD_SHARED_LIBS)
         foreach(arg ${ARGN})
             add_custom_command(TARGET ${exeName}
-                               POST_BUILD
-                               COMMAND ${CMAKE_COMMAND} -E copy_if_different
-                               "${CMAKE_BINARY_DIR}/${arg}/$<CONFIGURATION>/${arg}.dll"      
-                               ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIGURATION>/)    
+                    POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    "${CMAKE_BINARY_DIR}/${arg}/$<CONFIGURATION>/${arg}.dll"
+                    ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIGURATION>/)
         endforeach()
     endif()
 endmacro()
@@ -654,12 +664,12 @@ endmacro()
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
 set(CMAKE_CONFIGURATION_TYPES
-    Debug                   # Setup for easy debugging. No optimizations.
-    DebugOpt                # An optimized version of Debug.
-    Release                 # Fully optimized, no debugging information.
-    RelWithDebInfo          # A debuggable version of Release.
-    MinSizeRel              # Like Release, but optimized for memory rather than speed.
-)
+        Debug                   # Setup for easy debugging. No optimizations.
+        DebugOpt                # An optimized version of Debug.
+        Release                 # Fully optimized, no debugging information.
+        RelWithDebInfo          # A debuggable version of Release.
+        MinSizeRel              # Like Release, but optimized for memory rather than speed.
+        )
 
 # pass this flag to the jsoncpp amalgamated source
 add_definitions(-DJSON_USE_EXCEPTION=0)
@@ -706,7 +716,7 @@ if(PLATFORM_ANDROID)
     set(EXTERNAL_PROJECTS_DIR ${CMAKE_SOURCE_DIR}/external CACHE STRING "Android build" FORCE)
     set(USE_PROJECT_CMAKE_MODULE_PATH "-DCMAKE_MODULE_PATH=${MAKE_MODULE_PATH}")
     set(TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/android-build/android.toolchain.cmake)
-    
+
     # we patch the install process for each dependency to match what we need for 3rd party installation
     set(EXTERNAL_INSTALL_DIR ${CMAKE_SOURCE_DIR}/external)
 
@@ -723,28 +733,28 @@ if(PLATFORM_ANDROID)
     set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
 
     ExternalProject_Add(ZLIB
-			SOURCE_DIR ${ZLIB_SOURCE_DIR}
-			URL http://zlib.net/zlib-1.2.8.tar.gz
-			URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
-			PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
-			CMAKE_ARGS 
-			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-			   -DCMAKE_INSTALL_PREFIX=${ZLIB_INSTALL_DIR}
-			   -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS} 
-			   -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS} 
-			   -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-			   -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-			   -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-			   ${USE_PROJECT_CMAKE_MODULE_PATH}
-    )
-    
+            SOURCE_DIR ${ZLIB_SOURCE_DIR}
+            URL http://zlib.net/zlib-1.2.8.tar.gz
+            URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
+            PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
+            CMAKE_ARGS
+            -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+            -DCMAKE_INSTALL_PREFIX=${ZLIB_INSTALL_DIR}
+            -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
+            -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS}
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            ${USE_PROJECT_CMAKE_MODULE_PATH}
+            )
+
 
     if(UNIX)
-       set(ZLIB_NAME libz)
+        set(ZLIB_NAME libz)
     else()
-       set(ZLIB_NAME zlib)
+        set(ZLIB_NAME zlib)
     endif()
- 
+
     add_library(zlib UNKNOWN IMPORTED)
     set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.${SUFFIX})
 
@@ -765,26 +775,26 @@ if(PLATFORM_ANDROID)
         set(OPENSSL_ZLIB_SHARED_FLAG "zlib zlib-shared" CACHE INTERNAL "")
     else()
         set(OPENSSL_SHARED_FLAG "no-shared" CACHE INTERNAL "")
-        set(OPENSSL_ZLIB_SHARED_FLAG "zlib" CACHE INTERNAL "")     
+        set(OPENSSL_ZLIB_SHARED_FLAG "zlib" CACHE INTERNAL "")
     endif()
 
     ExternalProject_Add(OPENSSL
-        DEPENDS ZLIB
-        SOURCE_DIR ${OPENSSL_SOURCE_DIR}
-        URL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2d.tar.gz
-        URL_HASH "SHA256=671c36487785628a703374c652ad2cebea45fa920ae5681515df25d9f2c9a8c8"
-        UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py 
-        CMAKE_ARGS 
-        -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-        -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
-        -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS} 
-        -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS} 
-        -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
-        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-                    -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-        -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-        ${USE_PROJECT_CMAKE_MODULE_PATH}
-    )
+            DEPENDS ZLIB
+            SOURCE_DIR ${OPENSSL_SOURCE_DIR}
+            URL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2d.tar.gz
+            URL_HASH "SHA256=671c36487785628a703374c652ad2cebea45fa920ae5681515df25d9f2c9a8c8"
+            UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py
+            CMAKE_ARGS
+            -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+            -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
+            -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS}
+            -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS}
+            -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            ${USE_PROJECT_CMAKE_MODULE_PATH}
+            )
 
     add_library(ssl UNKNOWN IMPORTED)
     set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.${SUFFIX})
@@ -810,39 +820,39 @@ if(PLATFORM_ANDROID)
 
         if ( BUILD_SHARED_LIBS )
             set( CURL_STATICLIB OFF CACHE INTERNAL "" )
-	    set( BUILD_CURL_EXE OFF CACHE INTERNAL "" )
+            set( BUILD_CURL_EXE OFF CACHE INTERNAL "" )
         else()
             set( CURL_STATICLIB ON CACHE INTERNAL "" )
-	    set( BUILD_CURL_EXE ON CACHE INTERNAL "" )
+            set( BUILD_CURL_EXE ON CACHE INTERNAL "" )
         endif()
 
         #todo: figure out a better way of doing this
         set( GIT_EXECUTABLE /usr/bin/git )
 
         ExternalProject_Add(CURL
-            DEPENDS OPENSSL ZLIB 
-            SOURCE_DIR ${CURL_SOURCE_DIR}
-            GIT_REPOSITORY https://github.com/bagder/curl.git
-            GIT_TAG 38e0788  # 7.43.0
+                DEPENDS OPENSSL ZLIB
+                SOURCE_DIR ${CURL_SOURCE_DIR}
+                GIT_REPOSITORY https://github.com/bagder/curl.git
+                GIT_TAG 38e0788  # 7.43.0
                 PATCH_COMMAND patch lib/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/lib/CMakeLists.patch && patch src/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/src/CMakeLists.patch
-            CMAKE_ARGS
-            -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
-            -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-            -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
-            -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
-            -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
-            -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
-            -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
-            -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
-            -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
-            -DCURL_STATICLIB=${CURL_STATICLIB}
-            -DBUILD_CURL_EXE=${BUILD_CURL_EXE}
-            -DBUILD_CURL_TESTS=OFF
+                CMAKE_ARGS
+                -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
+                -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+                -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
+                -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
+                -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
+                -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
+                -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
+                -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
+                -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
+                -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
+                -DCURL_STATICLIB=${CURL_STATICLIB}
+                -DBUILD_CURL_EXE=${BUILD_CURL_EXE}
+                -DBUILD_CURL_TESTS=OFF
                 -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-            ${USE_PROJECT_CMAKE_MODULE_PATH}
-        )
+                ${USE_PROJECT_CMAKE_MODULE_PATH}
+                )
 
         add_library(curl UNKNOWN IMPORTED)
         set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.${SUFFIX})
@@ -1063,10 +1073,15 @@ if(OUTPUT_VAR GREATER -1)
     add_subdirectory(aws-cpp-sdk-queues)
 endif()
 
+LIST(FIND BUILD_ONLY "aws-cpp-sdk-firehose" OUTPUT_VAR)
+if(OUTPUT_VAR GREATER -1)
+    add_subdirectory(aws-cpp-sdk-firehose)
+endif()
+
 # trying to compile EC2Client.cpp hangs linux/android, may need some kind of custom build settings to handle it
 if(NOT PLATFORM_ANDROID)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-ec2" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
+    if(OUTPUT_VAR GREATER -1)
         add_subdirectory(aws-cpp-sdk-ec2)
     endif()
 endif()
@@ -1142,10 +1157,10 @@ else()
         add_subdirectory(aws-cpp-sdk-identity-management-tests)
     endif()
 
- #   add_subdirectory(aws-cpp-sdk-cloudfront-integration-tests)
+    #   add_subdirectory(aws-cpp-sdk-cloudfront-integration-tests)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-transfer" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         add_subdirectory(aws-cpp-sdk-transfer-tests)
     endif()
- #   add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
+    #   add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
 endif()
