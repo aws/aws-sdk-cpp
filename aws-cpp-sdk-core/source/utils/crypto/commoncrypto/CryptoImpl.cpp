@@ -17,6 +17,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <CommonCrypto/CommonDigest.h>
 #include <CommonCrypto/CommonHMAC.h>
+#include <CommonCrypto/CommonCrypto.h>
 
 
 using namespace Aws::Utils;
