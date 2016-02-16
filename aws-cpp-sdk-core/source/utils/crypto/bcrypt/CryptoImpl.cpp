@@ -84,7 +84,7 @@ BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algorithmHandle, algorithmName, MS_PRIMITIVE_PROVIDER, isHMAC ? BCRYPT_ALG_HANDLE_HMAC_FLAG : 0);
     if (!NT_SUCCESS(status))
     {
-        AWS_LOG_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for ", algorithmName);
+        AWS_LOGSTREAM_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for " << algorithmName);
         return;
     }
 
