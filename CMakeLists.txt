@@ -189,7 +189,7 @@ elseif(ENABLE_INJECTED_ENCRYPTION)
     message(STATUS "You will need to inject an encryption implementation before making any http requests!")
 endif()
 
-project(AWSNativeSDKAll)
+project(aws-sdk-cpp-all)
 
 # install setup
 # This install section must come after the initial "project(..)" declaration since that's when the compiler settings are discovered; prior to that CMAKE_SIZEOF_VOID_P is empty
@@ -699,6 +699,23 @@ if(PLATFORM_WINDOWS)
         else()
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
         endif()
+
+		#remove bogus errors at generation time if these variables haven't been manually set
+		if(NOT CMAKE_CONFIGURATION_TYPES)
+			set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
+		endif()
+	
+		if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
+			set(CMAKE_CXX_FLAGS_DEBUGOPT "")
+		endif()
+
+		if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
+			set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
+		endif()
+
+		if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
+			set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
+		endif()
     endif()
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
