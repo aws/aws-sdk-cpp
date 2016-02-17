@@ -289,6 +289,9 @@ if(PLATFORM_ANDROID)
     endif()
 endif()
 
+target_include_directories(aws-cpp-sdk-core PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CRYPTO_LIBS} ${CLIENT_LIBS})
 
 install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
