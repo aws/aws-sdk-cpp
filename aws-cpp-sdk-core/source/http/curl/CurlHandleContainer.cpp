@@ -27,6 +27,8 @@ bool CurlHandleContainer::isInit = false;
 
 #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
 
+#include <string.h>
+
 static const char* MemTag = "libcurl";
 static size_t offset = sizeof(size_t);
 
