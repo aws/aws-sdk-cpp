@@ -43,6 +43,10 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(aws-cpp-sdk-identity-management ${LIBTYPE} ${IDENTITY_MGMT_SRC})
+
+target_include_directories(aws-cpp-sdk-identity-management PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-identity-management aws-cpp-sdk-cognito-identity)
 
 install (TARGETS aws-cpp-sdk-identity-management 

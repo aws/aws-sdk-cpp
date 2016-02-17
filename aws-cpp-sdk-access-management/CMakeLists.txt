@@ -39,6 +39,10 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(aws-cpp-sdk-access-management ${LIBTYPE} ${ACCESS_MANAGEMENT_SRC})
+
+target_include_directories(aws-cpp-sdk-access-management PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-access-management aws-cpp-sdk-cognito-identity aws-cpp-sdk-iam)
 
 install (TARGETS aws-cpp-sdk-access-management 

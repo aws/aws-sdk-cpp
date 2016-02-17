@@ -40,6 +40,10 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(aws-cpp-sdk-transfer ${LIBTYPE} ${ALL_TRANSFER})
+
+target_include_directories(aws-cpp-sdk-transfer PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-transfer aws-cpp-sdk-s3)
 
 install (TARGETS aws-cpp-sdk-transfer

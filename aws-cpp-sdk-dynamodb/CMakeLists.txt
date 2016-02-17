@@ -46,6 +46,11 @@ project(aws-cpp-sdk-dynamodb)
   endif()
 
   add_library(aws-cpp-sdk-dynamodb ${LIBTYPE} ${DYNAMODB_SRC})
+
+  target_include_directories(aws-cpp-sdk-dynamodb PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+  
   target_link_libraries(aws-cpp-sdk-dynamodb aws-cpp-sdk-core)
 
   if(NOT MSVC)

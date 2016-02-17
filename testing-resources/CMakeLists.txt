@@ -71,5 +71,9 @@ if(PLATFORM_WINDOWS AND MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(testing-resources ${LIBTYPE} ${TestingResources_SRC})
+
+target_include_directories(testing-resources PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
 target_link_libraries(testing-resources aws-cpp-sdk-core)
 

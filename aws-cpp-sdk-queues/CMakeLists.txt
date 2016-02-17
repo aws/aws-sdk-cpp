@@ -43,6 +43,10 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(aws-cpp-sdk-queues ${LIBTYPE} ${QUEUES_SRC})
+
+target_include_directories(aws-cpp-sdk-queues PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-queues aws-cpp-sdk-sqs)
 
 install (TARGETS aws-cpp-sdk-queues

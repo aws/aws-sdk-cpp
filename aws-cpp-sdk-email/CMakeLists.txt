@@ -46,6 +46,11 @@ project(aws-cpp-sdk-email)
   endif()
 
   add_library(aws-cpp-sdk-email ${LIBTYPE} ${EMAIL_SRC})
+
+  target_include_directories(aws-cpp-sdk-email PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+  
   target_link_libraries(aws-cpp-sdk-email aws-cpp-sdk-core)
 
   if(NOT MSVC)

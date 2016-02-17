@@ -46,6 +46,11 @@ project(aws-cpp-sdk-ec2)
   endif()
 
   add_library(aws-cpp-sdk-ec2 ${LIBTYPE} ${EC2_SRC})
+
+  target_include_directories(aws-cpp-sdk-ec2 PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+  
   target_link_libraries(aws-cpp-sdk-ec2 aws-cpp-sdk-core)
 
   if(NOT MSVC)

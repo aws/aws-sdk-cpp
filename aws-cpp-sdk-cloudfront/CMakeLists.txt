@@ -46,6 +46,11 @@ project(aws-cpp-sdk-cloudfront)
   endif()
 
   add_library(aws-cpp-sdk-cloudfront ${LIBTYPE} ${CLOUDFRONT_SRC})
+
+  target_include_directories(aws-cpp-sdk-cloudfront PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+  
   target_link_libraries(aws-cpp-sdk-cloudfront aws-cpp-sdk-core)
 
   if(NOT MSVC)
