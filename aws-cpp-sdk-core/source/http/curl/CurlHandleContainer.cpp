@@ -92,8 +92,12 @@ static void* calloc_callback(size_t nmemb, size_t size)
     char* newMem = reinterpret_cast<char*>(Aws::Malloc(MemTag, dataSize + offset));
     std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(newMem);
     *pointerToSize = dataSize;
-
+#ifdef _MSC_VER
+    memset_s(newMem + offset, dataSize, 0, dataSize);
+#else
     memset(newMem + offset, 0, dataSize);
+#endif
+
     return reinterpret_cast<void*>(newMem + offset);
 }
 
