@@ -41,7 +41,7 @@ HashResult MD5OpenSSLImpl::Calculate(Aws::IStream& stream)
     MD5_CTX md5;
     MD5_Init(&md5);
 
-    unsigned currentPos = stream.tellg();
+    auto currentPos = stream.tellg();
     stream.seekg(0, stream.beg);
 
     char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -52,7 +52,7 @@ HashResult MD5OpenSSLImpl::Calculate(Aws::IStream& stream)
 
 	    if(bytesRead > 0)
 	    {
-	        MD5_Update(&md5, streamBuffer, bytesRead);
+	        MD5_Update(&md5, streamBuffer, (size_t)bytesRead);
 	    }
     }
 
@@ -82,7 +82,7 @@ HashResult Sha256OpenSSLImpl::Calculate(Aws::IStream& stream)
     SHA256_CTX sha256;
     SHA256_Init(&sha256);
 
-    unsigned currentPos = stream.tellg();
+    auto currentPos = stream.tellg();
     stream.seekg(0, stream.beg);
 
     char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -93,7 +93,7 @@ HashResult Sha256OpenSSLImpl::Calculate(Aws::IStream& stream)
 
 	    if(bytesRead > 0)
 	    {
-	        SHA256_Update(&sha256, streamBuffer, bytesRead);
+	        SHA256_Update(&sha256, streamBuffer, (size_t)bytesRead);
 	    }
     }
 
