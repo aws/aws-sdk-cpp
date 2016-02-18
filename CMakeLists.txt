@@ -105,16 +105,6 @@ else()
     message(STATUS "Dynamic linking enabled")
 endif()
 
-# If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
-# We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
-# allocate in one DLLs heap while freeing in another (which will lead to runtime crashes)
-if(("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "1") OR (BUILD_SHARED_LIBS AND NOT ("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "0")))
-    add_definitions(-DAWS_CUSTOM_MEMORY_MANAGEMENT)
-    message(STATUS "Custom memory management enabled; stl objects now using custom allocators")
-else()
-    message(STATUS "Custom memory management disabled")
-endif()
-
 # Http client control
 # After this section runs, client availability is technically platform-independent (ie we use the client #defines rather than a mess of platform #defines)
 # on Windows, set CURL_DIR to a valid curl install directory in order to enable the curl client

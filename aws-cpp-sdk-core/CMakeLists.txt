@@ -294,6 +294,16 @@ target_include_directories(aws-cpp-sdk-core PUBLIC
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CRYPTO_LIBS} ${CLIENT_LIBS})
 
+# If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
+# We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
+# allocate in one DLLs heap while freeing in another (which will lead to runtime crashes)
+if(("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "1") OR (BUILD_SHARED_LIBS AND NOT ("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "0")))
+    target_compile_definitions(aws-cpp-sdk-core PUBLIC -DAWS_CUSTOM_MEMORY_MANAGEMENT)
+    message(STATUS "Custom memory management enabled; stl objects now using custom allocators")
+else()
+    message(STATUS "Custom memory management disabled")
+endif()
+
 install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
                                   LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
 				                  RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})

@@ -17,17 +17,9 @@
 
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <cassert>
 
 using namespace Aws::Utils::Logging;
-
-static Aws::Map<LogLevel, Aws::String> logLevelNameMap =
-{
-{ LogLevel::Fatal, "FATAL" },
-{ LogLevel::Error, "ERROR" },
-{ LogLevel::Warn, "WARN" },
-{ LogLevel::Info, "INFO" },
-{ LogLevel::Debug, "DEBUG" },
-{ LogLevel::Trace, "TRACE" } };
 
 namespace Aws
 {
@@ -38,13 +30,24 @@ namespace Logging
 
 Aws::String GetLogLevelName(LogLevel logLevel) 
 { 
-    auto iter = logLevelNameMap.find(logLevel);
-    if(iter == logLevelNameMap.cend())
-    {
-        return Aws::String("");
-    }
-
-    return iter->second; 
+	switch (logLevel)
+	{
+	case LogLevel::Fatal:
+		return "FATAL";
+	case LogLevel::Error:
+		return "ERROR";
+	case LogLevel::Warn:
+		return "WARN";
+	case LogLevel::Info:
+		return "INFO";
+	case LogLevel::Debug:
+		return "DEBUG";
+	case LogLevel::Trace:
+		return "TRACE";
+	default:
+		assert(0);
+		return "";
+	}   
 }
 
 } // namespace Logging
