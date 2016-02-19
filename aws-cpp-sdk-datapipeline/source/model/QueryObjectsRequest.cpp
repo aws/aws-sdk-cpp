@@ -72,7 +72,7 @@ Aws::Http::HeaderValueCollection QueryObjectsRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.QueryObjects"));
-  return std::move(headers);
+  return headers;
 
 }
 

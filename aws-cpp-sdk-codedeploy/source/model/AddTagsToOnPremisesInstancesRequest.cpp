@@ -60,7 +60,7 @@ Aws::Http::HeaderValueCollection AddTagsToOnPremisesInstancesRequest::GetRequest
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.AddTagsToOnPremisesInstances"));
-  return std::move(headers);
+  return headers;
 
 }
 

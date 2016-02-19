@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection PutKeyPolicyRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.PutKeyPolicy"));
-  return std::move(headers);
+  return headers;
 
 }
 

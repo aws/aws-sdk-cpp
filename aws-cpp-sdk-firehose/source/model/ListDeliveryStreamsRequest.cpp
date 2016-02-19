@@ -51,7 +51,7 @@ Aws::Http::HeaderValueCollection ListDeliveryStreamsRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Firehose_20150804.ListDeliveryStreams"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -69,7 +69,7 @@ Aws::Http::HeaderValueCollection DescribeVolumesRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeVolumes"));
-  return std::move(headers);
+  return headers;
 
 }
 

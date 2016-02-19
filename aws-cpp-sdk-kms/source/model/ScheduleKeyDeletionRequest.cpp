@@ -51,7 +51,7 @@ Aws::Http::HeaderValueCollection ScheduleKeyDeletionRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.ScheduleKeyDeletion"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -67,5 +67,5 @@ JsonValue WorkflowExecutionTimedOutEventAttributes::Jsonize() const
    payload.WithString("childPolicy", ChildPolicyMapper::GetNameForChildPolicy(m_childPolicy));
   }
 
-  return std::move(payload);
+  return payload;
 }

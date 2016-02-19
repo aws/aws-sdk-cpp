@@ -67,7 +67,7 @@ Aws::Http::HeaderValueCollection DecryptRequest::GetRequestSpecificHeaders() con
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.Decrypt"));
-  return std::move(headers);
+  return headers;
 
 }
 

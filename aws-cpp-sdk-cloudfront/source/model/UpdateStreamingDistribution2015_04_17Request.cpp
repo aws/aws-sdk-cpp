@@ -57,6 +57,5 @@ Aws::Http::HeaderValueCollection UpdateStreamingDistribution2015_04_17Request::G
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

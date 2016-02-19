@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection DescribeRdsDbInstancesRequest::GetRequestSpecif
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeRdsDbInstances"));
-  return std::move(headers);
+  return headers;
 
 }
 

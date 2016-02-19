@@ -68,5 +68,5 @@ JsonValue AttributeDefinition::Jsonize() const
    payload.WithString("AttributeType", ScalarAttributeTypeMapper::GetNameForScalarAttributeType(m_attributeType));
   }
 
-  return std::move(payload);
+  return payload;
 }

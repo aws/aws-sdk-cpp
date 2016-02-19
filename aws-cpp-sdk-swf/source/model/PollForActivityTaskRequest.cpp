@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection PollForActivityTaskRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.PollForActivityTask"));
-  return std::move(headers);
+  return headers;
 
 }
 

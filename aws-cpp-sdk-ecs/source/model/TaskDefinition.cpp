@@ -146,5 +146,5 @@ JsonValue TaskDefinition::Jsonize() const
    payload.WithString("status", TaskDefinitionStatusMapper::GetNameForTaskDefinitionStatus(m_status));
   }
 
-  return std::move(payload);
+  return payload;
 }

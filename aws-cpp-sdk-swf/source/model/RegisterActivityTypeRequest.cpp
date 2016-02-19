@@ -106,7 +106,7 @@ Aws::Http::HeaderValueCollection RegisterActivityTypeRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RegisterActivityType"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DescribeAgentVersionsRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeAgentVersions"));
-  return std::move(headers);
+  return headers;
 
 }
 

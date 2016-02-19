@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection GetDeploymentGroupRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.GetDeploymentGroup"));
-  return std::move(headers);
+  return headers;
 
 }
 

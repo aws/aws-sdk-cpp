@@ -51,7 +51,7 @@ Aws::Http::HeaderValueCollection ListAliasesRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.ListAliases"));
-  return std::move(headers);
+  return headers;
 
 }
 

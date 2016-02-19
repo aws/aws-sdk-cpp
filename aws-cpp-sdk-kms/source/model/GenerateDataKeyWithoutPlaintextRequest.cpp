@@ -81,7 +81,7 @@ Aws::Http::HeaderValueCollection GenerateDataKeyWithoutPlaintextRequest::GetRequ
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.GenerateDataKeyWithoutPlaintext"));
-  return std::move(headers);
+  return headers;
 
 }
 

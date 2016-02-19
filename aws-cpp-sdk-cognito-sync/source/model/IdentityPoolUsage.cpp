@@ -105,5 +105,5 @@ JsonValue IdentityPoolUsage::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeleteTableRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.DeleteTable"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -115,5 +115,5 @@ JsonValue Application::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -58,7 +58,7 @@ Aws::Http::HeaderValueCollection ListRetirableGrantsRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.ListRetirableGrants"));
-  return std::move(headers);
+  return headers;
 
 }
 

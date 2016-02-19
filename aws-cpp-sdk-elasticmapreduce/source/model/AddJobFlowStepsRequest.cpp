@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection AddJobFlowStepsRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.AddJobFlowSteps"));
-  return std::move(headers);
+  return headers;
 
 }
 

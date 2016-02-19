@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection StartStackRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.StartStack"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -45,6 +45,5 @@ Aws::Http::HeaderValueCollection DeleteCloudFrontOriginAccessIdentity2015_04_17R
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

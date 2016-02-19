@@ -65,7 +65,7 @@ Aws::Http::HeaderValueCollection ListDomainsRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.ListDomains"));
-  return std::move(headers);
+  return headers;
 
 }
 

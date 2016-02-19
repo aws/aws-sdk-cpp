@@ -84,5 +84,5 @@ JsonValue RequestCancelExternalWorkflowExecutionDecisionAttributes::Jsonize() co
 
   }
 
-  return std::move(payload);
+  return payload;
 }

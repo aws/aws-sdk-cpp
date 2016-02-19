@@ -64,7 +64,7 @@ Aws::Http::HeaderValueCollection UnlinkDeveloperIdentityRequest::GetRequestSpeci
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UnlinkDeveloperIdentity"));
-  return std::move(headers);
+  return headers;
 
 }
 

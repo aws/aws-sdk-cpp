@@ -100,5 +100,5 @@ JsonValue ContainerOverride::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

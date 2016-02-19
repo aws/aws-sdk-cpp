@@ -103,6 +103,5 @@ Aws::Http::HeaderValueCollection PutBucketAclRequest::GetRequestSpecificHeaders(
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

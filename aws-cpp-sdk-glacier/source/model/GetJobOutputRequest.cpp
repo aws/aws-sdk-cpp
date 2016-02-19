@@ -46,7 +46,7 @@ Aws::Http::HeaderValueCollection GetJobOutputRequest::GetRequestSpecificHeaders(
    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }
 

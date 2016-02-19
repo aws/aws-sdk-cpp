@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection RegisterOnPremisesInstanceRequest::GetRequestSp
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.RegisterOnPremisesInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

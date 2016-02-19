@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeprecateDomainRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.DeprecateDomain"));
-  return std::move(headers);
+  return headers;
 
 }
 

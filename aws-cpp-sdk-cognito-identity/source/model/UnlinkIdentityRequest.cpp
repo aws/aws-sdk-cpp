@@ -67,7 +67,7 @@ Aws::Http::HeaderValueCollection UnlinkIdentityRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UnlinkIdentity"));
-  return std::move(headers);
+  return headers;
 
 }
 

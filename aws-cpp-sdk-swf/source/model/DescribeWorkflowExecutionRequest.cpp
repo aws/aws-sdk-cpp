@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DescribeWorkflowExecutionRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.DescribeWorkflowExecution"));
-  return std::move(headers);
+  return headers;
 
 }
 

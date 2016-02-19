@@ -62,7 +62,7 @@ Aws::Http::HeaderValueCollection DescribeRaidArraysRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeRaidArrays"));
-  return std::move(headers);
+  return headers;
 
 }
 

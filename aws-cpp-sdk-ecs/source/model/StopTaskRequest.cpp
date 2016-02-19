@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection StopTaskRequest::GetRequestSpecificHeaders() co
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.StopTask"));
-  return std::move(headers);
+  return headers;
 
 }
 

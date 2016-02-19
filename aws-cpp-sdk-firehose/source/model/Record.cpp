@@ -54,5 +54,5 @@ JsonValue Record::Jsonize() const
    payload.WithString("Data", HashingUtils::Base64Encode(m_data));
   }
 
-  return std::move(payload);
+  return payload;
 }

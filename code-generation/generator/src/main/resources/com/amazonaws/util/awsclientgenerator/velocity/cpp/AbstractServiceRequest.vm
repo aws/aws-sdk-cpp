@@ -26,7 +26,7 @@ namespace ${metadata.namespace}
     {
       auto headers = GetRequestSpecificHeaders();
       headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, ${CppViewHelper.computeRequestContentType($metadata)} ));
-      return std::move(headers);
+      return headers;
     }
 
   protected:

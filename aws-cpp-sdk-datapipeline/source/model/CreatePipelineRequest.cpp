@@ -69,7 +69,7 @@ Aws::Http::HeaderValueCollection CreatePipelineRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.CreatePipeline"));
-  return std::move(headers);
+  return headers;
 
 }
 

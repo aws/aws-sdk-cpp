@@ -132,5 +132,5 @@ JsonValue RequestCancelExternalWorkflowExecutionFailedEventAttributes::Jsonize()
 
   }
 
-  return std::move(payload);
+  return payload;
 }

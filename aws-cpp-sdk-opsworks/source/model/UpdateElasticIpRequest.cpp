@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection UpdateElasticIpRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.UpdateElasticIp"));
-  return std::move(headers);
+  return headers;
 
 }
 

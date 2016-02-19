@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DetachElasticLoadBalancerRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DetachElasticLoadBalancer"));
-  return std::move(headers);
+  return headers;
 
 }
 

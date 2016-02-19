@@ -53,7 +53,7 @@ Aws::Http::HeaderValueCollection InitiateMultipartUploadRequest::GetRequestSpeci
    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }
 

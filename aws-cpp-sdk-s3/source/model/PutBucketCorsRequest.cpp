@@ -57,6 +57,5 @@ Aws::Http::HeaderValueCollection PutBucketCorsRequest::GetRequestSpecificHeaders
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

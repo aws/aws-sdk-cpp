@@ -53,5 +53,5 @@ JsonValue CloseStatusFilter::Jsonize() const
    payload.WithString("status", CloseStatusMapper::GetNameForCloseStatus(m_status));
   }
 
-  return std::move(payload);
+  return payload;
 }

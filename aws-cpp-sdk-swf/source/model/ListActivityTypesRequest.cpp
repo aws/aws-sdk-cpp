@@ -79,7 +79,7 @@ Aws::Http::HeaderValueCollection ListActivityTypesRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.ListActivityTypes"));
-  return std::move(headers);
+  return headers;
 
 }
 

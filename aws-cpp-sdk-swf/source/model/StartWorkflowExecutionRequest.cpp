@@ -117,7 +117,7 @@ Aws::Http::HeaderValueCollection StartWorkflowExecutionRequest::GetRequestSpecif
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.StartWorkflowExecution"));
-  return std::move(headers);
+  return headers;
 
 }
 

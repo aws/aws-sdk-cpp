@@ -74,7 +74,7 @@ Aws::Http::HeaderValueCollection ListStepsRequest::GetRequestSpecificHeaders() c
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.ListSteps"));
-  return std::move(headers);
+  return headers;
 
 }
 

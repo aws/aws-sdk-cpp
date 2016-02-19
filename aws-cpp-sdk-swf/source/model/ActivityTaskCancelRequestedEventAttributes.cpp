@@ -71,5 +71,5 @@ JsonValue ActivityTaskCancelRequestedEventAttributes::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

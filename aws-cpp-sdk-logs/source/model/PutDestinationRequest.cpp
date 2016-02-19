@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection PutDestinationRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.PutDestination"));
-  return std::move(headers);
+  return headers;
 
 }
 

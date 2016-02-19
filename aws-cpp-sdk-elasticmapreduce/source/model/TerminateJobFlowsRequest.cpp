@@ -48,7 +48,7 @@ Aws::Http::HeaderValueCollection TerminateJobFlowsRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.TerminateJobFlows"));
-  return std::move(headers);
+  return headers;
 
 }
 

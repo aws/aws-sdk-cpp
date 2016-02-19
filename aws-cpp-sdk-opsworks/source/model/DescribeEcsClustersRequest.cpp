@@ -70,7 +70,7 @@ Aws::Http::HeaderValueCollection DescribeEcsClustersRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeEcsClusters"));
-  return std::move(headers);
+  return headers;
 
 }
 

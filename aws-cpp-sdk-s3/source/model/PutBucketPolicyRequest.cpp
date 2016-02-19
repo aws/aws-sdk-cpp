@@ -41,6 +41,6 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }

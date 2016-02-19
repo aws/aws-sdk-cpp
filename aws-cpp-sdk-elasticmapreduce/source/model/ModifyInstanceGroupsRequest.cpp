@@ -48,7 +48,7 @@ Aws::Http::HeaderValueCollection ModifyInstanceGroupsRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.ModifyInstanceGroups"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -62,7 +62,7 @@ Aws::Http::HeaderValueCollection ListDeploymentInstancesRequest::GetRequestSpeci
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListDeploymentInstances"));
-  return std::move(headers);
+  return headers;
 
 }
 

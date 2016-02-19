@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection EnableKeyRotationRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.EnableKeyRotation"));
-  return std::move(headers);
+  return headers;
 
 }
 

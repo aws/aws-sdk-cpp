@@ -194,5 +194,5 @@ JsonValue FunctionConfiguration::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

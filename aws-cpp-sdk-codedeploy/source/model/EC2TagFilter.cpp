@@ -83,5 +83,5 @@ JsonValue EC2TagFilter::Jsonize() const
    payload.WithString("Type", EC2TagFilterTypeMapper::GetNameForEC2TagFilterType(m_type));
   }
 
-  return std::move(payload);
+  return payload;
 }

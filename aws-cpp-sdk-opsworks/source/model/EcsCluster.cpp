@@ -99,5 +99,5 @@ JsonValue EcsCluster::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

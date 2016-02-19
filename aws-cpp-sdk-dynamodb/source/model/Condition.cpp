@@ -76,5 +76,5 @@ JsonValue Condition::Jsonize() const
    payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
   }
 
-  return std::move(payload);
+  return payload;
 }

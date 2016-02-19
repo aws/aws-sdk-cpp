@@ -68,5 +68,5 @@ JsonValue KeySchemaElement::Jsonize() const
    payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
   }
 
-  return std::move(payload);
+  return payload;
 }

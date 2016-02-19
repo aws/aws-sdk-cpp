@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection RespondActivityTaskCompletedRequest::GetRequest
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RespondActivityTaskCompleted"));
-  return std::move(headers);
+  return headers;
 
 }
 

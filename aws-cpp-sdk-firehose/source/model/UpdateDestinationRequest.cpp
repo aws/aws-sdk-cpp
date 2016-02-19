@@ -71,7 +71,7 @@ Aws::Http::HeaderValueCollection UpdateDestinationRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Firehose_20150804.UpdateDestination"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection GetIdentityPoolRolesRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetIdentityPoolRoles"));
-  return std::move(headers);
+  return headers;
 
 }
 

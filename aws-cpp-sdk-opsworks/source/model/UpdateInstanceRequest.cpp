@@ -125,7 +125,7 @@ Aws::Http::HeaderValueCollection UpdateInstanceRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.UpdateInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

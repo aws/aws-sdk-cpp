@@ -79,7 +79,7 @@ Aws::Http::HeaderValueCollection ValidatePipelineDefinitionRequest::GetRequestSp
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.ValidatePipelineDefinition"));
-  return std::move(headers);
+  return headers;
 
 }
 

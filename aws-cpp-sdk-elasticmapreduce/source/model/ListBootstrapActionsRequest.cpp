@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection ListBootstrapActionsRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.ListBootstrapActions"));
-  return std::move(headers);
+  return headers;
 
 }
 

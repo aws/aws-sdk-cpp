@@ -60,7 +60,7 @@ Aws::Http::HeaderValueCollection RemoveTagsFromOnPremisesInstancesRequest::GetRe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.RemoveTagsFromOnPremisesInstances"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -54,6 +54,6 @@ Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() cons
    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }

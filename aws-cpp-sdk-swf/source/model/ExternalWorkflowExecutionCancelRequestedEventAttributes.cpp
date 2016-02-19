@@ -71,5 +71,5 @@ JsonValue ExternalWorkflowExecutionCancelRequestedEventAttributes::Jsonize() con
 
   }
 
-  return std::move(payload);
+  return payload;
 }

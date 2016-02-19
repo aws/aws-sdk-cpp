@@ -35,7 +35,7 @@ namespace Lambda
     {
       auto headers = GetRequestSpecificHeaders();
       headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
-      return std::move(headers);
+      return headers;
     }
 
   protected:

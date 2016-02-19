@@ -58,7 +58,7 @@ Aws::Http::HeaderValueCollection ListTaskDefinitionFamiliesRequest::GetRequestSp
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies"));
-  return std::move(headers);
+  return headers;
 
 }
 

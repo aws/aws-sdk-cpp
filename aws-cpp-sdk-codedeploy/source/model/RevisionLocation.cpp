@@ -83,5 +83,5 @@ JsonValue RevisionLocation::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

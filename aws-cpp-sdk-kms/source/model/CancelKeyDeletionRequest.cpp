@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection CancelKeyDeletionRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.CancelKeyDeletion"));
-  return std::move(headers);
+  return headers;
 
 }
 

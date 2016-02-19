@@ -648,5 +648,5 @@ JsonValue Instance::Jsonize() const
    payload.WithString("VirtualizationType", VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType));
   }
 
-  return std::move(payload);
+  return payload;
 }

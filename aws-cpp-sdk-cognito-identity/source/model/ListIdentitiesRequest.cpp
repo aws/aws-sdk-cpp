@@ -66,7 +66,7 @@ Aws::Http::HeaderValueCollection ListIdentitiesRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.ListIdentities"));
-  return std::move(headers);
+  return headers;
 
 }
 

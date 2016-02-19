@@ -34,7 +34,7 @@ namespace CloudFront
     {
       auto headers = GetRequestSpecificHeaders();
       headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_XML_CONTENT_TYPE ));
-      return std::move(headers);
+      return headers;
     }
 
   protected:

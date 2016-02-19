@@ -169,5 +169,5 @@ JsonValue LogStream::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

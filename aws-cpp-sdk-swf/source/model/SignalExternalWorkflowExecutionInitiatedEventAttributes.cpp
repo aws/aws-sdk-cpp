@@ -131,5 +131,5 @@ JsonValue SignalExternalWorkflowExecutionInitiatedEventAttributes::Jsonize() con
 
   }
 
-  return std::move(payload);
+  return payload;
 }

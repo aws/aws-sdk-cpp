@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection ReportTaskRunnerHeartbeatRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.ReportTaskRunnerHeartbeat"));
-  return std::move(headers);
+  return headers;
 
 }
 

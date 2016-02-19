@@ -141,5 +141,5 @@ JsonValue LocalSecondaryIndexDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -118,5 +118,5 @@ JsonValue FilteredLogEvent::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection PollForTaskRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.PollForTask"));
-  return std::move(headers);
+  return headers;
 
 }
 

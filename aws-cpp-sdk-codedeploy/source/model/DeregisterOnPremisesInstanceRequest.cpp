@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeregisterOnPremisesInstanceRequest::GetRequest
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.DeregisterOnPremisesInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

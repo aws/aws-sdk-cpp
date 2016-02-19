@@ -206,5 +206,5 @@ JsonValue ActivityTaskScheduledEventAttributes::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

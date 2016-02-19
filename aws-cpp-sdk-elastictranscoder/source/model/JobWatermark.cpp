@@ -84,5 +84,5 @@ JsonValue JobWatermark::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

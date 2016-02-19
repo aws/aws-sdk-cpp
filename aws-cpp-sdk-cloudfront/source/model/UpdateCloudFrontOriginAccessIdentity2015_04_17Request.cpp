@@ -57,6 +57,5 @@ Aws::Http::HeaderValueCollection UpdateCloudFrontOriginAccessIdentity2015_04_17R
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

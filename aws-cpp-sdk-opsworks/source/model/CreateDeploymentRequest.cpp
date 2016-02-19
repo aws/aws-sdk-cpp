@@ -83,7 +83,7 @@ Aws::Http::HeaderValueCollection CreateDeploymentRequest::GetRequestSpecificHead
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.CreateDeployment"));
-  return std::move(headers);
+  return headers;
 
 }
 

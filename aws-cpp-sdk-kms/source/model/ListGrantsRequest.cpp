@@ -58,7 +58,7 @@ Aws::Http::HeaderValueCollection ListGrantsRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.ListGrants"));
-  return std::move(headers);
+  return headers;
 
 }
 

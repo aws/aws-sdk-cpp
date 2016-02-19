@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection UpdateApplicationRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.UpdateApplication"));
-  return std::move(headers);
+  return headers;
 
 }
 

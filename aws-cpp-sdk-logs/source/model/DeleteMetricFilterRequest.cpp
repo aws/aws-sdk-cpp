@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DeleteMetricFilterRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DeleteMetricFilter"));
-  return std::move(headers);
+  return headers;
 
 }
 

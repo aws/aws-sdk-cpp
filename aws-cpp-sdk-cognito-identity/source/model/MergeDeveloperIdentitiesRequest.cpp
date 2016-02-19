@@ -64,7 +64,7 @@ Aws::Http::HeaderValueCollection MergeDeveloperIdentitiesRequest::GetRequestSpec
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.MergeDeveloperIdentities"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -48,7 +48,7 @@ Aws::Http::HeaderValueCollection DescribeLoadBasedAutoScalingRequest::GetRequest
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeLoadBasedAutoScaling"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -185,7 +185,7 @@ Aws::Http::HeaderValueCollection QueryRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.Query"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -89,7 +89,7 @@ Aws::Http::HeaderValueCollection GetLogEventsRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.GetLogEvents"));
-  return std::move(headers);
+  return headers;
 
 }
 

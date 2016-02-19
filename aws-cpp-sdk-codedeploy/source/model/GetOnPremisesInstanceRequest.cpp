@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection GetOnPremisesInstanceRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.GetOnPremisesInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

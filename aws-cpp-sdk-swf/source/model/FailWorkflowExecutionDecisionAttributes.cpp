@@ -69,5 +69,5 @@ JsonValue FailWorkflowExecutionDecisionAttributes::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

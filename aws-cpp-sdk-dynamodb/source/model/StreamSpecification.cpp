@@ -70,5 +70,5 @@ JsonValue StreamSpecification::Jsonize() const
    payload.WithString("StreamViewType", StreamViewTypeMapper::GetNameForStreamViewType(m_streamViewType));
   }
 
-  return std::move(payload);
+  return payload;
 }

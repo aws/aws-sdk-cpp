@@ -82,7 +82,7 @@ Aws::Http::HeaderValueCollection ListApplicationRevisionsRequest::GetRequestSpec
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListApplicationRevisions"));
-  return std::move(headers);
+  return headers;
 
 }
 

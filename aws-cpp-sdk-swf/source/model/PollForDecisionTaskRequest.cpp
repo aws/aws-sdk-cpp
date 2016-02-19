@@ -80,7 +80,7 @@ Aws::Http::HeaderValueCollection PollForDecisionTaskRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.PollForDecisionTask"));
-  return std::move(headers);
+  return headers;
 
 }
 

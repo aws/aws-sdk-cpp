@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection SetTimeBasedAutoScalingRequest::GetRequestSpeci
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.SetTimeBasedAutoScaling"));
-  return std::move(headers);
+  return headers;
 
 }
 

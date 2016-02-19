@@ -51,7 +51,7 @@ Aws::Http::HeaderValueCollection DeactivatePipelineRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.DeactivatePipeline"));
-  return std::move(headers);
+  return headers;
 
 }
 

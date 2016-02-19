@@ -91,7 +91,7 @@ Aws::Http::HeaderValueCollection SubmitContainerStateChangeRequest::GetRequestSp
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange"));
-  return std::move(headers);
+  return headers;
 
 }
 

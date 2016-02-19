@@ -73,7 +73,7 @@ Aws::Http::HeaderValueCollection GetWorkflowExecutionHistoryRequest::GetRequestS
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.GetWorkflowExecutionHistory"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -184,7 +184,7 @@ Aws::Http::HeaderValueCollection RunJobFlowRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.RunJobFlow"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -89,7 +89,7 @@ Aws::Http::HeaderValueCollection UpdateIdentityPoolRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UpdateIdentityPool"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeleteDeliveryStreamRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Firehose_20150804.DeleteDeliveryStream"));
-  return std::move(headers);
+  return headers;
 
 }
 

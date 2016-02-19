@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection PutDestinationPolicyRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.PutDestinationPolicy"));
-  return std::move(headers);
+  return headers;
 
 }
 

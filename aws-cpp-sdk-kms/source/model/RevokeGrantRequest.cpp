@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection RevokeGrantRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.RevokeGrant"));
-  return std::move(headers);
+  return headers;
 
 }
 

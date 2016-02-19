@@ -58,7 +58,7 @@ Aws::Http::HeaderValueCollection ListTagsForStreamRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Kinesis_20131202.ListTagsForStream"));
-  return std::move(headers);
+  return headers;
 
 }
 

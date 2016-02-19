@@ -87,5 +87,5 @@ JsonValue LambdaFunctionTimedOutEventAttributes::Jsonize() const
    payload.WithString("timeoutType", LambdaFunctionTimeoutTypeMapper::GetNameForLambdaFunctionTimeoutType(m_timeoutType));
   }
 
-  return std::move(payload);
+  return payload;
 }

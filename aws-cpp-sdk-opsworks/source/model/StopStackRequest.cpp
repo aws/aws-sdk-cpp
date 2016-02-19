@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection StopStackRequest::GetRequestSpecificHeaders() c
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.StopStack"));
-  return std::move(headers);
+  return headers;
 
 }
 

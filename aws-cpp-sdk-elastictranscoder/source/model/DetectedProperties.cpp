@@ -122,5 +122,5 @@ JsonValue DetectedProperties::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

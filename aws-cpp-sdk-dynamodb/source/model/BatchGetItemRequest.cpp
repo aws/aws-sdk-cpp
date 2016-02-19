@@ -54,7 +54,7 @@ Aws::Http::HeaderValueCollection BatchGetItemRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.BatchGetItem"));
-  return std::move(headers);
+  return headers;
 
 }
 

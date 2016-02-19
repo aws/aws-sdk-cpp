@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection GetOpenIdTokenRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetOpenIdToken"));
-  return std::move(headers);
+  return headers;
 
 }
 

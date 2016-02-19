@@ -186,5 +186,5 @@ JsonValue WorkflowExecutionInfo::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

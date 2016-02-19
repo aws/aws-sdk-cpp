@@ -34,7 +34,7 @@ namespace DynamoDB
     {
       auto headers = GetRequestSpecificHeaders();
       headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_0 ));
-      return std::move(headers);
+      return headers;
     }
 
   protected:

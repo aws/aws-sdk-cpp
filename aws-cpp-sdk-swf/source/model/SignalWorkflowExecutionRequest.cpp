@@ -71,7 +71,7 @@ Aws::Http::HeaderValueCollection SignalWorkflowExecutionRequest::GetRequestSpeci
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.SignalWorkflowExecution"));
-  return std::move(headers);
+  return headers;
 
 }
 

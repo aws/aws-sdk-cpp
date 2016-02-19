@@ -65,7 +65,7 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -48,7 +48,7 @@ Aws::Http::HeaderValueCollection DeleteIdentitiesRequest::GetRequestSpecificHead
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.DeleteIdentities"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -68,5 +68,5 @@ JsonValue UnprocessedIdentityId::Jsonize() const
    payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
   }
 
-  return std::move(payload);
+  return payload;
 }

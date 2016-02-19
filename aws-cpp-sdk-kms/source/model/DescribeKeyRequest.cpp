@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DescribeKeyRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.DescribeKey"));
-  return std::move(headers);
+  return headers;
 
 }
 

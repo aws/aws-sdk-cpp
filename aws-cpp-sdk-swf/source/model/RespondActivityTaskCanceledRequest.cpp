@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection RespondActivityTaskCanceledRequest::GetRequestS
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RespondActivityTaskCanceled"));
-  return std::move(headers);
+  return headers;
 
 }
 

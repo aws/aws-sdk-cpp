@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection UpdateContainerAgentRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.UpdateContainerAgent"));
-  return std::move(headers);
+  return headers;
 
 }
 

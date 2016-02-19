@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection DescribeElasticLoadBalancersRequest::GetRequest
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeElasticLoadBalancers"));
-  return std::move(headers);
+  return headers;
 
 }
 

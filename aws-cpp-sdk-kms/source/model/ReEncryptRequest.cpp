@@ -86,7 +86,7 @@ Aws::Http::HeaderValueCollection ReEncryptRequest::GetRequestSpecificHeaders() c
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.ReEncrypt"));
-  return std::move(headers);
+  return headers;
 
 }
 

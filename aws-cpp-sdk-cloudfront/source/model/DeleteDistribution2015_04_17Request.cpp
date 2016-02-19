@@ -45,6 +45,5 @@ Aws::Http::HeaderValueCollection DeleteDistribution2015_04_17Request::GetRequest
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

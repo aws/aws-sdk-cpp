@@ -48,7 +48,7 @@ Aws::Http::HeaderValueCollection BatchGetApplicationsRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.BatchGetApplications"));
-  return std::move(headers);
+  return headers;
 
 }
 

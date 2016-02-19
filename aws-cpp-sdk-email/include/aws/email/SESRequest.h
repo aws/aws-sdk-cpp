@@ -34,7 +34,7 @@ namespace SES
     {
       auto headers = GetRequestSpecificHeaders();
       headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, FORM_CONTENT_TYPE ));
-      return std::move(headers);
+      return headers;
     }
 
   protected:

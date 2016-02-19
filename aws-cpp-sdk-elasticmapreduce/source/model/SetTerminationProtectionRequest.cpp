@@ -56,7 +56,7 @@ Aws::Http::HeaderValueCollection SetTerminationProtectionRequest::GetRequestSpec
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.SetTerminationProtection"));
-  return std::move(headers);
+  return headers;
 
 }
 

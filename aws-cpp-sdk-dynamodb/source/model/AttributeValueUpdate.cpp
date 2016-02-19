@@ -68,5 +68,5 @@ JsonValue AttributeValueUpdate::Jsonize() const
    payload.WithString("Action", AttributeActionMapper::GetNameForAttributeAction(m_action));
   }
 
-  return std::move(payload);
+  return payload;
 }

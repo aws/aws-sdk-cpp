@@ -97,5 +97,5 @@ JsonValue WorkflowExecutionTerminatedEventAttributes::Jsonize() const
    payload.WithString("cause", WorkflowExecutionTerminatedCauseMapper::GetNameForWorkflowExecutionTerminatedCause(m_cause));
   }
 
-  return std::move(payload);
+  return payload;
 }

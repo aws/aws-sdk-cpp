@@ -74,7 +74,7 @@ Aws::Http::HeaderValueCollection UpdateRecordsRequest::GetRequestSpecificHeaders
    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }
 

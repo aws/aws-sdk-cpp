@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DescribeIdentityPoolRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.DescribeIdentityPool"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection CountPendingActivityTasksRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.CountPendingActivityTasks"));
-  return std::move(headers);
+  return headers;
 
 }
 

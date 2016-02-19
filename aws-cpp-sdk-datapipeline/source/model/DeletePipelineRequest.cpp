@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeletePipelineRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.DeletePipeline"));
-  return std::move(headers);
+  return headers;
 
 }
 

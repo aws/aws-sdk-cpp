@@ -119,5 +119,5 @@ JsonValue StepExecutionStatusDetail::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

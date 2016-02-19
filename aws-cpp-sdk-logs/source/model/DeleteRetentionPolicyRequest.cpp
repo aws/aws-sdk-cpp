@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeleteRetentionPolicyRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DeleteRetentionPolicy"));
-  return std::move(headers);
+  return headers;
 
 }
 

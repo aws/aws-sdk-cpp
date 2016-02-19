@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DescribeWorkflowTypeRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.DescribeWorkflowType"));
-  return std::move(headers);
+  return headers;
 
 }
 

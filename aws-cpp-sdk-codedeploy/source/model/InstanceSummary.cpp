@@ -123,5 +123,5 @@ JsonValue InstanceSummary::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

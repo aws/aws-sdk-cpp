@@ -51,7 +51,7 @@ Aws::Http::HeaderValueCollection GetRecordsRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Kinesis_20131202.GetRecords"));
-  return std::move(headers);
+  return headers;
 
 }
 

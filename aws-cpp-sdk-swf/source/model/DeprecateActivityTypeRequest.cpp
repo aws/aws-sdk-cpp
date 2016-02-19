@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DeprecateActivityTypeRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.DeprecateActivityType"));
-  return std::move(headers);
+  return headers;
 
 }
 

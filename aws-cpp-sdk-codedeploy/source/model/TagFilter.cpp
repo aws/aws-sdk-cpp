@@ -83,5 +83,5 @@ JsonValue TagFilter::Jsonize() const
    payload.WithString("Type", TagFilterTypeMapper::GetNameForTagFilterType(m_type));
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -56,7 +56,7 @@ Aws::Http::HeaderValueCollection SetVisibleToAllUsersRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.SetVisibleToAllUsers"));
-  return std::move(headers);
+  return headers;
 
 }
 

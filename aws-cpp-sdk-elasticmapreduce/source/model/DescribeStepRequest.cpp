@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection DescribeStepRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.DescribeStep"));
-  return std::move(headers);
+  return headers;
 
 }
 

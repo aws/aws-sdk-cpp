@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection RecordActivityTaskHeartbeatRequest::GetRequestS
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RecordActivityTaskHeartbeat"));
-  return std::move(headers);
+  return headers;
 
 }
 

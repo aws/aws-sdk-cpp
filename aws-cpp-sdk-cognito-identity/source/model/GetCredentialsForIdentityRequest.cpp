@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection GetCredentialsForIdentityRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetCredentialsForIdentity"));
-  return std::move(headers);
+  return headers;
 
 }
 

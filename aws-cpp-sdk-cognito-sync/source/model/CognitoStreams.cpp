@@ -83,5 +83,5 @@ JsonValue CognitoStreams::Jsonize() const
    payload.WithString("StreamingStatus", StreamingStatusMapper::GetNameForStreamingStatus(m_streamingStatus));
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -101,5 +101,5 @@ JsonValue RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::Jsoniz
 
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DescribeTableRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.DescribeTable"));
-  return std::move(headers);
+  return headers;
 
 }
 

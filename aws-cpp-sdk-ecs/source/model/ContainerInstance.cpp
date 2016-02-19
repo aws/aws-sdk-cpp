@@ -210,5 +210,5 @@ JsonValue ContainerInstance::Jsonize() const
    payload.WithString("agentUpdateStatus", AgentUpdateStatusMapper::GetNameForAgentUpdateStatus(m_agentUpdateStatus));
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection RegisterDomainRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RegisterDomain"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -58,7 +58,7 @@ Aws::Http::HeaderValueCollection DescribeLogGroupsRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DescribeLogGroups"));
-  return std::move(headers);
+  return headers;
 
 }
 

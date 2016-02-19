@@ -77,7 +77,7 @@ Aws::Http::HeaderValueCollection TerminateWorkflowExecutionRequest::GetRequestSp
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.TerminateWorkflowExecution"));
-  return std::move(headers);
+  return headers;
 
 }
 

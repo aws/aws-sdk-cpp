@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection AddTagsRequest::GetRequestSpecificHeaders() con
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.AddTags"));
-  return std::move(headers);
+  return headers;
 
 }
 

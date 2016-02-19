@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection DescribeLayersRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DescribeLayers"));
-  return std::move(headers);
+  return headers;
 
 }
 

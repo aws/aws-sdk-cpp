@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection UpdateKeyDescriptionRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.UpdateKeyDescription"));
-  return std::move(headers);
+  return headers;
 
 }
 

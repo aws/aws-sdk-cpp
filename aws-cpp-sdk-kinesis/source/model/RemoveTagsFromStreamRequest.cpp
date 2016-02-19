@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection RemoveTagsFromStreamRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Kinesis_20131202.RemoveTagsFromStream"));
-  return std::move(headers);
+  return headers;
 
 }
 

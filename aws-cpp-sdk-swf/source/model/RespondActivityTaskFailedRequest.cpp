@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection RespondActivityTaskFailedRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RespondActivityTaskFailed"));
-  return std::move(headers);
+  return headers;
 
 }
 

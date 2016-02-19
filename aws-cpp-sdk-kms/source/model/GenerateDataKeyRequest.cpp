@@ -81,7 +81,7 @@ Aws::Http::HeaderValueCollection GenerateDataKeyRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.GenerateDataKey"));
-  return std::move(headers);
+  return headers;
 
 }
 

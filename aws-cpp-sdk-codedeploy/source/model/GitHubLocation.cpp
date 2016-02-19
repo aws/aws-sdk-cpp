@@ -69,5 +69,5 @@ JsonValue GitHubLocation::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

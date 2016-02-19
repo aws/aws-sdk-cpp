@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection PutRecordRequest::GetRequestSpecificHeaders() c
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Firehose_20150804.PutRecord"));
-  return std::move(headers);
+  return headers;
 
 }
 

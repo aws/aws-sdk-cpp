@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DescribeClusterRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.DescribeCluster"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeleteApplicationRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.DeleteApplication"));
-  return std::move(headers);
+  return headers;
 
 }
 

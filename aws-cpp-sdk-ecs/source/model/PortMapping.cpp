@@ -87,5 +87,5 @@ JsonValue PortMapping::Jsonize() const
    payload.WithString("protocol", TransportProtocolMapper::GetNameForTransportProtocol(m_protocol));
   }
 
-  return std::move(payload);
+  return payload;
 }

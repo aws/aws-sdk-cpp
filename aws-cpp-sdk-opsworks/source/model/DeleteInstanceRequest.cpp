@@ -59,7 +59,7 @@ Aws::Http::HeaderValueCollection DeleteInstanceRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DeleteInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -202,7 +202,7 @@ Aws::Http::HeaderValueCollection CloneStackRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.CloneStack"));
-  return std::move(headers);
+  return headers;
 
 }
 

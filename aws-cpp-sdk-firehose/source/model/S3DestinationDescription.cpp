@@ -128,5 +128,5 @@ JsonValue S3DestinationDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

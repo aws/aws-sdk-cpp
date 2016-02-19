@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection DeleteUserProfileRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.DeleteUserProfile"));
-  return std::move(headers);
+  return headers;
 
 }
 

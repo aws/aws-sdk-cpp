@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection ReportTaskProgressRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.ReportTaskProgress"));
-  return std::move(headers);
+  return headers;
 
 }
 

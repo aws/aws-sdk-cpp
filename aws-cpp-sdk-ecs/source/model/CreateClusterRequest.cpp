@@ -43,7 +43,7 @@ Aws::Http::HeaderValueCollection CreateClusterRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.CreateCluster"));
-  return std::move(headers);
+  return headers;
 
 }
 

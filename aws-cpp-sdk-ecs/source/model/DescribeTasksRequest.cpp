@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection DescribeTasksRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DescribeTasks"));
-  return std::move(headers);
+  return headers;
 
 }
 

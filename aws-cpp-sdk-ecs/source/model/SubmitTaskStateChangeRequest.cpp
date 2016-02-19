@@ -64,7 +64,7 @@ Aws::Http::HeaderValueCollection SubmitTaskStateChangeRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange"));
-  return std::move(headers);
+  return headers;
 
 }
 

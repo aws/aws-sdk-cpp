@@ -117,5 +117,5 @@ JsonValue LifecycleEvent::Jsonize() const
    payload.WithString("status", LifecycleEventStatusMapper::GetNameForLifecycleEventStatus(m_status));
   }
 
-  return std::move(payload);
+  return payload;
 }

@@ -65,7 +65,7 @@ Aws::Http::HeaderValueCollection DescribeSubscriptionFiltersRequest::GetRequestS
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DescribeSubscriptionFilters"));
-  return std::move(headers);
+  return headers;
 
 }
 

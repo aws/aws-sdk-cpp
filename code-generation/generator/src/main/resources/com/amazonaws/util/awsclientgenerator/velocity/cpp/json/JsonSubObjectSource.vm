@@ -37,5 +37,5 @@ JsonValue ${typeInfo.className}::Jsonize() const
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersJsonizeSource.vm")
-  return std::move(payload);
+  return payload;
 }

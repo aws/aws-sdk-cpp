@@ -70,5 +70,5 @@ JsonValue MinimumHealthyHosts::Jsonize() const
    payload.WithString("type", MinimumHealthyHostsTypeMapper::GetNameForMinimumHealthyHostsType(m_type));
   }
 
-  return std::move(payload);
+  return payload;
 }

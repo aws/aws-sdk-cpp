@@ -62,7 +62,7 @@ Aws::Http::HeaderValueCollection GetIdRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetId"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -58,7 +58,7 @@ Aws::Http::HeaderValueCollection DescribeDestinationsRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DescribeDestinations"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -94,7 +94,7 @@ Aws::Http::HeaderValueCollection ListOpenWorkflowExecutionsRequest::GetRequestSp
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.ListOpenWorkflowExecutions"));
-  return std::move(headers);
+  return headers;
 
 }
 

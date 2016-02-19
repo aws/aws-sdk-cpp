@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection ListInstanceGroupsRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.ListInstanceGroups"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -65,7 +65,7 @@ Aws::Http::HeaderValueCollection UpdateUserProfileRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.UpdateUserProfile"));
-  return std::move(headers);
+  return headers;
 
 }
 

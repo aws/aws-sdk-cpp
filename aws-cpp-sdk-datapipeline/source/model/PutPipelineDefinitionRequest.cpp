@@ -79,7 +79,7 @@ Aws::Http::HeaderValueCollection PutPipelineDefinitionRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.PutPipelineDefinition"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -81,7 +81,7 @@ Aws::Http::HeaderValueCollection UpdateTableRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.UpdateTable"));
-  return std::move(headers);
+  return headers;
 
 }
 

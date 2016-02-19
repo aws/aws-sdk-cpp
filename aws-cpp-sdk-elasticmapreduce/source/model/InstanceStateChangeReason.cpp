@@ -68,5 +68,5 @@ JsonValue InstanceStateChangeReason::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }

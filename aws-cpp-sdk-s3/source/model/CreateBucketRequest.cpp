@@ -95,6 +95,5 @@ Aws::Http::HeaderValueCollection CreateBucketRequest::GetRequestSpecificHeaders(
    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }
