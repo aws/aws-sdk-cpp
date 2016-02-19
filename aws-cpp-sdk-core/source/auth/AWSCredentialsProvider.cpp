@@ -115,7 +115,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
     }
 
 
-    return std::move(credentials);
+    return credentials;
 }
 
 static Aws::String GetBaseDirectory()
@@ -286,7 +286,7 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
     if (profileFile.is_open())
         profileFile.close();
 
-    return std::move(propertyValueMap);
+    return propertyValueMap;
 }
 
 

@@ -60,7 +60,7 @@ Aws::String FileSystemUtils::GetHomeDirectory()
         }
     }
     
-    return std::move(retVal);
+    return retVal;
 }
 
 bool FileSystemUtils::CreateDirectoryIfNotExists(const char* path)

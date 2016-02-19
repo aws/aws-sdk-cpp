@@ -45,7 +45,7 @@ public:
         auto headers = GetRequestSpecificHeaders();
         headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, GetContentType()));
 
-        return std::move(headers);
+        return headers;
     }
 
     const Aws::String& GetContentType() const { return m_contentType; }

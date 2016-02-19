@@ -34,7 +34,7 @@ Aws::String Aws::Utils::Xml::DecodeEscapedXmlText(const Aws::String& textToDecod
     StringUtils::Replace(decodedString, "&gt;", ">");
     StringUtils::Replace(decodedString, "&amp;;", "&");
 
-    return std::move(decodedString);
+    return decodedString;
 }
 
 XmlNode::XmlNode(const XmlNode& other) : m_node(other.m_node), m_doc(other.m_doc)
@@ -214,7 +214,7 @@ XmlDocument XmlDocument::CreateFromXmlString(const Aws::String& xmlText)
 {
     XmlDocument xmlDocument;
     xmlDocument.m_doc->Parse(xmlText.c_str(), xmlText.size());
-    return std::move(xmlDocument);
+    return xmlDocument;
 }
 
 XmlDocument XmlDocument::CreateWithRootNode(const Aws::String& rootNodeName)
@@ -223,6 +223,6 @@ XmlDocument XmlDocument::CreateWithRootNode(const Aws::String& rootNodeName)
     Aws::External::tinyxml2::XMLElement* rootNode = xmlDocument.m_doc->NewElement(rootNodeName.c_str());
     xmlDocument.m_doc->LinkEndChild(rootNode);
 
-    return std::move(xmlDocument);
+    return xmlDocument;
 }
 

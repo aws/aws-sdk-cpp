@@ -255,7 +255,7 @@ Array<JsonValue> JsonValue::GetArray(const char* key) const
         returnArray[i] = m_value[key][i];
     }
 
-    return std::move(returnArray);
+    return returnArray;
 }
 
 Array<JsonValue> JsonValue::GetArray(const Aws::String& key) const
@@ -348,7 +348,7 @@ Array<JsonValue> JsonValue::AsArray() const
         returnArray[i] = m_value[i];
     }
 
-    return std::move(returnArray);
+    return returnArray;
 }
 
 JsonValue JsonValue::GetObject(const char* key) const
@@ -409,7 +409,7 @@ Aws::Map<Aws::String, JsonValue> JsonValue::GetAllObjects() const
         valueMap[iter.key().asString()] = *iter;
     }
 
-    return std::move(valueMap);
+    return valueMap;
 }
 
 bool JsonValue::ValueExists(const char* key) const

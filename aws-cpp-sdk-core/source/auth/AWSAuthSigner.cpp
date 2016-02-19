@@ -338,7 +338,7 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
 
     Aws::String payloadHash(HashingUtils::HexEncode(sha256Digest));
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Calculated sha256 " << payloadHash << " for payload.");
-    return std::move(payloadHash);
+    return payloadHash;
 }
 
 Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const
