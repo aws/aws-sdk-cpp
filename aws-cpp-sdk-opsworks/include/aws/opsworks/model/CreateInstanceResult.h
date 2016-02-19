@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CreateInstance</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CreateInstance</code> request.</p>
+   */
   class AWS_OPSWORKS_API CreateInstanceResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline CreateInstanceResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline CreateInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The instance ID.</p>
-    */
+    /**
+     * <p>The instance ID.</p>
+     */
     inline CreateInstanceResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SQS
 {
 namespace Model
 {
-  /*
-    A list of received messages.
-  */
+  /**
+   * A list of received messages.
+   */
   class AWS_SQS_API ReceiveMessageResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     ReceiveMessageResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ReceiveMessageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline void SetMessages(const Aws::Vector<Message>& value) { m_messages = value; }
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline void SetMessages(Aws::Vector<Message>&& value) { m_messages = value; }
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline ReceiveMessageResult& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline ReceiveMessageResult& WithMessages(Aws::Vector<Message>&& value) { SetMessages(value); return *this;}
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline ReceiveMessageResult& AddMessages(const Message& value) { m_messages.push_back(value); return *this; }
 
-    /*
-     <p>A list of messages.</p>
-    */
+    /**
+     * <p>A list of messages.</p>
+     */
     inline ReceiveMessageResult& AddMessages(Message&& value) { m_messages.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a flow log.</p>
-  */
+
+  /**
+   * <p>Describes a flow log.</p>
+   */
   class AWS_EC2_API FlowLog
   {
   public:
@@ -44,289 +45,324 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The date and time the flow log was created.</p>
-    */
+    /**
+     * <p>The date and time the flow log was created.</p>
+     */
     inline double GetCreationTime() const{ return m_creationTime; }
 
-    /*
-     <p>The date and time the flow log was created.</p>
-    */
+    /**
+     * <p>The date and time the flow log was created.</p>
+     */
     inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
-    /*
-     <p>The date and time the flow log was created.</p>
-    */
+    /**
+     * <p>The date and time the flow log was created.</p>
+     */
     inline FlowLog& WithCreationTime(double value) { SetCreationTime(value); return *this;}
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline const Aws::String& GetFlowLogId() const{ return m_flowLogId; }
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline void SetFlowLogId(const Aws::String& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline void SetFlowLogId(const char* value) { m_flowLogIdHasBeenSet = true; m_flowLogId.assign(value); }
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline FlowLog& WithFlowLogId(const Aws::String& value) { SetFlowLogId(value); return *this;}
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(value); return *this;}
 
-    /*
-     <p>The flow log ID.</p>
-    */
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline FlowLog& WithFlowLogId(const char* value) { SetFlowLogId(value); return *this;}
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline const Aws::String& GetFlowLogStatus() const{ return m_flowLogStatus; }
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline void SetFlowLogStatus(const Aws::String& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = value; }
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline void SetFlowLogStatus(Aws::String&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = value; }
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline void SetFlowLogStatus(const char* value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus.assign(value); }
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline FlowLog& WithFlowLogStatus(const Aws::String& value) { SetFlowLogStatus(value); return *this;}
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline FlowLog& WithFlowLogStatus(Aws::String&& value) { SetFlowLogStatus(value); return *this;}
 
-    /*
-     <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    */
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
     inline FlowLog& WithFlowLogStatus(const char* value) { SetFlowLogStatus(value); return *this;}
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline FlowLog& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
-    /*
-     <p>The ID of the resource on which the flow log was created.</p>
-    */
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
     inline FlowLog& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
-    /*
-     <p>The type of traffic captured for the flow log.</p>
-    */
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
     inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
 
-    /*
-     <p>The type of traffic captured for the flow log.</p>
-    */
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
     inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
 
-    /*
-     <p>The type of traffic captured for the flow log.</p>
-    */
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
     inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
 
-    /*
-     <p>The type of traffic captured for the flow log.</p>
-    */
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
     inline FlowLog& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
 
-    /*
-     <p>The type of traffic captured for the flow log.</p>
-    */
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
     inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(value); return *this;}
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline FlowLog& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline FlowLog& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the flow log group.</p>
-    */
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline FlowLog& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline const Aws::String& GetDeliverLogsStatus() const{ return m_deliverLogsStatus; }
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline void SetDeliverLogsStatus(const Aws::String& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = value; }
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline void SetDeliverLogsStatus(Aws::String&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = value; }
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline void SetDeliverLogsStatus(const char* value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus.assign(value); }
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline FlowLog& WithDeliverLogsStatus(const Aws::String& value) { SetDeliverLogsStatus(value); return *this;}
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline FlowLog& WithDeliverLogsStatus(Aws::String&& value) { SetDeliverLogsStatus(value); return *this;}
 
-    /*
-     <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    */
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
     inline FlowLog& WithDeliverLogsStatus(const char* value) { SetDeliverLogsStatus(value); return *this;}
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline const Aws::String& GetDeliverLogsErrorMessage() const{ return m_deliverLogsErrorMessage; }
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline void SetDeliverLogsErrorMessage(const Aws::String& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline void SetDeliverLogsErrorMessage(Aws::String&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline void SetDeliverLogsErrorMessage(const char* value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage.assign(value); }
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline FlowLog& WithDeliverLogsErrorMessage(const Aws::String& value) { SetDeliverLogsErrorMessage(value); return *this;}
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline FlowLog& WithDeliverLogsErrorMessage(Aws::String&& value) { SetDeliverLogsErrorMessage(value); return *this;}
 
-    /*
-     <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    */
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch logs throttling has been applied for one or more
+     * network interfaces. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
     inline FlowLog& WithDeliverLogsErrorMessage(const char* value) { SetDeliverLogsErrorMessage(value); return *this;}
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline FlowLog& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline FlowLog& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(value); return *this;}
 
-    /*
-     <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
-    */
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline FlowLog& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
 
   private:

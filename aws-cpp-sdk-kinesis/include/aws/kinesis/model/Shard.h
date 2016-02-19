@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>A uniquely identified group of data records in an Amazon Kinesis stream.</p>
-  */
+
+  /**
+   * <p>A uniquely identified group of data records in an Amazon Kinesis stream.</p>
+   */
   class AWS_KINESIS_API Shard
   {
   public:
@@ -42,159 +43,164 @@ namespace Model
     Shard& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline Shard& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline Shard& WithShardId(Aws::String&& value) { SetShardId(value); return *this;}
 
-    /*
-     <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
-    */
+    /**
+     * <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
+     */
     inline Shard& WithShardId(const char* value) { SetShardId(value); return *this;}
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline const Aws::String& GetParentShardId() const{ return m_parentShardId; }
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline void SetParentShardId(const Aws::String& value) { m_parentShardIdHasBeenSet = true; m_parentShardId = value; }
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline void SetParentShardId(Aws::String&& value) { m_parentShardIdHasBeenSet = true; m_parentShardId = value; }
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline void SetParentShardId(const char* value) { m_parentShardIdHasBeenSet = true; m_parentShardId.assign(value); }
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline Shard& WithParentShardId(const Aws::String& value) { SetParentShardId(value); return *this;}
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline Shard& WithParentShardId(Aws::String&& value) { SetParentShardId(value); return *this;}
 
-    /*
-     <p>The shard Id of the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard's parent.</p>
+     */
     inline Shard& WithParentShardId(const char* value) { SetParentShardId(value); return *this;}
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline const Aws::String& GetAdjacentParentShardId() const{ return m_adjacentParentShardId; }
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline void SetAdjacentParentShardId(const Aws::String& value) { m_adjacentParentShardIdHasBeenSet = true; m_adjacentParentShardId = value; }
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline void SetAdjacentParentShardId(Aws::String&& value) { m_adjacentParentShardIdHasBeenSet = true; m_adjacentParentShardId = value; }
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline void SetAdjacentParentShardId(const char* value) { m_adjacentParentShardIdHasBeenSet = true; m_adjacentParentShardId.assign(value); }
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline Shard& WithAdjacentParentShardId(const Aws::String& value) { SetAdjacentParentShardId(value); return *this;}
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline Shard& WithAdjacentParentShardId(Aws::String&& value) { SetAdjacentParentShardId(value); return *this;}
 
-    /*
-     <p>The shard Id of the shard adjacent to the shard's parent.</p>
-    */
+    /**
+     * <p>The shard Id of the shard adjacent to the shard's parent.</p>
+     */
     inline Shard& WithAdjacentParentShardId(const char* value) { SetAdjacentParentShardId(value); return *this;}
 
-    /*
-     <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    */
+    /**
+     * <p>The range of possible hash key values for the shard, which is a set of
+     * ordered contiguous positive integers.</p>
+     */
     inline const HashKeyRange& GetHashKeyRange() const{ return m_hashKeyRange; }
 
-    /*
-     <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    */
+    /**
+     * <p>The range of possible hash key values for the shard, which is a set of
+     * ordered contiguous positive integers.</p>
+     */
     inline void SetHashKeyRange(const HashKeyRange& value) { m_hashKeyRangeHasBeenSet = true; m_hashKeyRange = value; }
 
-    /*
-     <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    */
+    /**
+     * <p>The range of possible hash key values for the shard, which is a set of
+     * ordered contiguous positive integers.</p>
+     */
     inline void SetHashKeyRange(HashKeyRange&& value) { m_hashKeyRangeHasBeenSet = true; m_hashKeyRange = value; }
 
-    /*
-     <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    */
+    /**
+     * <p>The range of possible hash key values for the shard, which is a set of
+     * ordered contiguous positive integers.</p>
+     */
     inline Shard& WithHashKeyRange(const HashKeyRange& value) { SetHashKeyRange(value); return *this;}
 
-    /*
-     <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    */
+    /**
+     * <p>The range of possible hash key values for the shard, which is a set of
+     * ordered contiguous positive integers.</p>
+     */
     inline Shard& WithHashKeyRange(HashKeyRange&& value) { SetHashKeyRange(value); return *this;}
 
-    /*
-     <p>The range of possible sequence numbers for the shard.</p>
-    */
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
     inline const SequenceNumberRange& GetSequenceNumberRange() const{ return m_sequenceNumberRange; }
 
-    /*
-     <p>The range of possible sequence numbers for the shard.</p>
-    */
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
     inline void SetSequenceNumberRange(const SequenceNumberRange& value) { m_sequenceNumberRangeHasBeenSet = true; m_sequenceNumberRange = value; }
 
-    /*
-     <p>The range of possible sequence numbers for the shard.</p>
-    */
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
     inline void SetSequenceNumberRange(SequenceNumberRange&& value) { m_sequenceNumberRangeHasBeenSet = true; m_sequenceNumberRange = value; }
 
-    /*
-     <p>The range of possible sequence numbers for the shard.</p>
-    */
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
     inline Shard& WithSequenceNumberRange(const SequenceNumberRange& value) { SetSequenceNumberRange(value); return *this;}
 
-    /*
-     <p>The range of possible sequence numbers for the shard.</p>
-    */
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
     inline Shard& WithSequenceNumberRange(SequenceNumberRange&& value) { SetSequenceNumberRange(value); return *this;}
 
   private:

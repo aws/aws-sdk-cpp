@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreateVirtualMFADevice</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreateVirtualMFADevice</a> request.
+   * </p>
+   */
   class AWS_IAM_API CreateVirtualMFADeviceResult
   {
   public:
@@ -43,29 +44,29 @@ namespace Model
     CreateVirtualMFADeviceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateVirtualMFADeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A newly created virtual MFA device.</p>
-    */
+    /**
+     * <p>A newly created virtual MFA device.</p>
+     */
     inline const VirtualMFADevice& GetVirtualMFADevice() const{ return m_virtualMFADevice; }
 
-    /*
-     <p>A newly created virtual MFA device.</p>
-    */
+    /**
+     * <p>A newly created virtual MFA device.</p>
+     */
     inline void SetVirtualMFADevice(const VirtualMFADevice& value) { m_virtualMFADevice = value; }
 
-    /*
-     <p>A newly created virtual MFA device.</p>
-    */
+    /**
+     * <p>A newly created virtual MFA device.</p>
+     */
     inline void SetVirtualMFADevice(VirtualMFADevice&& value) { m_virtualMFADevice = value; }
 
-    /*
-     <p>A newly created virtual MFA device.</p>
-    */
+    /**
+     * <p>A newly created virtual MFA device.</p>
+     */
     inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(const VirtualMFADevice& value) { SetVirtualMFADevice(value); return *this;}
 
-    /*
-     <p>A newly created virtual MFA device.</p>
-    */
+    /**
+     * <p>A newly created virtual MFA device.</p>
+     */
     inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(VirtualMFADevice&& value) { SetVirtualMFADevice(value); return *this;}
 
     

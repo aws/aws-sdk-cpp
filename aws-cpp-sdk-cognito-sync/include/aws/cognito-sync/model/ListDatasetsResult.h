@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    Returned for a successful ListDatasets request.
-  */
+  /**
+   * Returned for a successful ListDatasets request.
+   */
   class AWS_COGNITOSYNC_API ListDatasetsResult
   {
   public:
@@ -44,89 +44,89 @@ namespace Model
     ListDatasetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListDatasetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline const Aws::Vector<Dataset>& GetDatasets() const{ return m_datasets; }
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline void SetDatasets(const Aws::Vector<Dataset>& value) { m_datasets = value; }
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline void SetDatasets(Aws::Vector<Dataset>&& value) { m_datasets = value; }
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline ListDatasetsResult& WithDatasets(const Aws::Vector<Dataset>& value) { SetDatasets(value); return *this;}
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline ListDatasetsResult& WithDatasets(Aws::Vector<Dataset>&& value) { SetDatasets(value); return *this;}
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline ListDatasetsResult& AddDatasets(const Dataset& value) { m_datasets.push_back(value); return *this; }
 
-    /*
-     A set of datasets.
-    */
+    /**
+     * A set of datasets.
+     */
     inline ListDatasetsResult& AddDatasets(Dataset&& value) { m_datasets.push_back(value); return *this; }
 
-    /*
-     Number of datasets returned.
-    */
+    /**
+     * Number of datasets returned.
+     */
     inline long GetCount() const{ return m_count; }
 
-    /*
-     Number of datasets returned.
-    */
+    /**
+     * Number of datasets returned.
+     */
     inline void SetCount(long value) { m_count = value; }
 
-    /*
-     Number of datasets returned.
-    */
+    /**
+     * Number of datasets returned.
+     */
     inline ListDatasetsResult& WithCount(long value) { SetCount(value); return *this;}
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline ListDatasetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline ListDatasetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token for obtaining the next page of results.
-    */
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline ListDatasetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

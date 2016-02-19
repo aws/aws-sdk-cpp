@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    The returned result of the corresponding request.
-  */
+  /**
+   * The returned result of the corresponding request.
+   */
   class AWS_CLOUDFRONT_API ListInvalidations2015_04_17Result
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     ListInvalidations2015_04_17Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListInvalidations2015_04_17Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     Information about invalidation batches.
-    */
+    /**
+     * Information about invalidation batches.
+     */
     inline const InvalidationList& GetInvalidationList() const{ return m_invalidationList; }
 
-    /*
-     Information about invalidation batches.
-    */
+    /**
+     * Information about invalidation batches.
+     */
     inline void SetInvalidationList(const InvalidationList& value) { m_invalidationList = value; }
 
-    /*
-     Information about invalidation batches.
-    */
+    /**
+     * Information about invalidation batches.
+     */
     inline void SetInvalidationList(InvalidationList&& value) { m_invalidationList = value; }
 
-    /*
-     Information about invalidation batches.
-    */
+    /**
+     * Information about invalidation batches.
+     */
     inline ListInvalidations2015_04_17Result& WithInvalidationList(const InvalidationList& value) { SetInvalidationList(value); return *this;}
 
-    /*
-     Information about invalidation batches.
-    */
+    /**
+     * Information about invalidation batches.
+     */
     inline ListInvalidations2015_04_17Result& WithInvalidationList(InvalidationList&& value) { SetInvalidationList(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace Lambda
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_LAMBDA_API GetEventSourceMappingRequest : public LambdaRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline const Aws::String& GetUUID() const{ return m_uUID; }
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline GetEventSourceMappingRequest& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline GetEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(value); return *this;}
 
-    /*
-     <p>The AWS Lambda assigned ID of the event source mapping.</p>
-    */
+    /**
+     * <p>The AWS Lambda assigned ID of the event source mapping.</p>
+     */
     inline GetEventSourceMappingRequest& WithUUID(const char* value) { SetUUID(value); return *this;}
 
   private:

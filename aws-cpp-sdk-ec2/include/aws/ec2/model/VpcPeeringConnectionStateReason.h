@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the status of a VPC peering connection.</p>
-  */
+
+  /**
+   * <p>Describes the status of a VPC peering connection.</p>
+   */
   class AWS_EC2_API VpcPeeringConnectionStateReason
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The status of the VPC peering connection.</p>
-    */
+    /**
+     * <p>The status of the VPC peering connection.</p>
+     */
     inline const VpcPeeringConnectionStateReasonCode& GetCode() const{ return m_code; }
 
-    /*
-     <p>The status of the VPC peering connection.</p>
-    */
+    /**
+     * <p>The status of the VPC peering connection.</p>
+     */
     inline void SetCode(const VpcPeeringConnectionStateReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The status of the VPC peering connection.</p>
-    */
+    /**
+     * <p>The status of the VPC peering connection.</p>
+     */
     inline void SetCode(VpcPeeringConnectionStateReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The status of the VPC peering connection.</p>
-    */
+    /**
+     * <p>The status of the VPC peering connection.</p>
+     */
     inline VpcPeeringConnectionStateReason& WithCode(const VpcPeeringConnectionStateReasonCode& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The status of the VPC peering connection.</p>
-    */
+    /**
+     * <p>The status of the VPC peering connection.</p>
+     */
     inline VpcPeeringConnectionStateReason& WithCode(VpcPeeringConnectionStateReasonCode&& value) { SetCode(value); return *this;}
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline VpcPeeringConnectionStateReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline VpcPeeringConnectionStateReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>A message that provides more information about the status, if applicable.</p>
-    */
+    /**
+     * <p>A message that provides more information about the status, if applicable.</p>
+     */
     inline VpcPeeringConnectionStateReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

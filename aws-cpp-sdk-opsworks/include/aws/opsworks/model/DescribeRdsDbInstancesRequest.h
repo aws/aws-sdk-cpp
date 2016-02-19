@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API DescribeRdsDbInstancesRequest : public OpsWorksRequest
   {
   public:
@@ -36,79 +36,86 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline DescribeRdsDbInstancesRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline DescribeRdsDbInstancesRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    */
+    /**
+     * <p>The stack ID that the instances are registered with. The operation returns
+     * descriptions of all registered Amazon RDS instances.</p>
+     */
     inline DescribeRdsDbInstancesRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetRdsDbInstanceArns() const{ return m_rdsDbInstanceArns; }
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline void SetRdsDbInstanceArns(const Aws::Vector<Aws::String>& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = value; }
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline void SetRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = value; }
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(const Aws::Vector<Aws::String>& value) { SetRdsDbInstanceArns(value); return *this;}
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { SetRdsDbInstanceArns(value); return *this;}
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(const Aws::String& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(Aws::String&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
 
-    /*
-     <p>An array containing the ARNs of the instances to be described.</p>
-    */
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
     inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(const char* value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
 
   private:

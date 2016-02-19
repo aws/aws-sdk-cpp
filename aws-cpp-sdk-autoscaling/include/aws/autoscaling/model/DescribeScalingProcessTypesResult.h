@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeScalingProcessTypesResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeScalingProcessTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeScalingProcessTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline const Aws::Vector<ProcessType>& GetProcesses() const{ return m_processes; }
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline void SetProcesses(const Aws::Vector<ProcessType>& value) { m_processes = value; }
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline void SetProcesses(Aws::Vector<ProcessType>&& value) { m_processes = value; }
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline DescribeScalingProcessTypesResult& WithProcesses(const Aws::Vector<ProcessType>& value) { SetProcesses(value); return *this;}
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline DescribeScalingProcessTypesResult& WithProcesses(Aws::Vector<ProcessType>&& value) { SetProcesses(value); return *this;}
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline DescribeScalingProcessTypesResult& AddProcesses(const ProcessType& value) { m_processes.push_back(value); return *this; }
 
-    /*
-     <p>The names of the process types.</p>
-    */
+    /**
+     * <p>The names of the process types.</p>
+     */
     inline DescribeScalingProcessTypesResult& AddProcesses(ProcessType&& value) { m_processes.push_back(value); return *this; }
 
     

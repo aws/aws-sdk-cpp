@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_REDSHIFT_API DescribeHsmConfigurationsResult
   {
   public:
@@ -45,74 +45,109 @@ namespace Model
     DescribeHsmConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeHsmConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeHsmConfigurationsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeHsmConfigurationsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeHsmConfigurationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline const Aws::Vector<HsmConfiguration>& GetHsmConfigurations() const{ return m_hsmConfigurations; }
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline void SetHsmConfigurations(const Aws::Vector<HsmConfiguration>& value) { m_hsmConfigurations = value; }
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline void SetHsmConfigurations(Aws::Vector<HsmConfiguration>&& value) { m_hsmConfigurations = value; }
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline DescribeHsmConfigurationsResult& WithHsmConfigurations(const Aws::Vector<HsmConfiguration>& value) { SetHsmConfigurations(value); return *this;}
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline DescribeHsmConfigurationsResult& WithHsmConfigurations(Aws::Vector<HsmConfiguration>&& value) { SetHsmConfigurations(value); return *this;}
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline DescribeHsmConfigurationsResult& AddHsmConfigurations(const HsmConfiguration& value) { m_hsmConfigurations.push_back(value); return *this; }
 
-    /*
-     <p>A list of Amazon Redshift HSM configurations.</p>
-    */
+    /**
+     * <p>A list of Amazon Redshift HSM configurations.</p>
+     */
     inline DescribeHsmConfigurationsResult& AddHsmConfigurations(HsmConfiguration&& value) { m_hsmConfigurations.push_back(value); return *this; }
 
     

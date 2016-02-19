@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p> A specification identifying an individual configuration option. </p>
-  */
+
+  /**
+   * <p> A specification identifying an individual configuration option. </p>
+   */
   class AWS_ELASTICBEANSTALK_API OptionSpecification
   {
   public:
@@ -43,109 +44,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline OptionSpecification& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline OptionSpecification& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p> A unique resource name for a time-based scaling configuration option. </p>
-    */
+    /**
+     * <p> A unique resource name for a time-based scaling configuration option. </p>
+     */
     inline OptionSpecification& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline OptionSpecification& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline OptionSpecification& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
-    /*
-     <p> A unique namespace identifying the option's associated AWS resource. </p>
-    */
+    /**
+     * <p> A unique namespace identifying the option's associated AWS resource. </p>
+     */
     inline OptionSpecification& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline const Aws::String& GetOptionName() const{ return m_optionName; }
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline OptionSpecification& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline OptionSpecification& WithOptionName(Aws::String&& value) { SetOptionName(value); return *this;}
 
-    /*
-     <p> The name of the configuration option. </p>
-    */
+    /**
+     * <p> The name of the configuration option. </p>
+     */
     inline OptionSpecification& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 
   private:

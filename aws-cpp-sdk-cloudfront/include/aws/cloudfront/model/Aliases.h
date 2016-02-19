@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
-  */
+
+  /**
+   * A complex type that contains information about CNAMEs (alternate domain names),
+   * if any, for this distribution.
+   */
   class AWS_CLOUDFRONT_API Aliases
   {
   public:
@@ -42,59 +44,67 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The number of CNAMEs, if any, for this distribution.
-    */
+    /**
+     * The number of CNAMEs, if any, for this distribution.
+     */
     inline long GetQuantity() const{ return m_quantity; }
 
-    /*
-     The number of CNAMEs, if any, for this distribution.
-    */
+    /**
+     * The number of CNAMEs, if any, for this distribution.
+     */
     inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
-    /*
-     The number of CNAMEs, if any, for this distribution.
-    */
+    /**
+     * The number of CNAMEs, if any, for this distribution.
+     */
     inline Aliases& WithQuantity(long value) { SetQuantity(value); return *this;}
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline Aliases& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline Aliases& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline Aliases& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline Aliases& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains CNAME elements, if any, for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline Aliases& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:

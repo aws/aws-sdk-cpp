@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CreateStack</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CreateStack</code> request.</p>
+   */
   class AWS_OPSWORKS_API CreateStackResult
   {
   public:
@@ -42,39 +42,46 @@ namespace Model
     CreateStackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackId = value; }
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline CreateStackResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline CreateStackResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
-    */
+    /**
+     * <p>The stack ID, which is an opaque string that you use to identify the stack
+     * when performing actions such as <code>DescribeStacks</code>.</p>
+     */
     inline CreateStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:

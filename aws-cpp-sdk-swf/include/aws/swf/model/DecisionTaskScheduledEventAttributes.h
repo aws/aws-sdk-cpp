@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>
+   */
   class AWS_SWF_API DecisionTaskScheduledEventAttributes
   {
   public:
@@ -41,99 +42,162 @@ namespace Model
     DecisionTaskScheduledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the task list in which the decision task was scheduled.</p>
-    */
+    /**
+     * <p>The name of the task list in which the decision task was scheduled.</p>
+     */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
-    /*
-     <p>The name of the task list in which the decision task was scheduled.</p>
-    */
+    /**
+     * <p>The name of the task list in which the decision task was scheduled.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
-    /*
-     <p>The name of the task list in which the decision task was scheduled.</p>
-    */
+    /**
+     * <p>The name of the task list in which the decision task was scheduled.</p>
+     */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
-    /*
-     <p>The name of the task list in which the decision task was scheduled.</p>
-    */
+    /**
+     * <p>The name of the task list in which the decision task was scheduled.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
-    /*
-     <p>The name of the task list in which the decision task was scheduled.</p>
-    */
+    /**
+     * <p>The name of the task list in which the decision task was scheduled.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(value); return *this;}
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(value); return *this;}
 
-    /*
-     <p><i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
-    */
+    /**
+     * <p><i>Optional.</i> A task priority that, if set, specifies the priority for
+     * this decision task. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline void SetStartToCloseTimeout(const char* value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout.assign(value); }
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(const Aws::String& value) { SetStartToCloseTimeout(value); return *this;}
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(value); return *this;}
 
-    /*
-     <p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p> <p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
-    */
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it does not completed within this duration.</p> <p>The duration is specified
+     * in seconds; an integer greater than or equal to 0. The value "NONE" can be used
+     * to specify unlimited duration.</p>
+     */
     inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
   private:

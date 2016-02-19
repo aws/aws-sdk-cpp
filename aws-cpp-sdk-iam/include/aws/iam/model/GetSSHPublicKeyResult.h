@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetSSHPublicKey</a> request.</p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetSSHPublicKey</a> request.</p>
+   */
   class AWS_IAM_API GetSSHPublicKeyResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     GetSSHPublicKeyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetSSHPublicKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the SSH public key.</p>
-    */
+    /**
+     * <p>Information about the SSH public key.</p>
+     */
     inline const SSHPublicKey& GetSSHPublicKey() const{ return m_sSHPublicKey; }
 
-    /*
-     <p>Information about the SSH public key.</p>
-    */
+    /**
+     * <p>Information about the SSH public key.</p>
+     */
     inline void SetSSHPublicKey(const SSHPublicKey& value) { m_sSHPublicKey = value; }
 
-    /*
-     <p>Information about the SSH public key.</p>
-    */
+    /**
+     * <p>Information about the SSH public key.</p>
+     */
     inline void SetSSHPublicKey(SSHPublicKey&& value) { m_sSHPublicKey = value; }
 
-    /*
-     <p>Information about the SSH public key.</p>
-    */
+    /**
+     * <p>Information about the SSH public key.</p>
+     */
     inline GetSSHPublicKeyResult& WithSSHPublicKey(const SSHPublicKey& value) { SetSSHPublicKey(value); return *this;}
 
-    /*
-     <p>Information about the SSH public key.</p>
-    */
+    /**
+     * <p>Information about the SSH public key.</p>
+     */
     inline GetSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(value); return *this;}
 
     

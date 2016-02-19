@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace SimpleDB
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_SIMPLEDB_API SelectResult
   {
   public:
@@ -45,74 +42,88 @@ namespace Model
     SelectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     SelectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline const Aws::Vector<Item>& GetItems() const{ return m_items; }
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline void SetItems(const Aws::Vector<Item>& value) { m_items = value; }
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline void SetItems(Aws::Vector<Item>&& value) { m_items = value; }
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline SelectResult& WithItems(const Aws::Vector<Item>& value) { SetItems(value); return *this;}
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline SelectResult& WithItems(Aws::Vector<Item>&& value) { SetItems(value); return *this;}
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline SelectResult& AddItems(const Item& value) { m_items.push_back(value); return *this; }
 
-    /*
-     A list of items that match the select expression.
-    */
+    /**
+     * A list of items that match the select expression.
+     */
     inline SelectResult& AddItems(Item&& value) { m_items.push_back(value); return *this; }
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline SelectResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline SelectResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-    */
+    /**
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
+     * were matched, the response size exceeded 1 megabyte, or the execution time
+     * exceeded 5 seconds.
+     */
     inline SelectResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

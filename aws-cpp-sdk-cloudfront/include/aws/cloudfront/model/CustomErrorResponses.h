@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A complex type that contains zero or more CustomErrorResponse elements.
-  */
+
+  /**
+   * A complex type that contains zero or more CustomErrorResponse elements.
+   */
   class AWS_CLOUDFRONT_API CustomErrorResponses
   {
   public:
@@ -42,54 +43,61 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The number of custom error responses for this distribution.
-    */
+    /**
+     * The number of custom error responses for this distribution.
+     */
     inline long GetQuantity() const{ return m_quantity; }
 
-    /*
-     The number of custom error responses for this distribution.
-    */
+    /**
+     * The number of custom error responses for this distribution.
+     */
     inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
-    /*
-     The number of custom error responses for this distribution.
-    */
+    /**
+     * The number of custom error responses for this distribution.
+     */
     inline CustomErrorResponses& WithQuantity(long value) { SetQuantity(value); return *this;}
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline const Aws::Vector<CustomErrorResponse>& GetItems() const{ return m_items; }
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline void SetItems(const Aws::Vector<CustomErrorResponse>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline void SetItems(Aws::Vector<CustomErrorResponse>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline CustomErrorResponses& WithItems(const Aws::Vector<CustomErrorResponse>& value) { SetItems(value); return *this;}
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline CustomErrorResponses& WithItems(Aws::Vector<CustomErrorResponse>&& value) { SetItems(value); return *this;}
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline CustomErrorResponses& AddItems(const CustomErrorResponse& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:

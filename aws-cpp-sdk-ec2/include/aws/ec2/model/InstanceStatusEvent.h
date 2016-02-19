@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a scheduled event for an instance.</p>
-  */
+
+  /**
+   * <p>Describes a scheduled event for an instance.</p>
+   */
   class AWS_EC2_API InstanceStatusEvent
   {
   public:
@@ -44,94 +45,108 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The event code.</p>
-    */
+    /**
+     * <p>The event code.</p>
+     */
     inline const EventCode& GetCode() const{ return m_code; }
 
-    /*
-     <p>The event code.</p>
-    */
+    /**
+     * <p>The event code.</p>
+     */
     inline void SetCode(const EventCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The event code.</p>
-    */
+    /**
+     * <p>The event code.</p>
+     */
     inline void SetCode(EventCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The event code.</p>
-    */
+    /**
+     * <p>The event code.</p>
+     */
     inline InstanceStatusEvent& WithCode(const EventCode& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The event code.</p>
-    */
+    /**
+     * <p>The event code.</p>
+     */
     inline InstanceStatusEvent& WithCode(EventCode&& value) { SetCode(value); return *this;}
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline InstanceStatusEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline InstanceStatusEvent& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the event.</p> <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    */
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
     inline InstanceStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The earliest scheduled start time for the event.</p>
-    */
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
     inline double GetNotBefore() const{ return m_notBefore; }
 
-    /*
-     <p>The earliest scheduled start time for the event.</p>
-    */
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
     inline void SetNotBefore(double value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
-    /*
-     <p>The earliest scheduled start time for the event.</p>
-    */
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
     inline InstanceStatusEvent& WithNotBefore(double value) { SetNotBefore(value); return *this;}
 
-    /*
-     <p>The latest scheduled end time for the event.</p>
-    */
+    /**
+     * <p>The latest scheduled end time for the event.</p>
+     */
     inline double GetNotAfter() const{ return m_notAfter; }
 
-    /*
-     <p>The latest scheduled end time for the event.</p>
-    */
+    /**
+     * <p>The latest scheduled end time for the event.</p>
+     */
     inline void SetNotAfter(double value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
-    /*
-     <p>The latest scheduled end time for the event.</p>
-    */
+    /**
+     * <p>The latest scheduled end time for the event.</p>
+     */
     inline InstanceStatusEvent& WithNotAfter(double value) { SetNotAfter(value); return *this;}
 
   private:

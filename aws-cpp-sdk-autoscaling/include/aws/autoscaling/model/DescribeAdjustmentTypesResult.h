@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeAdjustmentTypesResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeAdjustmentTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAdjustmentTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline const Aws::Vector<AdjustmentType>& GetAdjustmentTypes() const{ return m_adjustmentTypes; }
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline void SetAdjustmentTypes(const Aws::Vector<AdjustmentType>& value) { m_adjustmentTypes = value; }
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline void SetAdjustmentTypes(Aws::Vector<AdjustmentType>&& value) { m_adjustmentTypes = value; }
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline DescribeAdjustmentTypesResult& WithAdjustmentTypes(const Aws::Vector<AdjustmentType>& value) { SetAdjustmentTypes(value); return *this;}
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline DescribeAdjustmentTypesResult& WithAdjustmentTypes(Aws::Vector<AdjustmentType>&& value) { SetAdjustmentTypes(value); return *this;}
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline DescribeAdjustmentTypesResult& AddAdjustmentTypes(const AdjustmentType& value) { m_adjustmentTypes.push_back(value); return *this; }
 
-    /*
-     <p>The policy adjustment types.</p>
-    */
+    /**
+     * <p>The policy adjustment types.</p>
+     */
     inline DescribeAdjustmentTypesResult& AddAdjustmentTypes(AdjustmentType&& value) { m_adjustmentTypes.push_back(value); return *this; }
 
     

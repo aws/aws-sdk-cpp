@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a disk image.</p>
-  */
+
+  /**
+   * <p>Describes a disk image.</p>
+   */
   class AWS_EC2_API DiskImage
   {
   public:
@@ -45,89 +46,89 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Information about the disk image.</p>
-    */
+    /**
+     * <p>Information about the disk image.</p>
+     */
     inline const DiskImageDetail& GetImage() const{ return m_image; }
 
-    /*
-     <p>Information about the disk image.</p>
-    */
+    /**
+     * <p>Information about the disk image.</p>
+     */
     inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
 
-    /*
-     <p>Information about the disk image.</p>
-    */
+    /**
+     * <p>Information about the disk image.</p>
+     */
     inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = value; }
 
-    /*
-     <p>Information about the disk image.</p>
-    */
+    /**
+     * <p>Information about the disk image.</p>
+     */
     inline DiskImage& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
 
-    /*
-     <p>Information about the disk image.</p>
-    */
+    /**
+     * <p>Information about the disk image.</p>
+     */
     inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(value); return *this;}
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline DiskImage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline DiskImage& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the disk image.</p>
-    */
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline DiskImage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Information about the volume.</p>
-    */
+    /**
+     * <p>Information about the volume.</p>
+     */
     inline const VolumeDetail& GetVolume() const{ return m_volume; }
 
-    /*
-     <p>Information about the volume.</p>
-    */
+    /**
+     * <p>Information about the volume.</p>
+     */
     inline void SetVolume(const VolumeDetail& value) { m_volumeHasBeenSet = true; m_volume = value; }
 
-    /*
-     <p>Information about the volume.</p>
-    */
+    /**
+     * <p>Information about the volume.</p>
+     */
     inline void SetVolume(VolumeDetail&& value) { m_volumeHasBeenSet = true; m_volume = value; }
 
-    /*
-     <p>Information about the volume.</p>
-    */
+    /**
+     * <p>Information about the volume.</p>
+     */
     inline DiskImage& WithVolume(const VolumeDetail& value) { SetVolume(value); return *this;}
 
-    /*
-     <p>Information about the volume.</p>
-    */
+    /**
+     * <p>Information about the volume.</p>
+     */
     inline DiskImage& WithVolume(VolumeDetail&& value) { SetVolume(value); return *this;}
 
   private:

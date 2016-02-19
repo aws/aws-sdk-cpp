@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeDhcpOptionsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeDhcpOptionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeDhcpOptionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline const Aws::Vector<DhcpOptions>& GetDhcpOptions() const{ return m_dhcpOptions; }
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline void SetDhcpOptions(const Aws::Vector<DhcpOptions>& value) { m_dhcpOptions = value; }
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline void SetDhcpOptions(Aws::Vector<DhcpOptions>&& value) { m_dhcpOptions = value; }
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline DescribeDhcpOptionsResponse& WithDhcpOptions(const Aws::Vector<DhcpOptions>& value) { SetDhcpOptions(value); return *this;}
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline DescribeDhcpOptionsResponse& WithDhcpOptions(Aws::Vector<DhcpOptions>&& value) { SetDhcpOptions(value); return *this;}
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline DescribeDhcpOptionsResponse& AddDhcpOptions(const DhcpOptions& value) { m_dhcpOptions.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more DHCP options sets.</p>
-    */
+    /**
+     * <p>Information about one or more DHCP options sets.</p>
+     */
     inline DescribeDhcpOptionsResponse& AddDhcpOptions(DhcpOptions&& value) { m_dhcpOptions.push_back(value); return *this; }
 
     

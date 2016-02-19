@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CloudFront
 namespace Model
 {
 
-  /*
-    The request to get an invalidation's information.
-  */
+  /**
+   * The request to get an invalidation's information.
+   */
   class AWS_CLOUDFRONT_API GetInvalidation2015_04_17Request : public CloudFrontRequest
   {
   public:
@@ -34,74 +34,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline GetInvalidation2015_04_17Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline GetInvalidation2015_04_17Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline GetInvalidation2015_04_17Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline GetInvalidation2015_04_17Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline GetInvalidation2015_04_17Request& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     The invalidation's id.
-    */
+    /**
+     * The invalidation's id.
+     */
     inline GetInvalidation2015_04_17Request& WithId(const char* value) { SetId(value); return *this;}
 
   private:

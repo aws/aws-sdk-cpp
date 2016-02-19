@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API MoveAddressToVpcResponse
   {
   public:
@@ -44,64 +41,64 @@ namespace Model
     MoveAddressToVpcResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     MoveAddressToVpcResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationId = value; }
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline void SetAllocationId(Aws::String&& value) { m_allocationId = value; }
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline void SetAllocationId(const char* value) { m_allocationId.assign(value); }
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline MoveAddressToVpcResponse& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline MoveAddressToVpcResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
 
-    /*
-     <p>The allocation ID for the Elastic IP address.</p>
-    */
+    /**
+     * <p>The allocation ID for the Elastic IP address.</p>
+     */
     inline MoveAddressToVpcResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
-    /*
-     <p>The status of the move of the IP address.</p>
-    */
+    /**
+     * <p>The status of the move of the IP address.</p>
+     */
     inline const Status& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The status of the move of the IP address.</p>
-    */
+    /**
+     * <p>The status of the move of the IP address.</p>
+     */
     inline void SetStatus(const Status& value) { m_status = value; }
 
-    /*
-     <p>The status of the move of the IP address.</p>
-    */
+    /**
+     * <p>The status of the move of the IP address.</p>
+     */
     inline void SetStatus(Status&& value) { m_status = value; }
 
-    /*
-     <p>The status of the move of the IP address.</p>
-    */
+    /**
+     * <p>The status of the move of the IP address.</p>
+     */
     inline MoveAddressToVpcResponse& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The status of the move of the IP address.</p>
-    */
+    /**
+     * <p>The status of the move of the IP address.</p>
+     */
     inline MoveAddressToVpcResponse& WithStatus(Status&& value) { SetStatus(value); return *this;}
 
     

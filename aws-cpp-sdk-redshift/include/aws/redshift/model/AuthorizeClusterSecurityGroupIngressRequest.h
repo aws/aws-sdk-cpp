@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p> ??? </p>
-  */
+  /**
+   * <p> ??? </p>
+   */
   class AWS_REDSHIFT_API AuthorizeClusterSecurityGroupIngressRequest : public RedshiftRequest
   {
   public:
@@ -34,144 +34,158 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline const Aws::String& GetClusterSecurityGroupName() const{ return m_clusterSecurityGroupName; }
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(const Aws::String& value) { SetClusterSecurityGroupName(value); return *this;}
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
 
-    /*
-     <p> The name of the security group to which the ingress rule is added. </p>
-    */
+    /**
+     * <p> The name of the security group to which the ingress rule is added. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline void SetCIDRIP(const char* value) { m_cIDRIPHasBeenSet = true; m_cIDRIP.assign(value); }
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> The IP range to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The IP range to be added the Amazon Redshift security group. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline void SetEC2SecurityGroupName(const char* value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName.assign(value); }
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(const Aws::String& value) { SetEC2SecurityGroupName(value); return *this;}
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
 
-    /*
-     <p> The EC2 security group to be added the Amazon Redshift security group. </p>
-    */
+    /**
+     * <p> The EC2 security group to be added the Amazon Redshift security group. </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p> The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p> Example: <code>111122223333</code> </p>
-    */
+    /**
+     * <p> The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p> Example: <code>111122223333</code> </p>
+     */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:

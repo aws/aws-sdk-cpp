@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Contains details about a workflow execution.</p>
-  */
+  /**
+   * <p>Contains details about a workflow execution.</p>
+   */
   class AWS_SWF_API DescribeWorkflowExecutionResult
   {
   public:
@@ -45,129 +45,162 @@ namespace Model
     DescribeWorkflowExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeWorkflowExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the workflow execution.</p>
-    */
+    /**
+     * <p>Information about the workflow execution.</p>
+     */
     inline const WorkflowExecutionInfo& GetExecutionInfo() const{ return m_executionInfo; }
 
-    /*
-     <p>Information about the workflow execution.</p>
-    */
+    /**
+     * <p>Information about the workflow execution.</p>
+     */
     inline void SetExecutionInfo(const WorkflowExecutionInfo& value) { m_executionInfo = value; }
 
-    /*
-     <p>Information about the workflow execution.</p>
-    */
+    /**
+     * <p>Information about the workflow execution.</p>
+     */
     inline void SetExecutionInfo(WorkflowExecutionInfo&& value) { m_executionInfo = value; }
 
-    /*
-     <p>Information about the workflow execution.</p>
-    */
+    /**
+     * <p>Information about the workflow execution.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithExecutionInfo(const WorkflowExecutionInfo& value) { SetExecutionInfo(value); return *this;}
 
-    /*
-     <p>Information about the workflow execution.</p>
-    */
+    /**
+     * <p>Information about the workflow execution.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithExecutionInfo(WorkflowExecutionInfo&& value) { SetExecutionInfo(value); return *this;}
 
-    /*
-     <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    */
+    /**
+     * <p>The configuration settings for this workflow execution including timeout
+     * values, tasklist etc.</p>
+     */
     inline const WorkflowExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
 
-    /*
-     <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    */
+    /**
+     * <p>The configuration settings for this workflow execution including timeout
+     * values, tasklist etc.</p>
+     */
     inline void SetExecutionConfiguration(const WorkflowExecutionConfiguration& value) { m_executionConfiguration = value; }
 
-    /*
-     <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    */
+    /**
+     * <p>The configuration settings for this workflow execution including timeout
+     * values, tasklist etc.</p>
+     */
     inline void SetExecutionConfiguration(WorkflowExecutionConfiguration&& value) { m_executionConfiguration = value; }
 
-    /*
-     <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    */
+    /**
+     * <p>The configuration settings for this workflow execution including timeout
+     * values, tasklist etc.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithExecutionConfiguration(const WorkflowExecutionConfiguration& value) { SetExecutionConfiguration(value); return *this;}
 
-    /*
-     <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    */
+    /**
+     * <p>The configuration settings for this workflow execution including timeout
+     * values, tasklist etc.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithExecutionConfiguration(WorkflowExecutionConfiguration&& value) { SetExecutionConfiguration(value); return *this;}
 
-    /*
-     <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    */
+    /**
+     * <p>The number of tasks for this workflow execution. This includes open and
+     * closed tasks of all types.</p>
+     */
     inline const WorkflowExecutionOpenCounts& GetOpenCounts() const{ return m_openCounts; }
 
-    /*
-     <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    */
+    /**
+     * <p>The number of tasks for this workflow execution. This includes open and
+     * closed tasks of all types.</p>
+     */
     inline void SetOpenCounts(const WorkflowExecutionOpenCounts& value) { m_openCounts = value; }
 
-    /*
-     <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    */
+    /**
+     * <p>The number of tasks for this workflow execution. This includes open and
+     * closed tasks of all types.</p>
+     */
     inline void SetOpenCounts(WorkflowExecutionOpenCounts&& value) { m_openCounts = value; }
 
-    /*
-     <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    */
+    /**
+     * <p>The number of tasks for this workflow execution. This includes open and
+     * closed tasks of all types.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithOpenCounts(const WorkflowExecutionOpenCounts& value) { SetOpenCounts(value); return *this;}
 
-    /*
-     <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    */
+    /**
+     * <p>The number of tasks for this workflow execution. This includes open and
+     * closed tasks of all types.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithOpenCounts(WorkflowExecutionOpenCounts&& value) { SetOpenCounts(value); return *this;}
 
-    /*
-     <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    */
+    /**
+     * <p>The time when the last activity task was scheduled for this workflow
+     * execution. You can use this information to determine if the workflow has not
+     * made progress for an unusually long period of time and might require a
+     * corrective action.</p>
+     */
     inline double GetLatestActivityTaskTimestamp() const{ return m_latestActivityTaskTimestamp; }
 
-    /*
-     <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    */
+    /**
+     * <p>The time when the last activity task was scheduled for this workflow
+     * execution. You can use this information to determine if the workflow has not
+     * made progress for an unusually long period of time and might require a
+     * corrective action.</p>
+     */
     inline void SetLatestActivityTaskTimestamp(double value) { m_latestActivityTaskTimestamp = value; }
 
-    /*
-     <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    */
+    /**
+     * <p>The time when the last activity task was scheduled for this workflow
+     * execution. You can use this information to determine if the workflow has not
+     * made progress for an unusually long period of time and might require a
+     * corrective action.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithLatestActivityTaskTimestamp(double value) { SetLatestActivityTaskTimestamp(value); return *this;}
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline const Aws::String& GetLatestExecutionContext() const{ return m_latestExecutionContext; }
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline void SetLatestExecutionContext(const Aws::String& value) { m_latestExecutionContext = value; }
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline void SetLatestExecutionContext(Aws::String&& value) { m_latestExecutionContext = value; }
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline void SetLatestExecutionContext(const char* value) { m_latestExecutionContext.assign(value); }
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithLatestExecutionContext(const Aws::String& value) { SetLatestExecutionContext(value); return *this;}
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithLatestExecutionContext(Aws::String&& value) { SetLatestExecutionContext(value); return *this;}
 
-    /*
-     <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
-    */
+    /**
+     * <p>The latest executionContext provided by the decider for this workflow
+     * execution. A decider can provide an executionContext (a free-form string) when
+     * closing a decision task using <a>RespondDecisionTaskCompleted</a>.</p>
+     */
     inline DescribeWorkflowExecutionResult& WithLatestExecutionContext(const char* value) { SetLatestExecutionContext(value); return *this;}
 
   private:

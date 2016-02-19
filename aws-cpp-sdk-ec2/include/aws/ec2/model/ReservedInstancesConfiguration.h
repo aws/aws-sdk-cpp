@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the configuration settings for the modified Reserved Instances.</p>
-  */
+
+  /**
+   * <p>Describes the configuration settings for the modified Reserved Instances.</p>
+   */
   class AWS_EC2_API ReservedInstancesConfiguration
   {
   public:
@@ -44,114 +45,121 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline ReservedInstancesConfiguration& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline ReservedInstancesConfiguration& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline ReservedInstancesConfiguration& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = value; }
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline ReservedInstancesConfiguration& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline ReservedInstancesConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(value); return *this;}
 
-    /*
-     <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
-    */
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
     inline ReservedInstancesConfiguration& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
-    /*
-     <p>The number of modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The number of modified Reserved Instances.</p>
+     */
     inline long GetInstanceCount() const{ return m_instanceCount; }
 
-    /*
-     <p>The number of modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The number of modified Reserved Instances.</p>
+     */
     inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
-    /*
-     <p>The number of modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The number of modified Reserved Instances.</p>
+     */
     inline ReservedInstancesConfiguration& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
 
-    /*
-     <p>The instance type for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
-    /*
-     <p>The instance type for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
-    /*
-     <p>The instance type for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
-    /*
-     <p>The instance type for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
     inline ReservedInstancesConfiguration& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
-    /*
-     <p>The instance type for the modified Reserved Instances.</p>
-    */
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
     inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <a>DescribeCacheEngineVersions</a> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <a>DescribeCacheEngineVersions</a> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeCacheEngineVersionsResult
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeCacheEngineVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeCacheEngineVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheEngineVersionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheEngineVersionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheEngineVersionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline const Aws::Vector<CacheEngineVersion>& GetCacheEngineVersions() const{ return m_cacheEngineVersions; }
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline void SetCacheEngineVersions(const Aws::Vector<CacheEngineVersion>& value) { m_cacheEngineVersions = value; }
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline void SetCacheEngineVersions(Aws::Vector<CacheEngineVersion>&& value) { m_cacheEngineVersions = value; }
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline DescribeCacheEngineVersionsResult& WithCacheEngineVersions(const Aws::Vector<CacheEngineVersion>& value) { SetCacheEngineVersions(value); return *this;}
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline DescribeCacheEngineVersionsResult& WithCacheEngineVersions(Aws::Vector<CacheEngineVersion>&& value) { SetCacheEngineVersions(value); return *this;}
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline DescribeCacheEngineVersionsResult& AddCacheEngineVersions(const CacheEngineVersion& value) { m_cacheEngineVersions.push_back(value); return *this; }
 
-    /*
-     <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    */
+    /**
+     * <p>A list of cache engine version details. Each element in the list contains
+     * detailed information about one cache engine version.</p>
+     */
     inline DescribeCacheEngineVersionsResult& AddCacheEngineVersions(CacheEngineVersion&& value) { m_cacheEngineVersions.push_back(value); return *this; }
 
     

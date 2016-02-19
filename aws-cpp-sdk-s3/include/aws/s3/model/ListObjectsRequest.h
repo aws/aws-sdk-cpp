@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ namespace S3
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_S3_API ListObjectsRequest : public S3Request
   {
   public:
@@ -61,39 +61,39 @@ namespace Model
     
     inline ListObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline ListObjectsRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline ListObjectsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
 
-    /*
-     A delimiter is a character you use to group keys.
-    */
+    /**
+     * A delimiter is a character you use to group keys.
+     */
     inline ListObjectsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
     
@@ -111,89 +111,92 @@ namespace Model
     
     inline ListObjectsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline ListObjectsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline ListObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     Specifies the key to start with when listing objects in a bucket.
-    */
+    /**
+     * Specifies the key to start with when listing objects in a bucket.
+     */
     inline ListObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
-    */
+    /**
+     * Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.
+     */
     inline long GetMaxKeys() const{ return m_maxKeys; }
 
-    /*
-     Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
-    */
+    /**
+     * Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.
+     */
     inline void SetMaxKeys(long value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
-    /*
-     Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
-    */
+    /**
+     * Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.
+     */
     inline ListObjectsRequest& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline ListObjectsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline ListObjectsRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
-    /*
-     Limits the response to keys that begin with the specified prefix.
-    */
+    /**
+     * Limits the response to keys that begin with the specified prefix.
+     */
     inline ListObjectsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:

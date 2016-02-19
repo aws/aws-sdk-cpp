@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Kinesis
 namespace Model
 {
 
-  /*
-    <p>Represents the input for <code>ListTagsForStream</code>.</p>
-  */
+  /**
+   * <p>Represents the input for <code>ListTagsForStream</code>.</p>
+   */
   class AWS_KINESIS_API ListTagsForStreamRequest : public KinesisRequest
   {
   public:
@@ -36,89 +36,112 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline ListTagsForStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline ListTagsForStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream.</p>
-    */
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline ListTagsForStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline const Aws::String& GetExclusiveStartTagKey() const{ return m_exclusiveStartTagKey; }
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline void SetExclusiveStartTagKey(const Aws::String& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = value; }
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline void SetExclusiveStartTagKey(Aws::String&& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = value; }
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline void SetExclusiveStartTagKey(const char* value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey.assign(value); }
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const Aws::String& value) { SetExclusiveStartTagKey(value); return *this;}
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(Aws::String&& value) { SetExclusiveStartTagKey(value); return *this;}
 
-    /*
-     <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    */
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const char* value) { SetExclusiveStartTagKey(value); return *this;}
 
-    /*
-     <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
-    */
+    /**
+     * <p>The number of tags to return. If this number is less than the total number of
+     * tags associated with the stream, <code>HasMoreTags</code> is set to
+     * <code>true</code>. To list additional tags, set
+     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
+     */
     inline long GetLimit() const{ return m_limit; }
 
-    /*
-     <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
-    */
+    /**
+     * <p>The number of tags to return. If this number is less than the total number of
+     * tags associated with the stream, <code>HasMoreTags</code> is set to
+     * <code>true</code>. To list additional tags, set
+     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
+     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    /*
-     <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
-    */
+    /**
+     * <p>The number of tags to return. If this number is less than the total number of
+     * tags associated with the stream, <code>HasMoreTags</code> is set to
+     * <code>true</code>. To list additional tags, set
+     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
+     */
     inline ListTagsForStreamRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:

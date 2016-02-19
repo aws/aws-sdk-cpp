@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cache cluster, adding or removing a cache node, or rebooting a node.</p>
-  */
+
+  /**
+   * <p>Represents a single occurrence of something interesting within the system.
+   * Some examples of events are creating a cache cluster, adding or removing a cache
+   * node, or rebooting a node.</p>
+   */
   class AWS_ELASTICACHE_API Event
   {
   public:
@@ -44,114 +47,133 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline Event& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
-    /*
-     <p>The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name of the cache cluster.</p>
-    */
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cache cluster level, the identifier would be the name of the
+     * cache cluster.</p>
+     */
     inline Event& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
-    /*
-     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
-    */
+    /**
+     * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
+     * security group, etc.</p>
+     */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
-    /*
-     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
-    */
+    /**
+     * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
+     * security group, etc.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    /*
-     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
-    */
+    /**
+     * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
+     * security group, etc.</p>
+     */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    /*
-     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
-    */
+    /**
+     * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
+     * security group, etc.</p>
+     */
     inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
-    /*
-     <p>Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.</p>
-    */
+    /**
+     * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
+     * security group, etc.</p>
+     */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline Event& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The text of the event.</p>
-    */
+    /**
+     * <p>The text of the event.</p>
+     */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The date and time when the event occurred.</p>
-    */
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
     inline double GetDate() const{ return m_date; }
 
-    /*
-     <p>The date and time when the event occurred.</p>
-    */
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
     inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
 
-    /*
-     <p>The date and time when the event occurred.</p>
-    */
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
     inline Event& WithDate(double value) { SetDate(value); return *this;}
 
   private:

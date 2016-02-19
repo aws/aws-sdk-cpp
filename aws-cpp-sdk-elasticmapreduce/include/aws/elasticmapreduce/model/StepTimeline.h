@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The timeline of the cluster step lifecycle. </p>
-  */
+
+  /**
+   * <p>The timeline of the cluster step lifecycle. </p>
+   */
   class AWS_EMR_API StepTimeline
   {
   public:
@@ -39,49 +40,49 @@ namespace Model
     StepTimeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The date and time when the cluster step was created. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step was created. </p>
+     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
 
-    /*
-     <p>The date and time when the cluster step was created. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step was created. </p>
+     */
     inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
-    /*
-     <p>The date and time when the cluster step was created. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step was created. </p>
+     */
     inline StepTimeline& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
-    /*
-     <p>The date and time when the cluster step execution started. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step execution started. </p>
+     */
     inline double GetStartDateTime() const{ return m_startDateTime; }
 
-    /*
-     <p>The date and time when the cluster step execution started. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step execution started. </p>
+     */
     inline void SetStartDateTime(double value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
-    /*
-     <p>The date and time when the cluster step execution started. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step execution started. </p>
+     */
     inline StepTimeline& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
 
-    /*
-     <p>The date and time when the cluster step execution completed or failed. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step execution completed or failed. </p>
+     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
 
-    /*
-     <p>The date and time when the cluster step execution completed or failed. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step execution completed or failed. </p>
+     */
     inline void SetEndDateTime(double value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
-    /*
-     <p>The date and time when the cluster step execution completed or failed. </p>
-    */
+    /**
+     * <p>The date and time when the cluster step execution completed or failed. </p>
+     */
     inline StepTimeline& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
   private:

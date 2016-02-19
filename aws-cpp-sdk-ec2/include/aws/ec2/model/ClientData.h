@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the client-specific data.</p>
-  */
+
+  /**
+   * <p>Describes the client-specific data.</p>
+   */
   class AWS_EC2_API ClientData
   {
   public:
@@ -43,84 +44,84 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The time that the disk upload starts.</p>
-    */
+    /**
+     * <p>The time that the disk upload starts.</p>
+     */
     inline double GetUploadStart() const{ return m_uploadStart; }
 
-    /*
-     <p>The time that the disk upload starts.</p>
-    */
+    /**
+     * <p>The time that the disk upload starts.</p>
+     */
     inline void SetUploadStart(double value) { m_uploadStartHasBeenSet = true; m_uploadStart = value; }
 
-    /*
-     <p>The time that the disk upload starts.</p>
-    */
+    /**
+     * <p>The time that the disk upload starts.</p>
+     */
     inline ClientData& WithUploadStart(double value) { SetUploadStart(value); return *this;}
 
-    /*
-     <p>The time that the disk upload ends.</p>
-    */
+    /**
+     * <p>The time that the disk upload ends.</p>
+     */
     inline double GetUploadEnd() const{ return m_uploadEnd; }
 
-    /*
-     <p>The time that the disk upload ends.</p>
-    */
+    /**
+     * <p>The time that the disk upload ends.</p>
+     */
     inline void SetUploadEnd(double value) { m_uploadEndHasBeenSet = true; m_uploadEnd = value; }
 
-    /*
-     <p>The time that the disk upload ends.</p>
-    */
+    /**
+     * <p>The time that the disk upload ends.</p>
+     */
     inline ClientData& WithUploadEnd(double value) { SetUploadEnd(value); return *this;}
 
-    /*
-     <p>The size of the uploaded disk image, in GiB.</p>
-    */
+    /**
+     * <p>The size of the uploaded disk image, in GiB.</p>
+     */
     inline double GetUploadSize() const{ return m_uploadSize; }
 
-    /*
-     <p>The size of the uploaded disk image, in GiB.</p>
-    */
+    /**
+     * <p>The size of the uploaded disk image, in GiB.</p>
+     */
     inline void SetUploadSize(double value) { m_uploadSizeHasBeenSet = true; m_uploadSize = value; }
 
-    /*
-     <p>The size of the uploaded disk image, in GiB.</p>
-    */
+    /**
+     * <p>The size of the uploaded disk image, in GiB.</p>
+     */
     inline ClientData& WithUploadSize(double value) { SetUploadSize(value); return *this;}
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline ClientData& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline ClientData& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
-    /*
-     <p>A user-defined comment about the disk upload.</p>
-    */
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline ClientData& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:

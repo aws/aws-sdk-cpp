@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CreateDeployment</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CreateDeployment</code> request.</p>
+   */
   class AWS_OPSWORKS_API CreateDeploymentResult
   {
   public:
@@ -42,39 +42,46 @@ namespace Model
     CreateDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = value; }
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline CreateDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    */
+    /**
+     * <p>The deployment ID, which can be used with other requests to identify the
+     * deployment.</p>
+     */
     inline CreateDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  /*
-    A description of the identity.
-  */
+
+  /**
+   * A description of the identity.
+   */
   class AWS_COGNITOIDENTITY_API IdentityDescription
   {
   public:
@@ -41,109 +42,109 @@ namespace Model
     IdentityDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline IdentityDescription& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline IdentityDescription& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
-    /*
-     A unique identifier in the format REGION:GUID.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID.
+     */
     inline IdentityDescription& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline const Aws::Vector<Aws::String>& GetLogins() const{ return m_logins; }
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline void SetLogins(const Aws::Vector<Aws::String>& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline void SetLogins(Aws::Vector<Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline IdentityDescription& WithLogins(const Aws::Vector<Aws::String>& value) { SetLogins(value); return *this;}
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline IdentityDescription& WithLogins(Aws::Vector<Aws::String>&& value) { SetLogins(value); return *this;}
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline IdentityDescription& AddLogins(const Aws::String& value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline IdentityDescription& AddLogins(Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 
-    /*
-     A set of optional name-value pairs that map provider names to provider tokens.
-    */
+    /**
+     * A set of optional name-value pairs that map provider names to provider tokens.
+     */
     inline IdentityDescription& AddLogins(const char* value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 
-    /*
-     <p>Date on which the identity was created.</p>
-    */
+    /**
+     * <p>Date on which the identity was created.</p>
+     */
     inline double GetCreationDate() const{ return m_creationDate; }
 
-    /*
-     <p>Date on which the identity was created.</p>
-    */
+    /**
+     * <p>Date on which the identity was created.</p>
+     */
     inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
-    /*
-     <p>Date on which the identity was created.</p>
-    */
+    /**
+     * <p>Date on which the identity was created.</p>
+     */
     inline IdentityDescription& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
-    /*
-     <p>Date on which the identity was last modified.</p>
-    */
+    /**
+     * <p>Date on which the identity was last modified.</p>
+     */
     inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
-    /*
-     <p>Date on which the identity was last modified.</p>
-    */
+    /**
+     * <p>Date on which the identity was last modified.</p>
+     */
     inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
-    /*
-     <p>Date on which the identity was last modified.</p>
-    */
+    /**
+     * <p>Date on which the identity was last modified.</p>
+     */
     inline IdentityDescription& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a product code.</p>
-  */
+
+  /**
+   * <p>Describes a product code.</p>
+   */
   class AWS_EC2_API ProductCode
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline const Aws::String& GetProductCodeId() const{ return m_productCodeId; }
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline void SetProductCodeId(const Aws::String& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = value; }
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline void SetProductCodeId(Aws::String&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = value; }
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline void SetProductCodeId(const char* value) { m_productCodeIdHasBeenSet = true; m_productCodeId.assign(value); }
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline ProductCode& WithProductCodeId(const Aws::String& value) { SetProductCodeId(value); return *this;}
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline ProductCode& WithProductCodeId(Aws::String&& value) { SetProductCodeId(value); return *this;}
 
-    /*
-     <p>The product code.</p>
-    */
+    /**
+     * <p>The product code.</p>
+     */
     inline ProductCode& WithProductCodeId(const char* value) { SetProductCodeId(value); return *this;}
 
-    /*
-     <p>The type of product code.</p>
-    */
+    /**
+     * <p>The type of product code.</p>
+     */
     inline const ProductCodeValues& GetProductCodeType() const{ return m_productCodeType; }
 
-    /*
-     <p>The type of product code.</p>
-    */
+    /**
+     * <p>The type of product code.</p>
+     */
     inline void SetProductCodeType(const ProductCodeValues& value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = value; }
 
-    /*
-     <p>The type of product code.</p>
-    */
+    /**
+     * <p>The type of product code.</p>
+     */
     inline void SetProductCodeType(ProductCodeValues&& value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = value; }
 
-    /*
-     <p>The type of product code.</p>
-    */
+    /**
+     * <p>The type of product code.</p>
+     */
     inline ProductCode& WithProductCodeType(const ProductCodeValues& value) { SetProductCodeType(value); return *this;}
 
-    /*
-     <p>The type of product code.</p>
-    */
+    /**
+     * <p>The type of product code.</p>
+     */
     inline ProductCode& WithProductCodeType(ProductCodeValues&& value) { SetProductCodeType(value); return *this;}
 
   private:

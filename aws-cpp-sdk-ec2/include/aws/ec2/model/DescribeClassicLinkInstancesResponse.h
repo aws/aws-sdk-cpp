@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeClassicLinkInstancesResponse
   {
   public:
@@ -45,74 +42,81 @@ namespace Model
     DescribeClassicLinkInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeClassicLinkInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline const Aws::Vector<ClassicLinkInstance>& GetInstances() const{ return m_instances; }
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline void SetInstances(const Aws::Vector<ClassicLinkInstance>& value) { m_instances = value; }
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline void SetInstances(Aws::Vector<ClassicLinkInstance>&& value) { m_instances = value; }
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& WithInstances(const Aws::Vector<ClassicLinkInstance>& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& WithInstances(Aws::Vector<ClassicLinkInstance>&& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& AddInstances(const ClassicLinkInstance& value) { m_instances.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more linked EC2-Classic instances.</p>
-    */
+    /**
+     * <p>Information about one or more linked EC2-Classic instances.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& AddInstances(ClassicLinkInstance&& value) { m_instances.push_back(value); return *this; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeClassicLinkInstancesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

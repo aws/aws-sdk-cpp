@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SNS
 {
 namespace Model
 {
-  /*
-    <p>Response for Publish action.</p>
-  */
+  /**
+   * <p>Response for Publish action.</p>
+   */
   class AWS_SNS_API PublishResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     PublishResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     PublishResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline PublishResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline PublishResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
-    /*
-     <p>Unique identifier assigned to the published message.</p> <p>Length Constraint: Maximum 100 characters</p>
-    */
+    /**
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
+     * Constraint: Maximum 100 characters</p>
+     */
     inline PublishResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
     

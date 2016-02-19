@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API AttachNetworkInterfaceResponse
   {
   public:
@@ -43,39 +40,39 @@ namespace Model
     AttachNetworkInterfaceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AttachNetworkInterfaceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentId = value; }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentId = value; }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(const char* value) { m_attachmentId.assign(value); }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(Aws::String&& value) { SetAttachmentId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
     

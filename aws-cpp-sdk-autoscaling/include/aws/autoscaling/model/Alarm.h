@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    <p>Describes an alarm.</p>
-  */
+
+  /**
+   * <p>Describes an alarm.</p>
+   */
   class AWS_AUTOSCALING_API Alarm
   {
   public:
@@ -43,74 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline Alarm& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline Alarm& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
 
-    /*
-     <p>The name of the alarm.</p>
-    */
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline Alarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline const Aws::String& GetAlarmARN() const{ return m_alarmARN; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline void SetAlarmARN(const Aws::String& value) { m_alarmARNHasBeenSet = true; m_alarmARN = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline void SetAlarmARN(Aws::String&& value) { m_alarmARNHasBeenSet = true; m_alarmARN = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline void SetAlarmARN(const char* value) { m_alarmARNHasBeenSet = true; m_alarmARN.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline Alarm& WithAlarmARN(const Aws::String& value) { SetAlarmARN(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline Alarm& WithAlarmARN(Aws::String&& value) { SetAlarmARN(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
     inline Alarm& WithAlarmARN(const char* value) { SetAlarmARN(value); return *this;}
 
   private:

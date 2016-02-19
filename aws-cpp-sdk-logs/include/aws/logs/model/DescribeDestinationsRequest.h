@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DescribeDestinationsRequest : public CloudWatchLogsRequest
   {
   public:
@@ -35,39 +35,46 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline const Aws::String& GetDestinationNamePrefix() const{ return m_destinationNamePrefix; }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline void SetDestinationNamePrefix(const Aws::String& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = value; }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline void SetDestinationNamePrefix(Aws::String&& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = value; }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline void SetDestinationNamePrefix(const char* value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix.assign(value); }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(const Aws::String& value) { SetDestinationNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(Aws::String&& value) { SetDestinationNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>Will only return destinations that match the provided destinationNamePrefix.
+     * If you don't specify a value, no prefix is applied.</p>
+     */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(const char* value) { SetDestinationNamePrefix(value); return *this;}
 
     

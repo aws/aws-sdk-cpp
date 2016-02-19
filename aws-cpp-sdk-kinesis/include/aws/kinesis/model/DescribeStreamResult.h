@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>Represents the output for <code>DescribeStream</code>.</p>
-  */
+  /**
+   * <p>Represents the output for <code>DescribeStream</code>.</p>
+   */
   class AWS_KINESIS_API DescribeStreamResult
   {
   public:
@@ -42,29 +42,39 @@ namespace Model
     DescribeStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are more shards available.</p>
-    */
+    /**
+     * <p>The current status of the stream, the stream ARN, an array of shard objects
+     * that comprise the stream, and states whether there are more shards
+     * available.</p>
+     */
     inline const StreamDescription& GetStreamDescription() const{ return m_streamDescription; }
 
-    /*
-     <p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are more shards available.</p>
-    */
+    /**
+     * <p>The current status of the stream, the stream ARN, an array of shard objects
+     * that comprise the stream, and states whether there are more shards
+     * available.</p>
+     */
     inline void SetStreamDescription(const StreamDescription& value) { m_streamDescription = value; }
 
-    /*
-     <p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are more shards available.</p>
-    */
+    /**
+     * <p>The current status of the stream, the stream ARN, an array of shard objects
+     * that comprise the stream, and states whether there are more shards
+     * available.</p>
+     */
     inline void SetStreamDescription(StreamDescription&& value) { m_streamDescription = value; }
 
-    /*
-     <p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are more shards available.</p>
-    */
+    /**
+     * <p>The current status of the stream, the stream ARN, an array of shard objects
+     * that comprise the stream, and states whether there are more shards
+     * available.</p>
+     */
     inline DescribeStreamResult& WithStreamDescription(const StreamDescription& value) { SetStreamDescription(value); return *this;}
 
-    /*
-     <p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are more shards available.</p>
-    */
+    /**
+     * <p>The current status of the stream, the stream ARN, an array of shard objects
+     * that comprise the stream, and states whether there are more shards
+     * available.</p>
+     */
     inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a request to cancel a Spot Instance.</p>
-  */
+
+  /**
+   * <p>Describes a request to cancel a Spot Instance.</p>
+   */
   class AWS_EC2_API CancelledSpotInstanceRequest
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(value); return *this;}
 
-    /*
-     <p>The ID of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
-    /*
-     <p>The state of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The state of the Spot Instance request.</p>
+     */
     inline const CancelSpotInstanceRequestState& GetState() const{ return m_state; }
 
-    /*
-     <p>The state of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The state of the Spot Instance request.</p>
+     */
     inline void SetState(const CancelSpotInstanceRequestState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The state of the Spot Instance request.</p>
+     */
     inline void SetState(CancelSpotInstanceRequestState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The state of the Spot Instance request.</p>
+     */
     inline CancelledSpotInstanceRequest& WithState(const CancelSpotInstanceRequestState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The state of the Spot Instance request.</p>
-    */
+    /**
+     * <p>The state of the Spot Instance request.</p>
+     */
     inline CancelledSpotInstanceRequest& WithState(CancelSpotInstanceRequestState&& value) { SetState(value); return *this;}
 
   private:

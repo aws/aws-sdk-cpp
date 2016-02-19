@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Describes a destination in Amazon Redshift.</p>
-  */
+
+  /**
+   * <p>Describes a destination in Amazon Redshift.</p>
+   */
   class AWS_FIREHOSE_API RedshiftDestinationDescription
   {
   public:
@@ -42,159 +43,159 @@ namespace Model
     RedshiftDestinationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline RedshiftDestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline RedshiftDestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline RedshiftDestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline const Aws::String& GetClusterJDBCURL() const{ return m_clusterJDBCURL; }
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline void SetClusterJDBCURL(const Aws::String& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = value; }
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline void SetClusterJDBCURL(Aws::String&& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = value; }
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline void SetClusterJDBCURL(const char* value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL.assign(value); }
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline RedshiftDestinationDescription& WithClusterJDBCURL(const Aws::String& value) { SetClusterJDBCURL(value); return *this;}
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline RedshiftDestinationDescription& WithClusterJDBCURL(Aws::String&& value) { SetClusterJDBCURL(value); return *this;}
 
-    /*
-     <p>The database connection string.</p>
-    */
+    /**
+     * <p>The database connection string.</p>
+     */
     inline RedshiftDestinationDescription& WithClusterJDBCURL(const char* value) { SetClusterJDBCURL(value); return *this;}
 
-    /*
-     <p>The <code>COPY</code> command.</p>
-    */
+    /**
+     * <p>The <code>COPY</code> command.</p>
+     */
     inline const CopyCommand& GetCopyCommand() const{ return m_copyCommand; }
 
-    /*
-     <p>The <code>COPY</code> command.</p>
-    */
+    /**
+     * <p>The <code>COPY</code> command.</p>
+     */
     inline void SetCopyCommand(const CopyCommand& value) { m_copyCommandHasBeenSet = true; m_copyCommand = value; }
 
-    /*
-     <p>The <code>COPY</code> command.</p>
-    */
+    /**
+     * <p>The <code>COPY</code> command.</p>
+     */
     inline void SetCopyCommand(CopyCommand&& value) { m_copyCommandHasBeenSet = true; m_copyCommand = value; }
 
-    /*
-     <p>The <code>COPY</code> command.</p>
-    */
+    /**
+     * <p>The <code>COPY</code> command.</p>
+     */
     inline RedshiftDestinationDescription& WithCopyCommand(const CopyCommand& value) { SetCopyCommand(value); return *this;}
 
-    /*
-     <p>The <code>COPY</code> command.</p>
-    */
+    /**
+     * <p>The <code>COPY</code> command.</p>
+     */
     inline RedshiftDestinationDescription& WithCopyCommand(CopyCommand&& value) { SetCopyCommand(value); return *this;}
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline RedshiftDestinationDescription& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline RedshiftDestinationDescription& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
 
-    /*
-     <p>The name of the user.</p>
-    */
+    /**
+     * <p>The name of the user.</p>
+     */
     inline RedshiftDestinationDescription& WithUsername(const char* value) { SetUsername(value); return *this;}
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline const S3DestinationDescription& GetS3DestinationDescription() const{ return m_s3DestinationDescription; }
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(S3DestinationDescription&& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline RedshiftDestinationDescription& WithS3DestinationDescription(const S3DestinationDescription& value) { SetS3DestinationDescription(value); return *this;}
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline RedshiftDestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(value); return *this;}
 
   private:

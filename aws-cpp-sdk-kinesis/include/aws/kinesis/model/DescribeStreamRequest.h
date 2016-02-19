@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Kinesis
 namespace Model
 {
 
-  /*
-    <p>Represents the input for <code>DescribeStream</code>.</p>
-  */
+  /**
+   * <p>Represents the input for <code>DescribeStream</code>.</p>
+   */
   class AWS_KINESIS_API DescribeStreamRequest : public KinesisRequest
   {
   public:
@@ -36,89 +36,89 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline DescribeStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline DescribeStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream to describe.</p>
-    */
+    /**
+     * <p>The name of the stream to describe.</p>
+     */
     inline DescribeStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The maximum number of shards to return.</p>
-    */
+    /**
+     * <p>The maximum number of shards to return.</p>
+     */
     inline long GetLimit() const{ return m_limit; }
 
-    /*
-     <p>The maximum number of shards to return.</p>
-    */
+    /**
+     * <p>The maximum number of shards to return.</p>
+     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    /*
-     <p>The maximum number of shards to return.</p>
-    */
+    /**
+     * <p>The maximum number of shards to return.</p>
+     */
     inline DescribeStreamRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline void SetExclusiveStartShardId(const Aws::String& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline void SetExclusiveStartShardId(const char* value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId.assign(value); }
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline DescribeStreamRequest& WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline DescribeStreamRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(value); return *this;}
 
-    /*
-     <p>The shard ID of the shard to start with.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to start with.</p>
+     */
     inline DescribeStreamRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,9 +36,9 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of an <i>UpdateItem</i> operation.</p>
-  */
+  /**
+   * <p>Represents the output of an <i>UpdateItem</i> operation.</p>
+   */
   class AWS_DYNAMODB_API UpdateItemResult
   {
   public:
@@ -46,59 +46,92 @@ namespace Model
     UpdateItemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateItemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline const Aws::Map<Aws::String, AttributeValue>& GetAttributes() const{ return m_attributes; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline void SetAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { m_attributes = value; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline void SetAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_attributes = value; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& WithAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { SetAttributes(value); return *this;}
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& WithAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetAttributes(value); return *this;}
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& AddAttributes(const Aws::String& key, const AttributeValue& value) { m_attributes[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& AddAttributes(Aws::String&& key, const AttributeValue& value) { m_attributes[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& AddAttributes(const Aws::String& key, AttributeValue&& value) { m_attributes[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& AddAttributes(Aws::String&& key, AttributeValue&& value) { m_attributes[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& AddAttributes(const char* key, AttributeValue&& value) { m_attributes[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute values as they appeared before the <i>UpdateItem</i> operation. This map only appears if <i>ReturnValues</i> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    */
+    /**
+     * <p>A map of attribute values as they appeared before the <i>UpdateItem</i>
+     * operation. This map only appears if <i>ReturnValues</i> was specified as
+     * something other than <code>NONE</code> in the request. Each element represents
+     * one attribute.</p>
+     */
     inline UpdateItemResult& AddAttributes(const char* key, const AttributeValue& value) { m_attributes[key] = value; return *this; }
 
     

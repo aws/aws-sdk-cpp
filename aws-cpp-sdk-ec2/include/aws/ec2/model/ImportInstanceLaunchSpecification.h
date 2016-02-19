@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,9 +36,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the launch specification for VM import.</p>
-  */
+
+  /**
+   * <p>Describes the launch specification for VM import.</p>
+   */
   class AWS_EC2_API ImportInstanceLaunchSpecification
   {
   public:
@@ -49,329 +50,356 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The architecture of the instance.</p>
-    */
+    /**
+     * <p>The architecture of the instance.</p>
+     */
     inline const ArchitectureValues& GetArchitecture() const{ return m_architecture; }
 
-    /*
-     <p>The architecture of the instance.</p>
-    */
+    /**
+     * <p>The architecture of the instance.</p>
+     */
     inline void SetArchitecture(const ArchitectureValues& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
-    /*
-     <p>The architecture of the instance.</p>
-    */
+    /**
+     * <p>The architecture of the instance.</p>
+     */
     inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
-    /*
-     <p>The architecture of the instance.</p>
-    */
+    /**
+     * <p>The architecture of the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithArchitecture(const ArchitectureValues& value) { SetArchitecture(value); return *this;}
 
-    /*
-     <p>The architecture of the instance.</p>
-    */
+    /**
+     * <p>The architecture of the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(value); return *this;}
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(value); return *this;}
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline ImportInstanceLaunchSpecification& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline ImportInstanceLaunchSpecification& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
-    /*
-     <p>One or more security group names.</p>
-    */
+    /**
+     * <p>One or more security group names.</p>
+     */
     inline ImportInstanceLaunchSpecification& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(value); return *this;}
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline ImportInstanceLaunchSpecification& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline ImportInstanceLaunchSpecification& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more security group IDs.</p>
-    */
+    /**
+     * <p>One or more security group IDs.</p>
+     */
     inline ImportInstanceLaunchSpecification& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
 
-    /*
-     <p>Reserved.</p>
-    */
+    /**
+     * <p>Reserved.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
-    /*
-     <p>The Base64-encoded MIME user data to be made available to the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     */
     inline const UserData& GetUserData() const{ return m_userData; }
 
-    /*
-     <p>The Base64-encoded MIME user data to be made available to the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     */
     inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
-    /*
-     <p>The Base64-encoded MIME user data to be made available to the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     */
     inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
-    /*
-     <p>The Base64-encoded MIME user data to be made available to the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithUserData(const UserData& value) { SetUserData(value); return *this;}
 
-    /*
-     <p>The Base64-encoded MIME user data to be made available to the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(value); return *this;}
 
-    /*
-     <p>The instance type. For more information about the instance types that you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
-    */
+    /**
+     * <p>The instance type. For more information about the instance types that you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
-    /*
-     <p>The instance type. For more information about the instance types that you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
-    */
+    /**
+     * <p>The instance type. For more information about the instance types that you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
-    /*
-     <p>The instance type. For more information about the instance types that you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
-    */
+    /**
+     * <p>The instance type. For more information about the instance types that you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
-    /*
-     <p>The instance type. For more information about the instance types that you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
-    */
+    /**
+     * <p>The instance type. For more information about the instance types that you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
-    /*
-     <p>The instance type. For more information about the instance types that you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
-    */
+    /**
+     * <p>The instance type. For more information about the instance types that you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 
-    /*
-     <p>The placement information for the instance.</p>
-    */
+    /**
+     * <p>The placement information for the instance.</p>
+     */
     inline const Placement& GetPlacement() const{ return m_placement; }
 
-    /*
-     <p>The placement information for the instance.</p>
-    */
+    /**
+     * <p>The placement information for the instance.</p>
+     */
     inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
 
-    /*
-     <p>The placement information for the instance.</p>
-    */
+    /**
+     * <p>The placement information for the instance.</p>
+     */
     inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = value; }
 
-    /*
-     <p>The placement information for the instance.</p>
-    */
+    /**
+     * <p>The placement information for the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
 
-    /*
-     <p>The placement information for the instance.</p>
-    */
+    /**
+     * <p>The placement information for the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithPlacement(Placement&& value) { SetPlacement(value); return *this;}
 
-    /*
-     <p>Indicates whether monitoring is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled.</p>
+     */
     inline bool GetMonitoring() const{ return m_monitoring; }
 
-    /*
-     <p>Indicates whether monitoring is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled.</p>
+     */
     inline void SetMonitoring(bool value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
-    /*
-     <p>Indicates whether monitoring is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithMonitoring(bool value) { SetMonitoring(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
-    /*
-     <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    */
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
     inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
 
-    /*
-     <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    */
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
     inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
 
-    /*
-     <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    */
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
     inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
 
-    /*
-     <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    */
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
     inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
 
-    /*
-     <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    */
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
     inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    */
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
     inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API UpdateServiceResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     UpdateServiceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateServiceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The full description of your service following the update call.</p>
-    */
+    /**
+     * <p>The full description of your service following the update call.</p>
+     */
     inline const Service& GetService() const{ return m_service; }
 
-    /*
-     <p>The full description of your service following the update call.</p>
-    */
+    /**
+     * <p>The full description of your service following the update call.</p>
+     */
     inline void SetService(const Service& value) { m_service = value; }
 
-    /*
-     <p>The full description of your service following the update call.</p>
-    */
+    /**
+     * <p>The full description of your service following the update call.</p>
+     */
     inline void SetService(Service&& value) { m_service = value; }
 
-    /*
-     <p>The full description of your service following the update call.</p>
-    */
+    /**
+     * <p>The full description of your service following the update call.</p>
+     */
     inline UpdateServiceResult& WithService(const Service& value) { SetService(value); return *this;}
 
-    /*
-     <p>The full description of your service following the update call.</p>
-    */
+    /**
+     * <p>The full description of your service following the update call.</p>
+     */
     inline UpdateServiceResult& WithService(Service&& value) { SetService(value); return *this;}
 
   private:

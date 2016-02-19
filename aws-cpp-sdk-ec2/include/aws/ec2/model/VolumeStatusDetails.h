@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a volume status.</p>
-  */
+
+  /**
+   * <p>Describes a volume status.</p>
+   */
   class AWS_EC2_API VolumeStatusDetails
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the volume status.</p>
-    */
+    /**
+     * <p>The name of the volume status.</p>
+     */
     inline const VolumeStatusName& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the volume status.</p>
-    */
+    /**
+     * <p>The name of the volume status.</p>
+     */
     inline void SetName(const VolumeStatusName& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the volume status.</p>
-    */
+    /**
+     * <p>The name of the volume status.</p>
+     */
     inline void SetName(VolumeStatusName&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the volume status.</p>
-    */
+    /**
+     * <p>The name of the volume status.</p>
+     */
     inline VolumeStatusDetails& WithName(const VolumeStatusName& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the volume status.</p>
-    */
+    /**
+     * <p>The name of the volume status.</p>
+     */
     inline VolumeStatusDetails& WithName(VolumeStatusName&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline VolumeStatusDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline VolumeStatusDetails& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The intended status of the volume status.</p>
-    */
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
     inline VolumeStatusDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:

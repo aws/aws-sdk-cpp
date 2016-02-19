@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Data retrieval policy.</p>
-  */
+
+  /**
+   * <p>Data retrieval policy.</p>
+   */
   class AWS_GLACIER_API DataRetrievalPolicy
   {
   public:
@@ -41,39 +42,53 @@ namespace Model
     DataRetrievalPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline const Aws::Vector<DataRetrievalRule>& GetRules() const{ return m_rules; }
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline void SetRules(const Aws::Vector<DataRetrievalRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline void SetRules(Aws::Vector<DataRetrievalRule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline DataRetrievalPolicy& WithRules(const Aws::Vector<DataRetrievalRule>& value) { SetRules(value); return *this;}
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline DataRetrievalPolicy& WithRules(Aws::Vector<DataRetrievalRule>&& value) { SetRules(value); return *this;}
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline DataRetrievalPolicy& AddRules(const DataRetrievalRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
-    /*
-     <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    */
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline DataRetrievalPolicy& AddRules(DataRetrievalRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
   private:

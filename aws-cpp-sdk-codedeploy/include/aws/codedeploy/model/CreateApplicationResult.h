@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a create application operation.</p>
-  */
+  /**
+   * <p>Represents the output of a create application operation.</p>
+   */
   class AWS_CODEDEPLOY_API CreateApplicationResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = value; }
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline CreateApplicationResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline CreateApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(value); return *this;}
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    /**
+     * <p>A unique application ID.</p>
+     */
     inline CreateApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:

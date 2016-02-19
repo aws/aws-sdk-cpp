@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Kinesis
 namespace Model
 {
 
-  /*
-    <p>Represents the input for <code>CreateStream</code>.</p>
-  */
+  /**
+   * <p>Represents the input for <code>CreateStream</code>.</p>
+   */
   class AWS_KINESIS_API CreateStreamRequest : public KinesisRequest
   {
   public:
@@ -36,54 +36,88 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline CreateStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline CreateStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account, but in two different regions, can have the same name.</p>
-    */
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by region.
+     * That is, two streams in two different AWS accounts can have the same name, and
+     * two streams in the same AWS account, but in two different regions, can have the
+     * same name.</p>
+     */
     inline CreateStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>
-    */
+    /**
+     * <p>The number of shards that the stream will use. The throughput of the stream
+     * is a function of the number of shards; more shards are required for greater
+     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     */
     inline long GetShardCount() const{ return m_shardCount; }
 
-    /*
-     <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>
-    */
+    /**
+     * <p>The number of shards that the stream will use. The throughput of the stream
+     * is a function of the number of shards; more shards are required for greater
+     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     */
     inline void SetShardCount(long value) { m_shardCountHasBeenSet = true; m_shardCount = value; }
 
-    /*
-     <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>
-    */
+    /**
+     * <p>The number of shards that the stream will use. The throughput of the stream
+     * is a function of the number of shards; more shards are required for greater
+     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     */
     inline CreateStreamRequest& WithShardCount(long value) { SetShardCount(value); return *this;}
 
   private:

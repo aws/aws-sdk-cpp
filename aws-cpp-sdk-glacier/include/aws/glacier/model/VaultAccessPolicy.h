@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Contains the vault access policy. </p>
-  */
+
+  /**
+   * <p>Contains the vault access policy. </p>
+   */
   class AWS_GLACIER_API VaultAccessPolicy
   {
   public:
@@ -40,39 +41,39 @@ namespace Model
     VaultAccessPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline VaultAccessPolicy& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline VaultAccessPolicy& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The vault access policy.</p>
-    */
+    /**
+     * <p>The vault access policy.</p>
+     */
     inline VaultAccessPolicy& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:

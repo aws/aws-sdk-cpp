@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    Response to a successful DeleteDataset request.
-  */
+  /**
+   * Response to a successful DeleteDataset request.
+   */
   class AWS_COGNITOSYNC_API DeleteDatasetResult
   {
   public:
@@ -42,29 +42,49 @@ namespace Model
     DeleteDatasetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteDatasetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    */
+    /**
+     * A collection of data for an identity pool. An identity pool can have multiple
+     * datasets. A dataset is per identity and can be general or associated with a
+     * particular entity in an application (like a saved game). Datasets are
+     * automatically created if they don't exist. Data is synced by dataset, and a
+     * dataset can hold up to 1MB of key-value pairs.
+     */
     inline const Dataset& GetDataset() const{ return m_dataset; }
 
-    /*
-     A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    */
+    /**
+     * A collection of data for an identity pool. An identity pool can have multiple
+     * datasets. A dataset is per identity and can be general or associated with a
+     * particular entity in an application (like a saved game). Datasets are
+     * automatically created if they don't exist. Data is synced by dataset, and a
+     * dataset can hold up to 1MB of key-value pairs.
+     */
     inline void SetDataset(const Dataset& value) { m_dataset = value; }
 
-    /*
-     A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    */
+    /**
+     * A collection of data for an identity pool. An identity pool can have multiple
+     * datasets. A dataset is per identity and can be general or associated with a
+     * particular entity in an application (like a saved game). Datasets are
+     * automatically created if they don't exist. Data is synced by dataset, and a
+     * dataset can hold up to 1MB of key-value pairs.
+     */
     inline void SetDataset(Dataset&& value) { m_dataset = value; }
 
-    /*
-     A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    */
+    /**
+     * A collection of data for an identity pool. An identity pool can have multiple
+     * datasets. A dataset is per identity and can be general or associated with a
+     * particular entity in an application (like a saved game). Datasets are
+     * automatically created if they don't exist. Data is synced by dataset, and a
+     * dataset can hold up to 1MB of key-value pairs.
+     */
     inline DeleteDatasetResult& WithDataset(const Dataset& value) { SetDataset(value); return *this;}
 
-    /*
-     A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    */
+    /**
+     * A collection of data for an identity pool. An identity pool can have multiple
+     * datasets. A dataset is per identity and can be general or associated with a
+     * particular entity in an application (like a saved game). Datasets are
+     * automatically created if they don't exist. Data is synced by dataset, and a
+     * dataset can hold up to 1MB of key-value pairs.
+     */
     inline DeleteDatasetResult& WithDataset(Dataset&& value) { SetDataset(value); return *this;}
 
   private:

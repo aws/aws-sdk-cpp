@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p> Provides details of the <code>TimerCanceled</code> event. </p>
-  */
+
+  /**
+   * <p> Provides details of the <code>TimerCanceled</code> event. </p>
+   */
   class AWS_SWF_API TimerCanceledEventAttributes
   {
   public:
@@ -40,69 +41,84 @@ namespace Model
     TimerCanceledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline const Aws::String& GetTimerId() const{ return m_timerId; }
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline void SetTimerId(const char* value) { m_timerIdHasBeenSet = true; m_timerId.assign(value); }
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline TimerCanceledEventAttributes& WithTimerId(const Aws::String& value) { SetTimerId(value); return *this;}
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline TimerCanceledEventAttributes& WithTimerId(Aws::String&& value) { SetTimerId(value); return *this;}
 
-    /*
-     <p> The unique ID of the timer that was canceled. </p>
-    */
+    /**
+     * <p> The unique ID of the timer that was canceled. </p>
+     */
     inline TimerCanceledEventAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 
-    /*
-     <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>TimerStarted</code> event that was recorded when this
+     * timer was started. This information can be useful for diagnosing problems by
+     * tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
 
-    /*
-     <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>TimerStarted</code> event that was recorded when this
+     * timer was started. This information can be useful for diagnosing problems by
+     * tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
 
-    /*
-     <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>TimerStarted</code> event that was recorded when this
+     * timer was started. This information can be useful for diagnosing problems by
+     * tracing back the chain of events leading up to this event.</p>
+     */
     inline TimerCanceledEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CancelTimer</code> decision to cancel
+     * this timer. This information can be useful for diagnosing problems by tracing
+     * back the chain of events leading up to this event.</p>
+     */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CancelTimer</code> decision to cancel
+     * this timer. This information can be useful for diagnosing problems by tracing
+     * back the chain of events leading up to this event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CancelTimer</code> decision to cancel
+     * this timer. This information can be useful for diagnosing problems by tracing
+     * back the chain of events leading up to this event.</p>
+     */
     inline TimerCanceledEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:

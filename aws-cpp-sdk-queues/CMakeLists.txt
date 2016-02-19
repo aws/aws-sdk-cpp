@@ -34,10 +34,6 @@ set(QUEUES_INCLUDES
 
 include_directories(${QUEUES_INCLUDES})
 
-if(NOT MSVC)
-  add_definitions(-std=c++11)
-endif()
-
 if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_QUEUES_EXPORTS")
 endif()

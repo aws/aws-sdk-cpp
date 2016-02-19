@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The timeline of the instance lifecycle.</p>
-  */
+
+  /**
+   * <p>The timeline of the instance lifecycle.</p>
+   */
   class AWS_EMR_API InstanceTimeline
   {
   public:
@@ -39,49 +40,49 @@ namespace Model
     InstanceTimeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The creation date and time of the instance.</p>
-    */
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
 
-    /*
-     <p>The creation date and time of the instance.</p>
-    */
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
     inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
-    /*
-     <p>The creation date and time of the instance.</p>
-    */
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
     inline InstanceTimeline& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
-    /*
-     <p>The date and time when the instance was ready to perform tasks.</p>
-    */
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
     inline double GetReadyDateTime() const{ return m_readyDateTime; }
 
-    /*
-     <p>The date and time when the instance was ready to perform tasks.</p>
-    */
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
     inline void SetReadyDateTime(double value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
-    /*
-     <p>The date and time when the instance was ready to perform tasks.</p>
-    */
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
     inline InstanceTimeline& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
 
-    /*
-     <p>The date and time when the instance was terminated.</p>
-    */
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
 
-    /*
-     <p>The date and time when the instance was terminated.</p>
-    */
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
     inline void SetEndDateTime(double value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
-    /*
-     <p>The date and time when the instance was terminated.</p>
-    */
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
     inline InstanceTimeline& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
   private:

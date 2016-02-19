@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the storage location for an instance store-backed AMI.</p>
-  */
+
+  /**
+   * <p>Describes the storage location for an instance store-backed AMI.</p>
+   */
   class AWS_EC2_API Storage
   {
   public:
@@ -43,29 +44,29 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>An Amazon S3 storage location.</p>
-    */
+    /**
+     * <p>An Amazon S3 storage location.</p>
+     */
     inline const S3Storage& GetS3() const{ return m_s3; }
 
-    /*
-     <p>An Amazon S3 storage location.</p>
-    */
+    /**
+     * <p>An Amazon S3 storage location.</p>
+     */
     inline void SetS3(const S3Storage& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
-    /*
-     <p>An Amazon S3 storage location.</p>
-    */
+    /**
+     * <p>An Amazon S3 storage location.</p>
+     */
     inline void SetS3(S3Storage&& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
-    /*
-     <p>An Amazon S3 storage location.</p>
-    */
+    /**
+     * <p>An Amazon S3 storage location.</p>
+     */
     inline Storage& WithS3(const S3Storage& value) { SetS3(value); return *this;}
 
-    /*
-     <p>An Amazon S3 storage location.</p>
-    */
+    /**
+     * <p>An Amazon S3 storage location.</p>
+     */
     inline Storage& WithS3(S3Storage&& value) { SetS3(value); return *this;}
 
   private:

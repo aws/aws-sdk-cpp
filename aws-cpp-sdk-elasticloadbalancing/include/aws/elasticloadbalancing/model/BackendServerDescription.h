@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about the configuration of a back-end server.</p>
-  */
+
+  /**
+   * <p>Information about the configuration of a back-end server.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API BackendServerDescription
   {
   public:
@@ -44,59 +45,59 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The port on which the back-end server is listening.</p>
-    */
+    /**
+     * <p>The port on which the back-end server is listening.</p>
+     */
     inline long GetInstancePort() const{ return m_instancePort; }
 
-    /*
-     <p>The port on which the back-end server is listening.</p>
-    */
+    /**
+     * <p>The port on which the back-end server is listening.</p>
+     */
     inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
-    /*
-     <p>The port on which the back-end server is listening.</p>
-    */
+    /**
+     * <p>The port on which the back-end server is listening.</p>
+     */
     inline BackendServerDescription& WithInstancePort(long value) { SetInstancePort(value); return *this;}
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline BackendServerDescription& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline BackendServerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline BackendServerDescription& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline BackendServerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the policies enabled for the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies enabled for the back-end server.</p>
+     */
     inline BackendServerDescription& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:

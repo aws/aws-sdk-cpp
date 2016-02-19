@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>A specification for an environment configuration</p>
-  */
+
+  /**
+   * <p>A specification for an environment configuration</p>
+   */
   class AWS_ELASTICBEANSTALK_API SourceConfiguration
   {
   public:
@@ -43,74 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline SourceConfiguration& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline SourceConfiguration& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of the application associated with the configuration.</p>
-    */
+    /**
+     * <p>The name of the application associated with the configuration.</p>
+     */
     inline SourceConfiguration& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline SourceConfiguration& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline SourceConfiguration& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
-    /*
-     <p>The name of the configuration template.</p>
-    */
+    /**
+     * <p>The name of the configuration template.</p>
+     */
     inline SourceConfiguration& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p> The result of the <a>RunJobFlow</a> operation. </p>
-  */
+  /**
+   * <p> The result of the <a>RunJobFlow</a> operation. </p>
+   */
   class AWS_EMR_API RunJobFlowResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     RunJobFlowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RunJobFlowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = value; }
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline void SetJobFlowId(const char* value) { m_jobFlowId.assign(value); }
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline RunJobFlowResult& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline RunJobFlowResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>An unique identifier for the job flow.</p>
-    */
+    /**
+     * <p>An unique identifier for the job flow.</p>
+     */
     inline RunJobFlowResult& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
 
   private:

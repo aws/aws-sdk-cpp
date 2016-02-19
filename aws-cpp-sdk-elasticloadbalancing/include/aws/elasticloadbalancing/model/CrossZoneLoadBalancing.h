@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
-  */
+
+  /**
+   * <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing
   {
   public:
@@ -42,19 +43,22 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
-    */
+    /**
+     * <p>Specifies whether cross-zone load balancing is enabled for the load
+     * balancer.</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    /*
-     <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
-    */
+    /**
+     * <p>Specifies whether cross-zone load balancing is enabled for the load
+     * balancer.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    /*
-     <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
-    */
+    /**
+     * <p>Specifies whether cross-zone load balancing is enabled for the load
+     * balancer.</p>
+     */
     inline CrossZoneLoadBalancing& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:

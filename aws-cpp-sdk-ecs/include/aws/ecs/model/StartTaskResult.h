@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API StartTaskResult
   {
   public:
@@ -44,74 +41,81 @@ namespace Model
     StartTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     StartTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline void SetTasks(const Aws::Vector<Task>& value) { m_tasks = value; }
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = value; }
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline StartTaskResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline StartTaskResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(value); return *this;}
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline StartTaskResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
 
-    /*
-     <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances will be described here.</p>
-    */
+    /**
+     * <p>A full description of the tasks that were started. Each task that was
+     * successfully placed on your container instances will be described here.</p>
+     */
     inline StartTaskResult& AddTasks(Task&& value) { m_tasks.push_back(value); return *this; }
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline StartTaskResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline StartTaskResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline StartTaskResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
-    /*
-     <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
-    */
+    /**
+     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     */
     inline StartTaskResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:

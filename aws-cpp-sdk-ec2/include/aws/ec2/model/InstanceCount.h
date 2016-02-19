@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a Reserved Instance listing state.</p>
-  */
+
+  /**
+   * <p>Describes a Reserved Instance listing state.</p>
+   */
   class AWS_EC2_API InstanceCount
   {
   public:
@@ -43,44 +44,47 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The states of the listed Reserved Instances.</p>
-    */
+    /**
+     * <p>The states of the listed Reserved Instances.</p>
+     */
     inline const ListingState& GetState() const{ return m_state; }
 
-    /*
-     <p>The states of the listed Reserved Instances.</p>
-    */
+    /**
+     * <p>The states of the listed Reserved Instances.</p>
+     */
     inline void SetState(const ListingState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The states of the listed Reserved Instances.</p>
-    */
+    /**
+     * <p>The states of the listed Reserved Instances.</p>
+     */
     inline void SetState(ListingState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The states of the listed Reserved Instances.</p>
-    */
+    /**
+     * <p>The states of the listed Reserved Instances.</p>
+     */
     inline InstanceCount& WithState(const ListingState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The states of the listed Reserved Instances.</p>
-    */
+    /**
+     * <p>The states of the listed Reserved Instances.</p>
+     */
     inline InstanceCount& WithState(ListingState&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
-    */
+    /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
     inline long GetInstanceCount() const{ return m_instanceCount; }
 
-    /*
-     <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
-    */
+    /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
     inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
-    /*
-     <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
-    */
+    /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
     inline InstanceCount& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
 
   private:

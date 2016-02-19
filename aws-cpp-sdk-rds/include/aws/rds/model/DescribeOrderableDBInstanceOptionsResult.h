@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action. </p>
-  */
+  /**
+   * <p> Contains the result of a successful invocation of the
+   * <a>DescribeOrderableDBInstanceOptions</a> action. </p>
+   */
   class AWS_RDS_API DescribeOrderableDBInstanceOptionsResult
   {
   public:
@@ -45,74 +46,102 @@ namespace Model
     DescribeOrderableDBInstanceOptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeOrderableDBInstanceOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline const Aws::Vector<OrderableDBInstanceOption>& GetOrderableDBInstanceOptions() const{ return m_orderableDBInstanceOptions; }
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline void SetOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { m_orderableDBInstanceOptions = value; }
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline void SetOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { m_orderableDBInstanceOptions = value; }
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { SetOrderableDBInstanceOptions(value); return *this;}
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { SetOrderableDBInstanceOptions(value); return *this;}
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(const OrderableDBInstanceOption& value) { m_orderableDBInstanceOptions.push_back(value); return *this; }
 
-    /*
-     <p>An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.</p>
-    */
+    /**
+     * <p>An <a>OrderableDBInstanceOption</a> structure containing information about
+     * orderable options for the DB Instance.</p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(OrderableDBInstanceOption&& value) { m_orderableDBInstanceOptions.push_back(value); return *this; }
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous
+     * OrderableDBInstanceOptions request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> . </p>
+     */
     inline DescribeOrderableDBInstanceOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     

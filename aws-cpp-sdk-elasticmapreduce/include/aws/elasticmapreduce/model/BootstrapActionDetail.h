@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>Reports the configuration of a bootstrap action in a job flow.</p>
-  */
+
+  /**
+   * <p>Reports the configuration of a bootstrap action in a job flow.</p>
+   */
   class AWS_EMR_API BootstrapActionDetail
   {
   public:
@@ -40,29 +41,29 @@ namespace Model
     BootstrapActionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>A description of the bootstrap action.</p>
-    */
+    /**
+     * <p>A description of the bootstrap action.</p>
+     */
     inline const BootstrapActionConfig& GetBootstrapActionConfig() const{ return m_bootstrapActionConfig; }
 
-    /*
-     <p>A description of the bootstrap action.</p>
-    */
+    /**
+     * <p>A description of the bootstrap action.</p>
+     */
     inline void SetBootstrapActionConfig(const BootstrapActionConfig& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = value; }
 
-    /*
-     <p>A description of the bootstrap action.</p>
-    */
+    /**
+     * <p>A description of the bootstrap action.</p>
+     */
     inline void SetBootstrapActionConfig(BootstrapActionConfig&& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = value; }
 
-    /*
-     <p>A description of the bootstrap action.</p>
-    */
+    /**
+     * <p>A description of the bootstrap action.</p>
+     */
     inline BootstrapActionDetail& WithBootstrapActionConfig(const BootstrapActionConfig& value) { SetBootstrapActionConfig(value); return *this;}
 
-    /*
-     <p>A description of the bootstrap action.</p>
-    */
+    /**
+     * <p>A description of the bootstrap action.</p>
+     */
     inline BootstrapActionDetail& WithBootstrapActionConfig(BootstrapActionConfig&& value) { SetBootstrapActionConfig(value); return *this;}
 
   private:

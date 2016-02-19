@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /*
-    <p>Represents the properties of a global secondary index.</p>
-  */
+
+  /**
+   * <p>Represents the properties of a global secondary index.</p>
+   */
   class AWS_DYNAMODB_API GlobalSecondaryIndex
   {
   public:
@@ -44,74 +45,95 @@ namespace Model
     GlobalSecondaryIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline GlobalSecondaryIndex& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline GlobalSecondaryIndex& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
-    /*
-     <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    */
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline GlobalSecondaryIndex& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline GlobalSecondaryIndex& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline GlobalSecondaryIndex& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(value); return *this;}
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline GlobalSecondaryIndex& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
-    /*
-     <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
-    */
+    /**
+     * <p>The complete key schema for a global secondary index, which consists of one
+     * or more pairs of attribute names and key types (<code>HASH</code> or
+     * <code>RANGE</code>).</p>
+     */
     inline GlobalSecondaryIndex& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
     

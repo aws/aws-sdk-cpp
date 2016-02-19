@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i>
+   * action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsResult
   {
   public:
@@ -45,74 +46,81 @@ namespace Model
     DescribeReservedCacheNodesOfferingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeReservedCacheNodesOfferingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline const Aws::Vector<ReservedCacheNodesOffering>& GetReservedCacheNodesOfferings() const{ return m_reservedCacheNodesOfferings; }
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline void SetReservedCacheNodesOfferings(const Aws::Vector<ReservedCacheNodesOffering>& value) { m_reservedCacheNodesOfferings = value; }
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline void SetReservedCacheNodesOfferings(Aws::Vector<ReservedCacheNodesOffering>&& value) { m_reservedCacheNodesOfferings = value; }
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& WithReservedCacheNodesOfferings(const Aws::Vector<ReservedCacheNodesOffering>& value) { SetReservedCacheNodesOfferings(value); return *this;}
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& WithReservedCacheNodesOfferings(Aws::Vector<ReservedCacheNodesOffering>&& value) { SetReservedCacheNodesOfferings(value); return *this;}
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& AddReservedCacheNodesOfferings(const ReservedCacheNodesOffering& value) { m_reservedCacheNodesOfferings.push_back(value); return *this; }
 
-    /*
-     <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    */
+    /**
+     * <p>A list of reserved cache node offerings. Each element in the list contains
+     * detailed information about one offering.</p>
+     */
     inline DescribeReservedCacheNodesOfferingsResult& AddReservedCacheNodesOfferings(ReservedCacheNodesOffering&& value) { m_reservedCacheNodesOfferings.push_back(value); return *this; }
 
     

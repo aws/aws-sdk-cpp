@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,11 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code> request. This list contains aggregated data from the previous two weeks of sending activity. </p>
-  */
+  /**
+   * <p>Represents a list of <code>SendDataPoint</code> items returned from a
+   * successful <code>GetSendStatistics</code> request. This list contains aggregated
+   * data from the previous two weeks of sending activity. </p>
+   */
   class AWS_SES_API GetSendStatisticsResult
   {
   public:
@@ -44,39 +46,39 @@ namespace Model
     GetSendStatisticsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetSendStatisticsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline const Aws::Vector<SendDataPoint>& GetSendDataPoints() const{ return m_sendDataPoints; }
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline void SetSendDataPoints(const Aws::Vector<SendDataPoint>& value) { m_sendDataPoints = value; }
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline void SetSendDataPoints(Aws::Vector<SendDataPoint>&& value) { m_sendDataPoints = value; }
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline GetSendStatisticsResult& WithSendDataPoints(const Aws::Vector<SendDataPoint>& value) { SetSendDataPoints(value); return *this;}
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline GetSendStatisticsResult& WithSendDataPoints(Aws::Vector<SendDataPoint>&& value) { SetSendDataPoints(value); return *this;}
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline GetSendStatisticsResult& AddSendDataPoints(const SendDataPoint& value) { m_sendDataPoints.push_back(value); return *this; }
 
-    /*
-     <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    */
+    /**
+     * <p>A list of data points, each of which represents 15 minutes of activity.</p>
+     */
     inline GetSendStatisticsResult& AddSendDataPoints(SendDataPoint&& value) { m_sendDataPoints.push_back(value); return *this; }
 
     

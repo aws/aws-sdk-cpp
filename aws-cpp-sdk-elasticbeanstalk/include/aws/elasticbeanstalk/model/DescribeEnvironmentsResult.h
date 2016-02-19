@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Result message containing a list of environment descriptions.</p>
-  */
+  /**
+   * <p>Result message containing a list of environment descriptions.</p>
+   */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentsResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeEnvironmentsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeEnvironmentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline const Aws::Vector<EnvironmentDescription>& GetEnvironments() const{ return m_environments; }
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline void SetEnvironments(const Aws::Vector<EnvironmentDescription>& value) { m_environments = value; }
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline void SetEnvironments(Aws::Vector<EnvironmentDescription>&& value) { m_environments = value; }
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline DescribeEnvironmentsResult& WithEnvironments(const Aws::Vector<EnvironmentDescription>& value) { SetEnvironments(value); return *this;}
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline DescribeEnvironmentsResult& WithEnvironments(Aws::Vector<EnvironmentDescription>&& value) { SetEnvironments(value); return *this;}
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline DescribeEnvironmentsResult& AddEnvironments(const EnvironmentDescription& value) { m_environments.push_back(value); return *this; }
 
-    /*
-     <p> Returns an <a>EnvironmentDescription</a> list. </p>
-    */
+    /**
+     * <p> Returns an <a>EnvironmentDescription</a> list. </p>
+     */
     inline DescribeEnvironmentsResult& AddEnvironments(EnvironmentDescription&& value) { m_environments.push_back(value); return *this; }
 
     

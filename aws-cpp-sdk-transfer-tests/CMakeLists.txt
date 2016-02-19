@@ -31,5 +31,5 @@ else()
     add_executable(runTransferIntegrationTests ${TRANSFER_TEST_SRC})
 endif()
 
-target_link_libraries(runTransferIntegrationTests aws-cpp-sdk-s3 aws-cpp-sdk-transfer testing-resources)
+target_link_libraries(runTransferIntegrationTests aws-cpp-sdk-transfer testing-resources)
 copyDlls(runTransferIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-transfer testing-resources)

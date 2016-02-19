@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetCredentialReport</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetCredentialReport</a> request.
+   * </p>
+   */
   class AWS_IAM_API GetCredentialReportResult
   {
   public:
@@ -44,69 +45,72 @@ namespace Model
     GetCredentialReportResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetCredentialReportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Contains the credential report. The report is Base64-encoded.</p>
-    */
+    /**
+     * <p>Contains the credential report. The report is Base64-encoded.</p>
+     */
     inline const Aws::Utils::ByteBuffer& GetContent() const{ return m_content; }
 
-    /*
-     <p>Contains the credential report. The report is Base64-encoded.</p>
-    */
+    /**
+     * <p>Contains the credential report. The report is Base64-encoded.</p>
+     */
     inline void SetContent(const Aws::Utils::ByteBuffer& value) { m_content = value; }
 
-    /*
-     <p>Contains the credential report. The report is Base64-encoded.</p>
-    */
+    /**
+     * <p>Contains the credential report. The report is Base64-encoded.</p>
+     */
     inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = value; }
 
-    /*
-     <p>Contains the credential report. The report is Base64-encoded.</p>
-    */
+    /**
+     * <p>Contains the credential report. The report is Base64-encoded.</p>
+     */
     inline GetCredentialReportResult& WithContent(const Aws::Utils::ByteBuffer& value) { SetContent(value); return *this;}
 
-    /*
-     <p>Contains the credential report. The report is Base64-encoded.</p>
-    */
+    /**
+     * <p>Contains the credential report. The report is Base64-encoded.</p>
+     */
     inline GetCredentialReportResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(value); return *this;}
 
-    /*
-     <p>The format (MIME type) of the credential report.</p>
-    */
+    /**
+     * <p>The format (MIME type) of the credential report.</p>
+     */
     inline const ReportFormatType& GetReportFormat() const{ return m_reportFormat; }
 
-    /*
-     <p>The format (MIME type) of the credential report.</p>
-    */
+    /**
+     * <p>The format (MIME type) of the credential report.</p>
+     */
     inline void SetReportFormat(const ReportFormatType& value) { m_reportFormat = value; }
 
-    /*
-     <p>The format (MIME type) of the credential report.</p>
-    */
+    /**
+     * <p>The format (MIME type) of the credential report.</p>
+     */
     inline void SetReportFormat(ReportFormatType&& value) { m_reportFormat = value; }
 
-    /*
-     <p>The format (MIME type) of the credential report.</p>
-    */
+    /**
+     * <p>The format (MIME type) of the credential report.</p>
+     */
     inline GetCredentialReportResult& WithReportFormat(const ReportFormatType& value) { SetReportFormat(value); return *this;}
 
-    /*
-     <p>The format (MIME type) of the credential report.</p>
-    */
+    /**
+     * <p>The format (MIME type) of the credential report.</p>
+     */
     inline GetCredentialReportResult& WithReportFormat(ReportFormatType&& value) { SetReportFormat(value); return *this;}
 
-    /*
-     <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
-    */
+    /**
+     * <p> The date and time when the credential report was created, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     */
     inline double GetGeneratedTime() const{ return m_generatedTime; }
 
-    /*
-     <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
-    */
+    /**
+     * <p> The date and time when the credential report was created, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     */
     inline void SetGeneratedTime(double value) { m_generatedTime = value; }
 
-    /*
-     <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
-    */
+    /**
+     * <p> The date and time when the credential report was created, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     */
     inline GetCredentialReportResult& WithGeneratedTime(double value) { SetGeneratedTime(value); return *this;}
 
     

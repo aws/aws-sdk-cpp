@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace SimpleDB
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_SIMPLEDB_API GetAttributesResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     GetAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributes = value; }
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = value; }
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline GetAttributesResult& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline GetAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline GetAttributesResult& AddAttributes(const Attribute& value) { m_attributes.push_back(value); return *this; }
 
-    /*
-     The list of attributes returned by the operation.
-    */
+    /**
+     * The list of attributes returned by the operation.
+     */
     inline GetAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(value); return *this; }
 
     

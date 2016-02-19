@@ -23,11 +23,11 @@ namespace Model
 #set($jsonRef = "${typeInfo.jsonType}&")
 #set($classNameRef = "${typeInfo.className}&")
 
-  /*
+  /**
 #if($shape.documentation)
-    $shape.documentation
+   * $shape.documentation
 #end
-  */
+   */
   class ${typeInfo.exportValue} ${typeInfo.className} : public ${typeInfo.baseClass}
   {
   public:

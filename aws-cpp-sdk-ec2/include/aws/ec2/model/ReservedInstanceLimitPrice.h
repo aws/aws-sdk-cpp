@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the limit price of a Reserved Instance offering.</p>
-  */
+
+  /**
+   * <p>Describes the limit price of a Reserved Instance offering.</p>
+   */
   class AWS_EC2_API ReservedInstanceLimitPrice
   {
   public:
@@ -43,44 +44,52 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
-    */
+    /**
+     * <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price
+     * on the total order (instanceCount * price).</p>
+     */
     inline double GetAmount() const{ return m_amount; }
 
-    /*
-     <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
-    */
+    /**
+     * <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price
+     * on the total order (instanceCount * price).</p>
+     */
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
 
-    /*
-     <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
-    */
+    /**
+     * <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price
+     * on the total order (instanceCount * price).</p>
+     */
     inline ReservedInstanceLimitPrice& WithAmount(double value) { SetAmount(value); return *this;}
 
-    /*
-     <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    */
+    /**
+     * <p>The currency in which the <code>limitPrice</code> amount is specified. At
+     * this time, the only supported currency is <code>USD</code>.</p>
+     */
     inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
 
-    /*
-     <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    */
+    /**
+     * <p>The currency in which the <code>limitPrice</code> amount is specified. At
+     * this time, the only supported currency is <code>USD</code>.</p>
+     */
     inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
-    /*
-     <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    */
+    /**
+     * <p>The currency in which the <code>limitPrice</code> amount is specified. At
+     * this time, the only supported currency is <code>USD</code>.</p>
+     */
     inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
-    /*
-     <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    */
+    /**
+     * <p>The currency in which the <code>limitPrice</code> amount is specified. At
+     * this time, the only supported currency is <code>USD</code>.</p>
+     */
     inline ReservedInstanceLimitPrice& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
 
-    /*
-     <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    */
+    /**
+     * <p>The currency in which the <code>limitPrice</code> amount is specified. At
+     * this time, the only supported currency is <code>USD</code>.</p>
+     */
     inline ReservedInstanceLimitPrice& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
 
   private:

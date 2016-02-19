@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace CloudWatch
 {
 namespace Model
 {
-  /*
-    <p> The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair. </p> <p>For examples that use one or more dimensions, see <a>PutMetricData</a>.</p>
-  */
+
+  /**
+   * <p> The <code>Dimension</code> data type further expands on the identity of a
+   * metric using a Name, Value pair. </p> <p>For examples that use one or more
+   * dimensions, see <a>PutMetricData</a>.</p>
+   */
   class AWS_CLOUDWATCH_API Dimension
   {
   public:
@@ -43,74 +46,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline Dimension& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p> The name of the dimension. </p>
-    */
+    /**
+     * <p> The name of the dimension. </p>
+     */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline Dimension& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     <p> The value representing the dimension measurement </p>
-    */
+    /**
+     * <p> The value representing the dimension measurement </p>
+     */
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

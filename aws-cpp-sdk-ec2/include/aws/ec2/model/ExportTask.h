@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an instance export task.</p>
-  */
+
+  /**
+   * <p>Describes an instance export task.</p>
+   */
   class AWS_EC2_API ExportTask
   {
   public:
@@ -46,184 +47,184 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline const Aws::String& GetExportTaskId() const{ return m_exportTaskId; }
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline void SetExportTaskId(const Aws::String& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = value; }
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline void SetExportTaskId(Aws::String&& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = value; }
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline void SetExportTaskId(const char* value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId.assign(value); }
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline ExportTask& WithExportTaskId(const Aws::String& value) { SetExportTaskId(value); return *this;}
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline ExportTask& WithExportTaskId(Aws::String&& value) { SetExportTaskId(value); return *this;}
 
-    /*
-     <p>The ID of the export task.</p>
-    */
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline ExportTask& WithExportTaskId(const char* value) { SetExportTaskId(value); return *this;}
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline ExportTask& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline ExportTask& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the resource being exported.</p>
-    */
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline ExportTask& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The state of the export task.</p>
-    */
+    /**
+     * <p>The state of the export task.</p>
+     */
     inline const ExportTaskState& GetState() const{ return m_state; }
 
-    /*
-     <p>The state of the export task.</p>
-    */
+    /**
+     * <p>The state of the export task.</p>
+     */
     inline void SetState(const ExportTaskState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the export task.</p>
-    */
+    /**
+     * <p>The state of the export task.</p>
+     */
     inline void SetState(ExportTaskState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the export task.</p>
-    */
+    /**
+     * <p>The state of the export task.</p>
+     */
     inline ExportTask& WithState(const ExportTaskState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The state of the export task.</p>
-    */
+    /**
+     * <p>The state of the export task.</p>
+     */
     inline ExportTask& WithState(ExportTaskState&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline ExportTask& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline ExportTask& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>The status message related to the export task.</p>
-    */
+    /**
+     * <p>The status message related to the export task.</p>
+     */
     inline ExportTask& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>Information about the instance to export.</p>
-    */
+    /**
+     * <p>Information about the instance to export.</p>
+     */
     inline const InstanceExportDetails& GetInstanceExportDetails() const{ return m_instanceExportDetails; }
 
-    /*
-     <p>Information about the instance to export.</p>
-    */
+    /**
+     * <p>Information about the instance to export.</p>
+     */
     inline void SetInstanceExportDetails(const InstanceExportDetails& value) { m_instanceExportDetailsHasBeenSet = true; m_instanceExportDetails = value; }
 
-    /*
-     <p>Information about the instance to export.</p>
-    */
+    /**
+     * <p>Information about the instance to export.</p>
+     */
     inline void SetInstanceExportDetails(InstanceExportDetails&& value) { m_instanceExportDetailsHasBeenSet = true; m_instanceExportDetails = value; }
 
-    /*
-     <p>Information about the instance to export.</p>
-    */
+    /**
+     * <p>Information about the instance to export.</p>
+     */
     inline ExportTask& WithInstanceExportDetails(const InstanceExportDetails& value) { SetInstanceExportDetails(value); return *this;}
 
-    /*
-     <p>Information about the instance to export.</p>
-    */
+    /**
+     * <p>Information about the instance to export.</p>
+     */
     inline ExportTask& WithInstanceExportDetails(InstanceExportDetails&& value) { SetInstanceExportDetails(value); return *this;}
 
-    /*
-     <p>Information about the export task.</p>
-    */
+    /**
+     * <p>Information about the export task.</p>
+     */
     inline const ExportToS3Task& GetExportToS3Task() const{ return m_exportToS3Task; }
 
-    /*
-     <p>Information about the export task.</p>
-    */
+    /**
+     * <p>Information about the export task.</p>
+     */
     inline void SetExportToS3Task(const ExportToS3Task& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
 
-    /*
-     <p>Information about the export task.</p>
-    */
+    /**
+     * <p>Information about the export task.</p>
+     */
     inline void SetExportToS3Task(ExportToS3Task&& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
 
-    /*
-     <p>Information about the export task.</p>
-    */
+    /**
+     * <p>Information about the export task.</p>
+     */
     inline ExportTask& WithExportToS3Task(const ExportToS3Task& value) { SetExportToS3Task(value); return *this;}
 
-    /*
-     <p>Information about the export task.</p>
-    */
+    /**
+     * <p>Information about the export task.</p>
+     */
     inline ExportTask& WithExportToS3Task(ExportToS3Task&& value) { SetExportToS3Task(value); return *this;}
 
   private:

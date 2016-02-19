@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace EFS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EFS_API DeleteMountTargetRequest : public EFSRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline DeleteMountTargetRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline DeleteMountTargetRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
 
-    /*
-     <p>String. The ID of the mount target to delete.</p>
-    */
+    /**
+     * <p>String. The ID of the mount target to delete.</p>
+     */
     inline DeleteMountTargetRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
   private:

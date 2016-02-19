@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a static route for a VPN connection.</p>
-  */
+
+  /**
+   * <p>Describes a static route for a VPN connection.</p>
+   */
   class AWS_EC2_API VpnStaticRoute
   {
   public:
@@ -45,89 +46,96 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline VpnStaticRoute& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline VpnStaticRoute& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
 
-    /*
-     <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    */
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline VpnStaticRoute& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
-    /*
-     <p>Indicates how the routes were provided.</p>
-    */
+    /**
+     * <p>Indicates how the routes were provided.</p>
+     */
     inline const VpnStaticRouteSource& GetSource() const{ return m_source; }
 
-    /*
-     <p>Indicates how the routes were provided.</p>
-    */
+    /**
+     * <p>Indicates how the routes were provided.</p>
+     */
     inline void SetSource(const VpnStaticRouteSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
-    /*
-     <p>Indicates how the routes were provided.</p>
-    */
+    /**
+     * <p>Indicates how the routes were provided.</p>
+     */
     inline void SetSource(VpnStaticRouteSource&& value) { m_sourceHasBeenSet = true; m_source = value; }
 
-    /*
-     <p>Indicates how the routes were provided.</p>
-    */
+    /**
+     * <p>Indicates how the routes were provided.</p>
+     */
     inline VpnStaticRoute& WithSource(const VpnStaticRouteSource& value) { SetSource(value); return *this;}
 
-    /*
-     <p>Indicates how the routes were provided.</p>
-    */
+    /**
+     * <p>Indicates how the routes were provided.</p>
+     */
     inline VpnStaticRoute& WithSource(VpnStaticRouteSource&& value) { SetSource(value); return *this;}
 
-    /*
-     <p>The current state of the static route.</p>
-    */
+    /**
+     * <p>The current state of the static route.</p>
+     */
     inline const VpnState& GetState() const{ return m_state; }
 
-    /*
-     <p>The current state of the static route.</p>
-    */
+    /**
+     * <p>The current state of the static route.</p>
+     */
     inline void SetState(const VpnState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The current state of the static route.</p>
-    */
+    /**
+     * <p>The current state of the static route.</p>
+     */
     inline void SetState(VpnState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The current state of the static route.</p>
-    */
+    /**
+     * <p>The current state of the static route.</p>
+     */
     inline VpnStaticRoute& WithState(const VpnState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the static route.</p>
-    */
+    /**
+     * <p>The current state of the static route.</p>
+     */
     inline VpnStaticRoute& WithState(VpnState&& value) { SetState(value); return *this;}
 
   private:

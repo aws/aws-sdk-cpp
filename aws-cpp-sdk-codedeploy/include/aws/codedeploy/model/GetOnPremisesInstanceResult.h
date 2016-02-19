@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get on-premises instance operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get on-premises instance operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetOnPremisesInstanceResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetOnPremisesInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetOnPremisesInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    /**
+     * <p>Information about the on-premises instance.</p>
+     */
     inline const InstanceInfo& GetInstanceInfo() const{ return m_instanceInfo; }
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    /**
+     * <p>Information about the on-premises instance.</p>
+     */
     inline void SetInstanceInfo(const InstanceInfo& value) { m_instanceInfo = value; }
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    /**
+     * <p>Information about the on-premises instance.</p>
+     */
     inline void SetInstanceInfo(InstanceInfo&& value) { m_instanceInfo = value; }
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    /**
+     * <p>Information about the on-premises instance.</p>
+     */
     inline GetOnPremisesInstanceResult& WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    /**
+     * <p>Information about the on-premises instance.</p>
+     */
     inline GetOnPremisesInstanceResult& WithInstanceInfo(InstanceInfo&& value) { SetInstanceInfo(value); return *this;}
 
   private:

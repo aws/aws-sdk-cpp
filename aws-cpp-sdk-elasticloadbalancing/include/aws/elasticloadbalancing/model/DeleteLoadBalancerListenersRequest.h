@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ELASTICLOADBALANCING_API DeleteLoadBalancerListenersRequest : public ElasticLoadBalancingRequest
   {
   public:
@@ -34,69 +34,69 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The client port numbers of the listeners.</p>
-    */
+    /**
+     * <p>The client port numbers of the listeners.</p>
+     */
     inline const Aws::Vector<long>& GetLoadBalancerPorts() const{ return m_loadBalancerPorts; }
 
-    /*
-     <p>The client port numbers of the listeners.</p>
-    */
+    /**
+     * <p>The client port numbers of the listeners.</p>
+     */
     inline void SetLoadBalancerPorts(const Aws::Vector<long>& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
 
-    /*
-     <p>The client port numbers of the listeners.</p>
-    */
+    /**
+     * <p>The client port numbers of the listeners.</p>
+     */
     inline void SetLoadBalancerPorts(Aws::Vector<long>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
 
-    /*
-     <p>The client port numbers of the listeners.</p>
-    */
+    /**
+     * <p>The client port numbers of the listeners.</p>
+     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(const Aws::Vector<long>& value) { SetLoadBalancerPorts(value); return *this;}
 
-    /*
-     <p>The client port numbers of the listeners.</p>
-    */
+    /**
+     * <p>The client port numbers of the listeners.</p>
+     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<long>&& value) { SetLoadBalancerPorts(value); return *this;}
 
-    /*
-     <p>The client port numbers of the listeners.</p>
-    */
+    /**
+     * <p>The client port numbers of the listeners.</p>
+     */
     inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(long value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts.push_back(value); return *this; }
 
   private:

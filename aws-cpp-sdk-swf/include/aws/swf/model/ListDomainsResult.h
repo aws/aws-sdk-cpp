@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Contains a paginated collection of DomainInfo structures.</p>
-  */
+  /**
+   * <p>Contains a paginated collection of DomainInfo structures.</p>
+   */
   class AWS_SWF_API ListDomainsResult
   {
   public:
@@ -44,74 +44,102 @@ namespace Model
     ListDomainsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline const Aws::Vector<DomainInfo>& GetDomainInfos() const{ return m_domainInfos; }
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline void SetDomainInfos(const Aws::Vector<DomainInfo>& value) { m_domainInfos = value; }
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline void SetDomainInfos(Aws::Vector<DomainInfo>&& value) { m_domainInfos = value; }
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline ListDomainsResult& WithDomainInfos(const Aws::Vector<DomainInfo>& value) { SetDomainInfos(value); return *this;}
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline ListDomainsResult& WithDomainInfos(Aws::Vector<DomainInfo>&& value) { SetDomainInfos(value); return *this;}
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline ListDomainsResult& AddDomainInfos(const DomainInfo& value) { m_domainInfos.push_back(value); return *this; }
 
-    /*
-     <p>A list of DomainInfo structures.</p>
-    */
+    /**
+     * <p>A list of DomainInfo structures.</p>
+     */
     inline ListDomainsResult& AddDomainInfos(DomainInfo&& value) { m_domainInfos.push_back(value); return *this; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline ListDomainsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline ListDomainsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline ListDomainsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:

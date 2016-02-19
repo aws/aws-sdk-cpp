@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API StopInstancesResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     StopInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     StopInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline const Aws::Vector<InstanceStateChange>& GetStoppingInstances() const{ return m_stoppingInstances; }
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline void SetStoppingInstances(const Aws::Vector<InstanceStateChange>& value) { m_stoppingInstances = value; }
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline void SetStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { m_stoppingInstances = value; }
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline StopInstancesResponse& WithStoppingInstances(const Aws::Vector<InstanceStateChange>& value) { SetStoppingInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline StopInstancesResponse& WithStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { SetStoppingInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline StopInstancesResponse& AddStoppingInstances(const InstanceStateChange& value) { m_stoppingInstances.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more stopped instances.</p>
-    */
+    /**
+     * <p>Information about one or more stopped instances.</p>
+     */
     inline StopInstancesResponse& AddStoppingInstances(InstanceStateChange&& value) { m_stoppingInstances.push_back(value); return *this; }
 
     

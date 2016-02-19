@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Contains the Amazon Glacier response to your request.</p>
-  */
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
   class AWS_GLACIER_API UploadMultipartPartResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     UploadMultipartPartResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UploadMultipartPartResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline void SetChecksum(Aws::String&& value) { m_checksum = value; }
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline UploadMultipartPartResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline UploadMultipartPartResult& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
 
-    /*
-     <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
-    */
+    /**
+     * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
+     */
     inline UploadMultipartPartResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:

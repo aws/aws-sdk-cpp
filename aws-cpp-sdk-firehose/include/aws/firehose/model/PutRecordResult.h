@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of <a>PutRecord</a>.</p>
-  */
+  /**
+   * <p>Contains the output of <a>PutRecord</a>.</p>
+   */
   class AWS_FIREHOSE_API PutRecordResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     PutRecordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     PutRecordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline const Aws::String& GetRecordId() const{ return m_recordId; }
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline void SetRecordId(const Aws::String& value) { m_recordId = value; }
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline void SetRecordId(Aws::String&& value) { m_recordId = value; }
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline void SetRecordId(const char* value) { m_recordId.assign(value); }
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline PutRecordResult& WithRecordId(const Aws::String& value) { SetRecordId(value); return *this;}
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline PutRecordResult& WithRecordId(Aws::String&& value) { SetRecordId(value); return *this;}
 
-    /*
-     <p>The ID of the record.</p>
-    */
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline PutRecordResult& WithRecordId(const char* value) { SetRecordId(value); return *this;}
 
   private:

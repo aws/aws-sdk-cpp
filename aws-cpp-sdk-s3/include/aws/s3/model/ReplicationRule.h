@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API ReplicationRule
   {
   public:
@@ -43,99 +41,113 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline const Aws::String& GetID() const{ return m_iD; }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline ReplicationRule& WithID(const Aws::String& value) { SetID(value); return *this;}
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline ReplicationRule& WithID(Aws::String&& value) { SetID(value); return *this;}
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline ReplicationRule& WithID(const char* value) { SetID(value); return *this;}
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline ReplicationRule& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline ReplicationRule& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
-    /*
-     Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
-    */
+    /**
+     * Object keyname prefix identifying one or more objects to which the rule applies.
+     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
+     * not supported.
+     */
     inline ReplicationRule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
-    /*
-     The rule is ignored if status is not Enabled.
-    */
+    /**
+     * The rule is ignored if status is not Enabled.
+     */
     inline const ReplicationRuleStatus& GetStatus() const{ return m_status; }
 
-    /*
-     The rule is ignored if status is not Enabled.
-    */
+    /**
+     * The rule is ignored if status is not Enabled.
+     */
     inline void SetStatus(const ReplicationRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     The rule is ignored if status is not Enabled.
-    */
+    /**
+     * The rule is ignored if status is not Enabled.
+     */
     inline void SetStatus(ReplicationRuleStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     The rule is ignored if status is not Enabled.
-    */
+    /**
+     * The rule is ignored if status is not Enabled.
+     */
     inline ReplicationRule& WithStatus(const ReplicationRuleStatus& value) { SetStatus(value); return *this;}
 
-    /*
-     The rule is ignored if status is not Enabled.
-    */
+    /**
+     * The rule is ignored if status is not Enabled.
+     */
     inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(value); return *this;}
 
     

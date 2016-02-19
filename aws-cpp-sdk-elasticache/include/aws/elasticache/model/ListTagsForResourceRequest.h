@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>The input parameters for the <i>ListTagsForResource</i> action.</p>
-  */
+  /**
+   * <p>The input parameters for the <i>ListTagsForResource</i> action.</p>
+   */
   class AWS_ELASTICACHE_API ListTagsForResourceRequest : public ElastiCacheRequest
   {
   public:
@@ -34,39 +34,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
-    */
+    /**
+     * <p>The name of the resource for which you want the list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:

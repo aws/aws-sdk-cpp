@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. </p>
-  */
+
+  /**
+   * <p>The list of supported product configurations which allow user-supplied
+   * arguments. EMR accepts these arguments and forwards them to the corresponding
+   * installation script as bootstrap action arguments. </p>
+   */
   class AWS_EMR_API SupportedProductConfig
   {
   public:
@@ -41,79 +44,79 @@ namespace Model
     SupportedProductConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline SupportedProductConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline SupportedProductConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the product configuration.</p>
-    */
+    /**
+     * <p>The name of the product configuration.</p>
+     */
     inline SupportedProductConfig& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = value; }
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline SupportedProductConfig& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline SupportedProductConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(value); return *this;}
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline SupportedProductConfig& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline SupportedProductConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
-    /*
-     <p>The list of user-supplied arguments.</p>
-    */
+    /**
+     * <p>The list of user-supplied arguments.</p>
+     */
     inline SupportedProductConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
   private:

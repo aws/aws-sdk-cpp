@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,11 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    Container for specifying the configuration when you want Amazon S3 to publish events to an Amazon Simple Notification Service (Amazon SNS) topic.
-  */
+
+  /**
+   * Container for specifying the configuration when you want Amazon S3 to publish
+   * events to an Amazon Simple Notification Service (Amazon SNS) topic.
+   */
   class AWS_S3_API TopicConfiguration
   {
   public:
@@ -65,39 +67,46 @@ namespace Model
     
     inline TopicConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline TopicConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline TopicConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
-    /*
-     Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline TopicConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     

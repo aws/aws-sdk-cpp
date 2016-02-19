@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-    =
-  */
+  /**
+   * =
+   */
   class AWS_ELASTICLOADBALANCING_API DeleteLoadBalancerPolicyRequest : public ElasticLoadBalancingRequest
   {
   public:
@@ -34,74 +34,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DeleteLoadBalancerPolicyRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DeleteLoadBalancerPolicyRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DeleteLoadBalancerPolicyRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline DeleteLoadBalancerPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline DeleteLoadBalancerPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline DeleteLoadBalancerPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:

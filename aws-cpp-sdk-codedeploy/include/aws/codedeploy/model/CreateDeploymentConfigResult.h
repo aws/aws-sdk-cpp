@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a create deployment configuration operation.</p>
-  */
+  /**
+   * <p>Represents the output of a create deployment configuration operation.</p>
+   */
   class AWS_CODEDEPLOY_API CreateDeploymentConfigResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateDeploymentConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigId = value; }
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigId = value; }
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline void SetDeploymentConfigId(const char* value) { m_deploymentConfigId.assign(value); }
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(value); return *this;}
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    /**
+     * <p>A unique deployment configuration ID.</p>
+     */
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details for the <code>LambdaFunctionStarted</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details for the <code>LambdaFunctionStarted</code> event.</p>
+   */
   class AWS_SWF_API LambdaFunctionStartedEventAttributes
   {
   public:
@@ -39,19 +40,28 @@ namespace Model
     LambdaFunctionStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
+     * when this AWS Lambda function was scheduled. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
 
-    /*
-     <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
+     * when this AWS Lambda function was scheduled. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
-    /*
-     <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
+     * when this AWS Lambda function was scheduled. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline LambdaFunctionStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
   private:

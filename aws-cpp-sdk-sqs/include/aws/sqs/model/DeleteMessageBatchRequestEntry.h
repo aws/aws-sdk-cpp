@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace SQS
 {
 namespace Model
 {
-  /*
-    <p>Encloses a receipt handle and an identifier for it.</p>
-  */
+
+  /**
+   * <p>Encloses a receipt handle and an identifier for it.</p>
+   */
   class AWS_SQS_API DeleteMessageBatchRequestEntry
   {
   public:
@@ -43,74 +44,88 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline DeleteMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline DeleteMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
-    */
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result. Note that the <code>Id</code>s of a batch request need to be unique
+     * within the request.</p>
+     */
     inline DeleteMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(value); return *this;}
 
-    /*
-     <p>A receipt handle.</p>
-    */
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
   private:

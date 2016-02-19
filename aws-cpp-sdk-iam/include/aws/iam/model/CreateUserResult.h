@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreateUser</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreateUser</a> request. </p>
+   */
   class AWS_IAM_API CreateUserResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateUserResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the user.</p>
-    */
+    /**
+     * <p>Information about the user.</p>
+     */
     inline const User& GetUser() const{ return m_user; }
 
-    /*
-     <p>Information about the user.</p>
-    */
+    /**
+     * <p>Information about the user.</p>
+     */
     inline void SetUser(const User& value) { m_user = value; }
 
-    /*
-     <p>Information about the user.</p>
-    */
+    /**
+     * <p>Information about the user.</p>
+     */
     inline void SetUser(User&& value) { m_user = value; }
 
-    /*
-     <p>Information about the user.</p>
-    */
+    /**
+     * <p>Information about the user.</p>
+     */
     inline CreateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
-    /*
-     <p>Information about the user.</p>
-    */
+    /**
+     * <p>Information about the user.</p>
+     */
     inline CreateUserResult& WithUser(User&& value) { SetUser(value); return *this;}
 
     

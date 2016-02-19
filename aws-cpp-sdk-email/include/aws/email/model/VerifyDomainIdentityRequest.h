@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,10 @@ namespace SES
 namespace Model
 {
 
-  /*
-    <p>Represents a request instructing the service to begin domain verification.</p>
-  */
+  /**
+   * <p>Represents a request instructing the service to begin domain
+   * verification.</p>
+   */
   class AWS_SES_API VerifyDomainIdentityRequest : public SESRequest
   {
   public:
@@ -34,39 +35,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline VerifyDomainIdentityRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline VerifyDomainIdentityRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The domain to be verified.</p>
-    */
+    /**
+     * <p>The domain to be verified.</p>
+     */
     inline VerifyDomainIdentityRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
   private:

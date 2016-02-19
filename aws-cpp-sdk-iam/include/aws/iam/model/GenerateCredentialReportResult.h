@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GenerateCredentialReport</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GenerateCredentialReport</a>
+   * request. </p>
+   */
   class AWS_IAM_API GenerateCredentialReportResult
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     GenerateCredentialReportResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GenerateCredentialReportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the state of the credential report.</p>
-    */
+    /**
+     * <p>Information about the state of the credential report.</p>
+     */
     inline const ReportStateType& GetState() const{ return m_state; }
 
-    /*
-     <p>Information about the state of the credential report.</p>
-    */
+    /**
+     * <p>Information about the state of the credential report.</p>
+     */
     inline void SetState(const ReportStateType& value) { m_state = value; }
 
-    /*
-     <p>Information about the state of the credential report.</p>
-    */
+    /**
+     * <p>Information about the state of the credential report.</p>
+     */
     inline void SetState(ReportStateType&& value) { m_state = value; }
 
-    /*
-     <p>Information about the state of the credential report.</p>
-    */
+    /**
+     * <p>Information about the state of the credential report.</p>
+     */
     inline GenerateCredentialReportResult& WithState(const ReportStateType& value) { SetState(value); return *this;}
 
-    /*
-     <p>Information about the state of the credential report.</p>
-    */
+    /**
+     * <p>Information about the state of the credential report.</p>
+     */
     inline GenerateCredentialReportResult& WithState(ReportStateType&& value) { SetState(value); return *this;}
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_description = value; }
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline GenerateCredentialReportResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline GenerateCredentialReportResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Information about the credential report.</p>
-    */
+    /**
+     * <p>Information about the credential report.</p>
+     */
     inline GenerateCredentialReportResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     

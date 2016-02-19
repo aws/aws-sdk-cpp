@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API LifecycleExpiration
   {
   public:
@@ -40,34 +38,40 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
     inline double GetDate() const{ return m_date; }
 
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
     inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
 
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
     inline LifecycleExpiration& WithDate(double value) { SetDate(value); return *this;}
 
-    /*
-     Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
-    */
+    /**
+     * Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.
+     */
     inline long GetDays() const{ return m_days; }
 
-    /*
-     Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
-    */
+    /**
+     * Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.
+     */
     inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
 
-    /*
-     Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
-    */
+    /**
+     * Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.
+     */
     inline LifecycleExpiration& WithDays(long value) { SetDays(value); return *this;}
 
   private:

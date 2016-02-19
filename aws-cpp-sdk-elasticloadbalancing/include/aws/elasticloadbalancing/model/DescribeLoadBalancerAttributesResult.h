@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerAttributesResult
   {
   public:
@@ -43,29 +40,29 @@ namespace Model
     DescribeLoadBalancerAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeLoadBalancerAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the load balancer attributes.</p>
-    */
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline const LoadBalancerAttributes& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
 
-    /*
-     <p>Information about the load balancer attributes.</p>
-    */
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline void SetLoadBalancerAttributes(const LoadBalancerAttributes& value) { m_loadBalancerAttributes = value; }
 
-    /*
-     <p>Information about the load balancer attributes.</p>
-    */
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline void SetLoadBalancerAttributes(LoadBalancerAttributes&& value) { m_loadBalancerAttributes = value; }
 
-    /*
-     <p>Information about the load balancer attributes.</p>
-    */
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline DescribeLoadBalancerAttributesResult& WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
 
-    /*
-     <p>Information about the load balancer attributes.</p>
-    */
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline DescribeLoadBalancerAttributesResult& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(value); return *this;}
 
     

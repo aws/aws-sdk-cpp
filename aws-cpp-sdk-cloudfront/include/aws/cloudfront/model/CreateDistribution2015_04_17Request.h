@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CloudFront
 namespace Model
 {
 
-  /*
-    The request to create a new distribution.
-  */
+  /**
+   * The request to create a new distribution.
+   */
   class AWS_CLOUDFRONT_API CreateDistribution2015_04_17Request : public CloudFrontRequest
   {
   public:
@@ -34,29 +34,29 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The distribution's configuration information.
-    */
+    /**
+     * The distribution's configuration information.
+     */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
 
-    /*
-     The distribution's configuration information.
-    */
+    /**
+     * The distribution's configuration information.
+     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
-    /*
-     The distribution's configuration information.
-    */
+    /**
+     * The distribution's configuration information.
+     */
     inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
-    /*
-     The distribution's configuration information.
-    */
+    /**
+     * The distribution's configuration information.
+     */
     inline CreateDistribution2015_04_17Request& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
 
-    /*
-     The distribution's configuration information.
-    */
+    /**
+     * The distribution's configuration information.
+     */
     inline CreateDistribution2015_04_17Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
 
   private:

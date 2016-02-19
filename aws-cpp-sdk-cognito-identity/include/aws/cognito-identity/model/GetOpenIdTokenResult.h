@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  /*
-    Returned in response to a successful GetOpenIdToken request.
-  */
+  /**
+   * Returned in response to a successful GetOpenIdToken request.
+   */
   class AWS_COGNITOIDENTITY_API GetOpenIdTokenResult
   {
   public:
@@ -42,74 +42,81 @@ namespace Model
     GetOpenIdTokenResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetOpenIdTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline GetOpenIdTokenResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline GetOpenIdTokenResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
-    /*
-     A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
-    */
+    /**
+     * A unique identifier in the format REGION:GUID. Note that the IdentityId returned
+     * may not match the one passed on input.
+     */
     inline GetOpenIdTokenResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline const Aws::String& GetToken() const{ return m_token; }
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline void SetToken(const Aws::String& value) { m_token = value; }
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline void SetToken(Aws::String&& value) { m_token = value; }
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline void SetToken(const char* value) { m_token.assign(value); }
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline GetOpenIdTokenResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline GetOpenIdTokenResult& WithToken(Aws::String&& value) { SetToken(value); return *this;}
 
-    /*
-     An OpenID token, valid for 15 minutes.
-    */
+    /**
+     * An OpenID token, valid for 15 minutes.
+     */
     inline GetOpenIdTokenResult& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,15 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clu\ sters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-  */
+
+  /**
+   * <p>A key/value pair containing user-defined metadata that you can associate with
+   * an Amazon EMR resource. Tags make it easier to associate clusters in various
+   * ways, such as grouping clu\ sters to track your Amazon EMR resource allocation
+   * costs. For more information, see <a
+   * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+   * Amazon EMR Resources</a>. </p>
+   */
   class AWS_EMR_API Tag
   {
   public:
@@ -40,74 +46,116 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     <p>A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
-    */
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+     * Amazon EMR Resources</a>. </p>
+     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

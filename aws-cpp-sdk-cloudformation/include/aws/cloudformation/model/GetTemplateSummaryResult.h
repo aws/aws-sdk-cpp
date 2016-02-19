@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,9 +36,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for the <a>GetTemplateSummary</a> action.</p>
-  */
+  /**
+   * <p>The output for the <a>GetTemplateSummary</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API GetTemplateSummaryResult
   {
   public:
@@ -46,214 +46,277 @@ namespace Model
     GetTemplateSummaryResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetTemplateSummaryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline const Aws::Vector<ParameterDeclaration>& GetParameters() const{ return m_parameters; }
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline void SetParameters(const Aws::Vector<ParameterDeclaration>& value) { m_parameters = value; }
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline void SetParameters(Aws::Vector<ParameterDeclaration>&& value) { m_parameters = value; }
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline GetTemplateSummaryResult& WithParameters(const Aws::Vector<ParameterDeclaration>& value) { SetParameters(value); return *this;}
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline GetTemplateSummaryResult& WithParameters(Aws::Vector<ParameterDeclaration>&& value) { SetParameters(value); return *this;}
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline GetTemplateSummaryResult& AddParameters(const ParameterDeclaration& value) { m_parameters.push_back(value); return *this; }
 
-    /*
-     <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    */
+    /**
+     * <p>A list of parameter declarations that describe various properties for each
+     * parameter.</p>
+     */
     inline GetTemplateSummaryResult& AddParameters(ParameterDeclaration&& value) { m_parameters.push_back(value); return *this; }
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_description = value; }
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The value that is defined in the <code>Description</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined in the <code>Description</code> property of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = value; }
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline GetTemplateSummaryResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline GetTemplateSummaryResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline GetTemplateSummaryResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
 
-    /*
-     <p>The capabilities found within the template. Currently, AWS CloudFormation supports only the CAPABILITY_IAM capability. If your template contains IAM resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>The capabilities found within the template. Currently, AWS CloudFormation
+     * supports only the CAPABILITY_IAM capability. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
+     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     */
     inline GetTemplateSummaryResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(value); return *this; }
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline const Aws::String& GetCapabilitiesReason() const{ return m_capabilitiesReason; }
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline void SetCapabilitiesReason(const Aws::String& value) { m_capabilitiesReason = value; }
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline void SetCapabilitiesReason(Aws::String&& value) { m_capabilitiesReason = value; }
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline void SetCapabilitiesReason(const char* value) { m_capabilitiesReason.assign(value); }
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline GetTemplateSummaryResult& WithCapabilitiesReason(const Aws::String& value) { SetCapabilitiesReason(value); return *this;}
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline GetTemplateSummaryResult& WithCapabilitiesReason(Aws::String&& value) { SetCapabilitiesReason(value); return *this;}
 
-    /*
-     <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    */
+    /**
+     * <p>The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.</p>
+     */
     inline GetTemplateSummaryResult& WithCapabilitiesReason(const char* value) { SetCapabilitiesReason(value); return *this;}
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline void SetVersion(Aws::String&& value) { m_version = value; }
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
-    /*
-     <p>The AWS template format version, which identifies the capabilities of the template.</p>
-    */
+    /**
+     * <p>The AWS template format version, which identifies the capabilities of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline void SetMetadata(const Aws::String& value) { m_metadata = value; }
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline void SetMetadata(Aws::String&& value) { m_metadata = value; }
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline void SetMetadata(const char* value) { m_metadata.assign(value); }
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithMetadata(Aws::String&& value) { SetMetadata(value); return *this;}
 
-    /*
-     <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
-    */
+    /**
+     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * template.</p>
+     */
     inline GetTemplateSummaryResult& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
     

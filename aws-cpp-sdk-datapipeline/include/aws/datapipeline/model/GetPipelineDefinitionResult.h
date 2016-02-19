@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of GetPipelineDefinition.</p>
-  */
+  /**
+   * <p>Contains the output of GetPipelineDefinition.</p>
+   */
   class AWS_DATAPIPELINE_API GetPipelineDefinitionResult
   {
   public:
@@ -45,109 +45,109 @@ namespace Model
     GetPipelineDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetPipelineDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjects = value; }
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = value; }
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline GetPipelineDefinitionResult& WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline GetPipelineDefinitionResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline GetPipelineDefinitionResult& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjects.push_back(value); return *this; }
 
-    /*
-     <p>The objects defined in the pipeline.</p>
-    */
+    /**
+     * <p>The objects defined in the pipeline.</p>
+     */
     inline GetPipelineDefinitionResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(value); return *this; }
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline const Aws::Vector<ParameterObject>& GetParameterObjects() const{ return m_parameterObjects; }
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline void SetParameterObjects(const Aws::Vector<ParameterObject>& value) { m_parameterObjects = value; }
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjects = value; }
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& WithParameterObjects(const Aws::Vector<ParameterObject>& value) { SetParameterObjects(value); return *this;}
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(value); return *this;}
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& AddParameterObjects(const ParameterObject& value) { m_parameterObjects.push_back(value); return *this; }
 
-    /*
-     <p>The parameter objects used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter objects used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& AddParameterObjects(ParameterObject&& value) { m_parameterObjects.push_back(value); return *this; }
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline const Aws::Vector<ParameterValue>& GetParameterValues() const{ return m_parameterValues; }
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline void SetParameterValues(const Aws::Vector<ParameterValue>& value) { m_parameterValues = value; }
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValues = value; }
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& WithParameterValues(const Aws::Vector<ParameterValue>& value) { SetParameterValues(value); return *this;}
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(value); return *this;}
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& AddParameterValues(const ParameterValue& value) { m_parameterValues.push_back(value); return *this; }
 
-    /*
-     <p>The parameter values used in the pipeline definition.</p>
-    */
+    /**
+     * <p>The parameter values used in the pipeline definition.</p>
+     */
     inline GetPipelineDefinitionResult& AddParameterValues(ParameterValue&& value) { m_parameterValues.push_back(value); return *this; }
 
   private:

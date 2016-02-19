@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,9 +36,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API ListObjectsResult
   {
   public:
@@ -46,19 +43,22 @@ namespace Model
     ListObjectsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListObjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria.
-    */
+    /**
+     * A flag that indicates whether or not Amazon S3 returned all of the results that
+     * satisfied the search criteria.
+     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
-    /*
-     A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria.
-    */
+    /**
+     * A flag that indicates whether or not Amazon S3 returned all of the results that
+     * satisfied the search criteria.
+     */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
-    /*
-     A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria.
-    */
+    /**
+     * A flag that indicates whether or not Amazon S3 returned all of the results that
+     * satisfied the search criteria.
+     */
     inline ListObjectsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     
@@ -82,39 +82,81 @@ namespace Model
     
     inline ListObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline ListObjectsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline ListObjectsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
-    /*
-     When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMaker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.
-    */
+    /**
+     * When response is truncated (the IsTruncated element value in the response is
+     * true), you can use the key name in this field as marker in the subsequent
+     * request to get next set of objects. Amazon S3 lists objects in alphabetical
+     * order Note: This element is returned only if you have delimiter request
+     * parameter specified. If response does not include the NextMaker and it is
+     * truncated, you can use the value of the last Key in the response as the marker
+     * in the subsequent request to get the next set of object keys.
+     */
     inline ListObjectsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
     
@@ -231,29 +273,29 @@ namespace Model
     
     inline ListObjectsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(value); return *this; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = value; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline ListObjectsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline ListObjectsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
 
   private:

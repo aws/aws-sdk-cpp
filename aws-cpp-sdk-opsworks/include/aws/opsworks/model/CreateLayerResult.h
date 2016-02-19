@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CreateLayer</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CreateLayer</code> request.</p>
+   */
   class AWS_OPSWORKS_API CreateLayerResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateLayerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateLayerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline void SetLayerId(Aws::String&& value) { m_layerId = value; }
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline void SetLayerId(const char* value) { m_layerId.assign(value); }
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline CreateLayerResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline CreateLayerResult& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
 
-    /*
-     <p>The layer ID.</p>
-    */
+    /**
+     * <p>The layer ID.</p>
+     */
     inline CreateLayerResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
   private:

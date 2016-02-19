@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about a policy.</p>
-  */
+
+  /**
+   * <p>Information about a policy.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API PolicyDescription
   {
   public:
@@ -45,109 +46,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline PolicyDescription& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline PolicyDescription& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline PolicyDescription& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline const Aws::String& GetPolicyTypeName() const{ return m_policyTypeName; }
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline void SetPolicyTypeName(Aws::String&& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline void SetPolicyTypeName(const char* value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName.assign(value); }
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline PolicyDescription& WithPolicyTypeName(const Aws::String& value) { SetPolicyTypeName(value); return *this;}
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline PolicyDescription& WithPolicyTypeName(Aws::String&& value) { SetPolicyTypeName(value); return *this;}
 
-    /*
-     <p>The name of the policy type.</p>
-    */
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline PolicyDescription& WithPolicyTypeName(const char* value) { SetPolicyTypeName(value); return *this;}
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline const Aws::Vector<PolicyAttributeDescription>& GetPolicyAttributeDescriptions() const{ return m_policyAttributeDescriptions; }
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline void SetPolicyAttributeDescriptions(const Aws::Vector<PolicyAttributeDescription>& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions = value; }
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline void SetPolicyAttributeDescriptions(Aws::Vector<PolicyAttributeDescription>&& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions = value; }
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline PolicyDescription& WithPolicyAttributeDescriptions(const Aws::Vector<PolicyAttributeDescription>& value) { SetPolicyAttributeDescriptions(value); return *this;}
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline PolicyDescription& WithPolicyAttributeDescriptions(Aws::Vector<PolicyAttributeDescription>&& value) { SetPolicyAttributeDescriptions(value); return *this;}
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline PolicyDescription& AddPolicyAttributeDescriptions(const PolicyAttributeDescription& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions.push_back(value); return *this; }
 
-    /*
-     <p>The policy attributes.</p>
-    */
+    /**
+     * <p>The policy attributes.</p>
+     */
     inline PolicyDescription& AddPolicyAttributeDescriptions(PolicyAttributeDescription&& value) { m_policyAttributeDescriptionsHasBeenSet = true; m_policyAttributeDescriptions.push_back(value); return *this; }
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>The range of possible sequence numbers for the shard.</p>
-  */
+
+  /**
+   * <p>The range of possible sequence numbers for the shard.</p>
+   */
   class AWS_KINESIS_API SequenceNumberRange
   {
   public:
@@ -40,74 +41,81 @@ namespace Model
     SequenceNumberRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline const Aws::String& GetStartingSequenceNumber() const{ return m_startingSequenceNumber; }
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline void SetStartingSequenceNumber(const char* value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber.assign(value); }
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline SequenceNumberRange& WithStartingSequenceNumber(const Aws::String& value) { SetStartingSequenceNumber(value); return *this;}
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline SequenceNumberRange& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(value); return *this;}
 
-    /*
-     <p>The starting sequence number for the range.</p>
-    */
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline SequenceNumberRange& WithStartingSequenceNumber(const char* value) { SetStartingSequenceNumber(value); return *this;}
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline const Aws::String& GetEndingSequenceNumber() const{ return m_endingSequenceNumber; }
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline void SetEndingSequenceNumber(const Aws::String& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = value; }
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline void SetEndingSequenceNumber(Aws::String&& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = value; }
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline void SetEndingSequenceNumber(const char* value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber.assign(value); }
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline SequenceNumberRange& WithEndingSequenceNumber(const Aws::String& value) { SetEndingSequenceNumber(value); return *this;}
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline SequenceNumberRange& WithEndingSequenceNumber(Aws::String&& value) { SetEndingSequenceNumber(value); return *this;}
 
-    /*
-     <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    */
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
     inline SequenceNumberRange& WithEndingSequenceNumber(const char* value) { SetEndingSequenceNumber(value); return *this;}
 
   private:

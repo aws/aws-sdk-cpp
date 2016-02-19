@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes whether monitoring is enabled.</p>
-  */
+
+  /**
+   * <p>Describes whether monitoring is enabled.</p>
+   */
   class AWS_EC2_API SpotFleetMonitoring
   {
   public:
@@ -42,19 +43,19 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
-    */
+    /**
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    /*
-     <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
-    */
+    /**
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    /*
-     <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
-    */
+    /**
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     */
     inline SpotFleetMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:

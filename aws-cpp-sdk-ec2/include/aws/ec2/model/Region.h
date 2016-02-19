@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a region.</p>
-  */
+
+  /**
+   * <p>Describes a region.</p>
+   */
   class AWS_EC2_API Region
   {
   public:
@@ -43,74 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline Region& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline Region& WithRegionName(Aws::String&& value) { SetRegionName(value); return *this;}
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline Region& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline Region& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
 
-    /*
-     <p>The region service endpoint.</p>
-    */
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline Region& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
   private:

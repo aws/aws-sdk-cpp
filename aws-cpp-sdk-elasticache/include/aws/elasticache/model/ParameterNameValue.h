@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Describes a name-value pair that is used to update the value of a parameter.</p>
-  */
+
+  /**
+   * <p>Describes a name-value pair that is used to update the value of a
+   * parameter.</p>
+   */
   class AWS_ELASTICACHE_API ParameterNameValue
   {
   public:
@@ -43,74 +45,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline ParameterNameValue& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline ParameterNameValue& WithParameterName(Aws::String&& value) { SetParameterName(value); return *this;}
 
-    /*
-     <p>The name of the parameter.</p>
-    */
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline ParameterNameValue& WithParameterName(const char* value) { SetParameterName(value); return *this;}
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline ParameterNameValue& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline ParameterNameValue& WithParameterValue(Aws::String&& value) { SetParameterValue(value); return *this;}
 
-    /*
-     <p>The value of the parameter.</p>
-    */
+    /**
+     * <p>The value of the parameter.</p>
+     */
     inline ParameterNameValue& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
   private:

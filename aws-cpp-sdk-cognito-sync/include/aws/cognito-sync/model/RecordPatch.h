@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    An update operation for a record.
-  */
+
+  /**
+   * An update operation for a record.
+   */
   class AWS_COGNITOSYNC_API RecordPatch
   {
   public:
@@ -41,129 +42,129 @@ namespace Model
     RecordPatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     An operation, either replace or remove.
-    */
+    /**
+     * An operation, either replace or remove.
+     */
     inline const Operation& GetOp() const{ return m_op; }
 
-    /*
-     An operation, either replace or remove.
-    */
+    /**
+     * An operation, either replace or remove.
+     */
     inline void SetOp(const Operation& value) { m_opHasBeenSet = true; m_op = value; }
 
-    /*
-     An operation, either replace or remove.
-    */
+    /**
+     * An operation, either replace or remove.
+     */
     inline void SetOp(Operation&& value) { m_opHasBeenSet = true; m_op = value; }
 
-    /*
-     An operation, either replace or remove.
-    */
+    /**
+     * An operation, either replace or remove.
+     */
     inline RecordPatch& WithOp(const Operation& value) { SetOp(value); return *this;}
 
-    /*
-     An operation, either replace or remove.
-    */
+    /**
+     * An operation, either replace or remove.
+     */
     inline RecordPatch& WithOp(Operation&& value) { SetOp(value); return *this;}
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline RecordPatch& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline RecordPatch& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     The key associated with the record patch.
-    */
+    /**
+     * The key associated with the record patch.
+     */
     inline RecordPatch& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline RecordPatch& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline RecordPatch& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     The value associated with the record patch.
-    */
+    /**
+     * The value associated with the record patch.
+     */
     inline RecordPatch& WithValue(const char* value) { SetValue(value); return *this;}
 
-    /*
-     Last known server sync count for this record. Set to 0 if unknown.
-    */
+    /**
+     * Last known server sync count for this record. Set to 0 if unknown.
+     */
     inline long long GetSyncCount() const{ return m_syncCount; }
 
-    /*
-     Last known server sync count for this record. Set to 0 if unknown.
-    */
+    /**
+     * Last known server sync count for this record. Set to 0 if unknown.
+     */
     inline void SetSyncCount(long long value) { m_syncCountHasBeenSet = true; m_syncCount = value; }
 
-    /*
-     Last known server sync count for this record. Set to 0 if unknown.
-    */
+    /**
+     * Last known server sync count for this record. Set to 0 if unknown.
+     */
     inline RecordPatch& WithSyncCount(long long value) { SetSyncCount(value); return *this;}
 
-    /*
-     The last modified date of the client device.
-    */
+    /**
+     * The last modified date of the client device.
+     */
     inline double GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
 
-    /*
-     The last modified date of the client device.
-    */
+    /**
+     * The last modified date of the client device.
+     */
     inline void SetDeviceLastModifiedDate(double value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
 
-    /*
-     The last modified date of the client device.
-    */
+    /**
+     * The last modified date of the client device.
+     */
     inline RecordPatch& WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
 
   private:

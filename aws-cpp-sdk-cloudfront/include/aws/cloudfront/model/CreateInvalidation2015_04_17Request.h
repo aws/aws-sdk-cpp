@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace CloudFront
 namespace Model
 {
 
-  /*
-    The request to create an invalidation.
-  */
+  /**
+   * The request to create an invalidation.
+   */
   class AWS_CLOUDFRONT_API CreateInvalidation2015_04_17Request : public CloudFrontRequest
   {
   public:
@@ -35,64 +35,64 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline CreateInvalidation2015_04_17Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline CreateInvalidation2015_04_17Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
 
-    /*
-     The distribution's id.
-    */
+    /**
+     * The distribution's id.
+     */
     inline CreateInvalidation2015_04_17Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
 
-    /*
-     The batch information for the invalidation.
-    */
+    /**
+     * The batch information for the invalidation.
+     */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
 
-    /*
-     The batch information for the invalidation.
-    */
+    /**
+     * The batch information for the invalidation.
+     */
     inline void SetInvalidationBatch(const InvalidationBatch& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
 
-    /*
-     The batch information for the invalidation.
-    */
+    /**
+     * The batch information for the invalidation.
+     */
     inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
 
-    /*
-     The batch information for the invalidation.
-    */
+    /**
+     * The batch information for the invalidation.
+     */
     inline CreateInvalidation2015_04_17Request& WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
 
-    /*
-     The batch information for the invalidation.
-    */
+    /**
+     * The batch information for the invalidation.
+     */
     inline CreateInvalidation2015_04_17Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(value); return *this;}
 
   private:

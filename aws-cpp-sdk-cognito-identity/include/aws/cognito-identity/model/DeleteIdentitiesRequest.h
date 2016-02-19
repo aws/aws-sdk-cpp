@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace CognitoIdentity
 namespace Model
 {
 
-  /*
-    <p>Input to the <code>DeleteIdentities</code> action.</p>
-  */
+  /**
+   * <p>Input to the <code>DeleteIdentities</code> action.</p>
+   */
   class AWS_COGNITOIDENTITY_API DeleteIdentitiesRequest : public CognitoIdentityRequest
   {
   public:
@@ -37,44 +37,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetIdentityIdsToDelete() const{ return m_identityIdsToDelete; }
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline void SetIdentityIdsToDelete(const Aws::Vector<Aws::String>& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = value; }
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline void SetIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = value; }
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline DeleteIdentitiesRequest& WithIdentityIdsToDelete(const Aws::Vector<Aws::String>& value) { SetIdentityIdsToDelete(value); return *this;}
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline DeleteIdentitiesRequest& WithIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { SetIdentityIdsToDelete(value); return *this;}
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(const Aws::String& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(Aws::String&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
 
-    /*
-     <p>A list of 1-60 identities that you want to delete.</p>
-    */
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(const char* value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
 
   private:

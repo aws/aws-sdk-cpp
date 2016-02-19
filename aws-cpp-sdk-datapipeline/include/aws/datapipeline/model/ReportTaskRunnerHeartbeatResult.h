@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
-  */
+  /**
+   * <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
+   */
   class AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatResult
   {
   public:
@@ -41,19 +41,19 @@ namespace Model
     ReportTaskRunnerHeartbeatResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ReportTaskRunnerHeartbeatResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Indicates whether the calling task runner should terminate.</p>
-    */
+    /**
+     * <p>Indicates whether the calling task runner should terminate.</p>
+     */
     inline bool GetTerminate() const{ return m_terminate; }
 
-    /*
-     <p>Indicates whether the calling task runner should terminate.</p>
-    */
+    /**
+     * <p>Indicates whether the calling task runner should terminate.</p>
+     */
     inline void SetTerminate(bool value) { m_terminate = value; }
 
-    /*
-     <p>Indicates whether the calling task runner should terminate.</p>
-    */
+    /**
+     * <p>Indicates whether the calling task runner should terminate.</p>
+     */
     inline ReportTaskRunnerHeartbeatResult& WithTerminate(bool value) { SetTerminate(value); return *this;}
 
   private:

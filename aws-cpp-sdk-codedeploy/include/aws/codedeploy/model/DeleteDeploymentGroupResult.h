@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a delete deployment group operation.</p>
-  */
+  /**
+   * <p>Represents the output of a delete deployment group operation.</p>
+   */
   class AWS_CODEDEPLOY_API DeleteDeploymentGroupResult
   {
   public:
@@ -43,39 +43,74 @@ namespace Model
     DeleteDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline const Aws::Vector<AutoScalingGroup>& GetHooksNotCleanedUp() const{ return m_hooksNotCleanedUp; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline void SetHooksNotCleanedUp(const Aws::Vector<AutoScalingGroup>& value) { m_hooksNotCleanedUp = value; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline void SetHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { m_hooksNotCleanedUp = value; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline DeleteDeploymentGroupResult& WithHooksNotCleanedUp(const Aws::Vector<AutoScalingGroup>& value) { SetHooksNotCleanedUp(value); return *this;}
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline DeleteDeploymentGroupResult& WithHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { SetHooksNotCleanedUp(value); return *this;}
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline DeleteDeploymentGroupResult& AddHooksNotCleanedUp(const AutoScalingGroup& value) { m_hooksNotCleanedUp.push_back(value); return *this; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling. If the output does contain data, AWS CodeDeploy
+     * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     * instances in the Auto Scaling group.</p>
+     */
     inline DeleteDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(value); return *this; }
 
   private:

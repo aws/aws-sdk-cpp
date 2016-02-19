@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    The returned result of the corresponding request.
-  */
+  /**
+   * The returned result of the corresponding request.
+   */
   class AWS_CLOUDFRONT_API CreateDistribution2015_04_17Result
   {
   public:
@@ -43,99 +43,113 @@ namespace Model
     CreateDistribution2015_04_17Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateDistribution2015_04_17Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     The distribution's information.
-    */
+    /**
+     * The distribution's information.
+     */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
-    /*
-     The distribution's information.
-    */
+    /**
+     * The distribution's information.
+     */
     inline void SetDistribution(const Distribution& value) { m_distribution = value; }
 
-    /*
-     The distribution's information.
-    */
+    /**
+     * The distribution's information.
+     */
     inline void SetDistribution(Distribution&& value) { m_distribution = value; }
 
-    /*
-     The distribution's information.
-    */
+    /**
+     * The distribution's information.
+     */
     inline CreateDistribution2015_04_17Result& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
-    /*
-     The distribution's information.
-    */
+    /**
+     * The distribution's information.
+     */
     inline CreateDistribution2015_04_17Result& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline void SetLocation(Aws::String&& value) { m_location = value; }
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline CreateDistribution2015_04_17Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline CreateDistribution2015_04_17Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
-    /*
-     The fully qualified URI of the new distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-    */
+    /**
+     * The fully qualified URI of the new distribution resource just created. For
+     * example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     inline CreateDistribution2015_04_17Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline void SetETag(Aws::String&& value) { m_eTag = value; }
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline CreateDistribution2015_04_17Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline CreateDistribution2015_04_17Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
-    /*
-     The current version of the distribution created.
-    */
+    /**
+     * The current version of the distribution created.
+     */
     inline CreateDistribution2015_04_17Result& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:

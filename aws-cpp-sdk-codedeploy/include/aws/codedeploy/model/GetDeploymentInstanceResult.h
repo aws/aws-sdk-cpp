@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get deployment instance operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get deployment instance operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetDeploymentInstanceResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetDeploymentInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    /**
+     * <p>Information about the instance.</p>
+     */
     inline const InstanceSummary& GetInstanceSummary() const{ return m_instanceSummary; }
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    /**
+     * <p>Information about the instance.</p>
+     */
     inline void SetInstanceSummary(const InstanceSummary& value) { m_instanceSummary = value; }
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    /**
+     * <p>Information about the instance.</p>
+     */
     inline void SetInstanceSummary(InstanceSummary&& value) { m_instanceSummary = value; }
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    /**
+     * <p>Information about the instance.</p>
+     */
     inline GetDeploymentInstanceResult& WithInstanceSummary(const InstanceSummary& value) { SetInstanceSummary(value); return *this;}
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    /**
+     * <p>Information about the instance.</p>
+     */
     inline GetDeploymentInstanceResult& WithInstanceSummary(InstanceSummary&& value) { SetInstanceSummary(value); return *this;}
 
   private:

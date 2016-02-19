@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a create deployment operation.</p>
-  */
+  /**
+   * <p>Represents the output of a create deployment operation.</p>
+   */
   class AWS_CODEDEPLOY_API CreateDeploymentResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = value; }
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline CreateDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>A unique deployment ID.</p>
-    */
+    /**
+     * <p>A unique deployment ID.</p>
+     */
     inline CreateDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:

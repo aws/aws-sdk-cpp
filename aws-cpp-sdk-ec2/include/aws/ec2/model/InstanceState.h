@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the current state of the instance.</p>
-  */
+
+  /**
+   * <p>Describes the current state of the instance.</p>
+   */
   class AWS_EC2_API InstanceState
   {
   public:
@@ -43,44 +44,65 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p> <ul> <li><p><code>0</code> : <code>pending</code></p></li> <li><p><code>16</code> : <code>running</code></p></li> <li><p><code>32</code> : <code>shutting-down</code></p></li> <li><p><code>48</code> : <code>terminated</code></p></li> <li><p><code>64</code> : <code>stopping</code></p></li> <li><p><code>80</code> : <code>stopped</code></p></li> </ul>
-    */
+    /**
+     * <p>The low byte represents the state. The high byte is an opaque internal value
+     * and should be ignored.</p> <ul> <li><p><code>0</code> :
+     * <code>pending</code></p></li> <li><p><code>16</code> :
+     * <code>running</code></p></li> <li><p><code>32</code> :
+     * <code>shutting-down</code></p></li> <li><p><code>48</code> :
+     * <code>terminated</code></p></li> <li><p><code>64</code> :
+     * <code>stopping</code></p></li> <li><p><code>80</code> :
+     * <code>stopped</code></p></li> </ul>
+     */
     inline long GetCode() const{ return m_code; }
 
-    /*
-     <p>The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p> <ul> <li><p><code>0</code> : <code>pending</code></p></li> <li><p><code>16</code> : <code>running</code></p></li> <li><p><code>32</code> : <code>shutting-down</code></p></li> <li><p><code>48</code> : <code>terminated</code></p></li> <li><p><code>64</code> : <code>stopping</code></p></li> <li><p><code>80</code> : <code>stopped</code></p></li> </ul>
-    */
+    /**
+     * <p>The low byte represents the state. The high byte is an opaque internal value
+     * and should be ignored.</p> <ul> <li><p><code>0</code> :
+     * <code>pending</code></p></li> <li><p><code>16</code> :
+     * <code>running</code></p></li> <li><p><code>32</code> :
+     * <code>shutting-down</code></p></li> <li><p><code>48</code> :
+     * <code>terminated</code></p></li> <li><p><code>64</code> :
+     * <code>stopping</code></p></li> <li><p><code>80</code> :
+     * <code>stopped</code></p></li> </ul>
+     */
     inline void SetCode(long value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p> <ul> <li><p><code>0</code> : <code>pending</code></p></li> <li><p><code>16</code> : <code>running</code></p></li> <li><p><code>32</code> : <code>shutting-down</code></p></li> <li><p><code>48</code> : <code>terminated</code></p></li> <li><p><code>64</code> : <code>stopping</code></p></li> <li><p><code>80</code> : <code>stopped</code></p></li> </ul>
-    */
+    /**
+     * <p>The low byte represents the state. The high byte is an opaque internal value
+     * and should be ignored.</p> <ul> <li><p><code>0</code> :
+     * <code>pending</code></p></li> <li><p><code>16</code> :
+     * <code>running</code></p></li> <li><p><code>32</code> :
+     * <code>shutting-down</code></p></li> <li><p><code>48</code> :
+     * <code>terminated</code></p></li> <li><p><code>64</code> :
+     * <code>stopping</code></p></li> <li><p><code>80</code> :
+     * <code>stopped</code></p></li> </ul>
+     */
     inline InstanceState& WithCode(long value) { SetCode(value); return *this;}
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline const InstanceStateName& GetName() const{ return m_name; }
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetName(const InstanceStateName& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetName(InstanceStateName&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline InstanceState& WithName(const InstanceStateName& value) { SetName(value); return *this;}
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline InstanceState& WithName(InstanceStateName&& value) { SetName(value); return *this;}
 
   private:

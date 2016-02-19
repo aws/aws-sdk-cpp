@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a placement group.</p>
-  */
+
+  /**
+   * <p>Describes a placement group.</p>
+   */
   class AWS_EC2_API PlacementGroup
   {
   public:
@@ -45,89 +46,89 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline PlacementGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline PlacementGroup& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline PlacementGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline const PlacementStrategy& GetStrategy() const{ return m_strategy; }
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline void SetStrategy(const PlacementStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline PlacementGroup& WithStrategy(const PlacementStrategy& value) { SetStrategy(value); return *this;}
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(value); return *this;}
 
-    /*
-     <p>The state of the placement group.</p>
-    */
+    /**
+     * <p>The state of the placement group.</p>
+     */
     inline const PlacementGroupState& GetState() const{ return m_state; }
 
-    /*
-     <p>The state of the placement group.</p>
-    */
+    /**
+     * <p>The state of the placement group.</p>
+     */
     inline void SetState(const PlacementGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the placement group.</p>
-    */
+    /**
+     * <p>The state of the placement group.</p>
+     */
     inline void SetState(PlacementGroupState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the placement group.</p>
-    */
+    /**
+     * <p>The state of the placement group.</p>
+     */
     inline PlacementGroup& WithState(const PlacementGroupState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The state of the placement group.</p>
-    */
+    /**
+     * <p>The state of the placement group.</p>
+     */
     inline PlacementGroup& WithState(PlacementGroupState&& value) { SetState(value); return *this;}
 
   private:

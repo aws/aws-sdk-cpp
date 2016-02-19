@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeVpcsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeVpcsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpcsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline const Aws::Vector<Vpc>& GetVpcs() const{ return m_vpcs; }
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline void SetVpcs(const Aws::Vector<Vpc>& value) { m_vpcs = value; }
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline void SetVpcs(Aws::Vector<Vpc>&& value) { m_vpcs = value; }
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline DescribeVpcsResponse& WithVpcs(const Aws::Vector<Vpc>& value) { SetVpcs(value); return *this;}
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline DescribeVpcsResponse& WithVpcs(Aws::Vector<Vpc>&& value) { SetVpcs(value); return *this;}
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline DescribeVpcsResponse& AddVpcs(const Vpc& value) { m_vpcs.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more VPCs.</p>
-    */
+    /**
+     * <p>Information about one or more VPCs.</p>
+     */
     inline DescribeVpcsResponse& AddVpcs(Vpc&& value) { m_vpcs.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_REDSHIFT_API DeleteHsmClientCertificateRequest : public RedshiftRequest
   {
   public:
@@ -34,39 +34,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline DeleteHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline DeleteHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
-    /*
-     <p>The identifier of the HSM client certificate to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline DeleteHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
   private:

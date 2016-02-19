@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>The description of an Amazon EC2 instance.</p>
-  */
+
+  /**
+   * <p>The description of an Amazon EC2 instance.</p>
+   */
   class AWS_ELASTICBEANSTALK_API Instance
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline Instance& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline Instance& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the Amazon EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline Instance& WithId(const char* value) { SetId(value); return *this;}
 
   private:

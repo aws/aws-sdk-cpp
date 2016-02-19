@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    <p>A failed resource.</p>
-  */
+
+  /**
+   * <p>A failed resource.</p>
+   */
   class AWS_ECS_API Failure
   {
   public:
@@ -40,74 +41,74 @@ namespace Model
     Failure& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline Failure& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline Failure& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+     */
     inline Failure& WithArn(const char* value) { SetArn(value); return *this;}
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline Failure& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline Failure& WithReason(Aws::String&& value) { SetReason(value); return *this;}
 
-    /*
-     <p>The reason for the failure.</p>
-    */
+    /**
+     * <p>The reason for the failure.</p>
+     */
     inline Failure& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an attachment change.</p>
-  */
+
+  /**
+   * <p>Describes an attachment change.</p>
+   */
   class AWS_EC2_API NetworkInterfaceAttachmentChanges
   {
   public:
@@ -43,54 +44,57 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(Aws::String&& value) { SetAttachmentId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface attachment.</p>
-    */
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
-    /*
-     <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    */
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
-    /*
-     <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    */
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
-    /*
-     <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    */
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
     inline NetworkInterfaceAttachmentChanges& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
   private:

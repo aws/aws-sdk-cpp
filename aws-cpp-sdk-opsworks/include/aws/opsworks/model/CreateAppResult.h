@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CreateApp</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CreateApp</code> request.</p>
+   */
   class AWS_OPSWORKS_API CreateAppResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateAppResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateAppResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appId = value; }
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline void SetAppId(Aws::String&& value) { m_appId = value; }
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline void SetAppId(const char* value) { m_appId.assign(value); }
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline CreateAppResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline CreateAppResult& WithAppId(Aws::String&& value) { SetAppId(value); return *this;}
 
-    /*
-     <p>The app ID.</p>
-    */
+    /**
+     * <p>The app ID.</p>
+     */
     inline CreateAppResult& WithAppId(const char* value) { SetAppId(value); return *this;}
 
   private:

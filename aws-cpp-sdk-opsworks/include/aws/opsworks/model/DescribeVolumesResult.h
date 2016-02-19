@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeVolumes</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeVolumes</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeVolumesResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     DescribeVolumesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeVolumesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumes = value; }
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = value; }
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline DescribeVolumesResult& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline DescribeVolumesResult& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline DescribeVolumesResult& AddVolumes(const Volume& value) { m_volumes.push_back(value); return *this; }
 
-    /*
-     <p>An array of volume IDs.</p>
-    */
+    /**
+     * <p>An array of volume IDs.</p>
+     */
     inline DescribeVolumesResult& AddVolumes(Volume&& value) { m_volumes.push_back(value); return *this; }
 
   private:

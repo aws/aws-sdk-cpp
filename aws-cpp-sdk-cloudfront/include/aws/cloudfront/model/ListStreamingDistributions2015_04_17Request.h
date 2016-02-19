@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,9 @@ namespace CloudFront
 namespace Model
 {
 
-  /*
-    The request to list your streaming distributions.
-  */
+  /**
+   * The request to list your streaming distributions.
+   */
   class AWS_CLOUDFRONT_API ListStreamingDistributions2015_04_17Request : public CloudFrontRequest
   {
   public:
@@ -40,74 +40,102 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline ListStreamingDistributions2015_04_17Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline ListStreamingDistributions2015_04_17Request& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).
-    */
+    /**
+     * Use this when paginating results to indicate where to begin in your list of
+     * streaming distributions. The results include distributions in the list that
+     * occur after the marker. To get the next page of results, set the Marker to the
+     * value of the NextMarker from the current page's response (which is also the ID
+     * of the last distribution on that page).
+     */
     inline ListStreamingDistributions2015_04_17Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline ListStreamingDistributions2015_04_17Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline ListStreamingDistributions2015_04_17Request& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
 
-    /*
-     The maximum number of streaming distributions you want in the response body.
-    */
+    /**
+     * The maximum number of streaming distributions you want in the response body.
+     */
     inline ListStreamingDistributions2015_04_17Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:

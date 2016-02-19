@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Contains the Amazon Glacier response to your request.</p>
-  */
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
   class AWS_GLACIER_API CreateVaultResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateVaultResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateVaultResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline void SetLocation(Aws::String&& value) { m_location = value; }
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline CreateVaultResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline CreateVaultResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
-    /*
-     <p>The URI of the vault that was created.</p>
-    */
+    /**
+     * <p>The URI of the vault that was created.</p>
+     */
     inline CreateVaultResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:

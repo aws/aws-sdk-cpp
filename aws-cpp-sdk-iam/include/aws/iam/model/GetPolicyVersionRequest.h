@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API GetPolicyVersionRequest : public IAMRequest
   {
   public:
@@ -54,39 +54,39 @@ namespace Model
     
     inline GetPolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline GetPolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline GetPolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
-    /*
-     <p>Identifies the policy version to retrieve.</p>
-    */
+    /**
+     * <p>Identifies the policy version to retrieve.</p>
+     */
     inline GetPolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:

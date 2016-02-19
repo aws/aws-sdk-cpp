@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeDeploymentsResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     DescribeDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline const Aws::Vector<Deployment>& GetDeployments() const{ return m_deployments; }
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline void SetDeployments(const Aws::Vector<Deployment>& value) { m_deployments = value; }
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deployments = value; }
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline DescribeDeploymentsResult& WithDeployments(const Aws::Vector<Deployment>& value) { SetDeployments(value); return *this;}
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline DescribeDeploymentsResult& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(value); return *this;}
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline DescribeDeploymentsResult& AddDeployments(const Deployment& value) { m_deployments.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    */
+    /**
+     * <p>An array of <code>Deployment</code> objects that describe the
+     * deployments.</p>
+     */
     inline DescribeDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(value); return *this; }
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  /*
-    <p>Returned in response to a successful <code>DeleteIdentities</code> operation.</p>
-  */
+  /**
+   * <p>Returned in response to a successful <code>DeleteIdentities</code>
+   * operation.</p>
+   */
   class AWS_COGNITOIDENTITY_API DeleteIdentitiesResult
   {
   public:
@@ -43,39 +44,46 @@ namespace Model
     DeleteIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline const Aws::Vector<UnprocessedIdentityId>& GetUnprocessedIdentityIds() const{ return m_unprocessedIdentityIds; }
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline void SetUnprocessedIdentityIds(const Aws::Vector<UnprocessedIdentityId>& value) { m_unprocessedIdentityIds = value; }
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline void SetUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { m_unprocessedIdentityIds = value; }
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(const Aws::Vector<UnprocessedIdentityId>& value) { SetUnprocessedIdentityIds(value); return *this;}
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { SetUnprocessedIdentityIds(value); return *this;}
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(const UnprocessedIdentityId& value) { m_unprocessedIdentityIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    */
+    /**
+     * <p>An array of UnprocessedIdentityId objects, each of which contains an
+     * ErrorCode and IdentityId.</p>
+     */
     inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(UnprocessedIdentityId&& value) { m_unprocessedIdentityIds.push_back(value); return *this; }
 
   private:

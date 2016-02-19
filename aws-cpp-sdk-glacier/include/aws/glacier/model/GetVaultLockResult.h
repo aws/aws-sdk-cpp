@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Contains the Amazon Glacier response to your request.</p>
-  */
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
   class AWS_GLACIER_API GetVaultLockResult
   {
   public:
@@ -42,144 +42,172 @@ namespace Model
     GetVaultLockResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetVaultLockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline void SetPolicy(Aws::String&& value) { m_policy = value; }
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline GetVaultLockResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline GetVaultLockResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    */
+    /**
+     * <p>The vault lock policy as a JSON string, which uses "\" as an escape
+     * character.</p>
+     */
     inline GetVaultLockResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline const Aws::String& GetState() const{ return m_state; }
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline void SetState(const Aws::String& value) { m_state = value; }
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline void SetState(Aws::String&& value) { m_state = value; }
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline void SetState(const char* value) { m_state.assign(value); }
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline GetVaultLockResult& WithState(const Aws::String& value) { SetState(value); return *this;}
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline GetVaultLockResult& WithState(Aws::String&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    */
+    /**
+     * <p>The state of the vault lock. <code>InProgress</code> or
+     * <code>Locked</code>.</p>
+     */
     inline GetVaultLockResult& WithState(const char* value) { SetState(value); return *this;}
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline const Aws::String& GetExpirationDate() const{ return m_expirationDate; }
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline void SetExpirationDate(const Aws::String& value) { m_expirationDate = value; }
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline void SetExpirationDate(Aws::String&& value) { m_expirationDate = value; }
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline void SetExpirationDate(const char* value) { m_expirationDate.assign(value); }
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline GetVaultLockResult& WithExpirationDate(const Aws::String& value) { SetExpirationDate(value); return *this;}
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline GetVaultLockResult& WithExpirationDate(Aws::String&& value) { SetExpirationDate(value); return *this;}
 
-    /*
-     <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the lock ID expires. This value can be
+     * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+     */
     inline GetVaultLockResult& WithExpirationDate(const char* value) { SetExpirationDate(value); return *this;}
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDate = value; }
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline void SetCreationDate(Aws::String&& value) { m_creationDate = value; }
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline void SetCreationDate(const char* value) { m_creationDate.assign(value); }
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline GetVaultLockResult& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline GetVaultLockResult& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
 
-    /*
-     <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    */
+    /**
+     * <p>The UTC date and time at which the vault lock was put into the
+     * <code>InProgress</code> state.</p>
+     */
     inline GetVaultLockResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
   private:

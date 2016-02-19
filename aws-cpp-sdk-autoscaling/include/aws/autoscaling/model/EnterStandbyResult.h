@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API EnterStandbyResult
   {
   public:
@@ -44,39 +41,46 @@ namespace Model
     EnterStandbyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     EnterStandbyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline const Aws::Vector<Activity>& GetActivities() const{ return m_activities; }
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline void SetActivities(const Aws::Vector<Activity>& value) { m_activities = value; }
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = value; }
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline EnterStandbyResult& WithActivities(const Aws::Vector<Activity>& value) { SetActivities(value); return *this;}
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline EnterStandbyResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(value); return *this;}
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline EnterStandbyResult& AddActivities(const Activity& value) { m_activities.push_back(value); return *this; }
 
-    /*
-     <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    */
+    /**
+     * <p>The activities related to moving instances into <code>Standby</code>
+     * mode.</p>
+     */
     inline EnterStandbyResult& AddActivities(Activity&& value) { m_activities.push_back(value); return *this; }
 
     

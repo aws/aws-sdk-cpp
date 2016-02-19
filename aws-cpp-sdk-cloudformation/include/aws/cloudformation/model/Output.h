@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The Output data type.</p>
-  */
+
+  /**
+   * <p>The Output data type.</p>
+   */
   class AWS_CLOUDFORMATION_API Output
   {
   public:
@@ -43,109 +44,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline Output& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline Output& WithOutputKey(Aws::String&& value) { SetOutputKey(value); return *this;}
 
-    /*
-     <p>The key associated with the output.</p>
-    */
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline Output& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline const Aws::String& GetOutputValue() const{ return m_outputValue; }
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline void SetOutputValue(const Aws::String& value) { m_outputValueHasBeenSet = true; m_outputValue = value; }
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline void SetOutputValue(Aws::String&& value) { m_outputValueHasBeenSet = true; m_outputValue = value; }
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline void SetOutputValue(const char* value) { m_outputValueHasBeenSet = true; m_outputValue.assign(value); }
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline Output& WithOutputValue(const Aws::String& value) { SetOutputValue(value); return *this;}
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline Output& WithOutputValue(Aws::String&& value) { SetOutputValue(value); return *this;}
 
-    /*
-     <p>The value associated with the output.</p>
-    */
+    /**
+     * <p>The value associated with the output.</p>
+     */
     inline Output& WithOutputValue(const char* value) { SetOutputValue(value); return *this;}
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline Output& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline Output& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>User defined description associated with the output.</p>
-    */
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline Output& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:

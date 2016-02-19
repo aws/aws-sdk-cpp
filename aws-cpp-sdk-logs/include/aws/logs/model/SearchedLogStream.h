@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    <p>An object indicating the search status of a log stream in a <code class="code">FilterLogEvents</code> request.</p>
-  */
+
+  /**
+   * <p>An object indicating the search status of a log stream in a <code
+   * class="code">FilterLogEvents</code> request.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API SearchedLogStream
   {
   public:
@@ -40,54 +42,57 @@ namespace Model
     SearchedLogStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline SearchedLogStream& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline SearchedLogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
-    /*
-     <p>The name of the log stream.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline SearchedLogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
-    /*
-     <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
-    */
+    /**
+     * <p>Indicates whether all the events in this log stream were searched or more
+     * data exists to search by paginating further.</p>
+     */
     inline bool GetSearchedCompletely() const{ return m_searchedCompletely; }
 
-    /*
-     <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
-    */
+    /**
+     * <p>Indicates whether all the events in this log stream were searched or more
+     * data exists to search by paginating further.</p>
+     */
     inline void SetSearchedCompletely(bool value) { m_searchedCompletelyHasBeenSet = true; m_searchedCompletely = value; }
 
-    /*
-     <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
-    */
+    /**
+     * <p>Indicates whether all the events in this log stream were searched or more
+     * data exists to search by paginating further.</p>
+     */
     inline SearchedLogStream& WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
 
   private:

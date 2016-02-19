@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SNS
 {
 namespace Model
 {
-  /*
-    <p>Response from CreatePlatformApplication action.</p>
-  */
+  /**
+   * <p>Response from CreatePlatformApplication action.</p>
+   */
   class AWS_SNS_API CreatePlatformApplicationResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreatePlatformApplicationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreatePlatformApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArn = value; }
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArn = value; }
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArn.assign(value); }
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
-    /*
-     <p>PlatformApplicationArn is returned.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn is returned.</p>
+     */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
     

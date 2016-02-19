@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DescribeSubscriptionFiltersRequest : public CloudWatchLogsRequest
   {
   public:
@@ -35,74 +35,81 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline DescribeSubscriptionFiltersRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline DescribeSubscriptionFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The log group name for which subscription filters are to be listed.</p>
-    */
+    /**
+     * <p>The log group name for which subscription filters are to be listed.</p>
+     */
     inline DescribeSubscriptionFiltersRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline void SetFilterNamePrefix(const char* value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix.assign(value); }
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return subscription filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return subscription filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+     */
     inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(const char* value) { SetFilterNamePrefix(value); return *this;}
 
     

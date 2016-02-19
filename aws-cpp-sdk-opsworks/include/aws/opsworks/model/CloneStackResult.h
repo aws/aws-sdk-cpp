@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CloneStack</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CloneStack</code> request.</p>
+   */
   class AWS_OPSWORKS_API CloneStackResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CloneStackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CloneStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackId = value; }
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline CloneStackResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline CloneStackResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The cloned stack ID.</p>
-    */
+    /**
+     * <p>The cloned stack ID.</p>
+     */
     inline CloneStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:

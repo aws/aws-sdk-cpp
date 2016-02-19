@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace Lambda
 {
 namespace Model
 {
-  /*
-    <p>Contains a list of event sources (see <a>API_EventSourceMappingConfiguration</a>)</p>
-  */
+  /**
+   * <p>Contains a list of event sources (see
+   * <a>API_EventSourceMappingConfiguration</a>)</p>
+   */
   class AWS_LAMBDA_API ListEventSourceMappingsResult
   {
   public:
@@ -44,74 +45,74 @@ namespace Model
     ListEventSourceMappingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListEventSourceMappingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline ListEventSourceMappingsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline ListEventSourceMappingsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>A string, present if there are more event source mappings.</p>
-    */
+    /**
+     * <p>A string, present if there are more event source mappings.</p>
+     */
     inline ListEventSourceMappingsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline const Aws::Vector<EventSourceMappingConfiguration>& GetEventSourceMappings() const{ return m_eventSourceMappings; }
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline void SetEventSourceMappings(const Aws::Vector<EventSourceMappingConfiguration>& value) { m_eventSourceMappings = value; }
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline void SetEventSourceMappings(Aws::Vector<EventSourceMappingConfiguration>&& value) { m_eventSourceMappings = value; }
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline ListEventSourceMappingsResult& WithEventSourceMappings(const Aws::Vector<EventSourceMappingConfiguration>& value) { SetEventSourceMappings(value); return *this;}
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline ListEventSourceMappingsResult& WithEventSourceMappings(Aws::Vector<EventSourceMappingConfiguration>&& value) { SetEventSourceMappings(value); return *this;}
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline ListEventSourceMappingsResult& AddEventSourceMappings(const EventSourceMappingConfiguration& value) { m_eventSourceMappings.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
-    */
+    /**
+     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     */
     inline ListEventSourceMappingsResult& AddEventSourceMappings(EventSourceMappingConfiguration&& value) { m_eventSourceMappings.push_back(value); return *this; }
 
   private:

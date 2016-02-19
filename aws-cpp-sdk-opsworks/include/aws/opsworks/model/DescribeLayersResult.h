@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeLayers</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeLayers</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeLayersResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     DescribeLayersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeLayersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline void SetLayers(const Aws::Vector<Layer>& value) { m_layers = value; }
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = value; }
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline DescribeLayersResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline DescribeLayersResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(value); return *this;}
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline DescribeLayersResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    */
+    /**
+     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
+     */
     inline DescribeLayersResult& AddLayers(Layer&& value) { m_layers.push_back(value); return *this; }
 
   private:

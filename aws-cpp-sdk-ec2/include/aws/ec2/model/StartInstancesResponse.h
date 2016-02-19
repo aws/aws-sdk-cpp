@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API StartInstancesResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     StartInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     StartInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline const Aws::Vector<InstanceStateChange>& GetStartingInstances() const{ return m_startingInstances; }
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline void SetStartingInstances(const Aws::Vector<InstanceStateChange>& value) { m_startingInstances = value; }
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline void SetStartingInstances(Aws::Vector<InstanceStateChange>&& value) { m_startingInstances = value; }
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline StartInstancesResponse& WithStartingInstances(const Aws::Vector<InstanceStateChange>& value) { SetStartingInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline StartInstancesResponse& WithStartingInstances(Aws::Vector<InstanceStateChange>&& value) { SetStartingInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline StartInstancesResponse& AddStartingInstances(const InstanceStateChange& value) { m_startingInstances.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more started instances.</p>
-    */
+    /**
+     * <p>Information about one or more started instances.</p>
+     */
     inline StartInstancesResponse& AddStartingInstances(InstanceStateChange&& value) { m_startingInstances.push_back(value); return *this; }
 
     

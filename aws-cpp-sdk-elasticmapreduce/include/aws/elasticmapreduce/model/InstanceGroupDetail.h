@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>Detailed information about an instance group. </p>
-  */
+
+  /**
+   * <p>Detailed information about an instance group. </p>
+   */
   class AWS_EMR_API InstanceGroupDetail
   {
   public:
@@ -43,344 +44,356 @@ namespace Model
     InstanceGroupDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline InstanceGroupDetail& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline InstanceGroupDetail& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(value); return *this;}
 
-    /*
-     <p>Unique identifier for the instance group. </p>
-    */
+    /**
+     * <p>Unique identifier for the instance group. </p>
+     */
     inline InstanceGroupDetail& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline InstanceGroupDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline InstanceGroupDetail& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>Friendly name for the instance group. </p>
-    */
+    /**
+     * <p>Friendly name for the instance group. </p>
+     */
     inline InstanceGroupDetail& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
-    */
+    /**
+     * <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+     */
     inline const MarketType& GetMarket() const{ return m_market; }
 
-    /*
-     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
-    */
+    /**
+     * <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+     */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
-    /*
-     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
-    */
+    /**
+     * <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+     */
     inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = value; }
 
-    /*
-     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
-    */
+    /**
+     * <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+     */
     inline InstanceGroupDetail& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
 
-    /*
-     <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
-    */
+    /**
+     * <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
+     */
     inline InstanceGroupDetail& WithMarket(MarketType&& value) { SetMarket(value); return *this;}
 
-    /*
-     <p>Instance group role in the cluster </p>
-    */
+    /**
+     * <p>Instance group role in the cluster </p>
+     */
     inline const InstanceRoleType& GetInstanceRole() const{ return m_instanceRole; }
 
-    /*
-     <p>Instance group role in the cluster </p>
-    */
+    /**
+     * <p>Instance group role in the cluster </p>
+     */
     inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
 
-    /*
-     <p>Instance group role in the cluster </p>
-    */
+    /**
+     * <p>Instance group role in the cluster </p>
+     */
     inline void SetInstanceRole(InstanceRoleType&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
 
-    /*
-     <p>Instance group role in the cluster </p>
-    */
+    /**
+     * <p>Instance group role in the cluster </p>
+     */
     inline InstanceGroupDetail& WithInstanceRole(const InstanceRoleType& value) { SetInstanceRole(value); return *this;}
 
-    /*
-     <p>Instance group role in the cluster </p>
-    */
+    /**
+     * <p>Instance group role in the cluster </p>
+     */
     inline InstanceGroupDetail& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(value); return *this;}
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline InstanceGroupDetail& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline InstanceGroupDetail& WithBidPrice(Aws::String&& value) { SetBidPrice(value); return *this;}
 
-    /*
-     <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.</p>
-    */
+    /**
+     * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
+     * in USD.</p>
+     */
     inline InstanceGroupDetail& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline InstanceGroupDetail& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline InstanceGroupDetail& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
-    /*
-     <p>Amazon EC2 Instance type.</p>
-    */
+    /**
+     * <p>Amazon EC2 Instance type.</p>
+     */
     inline InstanceGroupDetail& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
-    /*
-     <p>Target number of instances to run in the instance group. </p>
-    */
+    /**
+     * <p>Target number of instances to run in the instance group. </p>
+     */
     inline long GetInstanceRequestCount() const{ return m_instanceRequestCount; }
 
-    /*
-     <p>Target number of instances to run in the instance group. </p>
-    */
+    /**
+     * <p>Target number of instances to run in the instance group. </p>
+     */
     inline void SetInstanceRequestCount(long value) { m_instanceRequestCountHasBeenSet = true; m_instanceRequestCount = value; }
 
-    /*
-     <p>Target number of instances to run in the instance group. </p>
-    */
+    /**
+     * <p>Target number of instances to run in the instance group. </p>
+     */
     inline InstanceGroupDetail& WithInstanceRequestCount(long value) { SetInstanceRequestCount(value); return *this;}
 
-    /*
-     <p>Actual count of running instances. </p>
-    */
+    /**
+     * <p>Actual count of running instances. </p>
+     */
     inline long GetInstanceRunningCount() const{ return m_instanceRunningCount; }
 
-    /*
-     <p>Actual count of running instances. </p>
-    */
+    /**
+     * <p>Actual count of running instances. </p>
+     */
     inline void SetInstanceRunningCount(long value) { m_instanceRunningCountHasBeenSet = true; m_instanceRunningCount = value; }
 
-    /*
-     <p>Actual count of running instances. </p>
-    */
+    /**
+     * <p>Actual count of running instances. </p>
+     */
     inline InstanceGroupDetail& WithInstanceRunningCount(long value) { SetInstanceRunningCount(value); return *this;}
 
-    /*
-     <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
-    */
+    /**
+     * <p>State of instance group. The following values are deprecated: STARTING,
+     * TERMINATED, and FAILED.</p>
+     */
     inline const InstanceGroupState& GetState() const{ return m_state; }
 
-    /*
-     <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
-    */
+    /**
+     * <p>State of instance group. The following values are deprecated: STARTING,
+     * TERMINATED, and FAILED.</p>
+     */
     inline void SetState(const InstanceGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
-    */
+    /**
+     * <p>State of instance group. The following values are deprecated: STARTING,
+     * TERMINATED, and FAILED.</p>
+     */
     inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
-    */
+    /**
+     * <p>State of instance group. The following values are deprecated: STARTING,
+     * TERMINATED, and FAILED.</p>
+     */
     inline InstanceGroupDetail& WithState(const InstanceGroupState& value) { SetState(value); return *this;}
 
-    /*
-     <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
-    */
+    /**
+     * <p>State of instance group. The following values are deprecated: STARTING,
+     * TERMINATED, and FAILED.</p>
+     */
     inline InstanceGroupDetail& WithState(InstanceGroupState&& value) { SetState(value); return *this;}
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline const Aws::String& GetLastStateChangeReason() const{ return m_lastStateChangeReason; }
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline void SetLastStateChangeReason(const Aws::String& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline void SetLastStateChangeReason(const char* value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason.assign(value); }
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline InstanceGroupDetail& WithLastStateChangeReason(const Aws::String& value) { SetLastStateChangeReason(value); return *this;}
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline InstanceGroupDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(value); return *this;}
 
-    /*
-     <p>Details regarding the state of the instance group. </p>
-    */
+    /**
+     * <p>Details regarding the state of the instance group. </p>
+     */
     inline InstanceGroupDetail& WithLastStateChangeReason(const char* value) { SetLastStateChangeReason(value); return *this;}
 
-    /*
-     <p>The date/time the instance group was created. </p>
-    */
+    /**
+     * <p>The date/time the instance group was created. </p>
+     */
     inline double GetCreationDateTime() const{ return m_creationDateTime; }
 
-    /*
-     <p>The date/time the instance group was created. </p>
-    */
+    /**
+     * <p>The date/time the instance group was created. </p>
+     */
     inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
-    /*
-     <p>The date/time the instance group was created. </p>
-    */
+    /**
+     * <p>The date/time the instance group was created. </p>
+     */
     inline InstanceGroupDetail& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
 
-    /*
-     <p>The date/time the instance group was started.</p>
-    */
+    /**
+     * <p>The date/time the instance group was started.</p>
+     */
     inline double GetStartDateTime() const{ return m_startDateTime; }
 
-    /*
-     <p>The date/time the instance group was started.</p>
-    */
+    /**
+     * <p>The date/time the instance group was started.</p>
+     */
     inline void SetStartDateTime(double value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
-    /*
-     <p>The date/time the instance group was started.</p>
-    */
+    /**
+     * <p>The date/time the instance group was started.</p>
+     */
     inline InstanceGroupDetail& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
 
-    /*
-     <p>The date/time the instance group was available to the cluster. </p>
-    */
+    /**
+     * <p>The date/time the instance group was available to the cluster. </p>
+     */
     inline double GetReadyDateTime() const{ return m_readyDateTime; }
 
-    /*
-     <p>The date/time the instance group was available to the cluster. </p>
-    */
+    /**
+     * <p>The date/time the instance group was available to the cluster. </p>
+     */
     inline void SetReadyDateTime(double value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
-    /*
-     <p>The date/time the instance group was available to the cluster. </p>
-    */
+    /**
+     * <p>The date/time the instance group was available to the cluster. </p>
+     */
     inline InstanceGroupDetail& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
 
-    /*
-     <p>The date/time the instance group was terminated.</p>
-    */
+    /**
+     * <p>The date/time the instance group was terminated.</p>
+     */
     inline double GetEndDateTime() const{ return m_endDateTime; }
 
-    /*
-     <p>The date/time the instance group was terminated.</p>
-    */
+    /**
+     * <p>The date/time the instance group was terminated.</p>
+     */
     inline void SetEndDateTime(double value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
-    /*
-     <p>The date/time the instance group was terminated.</p>
-    */
+    /**
+     * <p>The date/time the instance group was terminated.</p>
+     */
     inline InstanceGroupDetail& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
 
   private:

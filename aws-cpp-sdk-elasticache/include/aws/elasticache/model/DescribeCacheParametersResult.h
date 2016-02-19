@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,9 +36,9 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>DescribeCacheParameters</i> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>DescribeCacheParameters</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeCacheParametersResult
   {
   public:
@@ -46,109 +46,116 @@ namespace Model
     DescribeCacheParametersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeCacheParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheParametersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheParametersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheParametersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline DescribeCacheParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline DescribeCacheParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline DescribeCacheParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
-    /*
-     <p>A list of <a>Parameter</a> instances.</p>
-    */
+    /**
+     * <p>A list of <a>Parameter</a> instances.</p>
+     */
     inline DescribeCacheParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline const Aws::Vector<CacheNodeTypeSpecificParameter>& GetCacheNodeTypeSpecificParameters() const{ return m_cacheNodeTypeSpecificParameters; }
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline void SetCacheNodeTypeSpecificParameters(const Aws::Vector<CacheNodeTypeSpecificParameter>& value) { m_cacheNodeTypeSpecificParameters = value; }
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline void SetCacheNodeTypeSpecificParameters(Aws::Vector<CacheNodeTypeSpecificParameter>&& value) { m_cacheNodeTypeSpecificParameters = value; }
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(const Aws::Vector<CacheNodeTypeSpecificParameter>& value) { SetCacheNodeTypeSpecificParameters(value); return *this;}
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(Aws::Vector<CacheNodeTypeSpecificParameter>&& value) { SetCacheNodeTypeSpecificParameters(value); return *this;}
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(const CacheNodeTypeSpecificParameter& value) { m_cacheNodeTypeSpecificParameters.push_back(value); return *this; }
 
-    /*
-     <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    */
+    /**
+     * <p>A list of parameters specific to a particular cache node type. Each element
+     * in the list contains detailed information about one parameter.</p>
+     */
     inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter&& value) { m_cacheNodeTypeSpecificParameters.push_back(value); return *this; }
 
     

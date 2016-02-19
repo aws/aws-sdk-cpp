@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_REDSHIFT_API PurchaseReservedNodeOfferingRequest : public RedshiftRequest
   {
   public:
@@ -34,54 +34,57 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline const Aws::String& GetReservedNodeOfferingId() const{ return m_reservedNodeOfferingId; }
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline void SetReservedNodeOfferingId(const char* value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId.assign(value); }
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
 
-    /*
-     <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    */
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
 
-    /*
-     <p>The number of reserved nodes you want to purchase.</p> <p>Default: <code>1</code></p>
-    */
+    /**
+     * <p>The number of reserved nodes you want to purchase.</p> <p>Default:
+     * <code>1</code></p>
+     */
     inline long GetNodeCount() const{ return m_nodeCount; }
 
-    /*
-     <p>The number of reserved nodes you want to purchase.</p> <p>Default: <code>1</code></p>
-    */
+    /**
+     * <p>The number of reserved nodes you want to purchase.</p> <p>Default:
+     * <code>1</code></p>
+     */
     inline void SetNodeCount(long value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
-    /*
-     <p>The number of reserved nodes you want to purchase.</p> <p>Default: <code>1</code></p>
-    */
+    /**
+     * <p>The number of reserved nodes you want to purchase.</p> <p>Default:
+     * <code>1</code></p>
+     */
     inline PurchaseReservedNodeOfferingRequest& WithNodeCount(long value) { SetNodeCount(value); return *this;}
 
   private:

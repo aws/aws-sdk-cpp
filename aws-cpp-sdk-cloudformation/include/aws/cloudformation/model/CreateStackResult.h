@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for a <a>CreateStack</a> action.</p>
-  */
+  /**
+   * <p>The output for a <a>CreateStack</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API CreateStackResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreateStackResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackId = value; }
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline CreateStackResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline CreateStackResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the stack.</p>
-    */
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
     inline CreateStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
     

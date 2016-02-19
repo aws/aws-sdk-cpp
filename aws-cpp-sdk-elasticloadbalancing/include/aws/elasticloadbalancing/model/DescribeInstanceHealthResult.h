@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeInstanceHealthResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeInstanceHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline const Aws::Vector<InstanceState>& GetInstanceStates() const{ return m_instanceStates; }
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline void SetInstanceStates(const Aws::Vector<InstanceState>& value) { m_instanceStates = value; }
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline void SetInstanceStates(Aws::Vector<InstanceState>&& value) { m_instanceStates = value; }
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline DescribeInstanceHealthResult& WithInstanceStates(const Aws::Vector<InstanceState>& value) { SetInstanceStates(value); return *this;}
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline DescribeInstanceHealthResult& WithInstanceStates(Aws::Vector<InstanceState>&& value) { SetInstanceStates(value); return *this;}
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline DescribeInstanceHealthResult& AddInstanceStates(const InstanceState& value) { m_instanceStates.push_back(value); return *this; }
 
-    /*
-     <p>Information about the health of the instances.</p>
-    */
+    /**
+     * <p>Information about the health of the instances.</p>
+     */
     inline DescribeInstanceHealthResult& AddInstanceStates(InstanceState&& value) { m_instanceStates.push_back(value); return *this; }
 
     

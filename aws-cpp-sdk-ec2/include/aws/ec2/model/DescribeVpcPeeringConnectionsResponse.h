@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeVpcPeeringConnectionsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeVpcPeeringConnectionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpcPeeringConnectionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline const Aws::Vector<VpcPeeringConnection>& GetVpcPeeringConnections() const{ return m_vpcPeeringConnections; }
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline void SetVpcPeeringConnections(const Aws::Vector<VpcPeeringConnection>& value) { m_vpcPeeringConnections = value; }
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline void SetVpcPeeringConnections(Aws::Vector<VpcPeeringConnection>&& value) { m_vpcPeeringConnections = value; }
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline DescribeVpcPeeringConnectionsResponse& WithVpcPeeringConnections(const Aws::Vector<VpcPeeringConnection>& value) { SetVpcPeeringConnections(value); return *this;}
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline DescribeVpcPeeringConnectionsResponse& WithVpcPeeringConnections(Aws::Vector<VpcPeeringConnection>&& value) { SetVpcPeeringConnections(value); return *this;}
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline DescribeVpcPeeringConnectionsResponse& AddVpcPeeringConnections(const VpcPeeringConnection& value) { m_vpcPeeringConnections.push_back(value); return *this; }
 
-    /*
-     <p>Information about the VPC peering connections.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connections.</p>
+     */
     inline DescribeVpcPeeringConnectionsResponse& AddVpcPeeringConnections(VpcPeeringConnection&& value) { m_vpcPeeringConnections.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace Lambda
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_LAMBDA_API GetFunctionConfigurationRequest : public LambdaRequest
   {
   public:
@@ -33,39 +33,95 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline GetFunctionConfigurationRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline GetFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
-    /*
-     <p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
-    */
+    /**
+     * <p>The name of the Lambda function for which you want to retrieve the
+     * configuration information.</p> <p> You can specify an unqualified function name
+     * (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
+     * function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
+     * allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 character in
+     * length. </p>
+     */
     inline GetFunctionConfigurationRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
   private:

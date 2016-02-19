@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    <p>Metric filters can be used to express how Amazon CloudWatch Logs would extract metric observations from ingested log events and transform them to metric data in a CloudWatch metric.</p>
-  */
+
+  /**
+   * <p>Metric filters can be used to express how Amazon CloudWatch Logs would
+   * extract metric observations from ingested log events and transform them to
+   * metric data in a CloudWatch metric.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API MetricFilter
   {
   public:

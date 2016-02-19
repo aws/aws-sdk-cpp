@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>RegisterElasticIp</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>RegisterElasticIp</code> request.</p>
+   */
   class AWS_OPSWORKS_API RegisterElasticIpResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     RegisterElasticIpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RegisterElasticIpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIp = value; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetElasticIp(Aws::String&& value) { m_elasticIp = value; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetElasticIp(const char* value) { m_elasticIp.assign(value); }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline RegisterElasticIpResult& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline RegisterElasticIpResult& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline RegisterElasticIpResult& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
   private:

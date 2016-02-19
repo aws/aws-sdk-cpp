@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EC2_API DeleteRouteTableRequest : public EC2Request
   {
   public:
@@ -33,54 +33,63 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline DeleteRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline DeleteRouteTableRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline DeleteRouteTableRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(value); return *this;}
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline DeleteRouteTableRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
   private:

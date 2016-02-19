@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the monitoring information of the instance.</p>
-  */
+
+  /**
+   * <p>Describes the monitoring information of the instance.</p>
+   */
   class AWS_EC2_API InstanceMonitoring
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline InstanceMonitoring& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline InstanceMonitoring& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline InstanceMonitoring& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The monitoring information.</p>
-    */
+    /**
+     * <p>The monitoring information.</p>
+     */
     inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
 
-    /*
-     <p>The monitoring information.</p>
-    */
+    /**
+     * <p>The monitoring information.</p>
+     */
     inline void SetMonitoring(const Monitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
-    /*
-     <p>The monitoring information.</p>
-    */
+    /**
+     * <p>The monitoring information.</p>
+     */
     inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
-    /*
-     <p>The monitoring information.</p>
-    */
+    /**
+     * <p>The monitoring information.</p>
+     */
     inline InstanceMonitoring& WithMonitoring(const Monitoring& value) { SetMonitoring(value); return *this;}
 
-    /*
-     <p>The monitoring information.</p>
-    */
+    /**
+     * <p>The monitoring information.</p>
+     */
     inline InstanceMonitoring& WithMonitoring(Monitoring&& value) { SetMonitoring(value); return *this;}
 
   private:

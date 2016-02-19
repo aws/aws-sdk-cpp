@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>ListSAMLProviders</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>ListSAMLProviders</a> request. </p>
+   */
   class AWS_IAM_API ListSAMLProvidersResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     ListSAMLProvidersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListSAMLProvidersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline const Aws::Vector<SAMLProviderListEntry>& GetSAMLProviderList() const{ return m_sAMLProviderList; }
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline void SetSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { m_sAMLProviderList = value; }
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline void SetSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { m_sAMLProviderList = value; }
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline ListSAMLProvidersResult& WithSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { SetSAMLProviderList(value); return *this;}
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline ListSAMLProvidersResult& WithSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { SetSAMLProviderList(value); return *this;}
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline ListSAMLProvidersResult& AddSAMLProviderList(const SAMLProviderListEntry& value) { m_sAMLProviderList.push_back(value); return *this; }
 
-    /*
-     <p>The list of SAML providers for this account.</p>
-    */
+    /**
+     * <p>The list of SAML providers for this account.</p>
+     */
     inline ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListEntry&& value) { m_sAMLProviderList.push_back(value); return *this; }
 
     

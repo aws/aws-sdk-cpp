@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the user data to be made available to an instance.</p>
-  */
+
+  /**
+   * <p>Describes the user data to be made available to an instance.</p>
+   */
   class AWS_EC2_API UserData
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline const Aws::String& GetData() const{ return m_data; }
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = value; }
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline UserData& WithData(const Aws::String& value) { SetData(value); return *this;}
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline UserData& WithData(Aws::String&& value) { SetData(value); return *this;}
 
-    /*
-     <p>The Base64-encoded MIME user data for the instance.</p>
-    */
+    /**
+     * <p>The Base64-encoded MIME user data for the instance.</p>
+     */
     inline UserData& WithData(const char* value) { SetData(value); return *this;}
 
   private:

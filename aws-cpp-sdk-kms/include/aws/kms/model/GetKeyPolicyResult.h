@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API GetKeyPolicyResult
   {
   public:
@@ -42,39 +39,39 @@ namespace Model
     GetKeyPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetKeyPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline void SetPolicy(Aws::String&& value) { m_policy = value; }
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline GetKeyPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline GetKeyPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>A policy document in JSON format.</p>
-    */
+    /**
+     * <p>A policy document in JSON format.</p>
+     */
     inline GetKeyPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:

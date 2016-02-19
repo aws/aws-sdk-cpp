@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeScheduledActionsResult
   {
   public:
@@ -45,74 +42,81 @@ namespace Model
     DescribeScheduledActionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeScheduledActionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline const Aws::Vector<ScheduledUpdateGroupAction>& GetScheduledUpdateGroupActions() const{ return m_scheduledUpdateGroupActions; }
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline void SetScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupAction>& value) { m_scheduledUpdateGroupActions = value; }
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline void SetScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupAction>&& value) { m_scheduledUpdateGroupActions = value; }
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupAction>& value) { SetScheduledUpdateGroupActions(value); return *this;}
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupAction>&& value) { SetScheduledUpdateGroupActions(value); return *this;}
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(const ScheduledUpdateGroupAction& value) { m_scheduledUpdateGroupActions.push_back(value); return *this; }
 
-    /*
-     <p>The scheduled actions.</p>
-    */
+    /**
+     * <p>The scheduled actions.</p>
+     */
     inline DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(ScheduledUpdateGroupAction&& value) { m_scheduledUpdateGroupActions.push_back(value); return *this; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeScheduledActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeScheduledActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeScheduledActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Provides a list of validation messages.</p>
-  */
+  /**
+   * <p>Provides a list of validation messages.</p>
+   */
   class AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     ValidateConfigurationSettingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ValidateConfigurationSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline const Aws::Vector<ValidationMessage>& GetMessages() const{ return m_messages; }
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline void SetMessages(const Aws::Vector<ValidationMessage>& value) { m_messages = value; }
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline void SetMessages(Aws::Vector<ValidationMessage>&& value) { m_messages = value; }
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline ValidateConfigurationSettingsResult& WithMessages(const Aws::Vector<ValidationMessage>& value) { SetMessages(value); return *this;}
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline ValidateConfigurationSettingsResult& WithMessages(Aws::Vector<ValidationMessage>&& value) { SetMessages(value); return *this;}
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline ValidateConfigurationSettingsResult& AddMessages(const ValidationMessage& value) { m_messages.push_back(value); return *this; }
 
-    /*
-     <p> A list of <a>ValidationMessage</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ValidationMessage</a>. </p>
+     */
     inline ValidateConfigurationSettingsResult& AddMessages(ValidationMessage&& value) { m_messages.push_back(value); return *this; }
 
     

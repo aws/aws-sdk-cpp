@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace AutoScaling
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_AUTOSCALING_API DescribeLoadBalancersRequest : public AutoScalingRequest
   {
   public:
@@ -33,89 +33,96 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline DescribeLoadBalancersRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline DescribeLoadBalancersRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline DescribeLoadBalancersRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline DescribeLoadBalancersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline DescribeLoadBalancersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline DescribeLoadBalancersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The maximum number of items to return with this call.</p>
-    */
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
-    /*
-     <p>The maximum number of items to return with this call.</p>
-    */
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
-    /*
-     <p>The maximum number of items to return with this call.</p>
-    */
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
     inline DescribeLoadBalancersRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
   private:

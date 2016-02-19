@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateVpcResponse
   {
   public:
@@ -43,29 +40,29 @@ namespace Model
     CreateVpcResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateVpcResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the VPC.</p>
-    */
+    /**
+     * <p>Information about the VPC.</p>
+     */
     inline const Vpc& GetVpc() const{ return m_vpc; }
 
-    /*
-     <p>Information about the VPC.</p>
-    */
+    /**
+     * <p>Information about the VPC.</p>
+     */
     inline void SetVpc(const Vpc& value) { m_vpc = value; }
 
-    /*
-     <p>Information about the VPC.</p>
-    */
+    /**
+     * <p>Information about the VPC.</p>
+     */
     inline void SetVpc(Vpc&& value) { m_vpc = value; }
 
-    /*
-     <p>Information about the VPC.</p>
-    */
+    /**
+     * <p>Information about the VPC.</p>
+     */
     inline CreateVpcResponse& WithVpc(const Vpc& value) { SetVpc(value); return *this;}
 
-    /*
-     <p>Information about the VPC.</p>
-    */
+    /**
+     * <p>Information about the VPC.</p>
+     */
     inline CreateVpcResponse& WithVpc(Vpc&& value) { SetVpc(value); return *this;}
 
     

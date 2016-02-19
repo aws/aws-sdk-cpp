@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>The value to use when a resource attribute accepts a Boolean value.</p>
-  */
+
+  /**
+   * <p>The value to use when a resource attribute accepts a Boolean value.</p>
+   */
   class AWS_EC2_API AttributeBooleanValue
   {
   public:
@@ -42,19 +43,19 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Valid values are <code>true</code> or <code>false</code>.</p>
-    */
+    /**
+     * <p>Valid values are <code>true</code> or <code>false</code>.</p>
+     */
     inline bool GetValue() const{ return m_value; }
 
-    /*
-     <p>Valid values are <code>true</code> or <code>false</code>.</p>
-    */
+    /**
+     * <p>Valid values are <code>true</code> or <code>false</code>.</p>
+     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>Valid values are <code>true</code> or <code>false</code>.</p>
-    */
+    /**
+     * <p>Valid values are <code>true</code> or <code>false</code>.</p>
+     */
     inline AttributeBooleanValue& WithValue(bool value) { SetValue(value); return *this;}
 
   private:

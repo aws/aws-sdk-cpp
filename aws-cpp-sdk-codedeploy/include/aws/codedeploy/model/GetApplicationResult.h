@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get application operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get application operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetApplicationResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the application.</p>
-    */
+    /**
+     * <p>Information about the application.</p>
+     */
     inline const ApplicationInfo& GetApplication() const{ return m_application; }
 
-    /*
-     <p>Information about the application.</p>
-    */
+    /**
+     * <p>Information about the application.</p>
+     */
     inline void SetApplication(const ApplicationInfo& value) { m_application = value; }
 
-    /*
-     <p>Information about the application.</p>
-    */
+    /**
+     * <p>Information about the application.</p>
+     */
     inline void SetApplication(ApplicationInfo&& value) { m_application = value; }
 
-    /*
-     <p>Information about the application.</p>
-    */
+    /**
+     * <p>Information about the application.</p>
+     */
     inline GetApplicationResult& WithApplication(const ApplicationInfo& value) { SetApplication(value); return *this;}
 
-    /*
-     <p>Information about the application.</p>
-    */
+    /**
+     * <p>Information about the application.</p>
+     */
     inline GetApplicationResult& WithApplication(ApplicationInfo&& value) { SetApplication(value); return *this;}
 
   private:

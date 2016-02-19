@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeSubnetsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeSubnetsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSubnetsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnets = value; }
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnets = value; }
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline DescribeSubnetsResponse& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline DescribeSubnetsResponse& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(value); return *this;}
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline DescribeSubnetsResponse& AddSubnets(const Subnet& value) { m_subnets.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more subnets.</p>
-    */
+    /**
+     * <p>Information about one or more subnets.</p>
+     */
     inline DescribeSubnetsResponse& AddSubnets(Subnet&& value) { m_subnets.push_back(value); return *this; }
 
     

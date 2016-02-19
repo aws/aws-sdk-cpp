@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -175,27 +175,24 @@ namespace Model
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateDistribution2015_04_17Request&, const Model::UpdateDistribution2015_04_17Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistribution2015_04_17ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateStreamingDistribution2015_04_17Request&, const Model::UpdateStreamingDistribution2015_04_17Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamingDistribution2015_04_17ResponseReceivedHandler;
 
-  /*
-    ${serviceModel.documentation}
-  */
   class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
 
-        /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudFrontClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudFrontClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -205,410 +202,410 @@ namespace Model
 
         virtual ~CloudFrontClient();
 
-        /*
-            Create a new origin access identity.
-        */
+        /**
+         * Create a new origin access identity.
+         */
         virtual Model::CreateCloudFrontOriginAccessIdentity2015_04_17Outcome CreateCloudFrontOriginAccessIdentity2015_04_17(const Model::CreateCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Create a new origin access identity.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Create a new origin access identity.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CreateCloudFrontOriginAccessIdentity2015_04_17Callable(const Model::CreateCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Create a new origin access identity.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Create a new origin access identity.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateCloudFrontOriginAccessIdentity2015_04_17Async(const Model::CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const CreateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Create a new distribution.
-        */
+        /**
+         * Create a new distribution.
+         */
         virtual Model::CreateDistribution2015_04_17Outcome CreateDistribution2015_04_17(const Model::CreateDistribution2015_04_17Request& request) const;
 
-        /*
-            Create a new distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Create a new distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDistribution2015_04_17OutcomeCallable CreateDistribution2015_04_17Callable(const Model::CreateDistribution2015_04_17Request& request) const;
 
-        /*
-            Create a new distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Create a new distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDistribution2015_04_17Async(const Model::CreateDistribution2015_04_17Request& request, const CreateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Create a new invalidation.
-        */
+        /**
+         * Create a new invalidation.
+         */
         virtual Model::CreateInvalidation2015_04_17Outcome CreateInvalidation2015_04_17(const Model::CreateInvalidation2015_04_17Request& request) const;
 
-        /*
-            Create a new invalidation.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Create a new invalidation.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateInvalidation2015_04_17OutcomeCallable CreateInvalidation2015_04_17Callable(const Model::CreateInvalidation2015_04_17Request& request) const;
 
-        /*
-            Create a new invalidation.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Create a new invalidation.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateInvalidation2015_04_17Async(const Model::CreateInvalidation2015_04_17Request& request, const CreateInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Create a new streaming distribution.
-        */
+        /**
+         * Create a new streaming distribution.
+         */
         virtual Model::CreateStreamingDistribution2015_04_17Outcome CreateStreamingDistribution2015_04_17(const Model::CreateStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Create a new streaming distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Create a new streaming distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateStreamingDistribution2015_04_17OutcomeCallable CreateStreamingDistribution2015_04_17Callable(const Model::CreateStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Create a new streaming distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Create a new streaming distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateStreamingDistribution2015_04_17Async(const Model::CreateStreamingDistribution2015_04_17Request& request, const CreateStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Delete an origin access identity.
-        */
+        /**
+         * Delete an origin access identity.
+         */
         virtual Model::DeleteCloudFrontOriginAccessIdentity2015_04_17Outcome DeleteCloudFrontOriginAccessIdentity2015_04_17(const Model::DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Delete an origin access identity.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Delete an origin access identity.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable DeleteCloudFrontOriginAccessIdentity2015_04_17Callable(const Model::DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Delete an origin access identity.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Delete an origin access identity.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteCloudFrontOriginAccessIdentity2015_04_17Async(const Model::DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const DeleteCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Delete a distribution.
-        */
+        /**
+         * Delete a distribution.
+         */
         virtual Model::DeleteDistribution2015_04_17Outcome DeleteDistribution2015_04_17(const Model::DeleteDistribution2015_04_17Request& request) const;
 
-        /*
-            Delete a distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Delete a distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteDistribution2015_04_17OutcomeCallable DeleteDistribution2015_04_17Callable(const Model::DeleteDistribution2015_04_17Request& request) const;
 
-        /*
-            Delete a distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Delete a distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteDistribution2015_04_17Async(const Model::DeleteDistribution2015_04_17Request& request, const DeleteDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Delete a streaming distribution.
-        */
+        /**
+         * Delete a streaming distribution.
+         */
         virtual Model::DeleteStreamingDistribution2015_04_17Outcome DeleteStreamingDistribution2015_04_17(const Model::DeleteStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Delete a streaming distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Delete a streaming distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteStreamingDistribution2015_04_17OutcomeCallable DeleteStreamingDistribution2015_04_17Callable(const Model::DeleteStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Delete a streaming distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Delete a streaming distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteStreamingDistribution2015_04_17Async(const Model::DeleteStreamingDistribution2015_04_17Request& request, const DeleteStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the information about an origin access identity.
-        */
+        /**
+         * Get the information about an origin access identity.
+         */
         virtual Model::GetCloudFrontOriginAccessIdentity2015_04_17Outcome GetCloudFrontOriginAccessIdentity2015_04_17(const Model::GetCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Get the information about an origin access identity.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the information about an origin access identity.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable GetCloudFrontOriginAccessIdentity2015_04_17Callable(const Model::GetCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Get the information about an origin access identity.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the information about an origin access identity.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetCloudFrontOriginAccessIdentity2015_04_17Async(const Model::GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const GetCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the configuration information about an origin access identity.
-        */
+        /**
+         * Get the configuration information about an origin access identity.
+         */
         virtual Model::GetCloudFrontOriginAccessIdentityConfig2015_04_17Outcome GetCloudFrontOriginAccessIdentityConfig2015_04_17(const Model::GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request) const;
 
-        /*
-            Get the configuration information about an origin access identity.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the configuration information about an origin access identity.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetCloudFrontOriginAccessIdentityConfig2015_04_17OutcomeCallable GetCloudFrontOriginAccessIdentityConfig2015_04_17Callable(const Model::GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request) const;
 
-        /*
-            Get the configuration information about an origin access identity.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the configuration information about an origin access identity.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetCloudFrontOriginAccessIdentityConfig2015_04_17Async(const Model::GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const GetCloudFrontOriginAccessIdentityConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the information about a distribution.
-        */
+        /**
+         * Get the information about a distribution.
+         */
         virtual Model::GetDistribution2015_04_17Outcome GetDistribution2015_04_17(const Model::GetDistribution2015_04_17Request& request) const;
 
-        /*
-            Get the information about a distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the information about a distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetDistribution2015_04_17OutcomeCallable GetDistribution2015_04_17Callable(const Model::GetDistribution2015_04_17Request& request) const;
 
-        /*
-            Get the information about a distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the information about a distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetDistribution2015_04_17Async(const Model::GetDistribution2015_04_17Request& request, const GetDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the configuration information about a distribution.
-        */
+        /**
+         * Get the configuration information about a distribution.
+         */
         virtual Model::GetDistributionConfig2015_04_17Outcome GetDistributionConfig2015_04_17(const Model::GetDistributionConfig2015_04_17Request& request) const;
 
-        /*
-            Get the configuration information about a distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the configuration information about a distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetDistributionConfig2015_04_17OutcomeCallable GetDistributionConfig2015_04_17Callable(const Model::GetDistributionConfig2015_04_17Request& request) const;
 
-        /*
-            Get the configuration information about a distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the configuration information about a distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetDistributionConfig2015_04_17Async(const Model::GetDistributionConfig2015_04_17Request& request, const GetDistributionConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the information about an invalidation.
-        */
+        /**
+         * Get the information about an invalidation.
+         */
         virtual Model::GetInvalidation2015_04_17Outcome GetInvalidation2015_04_17(const Model::GetInvalidation2015_04_17Request& request) const;
 
-        /*
-            Get the information about an invalidation.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the information about an invalidation.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetInvalidation2015_04_17OutcomeCallable GetInvalidation2015_04_17Callable(const Model::GetInvalidation2015_04_17Request& request) const;
 
-        /*
-            Get the information about an invalidation.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the information about an invalidation.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetInvalidation2015_04_17Async(const Model::GetInvalidation2015_04_17Request& request, const GetInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the information about a streaming distribution.
-        */
+        /**
+         * Get the information about a streaming distribution.
+         */
         virtual Model::GetStreamingDistribution2015_04_17Outcome GetStreamingDistribution2015_04_17(const Model::GetStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Get the information about a streaming distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the information about a streaming distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetStreamingDistribution2015_04_17OutcomeCallable GetStreamingDistribution2015_04_17Callable(const Model::GetStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Get the information about a streaming distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the information about a streaming distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetStreamingDistribution2015_04_17Async(const Model::GetStreamingDistribution2015_04_17Request& request, const GetStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Get the configuration information about a streaming distribution.
-        */
+        /**
+         * Get the configuration information about a streaming distribution.
+         */
         virtual Model::GetStreamingDistributionConfig2015_04_17Outcome GetStreamingDistributionConfig2015_04_17(const Model::GetStreamingDistributionConfig2015_04_17Request& request) const;
 
-        /*
-            Get the configuration information about a streaming distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Get the configuration information about a streaming distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetStreamingDistributionConfig2015_04_17OutcomeCallable GetStreamingDistributionConfig2015_04_17Callable(const Model::GetStreamingDistributionConfig2015_04_17Request& request) const;
 
-        /*
-            Get the configuration information about a streaming distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Get the configuration information about a streaming distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetStreamingDistributionConfig2015_04_17Async(const Model::GetStreamingDistributionConfig2015_04_17Request& request, const GetStreamingDistributionConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            List origin access identities.
-        */
+        /**
+         * List origin access identities.
+         */
         virtual Model::ListCloudFrontOriginAccessIdentities2015_04_17Outcome ListCloudFrontOriginAccessIdentities2015_04_17(const Model::ListCloudFrontOriginAccessIdentities2015_04_17Request& request) const;
 
-        /*
-            List origin access identities.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * List origin access identities.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListCloudFrontOriginAccessIdentities2015_04_17OutcomeCallable ListCloudFrontOriginAccessIdentities2015_04_17Callable(const Model::ListCloudFrontOriginAccessIdentities2015_04_17Request& request) const;
 
-        /*
-            List origin access identities.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * List origin access identities.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListCloudFrontOriginAccessIdentities2015_04_17Async(const Model::ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const ListCloudFrontOriginAccessIdentities2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            List distributions.
-        */
+        /**
+         * List distributions.
+         */
         virtual Model::ListDistributions2015_04_17Outcome ListDistributions2015_04_17(const Model::ListDistributions2015_04_17Request& request) const;
 
-        /*
-            List distributions.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * List distributions.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListDistributions2015_04_17OutcomeCallable ListDistributions2015_04_17Callable(const Model::ListDistributions2015_04_17Request& request) const;
 
-        /*
-            List distributions.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * List distributions.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListDistributions2015_04_17Async(const Model::ListDistributions2015_04_17Request& request, const ListDistributions2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            List invalidation batches.
-        */
+        /**
+         * List invalidation batches.
+         */
         virtual Model::ListInvalidations2015_04_17Outcome ListInvalidations2015_04_17(const Model::ListInvalidations2015_04_17Request& request) const;
 
-        /*
-            List invalidation batches.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * List invalidation batches.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListInvalidations2015_04_17OutcomeCallable ListInvalidations2015_04_17Callable(const Model::ListInvalidations2015_04_17Request& request) const;
 
-        /*
-            List invalidation batches.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * List invalidation batches.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListInvalidations2015_04_17Async(const Model::ListInvalidations2015_04_17Request& request, const ListInvalidations2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            List streaming distributions.
-        */
+        /**
+         * List streaming distributions.
+         */
         virtual Model::ListStreamingDistributions2015_04_17Outcome ListStreamingDistributions2015_04_17(const Model::ListStreamingDistributions2015_04_17Request& request) const;
 
-        /*
-            List streaming distributions.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * List streaming distributions.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListStreamingDistributions2015_04_17OutcomeCallable ListStreamingDistributions2015_04_17Callable(const Model::ListStreamingDistributions2015_04_17Request& request) const;
 
-        /*
-            List streaming distributions.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * List streaming distributions.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListStreamingDistributions2015_04_17Async(const Model::ListStreamingDistributions2015_04_17Request& request, const ListStreamingDistributions2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Update an origin access identity.
-        */
+        /**
+         * Update an origin access identity.
+         */
         virtual Model::UpdateCloudFrontOriginAccessIdentity2015_04_17Outcome UpdateCloudFrontOriginAccessIdentity2015_04_17(const Model::UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Update an origin access identity.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Update an origin access identity.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable UpdateCloudFrontOriginAccessIdentity2015_04_17Callable(const Model::UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request) const;
 
-        /*
-            Update an origin access identity.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Update an origin access identity.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateCloudFrontOriginAccessIdentity2015_04_17Async(const Model::UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const UpdateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Update a distribution.
-        */
+        /**
+         * Update a distribution.
+         */
         virtual Model::UpdateDistribution2015_04_17Outcome UpdateDistribution2015_04_17(const Model::UpdateDistribution2015_04_17Request& request) const;
 
-        /*
-            Update a distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Update a distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateDistribution2015_04_17OutcomeCallable UpdateDistribution2015_04_17Callable(const Model::UpdateDistribution2015_04_17Request& request) const;
 
-        /*
-            Update a distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Update a distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateDistribution2015_04_17Async(const Model::UpdateDistribution2015_04_17Request& request, const UpdateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Update a streaming distribution.
-        */
+        /**
+         * Update a streaming distribution.
+         */
         virtual Model::UpdateStreamingDistribution2015_04_17Outcome UpdateStreamingDistribution2015_04_17(const Model::UpdateStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Update a streaming distribution.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Update a streaming distribution.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateStreamingDistribution2015_04_17OutcomeCallable UpdateStreamingDistribution2015_04_17Callable(const Model::UpdateStreamingDistribution2015_04_17Request& request) const;
 
-        /*
-            Update a streaming distribution.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Update a streaming distribution.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateStreamingDistribution2015_04_17Async(const Model::UpdateStreamingDistribution2015_04_17Request& request, const UpdateStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-/**Async helpers**/
+        /**Async helpers**/
         void CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const CreateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDistribution2015_04_17AsyncHelper(const Model::CreateDistribution2015_04_17Request& request, const CreateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInvalidation2015_04_17AsyncHelper(const Model::CreateInvalidation2015_04_17Request& request, const CreateInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

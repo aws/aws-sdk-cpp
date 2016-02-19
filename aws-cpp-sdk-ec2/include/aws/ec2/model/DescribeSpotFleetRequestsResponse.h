@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of DescribeSpotFleetRequests.</p>
-  */
+  /**
+   * <p>Contains the output of DescribeSpotFleetRequests.</p>
+   */
   class AWS_EC2_API DescribeSpotFleetRequestsResponse
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeSpotFleetRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSpotFleetRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline const Aws::Vector<SpotFleetRequestConfig>& GetSpotFleetRequestConfigs() const{ return m_spotFleetRequestConfigs; }
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline void SetSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { m_spotFleetRequestConfigs = value; }
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline void SetSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { m_spotFleetRequestConfigs = value; }
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { SetSpotFleetRequestConfigs(value); return *this;}
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { SetSpotFleetRequestConfigs(value); return *this;}
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(const SpotFleetRequestConfig& value) { m_spotFleetRequestConfigs.push_back(value); return *this; }
 
-    /*
-     <p>Information about the configuration of your Spot fleet.</p>
-    */
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(SpotFleetRequestConfig&& value) { m_spotFleetRequestConfigs.push_back(value); return *this; }
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The token required to retrieve the next set of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeSpotFleetRequestsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

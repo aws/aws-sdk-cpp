@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
-  */
+  /**
+   * <p>The response body contains a JSON object. If the job is successfully
+   * canceled, the value of <code>Success</code> is <code>true</code>.</p>
+   */
   class AWS_ELASTICTRANSCODER_API CancelJobResult
   {
   public:

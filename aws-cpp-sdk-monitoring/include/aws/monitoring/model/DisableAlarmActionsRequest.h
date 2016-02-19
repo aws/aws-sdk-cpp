@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace CloudWatch
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_CLOUDWATCH_API DisableAlarmActionsRequest : public CloudWatchRequest
   {
   public:
@@ -35,44 +35,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline DisableAlarmActionsRequest& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline DisableAlarmActionsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(value); return *this;}
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline DisableAlarmActionsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline DisableAlarmActionsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
-    /*
-     <p> The names of the alarms to disable actions for. </p>
-    */
+    /**
+     * <p> The names of the alarms to disable actions for. </p>
+     */
     inline DisableAlarmActionsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
   private:

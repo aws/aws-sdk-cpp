@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>CreateCacheSubnetGroup</i> action.</p>
-  */
+  /**
+   * <p>Represents the input of a <i>CreateCacheSubnetGroup</i> action.</p>
+   */
   class AWS_ELASTICACHE_API CreateCacheSubnetGroupRequest : public ElastiCacheRequest
   {
   public:
@@ -35,114 +35,128 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(value); return *this;}
 
-    /*
-     <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
-    */
+    /**
+     * <p>A name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline const Aws::String& GetCacheSubnetGroupDescription() const{ return m_cacheSubnetGroupDescription; }
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline void SetCacheSubnetGroupDescription(const Aws::String& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline void SetCacheSubnetGroupDescription(Aws::String&& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline void SetCacheSubnetGroupDescription(const char* value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription.assign(value); }
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(const Aws::String& value) { SetCacheSubnetGroupDescription(value); return *this;}
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(Aws::String&& value) { SetCacheSubnetGroupDescription(value); return *this;}
 
-    /*
-     <p>A description for the cache subnet group.</p>
-    */
+    /**
+     * <p>A description for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(const char* value) { SetCacheSubnetGroupDescription(value); return *this;}
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    */
+    /**
+     * <p>A list of VPC subnet IDs for the cache subnet group.</p>
+     */
     inline CreateCacheSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:

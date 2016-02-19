@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    The output for the GetBulkPublishDetails operation.
-  */
+  /**
+   * The output for the GetBulkPublishDetails operation.
+   */
   class AWS_COGNITOSYNC_API GetBulkPublishDetailsResult
   {
   public:
@@ -43,129 +43,171 @@ namespace Model
     GetBulkPublishDetailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetBulkPublishDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline GetBulkPublishDetailsResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline GetBulkPublishDetailsResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline GetBulkPublishDetailsResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     The date/time at which the last bulk publish was initiated.
-    */
+    /**
+     * The date/time at which the last bulk publish was initiated.
+     */
     inline double GetBulkPublishStartTime() const{ return m_bulkPublishStartTime; }
 
-    /*
-     The date/time at which the last bulk publish was initiated.
-    */
+    /**
+     * The date/time at which the last bulk publish was initiated.
+     */
     inline void SetBulkPublishStartTime(double value) { m_bulkPublishStartTime = value; }
 
-    /*
-     The date/time at which the last bulk publish was initiated.
-    */
+    /**
+     * The date/time at which the last bulk publish was initiated.
+     */
     inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(double value) { SetBulkPublishStartTime(value); return *this;}
 
-    /*
-     If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    */
+    /**
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
+     * completed.
+     */
     inline double GetBulkPublishCompleteTime() const{ return m_bulkPublishCompleteTime; }
 
-    /*
-     If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    */
+    /**
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
+     * completed.
+     */
     inline void SetBulkPublishCompleteTime(double value) { m_bulkPublishCompleteTime = value; }
 
-    /*
-     If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    */
+    /**
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
+     * completed.
+     */
     inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(double value) { SetBulkPublishCompleteTime(value); return *this;}
 
-    /*
-     Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    */
+    /**
+     * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
+     * bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data
+     * is being published to the configured stream</p> <p>SUCCEEDED - All data for the
+     * identity pool has been published to the configured stream</p> <p>FAILED - Some
+     * portion of the data has failed to publish, check FailureMessage for the
+     * cause.</p>
+     */
     inline const BulkPublishStatus& GetBulkPublishStatus() const{ return m_bulkPublishStatus; }
 
-    /*
-     Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    */
+    /**
+     * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
+     * bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data
+     * is being published to the configured stream</p> <p>SUCCEEDED - All data for the
+     * identity pool has been published to the configured stream</p> <p>FAILED - Some
+     * portion of the data has failed to publish, check FailureMessage for the
+     * cause.</p>
+     */
     inline void SetBulkPublishStatus(const BulkPublishStatus& value) { m_bulkPublishStatus = value; }
 
-    /*
-     Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    */
+    /**
+     * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
+     * bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data
+     * is being published to the configured stream</p> <p>SUCCEEDED - All data for the
+     * identity pool has been published to the configured stream</p> <p>FAILED - Some
+     * portion of the data has failed to publish, check FailureMessage for the
+     * cause.</p>
+     */
     inline void SetBulkPublishStatus(BulkPublishStatus&& value) { m_bulkPublishStatus = value; }
 
-    /*
-     Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    */
+    /**
+     * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
+     * bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data
+     * is being published to the configured stream</p> <p>SUCCEEDED - All data for the
+     * identity pool has been published to the configured stream</p> <p>FAILED - Some
+     * portion of the data has failed to publish, check FailureMessage for the
+     * cause.</p>
+     */
     inline GetBulkPublishDetailsResult& WithBulkPublishStatus(const BulkPublishStatus& value) { SetBulkPublishStatus(value); return *this;}
 
-    /*
-     Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    */
+    /**
+     * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
+     * bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data
+     * is being published to the configured stream</p> <p>SUCCEEDED - All data for the
+     * identity pool has been published to the configured stream</p> <p>FAILED - Some
+     * portion of the data has failed to publish, check FailureMessage for the
+     * cause.</p>
+     */
     inline GetBulkPublishDetailsResult& WithBulkPublishStatus(BulkPublishStatus&& value) { SetBulkPublishStatus(value); return *this;}
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = value; }
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline GetBulkPublishDetailsResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline GetBulkPublishDetailsResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
 
-    /*
-     If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    */
+    /**
+     * If BulkPublishStatus is FAILED this field will contain the error message that
+     * caused the bulk publish to fail.
+     */
     inline GetBulkPublishDetailsResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>ListOpenIDConnectProviders</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>ListOpenIDConnectProviders</a>
+   * request. </p>
+   */
   class AWS_IAM_API ListOpenIDConnectProvidersResult
   {
   public:
@@ -44,39 +45,39 @@ namespace Model
     ListOpenIDConnectProvidersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListOpenIDConnectProvidersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline const Aws::Vector<OpenIDConnectProviderListEntry>& GetOpenIDConnectProviderList() const{ return m_openIDConnectProviderList; }
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline void SetOpenIDConnectProviderList(const Aws::Vector<OpenIDConnectProviderListEntry>& value) { m_openIDConnectProviderList = value; }
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline void SetOpenIDConnectProviderList(Aws::Vector<OpenIDConnectProviderListEntry>&& value) { m_openIDConnectProviderList = value; }
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(const Aws::Vector<OpenIDConnectProviderListEntry>& value) { SetOpenIDConnectProviderList(value); return *this;}
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline ListOpenIDConnectProvidersResult& WithOpenIDConnectProviderList(Aws::Vector<OpenIDConnectProviderListEntry>&& value) { SetOpenIDConnectProviderList(value); return *this;}
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(const OpenIDConnectProviderListEntry& value) { m_openIDConnectProviderList.push_back(value); return *this; }
 
-    /*
-     <p>The list of IAM OpenID Connect providers in the AWS account.</p>
-    */
+    /**
+     * <p>The list of IAM OpenID Connect providers in the AWS account.</p>
+     */
     inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(OpenIDConnectProviderListEntry&& value) { m_openIDConnectProviderList.push_back(value); return *this; }
 
     

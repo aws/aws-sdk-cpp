@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -137,7 +137,7 @@ namespace Model
         typedef std::future<UpdatePipelineStatusOutcome> UpdatePipelineStatusOutcomeCallable;
 } // namespace Model
 
-    class ElasticTranscoderClient;
+  class ElasticTranscoderClient;
 
     typedef std::function<void(const ElasticTranscoderClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
     typedef std::function<void(const ElasticTranscoderClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
@@ -157,27 +157,28 @@ namespace Model
     typedef std::function<void(const ElasticTranscoderClient*, const Model::UpdatePipelineNotificationsRequest&, const Model::UpdatePipelineNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineNotificationsResponseReceivedHandler;
     typedef std::function<void(const ElasticTranscoderClient*, const Model::UpdatePipelineStatusRequest&, const Model::UpdatePipelineStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineStatusResponseReceivedHandler;
 
-  /*
-    <fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic Transcoder Service.</p>
-  */
+  /**
+   * <fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic
+   * Transcoder Service.</p>
+   */
   class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : public Aws::Client::AWSJsonClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
 
-            /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElasticTranscoderClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElasticTranscoderClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -186,335 +187,491 @@ namespace Model
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
         virtual ~ElasticTranscoderClient();
-    
-        /*
-            <p>The CancelJob operation cancels an unfinished job.</p> <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
-        */
+
+        /**
+         * <p>The CancelJob operation cancels an unfinished job.</p> <note>You can only
+         * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
+         * from starting to process a job while you're getting the job identifier, use
+         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+         */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
-        /*
-            <p>The CancelJob operation cancels an unfinished job.</p> <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The CancelJob operation cancels an unfinished job.</p> <note>You can only
+         * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
+         * from starting to process a job while you're getting the job identifier, use
+         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
-        /*
-            <p>The CancelJob operation cancels an unfinished job.</p> <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The CancelJob operation cancels an unfinished job.</p> <note>You can only
+         * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
+         * from starting to process a job while you're getting the job identifier, use
+         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>
-        */
+        /**
+         * <p> When you create a job, Elastic Transcoder returns JSON data that includes
+         * the values that you specified plus information about the job that is created.
+         * </p> <p>If you have specified more than one output for your jobs (for example,
+         * one output for the Kindle Fire and another output for the Apple iPhone 4s), you
+         * currently must use the Elastic Transcoder API to list the jobs (as opposed to
+         * the AWS Console).</p>
+         */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
-        /*
-            <p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> When you create a job, Elastic Transcoder returns JSON data that includes
+         * the values that you specified plus information about the job that is created.
+         * </p> <p>If you have specified more than one output for your jobs (for example,
+         * one output for the Kindle Fire and another output for the Apple iPhone 4s), you
+         * currently must use the Elastic Transcoder API to list the jobs (as opposed to
+         * the AWS Console).</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
 
-        /*
-            <p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> When you create a job, Elastic Transcoder returns JSON data that includes
+         * the values that you specified plus information about the job that is created.
+         * </p> <p>If you have specified more than one output for your jobs (for example,
+         * one output for the Kindle Fire and another output for the Apple iPhone 4s), you
+         * currently must use the Elastic Transcoder API to list the jobs (as opposed to
+         * the AWS Console).</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
-        */
+        /**
+         * <p>The CreatePipeline operation creates a pipeline with settings that you
+         * specify.</p>
+         */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
-        /*
-            <p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The CreatePipeline operation creates a pipeline with settings that you
+         * specify.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
 
-        /*
-            <p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The CreatePipeline operation creates a pipeline with settings that you
+         * specify.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>
-        */
+        /**
+         * <p>The CreatePreset operation creates a preset with settings that you
+         * specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to
+         * ensure that they meet Elastic Transcoder requirements and to determine whether
+         * they comply with H.264 standards. If your settings are not valid for Elastic
+         * Transcoder, Elastic Transcoder returns an HTTP 400 response
+         * (<code>ValidationException</code>) and does not create the preset. If the
+         * settings are valid for Elastic Transcoder but aren't strictly compliant with the
+         * H.264 standard, Elastic Transcoder creates the preset and returns a warning
+         * message in the response. This helps you determine whether your settings comply
+         * with the H.264 standard while giving you greater flexibility with respect to the
+         * video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses
+         * the H.264 video-compression format. For more information, see the International
+         * Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced
+         * video coding for generic audiovisual services</i>.</p>
+         */
         virtual Model::CreatePresetOutcome CreatePreset(const Model::CreatePresetRequest& request) const;
 
-        /*
-            <p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The CreatePreset operation creates a preset with settings that you
+         * specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to
+         * ensure that they meet Elastic Transcoder requirements and to determine whether
+         * they comply with H.264 standards. If your settings are not valid for Elastic
+         * Transcoder, Elastic Transcoder returns an HTTP 400 response
+         * (<code>ValidationException</code>) and does not create the preset. If the
+         * settings are valid for Elastic Transcoder but aren't strictly compliant with the
+         * H.264 standard, Elastic Transcoder creates the preset and returns a warning
+         * message in the response. This helps you determine whether your settings comply
+         * with the H.264 standard while giving you greater flexibility with respect to the
+         * video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses
+         * the H.264 video-compression format. For more information, see the International
+         * Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced
+         * video coding for generic audiovisual services</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreatePresetOutcomeCallable CreatePresetCallable(const Model::CreatePresetRequest& request) const;
 
-        /*
-            <p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The CreatePreset operation creates a preset with settings that you
+         * specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to
+         * ensure that they meet Elastic Transcoder requirements and to determine whether
+         * they comply with H.264 standards. If your settings are not valid for Elastic
+         * Transcoder, Elastic Transcoder returns an HTTP 400 response
+         * (<code>ValidationException</code>) and does not create the preset. If the
+         * settings are valid for Elastic Transcoder but aren't strictly compliant with the
+         * H.264 standard, Elastic Transcoder creates the preset and returns a warning
+         * message in the response. This helps you determine whether your settings comply
+         * with the H.264 standard while giving you greater flexibility with respect to the
+         * video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses
+         * the H.264 video-compression format. For more information, see the International
+         * Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced
+         * video coding for generic audiovisual services</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreatePresetAsync(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>
-        */
+        /**
+         * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
+         * a pipeline that has never been used or that is not currently in use (doesn't
+         * contain any active jobs). If the pipeline is currently in use,
+         * <code>DeletePipeline</code> returns an error. </p>
+         */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
-        /*
-            <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
+         * a pipeline that has never been used or that is not currently in use (doesn't
+         * contain any active jobs). If the pipeline is currently in use,
+         * <code>DeletePipeline</code> returns an error. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
 
-        /*
-            <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
+         * a pipeline that has never been used or that is not currently in use (doesn't
+         * contain any active jobs). If the pipeline is currently in use,
+         * <code>DeletePipeline</code> returns an error. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>
-        */
+        /**
+         * <p>The DeletePreset operation removes a preset that you've added in an AWS
+         * region.</p> <note> <p>You can't delete the default presets that are included
+         * with Elastic Transcoder.</p> </note>
+         */
         virtual Model::DeletePresetOutcome DeletePreset(const Model::DeletePresetRequest& request) const;
 
-        /*
-            <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The DeletePreset operation removes a preset that you've added in an AWS
+         * region.</p> <note> <p>You can't delete the default presets that are included
+         * with Elastic Transcoder.</p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeletePresetOutcomeCallable DeletePresetCallable(const Model::DeletePresetRequest& request) const;
 
-        /*
-            <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The DeletePreset operation removes a preset that you've added in an AWS
+         * region.</p> <note> <p>You can't delete the default presets that are included
+         * with Elastic Transcoder.</p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeletePresetAsync(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>
-        */
+        /**
+         * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
+         * pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the
+         * specified pipeline. The response body contains one element for each job that
+         * satisfies the search criteria.</p>
+         */
         virtual Model::ListJobsByPipelineOutcome ListJobsByPipeline(const Model::ListJobsByPipelineRequest& request) const;
 
-        /*
-            <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
+         * pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the
+         * specified pipeline. The response body contains one element for each job that
+         * satisfies the search criteria.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListJobsByPipelineOutcomeCallable ListJobsByPipelineCallable(const Model::ListJobsByPipelineRequest& request) const;
 
-        /*
-            <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
+         * pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the
+         * specified pipeline. The response body contains one element for each job that
+         * satisfies the search criteria.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListJobsByPipelineAsync(const Model::ListJobsByPipelineRequest& request, const ListJobsByPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>
-        */
+        /**
+         * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
+         * status. The response body contains one element for each job that satisfies the
+         * search criteria.</p>
+         */
         virtual Model::ListJobsByStatusOutcome ListJobsByStatus(const Model::ListJobsByStatusRequest& request) const;
 
-        /*
-            <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
+         * status. The response body contains one element for each job that satisfies the
+         * search criteria.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListJobsByStatusOutcomeCallable ListJobsByStatusCallable(const Model::ListJobsByStatusRequest& request) const;
 
-        /*
-            <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
+         * status. The response body contains one element for each job that satisfies the
+         * search criteria.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListJobsByStatusAsync(const Model::ListJobsByStatusRequest& request, const ListJobsByStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
-        */
+        /**
+         * <p>The ListPipelines operation gets a list of the pipelines associated with the
+         * current AWS account.</p>
+         */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
-        /*
-            <p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ListPipelines operation gets a list of the pipelines associated with the
+         * current AWS account.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const Model::ListPipelinesRequest& request) const;
 
-        /*
-            <p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ListPipelines operation gets a list of the pipelines associated with the
+         * current AWS account.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>
-        */
+        /**
+         * <p>The ListPresets operation gets a list of the default presets included with
+         * Elastic Transcoder and the presets that you've added in an AWS region.</p>
+         */
         virtual Model::ListPresetsOutcome ListPresets(const Model::ListPresetsRequest& request) const;
 
-        /*
-            <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ListPresets operation gets a list of the default presets included with
+         * Elastic Transcoder and the presets that you've added in an AWS region.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListPresetsOutcomeCallable ListPresetsCallable(const Model::ListPresetsRequest& request) const;
 
-        /*
-            <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ListPresets operation gets a list of the default presets included with
+         * Elastic Transcoder and the presets that you've added in an AWS region.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListPresetsAsync(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ReadJob operation returns detailed information about a job.</p>
-        */
+        /**
+         * <p>The ReadJob operation returns detailed information about a job.</p>
+         */
         virtual Model::ReadJobOutcome ReadJob(const Model::ReadJobRequest& request) const;
 
-        /*
-            <p>The ReadJob operation returns detailed information about a job.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ReadJob operation returns detailed information about a job.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ReadJobOutcomeCallable ReadJobCallable(const Model::ReadJobRequest& request) const;
 
-        /*
-            <p>The ReadJob operation returns detailed information about a job.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ReadJob operation returns detailed information about a job.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ReadJobAsync(const Model::ReadJobRequest& request, const ReadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
-        */
+        /**
+         * <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+         */
         virtual Model::ReadPipelineOutcome ReadPipeline(const Model::ReadPipelineRequest& request) const;
 
-        /*
-            <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ReadPipelineOutcomeCallable ReadPipelineCallable(const Model::ReadPipelineRequest& request) const;
 
-        /*
-            <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ReadPipelineAsync(const Model::ReadPipelineRequest& request, const ReadPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The ReadPreset operation gets detailed information about a preset.</p>
-        */
+        /**
+         * <p>The ReadPreset operation gets detailed information about a preset.</p>
+         */
         virtual Model::ReadPresetOutcome ReadPreset(const Model::ReadPresetRequest& request) const;
 
-        /*
-            <p>The ReadPreset operation gets detailed information about a preset.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The ReadPreset operation gets detailed information about a preset.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ReadPresetOutcomeCallable ReadPresetCallable(const Model::ReadPresetRequest& request) const;
 
-        /*
-            <p>The ReadPreset operation gets detailed information about a preset.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The ReadPreset operation gets detailed information about a preset.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ReadPresetAsync(const Model::ReadPresetRequest& request, const ReadPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>
-        */
+        /**
+         * <p>The TestRole operation tests the IAM role used to create the pipeline.</p>
+         * <p>The <code>TestRole</code> action lets you determine whether the IAM role you
+         * are using has sufficient permissions to let Elastic Transcoder perform tasks
+         * associated with the transcoding process. The action attempts to assume the
+         * specified IAM role, checks read access to the input and output buckets, and
+         * tries to send a test notification to Amazon SNS topics that you specify.</p>
+         */
         virtual Model::TestRoleOutcome TestRole(const Model::TestRoleRequest& request) const;
 
-        /*
-            <p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The TestRole operation tests the IAM role used to create the pipeline.</p>
+         * <p>The <code>TestRole</code> action lets you determine whether the IAM role you
+         * are using has sufficient permissions to let Elastic Transcoder perform tasks
+         * associated with the transcoding process. The action attempts to assume the
+         * specified IAM role, checks read access to the input and output buckets, and
+         * tries to send a test notification to Amazon SNS topics that you specify.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::TestRoleOutcomeCallable TestRoleCallable(const Model::TestRoleRequest& request) const;
 
-        /*
-            <p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The TestRole operation tests the IAM role used to create the pipeline.</p>
+         * <p>The <code>TestRole</code> action lets you determine whether the IAM role you
+         * are using has sufficient permissions to let Elastic Transcoder perform tasks
+         * associated with the transcoding process. The action attempts to assume the
+         * specified IAM role, checks read access to the input and output buckets, and
+         * tries to send a test notification to Amazon SNS topics that you specify.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void TestRoleAsync(const Model::TestRoleRequest& request, const TestRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>
-        */
+        /**
+         * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
+         * pipeline. <important>When you change pipeline settings, your changes take effect
+         * immediately. Jobs that you have already submitted and that Elastic Transcoder
+         * has not started to process are affected in addition to jobs that you submit
+         * after you change settings. </important> </p>
+         */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
-        /*
-            <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
+         * pipeline. <important>When you change pipeline settings, your changes take effect
+         * immediately. Jobs that you have already submitted and that Elastic Transcoder
+         * has not started to process are affected in addition to jobs that you submit
+         * after you change settings. </important> </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdatePipelineOutcomeCallable UpdatePipelineCallable(const Model::UpdatePipelineRequest& request) const;
 
-        /*
-            <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
+         * pipeline. <important>When you change pipeline settings, your changes take effect
+         * immediately. Jobs that you have already submitted and that Elastic Transcoder
+         * has not started to process are affected in addition to jobs that you submit
+         * after you change settings. </important> </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
-        */
+        /**
+         * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
+         * Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you
+         * update notifications for a pipeline, Elastic Transcoder returns the values that
+         * you specified in the request.</p>
+         */
         virtual Model::UpdatePipelineNotificationsOutcome UpdatePipelineNotifications(const Model::UpdatePipelineNotificationsRequest& request) const;
 
-        /*
-            <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
+         * Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you
+         * update notifications for a pipeline, Elastic Transcoder returns the values that
+         * you specified in the request.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdatePipelineNotificationsOutcomeCallable UpdatePipelineNotificationsCallable(const Model::UpdatePipelineNotificationsRequest& request) const;
 
-        /*
-            <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
+         * Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you
+         * update notifications for a pipeline, Elastic Transcoder returns the values that
+         * you specified in the request.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdatePipelineNotificationsAsync(const Model::UpdatePipelineNotificationsRequest& request, const UpdatePipelineNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>
-        */
+        /**
+         * <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that
+         * the pipeline stops or restarts the processing of jobs.</p> <p>Changing the
+         * pipeline status is useful if you want to cancel one or more jobs. You can't
+         * cancel jobs after Elastic Transcoder has started processing them; if you pause
+         * the pipeline to which you submitted the jobs, you have more time to get the job
+         * IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a>
+         * request. </p>
+         */
         virtual Model::UpdatePipelineStatusOutcome UpdatePipelineStatus(const Model::UpdatePipelineStatusRequest& request) const;
 
-        /*
-            <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that
+         * the pipeline stops or restarts the processing of jobs.</p> <p>Changing the
+         * pipeline status is useful if you want to cancel one or more jobs. You can't
+         * cancel jobs after Elastic Transcoder has started processing them; if you pause
+         * the pipeline to which you submitted the jobs, you have more time to get the job
+         * IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a>
+         * request. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdatePipelineStatusOutcomeCallable UpdatePipelineStatusCallable(const Model::UpdatePipelineStatusRequest& request) const;
 
-        /*
-            <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that
+         * the pipeline stops or restarts the processing of jobs.</p> <p>Changing the
+         * pipeline status is useful if you want to cancel one or more jobs. You can't
+         * cancel jobs after Elastic Transcoder has started processing them; if you pause
+         * the pipeline to which you submitted the jobs, you have more time to get the job
+         * IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a>
+         * request. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdatePipelineStatusAsync(const Model::UpdatePipelineStatusRequest& request, const UpdatePipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
-    /**Async helpers**/
+        /**Async helpers**/
         void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePipelineAsyncHelper(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

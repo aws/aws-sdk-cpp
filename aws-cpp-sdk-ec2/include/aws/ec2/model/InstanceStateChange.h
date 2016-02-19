@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an instance state change.</p>
-  */
+
+  /**
+   * <p>Describes an instance state change.</p>
+   */
   class AWS_EC2_API InstanceStateChange
   {
   public:
@@ -44,89 +45,89 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline InstanceStateChange& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline InstanceStateChange& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline InstanceStateChange& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline const InstanceState& GetCurrentState() const{ return m_currentState; }
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetCurrentState(const InstanceState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetCurrentState(InstanceState&& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline InstanceStateChange& WithCurrentState(const InstanceState& value) { SetCurrentState(value); return *this;}
 
-    /*
-     <p>The current state of the instance.</p>
-    */
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline InstanceStateChange& WithCurrentState(InstanceState&& value) { SetCurrentState(value); return *this;}
 
-    /*
-     <p>The previous state of the instance.</p>
-    */
+    /**
+     * <p>The previous state of the instance.</p>
+     */
     inline const InstanceState& GetPreviousState() const{ return m_previousState; }
 
-    /*
-     <p>The previous state of the instance.</p>
-    */
+    /**
+     * <p>The previous state of the instance.</p>
+     */
     inline void SetPreviousState(const InstanceState& value) { m_previousStateHasBeenSet = true; m_previousState = value; }
 
-    /*
-     <p>The previous state of the instance.</p>
-    */
+    /**
+     * <p>The previous state of the instance.</p>
+     */
     inline void SetPreviousState(InstanceState&& value) { m_previousStateHasBeenSet = true; m_previousState = value; }
 
-    /*
-     <p>The previous state of the instance.</p>
-    */
+    /**
+     * <p>The previous state of the instance.</p>
+     */
     inline InstanceStateChange& WithPreviousState(const InstanceState& value) { SetPreviousState(value); return *this;}
 
-    /*
-     <p>The previous state of the instance.</p>
-    */
+    /**
+     * <p>The previous state of the instance.</p>
+     */
     inline InstanceStateChange& WithPreviousState(InstanceState&& value) { SetPreviousState(value); return *this;}
 
   private:

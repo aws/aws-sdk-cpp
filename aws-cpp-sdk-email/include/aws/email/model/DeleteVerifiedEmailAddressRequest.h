@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,10 @@ namespace SES
 namespace Model
 {
 
-  /*
-    <p>Represents a request instructing the service to delete an address from the list of verified email addresses.</p>
-  */
+  /**
+   * <p>Represents a request instructing the service to delete an address from the
+   * list of verified email addresses.</p>
+   */
   class AWS_SES_API DeleteVerifiedEmailAddressRequest : public SESRequest
   {
   public:
@@ -34,39 +35,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline DeleteVerifiedEmailAddressRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline DeleteVerifiedEmailAddressRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
 
-    /*
-     <p>An email address to be removed from the list of verified addresses.</p>
-    */
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline DeleteVerifiedEmailAddressRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
   private:

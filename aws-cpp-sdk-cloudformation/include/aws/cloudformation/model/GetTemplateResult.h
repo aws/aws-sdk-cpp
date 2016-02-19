@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for <a>GetTemplate</a> action.</p>
-  */
+  /**
+   * <p>The output for <a>GetTemplate</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API GetTemplateResult
   {
   public:
@@ -43,39 +43,53 @@ namespace Model
     GetTemplateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetTemplateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBody = value; }
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBody = value; }
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline void SetTemplateBody(const char* value) { m_templateBody.assign(value); }
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline GetTemplateResult& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline GetTemplateResult& WithTemplateBody(Aws::String&& value) { SetTemplateBody(value); return *this;}
 
-    /*
-     <p>Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
-    */
+    /**
+     * <p>Structure containing the template body. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     */
     inline GetTemplateResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
     

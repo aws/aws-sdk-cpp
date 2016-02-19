@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an Elastic IP address.</p>
-  */
+
+  /**
+   * <p>Describes an Elastic IP address.</p>
+   */
   class AWS_EC2_API Address
   {
   public:
@@ -44,274 +45,291 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline Address& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline Address& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance that the address is associated with (if any).</p>
-    */
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline Address& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline Address& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline Address& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline Address& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline Address& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline Address& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
 
-    /*
-     <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
-    */
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline Address& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline Address& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline Address& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
 
-    /*
-     <p>The ID representing the association of the address with an instance in a VPC.</p>
-    */
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
     inline Address& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
-    /*
-     <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
-    */
+    /**
+     * <p>Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).</p>
+     */
     inline const DomainType& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
-    */
+    /**
+     * <p>Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).</p>
+     */
     inline void SetDomain(const DomainType& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
-    */
+    /**
+     * <p>Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).</p>
+     */
     inline void SetDomain(DomainType&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
-    */
+    /**
+     * <p>Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).</p>
+     */
     inline Address& WithDomain(const DomainType& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
-    */
+    /**
+     * <p>Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).</p>
+     */
     inline Address& WithDomain(DomainType&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline Address& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline Address& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline Address& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline const Aws::String& GetNetworkInterfaceOwnerId() const{ return m_networkInterfaceOwnerId; }
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline void SetNetworkInterfaceOwnerId(const Aws::String& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = value; }
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline void SetNetworkInterfaceOwnerId(Aws::String&& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = value; }
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline void SetNetworkInterfaceOwnerId(const char* value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId.assign(value); }
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline Address& WithNetworkInterfaceOwnerId(const Aws::String& value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline Address& WithNetworkInterfaceOwnerId(Aws::String&& value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
-    /*
-     <p>The ID of the AWS account that owns the network interface.</p>
-    */
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline Address& WithNetworkInterfaceOwnerId(const char* value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline Address& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline Address& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
-    /*
-     <p>The private IP address associated with the Elastic IP address.</p>
-    */
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline Address& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:

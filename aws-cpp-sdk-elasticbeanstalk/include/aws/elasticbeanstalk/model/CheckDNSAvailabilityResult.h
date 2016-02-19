@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Indicates if the specified CNAME is available.</p>
-  */
+  /**
+   * <p>Indicates if the specified CNAME is available.</p>
+   */
   class AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult
   {
   public:
@@ -43,54 +43,73 @@ namespace Model
     CheckDNSAvailabilityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CheckDNSAvailabilityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> Indicates if the specified CNAME is available: </p> <enumValues> <value name="true"> <p> <code>true</code> : The CNAME is available. </p> </value> <value name="false"> <p> <code>true</code> : The CNAME is not available. </p> </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
-    */
+    /**
+     * <p> Indicates if the specified CNAME is available: </p> <enumValues> <value
+     * name="true"> <p> <code>true</code> : The CNAME is available. </p> </value>
+     * <value name="false"> <p> <code>true</code> : The CNAME is not available. </p>
+     * </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available.
+     * </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
+     */
     inline bool GetAvailable() const{ return m_available; }
 
-    /*
-     <p> Indicates if the specified CNAME is available: </p> <enumValues> <value name="true"> <p> <code>true</code> : The CNAME is available. </p> </value> <value name="false"> <p> <code>true</code> : The CNAME is not available. </p> </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
-    */
+    /**
+     * <p> Indicates if the specified CNAME is available: </p> <enumValues> <value
+     * name="true"> <p> <code>true</code> : The CNAME is available. </p> </value>
+     * <value name="false"> <p> <code>true</code> : The CNAME is not available. </p>
+     * </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available.
+     * </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
+     */
     inline void SetAvailable(bool value) { m_available = value; }
 
-    /*
-     <p> Indicates if the specified CNAME is available: </p> <enumValues> <value name="true"> <p> <code>true</code> : The CNAME is available. </p> </value> <value name="false"> <p> <code>true</code> : The CNAME is not available. </p> </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
-    */
+    /**
+     * <p> Indicates if the specified CNAME is available: </p> <enumValues> <value
+     * name="true"> <p> <code>true</code> : The CNAME is available. </p> </value>
+     * <value name="false"> <p> <code>true</code> : The CNAME is not available. </p>
+     * </value> </enumValues> <p> <ul> <li> <code>true</code> : The CNAME is available.
+     * </li> <li> <code>false</code> : The CNAME is not available. </li> </ul> </p>
+     */
     inline CheckDNSAvailabilityResult& WithAvailable(bool value) { SetAvailable(value); return *this;}
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline const Aws::String& GetFullyQualifiedCNAME() const{ return m_fullyQualifiedCNAME; }
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline void SetFullyQualifiedCNAME(const Aws::String& value) { m_fullyQualifiedCNAME = value; }
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline void SetFullyQualifiedCNAME(Aws::String&& value) { m_fullyQualifiedCNAME = value; }
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline void SetFullyQualifiedCNAME(const char* value) { m_fullyQualifiedCNAME.assign(value); }
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(const Aws::String& value) { SetFullyQualifiedCNAME(value); return *this;}
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(Aws::String&& value) { SetFullyQualifiedCNAME(value); return *this;}
 
-    /*
-     <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.</p>
-    */
+    /**
+     * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+     * with the provided prefix.</p>
+     */
     inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(const char* value) { SetFullyQualifiedCNAME(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a batch get deployments operation.</p>
-  */
+  /**
+   * <p>Represents the output of a batch get deployments operation.</p>
+   */
   class AWS_CODEDEPLOY_API BatchGetDeploymentsResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     BatchGetDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     BatchGetDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline const Aws::Vector<DeploymentInfo>& GetDeploymentsInfo() const{ return m_deploymentsInfo; }
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline void SetDeploymentsInfo(const Aws::Vector<DeploymentInfo>& value) { m_deploymentsInfo = value; }
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline void SetDeploymentsInfo(Aws::Vector<DeploymentInfo>&& value) { m_deploymentsInfo = value; }
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline BatchGetDeploymentsResult& WithDeploymentsInfo(const Aws::Vector<DeploymentInfo>& value) { SetDeploymentsInfo(value); return *this;}
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline BatchGetDeploymentsResult& WithDeploymentsInfo(Aws::Vector<DeploymentInfo>&& value) { SetDeploymentsInfo(value); return *this;}
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline BatchGetDeploymentsResult& AddDeploymentsInfo(const DeploymentInfo& value) { m_deploymentsInfo.push_back(value); return *this; }
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    /**
+     * <p>Information about the deployments.</p>
+     */
     inline BatchGetDeploymentsResult& AddDeploymentsInfo(DeploymentInfo&& value) { m_deploymentsInfo.push_back(value); return *this; }
 
   private:

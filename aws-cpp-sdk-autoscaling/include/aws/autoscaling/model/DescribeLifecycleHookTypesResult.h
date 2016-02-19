@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeLifecycleHookTypesResult
   {
   public:
@@ -44,44 +41,60 @@ namespace Model
     DescribeLifecycleHookTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeLifecycleHookTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline const Aws::Vector<Aws::String>& GetLifecycleHookTypes() const{ return m_lifecycleHookTypes; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline void SetLifecycleHookTypes(const Aws::Vector<Aws::String>& value) { m_lifecycleHookTypes = value; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline void SetLifecycleHookTypes(Aws::Vector<Aws::String>&& value) { m_lifecycleHookTypes = value; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(const Aws::Vector<Aws::String>& value) { SetLifecycleHookTypes(value); return *this;}
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(Aws::Vector<Aws::String>&& value) { SetLifecycleHookTypes(value); return *this;}
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(const Aws::String& value) { m_lifecycleHookTypes.push_back(value); return *this; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(Aws::String&& value) { m_lifecycleHookTypes.push_back(value); return *this; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></p></li> </ul>
+     */
     inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(const char* value) { m_lifecycleHookTypes.push_back(value); return *this; }
 
     

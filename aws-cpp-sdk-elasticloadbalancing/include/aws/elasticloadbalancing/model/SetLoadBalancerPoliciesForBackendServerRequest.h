@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesForBackendServerRequest : public ElasticLoadBalancingRequest
   {
   public:
@@ -34,94 +34,102 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The port number associated with the back-end server.</p>
-    */
+    /**
+     * <p>The port number associated with the back-end server.</p>
+     */
     inline long GetInstancePort() const{ return m_instancePort; }
 
-    /*
-     <p>The port number associated with the back-end server.</p>
-    */
+    /**
+     * <p>The port number associated with the back-end server.</p>
+     */
     inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
-    /*
-     <p>The port number associated with the back-end server.</p>
-    */
+    /**
+     * <p>The port number associated with the back-end server.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithInstancePort(long value) { SetInstancePort(value); return *this;}
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
-    */
+    /**
+     * <p>The names of the policies. If the list is empty, then all current polices are
+     * removed from the back-end server.</p>
+     */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:

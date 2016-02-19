@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Describes the encryption for a destination in Amazon S3.</p>
-  */
+
+  /**
+   * <p>Describes the encryption for a destination in Amazon S3.</p>
+   */
   class AWS_FIREHOSE_API EncryptionConfiguration
   {
   public:
@@ -41,54 +42,59 @@ namespace Model
     EncryptionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>Specifically override existing encryption information to ensure no encryption is used.</p>
-    */
+    /**
+     * <p>Specifically override existing encryption information to ensure no encryption
+     * is used.</p>
+     */
     inline const NoEncryptionConfig& GetNoEncryptionConfig() const{ return m_noEncryptionConfig; }
 
-    /*
-     <p>Specifically override existing encryption information to ensure no encryption is used.</p>
-    */
+    /**
+     * <p>Specifically override existing encryption information to ensure no encryption
+     * is used.</p>
+     */
     inline void SetNoEncryptionConfig(const NoEncryptionConfig& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = value; }
 
-    /*
-     <p>Specifically override existing encryption information to ensure no encryption is used.</p>
-    */
+    /**
+     * <p>Specifically override existing encryption information to ensure no encryption
+     * is used.</p>
+     */
     inline void SetNoEncryptionConfig(NoEncryptionConfig&& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = value; }
 
-    /*
-     <p>Specifically override existing encryption information to ensure no encryption is used.</p>
-    */
+    /**
+     * <p>Specifically override existing encryption information to ensure no encryption
+     * is used.</p>
+     */
     inline EncryptionConfiguration& WithNoEncryptionConfig(const NoEncryptionConfig& value) { SetNoEncryptionConfig(value); return *this;}
 
-    /*
-     <p>Specifically override existing encryption information to ensure no encryption is used.</p>
-    */
+    /**
+     * <p>Specifically override existing encryption information to ensure no encryption
+     * is used.</p>
+     */
     inline EncryptionConfiguration& WithNoEncryptionConfig(NoEncryptionConfig&& value) { SetNoEncryptionConfig(value); return *this;}
 
-    /*
-     <p>The encryption key.</p>
-    */
+    /**
+     * <p>The encryption key.</p>
+     */
     inline const KMSEncryptionConfig& GetKMSEncryptionConfig() const{ return m_kMSEncryptionConfig; }
 
-    /*
-     <p>The encryption key.</p>
-    */
+    /**
+     * <p>The encryption key.</p>
+     */
     inline void SetKMSEncryptionConfig(const KMSEncryptionConfig& value) { m_kMSEncryptionConfigHasBeenSet = true; m_kMSEncryptionConfig = value; }
 
-    /*
-     <p>The encryption key.</p>
-    */
+    /**
+     * <p>The encryption key.</p>
+     */
     inline void SetKMSEncryptionConfig(KMSEncryptionConfig&& value) { m_kMSEncryptionConfigHasBeenSet = true; m_kMSEncryptionConfig = value; }
 
-    /*
-     <p>The encryption key.</p>
-    */
+    /**
+     * <p>The encryption key.</p>
+     */
     inline EncryptionConfiguration& WithKMSEncryptionConfig(const KMSEncryptionConfig& value) { SetKMSEncryptionConfig(value); return *this;}
 
-    /*
-     <p>The encryption key.</p>
-    */
+    /**
+     * <p>The encryption key.</p>
+     */
     inline EncryptionConfiguration& WithKMSEncryptionConfig(KMSEncryptionConfig&& value) { SetKMSEncryptionConfig(value); return *this;}
 
   private:

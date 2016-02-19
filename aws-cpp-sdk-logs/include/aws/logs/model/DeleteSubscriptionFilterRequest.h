@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DeleteSubscriptionFilterRequest : public CloudWatchLogsRequest
   {
   public:
@@ -35,74 +35,81 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline DeleteSubscriptionFilterRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline DeleteSubscriptionFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log group that is associated with the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group that is associated with the subscription filter to
+     * delete.</p>
+     */
     inline DeleteSubscriptionFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline DeleteSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline DeleteSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
-    /*
-     <p>The name of the subscription filter to delete.</p>
-    */
+    /**
+     * <p>The name of the subscription filter to delete.</p>
+     */
     inline DeleteSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
   private:

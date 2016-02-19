@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>UploadSigningCertificate</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>UploadSigningCertificate</a>
+   * request. </p>
+   */
   class AWS_IAM_API UploadSigningCertificateResult
   {
   public:
@@ -43,29 +44,29 @@ namespace Model
     UploadSigningCertificateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     UploadSigningCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the certificate.</p>
-    */
+    /**
+     * <p>Information about the certificate.</p>
+     */
     inline const SigningCertificate& GetCertificate() const{ return m_certificate; }
 
-    /*
-     <p>Information about the certificate.</p>
-    */
+    /**
+     * <p>Information about the certificate.</p>
+     */
     inline void SetCertificate(const SigningCertificate& value) { m_certificate = value; }
 
-    /*
-     <p>Information about the certificate.</p>
-    */
+    /**
+     * <p>Information about the certificate.</p>
+     */
     inline void SetCertificate(SigningCertificate&& value) { m_certificate = value; }
 
-    /*
-     <p>Information about the certificate.</p>
-    */
+    /**
+     * <p>Information about the certificate.</p>
+     */
     inline UploadSigningCertificateResult& WithCertificate(const SigningCertificate& value) { SetCertificate(value); return *this;}
 
-    /*
-     <p>Information about the certificate.</p>
-    */
+    /**
+     * <p>Information about the certificate.</p>
+     */
     inline UploadSigningCertificateResult& WithCertificate(SigningCertificate&& value) { SetCertificate(value); return *this;}
 
     

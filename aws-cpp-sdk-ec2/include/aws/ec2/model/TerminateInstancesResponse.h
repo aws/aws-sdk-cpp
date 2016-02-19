@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API TerminateInstancesResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     TerminateInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     TerminateInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline const Aws::Vector<InstanceStateChange>& GetTerminatingInstances() const{ return m_terminatingInstances; }
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline void SetTerminatingInstances(const Aws::Vector<InstanceStateChange>& value) { m_terminatingInstances = value; }
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline void SetTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { m_terminatingInstances = value; }
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline TerminateInstancesResponse& WithTerminatingInstances(const Aws::Vector<InstanceStateChange>& value) { SetTerminatingInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline TerminateInstancesResponse& WithTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { SetTerminatingInstances(value); return *this;}
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline TerminateInstancesResponse& AddTerminatingInstances(const InstanceStateChange& value) { m_terminatingInstances.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more terminated instances.</p>
-    */
+    /**
+     * <p>Information about one or more terminated instances.</p>
+     */
     inline TerminateInstancesResponse& AddTerminatingInstances(InstanceStateChange&& value) { m_terminatingInstances.push_back(value); return *this; }
 
     

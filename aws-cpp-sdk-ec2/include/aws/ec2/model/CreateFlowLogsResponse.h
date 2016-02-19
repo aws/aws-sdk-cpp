@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateFlowLogsResponse
   {
   public:
@@ -45,114 +42,121 @@ namespace Model
     CreateFlowLogsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateFlowLogsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetFlowLogIds() const{ return m_flowLogIds; }
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline void SetFlowLogIds(const Aws::Vector<Aws::String>& value) { m_flowLogIds = value; }
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIds = value; }
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline CreateFlowLogsResponse& WithFlowLogIds(const Aws::Vector<Aws::String>& value) { SetFlowLogIds(value); return *this;}
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline CreateFlowLogsResponse& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(value); return *this;}
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline CreateFlowLogsResponse& AddFlowLogIds(const Aws::String& value) { m_flowLogIds.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline CreateFlowLogsResponse& AddFlowLogIds(Aws::String&& value) { m_flowLogIds.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the flow logs.</p>
-    */
+    /**
+     * <p>The IDs of the flow logs.</p>
+     */
     inline CreateFlowLogsResponse& AddFlowLogIds(const char* value) { m_flowLogIds.push_back(value); return *this; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = value; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline CreateFlowLogsResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline CreateFlowLogsResponse& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline CreateFlowLogsResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const{ return m_unsuccessful; }
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline void SetUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { m_unsuccessful = value; }
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = value; }
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline CreateFlowLogsResponse& WithUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { SetUnsuccessful(value); return *this;}
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline CreateFlowLogsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(value); return *this;}
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline CreateFlowLogsResponse& AddUnsuccessful(const UnsuccessfulItem& value) { m_unsuccessful.push_back(value); return *this; }
 
-    /*
-     <p>Information about the flow logs that could not be created successfully.</p>
-    */
+    /**
+     * <p>Information about the flow logs that could not be created successfully.</p>
+     */
     inline CreateFlowLogsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(value); return *this; }
 
     

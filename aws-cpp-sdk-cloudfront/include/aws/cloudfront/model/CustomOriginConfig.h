@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A customer origin.
-  */
+
+  /**
+   * A customer origin.
+   */
   class AWS_CLOUDFRONT_API CustomOriginConfig
   {
   public:
@@ -41,59 +42,59 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The HTTP port the custom origin listens on.
-    */
+    /**
+     * The HTTP port the custom origin listens on.
+     */
     inline long GetHTTPPort() const{ return m_hTTPPort; }
 
-    /*
-     The HTTP port the custom origin listens on.
-    */
+    /**
+     * The HTTP port the custom origin listens on.
+     */
     inline void SetHTTPPort(long value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
 
-    /*
-     The HTTP port the custom origin listens on.
-    */
+    /**
+     * The HTTP port the custom origin listens on.
+     */
     inline CustomOriginConfig& WithHTTPPort(long value) { SetHTTPPort(value); return *this;}
 
-    /*
-     The HTTPS port the custom origin listens on.
-    */
+    /**
+     * The HTTPS port the custom origin listens on.
+     */
     inline long GetHTTPSPort() const{ return m_hTTPSPort; }
 
-    /*
-     The HTTPS port the custom origin listens on.
-    */
+    /**
+     * The HTTPS port the custom origin listens on.
+     */
     inline void SetHTTPSPort(long value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
 
-    /*
-     The HTTPS port the custom origin listens on.
-    */
+    /**
+     * The HTTPS port the custom origin listens on.
+     */
     inline CustomOriginConfig& WithHTTPSPort(long value) { SetHTTPSPort(value); return *this;}
 
-    /*
-     The origin protocol policy to apply to your origin.
-    */
+    /**
+     * The origin protocol policy to apply to your origin.
+     */
     inline const OriginProtocolPolicy& GetOriginProtocolPolicy() const{ return m_originProtocolPolicy; }
 
-    /*
-     The origin protocol policy to apply to your origin.
-    */
+    /**
+     * The origin protocol policy to apply to your origin.
+     */
     inline void SetOriginProtocolPolicy(const OriginProtocolPolicy& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
 
-    /*
-     The origin protocol policy to apply to your origin.
-    */
+    /**
+     * The origin protocol policy to apply to your origin.
+     */
     inline void SetOriginProtocolPolicy(OriginProtocolPolicy&& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
 
-    /*
-     The origin protocol policy to apply to your origin.
-    */
+    /**
+     * The origin protocol policy to apply to your origin.
+     */
     inline CustomOriginConfig& WithOriginProtocolPolicy(const OriginProtocolPolicy& value) { SetOriginProtocolPolicy(value); return *this;}
 
-    /*
-     The origin protocol policy to apply to your origin.
-    */
+    /**
+     * The origin protocol policy to apply to your origin.
+     */
     inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(value); return *this;}
 
   private:

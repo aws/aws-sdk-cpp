@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>ScheduleActivityTaskFailed</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>ScheduleActivityTaskFailed</code> event.</p>
+   */
   class AWS_SWF_API ScheduleActivityTaskFailedEventAttributes
   {
   public:
@@ -42,104 +43,150 @@ namespace Model
     ScheduleActivityTaskFailedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activity type provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline const ActivityType& GetActivityType() const{ return m_activityType; }
 
-    /*
-     <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activity type provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
-    /*
-     <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activity type provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline void SetActivityType(ActivityType&& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
-    /*
-     <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activity type provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithActivityType(const ActivityType& value) { SetActivityType(value); return *this;}
 
-    /*
-     <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activity type provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithActivityType(ActivityType&& value) { SetActivityType(value); return *this;}
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithActivityId(Aws::String&& value) { SetActivityId(value); return *this;}
 
-    /*
-     <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
-    */
+    /**
+     * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
+     * that failed.</p>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
-    /*
-     <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-    */
+    /**
+     * <p>The cause of the failure. This information is generated by the system and can
+     * be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to
+     * OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient
+     * permissions. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
+     */
     inline const ScheduleActivityTaskFailedCause& GetCause() const{ return m_cause; }
 
-    /*
-     <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-    */
+    /**
+     * <p>The cause of the failure. This information is generated by the system and can
+     * be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to
+     * OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient
+     * permissions. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
+     */
     inline void SetCause(const ScheduleActivityTaskFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
 
-    /*
-     <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-    */
+    /**
+     * <p>The cause of the failure. This information is generated by the system and can
+     * be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to
+     * OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient
+     * permissions. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
+     */
     inline void SetCause(ScheduleActivityTaskFailedCause&& value) { m_causeHasBeenSet = true; m_cause = value; }
 
-    /*
-     <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-    */
+    /**
+     * <p>The cause of the failure. This information is generated by the system and can
+     * be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to
+     * OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient
+     * permissions. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithCause(const ScheduleActivityTaskFailedCause& value) { SetCause(value); return *this;}
 
-    /*
-     <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-    */
+    /**
+     * <p>The cause of the failure. This information is generated by the system and can
+     * be useful for diagnostic purposes.</p> <note>If <b>cause</b> is set to
+     * OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient
+     * permissions. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithCause(ScheduleActivityTaskFailedCause&& value) { SetCause(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision that resulted in the scheduling of this activity task. This information
+     * can be useful for diagnosing problems by tracing back the chain of events
+     * leading up to this event.</p>
+     */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision that resulted in the scheduling of this activity task. This information
+     * can be useful for diagnosing problems by tracing back the chain of events
+     * leading up to this event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision that resulted in the scheduling of this activity task. This information
+     * can be useful for diagnosing problems by tracing back the chain of events
+     * leading up to this event.</p>
+     */
     inline ScheduleActivityTaskFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:

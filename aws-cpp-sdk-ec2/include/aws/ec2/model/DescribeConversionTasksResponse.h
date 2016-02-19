@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeConversionTasksResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeConversionTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeConversionTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline const Aws::Vector<ConversionTask>& GetConversionTasks() const{ return m_conversionTasks; }
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline void SetConversionTasks(const Aws::Vector<ConversionTask>& value) { m_conversionTasks = value; }
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline void SetConversionTasks(Aws::Vector<ConversionTask>&& value) { m_conversionTasks = value; }
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline DescribeConversionTasksResponse& WithConversionTasks(const Aws::Vector<ConversionTask>& value) { SetConversionTasks(value); return *this;}
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline DescribeConversionTasksResponse& WithConversionTasks(Aws::Vector<ConversionTask>&& value) { SetConversionTasks(value); return *this;}
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline DescribeConversionTasksResponse& AddConversionTasks(const ConversionTask& value) { m_conversionTasks.push_back(value); return *this; }
 
-    /*
-     <p>Information about the conversion tasks.</p>
-    */
+    /**
+     * <p>Information about the conversion tasks.</p>
+     */
     inline DescribeConversionTasksResponse& AddConversionTasks(ConversionTask&& value) { m_conversionTasks.push_back(value); return *this; }
 
     

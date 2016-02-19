@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,13 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS. </p>
-  */
+
+  /**
+   * <p>Represents textual data, plus an optional character set specification.</p>
+   * <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP
+   * protocol. If the text must contain any other characters, then you must also
+   * specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS. </p>
+   */
   class AWS_SES_API Content
   {
   public:
@@ -43,74 +47,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline const Aws::String& GetData() const{ return m_data; }
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = value; }
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline Content& WithData(const Aws::String& value) { SetData(value); return *this;}
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline Content& WithData(Aws::String&& value) { SetData(value); return *this;}
 
-    /*
-     <p>The textual data of the content.</p>
-    */
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline Content& WithData(const char* value) { SetData(value); return *this;}
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline const Aws::String& GetCharset() const{ return m_charset; }
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline void SetCharset(const Aws::String& value) { m_charsetHasBeenSet = true; m_charset = value; }
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline void SetCharset(Aws::String&& value) { m_charsetHasBeenSet = true; m_charset = value; }
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline void SetCharset(const char* value) { m_charsetHasBeenSet = true; m_charset.assign(value); }
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline Content& WithCharset(const Aws::String& value) { SetCharset(value); return *this;}
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline Content& WithCharset(Aws::String&& value) { SetCharset(value); return *this;}
 
-    /*
-     <p>The character set of the content.</p>
-    */
+    /**
+     * <p>The character set of the content.</p>
+     */
     inline Content& WithCharset(const char* value) { SetCharset(value); return *this;}
 
   private:

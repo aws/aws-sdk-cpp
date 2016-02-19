@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a list of all verified identities for the AWS Account.</p>
-  */
+  /**
+   * <p>Represents a list of all verified identities for the AWS Account.</p>
+   */
   class AWS_SES_API ListIdentitiesResult
   {
   public:
@@ -44,79 +44,79 @@ namespace Model
     ListIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetIdentities() const{ return m_identities; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identities = value; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identities = value; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline ListIdentitiesResult& WithIdentities(const Aws::Vector<Aws::String>& value) { SetIdentities(value); return *this;}
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline ListIdentitiesResult& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(value); return *this;}
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline ListIdentitiesResult& AddIdentities(const Aws::String& value) { m_identities.push_back(value); return *this; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline ListIdentitiesResult& AddIdentities(Aws::String&& value) { m_identities.push_back(value); return *this; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline ListIdentitiesResult& AddIdentities(const char* value) { m_identities.push_back(value); return *this; }
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline ListIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token used for pagination.</p>
-    */
+    /**
+     * <p>The token used for pagination.</p>
+     */
     inline ListIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

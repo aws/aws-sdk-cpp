@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    <p>Contains information about each entry in the grant list.</p>
-  */
+
+  /**
+   * <p>Contains information about each entry in the grant list.</p>
+   */
   class AWS_KMS_API GrantListEntry
   {
   public:
@@ -64,39 +65,39 @@ namespace Model
     
     inline GrantListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline GrantListEntry& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline GrantListEntry& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
 
-    /*
-     <p>Unique grant identifier.</p>
-    */
+    /**
+     * <p>Unique grant identifier.</p>
+     */
     inline GrantListEntry& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
     
@@ -129,169 +130,195 @@ namespace Model
     
     inline GrantListEntry& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline GrantListEntry& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline GrantListEntry& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(value); return *this;}
 
-    /*
-     <p>The principal that receives the grant permission.</p>
-    */
+    /**
+     * <p>The principal that receives the grant permission.</p>
+     */
     inline GrantListEntry& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline GrantListEntry& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline GrantListEntry& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(value); return *this;}
 
-    /*
-     <p>The principal that can retire the account.</p>
-    */
+    /**
+     * <p>The principal that can retire the account.</p>
+     */
     inline GrantListEntry& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline const Aws::String& GetIssuingAccount() const{ return m_issuingAccount; }
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline void SetIssuingAccount(const Aws::String& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline void SetIssuingAccount(Aws::String&& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline void SetIssuingAccount(const char* value) { m_issuingAccountHasBeenSet = true; m_issuingAccount.assign(value); }
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline GrantListEntry& WithIssuingAccount(const Aws::String& value) { SetIssuingAccount(value); return *this;}
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline GrantListEntry& WithIssuingAccount(Aws::String&& value) { SetIssuingAccount(value); return *this;}
 
-    /*
-     <p>The account under which the grant was issued.</p>
-    */
+    /**
+     * <p>The account under which the grant was issued.</p>
+     */
     inline GrantListEntry& WithIssuingAccount(const char* value) { SetIssuingAccount(value); return *this;}
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline GrantListEntry& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline GrantListEntry& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(value); return *this;}
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline GrantListEntry& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
-    /*
-     <p>List of operations permitted by the grant. This can be any combination of one or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
-    */
+    /**
+     * <p>List of operations permitted by the grant. This can be any combination of one
+     * or more of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li>
+     * <li>GenerateDataKey</li> <li>GenerateDataKeyWithoutPlaintext</li>
+     * <li>ReEncryptFrom</li> <li>ReEncryptTo</li> <li>CreateGrant</li> </ol></p>
+     */
     inline GrantListEntry& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
-    /*
-     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
-    */
+    /**
+     * <p>Specifies the conditions under which the actions specified by the
+     * <code>Operations</code> parameter are allowed. </p>
+     */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
-    /*
-     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
-    */
+    /**
+     * <p>Specifies the conditions under which the actions specified by the
+     * <code>Operations</code> parameter are allowed. </p>
+     */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
-    /*
-     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
-    */
+    /**
+     * <p>Specifies the conditions under which the actions specified by the
+     * <code>Operations</code> parameter are allowed. </p>
+     */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
-    /*
-     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
-    */
+    /**
+     * <p>Specifies the conditions under which the actions specified by the
+     * <code>Operations</code> parameter are allowed. </p>
+     */
     inline GrantListEntry& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
-    /*
-     <p>Specifies the conditions under which the actions specified by the <code>Operations</code> parameter are allowed. </p>
-    */
+    /**
+     * <p>Specifies the conditions under which the actions specified by the
+     * <code>Operations</code> parameter are allowed. </p>
+     */
     inline GrantListEntry& WithConstraints(GrantConstraints&& value) { SetConstraints(value); return *this;}
 
   private:

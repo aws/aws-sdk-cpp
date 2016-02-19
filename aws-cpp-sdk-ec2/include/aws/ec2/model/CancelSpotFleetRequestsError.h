@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a Spot fleet error.</p>
-  */
+
+  /**
+   * <p>Describes a Spot fleet error.</p>
+   */
   class AWS_EC2_API CancelSpotFleetRequestsError
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The error code.</p>
-    */
+    /**
+     * <p>The error code.</p>
+     */
     inline const CancelBatchErrorCode& GetCode() const{ return m_code; }
 
-    /*
-     <p>The error code.</p>
-    */
+    /**
+     * <p>The error code.</p>
+     */
     inline void SetCode(const CancelBatchErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The error code.</p>
-    */
+    /**
+     * <p>The error code.</p>
+     */
     inline void SetCode(CancelBatchErrorCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The error code.</p>
-    */
+    /**
+     * <p>The error code.</p>
+     */
     inline CancelSpotFleetRequestsError& WithCode(const CancelBatchErrorCode& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The error code.</p>
-    */
+    /**
+     * <p>The error code.</p>
+     */
     inline CancelSpotFleetRequestsError& WithCode(CancelBatchErrorCode&& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline CancelSpotFleetRequestsError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline CancelSpotFleetRequestsError& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The description for the error code.</p>
-    */
+    /**
+     * <p>The description for the error code.</p>
+     */
     inline CancelSpotFleetRequestsError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

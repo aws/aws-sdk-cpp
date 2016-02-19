@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p>A tag and its associated resource. </p>
-  */
+
+  /**
+   * <p>A tag and its associated resource. </p>
+   */
   class AWS_REDSHIFT_API TaggedResource
   {
   public:
@@ -44,99 +45,162 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The tag for the resource. </p>
-    */
+    /**
+     * <p>The tag for the resource. </p>
+     */
     inline const Tag& GetTag() const{ return m_tag; }
 
-    /*
-     <p>The tag for the resource. </p>
-    */
+    /**
+     * <p>The tag for the resource. </p>
+     */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
-    /*
-     <p>The tag for the resource. </p>
-    */
+    /**
+     * <p>The tag for the resource. </p>
+     */
     inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = value; }
 
-    /*
-     <p>The tag for the resource. </p>
-    */
+    /**
+     * <p>The tag for the resource. </p>
+     */
     inline TaggedResource& WithTag(const Tag& value) { SetTag(value); return *this;}
 
-    /*
-     <p>The tag for the resource. </p>
-    */
+    /**
+     * <p>The tag for the resource. </p>
+     */
     inline TaggedResource& WithTag(Tag&& value) { SetTag(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline TaggedResource& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline TaggedResource& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) with which the tag is associated. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
     inline TaggedResource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline TaggedResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline TaggedResource& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
 
-    /*
-     <p> The type of resource with which the tag is associated. Valid resource types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p> For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    */
+    /**
+     * <p> The type of resource with which the tag is associated. Valid resource types
+     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
+     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
+     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> </ul> </p> <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs,
+     * go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
     inline TaggedResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
   private:

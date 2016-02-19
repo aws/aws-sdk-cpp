@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a launch permission.</p>
-  */
+
+  /**
+   * <p>Describes a launch permission.</p>
+   */
   class AWS_EC2_API LaunchPermission
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline LaunchPermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline LaunchPermission& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
 
-    /*
-     <p>The AWS account ID.</p>
-    */
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline LaunchPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline const PermissionGroup& GetGroup() const{ return m_group; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = value; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline LaunchPermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline LaunchPermission& WithGroup(PermissionGroup&& value) { SetGroup(value); return *this;}
 
   private:

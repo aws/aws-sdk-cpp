@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>The tags associated with a load balancer.</p>
-  */
+
+  /**
+   * <p>The tags associated with a load balancer.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API TagDescription
   {
   public:
@@ -45,74 +46,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline TagDescription& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline TagDescription& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline TagDescription& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline TagDescription& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline TagDescription& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline TagDescription& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The tags.</p>
-    */
+    /**
+     * <p>The tags.</p>
+     */
     inline TagDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

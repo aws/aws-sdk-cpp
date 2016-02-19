@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace SimpleDB
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SIMPLEDB_API BatchPutAttributesRequest : public SimpleDBRequest
   {
   public:
@@ -35,74 +35,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline BatchPutAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline BatchPutAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain in which the attributes are being stored.
-    */
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline BatchPutAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline const Aws::Vector<ReplaceableItem>& GetItems() const{ return m_items; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline void SetItems(const Aws::Vector<ReplaceableItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline void SetItems(Aws::Vector<ReplaceableItem>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchPutAttributesRequest& WithItems(const Aws::Vector<ReplaceableItem>& value) { SetItems(value); return *this;}
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchPutAttributesRequest& WithItems(Aws::Vector<ReplaceableItem>&& value) { SetItems(value); return *this;}
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchPutAttributesRequest& AddItems(const ReplaceableItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchPutAttributesRequest& AddItems(ReplaceableItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:

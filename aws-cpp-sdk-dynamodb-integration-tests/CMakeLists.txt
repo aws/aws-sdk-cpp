@@ -7,11 +7,6 @@ project(aws-cpp-sdk-dynamodb-integration-tests)
 file(GLOB AWS_DYNAMO_SRC "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 file(GLOB AWS_DYNAMO_INTEGRATION_TESTS_SRC ${AWS_DYNAMO_SRC})
 
-if(NOT MSVC)
-    add_definitions(-std=c++0x)
-endif()
-
-
 set(AWS_DYNAMO_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-dynamodb/include/"

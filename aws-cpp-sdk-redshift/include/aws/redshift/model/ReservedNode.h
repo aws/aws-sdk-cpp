@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,12 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p> Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. </p>
-  */
+
+  /**
+   * <p> Describes a reserved node. You can call the
+   * <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+   * offerings. </p>
+   */
   class AWS_REDSHIFT_API ReservedNode
   {
   public:
@@ -45,324 +48,362 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline ReservedNode& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline ReservedNode& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(value); return *this;}
 
-    /*
-     <p> The unique identifier for the reservation. </p>
-    */
+    /**
+     * <p> The unique identifier for the reservation. </p>
+     */
     inline ReservedNode& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline const Aws::String& GetReservedNodeOfferingId() const{ return m_reservedNodeOfferingId; }
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline void SetReservedNodeOfferingId(const char* value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId.assign(value); }
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline ReservedNode& WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline ReservedNode& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
 
-    /*
-     <p> The identifier for the reserved node offering. </p>
-    */
+    /**
+     * <p> The identifier for the reserved node offering. </p>
+     */
     inline ReservedNode& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline ReservedNode& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline ReservedNode& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
 
-    /*
-     <p> The node type of the reserved node. </p>
-    */
+    /**
+     * <p> The node type of the reserved node. </p>
+     */
     inline ReservedNode& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
-    /*
-     <p> The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration. </p>
-    */
+    /**
+     * <p> The time the reservation started. You purchase a reserved node offering for
+     * a duration. This is the start time of that duration. </p>
+     */
     inline double GetStartTime() const{ return m_startTime; }
 
-    /*
-     <p> The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration. </p>
-    */
+    /**
+     * <p> The time the reservation started. You purchase a reserved node offering for
+     * a duration. This is the start time of that duration. </p>
+     */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
-    /*
-     <p> The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration. </p>
-    */
+    /**
+     * <p> The time the reservation started. You purchase a reserved node offering for
+     * a duration. This is the start time of that duration. </p>
+     */
     inline ReservedNode& WithStartTime(double value) { SetStartTime(value); return *this;}
 
-    /*
-     <p> The duration of the node reservation in seconds. </p>
-    */
+    /**
+     * <p> The duration of the node reservation in seconds. </p>
+     */
     inline long GetDuration() const{ return m_duration; }
 
-    /*
-     <p> The duration of the node reservation in seconds. </p>
-    */
+    /**
+     * <p> The duration of the node reservation in seconds. </p>
+     */
     inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
 
-    /*
-     <p> The duration of the node reservation in seconds. </p>
-    */
+    /**
+     * <p> The duration of the node reservation in seconds. </p>
+     */
     inline ReservedNode& WithDuration(long value) { SetDuration(value); return *this;}
 
-    /*
-     <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
-    */
+    /**
+     * <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
+     */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
 
-    /*
-     <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
-    */
+    /**
+     * <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
+     */
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
 
-    /*
-     <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
-    */
+    /**
+     * <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
+     */
     inline ReservedNode& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
-    /*
-     <p> The hourly rate Amazon Redshift charges you for this reserved node. </p>
-    */
+    /**
+     * <p> The hourly rate Amazon Redshift charges you for this reserved node. </p>
+     */
     inline double GetUsagePrice() const{ return m_usagePrice; }
 
-    /*
-     <p> The hourly rate Amazon Redshift charges you for this reserved node. </p>
-    */
+    /**
+     * <p> The hourly rate Amazon Redshift charges you for this reserved node. </p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
-    /*
-     <p> The hourly rate Amazon Redshift charges you for this reserved node. </p>
-    */
+    /**
+     * <p> The hourly rate Amazon Redshift charges you for this reserved node. </p>
+     */
     inline ReservedNode& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline ReservedNode& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline ReservedNode& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(value); return *this;}
 
-    /*
-     <p>The currency code for the reserved cluster.</p>
-    */
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
     inline ReservedNode& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
-    /*
-     <p> The number of reserved compute nodes. </p>
-    */
+    /**
+     * <p> The number of reserved compute nodes. </p>
+     */
     inline long GetNodeCount() const{ return m_nodeCount; }
 
-    /*
-     <p> The number of reserved compute nodes. </p>
-    */
+    /**
+     * <p> The number of reserved compute nodes. </p>
+     */
     inline void SetNodeCount(long value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
-    /*
-     <p> The number of reserved compute nodes. </p>
-    */
+    /**
+     * <p> The number of reserved compute nodes. </p>
+     */
     inline ReservedNode& WithNodeCount(long value) { SetNodeCount(value); return *this;}
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline const Aws::String& GetState() const{ return m_state; }
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline ReservedNode& WithState(const Aws::String& value) { SetState(value); return *this;}
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline ReservedNode& WithState(Aws::String&& value) { SetState(value); return *this;}
 
-    /*
-     <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul> <li>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-    */
+    /**
+     * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
+     * <li>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</li> <li>active-This
+     * reserved node is owned by the caller and is available for use.</li>
+     * <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
+     */
     inline ReservedNode& WithState(const char* value) { SetState(value); return *this;}
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline ReservedNode& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline ReservedNode& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
 
-    /*
-     <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    */
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline ReservedNode& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline ReservedNode& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline ReservedNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline ReservedNode& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
-    /*
-     <p>The recurring charges for the reserved node.</p>
-    */
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline ReservedNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
   private:

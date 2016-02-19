@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Describes the details of a LoadBalancer.</p>
-  */
+
+  /**
+   * <p>Describes the details of a LoadBalancer.</p>
+   */
   class AWS_ELASTICBEANSTALK_API LoadBalancerDescription
   {
   public:
@@ -45,109 +46,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The domain name of the LoadBalancer.</p>
-    */
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithDomain(const char* value) { SetDomain(value); return *this;}
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(value); return *this;}
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
-    /*
-     <p>A list of Listeners used by the LoadBalancer.</p>
-    */
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
     inline LoadBalancerDescription& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
   private:

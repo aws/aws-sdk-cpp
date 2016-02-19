@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The execution status details of the cluster step. </p>
-  */
+
+  /**
+   * <p>The execution status details of the cluster step. </p>
+   */
   class AWS_EMR_API StepStatus
   {
   public:
@@ -42,79 +43,79 @@ namespace Model
     StepStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The execution state of the cluster step. </p>
-    */
+    /**
+     * <p>The execution state of the cluster step. </p>
+     */
     inline const StepState& GetState() const{ return m_state; }
 
-    /*
-     <p>The execution state of the cluster step. </p>
-    */
+    /**
+     * <p>The execution state of the cluster step. </p>
+     */
     inline void SetState(const StepState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The execution state of the cluster step. </p>
-    */
+    /**
+     * <p>The execution state of the cluster step. </p>
+     */
     inline void SetState(StepState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The execution state of the cluster step. </p>
-    */
+    /**
+     * <p>The execution state of the cluster step. </p>
+     */
     inline StepStatus& WithState(const StepState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The execution state of the cluster step. </p>
-    */
+    /**
+     * <p>The execution state of the cluster step. </p>
+     */
     inline StepStatus& WithState(StepState&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The reason for the step execution status change. </p>
-    */
+    /**
+     * <p>The reason for the step execution status change. </p>
+     */
     inline const StepStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
 
-    /*
-     <p>The reason for the step execution status change. </p>
-    */
+    /**
+     * <p>The reason for the step execution status change. </p>
+     */
     inline void SetStateChangeReason(const StepStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
-    /*
-     <p>The reason for the step execution status change. </p>
-    */
+    /**
+     * <p>The reason for the step execution status change. </p>
+     */
     inline void SetStateChangeReason(StepStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
-    /*
-     <p>The reason for the step execution status change. </p>
-    */
+    /**
+     * <p>The reason for the step execution status change. </p>
+     */
     inline StepStatus& WithStateChangeReason(const StepStateChangeReason& value) { SetStateChangeReason(value); return *this;}
 
-    /*
-     <p>The reason for the step execution status change. </p>
-    */
+    /**
+     * <p>The reason for the step execution status change. </p>
+     */
     inline StepStatus& WithStateChangeReason(StepStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
 
-    /*
-     <p>The timeline of the cluster step status over time. </p>
-    */
+    /**
+     * <p>The timeline of the cluster step status over time. </p>
+     */
     inline const StepTimeline& GetTimeline() const{ return m_timeline; }
 
-    /*
-     <p>The timeline of the cluster step status over time. </p>
-    */
+    /**
+     * <p>The timeline of the cluster step status over time. </p>
+     */
     inline void SetTimeline(const StepTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
 
-    /*
-     <p>The timeline of the cluster step status over time. </p>
-    */
+    /**
+     * <p>The timeline of the cluster step status over time. </p>
+     */
     inline void SetTimeline(StepTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
 
-    /*
-     <p>The timeline of the cluster step status over time. </p>
-    */
+    /**
+     * <p>The timeline of the cluster step status over time. </p>
+     */
     inline StepStatus& WithTimeline(const StepTimeline& value) { SetTimeline(value); return *this;}
 
-    /*
-     <p>The timeline of the cluster step status over time. </p>
-    */
+    /**
+     * <p>The timeline of the cluster step status over time. </p>
+     */
     inline StepStatus& WithTimeline(StepTimeline&& value) { SetTimeline(value); return *this;}
 
   private:

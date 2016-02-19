@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_RDS_API DeleteDBParameterGroupRequest : public RDSRequest
   {
   public:
@@ -34,39 +34,60 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline DeleteDBParameterGroupRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline DeleteDBParameterGroupRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
-    /*
-     <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Parameter Group. </p> <p>Constraints:</p> <ul> <li>Must
+     * be the name of an existing DB Parameter Group</li> <li>You cannot delete a
+     * default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
+     */
     inline DeleteDBParameterGroupRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
   private:

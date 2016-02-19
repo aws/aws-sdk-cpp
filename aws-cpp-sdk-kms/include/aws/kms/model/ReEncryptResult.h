@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API ReEncryptResult
   {
   public:
@@ -43,99 +40,104 @@ namespace Model
     ReEncryptResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ReEncryptResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.</p>
+     */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
-    /*
-     <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.</p>
+     */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
-    /*
-     <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.</p>
+     */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
 
-    /*
-     <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.</p>
+     */
     inline ReEncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
-    /*
-     <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The re-encrypted data. If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.</p>
+     */
     inline ReEncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline const Aws::String& GetSourceKeyId() const{ return m_sourceKeyId; }
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline void SetSourceKeyId(const Aws::String& value) { m_sourceKeyId = value; }
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline void SetSourceKeyId(Aws::String&& value) { m_sourceKeyId = value; }
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline void SetSourceKeyId(const char* value) { m_sourceKeyId.assign(value); }
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline ReEncryptResult& WithSourceKeyId(const Aws::String& value) { SetSourceKeyId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline ReEncryptResult& WithSourceKeyId(Aws::String&& value) { SetSourceKeyId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the key used to originally encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to originally encrypt the data.</p>
+     */
     inline ReEncryptResult& WithSourceKeyId(const char* value) { SetSourceKeyId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline ReEncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline ReEncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>Unique identifier of the key used to re-encrypt the data.</p>
-    */
+    /**
+     * <p>Unique identifier of the key used to re-encrypt the data.</p>
+     */
     inline ReEncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:

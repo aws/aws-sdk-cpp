@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for a <a>DescribeStackResource</a> action.</p>
-  */
+  /**
+   * <p>The output for a <a>DescribeStackResource</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API DescribeStackResourceResult
   {
   public:
@@ -43,29 +43,34 @@ namespace Model
     DescribeStackResourceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeStackResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    */
+    /**
+     * <p>A <code>StackResourceDetail</code> structure containing the description of
+     * the specified resource in the specified stack.</p>
+     */
     inline const StackResourceDetail& GetStackResourceDetail() const{ return m_stackResourceDetail; }
 
-    /*
-     <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    */
+    /**
+     * <p>A <code>StackResourceDetail</code> structure containing the description of
+     * the specified resource in the specified stack.</p>
+     */
     inline void SetStackResourceDetail(const StackResourceDetail& value) { m_stackResourceDetail = value; }
 
-    /*
-     <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    */
+    /**
+     * <p>A <code>StackResourceDetail</code> structure containing the description of
+     * the specified resource in the specified stack.</p>
+     */
     inline void SetStackResourceDetail(StackResourceDetail&& value) { m_stackResourceDetail = value; }
 
-    /*
-     <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    */
+    /**
+     * <p>A <code>StackResourceDetail</code> structure containing the description of
+     * the specified resource in the specified stack.</p>
+     */
     inline DescribeStackResourceResult& WithStackResourceDetail(const StackResourceDetail& value) { SetStackResourceDetail(value); return *this;}
 
-    /*
-     <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    */
+    /**
+     * <p>A <code>StackResourceDetail</code> structure containing the description of
+     * the specified resource in the specified stack.</p>
+     */
     inline DescribeStackResourceResult& WithStackResourceDetail(StackResourceDetail&& value) { SetStackResourceDetail(value); return *this;}
 
     

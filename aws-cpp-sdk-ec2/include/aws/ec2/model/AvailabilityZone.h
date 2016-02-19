@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an Availability Zone.</p>
-  */
+
+  /**
+   * <p>Describes an Availability Zone.</p>
+   */
   class AWS_EC2_API AvailabilityZone
   {
   public:
@@ -46,134 +47,139 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline const Aws::String& GetZoneName() const{ return m_zoneName; }
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(value); return *this;}
 
-    /*
-     <p>The name of the Availability Zone.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
 
-    /*
-     <p>The state of the Availability Zone (<code>available</code> | <code>impaired</code> | <code>unavailable</code>).</p>
-    */
+    /**
+     * <p>The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p>
+     */
     inline const AvailabilityZoneState& GetState() const{ return m_state; }
 
-    /*
-     <p>The state of the Availability Zone (<code>available</code> | <code>impaired</code> | <code>unavailable</code>).</p>
-    */
+    /**
+     * <p>The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p>
+     */
     inline void SetState(const AvailabilityZoneState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the Availability Zone (<code>available</code> | <code>impaired</code> | <code>unavailable</code>).</p>
-    */
+    /**
+     * <p>The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p>
+     */
     inline void SetState(AvailabilityZoneState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The state of the Availability Zone (<code>available</code> | <code>impaired</code> | <code>unavailable</code>).</p>
-    */
+    /**
+     * <p>The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p>
+     */
     inline AvailabilityZone& WithState(const AvailabilityZoneState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The state of the Availability Zone (<code>available</code> | <code>impaired</code> | <code>unavailable</code>).</p>
-    */
+    /**
+     * <p>The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p>
+     */
     inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline AvailabilityZone& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline AvailabilityZone& WithRegionName(Aws::String&& value) { SetRegionName(value); return *this;}
 
-    /*
-     <p>The name of the region.</p>
-    */
+    /**
+     * <p>The name of the region.</p>
+     */
     inline AvailabilityZone& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline const Aws::Vector<AvailabilityZoneMessage>& GetMessages() const{ return m_messages; }
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline void SetMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { m_messagesHasBeenSet = true; m_messages = value; }
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline void SetMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { m_messagesHasBeenSet = true; m_messages = value; }
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline AvailabilityZone& WithMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { SetMessages(value); return *this;}
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline AvailabilityZone& WithMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { SetMessages(value); return *this;}
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline AvailabilityZone& AddMessages(const AvailabilityZoneMessage& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 
-    /*
-     <p>Any messages about the Availability Zone.</p>
-    */
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
     inline AvailabilityZone& AddMessages(AvailabilityZoneMessage&& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 
   private:

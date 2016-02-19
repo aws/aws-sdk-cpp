@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an association between a route table and a subnet.</p>
-  */
+
+  /**
+   * <p>Describes an association between a route table and a subnet.</p>
+   */
   class AWS_EC2_API RouteTableAssociation
   {
   public:
@@ -43,124 +44,131 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline const Aws::String& GetRouteTableAssociationId() const{ return m_routeTableAssociationId; }
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline void SetRouteTableAssociationId(const Aws::String& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = value; }
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline void SetRouteTableAssociationId(Aws::String&& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = value; }
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline void SetRouteTableAssociationId(const char* value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId.assign(value); }
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline RouteTableAssociation& WithRouteTableAssociationId(const Aws::String& value) { SetRouteTableAssociationId(value); return *this;}
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline RouteTableAssociation& WithRouteTableAssociationId(Aws::String&& value) { SetRouteTableAssociationId(value); return *this;}
 
-    /*
-     <p>The ID of the association between a route table and a subnet.</p>
-    */
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
     inline RouteTableAssociation& WithRouteTableAssociationId(const char* value) { SetRouteTableAssociationId(value); return *this;}
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline RouteTableAssociation& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline RouteTableAssociation& WithRouteTableId(Aws::String&& value) { SetRouteTableId(value); return *this;}
 
-    /*
-     <p>The ID of the route table.</p>
-    */
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline RouteTableAssociation& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline RouteTableAssociation& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline RouteTableAssociation& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
-    /*
-     <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
-    */
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
     inline RouteTableAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
-    /*
-     <p>Indicates whether this is the main route table.</p>
-    */
+    /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
     inline bool GetMain() const{ return m_main; }
 
-    /*
-     <p>Indicates whether this is the main route table.</p>
-    */
+    /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
     inline void SetMain(bool value) { m_mainHasBeenSet = true; m_main = value; }
 
-    /*
-     <p>Indicates whether this is the main route table.</p>
-    */
+    /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
     inline RouteTableAssociation& WithMain(bool value) { SetMain(value); return *this;}
 
   private:

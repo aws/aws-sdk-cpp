@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DeleteVpcEndpointsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DeleteVpcEndpointsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DeleteVpcEndpointsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const{ return m_unsuccessful; }
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline void SetUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { m_unsuccessful = value; }
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = value; }
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline DeleteVpcEndpointsResponse& WithUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { SetUnsuccessful(value); return *this;}
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline DeleteVpcEndpointsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(value); return *this;}
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(const UnsuccessfulItem& value) { m_unsuccessful.push_back(value); return *this; }
 
-    /*
-     <p>Information about the endpoints that were not successfully deleted.</p>
-    */
+    /**
+     * <p>Information about the endpoints that were not successfully deleted.</p>
+     */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(value); return *this; }
 
     

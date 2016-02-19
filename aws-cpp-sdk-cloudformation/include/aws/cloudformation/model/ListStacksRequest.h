@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ namespace CloudFormation
 namespace Model
 {
 
-  /*
-    <p>The input for <a>ListStacks</a> action.</p>
-  */
+  /**
+   * <p>The input for <a>ListStacks</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API ListStacksRequest : public CloudFormationRequest
   {
   public:
@@ -36,74 +36,102 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline ListStacksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline ListStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>String that identifies the start of the next list of stacks, if there is one.</p> <p>Default: There is no default value.</p>
-    */
+    /**
+     * <p>String that identifies the start of the next list of stacks, if there is
+     * one.</p> <p>Default: There is no default value.</p>
+     */
     inline ListStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline const Aws::Vector<StackStatus>& GetStackStatusFilter() const{ return m_stackStatusFilter; }
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline void SetStackStatusFilter(const Aws::Vector<StackStatus>& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter = value; }
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline void SetStackStatusFilter(Aws::Vector<StackStatus>&& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter = value; }
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline ListStacksRequest& WithStackStatusFilter(const Aws::Vector<StackStatus>& value) { SetStackStatusFilter(value); return *this;}
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline ListStacksRequest& WithStackStatusFilter(Aws::Vector<StackStatus>&& value) { SetStackStatusFilter(value); return *this;}
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline ListStacksRequest& AddStackStatusFilter(const StackStatus& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter.push_back(value); return *this; }
 
-    /*
-     <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-    */
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
     inline ListStacksRequest& AddStackStatusFilter(StackStatus&& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter.push_back(value); return *this; }
 
   private:

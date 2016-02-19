@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CognitoIdentity
 namespace Model
 {
 
-  /*
-    <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
-  */
+  /**
+   * <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
+   */
   class AWS_COGNITOIDENTITY_API UnlinkDeveloperIdentityRequest : public CognitoIdentityRequest
   {
   public:
@@ -36,144 +36,144 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline const Aws::String& GetDeveloperProviderName() const{ return m_developerProviderName; }
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = value; }
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline void SetDeveloperProviderName(Aws::String&& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = value; }
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline void SetDeveloperProviderName(const char* value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName.assign(value); }
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperProviderName(const Aws::String& value) { SetDeveloperProviderName(value); return *this;}
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperProviderName(Aws::String&& value) { SetDeveloperProviderName(value); return *this;}
 
-    /*
-     <p>The "domain" by which Cognito will refer to your users.</p>
-    */
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline const Aws::String& GetDeveloperUserIdentifier() const{ return m_developerUserIdentifier; }
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline void SetDeveloperUserIdentifier(const Aws::String& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline void SetDeveloperUserIdentifier(Aws::String&& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline void SetDeveloperUserIdentifier(const char* value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier.assign(value); }
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(const Aws::String& value) { SetDeveloperUserIdentifier(value); return *this;}
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(Aws::String&& value) { SetDeveloperUserIdentifier(value); return *this;}
 
-    /*
-     A unique ID used by your backend authentication process to identify a user.
-    */
+    /**
+     * A unique ID used by your backend authentication process to identify a user.
+     */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(const char* value) { SetDeveloperUserIdentifier(value); return *this;}
 
   private:

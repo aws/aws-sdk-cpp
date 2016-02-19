@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace EMR
 namespace Model
 {
 
-  /*
-    <p>Change the size of some instance groups.</p>
-  */
+  /**
+   * <p>Change the size of some instance groups.</p>
+   */
   class AWS_EMR_API ModifyInstanceGroupsRequest : public EMRRequest
   {
   public:
@@ -37,39 +37,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline const Aws::Vector<InstanceGroupModifyConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline ModifyInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { SetInstanceGroups(value); return *this;}
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline ModifyInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { SetInstanceGroups(value); return *this;}
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupModifyConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
-    /*
-     <p>Instance groups to change.</p>
-    */
+    /**
+     * <p>Instance groups to change.</p>
+     */
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
   private:

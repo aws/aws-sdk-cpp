@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an IAM instance profile.</p>
-  */
+
+  /**
+   * <p>Describes an IAM instance profile.</p>
+   */
   class AWS_EC2_API IamInstanceProfileSpecification
   {
   public:
@@ -43,74 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline IamInstanceProfileSpecification& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline IamInstanceProfileSpecification& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline IamInstanceProfileSpecification& WithArn(const char* value) { SetArn(value); return *this;}
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline IamInstanceProfileSpecification& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline IamInstanceProfileSpecification& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the instance profile.</p>
-    */
+    /**
+     * <p>The name of the instance profile.</p>
+     */
     inline IamInstanceProfileSpecification& WithName(const char* value) { SetName(value); return *this;}
 
   private:

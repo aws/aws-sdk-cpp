@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SNS
 {
 namespace Model
 {
-  /*
-    <p>Response from CreateEndpoint action.</p>
-  */
+  /**
+   * <p>Response from CreateEndpoint action.</p>
+   */
   class AWS_SNS_API CreatePlatformEndpointResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreatePlatformEndpointResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreatePlatformEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArn = value; }
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline CreatePlatformEndpointResult& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline CreatePlatformEndpointResult& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
 
-    /*
-     <p>EndpointArn returned from CreateEndpoint action.</p>
-    */
+    /**
+     * <p>EndpointArn returned from CreateEndpoint action.</p>
+     */
     inline CreatePlatformEndpointResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
     

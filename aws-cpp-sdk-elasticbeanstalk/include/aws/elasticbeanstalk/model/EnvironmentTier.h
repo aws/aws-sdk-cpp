@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p> Describes the properties of an environment tier </p>
-  */
+
+  /**
+   * <p> Describes the properties of an environment tier </p>
+   */
   class AWS_ELASTICBEANSTALK_API EnvironmentTier
   {
   public:
@@ -43,109 +44,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline EnvironmentTier& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline EnvironmentTier& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of this environment tier.</p>
-    */
+    /**
+     * <p>The name of this environment tier.</p>
+     */
     inline EnvironmentTier& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline const Aws::String& GetType() const{ return m_type; }
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline EnvironmentTier& WithType(const Aws::String& value) { SetType(value); return *this;}
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline EnvironmentTier& WithType(Aws::String&& value) { SetType(value); return *this;}
 
-    /*
-     <p>The type of this environment tier.</p>
-    */
+    /**
+     * <p>The type of this environment tier.</p>
+     */
     inline EnvironmentTier& WithType(const char* value) { SetType(value); return *this;}
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline EnvironmentTier& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline EnvironmentTier& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
-    /*
-     <p>The version of this environment tier.</p>
-    */
+    /**
+     * <p>The version of this environment tier.</p>
+     */
     inline EnvironmentTier& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:

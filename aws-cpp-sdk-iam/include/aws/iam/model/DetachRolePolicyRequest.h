@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API DetachRolePolicyRequest : public IAMRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline DetachRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline DetachRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
-    /*
-     <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
+     */
     inline DetachRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
     

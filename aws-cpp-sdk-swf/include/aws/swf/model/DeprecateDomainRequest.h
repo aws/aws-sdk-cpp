@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SWF
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SWF_API DeprecateDomainRequest : public SWFRequest
   {
   public:
@@ -35,39 +35,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline DeprecateDomainRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline DeprecateDomainRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the domain to deprecate.</p>
-    */
+    /**
+     * <p>The name of the domain to deprecate.</p>
+     */
     inline DeprecateDomainRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:

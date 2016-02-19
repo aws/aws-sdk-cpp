@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Contains the Amazon Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
-  */
+  /**
+   * <p>Contains the Amazon Glacier response to the
+   * <code>GetDataRetrievalPolicy</code> request.</p>
+   */
   class AWS_GLACIER_API GetDataRetrievalPolicyResult
   {
   public:
@@ -42,29 +43,29 @@ namespace Model
     GetDataRetrievalPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDataRetrievalPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Contains the returned data retrieval policy in JSON format.</p>
-    */
+    /**
+     * <p>Contains the returned data retrieval policy in JSON format.</p>
+     */
     inline const DataRetrievalPolicy& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>Contains the returned data retrieval policy in JSON format.</p>
-    */
+    /**
+     * <p>Contains the returned data retrieval policy in JSON format.</p>
+     */
     inline void SetPolicy(const DataRetrievalPolicy& value) { m_policy = value; }
 
-    /*
-     <p>Contains the returned data retrieval policy in JSON format.</p>
-    */
+    /**
+     * <p>Contains the returned data retrieval policy in JSON format.</p>
+     */
     inline void SetPolicy(DataRetrievalPolicy&& value) { m_policy = value; }
 
-    /*
-     <p>Contains the returned data retrieval policy in JSON format.</p>
-    */
+    /**
+     * <p>Contains the returned data retrieval policy in JSON format.</p>
+     */
     inline GetDataRetrievalPolicyResult& WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>Contains the returned data retrieval policy in JSON format.</p>
-    */
+    /**
+     * <p>Contains the returned data retrieval policy in JSON format.</p>
+     */
     inline GetDataRetrievalPolicyResult& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a volume status operation code.</p>
-  */
+
+  /**
+   * <p>Describes a volume status operation code.</p>
+   */
   class AWS_EC2_API VolumeStatusAction
   {
   public:
@@ -43,144 +44,151 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline const Aws::String& GetCode() const{ return m_code; }
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline VolumeStatusAction& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline VolumeStatusAction& WithCode(Aws::String&& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    */
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline VolumeStatusAction& WithCode(const char* value) { SetCode(value); return *this;}
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline VolumeStatusAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline VolumeStatusAction& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the operation.</p>
-    */
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline VolumeStatusAction& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline VolumeStatusAction& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline VolumeStatusAction& WithEventType(Aws::String&& value) { SetEventType(value); return *this;}
 
-    /*
-     <p>The event type associated with this operation.</p>
-    */
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
     inline VolumeStatusAction& WithEventType(const char* value) { SetEventType(value); return *this;}
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline VolumeStatusAction& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline VolumeStatusAction& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
 
-    /*
-     <p>The ID of the event associated with this operation.</p>
-    */
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline VolumeStatusAction& WithEventId(const char* value) { SetEventId(value); return *this;}
 
   private:

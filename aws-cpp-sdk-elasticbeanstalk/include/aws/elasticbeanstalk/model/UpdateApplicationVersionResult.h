@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p> Result message wrapping a single description of an application version. </p>
-  */
+  /**
+   * <p> Result message wrapping a single description of an application version. </p>
+   */
   class AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     UpdateApplicationVersionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     UpdateApplicationVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-    */
+    /**
+     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+     */
     inline const ApplicationVersionDescription& GetApplicationVersion() const{ return m_applicationVersion; }
 
-    /*
-     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-    */
+    /**
+     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+     */
     inline void SetApplicationVersion(const ApplicationVersionDescription& value) { m_applicationVersion = value; }
 
-    /*
-     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-    */
+    /**
+     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+     */
     inline void SetApplicationVersion(ApplicationVersionDescription&& value) { m_applicationVersion = value; }
 
-    /*
-     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-    */
+    /**
+     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+     */
     inline UpdateApplicationVersionResult& WithApplicationVersion(const ApplicationVersionDescription& value) { SetApplicationVersion(value); return *this;}
 
-    /*
-     <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-    */
+    /**
+     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
+     */
     inline UpdateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(value); return *this;}
 
     

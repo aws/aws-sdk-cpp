@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>A value or list of parameter values. </p>
-  */
+
+  /**
+   * <p>A value or list of parameter values. </p>
+   */
   class AWS_DATAPIPELINE_API ParameterValue
   {
   public:
@@ -40,74 +41,74 @@ namespace Model
     ParameterValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline ParameterValue& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline ParameterValue& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the parameter value.</p>
-    */
+    /**
+     * <p>The ID of the parameter value.</p>
+     */
     inline ParameterValue& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline ParameterValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline ParameterValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
 
-    /*
-     <p>The field value, expressed as a String.</p>
-    */
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline ParameterValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
   private:

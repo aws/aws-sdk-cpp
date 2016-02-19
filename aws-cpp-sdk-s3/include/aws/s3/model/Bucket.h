@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Bucket
   {
   public:
@@ -41,54 +39,54 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline Bucket& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline Bucket& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     The name of the bucket.
-    */
+    /**
+     * The name of the bucket.
+     */
     inline Bucket& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     Date the bucket was created.
-    */
+    /**
+     * Date the bucket was created.
+     */
     inline double GetCreationDate() const{ return m_creationDate; }
 
-    /*
-     Date the bucket was created.
-    */
+    /**
+     * Date the bucket was created.
+     */
     inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
-    /*
-     Date the bucket was created.
-    */
+    /**
+     * Date the bucket was created.
+     */
     inline Bucket& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
   private:

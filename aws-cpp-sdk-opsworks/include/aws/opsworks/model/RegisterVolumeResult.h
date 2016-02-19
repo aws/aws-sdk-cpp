@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>RegisterVolume</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>RegisterVolume</code> request.</p>
+   */
   class AWS_OPSWORKS_API RegisterVolumeResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     RegisterVolumeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RegisterVolumeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline void SetVolumeId(Aws::String&& value) { m_volumeId = value; }
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline RegisterVolumeResult& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline RegisterVolumeResult& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
 
-    /*
-     <p>The volume ID.</p>
-    */
+    /**
+     * <p>The volume ID.</p>
+     */
     inline RegisterVolumeResult& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
   private:

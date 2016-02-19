@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_REDSHIFT_API ModifyClusterSubnetGroupRequest : public RedshiftRequest
   {
   public:
@@ -35,114 +35,122 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>The name of the subnet group to be modified.</p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A text description of the subnet group to be modified.</p>
-    */
+    /**
+     * <p>A text description of the subnet group to be modified.</p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline ModifyClusterSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
-    /*
-     <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
-    */
+    /**
+     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request. </p>
+     */
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:

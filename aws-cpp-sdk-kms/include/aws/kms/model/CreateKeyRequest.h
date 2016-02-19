@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace KMS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_KMS_API CreateKeyRequest : public KMSRequest
   {
   public:
@@ -36,99 +36,123 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>Policy to be attached to the key. This is required and delegates back to the account. The key is the root of trust. </p>
-    */
+    /**
+     * <p>Policy to be attached to the key. This is required and delegates back to the
+     * account. The key is the root of trust. </p>
+     */
     inline CreateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline CreateKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline CreateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Description of the key. We recommend that you choose a description that helps your customer decide whether the key is appropriate for a task. </p>
-    */
+    /**
+     * <p>Description of the key. We recommend that you choose a description that helps
+     * your customer decide whether the key is appropriate for a task. </p>
+     */
     inline CreateKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
-    */
+    /**
+     * <p>Specifies the intended use of the key. Currently this defaults to
+     * ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported.
+     * </p>
+     */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
 
-    /*
-     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
-    */
+    /**
+     * <p>Specifies the intended use of the key. Currently this defaults to
+     * ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported.
+     * </p>
+     */
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
-    /*
-     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
-    */
+    /**
+     * <p>Specifies the intended use of the key. Currently this defaults to
+     * ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported.
+     * </p>
+     */
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
-    /*
-     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
-    */
+    /**
+     * <p>Specifies the intended use of the key. Currently this defaults to
+     * ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported.
+     * </p>
+     */
     inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
-    /*
-     <p>Specifies the intended use of the key. Currently this defaults to ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported. </p>
-    */
+    /**
+     * <p>Specifies the intended use of the key. Currently this defaults to
+     * ENCRYPT/DECRYPT, and only symmetric encryption and decryption are supported.
+     * </p>
+     */
     inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(value); return *this;}
 
   private:

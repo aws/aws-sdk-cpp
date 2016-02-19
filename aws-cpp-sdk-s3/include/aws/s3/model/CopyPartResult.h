@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API CopyPartResult
   {
   public:
@@ -41,54 +39,54 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline CopyPartResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline CopyPartResult& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
-    /*
-     Entity tag of the object.
-    */
+    /**
+     * Entity tag of the object.
+     */
     inline CopyPartResult& WithETag(const char* value) { SetETag(value); return *this;}
 
-    /*
-     Date and time at which the object was uploaded.
-    */
+    /**
+     * Date and time at which the object was uploaded.
+     */
     inline double GetLastModified() const{ return m_lastModified; }
 
-    /*
-     Date and time at which the object was uploaded.
-    */
+    /**
+     * Date and time at which the object was uploaded.
+     */
     inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
-    /*
-     Date and time at which the object was uploaded.
-    */
+    /**
+     * Date and time at which the object was uploaded.
+     */
     inline CopyPartResult& WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:

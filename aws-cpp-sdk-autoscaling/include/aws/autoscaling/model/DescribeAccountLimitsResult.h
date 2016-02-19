@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeAccountLimitsResult
   {
   public:
@@ -42,34 +39,40 @@ namespace Model
     DescribeAccountLimitsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAccountLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The maximum number of groups allowed for your AWS account. The default limit is 20 per region.</p>
-    */
+    /**
+     * <p>The maximum number of groups allowed for your AWS account. The default limit
+     * is 20 per region.</p>
+     */
     inline long GetMaxNumberOfAutoScalingGroups() const{ return m_maxNumberOfAutoScalingGroups; }
 
-    /*
-     <p>The maximum number of groups allowed for your AWS account. The default limit is 20 per region.</p>
-    */
+    /**
+     * <p>The maximum number of groups allowed for your AWS account. The default limit
+     * is 20 per region.</p>
+     */
     inline void SetMaxNumberOfAutoScalingGroups(long value) { m_maxNumberOfAutoScalingGroups = value; }
 
-    /*
-     <p>The maximum number of groups allowed for your AWS account. The default limit is 20 per region.</p>
-    */
+    /**
+     * <p>The maximum number of groups allowed for your AWS account. The default limit
+     * is 20 per region.</p>
+     */
     inline DescribeAccountLimitsResult& WithMaxNumberOfAutoScalingGroups(long value) { SetMaxNumberOfAutoScalingGroups(value); return *this;}
 
-    /*
-     <p>The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.</p>
-    */
+    /**
+     * <p>The maximum number of launch configurations allowed for your AWS account. The
+     * default limit is 100 per region.</p>
+     */
     inline long GetMaxNumberOfLaunchConfigurations() const{ return m_maxNumberOfLaunchConfigurations; }
 
-    /*
-     <p>The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.</p>
-    */
+    /**
+     * <p>The maximum number of launch configurations allowed for your AWS account. The
+     * default limit is 100 per region.</p>
+     */
     inline void SetMaxNumberOfLaunchConfigurations(long value) { m_maxNumberOfLaunchConfigurations = value; }
 
-    /*
-     <p>The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.</p>
-    */
+    /**
+     * <p>The maximum number of launch configurations allowed for your AWS account. The
+     * default limit is 100 per region.</p>
+     */
     inline DescribeAccountLimitsResult& WithMaxNumberOfLaunchConfigurations(long value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
 
     

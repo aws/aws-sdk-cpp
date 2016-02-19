@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of CancelSpotFleetRequests.</p>
-  */
+  /**
+   * <p>Contains the output of CancelSpotFleetRequests.</p>
+   */
   class AWS_EC2_API CancelSpotFleetRequestsResponse
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     CancelSpotFleetRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CancelSpotFleetRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline const Aws::Vector<CancelSpotFleetRequestsErrorItem>& GetUnsuccessfulFleetRequests() const{ return m_unsuccessfulFleetRequests; }
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline void SetUnsuccessfulFleetRequests(const Aws::Vector<CancelSpotFleetRequestsErrorItem>& value) { m_unsuccessfulFleetRequests = value; }
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline void SetUnsuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsErrorItem>&& value) { m_unsuccessfulFleetRequests = value; }
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& WithUnsuccessfulFleetRequests(const Aws::Vector<CancelSpotFleetRequestsErrorItem>& value) { SetUnsuccessfulFleetRequests(value); return *this;}
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& WithUnsuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsErrorItem>&& value) { SetUnsuccessfulFleetRequests(value); return *this;}
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& AddUnsuccessfulFleetRequests(const CancelSpotFleetRequestsErrorItem& value) { m_unsuccessfulFleetRequests.push_back(value); return *this; }
 
-    /*
-     <p>Information about the Spot fleet requests that are not successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are not successfully
+     * canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& AddUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem&& value) { m_unsuccessfulFleetRequests.push_back(value); return *this; }
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline const Aws::Vector<CancelSpotFleetRequestsSuccessItem>& GetSuccessfulFleetRequests() const{ return m_successfulFleetRequests; }
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline void SetSuccessfulFleetRequests(const Aws::Vector<CancelSpotFleetRequestsSuccessItem>& value) { m_successfulFleetRequests = value; }
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline void SetSuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsSuccessItem>&& value) { m_successfulFleetRequests = value; }
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& WithSuccessfulFleetRequests(const Aws::Vector<CancelSpotFleetRequestsSuccessItem>& value) { SetSuccessfulFleetRequests(value); return *this;}
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& WithSuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsSuccessItem>&& value) { SetSuccessfulFleetRequests(value); return *this;}
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& AddSuccessfulFleetRequests(const CancelSpotFleetRequestsSuccessItem& value) { m_successfulFleetRequests.push_back(value); return *this; }
 
-    /*
-     <p>Information about the Spot fleet requests that are successfully canceled.</p>
-    */
+    /**
+     * <p>Information about the Spot fleet requests that are successfully canceled.</p>
+     */
     inline CancelSpotFleetRequestsResponse& AddSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItem&& value) { m_successfulFleetRequests.push_back(value); return *this; }
 
     

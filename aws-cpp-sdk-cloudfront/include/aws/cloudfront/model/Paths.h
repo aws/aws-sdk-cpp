@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A complex type that contains information about the objects that you want to invalidate.
-  */
+
+  /**
+   * A complex type that contains information about the objects that you want to
+   * invalidate.
+   */
   class AWS_CLOUDFRONT_API Paths
   {
   public:
@@ -42,59 +44,59 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The number of objects that you want to invalidate.
-    */
+    /**
+     * The number of objects that you want to invalidate.
+     */
     inline long GetQuantity() const{ return m_quantity; }
 
-    /*
-     The number of objects that you want to invalidate.
-    */
+    /**
+     * The number of objects that you want to invalidate.
+     */
     inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
-    /*
-     The number of objects that you want to invalidate.
-    */
+    /**
+     * The number of objects that you want to invalidate.
+     */
     inline Paths& WithQuantity(long value) { SetQuantity(value); return *this;}
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline Paths& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline Paths& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline Paths& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline Paths& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     A complex type that contains a list of the objects that you want to invalidate.
-    */
+    /**
+     * A complex type that contains a list of the objects that you want to invalidate.
+     */
     inline Paths& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:

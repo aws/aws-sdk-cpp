@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace KMS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_KMS_API DisableKeyRotationRequest : public KMSRequest
   {
   public:
@@ -35,39 +35,74 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline DisableKeyRotationRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline DisableKeyRotationRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline DisableKeyRotationRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:

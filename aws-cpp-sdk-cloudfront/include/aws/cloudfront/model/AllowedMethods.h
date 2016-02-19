@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,17 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you may not want users to have permission to delete objects from your origin.
-  */
+
+  /**
+   * A complex type that controls which HTTP methods CloudFront processes and
+   * forwards to your Amazon S3 bucket or your custom origin. There are three
+   * choices: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards
+   * only GET, HEAD and OPTIONS requests. - CloudFront forwards GET, HEAD, OPTIONS,
+   * PUT, PATCH, POST, and DELETE requests. If you pick the third choice, you may
+   * need to restrict access to your Amazon S3 bucket or to your custom origin so
+   * users can't perform operations that you don't want them to. For example, you may
+   * not want users to have permission to delete objects from your origin.
+   */
   class AWS_CLOUDFRONT_API AllowedMethods
   {
   public:
@@ -43,54 +51,67 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
-    */
+    /**
+     * The number of HTTP methods that you want CloudFront to forward to your origin.
+     * Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS
+     * requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
+     */
     inline long GetQuantity() const{ return m_quantity; }
 
-    /*
-     The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
-    */
+    /**
+     * The number of HTTP methods that you want CloudFront to forward to your origin.
+     * Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS
+     * requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
+     */
     inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
-    /*
-     The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
-    */
+    /**
+     * The number of HTTP methods that you want CloudFront to forward to your origin.
+     * Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS
+     * requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
+     */
     inline AllowedMethods& WithQuantity(long value) { SetQuantity(value); return *this;}
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline void SetItems(const Aws::Vector<Method>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline AllowedMethods& WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline AllowedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(value); return *this;}
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline AllowedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
-    */
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     inline AllowedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a list of policy names returned from a successful <code>ListIdentityPolicies</code> request. </p>
-  */
+  /**
+   * <p>Represents a list of policy names returned from a successful
+   * <code>ListIdentityPolicies</code> request. </p>
+   */
   class AWS_SES_API ListIdentityPoliciesResult
   {
   public:
@@ -44,44 +45,44 @@ namespace Model
     ListIdentityPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListIdentityPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = value; }
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline ListIdentityPoliciesResult& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline ListIdentityPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline ListIdentityPoliciesResult& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline ListIdentityPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(value); return *this; }
 
-    /*
-     <p>A list of names of policies that apply to the specified identity.</p>
-    */
+    /**
+     * <p>A list of names of policies that apply to the specified identity.</p>
+     */
     inline ListIdentityPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 
     

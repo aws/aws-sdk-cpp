@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    The returned result of the corresponding request.
-  */
+  /**
+   * The returned result of the corresponding request.
+   */
   class AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2015_04_17Result
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     ListCloudFrontOriginAccessIdentities2015_04_17Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListCloudFrontOriginAccessIdentities2015_04_17Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     The CloudFrontOriginAccessIdentityList type.
-    */
+    /**
+     * The CloudFrontOriginAccessIdentityList type.
+     */
     inline const CloudFrontOriginAccessIdentityList& GetCloudFrontOriginAccessIdentityList() const{ return m_cloudFrontOriginAccessIdentityList; }
 
-    /*
-     The CloudFrontOriginAccessIdentityList type.
-    */
+    /**
+     * The CloudFrontOriginAccessIdentityList type.
+     */
     inline void SetCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { m_cloudFrontOriginAccessIdentityList = value; }
 
-    /*
-     The CloudFrontOriginAccessIdentityList type.
-    */
+    /**
+     * The CloudFrontOriginAccessIdentityList type.
+     */
     inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = value; }
 
-    /*
-     The CloudFrontOriginAccessIdentityList type.
-    */
+    /**
+     * The CloudFrontOriginAccessIdentityList type.
+     */
     inline ListCloudFrontOriginAccessIdentities2015_04_17Result& WithCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
 
-    /*
-     The CloudFrontOriginAccessIdentityList type.
-    */
+    /**
+     * The CloudFrontOriginAccessIdentityList type.
+     */
     inline ListCloudFrontOriginAccessIdentities2015_04_17Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
 
   private:

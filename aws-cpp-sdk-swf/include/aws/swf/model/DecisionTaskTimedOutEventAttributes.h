@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>DecisionTaskTimedOut</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>DecisionTaskTimedOut</code> event.</p>
+   */
   class AWS_SWF_API DecisionTaskTimedOutEventAttributes
   {
   public:
@@ -40,59 +41,76 @@ namespace Model
     DecisionTaskTimedOutEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The type of timeout that expired before the decision task could be completed.</p>
-    */
+    /**
+     * <p>The type of timeout that expired before the decision task could be
+     * completed.</p>
+     */
     inline const DecisionTaskTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
 
-    /*
-     <p>The type of timeout that expired before the decision task could be completed.</p>
-    */
+    /**
+     * <p>The type of timeout that expired before the decision task could be
+     * completed.</p>
+     */
     inline void SetTimeoutType(const DecisionTaskTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
 
-    /*
-     <p>The type of timeout that expired before the decision task could be completed.</p>
-    */
+    /**
+     * <p>The type of timeout that expired before the decision task could be
+     * completed.</p>
+     */
     inline void SetTimeoutType(DecisionTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
 
-    /*
-     <p>The type of timeout that expired before the decision task could be completed.</p>
-    */
+    /**
+     * <p>The type of timeout that expired before the decision task could be
+     * completed.</p>
+     */
     inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(const DecisionTaskTimeoutType& value) { SetTimeoutType(value); return *this;}
 
-    /*
-     <p>The type of timeout that expired before the decision task could be completed.</p>
-    */
+    /**
+     * <p>The type of timeout that expired before the decision task could be
+     * completed.</p>
+     */
     inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(DecisionTaskTimeoutType&& value) { SetTimeoutType(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline DecisionTaskTimedOutEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline DecisionTaskTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,13 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    <p>A log event is a record of some activity that was recorded by the application or resource being monitored. The log event record that Amazon CloudWatch Logs understands contains two properties: the timestamp of when the event occurred, and the raw event message.</p>
-  */
+
+  /**
+   * <p>A log event is a record of some activity that was recorded by the application
+   * or resource being monitored. The log event record that Amazon CloudWatch Logs
+   * understands contains two properties: the timestamp of when the event occurred,
+   * and the raw event message.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API InputLogEvent
   {
   public:

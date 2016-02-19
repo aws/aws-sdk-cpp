@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetRole</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetRole</a> request. </p>
+   */
   class AWS_IAM_API GetRoleResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     GetRoleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the role.</p>
-    */
+    /**
+     * <p>Information about the role.</p>
+     */
     inline const Role& GetRole() const{ return m_role; }
 
-    /*
-     <p>Information about the role.</p>
-    */
+    /**
+     * <p>Information about the role.</p>
+     */
     inline void SetRole(const Role& value) { m_role = value; }
 
-    /*
-     <p>Information about the role.</p>
-    */
+    /**
+     * <p>Information about the role.</p>
+     */
     inline void SetRole(Role&& value) { m_role = value; }
 
-    /*
-     <p>Information about the role.</p>
-    */
+    /**
+     * <p>Information about the role.</p>
+     */
     inline GetRoleResult& WithRole(const Role& value) { SetRole(value); return *this;}
 
-    /*
-     <p>Information about the role.</p>
-    */
+    /**
+     * <p>Information about the role.</p>
+     */
     inline GetRoleResult& WithRole(Role&& value) { SetRole(value); return *this;}
 
     

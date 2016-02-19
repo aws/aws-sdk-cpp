@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Rule
   {
   public:
@@ -61,99 +59,104 @@ namespace Model
     
     inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(value); return *this;}
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline const Aws::String& GetID() const{ return m_iD; }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline Rule& WithID(const Aws::String& value) { SetID(value); return *this;}
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline Rule& WithID(Aws::String&& value) { SetID(value); return *this;}
 
-    /*
-     Unique identifier for the rule. The value cannot be longer than 255 characters.
-    */
+    /**
+     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     */
     inline Rule& WithID(const char* value) { SetID(value); return *this;}
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline Rule& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline Rule& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
-    /*
-     Prefix identifying one or more objects to which the rule applies.
-    */
+    /**
+     * Prefix identifying one or more objects to which the rule applies.
+     */
     inline Rule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
-    /*
-     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
-    */
+    /**
+     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.
+     */
     inline const ExpirationStatus& GetStatus() const{ return m_status; }
 
-    /*
-     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
-    */
+    /**
+     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.
+     */
     inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
-    */
+    /**
+     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.
+     */
     inline void SetStatus(ExpirationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
-    */
+    /**
+     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.
+     */
     inline Rule& WithStatus(const ExpirationStatus& value) { SetStatus(value); return *this;}
 
-    /*
-     If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
-    */
+    /**
+     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.
+     */
     inline Rule& WithStatus(ExpirationStatus&& value) { SetStatus(value); return *this;}
 
     

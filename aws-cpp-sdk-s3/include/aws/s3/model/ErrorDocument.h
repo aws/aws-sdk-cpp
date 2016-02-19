@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API ErrorDocument
   {
   public:
@@ -41,39 +39,39 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline ErrorDocument& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     The object key name to use when a 4XX class error occurs.
-    */
+    /**
+     * The object key name to use when a 4XX class error occurs.
+     */
     inline ErrorDocument& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,17 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
-  */
+
+  /**
+   * <p>Contains information about an attached policy.</p> <p>An attached policy is a
+   * managed policy that has been attached to a user, group, or role. This data type
+   * is used as a response element in the <a>ListAttachedGroupPolicies</a>,
+   * <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and
+   * <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information
+   * about managed policies, refer to <a
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+   * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
+   */
   class AWS_IAM_API AttachedPolicy
   {
   public:
@@ -43,39 +51,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline AttachedPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline AttachedPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The friendly name of the attached policy.</p>
-    */
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
     inline AttachedPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     

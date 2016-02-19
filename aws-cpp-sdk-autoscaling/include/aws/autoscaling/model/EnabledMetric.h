@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    <p>Describes an enabled metric.</p>
-  */
+
+  /**
+   * <p>Describes an enabled metric.</p>
+   */
   class AWS_AUTOSCALING_API EnabledMetric
   {
   public:
@@ -43,74 +44,130 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline const Aws::String& GetMetric() const{ return m_metric; }
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = value; }
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline EnabledMetric& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline EnabledMetric& WithMetric(Aws::String&& value) { SetMetric(value); return *this;}
 
-    /*
-     <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <li><p><code>GroupMaxSize</code></p></li>
+     * <li><p><code>GroupDesiredCapacity</code></p></li>
+     * <li><p><code>GroupInServiceInstances</code></p></li>
+     * <li><p><code>GroupPendingInstances</code></p></li>
+     * <li><p><code>GroupStandbyInstances</code></p></li>
+     * <li><p><code>GroupTerminatingInstances</code></p></li>
+     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     */
     inline EnabledMetric& WithMetric(const char* value) { SetMetric(value); return *this;}
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline const Aws::String& GetGranularity() const{ return m_granularity; }
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline void SetGranularity(const char* value) { m_granularityHasBeenSet = true; m_granularity.assign(value); }
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline EnabledMetric& WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline EnabledMetric& WithGranularity(Aws::String&& value) { SetGranularity(value); return *this;}
 
-    /*
-     <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    */
+    /**
+     * <p>The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.</p>
+     */
     inline EnabledMetric& WithGranularity(const char* value) { SetGranularity(value); return *this;}
 
   private:

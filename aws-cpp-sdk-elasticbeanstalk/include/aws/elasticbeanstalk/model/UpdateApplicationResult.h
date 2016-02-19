@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Result message containing a single description of an application.</p>
-  */
+  /**
+   * <p>Result message containing a single description of an application.</p>
+   */
   class AWS_ELASTICBEANSTALK_API UpdateApplicationResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     UpdateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     UpdateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> The <a>ApplicationDescription</a> of the application. </p>
-    */
+    /**
+     * <p> The <a>ApplicationDescription</a> of the application. </p>
+     */
     inline const ApplicationDescription& GetApplication() const{ return m_application; }
 
-    /*
-     <p> The <a>ApplicationDescription</a> of the application. </p>
-    */
+    /**
+     * <p> The <a>ApplicationDescription</a> of the application. </p>
+     */
     inline void SetApplication(const ApplicationDescription& value) { m_application = value; }
 
-    /*
-     <p> The <a>ApplicationDescription</a> of the application. </p>
-    */
+    /**
+     * <p> The <a>ApplicationDescription</a> of the application. </p>
+     */
     inline void SetApplication(ApplicationDescription&& value) { m_application = value; }
 
-    /*
-     <p> The <a>ApplicationDescription</a> of the application. </p>
-    */
+    /**
+     * <p> The <a>ApplicationDescription</a> of the application. </p>
+     */
     inline UpdateApplicationResult& WithApplication(const ApplicationDescription& value) { SetApplication(value); return *this;}
 
-    /*
-     <p> The <a>ApplicationDescription</a> of the application. </p>
-    */
+    /**
+     * <p> The <a>ApplicationDescription</a> of the application. </p>
+     */
     inline UpdateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(value); return *this;}
 
     

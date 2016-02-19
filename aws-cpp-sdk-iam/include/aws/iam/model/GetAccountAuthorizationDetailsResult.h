@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -38,9 +38,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetAccountAuthorizationDetails</a>
+   * request. </p>
+   */
   class AWS_IAM_API GetAccountAuthorizationDetailsResult
   {
   public:
@@ -48,194 +49,214 @@ namespace Model
     GetAccountAuthorizationDetailsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetAccountAuthorizationDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline const Aws::Vector<UserDetail>& GetUserDetailList() const{ return m_userDetailList; }
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline void SetUserDetailList(const Aws::Vector<UserDetail>& value) { m_userDetailList = value; }
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline void SetUserDetailList(Aws::Vector<UserDetail>&& value) { m_userDetailList = value; }
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithUserDetailList(const Aws::Vector<UserDetail>& value) { SetUserDetailList(value); return *this;}
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithUserDetailList(Aws::Vector<UserDetail>&& value) { SetUserDetailList(value); return *this;}
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddUserDetailList(const UserDetail& value) { m_userDetailList.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about IAM users.</p>
-    */
+    /**
+     * <p>A list containing information about IAM users.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddUserDetailList(UserDetail&& value) { m_userDetailList.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline const Aws::Vector<GroupDetail>& GetGroupDetailList() const{ return m_groupDetailList; }
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline void SetGroupDetailList(const Aws::Vector<GroupDetail>& value) { m_groupDetailList = value; }
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline void SetGroupDetailList(Aws::Vector<GroupDetail>&& value) { m_groupDetailList = value; }
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithGroupDetailList(const Aws::Vector<GroupDetail>& value) { SetGroupDetailList(value); return *this;}
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithGroupDetailList(Aws::Vector<GroupDetail>&& value) { SetGroupDetailList(value); return *this;}
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddGroupDetailList(const GroupDetail& value) { m_groupDetailList.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about IAM groups.</p>
-    */
+    /**
+     * <p>A list containing information about IAM groups.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddGroupDetailList(GroupDetail&& value) { m_groupDetailList.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline const Aws::Vector<RoleDetail>& GetRoleDetailList() const{ return m_roleDetailList; }
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline void SetRoleDetailList(const Aws::Vector<RoleDetail>& value) { m_roleDetailList = value; }
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline void SetRoleDetailList(Aws::Vector<RoleDetail>&& value) { m_roleDetailList = value; }
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithRoleDetailList(const Aws::Vector<RoleDetail>& value) { SetRoleDetailList(value); return *this;}
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithRoleDetailList(Aws::Vector<RoleDetail>&& value) { SetRoleDetailList(value); return *this;}
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddRoleDetailList(const RoleDetail& value) { m_roleDetailList.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about IAM roles.</p>
-    */
+    /**
+     * <p>A list containing information about IAM roles.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddRoleDetailList(RoleDetail&& value) { m_roleDetailList.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline const Aws::Vector<ManagedPolicyDetail>& GetPolicies() const{ return m_policies; }
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline void SetPolicies(const Aws::Vector<ManagedPolicyDetail>& value) { m_policies = value; }
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline void SetPolicies(Aws::Vector<ManagedPolicyDetail>&& value) { m_policies = value; }
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithPolicies(const Aws::Vector<ManagedPolicyDetail>& value) { SetPolicies(value); return *this;}
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithPolicies(Aws::Vector<ManagedPolicyDetail>&& value) { SetPolicies(value); return *this;}
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddPolicies(const ManagedPolicyDetail& value) { m_policies.push_back(value); return *this; }
 
-    /*
-     <p>A list containing information about managed policies.</p>
-    */
+    /**
+     * <p>A list containing information about managed policies.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& AddPolicies(ManagedPolicyDetail&& value) { m_policies.push_back(value); return *this; }
 
-    /*
-     <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items.</p>
+     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
-    /*
-     <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items.</p>
+     */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
-    /*
-     <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline GetAccountAuthorizationDetailsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     

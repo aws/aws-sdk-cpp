@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an event in the history of the Spot fleet request.</p>
-  */
+
+  /**
+   * <p>Describes an event in the history of the Spot fleet request.</p>
+   */
   class AWS_EC2_API HistoryRecord
   {
   public:
@@ -44,69 +45,92 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    */
+    /**
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
     inline double GetTimestamp() const{ return m_timestamp; }
 
-    /*
-     <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    */
+    /**
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
     inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
-    /*
-     <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    */
+    /**
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
     inline HistoryRecord& WithTimestamp(double value) { SetTimestamp(value); return *this;}
 
-    /*
-     <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.</p> </li> <li> <p><code>instanceChange</code> - Indicates that an instance was launched or terminated.</p> </li> </ul>
-    */
+    /**
+     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
+     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
+     * Indicates a change in the status or configuration of the Spot fleet request.</p>
+     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
+     * launched or terminated.</p> </li> </ul>
+     */
     inline const EventType& GetEventType() const{ return m_eventType; }
 
-    /*
-     <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.</p> </li> <li> <p><code>instanceChange</code> - Indicates that an instance was launched or terminated.</p> </li> </ul>
-    */
+    /**
+     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
+     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
+     * Indicates a change in the status or configuration of the Spot fleet request.</p>
+     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
+     * launched or terminated.</p> </li> </ul>
+     */
     inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
-    /*
-     <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.</p> </li> <li> <p><code>instanceChange</code> - Indicates that an instance was launched or terminated.</p> </li> </ul>
-    */
+    /**
+     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
+     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
+     * Indicates a change in the status or configuration of the Spot fleet request.</p>
+     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
+     * launched or terminated.</p> </li> </ul>
+     */
     inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
-    /*
-     <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.</p> </li> <li> <p><code>instanceChange</code> - Indicates that an instance was launched or terminated.</p> </li> </ul>
-    */
+    /**
+     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
+     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
+     * Indicates a change in the status or configuration of the Spot fleet request.</p>
+     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
+     * launched or terminated.</p> </li> </ul>
+     */
     inline HistoryRecord& WithEventType(const EventType& value) { SetEventType(value); return *this;}
 
-    /*
-     <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.</p> </li> <li> <p><code>instanceChange</code> - Indicates that an instance was launched or terminated.</p> </li> </ul>
-    */
+    /**
+     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
+     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
+     * Indicates a change in the status or configuration of the Spot fleet request.</p>
+     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
+     * launched or terminated.</p> </li> </ul>
+     */
     inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(value); return *this;}
 
-    /*
-     <p>Information about the event.</p>
-    */
+    /**
+     * <p>Information about the event.</p>
+     */
     inline const EventInformation& GetEventInformation() const{ return m_eventInformation; }
 
-    /*
-     <p>Information about the event.</p>
-    */
+    /**
+     * <p>Information about the event.</p>
+     */
     inline void SetEventInformation(const EventInformation& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
 
-    /*
-     <p>Information about the event.</p>
-    */
+    /**
+     * <p>Information about the event.</p>
+     */
     inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
 
-    /*
-     <p>Information about the event.</p>
-    */
+    /**
+     * <p>Information about the event.</p>
+     */
     inline HistoryRecord& WithEventInformation(const EventInformation& value) { SetEventInformation(value); return *this;}
 
-    /*
-     <p>Information about the event.</p>
-    */
+    /**
+     * <p>Information about the event.</p>
+     */
     inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(value); return *this;}
 
   private:

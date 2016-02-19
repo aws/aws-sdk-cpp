@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeInternetGatewaysResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeInternetGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeInternetGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline const Aws::Vector<InternetGateway>& GetInternetGateways() const{ return m_internetGateways; }
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline void SetInternetGateways(const Aws::Vector<InternetGateway>& value) { m_internetGateways = value; }
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline void SetInternetGateways(Aws::Vector<InternetGateway>&& value) { m_internetGateways = value; }
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline DescribeInternetGatewaysResponse& WithInternetGateways(const Aws::Vector<InternetGateway>& value) { SetInternetGateways(value); return *this;}
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline DescribeInternetGatewaysResponse& WithInternetGateways(Aws::Vector<InternetGateway>&& value) { SetInternetGateways(value); return *this;}
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline DescribeInternetGatewaysResponse& AddInternetGateways(const InternetGateway& value) { m_internetGateways.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more Internet gateways.</p>
-    */
+    /**
+     * <p>Information about one or more Internet gateways.</p>
+     */
     inline DescribeInternetGatewaysResponse& AddInternetGateways(InternetGateway&& value) { m_internetGateways.push_back(value); return *this; }
 
     

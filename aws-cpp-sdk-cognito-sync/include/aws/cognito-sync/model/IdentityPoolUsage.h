@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    Usage information for the identity pool.
-  */
+
+  /**
+   * Usage information for the identity pool.
+   */
   class AWS_COGNITOSYNC_API IdentityPoolUsage
   {
   public:
@@ -40,84 +41,91 @@ namespace Model
     IdentityPoolUsage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline IdentityPoolUsage& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline IdentityPoolUsage& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    */
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline IdentityPoolUsage& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     Number of sync sessions for the identity pool.
-    */
+    /**
+     * Number of sync sessions for the identity pool.
+     */
     inline long long GetSyncSessionsCount() const{ return m_syncSessionsCount; }
 
-    /*
-     Number of sync sessions for the identity pool.
-    */
+    /**
+     * Number of sync sessions for the identity pool.
+     */
     inline void SetSyncSessionsCount(long long value) { m_syncSessionsCountHasBeenSet = true; m_syncSessionsCount = value; }
 
-    /*
-     Number of sync sessions for the identity pool.
-    */
+    /**
+     * Number of sync sessions for the identity pool.
+     */
     inline IdentityPoolUsage& WithSyncSessionsCount(long long value) { SetSyncSessionsCount(value); return *this;}
 
-    /*
-     Data storage information for the identity pool.
-    */
+    /**
+     * Data storage information for the identity pool.
+     */
     inline long long GetDataStorage() const{ return m_dataStorage; }
 
-    /*
-     Data storage information for the identity pool.
-    */
+    /**
+     * Data storage information for the identity pool.
+     */
     inline void SetDataStorage(long long value) { m_dataStorageHasBeenSet = true; m_dataStorage = value; }
 
-    /*
-     Data storage information for the identity pool.
-    */
+    /**
+     * Data storage information for the identity pool.
+     */
     inline IdentityPoolUsage& WithDataStorage(long long value) { SetDataStorage(value); return *this;}
 
-    /*
-     Date on which the identity pool was last modified.
-    */
+    /**
+     * Date on which the identity pool was last modified.
+     */
     inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
-    /*
-     Date on which the identity pool was last modified.
-    */
+    /**
+     * Date on which the identity pool was last modified.
+     */
     inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
-    /*
-     Date on which the identity pool was last modified.
-    */
+    /**
+     * Date on which the identity pool was last modified.
+     */
     inline IdentityPoolUsage& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
   private:

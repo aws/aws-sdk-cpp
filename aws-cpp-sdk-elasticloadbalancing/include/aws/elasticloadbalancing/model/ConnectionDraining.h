@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about the <code>ConnectionDraining</code> attribute.</p>
-  */
+
+  /**
+   * <p>Information about the <code>ConnectionDraining</code> attribute.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API ConnectionDraining
   {
   public:
@@ -42,34 +43,37 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Specifies whether connection draining is enabled for the load balancer.</p>
-    */
+    /**
+     * <p>Specifies whether connection draining is enabled for the load balancer.</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    /*
-     <p>Specifies whether connection draining is enabled for the load balancer.</p>
-    */
+    /**
+     * <p>Specifies whether connection draining is enabled for the load balancer.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    /*
-     <p>Specifies whether connection draining is enabled for the load balancer.</p>
-    */
+    /**
+     * <p>Specifies whether connection draining is enabled for the load balancer.</p>
+     */
     inline ConnectionDraining& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
-    /*
-     <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    */
+    /**
+     * <p>The maximum time, in seconds, to keep the existing connections open before
+     * deregistering the instances.</p>
+     */
     inline long GetTimeout() const{ return m_timeout; }
 
-    /*
-     <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    */
+    /**
+     * <p>The maximum time, in seconds, to keep the existing connections open before
+     * deregistering the instances.</p>
+     */
     inline void SetTimeout(long value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
-    /*
-     <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    */
+    /**
+     * <p>The maximum time, in seconds, to keep the existing connections open before
+     * deregistering the instances.</p>
+     */
     inline ConnectionDraining& WithTimeout(long value) { SetTimeout(value); return *this;}
 
   private:

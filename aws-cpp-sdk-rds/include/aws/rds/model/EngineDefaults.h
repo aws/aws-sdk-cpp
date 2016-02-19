@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,11 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. </p>
-  */
+
+  /**
+   * <p> Contains the result of a successful invocation of the
+   * <a>DescribeEngineDefaultParameters</a> action. </p>
+   */
   class AWS_RDS_API EngineDefaults
   {
   public:
@@ -45,109 +47,130 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline EngineDefaults& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline EngineDefaults& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
-    /*
-     <p> Specifies the name of the DB Parameter Group Family which the engine default parameters apply to. </p>
-    */
+    /**
+     * <p> Specifies the name of the DB Parameter Group Family which the engine default
+     * parameters apply to. </p>
+     */
     inline EngineDefaults& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline EngineDefaults& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline EngineDefaults& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
     inline EngineDefaults& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline EngineDefaults& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline EngineDefaults& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline EngineDefaults& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
-    /*
-     <p> Contains a list of engine default parameters. </p>
-    */
+    /**
+     * <p> Contains a list of engine default parameters. </p>
+     */
     inline EngineDefaults& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
   private:

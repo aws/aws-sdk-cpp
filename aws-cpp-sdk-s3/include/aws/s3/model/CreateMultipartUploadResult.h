@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API CreateMultipartUploadResult
   {
   public:
@@ -44,239 +41,272 @@ namespace Model
     CreateMultipartUploadResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline void SetBucket(Aws::String&& value) { m_bucket = value; }
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline CreateMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline CreateMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
-    /*
-     Name of the bucket to which the multipart upload was initiated.
-    */
+    /**
+     * Name of the bucket to which the multipart upload was initiated.
+     */
     inline CreateMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline void SetKey(const Aws::String& value) { m_key = value; }
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline void SetKey(Aws::String&& value) { m_key = value; }
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline void SetKey(const char* value) { m_key.assign(value); }
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline CreateMultipartUploadResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline CreateMultipartUploadResult& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     Object key for which the multipart upload was initiated.
-    */
+    /**
+     * Object key for which the multipart upload was initiated.
+     */
     inline CreateMultipartUploadResult& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline void SetUploadId(Aws::String&& value) { m_uploadId = value; }
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline CreateMultipartUploadResult& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline CreateMultipartUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
 
-    /*
-     ID for the initiated multipart upload.
-    */
+    /**
+     * ID for the initiated multipart upload.
+     */
     inline CreateMultipartUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
-    /*
-     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
-    */
+    /**
+     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
+     * AES256, aws:kms).
+     */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
-    /*
-     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
-    */
+    /**
+     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
+     * AES256, aws:kms).
+     */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
-    /*
-     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
-    */
+    /**
+     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
+     * AES256, aws:kms).
+     */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = value; }
 
-    /*
-     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
-    */
+    /**
+     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
+     * AES256, aws:kms).
+     */
     inline CreateMultipartUploadResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
-    /*
-     The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).
-    */
+    /**
+     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
+     * AES256, aws:kms).
+     */
     inline CreateMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(value); return *this;}
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithm = value; }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithm = value; }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithm.assign(value); }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(value); return *this;}
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header confirming the encryption algorithm used.
+     */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = value; }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(value); return *this;}
 
-    /*
-     If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.
-    */
+    /**
+     * If server-side encryption with a customer-provided encryption key was requested,
+     * the response will include this header to provide round trip message integrity
+     * verification of the customer-provided encryption key.
+     */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = value; }
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(value); return *this;}
 
-    /*
-     If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.
-    */
+    /**
+     * If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.
+     */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
     

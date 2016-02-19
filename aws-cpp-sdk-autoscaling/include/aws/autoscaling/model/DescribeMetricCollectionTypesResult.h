@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeMetricCollectionTypesResult
   {
   public:
@@ -45,74 +42,74 @@ namespace Model
     DescribeMetricCollectionTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeMetricCollectionTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline const Aws::Vector<MetricCollectionType>& GetMetrics() const{ return m_metrics; }
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline void SetMetrics(const Aws::Vector<MetricCollectionType>& value) { m_metrics = value; }
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline void SetMetrics(Aws::Vector<MetricCollectionType>&& value) { m_metrics = value; }
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& WithMetrics(const Aws::Vector<MetricCollectionType>& value) { SetMetrics(value); return *this;}
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& WithMetrics(Aws::Vector<MetricCollectionType>&& value) { SetMetrics(value); return *this;}
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& AddMetrics(const MetricCollectionType& value) { m_metrics.push_back(value); return *this; }
 
-    /*
-     <p>One or more metrics.</p>
-    */
+    /**
+     * <p>One or more metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& AddMetrics(MetricCollectionType&& value) { m_metrics.push_back(value); return *this; }
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline const Aws::Vector<MetricGranularityType>& GetGranularities() const{ return m_granularities; }
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline void SetGranularities(const Aws::Vector<MetricGranularityType>& value) { m_granularities = value; }
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline void SetGranularities(Aws::Vector<MetricGranularityType>&& value) { m_granularities = value; }
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& WithGranularities(const Aws::Vector<MetricGranularityType>& value) { SetGranularities(value); return *this;}
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& WithGranularities(Aws::Vector<MetricGranularityType>&& value) { SetGranularities(value); return *this;}
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& AddGranularities(const MetricGranularityType& value) { m_granularities.push_back(value); return *this; }
 
-    /*
-     <p>The granularities for the metrics.</p>
-    */
+    /**
+     * <p>The granularities for the metrics.</p>
+     */
     inline DescribeMetricCollectionTypesResult& AddGranularities(MetricGranularityType&& value) { m_granularities.push_back(value); return *this; }
 
     

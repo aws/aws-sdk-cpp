@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
-  */
+
+  /**
+   * <p>Represents the subnet associated with a cache cluster. This parameter refers
+   * to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with
+   * ElastiCache.</p>
+   */
   class AWS_ELASTICACHE_API Subnet
   {
   public:
@@ -44,64 +47,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline const Aws::String& GetSubnetIdentifier() const{ return m_subnetIdentifier; }
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline void SetSubnetIdentifier(const Aws::String& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline void SetSubnetIdentifier(const char* value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier.assign(value); }
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline Subnet& WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(value); return *this;}
 
-    /*
-     <p>The unique identifier for the subnet.</p>
-    */
+    /**
+     * <p>The unique identifier for the subnet.</p>
+     */
     inline Subnet& WithSubnetIdentifier(const char* value) { SetSubnetIdentifier(value); return *this;}
 
-    /*
-     <p>The Availability Zone associated with the subnet.</p>
-    */
+    /**
+     * <p>The Availability Zone associated with the subnet.</p>
+     */
     inline const AvailabilityZone& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
 
-    /*
-     <p>The Availability Zone associated with the subnet.</p>
-    */
+    /**
+     * <p>The Availability Zone associated with the subnet.</p>
+     */
     inline void SetSubnetAvailabilityZone(const AvailabilityZone& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
-    /*
-     <p>The Availability Zone associated with the subnet.</p>
-    */
+    /**
+     * <p>The Availability Zone associated with the subnet.</p>
+     */
     inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
-    /*
-     <p>The Availability Zone associated with the subnet.</p>
-    */
+    /**
+     * <p>The Availability Zone associated with the subnet.</p>
+     */
     inline Subnet& WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone associated with the subnet.</p>
-    */
+    /**
+     * <p>The Availability Zone associated with the subnet.</p>
+     */
     inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(value); return *this;}
 
   private:

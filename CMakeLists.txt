@@ -661,17 +661,6 @@ set(CMAKE_CONFIGURATION_TYPES
         MinSizeRel              # Like Release, but optimized for memory rather than speed.
         )
 
-# pass this flag to the jsoncpp amalgamated source
-add_definitions(-DJSON_USE_EXCEPTION=0)
-
-if(NOT PLATFORM_WINDOWS)
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
-    if(NOT BUILD_SHARED_LIBS)
-        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-    endif()
-endif()
-
 # warning control
 if(PLATFORM_WINDOWS)
     if(MSVC)
@@ -710,7 +699,11 @@ if(PLATFORM_WINDOWS)
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
     # We also have some nested comments in the auto-generated member comments so turn that off as well
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-unused-private-field -Wno-comment")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-unused-private-field")
+endif()
+
+if(NOT PLATFORM_WINDOWS)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 endif()
 
 set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>The key of a tag.</p>
-  */
+
+  /**
+   * <p>The key of a tag.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API TagKeyOnly
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline TagKeyOnly& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline TagKeyOnly& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The name of the key.</p>
-    */
+    /**
+     * <p>The name of the key.</p>
+     */
     inline TagKeyOnly& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:

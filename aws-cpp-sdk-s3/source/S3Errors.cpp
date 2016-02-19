@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -20,10 +20,10 @@ using namespace Aws::Client;
 using namespace Aws::S3;
 using namespace Aws::Utils;
 
+static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectNotInActiveTierError");
 static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucket");
 static const int OBJECT_ALREADY_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectAlreadyInActiveTierError");
 static const int NO_SUCH_UPLOAD_HASH = HashingUtils::HashString("NoSuchUpload");
-static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectNotInActiveTierError");
 static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
 static const int NO_SUCH_KEY_HASH = HashingUtils::HashString("NoSuchKey");
 
@@ -38,7 +38,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NO_SUCH_BUCKET_HASH)
+  if (hashCode == OBJECT_NOT_IN_ACTIVE_TIER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::OBJECT_NOT_IN_ACTIVE_TIER), false);
+  }
+  else if (hashCode == NO_SUCH_BUCKET_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::NO_SUCH_BUCKET), false);
   }
@@ -49,10 +53,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_SUCH_UPLOAD_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::NO_SUCH_UPLOAD), false);
-  }
-  else if (hashCode == OBJECT_NOT_IN_ACTIVE_TIER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::OBJECT_NOT_IN_ACTIVE_TIER), false);
   }
   else if (hashCode == BUCKET_ALREADY_EXISTS_HASH)
   {

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreateGroup</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreateGroup</a> request. </p>
+   */
   class AWS_IAM_API CreateGroupResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the group.</p>
-    */
+    /**
+     * <p>Information about the group.</p>
+     */
     inline const Group& GetGroup() const{ return m_group; }
 
-    /*
-     <p>Information about the group.</p>
-    */
+    /**
+     * <p>Information about the group.</p>
+     */
     inline void SetGroup(const Group& value) { m_group = value; }
 
-    /*
-     <p>Information about the group.</p>
-    */
+    /**
+     * <p>Information about the group.</p>
+     */
     inline void SetGroup(Group&& value) { m_group = value; }
 
-    /*
-     <p>Information about the group.</p>
-    */
+    /**
+     * <p>Information about the group.</p>
+     */
     inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
 
-    /*
-     <p>Information about the group.</p>
-    */
+    /**
+     * <p>Information about the group.</p>
+     */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(value); return *this;}
 
     

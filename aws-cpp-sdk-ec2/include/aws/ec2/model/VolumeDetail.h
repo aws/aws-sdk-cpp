@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an EBS volume.</p>
-  */
+
+  /**
+   * <p>Describes an EBS volume.</p>
+   */
   class AWS_EC2_API VolumeDetail
   {
   public:
@@ -42,19 +43,19 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The size of the volume, in GiB.</p>
-    */
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
     inline long long GetSize() const{ return m_size; }
 
-    /*
-     <p>The size of the volume, in GiB.</p>
-    */
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
-    /*
-     <p>The size of the volume, in GiB.</p>
-    */
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
     inline VolumeDetail& WithSize(long long value) { SetSize(value); return *this;}
 
   private:

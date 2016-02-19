@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_ELASTICBEANSTALK_API CreateApplicationVersionRequest : public ElasticBeanstalkRequest
   {
   public:
@@ -35,149 +35,252 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
-    /*
-     <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    */
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline CreateApplicationVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline CreateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Describes this version.</p>
-    */
+    /**
+     * <p>Describes this version.</p>
+     */
     inline CreateApplicationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p> The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p> <p> If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB. </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
-    */
+    /**
+     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
+     * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is provided but
+     * not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
+     */
     inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
 
-    /*
-     <p> The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p> <p> If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB. </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
-    */
+    /**
+     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
+     * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is provided but
+     * not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
+     */
     inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
-    /*
-     <p> The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p> <p> If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB. </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
-    */
+    /**
+     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
+     * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is provided but
+     * not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
+     */
     inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
-    /*
-     <p> The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p> <p> If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB. </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
-    */
+    /**
+     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
+     * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is provided but
+     * not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithSourceBundle(const S3Location& value) { SetSourceBundle(value); return *this;}
 
-    /*
-     <p> The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p> <p> If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB. </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
-    */
+    /**
+     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
+     * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is provided but
+     * not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
+     */
     inline CreateApplicationVersionRequest& WithSourceBundle(S3Location&& value) { SetSourceBundle(value); return *this;}
 
-    /*
-     <p> Determines how the system behaves if the specified application for this version does not already exist: </p> <enumValues> <value name="true"> <p> <code>true</code>: Automatically creates the specified application for this version if it does not already exist. </p> </value> <value name="false"> <p> <code>false</code>: Returns an <code>InvalidParameterValue</code> if the specified application for this version does not already exist. </p> </value> </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified application for this release if it does not already exist. </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release does not already exist. </li> </ul> <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    */
+    /**
+     * <p> Determines how the system behaves if the specified application for this
+     * version does not already exist: </p> <enumValues> <value name="true"> <p>
+     * <code>true</code>: Automatically creates the specified application for this
+     * version if it does not already exist. </p> </value> <value name="false"> <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist. </p> </value>
+     * </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
+     * application for this release if it does not already exist. </li> <li>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the
+     * specified application for this release does not already exist. </li> </ul> <p>
+     * Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
     inline bool GetAutoCreateApplication() const{ return m_autoCreateApplication; }
 
-    /*
-     <p> Determines how the system behaves if the specified application for this version does not already exist: </p> <enumValues> <value name="true"> <p> <code>true</code>: Automatically creates the specified application for this version if it does not already exist. </p> </value> <value name="false"> <p> <code>false</code>: Returns an <code>InvalidParameterValue</code> if the specified application for this version does not already exist. </p> </value> </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified application for this release if it does not already exist. </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release does not already exist. </li> </ul> <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    */
+    /**
+     * <p> Determines how the system behaves if the specified application for this
+     * version does not already exist: </p> <enumValues> <value name="true"> <p>
+     * <code>true</code>: Automatically creates the specified application for this
+     * version if it does not already exist. </p> </value> <value name="false"> <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist. </p> </value>
+     * </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
+     * application for this release if it does not already exist. </li> <li>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the
+     * specified application for this release does not already exist. </li> </ul> <p>
+     * Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
     inline void SetAutoCreateApplication(bool value) { m_autoCreateApplicationHasBeenSet = true; m_autoCreateApplication = value; }
 
-    /*
-     <p> Determines how the system behaves if the specified application for this version does not already exist: </p> <enumValues> <value name="true"> <p> <code>true</code>: Automatically creates the specified application for this version if it does not already exist. </p> </value> <value name="false"> <p> <code>false</code>: Returns an <code>InvalidParameterValue</code> if the specified application for this version does not already exist. </p> </value> </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified application for this release if it does not already exist. </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release does not already exist. </li> </ul> <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    */
+    /**
+     * <p> Determines how the system behaves if the specified application for this
+     * version does not already exist: </p> <enumValues> <value name="true"> <p>
+     * <code>true</code>: Automatically creates the specified application for this
+     * version if it does not already exist. </p> </value> <value name="false"> <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist. </p> </value>
+     * </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
+     * application for this release if it does not already exist. </li> <li>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the
+     * specified application for this release does not already exist. </li> </ul> <p>
+     * Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
     inline CreateApplicationVersionRequest& WithAutoCreateApplication(bool value) { SetAutoCreateApplication(value); return *this;}
 
   private:

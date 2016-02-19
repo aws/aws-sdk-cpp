@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API DiscoverPollEndpointResult
   {
   public:
@@ -42,74 +39,74 @@ namespace Model
     DiscoverPollEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DiscoverPollEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline void SetEndpoint(Aws::String&& value) { m_endpoint = value; }
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline void SetEndpoint(const char* value) { m_endpoint.assign(value); }
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline DiscoverPollEndpointResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline DiscoverPollEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
 
-    /*
-     <p>The endpoint for the Amazon ECS agent to poll.</p>
-    */
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll.</p>
+     */
     inline DiscoverPollEndpointResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline const Aws::String& GetTelemetryEndpoint() const{ return m_telemetryEndpoint; }
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline void SetTelemetryEndpoint(const Aws::String& value) { m_telemetryEndpoint = value; }
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline void SetTelemetryEndpoint(Aws::String&& value) { m_telemetryEndpoint = value; }
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline void SetTelemetryEndpoint(const char* value) { m_telemetryEndpoint.assign(value); }
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const Aws::String& value) { SetTelemetryEndpoint(value); return *this;}
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline DiscoverPollEndpointResult& WithTelemetryEndpoint(Aws::String&& value) { SetTelemetryEndpoint(value); return *this;}
 
-    /*
-     <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    */
+    /**
+     * <p>The telemetry endpoint for the Amazon ECS agent.</p>
+     */
     inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const char* value) { SetTelemetryEndpoint(value); return *this;}
 
   private:

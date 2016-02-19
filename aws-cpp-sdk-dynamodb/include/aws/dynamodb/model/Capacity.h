@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /*
-    <p>Represents the amount of provisioned throughput capacity consumed on a table or an index. </p>
-  */
+
+  /**
+   * <p>Represents the amount of provisioned throughput capacity consumed on a table
+   * or an index. </p>
+   */
   class AWS_DYNAMODB_API Capacity
   {
   public:
@@ -39,19 +41,19 @@ namespace Model
     Capacity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The total number of capacity units consumed on a table or an index.</p>
-    */
+    /**
+     * <p>The total number of capacity units consumed on a table or an index.</p>
+     */
     inline double GetCapacityUnits() const{ return m_capacityUnits; }
 
-    /*
-     <p>The total number of capacity units consumed on a table or an index.</p>
-    */
+    /**
+     * <p>The total number of capacity units consumed on a table or an index.</p>
+     */
     inline void SetCapacityUnits(double value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
 
-    /*
-     <p>The total number of capacity units consumed on a table or an index.</p>
-    */
+    /**
+     * <p>The total number of capacity units consumed on a table or an index.</p>
+     */
     inline Capacity& WithCapacityUnits(double value) { SetCapacityUnits(value); return *this;}
 
   private:

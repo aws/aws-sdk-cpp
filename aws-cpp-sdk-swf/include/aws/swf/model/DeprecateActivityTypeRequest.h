@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace SWF
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SWF_API DeprecateActivityTypeRequest : public SWFRequest
   {
   public:
@@ -36,64 +36,64 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline DeprecateActivityTypeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline DeprecateActivityTypeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain in which the activity type is registered.</p>
-    */
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline DeprecateActivityTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The activity type to deprecate.</p>
-    */
+    /**
+     * <p>The activity type to deprecate.</p>
+     */
     inline const ActivityType& GetActivityType() const{ return m_activityType; }
 
-    /*
-     <p>The activity type to deprecate.</p>
-    */
+    /**
+     * <p>The activity type to deprecate.</p>
+     */
     inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
-    /*
-     <p>The activity type to deprecate.</p>
-    */
+    /**
+     * <p>The activity type to deprecate.</p>
+     */
     inline void SetActivityType(ActivityType&& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
-    /*
-     <p>The activity type to deprecate.</p>
-    */
+    /**
+     * <p>The activity type to deprecate.</p>
+     */
     inline DeprecateActivityTypeRequest& WithActivityType(const ActivityType& value) { SetActivityType(value); return *this;}
 
-    /*
-     <p>The activity type to deprecate.</p>
-    */
+    /**
+     * <p>The activity type to deprecate.</p>
+     */
     inline DeprecateActivityTypeRequest& WithActivityType(ActivityType&& value) { SetActivityType(value); return *this;}
 
   private:

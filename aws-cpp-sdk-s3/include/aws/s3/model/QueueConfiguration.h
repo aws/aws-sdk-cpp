@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,11 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    Container for specifying an configuration when you want Amazon S3 to publish events to an Amazon Simple Queue Service (Amazon SQS) queue.
-  */
+
+  /**
+   * Container for specifying an configuration when you want Amazon S3 to publish
+   * events to an Amazon Simple Queue Service (Amazon SQS) queue.
+   */
   class AWS_S3_API QueueConfiguration
   {
   public:
@@ -65,39 +67,46 @@ namespace Model
     
     inline QueueConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline const Aws::String& GetQueueArn() const{ return m_queueArn; }
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline void SetQueueArn(const Aws::String& value) { m_queueArnHasBeenSet = true; m_queueArn = value; }
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline void SetQueueArn(Aws::String&& value) { m_queueArnHasBeenSet = true; m_queueArn = value; }
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline void SetQueueArn(const char* value) { m_queueArnHasBeenSet = true; m_queueArn.assign(value); }
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline QueueConfiguration& WithQueueArn(const Aws::String& value) { SetQueueArn(value); return *this;}
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline QueueConfiguration& WithQueueArn(Aws::String&& value) { SetQueueArn(value); return *this;}
 
-    /*
-     Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
-    */
+    /**
+     * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
+     * events of specified type.
+     */
     inline QueueConfiguration& WithQueueArn(const char* value) { SetQueueArn(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>The <code>CreatePresetResponse</code> structure.</p>
-  */
+  /**
+   * <p>The <code>CreatePresetResponse</code> structure.</p>
+   */
   class AWS_ELASTICTRANSCODER_API CreatePresetResult
   {
   public:
@@ -43,64 +43,90 @@ namespace Model
     CreatePresetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreatePresetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p> A section of the response body that provides information about the preset that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the preset
+     * that is created. </p>
+     */
     inline const Preset& GetPreset() const{ return m_preset; }
 
-    /*
-     <p> A section of the response body that provides information about the preset that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the preset
+     * that is created. </p>
+     */
     inline void SetPreset(const Preset& value) { m_preset = value; }
 
-    /*
-     <p> A section of the response body that provides information about the preset that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the preset
+     * that is created. </p>
+     */
     inline void SetPreset(Preset&& value) { m_preset = value; }
 
-    /*
-     <p> A section of the response body that provides information about the preset that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the preset
+     * that is created. </p>
+     */
     inline CreatePresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
 
-    /*
-     <p> A section of the response body that provides information about the preset that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the preset
+     * that is created. </p>
+     */
     inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(value); return *this;}
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline const Aws::String& GetWarning() const{ return m_warning; }
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline void SetWarning(const Aws::String& value) { m_warning = value; }
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline void SetWarning(Aws::String&& value) { m_warning = value; }
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline void SetWarning(const char* value) { m_warning.assign(value); }
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline CreatePresetResult& WithWarning(const Aws::String& value) { SetWarning(value); return *this;}
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline CreatePresetResult& WithWarning(Aws::String&& value) { SetWarning(value); return *this;}
 
-    /*
-     <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    */
+    /**
+     * <p>If the preset settings don't comply with the standards for the video codec
+     * but Elastic Transcoder created the preset, this message explains the reason the
+     * preset settings don't meet the standard. Elastic Transcoder created the preset
+     * because the settings might produce acceptable output.</p>
+     */
     inline CreatePresetResult& WithWarning(const char* value) { SetWarning(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeVpnConnectionsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeVpnConnectionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpnConnectionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline const Aws::Vector<VpnConnection>& GetVpnConnections() const{ return m_vpnConnections; }
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline void SetVpnConnections(const Aws::Vector<VpnConnection>& value) { m_vpnConnections = value; }
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline void SetVpnConnections(Aws::Vector<VpnConnection>&& value) { m_vpnConnections = value; }
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline DescribeVpnConnectionsResponse& WithVpnConnections(const Aws::Vector<VpnConnection>& value) { SetVpnConnections(value); return *this;}
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline DescribeVpnConnectionsResponse& WithVpnConnections(Aws::Vector<VpnConnection>&& value) { SetVpnConnections(value); return *this;}
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline DescribeVpnConnectionsResponse& AddVpnConnections(const VpnConnection& value) { m_vpnConnections.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more VPN connections.</p>
-    */
+    /**
+     * <p>Information about one or more VPN connections.</p>
+     */
     inline DescribeVpnConnectionsResponse& AddVpnConnections(VpnConnection&& value) { m_vpnConnections.push_back(value); return *this; }
 
     

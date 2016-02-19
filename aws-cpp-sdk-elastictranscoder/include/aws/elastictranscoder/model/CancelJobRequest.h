@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-  /*
-    <p>The <code>CancelJobRequest</code> structure.</p>
-  */
+  /**
+   * <p>The <code>CancelJobRequest</code> structure.</p>
+   */
   class AWS_ELASTICTRANSCODER_API CancelJobRequest : public ElasticTranscoderRequest
   {
   public:
@@ -34,39 +34,53 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline CancelJobRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline CancelJobRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-    */
+    /**
+     * <p>The identifier of the job that you want to cancel. </p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline CancelJobRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:

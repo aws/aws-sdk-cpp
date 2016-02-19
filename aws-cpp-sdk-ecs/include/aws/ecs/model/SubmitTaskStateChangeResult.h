@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API SubmitTaskStateChangeResult
   {
   public:
@@ -42,39 +39,39 @@ namespace Model
     SubmitTaskStateChangeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     SubmitTaskStateChangeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline const Aws::String& GetAcknowledgment() const{ return m_acknowledgment; }
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline void SetAcknowledgment(const Aws::String& value) { m_acknowledgment = value; }
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline void SetAcknowledgment(Aws::String&& value) { m_acknowledgment = value; }
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline void SetAcknowledgment(const char* value) { m_acknowledgment.assign(value); }
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline SubmitTaskStateChangeResult& WithAcknowledgment(const Aws::String& value) { SetAcknowledgment(value); return *this;}
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline SubmitTaskStateChangeResult& WithAcknowledgment(Aws::String&& value) { SetAcknowledgment(value); return *this;}
 
-    /*
-     <p>Acknowledgement of the state change.</p>
-    */
+    /**
+     * <p>Acknowledgement of the state change.</p>
+     */
     inline SubmitTaskStateChangeResult& WithAcknowledgment(const char* value) { SetAcknowledgment(value); return *this;}
 
   private:

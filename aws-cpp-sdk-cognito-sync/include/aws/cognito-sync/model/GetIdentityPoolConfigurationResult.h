@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    <p>The output for the GetIdentityPoolConfiguration operation.</p>
-  */
+  /**
+   * <p>The output for the GetIdentityPoolConfiguration operation.</p>
+   */
   class AWS_COGNITOSYNC_API GetIdentityPoolConfigurationResult
   {
   public:
@@ -44,89 +44,96 @@ namespace Model
     GetIdentityPoolConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetIdentityPoolConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline GetIdentityPoolConfigurationResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline GetIdentityPoolConfigurationResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    */
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+     */
     inline GetIdentityPoolConfigurationResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>Options to apply to this identity pool for push synchronization.</p>
-    */
+    /**
+     * <p>Options to apply to this identity pool for push synchronization.</p>
+     */
     inline const PushSync& GetPushSync() const{ return m_pushSync; }
 
-    /*
-     <p>Options to apply to this identity pool for push synchronization.</p>
-    */
+    /**
+     * <p>Options to apply to this identity pool for push synchronization.</p>
+     */
     inline void SetPushSync(const PushSync& value) { m_pushSync = value; }
 
-    /*
-     <p>Options to apply to this identity pool for push synchronization.</p>
-    */
+    /**
+     * <p>Options to apply to this identity pool for push synchronization.</p>
+     */
     inline void SetPushSync(PushSync&& value) { m_pushSync = value; }
 
-    /*
-     <p>Options to apply to this identity pool for push synchronization.</p>
-    */
+    /**
+     * <p>Options to apply to this identity pool for push synchronization.</p>
+     */
     inline GetIdentityPoolConfigurationResult& WithPushSync(const PushSync& value) { SetPushSync(value); return *this;}
 
-    /*
-     <p>Options to apply to this identity pool for push synchronization.</p>
-    */
+    /**
+     * <p>Options to apply to this identity pool for push synchronization.</p>
+     */
     inline GetIdentityPoolConfigurationResult& WithPushSync(PushSync&& value) { SetPushSync(value); return *this;}
 
-    /*
-     Options to apply to this identity pool for Amazon Cognito streams.
-    */
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
     inline const CognitoStreams& GetCognitoStreams() const{ return m_cognitoStreams; }
 
-    /*
-     Options to apply to this identity pool for Amazon Cognito streams.
-    */
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
     inline void SetCognitoStreams(const CognitoStreams& value) { m_cognitoStreams = value; }
 
-    /*
-     Options to apply to this identity pool for Amazon Cognito streams.
-    */
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
     inline void SetCognitoStreams(CognitoStreams&& value) { m_cognitoStreams = value; }
 
-    /*
-     Options to apply to this identity pool for Amazon Cognito streams.
-    */
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
     inline GetIdentityPoolConfigurationResult& WithCognitoStreams(const CognitoStreams& value) { SetCognitoStreams(value); return *this;}
 
-    /*
-     Options to apply to this identity pool for Amazon Cognito streams.
-    */
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
     inline GetIdentityPoolConfigurationResult& WithCognitoStreams(CognitoStreams&& value) { SetCognitoStreams(value); return *this;}
 
   private:

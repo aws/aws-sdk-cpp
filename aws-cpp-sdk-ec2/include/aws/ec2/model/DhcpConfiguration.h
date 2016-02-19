@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a DHCP configuration option.</p>
-  */
+
+  /**
+   * <p>Describes a DHCP configuration option.</p>
+   */
   class AWS_EC2_API DhcpConfiguration
   {
   public:
@@ -45,74 +46,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline DhcpConfiguration& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline DhcpConfiguration& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The name of a DHCP option.</p>
-    */
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline DhcpConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline const Aws::Vector<AttributeValue>& GetValues() const{ return m_values; }
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline void SetValues(const Aws::Vector<AttributeValue>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline void SetValues(Aws::Vector<AttributeValue>&& value) { m_valuesHasBeenSet = true; m_values = value; }
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline DhcpConfiguration& WithValues(const Aws::Vector<AttributeValue>& value) { SetValues(value); return *this;}
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline DhcpConfiguration& WithValues(Aws::Vector<AttributeValue>&& value) { SetValues(value); return *this;}
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline DhcpConfiguration& AddValues(const AttributeValue& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
-    /*
-     <p>One or more values for the DHCP option.</p>
-    */
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
     inline DhcpConfiguration& AddValues(AttributeValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:

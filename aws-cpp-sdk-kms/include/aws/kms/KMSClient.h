@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -175,7 +175,7 @@ namespace Model
         typedef std::future<UpdateKeyDescriptionOutcome> UpdateKeyDescriptionOutcomeCallable;
 } // namespace Model
 
-    class KMSClient;
+  class KMSClient;
 
     typedef std::function<void(const KMSClient*, const Model::CancelKeyDeletionRequest&, const Model::CancelKeyDeletionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelKeyDeletionResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
@@ -207,27 +207,77 @@ namespace Model
     typedef std::function<void(const KMSClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::UpdateKeyDescriptionRequest&, const Model::UpdateKeyDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyDescriptionResponseReceivedHandler;
 
-  /*
-    <fullname>AWS Key Management Service</fullname> <p> AWS Key Management Service (KMS) is an encryption and key management web service. This guide describes the KMS actions that you can call programmatically. For general information about KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html"> AWS Key Management Service Developer Guide </a> </p> <note> AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to KMS and AWS. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and retrying requests automatically. For more information about the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. </note> <p> We recommend that you use the AWS SDKs to make programmatic API calls to KMS. </p> <p>Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support these modes. </p> <p><b>Signing Requests</b></p> <p> Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you do not use your AWS account access key ID and secret key for everyday work with KMS. Instead, use the access key ID and secret access key for an IAM user, or you can use the AWS Security Token Service to generate temporary security credentials that you can use to sign requests. </p> <p> All KMS operations require <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. </p> <p><b>Recording API Requests</b></p> <p> KMS supports AWS CloudTrail, a service that records AWS API calls and related events for your AWS account and delivers them to an Amazon S3 bucket that you specify. By using the information collected by CloudTrail, you can determine what requests were made to KMS, who made the request, when it was made, and so on. To learn more about CloudTrail, including how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatiscloudtrail.html">AWS CloudTrail User Guide</a> </p> <p><b>Additional Resources</b></p> <p>For more information about credentials and request signing, see the following:</p> <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>. This topic provides general information about the types of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security Token Service</a>. This guide describes how to create and use temporary security credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>. This set of topics walks you through the process of signing a request using an access key ID and a secret access key. </li> </ul> <p><b>Commonly Used APIs</b></p> <p> Of the APIs discussed in this guide, the following will prove the most useful for most applications. You will likely perform actions other than these, such as creating keys and assigning policies, by using the console. <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul> </p>
-  */
+  /**
+   * <fullname>AWS Key Management Service</fullname> <p> AWS Key Management Service
+   * (KMS) is an encryption and key management web service. This guide describes the
+   * KMS actions that you can call programmatically. For general information about
+   * KMS, see the <a
+   * href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html"> AWS
+   * Key Management Service Developer Guide </a> </p> <note> AWS provides SDKs that
+   * consist of libraries and sample code for various programming languages and
+   * platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient
+   * way to create programmatic access to KMS and AWS. For example, the SDKs take
+   * care of tasks such as signing requests (see below), managing errors, and
+   * retrying requests automatically. For more information about the AWS SDKs,
+   * including how to download and install them, see <a
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. </note>
+   * <p> We recommend that you use the AWS SDKs to make programmatic API calls to
+   * KMS. </p> <p>Clients must support TLS (Transport Layer Security) 1.0. We
+   * recommend TLS 1.2. Clients must also support cipher suites with Perfect Forward
+   * Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral
+   * Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support
+   * these modes. </p> <p><b>Signing Requests</b></p> <p> Requests must be signed by
+   * using an access key ID and a secret access key. We strongly recommend that you
+   * do not use your AWS account access key ID and secret key for everyday work with
+   * KMS. Instead, use the access key ID and secret access key for an IAM user, or
+   * you can use the AWS Security Token Service to generate temporary security
+   * credentials that you can use to sign requests. </p> <p> All KMS operations
+   * require <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * Version 4</a>. </p> <p><b>Recording API Requests</b></p> <p> KMS supports AWS
+   * CloudTrail, a service that records AWS API calls and related events for your AWS
+   * account and delivers them to an Amazon S3 bucket that you specify. By using the
+   * information collected by CloudTrail, you can determine what requests were made
+   * to KMS, who made the request, when it was made, and so on. To learn more about
+   * CloudTrail, including how to turn it on and find your log files, see the <a
+   * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatiscloudtrail.html">AWS
+   * CloudTrail User Guide</a> </p> <p><b>Additional Resources</b></p> <p>For more
+   * information about credentials and request signing, see the following:</p> <ul>
+   * <li> <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
+   * Security Credentials</a>. This topic provides general information about the
+   * types of credentials used for accessing AWS. </li> <li> <a
+   * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security Token
+   * Service</a>. This guide describes how to create and use temporary security
+   * credentials. </li> <li> <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+   * AWS API Requests</a>. This set of topics walks you through the process of
+   * signing a request using an access key ID and a secret access key. </li> </ul>
+   * <p><b>Commonly Used APIs</b></p> <p> Of the APIs discussed in this guide, the
+   * following will prove the most useful for most applications. You will likely
+   * perform actions other than these, such as creating keys and assigning policies,
+   * by using the console. <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li>
+   * <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+   * </ul> </p>
+   */
   class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
 
-            /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KMSClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KMSClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -236,563 +286,881 @@ namespace Model
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
         virtual ~KMSClient();
-    
-        /*
-            
-        */
+
+        /**
+         * 
+         */
         virtual Model::CancelKeyDeletionOutcome CancelKeyDeletion(const Model::CancelKeyDeletionRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CancelKeyDeletionOutcomeCallable CancelKeyDeletionCallable(const Model::CancelKeyDeletionRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CancelKeyDeletionAsync(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Creates a display name for a customer master key. An alias can be used to identify a key and should be unique. The console enforces a one-to-one mapping between the alias and a key. An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p> <p>To map an alias to a different key, call <a>UpdateAlias</a>.</p>
-        */
+        /**
+         * <p>Creates a display name for a customer master key. An alias can be used to
+         * identify a key and should be unique. The console enforces a one-to-one mapping
+         * between the alias and a key. An alias name can contain only alphanumeric
+         * characters, forward slashes (/), underscores (_), and dashes (-). An alias must
+         * start with the word "alias" followed by a forward slash (alias/). An alias that
+         * begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon
+         * Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the
+         * same AWS account and the same region.</p> <p>To map an alias to a different key,
+         * call <a>UpdateAlias</a>.</p>
+         */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
-        /*
-            <p>Creates a display name for a customer master key. An alias can be used to identify a key and should be unique. The console enforces a one-to-one mapping between the alias and a key. An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p> <p>To map an alias to a different key, call <a>UpdateAlias</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Creates a display name for a customer master key. An alias can be used to
+         * identify a key and should be unique. The console enforces a one-to-one mapping
+         * between the alias and a key. An alias name can contain only alphanumeric
+         * characters, forward slashes (/), underscores (_), and dashes (-). An alias must
+         * start with the word "alias" followed by a forward slash (alias/). An alias that
+         * begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon
+         * Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the
+         * same AWS account and the same region.</p> <p>To map an alias to a different key,
+         * call <a>UpdateAlias</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request) const;
 
-        /*
-            <p>Creates a display name for a customer master key. An alias can be used to identify a key and should be unique. The console enforces a one-to-one mapping between the alias and a key. An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p> <p>To map an alias to a different key, call <a>UpdateAlias</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Creates a display name for a customer master key. An alias can be used to
+         * identify a key and should be unique. The console enforces a one-to-one mapping
+         * between the alias and a key. An alias name can contain only alphanumeric
+         * characters, forward slashes (/), underscores (_), and dashes (-). An alias must
+         * start with the word "alias" followed by a forward slash (alias/). An alias that
+         * begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon
+         * Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the
+         * same AWS account and the same region.</p> <p>To map an alias to a different key,
+         * call <a>UpdateAlias</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Adds a grant to a key to specify who can access the key and under what conditions. Grants are alternate permission mechanisms to key policies. For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a> in the developer guide. If a grant is absent, access to the key is evaluated based on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li> </ol> </p>
-        */
+        /**
+         * <p>Adds a grant to a key to specify who can access the key and under what
+         * conditions. Grants are alternate permission mechanisms to key policies. For more
+         * information about grants, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+         * in the developer guide. If a grant is absent, access to the key is evaluated
+         * based on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li>
+         * <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li> </ol> </p>
+         */
         virtual Model::CreateGrantOutcome CreateGrant(const Model::CreateGrantRequest& request) const;
 
-        /*
-            <p>Adds a grant to a key to specify who can access the key and under what conditions. Grants are alternate permission mechanisms to key policies. For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a> in the developer guide. If a grant is absent, access to the key is evaluated based on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li> </ol> </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Adds a grant to a key to specify who can access the key and under what
+         * conditions. Grants are alternate permission mechanisms to key policies. For more
+         * information about grants, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+         * in the developer guide. If a grant is absent, access to the key is evaluated
+         * based on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li>
+         * <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li> </ol> </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateGrantOutcomeCallable CreateGrantCallable(const Model::CreateGrantRequest& request) const;
 
-        /*
-            <p>Adds a grant to a key to specify who can access the key and under what conditions. Grants are alternate permission mechanisms to key policies. For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a> in the developer guide. If a grant is absent, access to the key is evaluated based on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li> </ol> </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Adds a grant to a key to specify who can access the key and under what
+         * conditions. Grants are alternate permission mechanisms to key policies. For more
+         * information about grants, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+         * in the developer guide. If a grant is absent, access to the key is evaluated
+         * based on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li>
+         * <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li> </ol> </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateGrantAsync(const Model::CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Creates a customer master key. Customer master keys can be used to encrypt small amounts of data (less than 4K) directly, but they are most commonly used to encrypt or envelope data keys that are then used to encrypt customer data. For more information about data keys, see <a>GenerateDataKey</a> and <a>GenerateDataKeyWithoutPlaintext</a>.</p>
-        */
+        /**
+         * <p>Creates a customer master key. Customer master keys can be used to encrypt
+         * small amounts of data (less than 4K) directly, but they are most commonly used
+         * to encrypt or envelope data keys that are then used to encrypt customer data.
+         * For more information about data keys, see <a>GenerateDataKey</a> and
+         * <a>GenerateDataKeyWithoutPlaintext</a>.</p>
+         */
         virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request) const;
 
-        /*
-            <p>Creates a customer master key. Customer master keys can be used to encrypt small amounts of data (less than 4K) directly, but they are most commonly used to encrypt or envelope data keys that are then used to encrypt customer data. For more information about data keys, see <a>GenerateDataKey</a> and <a>GenerateDataKeyWithoutPlaintext</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Creates a customer master key. Customer master keys can be used to encrypt
+         * small amounts of data (less than 4K) directly, but they are most commonly used
+         * to encrypt or envelope data keys that are then used to encrypt customer data.
+         * For more information about data keys, see <a>GenerateDataKey</a> and
+         * <a>GenerateDataKeyWithoutPlaintext</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateKeyOutcomeCallable CreateKeyCallable(const Model::CreateKeyRequest& request) const;
 
-        /*
-            <p>Creates a customer master key. Customer master keys can be used to encrypt small amounts of data (less than 4K) directly, but they are most commonly used to encrypt or envelope data keys that are then used to encrypt customer data. For more information about data keys, see <a>GenerateDataKey</a> and <a>GenerateDataKeyWithoutPlaintext</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Creates a customer master key. Customer master keys can be used to encrypt
+         * small amounts of data (less than 4K) directly, but they are most commonly used
+         * to encrypt or envelope data keys that are then used to encrypt customer data.
+         * For more information about data keys, see <a>GenerateDataKey</a> and
+         * <a>GenerateDataKeyWithoutPlaintext</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateKeyAsync(const Model::CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by using any of the following functions: <ul> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> <li><a>Encrypt</a></li> </ul> </p> <p>Note that if a caller has been granted access permissions to all keys (through, for example, IAM user policies that grant <code>Decrypt</code> permission on all resources), then ciphertext encrypted by using keys in other accounts where the key grants access to the caller can be decrypted. To remedy this, we recommend that you do not grant <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code> access only in key policies. If you must grant <code>Decrypt</code> access in an IAM user policy, you should scope the resource to specific keys or to specific trusted accounts. </p>
-        */
+        /**
+         * <p>Decrypts ciphertext. Ciphertext is plaintext that has been previously
+         * encrypted by using any of the following functions: <ul>
+         * <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+         * <li><a>Encrypt</a></li> </ul> </p> <p>Note that if a caller has been granted
+         * access permissions to all keys (through, for example, IAM user policies that
+         * grant <code>Decrypt</code> permission on all resources), then ciphertext
+         * encrypted by using keys in other accounts where the key grants access to the
+         * caller can be decrypted. To remedy this, we recommend that you do not grant
+         * <code>Decrypt</code> access in an IAM user policy. Instead grant
+         * <code>Decrypt</code> access only in key policies. If you must grant
+         * <code>Decrypt</code> access in an IAM user policy, you should scope the resource
+         * to specific keys or to specific trusted accounts. </p>
+         */
         virtual Model::DecryptOutcome Decrypt(const Model::DecryptRequest& request) const;
 
-        /*
-            <p>Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by using any of the following functions: <ul> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> <li><a>Encrypt</a></li> </ul> </p> <p>Note that if a caller has been granted access permissions to all keys (through, for example, IAM user policies that grant <code>Decrypt</code> permission on all resources), then ciphertext encrypted by using keys in other accounts where the key grants access to the caller can be decrypted. To remedy this, we recommend that you do not grant <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code> access only in key policies. If you must grant <code>Decrypt</code> access in an IAM user policy, you should scope the resource to specific keys or to specific trusted accounts. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Decrypts ciphertext. Ciphertext is plaintext that has been previously
+         * encrypted by using any of the following functions: <ul>
+         * <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+         * <li><a>Encrypt</a></li> </ul> </p> <p>Note that if a caller has been granted
+         * access permissions to all keys (through, for example, IAM user policies that
+         * grant <code>Decrypt</code> permission on all resources), then ciphertext
+         * encrypted by using keys in other accounts where the key grants access to the
+         * caller can be decrypted. To remedy this, we recommend that you do not grant
+         * <code>Decrypt</code> access in an IAM user policy. Instead grant
+         * <code>Decrypt</code> access only in key policies. If you must grant
+         * <code>Decrypt</code> access in an IAM user policy, you should scope the resource
+         * to specific keys or to specific trusted accounts. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DecryptOutcomeCallable DecryptCallable(const Model::DecryptRequest& request) const;
 
-        /*
-            <p>Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by using any of the following functions: <ul> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> <li><a>Encrypt</a></li> </ul> </p> <p>Note that if a caller has been granted access permissions to all keys (through, for example, IAM user policies that grant <code>Decrypt</code> permission on all resources), then ciphertext encrypted by using keys in other accounts where the key grants access to the caller can be decrypted. To remedy this, we recommend that you do not grant <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code> access only in key policies. If you must grant <code>Decrypt</code> access in an IAM user policy, you should scope the resource to specific keys or to specific trusted accounts. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Decrypts ciphertext. Ciphertext is plaintext that has been previously
+         * encrypted by using any of the following functions: <ul>
+         * <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+         * <li><a>Encrypt</a></li> </ul> </p> <p>Note that if a caller has been granted
+         * access permissions to all keys (through, for example, IAM user policies that
+         * grant <code>Decrypt</code> permission on all resources), then ciphertext
+         * encrypted by using keys in other accounts where the key grants access to the
+         * caller can be decrypted. To remedy this, we recommend that you do not grant
+         * <code>Decrypt</code> access in an IAM user policy. Instead grant
+         * <code>Decrypt</code> access only in key policies. If you must grant
+         * <code>Decrypt</code> access in an IAM user policy, you should scope the resource
+         * to specific keys or to specific trusted accounts. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DecryptAsync(const Model::DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.</p>
-        */
+        /**
+         * <p>Deletes the specified alias. To map an alias to a different key, call
+         * <a>UpdateAlias</a>.</p>
+         */
         virtual Model::DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest& request) const;
 
-        /*
-            <p>Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Deletes the specified alias. To map an alias to a different key, call
+         * <a>UpdateAlias</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request) const;
 
-        /*
-            <p>Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Deletes the specified alias. To map an alias to a different key, call
+         * <a>UpdateAlias</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Provides detailed information about the specified customer master key.</p>
-        */
+        /**
+         * <p>Provides detailed information about the specified customer master key.</p>
+         */
         virtual Model::DescribeKeyOutcome DescribeKey(const Model::DescribeKeyRequest& request) const;
 
-        /*
-            <p>Provides detailed information about the specified customer master key.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Provides detailed information about the specified customer master key.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeKeyOutcomeCallable DescribeKeyCallable(const Model::DescribeKeyRequest& request) const;
 
-        /*
-            <p>Provides detailed information about the specified customer master key.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Provides detailed information about the specified customer master key.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeKeyAsync(const Model::DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Marks a key as disabled, thereby preventing its use.</p>
-        */
+        /**
+         * <p>Marks a key as disabled, thereby preventing its use.</p>
+         */
         virtual Model::DisableKeyOutcome DisableKey(const Model::DisableKeyRequest& request) const;
 
-        /*
-            <p>Marks a key as disabled, thereby preventing its use.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Marks a key as disabled, thereby preventing its use.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DisableKeyOutcomeCallable DisableKeyCallable(const Model::DisableKeyRequest& request) const;
 
-        /*
-            <p>Marks a key as disabled, thereby preventing its use.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Marks a key as disabled, thereby preventing its use.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DisableKeyAsync(const Model::DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Disables rotation of the specified key.
-        */
+        /**
+         * Disables rotation of the specified key.
+         */
         virtual Model::DisableKeyRotationOutcome DisableKeyRotation(const Model::DisableKeyRotationRequest& request) const;
 
-        /*
-            Disables rotation of the specified key.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Disables rotation of the specified key.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DisableKeyRotationOutcomeCallable DisableKeyRotationCallable(const Model::DisableKeyRotationRequest& request) const;
 
-        /*
-            Disables rotation of the specified key.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Disables rotation of the specified key.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DisableKeyRotationAsync(const Model::DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled keys at one time.
-        */
+        /**
+         * Marks a key as enabled, thereby permitting its use. You can have up to 25
+         * enabled keys at one time.
+         */
         virtual Model::EnableKeyOutcome EnableKey(const Model::EnableKeyRequest& request) const;
 
-        /*
-            Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled keys at one time.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Marks a key as enabled, thereby permitting its use. You can have up to 25
+         * enabled keys at one time.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::EnableKeyOutcomeCallable EnableKeyCallable(const Model::EnableKeyRequest& request) const;
 
-        /*
-            Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled keys at one time.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Marks a key as enabled, thereby permitting its use. You can have up to 25
+         * enabled keys at one time.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void EnableKeyAsync(const Model::EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Enables rotation of the specified customer master key.
-        */
+        /**
+         * Enables rotation of the specified customer master key.
+         */
         virtual Model::EnableKeyRotationOutcome EnableKeyRotation(const Model::EnableKeyRotationRequest& request) const;
 
-        /*
-            Enables rotation of the specified customer master key.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Enables rotation of the specified customer master key.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::EnableKeyRotationOutcomeCallable EnableKeyRotationCallable(const Model::EnableKeyRotationRequest& request) const;
 
-        /*
-            Enables rotation of the specified customer master key.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Enables rotation of the specified customer master key.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void EnableKeyRotationAsync(const Model::EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code> function has two primary use cases: <ul> <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or other sensitive customer information.</li> <li>If you are moving encrypted data from one region to another, you can use this API to encrypt in the new region the plaintext data key that was used to encrypt the data in the original region. This provides you with an encrypted copy of the data key that can be decrypted in the new region and used there to decrypt the encrypted data. </li> </ul> </p> <p>Unless you are moving encrypted data from one region to another, you don't use this function to encrypt a generated data key within a region. You retrieve data keys already encrypted by calling the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be encrypted again by calling <code>Encrypt</code>. </p> <p>If you want to encrypt data locally in your application, you can use the <code>GenerateDataKey</code> function to return a plaintext data encryption key and a copy of the key encrypted under the customer master key (CMK) of your choosing. </p>
-        */
+        /**
+         * <p>Encrypts plaintext into ciphertext by using a customer master key. The
+         * <code>Encrypt</code> function has two primary use cases: <ul> <li>You can
+         * encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or
+         * other sensitive customer information.</li> <li>If you are moving encrypted data
+         * from one region to another, you can use this API to encrypt in the new region
+         * the plaintext data key that was used to encrypt the data in the original region.
+         * This provides you with an encrypted copy of the data key that can be decrypted
+         * in the new region and used there to decrypt the encrypted data. </li> </ul> </p>
+         * <p>Unless you are moving encrypted data from one region to another, you don't
+         * use this function to encrypt a generated data key within a region. You retrieve
+         * data keys already encrypted by calling the <a>GenerateDataKey</a> or
+         * <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be
+         * encrypted again by calling <code>Encrypt</code>. </p> <p>If you want to encrypt
+         * data locally in your application, you can use the <code>GenerateDataKey</code>
+         * function to return a plaintext data encryption key and a copy of the key
+         * encrypted under the customer master key (CMK) of your choosing. </p>
+         */
         virtual Model::EncryptOutcome Encrypt(const Model::EncryptRequest& request) const;
 
-        /*
-            <p>Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code> function has two primary use cases: <ul> <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or other sensitive customer information.</li> <li>If you are moving encrypted data from one region to another, you can use this API to encrypt in the new region the plaintext data key that was used to encrypt the data in the original region. This provides you with an encrypted copy of the data key that can be decrypted in the new region and used there to decrypt the encrypted data. </li> </ul> </p> <p>Unless you are moving encrypted data from one region to another, you don't use this function to encrypt a generated data key within a region. You retrieve data keys already encrypted by calling the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be encrypted again by calling <code>Encrypt</code>. </p> <p>If you want to encrypt data locally in your application, you can use the <code>GenerateDataKey</code> function to return a plaintext data encryption key and a copy of the key encrypted under the customer master key (CMK) of your choosing. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Encrypts plaintext into ciphertext by using a customer master key. The
+         * <code>Encrypt</code> function has two primary use cases: <ul> <li>You can
+         * encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or
+         * other sensitive customer information.</li> <li>If you are moving encrypted data
+         * from one region to another, you can use this API to encrypt in the new region
+         * the plaintext data key that was used to encrypt the data in the original region.
+         * This provides you with an encrypted copy of the data key that can be decrypted
+         * in the new region and used there to decrypt the encrypted data. </li> </ul> </p>
+         * <p>Unless you are moving encrypted data from one region to another, you don't
+         * use this function to encrypt a generated data key within a region. You retrieve
+         * data keys already encrypted by calling the <a>GenerateDataKey</a> or
+         * <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be
+         * encrypted again by calling <code>Encrypt</code>. </p> <p>If you want to encrypt
+         * data locally in your application, you can use the <code>GenerateDataKey</code>
+         * function to return a plaintext data encryption key and a copy of the key
+         * encrypted under the customer master key (CMK) of your choosing. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::EncryptOutcomeCallable EncryptCallable(const Model::EncryptRequest& request) const;
 
-        /*
-            <p>Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code> function has two primary use cases: <ul> <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or other sensitive customer information.</li> <li>If you are moving encrypted data from one region to another, you can use this API to encrypt in the new region the plaintext data key that was used to encrypt the data in the original region. This provides you with an encrypted copy of the data key that can be decrypted in the new region and used there to decrypt the encrypted data. </li> </ul> </p> <p>Unless you are moving encrypted data from one region to another, you don't use this function to encrypt a generated data key within a region. You retrieve data keys already encrypted by calling the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be encrypted again by calling <code>Encrypt</code>. </p> <p>If you want to encrypt data locally in your application, you can use the <code>GenerateDataKey</code> function to return a plaintext data encryption key and a copy of the key encrypted under the customer master key (CMK) of your choosing. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Encrypts plaintext into ciphertext by using a customer master key. The
+         * <code>Encrypt</code> function has two primary use cases: <ul> <li>You can
+         * encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or
+         * other sensitive customer information.</li> <li>If you are moving encrypted data
+         * from one region to another, you can use this API to encrypt in the new region
+         * the plaintext data key that was used to encrypt the data in the original region.
+         * This provides you with an encrypted copy of the data key that can be decrypted
+         * in the new region and used there to decrypt the encrypted data. </li> </ul> </p>
+         * <p>Unless you are moving encrypted data from one region to another, you don't
+         * use this function to encrypt a generated data key within a region. You retrieve
+         * data keys already encrypted by calling the <a>GenerateDataKey</a> or
+         * <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be
+         * encrypted again by calling <code>Encrypt</code>. </p> <p>If you want to encrypt
+         * data locally in your application, you can use the <code>GenerateDataKey</code>
+         * function to return a plaintext data encryption key and a copy of the key
+         * encrypted under the customer master key (CMK) of your choosing. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void EncryptAsync(const Model::EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Generates a data key that you can use in your application to locally encrypt data. This call returns a plaintext version of the key in the <code>Plaintext</code> field of the response object and an encrypted copy of the key in the <code>CiphertextBlob</code> field. The key is encrypted by using the master key specified by the <code>KeyId</code> field. To decrypt the encrypted key, pass it to the <code>Decrypt</code> API. </p> <p>We recommend that you use the following pattern to locally encrypt data: call the <code>GenerateDataKey</code> API, use the key returned in the <code>Plaintext</code> response field to locally encrypt data, and then erase the plaintext data key from memory. Store the encrypted data key (contained in the <code>CiphertextBlob</code> field) alongside of the locally encrypted data. </p> <note>You should not call the <code>Encrypt</code> function to re-encrypt your data keys within a region. <code>GenerateDataKey</code> always returns the data key encrypted and tied to the customer master key that will be used to decrypt it. There is no need to decrypt it twice. </note> <p>If you decide to use the optional <code>EncryptionContext</code> parameter, you must also store the context in full or at least store enough information along with the encrypted data to be able to reconstruct the context when submitting the ciphertext to the <code>Decrypt</code> API. It is a good practice to choose a context that you can reconstruct on the fly to better secure the ciphertext. For more information about how this parameter is used, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>. </p> <p>To decrypt data, pass the encrypted data key to the <code>Decrypt</code> API. <code>Decrypt</code> uses the associated master key to decrypt the encrypted data key and returns it as plaintext. Use the plaintext data key to locally decrypt your data and then erase the key from memory. You must specify the encryption context, if any, that you specified when you generated the key. The encryption context is logged by CloudTrail, and you can use this log to help track the use of particular data. </p>
-        */
+        /**
+         * <p>Generates a data key that you can use in your application to locally encrypt
+         * data. This call returns a plaintext version of the key in the
+         * <code>Plaintext</code> field of the response object and an encrypted copy of the
+         * key in the <code>CiphertextBlob</code> field. The key is encrypted by using the
+         * master key specified by the <code>KeyId</code> field. To decrypt the encrypted
+         * key, pass it to the <code>Decrypt</code> API. </p> <p>We recommend that you use
+         * the following pattern to locally encrypt data: call the
+         * <code>GenerateDataKey</code> API, use the key returned in the
+         * <code>Plaintext</code> response field to locally encrypt data, and then erase
+         * the plaintext data key from memory. Store the encrypted data key (contained in
+         * the <code>CiphertextBlob</code> field) alongside of the locally encrypted data.
+         * </p> <note>You should not call the <code>Encrypt</code> function to re-encrypt
+         * your data keys within a region. <code>GenerateDataKey</code> always returns the
+         * data key encrypted and tied to the customer master key that will be used to
+         * decrypt it. There is no need to decrypt it twice. </note> <p>If you decide to
+         * use the optional <code>EncryptionContext</code> parameter, you must also store
+         * the context in full or at least store enough information along with the
+         * encrypted data to be able to reconstruct the context when submitting the
+         * ciphertext to the <code>Decrypt</code> API. It is a good practice to choose a
+         * context that you can reconstruct on the fly to better secure the ciphertext. For
+         * more information about how this parameter is used, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+         * Context</a>. </p> <p>To decrypt data, pass the encrypted data key to the
+         * <code>Decrypt</code> API. <code>Decrypt</code> uses the associated master key to
+         * decrypt the encrypted data key and returns it as plaintext. Use the plaintext
+         * data key to locally decrypt your data and then erase the key from memory. You
+         * must specify the encryption context, if any, that you specified when you
+         * generated the key. The encryption context is logged by CloudTrail, and you can
+         * use this log to help track the use of particular data. </p>
+         */
         virtual Model::GenerateDataKeyOutcome GenerateDataKey(const Model::GenerateDataKeyRequest& request) const;
 
-        /*
-            <p>Generates a data key that you can use in your application to locally encrypt data. This call returns a plaintext version of the key in the <code>Plaintext</code> field of the response object and an encrypted copy of the key in the <code>CiphertextBlob</code> field. The key is encrypted by using the master key specified by the <code>KeyId</code> field. To decrypt the encrypted key, pass it to the <code>Decrypt</code> API. </p> <p>We recommend that you use the following pattern to locally encrypt data: call the <code>GenerateDataKey</code> API, use the key returned in the <code>Plaintext</code> response field to locally encrypt data, and then erase the plaintext data key from memory. Store the encrypted data key (contained in the <code>CiphertextBlob</code> field) alongside of the locally encrypted data. </p> <note>You should not call the <code>Encrypt</code> function to re-encrypt your data keys within a region. <code>GenerateDataKey</code> always returns the data key encrypted and tied to the customer master key that will be used to decrypt it. There is no need to decrypt it twice. </note> <p>If you decide to use the optional <code>EncryptionContext</code> parameter, you must also store the context in full or at least store enough information along with the encrypted data to be able to reconstruct the context when submitting the ciphertext to the <code>Decrypt</code> API. It is a good practice to choose a context that you can reconstruct on the fly to better secure the ciphertext. For more information about how this parameter is used, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>. </p> <p>To decrypt data, pass the encrypted data key to the <code>Decrypt</code> API. <code>Decrypt</code> uses the associated master key to decrypt the encrypted data key and returns it as plaintext. Use the plaintext data key to locally decrypt your data and then erase the key from memory. You must specify the encryption context, if any, that you specified when you generated the key. The encryption context is logged by CloudTrail, and you can use this log to help track the use of particular data. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Generates a data key that you can use in your application to locally encrypt
+         * data. This call returns a plaintext version of the key in the
+         * <code>Plaintext</code> field of the response object and an encrypted copy of the
+         * key in the <code>CiphertextBlob</code> field. The key is encrypted by using the
+         * master key specified by the <code>KeyId</code> field. To decrypt the encrypted
+         * key, pass it to the <code>Decrypt</code> API. </p> <p>We recommend that you use
+         * the following pattern to locally encrypt data: call the
+         * <code>GenerateDataKey</code> API, use the key returned in the
+         * <code>Plaintext</code> response field to locally encrypt data, and then erase
+         * the plaintext data key from memory. Store the encrypted data key (contained in
+         * the <code>CiphertextBlob</code> field) alongside of the locally encrypted data.
+         * </p> <note>You should not call the <code>Encrypt</code> function to re-encrypt
+         * your data keys within a region. <code>GenerateDataKey</code> always returns the
+         * data key encrypted and tied to the customer master key that will be used to
+         * decrypt it. There is no need to decrypt it twice. </note> <p>If you decide to
+         * use the optional <code>EncryptionContext</code> parameter, you must also store
+         * the context in full or at least store enough information along with the
+         * encrypted data to be able to reconstruct the context when submitting the
+         * ciphertext to the <code>Decrypt</code> API. It is a good practice to choose a
+         * context that you can reconstruct on the fly to better secure the ciphertext. For
+         * more information about how this parameter is used, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+         * Context</a>. </p> <p>To decrypt data, pass the encrypted data key to the
+         * <code>Decrypt</code> API. <code>Decrypt</code> uses the associated master key to
+         * decrypt the encrypted data key and returns it as plaintext. Use the plaintext
+         * data key to locally decrypt your data and then erase the key from memory. You
+         * must specify the encryption context, if any, that you specified when you
+         * generated the key. The encryption context is logged by CloudTrail, and you can
+         * use this log to help track the use of particular data. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GenerateDataKeyOutcomeCallable GenerateDataKeyCallable(const Model::GenerateDataKeyRequest& request) const;
 
-        /*
-            <p>Generates a data key that you can use in your application to locally encrypt data. This call returns a plaintext version of the key in the <code>Plaintext</code> field of the response object and an encrypted copy of the key in the <code>CiphertextBlob</code> field. The key is encrypted by using the master key specified by the <code>KeyId</code> field. To decrypt the encrypted key, pass it to the <code>Decrypt</code> API. </p> <p>We recommend that you use the following pattern to locally encrypt data: call the <code>GenerateDataKey</code> API, use the key returned in the <code>Plaintext</code> response field to locally encrypt data, and then erase the plaintext data key from memory. Store the encrypted data key (contained in the <code>CiphertextBlob</code> field) alongside of the locally encrypted data. </p> <note>You should not call the <code>Encrypt</code> function to re-encrypt your data keys within a region. <code>GenerateDataKey</code> always returns the data key encrypted and tied to the customer master key that will be used to decrypt it. There is no need to decrypt it twice. </note> <p>If you decide to use the optional <code>EncryptionContext</code> parameter, you must also store the context in full or at least store enough information along with the encrypted data to be able to reconstruct the context when submitting the ciphertext to the <code>Decrypt</code> API. It is a good practice to choose a context that you can reconstruct on the fly to better secure the ciphertext. For more information about how this parameter is used, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>. </p> <p>To decrypt data, pass the encrypted data key to the <code>Decrypt</code> API. <code>Decrypt</code> uses the associated master key to decrypt the encrypted data key and returns it as plaintext. Use the plaintext data key to locally decrypt your data and then erase the key from memory. You must specify the encryption context, if any, that you specified when you generated the key. The encryption context is logged by CloudTrail, and you can use this log to help track the use of particular data. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Generates a data key that you can use in your application to locally encrypt
+         * data. This call returns a plaintext version of the key in the
+         * <code>Plaintext</code> field of the response object and an encrypted copy of the
+         * key in the <code>CiphertextBlob</code> field. The key is encrypted by using the
+         * master key specified by the <code>KeyId</code> field. To decrypt the encrypted
+         * key, pass it to the <code>Decrypt</code> API. </p> <p>We recommend that you use
+         * the following pattern to locally encrypt data: call the
+         * <code>GenerateDataKey</code> API, use the key returned in the
+         * <code>Plaintext</code> response field to locally encrypt data, and then erase
+         * the plaintext data key from memory. Store the encrypted data key (contained in
+         * the <code>CiphertextBlob</code> field) alongside of the locally encrypted data.
+         * </p> <note>You should not call the <code>Encrypt</code> function to re-encrypt
+         * your data keys within a region. <code>GenerateDataKey</code> always returns the
+         * data key encrypted and tied to the customer master key that will be used to
+         * decrypt it. There is no need to decrypt it twice. </note> <p>If you decide to
+         * use the optional <code>EncryptionContext</code> parameter, you must also store
+         * the context in full or at least store enough information along with the
+         * encrypted data to be able to reconstruct the context when submitting the
+         * ciphertext to the <code>Decrypt</code> API. It is a good practice to choose a
+         * context that you can reconstruct on the fly to better secure the ciphertext. For
+         * more information about how this parameter is used, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+         * Context</a>. </p> <p>To decrypt data, pass the encrypted data key to the
+         * <code>Decrypt</code> API. <code>Decrypt</code> uses the associated master key to
+         * decrypt the encrypted data key and returns it as plaintext. Use the plaintext
+         * data key to locally decrypt your data and then erase the key from memory. You
+         * must specify the encryption context, if any, that you specified when you
+         * generated the key. The encryption context is logged by CloudTrail, and you can
+         * use this log to help track the use of particular data. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GenerateDataKeyAsync(const Model::GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns a data key encrypted by a customer master key without the plaintext copy of that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can use this API to, for example, satisfy an audit requirement that an encrypted key be made available without exposing the plaintext copy of that key. </p>
-        */
+        /**
+         * <p>Returns a data key encrypted by a customer master key without the plaintext
+         * copy of that key. Otherwise, this API functions exactly like
+         * <a>GenerateDataKey</a>. You can use this API to, for example, satisfy an audit
+         * requirement that an encrypted key be made available without exposing the
+         * plaintext copy of that key. </p>
+         */
         virtual Model::GenerateDataKeyWithoutPlaintextOutcome GenerateDataKeyWithoutPlaintext(const Model::GenerateDataKeyWithoutPlaintextRequest& request) const;
 
-        /*
-            <p>Returns a data key encrypted by a customer master key without the plaintext copy of that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can use this API to, for example, satisfy an audit requirement that an encrypted key be made available without exposing the plaintext copy of that key. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns a data key encrypted by a customer master key without the plaintext
+         * copy of that key. Otherwise, this API functions exactly like
+         * <a>GenerateDataKey</a>. You can use this API to, for example, satisfy an audit
+         * requirement that an encrypted key be made available without exposing the
+         * plaintext copy of that key. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GenerateDataKeyWithoutPlaintextOutcomeCallable GenerateDataKeyWithoutPlaintextCallable(const Model::GenerateDataKeyWithoutPlaintextRequest& request) const;
 
-        /*
-            <p>Returns a data key encrypted by a customer master key without the plaintext copy of that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can use this API to, for example, satisfy an audit requirement that an encrypted key be made available without exposing the plaintext copy of that key. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns a data key encrypted by a customer master key without the plaintext
+         * copy of that key. Otherwise, this API functions exactly like
+         * <a>GenerateDataKey</a>. You can use this API to, for example, satisfy an audit
+         * requirement that an encrypted key be made available without exposing the
+         * plaintext copy of that key. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GenerateDataKeyWithoutPlaintextAsync(const Model::GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Generates an unpredictable byte string. </p>
-        */
+        /**
+         * <p>Generates an unpredictable byte string. </p>
+         */
         virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request) const;
 
-        /*
-            <p>Generates an unpredictable byte string. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Generates an unpredictable byte string. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const Model::GenerateRandomRequest& request) const;
 
-        /*
-            <p>Generates an unpredictable byte string. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Generates an unpredictable byte string. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GenerateRandomAsync(const Model::GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Retrieves a policy attached to the specified key.</p>
-        */
+        /**
+         * <p>Retrieves a policy attached to the specified key.</p>
+         */
         virtual Model::GetKeyPolicyOutcome GetKeyPolicy(const Model::GetKeyPolicyRequest& request) const;
 
-        /*
-            <p>Retrieves a policy attached to the specified key.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Retrieves a policy attached to the specified key.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetKeyPolicyOutcomeCallable GetKeyPolicyCallable(const Model::GetKeyPolicyRequest& request) const;
 
-        /*
-            <p>Retrieves a policy attached to the specified key.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Retrieves a policy attached to the specified key.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetKeyPolicyAsync(const Model::GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Retrieves a Boolean value that indicates whether key rotation is enabled for the specified key.
-        */
+        /**
+         * Retrieves a Boolean value that indicates whether key rotation is enabled for the
+         * specified key.
+         */
         virtual Model::GetKeyRotationStatusOutcome GetKeyRotationStatus(const Model::GetKeyRotationStatusRequest& request) const;
 
-        /*
-            Retrieves a Boolean value that indicates whether key rotation is enabled for the specified key.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Retrieves a Boolean value that indicates whether key rotation is enabled for the
+         * specified key.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetKeyRotationStatusOutcomeCallable GetKeyRotationStatusCallable(const Model::GetKeyRotationStatusRequest& request) const;
 
-        /*
-            Retrieves a Boolean value that indicates whether key rotation is enabled for the specified key.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Retrieves a Boolean value that indicates whether key rotation is enabled for the
+         * specified key.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetKeyRotationStatusAsync(const Model::GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Lists all of the key aliases in the account.</p>
-        */
+        /**
+         * <p>Lists all of the key aliases in the account.</p>
+         */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
-        /*
-            <p>Lists all of the key aliases in the account.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Lists all of the key aliases in the account.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request) const;
 
-        /*
-            <p>Lists all of the key aliases in the account.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Lists all of the key aliases in the account.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>List the grants for a specified key.</p>
-        */
+        /**
+         * <p>List the grants for a specified key.</p>
+         */
         virtual Model::ListGrantsOutcome ListGrants(const Model::ListGrantsRequest& request) const;
 
-        /*
-            <p>List the grants for a specified key.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>List the grants for a specified key.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListGrantsOutcomeCallable ListGrantsCallable(const Model::ListGrantsRequest& request) const;
 
-        /*
-            <p>List the grants for a specified key.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>List the grants for a specified key.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListGrantsAsync(const Model::ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Retrieves a list of policies attached to a key.</p>
-        */
+        /**
+         * <p>Retrieves a list of policies attached to a key.</p>
+         */
         virtual Model::ListKeyPoliciesOutcome ListKeyPolicies(const Model::ListKeyPoliciesRequest& request) const;
 
-        /*
-            <p>Retrieves a list of policies attached to a key.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Retrieves a list of policies attached to a key.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListKeyPoliciesOutcomeCallable ListKeyPoliciesCallable(const Model::ListKeyPoliciesRequest& request) const;
 
-        /*
-            <p>Retrieves a list of policies attached to a key.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Retrieves a list of policies attached to a key.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListKeyPoliciesAsync(const Model::ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Lists the customer master keys.</p>
-        */
+        /**
+         * <p>Lists the customer master keys.</p>
+         */
         virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request) const;
 
-        /*
-            <p>Lists the customer master keys.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Lists the customer master keys.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListKeysOutcomeCallable ListKeysCallable(const Model::ListKeysRequest& request) const;
 
-        /*
-            <p>Lists the customer master keys.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Lists the customer master keys.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListKeysAsync(const Model::ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::ListRetirableGrantsOutcome ListRetirableGrants(const Model::ListRetirableGrantsRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListRetirableGrantsOutcomeCallable ListRetirableGrantsCallable(const Model::ListRetirableGrantsRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListRetirableGrantsAsync(const Model::ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Attaches a policy to the specified key.</p>
-        */
+        /**
+         * <p>Attaches a policy to the specified key.</p>
+         */
         virtual Model::PutKeyPolicyOutcome PutKeyPolicy(const Model::PutKeyPolicyRequest& request) const;
 
-        /*
-            <p>Attaches a policy to the specified key.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Attaches a policy to the specified key.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutKeyPolicyOutcomeCallable PutKeyPolicyCallable(const Model::PutKeyPolicyRequest& request) const;
 
-        /*
-            <p>Attaches a policy to the specified key.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Attaches a policy to the specified key.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutKeyPolicyAsync(const Model::PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Encrypts data on the server side with a new customer master key without exposing the plaintext of the data on the client side. The data is first decrypted and then encrypted. This operation can also be used to change the encryption context of a ciphertext. </p> <p>Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code> on the source key and once as <code>ReEncryptTo</code> on the destination key. We therefore recommend that you include the <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit re-encryption from or to the key. The statement is included automatically when you authorize use of the key through the console but must be included manually when you set a policy by using the <a>PutKeyPolicy</a> function. </p>
-        */
+        /**
+         * <p>Encrypts data on the server side with a new customer master key without
+         * exposing the plaintext of the data on the client side. The data is first
+         * decrypted and then encrypted. This operation can also be used to change the
+         * encryption context of a ciphertext. </p> <p>Unlike other actions,
+         * <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code>
+         * on the source key and once as <code>ReEncryptTo</code> on the destination key.
+         * We therefore recommend that you include the
+         * <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit
+         * re-encryption from or to the key. The statement is included automatically when
+         * you authorize use of the key through the console but must be included manually
+         * when you set a policy by using the <a>PutKeyPolicy</a> function. </p>
+         */
         virtual Model::ReEncryptOutcome ReEncrypt(const Model::ReEncryptRequest& request) const;
 
-        /*
-            <p>Encrypts data on the server side with a new customer master key without exposing the plaintext of the data on the client side. The data is first decrypted and then encrypted. This operation can also be used to change the encryption context of a ciphertext. </p> <p>Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code> on the source key and once as <code>ReEncryptTo</code> on the destination key. We therefore recommend that you include the <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit re-encryption from or to the key. The statement is included automatically when you authorize use of the key through the console but must be included manually when you set a policy by using the <a>PutKeyPolicy</a> function. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Encrypts data on the server side with a new customer master key without
+         * exposing the plaintext of the data on the client side. The data is first
+         * decrypted and then encrypted. This operation can also be used to change the
+         * encryption context of a ciphertext. </p> <p>Unlike other actions,
+         * <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code>
+         * on the source key and once as <code>ReEncryptTo</code> on the destination key.
+         * We therefore recommend that you include the
+         * <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit
+         * re-encryption from or to the key. The statement is included automatically when
+         * you authorize use of the key through the console but must be included manually
+         * when you set a policy by using the <a>PutKeyPolicy</a> function. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ReEncryptOutcomeCallable ReEncryptCallable(const Model::ReEncryptRequest& request) const;
 
-        /*
-            <p>Encrypts data on the server side with a new customer master key without exposing the plaintext of the data on the client side. The data is first decrypted and then encrypted. This operation can also be used to change the encryption context of a ciphertext. </p> <p>Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code> on the source key and once as <code>ReEncryptTo</code> on the destination key. We therefore recommend that you include the <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit re-encryption from or to the key. The statement is included automatically when you authorize use of the key through the console but must be included manually when you set a policy by using the <a>PutKeyPolicy</a> function. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Encrypts data on the server side with a new customer master key without
+         * exposing the plaintext of the data on the client side. The data is first
+         * decrypted and then encrypted. This operation can also be used to change the
+         * encryption context of a ciphertext. </p> <p>Unlike other actions,
+         * <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code>
+         * on the source key and once as <code>ReEncryptTo</code> on the destination key.
+         * We therefore recommend that you include the
+         * <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit
+         * re-encryption from or to the key. The statement is included automatically when
+         * you authorize use of the key through the console but must be included manually
+         * when you set a policy by using the <a>PutKeyPolicy</a> function. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ReEncryptAsync(const Model::ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Retires a grant. You can retire a grant when you're done using it to clean up. You should revoke a grant when you intend to actively deny operations that depend on it. The following are permitted to call this API: <ul> <li>The account that created the grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire must be identified by its grant token or by a combination of the key ARN and the grant ID. A grant token is a unique variable-length base64-encoded string. A grant ID is a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code> function. </p>
-        */
+        /**
+         * <p>Retires a grant. You can retire a grant when you're done using it to clean
+         * up. You should revoke a grant when you intend to actively deny operations that
+         * depend on it. The following are permitted to call this API: <ul> <li>The account
+         * that created the grant</li> <li>The <code>RetiringPrincipal</code>, if
+         * present</li> <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code>
+         * is a grantee operation</li> </ul> The grant to retire must be identified by its
+         * grant token or by a combination of the key ARN and the grant ID. A grant token
+         * is a unique variable-length base64-encoded string. A grant ID is a 64 character
+         * unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+         * function. </p>
+         */
         virtual Model::RetireGrantOutcome RetireGrant(const Model::RetireGrantRequest& request) const;
 
-        /*
-            <p>Retires a grant. You can retire a grant when you're done using it to clean up. You should revoke a grant when you intend to actively deny operations that depend on it. The following are permitted to call this API: <ul> <li>The account that created the grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire must be identified by its grant token or by a combination of the key ARN and the grant ID. A grant token is a unique variable-length base64-encoded string. A grant ID is a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code> function. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Retires a grant. You can retire a grant when you're done using it to clean
+         * up. You should revoke a grant when you intend to actively deny operations that
+         * depend on it. The following are permitted to call this API: <ul> <li>The account
+         * that created the grant</li> <li>The <code>RetiringPrincipal</code>, if
+         * present</li> <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code>
+         * is a grantee operation</li> </ul> The grant to retire must be identified by its
+         * grant token or by a combination of the key ARN and the grant ID. A grant token
+         * is a unique variable-length base64-encoded string. A grant ID is a 64 character
+         * unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+         * function. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RetireGrantOutcomeCallable RetireGrantCallable(const Model::RetireGrantRequest& request) const;
 
-        /*
-            <p>Retires a grant. You can retire a grant when you're done using it to clean up. You should revoke a grant when you intend to actively deny operations that depend on it. The following are permitted to call this API: <ul> <li>The account that created the grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire must be identified by its grant token or by a combination of the key ARN and the grant ID. A grant token is a unique variable-length base64-encoded string. A grant ID is a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code> function. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Retires a grant. You can retire a grant when you're done using it to clean
+         * up. You should revoke a grant when you intend to actively deny operations that
+         * depend on it. The following are permitted to call this API: <ul> <li>The account
+         * that created the grant</li> <li>The <code>RetiringPrincipal</code>, if
+         * present</li> <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code>
+         * is a grantee operation</li> </ul> The grant to retire must be identified by its
+         * grant token or by a combination of the key ARN and the grant ID. A grant token
+         * is a unique variable-length base64-encoded string. A grant ID is a 64 character
+         * unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+         * function. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RetireGrantAsync(const Model::RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Revokes a grant. You can revoke a grant to actively deny operations that depend on it.
-        */
+        /**
+         * Revokes a grant. You can revoke a grant to actively deny operations that depend
+         * on it.
+         */
         virtual Model::RevokeGrantOutcome RevokeGrant(const Model::RevokeGrantRequest& request) const;
 
-        /*
-            Revokes a grant. You can revoke a grant to actively deny operations that depend on it.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Revokes a grant. You can revoke a grant to actively deny operations that depend
+         * on it.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RevokeGrantOutcomeCallable RevokeGrantCallable(const Model::RevokeGrantRequest& request) const;
 
-        /*
-            Revokes a grant. You can revoke a grant to actively deny operations that depend on it.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Revokes a grant. You can revoke a grant to actively deny operations that depend
+         * on it.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RevokeGrantAsync(const Model::RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::ScheduleKeyDeletionOutcome ScheduleKeyDeletion(const Model::ScheduleKeyDeletionRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ScheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Updates an alias to map it to a different key.</p> <p>An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped from an existing key without changing the properties of the key. </p> <p>An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p>
-        */
+        /**
+         * <p>Updates an alias to map it to a different key.</p> <p>An alias is not a
+         * property of a key. Therefore, an alias can be mapped to and unmapped from an
+         * existing key without changing the properties of the key. </p> <p>An alias name
+         * can contain only alphanumeric characters, forward slashes (/), underscores (_),
+         * and dashes (-). An alias must start with the word "alias" followed by a forward
+         * slash (alias/). An alias that begins with "aws" after the forward slash
+         * (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and
+         * the key it is mapped to must be in the same AWS account and the same region.</p>
+         */
         virtual Model::UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest& request) const;
 
-        /*
-            <p>Updates an alias to map it to a different key.</p> <p>An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped from an existing key without changing the properties of the key. </p> <p>An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Updates an alias to map it to a different key.</p> <p>An alias is not a
+         * property of a key. Therefore, an alias can be mapped to and unmapped from an
+         * existing key without changing the properties of the key. </p> <p>An alias name
+         * can contain only alphanumeric characters, forward slashes (/), underscores (_),
+         * and dashes (-). An alias must start with the word "alias" followed by a forward
+         * slash (alias/). An alias that begins with "aws" after the forward slash
+         * (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and
+         * the key it is mapped to must be in the same AWS account and the same region.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request) const;
 
-        /*
-            <p>Updates an alias to map it to a different key.</p> <p>An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped from an existing key without changing the properties of the key. </p> <p>An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Updates an alias to map it to a different key.</p> <p>An alias is not a
+         * property of a key. Therefore, an alias can be mapped to and unmapped from an
+         * existing key without changing the properties of the key. </p> <p>An alias name
+         * can contain only alphanumeric characters, forward slashes (/), underscores (_),
+         * and dashes (-). An alias must start with the word "alias" followed by a forward
+         * slash (alias/). An alias that begins with "aws" after the forward slash
+         * (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>The alias and
+         * the key it is mapped to must be in the same AWS account and the same region.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Updates the description of a key.</p>
-        */
+        /**
+         * <p>Updates the description of a key.</p>
+         */
         virtual Model::UpdateKeyDescriptionOutcome UpdateKeyDescription(const Model::UpdateKeyDescriptionRequest& request) const;
 
-        /*
-            <p>Updates the description of a key.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Updates the description of a key.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateKeyDescriptionOutcomeCallable UpdateKeyDescriptionCallable(const Model::UpdateKeyDescriptionRequest& request) const;
 
-        /*
-            <p>Updates the description of a key.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Updates the description of a key.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateKeyDescriptionAsync(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
-    /**Async helpers**/
+        /**Async helpers**/
         void CancelKeyDeletionAsyncHelper(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGrantAsyncHelper(const Model::CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

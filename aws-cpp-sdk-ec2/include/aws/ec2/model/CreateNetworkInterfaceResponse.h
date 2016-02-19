@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateNetworkInterfaceResponse
   {
   public:
@@ -43,29 +40,29 @@ namespace Model
     CreateNetworkInterfaceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateNetworkInterfaceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the network interface.</p>
-    */
+    /**
+     * <p>Information about the network interface.</p>
+     */
     inline const NetworkInterface& GetNetworkInterface() const{ return m_networkInterface; }
 
-    /*
-     <p>Information about the network interface.</p>
-    */
+    /**
+     * <p>Information about the network interface.</p>
+     */
     inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterface = value; }
 
-    /*
-     <p>Information about the network interface.</p>
-    */
+    /**
+     * <p>Information about the network interface.</p>
+     */
     inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterface = value; }
 
-    /*
-     <p>Information about the network interface.</p>
-    */
+    /**
+     * <p>Information about the network interface.</p>
+     */
     inline CreateNetworkInterfaceResponse& WithNetworkInterface(const NetworkInterface& value) { SetNetworkInterface(value); return *this;}
 
-    /*
-     <p>Information about the network interface.</p>
-    */
+    /**
+     * <p>Information about the network interface.</p>
+     */
     inline CreateNetworkInterfaceResponse& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(value); return *this;}
 
     

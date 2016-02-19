@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API TopicConfigurationDeprecated
   {
   public:
@@ -85,39 +83,46 @@ namespace Model
     
     inline TopicConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline const Aws::String& GetTopic() const{ return m_topic; }
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = value; }
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline TopicConfigurationDeprecated& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline TopicConfigurationDeprecated& WithTopic(Aws::String&& value) { SetTopic(value); return *this;}
 
-    /*
-     Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
-    */
+    /**
+     * Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.
+     */
     inline TopicConfigurationDeprecated& WithTopic(const char* value) { SetTopic(value); return *this;}
 
   private:

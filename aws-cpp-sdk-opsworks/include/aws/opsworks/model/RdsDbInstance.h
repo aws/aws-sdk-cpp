@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Describes an Amazon RDS instance.</p>
-  */
+
+  /**
+   * <p>Describes an Amazon RDS instance.</p>
+   */
   class AWS_OPSWORKS_API RdsDbInstance
   {
   public:
@@ -40,299 +41,315 @@ namespace Model
     RdsDbInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline RdsDbInstance& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline RdsDbInstance& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(value); return *this;}
 
-    /*
-     <p>The instance's ARN.</p>
-    */
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline RdsDbInstance& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline const Aws::String& GetDbInstanceIdentifier() const{ return m_dbInstanceIdentifier; }
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline void SetDbInstanceIdentifier(const Aws::String& value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier = value; }
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline void SetDbInstanceIdentifier(Aws::String&& value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier = value; }
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline void SetDbInstanceIdentifier(const char* value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier.assign(value); }
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline RdsDbInstance& WithDbInstanceIdentifier(const Aws::String& value) { SetDbInstanceIdentifier(value); return *this;}
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline RdsDbInstance& WithDbInstanceIdentifier(Aws::String&& value) { SetDbInstanceIdentifier(value); return *this;}
 
-    /*
-     <p>The DB instance identifier.</p>
-    */
+    /**
+     * <p>The DB instance identifier.</p>
+     */
     inline RdsDbInstance& WithDbInstanceIdentifier(const char* value) { SetDbInstanceIdentifier(value); return *this;}
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline RdsDbInstance& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline RdsDbInstance& WithDbUser(Aws::String&& value) { SetDbUser(value); return *this;}
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline RdsDbInstance& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline void SetDbPassword(Aws::String&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline void SetDbPassword(const char* value) { m_dbPasswordHasBeenSet = true; m_dbPassword.assign(value); }
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline RdsDbInstance& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline RdsDbInstance& WithDbPassword(Aws::String&& value) { SetDbPassword(value); return *this;}
 
-    /*
-     <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    */
+    /**
+     * <p>AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
+     */
     inline RdsDbInstance& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline RdsDbInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline RdsDbInstance& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
 
-    /*
-     <p>The instance's AWS region.</p>
-    */
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline RdsDbInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline RdsDbInstance& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline RdsDbInstance& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
-    /*
-     <p>The instance's address.</p>
-    */
+    /**
+     * <p>The instance's address.</p>
+     */
     inline RdsDbInstance& WithAddress(const char* value) { SetAddress(value); return *this;}
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline RdsDbInstance& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline RdsDbInstance& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
-    /*
-     <p>The instance's database engine.</p>
-    */
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline RdsDbInstance& WithEngine(const char* value) { SetEngine(value); return *this;}
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline RdsDbInstance& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline RdsDbInstance& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The ID of the stack that the instance is registered with.</p>
-    */
+    /**
+     * <p>The ID of the stack that the instance is registered with.</p>
+     */
     inline RdsDbInstance& WithStackId(const char* value) { SetStackId(value); return *this;}
 
-    /*
-     <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance. AWS OpsWorks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance and then register it again.</p>
-    */
+    /**
+     * <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon
+     * RDS instance. AWS OpsWorks attempts to discover the instance only once. If this
+     * value is set to <code>true</code>, you must deregister the instance and then
+     * register it again.</p>
+     */
     inline bool GetMissingOnRds() const{ return m_missingOnRds; }
 
-    /*
-     <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance. AWS OpsWorks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance and then register it again.</p>
-    */
+    /**
+     * <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon
+     * RDS instance. AWS OpsWorks attempts to discover the instance only once. If this
+     * value is set to <code>true</code>, you must deregister the instance and then
+     * register it again.</p>
+     */
     inline void SetMissingOnRds(bool value) { m_missingOnRdsHasBeenSet = true; m_missingOnRds = value; }
 
-    /*
-     <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance. AWS OpsWorks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance and then register it again.</p>
-    */
+    /**
+     * <p>Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon
+     * RDS instance. AWS OpsWorks attempts to discover the instance only once. If this
+     * value is set to <code>true</code>, you must deregister the instance and then
+     * register it again.</p>
+     */
     inline RdsDbInstance& WithMissingOnRds(bool value) { SetMissingOnRds(value); return *this;}
 
   private:

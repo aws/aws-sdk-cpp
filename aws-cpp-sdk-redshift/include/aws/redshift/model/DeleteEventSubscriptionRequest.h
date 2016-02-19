@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_REDSHIFT_API DeleteEventSubscriptionRequest : public RedshiftRequest
   {
   public:
@@ -34,39 +34,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
 
-    /*
-     <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    */
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
   private:

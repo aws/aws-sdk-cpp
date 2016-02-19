@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CopySnapshotResponse
   {
   public:
@@ -43,39 +40,39 @@ namespace Model
     CopySnapshotResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CopySnapshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = value; }
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline CopySnapshotResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline CopySnapshotResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
 
-    /*
-     <p>The ID of the new snapshot.</p>
-    */
+    /**
+     * <p>The ID of the new snapshot.</p>
+     */
     inline CopySnapshotResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
     

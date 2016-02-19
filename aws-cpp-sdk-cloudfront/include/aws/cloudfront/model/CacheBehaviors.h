@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A complex type that contains zero or more CacheBehavior elements.
-  */
+
+  /**
+   * A complex type that contains zero or more CacheBehavior elements.
+   */
   class AWS_CLOUDFRONT_API CacheBehaviors
   {
   public:
@@ -42,54 +43,61 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The number of cache behaviors for this distribution.
-    */
+    /**
+     * The number of cache behaviors for this distribution.
+     */
     inline long GetQuantity() const{ return m_quantity; }
 
-    /*
-     The number of cache behaviors for this distribution.
-    */
+    /**
+     * The number of cache behaviors for this distribution.
+     */
     inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
-    /*
-     The number of cache behaviors for this distribution.
-    */
+    /**
+     * The number of cache behaviors for this distribution.
+     */
     inline CacheBehaviors& WithQuantity(long value) { SetQuantity(value); return *this;}
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline const Aws::Vector<CacheBehavior>& GetItems() const{ return m_items; }
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline void SetItems(const Aws::Vector<CacheBehavior>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline void SetItems(Aws::Vector<CacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline CacheBehaviors& WithItems(const Aws::Vector<CacheBehavior>& value) { SetItems(value); return *this;}
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline CacheBehaviors& WithItems(Aws::Vector<CacheBehavior>&& value) { SetItems(value); return *this;}
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline CacheBehaviors& AddItems(const CacheBehavior& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.
-    */
+    /**
+     * Optional: A complex type that contains cache behaviors for this distribution. If
+     * Quantity is 0, you can omit Items.
+     */
     inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:

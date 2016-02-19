@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get deployment group operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get deployment group operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetDeploymentGroupResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    /**
+     * <p>Information about the deployment group.</p>
+     */
     inline const DeploymentGroupInfo& GetDeploymentGroupInfo() const{ return m_deploymentGroupInfo; }
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    /**
+     * <p>Information about the deployment group.</p>
+     */
     inline void SetDeploymentGroupInfo(const DeploymentGroupInfo& value) { m_deploymentGroupInfo = value; }
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    /**
+     * <p>Information about the deployment group.</p>
+     */
     inline void SetDeploymentGroupInfo(DeploymentGroupInfo&& value) { m_deploymentGroupInfo = value; }
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    /**
+     * <p>Information about the deployment group.</p>
+     */
     inline GetDeploymentGroupResult& WithDeploymentGroupInfo(const DeploymentGroupInfo& value) { SetDeploymentGroupInfo(value); return *this;}
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    /**
+     * <p>Information about the deployment group.</p>
+     */
     inline GetDeploymentGroupResult& WithDeploymentGroupInfo(DeploymentGroupInfo&& value) { SetDeploymentGroupInfo(value); return *this;}
 
   private:

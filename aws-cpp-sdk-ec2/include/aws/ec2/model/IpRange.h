@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an IP range.</p>
-  */
+
+  /**
+   * <p>Describes an IP range.</p>
+   */
   class AWS_EC2_API IpRange
   {
   public:
@@ -43,39 +44,46 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline IpRange& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline IpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
 
-    /*
-     <p>The CIDR range. You can either specify a CIDR range or a source security group, not both.</p>
-    */
+    /**
+     * <p>The CIDR range. You can either specify a CIDR range or a source security
+     * group, not both.</p>
+     */
     inline IpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
   private:

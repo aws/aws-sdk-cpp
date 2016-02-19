@@ -18,9 +18,11 @@ namespace $metadata.namespace
 namespace Model
 {
 #set($classNameRef = "${typeInfo.className}&")
-  /*
-    $shape.documentation
-  */
+#if($shape.documentation)
+  /**
+   * $shape.documentation
+   */
+#end
   class $typeInfo.exportValue $typeInfo.className
   {
   public:

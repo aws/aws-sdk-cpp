@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the S3 bucket for the disk image.</p>
-  */
+
+  /**
+   * <p>Describes the S3 bucket for the disk image.</p>
+   */
   class AWS_EC2_API UserBucket
   {
   public:
@@ -43,74 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline UserBucket& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline UserBucket& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p>The name of the S3 bucket where the disk image is located.</p>
-    */
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline UserBucket& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline UserBucket& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline UserBucket& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
 
-    /*
-     <p>The key for the disk image.</p>
-    */
+    /**
+     * <p>The key for the disk image.</p>
+     */
     inline UserBucket& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
   private:

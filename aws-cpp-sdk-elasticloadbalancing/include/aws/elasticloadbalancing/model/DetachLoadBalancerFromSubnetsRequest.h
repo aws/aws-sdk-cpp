@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ELASTICLOADBALANCING_API DetachLoadBalancerFromSubnetsRequest : public ElasticLoadBalancingRequest
   {
   public:
@@ -34,79 +34,79 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the subnets.</p>
-    */
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
     inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
   private:

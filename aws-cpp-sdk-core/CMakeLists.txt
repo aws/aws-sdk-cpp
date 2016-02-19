@@ -294,6 +294,9 @@ target_include_directories(aws-cpp-sdk-core PUBLIC
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CRYPTO_LIBS} ${CLIENT_LIBS})
 
+
+target_compile_definitions(aws-cpp-sdk-core PUBLIC -DJSON_USE_EXCEPTION=0)
+
 # If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
 # We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
 # allocate in one DLLs heap while freeing in another (which will lead to runtime crashes)
@@ -302,6 +305,33 @@ if(("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "1") OR (BUILD_SHARED_LIBS AND NOT ("
     message(STATUS "Custom memory management enabled; stl objects now using custom allocators")
 else()
     message(STATUS "Custom memory management disabled")
+endif()
+
+if(NOT PLATFORM_WINDOWS)
+    target_compile_options(aws-cpp-sdk-core PUBLIC -std=c++11)
+    if(NOT BUILD_SHARED_LIBS)
+        target_compile_options(aws-cpp-sdk-core PUBLIC -fPIC)
+    endif()
+
+    if(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
+        # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
+        # We also have some nested comments in the auto-generated member comments so turn that off as well
+       target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-unused-private-field -Wno-comment)
+    endif()
+elseif(MSVC)
+    target_compile_options(aws-cpp-sdk-core PRIVATE /bigobj)
+
+    # warnings as errors, max warning level (4)
+    if(NOT CMAKE_CXX_FLAGS MATCHES "/WX")
+        target_compile_options(aws-cpp-sdk-core PRIVATE /WX)
+    endif()
+
+    # taken from http://stackoverflow.com/questions/2368811/how-to-set-warning-level-in-cmake
+    if(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
+        string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    else()
+        target_compile_options(aws-cpp-sdk-core PRIVATE /W4)
+    endif()
 endif()
 
 install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}

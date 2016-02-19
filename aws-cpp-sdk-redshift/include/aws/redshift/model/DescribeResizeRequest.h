@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_REDSHIFT_API DescribeResizeRequest : public RedshiftRequest
   {
   public:
@@ -34,39 +34,53 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline DescribeResizeRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline DescribeResizeRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
-    /*
-     <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
-    */
+    /**
+     * <p> The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive. </p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned. </p>
+     */
     inline DescribeResizeRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:

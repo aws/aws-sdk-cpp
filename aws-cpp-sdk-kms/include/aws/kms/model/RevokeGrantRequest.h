@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace KMS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_KMS_API RevokeGrantRequest : public KMSRequest
   {
   public:
@@ -35,74 +35,109 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline RevokeGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline RevokeGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key associated with the grant.
+     * This value can be a globally unique identifier or the fully specified ARN to a
+     * key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline RevokeGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline RevokeGrantRequest& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline RevokeGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
 
-    /*
-     <p>Identifier of the grant to be revoked.</p>
-    */
+    /**
+     * <p>Identifier of the grant to be revoked.</p>
+     */
     inline RevokeGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
   private:

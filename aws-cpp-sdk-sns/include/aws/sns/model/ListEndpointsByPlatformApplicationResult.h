@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SNS
 {
 namespace Model
 {
-  /*
-    <p>Response for ListEndpointsByPlatformApplication action.</p>
-  */
+  /**
+   * <p>Response for ListEndpointsByPlatformApplication action.</p>
+   */
   class AWS_SNS_API ListEndpointsByPlatformApplicationResult
   {
   public:
@@ -44,79 +44,86 @@ namespace Model
     ListEndpointsByPlatformApplicationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListEndpointsByPlatformApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline void SetEndpoints(const Aws::Vector<Aws::String>& value) { m_endpoints = value; }
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline void SetEndpoints(Aws::Vector<Aws::String>&& value) { m_endpoints = value; }
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& WithEndpoints(const Aws::Vector<Aws::String>& value) { SetEndpoints(value); return *this;}
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& WithEndpoints(Aws::Vector<Aws::String>&& value) { SetEndpoints(value); return *this;}
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const Aws::String& value) { m_endpoints.push_back(value); return *this; }
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(Aws::String&& value) { m_endpoints.push_back(value); return *this; }
 
-    /*
-     <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    */
+    /**
+     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const char* value) { m_endpoints.push_back(value); return *this; }
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    */
+    /**
+     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
+     * action if additional records are available after the first page results.</p>
+     */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

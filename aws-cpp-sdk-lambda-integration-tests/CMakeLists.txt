@@ -12,11 +12,6 @@ project(aws-cpp-sdk-lambda-integration-tests)
     ${AWS_LAMBDA_SRC}
   )
 
-if(NOT MSVC)
-  add_definitions(-std=c++0x)
-endif()
-
-
 set(AWS_LAMBDA_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-iam/include/"

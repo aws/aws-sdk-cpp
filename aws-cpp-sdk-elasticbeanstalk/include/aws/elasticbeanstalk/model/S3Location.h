@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>A specification of a location in Amazon S3.</p>
-  */
+
+  /**
+   * <p>A specification of a location in Amazon S3.</p>
+   */
   class AWS_ELASTICBEANSTALK_API S3Location
   {
   public:
@@ -43,74 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline S3Location& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline S3Location& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p>The Amazon S3 bucket where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline S3Location& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline S3Location& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline S3Location& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
 
-    /*
-     <p>The Amazon S3 key where the data is located.</p>
-    */
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
     inline S3Location& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
   private:

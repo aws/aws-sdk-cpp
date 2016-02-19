@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a batch get applications operation.</p>
-  */
+  /**
+   * <p>Represents the output of a batch get applications operation.</p>
+   */
   class AWS_CODEDEPLOY_API BatchGetApplicationsResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     BatchGetApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     BatchGetApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline const Aws::Vector<ApplicationInfo>& GetApplicationsInfo() const{ return m_applicationsInfo; }
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline void SetApplicationsInfo(const Aws::Vector<ApplicationInfo>& value) { m_applicationsInfo = value; }
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline void SetApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { m_applicationsInfo = value; }
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline BatchGetApplicationsResult& WithApplicationsInfo(const Aws::Vector<ApplicationInfo>& value) { SetApplicationsInfo(value); return *this;}
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline BatchGetApplicationsResult& WithApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { SetApplicationsInfo(value); return *this;}
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline BatchGetApplicationsResult& AddApplicationsInfo(const ApplicationInfo& value) { m_applicationsInfo.push_back(value); return *this; }
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    /**
+     * <p>Information about the applications.</p>
+     */
     inline BatchGetApplicationsResult& AddApplicationsInfo(ApplicationInfo&& value) { m_applicationsInfo.push_back(value); return *this; }
 
   private:

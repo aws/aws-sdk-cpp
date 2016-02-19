@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p> Contains the output from the <a>DescribeClusterParameterGroups</a> action. </p>
-  */
+  /**
+   * <p> Contains the output from the <a>DescribeClusterParameterGroups</a> action.
+   * </p>
+   */
   class AWS_REDSHIFT_API DescribeClusterParameterGroupsResult
   {
   public:
@@ -45,74 +46,116 @@ namespace Model
     DescribeClusterParameterGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeClusterParameterGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeClusterParameterGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeClusterParameterGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeClusterParameterGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline const Aws::Vector<ClusterParameterGroup>& GetParameterGroups() const{ return m_parameterGroups; }
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline void SetParameterGroups(const Aws::Vector<ClusterParameterGroup>& value) { m_parameterGroups = value; }
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline void SetParameterGroups(Aws::Vector<ClusterParameterGroup>&& value) { m_parameterGroups = value; }
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline DescribeClusterParameterGroupsResult& WithParameterGroups(const Aws::Vector<ClusterParameterGroup>& value) { SetParameterGroups(value); return *this;}
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline DescribeClusterParameterGroupsResult& WithParameterGroups(Aws::Vector<ClusterParameterGroup>&& value) { SetParameterGroups(value); return *this;}
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline DescribeClusterParameterGroupsResult& AddParameterGroups(const ClusterParameterGroup& value) { m_parameterGroups.push_back(value); return *this; }
 
-    /*
-     <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster parameter group. </p>
-    */
+    /**
+     * <p> A list of <a>ClusterParameterGroup</a> instances. Each instance describes
+     * one cluster parameter group. </p>
+     */
     inline DescribeClusterParameterGroupsResult& AddParameterGroups(ClusterParameterGroup&& value) { m_parameterGroups.push_back(value); return *this; }
 
     

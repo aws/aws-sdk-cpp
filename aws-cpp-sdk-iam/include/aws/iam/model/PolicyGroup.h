@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,15 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
-  */
+
+  /**
+   * <p>Contains information about a group that a managed policy is attached to.</p>
+   * <p>This data type is used as a response element in the
+   * <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed
+   * policies, refer to <a
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+   * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
+   */
   class AWS_IAM_API PolicyGroup
   {
   public:
@@ -43,39 +49,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline PolicyGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline PolicyGroup& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name (friendly name, not ARN) identifying the group.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline PolicyGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:

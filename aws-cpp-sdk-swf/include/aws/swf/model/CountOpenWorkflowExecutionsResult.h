@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a></p>
-  */
+  /**
+   * <p>Contains the count of workflow executions returned from
+   * <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a></p>
+   */
   class AWS_SWF_API CountOpenWorkflowExecutionsResult
   {
   public:
@@ -41,34 +42,37 @@ namespace Model
     CountOpenWorkflowExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CountOpenWorkflowExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The number of workflow executions.</p>
-    */
+    /**
+     * <p>The number of workflow executions.</p>
+     */
     inline long GetCount() const{ return m_count; }
 
-    /*
-     <p>The number of workflow executions.</p>
-    */
+    /**
+     * <p>The number of workflow executions.</p>
+     */
     inline void SetCount(long value) { m_count = value; }
 
-    /*
-     <p>The number of workflow executions.</p>
-    */
+    /**
+     * <p>The number of workflow executions.</p>
+     */
     inline CountOpenWorkflowExecutionsResult& WithCount(long value) { SetCount(value); return *this;}
 
-    /*
-     <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
-    */
+    /**
+     * <p>If set to true, indicates that the actual count was more than the maximum
+     * supported by this API and the count returned is the truncated value.</p>
+     */
     inline bool GetTruncated() const{ return m_truncated; }
 
-    /*
-     <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
-    */
+    /**
+     * <p>If set to true, indicates that the actual count was more than the maximum
+     * supported by this API and the count returned is the truncated value.</p>
+     */
     inline void SetTruncated(bool value) { m_truncated = value; }
 
-    /*
-     <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
-    */
+    /**
+     * <p>If set to true, indicates that the actual count was more than the maximum
+     * supported by this API and the count returned is the truncated value.</p>
+     */
     inline CountOpenWorkflowExecutionsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes whether a VPC is enabled for ClassicLink.</p>
-  */
+
+  /**
+   * <p>Describes whether a VPC is enabled for ClassicLink.</p>
+   */
   class AWS_EC2_API VpcClassicLink
   {
   public:
@@ -45,89 +46,89 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline VpcClassicLink& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline VpcClassicLink& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline VpcClassicLink& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-    /*
-     <p>Indicates whether the VPC is enabled for ClassicLink.</p>
-    */
+    /**
+     * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
+     */
     inline bool GetClassicLinkEnabled() const{ return m_classicLinkEnabled; }
 
-    /*
-     <p>Indicates whether the VPC is enabled for ClassicLink.</p>
-    */
+    /**
+     * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
+     */
     inline void SetClassicLinkEnabled(bool value) { m_classicLinkEnabledHasBeenSet = true; m_classicLinkEnabled = value; }
 
-    /*
-     <p>Indicates whether the VPC is enabled for ClassicLink.</p>
-    */
+    /**
+     * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
+     */
     inline VpcClassicLink& WithClassicLinkEnabled(bool value) { SetClassicLinkEnabled(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline VpcClassicLink& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline VpcClassicLink& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline VpcClassicLink& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>Any tags assigned to the VPC.</p>
-    */
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
     inline VpcClassicLink& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API PutScalingPolicyResult
   {
   public:
@@ -43,39 +40,39 @@ namespace Model
     PutScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     PutScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline const Aws::String& GetPolicyARN() const{ return m_policyARN; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline void SetPolicyARN(const Aws::String& value) { m_policyARN = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline void SetPolicyARN(Aws::String&& value) { m_policyARN = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline void SetPolicyARN(const char* value) { m_policyARN.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline PutScalingPolicyResult& WithPolicyARN(const Aws::String& value) { SetPolicyARN(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the policy.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline PutScalingPolicyResult& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
 
     

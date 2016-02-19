@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a tag.</p>
-  */
+
+  /**
+   * <p>Describes a tag.</p>
+   */
   class AWS_EC2_API Tag
   {
   public:
@@ -43,74 +44,95 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></p>
-    */
+    /**
+     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code></p>
+     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
-    */
+    /**
+     * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
+     * accept a maximum of 255 Unicode characters.</p>
+     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

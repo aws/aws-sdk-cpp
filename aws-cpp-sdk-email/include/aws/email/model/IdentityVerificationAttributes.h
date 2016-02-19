@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents the verification attributes of a single identity.</p>
-  */
+
+  /**
+   * <p>Represents the verification attributes of a single identity.</p>
+   */
   class AWS_SES_API IdentityVerificationAttributes
   {
   public:
@@ -44,64 +45,76 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    */
+    /**
+     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
+     * "TemporaryFailure".</p>
+     */
     inline const VerificationStatus& GetVerificationStatus() const{ return m_verificationStatus; }
 
-    /*
-     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    */
+    /**
+     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
+     * "TemporaryFailure".</p>
+     */
     inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
 
-    /*
-     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    */
+    /**
+     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
+     * "TemporaryFailure".</p>
+     */
     inline void SetVerificationStatus(VerificationStatus&& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
 
-    /*
-     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    */
+    /**
+     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
+     * "TemporaryFailure".</p>
+     */
     inline IdentityVerificationAttributes& WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
 
-    /*
-     <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    */
+    /**
+     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
+     * "TemporaryFailure".</p>
+     */
     inline IdentityVerificationAttributes& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(value); return *this;}
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = value; }
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline void SetVerificationToken(Aws::String&& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = value; }
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline void SetVerificationToken(const char* value) { m_verificationTokenHasBeenSet = true; m_verificationToken.assign(value); }
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline IdentityVerificationAttributes& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline IdentityVerificationAttributes& WithVerificationToken(Aws::String&& value) { SetVerificationToken(value); return *this;}
 
-    /*
-     <p>The verification token for a domain identity. Null for email address identities.</p>
-    */
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
     inline IdentityVerificationAttributes& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
 
   private:

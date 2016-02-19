@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of <a>DescribeDeliveryStream</a>.</p>
-  */
+  /**
+   * <p>Contains the output of <a>DescribeDeliveryStream</a>.</p>
+   */
   class AWS_FIREHOSE_API DescribeDeliveryStreamResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     DescribeDeliveryStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeDeliveryStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the delivery stream.</p>
-    */
+    /**
+     * <p>Information about the delivery stream.</p>
+     */
     inline const DeliveryStreamDescription& GetDeliveryStreamDescription() const{ return m_deliveryStreamDescription; }
 
-    /*
-     <p>Information about the delivery stream.</p>
-    */
+    /**
+     * <p>Information about the delivery stream.</p>
+     */
     inline void SetDeliveryStreamDescription(const DeliveryStreamDescription& value) { m_deliveryStreamDescription = value; }
 
-    /*
-     <p>Information about the delivery stream.</p>
-    */
+    /**
+     * <p>Information about the delivery stream.</p>
+     */
     inline void SetDeliveryStreamDescription(DeliveryStreamDescription&& value) { m_deliveryStreamDescription = value; }
 
-    /*
-     <p>Information about the delivery stream.</p>
-    */
+    /**
+     * <p>Information about the delivery stream.</p>
+     */
     inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(const DeliveryStreamDescription& value) { SetDeliveryStreamDescription(value); return *this;}
 
-    /*
-     <p>Information about the delivery stream.</p>
-    */
+    /**
+     * <p>Information about the delivery stream.</p>
+     */
     inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(DeliveryStreamDescription&& value) { SetDeliveryStreamDescription(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the name and identifier of a pipeline.</p>
-  */
+
+  /**
+   * <p>Contains the name and identifier of a pipeline.</p>
+   */
   class AWS_DATAPIPELINE_API PipelineIdName
   {
   public:
@@ -40,74 +41,81 @@ namespace Model
     PipelineIdName& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline PipelineIdName& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline PipelineIdName& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    */
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline PipelineIdName& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline PipelineIdName& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline PipelineIdName& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the pipeline.</p>
-    */
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline PipelineIdName& WithName(const char* value) { SetName(value); return *this;}
 
   private:

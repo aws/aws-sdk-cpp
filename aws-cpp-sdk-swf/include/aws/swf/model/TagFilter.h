@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
-  */
+
+  /**
+   * <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
+   */
   class AWS_SWF_API TagFilter
   {
   public:
@@ -40,39 +41,46 @@ namespace Model
     TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline const Aws::String& GetTag() const{ return m_tag; }
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline void SetTag(const Aws::String& value) { m_tagHasBeenSet = true; m_tag = value; }
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline void SetTag(Aws::String&& value) { m_tagHasBeenSet = true; m_tag = value; }
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline void SetTag(const char* value) { m_tagHasBeenSet = true; m_tag.assign(value); }
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline TagFilter& WithTag(const Aws::String& value) { SetTag(value); return *this;}
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline TagFilter& WithTag(Aws::String&& value) { SetTag(value); return *this;}
 
-    /*
-     <p><b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
-    */
+    /**
+     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
+     * for it to meet the filter criteria.</p>
+     */
     inline TagFilter& WithTag(const char* value) { SetTag(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CognitoIdentity
 namespace Model
 {
 
-  /*
-    <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
-  */
+  /**
+   * <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
+   */
   class AWS_COGNITOIDENTITY_API LookupDeveloperIdentityRequest : public CognitoIdentityRequest
   {
   public:
@@ -36,159 +36,208 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>An identity pool ID in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline const Aws::String& GetDeveloperUserIdentifier() const{ return m_developerUserIdentifier; }
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline void SetDeveloperUserIdentifier(const Aws::String& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline void SetDeveloperUserIdentifier(Aws::String&& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline void SetDeveloperUserIdentifier(const char* value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier.assign(value); }
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(const Aws::String& value) { SetDeveloperUserIdentifier(value); return *this;}
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(Aws::String&& value) { SetDeveloperUserIdentifier(value); return *this;}
 
-    /*
-     <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    */
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a user.
+     * Typically, a developer identity provider would issue many developer user
+     * identifiers, in keeping with the number of users.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(const char* value) { SetDeveloperUserIdentifier(value); return *this;}
 
-    /*
-     <p>The maximum number of identities to return.</p>
-    */
+    /**
+     * <p>The maximum number of identities to return.</p>
+     */
     inline long GetMaxResults() const{ return m_maxResults; }
 
-    /*
-     <p>The maximum number of identities to return.</p>
-    */
+    /**
+     * <p>The maximum number of identities to return.</p>
+     */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
-    /*
-     <p>The maximum number of identities to return.</p>
-    */
+    /**
+     * <p>The maximum number of identities to return.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    */
+    /**
+     * <p>A pagination token. The first call you make will have <code>NextToken</code>
+     * set to null. After that the service will return <code>NextToken</code> values as
+     * needed. For example, let's say you make a request with <code>MaxResults</code>
+     * set to 10, and there are 20 matches in the database. The service will return a
+     * pagination token as a part of the response. This token can be used to call the
+     * API again and get results starting from the 11th match.</p>
+     */
     inline LookupDeveloperIdentityRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

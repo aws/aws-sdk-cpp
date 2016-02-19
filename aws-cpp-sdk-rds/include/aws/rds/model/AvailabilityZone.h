@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> Contains Availability Zone information. </p> <p> This data type is used as an element in the following data type: <ul> <li><a>OrderableDBInstanceOption</a></li> </ul> </p>
-  */
+
+  /**
+   * <p> Contains Availability Zone information. </p> <p> This data type is used as
+   * an element in the following data type: <ul>
+   * <li><a>OrderableDBInstanceOption</a></li> </ul> </p>
+   */
   class AWS_RDS_API AvailabilityZone
   {
   public:
@@ -43,54 +46,54 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline AvailabilityZone& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline AvailabilityZone& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p> The name of the availability zone. </p>
-    */
+    /**
+     * <p> The name of the availability zone. </p>
+     */
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p> True indicates the availability zone is capable of provisioned IOPs. </p>
-    */
+    /**
+     * <p> True indicates the availability zone is capable of provisioned IOPs. </p>
+     */
     inline bool GetProvisionedIopsCapable() const{ return m_provisionedIopsCapable; }
 
-    /*
-     <p> True indicates the availability zone is capable of provisioned IOPs. </p>
-    */
+    /**
+     * <p> True indicates the availability zone is capable of provisioned IOPs. </p>
+     */
     inline void SetProvisionedIopsCapable(bool value) { m_provisionedIopsCapableHasBeenSet = true; m_provisionedIopsCapable = value; }
 
-    /*
-     <p> True indicates the availability zone is capable of provisioned IOPs. </p>
-    */
+    /**
+     * <p> True indicates the availability zone is capable of provisioned IOPs. </p>
+     */
     inline AvailabilityZone& WithProvisionedIopsCapable(bool value) { SetProvisionedIopsCapable(value); return *this;}
 
   private:

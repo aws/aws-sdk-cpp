@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Result message containing a list of environment resource descriptions. </p>
-  */
+  /**
+   * <p>Result message containing a list of environment resource descriptions. </p>
+   */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     DescribeEnvironmentResourcesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeEnvironmentResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+     */
     inline const EnvironmentResourceDescription& GetEnvironmentResources() const{ return m_environmentResources; }
 
-    /*
-     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+     */
     inline void SetEnvironmentResources(const EnvironmentResourceDescription& value) { m_environmentResources = value; }
 
-    /*
-     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+     */
     inline void SetEnvironmentResources(EnvironmentResourceDescription&& value) { m_environmentResources = value; }
 
-    /*
-     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+     */
     inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(const EnvironmentResourceDescription& value) { SetEnvironmentResources(value); return *this;}
 
-    /*
-     <p> A list of <a>EnvironmentResourceDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+     */
     inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourceDescription&& value) { SetEnvironmentResources(value); return *this;}
 
     

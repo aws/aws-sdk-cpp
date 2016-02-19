@@ -53,10 +53,6 @@ project(aws-cpp-sdk-rds)
   
   target_link_libraries(aws-cpp-sdk-rds aws-cpp-sdk-core)
 
-  if(NOT MSVC)
-    add_definitions(-std=c++11)
-  endif()
-
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 

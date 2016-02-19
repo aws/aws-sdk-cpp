@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,11 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action.</p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It
+   * is also returned as a member of the <a>AccessKeyMetaData</a> structure returned
+   * by the <a>ListAccessKeys</a> action.</p>
+   */
   class AWS_IAM_API GetAccessKeyLastUsedResult
   {
   public:
@@ -44,64 +46,64 @@ namespace Model
     GetAccessKeyLastUsedResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetAccessKeyLastUsedResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userName = value; }
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline void SetUserName(Aws::String&& value) { m_userName = value; }
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline void SetUserName(const char* value) { m_userName.assign(value); }
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline GetAccessKeyLastUsedResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline GetAccessKeyLastUsedResult& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The name of the AWS IAM user that owns this access key.</p>
-    */
+    /**
+     * <p>The name of the AWS IAM user that owns this access key.</p>
+     */
     inline GetAccessKeyLastUsedResult& WithUserName(const char* value) { SetUserName(value); return *this;}
 
-    /*
-     <p>Contains information about the last time the access key was used.</p>
-    */
+    /**
+     * <p>Contains information about the last time the access key was used.</p>
+     */
     inline const AccessKeyLastUsed& GetAccessKeyLastUsed() const{ return m_accessKeyLastUsed; }
 
-    /*
-     <p>Contains information about the last time the access key was used.</p>
-    */
+    /**
+     * <p>Contains information about the last time the access key was used.</p>
+     */
     inline void SetAccessKeyLastUsed(const AccessKeyLastUsed& value) { m_accessKeyLastUsed = value; }
 
-    /*
-     <p>Contains information about the last time the access key was used.</p>
-    */
+    /**
+     * <p>Contains information about the last time the access key was used.</p>
+     */
     inline void SetAccessKeyLastUsed(AccessKeyLastUsed&& value) { m_accessKeyLastUsed = value; }
 
-    /*
-     <p>Contains information about the last time the access key was used.</p>
-    */
+    /**
+     * <p>Contains information about the last time the access key was used.</p>
+     */
     inline GetAccessKeyLastUsedResult& WithAccessKeyLastUsed(const AccessKeyLastUsed& value) { SetAccessKeyLastUsed(value); return *this;}
 
-    /*
-     <p>Contains information about the last time the access key was used.</p>
-    */
+    /**
+     * <p>Contains information about the last time the access key was used.</p>
+     */
     inline GetAccessKeyLastUsedResult& WithAccessKeyLastUsed(AccessKeyLastUsed&& value) { SetAccessKeyLastUsed(value); return *this;}
 
     

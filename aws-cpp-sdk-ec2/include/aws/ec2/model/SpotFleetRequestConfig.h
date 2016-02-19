@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a Spot fleet request.</p>
-  */
+
+  /**
+   * <p>Describes a Spot fleet request.</p>
+   */
   class AWS_EC2_API SpotFleetRequestConfig
   {
   public:
@@ -45,89 +46,89 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(value); return *this;}
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
-    /*
-     <p>The state of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The state of the Spot fleet request.</p>
+     */
     inline const BatchState& GetSpotFleetRequestState() const{ return m_spotFleetRequestState; }
 
-    /*
-     <p>The state of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The state of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestState(const BatchState& value) { m_spotFleetRequestStateHasBeenSet = true; m_spotFleetRequestState = value; }
 
-    /*
-     <p>The state of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The state of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestState(BatchState&& value) { m_spotFleetRequestStateHasBeenSet = true; m_spotFleetRequestState = value; }
 
-    /*
-     <p>The state of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The state of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestState(const BatchState& value) { SetSpotFleetRequestState(value); return *this;}
 
-    /*
-     <p>The state of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The state of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestState(BatchState&& value) { SetSpotFleetRequestState(value); return *this;}
 
-    /*
-     <p>Information about the configuration of the Spot fleet request.</p>
-    */
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
     inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const{ return m_spotFleetRequestConfig; }
 
-    /*
-     <p>Information about the configuration of the Spot fleet request.</p>
-    */
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
 
-    /*
-     <p>Information about the configuration of the Spot fleet request.</p>
-    */
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
 
-    /*
-     <p>Information about the configuration of the Spot fleet request.</p>
-    */
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { SetSpotFleetRequestConfig(value); return *this;}
 
-    /*
-     <p>Information about the configuration of the Spot fleet request.</p>
-    */
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
     inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(value); return *this;}
 
   private:

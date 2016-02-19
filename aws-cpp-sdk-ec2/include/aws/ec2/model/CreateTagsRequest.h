@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EC2_API CreateTagsRequest : public EC2Request
   {
   public:
@@ -35,94 +35,117 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline CreateTagsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline CreateTagsRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline CreateTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(value); return *this;}
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline CreateTagsRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline CreateTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
-    */
+    /**
+     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     */
     inline CreateTagsRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline CreateTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline CreateTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </p>
-    */
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

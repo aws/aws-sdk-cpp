@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
-  */
+  /**
+   * <p>When you create a pipeline, Elastic Transcoder returns the values that you
+   * specified in the request.</p>
+   */
   class AWS_ELASTICTRANSCODER_API CreatePipelineResult
   {
   public:
@@ -44,64 +45,90 @@ namespace Model
     CreatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A section of the response body that provides information about the pipeline that is created.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the pipeline
+     * that is created.</p>
+     */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
 
-    /*
-     <p>A section of the response body that provides information about the pipeline that is created.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the pipeline
+     * that is created.</p>
+     */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
 
-    /*
-     <p>A section of the response body that provides information about the pipeline that is created.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the pipeline
+     * that is created.</p>
+     */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
 
-    /*
-     <p>A section of the response body that provides information about the pipeline that is created.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the pipeline
+     * that is created.</p>
+     */
     inline CreatePipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
 
-    /*
-     <p>A section of the response body that provides information about the pipeline that is created.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the pipeline
+     * that is created.</p>
+     */
     inline CreatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = value; }
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline CreatePipelineResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline CreatePipelineResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(value); return *this;}
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline CreatePipelineResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
 
-    /*
-     <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    */
+    /**
+     * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
+     * are not in the same region as the pipeline.</p> <p>Using resources in the same
+     * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
+     * KMS key, reduces processing time and prevents cross-regional charges.</p>
+     */
     inline CreatePipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(value); return *this; }
 
   private:

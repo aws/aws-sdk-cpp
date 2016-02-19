@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CloudFront
 namespace Model
 {
 
-  /*
-    The request to get an origin access identity's information.
-  */
+  /**
+   * The request to get an origin access identity's information.
+   */
   class AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentity2015_04_17Request : public CloudFrontRequest
   {
   public:
@@ -34,39 +34,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline GetCloudFrontOriginAccessIdentity2015_04_17Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline GetCloudFrontOriginAccessIdentity2015_04_17Request& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     The identity's id.
-    */
+    /**
+     * The identity's id.
+     */
     inline GetCloudFrontOriginAccessIdentity2015_04_17Request& WithId(const char* value) { SetId(value); return *this;}
 
   private:

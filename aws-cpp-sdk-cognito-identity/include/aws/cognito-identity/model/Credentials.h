@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  /*
-    <p>Credentials for the the provided identity ID.</p>
-  */
+
+  /**
+   * <p>Credentials for the the provided identity ID.</p>
+   */
   class AWS_COGNITOIDENTITY_API Credentials
   {
   public:
@@ -40,124 +41,124 @@ namespace Model
     Credentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline Credentials& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline Credentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
-    /*
-     <p>The Access Key portion of the credentials.</p>
-    */
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline Credentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline void SetSecretKey(const char* value) { m_secretKeyHasBeenSet = true; m_secretKey.assign(value); }
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline Credentials& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline Credentials& WithSecretKey(Aws::String&& value) { SetSecretKey(value); return *this;}
 
-    /*
-     <p>The Secret Access Key portion of the credentials</p>
-    */
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
     inline Credentials& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline Credentials& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline Credentials& WithSessionToken(Aws::String&& value) { SetSessionToken(value); return *this;}
 
-    /*
-     <p>The Session Token portion of the credentials</p>
-    */
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline Credentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 
-    /*
-     <p>The date at which these credentials will expire.</p>
-    */
+    /**
+     * <p>The date at which these credentials will expire.</p>
+     */
     inline double GetExpiration() const{ return m_expiration; }
 
-    /*
-     <p>The date at which these credentials will expire.</p>
-    */
+    /**
+     * <p>The date at which these credentials will expire.</p>
+     */
     inline void SetExpiration(double value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
-    /*
-     <p>The date at which these credentials will expire.</p>
-    */
+    /**
+     * <p>The date at which these credentials will expire.</p>
+     */
     inline Credentials& WithExpiration(double value) { SetExpiration(value); return *this;}
 
   private:

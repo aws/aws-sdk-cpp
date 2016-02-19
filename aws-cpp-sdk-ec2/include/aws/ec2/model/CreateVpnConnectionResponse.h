@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateVpnConnectionResponse
   {
   public:
@@ -43,29 +40,29 @@ namespace Model
     CreateVpnConnectionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateVpnConnectionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the VPN connection.</p>
-    */
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline const VpnConnection& GetVpnConnection() const{ return m_vpnConnection; }
 
-    /*
-     <p>Information about the VPN connection.</p>
-    */
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline void SetVpnConnection(const VpnConnection& value) { m_vpnConnection = value; }
 
-    /*
-     <p>Information about the VPN connection.</p>
-    */
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline void SetVpnConnection(VpnConnection&& value) { m_vpnConnection = value; }
 
-    /*
-     <p>Information about the VPN connection.</p>
-    */
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline CreateVpnConnectionResponse& WithVpnConnection(const VpnConnection& value) { SetVpnConnection(value); return *this;}
 
-    /*
-     <p>Information about the VPN connection.</p>
-    */
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline CreateVpnConnectionResponse& WithVpnConnection(VpnConnection&& value) { SetVpnConnection(value); return *this;}
 
     

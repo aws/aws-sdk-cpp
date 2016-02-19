@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>Represents the output for <code>ListStreams</code>.</p>
-  */
+  /**
+   * <p>Represents the output for <code>ListStreams</code>.</p>
+   */
   class AWS_KINESIS_API ListStreamsResult
   {
   public:
@@ -43,59 +43,67 @@ namespace Model
     ListStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetStreamNames() const{ return m_streamNames; }
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline void SetStreamNames(const Aws::Vector<Aws::String>& value) { m_streamNames = value; }
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = value; }
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline ListStreamsResult& WithStreamNames(const Aws::Vector<Aws::String>& value) { SetStreamNames(value); return *this;}
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(value); return *this;}
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline ListStreamsResult& AddStreamNames(const Aws::String& value) { m_streamNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>
-    */
+    /**
+     * <p>The names of the streams that are associated with the AWS account making the
+     * <code>ListStreams</code> request.</p>
+     */
     inline ListStreamsResult& AddStreamNames(const char* value) { m_streamNames.push_back(value); return *this; }
 
-    /*
-     <p>If set to <code>true</code>, there are more streams available to list.</p>
-    */
+    /**
+     * <p>If set to <code>true</code>, there are more streams available to list.</p>
+     */
     inline bool GetHasMoreStreams() const{ return m_hasMoreStreams; }
 
-    /*
-     <p>If set to <code>true</code>, there are more streams available to list.</p>
-    */
+    /**
+     * <p>If set to <code>true</code>, there are more streams available to list.</p>
+     */
     inline void SetHasMoreStreams(bool value) { m_hasMoreStreams = value; }
 
-    /*
-     <p>If set to <code>true</code>, there are more streams available to list.</p>
-    */
+    /**
+     * <p>If set to <code>true</code>, there are more streams available to list.</p>
+     */
     inline ListStreamsResult& WithHasMoreStreams(bool value) { SetHasMoreStreams(value); return *this;}
 
   private:

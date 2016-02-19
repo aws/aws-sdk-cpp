@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a message about an Availability Zone.</p>
-  */
+
+  /**
+   * <p>Describes a message about an Availability Zone.</p>
+   */
   class AWS_EC2_API AvailabilityZoneMessage
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline AvailabilityZoneMessage& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline AvailabilityZoneMessage& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The message about the Availability Zone.</p>
-    */
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline AvailabilityZoneMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

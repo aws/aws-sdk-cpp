@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    The response to a successful DescribeIdentityUsage request.
-  */
+  /**
+   * The response to a successful DescribeIdentityUsage request.
+   */
   class AWS_COGNITOSYNC_API DescribeIdentityUsageResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     DescribeIdentityUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeIdentityUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     Usage information for the identity.
-    */
+    /**
+     * Usage information for the identity.
+     */
     inline const IdentityUsage& GetIdentityUsage() const{ return m_identityUsage; }
 
-    /*
-     Usage information for the identity.
-    */
+    /**
+     * Usage information for the identity.
+     */
     inline void SetIdentityUsage(const IdentityUsage& value) { m_identityUsage = value; }
 
-    /*
-     Usage information for the identity.
-    */
+    /**
+     * Usage information for the identity.
+     */
     inline void SetIdentityUsage(IdentityUsage&& value) { m_identityUsage = value; }
 
-    /*
-     Usage information for the identity.
-    */
+    /**
+     * Usage information for the identity.
+     */
     inline DescribeIdentityUsageResult& WithIdentityUsage(const IdentityUsage& value) { SetIdentityUsage(value); return *this;}
 
-    /*
-     Usage information for the identity.
-    */
+    /**
+     * Usage information for the identity.
+     */
     inline DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsage&& value) { SetIdentityUsage(value); return *this;}
 
   private:

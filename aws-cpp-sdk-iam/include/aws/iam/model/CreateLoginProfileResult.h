@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreateLoginProfile</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreateLoginProfile</a> request. </p>
+   */
   class AWS_IAM_API CreateLoginProfileResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateLoginProfileResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateLoginProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The user name and password create date.</p>
-    */
+    /**
+     * <p>The user name and password create date.</p>
+     */
     inline const LoginProfile& GetLoginProfile() const{ return m_loginProfile; }
 
-    /*
-     <p>The user name and password create date.</p>
-    */
+    /**
+     * <p>The user name and password create date.</p>
+     */
     inline void SetLoginProfile(const LoginProfile& value) { m_loginProfile = value; }
 
-    /*
-     <p>The user name and password create date.</p>
-    */
+    /**
+     * <p>The user name and password create date.</p>
+     */
     inline void SetLoginProfile(LoginProfile&& value) { m_loginProfile = value; }
 
-    /*
-     <p>The user name and password create date.</p>
-    */
+    /**
+     * <p>The user name and password create date.</p>
+     */
     inline CreateLoginProfileResult& WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
 
-    /*
-     <p>The user name and password create date.</p>
-    */
+    /**
+     * <p>The user name and password create date.</p>
+     */
     inline CreateLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(value); return *this;}
 
     

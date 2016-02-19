@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    <p>Describes a policy adjustment type.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
-  */
+
+  /**
+   * <p>Describes a policy adjustment type.</p> <p>For more information, see <a
+   * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+   * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+   */
   class AWS_AUTOSCALING_API AdjustmentType
   {
   public:
@@ -43,39 +46,53 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline AdjustmentType& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline AdjustmentType& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(value); return *this;}
 
-    /*
-     <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    */
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline AdjustmentType& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
 
   private:

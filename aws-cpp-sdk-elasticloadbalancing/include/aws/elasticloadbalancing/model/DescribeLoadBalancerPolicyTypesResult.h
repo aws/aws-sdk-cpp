@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPolicyTypesResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeLoadBalancerPolicyTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeLoadBalancerPolicyTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline const Aws::Vector<PolicyTypeDescription>& GetPolicyTypeDescriptions() const{ return m_policyTypeDescriptions; }
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline void SetPolicyTypeDescriptions(const Aws::Vector<PolicyTypeDescription>& value) { m_policyTypeDescriptions = value; }
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline void SetPolicyTypeDescriptions(Aws::Vector<PolicyTypeDescription>&& value) { m_policyTypeDescriptions = value; }
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline DescribeLoadBalancerPolicyTypesResult& WithPolicyTypeDescriptions(const Aws::Vector<PolicyTypeDescription>& value) { SetPolicyTypeDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline DescribeLoadBalancerPolicyTypesResult& WithPolicyTypeDescriptions(Aws::Vector<PolicyTypeDescription>&& value) { SetPolicyTypeDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline DescribeLoadBalancerPolicyTypesResult& AddPolicyTypeDescriptions(const PolicyTypeDescription& value) { m_policyTypeDescriptions.push_back(value); return *this; }
 
-    /*
-     <p>Information about the policy types.</p>
-    */
+    /**
+     * <p>Information about the policy types.</p>
+     */
     inline DescribeLoadBalancerPolicyTypesResult& AddPolicyTypeDescriptions(PolicyTypeDescription&& value) { m_policyTypeDescriptions.push_back(value); return *this; }
 
     

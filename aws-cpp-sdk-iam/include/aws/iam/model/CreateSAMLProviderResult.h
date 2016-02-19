@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreateSAMLProvider</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreateSAMLProvider</a> request. </p>
+   */
   class AWS_IAM_API CreateSAMLProviderResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreateSAMLProviderResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateSAMLProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 
     

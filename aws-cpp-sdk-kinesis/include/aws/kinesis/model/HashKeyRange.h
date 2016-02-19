@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-  */
+
+  /**
+   * <p>The range of possible hash key values for the shard, which is a set of
+   * ordered contiguous positive integers.</p>
+   */
   class AWS_KINESIS_API HashKeyRange
   {
   public:
@@ -40,74 +42,74 @@ namespace Model
     HashKeyRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline const Aws::String& GetStartingHashKey() const{ return m_startingHashKey; }
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline void SetStartingHashKey(const Aws::String& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline void SetStartingHashKey(Aws::String&& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline void SetStartingHashKey(const char* value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey.assign(value); }
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline HashKeyRange& WithStartingHashKey(const Aws::String& value) { SetStartingHashKey(value); return *this;}
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline HashKeyRange& WithStartingHashKey(Aws::String&& value) { SetStartingHashKey(value); return *this;}
 
-    /*
-     <p>The starting hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline HashKeyRange& WithStartingHashKey(const char* value) { SetStartingHashKey(value); return *this;}
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline const Aws::String& GetEndingHashKey() const{ return m_endingHashKey; }
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline void SetEndingHashKey(const Aws::String& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = value; }
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline void SetEndingHashKey(Aws::String&& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = value; }
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline void SetEndingHashKey(const char* value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey.assign(value); }
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline HashKeyRange& WithEndingHashKey(const Aws::String& value) { SetEndingHashKey(value); return *this;}
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline HashKeyRange& WithEndingHashKey(Aws::String&& value) { SetEndingHashKey(value); return *this;}
 
-    /*
-     <p>The ending hash key of the hash key range.</p>
-    */
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
     inline HashKeyRange& WithEndingHashKey(const char* value) { SetEndingHashKey(value); return *this;}
 
   private:

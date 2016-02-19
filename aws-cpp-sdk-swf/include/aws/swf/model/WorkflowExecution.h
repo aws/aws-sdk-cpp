@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Represents a workflow execution.</p>
-  */
+
+  /**
+   * <p>Represents a workflow execution.</p>
+   */
   class AWS_SWF_API WorkflowExecution
   {
   public:
@@ -40,74 +41,74 @@ namespace Model
     WorkflowExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline WorkflowExecution& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline WorkflowExecution& WithWorkflowId(Aws::String&& value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The user defined identifier associated with the workflow execution.</p>
-    */
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline WorkflowExecution& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline const Aws::String& GetRunId() const{ return m_runId; }
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline WorkflowExecution& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline WorkflowExecution& WithRunId(Aws::String&& value) { SetRunId(value); return *this;}
 
-    /*
-     <p>A system-generated unique identifier for the workflow execution.</p>
-    */
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
     inline WorkflowExecution& WithRunId(const char* value) { SetRunId(value); return *this;}
 
   private:

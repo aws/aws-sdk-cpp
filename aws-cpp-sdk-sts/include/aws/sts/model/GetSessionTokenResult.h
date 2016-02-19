@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace STS
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetSessionToken</a> request,
+   * including temporary AWS credentials that can be used to make AWS requests. </p>
+   */
   class AWS_STS_API GetSessionTokenResult
   {
   public:
@@ -43,29 +44,29 @@ namespace Model
     GetSessionTokenResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetSessionTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The session credentials for API authentication. </p>
-    */
+    /**
+     * <p>The session credentials for API authentication. </p>
+     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
-    /*
-     <p>The session credentials for API authentication. </p>
-    */
+    /**
+     * <p>The session credentials for API authentication. </p>
+     */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
-    /*
-     <p>The session credentials for API authentication. </p>
-    */
+    /**
+     * <p>The session credentials for API authentication. </p>
+     */
     inline void SetCredentials(Credentials&& value) { m_credentials = value; }
 
-    /*
-     <p>The session credentials for API authentication. </p>
-    */
+    /**
+     * <p>The session credentials for API authentication. </p>
+     */
     inline GetSessionTokenResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
-    /*
-     <p>The session credentials for API authentication. </p>
-    */
+    /**
+     * <p>The session credentials for API authentication. </p>
+     */
     inline GetSessionTokenResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
-  */
+
+  /**
+   * <p>Describes the status of a cluster restore action. Returns null if the cluster
+   * was not created by restoring a snapshot.</p>
+   */
   class AWS_REDSHIFT_API RestoreStatus
   {
   public:
@@ -43,114 +45,133 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline RestoreStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline RestoreStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the restore action. Returns starting, restoring, completed, or failed. </p>
-    */
+    /**
+     * <p> The status of the restore action. Returns starting, restoring, completed, or
+     * failed. </p>
+     */
     inline RestoreStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. </p>
-    */
+    /**
+     * <p> The number of megabytes per second being transferred from the backup
+     * storage. Returns the average rate for a completed backup. </p>
+     */
     inline double GetCurrentRestoreRateInMegaBytesPerSecond() const{ return m_currentRestoreRateInMegaBytesPerSecond; }
 
-    /*
-     <p> The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. </p>
-    */
+    /**
+     * <p> The number of megabytes per second being transferred from the backup
+     * storage. Returns the average rate for a completed backup. </p>
+     */
     inline void SetCurrentRestoreRateInMegaBytesPerSecond(double value) { m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true; m_currentRestoreRateInMegaBytesPerSecond = value; }
 
-    /*
-     <p> The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. </p>
-    */
+    /**
+     * <p> The number of megabytes per second being transferred from the backup
+     * storage. Returns the average rate for a completed backup. </p>
+     */
     inline RestoreStatus& WithCurrentRestoreRateInMegaBytesPerSecond(double value) { SetCurrentRestoreRateInMegaBytesPerSecond(value); return *this;}
 
-    /*
-     <p> The size of the set of snapshot data used to restore the cluster. </p>
-    */
+    /**
+     * <p> The size of the set of snapshot data used to restore the cluster. </p>
+     */
     inline long long GetSnapshotSizeInMegaBytes() const{ return m_snapshotSizeInMegaBytes; }
 
-    /*
-     <p> The size of the set of snapshot data used to restore the cluster. </p>
-    */
+    /**
+     * <p> The size of the set of snapshot data used to restore the cluster. </p>
+     */
     inline void SetSnapshotSizeInMegaBytes(long long value) { m_snapshotSizeInMegaBytesHasBeenSet = true; m_snapshotSizeInMegaBytes = value; }
 
-    /*
-     <p> The size of the set of snapshot data used to restore the cluster. </p>
-    */
+    /**
+     * <p> The size of the set of snapshot data used to restore the cluster. </p>
+     */
     inline RestoreStatus& WithSnapshotSizeInMegaBytes(long long value) { SetSnapshotSizeInMegaBytes(value); return *this;}
 
-    /*
-     <p> The number of megabytes that have been transferred from snapshot storage. </p>
-    */
+    /**
+     * <p> The number of megabytes that have been transferred from snapshot storage.
+     * </p>
+     */
     inline long long GetProgressInMegaBytes() const{ return m_progressInMegaBytes; }
 
-    /*
-     <p> The number of megabytes that have been transferred from snapshot storage. </p>
-    */
+    /**
+     * <p> The number of megabytes that have been transferred from snapshot storage.
+     * </p>
+     */
     inline void SetProgressInMegaBytes(long long value) { m_progressInMegaBytesHasBeenSet = true; m_progressInMegaBytes = value; }
 
-    /*
-     <p> The number of megabytes that have been transferred from snapshot storage. </p>
-    */
+    /**
+     * <p> The number of megabytes that have been transferred from snapshot storage.
+     * </p>
+     */
     inline RestoreStatus& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
 
-    /*
-     <p> The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. </p>
-    */
+    /**
+     * <p> The amount of time an in-progress restore has been running, or the amount of
+     * time it took a completed restore to finish. </p>
+     */
     inline long long GetElapsedTimeInSeconds() const{ return m_elapsedTimeInSeconds; }
 
-    /*
-     <p> The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. </p>
-    */
+    /**
+     * <p> The amount of time an in-progress restore has been running, or the amount of
+     * time it took a completed restore to finish. </p>
+     */
     inline void SetElapsedTimeInSeconds(long long value) { m_elapsedTimeInSecondsHasBeenSet = true; m_elapsedTimeInSeconds = value; }
 
-    /*
-     <p> The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. </p>
-    */
+    /**
+     * <p> The amount of time an in-progress restore has been running, or the amount of
+     * time it took a completed restore to finish. </p>
+     */
     inline RestoreStatus& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
 
-    /*
-     <p> The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. </p>
-    */
+    /**
+     * <p> The estimate of the time remaining before the restore will complete. Returns
+     * 0 for a completed restore. </p>
+     */
     inline long long GetEstimatedTimeToCompletionInSeconds() const{ return m_estimatedTimeToCompletionInSeconds; }
 
-    /*
-     <p> The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. </p>
-    */
+    /**
+     * <p> The estimate of the time remaining before the restore will complete. Returns
+     * 0 for a completed restore. </p>
+     */
     inline void SetEstimatedTimeToCompletionInSeconds(long long value) { m_estimatedTimeToCompletionInSecondsHasBeenSet = true; m_estimatedTimeToCompletionInSeconds = value; }
 
-    /*
-     <p> The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. </p>
-    */
+    /**
+     * <p> The estimate of the time remaining before the restore will complete. Returns
+     * 0 for a completed restore. </p>
+     */
     inline RestoreStatus& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 
   private:

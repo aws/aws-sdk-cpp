@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Object
   {
   public:
@@ -103,29 +101,29 @@ namespace Model
     
     inline Object& WithSize(long value) { SetSize(value); return *this;}
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline void SetStorageClass(const ObjectStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline Object& WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(value); return *this;}
 
     

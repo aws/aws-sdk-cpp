@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Describes an update for a destination in Amazon S3.</p>
-  */
+
+  /**
+   * <p>Describes an update for a destination in Amazon S3.</p>
+   */
   class AWS_FIREHOSE_API S3DestinationUpdate
   {
   public:
@@ -43,184 +44,256 @@ namespace Model
     S3DestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline S3DestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline S3DestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
 
-    /*
-     <p>The ARN of the AWS credentials.</p>
-    */
+    /**
+     * <p>The ARN of the AWS credentials.</p>
+     */
     inline S3DestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline S3DestinationUpdate& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline S3DestinationUpdate& WithBucketARN(Aws::String&& value) { SetBucketARN(value); return *this;}
 
-    /*
-     <p>The ARN of the S3 bucket.</p>
-    */
+    /**
+     * <p>The ARN of the S3 bucket.</p>
+     */
     inline S3DestinationUpdate& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline S3DestinationUpdate& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline S3DestinationUpdate& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
-    /*
-     <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
-    */
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
+     * files. You can specify an extra prefix to be added in front of the time format
+     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
+     * S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+     * S3 Object Name Format</a> in the <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     */
     inline S3DestinationUpdate& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
-    /*
-     <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
-    */
+    /**
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
+     */
     inline const BufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
-    /*
-     <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
-    */
+    /**
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
+     */
     inline void SetBufferingHints(const BufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
-    /*
-     <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
-    */
+    /**
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
+     */
     inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
-    /*
-     <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
-    */
+    /**
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
+     */
     inline S3DestinationUpdate& WithBufferingHints(const BufferingHints& value) { SetBufferingHints(value); return *this;}
 
-    /*
-     <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
-    */
+    /**
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
+     */
     inline S3DestinationUpdate& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(value); return *this;}
 
-    /*
-     <p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
-    */
+    /**
+     * <p>The compression format. If no value is specified, the default is
+     * <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code>
+     * or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because
+     * they are not supported by the Amazon Redshift <code>COPY</code> operation that
+     * reads from the S3 bucket.</p>
+     */
     inline const CompressionFormat& GetCompressionFormat() const{ return m_compressionFormat; }
 
-    /*
-     <p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
-    */
+    /**
+     * <p>The compression format. If no value is specified, the default is
+     * <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code>
+     * or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because
+     * they are not supported by the Amazon Redshift <code>COPY</code> operation that
+     * reads from the S3 bucket.</p>
+     */
     inline void SetCompressionFormat(const CompressionFormat& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
 
-    /*
-     <p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
-    */
+    /**
+     * <p>The compression format. If no value is specified, the default is
+     * <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code>
+     * or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because
+     * they are not supported by the Amazon Redshift <code>COPY</code> operation that
+     * reads from the S3 bucket.</p>
+     */
     inline void SetCompressionFormat(CompressionFormat&& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
 
-    /*
-     <p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
-    */
+    /**
+     * <p>The compression format. If no value is specified, the default is
+     * <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code>
+     * or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because
+     * they are not supported by the Amazon Redshift <code>COPY</code> operation that
+     * reads from the S3 bucket.</p>
+     */
     inline S3DestinationUpdate& WithCompressionFormat(const CompressionFormat& value) { SetCompressionFormat(value); return *this;}
 
-    /*
-     <p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
-    */
+    /**
+     * <p>The compression format. If no value is specified, the default is
+     * <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code>
+     * or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because
+     * they are not supported by the Amazon Redshift <code>COPY</code> operation that
+     * reads from the S3 bucket.</p>
+     */
     inline S3DestinationUpdate& WithCompressionFormat(CompressionFormat&& value) { SetCompressionFormat(value); return *this;}
 
-    /*
-     <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    */
+    /**
+     * <p>The encryption configuration. If no value is specified, the default is no
+     * encryption.</p>
+     */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
-    /*
-     <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    */
+    /**
+     * <p>The encryption configuration. If no value is specified, the default is no
+     * encryption.</p>
+     */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
-    /*
-     <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    */
+    /**
+     * <p>The encryption configuration. If no value is specified, the default is no
+     * encryption.</p>
+     */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
-    /*
-     <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    */
+    /**
+     * <p>The encryption configuration. If no value is specified, the default is no
+     * encryption.</p>
+     */
     inline S3DestinationUpdate& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
-    /*
-     <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    */
+    /**
+     * <p>The encryption configuration. If no value is specified, the default is no
+     * encryption.</p>
+     */
     inline S3DestinationUpdate& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(value); return *this;}
 
   private:

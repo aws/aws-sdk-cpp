@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreatePolicy</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreatePolicy</a> request. </p>
+   */
   class AWS_IAM_API CreatePolicyResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreatePolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreatePolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the policy.</p>
-    */
+    /**
+     * <p>Information about the policy.</p>
+     */
     inline const Policy& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>Information about the policy.</p>
-    */
+    /**
+     * <p>Information about the policy.</p>
+     */
     inline void SetPolicy(const Policy& value) { m_policy = value; }
 
-    /*
-     <p>Information about the policy.</p>
-    */
+    /**
+     * <p>Information about the policy.</p>
+     */
     inline void SetPolicy(Policy&& value) { m_policy = value; }
 
-    /*
-     <p>Information about the policy.</p>
-    */
+    /**
+     * <p>Information about the policy.</p>
+     */
     inline CreatePolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>Information about the policy.</p>
-    */
+    /**
+     * <p>Information about the policy.</p>
+     */
     inline CreatePolicyResult& WithPolicy(Policy&& value) { SetPolicy(value); return *this;}
 
     

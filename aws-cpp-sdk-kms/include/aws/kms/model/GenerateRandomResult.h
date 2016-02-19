@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API GenerateRandomResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     GenerateRandomResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GenerateRandomResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Plaintext that contains the unpredictable byte string.</p>
-    */
+    /**
+     * <p>Plaintext that contains the unpredictable byte string.</p>
+     */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
 
-    /*
-     <p>Plaintext that contains the unpredictable byte string.</p>
-    */
+    /**
+     * <p>Plaintext that contains the unpredictable byte string.</p>
+     */
     inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintext = value; }
 
-    /*
-     <p>Plaintext that contains the unpredictable byte string.</p>
-    */
+    /**
+     * <p>Plaintext that contains the unpredictable byte string.</p>
+     */
     inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = value; }
 
-    /*
-     <p>Plaintext that contains the unpredictable byte string.</p>
-    */
+    /**
+     * <p>Plaintext that contains the unpredictable byte string.</p>
+     */
     inline GenerateRandomResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
 
-    /*
-     <p>Plaintext that contains the unpredictable byte string.</p>
-    */
+    /**
+     * <p>Plaintext that contains the unpredictable byte string.</p>
+     */
     inline GenerateRandomResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
 
   private:

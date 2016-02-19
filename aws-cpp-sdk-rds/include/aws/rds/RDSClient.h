@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -317,27 +317,51 @@ namespace Model
     typedef std::function<void(const RDSClient*, const Model::RestoreDBInstanceToPointInTimeRequest&, const Model::RestoreDBInstanceToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBInstanceToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RevokeDBSecurityGroupIngressRequest&, const Model::RevokeDBSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeDBSecurityGroupIngressResponseReceivedHandler;
 
-  /*
-    <fullname>Amazon Relational Database Service</fullname> <p> Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks, freeing up developers to focus on what makes their applications and businesses unique. </p> <p> Amazon RDS gives you access to the capabilities of a familiar MySQL or Oracle database server. This means the code, applications, and tools you already use today with your existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon RDS automatically backs up your database and maintains the database software that powers your DB Instance. Amazon RDS is flexible: you can scale your database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services, there are no up-front investments, and you pay only for the resources you use. </p> <p> This is the <i>Amazon RDS API Reference</i>. It contains a comprehensive description of all Amazon RDS Query APIs and data types. Note that this API is asynchronous and some actions may require polling to determine when an action has been applied. See the parameter description to determine if a change is applied immediately or on the next instance reboot or during the maintenance window. To get started with Amazon RDS, go to the <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/GettingStartedGuide/">Amazon RDS Getting Started Guide</a>. For more information on Amazon RDS concepts and usage scenarios, go to the <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/">Amazon RDS User Guide</a>. </p>
-  */
+  /**
+   * <fullname>Amazon Relational Database Service</fullname> <p> Amazon Relational
+   * Database Service (Amazon RDS) is a web service that makes it easier to set up,
+   * operate, and scale a relational database in the cloud. It provides
+   * cost-efficient, resizable capacity for an industry-standard relational database
+   * and manages common database administration tasks, freeing up developers to focus
+   * on what makes their applications and businesses unique. </p> <p> Amazon RDS
+   * gives you access to the capabilities of a familiar MySQL or Oracle database
+   * server. This means the code, applications, and tools you already use today with
+   * your existing MySQL or Oracle databases work with Amazon RDS without
+   * modification. Amazon RDS automatically backs up your database and maintains the
+   * database software that powers your DB Instance. Amazon RDS is flexible: you can
+   * scale your database instance's compute resources and storage capacity to meet
+   * your application's demand. As with all Amazon Web Services, there are no
+   * up-front investments, and you pay only for the resources you use. </p> <p> This
+   * is the <i>Amazon RDS API Reference</i>. It contains a comprehensive description
+   * of all Amazon RDS Query APIs and data types. Note that this API is asynchronous
+   * and some actions may require polling to determine when an action has been
+   * applied. See the parameter description to determine if a change is applied
+   * immediately or on the next instance reboot or during the maintenance window. To
+   * get started with Amazon RDS, go to the <a
+   * href="http://docs.amazonwebservices.com/AmazonRDS/latest/GettingStartedGuide/">Amazon
+   * RDS Getting Started Guide</a>. For more information on Amazon RDS concepts and
+   * usage scenarios, go to the <a
+   * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/">Amazon RDS
+   * User Guide</a>. </p>
+   */
   class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
 
-        /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RDSClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RDSClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -347,961 +371,1357 @@ namespace Model
 
         virtual ~RDSClient();
 
-        /*
-            <p>Adds a source identifier to an existing RDS event notification subscription.</p>
-        */
+        /**
+         * <p>Adds a source identifier to an existing RDS event notification
+         * subscription.</p>
+         */
         virtual Model::AddSourceIdentifierToSubscriptionOutcome AddSourceIdentifierToSubscription(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
 
-        /*
-            <p>Adds a source identifier to an existing RDS event notification subscription.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Adds a source identifier to an existing RDS event notification
+         * subscription.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::AddSourceIdentifierToSubscriptionOutcomeCallable AddSourceIdentifierToSubscriptionCallable(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
 
-        /*
-            <p>Adds a source identifier to an existing RDS event notification subscription.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Adds a source identifier to an existing RDS event notification
+         * subscription.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void AddSourceIdentifierToSubscriptionAsync(const Model::AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-        */
+        /**
+         * <p> Adds metadata tags to a DB Instance. These tags can also be used with cost
+         * allocation reporting to track cost associated with a DB Instance.</p> <p>For an
+         * overview on tagging DB Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /*
-            <p> Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Adds metadata tags to a DB Instance. These tags can also be used with cost
+         * allocation reporting to track cost associated with a DB Instance.</p> <p>For an
+         * overview on tagging DB Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
 
-        /*
-            <p> Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Adds metadata tags to a DB Instance. These tags can also be used with cost
+         * allocation reporting to track cost associated with a DB Instance.</p> <p>For an
+         * overview on tagging DB Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS DB Instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB Instance in another. </note> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-        */
+        /**
+         * <p> Enables ingress to a DBSecurityGroup using one of two forms of
+         * authorization. First, EC2 or VPC Security Groups can be added to the
+         * DBSecurityGroup if the application using the database is running on EC2 or VPC
+         * instances. Second, IP ranges are available if the application accessing your
+         * database is running on the Internet. Required parameters for this API are one of
+         * CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot
+         * authorize ingress from an EC2 security group in one Region to an Amazon RDS DB
+         * Instance in another. You cannot authorize ingress from a VPC security group in
+         * one VPC to an Amazon RDS DB Instance in another. </note> <p>For an overview of
+         * CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         */
         virtual Model::AuthorizeDBSecurityGroupIngressOutcome AuthorizeDBSecurityGroupIngress(const Model::AuthorizeDBSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS DB Instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB Instance in another. </note> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Enables ingress to a DBSecurityGroup using one of two forms of
+         * authorization. First, EC2 or VPC Security Groups can be added to the
+         * DBSecurityGroup if the application using the database is running on EC2 or VPC
+         * instances. Second, IP ranges are available if the application accessing your
+         * database is running on the Internet. Required parameters for this API are one of
+         * CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot
+         * authorize ingress from an EC2 security group in one Region to an Amazon RDS DB
+         * Instance in another. You cannot authorize ingress from a VPC security group in
+         * one VPC to an Amazon RDS DB Instance in another. </note> <p>For an overview of
+         * CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::AuthorizeDBSecurityGroupIngressOutcomeCallable AuthorizeDBSecurityGroupIngressCallable(const Model::AuthorizeDBSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS DB Instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB Instance in another. </note> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Enables ingress to a DBSecurityGroup using one of two forms of
+         * authorization. First, EC2 or VPC Security Groups can be added to the
+         * DBSecurityGroup if the application using the database is running on EC2 or VPC
+         * instances. Second, IP ranges are available if the application accessing your
+         * database is running on the Internet. Required parameters for this API are one of
+         * CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot
+         * authorize ingress from an EC2 security group in one Region to an Amazon RDS DB
+         * Instance in another. You cannot authorize ingress from a VPC security group in
+         * one VPC to an Amazon RDS DB Instance in another. </note> <p>For an overview of
+         * CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void AuthorizeDBSecurityGroupIngressAsync(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </p>
-        */
+        /**
+         * <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the
+         * "available" state. </p>
+         */
         virtual Model::CopyDBSnapshotOutcome CopyDBSnapshot(const Model::CopyDBSnapshotRequest& request) const;
 
-        /*
-            <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the
+         * "available" state. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CopyDBSnapshotOutcomeCallable CopyDBSnapshotCallable(const Model::CopyDBSnapshotRequest& request) const;
 
-        /*
-            <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the
+         * "available" state. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CopyDBSnapshotAsync(const Model::CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a new DB instance. </p>
-        */
+        /**
+         * <p> Creates a new DB instance. </p>
+         */
         virtual Model::CreateDBInstanceOutcome CreateDBInstance(const Model::CreateDBInstanceRequest& request) const;
 
-        /*
-            <p> Creates a new DB instance. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a new DB instance. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request) const;
 
-        /*
-            <p> Creates a new DB instance. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a new DB instance. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </p> <p> All Read Replica DB Instances are created as Single-AZ deployments with backups disabled. All other DB Instance attributes (including DB Security Groups and DB Parameter Groups) are inherited from the source DB Instance, except as specified below. </p> <important> <p> The source DB Instance must have backup retention enabled. </p> </important>
-        */
+        /**
+         * <p> Creates a DB Instance that acts as a Read Replica of a source DB Instance.
+         * </p> <p> All Read Replica DB Instances are created as Single-AZ deployments with
+         * backups disabled. All other DB Instance attributes (including DB Security Groups
+         * and DB Parameter Groups) are inherited from the source DB Instance, except as
+         * specified below. </p> <important> <p> The source DB Instance must have backup
+         * retention enabled. </p> </important>
+         */
         virtual Model::CreateDBInstanceReadReplicaOutcome CreateDBInstanceReadReplica(const Model::CreateDBInstanceReadReplicaRequest& request) const;
 
-        /*
-            <p> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </p> <p> All Read Replica DB Instances are created as Single-AZ deployments with backups disabled. All other DB Instance attributes (including DB Security Groups and DB Parameter Groups) are inherited from the source DB Instance, except as specified below. </p> <important> <p> The source DB Instance must have backup retention enabled. </p> </important>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a DB Instance that acts as a Read Replica of a source DB Instance.
+         * </p> <p> All Read Replica DB Instances are created as Single-AZ deployments with
+         * backups disabled. All other DB Instance attributes (including DB Security Groups
+         * and DB Parameter Groups) are inherited from the source DB Instance, except as
+         * specified below. </p> <important> <p> The source DB Instance must have backup
+         * retention enabled. </p> </important>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDBInstanceReadReplicaOutcomeCallable CreateDBInstanceReadReplicaCallable(const Model::CreateDBInstanceReadReplicaRequest& request) const;
 
-        /*
-            <p> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </p> <p> All Read Replica DB Instances are created as Single-AZ deployments with backups disabled. All other DB Instance attributes (including DB Security Groups and DB Parameter Groups) are inherited from the source DB Instance, except as specified below. </p> <important> <p> The source DB Instance must have backup retention enabled. </p> </important>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a DB Instance that acts as a Read Replica of a source DB Instance.
+         * </p> <p> All Read Replica DB Instances are created as Single-AZ deployments with
+         * backups disabled. All other DB Instance attributes (including DB Security Groups
+         * and DB Parameter Groups) are inherited from the source DB Instance, except as
+         * specified below. </p> <important> <p> The source DB Instance must have backup
+         * retention enabled. </p> </important>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDBInstanceReadReplicaAsync(const Model::CreateDBInstanceReadReplicaRequest& request, const CreateDBInstanceReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a new DB Parameter Group. </p> <p> A DB Parameter Group is initially created with the default parameters for the database engine used by the DB Instance. To provide custom values for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've created a DB Parameter Group, you need to associate it with your DB Instance using <i>ModifyDBInstance</i>. When you associate a new DB Parameter Group with a running DB Instance, you need to reboot the DB Instance for the new DB Parameter Group and associated settings to take effect. </p>
-        */
+        /**
+         * <p> Creates a new DB Parameter Group. </p> <p> A DB Parameter Group is initially
+         * created with the default parameters for the database engine used by the DB
+         * Instance. To provide custom values for any of the parameters, you must modify
+         * the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've
+         * created a DB Parameter Group, you need to associate it with your DB Instance
+         * using <i>ModifyDBInstance</i>. When you associate a new DB Parameter Group with
+         * a running DB Instance, you need to reboot the DB Instance for the new DB
+         * Parameter Group and associated settings to take effect. </p>
+         */
         virtual Model::CreateDBParameterGroupOutcome CreateDBParameterGroup(const Model::CreateDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Creates a new DB Parameter Group. </p> <p> A DB Parameter Group is initially created with the default parameters for the database engine used by the DB Instance. To provide custom values for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've created a DB Parameter Group, you need to associate it with your DB Instance using <i>ModifyDBInstance</i>. When you associate a new DB Parameter Group with a running DB Instance, you need to reboot the DB Instance for the new DB Parameter Group and associated settings to take effect. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a new DB Parameter Group. </p> <p> A DB Parameter Group is initially
+         * created with the default parameters for the database engine used by the DB
+         * Instance. To provide custom values for any of the parameters, you must modify
+         * the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've
+         * created a DB Parameter Group, you need to associate it with your DB Instance
+         * using <i>ModifyDBInstance</i>. When you associate a new DB Parameter Group with
+         * a running DB Instance, you need to reboot the DB Instance for the new DB
+         * Parameter Group and associated settings to take effect. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDBParameterGroupOutcomeCallable CreateDBParameterGroupCallable(const Model::CreateDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Creates a new DB Parameter Group. </p> <p> A DB Parameter Group is initially created with the default parameters for the database engine used by the DB Instance. To provide custom values for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've created a DB Parameter Group, you need to associate it with your DB Instance using <i>ModifyDBInstance</i>. When you associate a new DB Parameter Group with a running DB Instance, you need to reboot the DB Instance for the new DB Parameter Group and associated settings to take effect. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a new DB Parameter Group. </p> <p> A DB Parameter Group is initially
+         * created with the default parameters for the database engine used by the DB
+         * Instance. To provide custom values for any of the parameters, you must modify
+         * the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've
+         * created a DB Parameter Group, you need to associate it with your DB Instance
+         * using <i>ModifyDBInstance</i>. When you associate a new DB Parameter Group with
+         * a running DB Instance, you need to reboot the DB Instance for the new DB
+         * Parameter Group and associated settings to take effect. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDBParameterGroupAsync(const Model::CreateDBParameterGroupRequest& request, const CreateDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </p>
-        */
+        /**
+         * <p> Creates a new DB Security Group. DB Security Groups control access to a DB
+         * Instance. </p>
+         */
         virtual Model::CreateDBSecurityGroupOutcome CreateDBSecurityGroup(const Model::CreateDBSecurityGroupRequest& request) const;
 
-        /*
-            <p> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a new DB Security Group. DB Security Groups control access to a DB
+         * Instance. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDBSecurityGroupOutcomeCallable CreateDBSecurityGroupCallable(const Model::CreateDBSecurityGroupRequest& request) const;
 
-        /*
-            <p> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a new DB Security Group. DB Security Groups control access to a DB
+         * Instance. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDBSecurityGroupAsync(const Model::CreateDBSecurityGroupRequest& request, const CreateDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a DBSnapshot. The source DBInstance must be in "available" state. </p>
-        */
+        /**
+         * <p> Creates a DBSnapshot. The source DBInstance must be in "available" state.
+         * </p>
+         */
         virtual Model::CreateDBSnapshotOutcome CreateDBSnapshot(const Model::CreateDBSnapshotRequest& request) const;
 
-        /*
-            <p> Creates a DBSnapshot. The source DBInstance must be in "available" state. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a DBSnapshot. The source DBInstance must be in "available" state.
+         * </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDBSnapshotOutcomeCallable CreateDBSnapshotCallable(const Model::CreateDBSnapshotRequest& request) const;
 
-        /*
-            <p> Creates a DBSnapshot. The source DBInstance must be in "available" state. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a DBSnapshot. The source DBInstance must be in "available" state.
+         * </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDBSnapshotAsync(const Model::CreateDBSnapshotRequest& request, const CreateDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
-        */
+        /**
+         * <p> Creates a new DB subnet group. DB subnet groups must contain at least one
+         * subnet in at least two AZs in the region. </p>
+         */
         virtual Model::CreateDBSubnetGroupOutcome CreateDBSubnetGroup(const Model::CreateDBSubnetGroupRequest& request) const;
 
-        /*
-            <p> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a new DB subnet group. DB subnet groups must contain at least one
+         * subnet in at least two AZs in the region. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateDBSubnetGroupOutcomeCallable CreateDBSubnetGroupCallable(const Model::CreateDBSubnetGroupRequest& request) const;
 
-        /*
-            <p> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a new DB subnet group. DB subnet groups must contain at least one
+         * subnet in at least two AZs in the region. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateDBSubnetGroupAsync(const Model::CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.</p>
-        */
+        /**
+         * <p>Creates an RDS event notification subscription. This action requires a topic
+         * ARN (Amazon Resource Name) created by either the RDS console, the SNS console,
+         * or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS
+         * and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You
+         * can specify the type of source (SourceType) you want to be notified of, provide
+         * a list of RDS sources (SourceIds) that triggers the events, and provide a list
+         * of event categories (EventCategories) for events you want to be notified of. For
+         * example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
+         * mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify
+         * both the SourceType and SourceIds, such as SourceType = db-instance and
+         * SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
+         * events for the specified source. If you specify a SourceType but do not specify
+         * a SourceIdentifier, you will receive notice of the events for that source type
+         * for all your RDS sources. If you do not specify either the SourceType nor the
+         * SourceIdentifier, you will be notified of events generated from all RDS sources
+         * belonging to your customer account.</p>
+         */
         virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
 
-        /*
-            <p>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Creates an RDS event notification subscription. This action requires a topic
+         * ARN (Amazon Resource Name) created by either the RDS console, the SNS console,
+         * or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS
+         * and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You
+         * can specify the type of source (SourceType) you want to be notified of, provide
+         * a list of RDS sources (SourceIds) that triggers the events, and provide a list
+         * of event categories (EventCategories) for events you want to be notified of. For
+         * example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
+         * mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify
+         * both the SourceType and SourceIds, such as SourceType = db-instance and
+         * SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
+         * events for the specified source. If you specify a SourceType but do not specify
+         * a SourceIdentifier, you will receive notice of the events for that source type
+         * for all your RDS sources. If you do not specify either the SourceType nor the
+         * SourceIdentifier, you will be notified of events generated from all RDS sources
+         * belonging to your customer account.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateEventSubscriptionOutcomeCallable CreateEventSubscriptionCallable(const Model::CreateEventSubscriptionRequest& request) const;
 
-        /*
-            <p>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Creates an RDS event notification subscription. This action requires a topic
+         * ARN (Amazon Resource Name) created by either the RDS console, the SNS console,
+         * or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS
+         * and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You
+         * can specify the type of source (SourceType) you want to be notified of, provide
+         * a list of RDS sources (SourceIds) that triggers the events, and provide a list
+         * of event categories (EventCategories) for events you want to be notified of. For
+         * example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
+         * mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify
+         * both the SourceType and SourceIds, such as SourceType = db-instance and
+         * SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
+         * events for the specified source. If you specify a SourceType but do not specify
+         * a SourceIdentifier, you will receive notice of the events for that source type
+         * for all your RDS sources. If you do not specify either the SourceType nor the
+         * SourceIdentifier, you will be notified of events generated from all RDS sources
+         * belonging to your customer account.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a new Option Group. </p>
-        */
+        /**
+         * <p> Creates a new Option Group. </p>
+         */
         virtual Model::CreateOptionGroupOutcome CreateOptionGroup(const Model::CreateOptionGroupRequest& request) const;
 
-        /*
-            <p> Creates a new Option Group. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a new Option Group. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateOptionGroupOutcomeCallable CreateOptionGroupCallable(const Model::CreateOptionGroupRequest& request) const;
 
-        /*
-            <p> Creates a new Option Group. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a new Option Group. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateOptionGroupAsync(const Model::CreateOptionGroupRequest& request, const CreateOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the request was received correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used to monitor the status of this operation. This cannot be canceled or reverted once submitted. </p>
-        */
+        /**
+         * <p> The DeleteDBInstance API deletes a previously provisioned RDS instance. A
+         * successful response from the web service indicates the request was received
+         * correctly. If a final DBSnapshot is requested the status of the RDS instance
+         * will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used
+         * to monitor the status of this operation. This cannot be canceled or reverted
+         * once submitted. </p>
+         */
         virtual Model::DeleteDBInstanceOutcome DeleteDBInstance(const Model::DeleteDBInstanceRequest& request) const;
 
-        /*
-            <p> The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the request was received correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used to monitor the status of this operation. This cannot be canceled or reverted once submitted. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> The DeleteDBInstance API deletes a previously provisioned RDS instance. A
+         * successful response from the web service indicates the request was received
+         * correctly. If a final DBSnapshot is requested the status of the RDS instance
+         * will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used
+         * to monitor the status of this operation. This cannot be canceled or reverted
+         * once submitted. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteDBInstanceOutcomeCallable DeleteDBInstanceCallable(const Model::DeleteDBInstanceRequest& request) const;
 
-        /*
-            <p> The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the request was received correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used to monitor the status of this operation. This cannot be canceled or reverted once submitted. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> The DeleteDBInstance API deletes a previously provisioned RDS instance. A
+         * successful response from the web service indicates the request was received
+         * correctly. If a final DBSnapshot is requested the status of the RDS instance
+         * will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used
+         * to monitor the status of this operation. This cannot be canceled or reverted
+         * once submitted. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </p> <note> The specified DB Parameter Group cannot be associated with any DB Instances. </note>
-        */
+        /**
+         * <p> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be
+         * associated with any RDS instances to be deleted. </p> <note> The specified DB
+         * Parameter Group cannot be associated with any DB Instances. </note>
+         */
         virtual Model::DeleteDBParameterGroupOutcome DeleteDBParameterGroup(const Model::DeleteDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </p> <note> The specified DB Parameter Group cannot be associated with any DB Instances. </note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be
+         * associated with any RDS instances to be deleted. </p> <note> The specified DB
+         * Parameter Group cannot be associated with any DB Instances. </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteDBParameterGroupOutcomeCallable DeleteDBParameterGroupCallable(const Model::DeleteDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </p> <note> The specified DB Parameter Group cannot be associated with any DB Instances. </note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be
+         * associated with any RDS instances to be deleted. </p> <note> The specified DB
+         * Parameter Group cannot be associated with any DB Instances. </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteDBParameterGroupAsync(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Deletes a DB Security Group. </p> <note>The specified DB Security Group must not be associated with any DB Instances.</note>
-        */
+        /**
+         * <p> Deletes a DB Security Group. </p> <note>The specified DB Security Group must
+         * not be associated with any DB Instances.</note>
+         */
         virtual Model::DeleteDBSecurityGroupOutcome DeleteDBSecurityGroup(const Model::DeleteDBSecurityGroupRequest& request) const;
 
-        /*
-            <p> Deletes a DB Security Group. </p> <note>The specified DB Security Group must not be associated with any DB Instances.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Deletes a DB Security Group. </p> <note>The specified DB Security Group must
+         * not be associated with any DB Instances.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteDBSecurityGroupOutcomeCallable DeleteDBSecurityGroupCallable(const Model::DeleteDBSecurityGroupRequest& request) const;
 
-        /*
-            <p> Deletes a DB Security Group. </p> <note>The specified DB Security Group must not be associated with any DB Instances.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Deletes a DB Security Group. </p> <note>The specified DB Security Group must
+         * not be associated with any DB Instances.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteDBSecurityGroupAsync(const Model::DeleteDBSecurityGroupRequest& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Deletes a DBSnapshot. </p> <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
-        */
+        /**
+         * <p> Deletes a DBSnapshot. </p> <note>The DBSnapshot must be in the
+         * <code>available</code> state to be deleted.</note>
+         */
         virtual Model::DeleteDBSnapshotOutcome DeleteDBSnapshot(const Model::DeleteDBSnapshotRequest& request) const;
 
-        /*
-            <p> Deletes a DBSnapshot. </p> <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Deletes a DBSnapshot. </p> <note>The DBSnapshot must be in the
+         * <code>available</code> state to be deleted.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteDBSnapshotOutcomeCallable DeleteDBSnapshotCallable(const Model::DeleteDBSnapshotRequest& request) const;
 
-        /*
-            <p> Deletes a DBSnapshot. </p> <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Deletes a DBSnapshot. </p> <note>The DBSnapshot must be in the
+         * <code>available</code> state to be deleted.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteDBSnapshotAsync(const Model::DeleteDBSnapshotRequest& request, const DeleteDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Deletes a DB subnet group. </p> <note>The specified database subnet group must not be associated with any DB instances.</note>
-        */
+        /**
+         * <p> Deletes a DB subnet group. </p> <note>The specified database subnet group
+         * must not be associated with any DB instances.</note>
+         */
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
-        /*
-            <p> Deletes a DB subnet group. </p> <note>The specified database subnet group must not be associated with any DB instances.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Deletes a DB subnet group. </p> <note>The specified database subnet group
+         * must not be associated with any DB instances.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteDBSubnetGroupOutcomeCallable DeleteDBSubnetGroupCallable(const Model::DeleteDBSubnetGroupRequest& request) const;
 
-        /*
-            <p> Deletes a DB subnet group. </p> <note>The specified database subnet group must not be associated with any DB instances.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Deletes a DB subnet group. </p> <note>The specified database subnet group
+         * must not be associated with any DB instances.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteDBSubnetGroupAsync(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Deletes an RDS event notification subscription.</p>
-        */
+        /**
+         * <p>Deletes an RDS event notification subscription.</p>
+         */
         virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
 
-        /*
-            <p>Deletes an RDS event notification subscription.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Deletes an RDS event notification subscription.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
 
-        /*
-            <p>Deletes an RDS event notification subscription.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Deletes an RDS event notification subscription.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Deletes an existing Option Group. </p>
-        */
+        /**
+         * <p> Deletes an existing Option Group. </p>
+         */
         virtual Model::DeleteOptionGroupOutcome DeleteOptionGroup(const Model::DeleteOptionGroupRequest& request) const;
 
-        /*
-            <p> Deletes an existing Option Group. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Deletes an existing Option Group. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteOptionGroupOutcomeCallable DeleteOptionGroupCallable(const Model::DeleteOptionGroupRequest& request) const;
 
-        /*
-            <p> Deletes an existing Option Group. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Deletes an existing Option Group. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteOptionGroupAsync(const Model::DeleteOptionGroupRequest& request, const DeleteOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns a list of the available DB engines. </p>
-        */
+        /**
+         * <p> Returns a list of the available DB engines. </p>
+         */
         virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request) const;
 
-        /*
-            <p> Returns a list of the available DB engines. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns a list of the available DB engines. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const Model::DescribeDBEngineVersionsRequest& request) const;
 
-        /*
-            <p> Returns a list of the available DB engines. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns a list of the available DB engines. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBEngineVersionsAsync(const Model::DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns information about provisioned RDS instances. This API supports pagination. </p>
-        */
+        /**
+         * <p> Returns information about provisioned RDS instances. This API supports
+         * pagination. </p>
+         */
         virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request) const;
 
-        /*
-            <p> Returns information about provisioned RDS instances. This API supports pagination. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns information about provisioned RDS instances. This API supports
+         * pagination. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request) const;
 
-        /*
-            <p> Returns information about provisioned RDS instances. This API supports pagination. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns information about provisioned RDS instances. This API supports
+         * pagination. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description of the specified DBParameterGroup. </p>
-        */
+        /**
+         * <p> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName
+         * is specified, the list will contain only the description of the specified
+         * DBParameterGroup. </p>
+         */
         virtual Model::DescribeDBParameterGroupsOutcome DescribeDBParameterGroups(const Model::DescribeDBParameterGroupsRequest& request) const;
 
-        /*
-            <p> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description of the specified DBParameterGroup. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName
+         * is specified, the list will contain only the description of the specified
+         * DBParameterGroup. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBParameterGroupsOutcomeCallable DescribeDBParameterGroupsCallable(const Model::DescribeDBParameterGroupsRequest& request) const;
 
-        /*
-            <p> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description of the specified DBParameterGroup. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName
+         * is specified, the list will contain only the description of the specified
+         * DBParameterGroup. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBParameterGroupsAsync(const Model::DescribeDBParameterGroupsRequest& request, const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns the detailed parameter list for a particular DBParameterGroup. </p>
-        */
+        /**
+         * <p> Returns the detailed parameter list for a particular DBParameterGroup. </p>
+         */
         virtual Model::DescribeDBParametersOutcome DescribeDBParameters(const Model::DescribeDBParametersRequest& request) const;
 
-        /*
-            <p> Returns the detailed parameter list for a particular DBParameterGroup. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns the detailed parameter list for a particular DBParameterGroup. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request) const;
 
-        /*
-            <p> Returns the detailed parameter list for a particular DBParameterGroup. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns the detailed parameter list for a particular DBParameterGroup. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const DescribeDBParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of the specified DBSecurityGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-        */
+        /**
+         * <p> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is
+         * specified, the list will contain only the descriptions of the specified
+         * DBSecurityGroup. </p> <p>For an overview of CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         */
         virtual Model::DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest& request) const;
 
-        /*
-            <p> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of the specified DBSecurityGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is
+         * specified, the list will contain only the descriptions of the specified
+         * DBSecurityGroup. </p> <p>For an overview of CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request) const;
 
-        /*
-            <p> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of the specified DBSecurityGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is
+         * specified, the list will contain only the descriptions of the specified
+         * DBSecurityGroup. </p> <p>For an overview of CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns information about DBSnapshots. This API supports pagination. </p>
-        */
+        /**
+         * <p> Returns information about DBSnapshots. This API supports pagination. </p>
+         */
         virtual Model::DescribeDBSnapshotsOutcome DescribeDBSnapshots(const Model::DescribeDBSnapshotsRequest& request) const;
 
-        /*
-            <p> Returns information about DBSnapshots. This API supports pagination. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns information about DBSnapshots. This API supports pagination. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBSnapshotsOutcomeCallable DescribeDBSnapshotsCallable(const Model::DescribeDBSnapshotsRequest& request) const;
 
-        /*
-            <p> Returns information about DBSnapshots. This API supports pagination. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns information about DBSnapshots. This API supports pagination. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBSnapshotsAsync(const Model::DescribeDBSnapshotsRequest& request, const DescribeDBSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-        */
+        /**
+         * <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is
+         * specified, the list will contain only the descriptions of the specified
+         * DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         */
         virtual Model::DescribeDBSubnetGroupsOutcome DescribeDBSubnetGroups(const Model::DescribeDBSubnetGroupsRequest& request) const;
 
-        /*
-            <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is
+         * specified, the list will contain only the descriptions of the specified
+         * DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeDBSubnetGroupsOutcomeCallable DescribeDBSubnetGroupsCallable(const Model::DescribeDBSubnetGroupsRequest& request) const;
 
-        /*
-            <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is
+         * specified, the list will contain only the descriptions of the specified
+         * DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a
+         * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+         * Tutorial</a>. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeDBSubnetGroupsAsync(const Model::DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns the default engine and system parameter information for the specified database engine. </p>
-        */
+        /**
+         * <p> Returns the default engine and system parameter information for the
+         * specified database engine. </p>
+         */
         virtual Model::DescribeEngineDefaultParametersOutcome DescribeEngineDefaultParameters(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
-        /*
-            <p> Returns the default engine and system parameter information for the specified database engine. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns the default engine and system parameter information for the
+         * specified database engine. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeEngineDefaultParametersOutcomeCallable DescribeEngineDefaultParametersCallable(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
-        /*
-            <p> Returns the default engine and system parameter information for the specified database engine. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns the default engine and system parameter information for the
+         * specified database engine. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the Amazon RDS User Guide.</p>
-        */
+        /**
+         * <p>Displays a list of categories for all event source types, or, if specified,
+         * for a specified source type. You can see a list of the event categories and
+         * source types in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+         * Events</a> topic in the Amazon RDS User Guide.</p>
+         */
         virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
 
-        /*
-            <p>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the Amazon RDS User Guide.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Displays a list of categories for all event source types, or, if specified,
+         * for a specified source type. You can see a list of the event categories and
+         * source types in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+         * Events</a> topic in the Amazon RDS User Guide.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const Model::DescribeEventCategoriesRequest& request) const;
 
-        /*
-            <p>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the Amazon RDS User Guide.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Displays a list of categories for all event source types, or, if specified,
+         * for a specified source type. You can see a list of the event categories and
+         * source types in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+         * Events</a> topic in the Amazon RDS User Guide.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you specify a SubscriptionName, lists the description for that subscription.</p>
-        */
+        /**
+         * <p>Lists all the subscription descriptions for a customer account. The
+         * description for a subscription includes SubscriptionName, SNSTopicARN,
+         * CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you
+         * specify a SubscriptionName, lists the description for that subscription.</p>
+         */
         virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
 
-        /*
-            <p>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you specify a SubscriptionName, lists the description for that subscription.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Lists all the subscription descriptions for a customer account. The
+         * description for a subscription includes SubscriptionName, SNSTopicARN,
+         * CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you
+         * specify a SubscriptionName, lists the description for that subscription.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const Model::DescribeEventSubscriptionsRequest& request) const;
 
-        /*
-            <p>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you specify a SubscriptionName, lists the description for that subscription.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Lists all the subscription descriptions for a customer account. The
+         * description for a subscription includes SubscriptionName, SNSTopicARN,
+         * CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you
+         * specify a SubscriptionName, lists the description for that subscription.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns events related to DB instances, DB security groups, DB Snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained by providing the source identifier as a parameter. By default, the past hour of events are returned. </p> <p>You can see a list of event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events </a> topic in the Amazon RDS User Guide.</p>
-        */
+        /**
+         * <p> Returns events related to DB instances, DB security groups, DB Snapshots,
+         * and DB parameter groups for the past 14 days. Events specific to a particular DB
+         * Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained
+         * by providing the source identifier as a parameter. By default, the past hour of
+         * events are returned. </p> <p>You can see a list of event categories and source
+         * types in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events
+         * </a> topic in the Amazon RDS User Guide.</p>
+         */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /*
-            <p> Returns events related to DB instances, DB security groups, DB Snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained by providing the source identifier as a parameter. By default, the past hour of events are returned. </p> <p>You can see a list of event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events </a> topic in the Amazon RDS User Guide.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns events related to DB instances, DB security groups, DB Snapshots,
+         * and DB parameter groups for the past 14 days. Events specific to a particular DB
+         * Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained
+         * by providing the source identifier as a parameter. By default, the past hour of
+         * events are returned. </p> <p>You can see a list of event categories and source
+         * types in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events
+         * </a> topic in the Amazon RDS User Guide.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
 
-        /*
-            <p> Returns events related to DB instances, DB security groups, DB Snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained by providing the source identifier as a parameter. By default, the past hour of events are returned. </p> <p>You can see a list of event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events </a> topic in the Amazon RDS User Guide.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns events related to DB instances, DB security groups, DB Snapshots,
+         * and DB parameter groups for the past 14 days. Events specific to a particular DB
+         * Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained
+         * by providing the source identifier as a parameter. By default, the past hour of
+         * events are returned. </p> <p>You can see a list of event categories and source
+         * types in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events
+         * </a> topic in the Amazon RDS User Guide.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Describes all available options. </p>
-        */
+        /**
+         * <p> Describes all available options. </p>
+         */
         virtual Model::DescribeOptionGroupOptionsOutcome DescribeOptionGroupOptions(const Model::DescribeOptionGroupOptionsRequest& request) const;
 
-        /*
-            <p> Describes all available options. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Describes all available options. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeOptionGroupOptionsOutcomeCallable DescribeOptionGroupOptionsCallable(const Model::DescribeOptionGroupOptionsRequest& request) const;
 
-        /*
-            <p> Describes all available options. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Describes all available options. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeOptionGroupOptionsAsync(const Model::DescribeOptionGroupOptionsRequest& request, const DescribeOptionGroupOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Describes the available option groups. </p>
-        */
+        /**
+         * <p> Describes the available option groups. </p>
+         */
         virtual Model::DescribeOptionGroupsOutcome DescribeOptionGroups(const Model::DescribeOptionGroupsRequest& request) const;
 
-        /*
-            <p> Describes the available option groups. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Describes the available option groups. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeOptionGroupsOutcomeCallable DescribeOptionGroupsCallable(const Model::DescribeOptionGroupsRequest& request) const;
 
-        /*
-            <p> Describes the available option groups. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Describes the available option groups. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeOptionGroupsAsync(const Model::DescribeOptionGroupsRequest& request, const DescribeOptionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns a list of orderable DB Instance options for the specified engine. </p>
-        */
+        /**
+         * <p> Returns a list of orderable DB Instance options for the specified engine.
+         * </p>
+         */
         virtual Model::DescribeOrderableDBInstanceOptionsOutcome DescribeOrderableDBInstanceOptions(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
 
-        /*
-            <p> Returns a list of orderable DB Instance options for the specified engine. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns a list of orderable DB Instance options for the specified engine.
+         * </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeOrderableDBInstanceOptionsOutcomeCallable DescribeOrderableDBInstanceOptionsCallable(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
 
-        /*
-            <p> Returns a list of orderable DB Instance options for the specified engine. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns a list of orderable DB Instance options for the specified engine.
+         * </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeOrderableDBInstanceOptionsAsync(const Model::DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </p>
-        */
+        /**
+         * <p> Returns information about reserved DB Instances for this account, or about a
+         * specified reserved DB Instance. </p>
+         */
         virtual Model::DescribeReservedDBInstancesOutcome DescribeReservedDBInstances(const Model::DescribeReservedDBInstancesRequest& request) const;
 
-        /*
-            <p> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Returns information about reserved DB Instances for this account, or about a
+         * specified reserved DB Instance. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReservedDBInstancesOutcomeCallable DescribeReservedDBInstancesCallable(const Model::DescribeReservedDBInstancesRequest& request) const;
 
-        /*
-            <p> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Returns information about reserved DB Instances for this account, or about a
+         * specified reserved DB Instance. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReservedDBInstancesAsync(const Model::DescribeReservedDBInstancesRequest& request, const DescribeReservedDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Lists available reserved DB Instance offerings. </p>
-        */
+        /**
+         * <p> Lists available reserved DB Instance offerings. </p>
+         */
         virtual Model::DescribeReservedDBInstancesOfferingsOutcome DescribeReservedDBInstancesOfferings(const Model::DescribeReservedDBInstancesOfferingsRequest& request) const;
 
-        /*
-            <p> Lists available reserved DB Instance offerings. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Lists available reserved DB Instance offerings. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReservedDBInstancesOfferingsOutcomeCallable DescribeReservedDBInstancesOfferingsCallable(const Model::DescribeReservedDBInstancesOfferingsRequest& request) const;
 
-        /*
-            <p> Lists available reserved DB Instance offerings. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Lists available reserved DB Instance offerings. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReservedDBInstancesOfferingsAsync(const Model::DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Lists all tags on a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-        */
+        /**
+         * <p> Lists all tags on a DB Instance.</p> <p>For an overview on tagging DB
+         * Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /*
-            <p> Lists all tags on a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Lists all tags on a DB Instance.</p> <p>For an overview on tagging DB
+         * Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
-        /*
-            <p> Lists all tags on a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Lists all tags on a DB Instance.</p> <p>For an overview on tagging DB
+         * Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. </p>
-        */
+        /**
+         * <p> Modify settings for a DB Instance. You can change one or more database
+         * configuration parameters by specifying these parameters and the new values in
+         * the request. </p>
+         */
         virtual Model::ModifyDBInstanceOutcome ModifyDBInstance(const Model::ModifyDBInstanceRequest& request) const;
 
-        /*
-            <p> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Modify settings for a DB Instance. You can change one or more database
+         * configuration parameters by specifying these parameters and the new values in
+         * the request. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyDBInstanceOutcomeCallable ModifyDBInstanceCallable(const Model::ModifyDBInstanceRequest& request) const;
 
-        /*
-            <p> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Modify settings for a DB Instance. You can change one or more database
+         * configuration parameters by specifying these parameters and the new values in
+         * the request. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyDBInstanceAsync(const Model::ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName, ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </p> <note> <p> The <code>apply-immediate</code> method can be used only for dynamic parameters; the <code>pending-reboot</code> method can be used with MySQL and Oracle DB Instances for either dynamic or static parameters. For Microsoft SQL Server DB Instances, the <code>pending-reboot</code> method can be used only for static parameters. </p> </note>
-        */
+        /**
+         * <p> Modifies the parameters of a DBParameterGroup. To modify more than one
+         * parameter submit a list of the following: ParameterName, ParameterValue, and
+         * ApplyMethod. A maximum of 20 parameters can be modified in a single request.
+         * </p> <note> <p> The <code>apply-immediate</code> method can be used only for
+         * dynamic parameters; the <code>pending-reboot</code> method can be used with
+         * MySQL and Oracle DB Instances for either dynamic or static parameters. For
+         * Microsoft SQL Server DB Instances, the <code>pending-reboot</code> method can be
+         * used only for static parameters. </p> </note>
+         */
         virtual Model::ModifyDBParameterGroupOutcome ModifyDBParameterGroup(const Model::ModifyDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName, ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </p> <note> <p> The <code>apply-immediate</code> method can be used only for dynamic parameters; the <code>pending-reboot</code> method can be used with MySQL and Oracle DB Instances for either dynamic or static parameters. For Microsoft SQL Server DB Instances, the <code>pending-reboot</code> method can be used only for static parameters. </p> </note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Modifies the parameters of a DBParameterGroup. To modify more than one
+         * parameter submit a list of the following: ParameterName, ParameterValue, and
+         * ApplyMethod. A maximum of 20 parameters can be modified in a single request.
+         * </p> <note> <p> The <code>apply-immediate</code> method can be used only for
+         * dynamic parameters; the <code>pending-reboot</code> method can be used with
+         * MySQL and Oracle DB Instances for either dynamic or static parameters. For
+         * Microsoft SQL Server DB Instances, the <code>pending-reboot</code> method can be
+         * used only for static parameters. </p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyDBParameterGroupOutcomeCallable ModifyDBParameterGroupCallable(const Model::ModifyDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName, ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </p> <note> <p> The <code>apply-immediate</code> method can be used only for dynamic parameters; the <code>pending-reboot</code> method can be used with MySQL and Oracle DB Instances for either dynamic or static parameters. For Microsoft SQL Server DB Instances, the <code>pending-reboot</code> method can be used only for static parameters. </p> </note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Modifies the parameters of a DBParameterGroup. To modify more than one
+         * parameter submit a list of the following: ParameterName, ParameterValue, and
+         * ApplyMethod. A maximum of 20 parameters can be modified in a single request.
+         * </p> <note> <p> The <code>apply-immediate</code> method can be used only for
+         * dynamic parameters; the <code>pending-reboot</code> method can be used with
+         * MySQL and Oracle DB Instances for either dynamic or static parameters. For
+         * Microsoft SQL Server DB Instances, the <code>pending-reboot</code> method can be
+         * used only for static parameters. </p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyDBParameterGroupAsync(const Model::ModifyDBParameterGroupRequest& request, const ModifyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
-        */
+        /**
+         * <p> Modifies an existing DB subnet group. DB subnet groups must contain at least
+         * one subnet in at least two AZs in the region. </p>
+         */
         virtual Model::ModifyDBSubnetGroupOutcome ModifyDBSubnetGroup(const Model::ModifyDBSubnetGroupRequest& request) const;
 
-        /*
-            <p> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Modifies an existing DB subnet group. DB subnet groups must contain at least
+         * one subnet in at least two AZs in the region. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyDBSubnetGroupOutcomeCallable ModifyDBSubnetGroupCallable(const Model::ModifyDBSubnetGroupRequest& request) const;
 
-        /*
-            <p> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Modifies an existing DB subnet group. DB subnet groups must contain at least
+         * one subnet in at least two AZs in the region. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.</p>
-        */
+        /**
+         * <p>Modifies an existing RDS event notification subscription. Note that you
+         * cannot modify the source identifiers using this call; to change source
+         * identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a>
+         * and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a
+         * list of the event categories for a given SourceType in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+         * topic in the Amazon RDS User Guide or by using the
+         * <b>DescribeEventCategories</b> action.</p>
+         */
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
-        /*
-            <p>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Modifies an existing RDS event notification subscription. Note that you
+         * cannot modify the source identifiers using this call; to change source
+         * identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a>
+         * and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a
+         * list of the event categories for a given SourceType in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+         * topic in the Amazon RDS User Guide or by using the
+         * <b>DescribeEventCategories</b> action.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
 
-        /*
-            <p>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Modifies an existing RDS event notification subscription. Note that you
+         * cannot modify the source identifiers using this call; to change source
+         * identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a>
+         * and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a
+         * list of the event categories for a given SourceType in the <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+         * topic in the Amazon RDS User Guide or by using the
+         * <b>DescribeEventCategories</b> action.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Modifies an existing Option Group. </p>
-        */
+        /**
+         * <p> Modifies an existing Option Group. </p>
+         */
         virtual Model::ModifyOptionGroupOutcome ModifyOptionGroup(const Model::ModifyOptionGroupRequest& request) const;
 
-        /*
-            <p> Modifies an existing Option Group. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Modifies an existing Option Group. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyOptionGroupOutcomeCallable ModifyOptionGroupCallable(const Model::ModifyOptionGroupRequest& request) const;
 
-        /*
-            <p> Modifies an existing Option Group. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Modifies an existing Option Group. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyOptionGroupAsync(const Model::ModifyOptionGroupRequest& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Promotes a Read Replica DB Instance to a standalone DB Instance. </p>
-        */
+        /**
+         * <p> Promotes a Read Replica DB Instance to a standalone DB Instance. </p>
+         */
         virtual Model::PromoteReadReplicaOutcome PromoteReadReplica(const Model::PromoteReadReplicaRequest& request) const;
 
-        /*
-            <p> Promotes a Read Replica DB Instance to a standalone DB Instance. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Promotes a Read Replica DB Instance to a standalone DB Instance. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PromoteReadReplicaOutcomeCallable PromoteReadReplicaCallable(const Model::PromoteReadReplicaRequest& request) const;
 
-        /*
-            <p> Promotes a Read Replica DB Instance to a standalone DB Instance. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Promotes a Read Replica DB Instance to a standalone DB Instance. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PromoteReadReplicaAsync(const Model::PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Purchases a reserved DB Instance offering. </p>
-        */
+        /**
+         * <p> Purchases a reserved DB Instance offering. </p>
+         */
         virtual Model::PurchaseReservedDBInstancesOfferingOutcome PurchaseReservedDBInstancesOffering(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
 
-        /*
-            <p> Purchases a reserved DB Instance offering. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Purchases a reserved DB Instance offering. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PurchaseReservedDBInstancesOfferingOutcomeCallable PurchaseReservedDBInstancesOfferingCallable(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
 
-        /*
-            <p> Purchases a reserved DB Instance offering. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Purchases a reserved DB Instance offering. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PurchaseReservedDBInstancesOfferingAsync(const Model::PurchaseReservedDBInstancesOfferingRequest& request, const PurchaseReservedDBInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS instance during which the RDS instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. A DBInstance event is created when the reboot is completed. </p>
-        */
+        /**
+         * <p> Reboots a previously provisioned RDS instance. This API results in the
+         * application of modified DBParameterGroup parameters with ApplyStatus of
+         * pending-reboot to the RDS instance. This action is taken as soon as possible,
+         * and results in a momentary outage to the RDS instance during which the RDS
+         * instance status is set to rebooting. If the RDS instance is configured for
+         * MultiAZ, it is possible that the reboot will be conducted through a failover. A
+         * DBInstance event is created when the reboot is completed. </p>
+         */
         virtual Model::RebootDBInstanceOutcome RebootDBInstance(const Model::RebootDBInstanceRequest& request) const;
 
-        /*
-            <p> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS instance during which the RDS instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. A DBInstance event is created when the reboot is completed. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Reboots a previously provisioned RDS instance. This API results in the
+         * application of modified DBParameterGroup parameters with ApplyStatus of
+         * pending-reboot to the RDS instance. This action is taken as soon as possible,
+         * and results in a momentary outage to the RDS instance during which the RDS
+         * instance status is set to rebooting. If the RDS instance is configured for
+         * MultiAZ, it is possible that the reboot will be conducted through a failover. A
+         * DBInstance event is created when the reboot is completed. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RebootDBInstanceOutcomeCallable RebootDBInstanceCallable(const Model::RebootDBInstanceRequest& request) const;
 
-        /*
-            <p> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS instance during which the RDS instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. A DBInstance event is created when the reboot is completed. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Reboots a previously provisioned RDS instance. This API results in the
+         * application of modified DBParameterGroup parameters with ApplyStatus of
+         * pending-reboot to the RDS instance. This action is taken as soon as possible,
+         * and results in a momentary outage to the RDS instance during which the RDS
+         * instance status is set to rebooting. If the RDS instance is configured for
+         * MultiAZ, it is possible that the reboot will be conducted through a failover. A
+         * DBInstance event is created when the reboot is completed. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RebootDBInstanceAsync(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Removes a source identifier from an existing RDS event notification subscription.</p>
-        */
+        /**
+         * <p>Removes a source identifier from an existing RDS event notification
+         * subscription.</p>
+         */
         virtual Model::RemoveSourceIdentifierFromSubscriptionOutcome RemoveSourceIdentifierFromSubscription(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
 
-        /*
-            <p>Removes a source identifier from an existing RDS event notification subscription.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Removes a source identifier from an existing RDS event notification
+         * subscription.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RemoveSourceIdentifierFromSubscriptionOutcomeCallable RemoveSourceIdentifierFromSubscriptionCallable(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
 
-        /*
-            <p>Removes a source identifier from an existing RDS event notification subscription.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Removes a source identifier from an existing RDS event notification
+         * subscription.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RemoveSourceIdentifierFromSubscriptionAsync(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Removes metadata tags from a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-        */
+        /**
+         * <p> Removes metadata tags from a DB Instance.</p> <p>For an overview on tagging
+         * DB Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /*
-            <p> Removes metadata tags from a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Removes metadata tags from a DB Instance.</p> <p>For an overview on tagging
+         * DB Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /*
-            <p> Removes metadata tags from a DB Instance.</p> <p>For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB Instance Tags.</a></p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Removes metadata tags from a DB Instance.</p> <p>For an overview on tagging
+         * DB Instances, see <a
+         * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">DB
+         * Instance Tags.</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset specific parameters submit a list of the following: ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the DBParameterGroup name and ResetAllParameters parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to pending-reboot to take effect on the next DB instance restart or RebootDBInstance request. </p>
-        */
+        /**
+         * <p> Modifies the parameters of a DBParameterGroup to the engine/system default
+         * value. To reset specific parameters submit a list of the following:
+         * ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the
+         * DBParameterGroup name and ResetAllParameters parameters. When resetting the
+         * entire group, dynamic parameters are updated immediately and static parameters
+         * are set to pending-reboot to take effect on the next DB instance restart or
+         * RebootDBInstance request. </p>
+         */
         virtual Model::ResetDBParameterGroupOutcome ResetDBParameterGroup(const Model::ResetDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset specific parameters submit a list of the following: ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the DBParameterGroup name and ResetAllParameters parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to pending-reboot to take effect on the next DB instance restart or RebootDBInstance request. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Modifies the parameters of a DBParameterGroup to the engine/system default
+         * value. To reset specific parameters submit a list of the following:
+         * ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the
+         * DBParameterGroup name and ResetAllParameters parameters. When resetting the
+         * entire group, dynamic parameters are updated immediately and static parameters
+         * are set to pending-reboot to take effect on the next DB instance restart or
+         * RebootDBInstance request. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ResetDBParameterGroupOutcomeCallable ResetDBParameterGroupCallable(const Model::ResetDBParameterGroupRequest& request) const;
 
-        /*
-            <p> Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset specific parameters submit a list of the following: ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the DBParameterGroup name and ResetAllParameters parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to pending-reboot to take effect on the next DB instance restart or RebootDBInstance request. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Modifies the parameters of a DBParameterGroup to the engine/system default
+         * value. To reset specific parameters submit a list of the following:
+         * ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the
+         * DBParameterGroup name and ResetAllParameters parameters. When resetting the
+         * entire group, dynamic parameters are updated immediately and static parameters
+         * are set to pending-reboot to take effect on the next DB instance restart or
+         * RebootDBInstance request. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ResetDBParameterGroupAsync(const Model::ResetDBParameterGroupRequest& request, const ResetDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as the original source database, except that the new RDS instance is created with the default security group. </p>
-        */
+        /**
+         * <p> Creates a new DB Instance from a DB snapshot. The target database is created
+         * from the source database restore point with the same configuration as the
+         * original source database, except that the new RDS instance is created with the
+         * default security group. </p>
+         */
         virtual Model::RestoreDBInstanceFromDBSnapshotOutcome RestoreDBInstanceFromDBSnapshot(const Model::RestoreDBInstanceFromDBSnapshotRequest& request) const;
 
-        /*
-            <p> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as the original source database, except that the new RDS instance is created with the default security group. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Creates a new DB Instance from a DB snapshot. The target database is created
+         * from the source database restore point with the same configuration as the
+         * original source database, except that the new RDS instance is created with the
+         * default security group. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RestoreDBInstanceFromDBSnapshotOutcomeCallable RestoreDBInstanceFromDBSnapshotCallable(const Model::RestoreDBInstanceFromDBSnapshotRequest& request) const;
 
-        /*
-            <p> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as the original source database, except that the new RDS instance is created with the default security group. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Creates a new DB Instance from a DB snapshot. The target database is created
+         * from the source database restore point with the same configuration as the
+         * original source database, except that the new RDS instance is created with the
+         * default security group. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RestoreDBInstanceFromDBSnapshotAsync(const Model::RestoreDBInstanceFromDBSnapshotRequest& request, const RestoreDBInstanceFromDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database except that the DB instance is created with the default DB security group. </p>
-        */
+        /**
+         * <p> Restores a DB Instance to an arbitrary point-in-time. Users can restore to
+         * any point in time before the latestRestorableTime for up to
+         * backupRetentionPeriod days. The target database is created from the source
+         * database with the same configuration as the original database except that the DB
+         * instance is created with the default DB security group. </p>
+         */
         virtual Model::RestoreDBInstanceToPointInTimeOutcome RestoreDBInstanceToPointInTime(const Model::RestoreDBInstanceToPointInTimeRequest& request) const;
 
-        /*
-            <p> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database except that the DB instance is created with the default DB security group. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Restores a DB Instance to an arbitrary point-in-time. Users can restore to
+         * any point in time before the latestRestorableTime for up to
+         * backupRetentionPeriod days. The target database is created from the source
+         * database with the same configuration as the original database except that the DB
+         * instance is created with the default DB security group. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RestoreDBInstanceToPointInTimeOutcomeCallable RestoreDBInstanceToPointInTimeCallable(const Model::RestoreDBInstanceToPointInTimeRequest& request) const;
 
-        /*
-            <p> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database except that the DB instance is created with the default DB security group. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Restores a DB Instance to an arbitrary point-in-time. Users can restore to
+         * any point in time before the latestRestorableTime for up to
+         * backupRetentionPeriod days. The target database is created from the source
+         * database with the same configuration as the original database except that the DB
+         * instance is created with the default DB security group. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RestoreDBInstanceToPointInTimeAsync(const Model::RestoreDBInstanceToPointInTimeRequest& request, const RestoreDBInstanceToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId). </p>
-        */
+        /**
+         * <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges
+         * or EC2 or VPC Security Groups. Required parameters for this API are one of
+         * CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+         * EC2SecurityGroupName or EC2SecurityGroupId). </p>
+         */
         virtual Model::RevokeDBSecurityGroupIngressOutcome RevokeDBSecurityGroupIngress(const Model::RevokeDBSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId). </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges
+         * or EC2 or VPC Security Groups. Required parameters for this API are one of
+         * CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+         * EC2SecurityGroupName or EC2SecurityGroupId). </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RevokeDBSecurityGroupIngressOutcomeCallable RevokeDBSecurityGroupIngressCallable(const Model::RevokeDBSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId). </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges
+         * or EC2 or VPC Security Groups. Required parameters for this API are one of
+         * CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+         * EC2SecurityGroupName or EC2SecurityGroupId). </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RevokeDBSecurityGroupIngressAsync(const Model::RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-/**Async helpers**/
+        /**Async helpers**/
         void AddSourceIdentifierToSubscriptionAsyncHelper(const Model::AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeDBSecurityGroupIngressAsyncHelper(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

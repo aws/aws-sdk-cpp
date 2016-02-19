@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Describes the destination for a delivery stream.</p>
-  */
+
+  /**
+   * <p>Describes the destination for a delivery stream.</p>
+   */
   class AWS_FIREHOSE_API DestinationDescription
   {
   public:
@@ -42,89 +43,89 @@ namespace Model
     DestinationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(const Aws::String& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(const char* value) { m_destinationIdHasBeenSet = true; m_destinationId.assign(value); }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline DestinationDescription& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline DestinationDescription& WithDestinationId(Aws::String&& value) { SetDestinationId(value); return *this;}
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline DestinationDescription& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline const S3DestinationDescription& GetS3DestinationDescription() const{ return m_s3DestinationDescription; }
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(S3DestinationDescription&& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline DestinationDescription& WithS3DestinationDescription(const S3DestinationDescription& value) { SetS3DestinationDescription(value); return *this;}
 
-    /*
-     <p>The Amazon S3 destination.</p>
-    */
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline DestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(value); return *this;}
 
-    /*
-     <p>The destination in Amazon Redshift.</p>
-    */
+    /**
+     * <p>The destination in Amazon Redshift.</p>
+     */
     inline const RedshiftDestinationDescription& GetRedshiftDestinationDescription() const{ return m_redshiftDestinationDescription; }
 
-    /*
-     <p>The destination in Amazon Redshift.</p>
-    */
+    /**
+     * <p>The destination in Amazon Redshift.</p>
+     */
     inline void SetRedshiftDestinationDescription(const RedshiftDestinationDescription& value) { m_redshiftDestinationDescriptionHasBeenSet = true; m_redshiftDestinationDescription = value; }
 
-    /*
-     <p>The destination in Amazon Redshift.</p>
-    */
+    /**
+     * <p>The destination in Amazon Redshift.</p>
+     */
     inline void SetRedshiftDestinationDescription(RedshiftDestinationDescription&& value) { m_redshiftDestinationDescriptionHasBeenSet = true; m_redshiftDestinationDescription = value; }
 
-    /*
-     <p>The destination in Amazon Redshift.</p>
-    */
+    /**
+     * <p>The destination in Amazon Redshift.</p>
+     */
     inline DestinationDescription& WithRedshiftDestinationDescription(const RedshiftDestinationDescription& value) { SetRedshiftDestinationDescription(value); return *this;}
 
-    /*
-     <p>The destination in Amazon Redshift.</p>
-    */
+    /**
+     * <p>The destination in Amazon Redshift.</p>
+     */
     inline DestinationDescription& WithRedshiftDestinationDescription(RedshiftDestinationDescription&& value) { SetRedshiftDestinationDescription(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EC2_API DescribeVpcEndpointsRequest : public EC2Request
   {
   public:
@@ -35,144 +35,204 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline DescribeVpcEndpointsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(value); return *this;}
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more endpoint IDs.</p>
-    */
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
     inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline DescribeVpcEndpointsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline DescribeVpcEndpointsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline DescribeVpcEndpointsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
-    /*
-     <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
-    */
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p><code>service-name</code>: The name of
+     * the AWS service.</p> </li> <li> <p><code>vpc-id</code>: The ID of the VPC in
+     * which the endpoint resides.</p> </li> <li> <p><code>vpc-endpoint-id</code>: The
+     * ID of the endpoint.</p> </li> <li> <p><code>vpc-endpoint-state</code>: The state
+     * of the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
     inline DescribeVpcEndpointsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
-    /*
-     <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p> <p>Constraint: If the value is greater than 1000, we return only 1000 items.</p>
-    */
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p> <p>Constraint: If the value is greater than 1000, we return only
+     * 1000 items.</p>
+     */
     inline long GetMaxResults() const{ return m_maxResults; }
 
-    /*
-     <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p> <p>Constraint: If the value is greater than 1000, we return only 1000 items.</p>
-    */
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p> <p>Constraint: If the value is greater than 1000, we return only
+     * 1000 items.</p>
+     */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
-    /*
-     <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p> <p>Constraint: If the value is greater than 1000, we return only 1000 items.</p>
-    */
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p> <p>Constraint: If the value is greater than 1000, we return only
+     * 1000 items.</p>
+     */
     inline DescribeVpcEndpointsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline DescribeVpcEndpointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline DescribeVpcEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    */
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
     inline DescribeVpcEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

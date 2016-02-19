@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the ICMP type and code.</p>
-  */
+
+  /**
+   * <p>Describes the ICMP type and code.</p>
+   */
   class AWS_EC2_API IcmpTypeCode
   {
   public:
@@ -42,34 +43,34 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-    */
+    /**
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     */
     inline long GetType() const{ return m_type; }
 
-    /*
-     <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-    */
+    /**
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     */
     inline void SetType(long value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /*
-     <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-    */
+    /**
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     */
     inline IcmpTypeCode& WithType(long value) { SetType(value); return *this;}
 
-    /*
-     <p>The ICMP type. A value of -1 means all types.</p>
-    */
+    /**
+     * <p>The ICMP type. A value of -1 means all types.</p>
+     */
     inline long GetCode() const{ return m_code; }
 
-    /*
-     <p>The ICMP type. A value of -1 means all types.</p>
-    */
+    /**
+     * <p>The ICMP type. A value of -1 means all types.</p>
+     */
     inline void SetCode(long value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The ICMP type. A value of -1 means all types.</p>
-    */
+    /**
+     * <p>The ICMP type. A value of -1 means all types.</p>
+     */
     inline IcmpTypeCode& WithCode(long value) { SetCode(value); return *this;}
 
   private:

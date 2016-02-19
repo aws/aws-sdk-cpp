@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>ActivityTaskStarted</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>ActivityTaskStarted</code> event.</p>
+   */
   class AWS_SWF_API ActivityTaskStartedEventAttributes
   {
   public:
@@ -40,54 +41,67 @@ namespace Model
     ActivityTaskStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline ActivityTaskStartedEventAttributes& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline ActivityTaskStartedEventAttributes& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
 
-    /*
-     <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    */
+    /**
+     * <p>Identity of the worker that was assigned this task. This aids diagnostics
+     * when problems arise. The form of this identity is user defined.</p>
+     */
     inline ActivityTaskStartedEventAttributes& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
-    /*
-     <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
+     * this activity task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
 
-    /*
-     <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
+     * this activity task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
-    /*
-     <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
+     * this activity task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline ActivityTaskStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
   private:

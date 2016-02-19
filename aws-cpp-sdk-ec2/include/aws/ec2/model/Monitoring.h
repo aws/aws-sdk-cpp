@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the monitoring for the instance.</p>
-  */
+
+  /**
+   * <p>Describes the monitoring for the instance.</p>
+   */
   class AWS_EC2_API Monitoring
   {
   public:
@@ -43,29 +44,29 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline const MonitoringState& GetState() const{ return m_state; }
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline void SetState(const MonitoringState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline void SetState(MonitoringState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline Monitoring& WithState(const MonitoringState& value) { SetState(value); return *this;}
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline Monitoring& WithState(MonitoringState&& value) { SetState(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Delete
   {
   public:
@@ -63,19 +61,22 @@ namespace Model
     
     inline Delete& AddObjects(ObjectIdentifier&& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
 
-    /*
-     Element to enable quiet mode for the request. When you add this element, you must set its value to true.
-    */
+    /**
+     * Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.
+     */
     inline bool GetQuiet() const{ return m_quiet; }
 
-    /*
-     Element to enable quiet mode for the request. When you add this element, you must set its value to true.
-    */
+    /**
+     * Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.
+     */
     inline void SetQuiet(bool value) { m_quietHasBeenSet = true; m_quiet = value; }
 
-    /*
-     Element to enable quiet mode for the request. When you add this element, you must set its value to true.
-    */
+    /**
+     * Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.
+     */
     inline Delete& WithQuiet(bool value) { SetQuiet(value); return *this;}
 
   private:

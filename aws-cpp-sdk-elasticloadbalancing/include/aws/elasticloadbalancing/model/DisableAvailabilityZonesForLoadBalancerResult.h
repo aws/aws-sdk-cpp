@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DisableAvailabilityZonesForLoadBalancerResult
   {
   public:
@@ -44,44 +41,44 @@ namespace Model
     DisableAvailabilityZonesForLoadBalancerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DisableAvailabilityZonesForLoadBalancerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZones = value; }
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZones = value; }
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline DisableAvailabilityZonesForLoadBalancerResult& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline DisableAvailabilityZonesForLoadBalancerResult& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline DisableAvailabilityZonesForLoadBalancerResult& AddAvailabilityZones(const Aws::String& value) { m_availabilityZones.push_back(value); return *this; }
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline DisableAvailabilityZonesForLoadBalancerResult& AddAvailabilityZones(Aws::String&& value) { m_availabilityZones.push_back(value); return *this; }
 
-    /*
-     <p>The remaining Availability Zones for the load balancer.</p>
-    */
+    /**
+     * <p>The remaining Availability Zones for the load balancer.</p>
+     */
     inline DisableAvailabilityZonesForLoadBalancerResult& AddAvailabilityZones(const char* value) { m_availabilityZones.push_back(value); return *this; }
 
     

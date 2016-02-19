@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -266,27 +266,34 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::VerifyEmailAddressRequest&, const Model::VerifyEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyEmailAddressResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::VerifyEmailIdentityRequest&, const Model::VerifyEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyEmailIdentityResponseReceivedHandler;
 
-  /*
-    <fullname>Amazon Simple Email Service</fullname> <p> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>. </p> <note>For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the Amazon SES Developer Guide. </note>
-  */
+  /**
+   * <fullname>Amazon Simple Email Service</fullname> <p> This is the API Reference
+   * for Amazon Simple Email Service (Amazon SES). This documentation is intended to
+   * be used in conjunction with the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+   * SES Developer Guide</a>. </p> <note>For a list of Amazon SES endpoints to use in
+   * service requests, see <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
+   * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
+   */
   class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
 
-        /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SESClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SESClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -296,752 +303,1313 @@ namespace Model
 
         virtual ~SESClient();
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::CloneReceiptRuleSetOutcome CloneReceiptRuleSet(const Model::CloneReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CloneReceiptRuleSetOutcomeCallable CloneReceiptRuleSetCallable(const Model::CloneReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CloneReceiptRuleSetAsync(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::CreateReceiptFilterOutcome CreateReceiptFilter(const Model::CreateReceiptFilterRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateReceiptFilterOutcomeCallable CreateReceiptFilterCallable(const Model::CreateReceiptFilterRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateReceiptFilterAsync(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::CreateReceiptRuleOutcome CreateReceiptRule(const Model::CreateReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateReceiptRuleOutcomeCallable CreateReceiptRuleCallable(const Model::CreateReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateReceiptRuleAsync(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::CreateReceiptRuleSetOutcome CreateReceiptRuleSet(const Model::CreateReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateReceiptRuleSetOutcomeCallable CreateReceiptRuleSetCallable(const Model::CreateReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateReceiptRuleSetAsync(const Model::CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Deletes the specified identity (email address or domain) from the list of verified identities.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Deletes the specified identity (email address or domain) from the list of
+         * verified identities.</p> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::DeleteIdentityOutcome DeleteIdentity(const Model::DeleteIdentityRequest& request) const;
 
-        /*
-            <p>Deletes the specified identity (email address or domain) from the list of verified identities.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Deletes the specified identity (email address or domain) from the list of
+         * verified identities.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteIdentityOutcomeCallable DeleteIdentityCallable(const Model::DeleteIdentityRequest& request) const;
 
-        /*
-            <p>Deletes the specified identity (email address or domain) from the list of verified identities.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Deletes the specified identity (email address or domain) from the list of
+         * verified identities.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteIdentityAsync(const Model::DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Deletes the specified sending authorization policy for the given identity (email address or domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Deletes the specified sending authorization policy for the given identity
+         * (email address or domain). This API returns successfully even if a policy with
+         * the specified name does not exist.</p> <note>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an
+         * error.</note> <p>Sending authorization is a feature that enables an identity
+         * owner to authorize other senders to use its identities. For information about
+         * using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::DeleteIdentityPolicyOutcome DeleteIdentityPolicy(const Model::DeleteIdentityPolicyRequest& request) const;
 
-        /*
-            <p>Deletes the specified sending authorization policy for the given identity (email address or domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Deletes the specified sending authorization policy for the given identity
+         * (email address or domain). This API returns successfully even if a policy with
+         * the specified name does not exist.</p> <note>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an
+         * error.</note> <p>Sending authorization is a feature that enables an identity
+         * owner to authorize other senders to use its identities. For information about
+         * using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteIdentityPolicyOutcomeCallable DeleteIdentityPolicyCallable(const Model::DeleteIdentityPolicyRequest& request) const;
 
-        /*
-            <p>Deletes the specified sending authorization policy for the given identity (email address or domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Deletes the specified sending authorization policy for the given identity
+         * (email address or domain). This API returns successfully even if a policy with
+         * the specified name does not exist.</p> <note>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an
+         * error.</note> <p>Sending authorization is a feature that enables an identity
+         * owner to authorize other senders to use its identities. For information about
+         * using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteIdentityPolicyAsync(const Model::DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DeleteReceiptFilterOutcome DeleteReceiptFilter(const Model::DeleteReceiptFilterRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteReceiptFilterOutcomeCallable DeleteReceiptFilterCallable(const Model::DeleteReceiptFilterRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteReceiptFilterAsync(const Model::DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DeleteReceiptRuleOutcome DeleteReceiptRule(const Model::DeleteReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteReceiptRuleOutcomeCallable DeleteReceiptRuleCallable(const Model::DeleteReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteReceiptRuleAsync(const Model::DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DeleteReceiptRuleSetOutcome DeleteReceiptRuleSet(const Model::DeleteReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteReceiptRuleSetOutcomeCallable DeleteReceiptRuleSetCallable(const Model::DeleteReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteReceiptRuleSetAsync(const Model::DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Deletes the specified email address from the list of verified addresses.</p> <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Deletes the specified email address from the list of verified addresses.</p>
+         * <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
+         * 2012 release of Domain Verification. The DeleteIdentity action is now
+         * preferred.</important> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::DeleteVerifiedEmailAddressOutcome DeleteVerifiedEmailAddress(const Model::DeleteVerifiedEmailAddressRequest& request) const;
 
-        /*
-            <p>Deletes the specified email address from the list of verified addresses.</p> <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Deletes the specified email address from the list of verified addresses.</p>
+         * <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
+         * 2012 release of Domain Verification. The DeleteIdentity action is now
+         * preferred.</important> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteVerifiedEmailAddressOutcomeCallable DeleteVerifiedEmailAddressCallable(const Model::DeleteVerifiedEmailAddressRequest& request) const;
 
-        /*
-            <p>Deletes the specified email address from the list of verified addresses.</p> <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Deletes the specified email address from the list of verified addresses.</p>
+         * <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
+         * 2012 release of Domain Verification. The DeleteIdentity action is now
+         * preferred.</important> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteVerifiedEmailAddressAsync(const Model::DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeActiveReceiptRuleSetOutcomeCallable DescribeActiveReceiptRuleSetCallable(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeActiveReceiptRuleSetAsync(const Model::DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DescribeReceiptRuleOutcome DescribeReceiptRule(const Model::DescribeReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReceiptRuleOutcomeCallable DescribeReceiptRuleCallable(const Model::DescribeReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReceiptRuleAsync(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DescribeReceiptRuleSetOutcome DescribeReceiptRuleSet(const Model::DescribeReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReceiptRuleSetOutcomeCallable DescribeReceiptRuleSetCallable(const Model::DescribeReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReceiptRuleSetAsync(const Model::DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p> <p>This action takes a list of identities as input and returns the following information for each:</p> <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li> <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</li> </ul> <p>This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-        */
+        /**
+         * <p>Returns the current status of Easy DKIM signing for an entity. For domain
+         * name identities, this action also returns the DKIM tokens that are required for
+         * Easy DKIM signing, and whether Amazon SES has successfully verified that these
+         * tokens have been published.</p> <p>This action takes a list of identities as
+         * input and returns the following information for each:</p> <ul> <li>Whether Easy
+         * DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that
+         * represent the identity. If the identity is an email address, the tokens
+         * represent the domain of that address.</li> <li>Whether Amazon SES has
+         * successfully verified the DKIM tokens published in the domain's DNS. This
+         * information is only returned for domain name identities, not for email
+         * addresses.</li> </ul> <p>This action is throttled at one request per second and
+         * can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more
+         * information about creating DNS records using DKIM tokens, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
         virtual Model::GetIdentityDkimAttributesOutcome GetIdentityDkimAttributes(const Model::GetIdentityDkimAttributesRequest& request) const;
 
-        /*
-            <p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p> <p>This action takes a list of identities as input and returns the following information for each:</p> <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li> <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</li> </ul> <p>This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the current status of Easy DKIM signing for an entity. For domain
+         * name identities, this action also returns the DKIM tokens that are required for
+         * Easy DKIM signing, and whether Amazon SES has successfully verified that these
+         * tokens have been published.</p> <p>This action takes a list of identities as
+         * input and returns the following information for each:</p> <ul> <li>Whether Easy
+         * DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that
+         * represent the identity. If the identity is an email address, the tokens
+         * represent the domain of that address.</li> <li>Whether Amazon SES has
+         * successfully verified the DKIM tokens published in the domain's DNS. This
+         * information is only returned for domain name identities, not for email
+         * addresses.</li> </ul> <p>This action is throttled at one request per second and
+         * can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more
+         * information about creating DNS records using DKIM tokens, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetIdentityDkimAttributesOutcomeCallable GetIdentityDkimAttributesCallable(const Model::GetIdentityDkimAttributesRequest& request) const;
 
-        /*
-            <p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p> <p>This action takes a list of identities as input and returns the following information for each:</p> <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li> <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</li> </ul> <p>This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the current status of Easy DKIM signing for an entity. For domain
+         * name identities, this action also returns the DKIM tokens that are required for
+         * Easy DKIM signing, and whether Amazon SES has successfully verified that these
+         * tokens have been published.</p> <p>This action takes a list of identities as
+         * input and returns the following information for each:</p> <ul> <li>Whether Easy
+         * DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that
+         * represent the identity. If the identity is an email address, the tokens
+         * represent the domain of that address.</li> <li>Whether Amazon SES has
+         * successfully verified the DKIM tokens published in the domain's DNS. This
+         * information is only returned for domain name identities, not for email
+         * addresses.</li> </ul> <p>This action is throttled at one request per second and
+         * can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more
+         * information about creating DNS records using DKIM tokens, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetIdentityDkimAttributesAsync(const Model::GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p> <p>This action is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-        */
+        /**
+         * <p>Given a list of verified identities (email addresses and/or domains), returns
+         * a structure describing identity notification attributes.</p> <p>This action is
+         * throttled at one request per second and can only get notification attributes for
+         * up to 100 identities at a time.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
         virtual Model::GetIdentityNotificationAttributesOutcome GetIdentityNotificationAttributes(const Model::GetIdentityNotificationAttributesRequest& request) const;
 
-        /*
-            <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p> <p>This action is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Given a list of verified identities (email addresses and/or domains), returns
+         * a structure describing identity notification attributes.</p> <p>This action is
+         * throttled at one request per second and can only get notification attributes for
+         * up to 100 identities at a time.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetIdentityNotificationAttributesOutcomeCallable GetIdentityNotificationAttributesCallable(const Model::GetIdentityNotificationAttributesRequest& request) const;
 
-        /*
-            <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p> <p>This action is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Given a list of verified identities (email addresses and/or domains), returns
+         * a structure describing identity notification attributes.</p> <p>This action is
+         * throttled at one request per second and can only get notification attributes for
+         * up to 100 identities at a time.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetIdentityNotificationAttributesAsync(const Model::GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the requested sending authorization policies for the given identity (email address or domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Returns the requested sending authorization policies for the given identity
+         * (email address or domain). The policies are returned as a map of policy names to
+         * policy contents. You can retrieve a maximum of 20 policies at a time.</p>
+         * <note>This API is for the identity owner only. If you have not verified the
+         * identity, this API will return an error.</note> <p>Sending authorization is a
+         * feature that enables an identity owner to authorize other senders to use its
+         * identities. For information about using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::GetIdentityPoliciesOutcome GetIdentityPolicies(const Model::GetIdentityPoliciesRequest& request) const;
 
-        /*
-            <p>Returns the requested sending authorization policies for the given identity (email address or domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the requested sending authorization policies for the given identity
+         * (email address or domain). The policies are returned as a map of policy names to
+         * policy contents. You can retrieve a maximum of 20 policies at a time.</p>
+         * <note>This API is for the identity owner only. If you have not verified the
+         * identity, this API will return an error.</note> <p>Sending authorization is a
+         * feature that enables an identity owner to authorize other senders to use its
+         * identities. For information about using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetIdentityPoliciesOutcomeCallable GetIdentityPoliciesCallable(const Model::GetIdentityPoliciesRequest& request) const;
 
-        /*
-            <p>Returns the requested sending authorization policies for the given identity (email address or domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the requested sending authorization policies for the given identity
+         * (email address or domain). The policies are returned as a map of policy names to
+         * policy contents. You can retrieve a maximum of 20 policies at a time.</p>
+         * <note>This API is for the identity owner only. If you have not verified the
+         * identity, this API will return an error.</note> <p>Sending authorization is a
+         * feature that enables an identity owner to authorize other senders to use its
+         * identities. For information about using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetIdentityPoliciesAsync(const Model::GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p> <p>This action is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>
-        */
+        /**
+         * <p>Given a list of identities (email addresses and/or domains), returns the
+         * verification status and (for domain identities) the verification token for each
+         * identity.</p> <p>This action is throttled at one request per second and can only
+         * get verification attributes for up to 100 identities at a time.</p>
+         */
         virtual Model::GetIdentityVerificationAttributesOutcome GetIdentityVerificationAttributes(const Model::GetIdentityVerificationAttributesRequest& request) const;
 
-        /*
-            <p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p> <p>This action is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Given a list of identities (email addresses and/or domains), returns the
+         * verification status and (for domain identities) the verification token for each
+         * identity.</p> <p>This action is throttled at one request per second and can only
+         * get verification attributes for up to 100 identities at a time.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetIdentityVerificationAttributesOutcomeCallable GetIdentityVerificationAttributesCallable(const Model::GetIdentityVerificationAttributesRequest& request) const;
 
-        /*
-            <p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p> <p>This action is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Given a list of identities (email addresses and/or domains), returns the
+         * verification status and (for domain identities) the verification token for each
+         * identity.</p> <p>This action is throttled at one request per second and can only
+         * get verification attributes for up to 100 identities at a time.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetIdentityVerificationAttributesAsync(const Model::GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the user's current sending limits.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
+         * one request per second.</p>
+         */
         virtual Model::GetSendQuotaOutcome GetSendQuota(const Model::GetSendQuotaRequest& request) const;
 
-        /*
-            <p>Returns the user's current sending limits.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
+         * one request per second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetSendQuotaOutcomeCallable GetSendQuotaCallable(const Model::GetSendQuotaRequest& request) const;
 
-        /*
-            <p>Returns the user's current sending limits.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
+         * one request per second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetSendQuotaAsync(const Model::GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity. </p> <p>Each data point in the list contains statistics for a 15-minute interval.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Returns the user's sending statistics. The result is a list of data points,
+         * representing the last two weeks of sending activity. </p> <p>Each data point in
+         * the list contains statistics for a 15-minute interval.</p> <p>This action is
+         * throttled at one request per second.</p>
+         */
         virtual Model::GetSendStatisticsOutcome GetSendStatistics(const Model::GetSendStatisticsRequest& request) const;
 
-        /*
-            <p>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity. </p> <p>Each data point in the list contains statistics for a 15-minute interval.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the user's sending statistics. The result is a list of data points,
+         * representing the last two weeks of sending activity. </p> <p>Each data point in
+         * the list contains statistics for a 15-minute interval.</p> <p>This action is
+         * throttled at one request per second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetSendStatisticsOutcomeCallable GetSendStatisticsCallable(const Model::GetSendStatisticsRequest& request) const;
 
-        /*
-            <p>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity. </p> <p>Each data point in the list contains statistics for a 15-minute interval.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the user's sending statistics. The result is a list of data points,
+         * representing the last two weeks of sending activity. </p> <p>Each data point in
+         * the list contains statistics for a 15-minute interval.</p> <p>This action is
+         * throttled at one request per second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetSendStatisticsAsync(const Model::GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification status.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Returns a list containing all of the identities (email addresses and domains)
+         * for a specific AWS Account, regardless of verification status.</p> <p>This
+         * action is throttled at one request per second.</p>
+         */
         virtual Model::ListIdentitiesOutcome ListIdentities(const Model::ListIdentitiesRequest& request) const;
 
-        /*
-            <p>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification status.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns a list containing all of the identities (email addresses and domains)
+         * for a specific AWS Account, regardless of verification status.</p> <p>This
+         * action is throttled at one request per second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListIdentitiesOutcomeCallable ListIdentitiesCallable(const Model::ListIdentitiesRequest& request) const;
 
-        /*
-            <p>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification status.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns a list containing all of the identities (email addresses and domains)
+         * for a specific AWS Account, regardless of verification status.</p> <p>This
+         * action is throttled at one request per second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListIdentitiesAsync(const Model::ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns a list of sending authorization policies that are attached to the given identity (email address or domain). This API returns only a list. If you want the actual policy content, you can use <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Returns a list of sending authorization policies that are attached to the
+         * given identity (email address or domain). This API returns only a list. If you
+         * want the actual policy content, you can use
+         * <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an
+         * error.</note> <p>Sending authorization is a feature that enables an identity
+         * owner to authorize other senders to use its identities. For information about
+         * using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::ListIdentityPoliciesOutcome ListIdentityPolicies(const Model::ListIdentityPoliciesRequest& request) const;
 
-        /*
-            <p>Returns a list of sending authorization policies that are attached to the given identity (email address or domain). This API returns only a list. If you want the actual policy content, you can use <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns a list of sending authorization policies that are attached to the
+         * given identity (email address or domain). This API returns only a list. If you
+         * want the actual policy content, you can use
+         * <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an
+         * error.</note> <p>Sending authorization is a feature that enables an identity
+         * owner to authorize other senders to use its identities. For information about
+         * using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListIdentityPoliciesOutcomeCallable ListIdentityPoliciesCallable(const Model::ListIdentityPoliciesRequest& request) const;
 
-        /*
-            <p>Returns a list of sending authorization policies that are attached to the given identity (email address or domain). This API returns only a list. If you want the actual policy content, you can use <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns a list of sending authorization policies that are attached to the
+         * given identity (email address or domain). This API returns only a list. If you
+         * want the actual policy content, you can use
+         * <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an
+         * error.</note> <p>Sending authorization is a feature that enables an identity
+         * owner to authorize other senders to use its identities. For information about
+         * using sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListIdentityPoliciesAsync(const Model::ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const Model::ListReceiptFiltersRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListReceiptFiltersAsync(const Model::ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListReceiptRuleSetsOutcomeCallable ListReceiptRuleSetsCallable(const Model::ListReceiptRuleSetsRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListReceiptRuleSetsAsync(const Model::ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns a list containing all of the email addresses that have been verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Returns a list containing all of the email addresses that have been
+         * verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as
+         * of the May 15, 2012 release of Domain Verification. The ListIdentities action is
+         * now preferred.</important> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request) const;
 
-        /*
-            <p>Returns a list containing all of the email addresses that have been verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns a list containing all of the email addresses that have been
+         * verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as
+         * of the May 15, 2012 release of Domain Verification. The ListIdentities action is
+         * now preferred.</important> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListVerifiedEmailAddressesOutcomeCallable ListVerifiedEmailAddressesCallable(const Model::ListVerifiedEmailAddressesRequest& request) const;
 
-        /*
-            <p>Returns a list containing all of the email addresses that have been verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns a list containing all of the email addresses that have been
+         * verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as
+         * of the May 15, 2012 release of Domain Verification. The ListIdentities action is
+         * now preferred.</important> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListVerifiedEmailAddressesAsync(const Model::ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Adds or updates a sending authorization policy for the specified identity (email address or domain).</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Adds or updates a sending authorization policy for the specified identity
+         * (email address or domain).</p> <note>This API is for the identity owner only. If
+         * you have not verified the identity, this API will return an error.</note>
+         * <p>Sending authorization is a feature that enables an identity owner to
+         * authorize other senders to use its identities. For information about using
+         * sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::PutIdentityPolicyOutcome PutIdentityPolicy(const Model::PutIdentityPolicyRequest& request) const;
 
-        /*
-            <p>Adds or updates a sending authorization policy for the specified identity (email address or domain).</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Adds or updates a sending authorization policy for the specified identity
+         * (email address or domain).</p> <note>This API is for the identity owner only. If
+         * you have not verified the identity, this API will return an error.</note>
+         * <p>Sending authorization is a feature that enables an identity owner to
+         * authorize other senders to use its identities. For information about using
+         * sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutIdentityPolicyOutcomeCallable PutIdentityPolicyCallable(const Model::PutIdentityPolicyRequest& request) const;
 
-        /*
-            <p>Adds or updates a sending authorization policy for the specified identity (email address or domain).</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Adds or updates a sending authorization policy for the specified identity
+         * (email address or domain).</p> <note>This API is for the identity owner only. If
+         * you have not verified the identity, this API will return an error.</note>
+         * <p>Sending authorization is a feature that enables an identity owner to
+         * authorize other senders to use its identities. For information about using
+         * sending authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutIdentityPolicyAsync(const Model::PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::ReorderReceiptRuleSetOutcome ReorderReceiptRuleSet(const Model::ReorderReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ReorderReceiptRuleSetOutcomeCallable ReorderReceiptRuleSetCallable(const Model::ReorderReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ReorderReceiptRuleSetAsync(const Model::ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Generates and sends a bounce in response to a valid message received through the Inbound pipeline. This API gives you a lot of freedom in specifying as many optional DSN fields as desired (in addition to the fields required by RFC 3464).
-        */
+        /**
+         * Generates and sends a bounce in response to a valid message received through the
+         * Inbound pipeline. This API gives you a lot of freedom in specifying as many
+         * optional DSN fields as desired (in addition to the fields required by RFC 3464).
+         */
         virtual Model::SendBounceOutcome SendBounce(const Model::SendBounceRequest& request) const;
 
-        /*
-            Generates and sends a bounce in response to a valid message received through the Inbound pipeline. This API gives you a lot of freedom in specifying as many optional DSN fields as desired (in addition to the fields required by RFC 3464).
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Generates and sends a bounce in response to a valid message received through the
+         * Inbound pipeline. This API gives you a lot of freedom in specifying as many
+         * optional DSN fields as desired (in addition to the fields required by RFC 3464).
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SendBounceOutcomeCallable SendBounceCallable(const Model::SendBounceRequest& request) const;
 
-        /*
-            Generates and sends a bounce in response to a valid message received through the Inbound pipeline. This API gives you a lot of freedom in specifying as many optional DSN fields as desired (in addition to the fields required by RFC 3464).
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Generates and sends a bounce in response to a valid message received through the
+         * Inbound pipeline. This API gives you a lot of freedom in specifying as many
+         * optional DSN fields as desired (in addition to the fields required by RFC 3464).
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SendBounceAsync(const Model::SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Composes an email message based on input data, and then immediately queues the message for sending. </p> <p>There are several important points to know about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> </ul>
-        */
+        /**
+         * <p>Composes an email message based on input data, and then immediately queues
+         * the message for sending. </p> <p>There are several important points to know
+         * about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified
+         * email addresses and domains; otherwise, you will get an "Email address not
+         * verified" error. If your account is still in the Amazon SES sandbox, you must
+         * also verify every recipient email address except for the recipients provided by
+         * the Amazon SES mailbox simulator. For more information, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
+         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
+         * SES has a limit on the total number of recipients per message. The combined
+         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
+         * send an email message to a larger audience, you can divide your recipient list
+         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
+         * message to each group.</li> <li>For every message that you send, the total
+         * number of recipients (To:, CC: and BCC:) is counted against your sending quota -
+         * the maximum number of emails you can send in a 24-hour period. For information
+         * about your sending quota, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+         * SES Developer Guide</a>.</li> </ul>
+         */
         virtual Model::SendEmailOutcome SendEmail(const Model::SendEmailRequest& request) const;
 
-        /*
-            <p>Composes an email message based on input data, and then immediately queues the message for sending. </p> <p>There are several important points to know about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> </ul>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Composes an email message based on input data, and then immediately queues
+         * the message for sending. </p> <p>There are several important points to know
+         * about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified
+         * email addresses and domains; otherwise, you will get an "Email address not
+         * verified" error. If your account is still in the Amazon SES sandbox, you must
+         * also verify every recipient email address except for the recipients provided by
+         * the Amazon SES mailbox simulator. For more information, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
+         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
+         * SES has a limit on the total number of recipients per message. The combined
+         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
+         * send an email message to a larger audience, you can divide your recipient list
+         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
+         * message to each group.</li> <li>For every message that you send, the total
+         * number of recipients (To:, CC: and BCC:) is counted against your sending quota -
+         * the maximum number of emails you can send in a 24-hour period. For information
+         * about your sending quota, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+         * SES Developer Guide</a>.</li> </ul>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SendEmailOutcomeCallable SendEmailCallable(const Model::SendEmailRequest& request) const;
 
-        /*
-            <p>Composes an email message based on input data, and then immediately queues the message for sending. </p> <p>There are several important points to know about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> </ul>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Composes an email message based on input data, and then immediately queues
+         * the message for sending. </p> <p>There are several important points to know
+         * about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified
+         * email addresses and domains; otherwise, you will get an "Email address not
+         * verified" error. If your account is still in the Amazon SES sandbox, you must
+         * also verify every recipient email address except for the recipients provided by
+         * the Amazon SES mailbox simulator. For more information, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
+         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
+         * SES has a limit on the total number of recipients per message. The combined
+         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
+         * send an email message to a larger audience, you can divide your recipient list
+         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
+         * message to each group.</li> <li>For every message that you send, the total
+         * number of recipients (To:, CC: and BCC:) is counted against your sending quota -
+         * the maximum number of emails you can send in a 24-hour period. For information
+         * about your sending quota, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+         * SES Developer Guide</a>.</li> </ul>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SendEmailAsync(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </p> <p>There are several important points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group list counts towards the 50-recipient limit.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> <li>If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account identity for the email's "Source," "From," and "Return-Path" parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can include the following X-headers in the header of your raw email: <ul> <li><code>X-SES-SOURCE-ARN</code></li> <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li> </ul> <important>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</important> For the most common sending authorization use case, we recommend that you specify the <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding X-headers.) If you only specify the <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address and the "Return Path" address to the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</li> </ul>
-        */
+        /**
+         * <p>Sends an email message, with header and content specified by the client. The
+         * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
+         * The raw text of the message must comply with Internet email standards;
+         * otherwise, the message cannot be sent. </p> <p>There are several important
+         * points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send
+         * email from verified email addresses and domains; otherwise, you will get an
+         * "Email address not verified" error. If your account is still in the Amazon SES
+         * sandbox, you must also verify every recipient email address except for the
+         * recipients provided by the Amazon SES mailbox simulator. For more information,
+         * go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
+         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
+         * SES has a limit on the total number of recipients per message. The combined
+         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
+         * send an email message to a larger audience, you can divide your recipient list
+         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
+         * message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw
+         * message can contain a group list. Note that each recipient in a group list
+         * counts towards the 50-recipient limit.</li> <li>For every message that you send,
+         * the total number of recipients (To:, CC: and BCC:) is counted against your
+         * sending quota - the maximum number of emails you can send in a 24-hour period.
+         * For information about your sending quota, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+         * SES Developer Guide</a>.</li> <li>If you are using sending authorization to send
+         * on behalf of another user, <code>SendRawEmail</code> enables you to specify the
+         * cross-account identity for the email's "Source," "From," and "Return-Path"
+         * parameters in one of two ways: you can pass optional parameters
+         * <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>
+         * to the API, or you can include the following X-headers in the header of your raw
+         * email: <ul> <li><code>X-SES-SOURCE-ARN</code></li>
+         * <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li>
+         * </ul> <important>Do not include these X-headers in the DKIM signature, because
+         * they are removed by Amazon SES before sending the email.</important> For the
+         * most common sending authorization use case, we recommend that you specify the
+         * <code>SourceIdentityArn</code> and do not specify either the
+         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
+         * note applies to the corresponding X-headers.) If you only specify the
+         * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
+         * and the "Return Path" address to the identity specified in
+         * <code>SourceIdentityArn</code>. For more information about sending
+         * authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</li> </ul>
+         */
         virtual Model::SendRawEmailOutcome SendRawEmail(const Model::SendRawEmailRequest& request) const;
 
-        /*
-            <p>Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </p> <p>There are several important points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group list counts towards the 50-recipient limit.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> <li>If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account identity for the email's "Source," "From," and "Return-Path" parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can include the following X-headers in the header of your raw email: <ul> <li><code>X-SES-SOURCE-ARN</code></li> <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li> </ul> <important>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</important> For the most common sending authorization use case, we recommend that you specify the <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding X-headers.) If you only specify the <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address and the "Return Path" address to the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</li> </ul>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Sends an email message, with header and content specified by the client. The
+         * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
+         * The raw text of the message must comply with Internet email standards;
+         * otherwise, the message cannot be sent. </p> <p>There are several important
+         * points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send
+         * email from verified email addresses and domains; otherwise, you will get an
+         * "Email address not verified" error. If your account is still in the Amazon SES
+         * sandbox, you must also verify every recipient email address except for the
+         * recipients provided by the Amazon SES mailbox simulator. For more information,
+         * go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
+         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
+         * SES has a limit on the total number of recipients per message. The combined
+         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
+         * send an email message to a larger audience, you can divide your recipient list
+         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
+         * message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw
+         * message can contain a group list. Note that each recipient in a group list
+         * counts towards the 50-recipient limit.</li> <li>For every message that you send,
+         * the total number of recipients (To:, CC: and BCC:) is counted against your
+         * sending quota - the maximum number of emails you can send in a 24-hour period.
+         * For information about your sending quota, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+         * SES Developer Guide</a>.</li> <li>If you are using sending authorization to send
+         * on behalf of another user, <code>SendRawEmail</code> enables you to specify the
+         * cross-account identity for the email's "Source," "From," and "Return-Path"
+         * parameters in one of two ways: you can pass optional parameters
+         * <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>
+         * to the API, or you can include the following X-headers in the header of your raw
+         * email: <ul> <li><code>X-SES-SOURCE-ARN</code></li>
+         * <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li>
+         * </ul> <important>Do not include these X-headers in the DKIM signature, because
+         * they are removed by Amazon SES before sending the email.</important> For the
+         * most common sending authorization use case, we recommend that you specify the
+         * <code>SourceIdentityArn</code> and do not specify either the
+         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
+         * note applies to the corresponding X-headers.) If you only specify the
+         * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
+         * and the "Return Path" address to the identity specified in
+         * <code>SourceIdentityArn</code>. For more information about sending
+         * authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</li> </ul>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SendRawEmailOutcomeCallable SendRawEmailCallable(const Model::SendRawEmailRequest& request) const;
 
-        /*
-            <p>Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </p> <p>There are several important points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group list counts towards the 50-recipient limit.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> <li>If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account identity for the email's "Source," "From," and "Return-Path" parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can include the following X-headers in the header of your raw email: <ul> <li><code>X-SES-SOURCE-ARN</code></li> <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li> </ul> <important>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</important> For the most common sending authorization use case, we recommend that you specify the <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding X-headers.) If you only specify the <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address and the "Return Path" address to the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</li> </ul>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Sends an email message, with header and content specified by the client. The
+         * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
+         * The raw text of the message must comply with Internet email standards;
+         * otherwise, the message cannot be sent. </p> <p>There are several important
+         * points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send
+         * email from verified email addresses and domains; otherwise, you will get an
+         * "Email address not verified" error. If your account is still in the Amazon SES
+         * sandbox, you must also verify every recipient email address except for the
+         * recipients provided by the Amazon SES mailbox simulator. For more information,
+         * go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
+         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
+         * SES has a limit on the total number of recipients per message. The combined
+         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
+         * send an email message to a larger audience, you can divide your recipient list
+         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
+         * message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw
+         * message can contain a group list. Note that each recipient in a group list
+         * counts towards the 50-recipient limit.</li> <li>For every message that you send,
+         * the total number of recipients (To:, CC: and BCC:) is counted against your
+         * sending quota - the maximum number of emails you can send in a 24-hour period.
+         * For information about your sending quota, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+         * SES Developer Guide</a>.</li> <li>If you are using sending authorization to send
+         * on behalf of another user, <code>SendRawEmail</code> enables you to specify the
+         * cross-account identity for the email's "Source," "From," and "Return-Path"
+         * parameters in one of two ways: you can pass optional parameters
+         * <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>
+         * to the API, or you can include the following X-headers in the header of your raw
+         * email: <ul> <li><code>X-SES-SOURCE-ARN</code></li>
+         * <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li>
+         * </ul> <important>Do not include these X-headers in the DKIM signature, because
+         * they are removed by Amazon SES before sending the email.</important> For the
+         * most common sending authorization use case, we recommend that you specify the
+         * <code>SourceIdentityArn</code> and do not specify either the
+         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
+         * note applies to the corresponding X-headers.) If you only specify the
+         * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
+         * and the "Return Path" address to the identity specified in
+         * <code>SourceIdentityArn</code>. For more information about sending
+         * authorization, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+         * SES Developer Guide</a>.</li> </ul>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SendRawEmailAsync(const Model::SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SetActiveReceiptRuleSetOutcomeCallable SetActiveReceiptRuleSetCallable(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SetActiveReceiptRuleSetAsync(const Model::SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Enables or disables Easy DKIM signing of email sent from an identity:</p> <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li> </ul> <p>For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one request per second.</p> <p>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-        */
+        /**
+         * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
+         * <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
+         * addresses under that domain name (e.g., <code>user@example.com</code>).</li>
+         * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will
+         * DKIM-sign all email sent by that email address.</li> </ul> <p>For email
+         * addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM
+         * signing if the corresponding domain (e.g., <code>example.com</code>) has been
+         * set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
+         * action.</p> <p>This action is throttled at one request per second.</p> <p>For
+         * more information about Easy DKIM signing, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
         virtual Model::SetIdentityDkimEnabledOutcome SetIdentityDkimEnabled(const Model::SetIdentityDkimEnabledRequest& request) const;
 
-        /*
-            <p>Enables or disables Easy DKIM signing of email sent from an identity:</p> <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li> </ul> <p>For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one request per second.</p> <p>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
+         * <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
+         * addresses under that domain name (e.g., <code>user@example.com</code>).</li>
+         * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will
+         * DKIM-sign all email sent by that email address.</li> </ul> <p>For email
+         * addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM
+         * signing if the corresponding domain (e.g., <code>example.com</code>) has been
+         * set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
+         * action.</p> <p>This action is throttled at one request per second.</p> <p>For
+         * more information about Easy DKIM signing, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SetIdentityDkimEnabledOutcomeCallable SetIdentityDkimEnabledCallable(const Model::SetIdentityDkimEnabledRequest& request) const;
 
-        /*
-            <p>Enables or disables Easy DKIM signing of email sent from an identity:</p> <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li> </ul> <p>For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one request per second.</p> <p>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
+         * <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
+         * addresses under that domain name (e.g., <code>user@example.com</code>).</li>
+         * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will
+         * DKIM-sign all email sent by that email address.</li> </ul> <p>For email
+         * addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM
+         * signing if the corresponding domain (e.g., <code>example.com</code>) has been
+         * set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
+         * action.</p> <p>This action is throttled at one request per second.</p> <p>For
+         * more information about Easy DKIM signing, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SetIdentityDkimEnabledAsync(const Model::SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Given an identity (email address or domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email. Feedback forwarding can only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified for both bounces and complaints.</p> <note>Feedback forwarding does not apply to delivery notifications. Delivery notifications are only available through Amazon SNS.</note> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-        */
+        /**
+         * <p>Given an identity (email address or domain), enables or disables whether
+         * Amazon SES forwards bounce and complaint notifications as email. Feedback
+         * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
+         * SNS) topics are specified for both bounces and complaints.</p> <note>Feedback
+         * forwarding does not apply to delivery notifications. Delivery notifications are
+         * only available through Amazon SNS.</note> <p>This action is throttled at one
+         * request per second.</p> <p>For more information about using notifications with
+         * Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
         virtual Model::SetIdentityFeedbackForwardingEnabledOutcome SetIdentityFeedbackForwardingEnabled(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
 
-        /*
-            <p>Given an identity (email address or domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email. Feedback forwarding can only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified for both bounces and complaints.</p> <note>Feedback forwarding does not apply to delivery notifications. Delivery notifications are only available through Amazon SNS.</note> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Given an identity (email address or domain), enables or disables whether
+         * Amazon SES forwards bounce and complaint notifications as email. Feedback
+         * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
+         * SNS) topics are specified for both bounces and complaints.</p> <note>Feedback
+         * forwarding does not apply to delivery notifications. Delivery notifications are
+         * only available through Amazon SNS.</note> <p>This action is throttled at one
+         * request per second.</p> <p>For more information about using notifications with
+         * Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SetIdentityFeedbackForwardingEnabledOutcomeCallable SetIdentityFeedbackForwardingEnabledCallable(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
 
-        /*
-            <p>Given an identity (email address or domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email. Feedback forwarding can only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified for both bounces and complaints.</p> <note>Feedback forwarding does not apply to delivery notifications. Delivery notifications are only available through Amazon SNS.</note> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Given an identity (email address or domain), enables or disables whether
+         * Amazon SES forwards bounce and complaint notifications as email. Feedback
+         * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
+         * SNS) topics are specified for both bounces and complaints.</p> <note>Feedback
+         * forwarding does not apply to delivery notifications. Delivery notifications are
+         * only available through Amazon SNS.</note> <p>This action is throttled at one
+         * request per second.</p> <p>For more information about using notifications with
+         * Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SetIdentityFeedbackForwardingEnabledAsync(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Given an identity (email address or domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note> <p>This action is throttled at one request per second.</p> <p>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-        */
+        /**
+         * <p>Given an identity (email address or domain), sets the Amazon Simple
+         * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
+         * complaint, and/or delivery notifications for emails sent with that identity as
+         * the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you
+         * must specify Amazon SNS topics for bounce and complaint notifications. For more
+         * information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
+         * <p>This action is throttled at one request per second.</p> <p>For more
+         * information about feedback notification, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
         virtual Model::SetIdentityNotificationTopicOutcome SetIdentityNotificationTopic(const Model::SetIdentityNotificationTopicRequest& request) const;
 
-        /*
-            <p>Given an identity (email address or domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note> <p>This action is throttled at one request per second.</p> <p>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Given an identity (email address or domain), sets the Amazon Simple
+         * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
+         * complaint, and/or delivery notifications for emails sent with that identity as
+         * the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you
+         * must specify Amazon SNS topics for bounce and complaint notifications. For more
+         * information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
+         * <p>This action is throttled at one request per second.</p> <p>For more
+         * information about feedback notification, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SetIdentityNotificationTopicOutcomeCallable SetIdentityNotificationTopicCallable(const Model::SetIdentityNotificationTopicRequest& request) const;
 
-        /*
-            <p>Given an identity (email address or domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note> <p>This action is throttled at one request per second.</p> <p>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Given an identity (email address or domain), sets the Amazon Simple
+         * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
+         * complaint, and/or delivery notifications for emails sent with that identity as
+         * the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you
+         * must specify Amazon SNS topics for bounce and complaint notifications. For more
+         * information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
+         * <p>This action is throttled at one request per second.</p> <p>For more
+         * information about feedback notification, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SetIdentityNotificationTopicAsync(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::SetReceiptRulePositionOutcome SetReceiptRulePosition(const Model::SetReceiptRulePositionRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SetReceiptRulePositionOutcomeCallable SetReceiptRulePositionCallable(const Model::SetReceiptRulePositionRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SetReceiptRulePositionAsync(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::UpdateReceiptRuleOutcome UpdateReceiptRule(const Model::UpdateReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateReceiptRuleOutcomeCallable UpdateReceiptRuleCallable(const Model::UpdateReceiptRuleRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateReceiptRuleAsync(const Model::UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain.</p> <p>This action is throttled at one request per second.</p> <p>To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-        */
+        /**
+         * <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character
+         * strings that represent your domain's identity. Using these tokens, you will need
+         * to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES.
+         * Amazon Web Services will eventually detect that you have updated your DNS
+         * records; this detection process may take up to 72 hours. Upon successful
+         * detection, Amazon SES will be able to DKIM-sign email originating from that
+         * domain.</p> <p>This action is throttled at one request per second.</p> <p>To
+         * enable or disable Easy DKIM signing for a domain, use the
+         * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
+         * creating DNS records using DKIM tokens, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
         virtual Model::VerifyDomainDkimOutcome VerifyDomainDkim(const Model::VerifyDomainDkimRequest& request) const;
 
-        /*
-            <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain.</p> <p>This action is throttled at one request per second.</p> <p>To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character
+         * strings that represent your domain's identity. Using these tokens, you will need
+         * to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES.
+         * Amazon Web Services will eventually detect that you have updated your DNS
+         * records; this detection process may take up to 72 hours. Upon successful
+         * detection, Amazon SES will be able to DKIM-sign email originating from that
+         * domain.</p> <p>This action is throttled at one request per second.</p> <p>To
+         * enable or disable Easy DKIM signing for a domain, use the
+         * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
+         * creating DNS records using DKIM tokens, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::VerifyDomainDkimOutcomeCallable VerifyDomainDkimCallable(const Model::VerifyDomainDkimRequest& request) const;
 
-        /*
-            <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain.</p> <p>This action is throttled at one request per second.</p> <p>To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character
+         * strings that represent your domain's identity. Using these tokens, you will need
+         * to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES.
+         * Amazon Web Services will eventually detect that you have updated your DNS
+         * records; this detection process may take up to 72 hours. Upon successful
+         * detection, Amazon SES will be able to DKIM-sign email originating from that
+         * domain.</p> <p>This action is throttled at one request per second.</p> <p>To
+         * enable or disable Easy DKIM signing for a domain, use the
+         * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
+         * creating DNS records using DKIM tokens, go to the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void VerifyDomainDkimAsync(const Model::VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Verifies a domain.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Verifies a domain.</p> <p>This action is throttled at one request per
+         * second.</p>
+         */
         virtual Model::VerifyDomainIdentityOutcome VerifyDomainIdentity(const Model::VerifyDomainIdentityRequest& request) const;
 
-        /*
-            <p>Verifies a domain.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Verifies a domain.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::VerifyDomainIdentityOutcomeCallable VerifyDomainIdentityCallable(const Model::VerifyDomainIdentityRequest& request) const;
 
-        /*
-            <p>Verifies a domain.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Verifies a domain.</p> <p>This action is throttled at one request per
+         * second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void VerifyDomainIdentityAsync(const Model::VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The VerifyEmailIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Verifies an email address. This action causes a confirmation email message to
+         * be sent to the specified address.</p> <important>The VerifyEmailAddress action
+         * is deprecated as of the May 15, 2012 release of Domain Verification. The
+         * VerifyEmailIdentity action is now preferred.</important> <p>This action is
+         * throttled at one request per second.</p>
+         */
         virtual Model::VerifyEmailAddressOutcome VerifyEmailAddress(const Model::VerifyEmailAddressRequest& request) const;
 
-        /*
-            <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The VerifyEmailIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Verifies an email address. This action causes a confirmation email message to
+         * be sent to the specified address.</p> <important>The VerifyEmailAddress action
+         * is deprecated as of the May 15, 2012 release of Domain Verification. The
+         * VerifyEmailIdentity action is now preferred.</important> <p>This action is
+         * throttled at one request per second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::VerifyEmailAddressOutcomeCallable VerifyEmailAddressCallable(const Model::VerifyEmailAddressRequest& request) const;
 
-        /*
-            <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The VerifyEmailIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Verifies an email address. This action causes a confirmation email message to
+         * be sent to the specified address.</p> <important>The VerifyEmailAddress action
+         * is deprecated as of the May 15, 2012 release of Domain Verification. The
+         * VerifyEmailIdentity action is now preferred.</important> <p>This action is
+         * throttled at one request per second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void VerifyEmailAddressAsync(const Model::VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <p>This action is throttled at one request per second.</p>
-        */
+        /**
+         * <p>Verifies an email address. This action causes a confirmation email message to
+         * be sent to the specified address.</p> <p>This action is throttled at one request
+         * per second.</p>
+         */
         virtual Model::VerifyEmailIdentityOutcome VerifyEmailIdentity(const Model::VerifyEmailIdentityRequest& request) const;
 
-        /*
-            <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <p>This action is throttled at one request per second.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Verifies an email address. This action causes a confirmation email message to
+         * be sent to the specified address.</p> <p>This action is throttled at one request
+         * per second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::VerifyEmailIdentityOutcomeCallable VerifyEmailIdentityCallable(const Model::VerifyEmailIdentityRequest& request) const;
 
-        /*
-            <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <p>This action is throttled at one request per second.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Verifies an email address. This action causes a confirmation email message to
+         * be sent to the specified address.</p> <p>This action is throttled at one request
+         * per second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void VerifyEmailIdentityAsync(const Model::VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-/**Async helpers**/
+        /**Async helpers**/
         void CloneReceiptRuleSetAsyncHelper(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReceiptFilterAsyncHelper(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReceiptRuleAsyncHelper(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

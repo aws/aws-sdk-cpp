@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ namespace Lambda
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_LAMBDA_API ListFunctionsRequest : public LambdaRequest
   {
   public:
@@ -39,54 +39,71 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline ListFunctionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline ListFunctionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>
-    */
+    /**
+     * <p>Optional string. An opaque pagination token returned from a previous
+     * <code>ListFunctions</code> operation. If present, indicates where to continue
+     * the listing. </p>
+     */
     inline ListFunctionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Optional integer. Specifies the maximum number of AWS Lambda functions to return in response. This parameter value must be greater than 0.</p>
-    */
+    /**
+     * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
+     * return in response. This parameter value must be greater than 0.</p>
+     */
     inline long GetMaxItems() const{ return m_maxItems; }
 
-    /*
-     <p>Optional integer. Specifies the maximum number of AWS Lambda functions to return in response. This parameter value must be greater than 0.</p>
-    */
+    /**
+     * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
+     * return in response. This parameter value must be greater than 0.</p>
+     */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
-    /*
-     <p>Optional integer. Specifies the maximum number of AWS Lambda functions to return in response. This parameter value must be greater than 0.</p>
-    */
+    /**
+     * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
+     * return in response. This parameter value must be greater than 0.</p>
+     */
     inline ListFunctionsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 
   private:

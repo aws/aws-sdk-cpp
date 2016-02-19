@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace KMS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_KMS_API PutKeyPolicyRequest : public KMSRequest
   {
   public:
@@ -35,109 +35,151 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline PutKeyPolicyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline PutKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
-    */
+    /**
+     * <p>A unique identifier for the customer master key. This value can be a globally
+     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
+     * -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * </ul> </p>
+     */
     inline PutKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline PutKeyPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline PutKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
-    */
+    /**
+     * <p>Name of the policy to be attached. Currently, the only supported name is
+     * "default".</p>
+     */
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline PutKeyPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>The policy, in JSON format, to be attached to the key.</p>
-    */
+    /**
+     * <p>The policy, in JSON format, to be attached to the key.</p>
+     */
     inline PutKeyPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:

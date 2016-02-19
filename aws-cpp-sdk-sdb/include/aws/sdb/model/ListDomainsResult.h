@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace SimpleDB
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_SIMPLEDB_API ListDomainsResult
   {
   public:
@@ -44,79 +41,86 @@ namespace Model
     ListDomainsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNames = value; }
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNames = value; }
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline ListDomainsResult& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline ListDomainsResult& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(value); return *this;}
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline ListDomainsResult& AddDomainNames(const Aws::String& value) { m_domainNames.push_back(value); return *this; }
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline ListDomainsResult& AddDomainNames(Aws::String&& value) { m_domainNames.push_back(value); return *this; }
 
-    /*
-     A list of domain names that match the expression.
-    */
+    /**
+     * A list of domain names that match the expression.
+     */
     inline ListDomainsResult& AddDomainNames(const char* value) { m_domainNames.push_back(value); return *this; }
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline ListDomainsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline ListDomainsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.
-    */
+    /**
+     * An opaque token indicating that there are more domains than the specified
+     * <code>MaxNumberOfDomains</code> still available.
+     */
     inline ListDomainsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

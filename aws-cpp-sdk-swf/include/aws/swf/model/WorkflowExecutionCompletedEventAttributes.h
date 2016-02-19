@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>WorkflowExecutionCompleted</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>WorkflowExecutionCompleted</code> event.</p>
+   */
   class AWS_SWF_API WorkflowExecutionCompletedEventAttributes
   {
   public:
@@ -40,54 +41,66 @@ namespace Model
     WorkflowExecutionCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline const Aws::String& GetResult() const{ return m_result; }
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = value; }
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline WorkflowExecutionCompletedEventAttributes& WithResult(const Aws::String& value) { SetResult(value); return *this;}
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline WorkflowExecutionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(value); return *this;}
 
-    /*
-     <p>The result produced by the workflow execution upon successful completion.</p>
-    */
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline WorkflowExecutionCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CompleteWorkflowExecution</code>
+     * decision to complete this execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CompleteWorkflowExecution</code>
+     * decision to complete this execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CompleteWorkflowExecution</code>
+     * decision to complete this execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline WorkflowExecutionCompletedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:

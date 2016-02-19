@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API DeregisterTaskDefinitionResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     DeregisterTaskDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeregisterTaskDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The full description of the deregistered task.</p>
-    */
+    /**
+     * <p>The full description of the deregistered task.</p>
+     */
     inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
 
-    /*
-     <p>The full description of the deregistered task.</p>
-    */
+    /**
+     * <p>The full description of the deregistered task.</p>
+     */
     inline void SetTaskDefinition(const TaskDefinition& value) { m_taskDefinition = value; }
 
-    /*
-     <p>The full description of the deregistered task.</p>
-    */
+    /**
+     * <p>The full description of the deregistered task.</p>
+     */
     inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
 
-    /*
-     <p>The full description of the deregistered task.</p>
-    */
+    /**
+     * <p>The full description of the deregistered task.</p>
+     */
     inline DeregisterTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
 
-    /*
-     <p>The full description of the deregistered task.</p>
-    */
+    /**
+     * <p>The full description of the deregistered task.</p>
+     */
     inline DeregisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a value of an account attribute.</p>
-  */
+
+  /**
+   * <p>Describes a value of an account attribute.</p>
+   */
   class AWS_EC2_API AccountAttributeValue
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline AccountAttributeValue& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline AccountAttributeValue& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
 
-    /*
-     <p>The value of the attribute.</p>
-    */
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline AccountAttributeValue& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 
   private:

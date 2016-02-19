@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API TargetGrant
   {
   public:
@@ -57,29 +55,29 @@ namespace Model
     
     inline TargetGrant& WithGrantee(Grantee&& value) { SetGrantee(value); return *this;}
 
-    /*
-     Logging permissions assigned to the Grantee for the bucket.
-    */
+    /**
+     * Logging permissions assigned to the Grantee for the bucket.
+     */
     inline const BucketLogsPermission& GetPermission() const{ return m_permission; }
 
-    /*
-     Logging permissions assigned to the Grantee for the bucket.
-    */
+    /**
+     * Logging permissions assigned to the Grantee for the bucket.
+     */
     inline void SetPermission(const BucketLogsPermission& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
-    /*
-     Logging permissions assigned to the Grantee for the bucket.
-    */
+    /**
+     * Logging permissions assigned to the Grantee for the bucket.
+     */
     inline void SetPermission(BucketLogsPermission&& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
-    /*
-     Logging permissions assigned to the Grantee for the bucket.
-    */
+    /**
+     * Logging permissions assigned to the Grantee for the bucket.
+     */
     inline TargetGrant& WithPermission(const BucketLogsPermission& value) { SetPermission(value); return *this;}
 
-    /*
-     Logging permissions assigned to the Grantee for the bucket.
-    */
+    /**
+     * Logging permissions assigned to the Grantee for the bucket.
+     */
     inline TargetGrant& WithPermission(BucketLogsPermission&& value) { SetPermission(value); return *this;}
 
   private:

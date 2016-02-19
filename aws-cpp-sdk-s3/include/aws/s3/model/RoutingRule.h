@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API RoutingRule
   {
   public:
@@ -42,54 +40,79 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the /docs folder, redirect to the /documents folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.
-    */
+    /**
+     * A container for describing a condition that must be met for the specified
+     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
+     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
+     * redirect request to another host where you might process the error.
+     */
     inline const Condition& GetCondition() const{ return m_condition; }
 
-    /*
-     A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the /docs folder, redirect to the /documents folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.
-    */
+    /**
+     * A container for describing a condition that must be met for the specified
+     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
+     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
+     * redirect request to another host where you might process the error.
+     */
     inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
-    /*
-     A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the /docs folder, redirect to the /documents folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.
-    */
+    /**
+     * A container for describing a condition that must be met for the specified
+     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
+     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
+     * redirect request to another host where you might process the error.
+     */
     inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
-    /*
-     A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the /docs folder, redirect to the /documents folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.
-    */
+    /**
+     * A container for describing a condition that must be met for the specified
+     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
+     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
+     * redirect request to another host where you might process the error.
+     */
     inline RoutingRule& WithCondition(const Condition& value) { SetCondition(value); return *this;}
 
-    /*
-     A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the /docs folder, redirect to the /documents folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.
-    */
+    /**
+     * A container for describing a condition that must be met for the specified
+     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
+     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
+     * redirect request to another host where you might process the error.
+     */
     inline RoutingRule& WithCondition(Condition&& value) { SetCondition(value); return *this;}
 
-    /*
-     Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
-    */
+    /**
+     * Container for redirect information. You can redirect requests to another host,
+     * to another page, or with another protocol. In the event of an error, you can can
+     * specify a different error code to return.
+     */
     inline const Redirect& GetRedirect() const{ return m_redirect; }
 
-    /*
-     Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
-    */
+    /**
+     * Container for redirect information. You can redirect requests to another host,
+     * to another page, or with another protocol. In the event of an error, you can can
+     * specify a different error code to return.
+     */
     inline void SetRedirect(const Redirect& value) { m_redirectHasBeenSet = true; m_redirect = value; }
 
-    /*
-     Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
-    */
+    /**
+     * Container for redirect information. You can redirect requests to another host,
+     * to another page, or with another protocol. In the event of an error, you can can
+     * specify a different error code to return.
+     */
     inline void SetRedirect(Redirect&& value) { m_redirectHasBeenSet = true; m_redirect = value; }
 
-    /*
-     Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
-    */
+    /**
+     * Container for redirect information. You can redirect requests to another host,
+     * to another page, or with another protocol. In the event of an error, you can can
+     * specify a different error code to return.
+     */
     inline RoutingRule& WithRedirect(const Redirect& value) { SetRedirect(value); return *this;}
 
-    /*
-     Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
-    */
+    /**
+     * Container for redirect information. You can redirect requests to another host,
+     * to another page, or with another protocol. In the event of an error, you can can
+     * specify a different error code to return.
+     */
     inline RoutingRule& WithRedirect(Redirect&& value) { SetRedirect(value); return *this;}
 
   private:

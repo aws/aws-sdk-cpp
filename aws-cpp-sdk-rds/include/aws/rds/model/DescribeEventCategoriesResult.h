@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p>Data returned from the <b>DescribeEventCategories</b> action.</p>
-  */
+  /**
+   * <p>Data returned from the <b>DescribeEventCategories</b> action.</p>
+   */
   class AWS_RDS_API DescribeEventCategoriesResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeEventCategoriesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeEventCategoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline const Aws::Vector<EventCategoriesMap>& GetEventCategoriesMapList() const{ return m_eventCategoriesMapList; }
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline void SetEventCategoriesMapList(const Aws::Vector<EventCategoriesMap>& value) { m_eventCategoriesMapList = value; }
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline void SetEventCategoriesMapList(Aws::Vector<EventCategoriesMap>&& value) { m_eventCategoriesMapList = value; }
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline DescribeEventCategoriesResult& WithEventCategoriesMapList(const Aws::Vector<EventCategoriesMap>& value) { SetEventCategoriesMapList(value); return *this;}
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline DescribeEventCategoriesResult& WithEventCategoriesMapList(Aws::Vector<EventCategoriesMap>&& value) { SetEventCategoriesMapList(value); return *this;}
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline DescribeEventCategoriesResult& AddEventCategoriesMapList(const EventCategoriesMap& value) { m_eventCategoriesMapList.push_back(value); return *this; }
 
-    /*
-     <p>A list of EventCategoriesMap data types.</p>
-    */
+    /**
+     * <p>A list of EventCategoriesMap data types.</p>
+     */
     inline DescribeEventCategoriesResult& AddEventCategoriesMapList(EventCategoriesMap&& value) { m_eventCategoriesMapList.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria, such as tags, attributes, or IDs.</p>
-  */
+
+  /**
+   * <p>A filter name and value pair that is used to return a more specific list of
+   * results. Filters can be used to match a set of resources by various criteria,
+   * such as tags, attributes, or IDs.</p>
+   */
   class AWS_EC2_API Filter
   {
   public:
@@ -44,79 +47,79 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline Filter& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the filter. Filter names are case-sensitive.</p>
-    */
+    /**
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
+     */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
-    /*
-     <p>One or more filter values. Filter values are case-sensitive.</p>
-    */
+    /**
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
+     */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:

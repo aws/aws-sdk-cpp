@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CognitoIdentity
 namespace Model
 {
 
-  /*
-    Input to the ListIdentityPools action.
-  */
+  /**
+   * Input to the ListIdentityPools action.
+   */
   class AWS_COGNITOIDENTITY_API ListIdentityPoolsRequest : public CognitoIdentityRequest
   {
   public:
@@ -36,54 +36,54 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     The maximum number of identities to return.
-    */
+    /**
+     * The maximum number of identities to return.
+     */
     inline long GetMaxResults() const{ return m_maxResults; }
 
-    /*
-     The maximum number of identities to return.
-    */
+    /**
+     * The maximum number of identities to return.
+     */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
-    /*
-     The maximum number of identities to return.
-    */
+    /**
+     * The maximum number of identities to return.
+     */
     inline ListIdentityPoolsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentityPoolsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentityPoolsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentityPoolsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

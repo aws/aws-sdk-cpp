@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>DeleteCacheSecurityGroup</i> action.</p>
-  */
+  /**
+   * <p>Represents the input of a <i>DeleteCacheSecurityGroup</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DeleteCacheSecurityGroupRequest : public ElastiCacheRequest
   {
   public:
@@ -34,39 +34,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
-    */
+    /**
+     * <p>The name of the cache security group to delete.</p> <note>You cannot delete
+     * the default security group.</note>
+     */
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
   private:

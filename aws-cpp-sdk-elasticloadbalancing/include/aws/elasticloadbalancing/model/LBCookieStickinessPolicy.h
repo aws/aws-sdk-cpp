@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about a policy for duration-based session stickiness.</p>
-  */
+
+  /**
+   * <p>Information about a policy for duration-based session stickiness.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API LBCookieStickinessPolicy
   {
   public:
@@ -43,54 +44,67 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline LBCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline LBCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name for the policy being created. The name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline LBCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
-    */
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If this parameter is not specified, the stickiness session lasts for the
+     * duration of the browser session.</p>
+     */
     inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
 
-    /*
-     <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
-    */
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If this parameter is not specified, the stickiness session lasts for the
+     * duration of the browser session.</p>
+     */
     inline void SetCookieExpirationPeriod(long long value) { m_cookieExpirationPeriodHasBeenSet = true; m_cookieExpirationPeriod = value; }
 
-    /*
-     <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
-    */
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If this parameter is not specified, the stickiness session lasts for the
+     * duration of the browser session.</p>
+     */
     inline LBCookieStickinessPolicy& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
 
   private:

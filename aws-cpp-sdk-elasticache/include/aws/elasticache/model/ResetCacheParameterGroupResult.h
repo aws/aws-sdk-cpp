@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,11 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of one of the following actions:</p> <ul> <li> <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i> </li> </ul>
-  */
+  /**
+   * <p>Represents the output of one of the following actions:</p> <ul> <li>
+   * <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i>
+   * </li> </ul>
+   */
   class AWS_ELASTICACHE_API ResetCacheParameterGroupResult
   {
   public:
@@ -43,39 +45,39 @@ namespace Model
     ResetCacheParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ResetCacheParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupName = value; }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline ResetCacheParameterGroupResult& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline ResetCacheParameterGroupResult& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline ResetCacheParameterGroupResult& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
     

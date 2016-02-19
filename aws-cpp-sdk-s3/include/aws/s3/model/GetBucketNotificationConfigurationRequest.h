@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace S3
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_S3_API GetBucketNotificationConfigurationRequest : public S3Request
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline GetBucketNotificationConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline GetBucketNotificationConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
-    /*
-     Name of the buket to get the notification configuration for.
-    */
+    /**
+     * Name of the buket to get the notification configuration for.
+     */
     inline GetBucketNotificationConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
   private:

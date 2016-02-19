@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>
-  */
+
+  /**
+   * <p>Contains information about an IAM policy, including the policy document.</p>
+   * <p>This data type is used as a response element in the
+   * <a>GetAccountAuthorizationDetails</a> action.</p>
+   */
   class AWS_IAM_API PolicyDetail
   {
   public:
@@ -43,74 +46,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline PolicyDetail& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline PolicyDetail& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy.</p>
-    */
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline PolicyDetail& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline PolicyDetail& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline PolicyDetail& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline PolicyDetail& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
   private:

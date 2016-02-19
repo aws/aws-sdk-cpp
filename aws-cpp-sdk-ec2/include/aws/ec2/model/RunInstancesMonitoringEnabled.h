@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the monitoring for the instance.</p>
-  */
+
+  /**
+   * <p>Describes the monitoring for the instance.</p>
+   */
   class AWS_EC2_API RunInstancesMonitoringEnabled
   {
   public:
@@ -42,19 +43,19 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    /*
-     <p>Indicates whether monitoring is enabled for the instance.</p>
-    */
+    /**
+     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     */
     inline RunInstancesMonitoringEnabled& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:

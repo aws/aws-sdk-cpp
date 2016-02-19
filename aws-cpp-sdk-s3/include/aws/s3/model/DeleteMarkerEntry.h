@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API DeleteMarkerEntry
   {
   public:
@@ -57,104 +55,107 @@ namespace Model
     
     inline DeleteMarkerEntry& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline DeleteMarkerEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline DeleteMarkerEntry& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     The object key.
-    */
+    /**
+     * The object key.
+     */
     inline DeleteMarkerEntry& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline DeleteMarkerEntry& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline DeleteMarkerEntry& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
-    /*
-     Version ID of an object.
-    */
+    /**
+     * Version ID of an object.
+     */
     inline DeleteMarkerEntry& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
-    /*
-     Specifies whether the object is (true) or is not (false) the latest version of an object.
-    */
+    /**
+     * Specifies whether the object is (true) or is not (false) the latest version of
+     * an object.
+     */
     inline bool GetIsLatest() const{ return m_isLatest; }
 
-    /*
-     Specifies whether the object is (true) or is not (false) the latest version of an object.
-    */
+    /**
+     * Specifies whether the object is (true) or is not (false) the latest version of
+     * an object.
+     */
     inline void SetIsLatest(bool value) { m_isLatestHasBeenSet = true; m_isLatest = value; }
 
-    /*
-     Specifies whether the object is (true) or is not (false) the latest version of an object.
-    */
+    /**
+     * Specifies whether the object is (true) or is not (false) the latest version of
+     * an object.
+     */
     inline DeleteMarkerEntry& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
 
-    /*
-     Date and time the object was last modified.
-    */
+    /**
+     * Date and time the object was last modified.
+     */
     inline double GetLastModified() const{ return m_lastModified; }
 
-    /*
-     Date and time the object was last modified.
-    */
+    /**
+     * Date and time the object was last modified.
+     */
     inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
-    /*
-     Date and time the object was last modified.
-    */
+    /**
+     * Date and time the object was last modified.
+     */
     inline DeleteMarkerEntry& WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:

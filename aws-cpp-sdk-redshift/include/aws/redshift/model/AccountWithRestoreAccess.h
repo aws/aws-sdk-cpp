@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p> Describes an AWS customer account authorized to restore a snapshot. </p>
-  */
+
+  /**
+   * <p> Describes an AWS customer account authorized to restore a snapshot. </p>
+   */
   class AWS_REDSHIFT_API AccountWithRestoreAccess
   {
   public:
@@ -43,39 +44,46 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline AccountWithRestoreAccess& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline AccountWithRestoreAccess& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
-    /*
-     <p> The identifier of an AWS customer account authorized to restore a snapshot. </p>
-    */
+    /**
+     * <p> The identifier of an AWS customer account authorized to restore a snapshot.
+     * </p>
+     */
     inline AccountWithRestoreAccess& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:

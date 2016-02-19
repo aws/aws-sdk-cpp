@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code>
+   * request.</p>
+   */
   class AWS_OPSWORKS_API DescribeTimeBasedAutoScalingResult
   {
   public:
@@ -43,39 +44,46 @@ namespace Model
     DescribeTimeBasedAutoScalingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeTimeBasedAutoScalingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline const Aws::Vector<TimeBasedAutoScalingConfiguration>& GetTimeBasedAutoScalingConfigurations() const{ return m_timeBasedAutoScalingConfigurations; }
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline void SetTimeBasedAutoScalingConfigurations(const Aws::Vector<TimeBasedAutoScalingConfiguration>& value) { m_timeBasedAutoScalingConfigurations = value; }
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline void SetTimeBasedAutoScalingConfigurations(Aws::Vector<TimeBasedAutoScalingConfiguration>&& value) { m_timeBasedAutoScalingConfigurations = value; }
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(const Aws::Vector<TimeBasedAutoScalingConfiguration>& value) { SetTimeBasedAutoScalingConfigurations(value); return *this;}
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(Aws::Vector<TimeBasedAutoScalingConfiguration>&& value) { SetTimeBasedAutoScalingConfigurations(value); return *this;}
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(const TimeBasedAutoScalingConfiguration& value) { m_timeBasedAutoScalingConfigurations.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
-    */
+    /**
+     * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
+     * describe the configuration for the specified instances.</p>
+     */
     inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfiguration&& value) { m_timeBasedAutoScalingConfigurations.push_back(value); return *this; }
 
   private:

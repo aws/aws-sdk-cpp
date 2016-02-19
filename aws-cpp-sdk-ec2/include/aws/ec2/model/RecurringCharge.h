@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a recurring charge.</p>
-  */
+
+  /**
+   * <p>Describes a recurring charge.</p>
+   */
   class AWS_EC2_API RecurringCharge
   {
   public:
@@ -43,44 +44,44 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The frequency of the recurring charge.</p>
-    */
+    /**
+     * <p>The frequency of the recurring charge.</p>
+     */
     inline const RecurringChargeFrequency& GetFrequency() const{ return m_frequency; }
 
-    /*
-     <p>The frequency of the recurring charge.</p>
-    */
+    /**
+     * <p>The frequency of the recurring charge.</p>
+     */
     inline void SetFrequency(const RecurringChargeFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
-    /*
-     <p>The frequency of the recurring charge.</p>
-    */
+    /**
+     * <p>The frequency of the recurring charge.</p>
+     */
     inline void SetFrequency(RecurringChargeFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
-    /*
-     <p>The frequency of the recurring charge.</p>
-    */
+    /**
+     * <p>The frequency of the recurring charge.</p>
+     */
     inline RecurringCharge& WithFrequency(const RecurringChargeFrequency& value) { SetFrequency(value); return *this;}
 
-    /*
-     <p>The frequency of the recurring charge.</p>
-    */
+    /**
+     * <p>The frequency of the recurring charge.</p>
+     */
     inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(value); return *this;}
 
-    /*
-     <p>The amount of the recurring charge.</p>
-    */
+    /**
+     * <p>The amount of the recurring charge.</p>
+     */
     inline double GetAmount() const{ return m_amount; }
 
-    /*
-     <p>The amount of the recurring charge.</p>
-    */
+    /**
+     * <p>The amount of the recurring charge.</p>
+     */
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
 
-    /*
-     <p>The amount of the recurring charge.</p>
-    */
+    /**
+     * <p>The amount of the recurring charge.</p>
+     */
     inline RecurringCharge& WithAmount(double value) { SetAmount(value); return *this;}
 
   private:

@@ -19,6 +19,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ public class C2jModelToGeneratorModelTransformer {
         ServiceModel serviceModel = new ServiceModel();
         serviceModel.setMetadata(convertMetadata());
         serviceModel.setVersion(c2jServiceModel.getVersion());
-        serviceModel.setDocumentation(c2jServiceModel.getDocumentation());
+        serviceModel.setDocumentation(formatDocumentation(c2jServiceModel.getDocumentation(), 3));
 
         convertShapes();
         convertOperations();
@@ -49,6 +50,18 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setOperations(operations);
         serviceModel.setServiceErrors(filterOutCoreErrors(allErrors));
         return serviceModel;
+    }
+
+    String formatDocumentation(String documentation, int indentDepth) {
+        if(documentation != null) {
+            String tabString = "";
+            for(int i = 0; i < indentDepth; ++i) {
+                tabString += " ";
+            }
+            String wrappedString = WordUtils.wrap(documentation, 80, System.lineSeparator() + tabString + "* ", false);
+            return wrappedString.replace("/*", "/ *").replace("*/", "* /");
+        }
+        return null;
     }
 
     void removeUnreferencedShapes() {
@@ -131,7 +144,7 @@ public class C2jModelToGeneratorModelTransformer {
         Shape shape = new Shape();
         shape.setName(CppViewHelper.convertToUpperCamel(shapeName));
 
-        shape.setDocumentation(c2jShape.getDocumentation());
+        shape.setDocumentation(formatDocumentation(c2jShape.getDocumentation(), 3));
 
         if (c2jShape.getEnums() != null) {
             shape.setEnumValues(new ArrayList<>(c2jShape.getEnums()));
@@ -161,12 +174,10 @@ public class C2jModelToGeneratorModelTransformer {
         }
 
         if (c2jShape.getMembers() != null) {
-            for (Map.Entry<String, C2jShapeMember> entry : c2jShape.getMembers().entrySet()) {
-                if(!entry.getValue().isDeprecated()) {
-                  ShapeMember shapeMember = convertMember(entry.getValue(), required.contains(entry.getKey()));
-                  shapeMemberMap.put(entry.getKey(), shapeMember);
-                }
-            }
+            c2jShape.getMembers().entrySet().stream().filter(entry -> !entry.getValue().isDeprecated()).forEach(entry -> {
+                ShapeMember shapeMember = convertMember(entry.getValue(), required.contains(entry.getKey()));
+                shapeMemberMap.put(entry.getKey(), shapeMember);
+            });
         }
 
         shape.setMembers(shapeMemberMap);
@@ -188,7 +199,7 @@ public class C2jModelToGeneratorModelTransformer {
     ShapeMember convertMember(C2jShapeMember c2jShapeMember, boolean required) {
         ShapeMember shapeMember = new ShapeMember();
         shapeMember.setRequired(required);
-        shapeMember.setDocumentation(c2jShapeMember.getDocumentation());
+        shapeMember.setDocumentation(formatDocumentation(c2jShapeMember.getDocumentation(), 5));
         shapeMember.setFlattened(c2jShapeMember.isFlattened());
         Shape referencedShape = shapes.get(CppViewHelper.convertToUpperCamel(c2jShapeMember.getShape()));
         referencedShape.setReferenced(true);
@@ -225,7 +236,7 @@ public class C2jModelToGeneratorModelTransformer {
         Operation operation = new Operation();
 
         // Documentation
-        operation.setDocumentation(c2jOperation.getDocumentation());
+        operation.setDocumentation(formatDocumentation(c2jOperation.getDocumentation(), 9));
 
         // input
         if (c2jOperation.getInput() != null) {
@@ -235,7 +246,7 @@ public class C2jModelToGeneratorModelTransformer {
             requestShape.setReferenced(true);
             ShapeMember requestMember = new ShapeMember();
             requestMember.setShape(requestShape);
-            requestMember.setDocumentation(c2jOperation.getInput().getDocumentation());
+            requestMember.setDocumentation(formatDocumentation(c2jOperation.getInput().getDocumentation(), 3));
             operation.setRequest(requestMember);
         }
 
@@ -247,7 +258,7 @@ public class C2jModelToGeneratorModelTransformer {
             resultShape.setReferenced(true);
             ShapeMember resultMember = new ShapeMember();
             resultMember.setShape(resultShape);
-            resultMember.setDocumentation(c2jOperation.getOutput().getDocumentation());
+            resultMember.setDocumentation(formatDocumentation(c2jOperation.getOutput().getDocumentation(), 3));
             operation.setResult(resultMember);
         }
         // http
@@ -260,7 +271,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         List<Error> operationErrors = new ArrayList<>();
         if (c2jOperation.getErrors() != null) {
-            operationErrors.addAll((Collection<? extends Error>) c2jOperation.getErrors().stream().map(this::convertError).collect(Collectors.toList()));
+            operationErrors.addAll(c2jOperation.getErrors().stream().map(this::convertError).collect(Collectors.toList()));
         }
 
         operation.setErrors(operationErrors);
@@ -310,7 +321,7 @@ public class C2jModelToGeneratorModelTransformer {
 
     Error convertError(C2jError c2jError) {
         Error error = new Error();
-        error.setDocumentation(c2jError.getDocumentation());
+        error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));
         error.setName(c2jError.getShape());
         error.setText(c2jError.getShape());
         error.setException(c2jError.isException());

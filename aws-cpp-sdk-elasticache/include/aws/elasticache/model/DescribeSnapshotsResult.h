@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>DescribeSnapshots</i> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>DescribeSnapshots</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeSnapshotsResult
   {
   public:
@@ -45,74 +45,102 @@ namespace Model
     DescribeSnapshotsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSnapshotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline DescribeSnapshotsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline DescribeSnapshotsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline DescribeSnapshotsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline const Aws::Vector<Snapshot>& GetSnapshots() const{ return m_snapshots; }
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline void SetSnapshots(const Aws::Vector<Snapshot>& value) { m_snapshots = value; }
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline void SetSnapshots(Aws::Vector<Snapshot>&& value) { m_snapshots = value; }
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline DescribeSnapshotsResult& WithSnapshots(const Aws::Vector<Snapshot>& value) { SetSnapshots(value); return *this;}
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline DescribeSnapshotsResult& WithSnapshots(Aws::Vector<Snapshot>&& value) { SetSnapshots(value); return *this;}
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline DescribeSnapshotsResult& AddSnapshots(const Snapshot& value) { m_snapshots.push_back(value); return *this; }
 
-    /*
-     <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    */
+    /**
+     * <p>A list of snapshots. Each item in the list contains detailed information
+     * about one snapshot.</p>
+     */
     inline DescribeSnapshotsResult& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(value); return *this; }
 
     

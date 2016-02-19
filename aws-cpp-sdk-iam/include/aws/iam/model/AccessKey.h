@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,15 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> actions. </p> <note>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key. </note>
-  */
+
+  /**
+   * <p>Contains information about an AWS access key.</p> <p> This data type is used
+   * as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a>
+   * actions. </p> <note>The <code>SecretAccessKey</code> value is returned only in
+   * response to <a>CreateAccessKey</a>. You can get a secret access key only when
+   * you first create an access key; you cannot recover the secret access key later.
+   * If you lose a secret access key, you must create a new access key. </note>
+   */
   class AWS_IAM_API AccessKey
   {
   public:
@@ -44,149 +50,154 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline AccessKey& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline AccessKey& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The name of the IAM user that the access key is associated with.</p>
-    */
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline AccessKey& WithUserName(const char* value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline AccessKey& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline AccessKey& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
-    /*
-     <p>The ID for this access key.</p>
-    */
+    /**
+     * <p>The ID for this access key.</p>
+     */
     inline AccessKey& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
-    /*
-     <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    */
+    /**
+     * <p>The status of the access key. <code>Active</code> means the key is valid for
+     * API calls, while <code>Inactive</code> means it is not. </p>
+     */
     inline const StatusType& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    */
+    /**
+     * <p>The status of the access key. <code>Active</code> means the key is valid for
+     * API calls, while <code>Inactive</code> means it is not. </p>
+     */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    */
+    /**
+     * <p>The status of the access key. <code>Active</code> means the key is valid for
+     * API calls, while <code>Inactive</code> means it is not. </p>
+     */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    */
+    /**
+     * <p>The status of the access key. <code>Active</code> means the key is valid for
+     * API calls, while <code>Inactive</code> means it is not. </p>
+     */
     inline AccessKey& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    */
+    /**
+     * <p>The status of the access key. <code>Active</code> means the key is valid for
+     * API calls, while <code>Inactive</code> means it is not. </p>
+     */
     inline AccessKey& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline void SetSecretAccessKey(const char* value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey.assign(value); }
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline AccessKey& WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline AccessKey& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(value); return *this;}
 
-    /*
-     <p>The secret key used to sign requests.</p>
-    */
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
     inline AccessKey& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
 
-    /*
-     <p>The date when the access key was created.</p>
-    */
+    /**
+     * <p>The date when the access key was created.</p>
+     */
     inline double GetCreateDate() const{ return m_createDate; }
 
-    /*
-     <p>The date when the access key was created.</p>
-    */
+    /**
+     * <p>The date when the access key was created.</p>
+     */
     inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
-    /*
-     <p>The date when the access key was created.</p>
-    */
+    /**
+     * <p>The date when the access key was created.</p>
+     */
     inline AccessKey& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
   private:

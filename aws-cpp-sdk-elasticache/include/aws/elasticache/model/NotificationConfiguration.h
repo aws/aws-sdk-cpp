@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>
-  */
+
+  /**
+   * <p>Describes a notification topic and its status. Notification topics are used
+   * for publishing ElastiCache events to subscribers using Amazon Simple
+   * Notification Service (SNS).</p>
+   */
   class AWS_ELASTICACHE_API NotificationConfiguration
   {
   public:
@@ -43,74 +46,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline NotificationConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline NotificationConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline NotificationConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline const Aws::String& GetTopicStatus() const{ return m_topicStatus; }
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline void SetTopicStatus(const Aws::String& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline void SetTopicStatus(Aws::String&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline void SetTopicStatus(const char* value) { m_topicStatusHasBeenSet = true; m_topicStatus.assign(value); }
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline NotificationConfiguration& WithTopicStatus(const Aws::String& value) { SetTopicStatus(value); return *this;}
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline NotificationConfiguration& WithTopicStatus(Aws::String&& value) { SetTopicStatus(value); return *this;}
 
-    /*
-     <p>The current state of the topic.</p>
-    */
+    /**
+     * <p>The current state of the topic.</p>
+     */
     inline NotificationConfiguration& WithTopicStatus(const char* value) { SetTopicStatus(value); return *this;}
 
   private:

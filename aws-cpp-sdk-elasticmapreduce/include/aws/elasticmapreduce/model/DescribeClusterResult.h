@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>This output contains the description of the cluster.</p>
-  */
+  /**
+   * <p>This output contains the description of the cluster.</p>
+   */
   class AWS_EMR_API DescribeClusterResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     DescribeClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>This output contains the details for the requested cluster.</p>
-    */
+    /**
+     * <p>This output contains the details for the requested cluster.</p>
+     */
     inline const Cluster& GetCluster() const{ return m_cluster; }
 
-    /*
-     <p>This output contains the details for the requested cluster.</p>
-    */
+    /**
+     * <p>This output contains the details for the requested cluster.</p>
+     */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
 
-    /*
-     <p>This output contains the details for the requested cluster.</p>
-    */
+    /**
+     * <p>This output contains the details for the requested cluster.</p>
+     */
     inline void SetCluster(Cluster&& value) { m_cluster = value; }
 
-    /*
-     <p>This output contains the details for the requested cluster.</p>
-    */
+    /**
+     * <p>This output contains the details for the requested cluster.</p>
+     */
     inline DescribeClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
 
-    /*
-     <p>This output contains the details for the requested cluster.</p>
-    */
+    /**
+     * <p>This output contains the details for the requested cluster.</p>
+     */
     inline DescribeClusterResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
 
   private:

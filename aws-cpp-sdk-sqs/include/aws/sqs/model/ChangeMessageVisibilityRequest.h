@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SQS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SQS_API ChangeMessageVisibilityRequest : public SQSRequest
   {
   public:
@@ -33,89 +33,106 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(value); return *this;}
 
-    /*
-     <p>The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</p>
-    */
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout
+     * should be changed. This parameter is returned by the <a>ReceiveMessage</a>
+     * action.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
-    /*
-     <p>The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</p>
-    */
+    /**
+     * <p>The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the
+     * message's visibility timeout.</p>
+     */
     inline long GetVisibilityTimeout() const{ return m_visibilityTimeout; }
 
-    /*
-     <p>The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</p>
-    */
+    /**
+     * <p>The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the
+     * message's visibility timeout.</p>
+     */
     inline void SetVisibilityTimeout(long value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
 
-    /*
-     <p>The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</p>
-    */
+    /**
+     * <p>The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the
+     * message's visibility timeout.</p>
+     */
     inline ChangeMessageVisibilityRequest& WithVisibilityTimeout(long value) { SetVisibilityTimeout(value); return *this;}
 
   private:

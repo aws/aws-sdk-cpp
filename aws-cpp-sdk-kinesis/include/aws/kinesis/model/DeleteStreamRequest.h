@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Kinesis
 namespace Model
 {
 
-  /*
-    <p>Represents the input for <code>DeleteStream</code>.</p>
-  */
+  /**
+   * <p>Represents the input for <code>DeleteStream</code>.</p>
+   */
   class AWS_KINESIS_API DeleteStreamRequest : public KinesisRequest
   {
   public:
@@ -36,39 +36,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline DeleteStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline DeleteStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream to delete.</p>
-    */
+    /**
+     * <p>The name of the stream to delete.</p>
+     */
     inline DeleteStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
   private:

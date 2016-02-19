@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,13 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
-  */
+
+  /**
+   * <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata
+   * service. For more information, see <a
+   * href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance
+   * Metadata and User Data</a>.</p>
+   */
   class AWS_OPSWORKS_API InstanceIdentity
   {
   public:
@@ -40,74 +44,81 @@ namespace Model
     InstanceIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline InstanceIdentity& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
-    /*
-     <p>A JSON document that contains the metadata. </p>
-    */
+    /**
+     * <p>A JSON document that contains the metadata. </p>
+     */
     inline InstanceIdentity& WithDocument(const char* value) { SetDocument(value); return *this;}
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline const Aws::String& GetSignature() const{ return m_signature; }
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = value; }
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline void SetSignature(const char* value) { m_signatureHasBeenSet = true; m_signature.assign(value); }
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline InstanceIdentity& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(value); return *this;}
 
-    /*
-     <p>A signature that can be used to verify the document's accuracy and authenticity. </p>
-    */
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity. </p>
+     */
     inline InstanceIdentity& WithSignature(const char* value) { SetSignature(value); return *this;}
 
   private:

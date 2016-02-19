@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of <a>PutRecordBatch</a>.</p>
-  */
+  /**
+   * <p>Contains the output of <a>PutRecordBatch</a>.</p>
+   */
   class AWS_FIREHOSE_API PutRecordBatchResult
   {
   public:
@@ -43,54 +43,61 @@ namespace Model
     PutRecordBatchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     PutRecordBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The number of unsuccessfully written records.</p>
-    */
+    /**
+     * <p>The number of unsuccessfully written records.</p>
+     */
     inline long GetFailedPutCount() const{ return m_failedPutCount; }
 
-    /*
-     <p>The number of unsuccessfully written records.</p>
-    */
+    /**
+     * <p>The number of unsuccessfully written records.</p>
+     */
     inline void SetFailedPutCount(long value) { m_failedPutCount = value; }
 
-    /*
-     <p>The number of unsuccessfully written records.</p>
-    */
+    /**
+     * <p>The number of unsuccessfully written records.</p>
+     */
     inline PutRecordBatchResult& WithFailedPutCount(long value) { SetFailedPutCount(value); return *this;}
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline const Aws::Vector<PutRecordBatchResponseEntry>& GetRequestResponses() const{ return m_requestResponses; }
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline void SetRequestResponses(const Aws::Vector<PutRecordBatchResponseEntry>& value) { m_requestResponses = value; }
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline void SetRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { m_requestResponses = value; }
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline PutRecordBatchResult& WithRequestResponses(const Aws::Vector<PutRecordBatchResponseEntry>& value) { SetRequestResponses(value); return *this;}
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline PutRecordBatchResult& WithRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { SetRequestResponses(value); return *this;}
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline PutRecordBatchResult& AddRequestResponses(const PutRecordBatchResponseEntry& value) { m_requestResponses.push_back(value); return *this; }
 
-    /*
-     <p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>
-    */
+    /**
+     * <p>The results for the individual records. The index of each element matches the
+     * same index in which records were sent.</p>
+     */
     inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(value); return *this; }
 
   private:

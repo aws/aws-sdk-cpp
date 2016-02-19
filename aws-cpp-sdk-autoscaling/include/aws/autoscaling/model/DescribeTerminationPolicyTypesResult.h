@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeTerminationPolicyTypesResult
   {
   public:
@@ -44,44 +41,68 @@ namespace Model
     DescribeTerminationPolicyTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeTerminationPolicyTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicyTypes() const{ return m_terminationPolicyTypes; }
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline void SetTerminationPolicyTypes(const Aws::Vector<Aws::String>& value) { m_terminationPolicyTypes = value; }
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline void SetTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { m_terminationPolicyTypes = value; }
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(const Aws::Vector<Aws::String>& value) { SetTerminationPolicyTypes(value); return *this;}
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { SetTerminationPolicyTypes(value); return *this;}
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(const Aws::String& value) { m_terminationPolicyTypes.push_back(value); return *this; }
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(Aws::String&& value) { m_terminationPolicyTypes.push_back(value); return *this; }
 
-    /*
-     <p>The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).</p>
-    */
+    /**
+     * <p>The termination policies supported by Auto Scaling
+     * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
+     * <code>Default</code>).</p>
+     */
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(const char* value) { m_terminationPolicyTypes.push_back(value); return *this; }
 
     

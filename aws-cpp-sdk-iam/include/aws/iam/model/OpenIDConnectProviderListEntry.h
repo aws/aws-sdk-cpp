@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider.</p>
-  */
+
+  /**
+   * <p>Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect
+   * provider.</p>
+   */
   class AWS_IAM_API OpenIDConnectProviderListEntry
   {
   public:

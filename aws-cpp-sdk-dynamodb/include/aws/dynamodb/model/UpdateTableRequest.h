@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ namespace DynamoDB
 namespace Model
 {
 
-  /*
-    <p>Represents the input of an <i>UpdateTable</i> operation.</p>
-  */
+  /**
+   * <p>Represents the input of an <i>UpdateTable</i> operation.</p>
+   */
   class AWS_DYNAMODB_API UpdateTableRequest : public DynamoDBRequest
   {
   public:
@@ -41,74 +41,95 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline const Aws::Vector<AttributeDefinition>& GetAttributeDefinitions() const{ return m_attributeDefinitions; }
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline void SetAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline UpdateTableRequest& WithAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { SetAttributeDefinitions(value); return *this;}
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline UpdateTableRequest& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(value); return *this;}
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline UpdateTableRequest& AddAttributeDefinitions(const AttributeDefinition& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(value); return *this; }
 
-    /*
-     <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.</p>
-    */
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.</p>
+     */
     inline UpdateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(value); return *this; }
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline UpdateTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline UpdateTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
 
-    /*
-     <p>The name of the table to be updated.</p>
-    */
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline UpdateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
     
@@ -126,64 +147,128 @@ namespace Model
     
     inline UpdateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(value); return *this;}
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline const Aws::Vector<GlobalSecondaryIndexUpdate>& GetGlobalSecondaryIndexUpdates() const{ return m_globalSecondaryIndexUpdates; }
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline void SetGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexUpdate>& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = value; }
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline void SetGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = value; }
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline UpdateTableRequest& WithGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexUpdate>& value) { SetGlobalSecondaryIndexUpdates(value); return *this;}
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline UpdateTableRequest& WithGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { SetGlobalSecondaryIndexUpdates(value); return *this;}
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(const GlobalSecondaryIndexUpdate& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
 
-    /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    */
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
+     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
+     * modify the provisioned throughput settings of an existing global secondary
+     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</p></li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
     inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
 
-    /*
-     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
-    */
+    /**
+     * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+     * <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a
+     * stream on a table that already has a stream, or if you attempt to disable a
+     * stream on a table which does not have a stream.</p> </note>
+     */
     inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
 
-    /*
-     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
-    */
+    /**
+     * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+     * <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a
+     * stream on a table that already has a stream, or if you attempt to disable a
+     * stream on a table which does not have a stream.</p> </note>
+     */
     inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
-    /*
-     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
-    */
+    /**
+     * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+     * <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a
+     * stream on a table that already has a stream, or if you attempt to disable a
+     * stream on a table which does not have a stream.</p> </note>
+     */
     inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
-    /*
-     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
-    */
+    /**
+     * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+     * <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a
+     * stream on a table that already has a stream, or if you attempt to disable a
+     * stream on a table which does not have a stream.</p> </note>
+     */
     inline UpdateTableRequest& WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
 
-    /*
-     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
-    */
+    /**
+     * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+     * <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a
+     * stream on a table that already has a stream, or if you attempt to disable a
+     * stream on a table which does not have a stream.</p> </note>
+     */
     inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the status of an instance.</p>
-  */
+
+  /**
+   * <p>Describes the status of an instance.</p>
+   */
   class AWS_EC2_API InstanceStatusSummary
   {
   public:
@@ -45,64 +46,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The status.</p>
-    */
+    /**
+     * <p>The status.</p>
+     */
     inline const SummaryStatus& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The status.</p>
-    */
+    /**
+     * <p>The status.</p>
+     */
     inline void SetStatus(const SummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The status.</p>
-    */
+    /**
+     * <p>The status.</p>
+     */
     inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The status.</p>
-    */
+    /**
+     * <p>The status.</p>
+     */
     inline InstanceStatusSummary& WithStatus(const SummaryStatus& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The status.</p>
-    */
+    /**
+     * <p>The status.</p>
+     */
     inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline const Aws::Vector<InstanceStatusDetails>& GetDetails() const{ return m_details; }
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline void SetDetails(const Aws::Vector<InstanceStatusDetails>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline void SetDetails(Aws::Vector<InstanceStatusDetails>&& value) { m_detailsHasBeenSet = true; m_details = value; }
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline InstanceStatusSummary& WithDetails(const Aws::Vector<InstanceStatusDetails>& value) { SetDetails(value); return *this;}
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline InstanceStatusSummary& WithDetails(Aws::Vector<InstanceStatusDetails>&& value) { SetDetails(value); return *this;}
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline InstanceStatusSummary& AddDetails(const InstanceStatusDetails& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
-    /*
-     <p>The system instance health or application instance health.</p>
-    */
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline InstanceStatusSummary& AddDetails(InstanceStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
   private:

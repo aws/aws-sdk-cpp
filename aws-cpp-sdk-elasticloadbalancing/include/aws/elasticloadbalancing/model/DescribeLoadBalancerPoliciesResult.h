@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeLoadBalancerPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeLoadBalancerPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline const Aws::Vector<PolicyDescription>& GetPolicyDescriptions() const{ return m_policyDescriptions; }
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline void SetPolicyDescriptions(const Aws::Vector<PolicyDescription>& value) { m_policyDescriptions = value; }
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline void SetPolicyDescriptions(Aws::Vector<PolicyDescription>&& value) { m_policyDescriptions = value; }
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(const Aws::Vector<PolicyDescription>& value) { SetPolicyDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(Aws::Vector<PolicyDescription>&& value) { SetPolicyDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(const PolicyDescription& value) { m_policyDescriptions.push_back(value); return *this; }
 
-    /*
-     <p>Information about the policies.</p>
-    */
+    /**
+     * <p>Information about the policies.</p>
+     */
     inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(PolicyDescription&& value) { m_policyDescriptions.push_back(value); return *this; }
 
     

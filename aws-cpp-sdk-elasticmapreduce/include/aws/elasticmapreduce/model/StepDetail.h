@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>Combines the execution state and configuration of a step.</p>
-  */
+
+  /**
+   * <p>Combines the execution state and configuration of a step.</p>
+   */
   class AWS_EMR_API StepDetail
   {
   public:
@@ -41,54 +42,54 @@ namespace Model
     StepDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The step configuration.</p>
-    */
+    /**
+     * <p>The step configuration.</p>
+     */
     inline const StepConfig& GetStepConfig() const{ return m_stepConfig; }
 
-    /*
-     <p>The step configuration.</p>
-    */
+    /**
+     * <p>The step configuration.</p>
+     */
     inline void SetStepConfig(const StepConfig& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
 
-    /*
-     <p>The step configuration.</p>
-    */
+    /**
+     * <p>The step configuration.</p>
+     */
     inline void SetStepConfig(StepConfig&& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
 
-    /*
-     <p>The step configuration.</p>
-    */
+    /**
+     * <p>The step configuration.</p>
+     */
     inline StepDetail& WithStepConfig(const StepConfig& value) { SetStepConfig(value); return *this;}
 
-    /*
-     <p>The step configuration.</p>
-    */
+    /**
+     * <p>The step configuration.</p>
+     */
     inline StepDetail& WithStepConfig(StepConfig&& value) { SetStepConfig(value); return *this;}
 
-    /*
-     <p>The description of the step status.</p>
-    */
+    /**
+     * <p>The description of the step status.</p>
+     */
     inline const StepExecutionStatusDetail& GetExecutionStatusDetail() const{ return m_executionStatusDetail; }
 
-    /*
-     <p>The description of the step status.</p>
-    */
+    /**
+     * <p>The description of the step status.</p>
+     */
     inline void SetExecutionStatusDetail(const StepExecutionStatusDetail& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
 
-    /*
-     <p>The description of the step status.</p>
-    */
+    /**
+     * <p>The description of the step status.</p>
+     */
     inline void SetExecutionStatusDetail(StepExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
 
-    /*
-     <p>The description of the step status.</p>
-    */
+    /**
+     * <p>The description of the step status.</p>
+     */
     inline StepDetail& WithExecutionStatusDetail(const StepExecutionStatusDetail& value) { SetExecutionStatusDetail(value); return *this;}
 
-    /*
-     <p>The description of the step status.</p>
-    */
+    /**
+     * <p>The description of the step status.</p>
+     */
     inline StepDetail& WithExecutionStatusDetail(StepExecutionStatusDetail&& value) { SetExecutionStatusDetail(value); return *this;}
 
   private:

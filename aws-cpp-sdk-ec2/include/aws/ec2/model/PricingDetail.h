@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a Reserved Instance offering.</p>
-  */
+
+  /**
+   * <p>Describes a Reserved Instance offering.</p>
+   */
   class AWS_EC2_API PricingDetail
   {
   public:
@@ -42,34 +43,34 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The price per instance.</p>
-    */
+    /**
+     * <p>The price per instance.</p>
+     */
     inline double GetPrice() const{ return m_price; }
 
-    /*
-     <p>The price per instance.</p>
-    */
+    /**
+     * <p>The price per instance.</p>
+     */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
 
-    /*
-     <p>The price per instance.</p>
-    */
+    /**
+     * <p>The price per instance.</p>
+     */
     inline PricingDetail& WithPrice(double value) { SetPrice(value); return *this;}
 
-    /*
-     <p>The number of instances available for the price.</p>
-    */
+    /**
+     * <p>The number of instances available for the price.</p>
+     */
     inline long GetCount() const{ return m_count; }
 
-    /*
-     <p>The number of instances available for the price.</p>
-    */
+    /**
+     * <p>The number of instances available for the price.</p>
+     */
     inline void SetCount(long value) { m_countHasBeenSet = true; m_count = value; }
 
-    /*
-     <p>The number of instances available for the price.</p>
-    */
+    /**
+     * <p>The number of instances available for the price.</p>
+     */
     inline PricingDetail& WithCount(long value) { SetCount(value); return *this;}
 
   private:

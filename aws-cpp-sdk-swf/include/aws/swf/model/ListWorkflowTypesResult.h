@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Contains a paginated list of information structures about workflow types.</p>
-  */
+  /**
+   * <p>Contains a paginated list of information structures about workflow types.</p>
+   */
   class AWS_SWF_API ListWorkflowTypesResult
   {
   public:
@@ -44,74 +44,102 @@ namespace Model
     ListWorkflowTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListWorkflowTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline const Aws::Vector<WorkflowTypeInfo>& GetTypeInfos() const{ return m_typeInfos; }
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline void SetTypeInfos(const Aws::Vector<WorkflowTypeInfo>& value) { m_typeInfos = value; }
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline void SetTypeInfos(Aws::Vector<WorkflowTypeInfo>&& value) { m_typeInfos = value; }
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline ListWorkflowTypesResult& WithTypeInfos(const Aws::Vector<WorkflowTypeInfo>& value) { SetTypeInfos(value); return *this;}
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline ListWorkflowTypesResult& WithTypeInfos(Aws::Vector<WorkflowTypeInfo>&& value) { SetTypeInfos(value); return *this;}
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline ListWorkflowTypesResult& AddTypeInfos(const WorkflowTypeInfo& value) { m_typeInfos.push_back(value); return *this; }
 
-    /*
-     <p>The list of workflow type information.</p>
-    */
+    /**
+     * <p>The list of workflow type information.</p>
+     */
     inline ListWorkflowTypesResult& AddTypeInfos(WorkflowTypeInfo&& value) { m_typeInfos.push_back(value); return *this; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline ListWorkflowTypesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline ListWorkflowTypesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
 
-    /*
-     <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    */
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
     inline ListWorkflowTypesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:

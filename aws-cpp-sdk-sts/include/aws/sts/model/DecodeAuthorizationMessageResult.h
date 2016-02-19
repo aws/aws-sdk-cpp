@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,11 @@ namespace STS
 {
 namespace Model
 {
-  /*
-    <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request. </p>
-  */
+  /**
+   * <p>A document that contains additional information about the authorization
+   * status of a request from an encoded message that is returned in response to an
+   * AWS request. </p>
+   */
   class AWS_STS_API DecodeAuthorizationMessageResult
   {
   public:
@@ -43,39 +45,46 @@ namespace Model
     DecodeAuthorizationMessageResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DecodeAuthorizationMessageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline const Aws::String& GetDecodedMessage() const{ return m_decodedMessage; }
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline void SetDecodedMessage(const Aws::String& value) { m_decodedMessage = value; }
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = value; }
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline void SetDecodedMessage(const char* value) { m_decodedMessage.assign(value); }
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const Aws::String& value) { SetDecodedMessage(value); return *this;}
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(value); return *this;}
 
-    /*
-     <p>An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>. </p>
-    */
+    /**
+     * <p>An XML document that contains the decoded message. For more information, see
+     * <code>DecodeAuthorizationMessage</code>. </p>
+     */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const char* value) { SetDecodedMessage(value); return *this;}
 
     

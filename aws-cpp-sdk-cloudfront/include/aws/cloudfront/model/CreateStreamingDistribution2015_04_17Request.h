@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CloudFront
 namespace Model
 {
 
-  /*
-    The request to create a new streaming distribution.
-  */
+  /**
+   * The request to create a new streaming distribution.
+   */
   class AWS_CLOUDFRONT_API CreateStreamingDistribution2015_04_17Request : public CloudFrontRequest
   {
   public:
@@ -34,29 +34,29 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The streaming distribution's configuration information.
-    */
+    /**
+     * The streaming distribution's configuration information.
+     */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
 
-    /*
-     The streaming distribution's configuration information.
-    */
+    /**
+     * The streaming distribution's configuration information.
+     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
-    /*
-     The streaming distribution's configuration information.
-    */
+    /**
+     * The streaming distribution's configuration information.
+     */
     inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
-    /*
-     The streaming distribution's configuration information.
-    */
+    /**
+     * The streaming distribution's configuration information.
+     */
     inline CreateStreamingDistribution2015_04_17Request& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
 
-    /*
-     The streaming distribution's configuration information.
-    */
+    /**
+     * The streaming distribution's configuration information.
+     */
     inline CreateStreamingDistribution2015_04_17Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(value); return *this;}
 
   private:

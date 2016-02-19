@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SQS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SQS_API DeleteQueueRequest : public SQSRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline DeleteQueueRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline DeleteQueueRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline DeleteQueueRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
   private:

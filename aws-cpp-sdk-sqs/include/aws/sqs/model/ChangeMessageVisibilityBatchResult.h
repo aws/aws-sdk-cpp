@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,11 @@ namespace SQS
 {
 namespace Model
 {
-  /*
-    <p> For each message in the batch, the response contains a <a>ChangeMessageVisibilityBatchResultEntry</a> tag if the message succeeds or a <a>BatchResultErrorEntry</a> tag if the message fails. </p>
-  */
+  /**
+   * <p> For each message in the batch, the response contains a
+   * <a>ChangeMessageVisibilityBatchResultEntry</a> tag if the message succeeds or a
+   * <a>BatchResultErrorEntry</a> tag if the message fails. </p>
+   */
   class AWS_SQS_API ChangeMessageVisibilityBatchResult
   {
   public:
@@ -45,74 +47,74 @@ namespace Model
     ChangeMessageVisibilityBatchResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ChangeMessageVisibilityBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline const Aws::Vector<ChangeMessageVisibilityBatchResultEntry>& GetSuccessful() const{ return m_successful; }
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline void SetSuccessful(const Aws::Vector<ChangeMessageVisibilityBatchResultEntry>& value) { m_successful = value; }
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline void SetSuccessful(Aws::Vector<ChangeMessageVisibilityBatchResultEntry>&& value) { m_successful = value; }
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& WithSuccessful(const Aws::Vector<ChangeMessageVisibilityBatchResultEntry>& value) { SetSuccessful(value); return *this;}
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& WithSuccessful(Aws::Vector<ChangeMessageVisibilityBatchResultEntry>&& value) { SetSuccessful(value); return *this;}
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& AddSuccessful(const ChangeMessageVisibilityBatchResultEntry& value) { m_successful.push_back(value); return *this; }
 
-    /*
-     <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& AddSuccessful(ChangeMessageVisibilityBatchResultEntry&& value) { m_successful.push_back(value); return *this; }
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline const Aws::Vector<BatchResultErrorEntry>& GetFailed() const{ return m_failed; }
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline void SetFailed(const Aws::Vector<BatchResultErrorEntry>& value) { m_failed = value; }
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline void SetFailed(Aws::Vector<BatchResultErrorEntry>&& value) { m_failed = value; }
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& WithFailed(const Aws::Vector<BatchResultErrorEntry>& value) { SetFailed(value); return *this;}
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& WithFailed(Aws::Vector<BatchResultErrorEntry>&& value) { SetFailed(value); return *this;}
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& AddFailed(const BatchResultErrorEntry& value) { m_failed.push_back(value); return *this; }
 
-    /*
-     <p>A list of <a>BatchResultErrorEntry</a> items.</p>
-    */
+    /**
+     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     */
     inline ChangeMessageVisibilityBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(value); return *this; }
 
     

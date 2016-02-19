@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API DescribeTaskDefinitionResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     DescribeTaskDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeTaskDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The full task definition description.</p>
-    */
+    /**
+     * <p>The full task definition description.</p>
+     */
     inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
 
-    /*
-     <p>The full task definition description.</p>
-    */
+    /**
+     * <p>The full task definition description.</p>
+     */
     inline void SetTaskDefinition(const TaskDefinition& value) { m_taskDefinition = value; }
 
-    /*
-     <p>The full task definition description.</p>
-    */
+    /**
+     * <p>The full task definition description.</p>
+     */
     inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
 
-    /*
-     <p>The full task definition description.</p>
-    */
+    /**
+     * <p>The full task definition description.</p>
+     */
     inline DescribeTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
 
-    /*
-     <p>The full task definition description.</p>
-    */
+    /**
+     * <p>The full task definition description.</p>
+     */
     inline DescribeTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
 
   private:

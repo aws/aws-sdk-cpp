@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace EFS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EFS_API ModifyMountTargetSecurityGroupsRequest : public EFSRequest
   {
   public:
@@ -34,79 +34,79 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
 
-    /*
-     <p>The ID of the mount target whose security groups you want to modify.</p>
-    */
+    /**
+     * <p>The ID of the mount target whose security groups you want to modify.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
-    /*
-     <p>An array of up to five VPC security group IDs.</p>
-    */
+    /**
+     * <p>An array of up to five VPC security group IDs.</p>
+     */
     inline ModifyMountTargetSecurityGroupsRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
   private:

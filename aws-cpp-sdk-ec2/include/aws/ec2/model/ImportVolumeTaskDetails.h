@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an import volume task.</p>
-  */
+
+  /**
+   * <p>Describes an import volume task.</p>
+   */
   class AWS_EC2_API ImportVolumeTaskDetails
   {
   public:
@@ -45,139 +46,139 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The number of bytes converted so far.</p>
-    */
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
     inline long long GetBytesConverted() const{ return m_bytesConverted; }
 
-    /*
-     <p>The number of bytes converted so far.</p>
-    */
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
     inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
 
-    /*
-     <p>The number of bytes converted so far.</p>
-    */
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
     inline ImportVolumeTaskDetails& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline ImportVolumeTaskDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline ImportVolumeTaskDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone where the resulting volume will reside.</p>
-    */
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline ImportVolumeTaskDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline ImportVolumeTaskDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline ImportVolumeTaskDetails& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The description you provided when starting the import volume task.</p>
-    */
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
     inline ImportVolumeTaskDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The image.</p>
-    */
+    /**
+     * <p>The image.</p>
+     */
     inline const DiskImageDescription& GetImage() const{ return m_image; }
 
-    /*
-     <p>The image.</p>
-    */
+    /**
+     * <p>The image.</p>
+     */
     inline void SetImage(const DiskImageDescription& value) { m_imageHasBeenSet = true; m_image = value; }
 
-    /*
-     <p>The image.</p>
-    */
+    /**
+     * <p>The image.</p>
+     */
     inline void SetImage(DiskImageDescription&& value) { m_imageHasBeenSet = true; m_image = value; }
 
-    /*
-     <p>The image.</p>
-    */
+    /**
+     * <p>The image.</p>
+     */
     inline ImportVolumeTaskDetails& WithImage(const DiskImageDescription& value) { SetImage(value); return *this;}
 
-    /*
-     <p>The image.</p>
-    */
+    /**
+     * <p>The image.</p>
+     */
     inline ImportVolumeTaskDetails& WithImage(DiskImageDescription&& value) { SetImage(value); return *this;}
 
-    /*
-     <p>The volume.</p>
-    */
+    /**
+     * <p>The volume.</p>
+     */
     inline const DiskImageVolumeDescription& GetVolume() const{ return m_volume; }
 
-    /*
-     <p>The volume.</p>
-    */
+    /**
+     * <p>The volume.</p>
+     */
     inline void SetVolume(const DiskImageVolumeDescription& value) { m_volumeHasBeenSet = true; m_volume = value; }
 
-    /*
-     <p>The volume.</p>
-    */
+    /**
+     * <p>The volume.</p>
+     */
     inline void SetVolume(DiskImageVolumeDescription&& value) { m_volumeHasBeenSet = true; m_volume = value; }
 
-    /*
-     <p>The volume.</p>
-    */
+    /**
+     * <p>The volume.</p>
+     */
     inline ImportVolumeTaskDetails& WithVolume(const DiskImageVolumeDescription& value) { SetVolume(value); return *this;}
 
-    /*
-     <p>The volume.</p>
-    */
+    /**
+     * <p>The volume.</p>
+     */
     inline ImportVolumeTaskDetails& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(value); return *this;}
 
   private:

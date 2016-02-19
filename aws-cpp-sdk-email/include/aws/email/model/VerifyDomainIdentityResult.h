@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a token used for domain ownership verification.</p>
-  */
+  /**
+   * <p>Represents a token used for domain ownership verification.</p>
+   */
   class AWS_SES_API VerifyDomainIdentityResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     VerifyDomainIdentityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     VerifyDomainIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationToken = value; }
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = value; }
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline void SetVerificationToken(const char* value) { m_verificationToken.assign(value); }
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline VerifyDomainIdentityResult& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(value); return *this;}
 
-    /*
-     <p>A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.</p>
-    */
+    /**
+     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
+     * to complete domain verification.</p>
+     */
     inline VerifyDomainIdentityResult& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
 
     

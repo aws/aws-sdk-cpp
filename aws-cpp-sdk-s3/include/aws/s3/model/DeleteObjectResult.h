@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API DeleteObjectResult
   {
   public:
@@ -43,54 +40,64 @@ namespace Model
     DeleteObjectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DeleteObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
-    */
+    /**
+     * Specifies whether the versioned object that was permanently deleted was (true)
+     * or was not (false) a delete marker.
+     */
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
 
-    /*
-     Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
-    */
+    /**
+     * Specifies whether the versioned object that was permanently deleted was (true)
+     * or was not (false) a delete marker.
+     */
     inline void SetDeleteMarker(bool value) { m_deleteMarker = value; }
 
-    /*
-     Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
-    */
+    /**
+     * Specifies whether the versioned object that was permanently deleted was (true)
+     * or was not (false) a delete marker.
+     */
     inline DeleteObjectResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionId = value; }
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline DeleteObjectResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline DeleteObjectResult& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
-    /*
-     Returns the version ID of the delete marker created as a result of the DELETE operation.
-    */
+    /**
+     * Returns the version ID of the delete marker created as a result of the DELETE
+     * operation.
+     */
     inline DeleteObjectResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
     

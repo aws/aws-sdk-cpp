@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>CreateUserProfile</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>CreateUserProfile</code> request.</p>
+   */
   class AWS_OPSWORKS_API CreateUserProfileResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateUserProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateUserProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArn = value; }
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArn = value; }
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline void SetIamUserArn(const char* value) { m_iamUserArn.assign(value); }
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline CreateUserProfileResult& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline CreateUserProfileResult& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
-    /*
-     <p>The user's IAM ARN.</p>
-    */
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline CreateUserProfileResult& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
   private:

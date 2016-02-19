@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Firehose
 namespace Model
 {
 
-  /*
-    <p>Contains the parameters for <a>ListDeliveryStreams</a>.</p>
-  */
+  /**
+   * <p>Contains the parameters for <a>ListDeliveryStreams</a>.</p>
+   */
   class AWS_FIREHOSE_API ListDeliveryStreamsRequest : public FirehoseRequest
   {
   public:
@@ -36,54 +36,54 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The maximum number of delivery streams to list.</p>
-    */
+    /**
+     * <p>The maximum number of delivery streams to list.</p>
+     */
     inline long GetLimit() const{ return m_limit; }
 
-    /*
-     <p>The maximum number of delivery streams to list.</p>
-    */
+    /**
+     * <p>The maximum number of delivery streams to list.</p>
+     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    /*
-     <p>The maximum number of delivery streams to list.</p>
-    */
+    /**
+     * <p>The maximum number of delivery streams to list.</p>
+     */
     inline ListDeliveryStreamsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline const Aws::String& GetExclusiveStartDeliveryStreamName() const{ return m_exclusiveStartDeliveryStreamName; }
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline void SetExclusiveStartDeliveryStreamName(const Aws::String& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = value; }
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline void SetExclusiveStartDeliveryStreamName(Aws::String&& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = value; }
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline void SetExclusiveStartDeliveryStreamName(const char* value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName.assign(value); }
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const Aws::String& value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(Aws::String&& value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
 
-    /*
-     <p>The name of the delivery stream to start the list with.</p>
-    */
+    /**
+     * <p>The name of the delivery stream to start the list with.</p>
+     */
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const char* value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
 
   private:

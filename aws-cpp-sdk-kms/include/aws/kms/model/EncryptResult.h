@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API EncryptResult
   {
   public:
@@ -43,64 +40,69 @@ namespace Model
     EncryptResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     EncryptResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.</p>
+     */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
-    /*
-     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.</p>
+     */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
-    /*
-     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.</p>
+     */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
 
-    /*
-     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.</p>
+     */
     inline EncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
-    /*
-     <p>The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-    */
+    /**
+     * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.</p>
+     */
     inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline EncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline EncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>The ID of the key used during encryption.</p>
-    */
+    /**
+     * <p>The ID of the key used during encryption.</p>
+     */
     inline EncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:

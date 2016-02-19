@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SimpleDB
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SIMPLEDB_API ListDomainsRequest : public SimpleDBRequest
   {
   public:
@@ -33,54 +33,57 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
-    */
+    /**
+     * The maximum number of domain names you want returned. The range is 1 to 100. The
+     * default setting is 100.
+     */
     inline long GetMaxNumberOfDomains() const{ return m_maxNumberOfDomains; }
 
-    /*
-     The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
-    */
+    /**
+     * The maximum number of domain names you want returned. The range is 1 to 100. The
+     * default setting is 100.
+     */
     inline void SetMaxNumberOfDomains(long value) { m_maxNumberOfDomainsHasBeenSet = true; m_maxNumberOfDomains = value; }
 
-    /*
-     The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
-    */
+    /**
+     * The maximum number of domain names you want returned. The range is 1 to 100. The
+     * default setting is 100.
+     */
     inline ListDomainsRequest& WithMaxNumberOfDomains(long value) { SetMaxNumberOfDomains(value); return *this;}
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline ListDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     A string informing Amazon SimpleDB where to start the next list of domain names.
-    */
+    /**
+     * A string informing Amazon SimpleDB where to start the next list of domain names.
+     */
     inline ListDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

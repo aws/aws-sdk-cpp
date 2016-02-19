@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeRaidArraysResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     DescribeRaidArraysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeRaidArraysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline const Aws::Vector<RaidArray>& GetRaidArrays() const{ return m_raidArrays; }
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline void SetRaidArrays(const Aws::Vector<RaidArray>& value) { m_raidArrays = value; }
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline void SetRaidArrays(Aws::Vector<RaidArray>&& value) { m_raidArrays = value; }
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline DescribeRaidArraysResult& WithRaidArrays(const Aws::Vector<RaidArray>& value) { SetRaidArrays(value); return *this;}
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline DescribeRaidArraysResult& WithRaidArrays(Aws::Vector<RaidArray>&& value) { SetRaidArrays(value); return *this;}
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline DescribeRaidArraysResult& AddRaidArrays(const RaidArray& value) { m_raidArrays.push_back(value); return *this; }
 
-    /*
-     <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    */
+    /**
+     * <p>A <code>RaidArrays</code> object that describes the specified RAID
+     * arrays.</p>
+     */
     inline DescribeRaidArraysResult& AddRaidArrays(RaidArray&& value) { m_raidArrays.push_back(value); return *this; }
 
   private:

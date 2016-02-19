@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace DataPipeline
 namespace Model
 {
 
-  /*
-    <p>Contains the parameters for RemoveTags.</p>
-  */
+  /**
+   * <p>Contains the parameters for RemoveTags.</p>
+   */
   class AWS_DATAPIPELINE_API RemoveTagsRequest : public DataPipelineRequest
   {
   public:
@@ -37,79 +37,79 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline RemoveTagsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline RemoveTagsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline RemoveTagsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline RemoveTagsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline RemoveTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline RemoveTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline RemoveTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
-    /*
-     <p>The keys of the tags to remove.</p>
-    */
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
     inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:

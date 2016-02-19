@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API RestoreAddressToClassicResponse
   {
   public:
@@ -44,64 +41,64 @@ namespace Model
     RestoreAddressToClassicResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     RestoreAddressToClassicResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The move status for the IP address.</p>
-    */
+    /**
+     * <p>The move status for the IP address.</p>
+     */
     inline const Status& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The move status for the IP address.</p>
-    */
+    /**
+     * <p>The move status for the IP address.</p>
+     */
     inline void SetStatus(const Status& value) { m_status = value; }
 
-    /*
-     <p>The move status for the IP address.</p>
-    */
+    /**
+     * <p>The move status for the IP address.</p>
+     */
     inline void SetStatus(Status&& value) { m_status = value; }
 
-    /*
-     <p>The move status for the IP address.</p>
-    */
+    /**
+     * <p>The move status for the IP address.</p>
+     */
     inline RestoreAddressToClassicResponse& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The move status for the IP address.</p>
-    */
+    /**
+     * <p>The move status for the IP address.</p>
+     */
     inline RestoreAddressToClassicResponse& WithStatus(Status&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIp = value; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetPublicIp(Aws::String&& value) { m_publicIp = value; }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetPublicIp(const char* value) { m_publicIp.assign(value); }
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline RestoreAddressToClassicResponse& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline RestoreAddressToClassicResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
 
-    /*
-     <p>The Elastic IP address.</p>
-    */
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline RestoreAddressToClassicResponse& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
     

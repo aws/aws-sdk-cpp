@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for a <a>EstimateTemplateCost</a> action.</p>
-  */
+  /**
+   * <p>The output for a <a>EstimateTemplateCost</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API EstimateTemplateCostResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     EstimateTemplateCostResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     EstimateTemplateCostResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline void SetUrl(const Aws::String& value) { m_url = value; }
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline void SetUrl(Aws::String&& value) { m_url = value; }
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline void SetUrl(const char* value) { m_url.assign(value); }
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline EstimateTemplateCostResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline EstimateTemplateCostResult& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
 
-    /*
-     <p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    */
+    /**
+     * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
+     * resources required to run the template.</p>
+     */
     inline EstimateTemplateCostResult& WithUrl(const char* value) { SetUrl(value); return *this;}
 
     

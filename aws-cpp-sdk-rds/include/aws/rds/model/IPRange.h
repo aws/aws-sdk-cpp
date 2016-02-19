@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action. </p>
-  */
+
+  /**
+   * <p> This data type is used as a response element in the
+   * <a>DescribeDBSecurityGroups</a> action. </p>
+   */
   class AWS_RDS_API IPRange
   {
   public:
@@ -43,74 +45,81 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline IPRange& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline IPRange& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked". </p>
-    */
+    /**
+     * <p> Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked". </p>
+     */
     inline IPRange& WithStatus(const char* value) { SetStatus(value); return *this;}
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline void SetCIDRIP(const char* value) { m_cIDRIPHasBeenSet = true; m_cIDRIP.assign(value); }
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline IPRange& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline IPRange& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> Specifies the IP range. </p>
-    */
+    /**
+     * <p> Specifies the IP range. </p>
+     */
     inline IPRange& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
   private:

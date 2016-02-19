@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_RDS_API OptionGroupMembership
   {
   public:
@@ -43,74 +41,81 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline OptionGroupMembership& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline OptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The name of the option group that the instance belongs to. </p>
-    */
+    /**
+     * <p> The name of the option group that the instance belongs to. </p>
+     */
     inline OptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline OptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying). </p>
-    */
+    /**
+     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
+     * pending, pending-maintenance, applying). </p>
+     */
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:

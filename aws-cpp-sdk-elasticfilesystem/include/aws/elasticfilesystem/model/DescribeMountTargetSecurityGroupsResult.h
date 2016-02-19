@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EFS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EFS_API DescribeMountTargetSecurityGroupsResult
   {
   public:
@@ -43,44 +40,44 @@ namespace Model
     DescribeMountTargetSecurityGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeMountTargetSecurityGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroups = value; }
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroups = value; }
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline DescribeMountTargetSecurityGroupsResult& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline DescribeMountTargetSecurityGroupsResult& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(const Aws::String& value) { m_securityGroups.push_back(value); return *this; }
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(Aws::String&& value) { m_securityGroups.push_back(value); return *this; }
 
-    /*
-     <p>An array of security groups.</p>
-    */
+    /**
+     * <p>An array of security groups.</p>
+     */
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
 
   private:

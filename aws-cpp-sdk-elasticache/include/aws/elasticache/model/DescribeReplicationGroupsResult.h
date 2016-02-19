@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>DescribeReplicationGroups</i> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>DescribeReplicationGroups</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeReplicationGroupsResult
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeReplicationGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeReplicationGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeReplicationGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeReplicationGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeReplicationGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline const Aws::Vector<ReplicationGroup>& GetReplicationGroups() const{ return m_replicationGroups; }
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline void SetReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { m_replicationGroups = value; }
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline void SetReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { m_replicationGroups = value; }
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline DescribeReplicationGroupsResult& WithReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { SetReplicationGroups(value); return *this;}
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline DescribeReplicationGroupsResult& WithReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { SetReplicationGroups(value); return *this;}
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline DescribeReplicationGroupsResult& AddReplicationGroups(const ReplicationGroup& value) { m_replicationGroups.push_back(value); return *this; }
 
-    /*
-     <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    */
+    /**
+     * <p>A list of replication groups. Each item in the list contains detailed
+     * information about one replication group.</p>
+     */
     inline DescribeReplicationGroupsResult& AddReplicationGroups(ReplicationGroup&& value) { m_replicationGroups.push_back(value); return *this; }
 
     

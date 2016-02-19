@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API DescribeLoadBasedAutoScalingRequest : public OpsWorksRequest
   {
   public:
@@ -36,44 +36,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of layer IDs.</p>
-    */
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
   private:

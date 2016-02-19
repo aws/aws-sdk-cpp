@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API CreateClusterResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     CreateClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The full description of your new cluster.</p>
-    */
+    /**
+     * <p>The full description of your new cluster.</p>
+     */
     inline const Cluster& GetCluster() const{ return m_cluster; }
 
-    /*
-     <p>The full description of your new cluster.</p>
-    */
+    /**
+     * <p>The full description of your new cluster.</p>
+     */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
 
-    /*
-     <p>The full description of your new cluster.</p>
-    */
+    /**
+     * <p>The full description of your new cluster.</p>
+     */
     inline void SetCluster(Cluster&& value) { m_cluster = value; }
 
-    /*
-     <p>The full description of your new cluster.</p>
-    */
+    /**
+     * <p>The full description of your new cluster.</p>
+     */
     inline CreateClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
 
-    /*
-     <p>The full description of your new cluster.</p>
-    */
+    /**
+     * <p>The full description of your new cluster.</p>
+     */
     inline CreateClusterResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
 
   private:

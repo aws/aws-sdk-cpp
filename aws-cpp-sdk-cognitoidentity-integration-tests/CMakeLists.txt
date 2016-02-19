@@ -12,11 +12,6 @@ project(aws-cpp-sdk-cognitoidentity-integration-tests)
     ${AWS_COGNITO_SRC}
   )
 
-if(NOT MSVC)
-  add_definitions(-std=c++0x)
-endif()
-
-
 set(AWS_COGNITO_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"

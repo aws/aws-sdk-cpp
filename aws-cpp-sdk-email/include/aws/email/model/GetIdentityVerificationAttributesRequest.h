@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,10 @@ namespace SES
 namespace Model
 {
 
-  /*
-    <p>Represents a request instructing the service to provide the verification attributes for a list of identities.</p>
-  */
+  /**
+   * <p>Represents a request instructing the service to provide the verification
+   * attributes for a list of identities.</p>
+   */
   class AWS_SES_API GetIdentityVerificationAttributesRequest : public SESRequest
   {
   public:
@@ -35,44 +36,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetIdentities() const{ return m_identities; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline GetIdentityVerificationAttributesRequest& WithIdentities(const Aws::Vector<Aws::String>& value) { SetIdentities(value); return *this;}
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline GetIdentityVerificationAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(value); return *this;}
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline GetIdentityVerificationAttributesRequest& AddIdentities(const Aws::String& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline GetIdentityVerificationAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
-    /*
-     <p>A list of identities.</p>
-    */
+    /**
+     * <p>A list of identities.</p>
+     */
     inline GetIdentityVerificationAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
   private:

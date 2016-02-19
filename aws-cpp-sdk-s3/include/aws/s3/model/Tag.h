@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Tag
   {
   public:
@@ -41,74 +39,74 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     Name of the tag.
-    */
+    /**
+     * Name of the tag.
+     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     Value of the tag.
-    */
+    /**
+     * Value of the tag.
+     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

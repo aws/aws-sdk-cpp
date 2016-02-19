@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetAccountPasswordPolicy</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetAccountPasswordPolicy</a>
+   * request. </p>
+   */
   class AWS_IAM_API GetAccountPasswordPolicyResult
   {
   public:

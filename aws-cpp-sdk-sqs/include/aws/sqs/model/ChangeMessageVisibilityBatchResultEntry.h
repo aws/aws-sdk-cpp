@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace SQS
 {
 namespace Model
 {
-  /*
-    <p>Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.</p>
-  */
+
+  /**
+   * <p>Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.</p>
+   */
   class AWS_SQS_API ChangeMessageVisibilityBatchResultEntry
   {
   public:
@@ -43,39 +44,46 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline ChangeMessageVisibilityBatchResultEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline ChangeMessageVisibilityBatchResultEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    */
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline ChangeMessageVisibilityBatchResultEntry& WithId(const char* value) { SetId(value); return *this;}
 
   private:

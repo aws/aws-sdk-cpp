@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateNetworkAclResponse
   {
   public:
@@ -43,29 +40,29 @@ namespace Model
     CreateNetworkAclResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateNetworkAclResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the network ACL.</p>
-    */
+    /**
+     * <p>Information about the network ACL.</p>
+     */
     inline const NetworkAcl& GetNetworkAcl() const{ return m_networkAcl; }
 
-    /*
-     <p>Information about the network ACL.</p>
-    */
+    /**
+     * <p>Information about the network ACL.</p>
+     */
     inline void SetNetworkAcl(const NetworkAcl& value) { m_networkAcl = value; }
 
-    /*
-     <p>Information about the network ACL.</p>
-    */
+    /**
+     * <p>Information about the network ACL.</p>
+     */
     inline void SetNetworkAcl(NetworkAcl&& value) { m_networkAcl = value; }
 
-    /*
-     <p>Information about the network ACL.</p>
-    */
+    /**
+     * <p>Information about the network ACL.</p>
+     */
     inline CreateNetworkAclResponse& WithNetworkAcl(const NetworkAcl& value) { SetNetworkAcl(value); return *this;}
 
-    /*
-     <p>Information about the network ACL.</p>
-    */
+    /**
+     * <p>Information about the network ACL.</p>
+     */
     inline CreateNetworkAclResponse& WithNetworkAcl(NetworkAcl&& value) { SetNetworkAcl(value); return *this;}
 
     

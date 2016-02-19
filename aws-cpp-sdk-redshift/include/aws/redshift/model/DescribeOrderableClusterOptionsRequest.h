@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_REDSHIFT_API DescribeOrderableClusterOptionsRequest : public RedshiftRequest
   {
   public:
@@ -34,124 +34,202 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline const Aws::String& GetClusterVersion() const{ return m_clusterVersion; }
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline void SetClusterVersion(const char* value) { m_clusterVersionHasBeenSet = true; m_clusterVersion.assign(value); }
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
 
-    /*
-     <p> The version filter value. Specify this parameter to show only the available offerings matching the specified version. </p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-    */
+    /**
+     * <p> The version filter value. Specify this parameter to show only the available
+     * offerings matching the specified version. </p> <p>Default: All versions.</p>
+     * <p>Constraints: Must be one of the version returned from
+     * <a>DescribeClusterVersions</a>.</p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
 
-    /*
-     <p> The node type filter value. Specify this parameter to show only the available offerings matching the specified node type. </p>
-    */
+    /**
+     * <p> The node type filter value. Specify this parameter to show only the
+     * available offerings matching the specified node type. </p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
-    /*
-     <p> The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p>
-    */
+    /**
+     * <p> The maximum number of response records to return in each call. If the number
+     * of remaining response records exceeds the specified <code>MaxRecords</code>
+     * value, a value is returned in a <code>marker</code> field of the response. You
+     * can retrieve the next set of records by retrying the command with the returned
+     * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
+     * maximum 100.</p>
+     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
-    /*
-     <p> The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p>
-    */
+    /**
+     * <p> The maximum number of response records to return in each call. If the number
+     * of remaining response records exceeds the specified <code>MaxRecords</code>
+     * value, a value is returned in a <code>marker</code> field of the response. You
+     * can retrieve the next set of records by retrying the command with the returned
+     * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
+     * maximum 100.</p>
+     */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
-    /*
-     <p> The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p>
-    */
+    /**
+     * <p> The maximum number of response records to return in each call. If the number
+     * of remaining response records exceeds the specified <code>MaxRecords</code>
+     * value, a value is returned in a <code>marker</code> field of the response. You
+     * can retrieve the next set of records by retrying the command with the returned
+     * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
+     * maximum 100.</p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    */
+    /**
+     * <p> An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeOrderableClusterOptions</a>
+     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
     inline DescribeOrderableClusterOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:

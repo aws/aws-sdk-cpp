@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateDhcpOptionsResponse
   {
   public:
@@ -43,29 +40,29 @@ namespace Model
     CreateDhcpOptionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateDhcpOptionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A set of DHCP options.</p>
-    */
+    /**
+     * <p>A set of DHCP options.</p>
+     */
     inline const DhcpOptions& GetDhcpOptions() const{ return m_dhcpOptions; }
 
-    /*
-     <p>A set of DHCP options.</p>
-    */
+    /**
+     * <p>A set of DHCP options.</p>
+     */
     inline void SetDhcpOptions(const DhcpOptions& value) { m_dhcpOptions = value; }
 
-    /*
-     <p>A set of DHCP options.</p>
-    */
+    /**
+     * <p>A set of DHCP options.</p>
+     */
     inline void SetDhcpOptions(DhcpOptions&& value) { m_dhcpOptions = value; }
 
-    /*
-     <p>A set of DHCP options.</p>
-    */
+    /**
+     * <p>A set of DHCP options.</p>
+     */
     inline CreateDhcpOptionsResponse& WithDhcpOptions(const DhcpOptions& value) { SetDhcpOptions(value); return *this;}
 
-    /*
-     <p>A set of DHCP options.</p>
-    */
+    /**
+     * <p>A set of DHCP options.</p>
+     */
     inline CreateDhcpOptionsResponse& WithDhcpOptions(DhcpOptions&& value) { SetDhcpOptions(value); return *this;}
 
     

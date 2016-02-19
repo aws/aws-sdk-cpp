@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DeregisterInstancesFromLoadBalancerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DeregisterInstancesFromLoadBalancerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline DeregisterInstancesFromLoadBalancerResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline DeregisterInstancesFromLoadBalancerResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline DeregisterInstancesFromLoadBalancerResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
 
-    /*
-     <p>The remaining instances registered with the load balancer.</p>
-    */
+    /**
+     * <p>The remaining instances registered with the load balancer.</p>
+     */
     inline DeregisterInstancesFromLoadBalancerResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
 
     

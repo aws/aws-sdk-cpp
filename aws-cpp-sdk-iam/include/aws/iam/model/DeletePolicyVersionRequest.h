@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API DeletePolicyVersionRequest : public IAMRequest
   {
   public:
@@ -54,39 +54,60 @@ namespace Model
     
     inline DeletePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline DeletePolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline DeletePolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
-    /*
-     <p>The policy version to delete.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>The policy version to delete.</p> <p>For more information about managed
+     * policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline DeletePolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:

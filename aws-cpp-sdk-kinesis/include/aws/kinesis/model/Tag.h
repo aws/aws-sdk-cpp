@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
-  */
+
+  /**
+   * <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
+   */
   class AWS_KINESIS_API Tag
   {
   public:
@@ -40,74 +41,95 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    */
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

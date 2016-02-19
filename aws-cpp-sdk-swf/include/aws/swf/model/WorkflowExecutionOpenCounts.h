@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Contains the counts of open tasks, child workflow executions and timers for a workflow execution.</p>
-  */
+
+  /**
+   * <p>Contains the counts of open tasks, child workflow executions and timers for a
+   * workflow execution.</p>
+   */
   class AWS_SWF_API WorkflowExecutionOpenCounts
   {
   public:
@@ -39,79 +41,85 @@ namespace Model
     WorkflowExecutionOpenCounts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The count of activity tasks whose status is OPEN.</p>
-    */
+    /**
+     * <p>The count of activity tasks whose status is OPEN.</p>
+     */
     inline long GetOpenActivityTasks() const{ return m_openActivityTasks; }
 
-    /*
-     <p>The count of activity tasks whose status is OPEN.</p>
-    */
+    /**
+     * <p>The count of activity tasks whose status is OPEN.</p>
+     */
     inline void SetOpenActivityTasks(long value) { m_openActivityTasksHasBeenSet = true; m_openActivityTasks = value; }
 
-    /*
-     <p>The count of activity tasks whose status is OPEN.</p>
-    */
+    /**
+     * <p>The count of activity tasks whose status is OPEN.</p>
+     */
     inline WorkflowExecutionOpenCounts& WithOpenActivityTasks(long value) { SetOpenActivityTasks(value); return *this;}
 
-    /*
-     <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
-    */
+    /**
+     * <p>The count of decision tasks whose status is OPEN. A workflow execution can
+     * have at most one open decision task.</p>
+     */
     inline long GetOpenDecisionTasks() const{ return m_openDecisionTasks; }
 
-    /*
-     <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
-    */
+    /**
+     * <p>The count of decision tasks whose status is OPEN. A workflow execution can
+     * have at most one open decision task.</p>
+     */
     inline void SetOpenDecisionTasks(long value) { m_openDecisionTasksHasBeenSet = true; m_openDecisionTasks = value; }
 
-    /*
-     <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
-    */
+    /**
+     * <p>The count of decision tasks whose status is OPEN. A workflow execution can
+     * have at most one open decision task.</p>
+     */
     inline WorkflowExecutionOpenCounts& WithOpenDecisionTasks(long value) { SetOpenDecisionTasks(value); return *this;}
 
-    /*
-     <p>The count of timers started by this workflow execution that have not fired yet.</p>
-    */
+    /**
+     * <p>The count of timers started by this workflow execution that have not fired
+     * yet.</p>
+     */
     inline long GetOpenTimers() const{ return m_openTimers; }
 
-    /*
-     <p>The count of timers started by this workflow execution that have not fired yet.</p>
-    */
+    /**
+     * <p>The count of timers started by this workflow execution that have not fired
+     * yet.</p>
+     */
     inline void SetOpenTimers(long value) { m_openTimersHasBeenSet = true; m_openTimers = value; }
 
-    /*
-     <p>The count of timers started by this workflow execution that have not fired yet.</p>
-    */
+    /**
+     * <p>The count of timers started by this workflow execution that have not fired
+     * yet.</p>
+     */
     inline WorkflowExecutionOpenCounts& WithOpenTimers(long value) { SetOpenTimers(value); return *this;}
 
-    /*
-     <p>The count of child workflow executions whose status is OPEN.</p>
-    */
+    /**
+     * <p>The count of child workflow executions whose status is OPEN.</p>
+     */
     inline long GetOpenChildWorkflowExecutions() const{ return m_openChildWorkflowExecutions; }
 
-    /*
-     <p>The count of child workflow executions whose status is OPEN.</p>
-    */
+    /**
+     * <p>The count of child workflow executions whose status is OPEN.</p>
+     */
     inline void SetOpenChildWorkflowExecutions(long value) { m_openChildWorkflowExecutionsHasBeenSet = true; m_openChildWorkflowExecutions = value; }
 
-    /*
-     <p>The count of child workflow executions whose status is OPEN.</p>
-    */
+    /**
+     * <p>The count of child workflow executions whose status is OPEN.</p>
+     */
     inline WorkflowExecutionOpenCounts& WithOpenChildWorkflowExecutions(long value) { SetOpenChildWorkflowExecutions(value); return *this;}
 
-    /*
-     <p>The count of AWS Lambda functions that are currently executing.</p>
-    */
+    /**
+     * <p>The count of AWS Lambda functions that are currently executing.</p>
+     */
     inline long GetOpenLambdaFunctions() const{ return m_openLambdaFunctions; }
 
-    /*
-     <p>The count of AWS Lambda functions that are currently executing.</p>
-    */
+    /**
+     * <p>The count of AWS Lambda functions that are currently executing.</p>
+     */
     inline void SetOpenLambdaFunctions(long value) { m_openLambdaFunctionsHasBeenSet = true; m_openLambdaFunctions = value; }
 
-    /*
-     <p>The count of AWS Lambda functions that are currently executing.</p>
-    */
+    /**
+     * <p>The count of AWS Lambda functions that are currently executing.</p>
+     */
     inline WorkflowExecutionOpenCounts& WithOpenLambdaFunctions(long value) { SetOpenLambdaFunctions(value); return *this;}
 
   private:

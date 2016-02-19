@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DetachLoadBalancerFromSubnetsResult
   {
   public:
@@ -44,44 +41,44 @@ namespace Model
     DetachLoadBalancerFromSubnetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DetachLoadBalancerFromSubnetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnets = value; }
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnets = value; }
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsResult& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsResult& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsResult& AddSubnets(const Aws::String& value) { m_subnets.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsResult& AddSubnets(Aws::String&& value) { m_subnets.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the remaining subnets for the load balancer.</p>
-    */
+    /**
+     * <p>The IDs of the remaining subnets for the load balancer.</p>
+     */
     inline DetachLoadBalancerFromSubnetsResult& AddSubnets(const char* value) { m_subnets.push_back(value); return *this; }
 
     

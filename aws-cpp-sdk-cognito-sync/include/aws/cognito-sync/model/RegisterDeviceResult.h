@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    <p>Response to a RegisterDevice request.</p>
-  */
+  /**
+   * <p>Response to a RegisterDevice request.</p>
+   */
   class AWS_COGNITOSYNC_API RegisterDeviceResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     RegisterDeviceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RegisterDeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceId = value; }
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline RegisterDeviceResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline RegisterDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(value); return *this;}
 
-    /*
-     <p>The unique ID generated for this device by Cognito.</p>
-    */
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline RegisterDeviceResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
   private:

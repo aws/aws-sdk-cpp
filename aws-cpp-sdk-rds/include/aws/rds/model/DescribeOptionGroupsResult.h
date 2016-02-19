@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> List of option groups. </p>
-  */
+  /**
+   * <p> List of option groups. </p>
+   */
   class AWS_RDS_API DescribeOptionGroupsResult
   {
   public:
@@ -45,39 +45,39 @@ namespace Model
     DescribeOptionGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeOptionGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline const Aws::Vector<OptionGroup>& GetOptionGroupsList() const{ return m_optionGroupsList; }
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline void SetOptionGroupsList(const Aws::Vector<OptionGroup>& value) { m_optionGroupsList = value; }
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline void SetOptionGroupsList(Aws::Vector<OptionGroup>&& value) { m_optionGroupsList = value; }
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline DescribeOptionGroupsResult& WithOptionGroupsList(const Aws::Vector<OptionGroup>& value) { SetOptionGroupsList(value); return *this;}
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline DescribeOptionGroupsResult& WithOptionGroupsList(Aws::Vector<OptionGroup>&& value) { SetOptionGroupsList(value); return *this;}
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline DescribeOptionGroupsResult& AddOptionGroupsList(const OptionGroup& value) { m_optionGroupsList.push_back(value); return *this; }
 
-    /*
-     <p> List of option groups. </p>
-    */
+    /**
+     * <p> List of option groups. </p>
+     */
     inline DescribeOptionGroupsResult& AddOptionGroupsList(OptionGroup&& value) { m_optionGroupsList.push_back(value); return *this; }
 
     

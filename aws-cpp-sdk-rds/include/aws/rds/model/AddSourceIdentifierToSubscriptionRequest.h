@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_RDS_API AddSourceIdentifierToSubscriptionRequest : public RDSRequest
   {
   public:
@@ -34,74 +34,137 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
 
-    /*
-     <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    */
+    /**
+     * <p>The name of the RDS event notification subscription you want to add a source
+     * identifier to.</p>
+     */
     inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
-    /*
-     <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
-    */
+    /**
+     * <p> The identifier of the event source to be added. An identifier must begin
+     * with a letter and must contain only ASCII letters, digits, and hyphens; it
+     * cannot end with a hyphen or contain two consecutive hyphens. </p>
+     * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
+     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
+     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
+     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
+     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
+     * supplied.</li> </ul>
+     */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
   private:

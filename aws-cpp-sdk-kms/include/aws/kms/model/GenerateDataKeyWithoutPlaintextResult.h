@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API GenerateDataKeyWithoutPlaintextResult
   {
   public:
@@ -43,64 +40,86 @@ namespace Model
     GenerateDataKeyWithoutPlaintextResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GenerateDataKeyWithoutPlaintextResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can be used in a future decrypt operation. </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded. </p>
-    */
+    /**
+     * <p>Ciphertext that contains the wrapped data key. You must store the blob and
+     * encryption context so that the key can be used in a future decrypt operation.
+     * </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is
+     * not encoded. </p>
+     */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
-    /*
-     <p>Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can be used in a future decrypt operation. </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded. </p>
-    */
+    /**
+     * <p>Ciphertext that contains the wrapped data key. You must store the blob and
+     * encryption context so that the key can be used in a future decrypt operation.
+     * </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is
+     * not encoded. </p>
+     */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
-    /*
-     <p>Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can be used in a future decrypt operation. </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded. </p>
-    */
+    /**
+     * <p>Ciphertext that contains the wrapped data key. You must store the blob and
+     * encryption context so that the key can be used in a future decrypt operation.
+     * </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is
+     * not encoded. </p>
+     */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
 
-    /*
-     <p>Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can be used in a future decrypt operation. </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded. </p>
-    */
+    /**
+     * <p>Ciphertext that contains the wrapped data key. You must store the blob and
+     * encryption context so that the key can be used in a future decrypt operation.
+     * </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is
+     * not encoded. </p>
+     */
     inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
-    /*
-     <p>Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can be used in a future decrypt operation. </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded. </p>
-    */
+    /**
+     * <p>Ciphertext that contains the wrapped data key. You must store the blob and
+     * encryption context so that the key can be used in a future decrypt operation.
+     * </p> <p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is
+     * not encoded. </p>
+     */
     inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    /*
-     <p>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</p>
-    */
+    /**
+     * <p>System generated unique identifier of the key to be used to decrypt the
+     * encrypted copy of the data key.</p>
+     */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:

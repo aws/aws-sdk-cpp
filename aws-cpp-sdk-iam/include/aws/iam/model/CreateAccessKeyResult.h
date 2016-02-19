@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>CreateAccessKey</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>CreateAccessKey</a> request. </p>
+   */
   class AWS_IAM_API CreateAccessKeyResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateAccessKeyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateAccessKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the access key.</p>
-    */
+    /**
+     * <p>Information about the access key.</p>
+     */
     inline const AccessKey& GetAccessKey() const{ return m_accessKey; }
 
-    /*
-     <p>Information about the access key.</p>
-    */
+    /**
+     * <p>Information about the access key.</p>
+     */
     inline void SetAccessKey(const AccessKey& value) { m_accessKey = value; }
 
-    /*
-     <p>Information about the access key.</p>
-    */
+    /**
+     * <p>Information about the access key.</p>
+     */
     inline void SetAccessKey(AccessKey&& value) { m_accessKey = value; }
 
-    /*
-     <p>Information about the access key.</p>
-    */
+    /**
+     * <p>Information about the access key.</p>
+     */
     inline CreateAccessKeyResult& WithAccessKey(const AccessKey& value) { SetAccessKey(value); return *this;}
 
-    /*
-     <p>Information about the access key.</p>
-    */
+    /**
+     * <p>Information about the access key.</p>
+     */
     inline CreateAccessKeyResult& WithAccessKey(AccessKey&& value) { SetAccessKey(value); return *this;}
 
     

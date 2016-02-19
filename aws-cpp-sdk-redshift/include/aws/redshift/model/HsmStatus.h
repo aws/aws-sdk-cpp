@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p></p>
-  */
+
+  /**
+   * <p></p>
+   */
   class AWS_REDSHIFT_API HsmStatus
   {
   public:
@@ -43,109 +44,137 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline HsmStatus& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline HsmStatus& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
-    /*
-     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline HsmStatus& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline HsmStatus& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline HsmStatus& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
-    /*
-     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    */
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
     inline HsmStatus& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline HsmStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline HsmStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>
-    */
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
     inline HsmStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:

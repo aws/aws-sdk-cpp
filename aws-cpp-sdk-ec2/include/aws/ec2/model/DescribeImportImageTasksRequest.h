@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EC2_API DescribeImportImageTasksRequest : public EC2Request
   {
   public:
@@ -35,144 +35,153 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline DescribeImportImageTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetImportTaskIds() const{ return m_importTaskIds; }
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline void SetImportTaskIds(const Aws::Vector<Aws::String>& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = value; }
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline void SetImportTaskIds(Aws::Vector<Aws::String>&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = value; }
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline DescribeImportImageTasksRequest& WithImportTaskIds(const Aws::Vector<Aws::String>& value) { SetImportTaskIds(value); return *this;}
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline DescribeImportImageTasksRequest& WithImportTaskIds(Aws::Vector<Aws::String>&& value) { SetImportTaskIds(value); return *this;}
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline DescribeImportImageTasksRequest& AddImportTaskIds(const Aws::String& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline DescribeImportImageTasksRequest& AddImportTaskIds(Aws::String&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of import image task IDs.</p>
-    */
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
     inline DescribeImportImageTasksRequest& AddImportTaskIds(const char* value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline DescribeImportImageTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline DescribeImportImageTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>A token that indicates the next page of results.</p>
-    */
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
     inline DescribeImportImageTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The maximum number of results to return in a single request.</p>
-    */
+    /**
+     * <p>The maximum number of results to return in a single request.</p>
+     */
     inline long GetMaxResults() const{ return m_maxResults; }
 
-    /*
-     <p>The maximum number of results to return in a single request.</p>
-    */
+    /**
+     * <p>The maximum number of results to return in a single request.</p>
+     */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
-    /*
-     <p>The maximum number of results to return in a single request.</p>
-    */
+    /**
+     * <p>The maximum number of results to return in a single request.</p>
+     */
     inline DescribeImportImageTasksRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline DescribeImportImageTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline DescribeImportImageTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline DescribeImportImageTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
-    /*
-     <p>One or more filters.</p>
-    */
+    /**
+     * <p>One or more filters.</p>
+     */
     inline DescribeImportImageTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
   private:

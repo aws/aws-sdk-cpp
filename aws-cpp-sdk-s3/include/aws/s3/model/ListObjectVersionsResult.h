@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -37,9 +37,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API ListObjectVersionsResult
   {
   public:
@@ -47,54 +44,66 @@ namespace Model
     ListObjectVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListObjectVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.
-    */
+    /**
+     * A flag that indicates whether or not Amazon S3 returned all of the results that
+     * satisfied the search criteria. If your results were truncated, you can make a
+     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
+     * response parameters as a starting place in another request to return the rest of
+     * the results.
+     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
-    /*
-     A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.
-    */
+    /**
+     * A flag that indicates whether or not Amazon S3 returned all of the results that
+     * satisfied the search criteria. If your results were truncated, you can make a
+     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
+     * response parameters as a starting place in another request to return the rest of
+     * the results.
+     */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
-    /*
-     A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.
-    */
+    /**
+     * A flag that indicates whether or not Amazon S3 returned all of the results that
+     * satisfied the search criteria. If your results were truncated, you can make a
+     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
+     * response parameters as a starting place in another request to return the rest of
+     * the results.
+     */
     inline ListObjectVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarker = value; }
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline void SetKeyMarker(Aws::String&& value) { m_keyMarker = value; }
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline void SetKeyMarker(const char* value) { m_keyMarker.assign(value); }
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline ListObjectVersionsResult& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline ListObjectVersionsResult& WithKeyMarker(Aws::String&& value) { SetKeyMarker(value); return *this;}
 
-    /*
-     Marks the last Key returned in a truncated response.
-    */
+    /**
+     * Marks the last Key returned in a truncated response.
+     */
     inline ListObjectVersionsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
     
@@ -118,74 +127,74 @@ namespace Model
     
     inline ListObjectVersionsResult& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline const Aws::String& GetNextKeyMarker() const{ return m_nextKeyMarker; }
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline void SetNextKeyMarker(const Aws::String& value) { m_nextKeyMarker = value; }
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline void SetNextKeyMarker(Aws::String&& value) { m_nextKeyMarker = value; }
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline void SetNextKeyMarker(const char* value) { m_nextKeyMarker.assign(value); }
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline ListObjectVersionsResult& WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline ListObjectVersionsResult& WithNextKeyMarker(Aws::String&& value) { SetNextKeyMarker(value); return *this;}
 
-    /*
-     Use this value for the key marker request parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the key marker request parameter in a subsequent request.
+     */
     inline ListObjectVersionsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline const Aws::String& GetNextVersionIdMarker() const{ return m_nextVersionIdMarker; }
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline void SetNextVersionIdMarker(const Aws::String& value) { m_nextVersionIdMarker = value; }
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline void SetNextVersionIdMarker(Aws::String&& value) { m_nextVersionIdMarker = value; }
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline void SetNextVersionIdMarker(const char* value) { m_nextVersionIdMarker.assign(value); }
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const Aws::String& value) { SetNextVersionIdMarker(value); return *this;}
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(Aws::String&& value) { SetNextVersionIdMarker(value); return *this;}
 
-    /*
-     Use this value for the next version id marker parameter in a subsequent request.
-    */
+    /**
+     * Use this value for the next version id marker parameter in a subsequent request.
+     */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const char* value) { SetNextVersionIdMarker(value); return *this;}
 
     
@@ -323,29 +332,29 @@ namespace Model
     
     inline ListObjectVersionsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(value); return *this; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = value; }
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline ListObjectVersionsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
-    /*
-     Encoding type used by Amazon S3 to encode object keys in the response.
-    */
+    /**
+     * Encoding type used by Amazon S3 to encode object keys in the response.
+     */
     inline ListObjectVersionsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
 
   private:

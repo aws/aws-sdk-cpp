@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>This output contains the list of steps.</p>
-  */
+  /**
+   * <p>This output contains the list of steps.</p>
+   */
   class AWS_EMR_API ListStepsResult
   {
   public:
@@ -44,74 +44,74 @@ namespace Model
     ListStepsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListStepsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline const Aws::Vector<StepSummary>& GetSteps() const{ return m_steps; }
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline void SetSteps(const Aws::Vector<StepSummary>& value) { m_steps = value; }
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline void SetSteps(Aws::Vector<StepSummary>&& value) { m_steps = value; }
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline ListStepsResult& WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline ListStepsResult& WithSteps(Aws::Vector<StepSummary>&& value) { SetSteps(value); return *this;}
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline ListStepsResult& AddSteps(const StepSummary& value) { m_steps.push_back(value); return *this; }
 
-    /*
-     <p>The filtered list of steps for the cluster.</p>
-    */
+    /**
+     * <p>The filtered list of steps for the cluster.</p>
+     */
     inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(value); return *this; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline ListStepsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline ListStepsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline ListStepsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:

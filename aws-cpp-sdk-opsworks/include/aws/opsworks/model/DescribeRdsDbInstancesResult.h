@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeRdsDbInstancesResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     DescribeRdsDbInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeRdsDbInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline const Aws::Vector<RdsDbInstance>& GetRdsDbInstances() const{ return m_rdsDbInstances; }
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline void SetRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { m_rdsDbInstances = value; }
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline void SetRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { m_rdsDbInstances = value; }
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline DescribeRdsDbInstancesResult& WithRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { SetRdsDbInstances(value); return *this;}
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline DescribeRdsDbInstancesResult& WithRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { SetRdsDbInstances(value); return *this;}
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline DescribeRdsDbInstancesResult& AddRdsDbInstances(const RdsDbInstance& value) { m_rdsDbInstances.push_back(value); return *this; }
 
-    /*
-     <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
+     * instances.</p>
+     */
     inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(value); return *this; }
 
   private:

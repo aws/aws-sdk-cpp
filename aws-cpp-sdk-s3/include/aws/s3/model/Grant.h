@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Grant
   {
   public:
@@ -57,29 +55,29 @@ namespace Model
     
     inline Grant& WithGrantee(Grantee&& value) { SetGrantee(value); return *this;}
 
-    /*
-     Specifies the permission given to the grantee.
-    */
+    /**
+     * Specifies the permission given to the grantee.
+     */
     inline const Permission& GetPermission() const{ return m_permission; }
 
-    /*
-     Specifies the permission given to the grantee.
-    */
+    /**
+     * Specifies the permission given to the grantee.
+     */
     inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
-    /*
-     Specifies the permission given to the grantee.
-    */
+    /**
+     * Specifies the permission given to the grantee.
+     */
     inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
-    /*
-     Specifies the permission given to the grantee.
-    */
+    /**
+     * Specifies the permission given to the grantee.
+     */
     inline Grant& WithPermission(const Permission& value) { SetPermission(value); return *this;}
 
-    /*
-     Specifies the permission given to the grantee.
-    */
+    /**
+     * Specifies the permission given to the grantee.
+     */
     inline Grant& WithPermission(Permission&& value) { SetPermission(value); return *this;}
 
   private:

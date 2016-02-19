@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action. </p>
-  */
+  /**
+   * <p> Contains the result of a successful invocation of the
+   * <a>DescribeDBEngineVersions</a> action. </p>
+   */
   class AWS_RDS_API DescribeDBEngineVersionsResult
   {
   public:
@@ -45,74 +46,88 @@ namespace Model
     DescribeDBEngineVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeDBEngineVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline DescribeDBEngineVersionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline DescribeDBEngineVersionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    */
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
     inline DescribeDBEngineVersionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline const Aws::Vector<DBEngineVersion>& GetDBEngineVersions() const{ return m_dBEngineVersions; }
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline void SetDBEngineVersions(const Aws::Vector<DBEngineVersion>& value) { m_dBEngineVersions = value; }
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline void SetDBEngineVersions(Aws::Vector<DBEngineVersion>&& value) { m_dBEngineVersions = value; }
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline DescribeDBEngineVersionsResult& WithDBEngineVersions(const Aws::Vector<DBEngineVersion>& value) { SetDBEngineVersions(value); return *this;}
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline DescribeDBEngineVersionsResult& WithDBEngineVersions(Aws::Vector<DBEngineVersion>&& value) { SetDBEngineVersions(value); return *this;}
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline DescribeDBEngineVersionsResult& AddDBEngineVersions(const DBEngineVersion& value) { m_dBEngineVersions.push_back(value); return *this; }
 
-    /*
-     <p> A list of <code>DBEngineVersion</code> elements. </p>
-    */
+    /**
+     * <p> A list of <code>DBEngineVersion</code> elements. </p>
+     */
     inline DescribeDBEngineVersionsResult& AddDBEngineVersions(DBEngineVersion&& value) { m_dBEngineVersions.push_back(value); return *this; }
 
     

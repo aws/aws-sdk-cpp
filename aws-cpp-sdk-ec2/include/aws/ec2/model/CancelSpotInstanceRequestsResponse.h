@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of CancelSpotInstanceRequests.</p>
-  */
+  /**
+   * <p>Contains the output of CancelSpotInstanceRequests.</p>
+   */
   class AWS_EC2_API CancelSpotInstanceRequestsResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     CancelSpotInstanceRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CancelSpotInstanceRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline const Aws::Vector<CancelledSpotInstanceRequest>& GetCancelledSpotInstanceRequests() const{ return m_cancelledSpotInstanceRequests; }
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline void SetCancelledSpotInstanceRequests(const Aws::Vector<CancelledSpotInstanceRequest>& value) { m_cancelledSpotInstanceRequests = value; }
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline void SetCancelledSpotInstanceRequests(Aws::Vector<CancelledSpotInstanceRequest>&& value) { m_cancelledSpotInstanceRequests = value; }
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline CancelSpotInstanceRequestsResponse& WithCancelledSpotInstanceRequests(const Aws::Vector<CancelledSpotInstanceRequest>& value) { SetCancelledSpotInstanceRequests(value); return *this;}
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline CancelSpotInstanceRequestsResponse& WithCancelledSpotInstanceRequests(Aws::Vector<CancelledSpotInstanceRequest>&& value) { SetCancelledSpotInstanceRequests(value); return *this;}
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline CancelSpotInstanceRequestsResponse& AddCancelledSpotInstanceRequests(const CancelledSpotInstanceRequest& value) { m_cancelledSpotInstanceRequests.push_back(value); return *this; }
 
-    /*
-     <p>One or more Spot Instance requests.</p>
-    */
+    /**
+     * <p>One or more Spot Instance requests.</p>
+     */
     inline CancelSpotInstanceRequestsResponse& AddCancelledSpotInstanceRequests(CancelledSpotInstanceRequest&& value) { m_cancelledSpotInstanceRequests.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a linked EC2-Classic instance.</p>
-  */
+
+  /**
+   * <p>Describes a linked EC2-Classic instance.</p>
+   */
   class AWS_EC2_API ClassicLinkInstance
   {
   public:
@@ -46,144 +47,144 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline ClassicLinkInstance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline ClassicLinkInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline ClassicLinkInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline ClassicLinkInstance& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline ClassicLinkInstance& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
-    /*
-     <p>The ID of the VPC.</p>
-    */
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline ClassicLinkInstance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline ClassicLinkInstance& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline ClassicLinkInstance& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline ClassicLinkInstance& AddGroups(const GroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
-    /*
-     <p>A list of security groups.</p>
-    */
+    /**
+     * <p>A list of security groups.</p>
+     */
     inline ClassicLinkInstance& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline ClassicLinkInstance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline ClassicLinkInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline ClassicLinkInstance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>Any tags assigned to the instance.</p>
-    */
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
     inline ClassicLinkInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

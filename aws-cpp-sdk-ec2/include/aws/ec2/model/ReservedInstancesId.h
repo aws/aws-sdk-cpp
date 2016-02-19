@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes the ID of a Reserved Instance.</p>
-  */
+
+  /**
+   * <p>Describes the ID of a Reserved Instance.</p>
+   */
   class AWS_EC2_API ReservedInstancesId
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline ReservedInstancesId& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline ReservedInstancesId& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The ID of the Reserved Instance.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline ReservedInstancesId& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
   private:

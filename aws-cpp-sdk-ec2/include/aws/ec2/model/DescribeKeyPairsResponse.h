@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeKeyPairsResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeKeyPairsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeKeyPairsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline const Aws::Vector<KeyPairInfo>& GetKeyPairs() const{ return m_keyPairs; }
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline void SetKeyPairs(const Aws::Vector<KeyPairInfo>& value) { m_keyPairs = value; }
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline void SetKeyPairs(Aws::Vector<KeyPairInfo>&& value) { m_keyPairs = value; }
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline DescribeKeyPairsResponse& WithKeyPairs(const Aws::Vector<KeyPairInfo>& value) { SetKeyPairs(value); return *this;}
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline DescribeKeyPairsResponse& WithKeyPairs(Aws::Vector<KeyPairInfo>&& value) { SetKeyPairs(value); return *this;}
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline DescribeKeyPairsResponse& AddKeyPairs(const KeyPairInfo& value) { m_keyPairs.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more key pairs.</p>
-    */
+    /**
+     * <p>Information about one or more key pairs.</p>
+     */
     inline DescribeKeyPairsResponse& AddKeyPairs(KeyPairInfo&& value) { m_keyPairs.push_back(value); return *this; }
 
     

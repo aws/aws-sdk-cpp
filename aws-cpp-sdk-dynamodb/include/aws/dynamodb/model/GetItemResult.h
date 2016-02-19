@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>GetItem</i> operation.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>GetItem</i> operation.</p>
+   */
   class AWS_DYNAMODB_API GetItemResult
   {
   public:
@@ -45,59 +45,70 @@ namespace Model
     GetItemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetItemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_item = value; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_item = value; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(value); return *this;}
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& AddItem(const Aws::String& key, const AttributeValue& value) { m_item[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& AddItem(Aws::String&& key, const AttributeValue& value) { m_item[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& AddItem(const Aws::String& key, AttributeValue&& value) { m_item[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& AddItem(Aws::String&& key, AttributeValue&& value) { m_item[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& AddItem(const char* key, AttributeValue&& value) { m_item[key] = value; return *this; }
 
-    /*
-     <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.</p>
-    */
+    /**
+     * <p>A map of attribute names to <i>AttributeValue</i> objects, as specified by
+     * <i>AttributesToGet</i>.</p>
+     */
     inline GetItemResult& AddItem(const char* key, const AttributeValue& value) { m_item[key] = value; return *this; }
 
     

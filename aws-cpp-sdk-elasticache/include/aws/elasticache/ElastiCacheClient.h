@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -255,27 +255,35 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::ResetCacheParameterGroupRequest&, const Model::ResetCacheParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetCacheParameterGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::RevokeCacheSecurityGroupIngressRequest&, const Model::RevokeCacheSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeCacheSecurityGroupIngressResponseReceivedHandler;
 
-  /*
-    <fullname>Amazon ElastiCache</fullname> <p>Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the cloud.</p> <p>With ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of the administrative burden of launching and managing a distributed cache. The service makes setup, scaling, and cluster failure handling much simpler than in a self-managed cache deployment.</p> <p>In addition, through integration with Amazon CloudWatch, customers get enhanced visibility into the key performance statistics associated with their cache and can receive alarms if a part of their cache runs hot.</p>
-  */
+  /**
+   * <fullname>Amazon ElastiCache</fullname> <p>Amazon ElastiCache is a web service
+   * that makes it easier to set up, operate, and scale a distributed cache in the
+   * cloud.</p> <p>With ElastiCache, customers gain all of the benefits of a
+   * high-performance, in-memory cache with far less of the administrative burden of
+   * launching and managing a distributed cache. The service makes setup, scaling,
+   * and cluster failure handling much simpler than in a self-managed cache
+   * deployment.</p> <p>In addition, through integration with Amazon CloudWatch,
+   * customers get enhanced visibility into the key performance statistics associated
+   * with their cache and can receive alarms if a part of their cache runs hot.</p>
+   */
   class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
 
-        /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElastiCacheClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElastiCacheClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -285,714 +293,1068 @@ namespace Model
 
         virtual ~ElastiCacheClient();
 
-        /*
-            <p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named resource. A <i>cost allocation tag</i> is a key-value pair where the key and value are case-sensitive. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
-        */
+        /**
+         * <p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the
+         * named resource. A <i>cost allocation tag</i> is a key-value pair where the key
+         * and value are case-sensitive. Cost allocation tags can be used to categorize and
+         * track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources,
+         * AWS generates a cost allocation report as a comma-separated value (CSV) file
+         * with your usage and costs aggregated by your tags. You can apply tags that
+         * represent business categories (such as cost centers, application names, or
+         * owners) to organize your costs across multiple services. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /*
-            <p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named resource. A <i>cost allocation tag</i> is a key-value pair where the key and value are case-sensitive. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the
+         * named resource. A <i>cost allocation tag</i> is a key-value pair where the key
+         * and value are case-sensitive. Cost allocation tags can be used to categorize and
+         * track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources,
+         * AWS generates a cost allocation report as a comma-separated value (CSV) file
+         * with your usage and costs aggregated by your tags. You can apply tags that
+         * represent business categories (such as cost centers, application names, or
+         * owners) to organize your costs across multiple services. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
 
-        /*
-            <p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named resource. A <i>cost allocation tag</i> is a key-value pair where the key and value are case-sensitive. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the
+         * named resource. A <i>cost allocation tag</i> is a key-value pair where the key
+         * and value are case-sensitive. Cost allocation tags can be used to categorize and
+         * track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources,
+         * AWS generates a cost allocation report as a comma-separated value (CSV) file
+         * with your usage and costs aggregated by your tags. You can apply tags that
+         * represent business categories (such as cost centers, application names, or
+         * owners) to organize your costs across multiple services. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region. </note>
-        */
+        /**
+         * <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress
+         * to a cache security group. Applications using ElastiCache must be running on
+         * Amazon EC2, and Amazon EC2 security groups are used as the authorization
+         * mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security
+         * group in one region to an ElastiCache cluster in another region. </note>
+         */
         virtual Model::AuthorizeCacheSecurityGroupIngressOutcome AuthorizeCacheSecurityGroupIngress(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region. </note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress
+         * to a cache security group. Applications using ElastiCache must be running on
+         * Amazon EC2, and Amazon EC2 security groups are used as the authorization
+         * mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security
+         * group in one region to an ElastiCache cluster in another region. </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::AuthorizeCacheSecurityGroupIngressOutcomeCallable AuthorizeCacheSecurityGroupIngressCallable(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region. </note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress
+         * to a cache security group. Applications using ElastiCache must be running on
+         * Amazon EC2, and Amazon EC2 security groups are used as the authorization
+         * mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security
+         * group in one region to an ElastiCache cluster in another region. </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void AuthorizeCacheSecurityGroupIngressAsync(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
-        */
+        /**
+         * <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
+         */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
-        /*
-            <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
 
-        /*
-            <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>
-        */
+        /**
+         * <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in
+         * the cache cluster run the same protocol-compliant cache engine software, either
+         * Memcached or Redis.</p>
+         */
         virtual Model::CreateCacheClusterOutcome CreateCacheCluster(const Model::CreateCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in
+         * the cache cluster run the same protocol-compliant cache engine software, either
+         * Memcached or Redis.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateCacheClusterOutcomeCallable CreateCacheClusterCallable(const Model::CreateCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in
+         * the cache cluster run the same protocol-compliant cache engine software, either
+         * Memcached or Redis.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateCacheClusterAsync(const Model::CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.</p>
-        */
+        /**
+         * <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter
+         * group. A cache parameter group is a collection of parameters that you apply to
+         * all of the nodes in a cache cluster.</p>
+         */
         virtual Model::CreateCacheParameterGroupOutcome CreateCacheParameterGroup(const Model::CreateCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter
+         * group. A cache parameter group is a collection of parameters that you apply to
+         * all of the nodes in a cache cluster.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateCacheParameterGroupOutcomeCallable CreateCacheParameterGroupCallable(const Model::CreateCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter
+         * group. A cache parameter group is a collection of parameters that you apply to
+         * all of the nodes in a cache cluster.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateCacheParameterGroupAsync(const Model::CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.</p> <p>Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
-        */
+        /**
+         * <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security
+         * group. Use a cache security group to control access to one or more cache
+         * clusters.</p> <p>Cache security groups are only used when you are creating a
+         * cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are
+         * creating a cache cluster inside of a VPC, use a cache subnet group instead. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
+         */
         virtual Model::CreateCacheSecurityGroupOutcome CreateCacheSecurityGroup(const Model::CreateCacheSecurityGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.</p> <p>Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security
+         * group. Use a cache security group to control access to one or more cache
+         * clusters.</p> <p>Cache security groups are only used when you are creating a
+         * cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are
+         * creating a cache cluster inside of a VPC, use a cache subnet group instead. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateCacheSecurityGroupOutcomeCallable CreateCacheSecurityGroupCallable(const Model::CreateCacheSecurityGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.</p> <p>Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security
+         * group. Use a cache security group to control access to one or more cache
+         * clusters.</p> <p>Cache security groups are only used when you are creating a
+         * cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are
+         * creating a cache cluster inside of a VPC, use a cache subnet group instead. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateCacheSecurityGroupAsync(const Model::CreateCacheSecurityGroupRequest& request, const CreateCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.</p> <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).</p>
-        */
+        /**
+         * <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet
+         * group.</p> <p>Use this parameter only when you are creating a cluster in an
+         * Amazon Virtual Private Cloud (VPC).</p>
+         */
         virtual Model::CreateCacheSubnetGroupOutcome CreateCacheSubnetGroup(const Model::CreateCacheSubnetGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.</p> <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet
+         * group.</p> <p>Use this parameter only when you are creating a cluster in an
+         * Amazon Virtual Private Cloud (VPC).</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateCacheSubnetGroupOutcomeCallable CreateCacheSubnetGroupCallable(const Model::CreateCacheSubnetGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.</p> <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet
+         * group.</p> <p>Use this parameter only when you are creating a cluster in an
+         * Amazon Virtual Private Cloud (VPC).</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateCacheSubnetGroupAsync(const Model::CreateCacheSubnetGroupRequest& request, const CreateCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CreateReplicationGroup</i> action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.</p> <p>When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
-        */
+        /**
+         * <p>The <i>CreateReplicationGroup</i> action creates a replication group. A
+         * replication group is a collection of cache clusters, where one of the cache
+         * clusters is a read/write primary and the others are read-only replicas. Writes
+         * to the primary are automatically propagated to the replicas.</p> <p>When you
+         * create a replication group, you must specify an existing cache cluster that is
+         * in the primary role. When the replication group has been successfully created,
+         * you can add one or more read replica replicas to it, up to a total of five read
+         * replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
+         */
         virtual Model::CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateReplicationGroup</i> action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.</p> <p>When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CreateReplicationGroup</i> action creates a replication group. A
+         * replication group is a collection of cache clusters, where one of the cache
+         * clusters is a read/write primary and the others are read-only replicas. Writes
+         * to the primary are automatically propagated to the replicas.</p> <p>When you
+         * create a replication group, you must specify an existing cache cluster that is
+         * in the primary role. When the replication group has been successfully created,
+         * you can add one or more read replica replicas to it, up to a total of five read
+         * replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateReplicationGroupOutcomeCallable CreateReplicationGroupCallable(const Model::CreateReplicationGroupRequest& request) const;
 
-        /*
-            <p>The <i>CreateReplicationGroup</i> action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.</p> <p>When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CreateReplicationGroup</i> action creates a replication group. A
+         * replication group is a collection of cache clusters, where one of the cache
+         * clusters is a read/write primary and the others are read-only replicas. Writes
+         * to the primary are automatically propagated to the replicas.</p> <p>When you
+         * create a replication group, you must specify an existing cache cluster that is
+         * in the primary role. When the replication group has been successfully created,
+         * you can add one or more read replica replicas to it, up to a total of five read
+         * replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific moment in time.</p>
-        */
+        /**
+         * <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at
+         * a specific moment in time.</p>
+         */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /*
-            <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific moment in time.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at
+         * a specific moment in time.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
 
-        /*
-            <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific moment in time.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at
+         * a specific moment in time.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.</p>
-        */
+        /**
+         * <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache
+         * cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node
+         * endpoints and the cache cluster itself. When you receive a successful response
+         * from this action, Amazon ElastiCache immediately begins deleting the cache
+         * cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used
+         * to delete a cache cluster that is the last read replica of a replication group
+         * that has Multi-AZ mode enabled.</p>
+         */
         virtual Model::DeleteCacheClusterOutcome DeleteCacheCluster(const Model::DeleteCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache
+         * cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node
+         * endpoints and the cache cluster itself. When you receive a successful response
+         * from this action, Amazon ElastiCache immediately begins deleting the cache
+         * cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used
+         * to delete a cache cluster that is the last read replica of a replication group
+         * that has Multi-AZ mode enabled.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteCacheClusterOutcomeCallable DeleteCacheClusterCallable(const Model::DeleteCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache
+         * cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node
+         * endpoints and the cache cluster itself. When you receive a successful response
+         * from this action, Amazon ElastiCache immediately begins deleting the cache
+         * cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used
+         * to delete a cache cluster that is the last read replica of a replication group
+         * that has Multi-AZ mode enabled.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteCacheClusterAsync(const Model::DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>
-        */
+        /**
+         * <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache
+         * parameter group. You cannot delete a cache parameter group if it is associated
+         * with any cache clusters.</p>
+         */
         virtual Model::DeleteCacheParameterGroupOutcome DeleteCacheParameterGroup(const Model::DeleteCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache
+         * parameter group. You cannot delete a cache parameter group if it is associated
+         * with any cache clusters.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteCacheParameterGroupOutcomeCallable DeleteCacheParameterGroupCallable(const Model::DeleteCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache
+         * parameter group. You cannot delete a cache parameter group if it is associated
+         * with any cache clusters.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteCacheParameterGroupAsync(const Model::DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.</p> <note>You cannot delete a cache security group if it is associated with any cache clusters.</note>
-        */
+        /**
+         * <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
+         * group.</p> <note>You cannot delete a cache security group if it is associated
+         * with any cache clusters.</note>
+         */
         virtual Model::DeleteCacheSecurityGroupOutcome DeleteCacheSecurityGroup(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.</p> <note>You cannot delete a cache security group if it is associated with any cache clusters.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
+         * group.</p> <note>You cannot delete a cache security group if it is associated
+         * with any cache clusters.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteCacheSecurityGroupOutcomeCallable DeleteCacheSecurityGroupCallable(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.</p> <note>You cannot delete a cache security group if it is associated with any cache clusters.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
+         * group.</p> <note>You cannot delete a cache security group if it is associated
+         * with any cache clusters.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteCacheSecurityGroupAsync(const Model::DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p> <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
-        */
+        /**
+         * <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p>
+         * <note>You cannot delete a cache subnet group if it is associated with any cache
+         * clusters.</note>
+         */
         virtual Model::DeleteCacheSubnetGroupOutcome DeleteCacheSubnetGroup(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p> <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p>
+         * <note>You cannot delete a cache subnet group if it is associated with any cache
+         * clusters.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteCacheSubnetGroupOutcomeCallable DeleteCacheSubnetGroupCallable(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p> <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p>
+         * <note>You cannot delete a cache subnet group if it is associated with any cache
+         * clusters.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteCacheSubnetGroupAsync(const Model::DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p> <p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>
-        */
+        /**
+         * <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication
+         * group. By default, this action deletes the entire replication group, including
+         * the primary cluster and all of the read replicas. You can optionally delete only
+         * the read replicas, while retaining the primary cluster.</p> <p>When you receive
+         * a successful response from this action, Amazon ElastiCache immediately begins
+         * deleting the selected resources; you cannot cancel or revert this action.</p>
+         */
         virtual Model::DeleteReplicationGroupOutcome DeleteReplicationGroup(const Model::DeleteReplicationGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p> <p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication
+         * group. By default, this action deletes the entire replication group, including
+         * the primary cluster and all of the read replicas. You can optionally delete only
+         * the read replicas, while retaining the primary cluster.</p> <p>When you receive
+         * a successful response from this action, Amazon ElastiCache immediately begins
+         * deleting the selected resources; you cannot cancel or revert this action.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteReplicationGroupOutcomeCallable DeleteReplicationGroupCallable(const Model::DeleteReplicationGroupRequest& request) const;
 
-        /*
-            <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p> <p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication
+         * group. By default, this action deletes the entire replication group, including
+         * the primary cluster and all of the read replicas. You can optionally delete only
+         * the read replicas, while retaining the primary cluster.</p> <p>When you receive
+         * a successful response from this action, Amazon ElastiCache immediately begins
+         * deleting the selected resources; you cannot cancel or revert this action.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteReplicationGroupAsync(const Model::DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.</p>
-        */
+        /**
+         * <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you
+         * receive a successful response from this action, ElastiCache immediately begins
+         * deleting the snapshot; you cannot cancel or revert this action.</p>
+         */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
-        /*
-            <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you
+         * receive a successful response from this action, ElastiCache immediately begins
+         * deleting the snapshot; you cannot cancel or revert this action.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
 
-        /*
-            <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you
+         * receive a successful response from this action, ElastiCache immediately begins
+         * deleting the snapshot; you cannot cancel or revert this action.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeCacheClusters</i> action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</p>
-        */
+        /**
+         * <p>The <i>DescribeCacheClusters</i> action returns information about all
+         * provisioned cache clusters if no cache cluster identifier is specified, or about
+         * a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By
+         * default, abbreviated information about the cache clusters(s) will be returned.
+         * You can use the optional <i>ShowDetails</i> flag to retrieve detailed
+         * information about the cache nodes associated with the cache clusters. These
+         * details include the DNS address and port for the cache node endpoint.</p> <p>If
+         * the cluster is in the CREATING state, only cluster level information will be
+         * displayed until all of the nodes are successfully provisioned.</p> <p>If the
+         * cluster is in the DELETING state, only cluster level information will be
+         * displayed.</p> <p>If cache nodes are currently being added to the cache cluster,
+         * node endpoint information and creation time for the additional nodes will not be
+         * displayed until they are completely provisioned. When the cache cluster state is
+         * <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are
+         * currently being removed from the cache cluster, no endpoint information for the
+         * removed nodes is displayed.</p>
+         */
         virtual Model::DescribeCacheClustersOutcome DescribeCacheClusters(const Model::DescribeCacheClustersRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheClusters</i> action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeCacheClusters</i> action returns information about all
+         * provisioned cache clusters if no cache cluster identifier is specified, or about
+         * a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By
+         * default, abbreviated information about the cache clusters(s) will be returned.
+         * You can use the optional <i>ShowDetails</i> flag to retrieve detailed
+         * information about the cache nodes associated with the cache clusters. These
+         * details include the DNS address and port for the cache node endpoint.</p> <p>If
+         * the cluster is in the CREATING state, only cluster level information will be
+         * displayed until all of the nodes are successfully provisioned.</p> <p>If the
+         * cluster is in the DELETING state, only cluster level information will be
+         * displayed.</p> <p>If cache nodes are currently being added to the cache cluster,
+         * node endpoint information and creation time for the additional nodes will not be
+         * displayed until they are completely provisioned. When the cache cluster state is
+         * <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are
+         * currently being removed from the cache cluster, no endpoint information for the
+         * removed nodes is displayed.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeCacheClustersOutcomeCallable DescribeCacheClustersCallable(const Model::DescribeCacheClustersRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheClusters</i> action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeCacheClusters</i> action returns information about all
+         * provisioned cache clusters if no cache cluster identifier is specified, or about
+         * a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By
+         * default, abbreviated information about the cache clusters(s) will be returned.
+         * You can use the optional <i>ShowDetails</i> flag to retrieve detailed
+         * information about the cache nodes associated with the cache clusters. These
+         * details include the DNS address and port for the cache node endpoint.</p> <p>If
+         * the cluster is in the CREATING state, only cluster level information will be
+         * displayed until all of the nodes are successfully provisioned.</p> <p>If the
+         * cluster is in the DELETING state, only cluster level information will be
+         * displayed.</p> <p>If cache nodes are currently being added to the cache cluster,
+         * node endpoint information and creation time for the additional nodes will not be
+         * displayed until they are completely provisioned. When the cache cluster state is
+         * <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are
+         * currently being removed from the cache cluster, no endpoint information for the
+         * removed nodes is displayed.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeCacheClustersAsync(const Model::DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache engines and their versions.</p>
-        */
+        /**
+         * <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available
+         * cache engines and their versions.</p>
+         */
         virtual Model::DescribeCacheEngineVersionsOutcome DescribeCacheEngineVersions(const Model::DescribeCacheEngineVersionsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache engines and their versions.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available
+         * cache engines and their versions.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeCacheEngineVersionsOutcomeCallable DescribeCacheEngineVersionsCallable(const Model::DescribeCacheEngineVersionsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache engines and their versions.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available
+         * cache engines and their versions.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeCacheEngineVersionsAsync(const Model::DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.</p>
-        */
+        /**
+         * <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache
+         * parameter group descriptions. If a cache parameter group name is specified, the
+         * list will contain only the descriptions for that group.</p>
+         */
         virtual Model::DescribeCacheParameterGroupsOutcome DescribeCacheParameterGroups(const Model::DescribeCacheParameterGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache
+         * parameter group descriptions. If a cache parameter group name is specified, the
+         * list will contain only the descriptions for that group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeCacheParameterGroupsOutcomeCallable DescribeCacheParameterGroupsCallable(const Model::DescribeCacheParameterGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache
+         * parameter group descriptions. If a cache parameter group name is specified, the
+         * list will contain only the descriptions for that group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeCacheParameterGroupsAsync(const Model::DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list for a particular cache parameter group.</p>
-        */
+        /**
+         * <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list
+         * for a particular cache parameter group.</p>
+         */
         virtual Model::DescribeCacheParametersOutcome DescribeCacheParameters(const Model::DescribeCacheParametersRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list for a particular cache parameter group.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list
+         * for a particular cache parameter group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeCacheParametersOutcomeCallable DescribeCacheParametersCallable(const Model::DescribeCacheParametersRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list for a particular cache parameter group.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list
+         * for a particular cache parameter group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeCacheParametersAsync(const Model::DescribeCacheParametersRequest& request, const DescribeCacheParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.</p>
-        */
+        /**
+         * <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache
+         * security group descriptions. If a cache security group name is specified, the
+         * list will contain only the description of that group.</p>
+         */
         virtual Model::DescribeCacheSecurityGroupsOutcome DescribeCacheSecurityGroups(const Model::DescribeCacheSecurityGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache
+         * security group descriptions. If a cache security group name is specified, the
+         * list will contain only the description of that group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeCacheSecurityGroupsOutcomeCallable DescribeCacheSecurityGroupsCallable(const Model::DescribeCacheSecurityGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache
+         * security group descriptions. If a cache security group name is specified, the
+         * list will contain only the description of that group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeCacheSecurityGroupsAsync(const Model::DescribeCacheSecurityGroupsRequest& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
-        */
+        /**
+         * <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet
+         * group descriptions. If a subnet group name is specified, the list will contain
+         * only the description of that group.</p>
+         */
         virtual Model::DescribeCacheSubnetGroupsOutcome DescribeCacheSubnetGroups(const Model::DescribeCacheSubnetGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet
+         * group descriptions. If a subnet group name is specified, the list will contain
+         * only the description of that group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeCacheSubnetGroupsOutcomeCallable DescribeCacheSubnetGroupsCallable(const Model::DescribeCacheSubnetGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet
+         * group descriptions. If a subnet group name is specified, the list will contain
+         * only the description of that group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeCacheSubnetGroupsAsync(const Model::DescribeCacheSubnetGroupsRequest& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system parameter information for the specified cache engine.</p>
-        */
+        /**
+         * <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine
+         * and system parameter information for the specified cache engine.</p>
+         */
         virtual Model::DescribeEngineDefaultParametersOutcome DescribeEngineDefaultParameters(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
-        /*
-            <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system parameter information for the specified cache engine.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine
+         * and system parameter information for the specified cache engine.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeEngineDefaultParametersOutcomeCallable DescribeEngineDefaultParametersCallable(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
-        /*
-            <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system parameter information for the specified cache engine.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine
+         * and system parameter information for the specified cache engine.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeEvents</i> action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
-        */
+        /**
+         * <p>The <i>DescribeEvents</i> action returns events related to cache clusters,
+         * cache security groups, and cache parameter groups. You can obtain events
+         * specific to a particular cache cluster, cache security group, or cache parameter
+         * group by providing the name as a parameter.</p> <p>By default, only the events
+         * occurring within the last hour are returned; however, you can retrieve up to 14
+         * days' worth of events if necessary.</p>
+         */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeEvents</i> action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeEvents</i> action returns events related to cache clusters,
+         * cache security groups, and cache parameter groups. You can obtain events
+         * specific to a particular cache cluster, cache security group, or cache parameter
+         * group by providing the name as a parameter.</p> <p>By default, only the events
+         * occurring within the last hour are returned; however, you can retrieve up to 14
+         * days' worth of events if necessary.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeEvents</i> action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeEvents</i> action returns events related to cache clusters,
+         * cache security groups, and cache parameter groups. You can obtain events
+         * specific to a particular cache cluster, cache security group, or cache parameter
+         * group by providing the name as a parameter.</p> <p>By default, only the events
+         * occurring within the last hour are returned; however, you can retrieve up to 14
+         * days' worth of events if necessary.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeReplicationGroups</i> action returns information about a particular replication group. If no identifier is specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</p>
-        */
+        /**
+         * <p>The <i>DescribeReplicationGroups</i> action returns information about a
+         * particular replication group. If no identifier is specified,
+         * <i>DescribeReplicationGroups</i> returns information about all replication
+         * groups.</p>
+         */
         virtual Model::DescribeReplicationGroupsOutcome DescribeReplicationGroups(const Model::DescribeReplicationGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeReplicationGroups</i> action returns information about a particular replication group. If no identifier is specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeReplicationGroups</i> action returns information about a
+         * particular replication group. If no identifier is specified,
+         * <i>DescribeReplicationGroups</i> returns information about all replication
+         * groups.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReplicationGroupsOutcomeCallable DescribeReplicationGroupsCallable(const Model::DescribeReplicationGroupsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeReplicationGroups</i> action returns information about a particular replication group. If no identifier is specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeReplicationGroups</i> action returns information about a
+         * particular replication group. If no identifier is specified,
+         * <i>DescribeReplicationGroups</i> returns information about all replication
+         * groups.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReplicationGroupsAsync(const Model::DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>
-        */
+        /**
+         * <p>The <i>DescribeReservedCacheNodes</i> action returns information about
+         * reserved cache nodes for this account, or about a specified reserved cache
+         * node.</p>
+         */
         virtual Model::DescribeReservedCacheNodesOutcome DescribeReservedCacheNodes(const Model::DescribeReservedCacheNodesRequest& request) const;
 
-        /*
-            <p>The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeReservedCacheNodes</i> action returns information about
+         * reserved cache nodes for this account, or about a specified reserved cache
+         * node.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReservedCacheNodesOutcomeCallable DescribeReservedCacheNodesCallable(const Model::DescribeReservedCacheNodesRequest& request) const;
 
-        /*
-            <p>The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeReservedCacheNodes</i> action returns information about
+         * reserved cache nodes for this account, or about a specified reserved cache
+         * node.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReservedCacheNodesAsync(const Model::DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache node offerings.</p>
-        */
+        /**
+         * <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available
+         * reserved cache node offerings.</p>
+         */
         virtual Model::DescribeReservedCacheNodesOfferingsOutcome DescribeReservedCacheNodesOfferings(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache node offerings.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available
+         * reserved cache node offerings.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeReservedCacheNodesOfferingsOutcomeCallable DescribeReservedCacheNodesOfferingsCallable(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache node offerings.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available
+         * reserved cache node offerings.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeReservedCacheNodesOfferingsAsync(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>
-        */
+        /**
+         * <p>The <i>DescribeSnapshots</i> action returns information about cache cluster
+         * snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it
+         * can optionally describe a single snapshot, or just the snapshots associated with
+         * a particular cache cluster.</p>
+         */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>DescribeSnapshots</i> action returns information about cache cluster
+         * snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it
+         * can optionally describe a single snapshot, or just the snapshots associated with
+         * a particular cache cluster.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
 
-        /*
-            <p>The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>DescribeSnapshots</i> action returns information about cache cluster
+         * snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it
+         * can optionally describe a single snapshot, or just the snapshots associated with
+         * a particular cache cluster.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>ListTagsForResource</i> action lists all cost allocation tags currently on the named resource. A <i>cost allocation tag</i> is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
-        */
+        /**
+         * <p>The <i>ListTagsForResource</i> action lists all cost allocation tags
+         * currently on the named resource. A <i>cost allocation tag</i> is a key-value
+         * pair where the key is case-sensitive and the value is optional. Cost allocation
+         * tags can be used to categorize and track your AWS costs.</p> <p>You can have a
+         * maximum of 10 cost allocation tags on an ElastiCache resource. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /*
-            <p>The <i>ListTagsForResource</i> action lists all cost allocation tags currently on the named resource. A <i>cost allocation tag</i> is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>ListTagsForResource</i> action lists all cost allocation tags
+         * currently on the named resource. A <i>cost allocation tag</i> is a key-value
+         * pair where the key is case-sensitive and the value is optional. Cost allocation
+         * tags can be used to categorize and track your AWS costs.</p> <p>You can have a
+         * maximum of 10 cost allocation tags on an ElastiCache resource. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
-        /*
-            <p>The <i>ListTagsForResource</i> action lists all cost allocation tags currently on the named resource. A <i>cost allocation tag</i> is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>ListTagsForResource</i> action lists all cost allocation tags
+         * currently on the named resource. A <i>cost allocation tag</i> is a key-value
+         * pair where the key is case-sensitive and the value is optional. Cost allocation
+         * tags can be used to categorize and track your AWS costs.</p> <p>You can have a
+         * maximum of 10 cost allocation tags on an ElastiCache resource. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
-        */
+        /**
+         * <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache
+         * cluster. You can use this action to change one or more cluster configuration
+         * parameters by specifying the parameters and the new values.</p>
+         */
         virtual Model::ModifyCacheClusterOutcome ModifyCacheCluster(const Model::ModifyCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache
+         * cluster. You can use this action to change one or more cluster configuration
+         * parameters by specifying the parameters and the new values.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyCacheClusterOutcomeCallable ModifyCacheClusterCallable(const Model::ModifyCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache
+         * cluster. You can use this action to change one or more cluster configuration
+         * parameters by specifying the parameters and the new values.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyCacheClusterAsync(const Model::ModifyCacheClusterRequest& request, const ModifyCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
-        */
+        /**
+         * <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a
+         * cache parameter group. You can modify up to 20 parameters in a single request by
+         * submitting a list parameter name and value pairs.</p>
+         */
         virtual Model::ModifyCacheParameterGroupOutcome ModifyCacheParameterGroup(const Model::ModifyCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a
+         * cache parameter group. You can modify up to 20 parameters in a single request by
+         * submitting a list parameter name and value pairs.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyCacheParameterGroupOutcomeCallable ModifyCacheParameterGroupCallable(const Model::ModifyCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a
+         * cache parameter group. You can modify up to 20 parameters in a single request by
+         * submitting a list parameter name and value pairs.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyCacheParameterGroupAsync(const Model::ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.</p>
-        */
+        /**
+         * <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet
+         * group.</p>
+         */
         virtual Model::ModifyCacheSubnetGroupOutcome ModifyCacheSubnetGroup(const Model::ModifyCacheSubnetGroupRequest& request) const;
 
-        /*
-            <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet
+         * group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyCacheSubnetGroupOutcomeCallable ModifyCacheSubnetGroupCallable(const Model::ModifyCacheSubnetGroupRequest& request) const;
 
-        /*
-            <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet
+         * group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyCacheSubnetGroupAsync(const Model::ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.</p>
-        */
+        /**
+         * <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a
+         * replication group.</p>
+         */
         virtual Model::ModifyReplicationGroupOutcome ModifyReplicationGroup(const Model::ModifyReplicationGroupRequest& request) const;
 
-        /*
-            <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a
+         * replication group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request) const;
 
-        /*
-            <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a
+         * replication group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved cache node offering.</p>
-        */
+        /**
+         * <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a
+         * reserved cache node offering.</p>
+         */
         virtual Model::PurchaseReservedCacheNodesOfferingOutcome PurchaseReservedCacheNodesOffering(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
 
-        /*
-            <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved cache node offering.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a
+         * reserved cache node offering.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PurchaseReservedCacheNodesOfferingOutcomeCallable PurchaseReservedCacheNodesOfferingCallable(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
 
-        /*
-            <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved cache node offering.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a
+         * reserved cache node offering.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PurchaseReservedCacheNodesOfferingAsync(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache cluster event is created.</p>
-        */
+        /**
+         * <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes
+         * within a provisioned cache cluster. This API will apply any modified cache
+         * parameter groups to the cache cluster. The reboot action takes place as soon as
+         * possible, and results in a momentary outage to the cache cluster. During the
+         * reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes
+         * the contents of the cache (for each cache node being rebooted) to be lost.</p>
+         * <p>When the reboot is complete, a cache cluster event is created.</p>
+         */
         virtual Model::RebootCacheClusterOutcome RebootCacheCluster(const Model::RebootCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache cluster event is created.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes
+         * within a provisioned cache cluster. This API will apply any modified cache
+         * parameter groups to the cache cluster. The reboot action takes place as soon as
+         * possible, and results in a momentary outage to the cache cluster. During the
+         * reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes
+         * the contents of the cache (for each cache node being rebooted) to be lost.</p>
+         * <p>When the reboot is complete, a cache cluster event is created.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RebootCacheClusterOutcomeCallable RebootCacheClusterCallable(const Model::RebootCacheClusterRequest& request) const;
 
-        /*
-            <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache cluster event is created.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes
+         * within a provisioned cache cluster. This API will apply any modified cache
+         * parameter groups to the cache cluster. The reboot action takes place as soon as
+         * possible, and results in a momentary outage to the cache cluster. During the
+         * reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes
+         * the contents of the cache (for each cache node being rebooted) to be lost.</p>
+         * <p>When the reboot is complete, a cache cluster event is created.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RebootCacheClusterAsync(const Model::RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code> list from the named resource.</p>
-        */
+        /**
+         * <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the
+         * <code>TagKeys</code> list from the named resource.</p>
+         */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /*
-            <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code> list from the named resource.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the
+         * <code>TagKeys</code> list from the named resource.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /*
-            <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code> list from the named resource.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the
+         * <code>TagKeys</code> list from the named resource.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</p>
-        */
+        /**
+         * <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache
+         * parameter group to the engine or system default value. You can reset specific
+         * parameters by submitting a list of parameter names. To reset the entire cache
+         * parameter group, specify the <i>ResetAllParameters</i> and
+         * <i>CacheParameterGroupName</i> parameters.</p>
+         */
         virtual Model::ResetCacheParameterGroupOutcome ResetCacheParameterGroup(const Model::ResetCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache
+         * parameter group to the engine or system default value. You can reset specific
+         * parameters by submitting a list of parameter names. To reset the entire cache
+         * parameter group, specify the <i>ResetAllParameters</i> and
+         * <i>CacheParameterGroupName</i> parameters.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ResetCacheParameterGroupOutcomeCallable ResetCacheParameterGroupCallable(const Model::ResetCacheParameterGroupRequest& request) const;
 
-        /*
-            <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache
+         * parameter group to the engine or system default value. You can reset specific
+         * parameters by submitting a list of parameter names. To reset the entire cache
+         * parameter group, specify the <i>ResetAllParameters</i> and
+         * <i>CacheParameterGroupName</i> parameters.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ResetCacheParameterGroupAsync(const Model::ResetCacheParameterGroupRequest& request, const ResetCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.</p>
-        */
+        /**
+         * <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a
+         * cache security group. Use this action to disallow access from an Amazon EC2
+         * security group that had been previously authorized.</p>
+         */
         virtual Model::RevokeCacheSecurityGroupIngressOutcome RevokeCacheSecurityGroupIngress(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a
+         * cache security group. Use this action to disallow access from an Amazon EC2
+         * security group that had been previously authorized.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RevokeCacheSecurityGroupIngressOutcomeCallable RevokeCacheSecurityGroupIngressCallable(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
 
-        /*
-            <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a
+         * cache security group. Use this action to disallow access from an Amazon EC2
+         * security group that had been previously authorized.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RevokeCacheSecurityGroupIngressAsync(const Model::RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-/**Async helpers**/
+        /**Async helpers**/
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeCacheSecurityGroupIngressAsyncHelper(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

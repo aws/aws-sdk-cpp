@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ namespace S3
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_S3_API DeleteObjectRequest : public S3Request
   {
   public:
@@ -84,74 +84,81 @@ namespace Model
     
     inline DeleteObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline void SetMFA(const char* value) { m_mFAHasBeenSet = true; m_mFA.assign(value); }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline DeleteObjectRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline DeleteObjectRequest& WithMFA(Aws::String&& value) { SetMFA(value); return *this;}
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline DeleteObjectRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline DeleteObjectRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline DeleteObjectRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
-    /*
-     VersionId used to reference a specific version of the object.
-    */
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
     inline DeleteObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
     

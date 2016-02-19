@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeAutoScalingGroupsResult
   {
   public:
@@ -45,74 +42,81 @@ namespace Model
     DescribeAutoScalingGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAutoScalingGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline void SetAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { m_autoScalingGroups = value; }
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline void SetAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { m_autoScalingGroups = value; }
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline DescribeAutoScalingGroupsResult& WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline DescribeAutoScalingGroupsResult& WithAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { SetAutoScalingGroups(value); return *this;}
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline DescribeAutoScalingGroupsResult& AddAutoScalingGroups(const AutoScalingGroup& value) { m_autoScalingGroups.push_back(value); return *this; }
 
-    /*
-     <p>The groups.</p>
-    */
+    /**
+     * <p>The groups.</p>
+     */
     inline DescribeAutoScalingGroupsResult& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroups.push_back(value); return *this; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeAutoScalingGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeAutoScalingGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeAutoScalingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

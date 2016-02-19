@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Result message wrapping a list of application version descriptions.</p>
-  */
+  /**
+   * <p>Result message wrapping a list of application version descriptions.</p>
+   */
   class AWS_ELASTICBEANSTALK_API DescribeApplicationVersionsResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeApplicationVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeApplicationVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline const Aws::Vector<ApplicationVersionDescription>& GetApplicationVersions() const{ return m_applicationVersions; }
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline void SetApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { m_applicationVersions = value; }
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline void SetApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { m_applicationVersions = value; }
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline DescribeApplicationVersionsResult& WithApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { SetApplicationVersions(value); return *this;}
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline DescribeApplicationVersionsResult& WithApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { SetApplicationVersions(value); return *this;}
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(const ApplicationVersionDescription& value) { m_applicationVersions.push_back(value); return *this; }
 
-    /*
-     <p> A list of <a>ApplicationVersionDescription</a> . </p>
-    */
+    /**
+     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(value); return *this; }
 
     

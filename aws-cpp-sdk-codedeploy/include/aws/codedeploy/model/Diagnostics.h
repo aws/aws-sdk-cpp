@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Diagnostic information about executable scripts that are part of a deployment.</p>
-  */
+
+  /**
+   * <p>Diagnostic information about executable scripts that are part of a
+   * deployment.</p>
+   */
   class AWS_CODEDEPLOY_API Diagnostics
   {
   public:
@@ -41,134 +43,164 @@ namespace Model
     Diagnostics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
-    */
+    /**
+     * <p>The associated error code:</p> <ul> <li>Success: The specified script
+     * ran.</li> <li>ScriptMissing: The specified script was not found in the specified
+     * location.</li> <li>ScriptNotExecutable: The specified script is not a recognized
+     * executable file type.</li> <li>ScriptTimedOut: The specified script did not
+     * finish running in the specified time period.</li> <li>ScriptFailed: The
+     * specified script failed to run as expected.</li> <li>UnknownError: The specified
+     * script did not run for an unknown reason.</li> </ul>
+     */
     inline const LifecycleErrorCode& GetErrorCode() const{ return m_errorCode; }
 
-    /*
-     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
-    */
+    /**
+     * <p>The associated error code:</p> <ul> <li>Success: The specified script
+     * ran.</li> <li>ScriptMissing: The specified script was not found in the specified
+     * location.</li> <li>ScriptNotExecutable: The specified script is not a recognized
+     * executable file type.</li> <li>ScriptTimedOut: The specified script did not
+     * finish running in the specified time period.</li> <li>ScriptFailed: The
+     * specified script failed to run as expected.</li> <li>UnknownError: The specified
+     * script did not run for an unknown reason.</li> </ul>
+     */
     inline void SetErrorCode(const LifecycleErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
-    /*
-     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
-    */
+    /**
+     * <p>The associated error code:</p> <ul> <li>Success: The specified script
+     * ran.</li> <li>ScriptMissing: The specified script was not found in the specified
+     * location.</li> <li>ScriptNotExecutable: The specified script is not a recognized
+     * executable file type.</li> <li>ScriptTimedOut: The specified script did not
+     * finish running in the specified time period.</li> <li>ScriptFailed: The
+     * specified script failed to run as expected.</li> <li>UnknownError: The specified
+     * script did not run for an unknown reason.</li> </ul>
+     */
     inline void SetErrorCode(LifecycleErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
-    /*
-     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
-    */
+    /**
+     * <p>The associated error code:</p> <ul> <li>Success: The specified script
+     * ran.</li> <li>ScriptMissing: The specified script was not found in the specified
+     * location.</li> <li>ScriptNotExecutable: The specified script is not a recognized
+     * executable file type.</li> <li>ScriptTimedOut: The specified script did not
+     * finish running in the specified time period.</li> <li>ScriptFailed: The
+     * specified script failed to run as expected.</li> <li>UnknownError: The specified
+     * script did not run for an unknown reason.</li> </ul>
+     */
     inline Diagnostics& WithErrorCode(const LifecycleErrorCode& value) { SetErrorCode(value); return *this;}
 
-    /*
-     <p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>
-    */
+    /**
+     * <p>The associated error code:</p> <ul> <li>Success: The specified script
+     * ran.</li> <li>ScriptMissing: The specified script was not found in the specified
+     * location.</li> <li>ScriptNotExecutable: The specified script is not a recognized
+     * executable file type.</li> <li>ScriptTimedOut: The specified script did not
+     * finish running in the specified time period.</li> <li>ScriptFailed: The
+     * specified script failed to run as expected.</li> <li>UnknownError: The specified
+     * script did not run for an unknown reason.</li> </ul>
+     */
     inline Diagnostics& WithErrorCode(LifecycleErrorCode&& value) { SetErrorCode(value); return *this;}
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline const Aws::String& GetScriptName() const{ return m_scriptName; }
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline void SetScriptName(const Aws::String& value) { m_scriptNameHasBeenSet = true; m_scriptName = value; }
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline void SetScriptName(Aws::String&& value) { m_scriptNameHasBeenSet = true; m_scriptName = value; }
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline void SetScriptName(const char* value) { m_scriptNameHasBeenSet = true; m_scriptName.assign(value); }
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline Diagnostics& WithScriptName(const Aws::String& value) { SetScriptName(value); return *this;}
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline Diagnostics& WithScriptName(Aws::String&& value) { SetScriptName(value); return *this;}
 
-    /*
-     <p>The name of the script.</p>
-    */
+    /**
+     * <p>The name of the script.</p>
+     */
     inline Diagnostics& WithScriptName(const char* value) { SetScriptName(value); return *this;}
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline Diagnostics& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline Diagnostics& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The message associated with the error.</p>
-    */
+    /**
+     * <p>The message associated with the error.</p>
+     */
     inline Diagnostics& WithMessage(const char* value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline const Aws::String& GetLogTail() const{ return m_logTail; }
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline void SetLogTail(const Aws::String& value) { m_logTailHasBeenSet = true; m_logTail = value; }
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline void SetLogTail(Aws::String&& value) { m_logTailHasBeenSet = true; m_logTail = value; }
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline void SetLogTail(const char* value) { m_logTailHasBeenSet = true; m_logTail.assign(value); }
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline Diagnostics& WithLogTail(const Aws::String& value) { SetLogTail(value); return *this;}
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline Diagnostics& WithLogTail(Aws::String&& value) { SetLogTail(value); return *this;}
 
-    /*
-     <p>The last portion of the associated diagnostic log.</p>
-    */
+    /**
+     * <p>The last portion of the associated diagnostic log.</p>
+     */
     inline Diagnostics& WithLogTail(const char* value) { SetLogTail(value); return *this;}
 
   private:

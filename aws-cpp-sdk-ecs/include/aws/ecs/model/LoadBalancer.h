@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    <p>Details on a load balancer that is used with a service.</p>
-  */
+
+  /**
+   * <p>Details on a load balancer that is used with a service.</p>
+   */
   class AWS_ECS_API LoadBalancer
   {
   public:
@@ -40,89 +41,98 @@ namespace Model
     LoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline LoadBalancer& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline LoadBalancer& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline LoadBalancer& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline LoadBalancer& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline LoadBalancer& WithContainerName(Aws::String&& value) { SetContainerName(value); return *this;}
 
-    /*
-     <p>The name of the container to associate with the load balancer.</p>
-    */
+    /**
+     * <p>The name of the container to associate with the load balancer.</p>
+     */
     inline LoadBalancer& WithContainerName(const char* value) { SetContainerName(value); return *this;}
 
-    /*
-     <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the service's task definition. Your container instances must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
-    */
+    /**
+     * <p>The port on the container to associate with the load balancer. This port must
+     * correspond to a <code>containerPort</code> in the service's task definition.
+     * Your container instances must allow ingress traffic on the <code>hostPort</code>
+     * of the port mapping.</p>
+     */
     inline long GetContainerPort() const{ return m_containerPort; }
 
-    /*
-     <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the service's task definition. Your container instances must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
-    */
+    /**
+     * <p>The port on the container to associate with the load balancer. This port must
+     * correspond to a <code>containerPort</code> in the service's task definition.
+     * Your container instances must allow ingress traffic on the <code>hostPort</code>
+     * of the port mapping.</p>
+     */
     inline void SetContainerPort(long value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
-    /*
-     <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the service's task definition. Your container instances must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
-    */
+    /**
+     * <p>The port on the container to associate with the load balancer. This port must
+     * correspond to a <code>containerPort</code> in the service's task definition.
+     * Your container instances must allow ingress traffic on the <code>hostPort</code>
+     * of the port mapping.</p>
+     */
     inline LoadBalancer& WithContainerPort(long value) { SetContainerPort(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>DescribeCacheSubnetGroups</i> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>DescribeCacheSubnetGroups</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeCacheSubnetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeCacheSubnetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline const Aws::Vector<CacheSubnetGroup>& GetCacheSubnetGroups() const{ return m_cacheSubnetGroups; }
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline void SetCacheSubnetGroups(const Aws::Vector<CacheSubnetGroup>& value) { m_cacheSubnetGroups = value; }
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline void SetCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { m_cacheSubnetGroups = value; }
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(const Aws::Vector<CacheSubnetGroup>& value) { SetCacheSubnetGroups(value); return *this;}
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { SetCacheSubnetGroups(value); return *this;}
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(const CacheSubnetGroup& value) { m_cacheSubnetGroups.push_back(value); return *this; }
 
-    /*
-     <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    */
+    /**
+     * <p>A list of cache subnet groups. Each element in the list contains detailed
+     * information about one group.</p>
+     */
     inline DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(CacheSubnetGroup&& value) { m_cacheSubnetGroups.push_back(value); return *this; }
 
     

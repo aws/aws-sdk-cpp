@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes VPN connection options.</p>
-  */
+
+  /**
+   * <p>Describes VPN connection options.</p>
+   */
   class AWS_EC2_API VpnConnectionOptions
   {
   public:
@@ -42,19 +43,22 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
-    */
+    /**
+     * <p>Indicates whether the VPN connection uses static routes only. Static routes
+     * must be used for devices that don't support BGP.</p>
+     */
     inline bool GetStaticRoutesOnly() const{ return m_staticRoutesOnly; }
 
-    /*
-     <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
-    */
+    /**
+     * <p>Indicates whether the VPN connection uses static routes only. Static routes
+     * must be used for devices that don't support BGP.</p>
+     */
     inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
 
-    /*
-     <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
-    */
+    /**
+     * <p>Indicates whether the VPN connection uses static routes only. Static routes
+     * must be used for devices that don't support BGP.</p>
+     */
     inline VpnConnectionOptions& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
 
   private:

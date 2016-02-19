@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>WorkflowExecutionSignaled</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>WorkflowExecutionSignaled</code> event.</p>
+   */
   class AWS_SWF_API WorkflowExecutionSignaledEventAttributes
   {
   public:
@@ -41,114 +42,148 @@ namespace Model
     WorkflowExecutionSignaledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline const Aws::String& GetSignalName() const{ return m_signalName; }
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline void SetSignalName(const Aws::String& value) { m_signalNameHasBeenSet = true; m_signalName = value; }
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline void SetSignalName(Aws::String&& value) { m_signalNameHasBeenSet = true; m_signalName = value; }
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline void SetSignalName(const char* value) { m_signalNameHasBeenSet = true; m_signalName.assign(value); }
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithSignalName(const Aws::String& value) { SetSignalName(value); return *this;}
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithSignalName(Aws::String&& value) { SetSignalName(value); return *this;}
 
-    /*
-     <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    */
+    /**
+     * <p>The name of the signal received. The decider can use the signal name and
+     * inputs to determine how to the process the signal.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithSignalName(const char* value) { SetSignalName(value); return *this;}
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline const Aws::String& GetInput() const{ return m_input; }
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(Aws::String&& value) { SetInput(value); return *this;}
 
-    /*
-     <p>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</p>
-    */
+    /**
+     * <p>Inputs provided with the signal (if any). The decider can use the signal name
+     * and inputs to determine how to process the signal.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
 
-    /*
-     <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    */
+    /**
+     * <p>The workflow execution that sent the signal. This is set only of the signal
+     * was sent by another workflow execution.</p>
+     */
     inline const WorkflowExecution& GetExternalWorkflowExecution() const{ return m_externalWorkflowExecution; }
 
-    /*
-     <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    */
+    /**
+     * <p>The workflow execution that sent the signal. This is set only of the signal
+     * was sent by another workflow execution.</p>
+     */
     inline void SetExternalWorkflowExecution(const WorkflowExecution& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = value; }
 
-    /*
-     <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    */
+    /**
+     * <p>The workflow execution that sent the signal. This is set only of the signal
+     * was sent by another workflow execution.</p>
+     */
     inline void SetExternalWorkflowExecution(WorkflowExecution&& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = value; }
 
-    /*
-     <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    */
+    /**
+     * <p>The workflow execution that sent the signal. This is set only of the signal
+     * was sent by another workflow execution.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithExternalWorkflowExecution(const WorkflowExecution& value) { SetExternalWorkflowExecution(value); return *this;}
 
-    /*
-     <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
-    */
+    /**
+     * <p>The workflow execution that sent the signal. This is set only of the signal
+     * was sent by another workflow execution.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithExternalWorkflowExecution(WorkflowExecution&& value) { SetExternalWorkflowExecution(value); return *this;}
 
-    /*
-     <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>
-    */
+    /**
+     * <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>SignalExternalWorkflow</code> decision to signal this
+     * workflow execution.The source event with this ID can be found in the history of
+     * the source workflow execution. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event. This
+     * field is set only if the signal was initiated by another workflow execution.</p>
+     */
     inline long long GetExternalInitiatedEventId() const{ return m_externalInitiatedEventId; }
 
-    /*
-     <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>
-    */
+    /**
+     * <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>SignalExternalWorkflow</code> decision to signal this
+     * workflow execution.The source event with this ID can be found in the history of
+     * the source workflow execution. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event. This
+     * field is set only if the signal was initiated by another workflow execution.</p>
+     */
     inline void SetExternalInitiatedEventId(long long value) { m_externalInitiatedEventIdHasBeenSet = true; m_externalInitiatedEventId = value; }
 
-    /*
-     <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>
-    */
+    /**
+     * <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>SignalExternalWorkflow</code> decision to signal this
+     * workflow execution.The source event with this ID can be found in the history of
+     * the source workflow execution. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event. This
+     * field is set only if the signal was initiated by another workflow execution.</p>
+     */
     inline WorkflowExecutionSignaledEventAttributes& WithExternalInitiatedEventId(long long value) { SetExternalInitiatedEventId(value); return *this;}
 
   private:

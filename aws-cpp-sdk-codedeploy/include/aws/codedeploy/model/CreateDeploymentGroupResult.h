@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a create deployment group operation.</p>
-  */
+  /**
+   * <p>Represents the output of a create deployment group operation.</p>
+   */
   class AWS_CODEDEPLOY_API CreateDeploymentGroupResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupId = value; }
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline void SetDeploymentGroupId(Aws::String&& value) { m_deploymentGroupId = value; }
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline void SetDeploymentGroupId(const char* value) { m_deploymentGroupId.assign(value); }
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(Aws::String&& value) { SetDeploymentGroupId(value); return *this;}
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    /**
+     * <p>A unique deployment group ID.</p>
+     */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const char* value) { SetDeploymentGroupId(value); return *this;}
 
   private:

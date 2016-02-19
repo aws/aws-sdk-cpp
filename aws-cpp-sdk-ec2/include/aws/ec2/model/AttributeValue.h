@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>The value to use for a resource attribute.</p>
-  */
+
+  /**
+   * <p>The value to use for a resource attribute.</p>
+   */
   class AWS_EC2_API AttributeValue
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline AttributeValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline AttributeValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    /*
-     <p>Valid values are case-sensitive and vary by action.</p>
-    */
+    /**
+     * <p>Valid values are case-sensitive and vary by action.</p>
+     */
     inline AttributeValue& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

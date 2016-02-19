@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,13 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents the notification attributes of an identity, including whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding is enabled for bounce and complaint notifications.</p>
-  */
+
+  /**
+   * <p>Represents the notification attributes of an identity, including whether an
+   * identity has Amazon Simple Notification Service (Amazon SNS) topics set for
+   * bounce, complaint, and/or delivery notifications, and whether feedback
+   * forwarding is enabled for bounce and complaint notifications.</p>
+   */
   class AWS_SES_API IdentityNotificationAttributes
   {
   public:
@@ -43,124 +47,157 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline const Aws::String& GetBounceTopic() const{ return m_bounceTopic; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline void SetBounceTopic(const Aws::String& value) { m_bounceTopicHasBeenSet = true; m_bounceTopic = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline void SetBounceTopic(Aws::String&& value) { m_bounceTopicHasBeenSet = true; m_bounceTopic = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline void SetBounceTopic(const char* value) { m_bounceTopicHasBeenSet = true; m_bounceTopic.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithBounceTopic(const Aws::String& value) { SetBounceTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithBounceTopic(Aws::String&& value) { SetBounceTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithBounceTopic(const char* value) { SetBounceTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline const Aws::String& GetComplaintTopic() const{ return m_complaintTopic; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline void SetComplaintTopic(const Aws::String& value) { m_complaintTopicHasBeenSet = true; m_complaintTopic = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline void SetComplaintTopic(Aws::String&& value) { m_complaintTopicHasBeenSet = true; m_complaintTopic = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline void SetComplaintTopic(const char* value) { m_complaintTopicHasBeenSet = true; m_complaintTopic.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithComplaintTopic(const Aws::String& value) { SetComplaintTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithComplaintTopic(Aws::String&& value) { SetComplaintTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithComplaintTopic(const char* value) { SetComplaintTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline const Aws::String& GetDeliveryTopic() const{ return m_deliveryTopic; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline void SetDeliveryTopic(const Aws::String& value) { m_deliveryTopicHasBeenSet = true; m_deliveryTopic = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline void SetDeliveryTopic(Aws::String&& value) { m_deliveryTopicHasBeenSet = true; m_deliveryTopic = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline void SetDeliveryTopic(const char* value) { m_deliveryTopicHasBeenSet = true; m_deliveryTopic.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithDeliveryTopic(const Aws::String& value) { SetDeliveryTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithDeliveryTopic(Aws::String&& value) { SetDeliveryTopic(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
     inline IdentityNotificationAttributes& WithDeliveryTopic(const char* value) { SetDeliveryTopic(value); return *this;}
 
-    /*
-     <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
-    */
+    /**
+     * <p>Describes whether Amazon SES will forward bounce and complaint notifications
+     * as email. <code>true</code> indicates that Amazon SES will forward bounce and
+     * complaint notifications as email, while <code>false</code> indicates that bounce
+     * and complaint notifications will be published only to the specified bounce and
+     * complaint Amazon SNS topics.</p>
+     */
     inline bool GetForwardingEnabled() const{ return m_forwardingEnabled; }
 
-    /*
-     <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
-    */
+    /**
+     * <p>Describes whether Amazon SES will forward bounce and complaint notifications
+     * as email. <code>true</code> indicates that Amazon SES will forward bounce and
+     * complaint notifications as email, while <code>false</code> indicates that bounce
+     * and complaint notifications will be published only to the specified bounce and
+     * complaint Amazon SNS topics.</p>
+     */
     inline void SetForwardingEnabled(bool value) { m_forwardingEnabledHasBeenSet = true; m_forwardingEnabled = value; }
 
-    /*
-     <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
-    */
+    /**
+     * <p>Describes whether Amazon SES will forward bounce and complaint notifications
+     * as email. <code>true</code> indicates that Amazon SES will forward bounce and
+     * complaint notifications as email, while <code>false</code> indicates that bounce
+     * and complaint notifications will be published only to the specified bounce and
+     * complaint Amazon SNS topics.</p>
+     */
     inline IdentityNotificationAttributes& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Information about the location of application artifacts that are stored in GitHub.</p>
-  */
+
+  /**
+   * <p>Information about the location of application artifacts that are stored in
+   * GitHub.</p>
+   */
   class AWS_CODEDEPLOY_API GitHubLocation
   {
   public:
@@ -40,74 +42,95 @@ namespace Model
     GitHubLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline const Aws::String& GetRepository() const{ return m_repository; }
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = value; }
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline GitHubLocation& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline GitHubLocation& WithRepository(Aws::String&& value) { SetRepository(value); return *this;}
 
-    /*
-     <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p> <p>Specified as account/repository.</p>
-    */
+    /**
+     * <p>The GitHub account and repository pair that stores a reference to the commit
+     * that represents the bundled artifacts for the application revision.</p>
+     * <p>Specified as account/repository.</p>
+     */
     inline GitHubLocation& WithRepository(const char* value) { SetRepository(value); return *this;}
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline const Aws::String& GetCommitId() const{ return m_commitId; }
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline GitHubLocation& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline GitHubLocation& WithCommitId(Aws::String&& value) { SetCommitId(value); return *this;}
 
-    /*
-     <p>The SHA1 commit ID of the GitHub commit that references the that represents the bundled artifacts for the application revision.</p>
-    */
+    /**
+     * <p>The SHA1 commit ID of the GitHub commit that references the that represents
+     * the bundled artifacts for the application revision.</p>
+     */
     inline GitHubLocation& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 
   private:

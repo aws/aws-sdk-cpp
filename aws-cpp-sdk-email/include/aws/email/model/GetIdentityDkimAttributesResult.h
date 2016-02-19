@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a list of all the DKIM attributes for the specified identity.</p>
-  */
+  /**
+   * <p>Represents a list of all the DKIM attributes for the specified identity.</p>
+   */
   class AWS_SES_API GetIdentityDkimAttributesResult
   {
   public:
@@ -45,59 +45,59 @@ namespace Model
     GetIdentityDkimAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetIdentityDkimAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline const Aws::Map<Aws::String, IdentityDkimAttributes>& GetDkimAttributes() const{ return m_dkimAttributes; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline void SetDkimAttributes(const Aws::Map<Aws::String, IdentityDkimAttributes>& value) { m_dkimAttributes = value; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline void SetDkimAttributes(Aws::Map<Aws::String, IdentityDkimAttributes>&& value) { m_dkimAttributes = value; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& WithDkimAttributes(const Aws::Map<Aws::String, IdentityDkimAttributes>& value) { SetDkimAttributes(value); return *this;}
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& WithDkimAttributes(Aws::Map<Aws::String, IdentityDkimAttributes>&& value) { SetDkimAttributes(value); return *this;}
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(Aws::String&& key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, IdentityDkimAttributes&& value) { m_dkimAttributes[key] = value; return *this; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(Aws::String&& key, IdentityDkimAttributes&& value) { m_dkimAttributes[key] = value; return *this; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, IdentityDkimAttributes&& value) { m_dkimAttributes[key] = value; return *this; }
 
-    /*
-     <p>The DKIM attributes for an email address or a domain. </p>
-    */
+    /**
+     * <p>The DKIM attributes for an email address or a domain. </p>
+     */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
 
     

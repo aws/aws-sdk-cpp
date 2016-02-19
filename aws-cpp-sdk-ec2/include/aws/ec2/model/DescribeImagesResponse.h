@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeImagesResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeImagesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeImagesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline const Aws::Vector<Image>& GetImages() const{ return m_images; }
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline void SetImages(const Aws::Vector<Image>& value) { m_images = value; }
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline void SetImages(Aws::Vector<Image>&& value) { m_images = value; }
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline DescribeImagesResponse& WithImages(const Aws::Vector<Image>& value) { SetImages(value); return *this;}
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline DescribeImagesResponse& WithImages(Aws::Vector<Image>&& value) { SetImages(value); return *this;}
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline DescribeImagesResponse& AddImages(const Image& value) { m_images.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more images.</p>
-    */
+    /**
+     * <p>Information about one or more images.</p>
+     */
     inline DescribeImagesResponse& AddImages(Image&& value) { m_images.push_back(value); return *this; }
 
     

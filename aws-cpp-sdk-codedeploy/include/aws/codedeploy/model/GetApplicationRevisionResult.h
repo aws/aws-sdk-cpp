@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get application revision operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get application revision operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetApplicationRevisionResult
   {
   public:
@@ -44,89 +44,94 @@ namespace Model
     GetApplicationRevisionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetApplicationRevisionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationName = value; }
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline GetApplicationRevisionResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline GetApplicationRevisionResult& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of the application that corresponds to the revision.</p>
-    */
+    /**
+     * <p>The name of the application that corresponds to the revision.</p>
+     */
     inline GetApplicationRevisionResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>Additional information about the revision, including the revision's type and its location.</p>
-    */
+    /**
+     * <p>Additional information about the revision, including the revision's type and
+     * its location.</p>
+     */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
 
-    /*
-     <p>Additional information about the revision, including the revision's type and its location.</p>
-    */
+    /**
+     * <p>Additional information about the revision, including the revision's type and
+     * its location.</p>
+     */
     inline void SetRevision(const RevisionLocation& value) { m_revision = value; }
 
-    /*
-     <p>Additional information about the revision, including the revision's type and its location.</p>
-    */
+    /**
+     * <p>Additional information about the revision, including the revision's type and
+     * its location.</p>
+     */
     inline void SetRevision(RevisionLocation&& value) { m_revision = value; }
 
-    /*
-     <p>Additional information about the revision, including the revision's type and its location.</p>
-    */
+    /**
+     * <p>Additional information about the revision, including the revision's type and
+     * its location.</p>
+     */
     inline GetApplicationRevisionResult& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
-    /*
-     <p>Additional information about the revision, including the revision's type and its location.</p>
-    */
+    /**
+     * <p>Additional information about the revision, including the revision's type and
+     * its location.</p>
+     */
     inline GetApplicationRevisionResult& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
 
-    /*
-     <p>General information about the revision.</p>
-    */
+    /**
+     * <p>General information about the revision.</p>
+     */
     inline const GenericRevisionInfo& GetRevisionInfo() const{ return m_revisionInfo; }
 
-    /*
-     <p>General information about the revision.</p>
-    */
+    /**
+     * <p>General information about the revision.</p>
+     */
     inline void SetRevisionInfo(const GenericRevisionInfo& value) { m_revisionInfo = value; }
 
-    /*
-     <p>General information about the revision.</p>
-    */
+    /**
+     * <p>General information about the revision.</p>
+     */
     inline void SetRevisionInfo(GenericRevisionInfo&& value) { m_revisionInfo = value; }
 
-    /*
-     <p>General information about the revision.</p>
-    */
+    /**
+     * <p>General information about the revision.</p>
+     */
     inline GetApplicationRevisionResult& WithRevisionInfo(const GenericRevisionInfo& value) { SetRevisionInfo(value); return *this;}
 
-    /*
-     <p>General information about the revision.</p>
-    */
+    /**
+     * <p>General information about the revision.</p>
+     */
     inline GetApplicationRevisionResult& WithRevisionInfo(GenericRevisionInfo&& value) { SetRevisionInfo(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-  /*
-    <p>The <code>ReadPresetRequest</code> structure.</p>
-  */
+  /**
+   * <p>The <code>ReadPresetRequest</code> structure.</p>
+   */
   class AWS_ELASTICTRANSCODER_API ReadPresetRequest : public ElasticTranscoderRequest
   {
   public:
@@ -34,39 +34,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline ReadPresetRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline ReadPresetRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>The identifier of the preset for which you want to get detailed information.</p>
-    */
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline ReadPresetRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:

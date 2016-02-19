@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Describes the properties of a Listener for the LoadBalancer.</p>
-  */
+
+  /**
+   * <p>Describes the properties of a Listener for the LoadBalancer.</p>
+   */
   class AWS_ELASTICBEANSTALK_API Listener
   {
   public:
@@ -43,54 +44,54 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline Listener& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
 
-    /*
-     <p>The protocol that is used by the Listener.</p>
-    */
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
-    /*
-     <p>The port that is used by the Listener.</p>
-    */
+    /**
+     * <p>The port that is used by the Listener.</p>
+     */
     inline long GetPort() const{ return m_port; }
 
-    /*
-     <p>The port that is used by the Listener.</p>
-    */
+    /**
+     * <p>The port that is used by the Listener.</p>
+     */
     inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
 
-    /*
-     <p>The port that is used by the Listener.</p>
-    */
+    /**
+     * <p>The port that is used by the Listener.</p>
+     */
     inline Listener& WithPort(long value) { SetPort(value); return *this;}
 
   private:

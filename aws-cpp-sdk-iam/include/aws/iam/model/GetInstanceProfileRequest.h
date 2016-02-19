@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API GetInstanceProfileRequest : public IAMRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline GetInstanceProfileRequest& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline GetInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
 
-    /*
-     <p>The name of the instance profile to get information about.</p>
-    */
+    /**
+     * <p>The name of the instance profile to get information about.</p>
+     */
     inline GetInstanceProfileRequest& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
 
   private:

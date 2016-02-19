@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeUserProfilesResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     DescribeUserProfilesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeUserProfilesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline const Aws::Vector<UserProfile>& GetUserProfiles() const{ return m_userProfiles; }
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline void SetUserProfiles(const Aws::Vector<UserProfile>& value) { m_userProfiles = value; }
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline void SetUserProfiles(Aws::Vector<UserProfile>&& value) { m_userProfiles = value; }
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline DescribeUserProfilesResult& WithUserProfiles(const Aws::Vector<UserProfile>& value) { SetUserProfiles(value); return *this;}
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline DescribeUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfile>&& value) { SetUserProfiles(value); return *this;}
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline DescribeUserProfilesResult& AddUserProfiles(const UserProfile& value) { m_userProfiles.push_back(value); return *this; }
 
-    /*
-     <p>A <code>Users</code> object that describes the specified users.</p>
-    */
+    /**
+     * <p>A <code>Users</code> object that describes the specified users.</p>
+     */
     inline DescribeUserProfilesResult& AddUserProfiles(UserProfile&& value) { m_userProfiles.push_back(value); return *this; }
 
   private:

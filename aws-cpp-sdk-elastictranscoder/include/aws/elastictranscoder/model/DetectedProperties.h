@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>
-  */
+
+  /**
+   * <p>The detected properties of the input file. Elastic Transcoder identifies
+   * these values from the input file.</p>
+   */
   class AWS_ELASTICTRANSCODER_API DetectedProperties
   {
   public:
@@ -40,99 +42,99 @@ namespace Model
     DetectedProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The detected width of the input file, in pixels.</p>
-    */
+    /**
+     * <p>The detected width of the input file, in pixels.</p>
+     */
     inline long GetWidth() const{ return m_width; }
 
-    /*
-     <p>The detected width of the input file, in pixels.</p>
-    */
+    /**
+     * <p>The detected width of the input file, in pixels.</p>
+     */
     inline void SetWidth(long value) { m_widthHasBeenSet = true; m_width = value; }
 
-    /*
-     <p>The detected width of the input file, in pixels.</p>
-    */
+    /**
+     * <p>The detected width of the input file, in pixels.</p>
+     */
     inline DetectedProperties& WithWidth(long value) { SetWidth(value); return *this;}
 
-    /*
-     <p>The detected height of the input file, in pixels.</p>
-    */
+    /**
+     * <p>The detected height of the input file, in pixels.</p>
+     */
     inline long GetHeight() const{ return m_height; }
 
-    /*
-     <p>The detected height of the input file, in pixels.</p>
-    */
+    /**
+     * <p>The detected height of the input file, in pixels.</p>
+     */
     inline void SetHeight(long value) { m_heightHasBeenSet = true; m_height = value; }
 
-    /*
-     <p>The detected height of the input file, in pixels.</p>
-    */
+    /**
+     * <p>The detected height of the input file, in pixels.</p>
+     */
     inline DetectedProperties& WithHeight(long value) { SetHeight(value); return *this;}
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline const Aws::String& GetFrameRate() const{ return m_frameRate; }
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline void SetFrameRate(const Aws::String& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline void SetFrameRate(const char* value) { m_frameRateHasBeenSet = true; m_frameRate.assign(value); }
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline DetectedProperties& WithFrameRate(const Aws::String& value) { SetFrameRate(value); return *this;}
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline DetectedProperties& WithFrameRate(Aws::String&& value) { SetFrameRate(value); return *this;}
 
-    /*
-     <p>The detected frame rate of the input file, in frames per second.</p>
-    */
+    /**
+     * <p>The detected frame rate of the input file, in frames per second.</p>
+     */
     inline DetectedProperties& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
 
-    /*
-     <p>The detected file size of the input file, in bytes.</p>
-    */
+    /**
+     * <p>The detected file size of the input file, in bytes.</p>
+     */
     inline long long GetFileSize() const{ return m_fileSize; }
 
-    /*
-     <p>The detected file size of the input file, in bytes.</p>
-    */
+    /**
+     * <p>The detected file size of the input file, in bytes.</p>
+     */
     inline void SetFileSize(long long value) { m_fileSizeHasBeenSet = true; m_fileSize = value; }
 
-    /*
-     <p>The detected file size of the input file, in bytes.</p>
-    */
+    /**
+     * <p>The detected file size of the input file, in bytes.</p>
+     */
     inline DetectedProperties& WithFileSize(long long value) { SetFileSize(value); return *this;}
 
-    /*
-     <p>The detected duration of the input file, in milliseconds.</p>
-    */
+    /**
+     * <p>The detected duration of the input file, in milliseconds.</p>
+     */
     inline long long GetDurationMillis() const{ return m_durationMillis; }
 
-    /*
-     <p>The detected duration of the input file, in milliseconds.</p>
-    */
+    /**
+     * <p>The detected duration of the input file, in milliseconds.</p>
+     */
     inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
 
-    /*
-     <p>The detected duration of the input file, in milliseconds.</p>
-    */
+    /**
+     * <p>The detected duration of the input file, in milliseconds.</p>
+     */
     inline DetectedProperties& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
   private:

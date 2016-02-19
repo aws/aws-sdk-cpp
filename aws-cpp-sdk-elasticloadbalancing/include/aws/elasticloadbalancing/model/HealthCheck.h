@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about a health check.</p>
-  */
+
+  /**
+   * <p>Information about a health check.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API HealthCheck
   {
   public:
@@ -43,99 +44,191 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = value; }
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline HealthCheck& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline HealthCheck& WithTarget(Aws::String&& value) { SetTarget(value); return *this;}
 
-    /*
-     <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    */
+    /**
+     * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
+     * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
+     * specified as a TCP: port pair, for example "TCP:5000". In this case, a health
+     * check simply attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string.
+     * HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to
+     * the instance on the given port and path. Any answer other than "200 OK" within
+     * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
+     * ping target must be 1024 16-bit Unicode characters or less.</p>
+     */
     inline HealthCheck& WithTarget(const char* value) { SetTarget(value); return *this;}
 
-    /*
-     <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    */
+    /**
+     * <p>The approximate interval, in seconds, between health checks of an individual
+     * instance.</p>
+     */
     inline long GetInterval() const{ return m_interval; }
 
-    /*
-     <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    */
+    /**
+     * <p>The approximate interval, in seconds, between health checks of an individual
+     * instance.</p>
+     */
     inline void SetInterval(long value) { m_intervalHasBeenSet = true; m_interval = value; }
 
-    /*
-     <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    */
+    /**
+     * <p>The approximate interval, in seconds, between health checks of an individual
+     * instance.</p>
+     */
     inline HealthCheck& WithInterval(long value) { SetInterval(value); return *this;}
 
-    /*
-     <p>The amount of time, in seconds, during which no response means a failed health check.</p> <p>This value must be less than the <code>Interval</code> value.</p>
-    */
+    /**
+     * <p>The amount of time, in seconds, during which no response means a failed
+     * health check.</p> <p>This value must be less than the <code>Interval</code>
+     * value.</p>
+     */
     inline long GetTimeout() const{ return m_timeout; }
 
-    /*
-     <p>The amount of time, in seconds, during which no response means a failed health check.</p> <p>This value must be less than the <code>Interval</code> value.</p>
-    */
+    /**
+     * <p>The amount of time, in seconds, during which no response means a failed
+     * health check.</p> <p>This value must be less than the <code>Interval</code>
+     * value.</p>
+     */
     inline void SetTimeout(long value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
-    /*
-     <p>The amount of time, in seconds, during which no response means a failed health check.</p> <p>This value must be less than the <code>Interval</code> value.</p>
-    */
+    /**
+     * <p>The amount of time, in seconds, during which no response means a failed
+     * health check.</p> <p>This value must be less than the <code>Interval</code>
+     * value.</p>
+     */
     inline HealthCheck& WithTimeout(long value) { SetTimeout(value); return *this;}
 
-    /*
-     <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    */
+    /**
+     * <p>The number of consecutive health check failures required before moving the
+     * instance to the <code>Unhealthy</code> state.</p>
+     */
     inline long GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
 
-    /*
-     <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    */
+    /**
+     * <p>The number of consecutive health check failures required before moving the
+     * instance to the <code>Unhealthy</code> state.</p>
+     */
     inline void SetUnhealthyThreshold(long value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
 
-    /*
-     <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    */
+    /**
+     * <p>The number of consecutive health check failures required before moving the
+     * instance to the <code>Unhealthy</code> state.</p>
+     */
     inline HealthCheck& WithUnhealthyThreshold(long value) { SetUnhealthyThreshold(value); return *this;}
 
-    /*
-     <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    */
+    /**
+     * <p>The number of consecutive health checks successes required before moving the
+     * instance to the <code>Healthy</code> state.</p>
+     */
     inline long GetHealthyThreshold() const{ return m_healthyThreshold; }
 
-    /*
-     <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    */
+    /**
+     * <p>The number of consecutive health checks successes required before moving the
+     * instance to the <code>Healthy</code> state.</p>
+     */
     inline void SetHealthyThreshold(long value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
 
-    /*
-     <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    */
+    /**
+     * <p>The number of consecutive health checks successes required before moving the
+     * instance to the <code>Healthy</code> state.</p>
+     */
     inline HealthCheck& WithHealthyThreshold(long value) { SetHealthyThreshold(value); return *this;}
 
   private:

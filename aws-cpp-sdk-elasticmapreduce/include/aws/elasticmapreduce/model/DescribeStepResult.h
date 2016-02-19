@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>This output contains the description of the cluster step.</p>
-  */
+  /**
+   * <p>This output contains the description of the cluster step.</p>
+   */
   class AWS_EMR_API DescribeStepResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     DescribeStepResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeStepResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The step details for the requested step identifier.</p>
-    */
+    /**
+     * <p>The step details for the requested step identifier.</p>
+     */
     inline const Step& GetStep() const{ return m_step; }
 
-    /*
-     <p>The step details for the requested step identifier.</p>
-    */
+    /**
+     * <p>The step details for the requested step identifier.</p>
+     */
     inline void SetStep(const Step& value) { m_step = value; }
 
-    /*
-     <p>The step details for the requested step identifier.</p>
-    */
+    /**
+     * <p>The step details for the requested step identifier.</p>
+     */
     inline void SetStep(Step&& value) { m_step = value; }
 
-    /*
-     <p>The step details for the requested step identifier.</p>
-    */
+    /**
+     * <p>The step details for the requested step identifier.</p>
+     */
     inline DescribeStepResult& WithStep(const Step& value) { SetStep(value); return *this;}
 
-    /*
-     <p>The step details for the requested step identifier.</p>
-    */
+    /**
+     * <p>The step details for the requested step identifier.</p>
+     */
     inline DescribeStepResult& WithStep(Step&& value) { SetStep(value); return *this;}
 
   private:

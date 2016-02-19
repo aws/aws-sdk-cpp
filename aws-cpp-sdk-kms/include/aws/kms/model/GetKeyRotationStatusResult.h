@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API GetKeyRotationStatusResult
   {
   public:
@@ -41,19 +38,19 @@ namespace Model
     GetKeyRotationStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetKeyRotationStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     A Boolean value that specifies whether key rotation is enabled.
-    */
+    /**
+     * A Boolean value that specifies whether key rotation is enabled.
+     */
     inline bool GetKeyRotationEnabled() const{ return m_keyRotationEnabled; }
 
-    /*
-     A Boolean value that specifies whether key rotation is enabled.
-    */
+    /**
+     * A Boolean value that specifies whether key rotation is enabled.
+     */
     inline void SetKeyRotationEnabled(bool value) { m_keyRotationEnabled = value; }
 
-    /*
-     A Boolean value that specifies whether key rotation is enabled.
-    */
+    /**
+     * A Boolean value that specifies whether key rotation is enabled.
+     */
     inline GetKeyRotationStatusResult& WithKeyRotationEnabled(bool value) { SetKeyRotationEnabled(value); return *this;}
 
   private:

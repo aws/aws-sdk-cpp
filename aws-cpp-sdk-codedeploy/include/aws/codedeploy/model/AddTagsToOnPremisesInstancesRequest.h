@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ namespace CodeDeploy
 namespace Model
 {
 
-  /*
-    <p>Represents the input of an adds tags to on-premises instance operation.</p>
-  */
+  /**
+   * <p>Represents the input of an adds tags to on-premises instance operation.</p>
+   */
   class AWS_CODEDEPLOY_API AddTagsToOnPremisesInstancesRequest : public CodeDeployRequest
   {
   public:
@@ -38,79 +38,93 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be nulls or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(value); return *this;}
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    /**
+     * <p>The names of the on-premises instances to add tags to.</p>
+     */
     inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
   private:

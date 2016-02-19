@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>DecisionTaskCompleted</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>DecisionTaskCompleted</code> event.</p>
+   */
   class AWS_SWF_API DecisionTaskCompletedEventAttributes
   {
   public:
@@ -40,69 +41,81 @@ namespace Model
     DecisionTaskCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline const Aws::String& GetExecutionContext() const{ return m_executionContext; }
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline void SetExecutionContext(const Aws::String& value) { m_executionContextHasBeenSet = true; m_executionContext = value; }
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline void SetExecutionContext(Aws::String&& value) { m_executionContextHasBeenSet = true; m_executionContext = value; }
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline void SetExecutionContext(const char* value) { m_executionContextHasBeenSet = true; m_executionContext.assign(value); }
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(const Aws::String& value) { SetExecutionContext(value); return *this;}
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(Aws::String&& value) { SetExecutionContext(value); return *this;}
 
-    /*
-     <p>User defined context for the workflow execution.</p>
-    */
+    /**
+     * <p>User defined context for the workflow execution.</p>
+     */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(const char* value) { SetExecutionContext(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline DecisionTaskCompletedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
-    /*
-     <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline DecisionTaskCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:

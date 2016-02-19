@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CognitoSync
 {
 namespace Model
 {
-  /*
-    Response to a successful DescribeIdentityPoolUsage request.
-  */
+  /**
+   * Response to a successful DescribeIdentityPoolUsage request.
+   */
   class AWS_COGNITOSYNC_API DescribeIdentityPoolUsageResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     DescribeIdentityPoolUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeIdentityPoolUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     Information about the usage of the identity pool.
-    */
+    /**
+     * Information about the usage of the identity pool.
+     */
     inline const IdentityPoolUsage& GetIdentityPoolUsage() const{ return m_identityPoolUsage; }
 
-    /*
-     Information about the usage of the identity pool.
-    */
+    /**
+     * Information about the usage of the identity pool.
+     */
     inline void SetIdentityPoolUsage(const IdentityPoolUsage& value) { m_identityPoolUsage = value; }
 
-    /*
-     Information about the usage of the identity pool.
-    */
+    /**
+     * Information about the usage of the identity pool.
+     */
     inline void SetIdentityPoolUsage(IdentityPoolUsage&& value) { m_identityPoolUsage = value; }
 
-    /*
-     Information about the usage of the identity pool.
-    */
+    /**
+     * Information about the usage of the identity pool.
+     */
     inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(const IdentityPoolUsage& value) { SetIdentityPoolUsage(value); return *this;}
 
-    /*
-     Information about the usage of the identity pool.
-    */
+    /**
+     * Information about the usage of the identity pool.
+     */
     inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(IdentityPoolUsage&& value) { SetIdentityPoolUsage(value); return *this;}
 
   private:

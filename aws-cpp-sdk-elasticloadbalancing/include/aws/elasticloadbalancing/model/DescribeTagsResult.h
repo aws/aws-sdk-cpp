@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DescribeTagsResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline const Aws::Vector<TagDescription>& GetTagDescriptions() const{ return m_tagDescriptions; }
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline void SetTagDescriptions(const Aws::Vector<TagDescription>& value) { m_tagDescriptions = value; }
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline void SetTagDescriptions(Aws::Vector<TagDescription>&& value) { m_tagDescriptions = value; }
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline DescribeTagsResult& WithTagDescriptions(const Aws::Vector<TagDescription>& value) { SetTagDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline DescribeTagsResult& WithTagDescriptions(Aws::Vector<TagDescription>&& value) { SetTagDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline DescribeTagsResult& AddTagDescriptions(const TagDescription& value) { m_tagDescriptions.push_back(value); return *this; }
 
-    /*
-     <p>Information about the tags.</p>
-    */
+    /**
+     * <p>Information about the tags.</p>
+     */
     inline DescribeTagsResult& AddTagDescriptions(TagDescription&& value) { m_tagDescriptions.push_back(value); return *this; }
 
     

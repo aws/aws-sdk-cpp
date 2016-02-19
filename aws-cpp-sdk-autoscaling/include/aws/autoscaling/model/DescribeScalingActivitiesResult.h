@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeScalingActivitiesResult
   {
   public:
@@ -45,74 +42,81 @@ namespace Model
     DescribeScalingActivitiesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeScalingActivitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline const Aws::Vector<Activity>& GetActivities() const{ return m_activities; }
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline void SetActivities(const Aws::Vector<Activity>& value) { m_activities = value; }
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = value; }
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline DescribeScalingActivitiesResult& WithActivities(const Aws::Vector<Activity>& value) { SetActivities(value); return *this;}
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline DescribeScalingActivitiesResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(value); return *this;}
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline DescribeScalingActivitiesResult& AddActivities(const Activity& value) { m_activities.push_back(value); return *this; }
 
-    /*
-     <p>The scaling activities.</p>
-    */
+    /**
+     * <p>The scaling activities.</p>
+     */
     inline DescribeScalingActivitiesResult& AddActivities(Activity&& value) { m_activities.push_back(value); return *this; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeScalingActivitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeScalingActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    */
+    /**
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty.</p>
+     */
     inline DescribeScalingActivitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

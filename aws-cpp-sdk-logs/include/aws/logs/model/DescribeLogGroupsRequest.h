@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DescribeLogGroupsRequest : public CloudWatchLogsRequest
   {
   public:
@@ -35,89 +35,113 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline const Aws::String& GetLogGroupNamePrefix() const{ return m_logGroupNamePrefix; }
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline void SetLogGroupNamePrefix(const Aws::String& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline void SetLogGroupNamePrefix(Aws::String&& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline void SetLogGroupNamePrefix(const char* value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix.assign(value); }
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const Aws::String& value) { SetLogGroupNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(Aws::String&& value) { SetLogGroupNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
-    */
+    /**
+     * <p>Will only return log groups that match the provided logGroupNamePrefix. If
+     * you don't specify a value, no prefix filter is applied.</p>
+     */
     inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const char* value) { SetLogGroupNamePrefix(value); return *this;}
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline DescribeLogGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline DescribeLogGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p> A string token used for pagination that points to the next page of results. It must be a value obtained from the response of the previous <code class="code">DescribeLogGroups</code> request. </p>
-    */
+    /**
+     * <p> A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous <code
+     * class="code">DescribeLogGroups</code> request. </p>
+     */
     inline DescribeLogGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /*
-     <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
-    */
+    /**
+     * <p> The maximum number of items returned in the response. If you don't specify a
+     * value, the request would return up to 50 items. </p>
+     */
     inline long GetLimit() const{ return m_limit; }
 
-    /*
-     <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
-    */
+    /**
+     * <p> The maximum number of items returned in the response. If you don't specify a
+     * value, the request would return up to 50 items. </p>
+     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    /*
-     <p> The maximum number of items returned in the response. If you don't specify a value, the request would return up to 50 items. </p>
-    */
+    /**
+     * <p> The maximum number of items returned in the response. If you don't specify a
+     * value, the request would return up to 50 items. </p>
+     */
     inline DescribeLogGroupsRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:

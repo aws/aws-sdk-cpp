@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of RequestSpotFleet.</p>
-  */
+  /**
+   * <p>Contains the output of RequestSpotFleet.</p>
+   */
   class AWS_EC2_API RequestSpotFleetResponse
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     RequestSpotFleetResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     RequestSpotFleetResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = value; }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(value); return *this;}
 
-    /*
-     <p>The ID of the Spot fleet request.</p>
-    */
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
     

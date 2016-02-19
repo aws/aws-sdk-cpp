@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>DescribeCacheSecurityGroups</i> action.</p>
-  */
+  /**
+   * <p>Represents the input of a <i>DescribeCacheSecurityGroups</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeCacheSecurityGroupsRequest : public ElastiCacheRequest
   {
   public:
@@ -34,89 +34,119 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache security group to return details for.</p>
-    */
+    /**
+     * <p>The name of the cache security group to return details for.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
-    */
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
+     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
-    /*
-     <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
-    */
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
+     */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
-    /*
-     <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p>
-    */
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.</p>
-    */
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.</p>
+     */
     inline DescribeCacheSecurityGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:

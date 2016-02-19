@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,11 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> action. </p>
-  */
+
+  /**
+   * <p>Contains information about a server certificate.</p> <p> This data type is
+   * used as a response element in the <a>GetServerCertificate</a> action. </p>
+   */
   class AWS_IAM_API ServerCertificate
   {
   public:
@@ -44,99 +46,104 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    */
+    /**
+     * <p>The meta information of the server certificate, such as its name, path, ID,
+     * and ARN.</p>
+     */
     inline const ServerCertificateMetadata& GetServerCertificateMetadata() const{ return m_serverCertificateMetadata; }
 
-    /*
-     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    */
+    /**
+     * <p>The meta information of the server certificate, such as its name, path, ID,
+     * and ARN.</p>
+     */
     inline void SetServerCertificateMetadata(const ServerCertificateMetadata& value) { m_serverCertificateMetadataHasBeenSet = true; m_serverCertificateMetadata = value; }
 
-    /*
-     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    */
+    /**
+     * <p>The meta information of the server certificate, such as its name, path, ID,
+     * and ARN.</p>
+     */
     inline void SetServerCertificateMetadata(ServerCertificateMetadata&& value) { m_serverCertificateMetadataHasBeenSet = true; m_serverCertificateMetadata = value; }
 
-    /*
-     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    */
+    /**
+     * <p>The meta information of the server certificate, such as its name, path, ID,
+     * and ARN.</p>
+     */
     inline ServerCertificate& WithServerCertificateMetadata(const ServerCertificateMetadata& value) { SetServerCertificateMetadata(value); return *this;}
 
-    /*
-     <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    */
+    /**
+     * <p>The meta information of the server certificate, such as its name, path, ID,
+     * and ARN.</p>
+     */
     inline ServerCertificate& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(value); return *this;}
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline ServerCertificate& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline ServerCertificate& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
 
-    /*
-     <p>The contents of the public key certificate.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
     inline ServerCertificate& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline void SetCertificateChain(const char* value) { m_certificateChainHasBeenSet = true; m_certificateChain.assign(value); }
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline ServerCertificate& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline ServerCertificate& WithCertificateChain(Aws::String&& value) { SetCertificateChain(value); return *this;}
 
-    /*
-     <p>The contents of the public key certificate chain.</p>
-    */
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
     inline ServerCertificate& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
   private:

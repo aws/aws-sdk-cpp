@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API DetachGroupPolicyRequest : public IAMRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline DetachGroupPolicyRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline DetachGroupPolicyRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
-    */
+    /**
+     * <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
+     */
     inline DetachGroupPolicyRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Describes the buffering to perform before delivering data to the destination.</p>
-  */
+
+  /**
+   * <p>Describes the buffering to perform before delivering data to the
+   * destination.</p>
+   */
   class AWS_FIREHOSE_API BufferingHints
   {
   public:
@@ -39,34 +41,49 @@ namespace Model
     BufferingHints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>
-    */
+    /**
+     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
+     * the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs
+     * to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1
+     * MB/sec set SizeInMBs to be 10 MB or higher.</p>
+     */
     inline long GetSizeInMBs() const{ return m_sizeInMBs; }
 
-    /*
-     <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>
-    */
+    /**
+     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
+     * the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs
+     * to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1
+     * MB/sec set SizeInMBs to be 10 MB or higher.</p>
+     */
     inline void SetSizeInMBs(long value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
 
-    /*
-     <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>
-    */
+    /**
+     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
+     * the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs
+     * to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1
+     * MB/sec set SizeInMBs to be 10 MB or higher.</p>
+     */
     inline BufferingHints& WithSizeInMBs(long value) { SetSizeInMBs(value); return *this;}
 
-    /*
-     <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</p>
-    */
+    /**
+     * <p>Buffer incoming data for the specified period of time, in seconds, before
+     * delivering it to the destination. The default value is 300.</p>
+     */
     inline long GetIntervalInSeconds() const{ return m_intervalInSeconds; }
 
-    /*
-     <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</p>
-    */
+    /**
+     * <p>Buffer incoming data for the specified period of time, in seconds, before
+     * delivering it to the destination. The default value is 300.</p>
+     */
     inline void SetIntervalInSeconds(long value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
 
-    /*
-     <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</p>
-    */
+    /**
+     * <p>Buffer incoming data for the specified period of time, in seconds, before
+     * delivering it to the destination. The default value is 300.</p>
+     */
     inline BufferingHints& WithIntervalInSeconds(long value) { SetIntervalInSeconds(value); return *this;}
 
   private:

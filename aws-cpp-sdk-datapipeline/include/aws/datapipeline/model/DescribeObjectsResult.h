@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of DescribeObjects.</p>
-  */
+  /**
+   * <p>Contains the output of DescribeObjects.</p>
+   */
   class AWS_DATAPIPELINE_API DescribeObjectsResult
   {
   public:
@@ -44,89 +44,103 @@ namespace Model
     DescribeObjectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeObjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjects = value; }
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = value; }
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline DescribeObjectsResult& WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline DescribeObjectsResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline DescribeObjectsResult& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjects.push_back(value); return *this; }
 
-    /*
-     <p>An array of object definitions.</p>
-    */
+    /**
+     * <p>An array of object definitions.</p>
+     */
     inline DescribeObjectsResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(value); return *this; }
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline DescribeObjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline DescribeObjectsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    */
+    /**
+     * <p>The starting point for the next page of results. To view the next page of
+     * results, call <code>DescribeObjects</code> again with this marker value. If the
+     * value is null, there are no more results.</p>
+     */
     inline DescribeObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Indicates whether there are more results to return.</p>
-    */
+    /**
+     * <p>Indicates whether there are more results to return.</p>
+     */
     inline bool GetHasMoreResults() const{ return m_hasMoreResults; }
 
-    /*
-     <p>Indicates whether there are more results to return.</p>
-    */
+    /**
+     * <p>Indicates whether there are more results to return.</p>
+     */
     inline void SetHasMoreResults(bool value) { m_hasMoreResults = value; }
 
-    /*
-     <p>Indicates whether there are more results to return.</p>
-    */
+    /**
+     * <p>Indicates whether there are more results to return.</p>
+     */
     inline DescribeObjectsResult& WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
 
   private:

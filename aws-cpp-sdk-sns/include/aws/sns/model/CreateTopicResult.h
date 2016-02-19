@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SNS
 {
 namespace Model
 {
-  /*
-    <p>Response from CreateTopic action.</p>
-  */
+  /**
+   * <p>Response from CreateTopic action.</p>
+   */
   class AWS_SNS_API CreateTopicResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreateTopicResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateTopicResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline CreateTopicResult& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline CreateTopicResult& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+     */
     inline CreateTopicResult& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     

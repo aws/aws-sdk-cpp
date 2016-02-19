@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    The returned result of the corresponding request.
-  */
+  /**
+   * The returned result of the corresponding request.
+   */
   class AWS_CLOUDFRONT_API GetInvalidation2015_04_17Result
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetInvalidation2015_04_17Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetInvalidation2015_04_17Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline void SetInvalidation(const Invalidation& value) { m_invalidation = value; }
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline void SetInvalidation(Invalidation&& value) { m_invalidation = value; }
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline GetInvalidation2015_04_17Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline GetInvalidation2015_04_17Result& WithInvalidation(Invalidation&& value) { SetInvalidation(value); return *this;}
 
   private:

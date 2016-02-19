@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>This output contains the boostrap actions detail .</p>
-  */
+  /**
+   * <p>This output contains the boostrap actions detail .</p>
+   */
   class AWS_EMR_API ListBootstrapActionsResult
   {
   public:
@@ -44,74 +44,74 @@ namespace Model
     ListBootstrapActionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListBootstrapActionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline const Aws::Vector<Command>& GetBootstrapActions() const{ return m_bootstrapActions; }
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline void SetBootstrapActions(const Aws::Vector<Command>& value) { m_bootstrapActions = value; }
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline void SetBootstrapActions(Aws::Vector<Command>&& value) { m_bootstrapActions = value; }
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline ListBootstrapActionsResult& WithBootstrapActions(const Aws::Vector<Command>& value) { SetBootstrapActions(value); return *this;}
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline ListBootstrapActionsResult& WithBootstrapActions(Aws::Vector<Command>&& value) { SetBootstrapActions(value); return *this;}
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline ListBootstrapActionsResult& AddBootstrapActions(const Command& value) { m_bootstrapActions.push_back(value); return *this; }
 
-    /*
-     <p>The bootstrap actions associated with the cluster .</p>
-    */
+    /**
+     * <p>The bootstrap actions associated with the cluster .</p>
+     */
     inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(value); return *this; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline ListBootstrapActionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline ListBootstrapActionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve .</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve .</p>
+     */
     inline ListBootstrapActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:

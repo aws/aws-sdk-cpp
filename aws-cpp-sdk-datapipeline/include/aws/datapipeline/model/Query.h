@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Defines the query to run against an object.</p>
-  */
+
+  /**
+   * <p>Defines the query to run against an object.</p>
+   */
   class AWS_DATAPIPELINE_API Query
   {
   public:
@@ -41,39 +42,46 @@ namespace Model
     Query& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline const Aws::Vector<Selector>& GetSelectors() const{ return m_selectors; }
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline void SetSelectors(const Aws::Vector<Selector>& value) { m_selectorsHasBeenSet = true; m_selectors = value; }
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline void SetSelectors(Aws::Vector<Selector>&& value) { m_selectorsHasBeenSet = true; m_selectors = value; }
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline Query& WithSelectors(const Aws::Vector<Selector>& value) { SetSelectors(value); return *this;}
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline Query& WithSelectors(Aws::Vector<Selector>&& value) { SetSelectors(value); return *this;}
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline Query& AddSelectors(const Selector& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(value); return *this; }
 
-    /*
-     <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    */
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline Query& AddSelectors(Selector&& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(value); return *this; }
 
   private:

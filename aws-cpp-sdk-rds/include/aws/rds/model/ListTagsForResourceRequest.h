@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p></p>
+   */
   class AWS_RDS_API ListTagsForResourceRequest : public RDSRequest
   {
   public:
@@ -34,39 +34,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
-    /*
-     <p>The DB Instance with tags to be listed.</p>
-    */
+    /**
+     * <p>The DB Instance with tags to be listed.</p>
+     */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:

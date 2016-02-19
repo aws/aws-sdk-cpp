@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a block device mapping.</p>
-  */
+
+  /**
+   * <p>Describes a block device mapping.</p>
+   */
   class AWS_EC2_API InstanceBlockDeviceMapping
   {
   public:
@@ -44,64 +45,76 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline InstanceBlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline InstanceBlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline InstanceBlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline const EbsInstanceBlockDevice& GetEbs() const{ return m_ebs; }
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline void SetEbs(const EbsInstanceBlockDevice& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline void SetEbs(EbsInstanceBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline InstanceBlockDeviceMapping& WithEbs(const EbsInstanceBlockDevice& value) { SetEbs(value); return *this;}
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline InstanceBlockDeviceMapping& WithEbs(EbsInstanceBlockDevice&& value) { SetEbs(value); return *this;}
 
   private:

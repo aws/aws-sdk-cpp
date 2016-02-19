@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    A distribution.
-  */
+
+  /**
+   * A distribution.
+   */
   class AWS_CLOUDFRONT_API Distribution
   {
   public:
@@ -43,189 +44,245 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline Distribution& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline Distribution& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     The identifier for the distribution. For example: EDFDVBD632BHDS5.
-    */
+    /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     */
     inline Distribution& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline Distribution& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline Distribution& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
-    */
+    /**
+     * This response element indicates the current status of the distribution. When the
+     * status is Deployed, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.
+     */
     inline Distribution& WithStatus(const char* value) { SetStatus(value); return *this;}
 
-    /*
-     The date and time the distribution was last modified.
-    */
+    /**
+     * The date and time the distribution was last modified.
+     */
     inline double GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
-    /*
-     The date and time the distribution was last modified.
-    */
+    /**
+     * The date and time the distribution was last modified.
+     */
     inline void SetLastModifiedTime(double value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
-    /*
-     The date and time the distribution was last modified.
-    */
+    /**
+     * The date and time the distribution was last modified.
+     */
     inline Distribution& WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
 
-    /*
-     The number of invalidation batches currently in progress.
-    */
+    /**
+     * The number of invalidation batches currently in progress.
+     */
     inline long GetInProgressInvalidationBatches() const{ return m_inProgressInvalidationBatches; }
 
-    /*
-     The number of invalidation batches currently in progress.
-    */
+    /**
+     * The number of invalidation batches currently in progress.
+     */
     inline void SetInProgressInvalidationBatches(long value) { m_inProgressInvalidationBatchesHasBeenSet = true; m_inProgressInvalidationBatches = value; }
 
-    /*
-     The number of invalidation batches currently in progress.
-    */
+    /**
+     * The number of invalidation batches currently in progress.
+     */
     inline Distribution& WithInProgressInvalidationBatches(long value) { SetInProgressInvalidationBatches(value); return *this;}
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline Distribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline Distribution& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
-    /*
-     The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-    */
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     inline Distribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
-    /*
-     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
-    */
+    /**
+     * CloudFront automatically adds this element to the response only if you've set up
+     * the distribution to serve private content with signed URLs. The element lists
+     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
+     * child element lists the AWS account number of the trusted signer (or an empty
+     * Self element if the signer is you). The Signer element also includes the IDs of
+     * any active key pairs associated with the trusted signer's AWS account. If no
+     * KeyPairId element appears for a Signer, that signer can't create working signed
+     * URLs.
+     */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
 
-    /*
-     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
-    */
+    /**
+     * CloudFront automatically adds this element to the response only if you've set up
+     * the distribution to serve private content with signed URLs. The element lists
+     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
+     * child element lists the AWS account number of the trusted signer (or an empty
+     * Self element if the signer is you). The Signer element also includes the IDs of
+     * any active key pairs associated with the trusted signer's AWS account. If no
+     * KeyPairId element appears for a Signer, that signer can't create working signed
+     * URLs.
+     */
     inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
-    /*
-     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
-    */
+    /**
+     * CloudFront automatically adds this element to the response only if you've set up
+     * the distribution to serve private content with signed URLs. The element lists
+     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
+     * child element lists the AWS account number of the trusted signer (or an empty
+     * Self element if the signer is you). The Signer element also includes the IDs of
+     * any active key pairs associated with the trusted signer's AWS account. If no
+     * KeyPairId element appears for a Signer, that signer can't create working signed
+     * URLs.
+     */
     inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
-    /*
-     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
-    */
+    /**
+     * CloudFront automatically adds this element to the response only if you've set up
+     * the distribution to serve private content with signed URLs. The element lists
+     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
+     * child element lists the AWS account number of the trusted signer (or an empty
+     * Self element if the signer is you). The Signer element also includes the IDs of
+     * any active key pairs associated with the trusted signer's AWS account. If no
+     * KeyPairId element appears for a Signer, that signer can't create working signed
+     * URLs.
+     */
     inline Distribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
 
-    /*
-     CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
-    */
+    /**
+     * CloudFront automatically adds this element to the response only if you've set up
+     * the distribution to serve private content with signed URLs. The element lists
+     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
+     * child element lists the AWS account number of the trusted signer (or an empty
+     * Self element if the signer is you). The Signer element also includes the IDs of
+     * any active key pairs associated with the trusted signer's AWS account. If no
+     * KeyPairId element appears for a Signer, that signer can't create working signed
+     * URLs.
+     */
     inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(value); return *this;}
 
-    /*
-     The current configuration information for the distribution.
-    */
+    /**
+     * The current configuration information for the distribution.
+     */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
 
-    /*
-     The current configuration information for the distribution.
-    */
+    /**
+     * The current configuration information for the distribution.
+     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
-    /*
-     The current configuration information for the distribution.
-    */
+    /**
+     * The current configuration information for the distribution.
+     */
     inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
-    /*
-     The current configuration information for the distribution.
-    */
+    /**
+     * The current configuration information for the distribution.
+     */
     inline Distribution& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
 
-    /*
-     The current configuration information for the distribution.
-    */
+    /**
+     * The current configuration information for the distribution.
+     */
     inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
 
   private:

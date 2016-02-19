@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
-  */
+
+  /**
+   * <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop
+   * Connection to log in to the instance.</p>
+   */
   class AWS_OPSWORKS_API TemporaryCredential
   {
   public:
@@ -40,124 +42,133 @@ namespace Model
     TemporaryCredential& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline TemporaryCredential& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline TemporaryCredential& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
 
-    /*
-     <p>The user name.</p>
-    */
+    /**
+     * <p>The user name.</p>
+     */
     inline TemporaryCredential& WithUsername(const char* value) { SetUsername(value); return *this;}
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline TemporaryCredential& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline TemporaryCredential& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
 
-    /*
-     <p>The password.</p>
-    */
+    /**
+     * <p>The password.</p>
+     */
     inline TemporaryCredential& WithPassword(const char* value) { SetPassword(value); return *this;}
 
-    /*
-     <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
-    */
+    /**
+     * <p>The length of time (in minutes) that the grant is valid. When the grant
+     * expires, at the end of this period, the user will no longer be able to use the
+     * credentials to log in. If they are logged in at the time, they will be
+     * automatically logged out.</p>
+     */
     inline long GetValidForInMinutes() const{ return m_validForInMinutes; }
 
-    /*
-     <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
-    */
+    /**
+     * <p>The length of time (in minutes) that the grant is valid. When the grant
+     * expires, at the end of this period, the user will no longer be able to use the
+     * credentials to log in. If they are logged in at the time, they will be
+     * automatically logged out.</p>
+     */
     inline void SetValidForInMinutes(long value) { m_validForInMinutesHasBeenSet = true; m_validForInMinutes = value; }
 
-    /*
-     <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
-    */
+    /**
+     * <p>The length of time (in minutes) that the grant is valid. When the grant
+     * expires, at the end of this period, the user will no longer be able to use the
+     * credentials to log in. If they are logged in at the time, they will be
+     * automatically logged out.</p>
+     */
     inline TemporaryCredential& WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline TemporaryCredential& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline TemporaryCredential& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The instance's AWS OpsWorks ID.</p>
-    */
+    /**
+     * <p>The instance's AWS OpsWorks ID.</p>
+     */
     inline TemporaryCredential& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:

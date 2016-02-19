@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API CreateAccessKeyRequest : public IAMRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline CreateAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline CreateAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The user name that the new key will belong to.</p>
-    */
+    /**
+     * <p>The user name that the new key will belong to.</p>
+     */
     inline CreateAccessKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
   private:

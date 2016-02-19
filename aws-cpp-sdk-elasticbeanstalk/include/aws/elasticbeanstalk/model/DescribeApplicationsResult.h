@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Result message containing a list of application descriptions.</p>
-  */
+  /**
+   * <p>Result message containing a list of application descriptions.</p>
+   */
   class AWS_ELASTICBEANSTALK_API DescribeApplicationsResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline const Aws::Vector<ApplicationDescription>& GetApplications() const{ return m_applications; }
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline void SetApplications(const Aws::Vector<ApplicationDescription>& value) { m_applications = value; }
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline void SetApplications(Aws::Vector<ApplicationDescription>&& value) { m_applications = value; }
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline DescribeApplicationsResult& WithApplications(const Aws::Vector<ApplicationDescription>& value) { SetApplications(value); return *this;}
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline DescribeApplicationsResult& WithApplications(Aws::Vector<ApplicationDescription>&& value) { SetApplications(value); return *this;}
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline DescribeApplicationsResult& AddApplications(const ApplicationDescription& value) { m_applications.push_back(value); return *this; }
 
-    /*
-     <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
-    */
+    /**
+     * <p> This parameter contains a list of <a>ApplicationDescription</a>. </p>
+     */
     inline DescribeApplicationsResult& AddApplications(ApplicationDescription&& value) { m_applications.push_back(value); return *this; }
 
     

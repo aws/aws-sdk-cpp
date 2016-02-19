@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SQS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SQS_API RemovePermissionRequest : public SQSRequest
   {
   public:
@@ -33,74 +33,81 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline RemovePermissionRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline RemovePermissionRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The URL of the Amazon SQS queue to take action on.</p>
-    */
+    /**
+     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     */
     inline RemovePermissionRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline const Aws::String& GetLabel() const{ return m_label; }
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline RemovePermissionRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
 
-    /*
-     <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
-    */
+    /**
+     * <p>The identification of the permission to remove. This is the label added with
+     * the <a>AddPermission</a> action.</p>
+     */
     inline RemovePermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:

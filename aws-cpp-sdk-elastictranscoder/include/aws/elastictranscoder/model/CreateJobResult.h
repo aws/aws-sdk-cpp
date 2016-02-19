@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>The CreateJobResponse structure.</p>
-  */
+  /**
+   * <p>The CreateJobResponse structure.</p>
+   */
   class AWS_ELASTICTRANSCODER_API CreateJobResult
   {
   public:
@@ -42,29 +42,34 @@ namespace Model
     CreateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p> A section of the response body that provides information about the job that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the job that
+     * is created. </p>
+     */
     inline const Job& GetJob() const{ return m_job; }
 
-    /*
-     <p> A section of the response body that provides information about the job that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the job that
+     * is created. </p>
+     */
     inline void SetJob(const Job& value) { m_job = value; }
 
-    /*
-     <p> A section of the response body that provides information about the job that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the job that
+     * is created. </p>
+     */
     inline void SetJob(Job&& value) { m_job = value; }
 
-    /*
-     <p> A section of the response body that provides information about the job that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the job that
+     * is created. </p>
+     */
     inline CreateJobResult& WithJob(const Job& value) { SetJob(value); return *this;}
 
-    /*
-     <p> A section of the response body that provides information about the job that is created. </p>
-    */
+    /**
+     * <p> A section of the response body that provides information about the job that
+     * is created. </p>
+     */
     inline CreateJobResult& WithJob(Job&& value) { SetJob(value); return *this;}
 
   private:

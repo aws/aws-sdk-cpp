@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ namespace Firehose
 namespace Model
 {
 
-  /*
-    <p>Contains the parameters for <a>UpdateDestination</a>.</p>
-  */
+  /**
+   * <p>Contains the parameters for <a>UpdateDestination</a>.</p>
+   */
   class AWS_FIREHOSE_API UpdateDestinationRequest : public FirehoseRequest
   {
   public:
@@ -38,109 +38,151 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline UpdateDestinationRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline UpdateDestinationRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(value); return *this;}
 
-    /*
-     <p>The name of the delivery stream.</p>
-    */
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline UpdateDestinationRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline const Aws::String& GetCurrentDeliveryStreamVersionId() const{ return m_currentDeliveryStreamVersionId; }
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline void SetCurrentDeliveryStreamVersionId(const Aws::String& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline void SetCurrentDeliveryStreamVersionId(const char* value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId.assign(value); }
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const Aws::String& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
-    /*
-     <p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    */
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of the
+     * <a>DeliveryStreamDescription</a> operation. This value is required, and helps
+     * the service to perform conditional operations. For example, if there is a
+     * interleaving update and this value is null, then the update destination fails.
+     * After the update is successful, the <code>VersionId</code> value is updated. The
+     * service then performs a merge of the old configuration with the new
+     * configuration.</p>
+     */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const char* value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(const Aws::String& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(const char* value) { m_destinationIdHasBeenSet = true; m_destinationId.assign(value); }
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline UpdateDestinationRequest& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline UpdateDestinationRequest& WithDestinationId(Aws::String&& value) { SetDestinationId(value); return *this;}
 
-    /*
-     <p>The ID of the destination.</p>
-    */
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline UpdateDestinationRequest& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 
     

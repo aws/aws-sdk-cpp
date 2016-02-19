@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API DescribeBundleTasksResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeBundleTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeBundleTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline const Aws::Vector<BundleTask>& GetBundleTasks() const{ return m_bundleTasks; }
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline void SetBundleTasks(const Aws::Vector<BundleTask>& value) { m_bundleTasks = value; }
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline void SetBundleTasks(Aws::Vector<BundleTask>&& value) { m_bundleTasks = value; }
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline DescribeBundleTasksResponse& WithBundleTasks(const Aws::Vector<BundleTask>& value) { SetBundleTasks(value); return *this;}
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline DescribeBundleTasksResponse& WithBundleTasks(Aws::Vector<BundleTask>&& value) { SetBundleTasks(value); return *this;}
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline DescribeBundleTasksResponse& AddBundleTasks(const BundleTask& value) { m_bundleTasks.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more bundle tasks.</p>
-    */
+    /**
+     * <p>Information about one or more bundle tasks.</p>
+     */
     inline DescribeBundleTasksResponse& AddBundleTasks(BundleTask&& value) { m_bundleTasks.push_back(value); return *this; }
 
     

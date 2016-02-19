@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace SimpleDB
 {
 namespace Model
 {
-  /*
-    <p></p>
-  */
+
+  /**
+   * <p></p>
+   */
   class AWS_SIMPLEDB_API Item
   {
   public:
@@ -45,109 +46,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline Item& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline Item& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline Item& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline const Aws::String& GetAlternateNameEncoding() const{ return m_alternateNameEncoding; }
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline void SetAlternateNameEncoding(const Aws::String& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline void SetAlternateNameEncoding(const char* value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding.assign(value); }
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline Item& WithAlternateNameEncoding(const Aws::String& value) { SetAlternateNameEncoding(value); return *this;}
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline Item& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(value); return *this;}
 
-    /*
-     <p></p>
-    */
+    /**
+     * <p></p>
+     */
     inline Item& WithAlternateNameEncoding(const char* value) { SetAlternateNameEncoding(value); return *this;}
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline Item& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline Item& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline Item& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
-    /*
-     A list of attributes.
-    */
+    /**
+     * A list of attributes.
+     */
     inline Item& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:

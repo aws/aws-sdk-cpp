@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API GetObjectAclResult
   {
   public:
@@ -60,39 +57,39 @@ namespace Model
     
     inline GetObjectAclResult& WithOwner(Owner&& value) { SetOwner(value); return *this;}
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline void SetGrants(const Aws::Vector<Grant>& value) { m_grants = value; }
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = value; }
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline GetObjectAclResult& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline GetObjectAclResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(value); return *this;}
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline GetObjectAclResult& AddGrants(const Grant& value) { m_grants.push_back(value); return *this; }
 
-    /*
-     A list of grants.
-    */
+    /**
+     * A list of grants.
+     */
     inline GetObjectAclResult& AddGrants(Grant&& value) { m_grants.push_back(value); return *this; }
 
     

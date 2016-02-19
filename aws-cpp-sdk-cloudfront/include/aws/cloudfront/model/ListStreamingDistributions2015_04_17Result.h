@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    The returned result of the corresponding request.
-  */
+  /**
+   * The returned result of the corresponding request.
+   */
   class AWS_CLOUDFRONT_API ListStreamingDistributions2015_04_17Result
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     ListStreamingDistributions2015_04_17Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListStreamingDistributions2015_04_17Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     The StreamingDistributionList type.
-    */
+    /**
+     * The StreamingDistributionList type.
+     */
     inline const StreamingDistributionList& GetStreamingDistributionList() const{ return m_streamingDistributionList; }
 
-    /*
-     The StreamingDistributionList type.
-    */
+    /**
+     * The StreamingDistributionList type.
+     */
     inline void SetStreamingDistributionList(const StreamingDistributionList& value) { m_streamingDistributionList = value; }
 
-    /*
-     The StreamingDistributionList type.
-    */
+    /**
+     * The StreamingDistributionList type.
+     */
     inline void SetStreamingDistributionList(StreamingDistributionList&& value) { m_streamingDistributionList = value; }
 
-    /*
-     The StreamingDistributionList type.
-    */
+    /**
+     * The StreamingDistributionList type.
+     */
     inline ListStreamingDistributions2015_04_17Result& WithStreamingDistributionList(const StreamingDistributionList& value) { SetStreamingDistributionList(value); return *this;}
 
-    /*
-     The StreamingDistributionList type.
-    */
+    /**
+     * The StreamingDistributionList type.
+     */
     inline ListStreamingDistributions2015_04_17Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(value); return *this;}
 
   private:

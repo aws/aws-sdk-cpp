@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeMyUserProfileResult
   {
   public:
@@ -42,29 +42,34 @@ namespace Model
     DescribeMyUserProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeMyUserProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    */
+    /**
+     * <p>A <code>UserProfile</code> object that describes the user's SSH
+     * information.</p>
+     */
     inline const SelfUserProfile& GetUserProfile() const{ return m_userProfile; }
 
-    /*
-     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    */
+    /**
+     * <p>A <code>UserProfile</code> object that describes the user's SSH
+     * information.</p>
+     */
     inline void SetUserProfile(const SelfUserProfile& value) { m_userProfile = value; }
 
-    /*
-     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    */
+    /**
+     * <p>A <code>UserProfile</code> object that describes the user's SSH
+     * information.</p>
+     */
     inline void SetUserProfile(SelfUserProfile&& value) { m_userProfile = value; }
 
-    /*
-     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    */
+    /**
+     * <p>A <code>UserProfile</code> object that describes the user's SSH
+     * information.</p>
+     */
     inline DescribeMyUserProfileResult& WithUserProfile(const SelfUserProfile& value) { SetUserProfile(value); return *this;}
 
-    /*
-     <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    */
+    /**
+     * <p>A <code>UserProfile</code> object that describes the user's SSH
+     * information.</p>
+     */
     inline DescribeMyUserProfileResult& WithUserProfile(SelfUserProfile&& value) { SetUserProfile(value); return *this;}
 
   private:

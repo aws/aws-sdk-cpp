@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API DescribeServicesResult
   {
   public:
@@ -44,74 +41,74 @@ namespace Model
     DescribeServicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeServicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline const Aws::Vector<Service>& GetServices() const{ return m_services; }
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline void SetServices(const Aws::Vector<Service>& value) { m_services = value; }
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline void SetServices(Aws::Vector<Service>&& value) { m_services = value; }
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline DescribeServicesResult& WithServices(const Aws::Vector<Service>& value) { SetServices(value); return *this;}
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(value); return *this;}
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline DescribeServicesResult& AddServices(const Service& value) { m_services.push_back(value); return *this; }
 
-    /*
-     <p>The list of services described.</p>
-    */
+    /**
+     * <p>The list of services described.</p>
+     */
     inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(value); return *this; }
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeServicesResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeServicesResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeServicesResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
-    /*
-     <p>Any failures associated with the call.</p>
-    */
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeServicesResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:

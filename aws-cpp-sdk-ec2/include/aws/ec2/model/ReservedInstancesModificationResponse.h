@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,7 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_EC2_API ReservedInstancesModificationResponse
   {
   public:
@@ -44,64 +42,83 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline ReservedInstancesModificationResponse& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline ReservedInstancesModificationResponse& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    */
+    /**
+     * <p>The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the modification is
+     * fulfilled.</p>
+     */
     inline ReservedInstancesModificationResponse& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
-    */
+    /**
+     * <p>The target Reserved Instances configurations supplied as part of the
+     * modification request.</p>
+     */
     inline const ReservedInstancesConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
 
-    /*
-     <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
-    */
+    /**
+     * <p>The target Reserved Instances configurations supplied as part of the
+     * modification request.</p>
+     */
     inline void SetTargetConfiguration(const ReservedInstancesConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
 
-    /*
-     <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
-    */
+    /**
+     * <p>The target Reserved Instances configurations supplied as part of the
+     * modification request.</p>
+     */
     inline void SetTargetConfiguration(ReservedInstancesConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
 
-    /*
-     <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
-    */
+    /**
+     * <p>The target Reserved Instances configurations supplied as part of the
+     * modification request.</p>
+     */
     inline ReservedInstancesModificationResponse& WithTargetConfiguration(const ReservedInstancesConfiguration& value) { SetTargetConfiguration(value); return *this;}
 
-    /*
-     <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
-    */
+    /**
+     * <p>The target Reserved Instances configurations supplied as part of the
+     * modification request.</p>
+     */
     inline ReservedInstancesModificationResponse& WithTargetConfiguration(ReservedInstancesConfiguration&& value) { SetTargetConfiguration(value); return *this;}
 
   private:

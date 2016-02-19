@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>This output contains the list of instances.</p>
-  */
+  /**
+   * <p>This output contains the list of instances.</p>
+   */
   class AWS_EMR_API ListInstancesResult
   {
   public:
@@ -44,74 +44,74 @@ namespace Model
     ListInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline ListInstancesResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline ListInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline ListInstancesResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
 
-    /*
-     <p>The list of instances for the cluster and given filters.</p>
-    */
+    /**
+     * <p>The list of instances for the cluster and given filters.</p>
+     */
     inline ListInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline ListInstancesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline ListInstancesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The pagination token that indicates the next set of results to retrieve.</p>
-    */
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
     inline ListInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:

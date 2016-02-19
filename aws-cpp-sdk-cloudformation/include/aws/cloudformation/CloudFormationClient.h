@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -159,27 +159,42 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ValidateTemplateRequest&, const Model::ValidateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateTemplateResponseReceivedHandler;
 
-  /*
-    <fullname>AWS CloudFormation</fullname> <p>AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost effective applications without worrying about creating and configuring the underlying AWS infrastructure.</p> <p>With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.</p> <p>For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.</p>
-  */
+  /**
+   * <fullname>AWS CloudFormation</fullname> <p>AWS CloudFormation enables you to
+   * create and manage AWS infrastructure deployments predictably and repeatedly. AWS
+   * CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon
+   * SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost
+   * effective applications without worrying about creating and configuring the
+   * underlying AWS infrastructure.</p> <p>With AWS CloudFormation, you declare all
+   * of your resources and dependencies in a template file. The template defines a
+   * collection of resources as a single unit called a stack. AWS CloudFormation
+   * creates and deletes all member resources of the stack together and manages all
+   * dependencies between the resources for you.</p> <p>For more information about
+   * this product, go to the <a
+   * href="http://aws.amazon.com/cloudformation/">CloudFormation Product
+   * Page</a>.</p> <p>Amazon CloudFormation makes use of other AWS products. If you
+   * need additional technical information about a specific AWS product, you can find
+   * the product's technical documentation at <a
+   * href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.</p>
+   */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
 
-        /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudFormationClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudFormationClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -189,353 +204,548 @@ namespace Model
 
         virtual ~CloudFormationClient();
 
-        /*
-            <p>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
-        */
+        /**
+         * <p>Cancels an update on the specified stack. If the call completes successfully,
+         * the stack will roll back the update and revert to the previous stack
+         * configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state
+         * can be canceled.</note>
+         */
         virtual Model::CancelUpdateStackOutcome CancelUpdateStack(const Model::CancelUpdateStackRequest& request) const;
 
-        /*
-            <p>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Cancels an update on the specified stack. If the call completes successfully,
+         * the stack will roll back the update and revert to the previous stack
+         * configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state
+         * can be canceled.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CancelUpdateStackOutcomeCallable CancelUpdateStackCallable(const Model::CancelUpdateStackRequest& request) const;
 
-        /*
-            <p>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Cancels an update on the specified stack. If the call completes successfully,
+         * the stack will roll back the update and revert to the previous stack
+         * configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state
+         * can be canceled.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CancelUpdateStackAsync(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p>
-        */
+        /**
+         * <p>Creates a stack as specified in the template. After the call completes
+         * successfully, the stack creation starts. You can check the status of the stack
+         * via the <a>DescribeStacks</a> API.</p>
+         */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
-        /*
-            <p>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Creates a stack as specified in the template. After the call completes
+         * successfully, the stack creation starts. You can check the status of the stack
+         * via the <a>DescribeStacks</a> API.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateStackOutcomeCallable CreateStackCallable(const Model::CreateStackRequest& request) const;
 
-        /*
-            <p>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Creates a stack as specified in the template. After the call completes
+         * successfully, the stack creation starts. You can check the status of the stack
+         * via the <a>DescribeStacks</a> API.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateStackAsync(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has been completed successfully.</p>
-        */
+        /**
+         * <p>Deletes a specified stack. Once the call completes successfully, stack
+         * deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API
+         * if the deletion has been completed successfully.</p>
+         */
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
-        /*
-            <p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has been completed successfully.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Deletes a specified stack. Once the call completes successfully, stack
+         * deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API
+         * if the deletion has been completed successfully.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteStackOutcomeCallable DeleteStackCallable(const Model::DeleteStackRequest& request) const;
 
-        /*
-            <p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has been completed successfully.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Deletes a specified stack. Once the call completes successfully, stack
+         * deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API
+         * if the deletion has been completed successfully.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</note>
-        */
+        /**
+         * <p>Returns all stack related events for a specified stack. For more information
+         * about a stack's event history, go to <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+         * in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks
+         * that have failed to create or have been deleted by specifying the unique stack
+         * identifier (stack ID).</note>
+         */
         virtual Model::DescribeStackEventsOutcome DescribeStackEvents(const Model::DescribeStackEventsRequest& request) const;
 
-        /*
-            <p>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns all stack related events for a specified stack. For more information
+         * about a stack's event history, go to <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+         * in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks
+         * that have failed to create or have been deleted by specifying the unique stack
+         * identifier (stack ID).</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeStackEventsOutcomeCallable DescribeStackEventsCallable(const Model::DescribeStackEventsRequest& request) const;
 
-        /*
-            <p>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns all stack related events for a specified stack. For more information
+         * about a stack's event history, go to <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+         * in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks
+         * that have failed to create or have been deleted by specifying the unique stack
+         * identifier (stack ID).</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeStackEventsAsync(const Model::DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns a description of the specified resource in the specified stack.</p> <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p>
-        */
+        /**
+         * <p>Returns a description of the specified resource in the specified stack.</p>
+         * <p>For deleted stacks, DescribeStackResource returns resource information for up
+         * to 90 days after the stack has been deleted.</p>
+         */
         virtual Model::DescribeStackResourceOutcome DescribeStackResource(const Model::DescribeStackResourceRequest& request) const;
 
-        /*
-            <p>Returns a description of the specified resource in the specified stack.</p> <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns a description of the specified resource in the specified stack.</p>
+         * <p>For deleted stacks, DescribeStackResource returns resource information for up
+         * to 90 days after the stack has been deleted.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeStackResourceOutcomeCallable DescribeStackResourceCallable(const Model::DescribeStackResourceRequest& request) const;
 
-        /*
-            <p>Returns a description of the specified resource in the specified stack.</p> <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns a description of the specified resource in the specified stack.</p>
+         * <p>For deleted stacks, DescribeStackResource returns resource information for up
+         * to 90 days after the stack has been deleted.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeStackResourceAsync(const Model::DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p> <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</note>
-        */
+        /**
+         * <p>Returns AWS resource descriptions for running and deleted stacks. If
+         * <code>StackName</code> is specified, all the associated resources that are part
+         * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
+         * associated resources of the stack that the resource belongs to are returned.</p>
+         * <note>Only the first 100 resources will be returned. If your stack has more
+         * resources than this, you should use <code>ListStackResources</code>
+         * instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code>
+         * returns resource information for up to 90 days after the stack has been
+         * deleted.</p> <p>You must specify either <code>StackName</code> or
+         * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
+         * <code>LogicalResourceId</code> to filter the returned result. For more
+         * information about resources, the <code>LogicalResourceId</code> and
+         * <code>PhysicalResourceId</code>, go to the <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+         * CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is
+         * returned if you specify both <code>StackName</code> and
+         * <code>PhysicalResourceId</code> in the same request.</note>
+         */
         virtual Model::DescribeStackResourcesOutcome DescribeStackResources(const Model::DescribeStackResourcesRequest& request) const;
 
-        /*
-            <p>Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p> <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns AWS resource descriptions for running and deleted stacks. If
+         * <code>StackName</code> is specified, all the associated resources that are part
+         * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
+         * associated resources of the stack that the resource belongs to are returned.</p>
+         * <note>Only the first 100 resources will be returned. If your stack has more
+         * resources than this, you should use <code>ListStackResources</code>
+         * instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code>
+         * returns resource information for up to 90 days after the stack has been
+         * deleted.</p> <p>You must specify either <code>StackName</code> or
+         * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
+         * <code>LogicalResourceId</code> to filter the returned result. For more
+         * information about resources, the <code>LogicalResourceId</code> and
+         * <code>PhysicalResourceId</code>, go to the <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+         * CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is
+         * returned if you specify both <code>StackName</code> and
+         * <code>PhysicalResourceId</code> in the same request.</note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeStackResourcesOutcomeCallable DescribeStackResourcesCallable(const Model::DescribeStackResourcesRequest& request) const;
 
-        /*
-            <p>Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p> <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns AWS resource descriptions for running and deleted stacks. If
+         * <code>StackName</code> is specified, all the associated resources that are part
+         * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
+         * associated resources of the stack that the resource belongs to are returned.</p>
+         * <note>Only the first 100 resources will be returned. If your stack has more
+         * resources than this, you should use <code>ListStackResources</code>
+         * instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code>
+         * returns resource information for up to 90 days after the stack has been
+         * deleted.</p> <p>You must specify either <code>StackName</code> or
+         * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
+         * <code>LogicalResourceId</code> to filter the returned result. For more
+         * information about resources, the <code>LogicalResourceId</code> and
+         * <code>PhysicalResourceId</code>, go to the <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+         * CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is
+         * returned if you specify both <code>StackName</code> and
+         * <code>PhysicalResourceId</code> in the same request.</note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeStackResourcesAsync(const Model::DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>
-        */
+        /**
+         * <p>Returns the description for the specified stack; if no stack name was
+         * specified, then it returns the description for all the stacks created.</p>
+         */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
-        /*
-            <p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the description for the specified stack; if no stack name was
+         * specified, then it returns the description for all the stacks created.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const Model::DescribeStacksRequest& request) const;
 
-        /*
-            <p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the description for the specified stack; if no stack name was
+         * specified, then it returns the description for all the stacks created.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-        */
+        /**
+         * <p>Returns the estimated monthly cost of a template. The return value is an AWS
+         * Simple Monthly Calculator URL with a query string that describes the resources
+         * required to run the template.</p>
+         */
         virtual Model::EstimateTemplateCostOutcome EstimateTemplateCost(const Model::EstimateTemplateCostRequest& request) const;
 
-        /*
-            <p>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the estimated monthly cost of a template. The return value is an AWS
+         * Simple Monthly Calculator URL with a query string that describes the resources
+         * required to run the template.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::EstimateTemplateCostOutcomeCallable EstimateTemplateCostCallable(const Model::EstimateTemplateCostRequest& request) const;
 
-        /*
-            <p>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the estimated monthly cost of a template. The return value is an AWS
+         * Simple Monthly Calculator URL with a query string that describes the resources
+         * required to run the template.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void EstimateTemplateCostAsync(const Model::EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p>
-        */
+        /**
+         * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
+         * policy, a null value is returned.</p>
+         */
         virtual Model::GetStackPolicyOutcome GetStackPolicy(const Model::GetStackPolicyRequest& request) const;
 
-        /*
-            <p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
+         * policy, a null value is returned.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetStackPolicyOutcomeCallable GetStackPolicyCallable(const Model::GetStackPolicyRequest& request) const;
 
-        /*
-            <p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
+         * policy, a null value is returned.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetStackPolicyAsync(const Model::GetStackPolicyRequest& request, const GetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> If the template does not exist, a <code>ValidationError</code> is returned. </note>
-        */
+        /**
+         * <p>Returns the template body for a specified stack. You can get the template for
+         * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
+         * template for up to 90 days after the stack has been deleted.</p> <note> If the
+         * template does not exist, a <code>ValidationError</code> is returned. </note>
+         */
         virtual Model::GetTemplateOutcome GetTemplate(const Model::GetTemplateRequest& request) const;
 
-        /*
-            <p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> If the template does not exist, a <code>ValidationError</code> is returned. </note>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the template body for a specified stack. You can get the template for
+         * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
+         * template for up to 90 days after the stack has been deleted.</p> <note> If the
+         * template does not exist, a <code>ValidationError</code> is returned. </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetTemplateOutcomeCallable GetTemplateCallable(const Model::GetTemplateRequest& request) const;
 
-        /*
-            <p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> If the template does not exist, a <code>ValidationError</code> is returned. </note>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the template body for a specified stack. You can get the template for
+         * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
+         * template for up to 90 days after the stack has been deleted.</p> <note> If the
+         * template does not exist, a <code>ValidationError</code> is returned. </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetTemplateAsync(const Model::GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a running or deleted stack.</p> <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a <code>ValidationError</code> is returned.</p>
-        */
+        /**
+         * <p>Returns information about a new or existing template. The
+         * <code>GetTemplateSummary</code> action is useful for viewing parameter
+         * information, such as default parameter values and parameter types, before you
+         * create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code>
+         * action when you submit a template, or you can get template information for a
+         * running or deleted stack.</p> <p>For deleted stacks,
+         * <code>GetTemplateSummary</code> returns the template information for up to 90
+         * days after the stack has been deleted. If the template does not exist, a
+         * <code>ValidationError</code> is returned.</p>
+         */
         virtual Model::GetTemplateSummaryOutcome GetTemplateSummary(const Model::GetTemplateSummaryRequest& request) const;
 
-        /*
-            <p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a running or deleted stack.</p> <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a <code>ValidationError</code> is returned.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns information about a new or existing template. The
+         * <code>GetTemplateSummary</code> action is useful for viewing parameter
+         * information, such as default parameter values and parameter types, before you
+         * create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code>
+         * action when you submit a template, or you can get template information for a
+         * running or deleted stack.</p> <p>For deleted stacks,
+         * <code>GetTemplateSummary</code> returns the template information for up to 90
+         * days after the stack has been deleted. If the template does not exist, a
+         * <code>ValidationError</code> is returned.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetTemplateSummaryOutcomeCallable GetTemplateSummaryCallable(const Model::GetTemplateSummaryRequest& request) const;
 
-        /*
-            <p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a running or deleted stack.</p> <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a <code>ValidationError</code> is returned.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns information about a new or existing template. The
+         * <code>GetTemplateSummary</code> action is useful for viewing parameter
+         * information, such as default parameter values and parameter types, before you
+         * create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code>
+         * action when you submit a template, or you can get template information for a
+         * running or deleted stack.</p> <p>For deleted stacks,
+         * <code>GetTemplateSummary</code> returns the template information for up to 90
+         * days after the stack has been deleted. If the template does not exist, a
+         * <code>ValidationError</code> is returned.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetTemplateSummaryAsync(const Model::GetTemplateSummaryRequest& request, const GetTemplateSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns descriptions of all resources of the specified stack.</p> <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>
-        */
+        /**
+         * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
+         * deleted stacks, ListStackResources returns resource information for up to 90
+         * days after the stack has been deleted.</p>
+         */
         virtual Model::ListStackResourcesOutcome ListStackResources(const Model::ListStackResourcesRequest& request) const;
 
-        /*
-            <p>Returns descriptions of all resources of the specified stack.</p> <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
+         * deleted stacks, ListStackResources returns resource information for up to 90
+         * days after the stack has been deleted.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListStackResourcesOutcomeCallable ListStackResourcesCallable(const Model::ListStackResourcesRequest& request) const;
 
-        /*
-            <p>Returns descriptions of all resources of the specified stack.</p> <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
+         * deleted stacks, ListStackResources returns resource information for up to 90
+         * days after the stack has been deleted.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListStackResourcesAsync(const Model::ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>
-        */
+        /**
+         * <p>Returns the summary information for stacks whose status matches the specified
+         * StackStatusFilter. Summary information for stacks that have been deleted is kept
+         * for 90 days after the stack is deleted. If no StackStatusFilter is specified,
+         * summary information for all stacks is returned (including existing stacks and
+         * stacks that have been deleted).</p>
+         */
         virtual Model::ListStacksOutcome ListStacks(const Model::ListStacksRequest& request) const;
 
-        /*
-            <p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Returns the summary information for stacks whose status matches the specified
+         * StackStatusFilter. Summary information for stacks that have been deleted is kept
+         * for 90 days after the stack is deleted. If no StackStatusFilter is specified,
+         * summary information for all stacks is returned (including existing stacks and
+         * stacks that have been deleted).</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListStacksOutcomeCallable ListStacksCallable(const Model::ListStacksRequest& request) const;
 
-        /*
-            <p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Returns the summary information for stacks whose status matches the specified
+         * StackStatusFilter. Summary information for stacks that have been deleted is kept
+         * for 90 days after the stack is deleted. If no StackStatusFilter is specified,
+         * summary information for all stacks is returned (including existing stacks and
+         * stacks that have been deleted).</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListStacksAsync(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Sets a stack policy for a specified stack.</p>
-        */
+        /**
+         * <p>Sets a stack policy for a specified stack.</p>
+         */
         virtual Model::SetStackPolicyOutcome SetStackPolicy(const Model::SetStackPolicyRequest& request) const;
 
-        /*
-            <p>Sets a stack policy for a specified stack.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Sets a stack policy for a specified stack.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SetStackPolicyOutcomeCallable SetStackPolicyCallable(const Model::SetStackPolicyRequest& request) const;
 
-        /*
-            <p>Sets a stack policy for a specified stack.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Sets a stack policy for a specified stack.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SetStackPolicyAsync(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p>
-        */
+        /**
+         * <p>Sends a signal to the specified resource with a success or failure status.
+         * You can use the SignalResource API in conjunction with a creation policy or
+         * update policy. AWS CloudFormation doesn't proceed with a stack creation or
+         * update until resources receive the required number of signals or the timeout
+         * period is exceeded. The SignalResource API is useful in cases where you want to
+         * send signals from anywhere other than an Amazon EC2 instance.</p>
+         */
         virtual Model::SignalResourceOutcome SignalResource(const Model::SignalResourceRequest& request) const;
 
-        /*
-            <p>Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Sends a signal to the specified resource with a success or failure status.
+         * You can use the SignalResource API in conjunction with a creation policy or
+         * update policy. AWS CloudFormation doesn't proceed with a stack creation or
+         * update until resources receive the required number of signals or the timeout
+         * period is exceeded. The SignalResource API is useful in cases where you want to
+         * send signals from anywhere other than an Amazon EC2 instance.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::SignalResourceOutcomeCallable SignalResourceCallable(const Model::SignalResourceRequest& request) const;
 
-        /*
-            <p>Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Sends a signal to the specified resource with a success or failure status.
+         * You can use the SignalResource API in conjunction with a creation policy or
+         * update policy. AWS CloudFormation doesn't proceed with a stack creation or
+         * update until resources receive the required number of signals or the timeout
+         * period is exceeded. The SignalResource API is useful in cases where you want to
+         * send signals from anywhere other than an Amazon EC2 instance.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void SignalResourceAsync(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.</p> <p>For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a Stack</a>.</p>
-        */
+        /**
+         * <p>Updates a stack as specified in the template. After the call completes
+         * successfully, the stack update starts. You can check the status of the stack via
+         * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
+         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were
+         * associated with this stack during creation time will still be associated with
+         * the stack after an <code>UpdateStack</code> operation.</p> <p>For more
+         * information about creating an update template, updating a stack, and monitoring
+         * the progress of the update, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
+         * a Stack</a>.</p>
+         */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
-        /*
-            <p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.</p> <p>For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a Stack</a>.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Updates a stack as specified in the template. After the call completes
+         * successfully, the stack update starts. You can check the status of the stack via
+         * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
+         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were
+         * associated with this stack during creation time will still be associated with
+         * the stack after an <code>UpdateStack</code> operation.</p> <p>For more
+         * information about creating an update template, updating a stack, and monitoring
+         * the progress of the update, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
+         * a Stack</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UpdateStackOutcomeCallable UpdateStackCallable(const Model::UpdateStackRequest& request) const;
 
-        /*
-            <p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.</p> <p>For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a Stack</a>.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Updates a stack as specified in the template. After the call completes
+         * successfully, the stack update starts. You can check the status of the stack via
+         * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
+         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were
+         * associated with this stack during creation time will still be associated with
+         * the stack after an <code>UpdateStack</code> operation.</p> <p>For more
+         * information about creating an update template, updating a stack, and monitoring
+         * the progress of the update, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
+         * a Stack</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Validates a specified template.</p>
-        */
+        /**
+         * <p>Validates a specified template.</p>
+         */
         virtual Model::ValidateTemplateOutcome ValidateTemplate(const Model::ValidateTemplateRequest& request) const;
 
-        /*
-            <p>Validates a specified template.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Validates a specified template.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ValidateTemplateOutcomeCallable ValidateTemplateCallable(const Model::ValidateTemplateRequest& request) const;
 
-        /*
-            <p>Validates a specified template.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Validates a specified template.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ValidateTemplateAsync(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-/**Async helpers**/
+        /**Async helpers**/
         void CancelUpdateStackAsyncHelper(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

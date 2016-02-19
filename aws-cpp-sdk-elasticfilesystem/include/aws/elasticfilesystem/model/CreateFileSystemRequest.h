@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace EFS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EFS_API CreateFileSystemRequest : public EFSRequest
   {
   public:
@@ -33,39 +33,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline const Aws::String& GetCreationToken() const{ return m_creationToken; }
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline void SetCreationToken(const Aws::String& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline void SetCreationToken(const char* value) { m_creationTokenHasBeenSet = true; m_creationToken.assign(value); }
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline CreateFileSystemRequest& WithCreationToken(const Aws::String& value) { SetCreationToken(value); return *this;}
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline CreateFileSystemRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(value); return *this;}
 
-    /*
-     <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    */
+    /**
+     * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline CreateFileSystemRequest& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
 
   private:

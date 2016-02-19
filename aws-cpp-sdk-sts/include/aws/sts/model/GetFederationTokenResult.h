@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace STS
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetFederationToken</a> request,
+   * including temporary AWS credentials that can be used to make AWS requests. </p>
+   */
   class AWS_STS_API GetFederationTokenResult
   {
   public:
@@ -44,69 +45,90 @@ namespace Model
     GetFederationTokenResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetFederationTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Credentials for the service API authentication. </p>
-    */
+    /**
+     * <p>Credentials for the service API authentication. </p>
+     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
-    /*
-     <p>Credentials for the service API authentication. </p>
-    */
+    /**
+     * <p>Credentials for the service API authentication. </p>
+     */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
-    /*
-     <p>Credentials for the service API authentication. </p>
-    */
+    /**
+     * <p>Credentials for the service API authentication. </p>
+     */
     inline void SetCredentials(Credentials&& value) { m_credentials = value; }
 
-    /*
-     <p>Credentials for the service API authentication. </p>
-    */
+    /**
+     * <p>Credentials for the service API authentication. </p>
+     */
     inline GetFederationTokenResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
-    /*
-     <p>Credentials for the service API authentication. </p>
-    */
+    /**
+     * <p>Credentials for the service API authentication. </p>
+     */
     inline GetFederationTokenResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
-    /*
-     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    */
+    /**
+     * <p>Identifiers for the federated user associated with the credentials (such as
+     * <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN in your
+     * resource-based policies, such as an Amazon S3 bucket policy. </p>
+     */
     inline const FederatedUser& GetFederatedUser() const{ return m_federatedUser; }
 
-    /*
-     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    */
+    /**
+     * <p>Identifiers for the federated user associated with the credentials (such as
+     * <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN in your
+     * resource-based policies, such as an Amazon S3 bucket policy. </p>
+     */
     inline void SetFederatedUser(const FederatedUser& value) { m_federatedUser = value; }
 
-    /*
-     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    */
+    /**
+     * <p>Identifiers for the federated user associated with the credentials (such as
+     * <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN in your
+     * resource-based policies, such as an Amazon S3 bucket policy. </p>
+     */
     inline void SetFederatedUser(FederatedUser&& value) { m_federatedUser = value; }
 
-    /*
-     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    */
+    /**
+     * <p>Identifiers for the federated user associated with the credentials (such as
+     * <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN in your
+     * resource-based policies, such as an Amazon S3 bucket policy. </p>
+     */
     inline GetFederationTokenResult& WithFederatedUser(const FederatedUser& value) { SetFederatedUser(value); return *this;}
 
-    /*
-     <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    */
+    /**
+     * <p>Identifiers for the federated user associated with the credentials (such as
+     * <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN in your
+     * resource-based policies, such as an Amazon S3 bucket policy. </p>
+     */
     inline GetFederationTokenResult& WithFederatedUser(FederatedUser&& value) { SetFederatedUser(value); return *this;}
 
-    /*
-     <p>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value. </p>
-    */
+    /**
+     * <p>A percentage value indicating the size of the policy in packed form. The
+     * service rejects policies for which the packed size is greater than 100 percent
+     * of the allowed value. </p>
+     */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
 
-    /*
-     <p>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value. </p>
-    */
+    /**
+     * <p>A percentage value indicating the size of the policy in packed form. The
+     * service rejects policies for which the packed size is greater than 100 percent
+     * of the allowed value. </p>
+     */
     inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
 
-    /*
-     <p>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value. </p>
-    */
+    /**
+     * <p>A percentage value indicating the size of the policy in packed form. The
+     * service rejects policies for which the packed size is greater than 100 percent
+     * of the allowed value. </p>
+     */
     inline GetFederationTokenResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API GetBucketRequestPaymentResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     GetBucketRequestPaymentResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetBucketRequestPaymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     Specifies who pays for the download and request fees.
-    */
+    /**
+     * Specifies who pays for the download and request fees.
+     */
     inline const Payer& GetPayer() const{ return m_payer; }
 
-    /*
-     Specifies who pays for the download and request fees.
-    */
+    /**
+     * Specifies who pays for the download and request fees.
+     */
     inline void SetPayer(const Payer& value) { m_payer = value; }
 
-    /*
-     Specifies who pays for the download and request fees.
-    */
+    /**
+     * Specifies who pays for the download and request fees.
+     */
     inline void SetPayer(Payer&& value) { m_payer = value; }
 
-    /*
-     Specifies who pays for the download and request fees.
-    */
+    /**
+     * Specifies who pays for the download and request fees.
+     */
     inline GetBucketRequestPaymentResult& WithPayer(const Payer& value) { SetPayer(value); return *this;}
 
-    /*
-     Specifies who pays for the download and request fees.
-    */
+    /**
+     * Specifies who pays for the download and request fees.
+     */
     inline GetBucketRequestPaymentResult& WithPayer(Payer&& value) { SetPayer(value); return *this;}
 
   private:

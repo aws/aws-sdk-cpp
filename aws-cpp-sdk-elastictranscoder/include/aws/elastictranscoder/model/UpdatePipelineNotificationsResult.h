@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
-  */
+  /**
+   * <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
+   */
   class AWS_ELASTICTRANSCODER_API UpdatePipelineNotificationsResult
   {
   public:
@@ -42,29 +42,34 @@ namespace Model
     UpdatePipelineNotificationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdatePipelineNotificationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A section of the response body that provides information about the pipeline.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the
+     * pipeline.</p>
+     */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
 
-    /*
-     <p>A section of the response body that provides information about the pipeline.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the
+     * pipeline.</p>
+     */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
 
-    /*
-     <p>A section of the response body that provides information about the pipeline.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the
+     * pipeline.</p>
+     */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
 
-    /*
-     <p>A section of the response body that provides information about the pipeline.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the
+     * pipeline.</p>
+     */
     inline UpdatePipelineNotificationsResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
 
-    /*
-     <p>A section of the response body that provides information about the pipeline.</p>
-    */
+    /**
+     * <p>A section of the response body that provides information about the
+     * pipeline.</p>
+     */
     inline UpdatePipelineNotificationsResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
 
   private:

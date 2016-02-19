@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ELASTICLOADBALANCING_API ConfigureHealthCheckRequest : public ElasticLoadBalancingRequest
   {
   public:
@@ -34,64 +34,64 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline ConfigureHealthCheckRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline ConfigureHealthCheckRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline ConfigureHealthCheckRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The configuration information for the new health check.</p>
-    */
+    /**
+     * <p>The configuration information for the new health check.</p>
+     */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
 
-    /*
-     <p>The configuration information for the new health check.</p>
-    */
+    /**
+     * <p>The configuration information for the new health check.</p>
+     */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
 
-    /*
-     <p>The configuration information for the new health check.</p>
-    */
+    /**
+     * <p>The configuration information for the new health check.</p>
+     */
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
 
-    /*
-     <p>The configuration information for the new health check.</p>
-    */
+    /**
+     * <p>The configuration information for the new health check.</p>
+     */
     inline ConfigureHealthCheckRequest& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
 
-    /*
-     <p>The configuration information for the new health check.</p>
-    */
+    /**
+     * <p>The configuration information for the new health check.</p>
+     */
     inline ConfigureHealthCheckRequest& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 
   private:

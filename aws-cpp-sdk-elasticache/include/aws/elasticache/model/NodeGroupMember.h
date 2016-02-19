@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents a single node within a node group.</p>
-  */
+
+  /**
+   * <p>Represents a single node within a node group.</p>
+   */
   class AWS_ELASTICACHE_API NodeGroupMember
   {
   public:
@@ -44,74 +45,81 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline NodeGroupMember& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline NodeGroupMember& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
-    /*
-     <p>The ID of the cache cluster to which the node belongs.</p>
-    */
+    /**
+     * <p>The ID of the cache cluster to which the node belongs.</p>
+     */
     inline NodeGroupMember& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline const Aws::String& GetCacheNodeId() const{ return m_cacheNodeId; }
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline void SetCacheNodeId(const char* value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId.assign(value); }
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline NodeGroupMember& WithCacheNodeId(const Aws::String& value) { SetCacheNodeId(value); return *this;}
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline NodeGroupMember& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(value); return *this;}
 
-    /*
-     <p>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    */
+    /**
+     * <p>The ID of the node within its cache cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).</p>
+     */
     inline NodeGroupMember& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
 
     
@@ -129,74 +137,81 @@ namespace Model
     
     inline NodeGroupMember& WithReadEndpoint(Endpoint&& value) { SetReadEndpoint(value); return *this;}
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline const Aws::String& GetPreferredAvailabilityZone() const{ return m_preferredAvailabilityZone; }
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline void SetPreferredAvailabilityZone(const Aws::String& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline void SetPreferredAvailabilityZone(const char* value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone.assign(value); }
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline NodeGroupMember& WithPreferredAvailabilityZone(const Aws::String& value) { SetPreferredAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline NodeGroupMember& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The name of the Availability Zone in which the node is located.</p>
-    */
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
     inline NodeGroupMember& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline const Aws::String& GetCurrentRole() const{ return m_currentRole; }
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline void SetCurrentRole(const Aws::String& value) { m_currentRoleHasBeenSet = true; m_currentRole = value; }
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline void SetCurrentRole(Aws::String&& value) { m_currentRoleHasBeenSet = true; m_currentRole = value; }
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline void SetCurrentRole(const char* value) { m_currentRoleHasBeenSet = true; m_currentRole.assign(value); }
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline NodeGroupMember& WithCurrentRole(const Aws::String& value) { SetCurrentRole(value); return *this;}
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline NodeGroupMember& WithCurrentRole(Aws::String&& value) { SetCurrentRole(value); return *this;}
 
-    /*
-     <p>The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.</p>
-    */
+    /**
+     * <p>The role that is currently assigned to the node - <i>primary</i> or
+     * <i>replica</i>.</p>
+     */
     inline NodeGroupMember& WithCurrentRole(const char* value) { SetCurrentRole(value); return *this;}
 
   private:

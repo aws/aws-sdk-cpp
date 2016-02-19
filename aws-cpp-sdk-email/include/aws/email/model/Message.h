@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents the message to be sent, composed of a subject and a body.</p>
-  */
+
+  /**
+   * <p>Represents the message to be sent, composed of a subject and a body.</p>
+   */
   class AWS_SES_API Message
   {
   public:
@@ -44,54 +45,59 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
-    */
+    /**
+     * <p>The subject of the message: A short summary of the content, which will appear
+     * in the recipient's inbox.</p>
+     */
     inline const Content& GetSubject() const{ return m_subject; }
 
-    /*
-     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
-    */
+    /**
+     * <p>The subject of the message: A short summary of the content, which will appear
+     * in the recipient's inbox.</p>
+     */
     inline void SetSubject(const Content& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
-    /*
-     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
-    */
+    /**
+     * <p>The subject of the message: A short summary of the content, which will appear
+     * in the recipient's inbox.</p>
+     */
     inline void SetSubject(Content&& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
-    /*
-     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
-    */
+    /**
+     * <p>The subject of the message: A short summary of the content, which will appear
+     * in the recipient's inbox.</p>
+     */
     inline Message& WithSubject(const Content& value) { SetSubject(value); return *this;}
 
-    /*
-     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
-    */
+    /**
+     * <p>The subject of the message: A short summary of the content, which will appear
+     * in the recipient's inbox.</p>
+     */
     inline Message& WithSubject(Content&& value) { SetSubject(value); return *this;}
 
-    /*
-     <p>The message body.</p>
-    */
+    /**
+     * <p>The message body.</p>
+     */
     inline const Body& GetBody() const{ return m_body; }
 
-    /*
-     <p>The message body.</p>
-    */
+    /**
+     * <p>The message body.</p>
+     */
     inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
 
-    /*
-     <p>The message body.</p>
-    */
+    /**
+     * <p>The message body.</p>
+     */
     inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = value; }
 
-    /*
-     <p>The message body.</p>
-    */
+    /**
+     * <p>The message body.</p>
+     */
     inline Message& WithBody(const Body& value) { SetBody(value); return *this;}
 
-    /*
-     <p>The message body.</p>
-    */
+    /**
+     * <p>The message body.</p>
+     */
     inline Message& WithBody(Body&& value) { SetBody(value); return *this;}
 
   private:

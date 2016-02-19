@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a customer gateway.</p>
-  */
+
+  /**
+   * <p>Describes a customer gateway.</p>
+   */
   class AWS_EC2_API CustomerGateway
   {
   public:
@@ -45,214 +46,242 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline void SetCustomerGatewayId(const char* value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId.assign(value); }
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline CustomerGateway& WithCustomerGatewayId(const Aws::String& value) { SetCustomerGatewayId(value); return *this;}
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline CustomerGateway& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(value); return *this;}
 
-    /*
-     <p>The ID of the customer gateway.</p>
-    */
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline CustomerGateway& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline const Aws::String& GetState() const{ return m_state; }
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline CustomerGateway& WithState(const Aws::String& value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline CustomerGateway& WithState(Aws::String&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    */
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline CustomerGateway& WithState(const char* value) { SetState(value); return *this;}
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline const Aws::String& GetType() const{ return m_type; }
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline CustomerGateway& WithType(const Aws::String& value) { SetType(value); return *this;}
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline CustomerGateway& WithType(Aws::String&& value) { SetType(value); return *this;}
 
-    /*
-     <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    */
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline CustomerGateway& WithType(const char* value) { SetType(value); return *this;}
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline CustomerGateway& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline CustomerGateway& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
 
-    /*
-     <p>The Internet-routable IP address of the customer gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
     inline CustomerGateway& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline const Aws::String& GetBgpAsn() const{ return m_bgpAsn; }
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline void SetBgpAsn(const Aws::String& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline void SetBgpAsn(Aws::String&& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline void SetBgpAsn(const char* value) { m_bgpAsnHasBeenSet = true; m_bgpAsn.assign(value); }
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline CustomerGateway& WithBgpAsn(const Aws::String& value) { SetBgpAsn(value); return *this;}
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline CustomerGateway& WithBgpAsn(Aws::String&& value) { SetBgpAsn(value); return *this;}
 
-    /*
-     <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    */
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline CustomerGateway& WithBgpAsn(const char* value) { SetBgpAsn(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline CustomerGateway& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline CustomerGateway& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline CustomerGateway& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>Any tags assigned to the customer gateway.</p>
-    */
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
     inline CustomerGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

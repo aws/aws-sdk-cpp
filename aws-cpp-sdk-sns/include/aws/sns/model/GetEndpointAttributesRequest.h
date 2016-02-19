@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace SNS
 namespace Model
 {
 
-  /*
-    <p>Input for GetEndpointAttributes action.</p>
-  */
+  /**
+   * <p>Input for GetEndpointAttributes action.</p>
+   */
   class AWS_SNS_API GetEndpointAttributesRequest : public SNSRequest
   {
   public:
@@ -34,39 +34,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline GetEndpointAttributesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline GetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
 
-    /*
-     <p>EndpointArn for GetEndpointAttributes input.</p>
-    */
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline GetEndpointAttributesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:

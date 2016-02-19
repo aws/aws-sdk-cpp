@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of DescribePipelines.</p>
-  */
+  /**
+   * <p>Contains the output of DescribePipelines.</p>
+   */
   class AWS_DATAPIPELINE_API DescribePipelinesResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     DescribePipelinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribePipelinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline const Aws::Vector<PipelineDescription>& GetPipelineDescriptionList() const{ return m_pipelineDescriptionList; }
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline void SetPipelineDescriptionList(const Aws::Vector<PipelineDescription>& value) { m_pipelineDescriptionList = value; }
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline void SetPipelineDescriptionList(Aws::Vector<PipelineDescription>&& value) { m_pipelineDescriptionList = value; }
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline DescribePipelinesResult& WithPipelineDescriptionList(const Aws::Vector<PipelineDescription>& value) { SetPipelineDescriptionList(value); return *this;}
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline DescribePipelinesResult& WithPipelineDescriptionList(Aws::Vector<PipelineDescription>&& value) { SetPipelineDescriptionList(value); return *this;}
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline DescribePipelinesResult& AddPipelineDescriptionList(const PipelineDescription& value) { m_pipelineDescriptionList.push_back(value); return *this; }
 
-    /*
-     <p>An array of descriptions for the specified pipelines.</p>
-    */
+    /**
+     * <p>An array of descriptions for the specified pipelines.</p>
+     */
     inline DescribePipelinesResult& AddPipelineDescriptionList(PipelineDescription&& value) { m_pipelineDescriptionList.push_back(value); return *this; }
 
   private:

@@ -12,11 +12,6 @@ project(aws-cpp-sdk-s3-integration-tests)
     ${AWS_S3_SRC}
   )
 
-if(NOT MSVC)
-  add_definitions(-std=c++0x)
-endif()
-
-
 set(AWS_S3_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a virtual private gateway propagating route.</p>
-  */
+
+  /**
+   * <p>Describes a virtual private gateway propagating route.</p>
+   */
   class AWS_EC2_API PropagatingVgw
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline PropagatingVgw& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline PropagatingVgw& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
 
-    /*
-     <p>The ID of the virtual private gateway (VGW).</p>
-    */
+    /**
+     * <p>The ID of the virtual private gateway (VGW).</p>
+     */
     inline PropagatingVgw& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace SimpleDB
 {
 namespace Model
 {
-  /*
-    <p></p>
-  */
+
+  /**
+   * <p></p>
+   */
   class AWS_SIMPLEDB_API ReplaceableItem
   {
   public:
@@ -45,74 +46,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline ReplaceableItem& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline ReplaceableItem& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     The name of the replaceable item.
-    */
+    /**
+     * The name of the replaceable item.
+     */
     inline ReplaceableItem& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline const Aws::Vector<ReplaceableAttribute>& GetAttributes() const{ return m_attributes; }
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline void SetAttributes(Aws::Vector<ReplaceableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline ReplaceableItem& WithAttributes(const Aws::Vector<ReplaceableAttribute>& value) { SetAttributes(value); return *this;}
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline ReplaceableItem& WithAttributes(Aws::Vector<ReplaceableAttribute>&& value) { SetAttributes(value); return *this;}
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline ReplaceableItem& AddAttributes(const ReplaceableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
-    /*
-     The list of attributes for a replaceable item.
-    */
+    /**
+     * The list of attributes for a replaceable item.
+     */
     inline ReplaceableItem& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:

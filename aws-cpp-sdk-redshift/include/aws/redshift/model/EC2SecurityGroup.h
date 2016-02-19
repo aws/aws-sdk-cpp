@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p>Describes an Amazon EC2 security group.</p>
-  */
+
+  /**
+   * <p>Describes an Amazon EC2 security group.</p>
+   */
   class AWS_REDSHIFT_API EC2SecurityGroup
   {
   public:
@@ -45,144 +46,151 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline EC2SecurityGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline EC2SecurityGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the EC2 security group. </p>
-    */
+    /**
+     * <p> The status of the EC2 security group. </p>
+     */
     inline EC2SecurityGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline void SetEC2SecurityGroupName(const char* value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName.assign(value); }
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const Aws::String& value) { SetEC2SecurityGroupName(value); return *this;}
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
 
-    /*
-     <p> The name of the EC2 Security Group. </p>
-    */
+    /**
+     * <p> The name of the EC2 Security Group. </p>
+     */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p> The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    */
+    /**
+     * <p> The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline EC2SecurityGroup& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline EC2SecurityGroup& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline EC2SecurityGroup& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The list of tags for the EC2 security group.</p>
-    */
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
     inline EC2SecurityGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

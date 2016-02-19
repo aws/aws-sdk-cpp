@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get deployment configuration operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get deployment configuration operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetDeploymentConfigResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetDeploymentConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployment configuration.</p>
-    */
+    /**
+     * <p>Information about the deployment configuration.</p>
+     */
     inline const DeploymentConfigInfo& GetDeploymentConfigInfo() const{ return m_deploymentConfigInfo; }
 
-    /*
-     <p>Information about the deployment configuration.</p>
-    */
+    /**
+     * <p>Information about the deployment configuration.</p>
+     */
     inline void SetDeploymentConfigInfo(const DeploymentConfigInfo& value) { m_deploymentConfigInfo = value; }
 
-    /*
-     <p>Information about the deployment configuration.</p>
-    */
+    /**
+     * <p>Information about the deployment configuration.</p>
+     */
     inline void SetDeploymentConfigInfo(DeploymentConfigInfo&& value) { m_deploymentConfigInfo = value; }
 
-    /*
-     <p>Information about the deployment configuration.</p>
-    */
+    /**
+     * <p>Information about the deployment configuration.</p>
+     */
     inline GetDeploymentConfigResult& WithDeploymentConfigInfo(const DeploymentConfigInfo& value) { SetDeploymentConfigInfo(value); return *this;}
 
-    /*
-     <p>Information about the deployment configuration.</p>
-    */
+    /**
+     * <p>Information about the deployment configuration.</p>
+     */
     inline GetDeploymentConfigResult& WithDeploymentConfigInfo(DeploymentConfigInfo&& value) { SetDeploymentConfigInfo(value); return *this;}
 
   private:

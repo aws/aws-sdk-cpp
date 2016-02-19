@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ELASTICLOADBALANCING_API DescribeLoadBalancersResult
   {
   public:
@@ -45,74 +42,81 @@ namespace Model
     DescribeLoadBalancersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeLoadBalancersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline const Aws::Vector<LoadBalancerDescription>& GetLoadBalancerDescriptions() const{ return m_loadBalancerDescriptions; }
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline void SetLoadBalancerDescriptions(const Aws::Vector<LoadBalancerDescription>& value) { m_loadBalancerDescriptions = value; }
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline void SetLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { m_loadBalancerDescriptions = value; }
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline DescribeLoadBalancersResult& WithLoadBalancerDescriptions(const Aws::Vector<LoadBalancerDescription>& value) { SetLoadBalancerDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline DescribeLoadBalancersResult& WithLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { SetLoadBalancerDescriptions(value); return *this;}
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline DescribeLoadBalancersResult& AddLoadBalancerDescriptions(const LoadBalancerDescription& value) { m_loadBalancerDescriptions.push_back(value); return *this; }
 
-    /*
-     <p>Information about the load balancers.</p>
-    */
+    /**
+     * <p>Information about the load balancers.</p>
+     */
     inline DescribeLoadBalancersResult& AddLoadBalancerDescriptions(LoadBalancerDescription&& value) { m_loadBalancerDescriptions.push_back(value); return *this; }
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline DescribeLoadBalancersResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline DescribeLoadBalancersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    */
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
     inline DescribeLoadBalancersResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
     

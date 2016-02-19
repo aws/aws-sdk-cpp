@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an instance to export.</p>
-  */
+
+  /**
+   * <p>Describes an instance to export.</p>
+   */
   class AWS_EC2_API InstanceExportDetails
   {
   public:
@@ -44,64 +45,64 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline InstanceExportDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline InstanceExportDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the resource being exported.</p>
-    */
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline InstanceExportDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The target virtualization environment.</p>
-    */
+    /**
+     * <p>The target virtualization environment.</p>
+     */
     inline const ExportEnvironment& GetTargetEnvironment() const{ return m_targetEnvironment; }
 
-    /*
-     <p>The target virtualization environment.</p>
-    */
+    /**
+     * <p>The target virtualization environment.</p>
+     */
     inline void SetTargetEnvironment(const ExportEnvironment& value) { m_targetEnvironmentHasBeenSet = true; m_targetEnvironment = value; }
 
-    /*
-     <p>The target virtualization environment.</p>
-    */
+    /**
+     * <p>The target virtualization environment.</p>
+     */
     inline void SetTargetEnvironment(ExportEnvironment&& value) { m_targetEnvironmentHasBeenSet = true; m_targetEnvironment = value; }
 
-    /*
-     <p>The target virtualization environment.</p>
-    */
+    /**
+     * <p>The target virtualization environment.</p>
+     */
     inline InstanceExportDetails& WithTargetEnvironment(const ExportEnvironment& value) { SetTargetEnvironment(value); return *this;}
 
-    /*
-     <p>The target virtualization environment.</p>
-    */
+    /**
+     * <p>The target virtualization environment.</p>
+     */
     inline InstanceExportDetails& WithTargetEnvironment(ExportEnvironment&& value) { SetTargetEnvironment(value); return *this;}
 
   private:

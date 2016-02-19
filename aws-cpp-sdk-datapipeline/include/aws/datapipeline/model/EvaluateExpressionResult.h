@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of EvaluateExpression.</p>
-  */
+  /**
+   * <p>Contains the output of EvaluateExpression.</p>
+   */
   class AWS_DATAPIPELINE_API EvaluateExpressionResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     EvaluateExpressionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     EvaluateExpressionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline const Aws::String& GetEvaluatedExpression() const{ return m_evaluatedExpression; }
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline void SetEvaluatedExpression(const Aws::String& value) { m_evaluatedExpression = value; }
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline void SetEvaluatedExpression(Aws::String&& value) { m_evaluatedExpression = value; }
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline void SetEvaluatedExpression(const char* value) { m_evaluatedExpression.assign(value); }
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline EvaluateExpressionResult& WithEvaluatedExpression(const Aws::String& value) { SetEvaluatedExpression(value); return *this;}
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline EvaluateExpressionResult& WithEvaluatedExpression(Aws::String&& value) { SetEvaluatedExpression(value); return *this;}
 
-    /*
-     <p>The evaluated expression.</p>
-    */
+    /**
+     * <p>The evaluated expression.</p>
+     */
     inline EvaluateExpressionResult& WithEvaluatedExpression(const char* value) { SetEvaluatedExpression(value); return *this;}
 
   private:

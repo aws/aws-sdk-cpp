@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace DynamoDB
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>DescribeTable</i> operation.</p>
-  */
+  /**
+   * <p>Represents the input of a <i>DescribeTable</i> operation.</p>
+   */
   class AWS_DYNAMODB_API DescribeTableRequest : public DynamoDBRequest
   {
   public:
@@ -36,39 +36,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline DescribeTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline DescribeTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
 
-    /*
-     <p> The name of the table to describe.</p>
-    */
+    /**
+     * <p> The name of the table to describe.</p>
+     */
     inline DescribeTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
   private:

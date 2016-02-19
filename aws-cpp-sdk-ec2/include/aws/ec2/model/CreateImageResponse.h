@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateImageResponse
   {
   public:
@@ -43,39 +40,39 @@ namespace Model
     CreateImageResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateImageResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline void SetImageId(const Aws::String& value) { m_imageId = value; }
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline void SetImageId(Aws::String&& value) { m_imageId = value; }
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline void SetImageId(const char* value) { m_imageId.assign(value); }
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline CreateImageResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline CreateImageResponse& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
 
-    /*
-     <p>The ID of the new AMI.</p>
-    */
+    /**
+     * <p>The ID of the new AMI.</p>
+     */
     inline CreateImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     

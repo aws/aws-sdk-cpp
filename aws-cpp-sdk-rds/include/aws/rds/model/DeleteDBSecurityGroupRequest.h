@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_RDS_API DeleteDBSecurityGroupRequest : public RDSRequest
   {
   public:
@@ -34,39 +34,60 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
 
-    /*
-     <p> The name of the DB Security Group to delete. </p> <note>You cannot delete the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-    */
+    /**
+     * <p> The name of the DB Security Group to delete. </p> <note>You cannot delete
+     * the default DB Security Group.</note> <p> Constraints: </p> <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 
   private:

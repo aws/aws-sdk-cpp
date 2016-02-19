@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace SNS
 namespace Model
 {
 
-  /*
-    <p>Input for DeleteEndpoint action.</p>
-  */
+  /**
+   * <p>Input for DeleteEndpoint action.</p>
+   */
   class AWS_SNS_API DeleteEndpointRequest : public SNSRequest
   {
   public:
@@ -34,39 +34,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline DeleteEndpointRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline DeleteEndpointRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
 
-    /*
-     <p>EndpointArn of endpoint to delete.</p>
-    */
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline DeleteEndpointRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:

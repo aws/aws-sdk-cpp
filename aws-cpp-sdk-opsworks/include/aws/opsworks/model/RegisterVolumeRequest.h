@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API RegisterVolumeRequest : public OpsWorksRequest
   {
   public:
@@ -35,74 +35,74 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline const Aws::String& GetEc2VolumeId() const{ return m_ec2VolumeId; }
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline void SetEc2VolumeId(const Aws::String& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline void SetEc2VolumeId(const char* value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId.assign(value); }
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline RegisterVolumeRequest& WithEc2VolumeId(const Aws::String& value) { SetEc2VolumeId(value); return *this;}
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline RegisterVolumeRequest& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(value); return *this;}
 
-    /*
-     <p>The Amazon EBS volume ID.</p>
-    */
+    /**
+     * <p>The Amazon EBS volume ID.</p>
+     */
     inline RegisterVolumeRequest& WithEc2VolumeId(const char* value) { SetEc2VolumeId(value); return *this;}
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline RegisterVolumeRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline RegisterVolumeRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline RegisterVolumeRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:

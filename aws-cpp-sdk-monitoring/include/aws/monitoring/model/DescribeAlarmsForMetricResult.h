@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CloudWatch
 {
 namespace Model
 {
-  /*
-    <p> The output for the <a>DescribeAlarmsForMetric</a> action. </p>
-  */
+  /**
+   * <p> The output for the <a>DescribeAlarmsForMetric</a> action. </p>
+   */
   class AWS_CLOUDWATCH_API DescribeAlarmsForMetricResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeAlarmsForMetricResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAlarmsForMetricResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline const Aws::Vector<MetricAlarm>& GetMetricAlarms() const{ return m_metricAlarms; }
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline void SetMetricAlarms(const Aws::Vector<MetricAlarm>& value) { m_metricAlarms = value; }
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline void SetMetricAlarms(Aws::Vector<MetricAlarm>&& value) { m_metricAlarms = value; }
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline DescribeAlarmsForMetricResult& WithMetricAlarms(const Aws::Vector<MetricAlarm>& value) { SetMetricAlarms(value); return *this;}
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline DescribeAlarmsForMetricResult& WithMetricAlarms(Aws::Vector<MetricAlarm>&& value) { SetMetricAlarms(value); return *this;}
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline DescribeAlarmsForMetricResult& AddMetricAlarms(const MetricAlarm& value) { m_metricAlarms.push_back(value); return *this; }
 
-    /*
-     <p> A list of information for each alarm with the specified metric. </p>
-    */
+    /**
+     * <p> A list of information for each alarm with the specified metric. </p>
+     */
     inline DescribeAlarmsForMetricResult& AddMetricAlarms(MetricAlarm&& value) { m_metricAlarms.push_back(value); return *this; }
 
     

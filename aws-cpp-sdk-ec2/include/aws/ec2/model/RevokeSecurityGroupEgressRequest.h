@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EC2_API RevokeSecurityGroupEgressRequest : public EC2Request
   {
   public:
@@ -35,259 +35,343 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline const Aws::String& GetSourceSecurityGroupName() const{ return m_sourceSecurityGroupName; }
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline void SetSourceSecurityGroupName(const Aws::String& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = value; }
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = value; }
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline void SetSourceSecurityGroupName(const char* value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName.assign(value); }
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupName(const Aws::String& value) { SetSourceSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The name of a destination security group. To revoke outbound access to a
+     * destination security group, we recommend that you use a set of IP permissions
+     * instead.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupName(const char* value) { SetSourceSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline void SetSourceSecurityGroupOwnerId(const char* value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId.assign(value); }
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(const Aws::String& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>
-    */
+    /**
+     * <p>The AWS account number for a destination security group. To revoke outbound
+     * access to a destination security group, we recommend that you use a set of IP
+     * permissions instead.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
 
-    /*
-     <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    */
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
-    /*
-     <p>The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use <code>-1</code> to specify all ICMP types.</p>
-    */
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
+     * types.</p>
+     */
     inline long GetFromPort() const{ return m_fromPort; }
 
-    /*
-     <p>The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use <code>-1</code> to specify all ICMP types.</p>
-    */
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
+     * types.</p>
+     */
     inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
-    /*
-     <p>The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use <code>-1</code> to specify all ICMP types.</p>
-    */
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
+     * types.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithFromPort(long value) { SetFromPort(value); return *this;}
 
-    /*
-     <p>The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the ICMP type.</p>
-    */
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
+     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
+     * ICMP type.</p>
+     */
     inline long GetToPort() const{ return m_toPort; }
 
-    /*
-     <p>The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the ICMP type.</p>
-    */
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
+     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
+     * ICMP type.</p>
+     */
     inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
-    /*
-     <p>The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the ICMP type.</p>
-    */
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
+     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
+     * ICMP type.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithToPort(long value) { SetToPort(value); return *this;}
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
 
-    /*
-     <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    */
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(value); return *this;}
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
-    /*
-     <p>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</p>
-    */
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
     inline RevokeSecurityGroupEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
   private:

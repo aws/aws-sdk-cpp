@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API CreateKeyResult
   {
   public:
@@ -42,29 +39,29 @@ namespace Model
     CreateKeyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Metadata associated with the key.</p>
-    */
+    /**
+     * <p>Metadata associated with the key.</p>
+     */
     inline const KeyMetadata& GetKeyMetadata() const{ return m_keyMetadata; }
 
-    /*
-     <p>Metadata associated with the key.</p>
-    */
+    /**
+     * <p>Metadata associated with the key.</p>
+     */
     inline void SetKeyMetadata(const KeyMetadata& value) { m_keyMetadata = value; }
 
-    /*
-     <p>Metadata associated with the key.</p>
-    */
+    /**
+     * <p>Metadata associated with the key.</p>
+     */
     inline void SetKeyMetadata(KeyMetadata&& value) { m_keyMetadata = value; }
 
-    /*
-     <p>Metadata associated with the key.</p>
-    */
+    /**
+     * <p>Metadata associated with the key.</p>
+     */
     inline CreateKeyResult& WithKeyMetadata(const KeyMetadata& value) { SetKeyMetadata(value); return *this;}
 
-    /*
-     <p>Metadata associated with the key.</p>
-    */
+    /**
+     * <p>Metadata associated with the key.</p>
+     */
     inline CreateKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(value); return *this;}
 
   private:

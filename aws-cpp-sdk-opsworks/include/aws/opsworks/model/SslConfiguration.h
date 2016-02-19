@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Describes an app's SSL configuration.</p>
-  */
+
+  /**
+   * <p>Describes an app's SSL configuration.</p>
+   */
   class AWS_OPSWORKS_API SslConfiguration
   {
   public:
@@ -40,109 +41,116 @@ namespace Model
     SslConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline SslConfiguration& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline SslConfiguration& WithCertificate(Aws::String&& value) { SetCertificate(value); return *this;}
 
-    /*
-     <p>The contents of the certificate's domain.crt file.</p>
-    */
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline SslConfiguration& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline SslConfiguration& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline SslConfiguration& WithPrivateKey(Aws::String&& value) { SetPrivateKey(value); return *this;}
 
-    /*
-     <p>The private key; the contents of the certificate's domain.kex file.</p>
-    */
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
     inline SslConfiguration& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline const Aws::String& GetChain() const{ return m_chain; }
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline void SetChain(const Aws::String& value) { m_chainHasBeenSet = true; m_chain = value; }
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline void SetChain(Aws::String&& value) { m_chainHasBeenSet = true; m_chain = value; }
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline void SetChain(const char* value) { m_chainHasBeenSet = true; m_chain.assign(value); }
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline SslConfiguration& WithChain(const Aws::String& value) { SetChain(value); return *this;}
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline SslConfiguration& WithChain(Aws::String&& value) { SetChain(value); return *this;}
 
-    /*
-     <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    */
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
     inline SslConfiguration& WithChain(const char* value) { SetChain(value); return *this;}
 
   private:

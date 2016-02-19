@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace ElasticTranscoder
 {
 namespace Model
 {
-  /*
-    <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
-  */
+
+  /**
+   * <p>Settings for one clip in a composition. All jobs in a playlist must have the
+   * same clip settings.</p>
+   */
   class AWS_ELASTICTRANSCODER_API Clip
   {
   public:
@@ -40,29 +42,29 @@ namespace Model
     Clip& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>Settings that determine when a clip begins and how long it lasts.</p>
-    */
+    /**
+     * <p>Settings that determine when a clip begins and how long it lasts.</p>
+     */
     inline const TimeSpan& GetTimeSpan() const{ return m_timeSpan; }
 
-    /*
-     <p>Settings that determine when a clip begins and how long it lasts.</p>
-    */
+    /**
+     * <p>Settings that determine when a clip begins and how long it lasts.</p>
+     */
     inline void SetTimeSpan(const TimeSpan& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
 
-    /*
-     <p>Settings that determine when a clip begins and how long it lasts.</p>
-    */
+    /**
+     * <p>Settings that determine when a clip begins and how long it lasts.</p>
+     */
     inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
 
-    /*
-     <p>Settings that determine when a clip begins and how long it lasts.</p>
-    */
+    /**
+     * <p>Settings that determine when a clip begins and how long it lasts.</p>
+     */
     inline Clip& WithTimeSpan(const TimeSpan& value) { SetTimeSpan(value); return *this;}
 
-    /*
-     <p>Settings that determine when a clip begins and how long it lasts.</p>
-    */
+    /**
+     * <p>Settings that determine when a clip begins and how long it lasts.</p>
+     */
     inline Clip& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(value); return *this;}
 
   private:

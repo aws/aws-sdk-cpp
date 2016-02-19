@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeInstances</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeInstances</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeInstancesResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     DescribeInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline DescribeInstancesResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline DescribeInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline DescribeInstancesResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    */
+    /**
+     * <p>An array of <code>Instance</code> objects that describe the instances.</p>
+     */
     inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
 
   private:

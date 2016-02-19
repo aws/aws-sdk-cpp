@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_RDS_API DeleteDBSnapshotRequest : public RDSRequest
   {
   public:
@@ -34,39 +34,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(value); return *this;}
 
-    /*
-     <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.</p>
-    */
+    /**
+     * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.</p>
+     */
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
 
   private:

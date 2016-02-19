@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace Kinesis
 {
 namespace Model
 {
-  /*
-    <p>Represents the output for <code>ListTagsForStream</code>.</p>
-  */
+  /**
+   * <p>Represents the output for <code>ListTagsForStream</code>.</p>
+   */
   class AWS_KINESIS_API ListTagsForStreamResult
   {
   public:
@@ -43,54 +43,74 @@ namespace Model
     ListTagsForStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListTagsForStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline ListTagsForStreamResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline ListTagsForStreamResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline ListTagsForStreamResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
-    /*
-     <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    */
+    /**
+     * <p>A list of tags associated with <code>StreamName</code>, starting with the
+     * first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+     * <code>Limit</code>. </p>
+     */
     inline ListTagsForStreamResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
 
-    /*
-     <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    */
+    /**
+     * <p>If set to <code>true</code>, more tags are available. To request additional
+     * tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag
+     * returned.</p>
+     */
     inline bool GetHasMoreTags() const{ return m_hasMoreTags; }
 
-    /*
-     <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    */
+    /**
+     * <p>If set to <code>true</code>, more tags are available. To request additional
+     * tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag
+     * returned.</p>
+     */
     inline void SetHasMoreTags(bool value) { m_hasMoreTags = value; }
 
-    /*
-     <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    */
+    /**
+     * <p>If set to <code>true</code>, more tags are available. To request additional
+     * tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag
+     * returned.</p>
+     */
     inline ListTagsForStreamResult& WithHasMoreTags(bool value) { SetHasMoreTags(value); return *this;}
 
   private:

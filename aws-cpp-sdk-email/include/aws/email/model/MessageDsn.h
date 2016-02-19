@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    Message level DSN fields.
-  */
+
+  /**
+   * Message level DSN fields.
+   */
   class AWS_SES_API MessageDsn
   {
   public:
@@ -45,89 +46,106 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline const Aws::String& GetReportingMta() const{ return m_reportingMta; }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline void SetReportingMta(const Aws::String& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = value; }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline void SetReportingMta(Aws::String&& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = value; }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline void SetReportingMta(const char* value) { m_reportingMtaHasBeenSet = true; m_reportingMta.assign(value); }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline MessageDsn& WithReportingMta(const Aws::String& value) { SetReportingMta(value); return *this;}
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline MessageDsn& WithReportingMta(Aws::String&& value) { SetReportingMta(value); return *this;}
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * The MTA that attempted to deliver the message. Should be RFC 3464 formatted to
+     * be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified,
+     * "dns; inbound-smtp.[region].amazonaws.com" is used.
+     */
     inline MessageDsn& WithReportingMta(const char* value) { SetReportingMta(value); return *this;}
 
-    /*
-     When the message arrived at the Reporting MTA. This should be in RFC 822 date-time format if it's specified.
-    */
+    /**
+     * When the message arrived at the Reporting MTA. This should be in RFC 822
+     * date-time format if it's specified.
+     */
     inline double GetArrivalDate() const{ return m_arrivalDate; }
 
-    /*
-     When the message arrived at the Reporting MTA. This should be in RFC 822 date-time format if it's specified.
-    */
+    /**
+     * When the message arrived at the Reporting MTA. This should be in RFC 822
+     * date-time format if it's specified.
+     */
     inline void SetArrivalDate(double value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
 
-    /*
-     When the message arrived at the Reporting MTA. This should be in RFC 822 date-time format if it's specified.
-    */
+    /**
+     * When the message arrived at the Reporting MTA. This should be in RFC 822
+     * date-time format if it's specified.
+     */
     inline MessageDsn& WithArrivalDate(double value) { SetArrivalDate(value); return *this;}
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline void SetExtensionFields(const Aws::Vector<ExtensionField>& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline MessageDsn& WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline MessageDsn& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(value); return *this;}
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline MessageDsn& AddExtensionFields(const ExtensionField& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * Additional x-headers to include in the DSN.
+     */
     inline MessageDsn& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 
   private:

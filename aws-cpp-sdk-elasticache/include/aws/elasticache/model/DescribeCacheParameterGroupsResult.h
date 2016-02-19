@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>DescribeCacheParameterGroups</i> action.</p>
-  */
+  /**
+   * <p>Represents the output of a <i>DescribeCacheParameterGroups</i> action.</p>
+   */
   class AWS_ELASTICACHE_API DescribeCacheParameterGroupsResult
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeCacheParameterGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeCacheParameterGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheParameterGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheParameterGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Provides an identifier to allow retrieval of paginated results.</p>
-    */
+    /**
+     * <p>Provides an identifier to allow retrieval of paginated results.</p>
+     */
     inline DescribeCacheParameterGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline const Aws::Vector<CacheParameterGroup>& GetCacheParameterGroups() const{ return m_cacheParameterGroups; }
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline void SetCacheParameterGroups(const Aws::Vector<CacheParameterGroup>& value) { m_cacheParameterGroups = value; }
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline void SetCacheParameterGroups(Aws::Vector<CacheParameterGroup>&& value) { m_cacheParameterGroups = value; }
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline DescribeCacheParameterGroupsResult& WithCacheParameterGroups(const Aws::Vector<CacheParameterGroup>& value) { SetCacheParameterGroups(value); return *this;}
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline DescribeCacheParameterGroupsResult& WithCacheParameterGroups(Aws::Vector<CacheParameterGroup>&& value) { SetCacheParameterGroups(value); return *this;}
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline DescribeCacheParameterGroupsResult& AddCacheParameterGroups(const CacheParameterGroup& value) { m_cacheParameterGroups.push_back(value); return *this; }
 
-    /*
-     <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    */
+    /**
+     * <p>A list of cache parameter groups. Each element in the list contains detailed
+     * information about one cache parameter group.</p>
+     */
     inline DescribeCacheParameterGroupsResult& AddCacheParameterGroups(CacheParameterGroup&& value) { m_cacheParameterGroups.push_back(value); return *this; }
 
     

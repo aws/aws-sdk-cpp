@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeCommands</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeCommands</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeCommandsResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     DescribeCommandsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeCommandsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline const Aws::Vector<Command>& GetCommands() const{ return m_commands; }
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline void SetCommands(const Aws::Vector<Command>& value) { m_commands = value; }
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline void SetCommands(Aws::Vector<Command>&& value) { m_commands = value; }
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline DescribeCommandsResult& WithCommands(const Aws::Vector<Command>& value) { SetCommands(value); return *this;}
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline DescribeCommandsResult& WithCommands(Aws::Vector<Command>&& value) { SetCommands(value); return *this;}
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline DescribeCommandsResult& AddCommands(const Command& value) { m_commands.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    */
+    /**
+     * <p>An array of <code>Command</code> objects that describe each of the specified
+     * commands.</p>
+     */
     inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(value); return *this; }
 
   private:

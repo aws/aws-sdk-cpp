@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API UnmonitorInstancesResponse
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     UnmonitorInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     UnmonitorInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline const Aws::Vector<InstanceMonitoring>& GetInstanceMonitorings() const{ return m_instanceMonitorings; }
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline void SetInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { m_instanceMonitorings = value; }
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline void SetInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { m_instanceMonitorings = value; }
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline UnmonitorInstancesResponse& WithInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { SetInstanceMonitorings(value); return *this;}
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline UnmonitorInstancesResponse& WithInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { SetInstanceMonitorings(value); return *this;}
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline UnmonitorInstancesResponse& AddInstanceMonitorings(const InstanceMonitoring& value) { m_instanceMonitorings.push_back(value); return *this; }
 
-    /*
-     <p>Monitoring information for one or more instances.</p>
-    */
+    /**
+     * <p>Monitoring information for one or more instances.</p>
+     */
     inline UnmonitorInstancesResponse& AddInstanceMonitorings(InstanceMonitoring&& value) { m_instanceMonitorings.push_back(value); return *this; }
 
     

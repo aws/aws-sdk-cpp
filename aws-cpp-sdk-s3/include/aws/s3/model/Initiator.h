@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Initiator
   {
   public:
@@ -41,74 +39,81 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline const Aws::String& GetID() const{ return m_iD; }
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline Initiator& WithID(const Aws::String& value) { SetID(value); return *this;}
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline Initiator& WithID(Aws::String&& value) { SetID(value); return *this;}
 
-    /*
-     If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.
-    */
+    /**
+     * If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.
+     */
     inline Initiator& WithID(const char* value) { SetID(value); return *this;}
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline Initiator& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline Initiator& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
 
-    /*
-     Name of the Principal.
-    */
+    /**
+     * Name of the Principal.
+     */
     inline Initiator& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
   private:

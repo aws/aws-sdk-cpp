@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeAutoScalingNotificationTypesResult
   {
   public:
@@ -44,44 +41,84 @@ namespace Model
     DescribeAutoScalingNotificationTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAutoScalingNotificationTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline const Aws::Vector<Aws::String>& GetAutoScalingNotificationTypes() const{ return m_autoScalingNotificationTypes; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline void SetAutoScalingNotificationTypes(const Aws::Vector<Aws::String>& value) { m_autoScalingNotificationTypes = value; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline void SetAutoScalingNotificationTypes(Aws::Vector<Aws::String>&& value) { m_autoScalingNotificationTypes = value; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline DescribeAutoScalingNotificationTypesResult& WithAutoScalingNotificationTypes(const Aws::Vector<Aws::String>& value) { SetAutoScalingNotificationTypes(value); return *this;}
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline DescribeAutoScalingNotificationTypesResult& WithAutoScalingNotificationTypes(Aws::Vector<Aws::String>&& value) { SetAutoScalingNotificationTypes(value); return *this;}
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(const Aws::String& value) { m_autoScalingNotificationTypes.push_back(value); return *this; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(Aws::String&& value) { m_autoScalingNotificationTypes.push_back(value); return *this; }
 
-    /*
-     <p>One or more of the following notification types:</p> <ul> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li> <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li> <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
-    */
+    /**
+     * <p>One or more of the following notification types:</p> <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(const char* value) { m_autoScalingNotificationTypes.push_back(value); return *this; }
 
     

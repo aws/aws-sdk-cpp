@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ namespace S3
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_S3_API ListMultipartUploadsRequest : public S3Request
   {
   public:
@@ -61,39 +61,39 @@ namespace Model
     
     inline ListMultipartUploadsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline ListMultipartUploadsRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline ListMultipartUploadsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
 
-    /*
-     Character you use to group keys.
-    */
+    /**
+     * Character you use to group keys.
+     */
     inline ListMultipartUploadsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
     
@@ -111,124 +111,158 @@ namespace Model
     
     inline ListMultipartUploadsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline void SetKeyMarker(const char* value) { m_keyMarkerHasBeenSet = true; m_keyMarker.assign(value); }
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline ListMultipartUploadsRequest& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline ListMultipartUploadsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(value); return *this;}
 
-    /*
-     Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
-    */
+    /**
+     * Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.
+     */
     inline ListMultipartUploadsRequest& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
-    /*
-     Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.
-    */
+    /**
+     * Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the
+     * response body. 1,000 is the maximum number of uploads that can be returned in a
+     * response.
+     */
     inline long GetMaxUploads() const{ return m_maxUploads; }
 
-    /*
-     Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.
-    */
+    /**
+     * Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the
+     * response body. 1,000 is the maximum number of uploads that can be returned in a
+     * response.
+     */
     inline void SetMaxUploads(long value) { m_maxUploadsHasBeenSet = true; m_maxUploads = value; }
 
-    /*
-     Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.
-    */
+    /**
+     * Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the
+     * response body. 1,000 is the maximum number of uploads that can be returned in a
+     * response.
+     */
     inline ListMultipartUploadsRequest& WithMaxUploads(long value) { SetMaxUploads(value); return *this;}
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline ListMultipartUploadsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline ListMultipartUploadsRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
-    /*
-     Lists in-progress uploads only for those keys that begin with the specified prefix.
-    */
+    /**
+     * Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.
+     */
     inline ListMultipartUploadsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline const Aws::String& GetUploadIdMarker() const{ return m_uploadIdMarker; }
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = value; }
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = value; }
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline void SetUploadIdMarker(const char* value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker.assign(value); }
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline ListMultipartUploadsRequest& WithUploadIdMarker(const Aws::String& value) { SetUploadIdMarker(value); return *this;}
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline ListMultipartUploadsRequest& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(value); return *this;}
 
-    /*
-     Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    */
+    /**
+     * Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.
+     */
     inline ListMultipartUploadsRequest& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
 
   private:

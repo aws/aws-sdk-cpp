@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API CompletedPart
   {
   public:
@@ -41,54 +39,57 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline CompletedPart& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline CompletedPart& WithETag(Aws::String&& value) { SetETag(value); return *this;}
 
-    /*
-     Entity tag returned when the part was uploaded.
-    */
+    /**
+     * Entity tag returned when the part was uploaded.
+     */
     inline CompletedPart& WithETag(const char* value) { SetETag(value); return *this;}
 
-    /*
-     Part number that identifies the part. This is a positive integer between 1 and 10,000.
-    */
+    /**
+     * Part number that identifies the part. This is a positive integer between 1 and
+     * 10,000.
+     */
     inline long GetPartNumber() const{ return m_partNumber; }
 
-    /*
-     Part number that identifies the part. This is a positive integer between 1 and 10,000.
-    */
+    /**
+     * Part number that identifies the part. This is a positive integer between 1 and
+     * 10,000.
+     */
     inline void SetPartNumber(long value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
-    /*
-     Part number that identifies the part. This is a positive integer between 1 and 10,000.
-    */
+    /**
+     * Part number that identifies the part. This is a positive integer between 1 and
+     * 10,000.
+     */
     inline CompletedPart& WithPartNumber(long value) { SetPartNumber(value); return *this;}
 
   private:

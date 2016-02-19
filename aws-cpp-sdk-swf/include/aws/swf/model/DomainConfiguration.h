@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Contains the configuration settings of a domain.</p>
-  */
+
+  /**
+   * <p>Contains the configuration settings of a domain.</p>
+   */
   class AWS_SWF_API DomainConfiguration
   {
   public:
@@ -40,39 +41,39 @@ namespace Model
     DomainConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const{ return m_workflowExecutionRetentionPeriodInDays; }
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const char* value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays.assign(value); }
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
 
-    /*
-     <p>The retention period for workflow executions in this domain.</p>
-    */
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
 
   private:

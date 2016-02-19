@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_RDS_API PurchaseReservedDBInstancesOfferingRequest : public RDSRequest
   {
   public:
@@ -34,89 +34,103 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline const Aws::String& GetReservedDBInstancesOfferingId() const{ return m_reservedDBInstancesOfferingId; }
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline void SetReservedDBInstancesOfferingId(const Aws::String& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline void SetReservedDBInstancesOfferingId(Aws::String&& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline void SetReservedDBInstancesOfferingId(const char* value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId.assign(value); }
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(const Aws::String& value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(Aws::String&& value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
-    /*
-     <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    */
+    /**
+     * <p> The ID of the Reserved DB Instance offering to purchase. </p> <p>Example:
+     * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline const Aws::String& GetReservedDBInstanceId() const{ return m_reservedDBInstanceId; }
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline void SetReservedDBInstanceId(const Aws::String& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline void SetReservedDBInstanceId(Aws::String&& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline void SetReservedDBInstanceId(const char* value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId.assign(value); }
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(const Aws::String& value) { SetReservedDBInstanceId(value); return *this;}
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(Aws::String&& value) { SetReservedDBInstanceId(value); return *this;}
 
-    /*
-     <p> Customer-specified identifier to track this reservation. </p> <p>Example: myreservationID</p>
-    */
+    /**
+     * <p> Customer-specified identifier to track this reservation. </p> <p>Example:
+     * myreservationID</p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(const char* value) { SetReservedDBInstanceId(value); return *this;}
 
-    /*
-     <p> The number of instances to reserve. </p> <p>Default: <code>1</code></p>
-    */
+    /**
+     * <p> The number of instances to reserve. </p> <p>Default: <code>1</code></p>
+     */
     inline long GetDBInstanceCount() const{ return m_dBInstanceCount; }
 
-    /*
-     <p> The number of instances to reserve. </p> <p>Default: <code>1</code></p>
-    */
+    /**
+     * <p> The number of instances to reserve. </p> <p>Default: <code>1</code></p>
+     */
     inline void SetDBInstanceCount(long value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
 
-    /*
-     <p> The number of instances to reserve. </p> <p>Default: <code>1</code></p>
-    */
+    /**
+     * <p> The number of instances to reserve. </p> <p>Default: <code>1</code></p>
+     */
     inline PurchaseReservedDBInstancesOfferingRequest& WithDBInstanceCount(long value) { SetDBInstanceCount(value); return *this;}
 
   private:

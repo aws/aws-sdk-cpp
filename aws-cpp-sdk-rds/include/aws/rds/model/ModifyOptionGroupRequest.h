@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p> </p>
+   */
   class AWS_RDS_API ModifyOptionGroupRequest : public RDSRequest
   {
   public:
@@ -36,129 +36,139 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The name of the option group to be modified. </p>
-    */
+    /**
+     * <p> The name of the option group to be modified. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline const Aws::Vector<OptionConfiguration>& GetOptionsToInclude() const{ return m_optionsToInclude; }
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline void SetOptionsToInclude(const Aws::Vector<OptionConfiguration>& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = value; }
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline void SetOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = value; }
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionsToInclude(const Aws::Vector<OptionConfiguration>& value) { SetOptionsToInclude(value); return *this;}
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { SetOptionsToInclude(value); return *this;}
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline ModifyOptionGroupRequest& AddOptionsToInclude(const OptionConfiguration& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(value); return *this; }
 
-    /*
-     <p> Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. </p>
-    */
+    /**
+     * <p> Options in this list are added to the Option Group or, if already present,
+     * the specified configuration is used to update the existing configuration. </p>
+     */
     inline ModifyOptionGroupRequest& AddOptionsToInclude(OptionConfiguration&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(value); return *this; }
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline const Aws::Vector<Aws::String>& GetOptionsToRemove() const{ return m_optionsToRemove; }
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline void SetOptionsToRemove(const Aws::Vector<Aws::String>& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline void SetOptionsToRemove(Aws::Vector<Aws::String>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionsToRemove(const Aws::Vector<Aws::String>& value) { SetOptionsToRemove(value); return *this;}
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline ModifyOptionGroupRequest& WithOptionsToRemove(Aws::Vector<Aws::String>&& value) { SetOptionsToRemove(value); return *this;}
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline ModifyOptionGroupRequest& AddOptionsToRemove(const Aws::String& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline ModifyOptionGroupRequest& AddOptionsToRemove(Aws::String&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
-    /*
-     <p> Options in this list are removed from the Option Group. </p>
-    */
+    /**
+     * <p> Options in this list are removed from the Option Group. </p>
+     */
     inline ModifyOptionGroupRequest& AddOptionsToRemove(const char* value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
-    /*
-     <p> Indicates whether the changes should be applied immediately, or during the next maintenance window for each instance associated with the Option Group. </p>
-    */
+    /**
+     * <p> Indicates whether the changes should be applied immediately, or during the
+     * next maintenance window for each instance associated with the Option Group. </p>
+     */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
-    /*
-     <p> Indicates whether the changes should be applied immediately, or during the next maintenance window for each instance associated with the Option Group. </p>
-    */
+    /**
+     * <p> Indicates whether the changes should be applied immediately, or during the
+     * next maintenance window for each instance associated with the Option Group. </p>
+     */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
-    /*
-     <p> Indicates whether the changes should be applied immediately, or during the next maintenance window for each instance associated with the Option Group. </p>
-    */
+    /**
+     * <p> Indicates whether the changes should be applied immediately, or during the
+     * next maintenance window for each instance associated with the Option Group. </p>
+     */
     inline ModifyOptionGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
   private:

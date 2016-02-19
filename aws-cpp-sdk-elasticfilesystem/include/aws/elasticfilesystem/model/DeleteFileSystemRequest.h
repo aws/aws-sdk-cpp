@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace EFS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_EFS_API DeleteFileSystemRequest : public EFSRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline DeleteFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline DeleteFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
 
-    /*
-     <p>The ID of the file system you want to delete.</p>
-    */
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline DeleteFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
   private:

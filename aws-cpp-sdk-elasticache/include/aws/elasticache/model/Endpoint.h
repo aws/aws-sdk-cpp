@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the information required for client programs to connect to a cache node.</p>
-  */
+
+  /**
+   * <p>Represents the information required for client programs to connect to a cache
+   * node.</p>
+   */
   class AWS_ELASTICACHE_API Endpoint
   {
   public:
@@ -43,54 +45,54 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
-    /*
-     <p>The DNS hostname of the cache node.</p>
-    */
+    /**
+     * <p>The DNS hostname of the cache node.</p>
+     */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
-    /*
-     <p>The port number that the cache engine is listening on.</p>
-    */
+    /**
+     * <p>The port number that the cache engine is listening on.</p>
+     */
     inline long GetPort() const{ return m_port; }
 
-    /*
-     <p>The port number that the cache engine is listening on.</p>
-    */
+    /**
+     * <p>The port number that the cache engine is listening on.</p>
+     */
     inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
 
-    /*
-     <p>The port number that the cache engine is listening on.</p>
-    */
+    /**
+     * <p>The port number that the cache engine is listening on.</p>
+     */
     inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
 
   private:

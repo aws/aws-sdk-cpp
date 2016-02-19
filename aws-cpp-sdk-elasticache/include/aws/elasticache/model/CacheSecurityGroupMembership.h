@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents a cache cluster's status within a particular cache security group.</p>
-  */
+
+  /**
+   * <p>Represents a cache cluster's status within a particular cache security
+   * group.</p>
+   */
   class AWS_ELASTICACHE_API CacheSecurityGroupMembership
   {
   public:
@@ -43,74 +45,88 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache security group.</p>
-    */
+    /**
+     * <p>The name of the cache security group.</p>
+     */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline CacheSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline CacheSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</p>
-    */
+    /**
+     * <p>The membership status in the cache security group. The status changes when a
+     * cache security group is modified, or when the cache security groups assigned to
+     * a cache cluster are modified.</p>
+     */
     inline CacheSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:

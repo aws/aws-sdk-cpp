@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeStackSummary</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeStackSummary</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeStackSummaryResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     DescribeStackSummaryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeStackSummaryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A <code>StackSummary</code> object that contains the results.</p>
-    */
+    /**
+     * <p>A <code>StackSummary</code> object that contains the results.</p>
+     */
     inline const StackSummary& GetStackSummary() const{ return m_stackSummary; }
 
-    /*
-     <p>A <code>StackSummary</code> object that contains the results.</p>
-    */
+    /**
+     * <p>A <code>StackSummary</code> object that contains the results.</p>
+     */
     inline void SetStackSummary(const StackSummary& value) { m_stackSummary = value; }
 
-    /*
-     <p>A <code>StackSummary</code> object that contains the results.</p>
-    */
+    /**
+     * <p>A <code>StackSummary</code> object that contains the results.</p>
+     */
     inline void SetStackSummary(StackSummary&& value) { m_stackSummary = value; }
 
-    /*
-     <p>A <code>StackSummary</code> object that contains the results.</p>
-    */
+    /**
+     * <p>A <code>StackSummary</code> object that contains the results.</p>
+     */
     inline DescribeStackSummaryResult& WithStackSummary(const StackSummary& value) { SetStackSummary(value); return *this;}
 
-    /*
-     <p>A <code>StackSummary</code> object that contains the results.</p>
-    */
+    /**
+     * <p>A <code>StackSummary</code> object that contains the results.</p>
+     */
     inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(value); return *this;}
 
   private:

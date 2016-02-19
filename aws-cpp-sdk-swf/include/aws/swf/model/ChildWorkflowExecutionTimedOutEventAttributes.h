@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,11 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>ChildWorkflowExecutionTimedOut</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>ChildWorkflowExecutionTimedOut</code>
+   * event.</p>
+   */
   class AWS_SWF_API ChildWorkflowExecutionTimedOutEventAttributes
   {
   public:
@@ -42,109 +44,132 @@ namespace Model
     ChildWorkflowExecutionTimedOutEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The child workflow execution that timed out.</p>
-    */
+    /**
+     * <p>The child workflow execution that timed out.</p>
+     */
     inline const WorkflowExecution& GetWorkflowExecution() const{ return m_workflowExecution; }
 
-    /*
-     <p>The child workflow execution that timed out.</p>
-    */
+    /**
+     * <p>The child workflow execution that timed out.</p>
+     */
     inline void SetWorkflowExecution(const WorkflowExecution& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
 
-    /*
-     <p>The child workflow execution that timed out.</p>
-    */
+    /**
+     * <p>The child workflow execution that timed out.</p>
+     */
     inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
 
-    /*
-     <p>The child workflow execution that timed out.</p>
-    */
+    /**
+     * <p>The child workflow execution that timed out.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowExecution(const WorkflowExecution& value) { SetWorkflowExecution(value); return *this;}
 
-    /*
-     <p>The child workflow execution that timed out.</p>
-    */
+    /**
+     * <p>The child workflow execution that timed out.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
 
-    /*
-     <p>The type of the child workflow execution.</p>
-    */
+    /**
+     * <p>The type of the child workflow execution.</p>
+     */
     inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
 
-    /*
-     <p>The type of the child workflow execution.</p>
-    */
+    /**
+     * <p>The type of the child workflow execution.</p>
+     */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
-    /*
-     <p>The type of the child workflow execution.</p>
-    */
+    /**
+     * <p>The type of the child workflow execution.</p>
+     */
     inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
-    /*
-     <p>The type of the child workflow execution.</p>
-    */
+    /**
+     * <p>The type of the child workflow execution.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
 
-    /*
-     <p>The type of the child workflow execution.</p>
-    */
+    /**
+     * <p>The type of the child workflow execution.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
 
-    /*
-     <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    */
+    /**
+     * <p>The type of the timeout that caused the child workflow execution to time
+     * out.</p>
+     */
     inline const WorkflowExecutionTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
 
-    /*
-     <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    */
+    /**
+     * <p>The type of the timeout that caused the child workflow execution to time
+     * out.</p>
+     */
     inline void SetTimeoutType(const WorkflowExecutionTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
 
-    /*
-     <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    */
+    /**
+     * <p>The type of the timeout that caused the child workflow execution to time
+     * out.</p>
+     */
     inline void SetTimeoutType(WorkflowExecutionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
 
-    /*
-     <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    */
+    /**
+     * <p>The type of the timeout that caused the child workflow execution to time
+     * out.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithTimeoutType(const WorkflowExecutionTimeoutType& value) { SetTimeoutType(value); return *this;}
 
-    /*
-     <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    */
+    /**
+     * <p>The type of the timeout that caused the child workflow execution to time
+     * out.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(value); return *this;}
 
-    /*
-     <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
+     * this child workflow execution. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
 
-    /*
-     <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
+     * this child workflow execution. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
 
-    /*
-     <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
+     * this child workflow execution. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 
-    /*
-     <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
+     * this child workflow execution was started. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
 
-    /*
-     <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
+     * this child workflow execution was started. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
 
-    /*
-     <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
+     * this child workflow execution was started. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:

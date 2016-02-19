@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Contains the Amazon Glacier response to your request.</p>
-  */
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
   class AWS_GLACIER_API GetVaultNotificationsResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetVaultNotificationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetVaultNotificationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Returns the notification configuration set on the vault.</p>
-    */
+    /**
+     * <p>Returns the notification configuration set on the vault.</p>
+     */
     inline const VaultNotificationConfig& GetVaultNotificationConfig() const{ return m_vaultNotificationConfig; }
 
-    /*
-     <p>Returns the notification configuration set on the vault.</p>
-    */
+    /**
+     * <p>Returns the notification configuration set on the vault.</p>
+     */
     inline void SetVaultNotificationConfig(const VaultNotificationConfig& value) { m_vaultNotificationConfig = value; }
 
-    /*
-     <p>Returns the notification configuration set on the vault.</p>
-    */
+    /**
+     * <p>Returns the notification configuration set on the vault.</p>
+     */
     inline void SetVaultNotificationConfig(VaultNotificationConfig&& value) { m_vaultNotificationConfig = value; }
 
-    /*
-     <p>Returns the notification configuration set on the vault.</p>
-    */
+    /**
+     * <p>Returns the notification configuration set on the vault.</p>
+     */
     inline GetVaultNotificationsResult& WithVaultNotificationConfig(const VaultNotificationConfig& value) { SetVaultNotificationConfig(value); return *this;}
 
-    /*
-     <p>Returns the notification configuration set on the vault.</p>
-    */
+    /**
+     * <p>Returns the notification configuration set on the vault.</p>
+     */
     inline GetVaultNotificationsResult& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(value); return *this;}
 
   private:

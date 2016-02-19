@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    <p>Describes a process type.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html#process-types">Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>
-  */
+
+  /**
+   * <p>Describes a process type.</p> <p>For more information, see <a
+   * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html#process-types">Auto
+   * Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+   */
   class AWS_AUTOSCALING_API ProcessType
   {
   public:
@@ -43,39 +46,88 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline const Aws::String& GetProcessName() const{ return m_processName; }
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline void SetProcessName(const char* value) { m_processNameHasBeenSet = true; m_processName.assign(value); }
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline ProcessType& WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline ProcessType& WithProcessName(Aws::String&& value) { SetProcessName(value); return *this;}
 
-    /*
-     <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li> <li><p><code>Terminate</code></p></li> <li><p><code>AddToLoadBalancer</code></p></li> <li><p><code>AlarmNotification</code></p></li> <li><p><code>AZRebalance</code></p></li> <li><p><code>HealthCheck</code></p></li> <li><p><code>ReplaceUnhealthy</code></p></li> <li><p><code>ScheduledActions</code></p></li> </ul>
-    */
+    /**
+     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <li><p><code>Terminate</code></p></li>
+     * <li><p><code>AddToLoadBalancer</code></p></li>
+     * <li><p><code>AlarmNotification</code></p></li>
+     * <li><p><code>AZRebalance</code></p></li>
+     * <li><p><code>HealthCheck</code></p></li>
+     * <li><p><code>ReplaceUnhealthy</code></p></li>
+     * <li><p><code>ScheduledActions</code></p></li> </ul>
+     */
     inline ProcessType& WithProcessName(const char* value) { SetProcessName(value); return *this;}
 
   private:

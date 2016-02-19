@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ namespace CloudFormation
 namespace Model
 {
 
-  /*
-    <p>The input for <a>UpdateStack</a> action.</p>
-  */
+  /**
+   * <p>The input for <a>UpdateStack</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API UpdateStackRequest : public CloudFormationRequest
   {
   public:
@@ -37,374 +37,798 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline UpdateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline UpdateStackRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
 
-    /*
-     <p>The name or unique stack ID of the stack to update.</p>
-    */
+    /**
+     * <p>The name or unique stack ID of the stack to update.</p>
+     */
     inline UpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline UpdateStackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline UpdateStackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(value); return *this;}
 
-    /*
-     <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline UpdateStackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline UpdateStackRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline UpdateStackRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(value); return *this;}
 
-    /*
-     <p>Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    */
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template located in an S3 bucket in the same region as the stack. For more
+     * information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
+     * parameter, but not both.</p>
+     */
     inline UpdateStackRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
-    /*
-     <p>Reuse the existing template that is associated with the stack that you are updating.</p>
-    */
+    /**
+     * <p>Reuse the existing template that is associated with the stack that you are
+     * updating.</p>
+     */
     inline bool GetUsePreviousTemplate() const{ return m_usePreviousTemplate; }
 
-    /*
-     <p>Reuse the existing template that is associated with the stack that you are updating.</p>
-    */
+    /**
+     * <p>Reuse the existing template that is associated with the stack that you are
+     * updating.</p>
+     */
     inline void SetUsePreviousTemplate(bool value) { m_usePreviousTemplateHasBeenSet = true; m_usePreviousTemplate = value; }
 
-    /*
-     <p>Reuse the existing template that is associated with the stack that you are updating.</p>
-    */
+    /**
+     * <p>Reuse the existing template that is associated with the stack that you are
+     * updating.</p>
+     */
     inline UpdateStackRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline const Aws::String& GetStackPolicyDuringUpdateBody() const{ return m_stackPolicyDuringUpdateBody; }
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline void SetStackPolicyDuringUpdateBody(const Aws::String& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = value; }
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline void SetStackPolicyDuringUpdateBody(Aws::String&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = value; }
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline void SetStackPolicyDuringUpdateBody(const char* value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody.assign(value); }
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const Aws::String& value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(Aws::String&& value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
-    /*
-     <p>Structure containing the temporary overriding stack policy body. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Structure containing the temporary overriding stack policy body. You can
+     * specify either the <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const char* value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline const Aws::String& GetStackPolicyDuringUpdateURL() const{ return m_stackPolicyDuringUpdateURL; }
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline void SetStackPolicyDuringUpdateURL(const Aws::String& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = value; }
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline void SetStackPolicyDuringUpdateURL(Aws::String&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = value; }
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline void SetStackPolicyDuringUpdateURL(const char* value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL.assign(value); }
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const Aws::String& value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(Aws::String&& value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
-    /*
-     <p>Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you want to update protected resources, specify a temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.</p>
-    */
+    /**
+     * <p>Location of a file containing the temporary overriding stack policy. The URL
+     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. You can specify either the
+     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
+     * want to update protected resources, specify a temporary overriding stack policy
+     * during this update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack will be used.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const char* value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline UpdateStackRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline UpdateStackRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline UpdateStackRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
-    /*
-     <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    */
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input parameters for
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
+     */
     inline UpdateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline UpdateStackRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline UpdateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline UpdateStackRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
-    /*
-     <p>A list of capabilities that you must specify before AWS CloudFormation can create or update certain stacks. Some stack templates might include resources that can affect permissions in your AWS account. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"> AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"> AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"> AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html"> AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources, we recommend that you review any permissions associated with them. If you don't specify this parameter, this action returns an InsufficientCapabilities error.</p>
-    */
+    /**
+     * <p>A list of capabilities that you must specify before AWS CloudFormation can
+     * create or update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account. For those stacks, you must
+     * explicitly acknowledge their capabilities by specifying this parameter.
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>, and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>. If your stack template contains these
+     * resources, we recommend that you review any permissions associated with them. If
+     * you don't specify this parameter, this action returns an
+     * InsufficientCapabilities error.</p>
+     */
     inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline void SetStackPolicyBody(const Aws::String& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline void SetStackPolicyBody(const char* value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody.assign(value); }
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyBody(const Aws::String& value) { SetStackPolicyBody(value); return *this;}
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(value); return *this;}
 
-    /*
-     <p>Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Structure containing a new stack policy body. You can specify either the
+     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+     * not both.</p> <p>You might update the stack policy, for example, in order to
+     * protect a new resource that you created during a stack update. If you do not
+     * specify a stack policy, the current policy that is associated with the stack is
+     * unchanged.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline void SetStackPolicyURL(const Aws::String& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline void SetStackPolicyURL(const char* value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL.assign(value); }
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyURL(const Aws::String& value) { SetStackPolicyURL(value); return *this;}
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(value); return *this;}
 
-    /*
-     <p>Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you do not specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
-    */
+    /**
+     * <p>Location of a file containing the updated stack policy. The URL must point to
+     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you do not specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
+     */
     inline UpdateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline UpdateStackRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline UpdateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(value); return *this;}
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline UpdateStackRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline UpdateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
-    /*
-     <p>Update the ARNs for the Amazon SNS topics that are associated with the stack.</p>
-    */
+    /**
+     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
+     * stack.</p>
+     */
     inline UpdateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
   private:

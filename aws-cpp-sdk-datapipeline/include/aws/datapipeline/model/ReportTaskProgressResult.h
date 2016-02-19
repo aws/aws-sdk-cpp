@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of ReportTaskProgress.</p>
-  */
+  /**
+   * <p>Contains the output of ReportTaskProgress.</p>
+   */
   class AWS_DATAPIPELINE_API ReportTaskProgressResult
   {
   public:
@@ -41,19 +41,22 @@ namespace Model
     ReportTaskProgressResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ReportTaskProgressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
-    */
+    /**
+     * <p>If true, the calling task runner should cancel processing of the task. The
+     * task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+     */
     inline bool GetCanceled() const{ return m_canceled; }
 
-    /*
-     <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
-    */
+    /**
+     * <p>If true, the calling task runner should cancel processing of the task. The
+     * task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+     */
     inline void SetCanceled(bool value) { m_canceled = value; }
 
-    /*
-     <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
-    */
+    /**
+     * <p>If true, the calling task runner should cancel processing of the task. The
+     * task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+     */
     inline ReportTaskProgressResult& WithCanceled(bool value) { SetCanceled(value); return *this;}
 
   private:

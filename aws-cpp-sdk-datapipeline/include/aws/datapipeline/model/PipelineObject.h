@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ namespace DataPipeline
 {
 namespace Model
 {
-  /*
-    <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
-  */
+
+  /**
+   * <p>Contains information about a pipeline object. This can be a logical,
+   * physical, or physical attempt pipeline object. The complete set of components of
+   * a pipeline defines the pipeline.</p>
+   */
   class AWS_DATAPIPELINE_API PipelineObject
   {
   public:
@@ -42,109 +45,109 @@ namespace Model
     PipelineObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline PipelineObject& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline PipelineObject& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    /*
-     <p>The ID of the object.</p>
-    */
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline PipelineObject& WithId(const char* value) { SetId(value); return *this;}
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline PipelineObject& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline PipelineObject& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p>The name of the object.</p>
-    */
+    /**
+     * <p>The name of the object.</p>
+     */
     inline PipelineObject& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline void SetFields(const Aws::Vector<Field>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = value; }
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline PipelineObject& WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline PipelineObject& WithFields(Aws::Vector<Field>&& value) { SetFields(value); return *this;}
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline PipelineObject& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
 
-    /*
-     <p>Key-value pairs that define the properties of the object.</p>
-    */
+    /**
+     * <p>Key-value pairs that define the properties of the object.</p>
+     */
     inline PipelineObject& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
 
   private:

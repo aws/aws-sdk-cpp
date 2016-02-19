@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API GetOpenIDConnectProviderRequest : public IAMRequest
   {
   public:
@@ -33,39 +33,53 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
+     * get information for. You can get a list of OIDC provider ARNs by using the
+     * <a>ListOpenIDConnectProviders</a> action.</p>
+     */
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
   private:

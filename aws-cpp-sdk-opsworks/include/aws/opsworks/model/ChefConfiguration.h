@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Describes the Chef configuration.</p>
-  */
+
+  /**
+   * <p>Describes the Chef configuration.</p>
+   */
   class AWS_OPSWORKS_API ChefConfiguration
   {
   public:
@@ -40,54 +41,54 @@ namespace Model
     ChefConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>Whether to enable Berkshelf.</p>
-    */
+    /**
+     * <p>Whether to enable Berkshelf.</p>
+     */
     inline bool GetManageBerkshelf() const{ return m_manageBerkshelf; }
 
-    /*
-     <p>Whether to enable Berkshelf.</p>
-    */
+    /**
+     * <p>Whether to enable Berkshelf.</p>
+     */
     inline void SetManageBerkshelf(bool value) { m_manageBerkshelfHasBeenSet = true; m_manageBerkshelf = value; }
 
-    /*
-     <p>Whether to enable Berkshelf.</p>
-    */
+    /**
+     * <p>Whether to enable Berkshelf.</p>
+     */
     inline ChefConfiguration& WithManageBerkshelf(bool value) { SetManageBerkshelf(value); return *this;}
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline const Aws::String& GetBerkshelfVersion() const{ return m_berkshelfVersion; }
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline void SetBerkshelfVersion(const Aws::String& value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion = value; }
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline void SetBerkshelfVersion(Aws::String&& value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion = value; }
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline void SetBerkshelfVersion(const char* value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion.assign(value); }
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline ChefConfiguration& WithBerkshelfVersion(const Aws::String& value) { SetBerkshelfVersion(value); return *this;}
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline ChefConfiguration& WithBerkshelfVersion(Aws::String&& value) { SetBerkshelfVersion(value); return *this;}
 
-    /*
-     <p>The Berkshelf version.</p>
-    */
+    /**
+     * <p>The Berkshelf version.</p>
+     */
     inline ChefConfiguration& WithBerkshelfVersion(const char* value) { SetBerkshelfVersion(value); return *this;}
 
   private:

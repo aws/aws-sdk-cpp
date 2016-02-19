@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace ECS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ECS_API DescribeServicesRequest : public ECSRequest
   {
   public:
@@ -36,79 +36,79 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline DescribeServicesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline DescribeServicesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
-    /*
-     <p>The name of the cluster that hosts the service you want to describe.</p>
-    */
+    /**
+     * <p>The name of the cluster that hosts the service you want to describe.</p>
+     */
     inline DescribeServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = value; }
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline DescribeServicesRequest& WithServices(const Aws::Vector<Aws::String>& value) { SetServices(value); return *this;}
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline DescribeServicesRequest& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(value); return *this;}
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline DescribeServicesRequest& AddServices(const Aws::String& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline DescribeServicesRequest& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
-    /*
-     <p>A list of services you want to describe.</p>
-    */
+    /**
+     * <p>A list of services you want to describe.</p>
+     */
     inline DescribeServicesRequest& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
   private:

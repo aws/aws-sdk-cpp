@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>
-  */
+
+  /**
+   * <p>Used to filter workflow execution query results by type. Each parameter, if
+   * specified, defines a rule that must be satisfied by each returned result.</p>
+   */
   class AWS_SWF_API WorkflowTypeFilter
   {
   public:
@@ -40,74 +42,74 @@ namespace Model
     WorkflowTypeFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline WorkflowTypeFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline WorkflowTypeFilter& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    /*
-     <p><b>Required.</b> Name of the workflow type.</p>
-    */
+    /**
+     * <p><b>Required.</b> Name of the workflow type.</p>
+     */
     inline WorkflowTypeFilter& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline WorkflowTypeFilter& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline WorkflowTypeFilter& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
-    /*
-     <p>Version of the workflow type.</p>
-    */
+    /**
+     * <p>Version of the workflow type.</p>
+     */
     inline WorkflowTypeFilter& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:

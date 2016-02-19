@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,13 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    Container for object key name filtering rules. For information about key name filtering, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
-  */
+
+  /**
+   * Container for object key name filtering rules. For information about key name
+   * filtering, go to <a
+   * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+   * Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+   */
   class AWS_S3_API NotificationConfigurationFilter
   {
   public:

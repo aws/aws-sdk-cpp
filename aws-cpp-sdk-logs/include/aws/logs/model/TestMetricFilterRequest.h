@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API TestMetricFilterRequest : public CloudWatchLogsRequest
   {
   public:
@@ -57,44 +57,44 @@ namespace Model
     
     inline TestMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLogEventMessages() const{ return m_logEventMessages; }
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline void SetLogEventMessages(const Aws::Vector<Aws::String>& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = value; }
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline void SetLogEventMessages(Aws::Vector<Aws::String>&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = value; }
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline TestMetricFilterRequest& WithLogEventMessages(const Aws::Vector<Aws::String>& value) { SetLogEventMessages(value); return *this;}
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline TestMetricFilterRequest& WithLogEventMessages(Aws::Vector<Aws::String>&& value) { SetLogEventMessages(value); return *this;}
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline TestMetricFilterRequest& AddLogEventMessages(const Aws::String& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline TestMetricFilterRequest& AddLogEventMessages(Aws::String&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 
-    /*
-     <p>A list of log event messages to test.</p>
-    */
+    /**
+     * <p>A list of log event messages to test.</p>
+     */
     inline TestMetricFilterRequest& AddLogEventMessages(const char* value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 
   private:

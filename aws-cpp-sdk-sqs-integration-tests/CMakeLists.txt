@@ -12,11 +12,6 @@ project(aws-cpp-sdk-sqs-integration-tests)
     ${AWS_SQS_SRC}
   )
 
-if(NOT MSVC)
-  add_definitions(-std=c++0x)
-endif()
-
-
 set(AWS_SQS_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-sqs/include/"

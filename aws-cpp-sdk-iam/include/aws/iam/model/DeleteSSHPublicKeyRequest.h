@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API DeleteSSHPublicKeyRequest : public IAMRequest
   {
   public:
@@ -33,74 +33,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline DeleteSSHPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline DeleteSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The name of the IAM user associated with the SSH public key.</p>
-    */
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline DeleteSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline void SetSSHPublicKeyId(const Aws::String& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline void SetSSHPublicKeyId(const char* value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId.assign(value); }
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
 
-    /*
-     <p>The unique identifier for the SSH public key.</p>
-    */
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
 
   private:

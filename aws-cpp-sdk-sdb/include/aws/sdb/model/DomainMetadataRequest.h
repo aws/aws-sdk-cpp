@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SimpleDB
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SIMPLEDB_API DomainMetadataRequest : public SimpleDBRequest
   {
   public:
@@ -33,39 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline DomainMetadataRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline DomainMetadataRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain for which to display the metadata of.
-    */
+    /**
+     * The name of the domain for which to display the metadata of.
+     */
     inline DomainMetadataRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:

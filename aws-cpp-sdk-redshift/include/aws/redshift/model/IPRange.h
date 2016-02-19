@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p> Describes an IP range used in a security group. </p>
-  */
+
+  /**
+   * <p> Describes an IP range used in a security group. </p>
+   */
   class AWS_REDSHIFT_API IPRange
   {
   public:
@@ -45,109 +46,109 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline IPRange& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline IPRange& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The status of the IP range, for example, "authorized". </p>
-    */
+    /**
+     * <p> The status of the IP range, for example, "authorized". </p>
+     */
     inline IPRange& WithStatus(const char* value) { SetStatus(value); return *this;}
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline void SetCIDRIP(const char* value) { m_cIDRIPHasBeenSet = true; m_cIDRIP.assign(value); }
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline IPRange& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline IPRange& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
-    */
+    /**
+     * <p> The IP range in Classless Inter-Domain Routing (CIDR) notation. </p>
+     */
     inline IPRange& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline IPRange& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline IPRange& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline IPRange& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The list of tags for the IP range.</p>
-    */
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
     inline IPRange& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API IndexDocument
   {
   public:
@@ -41,39 +39,67 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline const Aws::String& GetSuffix() const{ return m_suffix; }
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = value; }
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline IndexDocument& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline IndexDocument& WithSuffix(Aws::String&& value) { SetSuffix(value); return *this;}
 
-    /*
-     A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
-    */
+    /**
+     * A suffix that is appended to a request that is for a directory on the website
+     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * samplebucket/images/ the data that is returned will be for the object with the
+     * key name images/index.html) The suffix must not be empty and must not include a
+     * slash character.
+     */
     inline IndexDocument& WithSuffix(const char* value) { SetSuffix(value); return *this;}
 
   private:

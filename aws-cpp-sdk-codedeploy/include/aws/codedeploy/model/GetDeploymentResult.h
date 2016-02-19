@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a get deployment operation.</p>
-  */
+  /**
+   * <p>Represents the output of a get deployment operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetDeploymentResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    /**
+     * <p>Information about the deployment.</p>
+     */
     inline const DeploymentInfo& GetDeploymentInfo() const{ return m_deploymentInfo; }
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    /**
+     * <p>Information about the deployment.</p>
+     */
     inline void SetDeploymentInfo(const DeploymentInfo& value) { m_deploymentInfo = value; }
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    /**
+     * <p>Information about the deployment.</p>
+     */
     inline void SetDeploymentInfo(DeploymentInfo&& value) { m_deploymentInfo = value; }
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    /**
+     * <p>Information about the deployment.</p>
+     */
     inline GetDeploymentResult& WithDeploymentInfo(const DeploymentInfo& value) { SetDeploymentInfo(value); return *this;}
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    /**
+     * <p>Information about the deployment.</p>
+     */
     inline GetDeploymentResult& WithDeploymentInfo(DeploymentInfo&& value) { SetDeploymentInfo(value); return *this;}
 
   private:

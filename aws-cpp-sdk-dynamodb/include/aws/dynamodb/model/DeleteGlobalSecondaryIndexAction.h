@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /*
-    <p>Represents a global secondary index to be deleted from an existing table.</p>
-  */
+
+  /**
+   * <p>Represents a global secondary index to be deleted from an existing table.</p>
+   */
   class AWS_DYNAMODB_API DeleteGlobalSecondaryIndexAction
   {
   public:
@@ -40,39 +41,39 @@ namespace Model
     DeleteGlobalSecondaryIndexAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline DeleteGlobalSecondaryIndexAction& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline DeleteGlobalSecondaryIndexAction& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
-    /*
-     <p>The name of the global secondary index to be deleted.</p>
-    */
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline DeleteGlobalSecondaryIndexAction& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
   private:

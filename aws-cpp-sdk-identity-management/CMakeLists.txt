@@ -33,10 +33,6 @@ set(IDENTITY_MGMT_INCLUDES
 
 include_directories(${IDENTITY_MGMT_INCLUDES})
 
-if(NOT MSVC)
-  add_definitions(-std=c++11)
-endif()
-
 if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_IDENTITY_MANAGEMENT_EXPORTS")
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)

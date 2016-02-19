@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace SNS
 namespace Model
 {
 
-  /*
-    Input for ListSubscriptions action.
-  */
+  /**
+   * Input for ListSubscriptions action.
+   */
   class AWS_SNS_API ListSubscriptionsRequest : public SNSRequest
   {
   public:
@@ -34,39 +34,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline ListSubscriptionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline ListSubscriptionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    */
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+     */
     inline ListSubscriptionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EFS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EFS_API DescribeTagsResult
   {
   public:
@@ -44,109 +41,144 @@ namespace Model
     DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline DescribeTagsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline DescribeTagsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    */
+    /**
+     * <p>If the request included a <code>Marker</code>, the response returns that
+     * value in this field.</p>
+     */
     inline DescribeTagsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline DescribeTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline DescribeTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline DescribeTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
-    /*
-     <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    */
+    /**
+     * <p>Returns tags associated with the file system as an array of <code>Tag</code>
+     * objects. </p>
+     */
     inline DescribeTagsResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline DescribeTagsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline DescribeTagsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    */
+    /**
+     * <p>If a value is present, there are more tags to return. In a subsequent
+     * request, you can provide the value of <code>NextMarker</code> as the value of
+     * the <code>Marker</code> parameter in your next request to retrieve the next set
+     * of tags.</p>
+     */
     inline DescribeTagsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:

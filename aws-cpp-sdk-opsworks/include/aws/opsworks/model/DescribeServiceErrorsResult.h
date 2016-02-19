@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace OpsWorks
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
-  */
+  /**
+   * <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
+   */
   class AWS_OPSWORKS_API DescribeServiceErrorsResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     DescribeServiceErrorsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeServiceErrorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline const Aws::Vector<ServiceError>& GetServiceErrors() const{ return m_serviceErrors; }
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline void SetServiceErrors(const Aws::Vector<ServiceError>& value) { m_serviceErrors = value; }
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline void SetServiceErrors(Aws::Vector<ServiceError>&& value) { m_serviceErrors = value; }
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline DescribeServiceErrorsResult& WithServiceErrors(const Aws::Vector<ServiceError>& value) { SetServiceErrors(value); return *this;}
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline DescribeServiceErrorsResult& WithServiceErrors(Aws::Vector<ServiceError>&& value) { SetServiceErrors(value); return *this;}
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline DescribeServiceErrorsResult& AddServiceErrors(const ServiceError& value) { m_serviceErrors.push_back(value); return *this; }
 
-    /*
-     <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    */
+    /**
+     * <p>An array of <code>ServiceError</code> objects that describe the specified
+     * service errors.</p>
+     */
     inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(value); return *this; }
 
   private:

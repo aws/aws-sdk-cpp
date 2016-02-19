@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SWF
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SWF_API SignalWorkflowExecutionRequest : public SWFRequest
   {
   public:
@@ -35,179 +35,193 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain containing the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The workflowId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline const Aws::String& GetRunId() const{ return m_runId; }
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithRunId(Aws::String&& value) { SetRunId(value); return *this;}
 
-    /*
-     <p>The runId of the workflow execution to signal.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline const Aws::String& GetSignalName() const{ return m_signalName; }
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline void SetSignalName(const Aws::String& value) { m_signalNameHasBeenSet = true; m_signalName = value; }
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline void SetSignalName(Aws::String&& value) { m_signalNameHasBeenSet = true; m_signalName = value; }
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline void SetSignalName(const char* value) { m_signalNameHasBeenSet = true; m_signalName.assign(value); }
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithSignalName(const Aws::String& value) { SetSignalName(value); return *this;}
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithSignalName(Aws::String&& value) { SetSignalName(value); return *this;}
 
-    /*
-     <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    */
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithSignalName(const char* value) { SetSignalName(value); return *this;}
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline const Aws::String& GetInput() const{ return m_input; }
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithInput(Aws::String&& value) { SetInput(value); return *this;}
 
-    /*
-     <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    */
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
     inline SignalWorkflowExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
 
   private:

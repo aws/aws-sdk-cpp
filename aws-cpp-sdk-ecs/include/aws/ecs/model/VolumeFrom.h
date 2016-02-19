@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    <p>Details on a data volume from another container.</p>
-  */
+
+  /**
+   * <p>Details on a data volume from another container.</p>
+   */
   class AWS_ECS_API VolumeFrom
   {
   public:
@@ -40,54 +41,60 @@ namespace Model
     VolumeFrom& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline const Aws::String& GetSourceContainer() const{ return m_sourceContainer; }
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline void SetSourceContainer(const Aws::String& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline void SetSourceContainer(Aws::String&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline void SetSourceContainer(const char* value) { m_sourceContainerHasBeenSet = true; m_sourceContainer.assign(value); }
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline VolumeFrom& WithSourceContainer(const Aws::String& value) { SetSourceContainer(value); return *this;}
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline VolumeFrom& WithSourceContainer(Aws::String&& value) { SetSourceContainer(value); return *this;}
 
-    /*
-     <p>The name of the container to mount volumes from.</p>
-    */
+    /**
+     * <p>The name of the container to mount volumes from.</p>
+     */
     inline VolumeFrom& WithSourceContainer(const char* value) { SetSourceContainer(value); return *this;}
 
-    /*
-     <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    */
+    /**
+     * <p>If this value is <code>true</code>, the container has read-only access to the
+     * volume. If this value is <code>false</code>, then the container can write to the
+     * volume. The default value is <code>false</code>.</p>
+     */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
-    /*
-     <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    */
+    /**
+     * <p>If this value is <code>true</code>, the container has read-only access to the
+     * volume. If this value is <code>false</code>, then the container can write to the
+     * volume. The default value is <code>false</code>.</p>
+     */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
-    /*
-     <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    */
+    /**
+     * <p>If this value is <code>true</code>, the container has read-only access to the
+     * volume. If this value is <code>false</code>, then the container can write to the
+     * volume. The default value is <code>false</code>.</p>
+     */
     inline VolumeFrom& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:

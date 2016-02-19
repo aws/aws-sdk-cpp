@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_EC2_API CreateVpcEndpointResponse
   {
   public:
@@ -44,64 +41,71 @@ namespace Model
     CreateVpcEndpointResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateVpcEndpointResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the endpoint.</p>
-    */
+    /**
+     * <p>Information about the endpoint.</p>
+     */
     inline const VpcEndpoint& GetVpcEndpoint() const{ return m_vpcEndpoint; }
 
-    /*
-     <p>Information about the endpoint.</p>
-    */
+    /**
+     * <p>Information about the endpoint.</p>
+     */
     inline void SetVpcEndpoint(const VpcEndpoint& value) { m_vpcEndpoint = value; }
 
-    /*
-     <p>Information about the endpoint.</p>
-    */
+    /**
+     * <p>Information about the endpoint.</p>
+     */
     inline void SetVpcEndpoint(VpcEndpoint&& value) { m_vpcEndpoint = value; }
 
-    /*
-     <p>Information about the endpoint.</p>
-    */
+    /**
+     * <p>Information about the endpoint.</p>
+     */
     inline CreateVpcEndpointResponse& WithVpcEndpoint(const VpcEndpoint& value) { SetVpcEndpoint(value); return *this;}
 
-    /*
-     <p>Information about the endpoint.</p>
-    */
+    /**
+     * <p>Information about the endpoint.</p>
+     */
     inline CreateVpcEndpointResponse& WithVpcEndpoint(VpcEndpoint&& value) { SetVpcEndpoint(value); return *this;}
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = value; }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline CreateVpcEndpointResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline CreateVpcEndpointResponse& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
 
-    /*
-     <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>
-    */
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request.</p>
+     */
     inline CreateVpcEndpointResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     

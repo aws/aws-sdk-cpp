@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>The results from a request to change the configuration settings of an environment.</p>
-  */
+  /**
+   * <p>The results from a request to change the configuration settings of an
+   * environment.</p>
+   */
   class AWS_ELASTICBEANSTALK_API DescribeConfigurationSettingsResult
   {
   public:
@@ -44,39 +45,39 @@ namespace Model
     DescribeConfigurationSettingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeConfigurationSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline const Aws::Vector<ConfigurationSettingsDescription>& GetConfigurationSettings() const{ return m_configurationSettings; }
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline void SetConfigurationSettings(const Aws::Vector<ConfigurationSettingsDescription>& value) { m_configurationSettings = value; }
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline void SetConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { m_configurationSettings = value; }
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline DescribeConfigurationSettingsResult& WithConfigurationSettings(const Aws::Vector<ConfigurationSettingsDescription>& value) { SetConfigurationSettings(value); return *this;}
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline DescribeConfigurationSettingsResult& WithConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { SetConfigurationSettings(value); return *this;}
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline DescribeConfigurationSettingsResult& AddConfigurationSettings(const ConfigurationSettingsDescription& value) { m_configurationSettings.push_back(value); return *this; }
 
-    /*
-     <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
-    */
+    /**
+     * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+     */
     inline DescribeConfigurationSettingsResult& AddConfigurationSettings(ConfigurationSettingsDescription&& value) { m_configurationSettings.push_back(value); return *this; }
 
     

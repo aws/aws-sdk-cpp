@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes an import instance task.</p>
-  */
+
+  /**
+   * <p>Describes an import instance task.</p>
+   */
   class AWS_EC2_API ImportInstanceTaskDetails
   {
   public:
@@ -46,134 +47,134 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline const Aws::Vector<ImportInstanceVolumeDetailItem>& GetVolumes() const{ return m_volumes; }
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline void SetVolumes(const Aws::Vector<ImportInstanceVolumeDetailItem>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline void SetVolumes(Aws::Vector<ImportInstanceVolumeDetailItem>&& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline ImportInstanceTaskDetails& WithVolumes(const Aws::Vector<ImportInstanceVolumeDetailItem>& value) { SetVolumes(value); return *this;}
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline ImportInstanceTaskDetails& WithVolumes(Aws::Vector<ImportInstanceVolumeDetailItem>&& value) { SetVolumes(value); return *this;}
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline ImportInstanceTaskDetails& AddVolumes(const ImportInstanceVolumeDetailItem& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
-    /*
-     <p>One or more volumes.</p>
-    */
+    /**
+     * <p>One or more volumes.</p>
+     */
     inline ImportInstanceTaskDetails& AddVolumes(ImportInstanceVolumeDetailItem&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline ImportInstanceTaskDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline ImportInstanceTaskDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the instance.</p>
-    */
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline ImportInstanceTaskDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The instance operating system.</p>
-    */
+    /**
+     * <p>The instance operating system.</p>
+     */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
 
-    /*
-     <p>The instance operating system.</p>
-    */
+    /**
+     * <p>The instance operating system.</p>
+     */
     inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
 
-    /*
-     <p>The instance operating system.</p>
-    */
+    /**
+     * <p>The instance operating system.</p>
+     */
     inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = value; }
 
-    /*
-     <p>The instance operating system.</p>
-    */
+    /**
+     * <p>The instance operating system.</p>
+     */
     inline ImportInstanceTaskDetails& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
 
-    /*
-     <p>The instance operating system.</p>
-    */
+    /**
+     * <p>The instance operating system.</p>
+     */
     inline ImportInstanceTaskDetails& WithPlatform(PlatformValues&& value) { SetPlatform(value); return *this;}
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline ImportInstanceTaskDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline ImportInstanceTaskDetails& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the task.</p>
-    */
+    /**
+     * <p>A description of the task.</p>
+     */
     inline ImportInstanceTaskDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:

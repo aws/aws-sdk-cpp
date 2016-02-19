@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the list of SAML providers for this account.</p>
-  */
+
+  /**
+   * <p>Contains the list of SAML providers for this account.</p>
+   */
   class AWS_IAM_API SAMLProviderListEntry
   {
   public:
@@ -43,69 +44,69 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline SAMLProviderListEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline SAMLProviderListEntry& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline SAMLProviderListEntry& WithArn(const char* value) { SetArn(value); return *this;}
 
-    /*
-     <p>The expiration date and time for the SAML provider.</p>
-    */
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
     inline double GetValidUntil() const{ return m_validUntil; }
 
-    /*
-     <p>The expiration date and time for the SAML provider.</p>
-    */
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
     inline void SetValidUntil(double value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
-    /*
-     <p>The expiration date and time for the SAML provider.</p>
-    */
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
     inline SAMLProviderListEntry& WithValidUntil(double value) { SetValidUntil(value); return *this;}
 
-    /*
-     <p>The date and time when the SAML provider was created.</p>
-    */
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
     inline double GetCreateDate() const{ return m_createDate; }
 
-    /*
-     <p>The date and time when the SAML provider was created.</p>
-    */
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
     inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
-    /*
-     <p>The date and time when the SAML provider was created.</p>
-    */
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
     inline SAMLProviderListEntry& WithCreateDate(double value) { SetCreateDate(value); return *this;}
 
   private:

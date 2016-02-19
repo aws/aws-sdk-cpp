@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The detailed status of the cluster.</p>
-  */
+
+  /**
+   * <p>The detailed status of the cluster.</p>
+   */
   class AWS_EMR_API ClusterStatus
   {
   public:
@@ -42,79 +43,84 @@ namespace Model
     ClusterStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The current state of the cluster.</p>
-    */
+    /**
+     * <p>The current state of the cluster.</p>
+     */
     inline const ClusterState& GetState() const{ return m_state; }
 
-    /*
-     <p>The current state of the cluster.</p>
-    */
+    /**
+     * <p>The current state of the cluster.</p>
+     */
     inline void SetState(const ClusterState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The current state of the cluster.</p>
-    */
+    /**
+     * <p>The current state of the cluster.</p>
+     */
     inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    /*
-     <p>The current state of the cluster.</p>
-    */
+    /**
+     * <p>The current state of the cluster.</p>
+     */
     inline ClusterStatus& WithState(const ClusterState& value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the cluster.</p>
-    */
+    /**
+     * <p>The current state of the cluster.</p>
+     */
     inline ClusterStatus& WithState(ClusterState&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The reason for the cluster status change.</p>
-    */
+    /**
+     * <p>The reason for the cluster status change.</p>
+     */
     inline const ClusterStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
 
-    /*
-     <p>The reason for the cluster status change.</p>
-    */
+    /**
+     * <p>The reason for the cluster status change.</p>
+     */
     inline void SetStateChangeReason(const ClusterStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
-    /*
-     <p>The reason for the cluster status change.</p>
-    */
+    /**
+     * <p>The reason for the cluster status change.</p>
+     */
     inline void SetStateChangeReason(ClusterStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
-    /*
-     <p>The reason for the cluster status change.</p>
-    */
+    /**
+     * <p>The reason for the cluster status change.</p>
+     */
     inline ClusterStatus& WithStateChangeReason(const ClusterStateChangeReason& value) { SetStateChangeReason(value); return *this;}
 
-    /*
-     <p>The reason for the cluster status change.</p>
-    */
+    /**
+     * <p>The reason for the cluster status change.</p>
+     */
     inline ClusterStatus& WithStateChangeReason(ClusterStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
 
-    /*
-     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    */
+    /**
+     * <p>A timeline that represents the status of a cluster over the lifetime of the
+     * cluster.</p>
+     */
     inline const ClusterTimeline& GetTimeline() const{ return m_timeline; }
 
-    /*
-     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    */
+    /**
+     * <p>A timeline that represents the status of a cluster over the lifetime of the
+     * cluster.</p>
+     */
     inline void SetTimeline(const ClusterTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
 
-    /*
-     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    */
+    /**
+     * <p>A timeline that represents the status of a cluster over the lifetime of the
+     * cluster.</p>
+     */
     inline void SetTimeline(ClusterTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
 
-    /*
-     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    */
+    /**
+     * <p>A timeline that represents the status of a cluster over the lifetime of the
+     * cluster.</p>
+     */
     inline ClusterStatus& WithTimeline(const ClusterTimeline& value) { SetTimeline(value); return *this;}
 
-    /*
-     <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    */
+    /**
+     * <p>A timeline that represents the status of a cluster over the lifetime of the
+     * cluster.</p>
+     */
     inline ClusterStatus& WithTimeline(ClusterTimeline&& value) { SetTimeline(value); return *this;}
 
   private:

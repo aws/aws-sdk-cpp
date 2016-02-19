@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p> The output for the <a>AddJobFlowSteps</a> operation. </p>
-  */
+  /**
+   * <p> The output for the <a>AddJobFlowSteps</a> operation. </p>
+   */
   class AWS_EMR_API AddJobFlowStepsResult
   {
   public:
@@ -43,44 +43,44 @@ namespace Model
     AddJobFlowStepsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AddJobFlowStepsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline void SetStepIds(const Aws::Vector<Aws::String>& value) { m_stepIds = value; }
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIds = value; }
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline AddJobFlowStepsResult& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline AddJobFlowStepsResult& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(value); return *this;}
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline AddJobFlowStepsResult& AddStepIds(const Aws::String& value) { m_stepIds.push_back(value); return *this; }
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline AddJobFlowStepsResult& AddStepIds(Aws::String&& value) { m_stepIds.push_back(value); return *this; }
 
-    /*
-     <p>The identifiers of the list of steps added to the job flow.</p>
-    */
+    /**
+     * <p>The identifiers of the list of steps added to the job flow.</p>
+     */
     inline AddJobFlowStepsResult& AddStepIds(const char* value) { m_stepIds.push_back(value); return *this; }
 
   private:

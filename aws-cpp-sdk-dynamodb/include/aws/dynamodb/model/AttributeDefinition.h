@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /*
-    <p>Represents an attribute for describing the key schema for the table and indexes.</p>
-  */
+
+  /**
+   * <p>Represents an attribute for describing the key schema for the table and
+   * indexes.</p>
+   */
   class AWS_DYNAMODB_API AttributeDefinition
   {
   public:
@@ -41,64 +43,64 @@ namespace Model
     AttributeDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline AttributeDefinition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline AttributeDefinition& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
-    /*
-     <p>A name for the attribute.</p>
-    */
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline AttributeDefinition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
-    /*
-     <p>The data type for the attribute.</p>
-    */
+    /**
+     * <p>The data type for the attribute.</p>
+     */
     inline const ScalarAttributeType& GetAttributeType() const{ return m_attributeType; }
 
-    /*
-     <p>The data type for the attribute.</p>
-    */
+    /**
+     * <p>The data type for the attribute.</p>
+     */
     inline void SetAttributeType(const ScalarAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
-    /*
-     <p>The data type for the attribute.</p>
-    */
+    /**
+     * <p>The data type for the attribute.</p>
+     */
     inline void SetAttributeType(ScalarAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
-    /*
-     <p>The data type for the attribute.</p>
-    */
+    /**
+     * <p>The data type for the attribute.</p>
+     */
     inline AttributeDefinition& WithAttributeType(const ScalarAttributeType& value) { SetAttributeType(value); return *this;}
 
-    /*
-     <p>The data type for the attribute.</p>
-    */
+    /**
+     * <p>The data type for the attribute.</p>
+     */
     inline AttributeDefinition& WithAttributeType(ScalarAttributeType&& value) { SetAttributeType(value); return *this;}
 
   private:

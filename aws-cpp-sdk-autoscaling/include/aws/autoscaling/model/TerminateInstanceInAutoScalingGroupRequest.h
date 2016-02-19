@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace AutoScaling
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupRequest : public AutoScalingRequest
   {
   public:
@@ -33,54 +33,57 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the EC2 instance.</p>
-    */
+    /**
+     * <p>The ID of the EC2 instance.</p>
+     */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If <code>true</code>, terminating this instance also decrements the size of
+     * the Auto Scaling group.</p>
+     */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
 
-    /*
-     <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If <code>true</code>, terminating this instance also decrements the size of
+     * the Auto Scaling group.</p>
+     */
     inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacityHasBeenSet = true; m_shouldDecrementDesiredCapacity = value; }
 
-    /*
-     <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
-    */
+    /**
+     * <p>If <code>true</code>, terminating this instance also decrements the size of
+     * the Auto Scaling group.</p>
+     */
     inline TerminateInstanceInAutoScalingGroupRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
 
   private:

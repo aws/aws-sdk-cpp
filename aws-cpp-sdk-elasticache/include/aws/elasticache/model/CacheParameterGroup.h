@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ElastiCache
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a <i>CreateCacheParameterGroup</i> action.</p>
-  */
+
+  /**
+   * <p>Represents the output of a <i>CreateCacheParameterGroup</i> action.</p>
+   */
   class AWS_ELASTICACHE_API CacheParameterGroup
   {
   public:
@@ -43,109 +44,116 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline CacheParameterGroup& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline CacheParameterGroup& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline CacheParameterGroup& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
-    /*
-     <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    */
+    /**
+     * <p>The name of the cache parameter group family that this cache parameter group
+     * is compatible with.</p>
+     */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline CacheParameterGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline CacheParameterGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The description for this cache parameter group.</p>
-    */
+    /**
+     * <p>The description for this cache parameter group.</p>
+     */
     inline CacheParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:

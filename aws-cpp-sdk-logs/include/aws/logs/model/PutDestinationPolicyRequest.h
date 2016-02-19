@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API PutDestinationPolicyRequest : public CloudWatchLogsRequest
   {
   public:
@@ -35,74 +35,81 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline PutDestinationPolicyRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline PutDestinationPolicyRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
 
-    /*
-     <p>A name for an existing destination.</p>
-    */
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline PutDestinationPolicyRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline void SetAccessPolicy(const Aws::String& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline void SetAccessPolicy(const char* value) { m_accessPolicyHasBeenSet = true; m_accessPolicy.assign(value); }
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline PutDestinationPolicyRequest& WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(value); return *this;}
 
-    /*
-     <p>An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.</p>
-    */
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to associated destination.</p>
+     */
     inline PutDestinationPolicyRequest& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    <p>The overrides associated with a task.</p>
-  */
+
+  /**
+   * <p>The overrides associated with a task.</p>
+   */
   class AWS_ECS_API TaskOverride
   {
   public:
@@ -41,39 +42,39 @@ namespace Model
     TaskOverride& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline const Aws::Vector<ContainerOverride>& GetContainerOverrides() const{ return m_containerOverrides; }
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline void SetContainerOverrides(const Aws::Vector<ContainerOverride>& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline void SetContainerOverrides(Aws::Vector<ContainerOverride>&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline TaskOverride& WithContainerOverrides(const Aws::Vector<ContainerOverride>& value) { SetContainerOverrides(value); return *this;}
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline TaskOverride& WithContainerOverrides(Aws::Vector<ContainerOverride>&& value) { SetContainerOverrides(value); return *this;}
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline TaskOverride& AddContainerOverrides(const ContainerOverride& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
 
-    /*
-     <p>One or more container overrides sent to a task.</p>
-    */
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
 
   private:

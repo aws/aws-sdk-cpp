@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ namespace S3
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_S3_API ListPartsRequest : public S3Request
   {
   public:
@@ -84,69 +84,72 @@ namespace Model
     
     inline ListPartsRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     Sets the maximum number of parts to return.
-    */
+    /**
+     * Sets the maximum number of parts to return.
+     */
     inline long GetMaxParts() const{ return m_maxParts; }
 
-    /*
-     Sets the maximum number of parts to return.
-    */
+    /**
+     * Sets the maximum number of parts to return.
+     */
     inline void SetMaxParts(long value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
 
-    /*
-     Sets the maximum number of parts to return.
-    */
+    /**
+     * Sets the maximum number of parts to return.
+     */
     inline ListPartsRequest& WithMaxParts(long value) { SetMaxParts(value); return *this;}
 
-    /*
-     Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
-    */
+    /**
+     * Specifies the part after which listing should begin. Only parts with higher part
+     * numbers will be listed.
+     */
     inline long GetPartNumberMarker() const{ return m_partNumberMarker; }
 
-    /*
-     Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
-    */
+    /**
+     * Specifies the part after which listing should begin. Only parts with higher part
+     * numbers will be listed.
+     */
     inline void SetPartNumberMarker(long value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
 
-    /*
-     Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
-    */
+    /**
+     * Specifies the part after which listing should begin. Only parts with higher part
+     * numbers will be listed.
+     */
     inline ListPartsRequest& WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline ListPartsRequest& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline ListPartsRequest& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
 
-    /*
-     Upload ID identifying the multipart upload whose parts are being listed.
-    */
+    /**
+     * Upload ID identifying the multipart upload whose parts are being listed.
+     */
     inline ListPartsRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  /*
-    The result of a successful ListIdentityPools action.
-  */
+  /**
+   * The result of a successful ListIdentityPools action.
+   */
   class AWS_COGNITOIDENTITY_API ListIdentityPoolsResult
   {
   public:
@@ -44,74 +44,74 @@ namespace Model
     ListIdentityPoolsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListIdentityPoolsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline const Aws::Vector<IdentityPoolShortDescription>& GetIdentityPools() const{ return m_identityPools; }
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline void SetIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { m_identityPools = value; }
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline void SetIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { m_identityPools = value; }
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline ListIdentityPoolsResult& WithIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { SetIdentityPools(value); return *this;}
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline ListIdentityPoolsResult& WithIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { SetIdentityPools(value); return *this;}
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline ListIdentityPoolsResult& AddIdentityPools(const IdentityPoolShortDescription& value) { m_identityPools.push_back(value); return *this; }
 
-    /*
-     The identity pools returned by the ListIdentityPools action.
-    */
+    /**
+     * The identity pools returned by the ListIdentityPools action.
+     */
     inline ListIdentityPoolsResult& AddIdentityPools(IdentityPoolShortDescription&& value) { m_identityPools.push_back(value); return *this; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentityPoolsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentityPoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentityPoolsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

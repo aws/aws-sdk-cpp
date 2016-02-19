@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Glacier
 {
 namespace Model
 {
-  /*
-    <p>Output for GetVaultAccessPolicy.</p>
-  */
+  /**
+   * <p>Output for GetVaultAccessPolicy.</p>
+   */
   class AWS_GLACIER_API GetVaultAccessPolicyResult
   {
   public:
@@ -42,29 +42,29 @@ namespace Model
     GetVaultAccessPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetVaultAccessPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Contains the returned vault access policy as a JSON string.</p>
-    */
+    /**
+     * <p>Contains the returned vault access policy as a JSON string.</p>
+     */
     inline const VaultAccessPolicy& GetPolicy() const{ return m_policy; }
 
-    /*
-     <p>Contains the returned vault access policy as a JSON string.</p>
-    */
+    /**
+     * <p>Contains the returned vault access policy as a JSON string.</p>
+     */
     inline void SetPolicy(const VaultAccessPolicy& value) { m_policy = value; }
 
-    /*
-     <p>Contains the returned vault access policy as a JSON string.</p>
-    */
+    /**
+     * <p>Contains the returned vault access policy as a JSON string.</p>
+     */
     inline void SetPolicy(VaultAccessPolicy&& value) { m_policy = value; }
 
-    /*
-     <p>Contains the returned vault access policy as a JSON string.</p>
-    */
+    /**
+     * <p>Contains the returned vault access policy as a JSON string.</p>
+     */
     inline GetVaultAccessPolicyResult& WithPolicy(const VaultAccessPolicy& value) { SetPolicy(value); return *this;}
 
-    /*
-     <p>Contains the returned vault access policy as a JSON string.</p>
-    */
+    /**
+     * <p>Contains the returned vault access policy as a JSON string.</p>
+     */
     inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(value); return *this;}
 
   private:

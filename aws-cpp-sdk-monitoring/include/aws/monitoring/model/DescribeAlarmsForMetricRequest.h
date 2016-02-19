@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ namespace CloudWatch
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCH_API DescribeAlarmsForMetricRequest : public CloudWatchRequest
   {
   public:
@@ -37,174 +37,174 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
-    /*
-     <p> The name of the metric. </p>
-    */
+    /**
+     * <p> The name of the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
-    /*
-     <p> The namespace of the metric. </p>
-    */
+    /**
+     * <p> The namespace of the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
-    /*
-     <p> The statistic for the metric. </p>
-    */
+    /**
+     * <p> The statistic for the metric. </p>
+     */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
 
-    /*
-     <p> The statistic for the metric. </p>
-    */
+    /**
+     * <p> The statistic for the metric. </p>
+     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
-    /*
-     <p> The statistic for the metric. </p>
-    */
+    /**
+     * <p> The statistic for the metric. </p>
+     */
     inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
-    /*
-     <p> The statistic for the metric. </p>
-    */
+    /**
+     * <p> The statistic for the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
 
-    /*
-     <p> The statistic for the metric. </p>
-    */
+    /**
+     * <p> The statistic for the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithStatistic(Statistic&& value) { SetStatistic(value); return *this;}
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
-    /*
-     <p> The list of dimensions associated with the metric. </p>
-    */
+    /**
+     * <p> The list of dimensions associated with the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
-    /*
-     <p> The period in seconds over which the statistic is applied. </p>
-    */
+    /**
+     * <p> The period in seconds over which the statistic is applied. </p>
+     */
     inline long GetPeriod() const{ return m_period; }
 
-    /*
-     <p> The period in seconds over which the statistic is applied. </p>
-    */
+    /**
+     * <p> The period in seconds over which the statistic is applied. </p>
+     */
     inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
 
-    /*
-     <p> The period in seconds over which the statistic is applied. </p>
-    */
+    /**
+     * <p> The period in seconds over which the statistic is applied. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithPeriod(long value) { SetPeriod(value); return *this;}
 
-    /*
-     <p> The unit for the metric. </p>
-    */
+    /**
+     * <p> The unit for the metric. </p>
+     */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
-    /*
-     <p> The unit for the metric. </p>
-    */
+    /**
+     * <p> The unit for the metric. </p>
+     */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
-    /*
-     <p> The unit for the metric. </p>
-    */
+    /**
+     * <p> The unit for the metric. </p>
+     */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
 
-    /*
-     <p> The unit for the metric. </p>
-    */
+    /**
+     * <p> The unit for the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
-    /*
-     <p> The unit for the metric. </p>
-    */
+    /**
+     * <p> The unit for the metric. </p>
+     */
     inline DescribeAlarmsForMetricRequest& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 
   private:

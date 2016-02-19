@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,11 @@ namespace STS
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a>
+   * request, including temporary AWS credentials that can be used to make AWS
+   * requests. </p>
+   */
   class AWS_STS_API AssumeRoleWithWebIdentityResult
   {
   public:
@@ -45,174 +47,294 @@ namespace Model
     AssumeRoleWithWebIdentityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AssumeRoleWithWebIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p>
-    */
+    /**
+     * <p>The temporary security credentials, which include an access key ID, a secret
+     * access key, and a security token.</p>
+     */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
-    /*
-     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p>
-    */
+    /**
+     * <p>The temporary security credentials, which include an access key ID, a secret
+     * access key, and a security token.</p>
+     */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
-    /*
-     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p>
-    */
+    /**
+     * <p>The temporary security credentials, which include an access key ID, a secret
+     * access key, and a security token.</p>
+     */
     inline void SetCredentials(Credentials&& value) { m_credentials = value; }
 
-    /*
-     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p>
-    */
+    /**
+     * <p>The temporary security credentials, which include an access key ID, a secret
+     * access key, and a security token.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
-    /*
-     <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p>
-    */
+    /**
+     * <p>The temporary security credentials, which include an access key ID, a secret
+     * access key, and a security token.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline const Aws::String& GetSubjectFromWebIdentityToken() const{ return m_subjectFromWebIdentityToken; }
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline void SetSubjectFromWebIdentityToken(const Aws::String& value) { m_subjectFromWebIdentityToken = value; }
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline void SetSubjectFromWebIdentityToken(Aws::String&& value) { m_subjectFromWebIdentityToken = value; }
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline void SetSubjectFromWebIdentityToken(const char* value) { m_subjectFromWebIdentityToken.assign(value); }
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(const Aws::String& value) { SetSubjectFromWebIdentityToken(value); return *this;}
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(Aws::String&& value) { SetSubjectFromWebIdentityToken(value); return *this;}
 
-    /*
-     <p>The unique user identifier that is returned by the identity provider. This identifier is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the user and the application that acquired the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <code>sub</code> (Subject) claim. </p>
-    */
+    /**
+     * <p>The unique user identifier that is returned by the identity provider. This
+     * identifier is associated with the <code>WebIdentityToken</code> that was
+     * submitted with the <code>AssumeRoleWithWebIdentity</code> call. The identifier
+     * is typically unique to the user and the application that acquired the
+     * <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID
+     * tokens, this field contains the value returned by the identity provider as the
+     * token's <code>sub</code> (Subject) claim. </p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(const char* value) { SetSubjectFromWebIdentityToken(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
+     * that you can use to refer to the resulting temporary security credentials. For
+     * example, you can reference these credentials as a principal in a resource-based
+     * policy by using the ARN or assumed role ID. The ARN and ID include the
+     * <code>RoleSessionName</code> that you specified when you called
+     * <code>AssumeRole</code>. </p>
+     */
     inline const AssumedRoleUser& GetAssumedRoleUser() const{ return m_assumedRoleUser; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
+     * that you can use to refer to the resulting temporary security credentials. For
+     * example, you can reference these credentials as a principal in a resource-based
+     * policy by using the ARN or assumed role ID. The ARN and ID include the
+     * <code>RoleSessionName</code> that you specified when you called
+     * <code>AssumeRole</code>. </p>
+     */
     inline void SetAssumedRoleUser(const AssumedRoleUser& value) { m_assumedRoleUser = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
+     * that you can use to refer to the resulting temporary security credentials. For
+     * example, you can reference these credentials as a principal in a resource-based
+     * policy by using the ARN or assumed role ID. The ARN and ID include the
+     * <code>RoleSessionName</code> that you specified when you called
+     * <code>AssumeRole</code>. </p>
+     */
     inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = value; }
 
-    /*
-     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
+     * that you can use to refer to the resulting temporary security credentials. For
+     * example, you can reference these credentials as a principal in a resource-based
+     * policy by using the ARN or assumed role ID. The ARN and ID include the
+     * <code>RoleSessionName</code> that you specified when you called
+     * <code>AssumeRole</code>. </p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(const AssumedRoleUser& value) { SetAssumedRoleUser(value); return *this;}
 
-    /*
-     <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>. </p>
-    */
+    /**
+     * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
+     * that you can use to refer to the resulting temporary security credentials. For
+     * example, you can reference these credentials as a principal in a resource-based
+     * policy by using the ARN or assumed role ID. The ARN and ID include the
+     * <code>RoleSessionName</code> that you specified when you called
+     * <code>AssumeRole</code>. </p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(value); return *this;}
 
-    /*
-     <p>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space. </p>
-    */
+    /**
+     * <p>A percentage value that indicates the size of the policy in packed form. The
+     * service rejects any policy with a packed size greater than 100 percent, which
+     * means the policy exceeded the allowed space. </p>
+     */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
 
-    /*
-     <p>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space. </p>
-    */
+    /**
+     * <p>A percentage value that indicates the size of the policy in packed form. The
+     * service rejects any policy with a packed size greater than 100 percent, which
+     * means the policy exceeded the allowed space. </p>
+     */
     inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
 
-    /*
-     <p>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space. </p>
-    */
+    /**
+     * <p>A percentage value that indicates the size of the policy in packed form. The
+     * service rejects any policy with a packed size greater than 100 percent, which
+     * means the policy exceeded the allowed space. </p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline const Aws::String& GetProvider() const{ return m_provider; }
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline void SetProvider(const Aws::String& value) { m_provider = value; }
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline void SetProvider(Aws::String&& value) { m_provider = value; }
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline void SetProvider(const char* value) { m_provider.assign(value); }
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithProvider(Aws::String&& value) { SetProvider(value); return *this;}
 
-    /*
-     <p> The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.</p>
-    */
+    /**
+     * <p> The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code> field. For
+     * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
+     * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
+     * request.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithProvider(const char* value) { SetProvider(value); return *this;}
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline const Aws::String& GetAudience() const{ return m_audience; }
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline void SetAudience(const Aws::String& value) { m_audience = value; }
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline void SetAudience(Aws::String&& value) { m_audience = value; }
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline void SetAudience(const char* value) { m_audience.assign(value); }
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithAudience(Aws::String&& value) { SetAudience(value); return *this;}
 
-    /*
-     <p> The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</p>
-    */
+    /**
+     * <p> The intended audience (also known as client ID) of the web identity token.
+     * This is traditionally the client identifier issued to the application that
+     * requested the web identity token.</p>
+     */
     inline AssumeRoleWithWebIdentityResult& WithAudience(const char* value) { SetAudience(value); return *this;}
 
     

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Status information about an activity task.</p>
-  */
+  /**
+   * <p>Status information about an activity task.</p>
+   */
   class AWS_SWF_API RecordActivityTaskHeartbeatResult
   {
   public:
@@ -41,19 +41,19 @@ namespace Model
     RecordActivityTaskHeartbeatResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RecordActivityTaskHeartbeatResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-    */
+    /**
+     * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
+     */
     inline bool GetCancelRequested() const{ return m_cancelRequested; }
 
-    /*
-     <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-    */
+    /**
+     * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
+     */
     inline void SetCancelRequested(bool value) { m_cancelRequested = value; }
 
-    /*
-     <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-    */
+    /**
+     * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
+     */
     inline RecordActivityTaskHeartbeatResult& WithCancelRequested(bool value) { SetCancelRequested(value); return *this;}
 
   private:

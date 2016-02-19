@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Result message containing a description of the requested environment info.</p>
-  */
+  /**
+   * <p>Result message containing a description of the requested environment
+   * info.</p>
+   */
   class AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult
   {
   public:
@@ -44,39 +45,39 @@ namespace Model
     RetrieveEnvironmentInfoResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     RetrieveEnvironmentInfoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline const Aws::Vector<EnvironmentInfoDescription>& GetEnvironmentInfo() const{ return m_environmentInfo; }
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline void SetEnvironmentInfo(const Aws::Vector<EnvironmentInfoDescription>& value) { m_environmentInfo = value; }
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline void SetEnvironmentInfo(Aws::Vector<EnvironmentInfoDescription>&& value) { m_environmentInfo = value; }
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline RetrieveEnvironmentInfoResult& WithEnvironmentInfo(const Aws::Vector<EnvironmentInfoDescription>& value) { SetEnvironmentInfo(value); return *this;}
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline RetrieveEnvironmentInfoResult& WithEnvironmentInfo(Aws::Vector<EnvironmentInfoDescription>&& value) { SetEnvironmentInfo(value); return *this;}
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(const EnvironmentInfoDescription& value) { m_environmentInfo.push_back(value); return *this; }
 
-    /*
-     <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-    */
+    /**
+     * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+     */
     inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(EnvironmentInfoDescription&& value) { m_environmentInfo.push_back(value); return *this; }
 
     

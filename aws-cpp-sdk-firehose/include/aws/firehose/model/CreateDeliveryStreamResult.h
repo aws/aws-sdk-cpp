@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace Firehose
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of <a>CreateDeliveryStream</a>.</p>
-  */
+  /**
+   * <p>Contains the output of <a>CreateDeliveryStream</a>.</p>
+   */
   class AWS_FIREHOSE_API CreateDeliveryStreamResult
   {
   public:
@@ -42,39 +42,39 @@ namespace Model
     CreateDeliveryStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeliveryStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamARN(const Aws::String& value) { m_deliveryStreamARN = value; }
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamARN(Aws::String&& value) { m_deliveryStreamARN = value; }
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamARN(const char* value) { m_deliveryStreamARN.assign(value); }
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline CreateDeliveryStreamResult& WithDeliveryStreamARN(const Aws::String& value) { SetDeliveryStreamARN(value); return *this;}
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline CreateDeliveryStreamResult& WithDeliveryStreamARN(Aws::String&& value) { SetDeliveryStreamARN(value); return *this;}
 
-    /*
-     <p>The ARN of the delivery stream.</p>
-    */
+    /**
+     * <p>The ARN of the delivery stream.</p>
+     */
     inline CreateDeliveryStreamResult& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
 
   private:

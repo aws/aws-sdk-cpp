@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  /*
-    <p>Results of a <a>CreateStorageLocationResult</a> call.</p>
-  */
+  /**
+   * <p>Results of a <a>CreateStorageLocationResult</a> call.</p>
+   */
   class AWS_ELASTICBEANSTALK_API CreateStorageLocationResult
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreateStorageLocationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateStorageLocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3Bucket = value; }
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline void SetS3Bucket(Aws::String&& value) { m_s3Bucket = value; }
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline void SetS3Bucket(const char* value) { m_s3Bucket.assign(value); }
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline CreateStorageLocationResult& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline CreateStorageLocationResult& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
 
-    /*
-     <p> The name of the Amazon S3 bucket created. </p>
-    */
+    /**
+     * <p> The name of the Amazon S3 bucket created. </p>
+     */
     inline CreateStorageLocationResult& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
     

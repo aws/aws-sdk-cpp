@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace SWF
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SWF_API DescribeWorkflowExecutionRequest : public SWFRequest
   {
   public:
@@ -36,64 +36,64 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline DescribeWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline DescribeWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain containing the workflow execution.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline DescribeWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The workflow execution to describe.</p>
-    */
+    /**
+     * <p>The workflow execution to describe.</p>
+     */
     inline const WorkflowExecution& GetExecution() const{ return m_execution; }
 
-    /*
-     <p>The workflow execution to describe.</p>
-    */
+    /**
+     * <p>The workflow execution to describe.</p>
+     */
     inline void SetExecution(const WorkflowExecution& value) { m_executionHasBeenSet = true; m_execution = value; }
 
-    /*
-     <p>The workflow execution to describe.</p>
-    */
+    /**
+     * <p>The workflow execution to describe.</p>
+     */
     inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = value; }
 
-    /*
-     <p>The workflow execution to describe.</p>
-    */
+    /**
+     * <p>The workflow execution to describe.</p>
+     */
     inline DescribeWorkflowExecutionRequest& WithExecution(const WorkflowExecution& value) { SetExecution(value); return *this;}
 
-    /*
-     <p>The workflow execution to describe.</p>
-    */
+    /**
+     * <p>The workflow execution to describe.</p>
+     */
     inline DescribeWorkflowExecutionRequest& WithExecution(WorkflowExecution&& value) { SetExecution(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CloudFront
 {
 namespace Model
 {
-  /*
-    The returned result of the corresponding request.
-  */
+  /**
+   * The returned result of the corresponding request.
+   */
   class AWS_CLOUDFRONT_API CreateInvalidation2015_04_17Result
   {
   public:
@@ -43,64 +43,71 @@ namespace Model
     CreateInvalidation2015_04_17Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateInvalidation2015_04_17Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline void SetLocation(Aws::String&& value) { m_location = value; }
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline CreateInvalidation2015_04_17Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline CreateInvalidation2015_04_17Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
-    /*
-     The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-    */
+    /**
+     * The fully qualified URI of the distribution and invalidation batch request,
+     * including the Invalidation ID.
+     */
     inline CreateInvalidation2015_04_17Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline void SetInvalidation(const Invalidation& value) { m_invalidation = value; }
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline void SetInvalidation(Invalidation&& value) { m_invalidation = value; }
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline CreateInvalidation2015_04_17Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
 
-    /*
-     The invalidation's information.
-    */
+    /**
+     * The invalidation's information.
+     */
     inline CreateInvalidation2015_04_17Result& WithInvalidation(Invalidation&& value) { SetInvalidation(value); return *this;}
 
   private:

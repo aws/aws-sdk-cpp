@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    <p>Information about the <code>ConnectionSettings</code> attribute.</p>
-  */
+
+  /**
+   * <p>Information about the <code>ConnectionSettings</code> attribute.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API ConnectionSettings
   {
   public:
@@ -42,19 +43,22 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
-    */
+    /**
+     * <p>The time, in seconds, that the connection is allowed to be idle (no data has
+     * been sent over the connection) before it is closed by the load balancer.</p>
+     */
     inline long GetIdleTimeout() const{ return m_idleTimeout; }
 
-    /*
-     <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
-    */
+    /**
+     * <p>The time, in seconds, that the connection is allowed to be idle (no data has
+     * been sent over the connection) before it is closed by the load balancer.</p>
+     */
     inline void SetIdleTimeout(long value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
 
-    /*
-     <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
-    */
+    /**
+     * <p>The time, in seconds, that the connection is allowed to be idle (no data has
+     * been sent over the connection) before it is closed by the load balancer.</p>
+     */
     inline ConnectionSettings& WithIdleTimeout(long value) { SetIdleTimeout(value); return *this;}
 
   private:

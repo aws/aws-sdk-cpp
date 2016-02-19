@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a block device mapping entry.</p>
-  */
+
+  /**
+   * <p>Describes a block device mapping entry.</p>
+   */
   class AWS_EC2_API InstanceBlockDeviceMappingSpecification
   {
   public:
@@ -44,134 +45,146 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
 
-    /*
-     <p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    */
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline const EbsInstanceBlockDeviceSpecification& GetEbs() const{ return m_ebs; }
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline void SetEbs(const EbsInstanceBlockDeviceSpecification& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline void SetEbs(EbsInstanceBlockDeviceSpecification&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithEbs(const EbsInstanceBlockDeviceSpecification& value) { SetEbs(value); return *this;}
 
-    /*
-     <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    */
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithEbs(EbsInstanceBlockDeviceSpecification&& value) { SetEbs(value); return *this;}
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline void SetVirtualName(const Aws::String& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline void SetVirtualName(const char* value) { m_virtualNameHasBeenSet = true; m_virtualName.assign(value); }
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithVirtualName(const Aws::String& value) { SetVirtualName(value); return *this;}
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithVirtualName(Aws::String&& value) { SetVirtualName(value); return *this;}
 
-    /*
-     <p>The virtual device name.</p>
-    */
+    /**
+     * <p>The virtual device name.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithNoDevice(Aws::String&& value) { SetNoDevice(value); return *this;}
 
-    /*
-     <p>suppress the specified device included in the block device mapping.</p>
-    */
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
     inline InstanceBlockDeviceMappingSpecification& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
 
   private:

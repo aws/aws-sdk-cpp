@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_AUTOSCALING_API DescribeLifecycleHooksResult
   {
   public:
@@ -44,39 +41,39 @@ namespace Model
     DescribeLifecycleHooksResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeLifecycleHooksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline const Aws::Vector<LifecycleHook>& GetLifecycleHooks() const{ return m_lifecycleHooks; }
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline void SetLifecycleHooks(const Aws::Vector<LifecycleHook>& value) { m_lifecycleHooks = value; }
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline void SetLifecycleHooks(Aws::Vector<LifecycleHook>&& value) { m_lifecycleHooks = value; }
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline DescribeLifecycleHooksResult& WithLifecycleHooks(const Aws::Vector<LifecycleHook>& value) { SetLifecycleHooks(value); return *this;}
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline DescribeLifecycleHooksResult& WithLifecycleHooks(Aws::Vector<LifecycleHook>&& value) { SetLifecycleHooks(value); return *this;}
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline DescribeLifecycleHooksResult& AddLifecycleHooks(const LifecycleHook& value) { m_lifecycleHooks.push_back(value); return *this; }
 
-    /*
-     <p>The lifecycle hooks for the specified group.</p>
-    */
+    /**
+     * <p>The lifecycle hooks for the specified group.</p>
+     */
     inline DescribeLifecycleHooksResult& AddLifecycleHooks(LifecycleHook&& value) { m_lifecycleHooks.push_back(value); return *this; }
 
     

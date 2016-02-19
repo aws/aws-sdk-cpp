@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API ObjectIdentifier
   {
   public:
@@ -41,74 +39,74 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline ObjectIdentifier& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline ObjectIdentifier& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    /*
-     Key name of the object to delete.
-    */
+    /**
+     * Key name of the object to delete.
+     */
     inline ObjectIdentifier& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline ObjectIdentifier& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline ObjectIdentifier& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
-    /*
-     VersionId for the specific version of the object to delete.
-    */
+    /**
+     * VersionId for the specific version of the object to delete.
+     */
     inline ObjectIdentifier& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:

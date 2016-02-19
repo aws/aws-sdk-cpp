@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace DataPipeline
 namespace Model
 {
 
-  /*
-    <p>Contains the parameters for DeletePipeline.</p>
-  */
+  /**
+   * <p>Contains the parameters for DeletePipeline.</p>
+   */
   class AWS_DATAPIPELINE_API DeletePipelineRequest : public DataPipelineRequest
   {
   public:
@@ -36,39 +36,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline DeletePipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline DeletePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline DeletePipelineRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>UploadServerCertificate</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>UploadServerCertificate</a> request.
+   * </p>
+   */
   class AWS_IAM_API UploadServerCertificateResult
   {
   public:
@@ -43,29 +44,34 @@ namespace Model
     UploadServerCertificateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     UploadServerCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
-    */
+    /**
+     * <p> The meta information of the uploaded server certificate without its
+     * certificate body, certificate chain, and private key. </p>
+     */
     inline const ServerCertificateMetadata& GetServerCertificateMetadata() const{ return m_serverCertificateMetadata; }
 
-    /*
-     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
-    */
+    /**
+     * <p> The meta information of the uploaded server certificate without its
+     * certificate body, certificate chain, and private key. </p>
+     */
     inline void SetServerCertificateMetadata(const ServerCertificateMetadata& value) { m_serverCertificateMetadata = value; }
 
-    /*
-     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
-    */
+    /**
+     * <p> The meta information of the uploaded server certificate without its
+     * certificate body, certificate chain, and private key. </p>
+     */
     inline void SetServerCertificateMetadata(ServerCertificateMetadata&& value) { m_serverCertificateMetadata = value; }
 
-    /*
-     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
-    */
+    /**
+     * <p> The meta information of the uploaded server certificate without its
+     * certificate body, certificate chain, and private key. </p>
+     */
     inline UploadServerCertificateResult& WithServerCertificateMetadata(const ServerCertificateMetadata& value) { SetServerCertificateMetadata(value); return *this;}
 
-    /*
-     <p> The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key. </p>
-    */
+    /**
+     * <p> The meta information of the uploaded server certificate without its
+     * certificate body, certificate chain, and private key. </p>
+     */
     inline UploadServerCertificateResult& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(value); return *this;}
 
     

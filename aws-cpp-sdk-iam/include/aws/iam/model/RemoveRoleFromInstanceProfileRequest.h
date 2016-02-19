@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API RemoveRoleFromInstanceProfileRequest : public IAMRequest
   {
   public:
@@ -33,74 +33,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline RemoveRoleFromInstanceProfileRequest& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline RemoveRoleFromInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
 
-    /*
-     <p>The name of the instance profile to update.</p>
-    */
+    /**
+     * <p>The name of the instance profile to update.</p>
+     */
     inline RemoveRoleFromInstanceProfileRequest& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline RemoveRoleFromInstanceProfileRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline RemoveRoleFromInstanceProfileRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
-    /*
-     <p>The name of the role to remove.</p>
-    */
+    /**
+     * <p>The name of the role to remove.</p>
+     */
     inline RemoveRoleFromInstanceProfileRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:

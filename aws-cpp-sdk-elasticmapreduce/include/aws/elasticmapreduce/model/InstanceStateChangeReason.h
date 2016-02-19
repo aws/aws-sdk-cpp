@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The details of the status change reason for the instance.</p>
-  */
+
+  /**
+   * <p>The details of the status change reason for the instance.</p>
+   */
   class AWS_EMR_API InstanceStateChangeReason
   {
   public:
@@ -41,64 +42,64 @@ namespace Model
     InstanceStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The programmable code for the state change reason.</p>
-    */
+    /**
+     * <p>The programmable code for the state change reason.</p>
+     */
     inline const InstanceStateChangeReasonCode& GetCode() const{ return m_code; }
 
-    /*
-     <p>The programmable code for the state change reason.</p>
-    */
+    /**
+     * <p>The programmable code for the state change reason.</p>
+     */
     inline void SetCode(const InstanceStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The programmable code for the state change reason.</p>
-    */
+    /**
+     * <p>The programmable code for the state change reason.</p>
+     */
     inline void SetCode(InstanceStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    /*
-     <p>The programmable code for the state change reason.</p>
-    */
+    /**
+     * <p>The programmable code for the state change reason.</p>
+     */
     inline InstanceStateChangeReason& WithCode(const InstanceStateChangeReasonCode& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The programmable code for the state change reason.</p>
-    */
+    /**
+     * <p>The programmable code for the state change reason.</p>
+     */
     inline InstanceStateChangeReason& WithCode(InstanceStateChangeReasonCode&& value) { SetCode(value); return *this;}
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline InstanceStateChangeReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline InstanceStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    /*
-     <p>The status change reason description.</p>
-    */
+    /**
+     * <p>The status change reason description.</p>
+     */
     inline InstanceStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

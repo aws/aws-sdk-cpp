@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for a <a>DescribeStackResources</a> action.</p>
-  */
+  /**
+   * <p>The output for a <a>DescribeStackResources</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API DescribeStackResourcesResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeStackResourcesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeStackResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline const Aws::Vector<StackResource>& GetStackResources() const{ return m_stackResources; }
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline void SetStackResources(const Aws::Vector<StackResource>& value) { m_stackResources = value; }
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline void SetStackResources(Aws::Vector<StackResource>&& value) { m_stackResources = value; }
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline DescribeStackResourcesResult& WithStackResources(const Aws::Vector<StackResource>& value) { SetStackResources(value); return *this;}
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline DescribeStackResourcesResult& WithStackResources(Aws::Vector<StackResource>&& value) { SetStackResources(value); return *this;}
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline DescribeStackResourcesResult& AddStackResources(const StackResource& value) { m_stackResources.push_back(value); return *this; }
 
-    /*
-     <p>A list of <code>StackResource</code> structures.</p>
-    */
+    /**
+     * <p>A list of <code>StackResource</code> structures.</p>
+     */
     inline DescribeStackResourcesResult& AddStackResources(StackResource&& value) { m_stackResources.push_back(value); return *this; }
 
     

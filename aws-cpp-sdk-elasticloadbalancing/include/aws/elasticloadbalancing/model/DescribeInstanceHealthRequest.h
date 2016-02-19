@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthRequest : public ElasticLoadBalancingRequest
   {
   public:
@@ -35,74 +35,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DescribeInstanceHealthRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DescribeInstanceHealthRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline DescribeInstanceHealthRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline DescribeInstanceHealthRequest& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline DescribeInstanceHealthRequest& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline DescribeInstanceHealthRequest& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
-    /*
-     <p>The IDs of the instances.</p>
-    */
+    /**
+     * <p>The IDs of the instances.</p>
+     */
     inline DescribeInstanceHealthRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
   private:

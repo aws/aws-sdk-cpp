@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace IAM
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_IAM_API CreatePolicyVersionRequest : public IAMRequest
   {
   public:
@@ -54,54 +54,72 @@ namespace Model
     
     inline CreatePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
-    /*
-     <p>The policy document.</p>
-    */
+    /**
+     * <p>The policy document.</p>
+     */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
-    /*
-     <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>Specifies whether to set this version as the policy's default version.</p>
+     * <p>When this parameter is <code>true</code>, the new policy version becomes the
+     * operative version; that is, the version that is in effect for the IAM users,
+     * groups, and roles that the policy is attached to.</p> <p>For more information
+     * about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
 
-    /*
-     <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>Specifies whether to set this version as the policy's default version.</p>
+     * <p>When this parameter is <code>true</code>, the new policy version becomes the
+     * operative version; that is, the version that is in effect for the IAM users,
+     * groups, and roles that the policy is attached to.</p> <p>For more information
+     * about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline void SetSetAsDefault(bool value) { m_setAsDefaultHasBeenSet = true; m_setAsDefault = value; }
 
-    /*
-     <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
-    */
+    /**
+     * <p>Specifies whether to set this version as the policy's default version.</p>
+     * <p>When this parameter is <code>true</code>, the new policy version becomes the
+     * operative version; that is, the version that is in effect for the IAM users,
+     * groups, and roles that the policy is attached to.</p> <p>For more information
+     * about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 
   private:

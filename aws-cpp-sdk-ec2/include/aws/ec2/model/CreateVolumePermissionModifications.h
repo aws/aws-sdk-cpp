@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes modifications to the permissions for a volume.</p>
-  */
+
+  /**
+   * <p>Describes modifications to the permissions for a volume.</p>
+   */
   class AWS_EC2_API CreateVolumePermissionModifications
   {
   public:
@@ -44,74 +45,88 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline const Aws::Vector<CreateVolumePermission>& GetAdd() const{ return m_add; }
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline void SetAdd(const Aws::Vector<CreateVolumePermission>& value) { m_addHasBeenSet = true; m_add = value; }
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline void SetAdd(Aws::Vector<CreateVolumePermission>&& value) { m_addHasBeenSet = true; m_add = value; }
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline CreateVolumePermissionModifications& WithAdd(const Aws::Vector<CreateVolumePermission>& value) { SetAdd(value); return *this;}
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline CreateVolumePermissionModifications& WithAdd(Aws::Vector<CreateVolumePermission>&& value) { SetAdd(value); return *this;}
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline CreateVolumePermissionModifications& AddAdd(const CreateVolumePermission& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
 
-    /*
-     <p>Adds a specific AWS account ID or group to a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Adds a specific AWS account ID or group to a volume's list of create volume
+     * permissions.</p>
+     */
     inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline const Aws::Vector<CreateVolumePermission>& GetRemove() const{ return m_remove; }
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline void SetRemove(const Aws::Vector<CreateVolumePermission>& value) { m_removeHasBeenSet = true; m_remove = value; }
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline void SetRemove(Aws::Vector<CreateVolumePermission>&& value) { m_removeHasBeenSet = true; m_remove = value; }
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline CreateVolumePermissionModifications& WithRemove(const Aws::Vector<CreateVolumePermission>& value) { SetRemove(value); return *this;}
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline CreateVolumePermissionModifications& WithRemove(Aws::Vector<CreateVolumePermission>&& value) { SetRemove(value); return *this;}
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline CreateVolumePermissionModifications& AddRemove(const CreateVolumePermission& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
 
-    /*
-     <p>Removes a specific AWS account ID or group from a volume's list of create volume permissions.</p>
-    */
+    /**
+     * <p>Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.</p>
+     */
     inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
 
   private:

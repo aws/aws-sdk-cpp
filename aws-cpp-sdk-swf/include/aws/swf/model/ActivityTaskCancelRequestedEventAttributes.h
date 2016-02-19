@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace SWF
 {
 namespace Model
 {
-  /*
-    <p>Provides details of the <code>ActivityTaskCancelRequested</code> event.</p>
-  */
+
+  /**
+   * <p>Provides details of the <code>ActivityTaskCancelRequested</code> event.</p>
+   */
   class AWS_SWF_API ActivityTaskCancelRequestedEventAttributes
   {
   public:
@@ -40,54 +41,66 @@ namespace Model
     ActivityTaskCancelRequestedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>RequestCancelActivityTask</code>
+     * decision for this cancellation request. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>RequestCancelActivityTask</code>
+     * decision for this cancellation request. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
-    /*
-     <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    */
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>RequestCancelActivityTask</code>
+     * decision for this cancellation request. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline ActivityTaskCancelRequestedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline ActivityTaskCancelRequestedEventAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline ActivityTaskCancelRequestedEventAttributes& WithActivityId(Aws::String&& value) { SetActivityId(value); return *this;}
 
-    /*
-     <p>The unique ID of the task.</p>
-    */
+    /**
+     * <p>The unique ID of the task.</p>
+     */
     inline ActivityTaskCancelRequestedEventAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
   private:

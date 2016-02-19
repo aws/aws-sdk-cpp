@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>Output from an AddInstanceGroups call.</p>
-  */
+  /**
+   * <p>Output from an AddInstanceGroups call.</p>
+   */
   class AWS_EMR_API AddInstanceGroupsResult
   {
   public:
@@ -43,79 +43,79 @@ namespace Model
     AddInstanceGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AddInstanceGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = value; }
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline void SetJobFlowId(const char* value) { m_jobFlowId.assign(value); }
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline AddInstanceGroupsResult& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline AddInstanceGroupsResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>The job flow ID in which the instance groups are added.</p>
-    */
+    /**
+     * <p>The job flow ID in which the instance groups are added.</p>
+     */
     inline AddInstanceGroupsResult& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceGroupIds() const{ return m_instanceGroupIds; }
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline void SetInstanceGroupIds(const Aws::Vector<Aws::String>& value) { m_instanceGroupIds = value; }
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline void SetInstanceGroupIds(Aws::Vector<Aws::String>&& value) { m_instanceGroupIds = value; }
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline AddInstanceGroupsResult& WithInstanceGroupIds(const Aws::Vector<Aws::String>& value) { SetInstanceGroupIds(value); return *this;}
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline AddInstanceGroupsResult& WithInstanceGroupIds(Aws::Vector<Aws::String>&& value) { SetInstanceGroupIds(value); return *this;}
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline AddInstanceGroupsResult& AddInstanceGroupIds(const Aws::String& value) { m_instanceGroupIds.push_back(value); return *this; }
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline AddInstanceGroupsResult& AddInstanceGroupIds(Aws::String&& value) { m_instanceGroupIds.push_back(value); return *this; }
 
-    /*
-     <p>Instance group IDs of the newly created instance groups.</p>
-    */
+    /**
+     * <p>Instance group IDs of the newly created instance groups.</p>
+     */
     inline AddInstanceGroupsResult& AddInstanceGroupIds(const char* value) { m_instanceGroupIds.push_back(value); return *this; }
 
   private:

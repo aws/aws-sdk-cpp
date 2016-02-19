@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.</p>
-  */
+
+  /**
+   * <p>A set of criteria that AWS CloudFormation uses to validate parameter values.
+   * Although other constraints might be defined in the stack template, AWS
+   * CloudFormation returns only the <code>AllowedValues</code> property.</p>
+   */
   class AWS_CLOUDFORMATION_API ParameterConstraints
   {
   public:
@@ -44,44 +47,44 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline ParameterConstraints& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline ParameterConstraints& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(value); return *this;}
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline ParameterConstraints& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline ParameterConstraints& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
-    /*
-     <p>A list of values that are permitted for a parameter.</p>
-    */
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline ParameterConstraints& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
   private:

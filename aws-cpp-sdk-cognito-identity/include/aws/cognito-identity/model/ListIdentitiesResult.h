@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  /*
-    The response to a ListIdentities request.
-  */
+  /**
+   * The response to a ListIdentities request.
+   */
   class AWS_COGNITOIDENTITY_API ListIdentitiesResult
   {
   public:
@@ -44,109 +44,109 @@ namespace Model
     ListIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline ListIdentitiesResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline ListIdentitiesResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline ListIdentitiesResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline const Aws::Vector<IdentityDescription>& GetIdentities() const{ return m_identities; }
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline void SetIdentities(const Aws::Vector<IdentityDescription>& value) { m_identities = value; }
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline void SetIdentities(Aws::Vector<IdentityDescription>&& value) { m_identities = value; }
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline ListIdentitiesResult& WithIdentities(const Aws::Vector<IdentityDescription>& value) { SetIdentities(value); return *this;}
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline ListIdentitiesResult& WithIdentities(Aws::Vector<IdentityDescription>&& value) { SetIdentities(value); return *this;}
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline ListIdentitiesResult& AddIdentities(const IdentityDescription& value) { m_identities.push_back(value); return *this; }
 
-    /*
-     An object containing a set of identities and associated mappings.
-    */
+    /**
+     * An object containing a set of identities and associated mappings.
+     */
     inline ListIdentitiesResult& AddIdentities(IdentityDescription&& value) { m_identities.push_back(value); return *this; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     A pagination token.
-    */
+    /**
+     * A pagination token.
+     */
     inline ListIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

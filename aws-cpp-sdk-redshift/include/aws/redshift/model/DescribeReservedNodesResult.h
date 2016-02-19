@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p>Contains the output from the <a>DescribeReservedNodes</a> action.</p>
-  */
+  /**
+   * <p>Contains the output from the <a>DescribeReservedNodes</a> action.</p>
+   */
   class AWS_REDSHIFT_API DescribeReservedNodesResult
   {
   public:
@@ -45,74 +45,109 @@ namespace Model
     DescribeReservedNodesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeReservedNodesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeReservedNodesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeReservedNodesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p> A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeReservedNodesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline const Aws::Vector<ReservedNode>& GetReservedNodes() const{ return m_reservedNodes; }
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline void SetReservedNodes(const Aws::Vector<ReservedNode>& value) { m_reservedNodes = value; }
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline void SetReservedNodes(Aws::Vector<ReservedNode>&& value) { m_reservedNodes = value; }
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline DescribeReservedNodesResult& WithReservedNodes(const Aws::Vector<ReservedNode>& value) { SetReservedNodes(value); return *this;}
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline DescribeReservedNodesResult& WithReservedNodes(Aws::Vector<ReservedNode>&& value) { SetReservedNodes(value); return *this;}
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline DescribeReservedNodesResult& AddReservedNodes(const ReservedNode& value) { m_reservedNodes.push_back(value); return *this; }
 
-    /*
-     <p>The list of reserved nodes.</p>
-    */
+    /**
+     * <p>The list of reserved nodes.</p>
+     */
     inline DescribeReservedNodesResult& AddReservedNodes(ReservedNode&& value) { m_reservedNodes.push_back(value); return *this; }
 
     

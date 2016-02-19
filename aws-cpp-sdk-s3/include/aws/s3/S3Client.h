@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -59,44 +59,43 @@
 #include <future>
 #include <functional>
 
-    namespace Aws
-    {
+namespace Aws
+{
 
-    namespace Http
-    {
+  namespace Http
+  {
     class HttpClient;
     class HttpClientFactory;
-    } // namespace Http
+  } // namespace Http
 
-    namespace Utils
-    {
+  namespace Utils
+  {
     template< typename R, typename E> class Outcome;
 
     namespace Threading
     {
-    class Executor;
+      class Executor;
     } // namespace Threading
 
     namespace Xml
     {
-    class XmlDocument;
+      class XmlDocument;
     } // namespace Xml
-    } // namespace Utils
+  } // namespace Utils
 
-    namespace Auth
-    {
+  namespace Auth
+  {
     class AWSCredentials;
     class AWSCredentialsProvider;
-    } // namespace Auth
+  } // namespace Auth
 
-    namespace Client
-    {
+  namespace Client
+  {
     class RetryStrategy;
-    } // namespace Client
+  } // namespace Client
 
-    namespace S3
-    {
-
+  namespace S3
+  {
     namespace Model
     {
         class AbortMultipartUploadRequest;
@@ -258,7 +257,7 @@
         typedef std::future<UploadPartCopyOutcome> UploadPartCopyOutcomeCallable;
     } // namespace Model
 
-        class S3Client;
+    class S3Client;
 
     typedef std::function<void(const S3Client*, const Model::AbortMultipartUploadRequest&, const Model::AbortMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortMultipartUploadResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::CompleteMultipartUploadRequest&, const Model::CompleteMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteMultipartUploadResponseReceivedHandler;
@@ -316,27 +315,24 @@
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
 
-    /*
-    ${serviceModel.documentation}
-    */
     class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
 
-        /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
@@ -346,991 +342,1090 @@
 
         virtual ~S3Client();
 
-        /*
-            <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed, so you don't get charged for the part storage, you should call the List Parts operation and ensure the parts list is empty.</p>
-        */
+        /**
+         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
+         * so you don't get charged for the part storage, you should call the List Parts
+         * operation and ensure the parts list is empty.</p>
+         */
         virtual Model::AbortMultipartUploadOutcome AbortMultipartUpload(const Model::AbortMultipartUploadRequest& request) const;
 
-        /*
-            <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed, so you don't get charged for the part storage, you should call the List Parts operation and ensure the parts list is empty.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
+         * so you don't get charged for the part storage, you should call the List Parts
+         * operation and ensure the parts list is empty.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::AbortMultipartUploadOutcomeCallable AbortMultipartUploadCallable(const Model::AbortMultipartUploadRequest& request) const;
 
-        /*
-            <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed, so you don't get charged for the part storage, you should call the List Parts operation and ensure the parts list is empty.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
+         * so you don't get charged for the part storage, you should call the List Parts
+         * operation and ensure the parts list is empty.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Completes a multipart upload by assembling previously uploaded parts.
-        */
+        /**
+         * Completes a multipart upload by assembling previously uploaded parts.
+         */
         virtual Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const;
 
-        /*
-            Completes a multipart upload by assembling previously uploaded parts.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Completes a multipart upload by assembling previously uploaded parts.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CompleteMultipartUploadOutcomeCallable CompleteMultipartUploadCallable(const Model::CompleteMultipartUploadRequest& request) const;
 
-        /*
-            Completes a multipart upload by assembling previously uploaded parts.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Completes a multipart upload by assembling previously uploaded parts.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CompleteMultipartUploadAsync(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Creates a copy of an object that is already stored in Amazon S3.
-        */
+        /**
+         * Creates a copy of an object that is already stored in Amazon S3.
+         */
         virtual Model::CopyObjectOutcome CopyObject(const Model::CopyObjectRequest& request) const;
 
-        /*
-            Creates a copy of an object that is already stored in Amazon S3.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Creates a copy of an object that is already stored in Amazon S3.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CopyObjectOutcomeCallable CopyObjectCallable(const Model::CopyObjectRequest& request) const;
 
-        /*
-            Creates a copy of an object that is already stored in Amazon S3.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Creates a copy of an object that is already stored in Amazon S3.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CopyObjectAsync(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Creates a new bucket.
-        */
+        /**
+         * Creates a new bucket.
+         */
         virtual Model::CreateBucketOutcome CreateBucket(const Model::CreateBucketRequest& request) const;
 
-        /*
-            Creates a new bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Creates a new bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateBucketOutcomeCallable CreateBucketCallable(const Model::CreateBucketRequest& request) const;
 
-        /*
-            Creates a new bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Creates a new bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateBucketAsync(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-        */
+        /**
+         * <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b>
+         * After you initiate multipart upload and upload one or more parts, you must
+         * either complete or abort multipart upload in order to stop getting charged for
+         * storage of the uploaded parts. Only after you either complete or abort multipart
+         * upload, Amazon S3 frees up the parts storage and stops charging you for the
+         * parts storage.</p>
+         */
         virtual Model::CreateMultipartUploadOutcome CreateMultipartUpload(const Model::CreateMultipartUploadRequest& request) const;
 
-        /*
-            <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b>
+         * After you initiate multipart upload and upload one or more parts, you must
+         * either complete or abort multipart upload in order to stop getting charged for
+         * storage of the uploaded parts. Only after you either complete or abort multipart
+         * upload, Amazon S3 frees up the parts storage and stops charging you for the
+         * parts storage.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::CreateMultipartUploadOutcomeCallable CreateMultipartUploadCallable(const Model::CreateMultipartUploadRequest& request) const;
 
-        /*
-            <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b>
+         * After you initiate multipart upload and upload one or more parts, you must
+         * either complete or abort multipart upload in order to stop getting charged for
+         * storage of the uploaded parts. Only after you either complete or abort multipart
+         * upload, Amazon S3 frees up the parts storage and stops charging you for the
+         * parts storage.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void CreateMultipartUploadAsync(const Model::CreateMultipartUploadRequest& request, const CreateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
-        */
+        /**
+         * Deletes the bucket. All objects (including all object versions and Delete
+         * Markers) in the bucket must be deleted before the bucket itself can be deleted.
+         */
         virtual Model::DeleteBucketOutcome DeleteBucket(const Model::DeleteBucketRequest& request) const;
 
-        /*
-            Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Deletes the bucket. All objects (including all object versions and Delete
+         * Markers) in the bucket must be deleted before the bucket itself can be deleted.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketOutcomeCallable DeleteBucketCallable(const Model::DeleteBucketRequest& request) const;
 
-        /*
-            Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Deletes the bucket. All objects (including all object versions and Delete
+         * Markers) in the bucket must be deleted before the bucket itself can be deleted.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketAsync(const Model::DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Deletes the cors configuration information set for the bucket.
-        */
+        /**
+         * Deletes the cors configuration information set for the bucket.
+         */
         virtual Model::DeleteBucketCorsOutcome DeleteBucketCors(const Model::DeleteBucketCorsRequest& request) const;
 
-        /*
-            Deletes the cors configuration information set for the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Deletes the cors configuration information set for the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketCorsOutcomeCallable DeleteBucketCorsCallable(const Model::DeleteBucketCorsRequest& request) const;
 
-        /*
-            Deletes the cors configuration information set for the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Deletes the cors configuration information set for the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketCorsAsync(const Model::DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Deletes the lifecycle configuration from the bucket.
-        */
+        /**
+         * Deletes the lifecycle configuration from the bucket.
+         */
         virtual Model::DeleteBucketLifecycleOutcome DeleteBucketLifecycle(const Model::DeleteBucketLifecycleRequest& request) const;
 
-        /*
-            Deletes the lifecycle configuration from the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Deletes the lifecycle configuration from the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketLifecycleOutcomeCallable DeleteBucketLifecycleCallable(const Model::DeleteBucketLifecycleRequest& request) const;
 
-        /*
-            Deletes the lifecycle configuration from the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Deletes the lifecycle configuration from the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketLifecycleAsync(const Model::DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Deletes the policy from the bucket.
-        */
+        /**
+         * Deletes the policy from the bucket.
+         */
         virtual Model::DeleteBucketPolicyOutcome DeleteBucketPolicy(const Model::DeleteBucketPolicyRequest& request) const;
 
-        /*
-            Deletes the policy from the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Deletes the policy from the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketPolicyOutcomeCallable DeleteBucketPolicyCallable(const Model::DeleteBucketPolicyRequest& request) const;
 
-        /*
-            Deletes the policy from the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Deletes the policy from the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketReplicationAsync(const Model::DeleteBucketReplicationRequest& request, const DeleteBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Deletes the tags from the bucket.
-        */
+        /**
+         * Deletes the tags from the bucket.
+         */
         virtual Model::DeleteBucketTaggingOutcome DeleteBucketTagging(const Model::DeleteBucketTaggingRequest& request) const;
 
-        /*
-            Deletes the tags from the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Deletes the tags from the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketTaggingOutcomeCallable DeleteBucketTaggingCallable(const Model::DeleteBucketTaggingRequest& request) const;
 
-        /*
-            Deletes the tags from the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Deletes the tags from the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketTaggingAsync(const Model::DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            This operation removes the website configuration from the bucket.
-        */
+        /**
+         * This operation removes the website configuration from the bucket.
+         */
         virtual Model::DeleteBucketWebsiteOutcome DeleteBucketWebsite(const Model::DeleteBucketWebsiteRequest& request) const;
 
-        /*
-            This operation removes the website configuration from the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * This operation removes the website configuration from the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteBucketWebsiteOutcomeCallable DeleteBucketWebsiteCallable(const Model::DeleteBucketWebsiteRequest& request) const;
 
-        /*
-            This operation removes the website configuration from the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * This operation removes the website configuration from the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteBucketWebsiteAsync(const Model::DeleteBucketWebsiteRequest& request, const DeleteBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects.
-        */
+        /**
+         * Removes the null version (if there is one) of an object and inserts a delete
+         * marker, which becomes the latest version of the object. If there isn't a null
+         * version, Amazon S3 does not remove any objects.
+         */
         virtual Model::DeleteObjectOutcome DeleteObject(const Model::DeleteObjectRequest& request) const;
 
-        /*
-            Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Removes the null version (if there is one) of an object and inserts a delete
+         * marker, which becomes the latest version of the object. If there isn't a null
+         * version, Amazon S3 does not remove any objects.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteObjectOutcomeCallable DeleteObjectCallable(const Model::DeleteObjectRequest& request) const;
 
-        /*
-            Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Removes the null version (if there is one) of an object and inserts a delete
+         * marker, which becomes the latest version of the object. If there isn't a null
+         * version, Amazon S3 does not remove any objects.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000 keys.
-        */
+        /**
+         * This operation enables you to delete multiple objects from a bucket using a
+         * single HTTP request. You may specify up to 1000 keys.
+         */
         virtual Model::DeleteObjectsOutcome DeleteObjects(const Model::DeleteObjectsRequest& request) const;
 
-        /*
-            This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000 keys.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * This operation enables you to delete multiple objects from a bucket using a
+         * single HTTP request. You may specify up to 1000 keys.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::DeleteObjectsOutcomeCallable DeleteObjectsCallable(const Model::DeleteObjectsRequest& request) const;
 
-        /*
-            This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000 keys.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * This operation enables you to delete multiple objects from a bucket using a
+         * single HTTP request. You may specify up to 1000 keys.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Gets the access control policy for the bucket.
-        */
+        /**
+         * Gets the access control policy for the bucket.
+         */
         virtual Model::GetBucketAclOutcome GetBucketAcl(const Model::GetBucketAclRequest& request) const;
 
-        /*
-            Gets the access control policy for the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Gets the access control policy for the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketAclOutcomeCallable GetBucketAclCallable(const Model::GetBucketAclRequest& request) const;
 
-        /*
-            Gets the access control policy for the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Gets the access control policy for the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketAclAsync(const Model::GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the cors configuration for the bucket.
-        */
+        /**
+         * Returns the cors configuration for the bucket.
+         */
         virtual Model::GetBucketCorsOutcome GetBucketCors(const Model::GetBucketCorsRequest& request) const;
 
-        /*
-            Returns the cors configuration for the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the cors configuration for the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketCorsOutcomeCallable GetBucketCorsCallable(const Model::GetBucketCorsRequest& request) const;
 
-        /*
-            Returns the cors configuration for the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the cors configuration for the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketCorsAsync(const Model::GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the lifecycle configuration information set on the bucket.
-        */
+        /**
+         * Returns the lifecycle configuration information set on the bucket.
+         */
         virtual Model::GetBucketLifecycleOutcome GetBucketLifecycle(const Model::GetBucketLifecycleRequest& request) const;
 
-        /*
-            Returns the lifecycle configuration information set on the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the lifecycle configuration information set on the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketLifecycleOutcomeCallable GetBucketLifecycleCallable(const Model::GetBucketLifecycleRequest& request) const;
 
-        /*
-            Returns the lifecycle configuration information set on the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the lifecycle configuration information set on the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketLifecycleAsync(const Model::GetBucketLifecycleRequest& request, const GetBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the region the bucket resides in.
-        */
+        /**
+         * Returns the region the bucket resides in.
+         */
         virtual Model::GetBucketLocationOutcome GetBucketLocation(const Model::GetBucketLocationRequest& request) const;
 
-        /*
-            Returns the region the bucket resides in.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the region the bucket resides in.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketLocationOutcomeCallable GetBucketLocationCallable(const Model::GetBucketLocationRequest& request) const;
 
-        /*
-            Returns the region the bucket resides in.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the region the bucket resides in.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketLocationAsync(const Model::GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the bucket owner.
-        */
+        /**
+         * Returns the logging status of a bucket and the permissions users have to view
+         * and modify that status. To use GET, you must be the bucket owner.
+         */
         virtual Model::GetBucketLoggingOutcome GetBucketLogging(const Model::GetBucketLoggingRequest& request) const;
 
-        /*
-            Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the bucket owner.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the logging status of a bucket and the permissions users have to view
+         * and modify that status. To use GET, you must be the bucket owner.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketLoggingOutcomeCallable GetBucketLoggingCallable(const Model::GetBucketLoggingRequest& request) const;
 
-        /*
-            Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the bucket owner.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the logging status of a bucket and the permissions users have to view
+         * and modify that status. To use GET, you must be the bucket owner.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketLoggingAsync(const Model::GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the notification configuration of a bucket.
-        */
+        /**
+         * Returns the notification configuration of a bucket.
+         */
         virtual Model::GetBucketNotificationConfigurationOutcome GetBucketNotificationConfiguration(const Model::GetBucketNotificationConfigurationRequest& request) const;
 
-        /*
-            Returns the notification configuration of a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the notification configuration of a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketNotificationConfigurationOutcomeCallable GetBucketNotificationConfigurationCallable(const Model::GetBucketNotificationConfigurationRequest& request) const;
 
-        /*
-            Returns the notification configuration of a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the notification configuration of a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketNotificationConfigurationAsync(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the policy of a specified bucket.
-        */
+        /**
+         * Returns the policy of a specified bucket.
+         */
         virtual Model::GetBucketPolicyOutcome GetBucketPolicy(const Model::GetBucketPolicyRequest& request) const;
 
-        /*
-            Returns the policy of a specified bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the policy of a specified bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketPolicyOutcomeCallable GetBucketPolicyCallable(const Model::GetBucketPolicyRequest& request) const;
 
-        /*
-            Returns the policy of a specified bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the policy of a specified bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            
-        */
+        /**
+         * 
+         */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
-        /*
-            
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
-        /*
-            
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketReplicationAsync(const Model::GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the request payment configuration of a bucket.
-        */
+        /**
+         * Returns the request payment configuration of a bucket.
+         */
         virtual Model::GetBucketRequestPaymentOutcome GetBucketRequestPayment(const Model::GetBucketRequestPaymentRequest& request) const;
 
-        /*
-            Returns the request payment configuration of a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the request payment configuration of a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketRequestPaymentOutcomeCallable GetBucketRequestPaymentCallable(const Model::GetBucketRequestPaymentRequest& request) const;
 
-        /*
-            Returns the request payment configuration of a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the request payment configuration of a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketRequestPaymentAsync(const Model::GetBucketRequestPaymentRequest& request, const GetBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the tag set associated with the bucket.
-        */
+        /**
+         * Returns the tag set associated with the bucket.
+         */
         virtual Model::GetBucketTaggingOutcome GetBucketTagging(const Model::GetBucketTaggingRequest& request) const;
 
-        /*
-            Returns the tag set associated with the bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the tag set associated with the bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketTaggingOutcomeCallable GetBucketTaggingCallable(const Model::GetBucketTaggingRequest& request) const;
 
-        /*
-            Returns the tag set associated with the bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the tag set associated with the bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketTaggingAsync(const Model::GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the versioning state of a bucket.
-        */
+        /**
+         * Returns the versioning state of a bucket.
+         */
         virtual Model::GetBucketVersioningOutcome GetBucketVersioning(const Model::GetBucketVersioningRequest& request) const;
 
-        /*
-            Returns the versioning state of a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the versioning state of a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketVersioningOutcomeCallable GetBucketVersioningCallable(const Model::GetBucketVersioningRequest& request) const;
 
-        /*
-            Returns the versioning state of a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the versioning state of a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketVersioningAsync(const Model::GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the website configuration for a bucket.
-        */
+        /**
+         * Returns the website configuration for a bucket.
+         */
         virtual Model::GetBucketWebsiteOutcome GetBucketWebsite(const Model::GetBucketWebsiteRequest& request) const;
 
-        /*
-            Returns the website configuration for a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the website configuration for a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetBucketWebsiteOutcomeCallable GetBucketWebsiteCallable(const Model::GetBucketWebsiteRequest& request) const;
 
-        /*
-            Returns the website configuration for a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the website configuration for a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetBucketWebsiteAsync(const Model::GetBucketWebsiteRequest& request, const GetBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Retrieves objects from Amazon S3.
-        */
+        /**
+         * Retrieves objects from Amazon S3.
+         */
         virtual Model::GetObjectOutcome GetObject(const Model::GetObjectRequest& request) const;
 
-        /*
-            Retrieves objects from Amazon S3.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Retrieves objects from Amazon S3.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetObjectOutcomeCallable GetObjectCallable(const Model::GetObjectRequest& request) const;
 
-        /*
-            Retrieves objects from Amazon S3.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Retrieves objects from Amazon S3.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetObjectAsync(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns the access control list (ACL) of an object.
-        */
+        /**
+         * Returns the access control list (ACL) of an object.
+         */
         virtual Model::GetObjectAclOutcome GetObjectAcl(const Model::GetObjectAclRequest& request) const;
 
-        /*
-            Returns the access control list (ACL) of an object.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns the access control list (ACL) of an object.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetObjectAclOutcomeCallable GetObjectAclCallable(const Model::GetObjectAclRequest& request) const;
 
-        /*
-            Returns the access control list (ACL) of an object.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns the access control list (ACL) of an object.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetObjectAclAsync(const Model::GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Return torrent files from a bucket.
-        */
+        /**
+         * Return torrent files from a bucket.
+         */
         virtual Model::GetObjectTorrentOutcome GetObjectTorrent(const Model::GetObjectTorrentRequest& request) const;
 
-        /*
-            Return torrent files from a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Return torrent files from a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::GetObjectTorrentOutcomeCallable GetObjectTorrentCallable(const Model::GetObjectTorrentRequest& request) const;
 
-        /*
-            Return torrent files from a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Return torrent files from a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            This operation is useful to determine if a bucket exists and you have permission to access it.
-        */
+        /**
+         * This operation is useful to determine if a bucket exists and you have permission
+         * to access it.
+         */
         virtual Model::HeadBucketOutcome HeadBucket(const Model::HeadBucketRequest& request) const;
 
-        /*
-            This operation is useful to determine if a bucket exists and you have permission to access it.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * This operation is useful to determine if a bucket exists and you have permission
+         * to access it.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::HeadBucketOutcomeCallable HeadBucketCallable(const Model::HeadBucketRequest& request) const;
 
-        /*
-            This operation is useful to determine if a bucket exists and you have permission to access it.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * This operation is useful to determine if a bucket exists and you have permission
+         * to access it.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void HeadBucketAsync(const Model::HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            The HEAD operation retrieves metadata from an object without returning the object itself. This operation is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.
-        */
+        /**
+         * The HEAD operation retrieves metadata from an object without returning the
+         * object itself. This operation is useful if you're only interested in an object's
+         * metadata. To use HEAD, you must have READ access to the object.
+         */
         virtual Model::HeadObjectOutcome HeadObject(const Model::HeadObjectRequest& request) const;
 
-        /*
-            The HEAD operation retrieves metadata from an object without returning the object itself. This operation is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * The HEAD operation retrieves metadata from an object without returning the
+         * object itself. This operation is useful if you're only interested in an object's
+         * metadata. To use HEAD, you must have READ access to the object.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::HeadObjectOutcomeCallable HeadObjectCallable(const Model::HeadObjectRequest& request) const;
 
-        /*
-            The HEAD operation retrieves metadata from an object without returning the object itself. This operation is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * The HEAD operation retrieves metadata from an object without returning the
+         * object itself. This operation is useful if you're only interested in an object's
+         * metadata. To use HEAD, you must have READ access to the object.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void HeadObjectAsync(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns a list of all buckets owned by the authenticated sender of the request.
-        */
+        /**
+         * Returns a list of all buckets owned by the authenticated sender of the request.
+         */
         virtual Model::ListBucketsOutcome ListBuckets() const;
 
-        /*
-            Returns a list of all buckets owned by the authenticated sender of the request.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns a list of all buckets owned by the authenticated sender of the request.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListBucketsOutcomeCallable ListBucketsCallable() const;
 
-        /*
-            Returns a list of all buckets owned by the authenticated sender of the request.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns a list of all buckets owned by the authenticated sender of the request.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListBucketsAsync(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-        /*
-            This operation lists in-progress multipart uploads.
-        */
+        /**
+         * This operation lists in-progress multipart uploads.
+         */
         virtual Model::ListMultipartUploadsOutcome ListMultipartUploads(const Model::ListMultipartUploadsRequest& request) const;
 
-        /*
-            This operation lists in-progress multipart uploads.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * This operation lists in-progress multipart uploads.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListMultipartUploadsOutcomeCallable ListMultipartUploadsCallable(const Model::ListMultipartUploadsRequest& request) const;
 
-        /*
-            This operation lists in-progress multipart uploads.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * This operation lists in-progress multipart uploads.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns metadata about all of the versions of objects in a bucket.
-        */
+        /**
+         * Returns metadata about all of the versions of objects in a bucket.
+         */
         virtual Model::ListObjectVersionsOutcome ListObjectVersions(const Model::ListObjectVersionsRequest& request) const;
 
-        /*
-            Returns metadata about all of the versions of objects in a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns metadata about all of the versions of objects in a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListObjectVersionsOutcomeCallable ListObjectVersionsCallable(const Model::ListObjectVersionsRequest& request) const;
 
-        /*
-            Returns metadata about all of the versions of objects in a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns metadata about all of the versions of objects in a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListObjectVersionsAsync(const Model::ListObjectVersionsRequest& request, const ListObjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
-        */
+        /**
+         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * request parameters as selection criteria to return a subset of the objects in a
+         * bucket.
+         */
         virtual Model::ListObjectsOutcome ListObjects(const Model::ListObjectsRequest& request) const;
 
-        /*
-            Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * request parameters as selection criteria to return a subset of the objects in a
+         * bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListObjectsOutcomeCallable ListObjectsCallable(const Model::ListObjectsRequest& request) const;
 
-        /*
-            Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * request parameters as selection criteria to return a subset of the objects in a
+         * bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Lists the parts that have been uploaded for a specific multipart upload.
-        */
+        /**
+         * Lists the parts that have been uploaded for a specific multipart upload.
+         */
         virtual Model::ListPartsOutcome ListParts(const Model::ListPartsRequest& request) const;
 
-        /*
-            Lists the parts that have been uploaded for a specific multipart upload.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Lists the parts that have been uploaded for a specific multipart upload.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::ListPartsOutcomeCallable ListPartsCallable(const Model::ListPartsRequest& request) const;
 
-        /*
-            Lists the parts that have been uploaded for a specific multipart upload.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Lists the parts that have been uploaded for a specific multipart upload.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void ListPartsAsync(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Sets the permissions on a bucket using access control lists (ACL).
-        */
+        /**
+         * Sets the permissions on a bucket using access control lists (ACL).
+         */
         virtual Model::PutBucketAclOutcome PutBucketAcl(const Model::PutBucketAclRequest& request) const;
 
-        /*
-            Sets the permissions on a bucket using access control lists (ACL).
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Sets the permissions on a bucket using access control lists (ACL).
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketAclOutcomeCallable PutBucketAclCallable(const Model::PutBucketAclRequest& request) const;
 
-        /*
-            Sets the permissions on a bucket using access control lists (ACL).
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Sets the permissions on a bucket using access control lists (ACL).
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketAclAsync(const Model::PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Sets the cors configuration for a bucket.
-        */
+        /**
+         * Sets the cors configuration for a bucket.
+         */
         virtual Model::PutBucketCorsOutcome PutBucketCors(const Model::PutBucketCorsRequest& request) const;
 
-        /*
-            Sets the cors configuration for a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Sets the cors configuration for a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketCorsOutcomeCallable PutBucketCorsCallable(const Model::PutBucketCorsRequest& request) const;
 
-        /*
-            Sets the cors configuration for a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Sets the cors configuration for a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketCorsAsync(const Model::PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
-        */
+        /**
+         * Sets lifecycle configuration for your bucket. If a lifecycle configuration
+         * exists, it replaces it.
+         */
         virtual Model::PutBucketLifecycleOutcome PutBucketLifecycle(const Model::PutBucketLifecycleRequest& request) const;
 
-        /*
-            Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Sets lifecycle configuration for your bucket. If a lifecycle configuration
+         * exists, it replaces it.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketLifecycleOutcomeCallable PutBucketLifecycleCallable(const Model::PutBucketLifecycleRequest& request) const;
 
-        /*
-            Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Sets lifecycle configuration for your bucket. If a lifecycle configuration
+         * exists, it replaces it.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketLifecycleAsync(const Model::PutBucketLifecycleRequest& request, const PutBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
-        */
+        /**
+         * Set the logging parameters for a bucket and to specify permissions for who can
+         * view and modify the logging parameters. To set the logging status of a bucket,
+         * you must be the bucket owner.
+         */
         virtual Model::PutBucketLoggingOutcome PutBucketLogging(const Model::PutBucketLoggingRequest& request) const;
 
-        /*
-            Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Set the logging parameters for a bucket and to specify permissions for who can
+         * view and modify the logging parameters. To set the logging status of a bucket,
+         * you must be the bucket owner.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketLoggingOutcomeCallable PutBucketLoggingCallable(const Model::PutBucketLoggingRequest& request) const;
 
-        /*
-            Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Set the logging parameters for a bucket and to specify permissions for who can
+         * view and modify the logging parameters. To set the logging status of a bucket,
+         * you must be the bucket owner.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketLoggingAsync(const Model::PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Enables notifications of specified events for a bucket.
-        */
+        /**
+         * Enables notifications of specified events for a bucket.
+         */
         virtual Model::PutBucketNotificationConfigurationOutcome PutBucketNotificationConfiguration(const Model::PutBucketNotificationConfigurationRequest& request) const;
 
-        /*
-            Enables notifications of specified events for a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Enables notifications of specified events for a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketNotificationConfigurationOutcomeCallable PutBucketNotificationConfigurationCallable(const Model::PutBucketNotificationConfigurationRequest& request) const;
 
-        /*
-            Enables notifications of specified events for a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Enables notifications of specified events for a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
-        */
+        /**
+         * Replaces a policy on a bucket. If the bucket already has a policy, the one in
+         * this request completely replaces it.
+         */
         virtual Model::PutBucketPolicyOutcome PutBucketPolicy(const Model::PutBucketPolicyRequest& request) const;
 
-        /*
-            Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Replaces a policy on a bucket. If the bucket already has a policy, the one in
+         * this request completely replaces it.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketPolicyOutcomeCallable PutBucketPolicyCallable(const Model::PutBucketPolicyRequest& request) const;
 
-        /*
-            Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Replaces a policy on a bucket. If the bucket already has a policy, the one in
+         * this request completely replaces it.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Creates a new replication configuration (or replaces an existing one, if present).
-        */
+        /**
+         * Creates a new replication configuration (or replaces an existing one, if
+         * present).
+         */
         virtual Model::PutBucketReplicationOutcome PutBucketReplication(const Model::PutBucketReplicationRequest& request) const;
 
-        /*
-            Creates a new replication configuration (or replaces an existing one, if present).
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Creates a new replication configuration (or replaces an existing one, if
+         * present).
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketReplicationOutcomeCallable PutBucketReplicationCallable(const Model::PutBucketReplicationRequest& request) const;
 
-        /*
-            Creates a new replication configuration (or replaces an existing one, if present).
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Creates a new replication configuration (or replaces an existing one, if
+         * present).
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketReplicationAsync(const Model::PutBucketReplicationRequest& request, const PutBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
-        */
+        /**
+         * Sets the request payment configuration for a bucket. By default, the bucket
+         * owner pays for downloads from the bucket. This configuration parameter enables
+         * the bucket owner (only) to specify that the person requesting the download will
+         * be charged for the download. Documentation on requester pays buckets can be
+         * found at
+         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+         */
         virtual Model::PutBucketRequestPaymentOutcome PutBucketRequestPayment(const Model::PutBucketRequestPaymentRequest& request) const;
 
-        /*
-            Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Sets the request payment configuration for a bucket. By default, the bucket
+         * owner pays for downloads from the bucket. This configuration parameter enables
+         * the bucket owner (only) to specify that the person requesting the download will
+         * be charged for the download. Documentation on requester pays buckets can be
+         * found at
+         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketRequestPaymentOutcomeCallable PutBucketRequestPaymentCallable(const Model::PutBucketRequestPaymentRequest& request) const;
 
-        /*
-            Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Sets the request payment configuration for a bucket. By default, the bucket
+         * owner pays for downloads from the bucket. This configuration parameter enables
+         * the bucket owner (only) to specify that the person requesting the download will
+         * be charged for the download. Documentation on requester pays buckets can be
+         * found at
+         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketRequestPaymentAsync(const Model::PutBucketRequestPaymentRequest& request, const PutBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Sets the tags for a bucket.
-        */
+        /**
+         * Sets the tags for a bucket.
+         */
         virtual Model::PutBucketTaggingOutcome PutBucketTagging(const Model::PutBucketTaggingRequest& request) const;
 
-        /*
-            Sets the tags for a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Sets the tags for a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketTaggingOutcomeCallable PutBucketTaggingCallable(const Model::PutBucketTaggingRequest& request) const;
 
-        /*
-            Sets the tags for a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Sets the tags for a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketTaggingAsync(const Model::PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
-        */
+        /**
+         * Sets the versioning state of an existing bucket. To set the versioning state,
+         * you must be the bucket owner.
+         */
         virtual Model::PutBucketVersioningOutcome PutBucketVersioning(const Model::PutBucketVersioningRequest& request) const;
 
-        /*
-            Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Sets the versioning state of an existing bucket. To set the versioning state,
+         * you must be the bucket owner.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketVersioningOutcomeCallable PutBucketVersioningCallable(const Model::PutBucketVersioningRequest& request) const;
 
-        /*
-            Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Sets the versioning state of an existing bucket. To set the versioning state,
+         * you must be the bucket owner.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketVersioningAsync(const Model::PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Set the website configuration for a bucket.
-        */
+        /**
+         * Set the website configuration for a bucket.
+         */
         virtual Model::PutBucketWebsiteOutcome PutBucketWebsite(const Model::PutBucketWebsiteRequest& request) const;
 
-        /*
-            Set the website configuration for a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Set the website configuration for a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutBucketWebsiteOutcomeCallable PutBucketWebsiteCallable(const Model::PutBucketWebsiteRequest& request) const;
 
-        /*
-            Set the website configuration for a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Set the website configuration for a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutBucketWebsiteAsync(const Model::PutBucketWebsiteRequest& request, const PutBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Adds an object to a bucket.
-        */
+        /**
+         * Adds an object to a bucket.
+         */
         virtual Model::PutObjectOutcome PutObject(const Model::PutObjectRequest& request) const;
 
-        /*
-            Adds an object to a bucket.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Adds an object to a bucket.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutObjectOutcomeCallable PutObjectCallable(const Model::PutObjectRequest& request) const;
 
-        /*
-            Adds an object to a bucket.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Adds an object to a bucket.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutObjectAsync(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
-        */
+        /**
+         * uses the acl subresource to set the access control list (ACL) permissions for an
+         * object that already exists in a bucket
+         */
         virtual Model::PutObjectAclOutcome PutObjectAcl(const Model::PutObjectAclRequest& request) const;
 
-        /*
-            uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * uses the acl subresource to set the access control list (ACL) permissions for an
+         * object that already exists in a bucket
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutObjectAclOutcomeCallable PutObjectAclCallable(const Model::PutObjectAclRequest& request) const;
 
-        /*
-            uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * uses the acl subresource to set the access control list (ACL) permissions for an
+         * object that already exists in a bucket
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Restores an archived copy of an object back into Amazon S3
-        */
+        /**
+         * Restores an archived copy of an object back into Amazon S3
+         */
         virtual Model::RestoreObjectOutcome RestoreObject(const Model::RestoreObjectRequest& request) const;
 
-        /*
-            Restores an archived copy of an object back into Amazon S3
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Restores an archived copy of an object back into Amazon S3
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::RestoreObjectOutcomeCallable RestoreObjectCallable(const Model::RestoreObjectRequest& request) const;
 
-        /*
-            Restores an archived copy of an object back into Amazon S3
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Restores an archived copy of an object back into Amazon S3
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void RestoreObjectAsync(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-        */
+        /**
+         * <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate
+         * multipart upload and upload one or more parts, you must either complete or abort
+         * multipart upload in order to stop getting charged for storage of the uploaded
+         * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
+         * up the parts storage and stops charging you for the parts storage.</p>
+         */
         virtual Model::UploadPartOutcome UploadPart(const Model::UploadPartRequest& request) const;
 
-        /*
-            <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate
+         * multipart upload and upload one or more parts, you must either complete or abort
+         * multipart upload in order to stop getting charged for storage of the uploaded
+         * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
+         * up the parts storage and stops charging you for the parts storage.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UploadPartOutcomeCallable UploadPartCallable(const Model::UploadPartRequest& request) const;
 
-        /*
-            <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate
+         * multipart upload and upload one or more parts, you must either complete or abort
+         * multipart upload in order to stop getting charged for storage of the uploaded
+         * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
+         * up the parts storage and stops charging you for the parts storage.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UploadPartAsync(const Model::UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /*
-            Uploads a part by copying data from an existing object as data source.
-        */
+        /**
+         * Uploads a part by copying data from an existing object as data source.
+         */
         virtual Model::UploadPartCopyOutcome UploadPartCopy(const Model::UploadPartCopyRequest& request) const;
 
-        /*
-            Uploads a part by copying data from an existing object as data source.
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * Uploads a part by copying data from an existing object as data source.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::UploadPartCopyOutcomeCallable UploadPartCopyCallable(const Model::UploadPartCopyRequest& request) const;
 
-        /*
-            Uploads a part by copying data from an existing object as data source.
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * Uploads a part by copying data from an existing object as data source.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void UploadPartCopyAsync(const Model::UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
@@ -1339,7 +1434,7 @@
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
 
-/**Async helpers**/
+        /**Async helpers**/
         void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CompleteMultipartUploadAsyncHelper(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyObjectAsyncHelper(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1397,5 +1492,5 @@
         std::shared_ptr<Utils::Threading::Executor> m_executor;
     };
 
-} // namespace S3
+  } // namespace S3
 } // namespace Aws
