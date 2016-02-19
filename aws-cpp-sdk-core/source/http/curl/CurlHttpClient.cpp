@@ -114,7 +114,11 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
 std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
                                                           Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
-    Aws::String url = request.GetURIString();
+    //handle uri encoding at last second. Otherwise, the signer and the http layer will mismatch.
+    URI uri = request.GetUri();
+    uri.SetPath(URI::URLEncodePath(uri.GetPath()));
+    Aws::String url = uri.GetURIString();
+
     AWS_LOGSTREAM_TRACE(CurlTag, "Making request to " << url);
     struct curl_slist* headers = NULL;
 
@@ -164,6 +168,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         CurlReadCallbackContext readContext(this, &request);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
+
         curl_easy_setopt(connectionHandle, CURLOPT_URL, url.c_str());
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEFUNCTION, &CurlHttpClient::WriteData);
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEDATA, &writeContext);

@@ -239,6 +239,16 @@ TEST(StringUtilsTest, TestDoubleURLEncoding)
     ASSERT_EQ("0.0005678", StringUtils::URLEncode(doubleValue));
 }
 
+TEST(StringUtilsTest, TestUnicodeURLEncoding)
+{
+    ASSERT_EQ("sample%E4%B8%AD%E5%9B%BD", StringUtils::URLEncode("sample中国"));
+}
+
+TEST(StringUtilsTest, TestUnicodeURLDecoding)
+{
+    ASSERT_EQ("sample中国", StringUtils::URLDecode("sample%E4%B8%AD%E5%9B%BD"));
+}
+
 #ifdef _WIN32
 
 TEST(StringUtilsTest, TestWCharToString)

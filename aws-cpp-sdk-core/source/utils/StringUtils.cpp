@@ -130,7 +130,8 @@ Aws::String StringUtils::URLEncode(const char* unsafe)
         }
         else
         {
-            escaped << '%' << std::setw(2) << ((int) c) << std::setw(0);
+            //this unsigned char cast allows us to handle unicode characters.
+            escaped << '%' << std::setw(2) << int((unsigned char)c) << std::setw(0);
         }
     }
 
