@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -62,11 +62,16 @@ namespace
     static const char* CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucket";
     static const char* LOCATION_BUCKET_TEST_NAME = "loc";
     static const char* PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucket";
+	static const char* PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucket";
     static const char* PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucket";
     static const char* PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultipartbucket";
     static const char* ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucket";
     static const char* INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucket";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
+	//windows is stupid and won't let you hard code unicode strings in a source file. Every other compiler does and I need to test this.
+	//to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
+	static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
+	static const char* URIESCAPE_KEY = "Escape+Me";
 
     static const int TIMEOUT_MAX = 10;
 
@@ -506,6 +511,100 @@ namespace
         headObjectOutcome = Client->HeadObject(headObjectRequest);
         ASSERT_FALSE(headObjectOutcome.IsSuccess());
     }
+
+	TEST_F(BucketAndObjectOperationTest, TestKeysWithCrazyCharacterSets)
+	{
+		Aws::String fullBucketName = CalculateBucketName(PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
+
+		CreateBucketRequest createBucketRequest;
+		createBucketRequest.SetBucket(fullBucketName);
+		createBucketRequest.SetACL(BucketCannedACL::private_);
+
+		CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+		ASSERT_TRUE(createBucketOutcome.IsSuccess());
+		const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+		ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+
+		WaitForBucketToPropagate(fullBucketName);
+
+		//test unicode
+		{
+			//we already have verification that this is a legit unicode string via the StringUtils test.
+			Aws::String unicodekey = StringUtils::URLDecode(URLENCODED_UNICODE_KEY);
+			PutObjectRequest putObjectRequest;
+			putObjectRequest.SetBucket(fullBucketName);
+
+			std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
+			*objectStream << "Test Object";
+			objectStream->flush();
+			putObjectRequest.SetBody(objectStream);			
+			putObjectRequest.SetKey(unicodekey);
+
+			PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+			ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+			WaitForObjectToPropagate(fullBucketName, unicodekey.c_str());
+
+			ListObjectsRequest listObjectsRequest;
+			listObjectsRequest.SetBucket(fullBucketName);
+
+			ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+			ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+			ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, unicodekey.c_str()));
+
+			HeadObjectRequest headObjectRequest;
+			headObjectRequest.SetBucket(fullBucketName);
+			headObjectRequest.SetKey(unicodekey);
+
+			HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
+			ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+			DeleteObjectRequest deleteObjectRequest;
+			deleteObjectRequest.SetBucket(fullBucketName);
+			deleteObjectRequest.SetKey(unicodekey);
+			DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+			ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+		}
+
+		//test uri encoding edge case.
+		{
+			PutObjectRequest putObjectRequest;
+			putObjectRequest.SetBucket(fullBucketName);
+
+			std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
+			*objectStream << "Test Object";
+			objectStream->flush();
+			putObjectRequest.SetBody(objectStream);			
+			putObjectRequest.SetKey(URIESCAPE_KEY);
+
+			PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+			ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+			WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY);
+
+			ListObjectsRequest listObjectsRequest;
+			listObjectsRequest.SetBucket(fullBucketName);
+
+			ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+			ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+			ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY));
+
+			HeadObjectRequest headObjectRequest;
+			headObjectRequest.SetBucket(fullBucketName);
+			headObjectRequest.SetKey(URIESCAPE_KEY);
+
+			HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
+			ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+			DeleteObjectRequest deleteObjectRequest;
+			deleteObjectRequest.SetBucket(fullBucketName);
+			deleteObjectRequest.SetKey(URIESCAPE_KEY);
+			DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+			ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+		}
+
+		WaitForBucketToEmpty(fullBucketName);		
+	}
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrls)
     {

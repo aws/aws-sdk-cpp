@@ -14,7 +14,6 @@
   */
 
 #include <aws/core/http/windows/WinSyncHttpClient.h>
-
 #include <aws/core/Http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
@@ -44,7 +43,7 @@ WinSyncHttpClient::WinSyncHttpClient() :
 
 WinSyncHttpClient::~WinSyncHttpClient()
 {
-    AWS_LOG_DEBUG(GetLogTag(), "Cleaning up client with handle %p.", m_openHandle);
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Cleaning up client with handle " << m_openHandle);
     if (GetConnectionPoolManager() && GetOpenHandle())
     {
         GetConnectionPoolManager()->DoCloseHandle(GetOpenHandle());
@@ -74,7 +73,7 @@ void* WinSyncHttpClient::AllocateWindowsHttpRequest(const Aws::Http::HttpRequest
     }
 
     void* hHttpRequest = OpenRequest(request, connection, ss);
-    AWS_LOG_DEBUG(GetLogTag(), "AllocateWindowsHttpRequest returned handle %p", hHttpRequest);
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "AllocateWindowsHttpRequest returned handle " << hHttpRequest);
 
     return hHttpRequest;
 }
@@ -169,7 +168,7 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
         messageBuffer,
         WINDOWS_ERROR_MESSAGE_BUFFER_SIZE, 
         nullptr);
-    AWS_LOG_WARN(GetLogTag(), "Send request failed: %s", messageBuffer);
+    AWS_LOGSTREAM_WARN(GetLogTag(), "Send request failed: " << messageBuffer);
 
 }
 
@@ -250,8 +249,12 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
                                                                  Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
                                                                  Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
-    AWS_LOG_TRACE(GetLogTag(), "Making %s request to uri %s.",
-        HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()), request.GetURIString(true).c_str());
+	//we URL encode right before going over the wire to avoid double encoding problems with the signer.
+	URI& uriRef = request.GetUri();
+	uriRef.SetPath(URI::URLEncodePath(uriRef.GetPath()));	
+
+    AWS_LOGSTREAM_TRACE(GetLogTag(), "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) <<
+			" request to uri " << uriRef.GetURIString(true));
 
     bool success = IsRequestProcessingEnabled();
 
@@ -265,8 +268,8 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
             writeLimiter->ApplyAndPayForCost(request.GetSize());
         }
 
-        connection = m_connectionPoolMgr->AquireConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort());
-        AWS_LOG_DEBUG(GetLogTag(), "Acquired connection %p.", connection);
+        connection = m_connectionPoolMgr->AquireConnectionForHost(uriRef.GetAuthority(), uriRef.GetPort());
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Acquired connection " << connection);
 
         hHttpRequest = AllocateWindowsHttpRequest(request, connection);
 
@@ -295,11 +298,11 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
 
     if (hHttpRequest)
     {
-        AWS_LOG_DEBUG(GetLogTag(), "Closing http request handle %p.", hHttpRequest);
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Closing http request handle " << hHttpRequest);
         GetConnectionPoolManager()->DoCloseHandle(hHttpRequest);
     }
 
-    AWS_LOG_DEBUG(GetLogTag(), "Releasing connection handle %p.", connection);
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Releasing connection handle " << connection);
     GetConnectionPoolManager()->ReleaseConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort(), connection);
 
     return response;

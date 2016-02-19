@@ -15,7 +15,6 @@
 
 
 #include <aws/core/utils/StringUtils.h>
-
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <algorithm>
 #include <iomanip>
@@ -124,7 +123,9 @@ Aws::String StringUtils::URLEncode(const char* unsafe)
     for (auto i = unsafe, n = unsafe + unsafeLength; i != n; ++i)
     {
         char c = *i;
-        if (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~')
+		//MSVC 2015 has an assertion that c is positive in isalnum(). This breaks unicode support.
+		//bypass that with the first check.
+        if (c >= 0 && (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~'))
         {
             escaped << c;
         }
