@@ -30,7 +30,7 @@ set(ACCESS_MANAGEMENT_INCLUDES
 include_directories(${ACCESS_MANAGEMENT_INCLUDES})
 
 if(MSVC AND BUILD_SHARED_LIBS)
-    add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
+    add_definitions("-DAWS_ACCESS_MANAGEMENT_EXPORTS")
 endif()
 
 add_library(aws-cpp-sdk-access-management ${LIBTYPE} ${ACCESS_MANAGEMENT_SRC})
