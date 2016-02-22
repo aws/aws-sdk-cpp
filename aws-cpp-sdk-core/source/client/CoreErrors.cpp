@@ -55,6 +55,7 @@ static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("ResourceNot
 static const int RESOURCE_NOT_FOUND_EXCEPTION_HASH = HashingUtils::HashString("ResourceNotFoundException");
 static const int UNRECOGNIZED_CLIENT_HASH = HashingUtils::HashString("UnrecognizedClient");
 static const int UNRECOGNIZED_CLIENT_EXCEPTION_HASH = HashingUtils::HashString("UnrecognizedClientException");
+static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 
 AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
 {
@@ -131,6 +132,10 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   else if (errorHash == UNRECOGNIZED_CLIENT_HASH || errorHash == UNRECOGNIZED_CLIENT_EXCEPTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::UNRECOGNIZED_CLIENT, false);
+  }
+  else if (errorHash == REQUEST_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true);
   }
 
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
