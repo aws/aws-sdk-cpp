@@ -131,7 +131,7 @@ CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, 
                 m_maxPoolSize(maxSize), m_requestTimeout(requestTimeout), m_connectTimeout(connectTimeout),
                 m_poolSize(0)
 {
-    AWS_LOGSTREAM_INFO(CurlTag, "Intializing CurlHandleContainer with size " << maxSize);
+    AWS_LOGSTREAM_INFO(CurlTag, "Initializing CurlHandleContainer with size " << maxSize);
     if (!isInit)
     {
         AWS_LOG_INFO(CurlTag, "Initializing Curl library");
@@ -174,6 +174,16 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
     CURL* handle = m_handleContainer.top();
     AWS_LOGSTREAM_DEBUG(CurlTag, "Returning connection handle " << handle);
     m_handleContainer.pop();
+
+    curl_easy_reset(handle);
+
+    //for timeouts to work in a multi-threaded context,
+    //always turn signals off. This also forces dns queries to
+    //not be included in the timeout calculations.
+    curl_easy_setopt(handle, CURLOPT_NOSIGNAL, 1L);
+    curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, m_requestTimeout);
+    curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
+
     return handle;
 }
 
@@ -205,12 +215,6 @@ bool CurlHandleContainer::CheckAndGrowPool()
 
             if (curlHandle)
             {
-                //for timeouts to work in a multi-threaded context,
-                //always turn signals off. This also forces dns queries to
-                //not be included in the timeout calculations.
-                curl_easy_setopt(curlHandle, CURLOPT_NOSIGNAL, 1L);
-                curl_easy_setopt(curlHandle, CURLOPT_TIMEOUT_MS, m_requestTimeout);
-                curl_easy_setopt(curlHandle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
                 m_handleContainer.push(curlHandle);
                 ++actuallyAdded;
             }
