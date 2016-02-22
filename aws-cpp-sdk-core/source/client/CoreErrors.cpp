@@ -26,6 +26,7 @@ static const int INCOMPLETE_SIGNATURE_EXCEPTION_HASH = HashingUtils::HashString(
 static const int INCOMPLETE_SIGNATURE_HASH = HashingUtils::HashString("IncompleteSignature");
 static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("InternalFailure");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerError");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int INVALID_ACTION_HASH = HashingUtils::HashString("InvalidAction");
 static const int INVALID_CLIENT_TOKEN_ID_HASH = HashingUtils::HashString("InvalidClientTokenId");
 static const int INVALID_CLIENT_TOKEN_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidClientTokenIdException");
@@ -63,7 +64,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false);
   }
-  else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH)
+  else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH || errorHash == INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, true);
   }
