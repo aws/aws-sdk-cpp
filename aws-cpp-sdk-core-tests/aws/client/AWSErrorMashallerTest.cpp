@@ -194,6 +194,12 @@ TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
 
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InternalError", message));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InvalidAction", message));
     ASSERT_EQ(CoreErrors::INVALID_ACTION, error.GetErrorType());
     ASSERT_EQ("InvalidAction", error.GetExceptionName());
@@ -389,6 +395,12 @@ TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InternalServerError", message));
     ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
     ASSERT_EQ("InternalServerError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InternalError", message));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalError", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
 
