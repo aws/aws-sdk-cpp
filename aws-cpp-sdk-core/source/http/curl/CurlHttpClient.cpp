@@ -247,7 +247,6 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
                 response->SetContentType(contentType);
                 AWS_LOGSTREAM_DEBUG(CurlTag, "Returned content type " << contentType);
             }
-            curl_easy_reset(connectionHandle);
             AWS_LOGSTREAM_DEBUG(CurlTag, "Releasing curl handle " << connectionHandle);
         }
 
