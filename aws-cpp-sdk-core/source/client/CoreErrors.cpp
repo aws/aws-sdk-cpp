@@ -68,6 +68,7 @@ static const int INVALID_ACCESS_KEY_ID_HASH = HashingUtils::HashString("InvalidA
 static const int INVALID_ACCESS_KEY_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidAccessKeyIdException");
 static const int REQUEST_TIME_TOO_SKEWED_HASH = HashingUtils::HashString("RequestTimeTooSkewed");
 static const int REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeTooSkewedException");
+static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 
 AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
 {
@@ -164,6 +165,10 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   else if (errorHash == REQUEST_TIME_TOO_SKEWED_HASH || errorHash == REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true);
+  }
+  else if (errorHash == REQUEST_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true);
   }
 
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);

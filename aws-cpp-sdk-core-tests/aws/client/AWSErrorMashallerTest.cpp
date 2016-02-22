@@ -362,6 +362,12 @@ TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_FALSE(error.ShouldRetry());
 
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "RequestTimeout", message));
+    ASSERT_EQ(CoreErrors::REQUEST_TIMEOUT, error.GetErrorType());
+    ASSERT_EQ("RequestTimeout", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "IDon'tExist", "JunkMessage"));
     ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
     ASSERT_EQ(exceptionPrefix + "IDon'tExist", error.GetExceptionName());
@@ -565,6 +571,12 @@ TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
     ASSERT_EQ("UnrecognizedClientException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "RequestTimeout", message));
+    ASSERT_EQ(CoreErrors::REQUEST_TIMEOUT, error.GetErrorType());
+    ASSERT_EQ("RequestTimeout", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
 
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "IDon'tExist", "JunkMessage"));
     ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
