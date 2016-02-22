@@ -2701,7 +2701,5 @@
       "type":"string",
       "pattern":"[\\S]+"
     }
-  },
-  "examples":{
   }
 }

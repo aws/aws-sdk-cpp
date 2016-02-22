@@ -5359,7 +5359,5 @@
         "CacheSecurityGroup":{"shape":"CacheSecurityGroup"}
       }
     }
-  },
-  "examples":{
   }
 }

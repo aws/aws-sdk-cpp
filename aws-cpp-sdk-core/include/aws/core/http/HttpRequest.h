@@ -87,7 +87,7 @@ public:
     {
         return m_uri.GetURIString(includeQueryString);
     }
-    inline const HttpMethod GetMethod() const
+    inline HttpMethod GetMethod() const
     {
         return m_method;
     }

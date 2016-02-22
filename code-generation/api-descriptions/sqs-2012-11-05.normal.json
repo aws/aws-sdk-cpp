@@ -1,5 +1,4 @@
 {
-  "version":"2.0",
   "metadata":{
     "apiVersion":"2012-11-05",
     "endpointPrefix":"sqs",
@@ -1488,7 +1487,5 @@
       "exception":true,
       "documentation":"<p>Error code 400. Unsupported operation.</p>"
     }
-  },
-  "examples":{
   }
 }

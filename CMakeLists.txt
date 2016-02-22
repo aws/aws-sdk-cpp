@@ -76,7 +76,7 @@ if(PLATFORM_WINDOWS)
     message(STATUS "Generating windows build config")
     add_definitions("-DAWS_SDK_PLATFORM_WINDOWS")
     set(SDK_INSTALL_BINARY_PREFIX "windows")
-    SET(PYTHON_CMD "py")
+	SET(PYTHON_CMD "py")
 elseif(PLATFORM_LINUX)
     message(STATUS "Generating linux build config")
     add_definitions("-DAWS_SDK_PLATFORM_LINUX")
@@ -240,15 +240,29 @@ if(BUILD_ONLY)
 else()
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-access-management")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-autoscaling")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-acm")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-apigateway")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cloudhsm")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cloudformation")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cloudfront")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cloudsearch")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cloudsearchdomain")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cloudtrail")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-codecommit")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-codedeploy")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-codepipeline")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cognito-identity")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-cognito-sync")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-config")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-datapipeline")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-devicefarm")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-directconnect")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ds")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-dynamodb")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-dynamodbstreams")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ec2")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ecs")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ecr")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-elasticache")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-elasticbeanstalk")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-elasticfilesystem")
@@ -256,27 +270,43 @@ else()
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-elasticmapreduce")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-elastictranscoder")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-email")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-es")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-events")	
+    LIST(APPEND BUILD_ONLY "aws-cpp-sdk-firehose")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-gamelift")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-glacier")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-iam")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-importexport")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-inspector")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-iot")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-iot-data")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-identity-management")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-kinesis")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-kms")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-lambda")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-logs")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-machinelearning")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-marketplacecommerceanalytics")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-mobileanalytics")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-monitoring")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-opsworks")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-queues")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-rds")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-redshift")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-route53")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-route53domains")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-s3")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-sdb")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-sns")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-sqs")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ssm")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-storagegateway")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-sts")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-support")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-swf")
-    LIST(APPEND BUILD_ONLY "aws-cpp-sdk-firehose")
-    LIST(APPEND BUILD_ONLY "aws-cpp-sdk-transfer")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-transfer")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-waf")
+	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-workspaces")    
 endif()
 
 LIST(REMOVE_DUPLICATES BUILD_ONLY)
@@ -382,7 +412,7 @@ if(REGENERATE_CLIENTS)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-rds" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName rds --apiVersion 2013-01-10 --outputLocation ./
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName rds --apiVersion 2014-10-31 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()
@@ -409,7 +439,7 @@ if(REGENERATE_CLIENTS)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudfront" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cloudfront --apiVersion 2015-04-17 --outputLocation ./
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cloudfront --apiVersion 2016-01-28 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()
@@ -603,11 +633,281 @@ if(REGENERATE_CLIENTS)
         )
     endif()
 
+	#acm
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-acm" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName acm --apiVersion 2015-12-08 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#api-gateway
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-apigateway" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName apigateway --apiVersion 2015-07-09 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#cloudhsm
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudhsm" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cloudhsm --apiVersion 2014-05-30 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#cloudsearch
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudsearch" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cloudsearch --apiVersion 2013-01-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#cloudsearchdomain
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudsearchdomain" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cloudsearchdomain --apiVersion 2013-01-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#cloudtrail
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudtrail" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName cloudtrail --apiVersion 2013-11-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#codecommit
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-codecommit" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName codecommit --apiVersion 2015-04-13 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#codepipeline
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-codepipeline" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName codepipeline --apiVersion 2015-07-09 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#config
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-config" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName config --apiVersion 2014-11-12 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#devicefarm
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-devicefarm" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName devicefarm --apiVersion 2015-06-23 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#directconnect
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-directconnect" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName directconnect --apiVersion 2012-10-25 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#ds
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-ds" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ds --apiVersion 2015-04-16 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#dynamodbstreams
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-dynamodbstreams" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName dynamodbstreams --apiVersion 2012-08-10 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#ecr
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-ecr" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ecr --apiVersion 2015-09-21 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#es
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-es" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName es --apiVersion 2015-01-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#events
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-events" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName events --apiVersion 2014-02-03 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#gamelift
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-gamelift" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName gamelift --apiVersion 2015-10-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#importexport
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-importexport" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName importexport --apiVersion 2010-06-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#inspector
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-inspector" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName inspector --apiVersion 2015-08-18 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#iot
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-iot" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName iot --apiVersion 2015-05-28 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#iot-data
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-iot-data" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName iot-data --apiVersion 2015-05-28 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#machinelearning
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-machinelearning" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName machinelearning --apiVersion 2014-12-12 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#marketplacecommerceanalytics
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-marketplacecommerceanalytics" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName marketplacecommerceanalytics --apiVersion 2015-07-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#route53
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-route53" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName route53 --apiVersion 2013-04-01 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#route53domains
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-route53domains" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName route53domains --apiVersion 2014-05-15 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#ssm
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-ssm" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ssm --apiVersion 2014-11-06 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#storagegateway
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-storagegateway" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName storagegateway --apiVersion 2013-06-30 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#support
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-support" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName support --apiVersion 2013-04-15 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#waf
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-waf" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName waf --apiVersion 2015-08-24 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+	#workspaces
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-workspaces" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName workspaces --apiVersion 2015-04-08 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
     #ec2
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-ec2" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ec2 --apiVersion 2015-04-15 --outputLocation ./
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ec2 --apiVersion 2015-10-01 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()
@@ -697,9 +997,8 @@ if(PLATFORM_WINDOWS)
 		endif()
     endif()
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
-    # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
-    # We also have some nested comments in the auto-generated member comments so turn that off as well
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-unused-private-field")
+    # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.    
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-unused-private-field -pedantic -Wextra")
 endif()
 
 if(NOT PLATFORM_WINDOWS)
@@ -899,238 +1198,17 @@ add_subdirectory(aws-cpp-sdk-core)
 LIST(APPEND EXPORTS "aws-cpp-sdk-core")
 add_subdirectory(testing-resources)
 
-SET(OUTPUT_VAR -1)
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-dynamodb" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-dynamodb)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-dynamodb")
+if(PLATFORM_ANDROID)
+    # the EventSeverity::DEBUG entry doesn't compile on android because DEBUG is #defined
+    # ToDo: fix the client generator to map DEBUG to something else
+    LIST(REMOVE BUILD_ONLY "aws-cpp-sdk-elasticbeanstalk")
+	LIST(REMOVE BUILD_ONLY "aws-cpp-sdk-ec2")   
 endif()
 
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-cognito-identity" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-cognito-identity)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-cognito-identity")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-identity-management" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-identity-management)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-identity-management")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-sqs" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-sqs)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-sqs")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-kinesis" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-kinesis)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-kinesis")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-lambda" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-lambda)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-lambda")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-s3" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-s3)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-s3")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-mobileanalytics" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-mobileanalytics)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-mobileanalytics")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-elasticloadbalancing" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-elasticloadbalancing)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-elasticloadbalancing")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-opsworks" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-opsworks)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-opsworks")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudfront" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-cloudfront)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-cloudfront")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-kms" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-kms)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-kms")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-codedeploy" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-codedeploy)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-codedeploy")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-redshift" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-redshift)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-redshift")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-iam" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-iam)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-iam")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-ecs" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-ecs)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-ecs")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-datapipeline" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-datapipeline)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-datapipeline")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-glacier" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-glacier)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-glacier")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-logs" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-logs)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-logs")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-email" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-email)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-email")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-elasticache" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-elasticache)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-elasticache")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-elasticmapreduce" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-elasticmapreduce)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-elasticmapreduce")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-elasticfilesystem" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-elasticfilesystem)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-elasticfilesystem")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-monitoring" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-monitoring)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-monitoring")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-cognito-sync" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-cognito-sync)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-cognito-sync")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-sdb" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-sdb)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-sdb")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-sts" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-sts)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-sts")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-elastictranscoder" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-elastictranscoder)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-elastictranscoder")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-sns" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-sns)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-sns")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-autoscaling" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-autoscaling)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-autoscaling")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-cloudformation" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-cloudformation)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-cloudformation")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-rds" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-rds)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-rds")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-access-management" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-access-management)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-access-management")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-transfer" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-transfer)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-transfer")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-queues" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-queues)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-queues")
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-firehose" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-firehose)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-firehose")
-endif()
-
-# trying to compile EC2Client.cpp hangs linux/android, may need some kind of custom build settings to handle it
-if(NOT PLATFORM_ANDROID)
-    LIST(FIND BUILD_ONLY "aws-cpp-sdk-ec2" OUTPUT_VAR)
-    if(OUTPUT_VAR GREATER -1)
-        add_subdirectory(aws-cpp-sdk-ec2)
-        LIST(APPEND EXPORTS "aws-cpp-sdk-ec2")
-    endif()
-endif()
-
-LIST(FIND BUILD_ONLY "aws-cpp-sdk-swf" OUTPUT_VAR)
-if(OUTPUT_VAR GREATER -1)
-    add_subdirectory(aws-cpp-sdk-swf)
-    LIST(APPEND EXPORTS "aws-cpp-sdk-swf")
-endif()
+foreach(build_client ${BUILD_ONLY})   
+    add_subdirectory("${build_client}")
+	LIST(APPEND EXPORTS "${build_client}")
+endforeach(build_client)
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.
 foreach(custom_client ${ADD_CUSTOM_CLIENTS})
@@ -1153,22 +1231,13 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
 
 endforeach(custom_client)
 
-if(NOT PLATFORM_ANDROID)
-    # the EventSeverity::DEBUG entry doesn't compile on android because DEBUG is #defined
-    # ToDo: fix the client generator to map DEBUG to something else
-    LIST(FIND BUILD_ONLY "aws-cpp-sdk-elasticbeanstalk" OUTPUT_VAR)
-    if(OUTPUT_VAR GREATER -1)
-        add_subdirectory(aws-cpp-sdk-elasticbeanstalk)
-        LIST(APPEND EXPORTS "aws-cpp-sdk-elasticbeanstalk")
-    endif()
-endif()
-
 #testing
 if(PLATFORM_ANDROID AND NOT BUILD_SHARED_LIBS)
     add_subdirectory(android-unified-tests)
 else()
     add_subdirectory(aws-cpp-sdk-core-tests)
 
+	SET(OUTPUT_VAR -1)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-dynamodb" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         add_subdirectory(aws-cpp-sdk-dynamodb-integration-tests)

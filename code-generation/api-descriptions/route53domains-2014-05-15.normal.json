@@ -1932,7 +1932,5 @@
       "type":"string",
       "max":255
     }
-  },
-  "examples":{
   }
 }
