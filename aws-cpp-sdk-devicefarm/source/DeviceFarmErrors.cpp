@@ -20,10 +20,10 @@ using namespace Aws::Client;
 using namespace Aws::DeviceFarm;
 using namespace Aws::Utils;
 
-static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
+static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
-static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
+static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 
 namespace Aws
@@ -37,9 +37,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == IDEMPOTENCY_HASH)
+  if (hashCode == ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::IDEMPOTENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -49,9 +49,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), false);
   }
-  else if (hashCode == ARGUMENT_HASH)
+  else if (hashCode == IDEMPOTENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::IDEMPOTENCY), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {

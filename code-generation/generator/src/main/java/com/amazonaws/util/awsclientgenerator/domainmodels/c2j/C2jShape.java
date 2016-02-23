@@ -37,4 +37,6 @@ public class C2jShape {
     private String locationName;
     private String payload;
     private boolean flattened;
+    private C2jErrorInfo error;
+    private boolean exception;
 }

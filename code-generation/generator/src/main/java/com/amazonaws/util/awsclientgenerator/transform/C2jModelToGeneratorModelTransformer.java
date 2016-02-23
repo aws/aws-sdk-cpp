@@ -44,7 +44,7 @@ public class C2jModelToGeneratorModelTransformer {
         convertShapes();
         convertOperations();
         removeUnreferencedShapes();
-        PostProcessShapes();
+        postProcessShapes();
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
@@ -109,7 +109,7 @@ public class C2jModelToGeneratorModelTransformer {
         }
     }
 
-    void PostProcessShapes() {
+    void postProcessShapes() {
         for(Map.Entry<String, Shape> entry : shapes.entrySet()) {
             Shape shape = entry.getValue();
 
@@ -321,6 +321,12 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     Error convertError(C2jError c2jError) {
+        if(c2jServiceModel.getShapes().get(c2jError.getShape()) != null) {
+            C2jShape shape = c2jServiceModel.getShapes().get(c2jError.getShape());
+            c2jError.setError(shape.getError());
+            c2jError.setException(shape.isException());
+        }
+
         Error error = new Error();
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));
         error.setName(c2jError.getShape());
@@ -330,6 +336,11 @@ public class C2jModelToGeneratorModelTransformer {
 
         //query xml loads this inner structure to do this work.
         if (c2jError.getError() != null && c2jError.getError().getCode() != null) {
+            if(c2jError.getError().getHttpStatusCode() >= 500 || !c2jError.getError().isSenderFault()) {
+                error.setRetryable(true);
+            }
+
+            error.setName(c2jError.getError().getCode());
             error.setText(c2jError.getError().getCode());
         }
 

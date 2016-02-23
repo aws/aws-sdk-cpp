@@ -20,21 +20,21 @@ using namespace Aws::Client;
 using namespace Aws::Lambda;
 using namespace Aws::Utils;
 
-static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
-static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
-static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
-static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
-static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
+static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
+static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
+static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
+static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
+static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
+static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
+static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
-static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
-static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
+static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 
 namespace Aws
 {
@@ -47,21 +47,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == E_C2_UNEXPECTED_HASH)
+  if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), false);
   }
-  else if (hashCode == INVALID_SUBNET_I_D_HASH)
+  else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), false);
   }
-  else if (hashCode == REQUEST_TOO_LARGE_HASH)
+  else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
-  }
-  else if (hashCode == E_N_I_LIMIT_REACHED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_N_I_LIMIT_REACHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), false);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
@@ -75,17 +71,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), false);
   }
-  else if (hashCode == SERVICE_HASH)
+  else if (hashCode == REQUEST_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
   }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
+  else if (hashCode == E_N_I_LIMIT_REACHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_N_I_LIMIT_REACHED), false);
   }
-  else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH)
+  else if (hashCode == E_C2_UNEXPECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), false);
+  }
+  else if (hashCode == INVALID_SUBNET_I_D_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), false);
+  }
+  else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_STORAGE_EXCEEDED), false);
   }
   else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH)
   {
@@ -95,17 +99,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), false);
   }
-  else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
+  else if (hashCode == E_C2_THROTTLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_STORAGE_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), false);
   }
   else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::POLICY_LENGTH_EXCEEDED), false);
-  }
-  else if (hashCode == E_C2_THROTTLED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

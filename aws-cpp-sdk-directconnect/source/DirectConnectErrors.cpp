@@ -20,8 +20,8 @@ using namespace Aws::Client;
 using namespace Aws::DirectConnect;
 using namespace Aws::Utils;
 
-static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
 static const int DIRECT_CONNECT_CLIENT_HASH = HashingUtils::HashString("DirectConnectClientException");
+static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
 
 namespace Aws
 {
@@ -34,13 +34,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DIRECT_CONNECT_SERVER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DIRECT_CONNECT_SERVER), false);
-  }
-  else if (hashCode == DIRECT_CONNECT_CLIENT_HASH)
+  if (hashCode == DIRECT_CONNECT_CLIENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DIRECT_CONNECT_CLIENT), false);
+  }
+  else if (hashCode == DIRECT_CONNECT_SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DIRECT_CONNECT_SERVER), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

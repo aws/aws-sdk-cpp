@@ -20,28 +20,28 @@ using namespace Aws::Client;
 using namespace Aws::IAM;
 using namespace Aws::Utils;
 
-static const int INVALID_AUTHENTICATION_CODE_HASH = HashingUtils::HashString("InvalidAuthenticationCodeException");
-static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("CredentialReportNotReadyException");
-static const int INVALID_USER_TYPE_HASH = HashingUtils::HashString("InvalidUserTypeException");
-static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificateException");
-static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("DuplicateCertificateException");
-static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
-static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflictException");
-static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolationException");
-static const int POLICY_EVALUATION_HASH = HashingUtils::HashString("PolicyEvaluationException");
-static const int CREDENTIAL_REPORT_EXPIRED_HASH = HashingUtils::HashString("CredentialReportExpiredException");
-static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("CredentialReportNotPresentException");
-static const int KEY_PAIR_MISMATCH_HASH = HashingUtils::HashString("KeyPairMismatchException");
-static const int UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = HashingUtils::HashString("UnrecognizedPublicKeyEncodingException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_PUBLIC_KEY_HASH = HashingUtils::HashString("InvalidPublicKeyException");
-static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
-static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExistsException");
-static const int DUPLICATE_S_S_H_PUBLIC_KEY_HASH = HashingUtils::HashString("DuplicateSSHPublicKeyException");
-static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificateException");
-static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
-static const int ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = HashingUtils::HashString("EntityTemporarilyUnmodifiableException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static const int REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
+static const int REPORT_IN_PROGRESS_HASH = HashingUtils::HashString("ReportInProgress");
+static const int POLICY_EVALUATION_HASH = HashingUtils::HashString("PolicyEvaluation");
+static const int DUPLICATE_S_S_H_PUBLIC_KEY_HASH = HashingUtils::HashString("DuplicateSSHPublicKey");
+static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificate");
+static const int INVALID_PUBLIC_KEY_HASH = HashingUtils::HashString("InvalidPublicKey");
+static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificate");
+static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocument");
+static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("DuplicateCertificate");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
+static const int ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = HashingUtils::HashString("EntityTemporarilyUnmodifiable");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
+static const int KEY_PAIR_MISMATCH_HASH = HashingUtils::HashString("KeyPairMismatch");
+static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolation");
+static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflict");
+static const int INVALID_AUTHENTICATION_CODE_HASH = HashingUtils::HashString("InvalidAuthenticationCode");
+static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure");
+static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExists");
+static const int INVALID_USER_TYPE_HASH = HashingUtils::HashString("InvalidUserType");
+static const int UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = HashingUtils::HashString("UnrecognizedPublicKeyEncoding");
+static const int REPORT_EXPIRED_HASH = HashingUtils::HashString("ReportExpired");
+static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntity");
 
 namespace Aws
 {
@@ -54,73 +54,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_AUTHENTICATION_CODE_HASH)
+  if (hashCode == REPORT_NOT_PRESENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_AUTHENTICATION_CODE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::REPORT_NOT_PRESENT), false);
   }
-  else if (hashCode == CREDENTIAL_REPORT_NOT_READY_HASH)
+  else if (hashCode == REPORT_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CREDENTIAL_REPORT_NOT_READY), false);
-  }
-  else if (hashCode == INVALID_USER_TYPE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_USER_TYPE), false);
-  }
-  else if (hashCode == INVALID_CERTIFICATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_CERTIFICATE), false);
-  }
-  else if (hashCode == DUPLICATE_CERTIFICATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DUPLICATE_CERTIFICATE), false);
-  }
-  else if (hashCode == SERVICE_FAILURE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::SERVICE_FAILURE), false);
-  }
-  else if (hashCode == DELETE_CONFLICT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DELETE_CONFLICT), false);
-  }
-  else if (hashCode == PASSWORD_POLICY_VIOLATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::PASSWORD_POLICY_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::REPORT_IN_PROGRESS), false);
   }
   else if (hashCode == POLICY_EVALUATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::POLICY_EVALUATION), false);
-  }
-  else if (hashCode == CREDENTIAL_REPORT_EXPIRED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CREDENTIAL_REPORT_EXPIRED), false);
-  }
-  else if (hashCode == CREDENTIAL_REPORT_NOT_PRESENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CREDENTIAL_REPORT_NOT_PRESENT), false);
-  }
-  else if (hashCode == KEY_PAIR_MISMATCH_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::KEY_PAIR_MISMATCH), false);
-  }
-  else if (hashCode == UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::UNRECOGNIZED_PUBLIC_KEY_ENCODING), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_PUBLIC_KEY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_PUBLIC_KEY), false);
-  }
-  else if (hashCode == NO_SUCH_ENTITY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::NO_SUCH_ENTITY), false);
-  }
-  else if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ENTITY_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::POLICY_EVALUATION), true);
   }
   else if (hashCode == DUPLICATE_S_S_H_PUBLIC_KEY_HASH)
   {
@@ -130,17 +74,73 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::MALFORMED_CERTIFICATE), false);
   }
+  else if (hashCode == INVALID_PUBLIC_KEY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_PUBLIC_KEY), false);
+  }
+  else if (hashCode == INVALID_CERTIFICATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_CERTIFICATE), false);
+  }
   else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::MALFORMED_POLICY_DOCUMENT), false);
+  }
+  else if (hashCode == DUPLICATE_CERTIFICATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DUPLICATE_CERTIFICATE), false);
+  }
+  else if (hashCode == INVALID_INPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_INPUT), false);
   }
   else if (hashCode == ENTITY_TEMPORARILY_UNMODIFIABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ENTITY_TEMPORARILY_UNMODIFIABLE), false);
   }
-  else if (hashCode == INVALID_INPUT_HASH)
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == KEY_PAIR_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::KEY_PAIR_MISMATCH), false);
+  }
+  else if (hashCode == PASSWORD_POLICY_VIOLATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::PASSWORD_POLICY_VIOLATION), false);
+  }
+  else if (hashCode == DELETE_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DELETE_CONFLICT), false);
+  }
+  else if (hashCode == INVALID_AUTHENTICATION_CODE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_AUTHENTICATION_CODE), false);
+  }
+  else if (hashCode == SERVICE_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::SERVICE_FAILURE), true);
+  }
+  else if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ENTITY_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == INVALID_USER_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_USER_TYPE), false);
+  }
+  else if (hashCode == UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::UNRECOGNIZED_PUBLIC_KEY_ENCODING), false);
+  }
+  else if (hashCode == REPORT_EXPIRED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::REPORT_EXPIRED), false);
+  }
+  else if (hashCode == NO_SUCH_ENTITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::NO_SUCH_ENTITY), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

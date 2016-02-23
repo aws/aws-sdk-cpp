@@ -20,25 +20,25 @@ using namespace Aws::Client;
 using namespace Aws::ElasticLoadBalancing;
 using namespace Aws::Utils;
 
-static const int INVALID_SECURITY_GROUP_HASH = HashingUtils::HashString("InvalidSecurityGroup");
-static const int DUPLICATE_ACCESS_POINT_NAME_HASH = HashingUtils::HashString("DuplicateLoadBalancerName");
 static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeys");
-static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
-static const int INVALID_END_POINT_HASH = HashingUtils::HashString("InvalidInstance");
-static const int DUPLICATE_POLICY_NAME_HASH = HashingUtils::HashString("DuplicatePolicyName");
-static const int TOO_MANY_POLICIES_HASH = HashingUtils::HashString("TooManyPolicies");
-static const int TOO_MANY_ACCESS_POINTS_HASH = HashingUtils::HashString("TooManyLoadBalancers");
-static const int POLICY_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("PolicyTypeNotFound");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
-static const int INVALID_CONFIGURATION_REQUEST_HASH = HashingUtils::HashString("InvalidConfigurationRequest");
-static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
-static const int CERTIFICATE_NOT_FOUND_HASH = HashingUtils::HashString("CertificateNotFound");
-static const int LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerAttributeNotFound");
-static const int ACCESS_POINT_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerNotFound");
+static const int INVALID_INSTANCE_HASH = HashingUtils::HashString("InvalidInstance");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
+static const int LOAD_BALANCER_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerNotFound");
+static const int POLICY_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("PolicyTypeNotFound");
+static const int DUPLICATE_POLICY_NAME_HASH = HashingUtils::HashString("DuplicatePolicyName");
+static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
+static const int LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerAttributeNotFound");
+static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
 static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
-static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
+static const int TOO_MANY_LOAD_BALANCERS_HASH = HashingUtils::HashString("TooManyLoadBalancers");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
+static const int CERTIFICATE_NOT_FOUND_HASH = HashingUtils::HashString("CertificateNotFound");
+static const int DUPLICATE_LOAD_BALANCER_NAME_HASH = HashingUtils::HashString("DuplicateLoadBalancerName");
+static const int TOO_MANY_POLICIES_HASH = HashingUtils::HashString("TooManyPolicies");
+static const int INVALID_CONFIGURATION_REQUEST_HASH = HashingUtils::HashString("InvalidConfigurationRequest");
 static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFound");
+static const int INVALID_SECURITY_GROUP_HASH = HashingUtils::HashString("InvalidSecurityGroup");
+static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
 
 namespace Aws
 {
@@ -51,81 +51,81 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_SECURITY_GROUP_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SECURITY_GROUP), false);
-  }
-  else if (hashCode == DUPLICATE_ACCESS_POINT_NAME_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_ACCESS_POINT_NAME), false);
-  }
-  else if (hashCode == DUPLICATE_TAG_KEYS_HASH)
+  if (hashCode == DUPLICATE_TAG_KEYS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_TAG_KEYS), false);
   }
-  else if (hashCode == INVALID_SCHEME_HASH)
+  else if (hashCode == INVALID_INSTANCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SCHEME), false);
-  }
-  else if (hashCode == INVALID_END_POINT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_END_POINT), false);
-  }
-  else if (hashCode == DUPLICATE_POLICY_NAME_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_POLICY_NAME), false);
-  }
-  else if (hashCode == TOO_MANY_POLICIES_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_POLICIES), false);
-  }
-  else if (hashCode == TOO_MANY_ACCESS_POINTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_ACCESS_POINTS), false);
-  }
-  else if (hashCode == POLICY_TYPE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_TYPE_NOT_FOUND), false);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_TAGS), false);
-  }
-  else if (hashCode == INVALID_CONFIGURATION_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_CONFIGURATION_REQUEST), false);
-  }
-  else if (hashCode == LISTENER_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LISTENER_NOT_FOUND), false);
-  }
-  else if (hashCode == CERTIFICATE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::CERTIFICATE_NOT_FOUND), false);
-  }
-  else if (hashCode == LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LOAD_BALANCER_ATTRIBUTE_NOT_FOUND), false);
-  }
-  else if (hashCode == ACCESS_POINT_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::ACCESS_POINT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_INSTANCE), false);
   }
   else if (hashCode == INVALID_SUBNET_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SUBNET), false);
   }
+  else if (hashCode == LOAD_BALANCER_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LOAD_BALANCER_NOT_FOUND), false);
+  }
+  else if (hashCode == POLICY_TYPE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_TYPE_NOT_FOUND), false);
+  }
+  else if (hashCode == DUPLICATE_POLICY_NAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_POLICY_NAME), false);
+  }
+  else if (hashCode == INVALID_SCHEME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SCHEME), false);
+  }
+  else if (hashCode == LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LOAD_BALANCER_ATTRIBUTE_NOT_FOUND), false);
+  }
+  else if (hashCode == LISTENER_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LISTENER_NOT_FOUND), false);
+  }
   else if (hashCode == SUBNET_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::SUBNET_NOT_FOUND), false);
   }
-  else if (hashCode == DUPLICATE_LISTENER_HASH)
+  else if (hashCode == TOO_MANY_LOAD_BALANCERS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_LISTENER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_LOAD_BALANCERS), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_TAGS), false);
+  }
+  else if (hashCode == CERTIFICATE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::CERTIFICATE_NOT_FOUND), false);
+  }
+  else if (hashCode == DUPLICATE_LOAD_BALANCER_NAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_LOAD_BALANCER_NAME), false);
+  }
+  else if (hashCode == TOO_MANY_POLICIES_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_POLICIES), false);
+  }
+  else if (hashCode == INVALID_CONFIGURATION_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_CONFIGURATION_REQUEST), false);
   }
   else if (hashCode == POLICY_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_SECURITY_GROUP_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SECURITY_GROUP), false);
+  }
+  else if (hashCode == DUPLICATE_LISTENER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_LISTENER), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

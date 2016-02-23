@@ -22,20 +22,20 @@ using namespace Aws::Utils;
 
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
 static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
-static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
-static const int REPOSITORY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryNotFoundException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
-static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
 static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
-static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
+static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
+static const int REPOSITORY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryNotFoundException");
+static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
+static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
+static const int EMPTY_UPLOAD_HASH = HashingUtils::HashString("EmptyUploadException");
+static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
 static const int UPLOAD_NOT_FOUND_HASH = HashingUtils::HashString("UploadNotFoundException");
 static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("RepositoryAlreadyExistsException");
 static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
-static const int EMPTY_UPLOAD_HASH = HashingUtils::HashString("EmptyUploadException");
-static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
-static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 
 namespace Aws
 {
@@ -56,37 +56,45 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_LAYER_PART), false);
   }
-  else if (hashCode == REPOSITORY_NOT_EMPTY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_NOT_EMPTY), false);
-  }
-  else if (hashCode == REPOSITORY_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_NOT_FOUND), false);
-  }
   else if (hashCode == SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::SERVER), false);
-  }
-  else if (hashCode == IMAGE_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_ALREADY_EXISTS), false);
   }
   else if (hashCode == REPOSITORY_POLICY_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_POLICY_NOT_FOUND), false);
   }
-  else if (hashCode == INVALID_LAYER_HASH)
+  else if (hashCode == IMAGE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_LAYER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == REPOSITORY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_NOT_FOUND), false);
+  }
+  else if (hashCode == REPOSITORY_NOT_EMPTY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_NOT_EMPTY), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == INVALID_PARAMETER_HASH)
+  else if (hashCode == INVALID_LAYER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_LAYER), false);
+  }
+  else if (hashCode == LAYER_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == EMPTY_UPLOAD_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::EMPTY_UPLOAD), false);
+  }
+  else if (hashCode == LAYERS_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYERS_NOT_FOUND), false);
   }
   else if (hashCode == UPLOAD_NOT_FOUND_HASH)
   {
@@ -100,17 +108,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_PART_TOO_SMALL), false);
   }
-  else if (hashCode == EMPTY_UPLOAD_HASH)
+  else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::EMPTY_UPLOAD), false);
-  }
-  else if (hashCode == LAYER_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_ALREADY_EXISTS), false);
-  }
-  else if (hashCode == LAYERS_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYERS_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_PARAMETER), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

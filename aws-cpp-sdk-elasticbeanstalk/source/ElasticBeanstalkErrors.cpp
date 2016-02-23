@@ -20,18 +20,18 @@ using namespace Aws::Client;
 using namespace Aws::ElasticBeanstalk;
 using namespace Aws::Utils;
 
+static const int TOO_MANY_APPLICATION_VERSIONS_HASH = HashingUtils::HashString("TooManyApplicationVersionsException");
+static const int TOO_MANY_APPLICATIONS_HASH = HashingUtils::HashString("TooManyApplicationsException");
+static const int TOO_MANY_BUCKETS_HASH = HashingUtils::HashString("TooManyBucketsException");
+static const int OPERATION_IN_PROGRESS_FAILURE_HASH = HashingUtils::HashString("OperationInProgressFailure");
 static const int INSUFFICIENT_PRIVILEGES_HASH = HashingUtils::HashString("InsufficientPrivilegesException");
 static const int S3_LOCATION_NOT_IN_SERVICE_REGION_HASH = HashingUtils::HashString("S3LocationNotInServiceRegionException");
 static const int TOO_MANY_CONFIGURATION_TEMPLATES_HASH = HashingUtils::HashString("TooManyConfigurationTemplatesException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
 static const int ELASTIC_BEANSTALK_SERVICE_HASH = HashingUtils::HashString("ElasticBeanstalkServiceException");
-static const int TOO_MANY_APPLICATIONS_HASH = HashingUtils::HashString("TooManyApplicationsException");
-static const int TOO_MANY_BUCKETS_HASH = HashingUtils::HashString("TooManyBucketsException");
-static const int TOO_MANY_APPLICATION_VERSIONS_HASH = HashingUtils::HashString("TooManyApplicationVersionsException");
+static const int TOO_MANY_ENVIRONMENTS_HASH = HashingUtils::HashString("TooManyEnvironmentsException");
+static const int SOURCE_BUNDLE_DELETION_FAILURE_HASH = HashingUtils::HashString("SourceBundleDeletionFailure");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int S3_SUBSCRIPTION_REQUIRED_HASH = HashingUtils::HashString("S3SubscriptionRequiredException");
-static const int SOURCE_BUNDLE_DELETION_HASH = HashingUtils::HashString("SourceBundleDeletionException");
-static const int TOO_MANY_ENVIRONMENTS_HASH = HashingUtils::HashString("TooManyEnvironmentsException");
 
 namespace Aws
 {
@@ -44,7 +44,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INSUFFICIENT_PRIVILEGES_HASH)
+  if (hashCode == TOO_MANY_APPLICATION_VERSIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATION_VERSIONS), false);
+  }
+  else if (hashCode == TOO_MANY_APPLICATIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATIONS), false);
+  }
+  else if (hashCode == TOO_MANY_BUCKETS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_BUCKETS), false);
+  }
+  else if (hashCode == OPERATION_IN_PROGRESS_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::OPERATION_IN_PROGRESS_FAILURE), false);
+  }
+  else if (hashCode == INSUFFICIENT_PRIVILEGES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::INSUFFICIENT_PRIVILEGES), false);
   }
@@ -56,25 +72,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_CONFIGURATION_TEMPLATES), false);
   }
-  else if (hashCode == OPERATION_IN_PROGRESS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::OPERATION_IN_PROGRESS), false);
-  }
   else if (hashCode == ELASTIC_BEANSTALK_SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::ELASTIC_BEANSTALK_SERVICE), false);
   }
-  else if (hashCode == TOO_MANY_APPLICATIONS_HASH)
+  else if (hashCode == TOO_MANY_ENVIRONMENTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_ENVIRONMENTS), false);
   }
-  else if (hashCode == TOO_MANY_BUCKETS_HASH)
+  else if (hashCode == SOURCE_BUNDLE_DELETION_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_BUCKETS), false);
-  }
-  else if (hashCode == TOO_MANY_APPLICATION_VERSIONS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATION_VERSIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::SOURCE_BUNDLE_DELETION_FAILURE), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
@@ -83,14 +91,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == S3_SUBSCRIPTION_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::S3_SUBSCRIPTION_REQUIRED), false);
-  }
-  else if (hashCode == SOURCE_BUNDLE_DELETION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::SOURCE_BUNDLE_DELETION), false);
-  }
-  else if (hashCode == TOO_MANY_ENVIRONMENTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_ENVIRONMENTS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
